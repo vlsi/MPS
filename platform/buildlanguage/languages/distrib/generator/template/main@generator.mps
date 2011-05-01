@@ -9104,7 +9104,6 @@
                         </node>
                       </node>
                     </node>
-                    <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6494436701937087731" />
                   </node>
                 </node>
               </node>
@@ -9114,7 +9113,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6494436701937087733" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="6494436701937087777">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="6494436701937087778">
@@ -9135,7 +9133,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6494436701937087796" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="6494436701937087716">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="6494436701937087717">
@@ -9146,7 +9143,6 @@
                   <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="6494436701937094960">
                     <node role="base" roleId="u9e0.8474643070102636485" type="u9e0.HeadPipeline" typeId="u9e0.8474643070110245381" id="6494436701937094961" />
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6494436701937094963" />
                   <node role="comment" roleId="u9e0.2635812496400429929" type="u9e0.CommentedText" typeId="u9e0.8457058248751600624" id="6494436701937094964">
                     <property name="comment" nameId="u9e0.8457058248751600627" value="readlink resolves symbolic links, but on linux only" />
                   </node>
@@ -9182,7 +9178,6 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6494436701937087769" />
                             </node>
                           </node>
                         </node>
@@ -9192,7 +9187,6 @@
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6494436701937087771" />
                 </node>
               </node>
               <node role="testCommand" roleId="u9e0.7633559109508737478" type="u9e0.ConditionalCommand" typeId="u9e0.3147078024747082354" id="6494436701937087742">
@@ -9220,7 +9214,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6494436701937087720" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904619">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904620">
@@ -9251,14 +9244,12 @@
                         </node>
                       </node>
                     </node>
-                    <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904635" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904636" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904637">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904638">
@@ -9425,7 +9416,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904644" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904645">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904646">
@@ -9433,7 +9423,6 @@
             <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.Command" typeId="u9e0.3905757829901343108" id="1635896182103904648" />
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904649" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904650">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904651">
@@ -9468,7 +9457,6 @@
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904668" />
                 </node>
               </node>
               <node role="ifFalse" roleId="u9e0.7633559109508737480" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="1635896182103904669">
@@ -9494,7 +9482,6 @@
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904680" />
                 </node>
                 <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="4295420159790374215">
                   <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="4295420159790374216">
@@ -9521,13 +9508,11 @@
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="4295420159790374226" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904681" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="2837696374706635252">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="2837696374706635253">
@@ -9535,7 +9520,6 @@
             <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.Command" typeId="u9e0.3905757829901343108" id="2837696374706635255" />
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="2837696374706635256" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904682">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904683">
@@ -9572,7 +9556,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904689" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="2837696374706635257">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="2837696374706635258">
@@ -9580,7 +9563,6 @@
             <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.Command" typeId="u9e0.3905757829901343108" id="2837696374706635260" />
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="2837696374706635261" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904690">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904691">
@@ -9640,7 +9622,6 @@
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904711" />
                 </node>
               </node>
               <node role="ifFalse" roleId="u9e0.7633559109508737480" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="4295420159790374116">
@@ -9669,13 +9650,11 @@
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="4295420159790374121" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904712" />
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1635896182103908253">
           <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1635896182103908254">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1635896182103908255">
@@ -9770,7 +9749,6 @@
                         </node>
                       </node>
                     </node>
-                    <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904737" />
                   </node>
                 </node>
               </node>
@@ -9839,7 +9817,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904739" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommentedCommandList" typeId="u9e0.8457058248751696156" id="1635896182103904740">
         <node role="commandList" roleId="u9e0.8457058248751696157" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904741">
@@ -9911,7 +9888,6 @@
             <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.Command" typeId="u9e0.3905757829901343108" id="1635896182103904751" />
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904752" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904753">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904754">
@@ -9928,7 +9904,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904761" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904762">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904763">
@@ -9983,7 +9958,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904773" />
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="1635896182104079195">
           <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="1635896182104079196">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1635896182104079197">
@@ -10015,7 +9989,6 @@
             <node role="command" roleId="u9e0.8474643070110463418" type="u9e0.Command" typeId="u9e0.3905757829901343108" id="1635896182103904777" />
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904778" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904779">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904780">
@@ -10033,7 +10006,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904786" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904787">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904788">
@@ -10076,7 +10048,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904794" />
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1635896182103908377">
           <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1635896182103908378">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1635896182103908379">
@@ -10168,7 +10139,6 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138167442" />
                           </node>
                         </node>
                         <node role="ifFalse" roleId="u9e0.7633559109508737480" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="6027654792138167417">
@@ -10193,13 +10163,11 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138167432" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138167393" />
                 </node>
                 <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="6027654792138152505">
                   <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="6027654792138152506">
@@ -10217,7 +10185,6 @@
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138152512" />
                 </node>
               </node>
               <node role="elseIf" roleId="u9e0.7633559109508737481" type="u9e0.ElifCommand" typeId="u9e0.7633559109508737482" id="6027654792138152442">
@@ -10273,7 +10240,6 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138167470" />
                             </node>
                           </node>
                           <node role="ifFalse" roleId="u9e0.7633559109508737480" type="u9e0.InputLines" typeId="u9e0.3321051580269917239" id="6027654792138167471">
@@ -10298,13 +10264,11 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138167486" />
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138167447" />
                   </node>
                   <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="6027654792138152490">
                     <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="6027654792138152491">
@@ -10322,7 +10286,6 @@
                         </node>
                       </node>
                     </node>
-                    <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138152497" />
                   </node>
                 </node>
               </node>
@@ -10355,13 +10318,11 @@
                       </node>
                     </node>
                   </node>
-                  <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138152518" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="6027654792138152412" />
       </node>
       <node role="lines" roleId="u9e0.3321051580270635008" type="u9e0.CommandList" typeId="u9e0.3321051580269894529" id="1635896182103904813">
         <node role="head" roleId="u9e0.3321051580273150845" type="u9e0.HeadCommandList" typeId="u9e0.8474643070102636479" id="1635896182103904814">
@@ -10405,7 +10366,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" roleId="u9e0.7633559109503378344" type="u9e0.CommandTerminator" typeId="u9e0.7633559109503378338" id="1635896182103904829" />
       </node>
     </node>
     <node role="usedVars" roleId="u9e0.9034131902190735828" type="u9e0.VariableNameDeclaration" typeId="u9e0.7633559109506263695" id="7093590863634209389">

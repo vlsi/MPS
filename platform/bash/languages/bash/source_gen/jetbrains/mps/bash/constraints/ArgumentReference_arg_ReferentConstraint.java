@@ -10,6 +10,13 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bash.behavior.ExternalCommandCall_Behavior;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.constraints.ProviderGeneratedSearchScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ArgumentReference_arg_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -29,7 +36,25 @@ public class ArgumentReference_arg_ReferentConstraint extends BaseNodeReferenceS
     return ExternalCommandCall_Behavior.call_getUnusedArguments_3263637656466355284(call);
   }
 
+  public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new ProviderGeneratedSearchScope(this, operationContext, _context) {
+      public boolean isInScope(SNode checkedNode) {
+        SNode call = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.bash.structure.ExternalCommandCall");
+        Iterable<SNode> argumentReferences = ListSequence.fromList(SLinkOperations.getTargets(call, "refToOptions", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.bash.structure.ArgumentReference");
+          }
+        });
+        return Sequence.fromIterable(argumentReferences).<SNode>select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.bash.structure.ArgumentReference"), "arg", false);
+          }
+        }).distinct().count() == Sequence.fromIterable(argumentReferences).count();
+      }
+    };
+  }
+
   public SNodePointer getSearchScopeValidatorNodePointer() {
-    return new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3263637656466344330");
+    return new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3411949499900739977");
   }
 }
