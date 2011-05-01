@@ -1,12 +1,13 @@
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
@@ -21,8 +22,7 @@ import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -90,10 +90,35 @@ public class ProjectTest {
     HELPER.setMacro("samples_home", System.getProperty("user.dir")+"/samples");
     List<Object[]> fixtures = new ArrayList<Object[]>();
     mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir")+ PROJECT));
-    for (IModule module : mpsProject.getModules()) {
-      fixtures.add(new Object[] {new Fixture(module, mpsProject.getProject())});
+    List<IModule> allModules = ModelAccess.instance().runReadAction(new Computable<List<IModule>>() {
+      @Override
+      public List<IModule> compute() {
+        return MPSModuleRepository.getInstance().getAllModules();
+      }
+    });
+    Collections.sort(allModules, new Comparator<IModule>() {
+      @Override
+      public int compare(IModule m1, IModule m2) {
+        String fqName1 = m1.getModuleFqName();
+        String fqName2 = m2.getModuleFqName();
+        return fqName1.compareTo(fqName2);
+      }
+    });
+    for (IModule module : allModules) {
+      if (needsGeneration(module) && !(module instanceof Generator)) {
+        fixtures.add(new Object[]{new Fixture(module, mpsProject.getProject())});
+      }
     }
     return fixtures;
+  }
+
+  private static boolean needsGeneration(IModule module) {
+    for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
+      if (descriptor.isGeneratable()) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private final Fixture fixture;

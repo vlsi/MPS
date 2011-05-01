@@ -41,7 +41,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -137,8 +137,7 @@ public class ProjectTestHelper {
     final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<IModule> modules = Collections.singletonList(module);
-        for (IModule mod : withGenerators(modules)) {
+        for (IModule mod : withGenerators(Collections.singletonList(module))) {
           models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it) {
               return it.isGeneratable();
@@ -218,7 +217,7 @@ public class ProjectTestHelper {
       ModelAccess.instance().flushEventQueue();
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
-          IOperationContext context = new ModuleContext(module, project);
+          IOperationContext context = ProjectOperationContext.get(project);
           IScript scr = defaultScriptBuilder().toScript();
           result.value = new TestMakeService(context, myMessageHandler).make(collectResources(context, module), scr, ctl);
         }
@@ -246,7 +245,7 @@ public class ProjectTestHelper {
           ListSequence.fromList(diffs).addElement("None exists: " + orig + " or " + revd);
         } else if (!(orig.exists())) {
           ListSequence.fromList(diffs).addElement("Created: " + revd);
-        } else if (!(orig.exists())) {
+        } else if (!(revd.exists())) {
           ListSequence.fromList(diffs).addElement("Removed: " + orig);
         } else {
           ListSequence.fromList(diffs).addElement("Something weird here: " + orig + " or here " + revd);
