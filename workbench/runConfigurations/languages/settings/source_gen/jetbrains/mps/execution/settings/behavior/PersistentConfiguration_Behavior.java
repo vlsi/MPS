@@ -9,9 +9,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.ArrayList;
 import java.util.Set;
@@ -62,6 +64,18 @@ public class PersistentConfiguration_Behavior {
     return "Editor";
   }
 
+  public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
+    List<SNode> allMemebers = IClassifier_Behavior.callSuper_getMembers_1213877528020(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration", contextNode);
+    if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null)) {
+      return ListSequence.fromList(allMemebers).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod")) || !(SNodeOperations.isInstanceOf(IMember_Behavior.call_getVisiblity_1213877352965(it), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+        }
+      }).toListSequence();
+    }
+    return allMemebers;
+  }
+
   public static SNode call_createType_946964771156066501(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), "virtual_createType_1213877527970", PARAMETERS_946964771156066501);
@@ -79,7 +93,7 @@ public class PersistentConfiguration_Behavior {
         configuration = SLinkOperations.getTarget(executor, "configuration", false);
       }
     }
-    return new PersistentConfiguration_Behavior.QuotationClass_4ves9l_a0c0k().createNode(configuration);
+    return new PersistentConfiguration_Behavior.QuotationClass_4ves9l_a0c0l().createNode(configuration);
   }
 
   public static List<SNode> getContextPersistentProperties_946964771156066434(SNode node) {
@@ -112,8 +126,8 @@ public class PersistentConfiguration_Behavior {
     }
   }
 
-  public static class QuotationClass_4ves9l_a0c0k {
-    public QuotationClass_4ves9l_a0c0k() {
+  public static class QuotationClass_4ves9l_a0c0l {
+    public QuotationClass_4ves9l_a0c0l() {
     }
 
     public SNode createNode(Object parameter_3) {

@@ -8,10 +8,13 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import org.apache.commons.lang.StringUtils;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.util.MacrosFactory;
+import java.io.File;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -34,6 +37,12 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
+    if (StringUtils.isEmpty(this.getConfigurationPath())) {
+      throw new RuntimeConfigurationException("Configuration path is empty.");
+    }
+    if (StringUtils.isEmpty(this.getSystemPath())) {
+      throw new RuntimeConfigurationException("System path is empty.");
+    }
   }
 
   @Override
@@ -54,12 +63,39 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return myState.myJrePath;
   }
 
+  public String getSystemPath() {
+    return myState.mySystemPath;
+  }
+
+  public String getConfigurationPath() {
+    return myState.myConfigurationPath;
+  }
+
   public void setVmOptions(String value) {
     myState.myVmOptions = value;
   }
 
   public void setJrePath(String value) {
     myState.myJrePath = value;
+  }
+
+  public void setSystemPath(String value) {
+    myState.mySystemPath = value;
+  }
+
+  public void setConfigurationPath(String value) {
+    myState.myConfigurationPath = value;
+  }
+
+  public String expandPath(String path) {
+    return MacrosFactory.mpsHomeMacros().expandPath(path, new File(System.getProperty("user.home"))).replace(File.separator, "/");
+  }
+
+  public String shinkPath(String path) {
+    if (StringUtils.isEmpty(path)) {
+      return path;
+    }
+    return MacrosFactory.mpsHomeMacros().shrinkPath(path, new File(System.getProperty("user.home"))).replace(File.separator, "/");
   }
 
   @Override
@@ -109,6 +145,8 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   public class MyState {
     public String myVmOptions;
     public String myJrePath;
+    public String mySystemPath = shinkPath(Mps_Command.getDefaultSystemPath());
+    public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
 
     public MyState() {
     }
@@ -118,6 +156,8 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
       MPSInstance_Configuration.MyState state = new MPSInstance_Configuration.MyState();
       state.myVmOptions = myVmOptions;
       state.myJrePath = myJrePath;
+      state.mySystemPath = mySystemPath;
+      state.myConfigurationPath = myConfigurationPath;
       return state;
     }
   }

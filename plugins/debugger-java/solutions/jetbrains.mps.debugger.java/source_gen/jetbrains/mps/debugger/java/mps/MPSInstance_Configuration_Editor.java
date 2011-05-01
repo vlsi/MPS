@@ -15,6 +15,8 @@ import com.intellij.openapi.options.ConfigurationException;
 public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstance_Configuration> {
   private RawLineEditorComponent myVmOptions = new RawLineEditorComponent();
   private FieldWithPathChooseDialog myJrePath = new FieldWithPathChooseDialog();
+  private FieldWithPathChooseDialog mySystemPath = new FieldWithPathChooseDialog();
+  private FieldWithPathChooseDialog myConfigurationPath = new FieldWithPathChooseDialog();
 
   public MPSInstance_Configuration_Editor() {
   }
@@ -25,22 +27,30 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
   @NotNull
   public JPanel createEditor() {
     JPanel mainPanel = new JPanel(new GridBagLayout());
+    mainPanel.add(new JLabel("MPS System Path:"), LayoutUtil.createLabelConstraints(0));
+    mainPanel.add(mySystemPath, LayoutUtil.createFieldConstraints(1));
+    mainPanel.add(new JLabel("MPS Configuration Path:"), LayoutUtil.createLabelConstraints(2));
+    mainPanel.add(myConfigurationPath, LayoutUtil.createFieldConstraints(3));
     myVmOptions.setDialogCaption("Virtual Machine Parameters");
     myVmOptions.setText(Mps_Command.getDefaultVirtualMachineParameters());
-    mainPanel.add(new JLabel("Virtual Machine Parameters:"), LayoutUtil.createLabelConstraints(0));
-    mainPanel.add(myVmOptions, LayoutUtil.createPanelConstraints(1));
-    mainPanel.add(new JLabel("Alternative JRE Path:"), LayoutUtil.createLabelConstraints(2));
-    mainPanel.add(myJrePath, LayoutUtil.createPanelConstraints(3));
+    mainPanel.add(new JLabel("Virtual Machine Parameters:"), LayoutUtil.createLabelConstraints(4));
+    mainPanel.add(myVmOptions, LayoutUtil.createFieldConstraints(5));
+    mainPanel.add(new JLabel("Alternative JRE Path:"), LayoutUtil.createLabelConstraints(6));
+    mainPanel.add(myJrePath, LayoutUtil.createFieldConstraints(7));
     return mainPanel;
   }
 
   public void applyEditorTo(final MPSInstance_Configuration configuration) throws ConfigurationException {
     configuration.setVmOptions(myVmOptions.getText());
     configuration.setJrePath(myJrePath.getText());
+    configuration.setSystemPath(configuration.shinkPath(mySystemPath.getText()));
+    configuration.setConfigurationPath(configuration.shinkPath(myConfigurationPath.getText()));
   }
 
   public void resetEditorFrom(final MPSInstance_Configuration configuration) {
     myVmOptions.setText(configuration.getVmOptions());
     myJrePath.setText(configuration.getJrePath());
+    mySystemPath.setText(configuration.expandPath(configuration.getSystemPath()));
+    myConfigurationPath.setText(configuration.expandPath(configuration.getConfigurationPath()));
   }
 }

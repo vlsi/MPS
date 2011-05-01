@@ -651,6 +651,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "arguments", true);
   }
 
+  public static Iterable sourceNodesQuery_311998562821482491(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true);
+  }
+
   public static SNode weaving_MappingRule_ContextNodeQuery_5041115067675922984(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }

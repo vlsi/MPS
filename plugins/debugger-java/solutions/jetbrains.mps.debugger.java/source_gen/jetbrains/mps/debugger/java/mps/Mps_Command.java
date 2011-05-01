@@ -4,11 +4,11 @@ package jetbrains.mps.debugger.java.mps;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
-import jetbrains.mps.util.PathManager;
-import java.io.File;
 import jetbrains.mps.execution.lib.Java_Command;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.io.File;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 
@@ -16,6 +16,8 @@ public class Mps_Command {
   private String myDebuggerSettings = "";
   private String myVirtualMachineParameters = Mps_Command.getDefaultVirtualMachineParameters();
   private String myJrePath;
+  private String myConfigurationPath = Mps_Command.getDefaultConfigurationPath();
+  private String mySystemPath = Mps_Command.getDefaultSystemPath();
 
   public Mps_Command() {
   }
@@ -41,8 +43,22 @@ public class Mps_Command {
     return this;
   }
 
+  public Mps_Command setConfigurationPath(String configurationPath) {
+    if (configurationPath != null) {
+      myConfigurationPath = configurationPath;
+    }
+    return this;
+  }
+
+  public Mps_Command setSystemPath(String systemPath) {
+    if (systemPath != null) {
+      mySystemPath = systemPath;
+    }
+    return this;
+  }
+
   public ProcessHandler createProcess() throws ExecutionException {
-    String mpsProperties = "-Didea.properties.file=" + PathManager.getHomePath() + File.separator + "bin" + File.separator + "mps.debug.properties";
+    String mpsProperties = "-Didea.config.path=" + myConfigurationPath + " " + "-Didea.system.path=" + mySystemPath;
     return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties + " " + myDebuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).setJrePath(myJrePath).createProcess();
   }
 
@@ -52,5 +68,13 @@ public class Mps_Command {
 
   public static String getDefaultVirtualMachineParameters() {
     return "-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=150m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8";
+  }
+
+  public static String getDefaultConfigurationPath() {
+    return System.getProperty("user.home").replace(File.separator, "/") + "/" + ".MPSDebug1x/config";
+  }
+
+  public static String getDefaultSystemPath() {
+    return System.getProperty("user.home").replace(File.separator, "/") + "/" + ".MPSDebug1x/system";
   }
 }

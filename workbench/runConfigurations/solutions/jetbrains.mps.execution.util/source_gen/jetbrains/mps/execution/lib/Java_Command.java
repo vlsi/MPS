@@ -24,8 +24,8 @@ import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public class Java_Command {
   private File myWorkingDirectory = new File(System.getProperty("user.home"));
@@ -142,6 +142,9 @@ public class Java_Command {
   }
 
   public static String getJavaCommand(String javaHome) {
+    if (StringUtils.isEmpty(javaHome) || !(new File(javaHome).exists())) {
+      javaHome = Java_Command.getJdkHome();
+    }
     String result = javaHome + Java_Command.fs() + "bin" + Java_Command.fs();
     String osName = System.getProperty("os.name");
     if (osName.startsWith("Mac OS")) {
