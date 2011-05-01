@@ -7,7 +7,7 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
 
 public class MPSInstance_Configuration_Factory extends ConfigurationFactory {
-  public MPSInstance_Configuration_Factory(DebugMPS_Kind type) {
+  public MPSInstance_Configuration_Factory(MPS_Kind type) {
     super(type);
   }
 

@@ -14,10 +14,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
-public class DebugMPS_Kind implements ConfigurationType {
-  private static final Icon ICON = new ImageIcon(DebugMPS_Kind.class.getResource("MPS_16.png"));
+public class MPS_Kind implements ConfigurationType {
+  private static final Icon ICON = new ImageIcon(MPS_Kind.class.getResource("MPS_16.png"));
 
-  public DebugMPS_Kind() {
+  public MPS_Kind() {
   }
 
   public ConfigurationFactory[] getConfigurationFactories() {
@@ -30,7 +30,7 @@ public class DebugMPS_Kind implements ConfigurationType {
   @NonNls
   @NotNull
   public String getId() {
-    return "Debug MPS";
+    return "MPS";
   }
 
   public Icon getIcon() {
@@ -42,10 +42,10 @@ public class DebugMPS_Kind implements ConfigurationType {
   }
 
   public String getDisplayName() {
-    return "Debug MPS";
+    return "MPS";
   }
 
-  public static DebugMPS_Kind getInstance() {
-    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), DebugMPS_Kind.class);
+  public static MPS_Kind getInstance() {
+    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), MPS_Kind.class);
   }
 }

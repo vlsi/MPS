@@ -37,7 +37,7 @@
       <link role="configurationType" roleId="uhxm.2401501559171353314" targetNodeId="3271576760503788622" resolveInfo="DebugMps" />
     </node>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="3271576760503788622">
-      <property name="name" nameId="tpck.1169194664001" value="Debug MPS" />
+      <property name="name" nameId="tpck.1169194664001" value="MPS" />
     </node>
     <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="3271576760503799855">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />

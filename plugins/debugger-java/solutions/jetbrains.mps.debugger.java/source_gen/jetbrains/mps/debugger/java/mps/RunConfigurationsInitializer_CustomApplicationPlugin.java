@@ -13,11 +13,11 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
 
   public void doInit() {
     ExtensionPoint<ConfigurationType> extensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    extensionPoint.registerExtension(new DebugMPS_Kind());
+    extensionPoint.registerExtension(new MPS_Kind());
   }
 
   public void doDispose() {
     ExtensionPoint<ConfigurationType> extensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    extensionPoint.registerExtension(new DebugMPS_Kind());
+    extensionPoint.registerExtension(new MPS_Kind());
   }
 }
