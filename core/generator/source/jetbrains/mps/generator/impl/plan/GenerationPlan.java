@@ -11,12 +11,8 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.*;
 
 /**
@@ -29,7 +25,7 @@ public class GenerationPlan {
   private Collection<TemplateModule> myGenerators;
   private Collection<TemplateModel> myTemplateModels;
 
-//  private Set<Language> myLanguages = new HashSet<Language>();
+  //  private Set<Language> myLanguages = new HashSet<Language>();
   private List<List<TemplateMappingConfiguration>> myPlan;
   private Set<TemplateMappingPriorityRule> myConflictingPriorityRules;
   private final String myInputName;
@@ -63,7 +59,7 @@ public class GenerationPlan {
 
   public void initTemplateModels() {
     myTemplateModels = new ArrayList<TemplateModel>();
-    for(TemplateModule module : myGenerators) {
+    for (TemplateModule module : myGenerators) {
       myTemplateModels.addAll(module.getModels());
     }
   }
@@ -138,50 +134,5 @@ public class GenerationPlan {
 
   public Collection<TemplateModel> getTemplateModels() {
     return myTemplateModels;
-  }
-
-//  public static Collection<TemplateModule> convert(Collection<Generator> generators) {
-//    List<TemplateModule> modules = new ArrayList<TemplateModule>(generators.size());
-//    for (Generator generator : generators) {
-//      TemplateModule module = new TemplateModuleInterpreted(null, generator);
-//      List<SModelDescriptor> list = generator.getOwnTemplateModels();
-//      for (SModelDescriptor descriptor : list) {
-//        TemplateModel templateModel = null;
-//        if(USE_GENERATED) {
-//          templateModel = getGeneratedTemplateModel(module, descriptor);
-//        }
-//        if(templateModel == null) {
-//          SModel model = descriptor.getSModel();
-//          if (model != null) {
-//            templateModel = new TemplateModelInterpreted(module, model);
-//          }
-//        }
-//        if(templateModel != null) {
-//          module.getModels().add(templateModel);
-//        }
-//      }
-//      modules.add(module);
-//    }
-//    return modules;
-//  }
-
-  private static TemplateModel getGeneratedTemplateModel(TemplateModule module, SModelDescriptor descriptor) {
-    try {
-      Class aClass = QueryMethodGenerated.getQueriesGeneratedClassFor(descriptor, true);
-      try {
-        Method meth = aClass.getMethod("getDescriptor");
-        Object result = meth.invoke(null, module);
-        if(result instanceof TemplateModel) {
-          return (TemplateModel) result;
-        }
-      } catch (IllegalArgumentException e) {
-      } catch (IllegalAccessException e) {
-      } catch (InvocationTargetException e) {
-      } catch (NoSuchMethodException e) {
-      }
-    } catch (ClassNotFoundException e) {
-      /* ignore */
-    }
-    return null;
   }
 }

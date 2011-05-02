@@ -608,7 +608,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(patternRule_417xrn_a0a0f);
       try {
-        return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
+        return apply(context.subContext(pattern), pattern, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -647,7 +647,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(patternRule_417xrn_a0a0g);
       try {
-        return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
+        return apply(context.subContext(pattern), pattern, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -767,7 +767,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(patternRule_417xrn_a0a0h);
       try {
-        return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
+        return apply(context.subContext(pattern), pattern, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -842,7 +842,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(patternRule_417xrn_a0a0i);
       try {
-        return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
+        return apply(context.subContext(pattern), pattern, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -881,7 +881,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(patternRule_417xrn_a0a0j);
       try {
-        return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
+        return apply(context.subContext(pattern), pattern, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -1006,7 +1006,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(patternRule_417xrn_a0a0k);
       try {
-        return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
+        return apply(context.subContext(pattern), pattern, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -1045,7 +1045,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(patternRule_417xrn_a0a0l);
       try {
-        return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
+        return apply(context.subContext(pattern), pattern, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -1143,7 +1143,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(patternRule_417xrn_a0a0m);
       try {
-        return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
+        return apply(context.subContext(pattern), pattern, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {

@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.annotation.ImmutableObject;
 
@@ -30,4 +31,6 @@ public interface TemplateContext {
   TemplateContext subContext(String inputName);
 
   TemplateContext subContext(Map<String, Object> variables);
+
+  TemplateContext subContext(GeneratedMatchingPattern pattern);
 }

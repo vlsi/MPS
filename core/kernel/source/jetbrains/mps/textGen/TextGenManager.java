@@ -124,7 +124,7 @@ public class TextGenManager {
       buffer.append("???");
 
       if (contextNode != null) {
-        LOG.error("possible broken reference", contextNode);
+        LOG.error("possible broken reference in " + contextNode.getDebugText(), contextNode);
       }
 
       return;

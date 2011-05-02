@@ -197,4 +197,10 @@ public class DefaultTemplateContext implements TemplateContext {
     }
     return new DefaultTemplateContext(this, variables);
   }
+
+  @Override
+  public TemplateContext subContext(GeneratedMatchingPattern pattern) {
+    // TODO parent = this
+    return new DefaultTemplateContext(pattern, null, getInput());
+  }
 }
