@@ -1376,7 +1376,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091381">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/todo.png" />
     </node>
   </root>
   <root id="1223452095337">
