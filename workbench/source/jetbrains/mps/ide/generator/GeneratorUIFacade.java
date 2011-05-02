@@ -28,6 +28,7 @@ import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -269,7 +270,10 @@ public class GeneratorUIFacade {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
 
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), module.getScope())) {
+    for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(model.getSModel())) {
+      Generator g = MPSModuleRepository.getInstance().getGenerator(templateModule.getReference());
+      if(g == null) continue;
+
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
         if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
           result.add(sm);

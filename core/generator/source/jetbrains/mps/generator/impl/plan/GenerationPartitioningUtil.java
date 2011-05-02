@@ -85,50 +85,6 @@ public class GenerationPartitioningUtil {
     return result;
   }
 
-
-  @Deprecated
-  public static List<Generator> getAllPossiblyEngagedGenerators(SModel inputModel, IScope scope) {
-    // collect generators brutally
-    return collectGenerators(inputModel, false, new ArrayList<Generator>(), new HashSet<Language>(), scope);
-  }
-
-  @Deprecated
-  private static List<Generator> collectGenerators(SModel inputModel, boolean isTemplateModel, List<Generator> collectedGenerators, Set<Language> processedLanguages, IScope scope) {
-    List<Language> languages = ModelContentUtil.getUsedLanguages(inputModel, isTemplateModel, scope);
-
-    for (Language language : languages) {
-      if (processedLanguages.contains(language)) continue;
-      processedLanguages.add(language);
-
-      List<Generator> generators = language.getGenerators();
-      if (generators.size() == 0) continue;
-      Generator generator = generators.get(0);
-      if (generators.size() > 1) {
-        LOG.warning("LANG '" + language.getModuleFqName() + "' has " + generators.size() + " generators. use 1st: '" + generator.getName() + "'");
-      }
-      collectGenerators(generator, collectedGenerators, processedLanguages);
-    }
-    return collectedGenerators;
-  }
-
-  @Deprecated
-  private static List<Generator> collectGenerators(Generator generator, List<Generator> collectedGenerators, Set<Language> processedLanguages) {
-    if (collectedGenerators.contains(generator)) return collectedGenerators;
-
-    collectedGenerators.add(generator);
-    List<SModelDescriptor> templateModels = generator.getOwnTemplateModels();
-    for (SModelDescriptor templateModel : templateModels) {
-      collectGenerators(templateModel.getSModel(), true, collectedGenerators, processedLanguages, generator.getScope());
-    }
-
-    for (Generator refGenerator : generator.getReferencedGenerators()) {
-      collectGenerators(refGenerator, collectedGenerators, processedLanguages);
-    }
-
-    return collectedGenerators;
-  }
-
-
   public static List<String> toStrings(List<TemplateMappingConfiguration> mappings) {
     List<String> strings = new ArrayList<String>();
 

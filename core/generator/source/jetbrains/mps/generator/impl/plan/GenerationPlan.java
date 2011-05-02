@@ -2,16 +2,16 @@ package jetbrains.mps.generator.impl.plan;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
-import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
-import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,7 +39,6 @@ public class GenerationPlan {
     myInputName = inputModel.getLongName();
     try {
       myGenerators = GenerationPartitioningUtil.getTemplateModules(inputModel);
-      checkOldGenerators(inputModel, scope);
 
       initTemplateModels();
 //      for (Generator generator : generators) {
@@ -55,25 +54,6 @@ public class GenerationPlan {
     } catch (Throwable t) {
       LOG.error(t);
       throw new RuntimeException("Couldn't compute generation steps for model '" + inputModel.getLongName() + "'", t);
-    }
-  }
-
-  private void checkOldGenerators(@NotNull SModel inputModel, IScope scope) {
-    List<Generator> generatorsOld = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, scope);
-
-    Set<ModuleReference> refs = new HashSet<ModuleReference>();
-    for (Generator generator : generatorsOld) {
-      refs.add(generator.getModuleReference());
-    }
-
-    for(TemplateModule module : myGenerators) {
-      if(!refs.remove(module.getReference())) {
-        throw new RuntimeException("Generator " + module.getAlias() + " presents only in new algorithm");
-      }
-    }
-
-    for(ModuleReference ref : refs) {
-      throw new RuntimeException("Generator " + ref.toString() + " is absent in a new algorithm");
     }
   }
 
