@@ -67,7 +67,12 @@ public class TypeChecker implements ApplicationComponent {
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
-      clearForReload();
+      myRulesManager.clear();
+    }
+
+    @Override
+    public void load() {
+      loadAllLanguages();
     }
   };
 
@@ -126,11 +131,6 @@ public class TypeChecker implements ApplicationComponent {
 
   public RulesManager getRulesManager() {
     return myRulesManager;
-  }
-
-  public void clearForReload() {
-    myRulesManager.clear();
-    loadAllLanguages();
   }
 
   private void loadAllLanguages() {

@@ -23,6 +23,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRuntimeInterpreted;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
@@ -109,7 +110,19 @@ public class RulesManager {
     }
     LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageNamespace);
     if (language == null) return false;
-    IHelginsDescriptor typesystemDescriptor = language.getTypesystem();
+    IHelginsDescriptor typesystemDescriptor = null;
+    try {
+      typesystemDescriptor = language.getTypesystem();
+    } catch (Throwable t) {
+      LOG.error("fail to instantiate HelginsDescriptor for language " + languageNamespace + ": " + t.toString());
+
+      // TODO temp hack, unless MPS-12321 is fixed
+      typesystemDescriptor = new LanguageRuntimeInterpreted(MPSModuleRepository.getInstance().getLanguage(languageNamespace)).getTypesystem();
+      if(typesystemDescriptor != null) {
+        LOG.error("critical: language classpath failure");
+      }
+    }
+
     if (typesystemDescriptor == null) return false;
     try {
       myInferenceRules.addRuleSetItem(typesystemDescriptor.getInferenceRules());

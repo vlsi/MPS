@@ -68,7 +68,7 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
         return null;
       }
       return c.newInstance();
-    } catch(Exception ex) {
+    } catch(Throwable ex) {
       //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
       return null;
     }
