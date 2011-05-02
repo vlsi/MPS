@@ -33,7 +33,7 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithM
     myRulePointer = null;
   }
 
-  public SourceSubstituteMacroNodesContext(SNode node, SNodePointer ruleNode, @NotNull SNodePointer macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+  public SourceSubstituteMacroNodesContext(SNode node, SNodePointer ruleNode, SNodePointer macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myRule = null;
     myRulePointer = ruleNode;
