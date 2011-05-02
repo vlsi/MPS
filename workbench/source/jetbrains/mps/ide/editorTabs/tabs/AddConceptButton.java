@@ -15,19 +15,15 @@
  */
 package jetbrains.mps.ide.editorTabs.tabs;
 
+import com.intellij.execution.actions.CreateAction;
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabs.icons.Icons;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.NameUtil;
 
-import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
-import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
 import java.util.*;
 
 abstract class AddConceptTab {
@@ -50,88 +46,27 @@ abstract class AddConceptTab {
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    DefaultActionGroup currentGroup = null;
-    List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
-
-    List<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
-    Collections.sort(tabs, new EditorTabComparator());
-
-    for (final EditorTabDescriptor d : tabs) {
-      List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
-      if (concepts.isEmpty()) continue;
-
-      boolean current = false;
-      for (SNode aspect:d.getNodes(myBaseNode.getNode())){
-        if (aspect.getContainingRoot().equals(getCurrentAspect())){
-          current = true;
-          break;
-        }
+    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, getCurrentAspect()) {
+      public void aspectCreated(SNode sNode) {
+        AddConceptTab.this.aspectCreated(sNode);
       }
+    };
 
-      DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), !current);
-      for (final SNode concept : concepts) {
-        group.add(new CreateAction(concept, d));
-      }
+    Iterator<DefaultActionGroup> it = builder.getCreateGroups().iterator();
 
-      if (current) {
-        currentGroup = group;
-      } else {
-        groups.add(group);
-      }
-    }
-
-    if (currentGroup != null) {
-      result.add(currentGroup);
+    if (it.hasNext()) {
+      DefaultActionGroup current = it.next();
+      result.add(current);
       result.add(new Separator());
     }
-    for (DefaultActionGroup group : groups) {
-      result.add(group);
+
+    while (it.hasNext()){
+      DefaultActionGroup g = it.next();
+      g.setPopup(true);
+      result.add(g);
     }
 
     return result;
-  }
-
-  private class CreateAction extends AnAction {
-    private final SNode myConcept;
-    private final EditorTabDescriptor myD;
-
-    public CreateAction(SNode concept, EditorTabDescriptor d) {
-      super(concept.getName().replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
-      myConcept = concept;
-      myD = d;
-    }
-
-    public void actionPerformed(AnActionEvent e) {
-      final SNode[] created = new SNode[1];
-
-      final Runnable r1 = new Runnable() {
-        public void run() {
-          created[0] = myD.createNode(myBaseNode.getNode(), myConcept);
-        }
-      };
-
-      final Runnable r2 = new Runnable() {
-        public void run() {
-          String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
-          created[0].setProperty(SNode.PACK, mainPack);
-          aspectCreated(created[0]);
-        }
-      };
-
-      if (myD.commandOnCreate()) {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            r1.run();
-            if (created[0] == null) return;
-            r2.run();
-          }
-        });
-      } else {
-        r1.run();
-        if (created[0] == null) return;
-        ModelAccess.instance().runWriteActionInCommand(r2);
-      }
-    }
   }
 
   private class MyAddAction extends AnAction {
@@ -154,16 +89,4 @@ abstract class AddConceptTab {
     }
   }
 
-  private static class EditorTabComparator implements Comparator<EditorTabDescriptor> {
-    public int compare(EditorTabDescriptor d1, EditorTabDescriptor d2) {
-      int r1 = d1.compareTo(d2);
-      int r2 = d2.compareTo(d1);
-
-      if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
-
-      assert r1 * r2 <= 0 : "can't determine order";
-
-      return r1;
-    }
-  }
 }

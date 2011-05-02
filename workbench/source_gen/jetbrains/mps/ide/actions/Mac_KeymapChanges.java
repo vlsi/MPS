@@ -13,6 +13,7 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
   public Mac_KeymapChanges() {
     // simple 
     addSimpleShortcut("jetbrains.mps.ide.actions.AddModelImport_Action", getShortcut("ctrl M"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.CreateAspect_Action", getShortcut("ctrl alt N"));
     addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("ctrl N"), getShortcut("ctrl ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", getShortcut("ctrl H"));
@@ -20,7 +21,7 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     // simple parameterized 
     addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl 0")));
     // complex 
-    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Mac_KeymapChanges.GoToBookmark_ShortcutChange_tqv_g());
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Mac_KeymapChanges.GoToBookmark_ShortcutChange_tqv_h());
   }
 
   public String getScheme() {
@@ -31,8 +32,8 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
 
-  public class GoToBookmark_ShortcutChange_tqv_g extends BaseKeymapChanges.ComplexShortcut {
-    public GoToBookmark_ShortcutChange_tqv_g() {
+  public class GoToBookmark_ShortcutChange_tqv_h extends BaseKeymapChanges.ComplexShortcut {
+    public GoToBookmark_ShortcutChange_tqv_h() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {

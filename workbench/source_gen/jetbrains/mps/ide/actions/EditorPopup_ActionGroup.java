@@ -97,6 +97,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         EditorPopup_ActionGroup.this.addAction(action);
       }
       EditorPopup_ActionGroup.this.addSeparator();
+      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CreateAspect_Action");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CloneRoot_Action");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowParameters_Action");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInfo_Action");
@@ -108,7 +109,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         EditorPopup_ActionGroup.this.addAction(action);
       }
-      EditorPopup_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

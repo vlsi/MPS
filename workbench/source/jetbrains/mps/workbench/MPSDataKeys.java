@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.IEditor;
@@ -41,12 +42,6 @@ import java.util.List;
 public class MPSDataKeys extends PlatformDataKeys {
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
-
-  //todo: remove, was deprecated before 1.0
-  @Deprecated
-  public static final DataKey<SNode> SNODE = DataKey.create("MPS_SNode");
-  @Deprecated
-  public static final DataKey<List<SNode>> SNODES = DataKey.create("MPS_SNode_List");
 
   @Description(description = "selected node")
   public static final DataKey<SNode> NODE = DataKey.create("MPS_SNode");
@@ -92,6 +87,8 @@ public class MPSDataKeys extends PlatformDataKeys {
 
   @Description(description = "current editor cell")
   public static final DataKey<EditorCell> EDITOR_CELL = DataKey.create("MPS_EditorCell");
+  @Description(description = "editor create actions")
+  public static final DataKey<ActionGroup> EDITOR_CREATE_GROUP = DataKey.create("MPS_EditorCreateGroup");
   @Description(description = "current editor")
   public static final DataKey<IEditor> MPS_EDITOR = DataKey.create("MPS_IEditor");
   @Description(description = "main window's Frame")

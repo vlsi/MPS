@@ -15,20 +15,18 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import javax.swing.tree.TreeNode;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 
-public class QuickCreate_Action extends GeneratedAction {
+public class CreateAspect_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(QuickCreate_Action.class);
+  protected static Log log = LogFactory.getLog(CreateAspect_Action.class);
 
-  public QuickCreate_Action() {
-    super("Quick Create", "", ICON);
+  public CreateAspect_Action() {
+    super("Create Aspect", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -38,7 +36,7 @@ public class QuickCreate_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "QuickCreate", t);
+        log.error("User's action doUpdate method failed. Action:" + "CreateAspect", t);
       }
       this.disable(event.getPresentation());
     }
@@ -48,8 +46,8 @@ public class QuickCreate_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.fromMap(_params).put("group", event.getData(MPSDataKeys.EDITOR_CREATE_GROUP));
+    if (MapSequence.fromMap(_params).get("group") == null) {
       return false;
     }
     return true;
@@ -60,14 +58,12 @@ public class QuickCreate_Action extends GeneratedAction {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          boolean controlDown = event.getInputEvent().isControlDown();
-          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(controlDown);
 
-          if (group != null) {
+          if (((ActionGroup) MapSequence.fromMap(_params).get("group")) != null) {
             Presentation pres = new Presentation();
             AnActionEvent e = new AnActionEvent(event.getInputEvent(), event.getDataContext(), ActionPlaces.UNKNOWN, pres, ActionManager.getInstance(), 0);
-            ActionUtils.updateGroup(group, e);
-            popup.value = JBPopupFactory.getInstance().createActionGroupPopup("New", group, event.getDataContext(), JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
+            ActionUtils.updateGroup(((ActionGroup) MapSequence.fromMap(_params).get("group")), e);
+            popup.value = JBPopupFactory.getInstance().createActionGroupPopup("New", ((ActionGroup) MapSequence.fromMap(_params).get("group")), event.getDataContext(), JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
           }
         }
       });
@@ -77,7 +73,7 @@ public class QuickCreate_Action extends GeneratedAction {
       popup.value.showInBestPositionFor(event.getDataContext());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "QuickCreate", t);
+        log.error("User's action execute method failed. Action:" + "CreateAspect", t);
       }
     }
   }

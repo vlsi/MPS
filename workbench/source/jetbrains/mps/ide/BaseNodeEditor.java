@@ -40,7 +40,7 @@ import java.awt.Color;
 
 public abstract class BaseNodeEditor implements IEditor {
   private EditorComponent myEditorComponent;
-  private JPanel myComponent = new MyPanel();
+  private JPanel myComponent = new EditorPanel();
 
   public BaseNodeEditor(IOperationContext context) {
     myEditorComponent = new NodeEditorComponent(context);
@@ -72,8 +72,8 @@ public abstract class BaseNodeEditor implements IEditor {
     myEditorComponent.dispose();
   }
 
-  private class MyPanel extends JPanel implements DataProvider {
-    private MyPanel() {
+  private class EditorPanel extends JPanel implements DataProvider {
+    private EditorPanel() {
       setLayout(new BorderLayout());
       setBorder(new CompoundBorder(
         new EmptyBorder(1, 1, 1, 1),
@@ -84,6 +84,10 @@ public abstract class BaseNodeEditor implements IEditor {
     @Nullable
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
+      if (BaseNodeEditor.this instanceof DataProvider) {
+        Object data = ((DataProvider) BaseNodeEditor.this).getData(dataId);
+        if (data != null) return data;
+      }
       return getCurrentEditorComponent().getData(dataId);
     }
   }
@@ -92,7 +96,7 @@ public abstract class BaseNodeEditor implements IEditor {
 
   @Nullable
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
-   BaseEditorState result = new BaseEditorState();
+    BaseEditorState result = new BaseEditorState();
     EditorContext editorContext = getEditorContext();
     if (editorContext != null) {
       boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
@@ -134,7 +138,7 @@ public abstract class BaseNodeEditor implements IEditor {
     private Object myMemento;
     private Object myInspectorMemento;
 
-    public void refCopyFrom(BaseEditorState source){
+    public void refCopyFrom(BaseEditorState source) {
       this.myMemento = source.myMemento;
       this.myInspectorMemento = source.myInspectorMemento;
     }

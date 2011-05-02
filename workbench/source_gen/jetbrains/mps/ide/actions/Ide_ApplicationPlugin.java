@@ -37,6 +37,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CopyNodeName_Action());
     addAction(new CopyNodeReference_Action());
     addAction(new CopyNode_Action());
+    addAction(new CreateAspect_Action());
     addAction(new CutNode_Action());
     addAction(new DeleteFavoritesList_Action());
     addAction(new DeleteModels_Action());

@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.ide.editorTabs;
 
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
@@ -24,30 +28,35 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.BaseNodeEditor;
 import jetbrains.mps.ide.MPSEditorState;
+import jetbrains.mps.ide.editorTabs.tabs.CreateGroupsBuilder;
 import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.BorderLayout;
 import java.util.List;
 import java.util.Set;
 
-public class TabbedEditor extends BaseNodeEditor {
+public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private TabsComponent myTabsComponent;
   private SModelListener myModelListener = new MyNameListener();
   private TabColorProvider myColorProvider = null;
   private SNodePointer myBaseNode;
+  private Set<EditorTabDescriptor> myPossibleTabs;
   private IOperationContext myContext;
 
   public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
+    myPossibleTabs = possibleTabs;
     myContext = context;
     myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
 
@@ -134,6 +143,28 @@ public class TabbedEditor extends BaseNodeEditor {
     FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
     manager.updateFilePresentation(virtualFile);
     return false;
+  }
+
+
+  public Object getData(@NonNls String dataId) {
+    if (MPSDataKeys.EDITOR_CREATE_GROUP.getName().equals(dataId)) return getCreateGroup();
+    return null;
+  }
+
+  private AnAction getCreateGroup() {
+    DefaultActionGroup result = new DefaultActionGroup();
+
+    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, null){
+      public void aspectCreated(SNode sNode) {
+        myTabsComponent.onNodeChange(sNode);
+      }
+    };
+    for (DefaultActionGroup group : builder.getCreateGroups()) {
+      result.add(group);
+      result.add(new Separator());
+    }
+
+    return result;
   }
 
   private class MyNameListener extends SModelAdapter {
