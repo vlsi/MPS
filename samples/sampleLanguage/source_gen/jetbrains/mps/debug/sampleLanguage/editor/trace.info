@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="WannabeMethodCall_Editor.java" startLine="64" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor$_Inline_6urdah_a0a" />
-  <unitInfo fileName="WannabeClass_Editor.java" startLine="102" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeClass_Editor$methodListHandler_c8aenb_b1a" />
+  <unitInfo fileName="WannabeClass_Editor.java" startLine="102" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeClass_Editor$methodListHandler_c8aenb_b1a" />
   <unitInfo fileName="WannabeMethodCall_Editor.java" startLine="18" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor" />
-  <unitInfo fileName="WannabeClass_Editor.java" startLine="27" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeClass_Editor" />
+  <unitInfo fileName="WannabeClass_Editor.java" startLine="27" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeClass_Editor" />
   <unitInfo fileName="WannabeMethod_Editor.java" startLine="20" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethod_Editor" />
 </debugInfo>
 

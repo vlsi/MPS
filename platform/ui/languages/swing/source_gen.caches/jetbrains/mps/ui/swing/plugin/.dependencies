@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ui.swing.plugin.EditorExtension_CustomApplicationPlugin" file="EditorExtension_CustomApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.plugin.EditorExtensionHelper" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
@@ -19,20 +18,19 @@
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ui.swing.plugin.Variant_CustomApplicationPlugin" file="Variant_CustomApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.ui.plugin.Variants" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.ui.plugin.Variants" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>

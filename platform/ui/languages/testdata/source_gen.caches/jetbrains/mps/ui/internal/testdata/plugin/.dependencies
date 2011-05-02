@@ -2,9 +2,8 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ui.internal.testdata.plugin.EditorExtension_CustomApplicationPlugin" file="EditorExtension_CustomApplicationPlugin.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.ui.modeling.plugin.EditorExtensionHelper" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.plugin.EditorExtensionHelper" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ui.internal.testdata.plugin.Testdata_ApplicationPlugin" file="Testdata_ApplicationPlugin.java">

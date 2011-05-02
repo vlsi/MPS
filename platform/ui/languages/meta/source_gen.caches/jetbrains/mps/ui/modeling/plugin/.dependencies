@@ -59,7 +59,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.plugin.EditorExtensions_CustomApplicationPlugin" file="EditorExtensions_CustomApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.ui.modeling.plugin.EditorExtensions" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.plugin.Event_editor_Helper" file="Event_editor_Helper.java">
