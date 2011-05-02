@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.Collection;
 
@@ -26,5 +28,11 @@ public abstract class LanguageRuntime {
 
   public abstract String getNamespace();
 
+  public IHelginsDescriptor getTypesystem() {
+    // TODO generate
+    return new LanguageRuntimeInterpreted(MPSModuleRepository.getInstance().getLanguage(getNamespace())).getTypesystem();
+  }
+
   public abstract Collection<TemplateModule> getGenerators();
+
 }

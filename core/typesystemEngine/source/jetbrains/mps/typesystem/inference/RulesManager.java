@@ -21,6 +21,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtim
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
@@ -101,49 +103,38 @@ public class RulesManager {
   //todo: we should not change language models while loading language
   public boolean loadLanguage(final Language l) {
     // synchronized (RULES_LOCK) {
-    if (myLoadedLanguages.contains(l.getModuleFqName())) {
+    String languageNamespace = l.getModuleFqName();
+    if (myLoadedLanguages.contains(languageNamespace)) {
       return true;
     }
-    SModelDescriptor helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(l);
-    if (helginsModelDescriptor == null) return false;
-    String packageName = helginsModelDescriptor.getLongName();
-    String oldClassname = "HelginsDescriptor";
-    String classname = "TypesystemDescriptor";
+    LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageNamespace);
+    if (language == null) return false;
+    IHelginsDescriptor typesystemDescriptor = language.getTypesystem();
+    if (typesystemDescriptor == null) return false;
     try {
-      IHelginsDescriptor typesystemDescriptor;
-      Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + classname);
-      if (c == null) {
-        c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + oldClassname);
+      myInferenceRules.addRuleSetItem(typesystemDescriptor.getInferenceRules());
+      myNonTypesystemRules.addRuleSetItem(typesystemDescriptor.getNonTypesystemRules());
+      mySubtypingRules.addRuleSetItem(typesystemDescriptor.getSubtypingRules());
+      Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystemDescriptor.getComparisonRules();
+      myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
+      myReplacementRules.addRuleSetItem(typesystemDescriptor.getEliminationRules());
+      myDependenciesContainer.addDependencies(typesystemDescriptor.getDependencies());
+      myVariableConverters.addAll(typesystemDescriptor.getVariableConverters());
+      myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystemDescriptor.getOverloadedOperationsTypesProviders());
+      Set<AbstractDependentComputation_Runtime> dependentComputations = typesystemDescriptor.getDependentComputations();
+      myDependentComputations.addRuleSetItem(dependentComputations);
+      for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
+        myDependentComputationsBlockedNodes.addRule(dependentComputation.getWrapper());
       }
-      if (c != null) {
-        typesystemDescriptor = c.newInstance();
-        myInferenceRules.addRuleSetItem(typesystemDescriptor.getInferenceRules());
-        myNonTypesystemRules.addRuleSetItem(typesystemDescriptor.getNonTypesystemRules());
-        mySubtypingRules.addRuleSetItem(typesystemDescriptor.getSubtypingRules());
-        Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystemDescriptor.getComparisonRules();
-        myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
-        myReplacementRules.addRuleSetItem(typesystemDescriptor.getEliminationRules());
-        myDependenciesContainer.addDependencies(typesystemDescriptor.getDependencies());
-        myVariableConverters.addAll(typesystemDescriptor.getVariableConverters());
-        myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystemDescriptor.getOverloadedOperationsTypesProviders());
-        Set<AbstractDependentComputation_Runtime> dependentComputations = typesystemDescriptor.getDependentComputations();
-        myDependentComputations.addRuleSetItem(dependentComputations);
-        for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
-          myDependentComputationsBlockedNodes.addRule(dependentComputation.getWrapper());
-        }
-        myComparisonRules.makeConsistent();
-        myReplacementRules.makeConsistent();
-        myDependenciesContainer.makeConsistent();
-        myOverloadedOperationsManager.makeConsistent();
-        return true;
-      } else {
-        return false;
-      }
+      myComparisonRules.makeConsistent();
+      myReplacementRules.makeConsistent();
+      myDependenciesContainer.makeConsistent();
+      myOverloadedOperationsManager.makeConsistent();
+      return true;
     } catch (Throwable t) {
-      //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
       return false;
     } finally {
-      myLoadedLanguages.add(l.getModuleFqName());
+      myLoadedLanguages.add(languageNamespace);
     }
     // }
   }

@@ -17,8 +17,11 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -49,6 +52,26 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
   @Override
   public String getNamespace() {
     return myLanguage.getModuleFqName();
+  }
+
+  @Override
+  public IHelginsDescriptor getTypesystem() {
+    try {
+      SModelDescriptor helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(myLanguage);
+      if (helginsModelDescriptor == null) return null;
+      String packageName = helginsModelDescriptor.getLongName();
+      Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) myLanguage.getClass(packageName + ".TypesystemDescriptor");
+      if (c == null) {
+        c = (Class<? extends IHelginsDescriptor>) myLanguage.getClass(packageName + ".HelginsDescriptor");
+      }
+      if (c == null) {
+        return null;
+      }
+      return c.newInstance();
+    } catch(Exception ex) {
+      //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
+      return null;
+    }
   }
 
   @Override
