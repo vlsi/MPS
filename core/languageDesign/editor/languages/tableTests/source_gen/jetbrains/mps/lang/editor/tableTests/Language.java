@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.tableTests;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 
@@ -15,6 +16,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "jetbrains.mps.lang.editor.tableTests";
+  }
+
+  @Override
+  public IHelginsDescriptor getTypesystem() {
+    return null;
   }
 
   public Collection<TemplateModule> getGenerators() {
