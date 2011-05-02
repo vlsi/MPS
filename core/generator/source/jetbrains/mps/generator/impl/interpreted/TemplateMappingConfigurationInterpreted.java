@@ -57,7 +57,8 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       } else if (conceptName.equals(RuleUtil.concept_Root_MappingRule)) {
         myRootMappingRules.add(new TemplateRootMappingRuleInterpreted(child));
       } else if (conceptName.equals(RuleUtil.concept_PatternReduction_MappingRule)) {
-        myReductionRules.add(new TemplateReductionPatternRuleInterpreted(child));
+        // TODO make more effective
+        myReductionRules.add(0, new TemplateReductionPatternRuleInterpreted(child));
       } else if (conceptName.equals(RuleUtil.concept_CreateRootRule)) {
         myCreateRootRules.add(new TemplateCreateRootRuleInterpreted(child));
       } else if (conceptName.equals(RuleUtil.concept_Weaving_MappingRule)) {
@@ -76,7 +77,6 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
         }
       }
     }
-
   }
 
   @Override

@@ -3367,12 +3367,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "weavingMappingRule", true);
   }
 
-  public static Iterable sourceNodesQuery_7635689088544993757(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "reductionMappingRule", true);
-  }
-
   public static Iterable sourceNodesQuery_7635689088544993766(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "patternReductionRule", true);
+  }
+
+  public static Iterable sourceNodesQuery_7635689088544993757(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "reductionMappingRule", true);
   }
 
   public static Iterable sourceNodesQuery_7635689088544983520(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

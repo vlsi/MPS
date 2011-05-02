@@ -118,7 +118,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
   public Mappingmain(TemplateModel model) {
     this.myModel = model;
-    rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1(), new Mappingmain.ReductionRule2(), new Mappingmain.ReductionRule3(), new Mappingmain.ReductionRule4(), new Mappingmain.PatternRule0(), new Mappingmain.PatternRule1(), new Mappingmain.PatternRule2(), new Mappingmain.PatternRule3(), new Mappingmain.PatternRule4(), new Mappingmain.PatternRule5(), new Mappingmain.PatternRule6(), new Mappingmain.PatternRule7());
+    rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.PatternRule0(), new Mappingmain.PatternRule1(), new Mappingmain.PatternRule2(), new Mappingmain.PatternRule3(), new Mappingmain.PatternRule4(), new Mappingmain.PatternRule5(), new Mappingmain.PatternRule6(), new Mappingmain.PatternRule7(), new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1(), new Mappingmain.ReductionRule2(), new Mappingmain.ReductionRule3(), new Mappingmain.ReductionRule4());
     rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mappingmain.RootMappingRule0());
     weavings = TemplateUtil.<TemplateWeavingRule>asCollection(new Mappingmain.WeavingRule0());
   }
