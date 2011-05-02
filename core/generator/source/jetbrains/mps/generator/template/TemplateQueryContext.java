@@ -183,7 +183,7 @@ public class TemplateQueryContext {
   }
 
   public Object getGenerationParameter(String name) {
-    return null;
+    return myGenerator.getGeneratorSessionContext().getGenerationParameter(name);
   }
 
   public Object putStepObject(Object key, Object o) {

@@ -137,7 +137,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       GenerationDependencies dep = status.getDependencies();
       if(dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
         final StringBuilder sb = new StringBuilder("Not optimized:\n");
-        new GenerationFilter(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel(), GlobalScope.getInstance()).getSignature(), new IncrementalReporter() {
+        new GenerationFilter(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel(), GlobalScope.getInstance()).getSignature(), null, new IncrementalReporter() {
           @Override
           public void report(String message) {
             sb.append(message);

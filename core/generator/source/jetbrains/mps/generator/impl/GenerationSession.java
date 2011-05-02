@@ -38,10 +38,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -63,6 +60,7 @@ public class GenerationSession {
   private ILoggingHandler myLoggingHandler;
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
+  private Map<String, Object> myParameters;
 
   private IntermediateModelsCache myNewCache;
   private GenerationSessionContext mySessionContext;
@@ -100,7 +98,15 @@ public class GenerationSession {
       // throw new GenerationCanceledException();
     }
 
-    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature(), null);
+    // generation parameters
+    GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
+    if (parametersProvider != null) {
+      myParameters = parametersProvider.getParameters(myOriginalInputModel);
+    } else {
+      myParameters = null;
+    }
+
+    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature(), myParameters, null);
     myDependenciesBuilder = filter.createDependenciesBuilder();
 
     if (filter.canOptimize()) {
@@ -177,7 +183,7 @@ public class GenerationSession {
     } catch (GenerationCanceledException gce) {
       throw gce;
     } catch (GenerationFailureException gfe) {
-      if(gfe.getCause() != null) {
+      if (gfe.getCause() != null) {
         myLogger.handleException(gfe.getCause());
       }
       myLogger.error(gfe.getMessage());
@@ -214,20 +220,20 @@ public class GenerationSession {
     }
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, inputModel, myGenerationPlan, mySessionContext);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, inputModel, myGenerationPlan, myParameters, mySessionContext);
     myLogger.setOperationContext(mySessionContext);
 
     // -- filter mapping configurations
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, null, inputModel, null, myGenerationOptions, myDependenciesBuilder, ttrace);
-    while(it.hasNext()) {
+    while (it.hasNext()) {
       TemplateMappingConfiguration c = it.next();
       try {
-        if(!c.isApplicable(templateGenerator)) {
+        if (!c.isApplicable(templateGenerator)) {
           it.remove();
         }
       } catch (GenerationException e) {
-        if(!(e instanceof GenerationFailureException)) {
+        if (!(e instanceof GenerationFailureException)) {
           throw new GenerationFailureException("mapping configuration's isApplicable block threw an exception", null, e);
         }
         throw (GenerationFailureException) e;

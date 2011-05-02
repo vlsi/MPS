@@ -29,6 +29,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   /* generation data */
   private final Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
   private final String myModelHash;
+  private final String myParametersHash;
   private final IntermediateModelsCache myCache;
   private RootDependenciesBuilder myConditionalsBuilder;
   private RootDependenciesBuilder[] myAllBuilders;
@@ -49,8 +50,9 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   private Map<String, SNode> myRequiredSet;
 
   public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes,
-                                    IntermediateModelsCache cache) {
+                                    String parametersHash, IntermediateModelsCache cache) {
     currentInputModel = originalInputModel;
+    myParametersHash = parametersHash;
     myCache = cache;
     currentOutputModel = null;
     myModelHash = generationHashes == null ? null : generationHashes.get(ModelDigestHelper.FILE);
@@ -209,7 +211,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public GenerationDependencies getResult(IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy) {
-    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, operationContext, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size());
+    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, myParametersHash, operationContext, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size());
   }
 
   /* working with cache */

@@ -24,5 +24,7 @@ import java.util.Map;
  */
 public interface GenerationParametersProvider {
 
+  public static final String HASH = "__parametersHash";
+
   Map<String, Object> getParameters(SModelDescriptor descriptor);
 }

@@ -41,6 +41,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final IGenerationTracer myGenerationTracer;
   private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
+  private final Map<String, Object> myParameters;
 
   private final Object NULL_OBJECT = new Object();
 
@@ -58,12 +59,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
                                   TransientModelsModule transientModule,
                                   SModel inputModel,
                                   GenerationPlan generationPlan,
+                                  Map<String, Object> parameters,
                                   GenerationSessionContext prevContext) {
 
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
     myTransientModule = transientModule;
     myGenerationPlan = generationPlan;
+    myParameters = parameters;
 
     if (prevContext != null) {
       myOriginalInputModel = prevContext.myOriginalInputModel;
@@ -299,5 +302,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public void clearTransientModels() {
     getModule().clearUnused();
+  }
+
+  public Object getGenerationParameter(String name) {
+    return myParameters == null ? null : myParameters.get(name);
   }
 }

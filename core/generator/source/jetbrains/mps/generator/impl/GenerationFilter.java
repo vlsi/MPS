@@ -1,10 +1,7 @@
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationCacheContainer;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
-import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
-import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.dependencies.DefaultDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -35,6 +32,7 @@ public class GenerationFilter {
   private GenerationOptions myGenerationOptions;
   private IOperationContext myOperationContext;
   private final String myPlanSignature;
+  private final String myParametersHash;
   private final IncrementalReporter myTracer;
   private Set<SNode> myUnchangedRoots;
   private Set<SNode> myRequiredRoots;
@@ -45,11 +43,12 @@ public class GenerationFilter {
   private GenerationDependencies mySavedDependencies;
   private IntermediateModelsCache myCache;
 
-  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options, String planSignature, IncrementalReporter tracer) {
+  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options, String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
     myModel = model;
     myGenerationOptions = options;
     myOperationContext = operationContext;
     myPlanSignature = planSignature;
+    myParametersHash = getParametersHash(genParameters);
     myTracer = tracer;
     myUnchangedRoots = Collections.emptySet();
     myRequiredRoots = Collections.emptySet();
@@ -72,11 +71,11 @@ public class GenerationFilter {
 
     GenerationDependencies dependencies = incrementalStrategy.getDependencies(myModel);
     if (dependencies == null || myGenerationHashes == null) {
-      if(myTracer != null) {
-        if(dependencies == null) {
+      if (myTracer != null) {
+        if (dependencies == null) {
           myTracer.report("No dependencies data found");
         }
-        if(myGenerationHashes == null) {
+        if (myGenerationHashes == null) {
           myTracer.report("No caches data for input model");
         }
       }
@@ -84,7 +83,7 @@ public class GenerationFilter {
     }
 
     loadCaches(dependencies);
-    if(myCache == null && incrementalStrategy.getContainer() != null) {
+    if (myCache == null && incrementalStrategy.getContainer() != null) {
       // if we are creating a new cache without the previous one => rebuild all
       return;
     }
@@ -103,13 +102,13 @@ public class GenerationFilter {
     }
 
     GenerationCacheContainer incrementalCacheContainer = incrementalStrategy.getContainer();
-    if(incrementalCacheContainer == null) {
+    if (incrementalCacheContainer == null) {
       return null;
     }
 
     String currentHash = myGenerationHashes.get(ModelDigestHelper.FILE);
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, currentHash, true);
-    if(cacheContainer == null) {
+    if (cacheContainer == null) {
       LOG.error("cannot create cache for " + currentHash + ", " + myModel.getSModelReference().toString());
       return null;
     }
@@ -119,23 +118,24 @@ public class GenerationFilter {
 
   private void loadCaches(GenerationDependencies dependencies) {
     GenerationCacheContainer incrementalCacheContainer = myGenerationOptions.getIncrementalStrategy().getContainer();
-    if(incrementalCacheContainer == null) {
-      if(myTracer != null) myTracer.report("No container for incremental caches.");
+    if (incrementalCacheContainer == null) {
+      if (myTracer != null) myTracer.report("No container for incremental caches.");
       return;
     }
 
     String oldHash = dependencies.getModelHash();
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, oldHash, false);
-    if(cacheContainer == null) {
-      if(myTracer != null) myTracer.report("No cache for " + myModel.getSModelReference().toString() + " (" + oldHash + ")");
+    if (cacheContainer == null) {
+      if (myTracer != null)
+        myTracer.report("No cache for " + myModel.getSModelReference().toString() + " (" + oldHash + ")");
       return;
     }
 
     IntermediateModelsCache c = IntermediateModelsCache.load(cacheContainer);
     if (c != null && myPlanSignature.equals(c.getSignature())) {
       myCache = c;
-    } else if(myTracer != null) {
-      if(c == null) {
+    } else if (myTracer != null) {
+      if (c == null) {
         myTracer.report("Caches are corrupted for " + oldHash);
       } else {
         myTracer.report("Plan differs:");
@@ -175,7 +175,7 @@ public class GenerationFilter {
 
     GenerationRootDependencies commonDeps = oldDependencies.getDependenciesFor(ModelDigestHelper.HEADER);
     if (commonDeps == null) {
-      if(myTracer != null) myTracer.report("Dependencies are incomplete. No info about header.");
+      if (myTracer != null) myTracer.report("Dependencies are incomplete. No info about header.");
       return;
     }
 
@@ -184,7 +184,19 @@ public class GenerationFilter {
       String oldHash = commonDeps.getHash();
       String newHash = myGenerationHashes.get(ModelDigestHelper.HEADER);
       if (oldHash == null || newHash == null || !newHash.equals(oldHash)) {
-        if(myTracer != null) myTracer.report("Changes in model header, regenerating.");
+        if (myTracer != null) myTracer.report("Changes in model header, regenerating.");
+        return;
+      }
+    }
+
+    // check generation parameters, rebuild all if changed
+    {
+      String oldHash = oldDependencies.getParametersHash();
+      String newHash = myParametersHash;
+      if (oldHash == null
+        ? (newHash != null)
+        : !oldHash.equals(newHash)) {
+        if (myTracer != null) myTracer.report("Changes in generation parameters, regenerating.");
         return;
       }
     }
@@ -227,7 +239,7 @@ public class GenerationFilter {
 
       String newHash = myGenerationHashes.get(id);
       if (newHash == null || !newHash.equals(oldHash)) continue;
-      
+
       boolean isDirty = false;
       for (String m : rd.getExternal()) {
         if (changedModels.contains(m)) {
@@ -242,7 +254,7 @@ public class GenerationFilter {
 
     // all roots are dirty? rebuild all
     if (myUnchangedRoots.isEmpty()) {
-      if(myTracer != null) myTracer.report("All roots are dirty.");
+      if (myTracer != null) myTracer.report("All roots are dirty.");
       return;
     }
 
@@ -261,7 +273,7 @@ public class GenerationFilter {
     }
 
     // Phase 1: build closure using strongly connected components (only if we have cache)
-    if(myCache != null) {
+    if (myCache != null) {
       closureUsingSavedDependencies(savedDep);
 
       if (myUnchangedRoots.isEmpty() && !myConditionalsUnchanged) {
@@ -299,7 +311,7 @@ public class GenerationFilter {
     }
 
     // closure using current dependencies
-    if(partitioner == null) {
+    if (partitioner == null) {
       partitioner = new ConnectedComponentPartitioner(roots);
     }
     List<SNode[]> components = partitioner.partition();
@@ -319,9 +331,9 @@ public class GenerationFilter {
     // at this point unchanged roots can be excluded from generation at all (there is no
     // references/dependency between them and dirty roots)
 
-    if(!myRequiredRoots.isEmpty()) {
+    if (!myRequiredRoots.isEmpty()) {
       myRequiredRoots.removeAll(myUnchangedRoots);
-      if(myConditionalsUnchanged) {
+      if (myConditionalsUnchanged) {
         myConditionalsRequired = false;
       }
     }
@@ -361,7 +373,7 @@ public class GenerationFilter {
    */
   private boolean closureUsingStrongComponents(Component[] components, Map<String, Set<String>> dep) {
     boolean result = false;
-    for(int i = 0; i < components.length; i++) {
+    for (int i = 0; i < components.length; i++) {
       Component component = components[i];
       boolean hasUnchanged = false;
       boolean hasChanged = false;
@@ -372,14 +384,14 @@ public class GenerationFilter {
           hasChanged = true;
         }
       }
-      for(Component c : component.getDependsOn()) {
-        if(c.isDirty()) {
+      for (Component c : component.getDependsOn()) {
+        if (c.isDirty()) {
           hasChanged = true;
         }
       }
       if (hasUnchanged && hasChanged) {
         for (SNode n : component.getRoots()) {
-          if(myUnchangedRoots.remove(n)) {
+          if (myUnchangedRoots.remove(n)) {
             dep.remove(n.getId());
             result = true;
           }
@@ -479,12 +491,38 @@ public class GenerationFilter {
     return myModel;
   }
 
+  private String getParametersHash(Map<String, Object> parameters) {
+    if (parameters == null || parameters.isEmpty()) {
+      return null;
+    }
+    String val = (String) parameters.get(GenerationParametersProvider.HASH);
+    if (val != null) {
+      return null;
+    }
+
+    StringBuilder sb = new StringBuilder();
+    String[] keys = parameters.keySet().toArray(new String[parameters.size()]);
+    Arrays.sort(keys);
+    for(String k : keys) {
+      sb.append(k);
+      sb.append(':');
+      Object value = parameters.get(k);
+      if(value == null) {
+        sb.append("null");
+      } else {
+        sb.append(val);
+      }
+      sb.append(";\n");
+    }
+    return ModelDigestUtil.hash(sb.toString());
+  }
+
   public DependenciesBuilder createDependenciesBuilder() {
     if (myGenerationOptions.getIncrementalStrategy() == null) {
       return new NullDependenciesBuilder();
     }
 
-    DefaultDependenciesBuilder result = new DefaultDependenciesBuilder(myModel.getSModel(), myGenerationHashes, myCache);
+    DefaultDependenciesBuilder result = new DefaultDependenciesBuilder(myModel.getSModel(), myGenerationHashes, myParametersHash, myCache);
     result.propagateDependencies(myUnchangedRoots, myRequiredRoots, myConditionalsUnchanged, myConditionalsRequired, mySavedDependencies);
     return result;
   }

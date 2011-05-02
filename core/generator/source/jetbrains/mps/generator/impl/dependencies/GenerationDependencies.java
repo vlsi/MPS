@@ -19,6 +19,7 @@ public class GenerationDependencies {
   private static final String NODE_ROOT = "source";
   private static final String NODE_COMMON = "common";
   private static final String ATTR_MODEL_HASH = "modelHash";
+  private static final String ATTR_PARAMS_HASH = "parametersHash";
   private static final String ATTR_VERSION = "version";
 
   private static final String NODE_MODEL = "dep";
@@ -28,6 +29,7 @@ public class GenerationDependencies {
   private final List<GenerationRootDependencies> myRootDependencies;
   private final Map<String, GenerationRootDependencies> myRootDependenciesMap;
   private final String myModelHash;
+  private final String myParametersHash;
 
   private final Map<String, String> myUsedModelsHashes;
 
@@ -35,12 +37,13 @@ public class GenerationDependencies {
   private /* transient */ final int mySkippedCount;
   private /* transient */ final int myFromCacheCount;
 
-  private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, Map<String, String> externalHashes, List<GenerationRootDependencies> unchanged, int skippedCount, int fromCacheCount) {
+  private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, String parametersHash, Map<String, String> externalHashes, List<GenerationRootDependencies> unchanged, int skippedCount, int fromCacheCount) {
     this.myRootDependencies = data;
     this.mySkippedCount = skippedCount;
     this.myFromCacheCount = fromCacheCount;
     this.myRootDependenciesMap = new HashMap<String, GenerationRootDependencies>(data.size());
     this.myModelHash = modelHash;
+    this.myParametersHash = parametersHash;
     this.myUnchanged = unchanged;
     this.myUsedModelsHashes = externalHashes;
     for (GenerationRootDependencies rd : data) {
@@ -51,6 +54,10 @@ public class GenerationDependencies {
 
   public String getModelHash() {
     return myModelHash;
+  }
+
+  public String getParametersHash() {
+    return myParametersHash;
   }
 
   public int getSkippedCount() {
@@ -82,6 +89,9 @@ public class GenerationDependencies {
     root.setAttribute(ATTR_VERSION, Integer.toString(DEPENDENCIES_VERSION));
     if (myModelHash != null) {
       root.setAttribute(ATTR_MODEL_HASH, myModelHash);
+    }
+    if(myParametersHash != null) {
+      root.setAttribute(ATTR_PARAMS_HASH, myParametersHash);
     }
     String[] models = myUsedModelsHashes.keySet().toArray(new String[myUsedModelsHashes.size()]);
     Arrays.sort(models);
@@ -126,7 +136,8 @@ public class GenerationDependencies {
       data.add(GenerationRootDependencies.fromXml(e, false));
     }
     String modelHash = GenerationRootDependencies.getValue(root, ATTR_MODEL_HASH);
-    return new GenerationDependencies(data, modelHash, externalHashes, Collections.<GenerationRootDependencies>emptyList(), 0, 0);
+    String paramsHash = GenerationRootDependencies.getValue(root, ATTR_PARAMS_HASH);
+    return new GenerationDependencies(data, modelHash, paramsHash, externalHashes, Collections.<GenerationRootDependencies>emptyList(), 0, 0);
   }
 
   public static String getFileName(SNode outputRootNode) {
@@ -135,7 +146,7 @@ public class GenerationDependencies {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount) {
+  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, String parametersHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount) {
     Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
     Map<String, String> externalHashes = new HashMap<String, String>();
 
@@ -181,7 +192,7 @@ public class GenerationDependencies {
         }
       }
     }
-    return new GenerationDependencies(rootDependencies, modelHash, externalHashes, unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged, skippedCount, fromCacheCount);
+    return new GenerationDependencies(rootDependencies, modelHash, parametersHash, externalHashes, unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged, skippedCount, fromCacheCount);
   }
 
 }
