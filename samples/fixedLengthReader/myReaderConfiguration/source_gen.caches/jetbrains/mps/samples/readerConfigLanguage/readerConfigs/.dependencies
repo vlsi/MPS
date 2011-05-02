@@ -6,5 +6,6 @@
     <classNode dependClassName="jetbrains.mps.samples.readerConfigLanguage.reader.Reader" />
     <classNode dependClassName="jetbrains.mps.samples.readerConfigLanguage.dsl.Usage" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" file="Config1.xml" />
 </dependenciesRoot>
 
