@@ -696,12 +696,6 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8821035829284523828">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230057984816" resolveInfo="InlineMethodInTest" />
     </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8821035829284523829">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230057984818" resolveInfo="test1" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8821035829284523830">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230057984834" resolveInfo="test1" />
-    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8821035829284523831">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.995475547969867885" resolveInfo="ConvertAnonymousWithParameterReference" />
     </node>

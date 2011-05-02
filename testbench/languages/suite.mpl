@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.testbench.suite" uuid="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.testbench.suite" uuid="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.testbench.suite" />
   </models>
   <accessoryModels>
     <model modelUID="r:2623dc86-b72d-4474-bafb-caa0418fe3c1(jetbrains.mps.testbench.suite.util)" />
   </accessoryModels>
-  <generators />
+  <generators>
+    <generator name="java" generatorUID="jetbrains.mps.testbench.suite#8749850441865775970" uuid="13b00428-a31f-4c99-b565-ebb37706f8e8">
+      <models>
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.testbench.suite.generator.template" />
+      </models>
+      <external-templates />
+      <usedDevKits>
+        <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
+      </usedDevKits>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <dependencies>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
@@ -15,6 +26,7 @@
     <dependency reexport="false">1c0088d4-c911-46d4-ace1-4500911173b5(jetbrains.mps.workbench.make)</dependency>
     <dependency reexport="false">f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</dependency>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+    <dependency reexport="false">b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)</usedLanguage>

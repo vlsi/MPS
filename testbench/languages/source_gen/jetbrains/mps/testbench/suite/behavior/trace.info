@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="SolutionRef_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.SolutionRef_Behavior" />
-  <unitInfo fileName="IModuleRef_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior" />
+  <unitInfo fileName="JUnit4TestCaseRef_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior" />
+  <unitInfo fileName="JUnit3TestCaseRef_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior" />
+  <unitInfo fileName="TestCaseRef_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.TestCaseRef_Behavior" />
+  <unitInfo fileName="SolutionRef_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.SolutionRef_Behavior" />
+  <unitInfo fileName="ITestRef_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ITestRef_Behavior" />
+  <unitInfo fileName="IModuleRef_Behavior.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior" />
   <unitInfo fileName="ModuleSuite_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior" />
   <root nodeId="1280144168199506814">
     <nodeInfo nodeId="1280144168199518345" fileName="ModuleSuite_Behavior.java" startLine="17" startPosition="71" endLine="18" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -45,6 +49,24 @@
   </root>
   <root nodeId="1280144168199513541">
     <scopeInfo nodeId="1280144168199513543" fileName="IModuleRef_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+  </root>
+  <root nodeId="2956932267233324534">
+    <scopeInfo nodeId="2956932267233324536" fileName="ITestRef_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+  </root>
+  <root nodeId="2956932267233324542">
+    <nodeInfo nodeId="2956932267233324549" fileName="TestCaseRef_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2956932267233324544" fileName="TestCaseRef_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="2956932267233324547" fileName="TestCaseRef_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="118" />
+  </root>
+  <root nodeId="2956932267233324561">
+    <nodeInfo nodeId="2956932267233336791" fileName="JUnit3TestCaseRef_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2956932267233324563" fileName="JUnit3TestCaseRef_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="2956932267233324566" fileName="JUnit3TestCaseRef_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="122" />
+  </root>
+  <root nodeId="2956932267233336804">
+    <nodeInfo nodeId="2956932267233336811" fileName="JUnit4TestCaseRef_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2956932267233336806" fileName="JUnit4TestCaseRef_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="2956932267233336809" fileName="JUnit4TestCaseRef_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="122" />
   </root>
 </debugInfo>
 
