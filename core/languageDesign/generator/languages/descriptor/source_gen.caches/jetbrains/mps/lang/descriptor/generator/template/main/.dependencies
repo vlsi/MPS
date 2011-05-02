@@ -3,10 +3,12 @@
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.Module_Behavior" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModelReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.generator.impl.plan.ModelContentUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContextWithMacro" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
