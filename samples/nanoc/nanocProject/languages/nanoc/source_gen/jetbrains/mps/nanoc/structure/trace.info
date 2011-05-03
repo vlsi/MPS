@@ -19,7 +19,6 @@
   <unitInfo fileName="GreaterOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.GreaterOp" />
   <unitInfo fileName="LessOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.LessOp" />
   <unitInfo fileName="EqualOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.EqualOp" />
-  <unitInfo fileName="CStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CStatement" />
   <unitInfo fileName="CExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CExpression" />
   <unitInfo fileName="CType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CType" />
   <unitInfo fileName="IntConst.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.structure.IntConst" />
@@ -32,6 +31,7 @@
   <unitInfo fileName="CBody.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CBody" />
   <unitInfo fileName="VarDeclStatement.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.structure.VarDeclStatement" />
   <unitInfo fileName="CFor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CFor" />
+  <unitInfo fileName="CStatement.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CStatement" />
   <unitInfo fileName="VarDecl.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.nanoc.structure.VarDecl" />
   <unitInfo fileName="File.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.nanoc.structure.File" />
 </debugInfo>
