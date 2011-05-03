@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1036071220598694533">
+    <nodeInfo nodeId="1036071220598694544" fileName="ModuleSymbolicSuite.java" startLine="21" startPosition="63" endLine="22" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
+    <nodeInfo nodeId="1036071220598721011" fileName="ModuleSymbolicSuite.java" startLine="22" startPosition="59" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleRef" />
+    <nodeInfo nodeId="1036071220598709427" fileName="ModuleSymbolicSuite.java" startLine="23" startPosition="29" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuilder" />
+    <nodeInfo nodeId="1036071220598721041" fileName="ModuleSymbolicSuite.java" startLine="24" startPosition="34" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="initialized" />
+    <nodeInfo nodeId="1036071220598694557" fileName="ModuleSymbolicSuite.java" startLine="27" startPosition="96" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="4089647634161020019" fileName="ModuleSymbolicSuite.java" startLine="28" startPosition="25" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4089647634161020025" fileName="ModuleSymbolicSuite.java" startLine="29" startPosition="46" endLine="30" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1036071220598720945" fileName="ModuleSymbolicSuite.java" startLine="31" startPosition="66" endLine="32" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598721016" fileName="ModuleSymbolicSuite.java" startLine="35" startPosition="5" endLine="36" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598694612" fileName="ModuleSymbolicSuite.java" startLine="39" startPosition="99" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="1036071220598709430" fileName="ModuleSymbolicSuite.java" startLine="40" startPosition="16" endLine="41" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598694630" fileName="ModuleSymbolicSuite.java" startLine="44" startPosition="76" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1036071220598694642" fileName="ModuleSymbolicSuite.java" startLine="49" startPosition="40" endLine="50" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1036071220598694651" fileName="ModuleSymbolicSuite.java" startLine="54" startPosition="53" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1036071220598721057" fileName="ModuleSymbolicSuite.java" startLine="60" startPosition="25" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598694664" fileName="ModuleSymbolicSuite.java" startLine="62" startPosition="5" endLine="63" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598721030" fileName="ModuleSymbolicSuite.java" startLine="66" startPosition="29" endLine="67" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1036071220598720968" fileName="ModuleSymbolicSuite.java" startLine="68" startPosition="36" endLine="69" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1911350509414658384" fileName="ModuleSymbolicSuite.java" startLine="70" startPosition="5" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598694783" fileName="ModuleSymbolicSuite.java" startLine="74" startPosition="87" endLine="75" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1036071220598694795" fileName="ModuleSymbolicSuite.java" startLine="76" startPosition="26" endLine="77" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1036071220598720992" fileName="ModuleSymbolicSuite.java" startLine="78" startPosition="5" endLine="79" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1036071220598709691" fileName="ModuleSymbolicSuite.java" startLine="82" startPosition="93" endLine="83" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1036071220598709703" fileName="ModuleSymbolicSuite.java" startLine="84" startPosition="25" endLine="85" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1036071220598709837" fileName="ModuleSymbolicSuite.java" startLine="86" startPosition="5" endLine="87" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4089647634161019990" fileName="ModuleSymbolicSuite.java" startLine="90" startPosition="88" endLine="91" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4089647634161020002" fileName="ModuleSymbolicSuite.java" startLine="92" startPosition="25" endLine="93" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4089647634161020010" fileName="ModuleSymbolicSuite.java" startLine="94" startPosition="5" endLine="95" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1036071220598709540" fileName="ModuleSymbolicSuite.java" startLine="98" startPosition="55" endLine="99" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDelegate" />
+    <nodeInfo nodeId="1036071220598709567" fileName="ModuleSymbolicSuite.java" startLine="99" startPosition="30" endLine="100" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassName" />
+    <nodeInfo nodeId="4089647634161020095" fileName="ModuleSymbolicSuite.java" startLine="100" startPosition="31" endLine="101" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTests" />
+    <nodeInfo nodeId="1036071220598709570" fileName="ModuleSymbolicSuite.java" startLine="103" startPosition="63" endLine="104" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4089647634161020098" fileName="ModuleSymbolicSuite.java" startLine="104" startPosition="35" endLine="105" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598709641" fileName="ModuleSymbolicSuite.java" startLine="109" startPosition="31" endLine="110" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598709665" fileName="ModuleSymbolicSuite.java" startLine="111" startPosition="14" endLine="112" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598709552" fileName="ModuleSymbolicSuite.java" startLine="117" startPosition="40" endLine="118" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4089647634161020108" fileName="ModuleSymbolicSuite.java" startLine="119" startPosition="7" endLine="120" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4089647634161021287" fileName="ModuleSymbolicSuite.java" startLine="121" startPosition="35" endLine="122" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4089647634161021277" fileName="ModuleSymbolicSuite.java" startLine="122" startPosition="69" endLine="123" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4089647634161021297" fileName="ModuleSymbolicSuite.java" startLine="124" startPosition="7" endLine="125" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1036071220598709603" fileName="ModuleSymbolicSuite.java" startLine="128" startPosition="59" endLine="129" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1036071220598709620" fileName="ModuleSymbolicSuite.java" startLine="130" startPosition="26" endLine="131" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1036071220598694540" fileName="ModuleSymbolicSuite.java" startLine="138" startPosition="47" endLine="139" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="classes#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="4089647634161018274" fileName="ModuleSymbolicSuite.java" startLine="139" startPosition="23" endLine="140" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="tests#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="1036071220598694769" fileName="ModuleSymbolicSuite.java" startLine="145" startPosition="42" endLine="146" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1036071220598720934" fileName="ModuleSymbolicSuite.java" startLine="33" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1036071220598709663" fileName="ModuleSymbolicSuite.java" startLine="111" startPosition="12" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4089647634161020033" fileName="ModuleSymbolicSuite.java" startLine="30" startPosition="53" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1036071220598694620" fileName="ModuleSymbolicSuite.java" startLine="43" startPosition="0" endLine="46" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleSymbolicSuite#(Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="1036071220598721048" fileName="ModuleSymbolicSuite.java" startLine="59" startPosition="63" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1036071220598720958" fileName="ModuleSymbolicSuite.java" startLine="67" startPosition="143" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1036071220598694790" fileName="ModuleSymbolicSuite.java" startLine="75" startPosition="113" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1036071220598709698" fileName="ModuleSymbolicSuite.java" startLine="83" startPosition="118" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4089647634161019997" fileName="ModuleSymbolicSuite.java" startLine="91" startPosition="118" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1036071220598709544" fileName="ModuleSymbolicSuite.java" startLine="116" startPosition="41" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1036071220598709611" fileName="ModuleSymbolicSuite.java" startLine="129" startPosition="46" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1036071220598694599" fileName="ModuleSymbolicSuite.java" startLine="38" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleSymbolicSuite#(Lorg/junit/runners/model/RunnerBuilder;Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="1036071220598709523" fileName="ModuleSymbolicSuite.java" startLine="102" startPosition="0" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingRunner#(Ljava/lang/String;[Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4089647634161021265" fileName="ModuleSymbolicSuite.java" startLine="120" startPosition="73" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1036071220598694637" fileName="ModuleSymbolicSuite.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
+    <nodeInfo nodeId="1036071220598694645" fileName="ModuleSymbolicSuite.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describeChild#(Lorg/junit/runner/Runner;)Lorg/junit/runner/Description;" />
+    <nodeInfo nodeId="1036071220598709577" fileName="ModuleSymbolicSuite.java" startLine="108" startPosition="43" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1036071220598709585" fileName="ModuleSymbolicSuite.java" startLine="127" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/project/IModule;Lorg/junit/runners/model/RunnerBuilder;)V" />
+    <nodeInfo nodeId="1036071220598694656" fileName="ModuleSymbolicSuite.java" startLine="57" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
+    <nodeInfo nodeId="1036071220598709418" fileName="ModuleSymbolicSuite.java" startLine="65" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initialize#()V" />
+    <nodeInfo nodeId="1036071220598694670" fileName="ModuleSymbolicSuite.java" startLine="73" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAnnotatedModule#(Ljava/lang/Class;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1036071220598709682" fileName="ModuleSymbolicSuite.java" startLine="81" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAnnotatedClassNames#(Ljava/lang/Class;)[Ljava/lang/String;" />
+    <nodeInfo nodeId="4089647634161019982" fileName="ModuleSymbolicSuite.java" startLine="89" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAnnotatedTests#(Ljava/lang/Class;)[Ljava/lang/String;" />
+    <nodeInfo nodeId="1036071220598709528" fileName="ModuleSymbolicSuite.java" startLine="107" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lorg/junit/runner/notification/RunNotifier;)V" />
+    <nodeInfo nodeId="1036071220598694548" fileName="ModuleSymbolicSuite.java" startLine="26" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleSymbolicSuite#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
+    <nodeInfo nodeId="1036071220598709534" fileName="ModuleSymbolicSuite.java" startLine="115" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Lorg/junit/runner/Description;" />
+    <scopeInfo nodeId="1036071220598720935" fileName="ModuleSymbolicSuite.java" startLine="34" startPosition="33" endLine="34" endPosition="33" />
+    <scopeInfo nodeId="4089647634161020034" fileName="ModuleSymbolicSuite.java" startLine="31" startPosition="66" endLine="32" endPosition="95" />
+    <scopeInfo nodeId="1036071220598694629" fileName="ModuleSymbolicSuite.java" startLine="44" startPosition="76" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="1036071220598694641" fileName="ModuleSymbolicSuite.java" startLine="49" startPosition="40" endLine="50" endPosition="21" />
+    <scopeInfo nodeId="1036071220598694650" fileName="ModuleSymbolicSuite.java" startLine="54" startPosition="53" endLine="55" endPosition="34" />
+    <scopeInfo nodeId="1036071220598721049" fileName="ModuleSymbolicSuite.java" startLine="60" startPosition="25" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="1036071220598720959" fileName="ModuleSymbolicSuite.java" startLine="68" startPosition="36" endLine="69" endPosition="74" />
+    <scopeInfo nodeId="1036071220598694794" fileName="ModuleSymbolicSuite.java" startLine="76" startPosition="26" endLine="77" endPosition="121" />
+    <scopeInfo nodeId="1036071220598709702" fileName="ModuleSymbolicSuite.java" startLine="84" startPosition="25" endLine="85" endPosition="124" />
+    <scopeInfo nodeId="4089647634161020001" fileName="ModuleSymbolicSuite.java" startLine="92" startPosition="25" endLine="93" endPosition="124" />
+    <scopeInfo nodeId="1036071220598709579" fileName="ModuleSymbolicSuite.java" startLine="109" startPosition="31" endLine="110" endPosition="123" />
+    <scopeInfo nodeId="1036071220598709664" fileName="ModuleSymbolicSuite.java" startLine="111" startPosition="14" endLine="112" endPosition="33" />
+    <scopeInfo nodeId="1036071220598709546" fileName="ModuleSymbolicSuite.java" startLine="117" startPosition="40" endLine="118" endPosition="43" />
+    <scopeInfo nodeId="1036071220598709612" fileName="ModuleSymbolicSuite.java" startLine="130" startPosition="26" endLine="131" endPosition="60" />
+    <scopeInfo nodeId="1036071220598694540" fileName="ModuleSymbolicSuite.java" startLine="138" startPosition="47" endLine="139" endPosition="23" />
+    <scopeInfo nodeId="4089647634161018274" fileName="ModuleSymbolicSuite.java" startLine="139" startPosition="23" endLine="140" endPosition="21" />
+    <scopeInfo nodeId="1036071220598694769" fileName="ModuleSymbolicSuite.java" startLine="145" startPosition="42" endLine="146" endPosition="17" />
+    <scopeInfo nodeId="1036071220598720934" fileName="ModuleSymbolicSuite.java" startLine="33" startPosition="5" endLine="35" endPosition="5">
+      <varInfo nodeId="1036071220598720937" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694611" fileName="ModuleSymbolicSuite.java" startLine="39" startPosition="99" endLine="41" endPosition="29" />
+    <scopeInfo nodeId="1036071220598709526" fileName="ModuleSymbolicSuite.java" startLine="103" startPosition="63" endLine="105" endPosition="27" />
+    <scopeInfo nodeId="4089647634161021266" fileName="ModuleSymbolicSuite.java" startLine="121" startPosition="35" endLine="123" endPosition="102" />
+    <scopeInfo nodeId="4089647634161020033" fileName="ModuleSymbolicSuite.java" startLine="30" startPosition="53" endLine="33" endPosition="5">
+      <varInfo nodeId="4089647634161020036" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694620" fileName="ModuleSymbolicSuite.java" startLine="43" startPosition="0" endLine="46" endPosition="3">
+      <varInfo nodeId="1036071220598694623" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598720958" fileName="ModuleSymbolicSuite.java" startLine="67" startPosition="143" endLine="70" endPosition="5">
+      <varInfo nodeId="1036071220598720961" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694599" fileName="ModuleSymbolicSuite.java" startLine="38" startPosition="0" endLine="42" endPosition="3">
+      <varInfo nodeId="1036071220598694604" varName="klass" />
+      <varInfo nodeId="1036071220598694602" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694663" fileName="ModuleSymbolicSuite.java" startLine="59" startPosition="63" endLine="63" endPosition="24" />
+    <scopeInfo nodeId="1036071220598709523" fileName="ModuleSymbolicSuite.java" startLine="102" startPosition="0" endLine="106" endPosition="5">
+      <varInfo nodeId="4089647634161020092" varName="tests" />
+      <varInfo nodeId="1036071220598709565" varName="klassName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4089647634161021265" fileName="ModuleSymbolicSuite.java" startLine="120" startPosition="73" endLine="124" endPosition="7">
+      <varInfo nodeId="4089647634161021268" varName="test" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709588" fileName="ModuleSymbolicSuite.java" startLine="128" startPosition="59" endLine="132" endPosition="7">
+      <varInfo nodeId="1036071220598709604" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694637" fileName="ModuleSymbolicSuite.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1036071220598694645" fileName="ModuleSymbolicSuite.java" startLine="52" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1036071220598694648" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709421" fileName="ModuleSymbolicSuite.java" startLine="66" startPosition="29" endLine="71" endPosition="28">
+      <varInfo nodeId="1036071220598721031" varName="mod" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694678" fileName="ModuleSymbolicSuite.java" startLine="74" startPosition="87" endLine="79" endPosition="27">
+      <varInfo nodeId="1036071220598694784" varName="mrefAnn" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709690" fileName="ModuleSymbolicSuite.java" startLine="82" startPosition="93" endLine="87" endPosition="28">
+      <varInfo nodeId="1036071220598709692" varName="symAnn" />
+    </scopeInfo>
+    <scopeInfo nodeId="4089647634161019989" fileName="ModuleSymbolicSuite.java" startLine="90" startPosition="88" endLine="95" endPosition="26">
+      <varInfo nodeId="4089647634161019991" varName="symAnn" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709533" fileName="ModuleSymbolicSuite.java" startLine="108" startPosition="43" endLine="113" endPosition="7" />
+    <scopeInfo nodeId="1036071220598709585" fileName="ModuleSymbolicSuite.java" startLine="127" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="1036071220598709592" varName="mod" />
+      <varInfo nodeId="1036071220598709630" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694656" fileName="ModuleSymbolicSuite.java" startLine="57" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1036071220598694659" varName="child" />
+      <varInfo nodeId="1036071220598694661" varName="notifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709418" fileName="ModuleSymbolicSuite.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1036071220598694670" fileName="ModuleSymbolicSuite.java" startLine="73" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1036071220598694675" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709682" fileName="ModuleSymbolicSuite.java" startLine="81" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="1036071220598709687" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="4089647634161019982" fileName="ModuleSymbolicSuite.java" startLine="89" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="4089647634161019986" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709528" fileName="ModuleSymbolicSuite.java" startLine="107" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="1036071220598709531" varName="notifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694556" fileName="ModuleSymbolicSuite.java" startLine="27" startPosition="96" endLine="36" endPosition="49">
+      <varInfo nodeId="4089647634161020026" varName="classes" />
+      <varInfo nodeId="4089647634161020020" varName="tests" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709537" fileName="ModuleSymbolicSuite.java" startLine="116" startPosition="41" endLine="125" endPosition="18">
+      <varInfo nodeId="4089647634161020109" varName="desc" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598694548" fileName="ModuleSymbolicSuite.java" startLine="26" startPosition="0" endLine="37" endPosition="3">
+      <varInfo nodeId="1036071220598694551" varName="klass" />
+      <varInfo nodeId="1036071220598694554" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="1036071220598709534" fileName="ModuleSymbolicSuite.java" startLine="115" startPosition="0" endLine="127" endPosition="0" />
+    <unitInfo nodeId="1036071220598694766" fileName="ModuleSymbolicSuite.java" startLine="143" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite$ModuleReference" />
+    <unitInfo nodeId="1036071220598694537" fileName="ModuleSymbolicSuite.java" startLine="136" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite$ModuleClassSymbols" />
+    <unitInfo nodeId="1036071220598709521" fileName="ModuleSymbolicSuite.java" startLine="98" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite$DelegatingRunner" />
+    <unitInfo nodeId="1036071220598694533" fileName="ModuleSymbolicSuite.java" startLine="21" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
+  </root>
+  <root nodeId="935017990628671485">
+    <nodeInfo nodeId="935017990628671497" fileName="WatchingSuite.java" startLine="13" startPosition="90" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671509" fileName="WatchingSuite.java" startLine="18" startPosition="64" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671526" fileName="WatchingSuite.java" startLine="20" startPosition="9" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671517" fileName="WatchingSuite.java" startLine="22" startPosition="15" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671521" fileName="WatchingSuite.java" startLine="23" startPosition="58" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671488" fileName="WatchingSuite.java" startLine="12" startPosition="50" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchingSuite#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
+    <nodeInfo nodeId="935017990628671515" fileName="WatchingSuite.java" startLine="19" startPosition="72" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="935017990628671501" fileName="WatchingSuite.java" startLine="16" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
+    <scopeInfo nodeId="935017990628671496" fileName="WatchingSuite.java" startLine="13" startPosition="90" endLine="14" endPosition="26" />
+    <scopeInfo nodeId="935017990628671525" fileName="WatchingSuite.java" startLine="20" startPosition="9" endLine="21" endPosition="42" />
+    <scopeInfo nodeId="935017990628671516" fileName="WatchingSuite.java" startLine="22" startPosition="15" endLine="24" endPosition="28" />
+    <scopeInfo nodeId="935017990628671488" fileName="WatchingSuite.java" startLine="12" startPosition="50" endLine="15" endPosition="3">
+      <varInfo nodeId="935017990628671491" varName="klass" />
+      <varInfo nodeId="935017990628671494" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671508" fileName="WatchingSuite.java" startLine="18" startPosition="64" endLine="25" endPosition="5">
+      <varInfo nodeId="935017990628671510" varName="runNotifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671501" fileName="WatchingSuite.java" startLine="16" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="935017990628671506" varName="notifier" />
+      <varInfo nodeId="935017990628671504" varName="runner" />
+    </scopeInfo>
+    <unitInfo nodeId="935017990628671485" fileName="WatchingSuite.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingSuite" />
+  </root>
+  <root nodeId="935017990628671531">
+    <nodeInfo nodeId="935017990628671582" fileName="FilepathParameterized.java" startLine="19" startPosition="50" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="runners" />
+    <nodeInfo nodeId="935017990628671596" fileName="FilepathParameterized.java" startLine="22" startPosition="65" endLine="23" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671600" fileName="FilepathParameterized.java" startLine="23" startPosition="50" endLine="24" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671619" fileName="FilepathParameterized.java" startLine="25" startPosition="53" endLine="26" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671629" fileName="FilepathParameterized.java" startLine="26" startPosition="171" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671640" fileName="FilepathParameterized.java" startLine="32" startPosition="40" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671651" fileName="FilepathParameterized.java" startLine="37" startPosition="78" endLine="38" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671671" fileName="FilepathParameterized.java" startLine="41" startPosition="85" endLine="42" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671684" fileName="FilepathParameterized.java" startLine="43" startPosition="42" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671699" fileName="FilepathParameterized.java" startLine="45" startPosition="73" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671701" fileName="FilepathParameterized.java" startLine="48" startPosition="5" endLine="49" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="935017990628671537" fileName="FilepathParameterized.java" startLine="52" startPosition="77" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="fParameterSetNumber" />
+    <nodeInfo nodeId="935017990628671540" fileName="FilepathParameterized.java" startLine="53" startPosition="42" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="fParameterList" />
+    <nodeInfo nodeId="935017990628671711" fileName="FilepathParameterized.java" startLine="56" startPosition="125" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671713" fileName="FilepathParameterized.java" startLine="57" startPosition="18" endLine="58" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671717" fileName="FilepathParameterized.java" startLine="58" startPosition="37" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671723" fileName="FilepathParameterized.java" startLine="63" startPosition="49" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671751" fileName="FilepathParameterized.java" startLine="68" startPosition="11" endLine="69" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671736" fileName="FilepathParameterized.java" startLine="70" startPosition="38" endLine="71" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="935017990628671758" fileName="FilepathParameterized.java" startLine="76" startPosition="32" endLine="77" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671772" fileName="FilepathParameterized.java" startLine="78" startPosition="39" endLine="79" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671776" fileName="FilepathParameterized.java" startLine="80" startPosition="7" endLine="81" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671781" fileName="FilepathParameterized.java" startLine="81" startPosition="46" endLine="82" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671789" fileName="FilepathParameterized.java" startLine="82" startPosition="47" endLine="83" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671797" fileName="FilepathParameterized.java" startLine="83" startPosition="45" endLine="84" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671805" fileName="FilepathParameterized.java" startLine="84" startPosition="43" endLine="85" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671811" fileName="FilepathParameterized.java" startLine="89" startPosition="61" endLine="90" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671825" fileName="FilepathParameterized.java" startLine="94" startPosition="64" endLine="95" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671830" fileName="FilepathParameterized.java" startLine="99" startPosition="58" endLine="100" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671692" fileName="FilepathParameterized.java" startLine="44" startPosition="54" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="935017990628671767" fileName="FilepathParameterized.java" startLine="77" startPosition="67" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="935017990628671607" fileName="FilepathParameterized.java" startLine="24" startPosition="70" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="935017990628671635" fileName="FilepathParameterized.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
+    <nodeInfo nodeId="935017990628671643" fileName="FilepathParameterized.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParametersList#(Lorg/junit/runners/model/TestClass;)Ljava/util/List;" />
+    <nodeInfo nodeId="935017990628671545" fileName="FilepathParameterized.java" startLine="55" startPosition="0" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestClassRunnerForParameters#(Ljava/lang/Class;Ljava/util/List;I)V" />
+    <nodeInfo nodeId="935017990628671556" fileName="FilepathParameterized.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTest#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="935017990628671733" fileName="FilepathParameterized.java" startLine="67" startPosition="55" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="935017990628671566" fileName="FilepathParameterized.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testName#(Lorg/junit/runners/model/FrameworkMethod;)Ljava/lang/String;" />
+    <nodeInfo nodeId="935017990628671571" fileName="FilepathParameterized.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateConstructor#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="935017990628671577" fileName="FilepathParameterized.java" startLine="97" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classBlock#(Lorg/junit/runner/notification/RunNotifier;)Lorg/junit/runners/model/Statement;" />
+    <nodeInfo nodeId="935017990628671679" fileName="FilepathParameterized.java" startLine="42" startPosition="98" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="935017990628671589" fileName="FilepathParameterized.java" startLine="21" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FilepathParameterized#(Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="935017990628671559" fileName="FilepathParameterized.java" startLine="66" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="computeParams#()[Ljava/lang/Object;" />
+    <nodeInfo nodeId="935017990628671665" fileName="FilepathParameterized.java" startLine="40" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParametersMethod#(Lorg/junit/runners/model/TestClass;)Lorg/junit/runners/model/FrameworkMethod;" />
+    <nodeInfo nodeId="935017990628671563" fileName="FilepathParameterized.java" startLine="74" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="935017990628671639" fileName="FilepathParameterized.java" startLine="32" startPosition="40" endLine="33" endPosition="19" />
+    <scopeInfo nodeId="935017990628671650" fileName="FilepathParameterized.java" startLine="37" startPosition="78" endLine="38" endPosition="79" />
+    <scopeInfo nodeId="935017990628671698" fileName="FilepathParameterized.java" startLine="45" startPosition="73" endLine="46" endPosition="20" />
+    <scopeInfo nodeId="935017990628671722" fileName="FilepathParameterized.java" startLine="63" startPosition="49" endLine="64" endPosition="78" />
+    <scopeInfo nodeId="935017990628671750" fileName="FilepathParameterized.java" startLine="68" startPosition="11" endLine="69" endPosition="55" />
+    <scopeInfo nodeId="935017990628671734" fileName="FilepathParameterized.java" startLine="70" startPosition="0" endLine="71" endPosition="163">
+      <varInfo nodeId="935017990628671748" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671735" fileName="FilepathParameterized.java" startLine="70" startPosition="38" endLine="71" endPosition="163" />
+    <scopeInfo nodeId="935017990628671771" fileName="FilepathParameterized.java" startLine="78" startPosition="39" endLine="79" endPosition="33" />
+    <scopeInfo nodeId="935017990628671810" fileName="FilepathParameterized.java" startLine="89" startPosition="61" endLine="90" endPosition="100" />
+    <scopeInfo nodeId="935017990628671824" fileName="FilepathParameterized.java" startLine="94" startPosition="64" endLine="95" endPosition="41" />
+    <scopeInfo nodeId="935017990628671829" fileName="FilepathParameterized.java" startLine="99" startPosition="58" endLine="100" endPosition="39" />
+    <scopeInfo nodeId="935017990628671618" fileName="FilepathParameterized.java" startLine="25" startPosition="53" endLine="27" endPosition="26">
+      <varInfo nodeId="935017990628671620" varName="runner" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671710" fileName="FilepathParameterized.java" startLine="56" startPosition="125" endLine="59" endPosition="30" />
+    <scopeInfo nodeId="935017990628671607" fileName="FilepathParameterized.java" startLine="24" startPosition="70" endLine="28" endPosition="5">
+      <varInfo nodeId="935017990628671613" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671683" fileName="FilepathParameterized.java" startLine="43" startPosition="42" endLine="47" endPosition="7">
+      <varInfo nodeId="935017990628671685" varName="modifiers" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671635" fileName="FilepathParameterized.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="935017990628671643" fileName="FilepathParameterized.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="935017990628671648" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671545" fileName="FilepathParameterized.java" startLine="55" startPosition="0" endLine="60" endPosition="5">
+      <varInfo nodeId="935017990628671550" varName="parameterList" />
+      <varInfo nodeId="935017990628671547" varName="type" />
+      <varInfo nodeId="935017990628671554" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671556" fileName="FilepathParameterized.java" startLine="61" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="935017990628671732" fileName="FilepathParameterized.java" startLine="67" startPosition="55" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="935017990628671566" fileName="FilepathParameterized.java" startLine="87" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="935017990628671569" varName="method" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671571" fileName="FilepathParameterized.java" startLine="92" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="935017990628671574" varName="errors" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671577" fileName="FilepathParameterized.java" startLine="97" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="935017990628671580" varName="notifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671595" fileName="FilepathParameterized.java" startLine="22" startPosition="65" endLine="28" endPosition="5">
+      <varInfo nodeId="935017990628671601" varName="parametersList" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671679" fileName="FilepathParameterized.java" startLine="42" startPosition="98" endLine="48" endPosition="5">
+      <varInfo nodeId="935017990628671681" varName="each" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671589" fileName="FilepathParameterized.java" startLine="21" startPosition="0" endLine="29" endPosition="3">
+      <varInfo nodeId="935017990628671592" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671670" fileName="FilepathParameterized.java" startLine="41" startPosition="85" endLine="49" endPosition="94">
+      <varInfo nodeId="935017990628671672" varName="methods" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671559" fileName="FilepathParameterized.java" startLine="66" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="935017990628671757" fileName="FilepathParameterized.java" startLine="76" startPosition="32" endLine="85" endPosition="40">
+      <varInfo nodeId="935017990628671759" varName="firstArg" />
+      <varInfo nodeId="935017990628671777" varName="fname" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671665" fileName="FilepathParameterized.java" startLine="40" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="935017990628671668" varName="testClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671563" fileName="FilepathParameterized.java" startLine="74" startPosition="0" endLine="87" endPosition="0" />
+    <unitInfo nodeId="935017990628671534" fileName="FilepathParameterized.java" startLine="52" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.FilepathParameterized$TestClassRunnerForParameters" />
+    <unitInfo nodeId="935017990628671531" fileName="FilepathParameterized.java" startLine="19" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.FilepathParameterized" />
+  </root>
+  <root nodeId="935017990628671834">
+    <nodeInfo nodeId="935017990628671845" fileName="SymbolicSuite.java" startLine="19" startPosition="57" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
+    <nodeInfo nodeId="935017990628671858" fileName="SymbolicSuite.java" startLine="22" startPosition="93" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671874" fileName="SymbolicSuite.java" startLine="26" startPosition="97" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671893" fileName="SymbolicSuite.java" startLine="30" startPosition="95" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671913" fileName="SymbolicSuite.java" startLine="34" startPosition="118" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671931" fileName="SymbolicSuite.java" startLine="38" startPosition="92" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671933" fileName="SymbolicSuite.java" startLine="39" startPosition="17" endLine="40" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671943" fileName="SymbolicSuite.java" startLine="44" startPosition="40" endLine="45" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671952" fileName="SymbolicSuite.java" startLine="49" startPosition="53" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671965" fileName="SymbolicSuite.java" startLine="54" startPosition="63" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671980" fileName="SymbolicSuite.java" startLine="58" startPosition="92" endLine="59" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671992" fileName="SymbolicSuite.java" startLine="60" startPosition="29" endLine="61" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="935017990628672000" fileName="SymbolicSuite.java" startLine="62" startPosition="5" endLine="63" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628672009" fileName="SymbolicSuite.java" startLine="63" startPosition="60" endLine="64" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628672034" fileName="SymbolicSuite.java" startLine="66" startPosition="11" endLine="67" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628672026" fileName="SymbolicSuite.java" startLine="68" startPosition="42" endLine="69" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628672046" fileName="SymbolicSuite.java" startLine="72" startPosition="39" endLine="73" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="935017990628672052" fileName="SymbolicSuite.java" startLine="74" startPosition="5" endLine="75" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671841" fileName="SymbolicSuite.java" startLine="80" startPosition="46" endLine="81" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="935017990628671849" fileName="SymbolicSuite.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SymbolicSuite#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
+    <nodeInfo nodeId="935017990628671864" fileName="SymbolicSuite.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SymbolicSuite#(Lorg/junit/runners/model/RunnerBuilder;[Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="935017990628671882" fileName="SymbolicSuite.java" startLine="29" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SymbolicSuite#(Ljava/lang/Class;[Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="935017990628671900" fileName="SymbolicSuite.java" startLine="33" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SymbolicSuite#(Lorg/junit/runners/model/RunnerBuilder;Ljava/lang/Class;[Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="935017990628671987" fileName="SymbolicSuite.java" startLine="59" startPosition="108" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="935017990628672040" fileName="SymbolicSuite.java" startLine="71" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="935017990628671921" fileName="SymbolicSuite.java" startLine="37" startPosition="0" endLine="41" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SymbolicSuite#(Ljava/lang/Class;Ljava/util/List;)V" />
+    <nodeInfo nodeId="935017990628671938" fileName="SymbolicSuite.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
+    <nodeInfo nodeId="935017990628671946" fileName="SymbolicSuite.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describeChild#(Lorg/junit/runner/Runner;)Lorg/junit/runner/Description;" />
+    <nodeInfo nodeId="935017990628671957" fileName="SymbolicSuite.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
+    <nodeInfo nodeId="935017990628672023" fileName="SymbolicSuite.java" startLine="65" startPosition="43" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="935017990628672016" fileName="SymbolicSuite.java" startLine="64" startPosition="59" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="935017990628671971" fileName="SymbolicSuite.java" startLine="57" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAnnotatedClasses#(Ljava/lang/Class;)[Ljava/lang/Class;" />
+    <scopeInfo nodeId="935017990628671857" fileName="SymbolicSuite.java" startLine="22" startPosition="93" endLine="23" endPosition="67" />
+    <scopeInfo nodeId="935017990628671873" fileName="SymbolicSuite.java" startLine="26" startPosition="97" endLine="27" endPosition="47" />
+    <scopeInfo nodeId="935017990628671892" fileName="SymbolicSuite.java" startLine="30" startPosition="95" endLine="31" endPosition="72" />
+    <scopeInfo nodeId="935017990628671912" fileName="SymbolicSuite.java" startLine="34" startPosition="118" endLine="35" endPosition="54" />
+    <scopeInfo nodeId="935017990628671942" fileName="SymbolicSuite.java" startLine="44" startPosition="40" endLine="45" endPosition="21" />
+    <scopeInfo nodeId="935017990628671951" fileName="SymbolicSuite.java" startLine="49" startPosition="53" endLine="50" endPosition="34" />
+    <scopeInfo nodeId="935017990628671964" fileName="SymbolicSuite.java" startLine="54" startPosition="63" endLine="55" endPosition="24" />
+    <scopeInfo nodeId="935017990628671991" fileName="SymbolicSuite.java" startLine="60" startPosition="29" endLine="61" endPosition="123" />
+    <scopeInfo nodeId="935017990628672033" fileName="SymbolicSuite.java" startLine="66" startPosition="11" endLine="67" endPosition="45" />
+    <scopeInfo nodeId="935017990628672024" fileName="SymbolicSuite.java" startLine="68" startPosition="0" endLine="69" endPosition="33">
+      <varInfo nodeId="935017990628672031" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628672025" fileName="SymbolicSuite.java" startLine="68" startPosition="42" endLine="69" endPosition="33" />
+    <scopeInfo nodeId="935017990628672045" fileName="SymbolicSuite.java" startLine="72" startPosition="39" endLine="73" endPosition="77" />
+    <scopeInfo nodeId="935017990628671841" fileName="SymbolicSuite.java" startLine="80" startPosition="46" endLine="81" endPosition="21" />
+    <scopeInfo nodeId="935017990628671930" fileName="SymbolicSuite.java" startLine="38" startPosition="92" endLine="40" endPosition="24" />
+    <scopeInfo nodeId="935017990628671849" fileName="SymbolicSuite.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="935017990628671852" varName="klass" />
+      <varInfo nodeId="935017990628671855" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671864" fileName="SymbolicSuite.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="935017990628671869" varName="classes" />
+      <varInfo nodeId="935017990628671867" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671882" fileName="SymbolicSuite.java" startLine="29" startPosition="0" endLine="32" endPosition="3">
+      <varInfo nodeId="935017990628671885" varName="klass" />
+      <varInfo nodeId="935017990628671888" varName="suiteClasses" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671900" fileName="SymbolicSuite.java" startLine="33" startPosition="0" endLine="36" endPosition="3">
+      <varInfo nodeId="935017990628671905" varName="klass" />
+      <varInfo nodeId="935017990628671903" varName="builder" />
+      <varInfo nodeId="935017990628671908" varName="suiteClasses" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671921" fileName="SymbolicSuite.java" startLine="37" startPosition="0" endLine="41" endPosition="3">
+      <varInfo nodeId="935017990628671924" varName="klass" />
+      <varInfo nodeId="935017990628671927" varName="runners" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671938" fileName="SymbolicSuite.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="935017990628671946" fileName="SymbolicSuite.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="935017990628671949" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671957" fileName="SymbolicSuite.java" startLine="52" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="935017990628671960" varName="child" />
+      <varInfo nodeId="935017990628671962" varName="notifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628672022" fileName="SymbolicSuite.java" startLine="65" startPosition="43" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="935017990628672016" fileName="SymbolicSuite.java" startLine="64" startPosition="59" endLine="71" endPosition="5">
+      <varInfo nodeId="935017990628672020" varName="sym" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671979" fileName="SymbolicSuite.java" startLine="58" startPosition="92" endLine="75" endPosition="67">
+      <varInfo nodeId="935017990628671981" varName="annotation" />
+      <varInfo nodeId="935017990628672010" varName="notfoundClasses" />
+      <varInfo nodeId="935017990628672001" varName="foundClasses" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628671971" fileName="SymbolicSuite.java" startLine="57" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="935017990628671976" varName="klass" />
+    </scopeInfo>
+    <unitInfo nodeId="935017990628671835" fileName="SymbolicSuite.java" startLine="78" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.SymbolicSuite$SuiteClassSymbols" />
+    <unitInfo nodeId="935017990628671834" fileName="SymbolicSuite.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.SymbolicSuite" />
+  </root>
+  <root nodeId="935017990628672065">
+    <nodeInfo nodeId="935017990628672075" fileName="WatchingParameterized.java" startLine="13" startPosition="65" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="935017990628672086" fileName="WatchingParameterized.java" startLine="18" startPosition="64" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628672097" fileName="WatchingParameterized.java" startLine="20" startPosition="37" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628672115" fileName="WatchingParameterized.java" startLine="23" startPosition="9" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628672110" fileName="WatchingParameterized.java" startLine="25" startPosition="15" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628672068" fileName="WatchingParameterized.java" startLine="12" startPosition="66" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchingParameterized#(Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="935017990628672092" fileName="WatchingParameterized.java" startLine="19" startPosition="72" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="935017990628672108" fileName="WatchingParameterized.java" startLine="22" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="935017990628672078" fileName="WatchingParameterized.java" startLine="16" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
+    <scopeInfo nodeId="935017990628672074" fileName="WatchingParameterized.java" startLine="13" startPosition="65" endLine="14" endPosition="17" />
+    <scopeInfo nodeId="935017990628672096" fileName="WatchingParameterized.java" startLine="20" startPosition="37" endLine="21" endPosition="66" />
+    <scopeInfo nodeId="935017990628672114" fileName="WatchingParameterized.java" startLine="23" startPosition="9" endLine="24" endPosition="42" />
+    <scopeInfo nodeId="935017990628672109" fileName="WatchingParameterized.java" startLine="25" startPosition="15" endLine="26" endPosition="28" />
+    <scopeInfo nodeId="935017990628672068" fileName="WatchingParameterized.java" startLine="12" startPosition="66" endLine="15" endPosition="3">
+      <varInfo nodeId="935017990628672071" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628672085" fileName="WatchingParameterized.java" startLine="18" startPosition="64" endLine="27" endPosition="5">
+      <varInfo nodeId="935017990628672087" varName="runNotifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="935017990628672078" fileName="WatchingParameterized.java" startLine="16" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="935017990628672083" varName="notifier" />
+      <varInfo nodeId="935017990628672081" varName="runner" />
+    </scopeInfo>
+    <unitInfo nodeId="935017990628672065" fileName="WatchingParameterized.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingParameterized" />
+  </root>
+</debugInfo>
+

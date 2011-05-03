@@ -12,6 +12,9 @@
         <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.testbench.suite.generator.template" />
       </models>
       <external-templates />
+      <dependencies>
+        <dependency reexport="false">e9000334-f5e2-4a2f-a0fc-9afd1d31e048(jetbrains.mps.testbench)</dependency>
+      </dependencies>
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
       </usedDevKits>

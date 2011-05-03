@@ -37,6 +37,7 @@
       <solutionPath path="${mps_home}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="" />
       <solutionPath path="${mps_home}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" />
       <solutionPath path="${mps_home}/platform/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" />
+      <solutionPath path="${mps_home}/testbench/solution/jetbrains.mps.testbench.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/facet/facet.mpl" />

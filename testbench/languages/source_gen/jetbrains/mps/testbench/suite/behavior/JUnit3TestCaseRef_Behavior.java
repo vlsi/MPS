@@ -5,6 +5,11 @@ package jetbrains.mps.testbench.suite.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class JUnit3TestCaseRef_Behavior {
   public static void init(SNode thisNode) {
@@ -12,5 +17,17 @@ public class JUnit3TestCaseRef_Behavior {
 
   public static String virtual_fqClassName_2956932267233324537(SNode thisNode) {
     return UnitConcept_Behavior.call_getUnitName_3822000666564591112(SLinkOperations.getTarget(thisNode, "klass", false));
+  }
+
+  public static Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "klass", false), "method", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode m) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && SPropertyOperations.getString(m, "name").startsWith("test");
+      }
+    }).<String>select(new ISelector<SNode, String>() {
+      public String select(SNode m) {
+        return SPropertyOperations.getString(m, "name");
+      }
+    });
   }
 }

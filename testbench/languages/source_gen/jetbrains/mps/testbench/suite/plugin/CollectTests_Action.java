@@ -125,7 +125,7 @@ public class CollectTests_Action extends GeneratedAction {
       if (module != null) {
         final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
         for (final SModelDescriptor smd : module.getOwnModelDescriptors()) {
-          if (!(CollectTests_Action.this.isUserEditableModel(smd, _params))) {
+          if (!(CollectTests_Action.this.isUserEditableGeneratableModel(smd, _params))) {
             continue;
           }
 
@@ -143,7 +143,7 @@ public class CollectTests_Action extends GeneratedAction {
             continue;
           }
 
-          if (new TestCollector().collectTests(smodel.value, module.getScope(), new _FunctionTypes._void_P1_E0<_FunctionTypes._return_P0_E0<? extends SNode>>() {
+          if (new TestCollector().collectTests(smodel.value, new _FunctionTypes._void_P1_E0<_FunctionTypes._return_P0_E0<? extends SNode>>() {
             public void invoke(final _FunctionTypes._return_P0_E0<? extends SNode> tref) {
               ThreadUtils.runInUIThreadAndWait(new Runnable() {
                 public void run() {
@@ -179,6 +179,10 @@ public class CollectTests_Action extends GeneratedAction {
       return false;
     }
     return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isPackaged());
+  }
+
+  private boolean isUserEditableGeneratableModel(SModelDescriptor md, final Map<String, Object> _params) {
+    return CollectTests_Action.this.isUserEditableModel(md, _params) && md.isGeneratable();
   }
 
   private List<ModuleReference> allSolutions(final Map<String, Object> _params) {

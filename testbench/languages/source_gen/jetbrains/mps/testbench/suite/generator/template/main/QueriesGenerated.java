@@ -5,14 +5,25 @@ package jetbrains.mps.testbench.suite.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.testbench.suite.behavior.ITestRef_Behavior;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2956932267233365622(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ITestRef_Behavior.call_fqClassName_2956932267233324537(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4089647634161018296(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IterableUtils.join(Sequence.fromIterable(ITestRef_Behavior.call_testNames_4089647634160960707(_context.getNode())), ",");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4089647634160960602(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IModuleRef_Behavior.call_moduleReference_1280144168199513544(SLinkOperations.getTarget(_context.getNode(), "moduleRef", true)).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2956932267233340150(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -20,6 +31,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_2956932267233365615(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "testRef", true);
+  }
+
+  public static Iterable sourceNodesQuery_4089647634161018289(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "testRef", true);
   }
 }
