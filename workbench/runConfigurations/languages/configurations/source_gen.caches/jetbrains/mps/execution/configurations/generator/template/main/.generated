@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5v7zvx8e2bxinzdf6gxoysoq94ueqcf">
+<dependencies version="2" modelHash="1y7hif7jeaixmr8hgl98l3q75m7ut0q">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-94n2b8uqx5vkme4z9vd9f2k2jriyibs" />
@@ -118,7 +118,7 @@
   <source id="4762811064051417753" name="reduce_StartProcessHandlerStatement" hash="-e6jjqh8fdayxbdkqt8eotx6a3lwvfky">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="693139443247210143" name="RunConfigurationsInitializer" hash="57gzu5x30k8zpe8c0jpn3zeunre76gu">
+  <source id="693139443247210143" name="RunConfigurationsInitializer" hash="dg7nzngu242roq1ae48ewdfifimnvfy">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1529002684853883835" name="reduce_Configuration_Parameter" hash="-ae3ewzzr4gewyzrm7e808y6fd0sg9g9">

@@ -147,10 +147,13 @@
     <classNode extendsClassName="jetbrains.mps.execution.settings.runtime.SettingsEditorEx" />
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Demo_Kind" />
-    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Demo_Kind" />
+    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>
