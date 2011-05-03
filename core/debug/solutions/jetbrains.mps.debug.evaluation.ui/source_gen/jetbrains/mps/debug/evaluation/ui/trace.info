@@ -10,11 +10,11 @@
     <nodeInfo nodeId="9071178110302103587" fileName="EvaluationAuxModule.java" startLine="41" startPosition="39" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9071178110302103595" fileName="EvaluationAuxModule.java" startLine="45" startPosition="22" endLine="46" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9071178110302103607" fileName="EvaluationAuxModule.java" startLine="49" startPosition="25" endLine="50" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9071178110302193638" fileName="EvaluationAuxModule.java" startLine="52" startPosition="25" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9071178110302193657" fileName="EvaluationAuxModule.java" startLine="53" startPosition="44" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9071178110302193662" fileName="EvaluationAuxModule.java" startLine="54" startPosition="81" endLine="55" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9071178110302193667" fileName="EvaluationAuxModule.java" startLine="55" startPosition="92" endLine="56" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9071178110302193671" fileName="EvaluationAuxModule.java" startLine="56" startPosition="47" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4576417129640276588" fileName="EvaluationAuxModule.java" startLine="52" startPosition="25" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4576417129640276592" fileName="EvaluationAuxModule.java" startLine="53" startPosition="44" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4576417129640276597" fileName="EvaluationAuxModule.java" startLine="54" startPosition="81" endLine="55" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4576417129640276602" fileName="EvaluationAuxModule.java" startLine="55" startPosition="92" endLine="56" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4576417129640276606" fileName="EvaluationAuxModule.java" startLine="56" startPosition="47" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="9071178110302103623" fileName="EvaluationAuxModule.java" startLine="62" startPosition="37" endLine="63" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9071178110302103636" fileName="EvaluationAuxModule.java" startLine="66" startPosition="63" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9071178110302103655" fileName="EvaluationAuxModule.java" startLine="72" startPosition="43" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -53,9 +53,9 @@
     <nodeInfo nodeId="9071178110302103765" fileName="EvaluationAuxModule.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="9071178110302103563" fileName="EvaluationAuxModule.java" startLine="37" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EvaluationAuxModule#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="9071178110302103752" fileName="EvaluationAuxModule.java" startLine="118" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearAll#()V" />
-    <nodeInfo nodeId="9071178110302193636" fileName="EvaluationAuxModule.java" startLine="51" startPosition="57" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4576417129640276586" fileName="EvaluationAuxModule.java" startLine="51" startPosition="58" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="9071178110302103642" fileName="EvaluationAuxModule.java" startLine="69" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClass#(Ljava/lang/String;)Ljava/lang/Class;" />
-    <nodeInfo nodeId="9071178110302193635" fileName="EvaluationAuxModule.java" startLine="50" startPosition="20" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4576417129640276585" fileName="EvaluationAuxModule.java" startLine="50" startPosition="20" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9071178110302103713" fileName="EvaluationAuxModule.java" startLine="106" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addStubPath#(Ljava/lang/String;)Ljetbrains/mps/project/StubPath;" />
     <nodeInfo nodeId="9071178110302103603" fileName="EvaluationAuxModule.java" startLine="48" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <scopeInfo nodeId="9071178110302103704" fileName="EvaluationAuxModule.java" startLine="99" startPosition="22" endLine="99" endPosition="22" />
@@ -90,7 +90,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9071178110302103689" fileName="EvaluationAuxModule.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="9071178110302103695" fileName="EvaluationAuxModule.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="9071178110302193637" fileName="EvaluationAuxModule.java" startLine="52" startPosition="25" endLine="57" endPosition="58" />
+    <scopeInfo nodeId="4576417129640276587" fileName="EvaluationAuxModule.java" startLine="52" startPosition="25" endLine="57" endPosition="58" />
     <scopeInfo nodeId="9071178110302103665" fileName="EvaluationAuxModule.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="9071178110302103705" fileName="EvaluationAuxModule.java" startLine="101" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="9071178110302103765" fileName="EvaluationAuxModule.java" startLine="124" startPosition="0" endLine="129" endPosition="0" />
@@ -98,7 +98,7 @@
       <varInfo nodeId="9071178110302103566" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="9071178110302103752" fileName="EvaluationAuxModule.java" startLine="118" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="9071178110302193636" fileName="EvaluationAuxModule.java" startLine="51" startPosition="57" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="4576417129640276586" fileName="EvaluationAuxModule.java" startLine="51" startPosition="58" endLine="59" endPosition="0" />
     <scopeInfo nodeId="9071178110302103642" fileName="EvaluationAuxModule.java" startLine="69" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="9071178110302103645" varName="fqName" />
     </scopeInfo>
@@ -110,7 +110,7 @@
       <varInfo nodeId="9071178110302103716" varName="stubPath" />
     </scopeInfo>
     <scopeInfo nodeId="9071178110302103603" fileName="EvaluationAuxModule.java" startLine="48" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="9071178110302193636" fileName="EvaluationAuxModule.java" startLine="51" startPosition="45" endLine="59" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule$1" />
+    <unitInfo nodeId="4576417129640276586" fileName="EvaluationAuxModule.java" startLine="51" startPosition="46" endLine="59" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule$1" />
     <unitInfo nodeId="9071178110302103533" fileName="EvaluationAuxModule.java" startLine="28" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule" />
   </root>
 </debugInfo>

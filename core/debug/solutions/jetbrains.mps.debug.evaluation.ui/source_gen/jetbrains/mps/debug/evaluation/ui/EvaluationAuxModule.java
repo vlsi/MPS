@@ -48,7 +48,7 @@ public class EvaluationAuxModule extends AbstractModule {
 
   public void dispose() {
     super.dispose();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         EvaluationAuxModule.this.clearAll();
         MPSModuleRepository.getInstance().removeModule(EvaluationAuxModule.this);
