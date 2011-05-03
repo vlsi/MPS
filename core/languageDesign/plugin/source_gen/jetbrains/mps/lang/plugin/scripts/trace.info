@@ -13,13 +13,7 @@
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="437" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="447" startPosition="0" endLine="464" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$QuotationClass_3y9ork_a0a0b0n0e0a0a0b0a" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="532" startPosition="0" endLine="549" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$QuotationClass_3y9ork_a0a0a0a0a0a0a0a31a4a0a0a1a0" />
-  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="73" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0d0a0a0b0a" />
-  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="92" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0c0a0e0a0a0b0a" />
-  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="111" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0d0a0a0c0a" />
-  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="130" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0c0a0e0a0a0c0a" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="132" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a4a4a0a0a1a0" />
-  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="21" startPosition="28" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$1" />
-  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="46" startPosition="28" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$2" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="156" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a5a4a0a0a1a0" />
   <unitInfo fileName="UpdateActionIcons_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateActionIcons_MigrationScript$1" />
   <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript$1" />
@@ -41,19 +35,8 @@
   <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="31" startPosition="28" endLine="129" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$1" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="34" startPosition="28" endLine="164" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$1" />
-  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="18" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="28" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="31" startPosition="0" endLine="550" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript" />
-  <root nodeId="1171743928472194518">
-    <nodeInfo nodeId="1171743928472218640" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171743928472218664" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="38" startPosition="52" endLine="39" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171743928472218708" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="59" startPosition="59" endLine="60" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171743928472218696" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="63" startPosition="52" endLine="64" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1171743928472218639" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="220" />
-    <scopeInfo nodeId="1171743928472218637" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="38" startPosition="52" endLine="39" endPosition="211" />
-    <scopeInfo nodeId="1171743928472218707" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="59" startPosition="59" endLine="60" endPosition="220" />
-    <scopeInfo nodeId="1171743928472218695" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="63" startPosition="52" endLine="64" endPosition="211" />
-  </root>
   <root nodeId="1239976380271">
     <nodeInfo nodeId="1239976508272" fileName="ConvertUpdateMethod_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239976518423" fileName="ConvertUpdateMethod_MigrationScript.java" startLine="34" startPosition="149" endLine="35" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
