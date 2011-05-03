@@ -38,8 +38,6 @@ public class GeneratorManager {
 
   private static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  public static final String DO_NOT_GENERATE = "doNotGenerate";
-
   private final List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
 
   private Project myProject;
@@ -171,11 +169,11 @@ public class GeneratorManager {
 
   public static boolean isDoNotGenerate(SModelDescriptor sm) {
     if (!(sm instanceof EditableSModelDescriptor)) return false;
-    return Boolean.parseBoolean(((EditableSModelDescriptor) sm).getAttribute(DO_NOT_GENERATE));
+    return ((EditableSModelDescriptor) sm).isDoNotGenerate();
   }
 
   public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
     if (!(sm instanceof EditableSModelDescriptor)) return;
-    ((EditableSModelDescriptor) sm).setAttribute(DO_NOT_GENERATE, "" + value);
+    ((EditableSModelDescriptor) sm).setDoNotGenerate(value);
   }
 }

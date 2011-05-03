@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
@@ -42,6 +41,7 @@ import java.util.Map;
 public class DefaultSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
   private static final String VERSION = "version";
+  private static final String DO_NOT_GENERATE = "doNotGenerate";
 
   private Map<String, String> myMetadata;
 
@@ -255,8 +255,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   @Override
   public boolean isGeneratable() {
-    boolean doNotGenerate = Boolean.parseBoolean(getAttribute(GeneratorManager.DO_NOT_GENERATE));
-    return !doNotGenerate && !isPackaged() && SModelStereotype.isUserModel(this);
+    return !isDoNotGenerate() && !isPackaged() && SModelStereotype.isUserModel(this);
   }
 
   @Override
@@ -270,6 +269,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   //this method should be called only with a fully loaded model as parameter
   public void replaceModel(@NotNull SModel newModel) {
     replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
+  }
+
+  @Override
+  public void setDoNotGenerate(boolean value) {
+    setAttribute(DO_NOT_GENERATE, "" + value);
+  }
+
+  @Override
+  public boolean isDoNotGenerate() {
+    return Boolean.parseBoolean(getAttribute(DO_NOT_GENERATE));
   }
 
   private void replaceModel(SModel newModel, ModelLoadingState state) {
