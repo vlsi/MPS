@@ -99,6 +99,24 @@ public abstract class AbstractUiState {
     return Collections.emptyList();
   }
 
+  public int getStackFramesCount() {
+    IThread thread = getThread();
+    if (thread != null) {
+      return thread.getFramesCount();
+    }
+    return 0;
+  }
+
+  @Nullable
+  public IStackFrame getStackFrame(int index) {
+    assert index >= 0;
+    List<IStackFrame> frames = getStackFrames();
+    if (index >= frames.size()){
+      return null;
+    }
+    return frames.get(index);
+  }
+
   // todo is this method really used?
   @NotNull
   public Map<IWatchable, IValue> getWatchableValues() {

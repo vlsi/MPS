@@ -205,22 +205,16 @@ public class DebuggerToolPanel {
   private class StackFramesListModel extends AbstractListModel {
     @Override
     public int getSize() {
-      return getFrames().size();
+      return myUiState.getStackFramesCount();
     }
 
     @Override
     public Object getElementAt(int index) {
-      List<IStackFrame> frames = getFrames();
-      if (index >= frames.size()) return null;
-      return frames.get(index);
+      return myUiState.getStackFrame(index);
     }
 
     public void updateFrames() {
       fireContentsChanged(DebuggerToolPanel.this, -1, getSize());
-    }
-
-    private List<IStackFrame> getFrames() {
-      return myUiState.getStackFrames();
     }
 
     public void selected(int selectedIndex) {

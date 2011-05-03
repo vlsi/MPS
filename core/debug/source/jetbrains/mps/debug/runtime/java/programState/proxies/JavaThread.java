@@ -7,6 +7,7 @@ import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -24,6 +25,8 @@ public class JavaThread extends ProxyForJava implements IThread {
   private static final Logger LOG = Logger.getLogger(JavaThread.class);
   @NotNull
   private final ThreadReference myThreadReference;
+  @Nullable
+  private Icon myCachedIcon = null;
 
   public JavaThread(@NotNull ThreadReference threadReference) {
     super(threadReference);
@@ -54,6 +57,19 @@ public class JavaThread extends ProxyForJava implements IThread {
     }
   }
 
+  @Nullable
+  public IStackFrame getFrame(int index) {
+    try {
+      if (index >= myThreadReference.frameCount()) {
+        return null;
+      }
+      return new JavaStackFrame(myThreadReference, index);
+    } catch (IncompatibleThreadStateException ex) {
+      LOG.warning("IncompatibleThreadStateException", ex);
+      return null;
+    }
+  }
+
   @NotNull
   public ThreadReference getThread() {
     return myThreadReference;
@@ -74,14 +90,17 @@ public class JavaThread extends ProxyForJava implements IThread {
 
   @Override
   public Icon getPresentationIcon() {
-    ThreadReference thread = myThreadReference;
-    if (thread.isAtBreakpoint()) {
-      return Icons.THREAD_AT_BREAKPOINT;
-    } else if (thread.isSuspended()) {
-      return Icons.THREAD_SUSPENDED;
-    } else {
-      return Icons.THREAD_RUNNING;
+    if (myCachedIcon == null) {
+      ThreadReference thread = myThreadReference;
+      if (thread.isAtBreakpoint()) {
+        myCachedIcon = Icons.THREAD_AT_BREAKPOINT;
+      } else if (thread.isSuspended()) {
+        myCachedIcon = Icons.THREAD_SUSPENDED;
+      } else {
+        myCachedIcon = Icons.THREAD_RUNNING;
+      }
     }
+    return myCachedIcon;
   }
 
   private static String getThreadStatusText(int statusId) {

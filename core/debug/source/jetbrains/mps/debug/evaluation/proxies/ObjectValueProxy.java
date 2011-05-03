@@ -15,7 +15,6 @@ import java.util.List;
 import static jetbrains.mps.debug.evaluation.EvaluationUtils.handleInvocationExceptions;
 
 class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
-  private static final Logger LOG = Logger.getLogger(ObjectValueProxy.class);
   private ClassType myReferenceType;
 
   public ObjectValueProxy(ObjectReference v, ThreadReference threadReference) {

@@ -15,17 +15,16 @@ import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class CustomViewersManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(CustomViewersManager.class);
 
-  private Set<ValueWrapperFactory> myFactories = new HashSet<ValueWrapperFactory>();
-  private Set<String> myLoadedLanguages = new HashSet<String>();
-  private ClassLoaderManager myClassLoaderManager;
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+  private final Set<ValueWrapperFactory> myFactories = new HashSet<ValueWrapperFactory>();
+  private final Set<String> myLoadedLanguages = new HashSet<String>();
+  private final Set<String> myLoadedPackages = new HashSet<String>();
+  private final ClassLoaderManager myClassLoaderManager;
+  private final ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
       clear();
     }
@@ -54,6 +53,7 @@ public class CustomViewersManager implements ApplicationComponent {
   }
 
   public void clear() {
+    myLoadedPackages.clear();
     myLoadedLanguages.clear();
     myFactories.clear();
   }
@@ -105,12 +105,28 @@ public class CustomViewersManager implements ApplicationComponent {
   }
 
   public ValueWrapper getValueWrapper(JavaValue originalValue, @NotNull String className) {
+    loadLanguages(className);
+    //searching for wrappers
+    Set<ValueWrapperFactory> factories = getValueWrapperFactories(originalValue);
+    if (factories.isEmpty()) {
+      return null;
+    }
+    if (factories.size() > 1) {
+      LOG.warning("several custom viewers found for value; using the random one");
+    }
+    ValueWrapperFactory factory = factories.iterator().next();
+    return factory.createValueWrapper(originalValue);
+  }
+
+  private void loadLanguages(String className) {
     //loading languages
     int lastDot = className.lastIndexOf(".");
     String pkg = (lastDot == -1 ?
       "" :
       className.substring(0, lastDot)
     );
+    if (myLoadedPackages.contains(pkg)) return;
+
     List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
     for (final SModelDescriptor descriptor : list) {
       if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
@@ -122,16 +138,6 @@ public class CustomViewersManager implements ApplicationComponent {
       }
       break;
     }
-
-    //searching for wrappers
-    Set<ValueWrapperFactory> factories = getValueWrapperFactories(originalValue);
-    if (factories.isEmpty()) {
-      return null;
-    }
-    if (factories.size() > 1) {
-      LOG.warning("several custom viewers found for value; using the random one");
-    }
-    ValueWrapperFactory factory = factories.iterator().next();
-    return factory.createValueWrapper(originalValue);
+    myLoadedPackages.add(pkg);
   }
 }

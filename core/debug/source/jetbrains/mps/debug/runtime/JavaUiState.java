@@ -4,6 +4,7 @@ import com.sun.jdi.*;
 import com.sun.jdi.event.*;
 import jetbrains.mps.debug.api.AbstractDebugSession.ExecutionState;
 import jetbrains.mps.debug.api.AbstractUiState;
+import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
@@ -200,6 +201,13 @@ public class JavaUiState extends AbstractUiState {
     if (myStackFrameIndex == NO_FRAME) return null;
     assert myThread != null; // if we have a frame then we have a thread
     return (JavaStackFrame) myThread.getFrames().get(myStackFrameIndex);
+  }
+
+  @Override
+  public IStackFrame getStackFrame(int index) {
+    JavaThread thread = getThread();
+    if (thread == null) return null;
+    return thread.getFrame(index);
   }
 
   private DebugVMEventsProcessor getEventsProcessor() {

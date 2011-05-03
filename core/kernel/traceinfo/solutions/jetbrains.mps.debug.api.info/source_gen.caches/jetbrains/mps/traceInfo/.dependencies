@@ -48,6 +48,7 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="java.util.TreeSet" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.util.HashSet" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.PositionInfo" file="PositionInfo.java">
     <classNode dependClassName="java.lang.String" />

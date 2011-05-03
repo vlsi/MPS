@@ -252,9 +252,13 @@ public class DebugInfo {
     return model.getNodeById(id);
   }
 
-  private <T extends PositionInfo> List<T> getInfoForPosition(String file, int line, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
+  private <T extends PositionInfo> List<T> getInfoForPosition(final String file, int line, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
     List<T> resultList = ListSequence.fromList(new ArrayList<T>());
-    for (T element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<T>translate(new ITranslator2<DebugInfoRoot, T>() {
+    for (T element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).where(new IWhereFilter<DebugInfoRoot>() {
+      public boolean accept(DebugInfoRoot it) {
+        return SetSequence.fromSet(it.getFileNames()).contains(file);
+      }
+    }).<T>translate(new ITranslator2<DebugInfoRoot, T>() {
       public Iterable<T> translate(DebugInfoRoot it) {
         return getAllPositionsForRoot.invoke(it);
       }

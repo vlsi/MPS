@@ -4,6 +4,7 @@ package jetbrains.mps.traceInfo;
 
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.util.TreeSet;
 import org.jdom.Element;
 import java.util.Comparator;
@@ -23,6 +24,7 @@ public class DebugInfoRoot {
   private Set<TraceablePositionInfo> myPositions;
   private Set<ScopePositionInfo> myScopePositions;
   private Set<UnitPositionInfo> myUnitPositions;
+  private final Set<String> myFileNames = SetSequence.fromSet(new HashSet<String>());
 
   public DebugInfoRoot(String rootId) {
     myRootId = rootId;
@@ -32,6 +34,7 @@ public class DebugInfoRoot {
     if (myPositions == null) {
       myPositions = SetSequence.fromSet(new TreeSet<TraceablePositionInfo>());
     }
+    SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myPositions).addElement(position);
   }
 
@@ -39,6 +42,7 @@ public class DebugInfoRoot {
     if (myScopePositions == null) {
       myScopePositions = SetSequence.fromSet(new TreeSet<ScopePositionInfo>());
     }
+    SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myScopePositions).addElement(position);
   }
 
@@ -46,6 +50,7 @@ public class DebugInfoRoot {
     if (myUnitPositions == null) {
       myUnitPositions = SetSequence.fromSet(new TreeSet<UnitPositionInfo>());
     }
+    SetSequence.fromSet(myFileNames).addElement(unitPosition.getFileName());
     SetSequence.fromSet(myUnitPositions).addElement(unitPosition);
   }
 
@@ -63,6 +68,10 @@ public class DebugInfoRoot {
 
   public Set<UnitPositionInfo> getUnitPositions() {
     return myUnitPositions;
+  }
+
+  public Set<String> getFileNames() {
+    return myFileNames;
   }
 
   public void toXml(Element container) {
