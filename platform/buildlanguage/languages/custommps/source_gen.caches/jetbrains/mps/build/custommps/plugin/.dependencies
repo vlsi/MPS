@@ -43,9 +43,14 @@
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.plugin.Custommps_ApplicationPlugin" file="Custommps_ApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.GenerateCustomMPSBuildForProjectAction_Action" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.build.custommps.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.plugin.Custommps_ProjectPlugin" file="Custommps_ProjectPlugin.java">
@@ -236,16 +241,6 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
-  <dependency className="jetbrains.mps.build.custommps.plugin.ForeignConfigurations" file="ForeignConfigurations.java">
-    <classNode dependClassName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Factory" />
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
-    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType" />
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
-  </dependency>
   <dependency className="jetbrains.mps.build.custommps.plugin.GenerateCustomMPSBuildForProjectAction_Action" file="GenerateCustomMPSBuildForProjectAction_Action.java">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
@@ -272,6 +267,25 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.BuildToolsStep" />
     <classNode extendsClassName="jetbrains.mps.build.packaging.plugin.GenerateBuildWizard" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.custommps.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" file="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java">
+    <classNode dependClassName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Factory" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSBuild" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromConfiguration" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
+    <classNode dependClassName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSLayout" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" file="ProjectAddition_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />

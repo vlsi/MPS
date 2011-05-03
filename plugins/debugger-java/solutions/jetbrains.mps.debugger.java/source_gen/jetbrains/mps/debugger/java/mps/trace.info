@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="MPSInstance_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Factory" />
   <unitInfo fileName="MPSInstance_Configuration.java" startLine="145" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration$MyState" />
-  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.RunConfigurationsInitializer_CustomApplicationPlugin" />
+  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="MPS_Kind.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPS_Kind" />
   <unitInfo fileName="MPSInstance_Configuration_Editor.java" startLine="15" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_Editor" />
   <unitInfo fileName="MPSInstance_Configuration_RunProfileState.java" startLine="29" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState" />

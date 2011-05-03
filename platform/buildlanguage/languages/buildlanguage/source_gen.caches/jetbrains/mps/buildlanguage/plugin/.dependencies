@@ -180,7 +180,12 @@
     <classNode extendsClassName="javax.swing.table.TableModel" />
   </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ApplicationPlugin" file="Buildlanguage_ApplicationPlugin.java">
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ProjectPlugin" file="Buildlanguage_ProjectPlugin.java">
@@ -300,6 +305,18 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
     <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildlanguage.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" file="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageConfigurationFromNode" />
+    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>
 

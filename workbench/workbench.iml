@@ -26,6 +26,7 @@
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="library" name="Trove" level="project" />
+    <orderEntry type="module" module-name="runConfigurations" />
   </component>
 </module>
 

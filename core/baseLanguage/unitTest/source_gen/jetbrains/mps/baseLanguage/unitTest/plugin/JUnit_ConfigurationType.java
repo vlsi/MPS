@@ -20,6 +20,9 @@ public class JUnit_ConfigurationType implements ConfigurationType {
 
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
+  public JUnit_ConfigurationType() {
+  }
+
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new DefaultJUnit_Factory(this));

@@ -150,6 +150,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethod_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.PrintNodePosition_ActionGroup" />
@@ -700,6 +701,19 @@
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" file="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromClass" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromMainMethod" />
+    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.NodeListCellRenderer" file="NodeListCellRenderer.java">
     <classNode dependClassName="java.awt.BorderLayout" />

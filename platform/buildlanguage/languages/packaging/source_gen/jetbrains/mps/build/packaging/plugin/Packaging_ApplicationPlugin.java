@@ -6,6 +6,10 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
+import java.util.List;
+import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.build.packaging");
@@ -29,5 +33,16 @@ public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(ProjectPaneModelAddition_ActionGroup.ID, ModelActions_ActionGroup.ID, null);
     insertGroupIntoAnother(ProjectPaneProjectAddition_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, null);
+  }
+
+  public List<BaseCustomApplicationPlugin> initCustomParts() {
+    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
+    addCustomPart(res, new LegacyRunConfigurationsProvider_CustomApplicationPlugin());
+    return res;
+  }
+
+  private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
+    ListSequence.fromList(plugins).addElement(plugin);
+    plugin.init();
   }
 }

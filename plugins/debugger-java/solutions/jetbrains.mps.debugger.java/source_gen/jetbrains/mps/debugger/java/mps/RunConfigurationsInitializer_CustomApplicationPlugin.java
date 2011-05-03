@@ -27,8 +27,9 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
 
   public void doDispose() {
     ExtensionPoint<ConfigurationType> extensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    for (ConfigurationType configurationKind : ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds)) {
+    for (ConfigurationType configurationKind : ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).reversedList()) {
       extensionPoint.unregisterExtension(configurationKind);
     }
+    ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).clear();
   }
 }
