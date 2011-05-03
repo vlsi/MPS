@@ -20,6 +20,9 @@ public class WannabeClassConfigurationType_ConfigurationType implements Configur
 
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
+  public WannabeClassConfigurationType_ConfigurationType() {
+  }
+
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new WannabeClassConfiguration_Factory(this));
