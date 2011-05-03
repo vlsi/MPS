@@ -18,7 +18,8 @@ package jetbrains.mps.plugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.execution.configurations.ApplicationRunConfigurationsReloader;
+import jetbrains.mps.execution.configurations.RunConfigurationsStateManager;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -33,14 +34,12 @@ public class PluginReloader implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
-  private final ApplicationRunConfigurationsReloader myRunConfigurationsReloader;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager, ApplicationRunConfigurationsReloader runConfigurationsReloader) {
+  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
     myClassLoaderManager = classLoaderManager;
     myProjectManager = projectManager;
     myPluginManager = pluginManager;
-    myRunConfigurationsReloader = runConfigurationsReloader;
   }
 
   private void loadPlugins() {
@@ -49,16 +48,34 @@ public class PluginReloader implements ApplicationComponent {
       p.getComponent(ProjectPluginManager.class).loadPlugins();
     }
 
-    myRunConfigurationsReloader.init();
+    loadConfigurations();
   }
 
   private void disposePlugins() {
-    myRunConfigurationsReloader.dispose();
+    disposeConfigurations();
 
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).disposePlugins();
     }
     myPluginManager.disposePlugins();
+  }
+
+  private void loadConfigurations() {
+    if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
+      return;
+    }
+    for (Project p : myProjectManager.getOpenProjects()) {
+      p.getComponent(RunConfigurationsStateManager.class).initRunConfigurations();
+    }
+  }
+
+  private void disposeConfigurations() {
+    if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
+      return;
+    }
+    for (Project p : myProjectManager.getOpenProjects()) {
+      p.getComponent(RunConfigurationsStateManager.class).disposeRunConfigurations();
+    }
   }
 
   //----------------COMPONENT STUFF---------------------

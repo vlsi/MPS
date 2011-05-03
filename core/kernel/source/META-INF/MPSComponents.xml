@@ -238,10 +238,6 @@
       <implementation-class>jetbrains.mps.workbench.make.GeneratedTextPreviewEditorProvider</implementation-class>
     </component>
 
-    <component>
-      <implementation-class>jetbrains.mps.execution.configurations.ApplicationRunConfigurationsReloader</implementation-class>
-    </component>
-
   </application-components>
 
   <project-components>
@@ -370,7 +366,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.execution.configurations.RunConfigurationsReloader</implementation-class>
+      <implementation-class>jetbrains.mps.execution.configurations.RunConfigurationsStateManager</implementation-class>
     </component>
 
     <component>

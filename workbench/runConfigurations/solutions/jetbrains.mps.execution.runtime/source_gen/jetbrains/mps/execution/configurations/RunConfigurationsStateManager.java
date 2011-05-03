@@ -23,14 +23,14 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
-public class RunConfigurationsReloader implements ProjectComponent {
-  private static final Logger LOG = Logger.getLogger(RunConfigurationsReloader.class);
+public class RunConfigurationsStateManager implements ProjectComponent {
+  private static final Logger LOG = Logger.getLogger(RunConfigurationsStateManager.class);
 
   private Project myProject;
   private Element myState = null;
   private Element mySharedState = null;
 
-  public RunConfigurationsReloader(Project project) {
+  public RunConfigurationsStateManager(Project project) {
     myProject = project;
   }
 
@@ -40,11 +40,11 @@ public class RunConfigurationsReloader implements ProjectComponent {
   public void projectClosed() {
   }
 
-  /*package*/ void initRunConfigurations() {
+  public void initRunConfigurations() {
     if (myProject.isDisposed()) {
       return;
     }
-    getRunManager().initializeConfigurationTypes(RunConfigurationsReloader.getConfigurationTypes());
+    getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
     reInitializeManagers();
     if (myState != null) {
       try {
@@ -62,7 +62,7 @@ public class RunConfigurationsReloader implements ProjectComponent {
     }
   }
 
-  /*package*/ void disposeRunConfigurations() {
+  public void disposeRunConfigurations() {
     assert !(myProject.isDisposed());
     ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
     RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
