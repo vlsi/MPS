@@ -4,7 +4,6 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContextOld;
 
 public class TypeCheckingContext_Tracer extends TypeCheckingContextNew {
   public TypeCheckingContext_Tracer(SNode rootNode, TypeChecker typeChecker) {

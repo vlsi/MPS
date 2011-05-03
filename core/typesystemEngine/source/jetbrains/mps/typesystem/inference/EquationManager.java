@@ -1354,7 +1354,7 @@ public class EquationManager {
   }
 
   /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel,
-                               boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
+                               boolean finalExpansion, INodeTypesComponent nodeTypesComponent) {
     if (type == null) return null;
     IWrapper wrapper = NodeWrapper.createWrapperFromNode(type, this);
     IWrapper representator;
@@ -1364,18 +1364,18 @@ public class EquationManager {
   }
 
   /*package*/ IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
-                                     boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
+                                     boolean finalExpansion, INodeTypesComponent nodeTypesComponent) {
     Set<IWrapper> variables = new THashSet<IWrapper>(1);
     return expandNode(term, representator, representator, 0, variables, typesModel, finalExpansion, nodeTypesComponent);
   }
 
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
-                                 boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
+                                 boolean finalExpansion, INodeTypesComponent nodeTypesComponent) {
     return expandNode(term, wrapper, representator, depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent, true);
   }
 
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
-                                 boolean finalExpansion, NodeTypesComponent nodeTypesComponent, boolean expandChild) {
+                                 boolean finalExpansion, INodeTypesComponent nodeTypesComponent, boolean expandChild) {
     if (wrapper == null) return null;
     if (wrapper instanceof ConceptWrapper) {
       return null; //todo
