@@ -232,7 +232,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (needsReloading()) return;
 
     setChanged(false);
-    SModel newData = myModelRootManager.saveModel(this, true);
+    SModel newData = myModelRootManager.saveModel(this);
     if (newData != null) {
       replaceModel(newData);
     }

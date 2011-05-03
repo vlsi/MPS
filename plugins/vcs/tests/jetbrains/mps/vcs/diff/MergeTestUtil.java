@@ -31,7 +31,7 @@ public class MergeTestUtil {
   }
 
   public static void saveTestModel(final SModel model, final File file) {
-    ModelPersistence.saveModel(model, FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), false, model.getPersistenceVersion());
+    ModelPersistence.saveModel(model, FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), model.getPersistenceVersion());
   }
 
   public static enum TestVersion implements Version {

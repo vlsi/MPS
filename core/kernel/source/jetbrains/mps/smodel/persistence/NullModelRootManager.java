@@ -35,7 +35,7 @@ class NullModelRootManager extends BaseMPSModelRootManager {
     return new SModel(modelDescriptor.getSModelReference());
   }
 
-  public SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade) {
+  public SModel saveModel(@NotNull SModelDescriptor modelDescriptor) {
     String message = "saving model " + modelDescriptor.getSModelReference().getSModelFqName() + " using null model root manager \n";
     message += "this model is owned by " + SModelRepository.getInstance().getOwners(modelDescriptor);
     LOG.error(message);

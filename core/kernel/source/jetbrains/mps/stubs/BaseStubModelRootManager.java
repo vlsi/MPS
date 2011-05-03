@@ -124,7 +124,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     return model;
   }
 
-  public final SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade) {
+  public final SModel saveModel(@NotNull SModelDescriptor modelDescriptor) {
     return null;
   }
 

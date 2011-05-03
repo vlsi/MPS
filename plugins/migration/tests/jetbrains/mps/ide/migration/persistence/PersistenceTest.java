@@ -68,7 +68,7 @@ public class PersistenceTest extends BaseMPSTest {
                 for (int i = START_PERSISTENCE_TEST_VERSION; i <= PersistenceSettings.MAX_VERSION; ++i) {
                   try { // errors about not found attributes are expected for old models
                     filter.start();
-                    ModelPersistence.saveModel(model, file, false, i);
+                    ModelPersistence.saveModel(model, file, i);
                   } finally {
                     filter.stop();
                   }

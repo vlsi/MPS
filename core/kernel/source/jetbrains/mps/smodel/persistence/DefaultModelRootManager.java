@@ -212,7 +212,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   /**
    * returns upgraded model, or null
    */
-  public SModel saveModel(@NotNull SModelDescriptor sm, boolean canUpgrade) {
+  public SModel saveModel(@NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     SModel smodel = dsm.getSModel();
     if (smodel instanceof StubModel) {
@@ -221,7 +221,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     }
     IFile modelFile = dsm.getModelFile();
     assert modelFile != null;
-    return ModelPersistence.saveModel(smodel, modelFile, true, dsm.getPersistenceVersion());
+    return ModelPersistence.saveModel(smodel, modelFile);
   }
 
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {

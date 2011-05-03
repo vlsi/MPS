@@ -36,7 +36,7 @@ public interface IModelRootManager {
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
 
-  SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade);
+  SModel saveModel(@NotNull SModelDescriptor modelDescriptor);
 
   StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
 

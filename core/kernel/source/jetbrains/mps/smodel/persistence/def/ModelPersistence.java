@@ -138,11 +138,11 @@ public class ModelPersistence {
           if (version != null) {
             try {
               result.setVersion(Integer.parseInt(version));
-            } catch(NumberFormatException ex) {
+            } catch (NumberFormatException ex) {
             }
           }
           String doNotGenerate = attributes.getValue(SModelHeader.DO_NOT_GENERATE);
-          if(doNotGenerate != null) {
+          if (doNotGenerate != null) {
             result.setDoNotGenerate(Boolean.parseBoolean(doNotGenerate));
           }
 
@@ -261,8 +261,22 @@ public class ModelPersistence {
 
   //--------write--------
 
-  // returns upgraded model, or null if the model doesn't require update or canUpgrade is false
-  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade, int persistenceVersion) {
+  /*
+   *  Saves model and metadata.
+   */
+  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file) {
+    int persistenceVersion = model.getPersistenceVersion();
+    if (persistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(persistenceVersion)) {
+      persistenceVersion = getCurrentPersistenceVersion();
+    }
+
+    return saveModel(model, file, persistenceVersion);
+  }
+
+  /*
+   *  returns upgraded model, or null if the model doesn't require update
+   */
+  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, int persistenceVersion) {
     LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getPath());
 
     if (file.isReadOnly()) {
@@ -278,43 +292,24 @@ public class ModelPersistence {
     }
 
     // upgrade?
-    int newVersion = persistenceVersion;
-    if (canUpgrade) {
-      if (persistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(persistenceVersion)) {
-        newVersion = getCurrentPersistenceVersion();
-        upgradePersistence(file, model, persistenceVersion, newVersion);
-        return model;
-      }
+    int oldVersion = model.getPersistenceVersion();
+    if (oldVersion != persistenceVersion) {
+      model.setPersistenceVersion(persistenceVersion);
     }
 
-    // no, save
-    Document document = saveModel(model, newVersion);
+    // save
+    Document document = saveModel(model, persistenceVersion);
     try {
       JDOMUtil.writeDocument(document, file);
-      SModelRepository.getInstance().markUnchanged(model);
     } catch (IOException e) {
       LOG.error("Error in file " + file, e);
     }
-    return null;
-  }
 
-  // upgrades model persistence and saves model
-  public static void upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
-//    if (fromVersion < 5 && toVersion >= 5) {
-//      StructureModificationHistory refactorings = model.getRefactoringHistory();
-//      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
-//        RefactoringsPersistence.save(file, refactorings);
-//      }
-//      model.setRefactoringHistory(null);
-//    }
-    model.setPersistenceVersion(toVersion);
-    Document document = saveModel(model, toVersion);
-    try {
-      JDOMUtil.writeDocument(document, file);
-    } catch (IOException e) {
-      LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
+    if (oldVersion != persistenceVersion) {
+      LOG.info("persistence upgraded: " + oldVersion + "->" + persistenceVersion + " " + model.getSModelReference());
+      return model;
     }
-    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + model.getSModelReference());
+    return null;
   }
 
   @NotNull
@@ -429,7 +424,7 @@ public class ModelPersistence {
 
   public static Map<String, String> calculateHashes(byte[] modelBytes, int persistenceVersion) {
     IHashProvider hashProvider = getModelPersistence(persistenceVersion).getHashProvider();
-    Map<String,String> result = hashProvider.getRootHashes(modelBytes);
+    Map<String, String> result = hashProvider.getRootHashes(modelBytes);
     result.put(ModelDigestHelper.FILE, hashProvider.getHash(modelBytes));
     return result;
   }
@@ -473,11 +468,11 @@ public class ModelPersistence {
 
   @Deprecated
   public static void saveMetadata(IFile modelFile, @NotNull Map<String, String> metadata) {
-    if(modelFile == null) return;
+    if (modelFile == null) return;
 
     IFile metadataFile = getMetadataFile(modelFile);
     if (metadata.isEmpty()) {
-      if(metadataFile.exists()) {
+      if (metadataFile.exists()) {
         metadataFile.delete();
       }
       return;

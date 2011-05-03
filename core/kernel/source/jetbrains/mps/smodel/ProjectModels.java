@@ -34,7 +34,7 @@ public class ProjectModels {
       return new SModel(modelDescriptor.getSModelReference());
     }
 
-    public SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade) {
+    public SModel saveModel(@NotNull SModelDescriptor modelDescriptor) {
       return null;
     }
   };
