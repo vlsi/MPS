@@ -34,7 +34,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
-import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
@@ -143,9 +142,9 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           mySortedPlugins.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ProjectPluginCreator()));
 
           Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
-          for (PluginContributor c:pluginContributors){
+          for (PluginContributor c : pluginContributors) {
             BaseProjectPlugin plugin = c.createProjectPlugin();
-            if (plugin==null) continue;
+            if (plugin == null) continue;
             mySortedPlugins.add(plugin);
           }
 

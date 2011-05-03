@@ -16,42 +16,41 @@
 package jetbrains.mps.plugins;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
 
 import java.util.*;
 
 public class PluginSorter {
   //todo for now, the cycle will be broken in unknown place
   public static List<IModule> sortByDependencies(Collection<IModule> modules) {
-    List <Item> items = new ArrayList<Item>();
-    Map<IModule,Item> module2Item = new HashMap<IModule, Item>();
-    for (IModule module:modules){
+    List<Item> items = new ArrayList<Item>();
+    Map<IModule, Item> module2Item = new HashMap<IModule, Item>();
+    for (IModule module : modules) {
       Item item = new Item(module, -1);
       items.add(item);
-      module2Item.put(module,item);
+      module2Item.put(module, item);
     }
     int initIndex = 0;
-    for (Item item:items){
-      if (item.myInitIndex ==-1){
-        initIndex = init(item,module2Item,initIndex);
+    for (Item item : items) {
+      if (item.myInitIndex == -1) {
+        initIndex = init(item, module2Item, initIndex);
       }
     }
 
     IModule[] result = new IModule[initIndex];
 
-    for (Item item:items){
-      result[item.myInitIndex]=item.myModule;
+    for (Item item : items) {
+      result[item.myInitIndex] = item.myModule;
     }
     return Arrays.asList(result);
   }
 
   private static int init(Item item, Map<IModule, Item> module2Item, int initIndex) {
-    item.myInitIndex =-2;
-    for (IModule dependency: item.myModule.getDependenciesManager().getAllDependOnModules()){
+    item.myInitIndex = -2;
+    for (IModule dependency : item.myModule.getDependenciesManager().getAllDependOnModules()) {
       Item depItem = module2Item.get(dependency);
-      if (depItem !=null) {
-        if (depItem.myInitIndex ==-1){
-          initIndex = init(depItem,module2Item,initIndex);
+      if (depItem != null) {
+        if (depItem.myInitIndex == -1) {
+          initIndex = init(depItem, module2Item, initIndex);
         }
       }
     }
@@ -60,7 +59,7 @@ public class PluginSorter {
     return initIndex;
   }
 
-  private static class Item{
+  private static class Item {
     private Item(IModule module, int initIndex) {
       this.myModule = module;
       this.myInitIndex = initIndex;

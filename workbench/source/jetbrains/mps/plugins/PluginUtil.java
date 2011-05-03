@@ -99,7 +99,7 @@ public class PluginUtil {
 
   private static Collection<PluginContributor> myPluginContributors = new ArrayList();
 
-  public static void addPluginContributor(PluginContributor contributor){
+  public static void addPluginContributor(PluginContributor contributor) {
     myPluginContributors.add(contributor);
   }
 
