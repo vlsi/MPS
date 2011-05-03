@@ -54,7 +54,7 @@ public class SModel {
 
   private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
 
-  private int myPersistenceVersion = -1;
+  private final SModelHeader myHeader = new SModelHeader();
 
   private SModelDescriptor myModelDescriptor;
 
@@ -760,11 +760,15 @@ public class SModel {
   //---------persistance-related refactorings--------
 
   public void setPersistenceVersion(int persistenceVersion) {
-    myPersistenceVersion = persistenceVersion;
+    myHeader.setPersistenceVersion(persistenceVersion);
   }
 
   public int getPersistenceVersion() {
-    return myPersistenceVersion;
+    return myHeader.getPersistenceVersion();
+  }
+
+  public SModelHeader getSModelHeader() {
+    return myHeader;
   }
 
   public void refreshRefactoringHistory() {

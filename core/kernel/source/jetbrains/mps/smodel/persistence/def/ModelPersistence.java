@@ -134,6 +134,18 @@ public class ModelPersistence {
           if (uid != null) {
             result.setUID(uid);
           }
+          String version = attributes.getValue(SModelHeader.VERSION);
+          if (version != null) {
+            try {
+              result.setVersion(Integer.parseInt(version));
+            } catch(NumberFormatException ex) {
+            }
+          }
+          String doNotGenerate = attributes.getValue(SModelHeader.DO_NOT_GENERATE);
+          if(doNotGenerate != null) {
+            result.setDoNotGenerate(Boolean.parseBoolean(doNotGenerate));
+          }
+
         } else if (PERSISTENCE.equals(qName)) {
           String s = attributes.getValue(PERSISTENCE_VERSION);
           if (s != null) {
@@ -225,7 +237,7 @@ public class ModelPersistence {
   }
 
   public static int getPersistenceVersion(@NotNull InputSource inputSource) {
-    return loadDescriptor(inputSource).getPersistenceVersion();
+    return loadDescriptor(inputSource).getHeader().getPersistenceVersion();
   }
 
   @Nullable
@@ -250,7 +262,7 @@ public class ModelPersistence {
   //--------write--------
 
   // returns upgraded model, or null if the model doesn't require update or canUpgrade is false
-  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade, int modelVersion) {
+  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade, int persistenceVersion) {
     LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getPath());
 
     if (file.isReadOnly()) {
@@ -260,16 +272,17 @@ public class ModelPersistence {
 
 
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor != null) {
-      saveMetadata(modelDescriptor);
+    if (modelDescriptor instanceof DefaultSModelDescriptor) {
+      DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
+      saveMetadata(md.getModelFile(), md.getMetaData());
     }
 
     // upgrade?
-    int newVersion = modelVersion;
+    int newVersion = persistenceVersion;
     if (canUpgrade) {
-      if (modelVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelVersion)) {
+      if (persistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(persistenceVersion)) {
         newVersion = getCurrentPersistenceVersion();
-        upgradePersistence(file, model, modelVersion, newVersion);
+        upgradePersistence(file, model, persistenceVersion, newVersion);
         return model;
       }
     }
@@ -285,19 +298,38 @@ public class ModelPersistence {
     return null;
   }
 
+  // upgrades model persistence and saves model
+  public static void upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
+//    if (fromVersion < 5 && toVersion >= 5) {
+//      StructureModificationHistory refactorings = model.getRefactoringHistory();
+//      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
+//        RefactoringsPersistence.save(file, refactorings);
+//      }
+//      model.setRefactoringHistory(null);
+//    }
+    model.setPersistenceVersion(toVersion);
+    Document document = saveModel(model, toVersion);
+    try {
+      JDOMUtil.writeDocument(document, file);
+    } catch (IOException e) {
+      LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
+    }
+    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + model.getSModelReference());
+  }
+
   @NotNull
-  public static Document saveModel(@NotNull SModel sourceModel, int version) {
+  public static Document saveModel(@NotNull SModel sourceModel, int persistenceVersion) {
     //model persistence level update is performed on startup;
     // here model's persistence level is used, if a model has persistence level bigger than user-selected
     // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
-    if (version == -1) {
-      version = getCurrentPersistenceVersion();
-      sourceModel.setPersistenceVersion(version);
+    if (persistenceVersion == -1) {
+      persistenceVersion = getCurrentPersistenceVersion();
+      sourceModel.setPersistenceVersion(persistenceVersion);
     }
 
     sourceModel.calculateImplicitImports();
 
-    return getModelPersistence(version).getModelWriter().saveModel(sourceModel);
+    return getModelPersistence(persistenceVersion).getModelWriter().saveModel(sourceModel);
   }
 
   //-------- --------
@@ -322,25 +354,6 @@ public class ModelPersistence {
       modelName = rawModelName.substring(0, index1);
     }
     return modelName;
-  }
-
-  // upgrades model persistence and saves model
-  public static void upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
-//    if (fromVersion < 5 && toVersion >= 5) {
-//      StructureModificationHistory refactorings = model.getRefactoringHistory();
-//      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
-//        RefactoringsPersistence.save(file, refactorings);
-//      }
-//      model.setRefactoringHistory(null);
-//    }
-    model.setPersistenceVersion(toVersion);
-    Document document = saveModel(model, toVersion);
-    try {
-      JDOMUtil.writeDocument(document, file);
-    } catch (IOException e) {
-      LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
-    }
-    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + model.getSModelReference());
   }
 
   public static boolean needsRecreating(IFile file) {
@@ -459,13 +472,17 @@ public class ModelPersistence {
   }
 
   @Deprecated
-  public static void saveMetadata(@NotNull SModelDescriptor sm) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+  public static void saveMetadata(IFile modelFile, @NotNull Map<String, String> metadata) {
+    if(modelFile == null) return;
 
-    Map<String, String> metadata = dsm.getMetaData();
-    if (metadata.isEmpty()) return;
+    IFile metadataFile = getMetadataFile(modelFile);
+    if (metadata.isEmpty()) {
+      if(metadataFile.exists()) {
+        metadataFile.delete();
+      }
+      return;
+    }
 
-    IFile metadataFile = getMetadataFile(dsm.getModelFile());
     if (!metadataFile.exists()) {
       metadataFile.createNewFile();
     }
@@ -478,7 +495,7 @@ public class ModelPersistence {
   private static Map<String, String> loadMetadata(IFile modelFile) {
     IFile metadataFile = getMetadataFile(modelFile);
     if (!metadataFile.exists()) {
-      return new HashMap<String, String>();
+      return null;
     }
     return DefaultMetadataPersistence.load(metadataFile);
   }

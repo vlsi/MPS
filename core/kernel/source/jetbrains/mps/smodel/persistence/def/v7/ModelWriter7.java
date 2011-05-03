@@ -16,11 +16,8 @@
 package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -41,6 +38,15 @@ public class ModelWriter7 implements IModelWriter {
 
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
+
+    int version = myModel.getSModelHeader().getVersion();
+    if(version >= 0) {
+      rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
+    }
+    if(myModel.getSModelHeader().isDoNotGenerate()) {
+      rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
+    }
+
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
     persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);

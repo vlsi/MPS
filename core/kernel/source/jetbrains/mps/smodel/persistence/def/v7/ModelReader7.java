@@ -20,10 +20,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.ModelLinkMap;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -48,6 +48,8 @@ public class ModelReader7 implements IModelReader {
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     SModel model = new SModel(modelReference,new RegularNodeIdMap());
     model.setPersistenceVersion(getVersion());
+    model.getSModelHeader().setVersion(AttributeUtils.integerWithDefault(rootElement.getAttributeValue(SModelHeader.VERSION), -1));
+    model.getSModelHeader().setDoNotGenerate(AttributeUtils.booleanWithDefault(rootElement.getAttributeValue(SModelHeader.DO_NOT_GENERATE), false));
     myHelper = new ReadHelper(modelReference);
     myLinkMap = new ModelLinkMap(model);
 

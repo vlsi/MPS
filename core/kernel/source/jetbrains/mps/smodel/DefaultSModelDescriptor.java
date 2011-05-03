@@ -40,14 +40,12 @@ import java.util.Map;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
-  private static final String VERSION = "version";
-  private static final String DO_NOT_GENERATE = "doNotGenerate";
 
   private Map<String, String> myMetadata;
+  private SModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
-  private int myPersistenceVersion = -1;
 
   private long myLastChange;
 
@@ -79,7 +77,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
     super(manager, modelReference, checkDup);
     myModelFile = modelFile;
-    myPersistenceVersion = d.getPersistenceVersion();
+    myHeader = d.getHeader();
     myMetadata = d.getMetadata();
     updateLastChange();
   }
@@ -154,7 +152,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
 
     DescriptorLoadResult dr = ModelPersistence.loadDescriptor(modelFile);
-    myPersistenceVersion = dr.getPersistenceVersion();
+    myHeader = dr.getHeader();
     myMetadata = dr.getMetadata();
 
     if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
@@ -166,7 +164,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public int getPersistenceVersion() {
-    return myPersistenceVersion;
+    return getSModelHeader().getPersistenceVersion();
   }
 
   @NotNull
@@ -273,12 +271,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   @Override
   public void setDoNotGenerate(boolean value) {
-    setAttribute(DO_NOT_GENERATE, "" + value);
+    setAttribute(SModelHeader.DO_NOT_GENERATE, "" + value);
   }
 
   @Override
   public boolean isDoNotGenerate() {
-    return Boolean.parseBoolean(getAttribute(DO_NOT_GENERATE));
+    return Boolean.parseBoolean(getAttribute(SModelHeader.DO_NOT_GENERATE));
   }
 
   private void replaceModel(SModel newModel, ModelLoadingState state) {
@@ -336,12 +334,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
   }
 
+  public SModelHeader getSModelHeader() {
+    SModel model = mySModel;
+    if(model != null) {
+      return model.getSModelHeader();
+    }
+    return myHeader;
+  }
+
   public Map<String, String> getMetaData() {
     return Collections.unmodifiableMap(myMetadata);
   }
 
   public int getVersion() {
-    String attributeValue = getAttribute(VERSION);
+    String attributeValue = getAttribute(SModelHeader.VERSION);
     if (attributeValue == null) return -1;
     try {
       return Integer.parseInt(attributeValue);
@@ -351,7 +357,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public void setVersion(int newVersion) {
-    setAttribute(VERSION, "" + newVersion);
+    setAttribute(SModelHeader.VERSION, "" + newVersion);
   }
 
   protected void checkModelDuplication() {

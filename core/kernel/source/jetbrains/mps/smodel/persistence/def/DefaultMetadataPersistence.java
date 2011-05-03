@@ -61,10 +61,10 @@ public class DefaultMetadataPersistence {
       return result;
     } catch (IOException e) {
       LOG.error("Was not able to load metadata. File: " + file.getPath() + ". Assuming there's no metadata for this model.", e);
-      return new HashMap<String, String>();
+      return null;
     } catch (JDOMException e) {
       LOG.error("Metadata file corrupted. File: " + file.getPath() + ". Assuming there's no metadata for this model.", e);
-      return new HashMap<String, String>();
+      return null;
     }
   }
 }

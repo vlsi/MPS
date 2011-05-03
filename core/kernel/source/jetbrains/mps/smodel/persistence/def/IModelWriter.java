@@ -16,9 +16,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
 import org.jdom.Document;
-import org.jdom.Element;
 
 public interface IModelWriter {
   Document saveModel(SModel sourceModel);

@@ -15,32 +15,41 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import jetbrains.mps.smodel.SModelHeader;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class DescriptorLoadResult {
-  private String myUID = null;
-  private int myPersistenceVersion = ModelPersistence.getCurrentPersistenceVersion();
+  private final SModelHeader myHeader = new SModelHeader();
   private Map<String, String> myMetadata = new HashMap<String, String>();
 
   public void setUID(String UID) {
-    myUID = UID;
+    myHeader.setUID(UID);
   }
 
   public void setPersistenceVersion(int persistenceVersion) {
-    myPersistenceVersion = persistenceVersion;
+    myHeader.setPersistenceVersion(persistenceVersion);
   }
 
   public void setMetadata(Map<String, String> metadata) {
     myMetadata = metadata;
   }
 
-  public String getUID() {
-    return myUID;
+  public void setVersion(int version) {
+    myHeader.setVersion(version);
   }
 
-  public int getPersistenceVersion() {
-    return myPersistenceVersion;
+  public void setDoNotGenerate(boolean doNotGenerate) {
+    myHeader.setDoNotGenerate(doNotGenerate);
+  }
+
+  public String getUID() {
+    return myHeader.getUID();
+  }
+
+  public SModelHeader getHeader() {
+    return myHeader;
   }
 
   public Map<String,String> getMetadata() {

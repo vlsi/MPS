@@ -70,18 +70,18 @@ public class PersistenceUpdater {
     for (SModelDescriptor modelDescriptor : scopeModelDescriptors) {
       if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
-      int version = -1;
+      int persistenceVersion = -1;
       if (modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) {
-        version = modelDescriptor.getSModel().getPersistenceVersion();
+        persistenceVersion = modelDescriptor.getSModel().getPersistenceVersion();
       } else {
         if (modelDescriptor instanceof EditableSModelDescriptor) {
           IFile file = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
           if (file != null) {
-            version = ModelPersistence.loadDescriptor(file).getPersistenceVersion();
+            persistenceVersion = ModelPersistence.loadDescriptor(file).getHeader().getPersistenceVersion();
           }
         }
       }
-      if (version != -1 && version < PersistenceSettings.MAX_VERSION) {
+      if (persistenceVersion != -1 && persistenceVersion < PersistenceSettings.MAX_VERSION) {
         modelDescriptors.add((EditableSModelDescriptor) modelDescriptor);
       }
     }

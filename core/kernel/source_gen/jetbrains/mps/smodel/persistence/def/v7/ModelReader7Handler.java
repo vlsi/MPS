@@ -16,6 +16,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
+import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
@@ -180,6 +181,14 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       BaseSModelDescriptor.ModelLoadResult result = (BaseSModelDescriptor.ModelLoadResult) resultObject;
       if ("modelUID".equals(name)) {
+        return;
+      }
+      if ("version".equals(name)) {
+        fieldmodel.getSModelHeader().setVersion(AttributeUtils.integerWithDefault(value, -1));
+        return;
+      }
+      if ("doNotGenerate".equals(name)) {
+        fieldmodel.getSModelHeader().setDoNotGenerate(AttributeUtils.booleanWithDefault(value, false));
         return;
       }
       super.handleAttribute(resultObject, name, value);
