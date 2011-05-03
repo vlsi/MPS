@@ -63,7 +63,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.NodeMaps" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

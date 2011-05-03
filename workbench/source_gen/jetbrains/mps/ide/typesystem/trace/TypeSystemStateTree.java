@@ -23,18 +23,17 @@ import java.util.Collections;
 import java.util.Comparator;
 import javax.swing.JPopupMenu;
 import jetbrains.mps.workbench.action.BaseAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
-import jetbrains.mps.util.Pair;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.util.Pair;
 
 public class TypeSystemStateTree extends MPSTree implements DataProvider {
   private IOperationContext myOperationContext;
@@ -157,18 +156,9 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
-    BaseAction goToRule = null;
     BaseAction goToNode = null;
     final TypeSystemStateTreeNode stateNode = (TypeSystemStateTreeNode) treeNode;
-    if (stateNode.getRuleModel() != null && stateNode.getRuleId() != null) {
-      goToRule = new BaseAction("Go to rule") {
-        public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(stateNode.getRuleModel(), stateNode.getRuleId()));
-
-        }
-      };
-    }
-    final DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.devkit.actions.GoToRule_Action"), goToNode);
+    final DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"), goToNode);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         NodeMaps maps = myState.getNodeMaps();
@@ -177,7 +167,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           return;
         }
         for (SNode var : vars) {
-          final SNode node = check_x8yvv7_a0a0d0a0a0a0f0i(maps, var);
+          final SNode node = check_x8yvv7_a0a0d0a0a0a0d0i(maps, var);
           if (node != null && node.isRegistered()) {
             group.add(new BaseAction("Go to node with type " + var) {
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
@@ -208,7 +198,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static SNode check_x8yvv7_a0a0d0a0a0a0f0i(NodeMaps checkedDotOperand, SNode var) {
+  private static SNode check_x8yvv7_a0a0d0a0a0a0d0i(NodeMaps checkedDotOperand, SNode var) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(var);
     }

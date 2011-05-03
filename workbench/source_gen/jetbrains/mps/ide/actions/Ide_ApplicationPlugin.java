@@ -58,6 +58,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FoldSelection_Action());
     addAction(new GoByCurrentReference_Action());
     addAction(new GoToNodeById_Action());
+    addAction(new GoToNode_Action());
+    addAction(new GoToRule_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new MPSProjectPaths_Action());
@@ -224,6 +226,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
+    ListSequence.fromList(res).addElement(new TraceActions_KeymapChanges());
     return res;
   }
 }

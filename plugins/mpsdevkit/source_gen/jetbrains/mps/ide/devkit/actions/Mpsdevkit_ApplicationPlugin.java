@@ -48,8 +48,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GeneratorProperties_Action());
     addAction(new GoToConceptDeclaration_Action());
     addAction(new GoToEditorDeclaration_Action());
-    addAction(new GoToNode_Action());
-    addAction(new GoToRule_Action());
     addAction(new GoToRules_Action());
     addAction(new GoToUsageInMappingConfig_Action());
     addAction(new HighlightCellDependencies_Action());

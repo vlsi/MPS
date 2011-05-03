@@ -22,6 +22,7 @@
   <unitInfo fileName="TransientModulesActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup" />
   <unitInfo fileName="CreateRootNode_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
   <unitInfo fileName="FileSystemNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.FileSystemNewActions_ActionGroup" />
+  <unitInfo fileName="TraceActions_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.actions.TraceActions_KeymapChanges" />
   <unitInfo fileName="NamespaceMakeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup" />
   <unitInfo fileName="NamespaceActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceActions_ActionGroup" />
   <unitInfo fileName="ModuleActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleActions_ActionGroup" />
@@ -64,6 +65,8 @@
   <unitInfo fileName="DevkitActions_ActionGroup.java" startLine="11" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
   <unitInfo fileName="RemoveTransientModels_Action.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
   <unitInfo fileName="AddMissingImports_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.actions.AddMissingImports_Action" />
+  <unitInfo fileName="GoToRule_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToRule_Action" />
+  <unitInfo fileName="GoToNode_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNode_Action" />
   <unitInfo fileName="SetBookmarkNoNumber_Action.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action" />
   <unitInfo fileName="ShowModuleDependencies_Action.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModuleDependencies_Action" />
   <unitInfo fileName="AnalyzeClasspath_Action.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeClasspath_Action" />
@@ -162,7 +165,7 @@
   <unitInfo fileName="LanguageActions_ActionGroup.java" startLine="11" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
   <unitInfo fileName="NewModel_Action.java" startLine="29" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModel_Action" />
   <unitInfo fileName="GoByCurrentReference_Action.java" startLine="35" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action" />
-  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
+  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
   <root nodeId="1204991215587">
     <nodeInfo nodeId="1215882221908" fileName="NodeActions_ActionGroup.java" startLine="26" startPosition="9" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2268726300190761975" fileName="NodeActions_ActionGroup.java" startLine="27" startPosition="90" endLine="28" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1673,6 +1676,12 @@
     <scopeInfo nodeId="1366781238034273702" fileName="LanguageNewActions_ActionGroup.java" startLine="23" startPosition="7" endLine="27" endPosition="62" />
     <scopeInfo nodeId="1366781238034273692" fileName="LanguageNewActions_ActionGroup.java" startLine="30" startPosition="7" endLine="34" endPosition="62" />
     <scopeInfo nodeId="1366781238034273704" fileName="LanguageNewActions_ActionGroup.java" startLine="38" startPosition="7" endLine="42" endPosition="62" />
+  </root>
+  <root nodeId="1382572689121738513">
+    <nodeInfo nodeId="1382572689121738518" fileName="GoToNode_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="1382572689121738536">
+    <nodeInfo nodeId="1382572689121738539" fileName="GoToRule_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1420252515663895912">
     <nodeInfo nodeId="5500129768599897757" fileName="NewSubModel_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

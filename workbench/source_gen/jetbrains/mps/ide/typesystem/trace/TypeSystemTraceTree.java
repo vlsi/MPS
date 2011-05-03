@@ -245,7 +245,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
-    DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.devkit.actions.GoToNode_Action"), ActionManager.getInstance().getAction("jetbrains.mps.ide.devkit.actions.GoToRule_Action"));
+    DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"), ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
