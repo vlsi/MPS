@@ -39,7 +39,6 @@
     <node type="tp4k.PreferencesComponentDeclaration" typeId="tp4k.1210179134063" id="2617013732192775193">
       <property name="name" nameId="tpck.1169194664001" value="ProgramsLocationComponent" />
     </node>
-    <node type="tp4k.DebugInfoInitializer" typeId="tp4k.5124230653299345208" id="4211204866430906520" />
     <node type="tp4k.RunConfigurationDeclaration" typeId="tp4k.7035278950562851062" id="3434145137065387923">
       <property name="name" nameId="tpck.1169194664001" value="SourceNanocConfiguration" />
       <property name="caption" nameId="tp4k.678887849223472623" value="Nanoc Source File" />
@@ -229,11 +228,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="4211204866430906520">
-    <node role="conceptsToDebug" roleId="tp4k.5124230653299370499" type="tp4k.DebuggableNodeItem" typeId="tp4k.5124230653299542673" id="4211204866430906521">
-      <link role="declaration" roleId="tp4k.5124230653299542674" targetNodeId="i1tc.7211731935130582982" resolveInfo="CStatement" />
     </node>
   </root>
   <root id="3434145137065387923">
