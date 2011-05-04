@@ -352,12 +352,12 @@ public class EquationManager {
       NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(supertypeNodeWrapper.getNode()), this);
       supertypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
-
+              /*
     // if subtyping
     if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak)) {
       return;
     }
-
+                                      */
     IErrorReporter errorReporter;
     String errorString = equationInfo.getErrorString();
     String ruleModel = equationInfo.getRuleModel();
@@ -455,9 +455,9 @@ public class EquationManager {
     }
 
     // if subtype or supertype
-    if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2, this, errorInfo, isWeak)) {
+ /*   if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2, this, errorInfo, isWeak)) {
       return;
-    }
+    } Deprecate
     if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator1.getNode(), representator2.getNode(), true)) {
       return;
     }
@@ -469,7 +469,7 @@ public class EquationManager {
     }
     if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1, this, errorInfo, isWeak)) {
       return;
-    }
+    }             */
 
     String ruleModel = errorInfo.getRuleModel();
     String ruleId = errorInfo.getRuleId();

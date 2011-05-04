@@ -48,244 +48,11 @@ public abstract class SubtypingManager {
 
   //api
 
-  public boolean isSubtype(SNode subtype, SNode supertype) {
-    return isSubtype(subtype, supertype, true);
-  }
-
-  @Deprecated
-  public boolean isSubtype(SNode subtype, SNode superType, boolean processVariables, boolean isWeak) {
-    return isSubtype(subtype, superType, isWeak);
-  }
+  public abstract  boolean isSubtype(SNode subtype, SNode supertype);
 
   //api
 
-  public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
-    if (subtype == supertype) return true;
-    if (subtype == null || supertype == null) return false;
-
-    if (isSubtypeByReplacementRules(subtype, supertype, isWeak)) return true;
-
-    return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null, true),
-      NodeWrapper.createWrapperFromNode(supertype, null, true), null, null, isWeak);
-  }
-
-  boolean isSubtypeByReplacementRules(SNode subtype, SNode supertype, boolean isWeak) {
-    List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
-    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequationReplacementRule : inequationReplacementRules) {
-      if (inequationReplacementRule.o1.checkInequation(subtype, supertype, new EquationInfo(null, null), inequationReplacementRule.o2, true, isWeak)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, EquationInfo errorInfo) {
-    return isSubtype(subtype, supertype, equationManager, errorInfo, true);
-  }
-
-  /**
-   * may produce side effects, such as creating new type equations
-   */
-  public boolean isSubtype(final IWrapper subtype, final IWrapper supertype, @Nullable final EquationManager equationManager, @Nullable final EquationInfo errorInfo, final boolean isWeak) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        IWrapper subRepresentator = subtype;
-        IWrapper superRepresentator = supertype;
-        if (equationManager != null) {
-          subRepresentator = equationManager.getRepresentatorWrapper(subtype);
-          superRepresentator = equationManager.getRepresentatorWrapper(supertype);
-        }
-
-        //reflexivity:
-        if (subRepresentator == superRepresentator) return true;
-        if (subRepresentator == null || superRepresentator == null) return false;
-
-        if (superRepresentator.matchesWith(subRepresentator, equationManager, errorInfo)) {
-          return true;
-        }
-
-        // transitivity:
-        return isStrictSubtype(subRepresentator, superRepresentator, equationManager, errorInfo, isWeak);
-      }
-    });
-  }
-
-  /**
-   * may produce side effects, such as creating new type equations
-   */
-  private boolean isStrictSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
-    IWrapper subRepresentator = subtype;
-    IWrapper superRepresentator = supertype;
-    if (equationManager != null) {
-      subRepresentator = equationManager.getRepresentatorWrapper(subtype);
-      superRepresentator = equationManager.getRepresentatorWrapper(supertype);
-    }
-
-    //joins
-    if (superRepresentator instanceof NodeWrapper) {
-      SNode node = superRepresentator.getNode();
-      if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isJoin(node)) {
-        for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getJoinArguments(node)) {
-          if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager, true))) {
-            if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument, isWeak)) {
-              return true;
-            }
-          }
-          if (isSubtype(subRepresentator, NodeWrapper.createWrapperFromNode(argument, equationManager, true), equationManager, errorInfo, isWeak)) {
-            return true;
-          }
-        }
-      }
-    }
-
-
-    if (subRepresentator instanceof NodeWrapper) {
-      SNode node = subRepresentator.getNode();
-
-      //meets
-      if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isMeet(node)) {
-        boolean replacementAllowed = equationManager == null || equationManager.isConcrete(superRepresentator);
-        for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(node)) {
-          if (replacementAllowed) {
-            if (isSubtypeByReplacementRules(argument, superRepresentator.getNode(), isWeak)) {
-              return true;
-            }
-          }
-          if (isSubtype(NodeWrapper.createWrapperFromNode(argument, equationManager, true), superRepresentator, equationManager, errorInfo, isWeak)) {
-            return true;
-          }
-        }
-      }
-
-      //supertypes
-      if (searchInSupertypes((NodeWrapper) subRepresentator, superRepresentator, equationManager, errorInfo, isWeak))
-        return true;
-    }
-
-    return false;
-  }
-
-
-  private boolean searchInSupertypes(NodeWrapper subRepresentator, IMatcher superRepresentator, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
-
-    if (subRepresentator == null) {
-      return false;
-    }
-
-    //asking a cache
-    Boolean answer = getCacheAnswer(subRepresentator, superRepresentator, isWeak);
-    if (answer != null) {
-      return answer;
-    }
-
-    StructuralNodeSet<?> frontier = new StructuralNodeSet();
-    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
-    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
-    frontier.add(subRepresentator.getNode());
-    while (!frontier.isEmpty()) {
-      Set<SNode> yetPassedRaw = new THashSet<SNode>();
-
-      //collecting a set of frontier's ancestors
-      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
-      for (SNode node : frontier) {
-        collectImmediateSupertypes_internal(node, isWeak, ancestors, equationManager, superRepresentator.getConceptFQName());
-        yetPassedRaw.add(node);
-        //    yetPassed.add(node);
-      }
-      /*   for (SNode passedNode : yetPassed) {
-        ancestors.removeStructurally(passedNode);
-      }*/
-      ArrayList<SNode> ancestorsSorted;
-      ancestorsSorted = new ArrayList<SNode>(ancestors);
-      Collections.sort(ancestorsSorted, new Comparator<SNode>() {
-        public int compare(SNode o1, SNode o2) {
-          return SNodeOperations.depth(o2) - SNodeOperations.depth(o1);
-        }
-      });
-      //searching the frontier's ancestors
-      Pair<SubtypingManager, Map<SNode, Set<SNode>>> matchParameter = new Pair<SubtypingManager, Map<SNode, Set<SNode>>>(this, new THashMap<SNode, Set<SNode>>());
-      boolean wasMatch = false;
-      for (SNode ancestor : ancestorsSorted) {
-        //performing a match with a "hack" parameter containing a "secret" map inside
-        if (superRepresentator.matchesWith(NodeWrapper.createWrapperFromNode(ancestor, equationManager),
-          equationManager, errorInfo, matchParameter)) {
-          if (matchParameter.o2.keySet().isEmpty()) { //no vars in superRepresentator!
-            addToCache(subRepresentator, superRepresentator, true, isWeak);
-            return true;
-          } else {
-            wasMatch = true;
-          }
-        }
-      }
-      if (wasMatch) {  //there were vars, some may be supposed to be equated with several different types;
-        // then we should equate them with a most specific type. if there's is no unique one then we choose a random one
-        Map<SNode, Set<SNode>> mapWithVars = matchParameter.o2;
-        Set<Pair<SNode, SNode>> childEqs = new THashSet<Pair<SNode, SNode>>();
-        for (SNode var : mapWithVars.keySet()) {
-          childEqs.add(new Pair<SNode, SNode>(var, mostSpecificTypes(mapWithVars.get(var)).iterator().next()));
-        }
-        if (equationManager != null) {
-          equationManager.addChildEquations(childEqs, errorInfo);
-        }
-        return true;
-      }
-
-      //new:
-      for (SNode passedNodeRaw : yetPassedRaw) {
-        yetPassed.add(passedNodeRaw);
-      }
-      for (SNode passedNode : yetPassed) {
-        ancestors.removeStructurally(passedNode);
-      }
-
-      newFrontier.addAllStructurally(ancestors);
-      yetPassed.addAllStructurally(ancestors);
-      frontier = newFrontier;
-      newFrontier = new StructuralNodeSet();
-    }
-    addToCache(subRepresentator, superRepresentator, false, isWeak);
-    return false;
-  }
-
-  private Boolean getCacheAnswer(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean isWeak) {
-    SubtypingCache cache = myTypeChecker.getSubtypingCache();
-    if (cache != null) {
-      if (superRepresentator instanceof NodeWrapper) {
-        Boolean answer = cache.getAnswer(subRepresentator.getNode(), ((NodeWrapper) superRepresentator).getNode(), isWeak);
-        if (answer != null) {
-          return answer;
-        }
-      }
-    }
-    cache = myTypeChecker.getGlobalSubtypingCache();
-    if (cache != null) {
-      if (superRepresentator instanceof NodeWrapper) {
-        Boolean answer = cache.getAnswer(subRepresentator.getNode(), ((NodeWrapper) superRepresentator).getNode(), isWeak);
-        if (answer != null) {
-          return answer;
-        }
-      }
-    }
-    return null;
-  }
-
-  private void addToCache(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean answer, boolean isWeak) {
-    // if (myTypeChecker.isGenerationMode()) {
-    SubtypingCache cache = myTypeChecker.getSubtypingCache();
-    if (cache != null) {
-      if (superRepresentator instanceof NodeWrapper) {
-        cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper) superRepresentator).getNode(), answer, isWeak);
-      }
-    }
-
-    cache = myTypeChecker.getGlobalSubtypingCache();
-    if (cache != null) {
-      if (superRepresentator instanceof NodeWrapper) {
-        cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper) superRepresentator).getNode(), answer, isWeak);
-      }
-    }
-    // }
-  }
+  public abstract boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak);
 
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
     return collectImmediateSupertypes(term, true);
@@ -370,7 +137,7 @@ public abstract class SubtypingManager {
     return lcss.iterator().next();
   }
 
-  public static Set<IWrapper> toWrappers(Set<SNode> nodes, final EquationManager equationManager) {
+  private static Set<IWrapper> toWrappers(Set<SNode> nodes, final EquationManager equationManager) {
     Set<IWrapper> result = new THashSet<IWrapper>();
     for (SNode sNode : nodes) {
       result.add(NodeWrapper.fromNode(sNode, equationManager));
@@ -379,7 +146,7 @@ public abstract class SubtypingManager {
     return result;
   }
 
-  public static Set<SNode> toNodes(Set<IWrapper> wrappers) {
+  private static Set<SNode> toNodes(Set<IWrapper> wrappers) {
     Set<SNode> result = new THashSet<SNode>();
     for (IWrapper wrapper : wrappers) {
       result.add(wrapper.getNode());
@@ -561,32 +328,6 @@ System.out.println("alltypes = " + allTypes);*/
     result_.add(jetbrains.mps.typesystemEngine.util.LatticeUtil.meet(commonSupertypes));
 
     return result_; //commonSupertypes;
-  }
-
-  public boolean isComparableWRTRules(IWrapper wrapper1, IWrapper wrapper2, EquationManager equationManager, EquationInfo errorInfo, boolean isWeak) {
-    if (wrapper1 == null || wrapper2 == null) {
-      return false;
-    }
-    SNode term1 = wrapper1.getNode();
-    SNode term2 = wrapper2.getNode();
-    if (term1 == null || term2 == null) {
-      return false;
-    }
-
-    List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term1, term2, isWeak);
-    if (comparisonRule_runtimes != null) {
-      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(term1, term2, comparisonRule_runtime.o2)) return true;
-      }
-    }
-    comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term2, term1, isWeak);
-    if (comparisonRule_runtimes != null) {
-      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(term2, term1, comparisonRule_runtime.o2)) return true;
-      }
-    }
-
-    return false;
   }
 
   public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
