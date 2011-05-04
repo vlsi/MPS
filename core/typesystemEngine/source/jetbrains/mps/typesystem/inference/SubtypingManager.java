@@ -49,54 +49,12 @@ public abstract class SubtypingManager {
   //api
 
   public abstract  boolean isSubtype(SNode subtype, SNode supertype);
-
-  //api
-
   public abstract boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak);
 
-  public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
-    return collectImmediateSupertypes(term, true);
-  }
+  public abstract StructuralNodeSet<?> collectImmediateSupertypes(SNode term);
+  public abstract StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak);
 
-  public StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak) {
-    StructuralNodeSet result = new StructuralNodeSet();
-    collectImmediateSupertypes_internal(term, isWeak, result, null, null);
-    return result;
-  }
-
-  private void collectImmediateSupertypes_internal(final SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager, String supertypeConceptFQName) {
-    if (term == null) {
-      return;
-    }
-    List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
-    /* boolean possiblyBlindAlley = false;
-    if (supertypeConceptFQName != null && !(supertypeConceptFQName.equals(term.getConceptFqName()))) {
-      possiblyBlindAlley = myTypeChecker.getRulesManager().subtypingRulesByNodeAreAllByConcept(term, isWeak);
-    }*/
-    if (subtypingRule_runtimes != null) {
-      for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
-        /*    if (possiblyBlindAlley && subtypingRule.o1.surelyKeepsConcept()) {
-          //skip a rule, it will give us nothing
-          continue;
-        }*/
-        final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
-        List<SNode> supertypes = ModelChange.freezeAndCompute(term, new Computable<List<SNode>>() {
-          public List<SNode> compute() {
-            return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
-              @Override
-              public List<SNode> compute() {
-                return subtypingRule.o1.getSubOrSuperTypes(term, tcContext, subtypingRule.o2);
-              }
-            });
-          }
-        });
-        result.addAll(supertypes);
-      }
-    }
-  }
-
-
-  public StructuralWrapperSet collectImmediateSupertypes(IWrapper term, boolean isWeak) {
+  private StructuralWrapperSet collectImmediateSupertypes(IWrapper term, boolean isWeak) {
     StructuralWrapperSet result = new StructuralWrapperSet();
     if (term == null) {
       return result;
@@ -136,28 +94,9 @@ public abstract class SubtypingManager {
     }
     return lcss.iterator().next();
   }
-
-  private static Set<IWrapper> toWrappers(Set<SNode> nodes, final EquationManager equationManager) {
-    Set<IWrapper> result = new THashSet<IWrapper>();
-    for (SNode sNode : nodes) {
-      result.add(NodeWrapper.fromNode(sNode, equationManager));
-
-    }
-    return result;
-  }
-
-  private static Set<SNode> toNodes(Set<IWrapper> wrappers) {
-    Set<SNode> result = new THashSet<SNode>();
-    for (IWrapper wrapper : wrappers) {
-      result.add(wrapper.getNode());
-    }
-    return result;
-  }
-
   public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
     return toNodes(leastCommonSupertypesWrappers(toWrappers(types, null), isWeak));
   }
-
   private Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
     if (types.size() == 1) return new THashSet<IWrapper>(types);
 
@@ -264,7 +203,6 @@ System.out.println("alltypes = " + allTypes);*/
 
     return result;
   }
-
   private StructuralWrapperSet leastCommonSupertypes(final IWrapper a, final IWrapper b, final StructuralWrapperMap<StructuralWrapperSet<Integer>> subTypesToSuperTypes, boolean isWeak) {
     // System.err.println("lcs inner, types are: " + PresentationManager.toString(a) + " , " + PresentationManager.toString(b));
     StructuralWrapperSet result = new StructuralWrapperSet();
@@ -357,5 +295,21 @@ System.out.println("alltypes = " + allTypes);*/
       }
     }
     return residualNodes;
+  }
+
+  private static Set<IWrapper> toWrappers(Set<SNode> nodes, final EquationManager equationManager) {
+    Set<IWrapper> result = new THashSet<IWrapper>();
+    for (SNode sNode : nodes) {
+      result.add(NodeWrapper.fromNode(sNode, equationManager));
+
+    }
+    return result;
+  }
+  private static Set<SNode> toNodes(Set<IWrapper> wrappers) {
+    Set<SNode> result = new THashSet<SNode>();
+    for (IWrapper wrapper : wrappers) {
+      result.add(wrapper.getNode());
+    }
+    return result;
   }
 }

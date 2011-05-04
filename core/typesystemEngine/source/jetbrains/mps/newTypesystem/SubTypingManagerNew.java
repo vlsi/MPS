@@ -58,7 +58,6 @@ public class SubTypingManagerNew extends SubtypingManager {
     return isSubtype(subtype, supertype, true);
   }
 
-  @Override
   public boolean isSubtype(SNode subType, SNode superType, boolean isWeak) {
     if (null == subType || null == superType) {
       return false;
@@ -184,6 +183,14 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
+  public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
+    return collectImmediateSupertypes(term, true);
+  }
+  public StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak) {
+    StructuralNodeSet result = new StructuralNodeSet();
+    collectImmediateSuperTypes(term, isWeak, result, null);
+    return result;
+  }
 
   private void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
     if (term == null) {
@@ -349,7 +356,6 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
     return false;
   }
-
 
   public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
     return myCoercionManager.coerceSubTypingNew(subtype, pattern, isWeak, state);
