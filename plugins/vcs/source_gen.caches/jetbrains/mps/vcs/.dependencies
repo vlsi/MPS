@@ -69,11 +69,12 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelLoadingState" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DescriptorLoadResult" />
     <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="java.lang.Comparable" />

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.test;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -24,10 +25,11 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -35,6 +37,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * Evgeny Gryaznov, 10/18/10
  */
 public class TestModule extends AbstractModule {
+
+  private static final Logger LOG = Logger.getLogger(TestModule.class);
 
   private IModule myPeer;
   private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
@@ -179,10 +183,17 @@ public class TestModule extends AbstractModule {
 
     @Override
     protected ModelLoadResult initialLoad() {
-      Document document = ModelPersistence.saveModel(myToCopy, ModelPersistence.getCurrentPersistenceVersion());
+      Document document = ModelPersistence.saveModel(myToCopy);
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
-      SModel result = ModelPersistence.readModel(document, NameUtil.shortNameFromLongName(myToCopy.getLongName()), myToCopy.getStereotype());
+      SModel result;
+      try {
+        String modelContent = JDOMUtil.asString(document);
+        result = ModelPersistence.readModel(modelContent, false);
+      } catch(IOException e) {
+        LOG.error(e);
+        result = new StubModel(getSModelReference());
+      }
       result.setLoading(true);
       return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
     }

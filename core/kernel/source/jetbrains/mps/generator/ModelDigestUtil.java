@@ -20,7 +20,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.xml.sax.InputSource;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -57,8 +56,7 @@ public class ModelDigestUtil {
   }
 
   public static Map<String, String> getDigestMap(byte[] modelBytes) {
-    int persistenceVersion = ModelPersistence.getPersistenceVersion(new InputSource(new ByteArrayInputStream(modelBytes)));
-    return ModelPersistence.calculateHashes(modelBytes, persistenceVersion);
+    return ModelPersistence.calculateHashes(modelBytes);
   }
 
   public static String hash(IFile file) {

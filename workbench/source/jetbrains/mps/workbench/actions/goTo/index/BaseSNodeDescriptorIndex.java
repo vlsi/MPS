@@ -78,7 +78,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     if (model == null) {
       //todo only roots loading
       IFile file = new IdeaFileSystemProvider().getFile(inputData.getFile());
-      model = ModelPersistence.readModel(file, ModelLoadingState.FULLY_LOADED).getModel();
+      model = ModelPersistence.readModel(file, false);
       model.setLoading(true);
       inputData.putUserData(PARSED_MODEL, model);
     }

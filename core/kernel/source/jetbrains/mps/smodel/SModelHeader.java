@@ -59,4 +59,14 @@ public class SModelHeader {
   public String getUID() {
     return myUID;
   }
+
+  public SModelReference getModelReference() {
+    return myUID != null ? SModelReference.fromString(myUID) : null;
+  }
+
+  public static SModelHeader create(int persistenceVersion) {
+    SModelHeader header = new SModelHeader();
+    header.setPersistenceVersion(persistenceVersion);
+    return header;
+  }
 }

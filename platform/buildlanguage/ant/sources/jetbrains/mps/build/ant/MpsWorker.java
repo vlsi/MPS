@@ -42,6 +42,7 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
@@ -429,13 +430,16 @@ public abstract class MpsWorker {
 
     // if model is not loaded, read it
     try {
-      SModel smodel = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        public SModel compute() {
-          return ModelPersistence.readModel(ifile);
-        }
-      });
-      info("Read model " + smodel);
-      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, smodel.getSModelReference());
+      DescriptorLoadResult dr = ModelPersistence.loadDescriptor(ifile);
+      SModelReference modelReference;
+      if (dr.getUID() != null) {
+        modelReference = SModelReference.fromString(dr.getUID());
+      } else {
+        modelReference = SModelReference.fromPath(ifile.getPath());
+      }
+
+      info("Read model " + modelReference);
+      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, modelReference);
       modelDescriptors.add(smodelDescriptor);
     } catch (ModelFileReadException e) {
       log(e);

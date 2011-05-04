@@ -24,9 +24,6 @@ import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
 import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.smodel.SModelDescriptor;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
-import java.io.StringReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -80,13 +77,12 @@ public class VcsActionsHelper {
     }
   }
 
-  public static SModel loadModel(String modelContent, final SModelDescriptor model) {
+  public static SModel loadModel(final String modelContent, SModelDescriptor model) {
     try {
-      final Document document = JDOMUtil.loadDocument(new StringReader(modelContent));
       final Wrappers._T<SModel> sModel = new Wrappers._T<SModel>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          sModel.value = ModelPersistence.readModel(document, model.getLongName(), model.getStereotype());
+          sModel.value = ModelPersistence.readModel(modelContent, false);
         }
       });
       return sModel.value;

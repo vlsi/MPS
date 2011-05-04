@@ -81,7 +81,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     ModelLoadResult result;
     try {
-      result = ModelPersistence.readModel(dsm.getPersistenceVersion(), dsm.getModelFile(), state);
+      result = ModelPersistence.readModel(dsm.getSModelHeader(), dsm.getModelFile(), state);
       if (result.getState() == ModelLoadingState.NOT_LOADED) {
         // TODO this is a temporary fix to enable invoking merge dialog for model with wrong markup
         if (state != ModelLoadingState.NOT_LOADED) {

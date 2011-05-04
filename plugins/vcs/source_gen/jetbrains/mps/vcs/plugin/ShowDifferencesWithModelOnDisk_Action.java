@@ -77,7 +77,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SModel memory = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")).getSModel();
-      final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).getModelFile());
+      final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).getModelFile(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           if (ModelDifferenceDialog.isNewDiffEnabled()) {

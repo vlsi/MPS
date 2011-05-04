@@ -26,11 +26,11 @@ import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vcs.Version;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import junit.framework.AssertionFailedError;
@@ -72,7 +72,7 @@ public class PersistenceTest extends BaseMPSTest {
                   } finally {
                     filter.stop();
                   }
-                  ModelLoadResult result = ModelPersistence.readModel(i, file, ModelLoadingState.FULLY_LOADED);
+                  ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(i), file, ModelLoadingState.FULLY_LOADED);
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                   ModelAssert.assertDeepModelEquals(model, result.getModel());
                   result.getModel().dispose();
@@ -122,7 +122,7 @@ public class PersistenceTest extends BaseMPSTest {
 
               final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                 public ModelLoadResult compute() {
-                  ModelLoadResult result = ModelPersistence.readModel(version[0], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                  ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                   return result;
                 }
@@ -135,7 +135,7 @@ public class PersistenceTest extends BaseMPSTest {
 
               final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                 public ModelLoadResult compute() {
-                  ModelLoadResult result = ModelPersistence.readModel(version[1], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                  ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                   ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
                   return result;

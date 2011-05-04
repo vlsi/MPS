@@ -117,4 +117,20 @@ public final class SModelReference {
   public boolean differs(SModelReference ref) {
     return !(ObjectUtils.equals(myModelId, ref.myModelId) && ObjectUtils.equals(myModelFqName, ref.myModelFqName));
   }
+
+  public static SModelReference fromPath(String path) {
+    int index = Math.max(path.lastIndexOf("/"), path.lastIndexOf("\\"));
+    String shortName = index == -1 ? path : path.substring(index + 1);
+    index = shortName.lastIndexOf('.');
+    String modelName = index >= 0 ? shortName.substring(0, index) : shortName;
+    String stereotype;
+    index = modelName.indexOf('@');
+    if(index >= 0) {
+      stereotype = modelName.substring(index+1);
+      modelName = modelName.substring(0, index);
+    } else {
+      stereotype = "";
+    }
+    return new SModelReference(modelName, stereotype);
+  }
 }

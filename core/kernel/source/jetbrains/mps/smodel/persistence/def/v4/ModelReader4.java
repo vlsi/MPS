@@ -60,7 +60,7 @@ public class ModelReader4 implements IModelReader {
     return 4;
   }
 
-  public SModel readModel(Document document, String modelShortName, String stereotype) {
+  public SModel readModel(Document document) {
     SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 

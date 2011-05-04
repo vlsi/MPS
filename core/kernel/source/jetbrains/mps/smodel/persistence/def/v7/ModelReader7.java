@@ -42,7 +42,7 @@ public class ModelReader7 implements IModelReader {
     return 7;
   }
 
-  public SModel readModel(Document document, String modelShortName, String stereotype) {
+  public SModel readModel(Document document) {
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));

@@ -16,11 +16,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
-import org.jdom.Element;
 
 /**
  * Igor Alshannikov
@@ -29,5 +25,5 @@ import org.jdom.Element;
 public interface IModelReader {
   int getVersion();
 
-  SModel readModel(Document document, String modelShortName, String stereotype);
+  SModel readModel(Document document);
 }

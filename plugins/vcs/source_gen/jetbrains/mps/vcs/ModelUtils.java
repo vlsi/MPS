@@ -26,6 +26,7 @@ import java.io.ByteArrayInputStream;
 import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.util.Ref;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -40,7 +41,7 @@ public class ModelUtils {
   public static byte[] modelToBytes(final SModel result) {
     Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
       public Document compute() {
-        return ModelPersistence.saveModel(result, result.getPersistenceVersion());
+        return ModelPersistence.saveModel(result);
       }
     });
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -161,26 +162,16 @@ public class ModelUtils {
   }
 
   private static SModel readModel(final ModelUtils.InputSourceFactory inputSourceFactory, String path) throws IOException {
-    int index = path.lastIndexOf("/");
-    String shortName = path;
-    if (index != -1) {
-      shortName = path.substring(index + 1);
-    }
-    index = shortName.lastIndexOf("\\");
-    if (index != -1) {
-      shortName = shortName.substring(index + 1);
-    }
-    final String modelName = ModelPersistence.extractModelName(shortName);
-    final String modelStereotype = ModelPersistence.extractModelStereotype(shortName);
     try {
       if (inputSourceFactory == null) {
-        return new SModel(SModelReference.fromString(modelName + "@" + modelStereotype));
+        return new SModel(SModelReference.fromPath(path));
       }
       final Ref<IOException> ex = new Ref<IOException>();
       SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
         public SModel compute() {
           try {
-            return ModelPersistence.readModel(ModelPersistence.getPersistenceVersion(inputSourceFactory.create()), inputSourceFactory.create(), modelName, modelStereotype, ModelLoadingState.FULLY_LOADED).getModel();
+            DescriptorLoadResult loadResult = ModelPersistence.loadDescriptor(inputSourceFactory.create());
+            return ModelPersistence.readModel(loadResult.getHeader(), inputSourceFactory.create(), ModelLoadingState.FULLY_LOADED).getModel();
           } catch (IOException e) {
             ex.set(e);
             return null;
