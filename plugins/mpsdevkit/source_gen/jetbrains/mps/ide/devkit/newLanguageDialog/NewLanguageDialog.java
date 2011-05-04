@@ -47,11 +47,6 @@ public class NewLanguageDialog extends BaseDialog {
     return this.myContentPane.getProject();
   }
 
-  public boolean getCompileInMPS() {
-    this.getMainComponent();
-    return this.myContentPane.getCompileInMPS();
-  }
-
   public Language getResult() {
     this.getMainComponent();
     return this.myContentPane.getResult();
@@ -70,11 +65,6 @@ public class NewLanguageDialog extends BaseDialog {
   public void setProject(MPSProject newValue) {
     this.getMainComponent();
     this.myContentPane.setProject(newValue);
-  }
-
-  public void setCompileInMPS(boolean newValue) {
-    this.getMainComponent();
-    this.myContentPane.setCompileInMPS(newValue);
   }
 
   public void setResult(Language newValue) {

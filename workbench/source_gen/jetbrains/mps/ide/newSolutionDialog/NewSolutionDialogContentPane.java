@@ -17,15 +17,11 @@ import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.ide.NewModuleCheckUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import java.io.File;
 
 public class NewSolutionDialogContentPane extends JPanel {
   public NewSolutionDialogContentPane myThis;
@@ -35,7 +31,6 @@ public class NewSolutionDialogContentPane extends JPanel {
   private PathField myPath_e0;
   private String mySolutionName;
   private String mySolutionPath;
-  private boolean myCompileInMPS = true;
   private MPSProject myProject;
   private Solution myResult;
   private NewSolutionDialog myDialog;
@@ -140,10 +135,6 @@ public class NewSolutionDialogContentPane extends JPanel {
     return this.mySolutionPath;
   }
 
-  public boolean getCompileInMPS() {
-    return this.myCompileInMPS;
-  }
-
   public MPSProject getProject() {
     return this.myProject;
   }
@@ -169,12 +160,6 @@ public class NewSolutionDialogContentPane extends JPanel {
     this.firePropertyChange("solutionPath", oldValue, newValue);
   }
 
-  public void setCompileInMPS(boolean newValue) {
-    boolean oldValue = this.myCompileInMPS;
-    this.myCompileInMPS = newValue;
-    this.firePropertyChange("compileInMPS", oldValue, newValue);
-  }
-
   public void setProject(MPSProject newValue) {
     MPSProject oldValue = this.myProject;
     this.myProject = newValue;
@@ -195,48 +180,23 @@ public class NewSolutionDialogContentPane extends JPanel {
   }
 
   /*package*/ void onOk() {
-    if (myThis.getSolutionPath().length() == 0) {
-      myThis.getDialog().setErrorText("Enter solution directory");
-      return;
-    }
-    if (myThis.getSolutionName().length() == 0) {
-      myThis.getDialog().setErrorText("Enter solution name");
-      return;
-    }
-    if (MPSModuleRepository.getInstance().getModuleByUID(myThis.getSolutionName()) != null) {
-      myThis.getDialog().setErrorText("Duplicate solution name");
-      return;
-    }
-    String descriptorPath = myThis.getSolutionPath() + File.separator + myThis.getSolutionName() + MPSExtentions.DOT_SOLUTION;
-    final File file = new File(descriptorPath);
-    File dir = file.getParentFile();
-    String message = NewModuleCheckUtil.checkModuleDirectory(dir, MPSExtentions.DOT_SOLUTION, "Solution");
+    String message = NewModuleUtil.check(MPSExtentions.DOT_SOLUTION, myThis.getSolutionName(), myThis.getSolutionPath());
     if (message != null) {
       myThis.getDialog().setErrorText(message);
       return;
     }
-    if (file == null) {
-      myThis.getDialog().setErrorText("Can't create " + file);
-      return;
-    }
-    myThis.getDialog().dispose();
 
+    myThis.getDialog().dispose();
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
       public void run(ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        myThis.setResult(myThis.createNewSolution(FileSystem.getInstance().getFileByPath(file.getAbsolutePath())));
+        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject()));
       }
     }, "Creating", false, myThis.getProject().getProject());
   }
 
   /*package*/ void onCancel() {
     myThis.getDialog().dispose();
-  }
-
-  /*package*/ Solution createNewSolution(final IFile solutionDescriptorFile) {
-    Solution solution = NewModuleUtil.createNewSolution(solutionDescriptorFile, myThis.getProject());
-    solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
-    return solution;
   }
 
   /*package*/ void updateSolutionPath() {

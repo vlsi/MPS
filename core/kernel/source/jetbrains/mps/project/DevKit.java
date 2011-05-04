@@ -39,6 +39,39 @@ import java.util.UUID;
 public class DevKit extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(DevKit.class);
 
+  public static DevKit createDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    DevKit devKit = new DevKit();
+    DevkitDescriptor descriptor;
+    if (descriptorFile.exists()) {
+      descriptor = DevkitDescriptorPersistence.loadDevKitDescriptor(descriptorFile);
+      if (descriptor.getUUID() == null) {
+        descriptor.setUUID(UUID.randomUUID().toString());
+        DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, descriptorFile);
+      }
+    } else {
+      descriptor = createNewDescriptor(namespace, descriptorFile);
+    }
+    devKit.myDescriptorFile = descriptorFile;
+
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (repository.existsModule(descriptor.getModuleReference())) {
+      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
+      return repository.getDevKit(descriptor.getModuleReference());
+    }
+
+    devKit.setDevKitDescriptor(descriptor, false);
+    repository.addModule(devKit, moduleOwner);
+
+    return devKit;
+  }
+
+  private static DevkitDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
+    DevkitDescriptor descriptor = new DevkitDescriptor();
+    descriptor.setNamespace(namespace);
+    descriptor.setUUID(UUID.randomUUID().toString());
+    return descriptor;
+  }
+
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
 

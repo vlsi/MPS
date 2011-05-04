@@ -42,11 +42,6 @@ public class NewSolutionDialog extends BaseDialog {
     return this.myContentPane.getSolutionPath();
   }
 
-  public boolean getCompileInMPS() {
-    this.getMainComponent();
-    return this.myContentPane.getCompileInMPS();
-  }
-
   public MPSProject getProject() {
     this.getMainComponent();
     return this.myContentPane.getProject();
@@ -65,11 +60,6 @@ public class NewSolutionDialog extends BaseDialog {
   public void setSolutionPath(String newValue) {
     this.getMainComponent();
     this.myContentPane.setSolutionPath(newValue);
-  }
-
-  public void setCompileInMPS(boolean newValue) {
-    this.getMainComponent();
-    this.myContentPane.setCompileInMPS(newValue);
   }
 
   public void setProject(MPSProject newValue) {

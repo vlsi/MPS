@@ -18,11 +18,9 @@ import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
-import java.io.File;
-import jetbrains.mps.ide.NewModuleCheckUtil;
+import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.Progressive;
@@ -32,11 +30,12 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
+import java.io.File;
 
 public class NewLanguageDialogContentPane extends JPanel {
   public NewLanguageDialogContentPane myThis;
@@ -49,7 +48,6 @@ public class NewLanguageDialogContentPane extends JPanel {
   private String myLanguageNamespace;
   private String myLanguagePath;
   private MPSProject myProject;
-  private boolean myCompileInMPS = true;
   private Language myResult;
   private NewLanguageDialog myDialog;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
@@ -173,10 +171,6 @@ public class NewLanguageDialogContentPane extends JPanel {
     return this.myProject;
   }
 
-  public boolean getCompileInMPS() {
-    return this.myCompileInMPS;
-  }
-
   public Language getResult() {
     return this.myResult;
   }
@@ -205,12 +199,6 @@ public class NewLanguageDialogContentPane extends JPanel {
     myThis.updateLanguagePath();
   }
 
-  public void setCompileInMPS(boolean newValue) {
-    boolean oldValue = this.myCompileInMPS;
-    this.myCompileInMPS = newValue;
-    this.firePropertyChange("compileInMPS", oldValue, newValue);
-  }
-
   public void setResult(Language newValue) {
     Language oldValue = this.myResult;
     this.myResult = newValue;
@@ -224,40 +212,28 @@ public class NewLanguageDialogContentPane extends JPanel {
   }
 
   /*package*/ void onOk() {
-    File dir = new File(myThis.getLanguagePath());
-    String message = NewModuleCheckUtil.checkModuleDirectory(dir, MPSExtentions.DOT_LANGUAGE, "Language");
+    String message = NewModuleUtil.check(MPSExtentions.DOT_LANGUAGE, myThis.getLanguageNamespace(), myThis.getLanguagePath());
     if (message != null) {
       myThis.getDialog().setErrorText(message);
       return;
     }
-    if (myThis.getLanguageNamespace().length() == 0) {
-      myThis.getDialog().setErrorText("Enter namespace");
-      return;
-    }
-    if (MPSModuleRepository.getInstance().getModuleByUID(myThis.getLanguageNamespace()) != null) {
-      myThis.getDialog().setErrorText("Language namespace already exists");
-      return;
-    }
-    if (NameUtil.shortNameFromLongName(myThis.getLanguageNamespace()).length() == 0) {
-      myThis.getDialog().setErrorText("Enter valid namespace");
-      return;
-    }
+
     myThis.getDialog().dispose();
-    final Language language = null;
+    final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
     Project project = myThis.getProject().getProject();
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
       public void run(ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        //language = myThis.createNewLanguage();
+        language.value = myThis.createNewLanguage();
       }
     }, "Creating", false, project);
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
-        if (!(language.getSModelRoots().isEmpty())) {
-          LanguageAspect.STRUCTURE.createNew(language, false);
-          LanguageAspect.EDITOR.createNew(language, false);
-          LanguageAspect.CONSTRAINTS.createNew(language, false);
-          LanguageAspect.TYPESYSTEM.createNew(language, false);
+        if (!(language.value.getSModelRoots().isEmpty())) {
+          LanguageAspect.STRUCTURE.createNew(language.value, false);
+          LanguageAspect.EDITOR.createNew(language.value, false);
+          LanguageAspect.CONSTRAINTS.createNew(language.value, false);
+          LanguageAspect.TYPESYSTEM.createNew(language.value, false);
         }
         if (myThis.myNeedRuntime_f0.isSelected()) {
           Solution runtime = myThis.createRuntimeSolution();
@@ -289,37 +265,30 @@ public class NewLanguageDialogContentPane extends JPanel {
   }
 
   /*package*/ Language createNewLanguage() {
-    String descriptorFileName = myThis.getLanguageName();
-    IFile descriptorFile = FileSystem.getInstance().getFileByPath(myThis.getLanguagePath() + File.separator + descriptorFileName + MPSExtentions.DOT_LANGUAGE);
-    final Language language = Language.createLanguage(myThis.getLanguageNamespace(), descriptorFile, myThis.getProject());
-    LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
-    ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
-    languageDescriptor.getUsedDevkits().add(devkitRef);
-    languageDescriptor.setCompileInMPS(myThis.getCompileInMPS());
-    language.setLanguageDescriptor(languageDescriptor, true);
-    ModelAccess.instance().writeFilesInEDT(new Runnable() {
-      public void run() {
-        language.save();
+    myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_LANGUAGE, myThis.getLanguageNamespace(), myThis.getLanguagePath(), myThis.getProject(), new _FunctionTypes._return_P3_E0<Language, String, IFile, MPSProject>() {
+      public Language invoke(String s, IFile f, MPSProject p) {
+        return Language.createLanguage(s, f, p);
       }
-    });
-    myThis.getProject().addProjectModule(language);
-    myThis.setResult(language);
-    return language;
+    }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
+      public void invoke(ModuleDescriptor d) {
+        ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
+        d.getUsedDevkits().add(devkitRef);
+      }
+    }));
+    return myThis.getResult();
   }
 
   /*package*/ Solution createRuntimeSolution() {
-    String descriptorPath = myThis.getLanguagePath() + File.separator + "runtime" + File.separator + myThis.getLanguageNamespace() + ".runtime" + MPSExtentions.DOT_SOLUTION;
-    IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
-    Solution solution = NewModuleUtil.createNewSolution(descriptorFile, myThis.getProject());
-    solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
+    String basePath = myThis.getLanguagePath() + File.separator + "runtime";
+    String namespace = myThis.getLanguageNamespace() + ".runtime";
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
     return solution;
   }
 
   /*package*/ Solution createSandboxSolution() {
-    String descriptorPath = myThis.getLanguagePath() + File.separator + "sandbox" + File.separator + myThis.getLanguageNamespace() + ".sandbox" + MPSExtentions.DOT_SOLUTION;
-    IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
-    Solution solution = NewModuleUtil.createNewSolution(descriptorFile, myThis.getProject());
-    solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
+    String basePath = myThis.getLanguagePath() + File.separator + "sandbox";
+    String namespace = myThis.getLanguageNamespace() + ".sandbox";
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
     return solution;
   }
 

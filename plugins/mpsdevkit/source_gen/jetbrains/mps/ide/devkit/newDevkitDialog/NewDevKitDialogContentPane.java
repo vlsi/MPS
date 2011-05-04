@@ -17,19 +17,16 @@ import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
-import java.io.File;
+import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.ide.NewModuleCheckUtil;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import java.util.UUID;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import java.io.File;
 
 public class NewDevKitDialogContentPane extends JPanel {
   public NewDevKitDialogContentPane myThis;
@@ -188,36 +185,27 @@ public class NewDevKitDialogContentPane extends JPanel {
   }
 
   /*package*/ void onOk() {
-    if (myThis.getDevkitDir().length() == 0) {
-      myThis.getDialog().setErrorText("Enter DevKit Directory");
-      return;
-    }
-    if (myThis.getDevkitName().length() == 0) {
-      myThis.getDialog().setErrorText("Enter DevKit Name");
-      return;
-    }
-    final String devkitPath = myThis.getDevkitDir() + File.separator + myThis.getDevkitName() + MPSExtentions.DOT_DEVKIT;
-    if (new File(devkitPath).exists()) {
-      myThis.getDialog().setErrorText("File " + devkitPath + " already exists");
-      return;
-    }
-    File dir = new File(devkitPath);
-    String message = NewModuleCheckUtil.checkModuleDirectory(dir, MPSExtentions.DOT_DEVKIT, "DevKit");
+    String message = NewModuleUtil.check(MPSExtentions.DOT_SOLUTION, myThis.getDevkitName(), myThis.getDevkitDir());
     if (message != null) {
       myThis.getDialog().setErrorText(message);
       return;
     }
+
     myThis.getDialog().dispose();
     Project ideaProject = myThis.getProject().getProject();
-    final DevKit[] localResult = new DevKit[1];
-    final Wrappers._T<DevKit> localResult2 = new Wrappers._T<DevKit>();
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
       public void run(ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        localResult2.value = myThis.createNewDevKit(FileSystem.getInstance().getFileByPath(devkitPath));
+        myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, myThis.getDevkitName(), myThis.getDevkitDir(), myThis.getProject(), new _FunctionTypes._return_P3_E0<DevKit, String, IFile, MPSProject>() {
+          public DevKit invoke(String s, IFile f, MPSProject p) {
+            return DevKit.createDevkit(s, f, p);
+          }
+        }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
+          public void invoke(ModuleDescriptor d) {
+          }
+        }));
       }
     }, "Creating", false, ideaProject);
-    myThis.setResult(localResult[0]);
   }
 
   /*package*/ void onCancel() {
@@ -233,17 +221,5 @@ public class NewDevKitDialogContentPane extends JPanel {
     if (myThis.getDevkitDir().length() == 0 || myThis.getDevkitDir().startsWith(prefix)) {
       myThis.setDevkitDir(prefix + myThis.getDevkitName());
     }
-  }
-
-  /*package*/ DevKit createNewDevKit(final IFile devkitFile) {
-    final DevkitDescriptor descriptor = new DevkitDescriptor();
-    descriptor.setNamespace(myThis.getDevkitName());
-    descriptor.setUUID(UUID.randomUUID().toString());
-    ModelAccess.instance().writeFilesInEDT(new Runnable() {
-      public void run() {
-        DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, devkitFile);
-      }
-    });
-    return null;
   }
 }
