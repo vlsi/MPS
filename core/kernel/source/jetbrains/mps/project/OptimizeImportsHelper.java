@@ -55,10 +55,10 @@ public class OptimizeImportsHelper {
   private Result optimizeProjectImports_internal(MPSProject p) {
     Result result = new Result();
 
-    for (Language l : p.getProjectLanguages()) {
+    for (Language l : p.getProjectModules(Language.class)) {
       result.add(optimizeLanguageImports_internal(l));
     }
-    for (Solution s : p.getProjectSolutions()) {
+    for (Solution s : p.getProjectModules(Solution.class)) {
       result.add(optimizeSolutionImports_internal(s));
     }
 

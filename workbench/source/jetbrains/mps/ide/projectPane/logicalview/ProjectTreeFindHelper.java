@@ -271,7 +271,7 @@ public abstract class ProjectTreeFindHelper {
     */
 
     //runtime models in languages
-    for (Language l : project.getProjectLanguages()) {
+    for (Language l : project.getProjectModules(Language.class)) {
       for (IModule depModule : ((LanguageDepsManager) l.getDependenciesManager()).getRuntimeDependOnModules()) {
         if (depModule.getModuleReference().equals(mainModule.getModuleReference())) return owner;
       }

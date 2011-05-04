@@ -29,9 +29,7 @@ public class ProjectDescriptor {
   };
 
   private String myName = "";
-  private List<Path> myLanguages = new ArrayList<Path>();
-  private List<Path> mySolutions = new ArrayList<Path>();
-  private List<Path> myDevkits = new ArrayList<Path>();
+  private List<Path> myModules = new ArrayList<Path>();
   private List<BaseTestConfiguration> myTestConfigurations = new ArrayList<BaseTestConfiguration>();
 
   public String getName() {
@@ -42,52 +40,20 @@ public class ProjectDescriptor {
     myName = name;
   }
 
-  public List<Path> getLanguages() {
-    return myLanguages;
+  public List<Path> getModules() {
+    return myModules;
   }
 
-  public void addLanguage(String path) {
-    addLanguage(new Path(path));
+  public void addModule(String path) {
+    addModule(new Path(path));
   }
 
-  public void addLanguage(Path path) {
-    add(myLanguages, path, MODULE_BY_PATH_COMPARATOR);
+  public void addModule(Path path) {
+    add(myModules, path, MODULE_BY_PATH_COMPARATOR);
   }
 
-  public void removeLanguage(String path) {
-    remove(myLanguages, new Path(path), MODULE_BY_PATH_COMPARATOR);
-  }
-
-  public List<Path> getSolutions() {
-    return mySolutions;
-  }
-
-  public void addSolution(String path) {
-    addSolution(new Path(path));
-  }
-
-  public void addSolution(Path path) {
-    add(mySolutions, path, MODULE_BY_PATH_COMPARATOR);
-  }
-
-  public void removeSolution(String path) {
-    remove(mySolutions, new Path(path), MODULE_BY_PATH_COMPARATOR);
-  }
-
-  public List<Path> getDevkits() {
-    return myDevkits;
-  }
-
-  public void addDevkit(String path) {
-    addDevkit(new Path(path));
-  }
-
-  public void addDevkit(Path path) {
-    add(myDevkits, path, MODULE_BY_PATH_COMPARATOR);
-  }
-
-  public void removeDevkit(String path) {
-    remove(myDevkits, new Path(path), MODULE_BY_PATH_COMPARATOR);
+  public void removeModule(String path) {
+    remove(myModules, new Path(path), MODULE_BY_PATH_COMPARATOR);
   }
 
   public List<BaseTestConfiguration> getTestConfigurations() {

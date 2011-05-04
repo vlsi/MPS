@@ -45,16 +45,16 @@ public class PluginUtil {
 
     Set<IModule> modules = new HashSet<IModule>();
 
-    for (Solution s : mpsProject.getProjectSolutions()) {
+    for (Solution s : mpsProject.getProjectModules(Solution.class)) {
       modules.addAll(IterableUtil.asCollection(s.getScope().getVisibleLanguages()));
       modules.addAll(IterableUtil.asCollection(s.getScope().getVisibleDevkits()));
     }
 
-    for (Language l : mpsProject.getProjectLanguages()) {
+    for (Language l : mpsProject.getProjectModules(Language.class)) {
       modules.add(l);
     }
 
-    for (DevKit dk : mpsProject.getProjectDevKits()) {
+    for (DevKit dk : mpsProject.getProjectModules(DevKit.class)) {
       modules.add(dk);
     }
 

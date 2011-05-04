@@ -103,7 +103,7 @@ public class ModelsExtractor {
 
   private void extractModels(Collection<SModelDescriptor> modelDescriptors, MPSProject project) {
     List<SModelDescriptor> models = project.getProjectModels();
-    for (Language language : project.getProjectLanguages()) {
+    for (Language language : project.getProjectModules(Language.class)) {
       models.addAll(language.getOwnModelDescriptors());
       for (Generator gen : language.getGenerators()) {
         models.addAll(gen.getOwnModelDescriptors());

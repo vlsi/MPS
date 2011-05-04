@@ -339,7 +339,7 @@ public abstract class MpsWorker {
 
   protected void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
     List<SModelDescriptor> models = project.getProjectModels();
-    for (Language language : project.getProjectLanguages()) {
+    for (Language language : project.getProjectModules(Language.class)) {
       models.addAll(language.getOwnModelDescriptors());
       for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
         models.addAll(gen.getOwnModelDescriptors());

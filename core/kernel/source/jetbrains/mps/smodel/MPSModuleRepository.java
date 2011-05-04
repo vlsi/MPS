@@ -109,18 +109,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     return myModuleToOwners.getByFirst(module);
   }
 
-  public Language registerLanguage(IFile file, MPSModuleOwner owner) {
-    return registerModule(file, owner, Language.class);
-  }
-
-  public DevKit registerDevKit(IFile file, MPSModuleOwner owner) {
-    return registerModule(file, owner, DevKit.class);
-  }
-
-  public Solution registerSolution(IFile file, MPSModuleOwner owner) {
-    return registerModule(file, owner, Solution.class);
-  }
-
   public IModule getModuleByFile(IFile file) {
     assertCanRead();
 

@@ -36,50 +36,6 @@ public class ProjectDescriptorPersistence {
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         final Element result_jnk9az_a0a1a0 = new Element("project");
-        final Element result_jnk9az_a0a0a1a0 = new Element("projectSolutions");
-        for (Path solutionPath : ListSequence.fromList(descriptor.getSolutions())) {
-          final Element result_jnk9az_a0a0a0a0a1a0 = new Element("solutionPath");
-          if (solutionPath.getPath() != null) {
-            final String result_jnk9az_a0a0a0a0a0a0a1a0 = macros.shrinkPath(solutionPath.getPath(), file);
-            result_jnk9az_a0a0a0a0a1a0.setAttribute("path", "" + result_jnk9az_a0a0a0a0a0a0a1a0);
-          }
-          if (solutionPath.getMPSFolder() != null) {
-            final String result_jnk9az_a0a1a0a0a0a0a1a0 = solutionPath.getMPSFolder();
-            result_jnk9az_a0a0a0a0a1a0.setAttribute("folder", "" + result_jnk9az_a0a1a0a0a0a0a1a0);
-          }
-          result_jnk9az_a0a0a1a0.addContent(result_jnk9az_a0a0a0a0a1a0);
-        }
-        result_jnk9az_a0a1a0.addContent(result_jnk9az_a0a0a1a0);
-
-        final Element result_jnk9az_a2a0a1a0 = new Element("projectLanguages");
-        for (Path languagePath : ListSequence.fromList(descriptor.getLanguages())) {
-          final Element result_jnk9az_a0a0a2a0a1a0 = new Element("languagePath");
-          if (languagePath.getPath() != null) {
-            final String result_jnk9az_a0a0a0a0a2a0a1a0 = macros.shrinkPath(languagePath.getPath(), file);
-            result_jnk9az_a0a0a2a0a1a0.setAttribute("path", "" + result_jnk9az_a0a0a0a0a2a0a1a0);
-          }
-          if (languagePath.getMPSFolder() != null) {
-            final String result_jnk9az_a0a1a0a0a2a0a1a0 = languagePath.getMPSFolder();
-            result_jnk9az_a0a0a2a0a1a0.setAttribute("folder", "" + result_jnk9az_a0a1a0a0a2a0a1a0);
-          }
-          result_jnk9az_a2a0a1a0.addContent(result_jnk9az_a0a0a2a0a1a0);
-        }
-        result_jnk9az_a0a1a0.addContent(result_jnk9az_a2a0a1a0);
-
-        final Element result_jnk9az_a4a0a1a0 = new Element("projectDevkits");
-        for (Path devkitPath : ListSequence.fromList(descriptor.getDevkits())) {
-          final Element result_jnk9az_a0a0a4a0a1a0 = new Element("devkitPath");
-          if (devkitPath.getPath() != null) {
-            final String result_jnk9az_a0a0a0a0a4a0a1a0 = macros.shrinkPath(devkitPath.getPath(), file);
-            result_jnk9az_a0a0a4a0a1a0.setAttribute("path", "" + result_jnk9az_a0a0a0a0a4a0a1a0);
-          }
-          if (devkitPath.getMPSFolder() != null) {
-            final String result_jnk9az_a0a1a0a0a4a0a1a0 = devkitPath.getMPSFolder();
-            result_jnk9az_a0a0a4a0a1a0.setAttribute("folder", "" + result_jnk9az_a0a1a0a0a4a0a1a0);
-          }
-          result_jnk9az_a4a0a1a0.addContent(result_jnk9az_a0a0a4a0a1a0);
-        }
-        result_jnk9az_a0a1a0.addContent(result_jnk9az_a4a0a1a0);
 
         final Element result_jnk9az_a6a0a1a0 = new Element("genConfs");
         for (BaseTestConfiguration tc : ListSequence.fromList(descriptor.getTestConfigurations())) {
@@ -153,7 +109,7 @@ public class ProjectDescriptorPersistence {
       result_jnk9az_a1a5a1a2.setPath(result_jnk9az_a0a1a5a1a2);
       final String result_jnk9az_a1a1a5a1a2 = solutionElement.getAttributeValue("folder");
       result_jnk9az_a1a5a1a2.setMPSFolder(result_jnk9az_a1a1a5a1a2);
-      result_jnk9az_a1a2.getSolutions().add(solutionPath);
+      result_jnk9az_a1a2.addModule(solutionPath);
     }
 
     // project languages 
@@ -164,7 +120,7 @@ public class ProjectDescriptorPersistence {
       result_jnk9az_a1a8a1a2.setPath(result_jnk9az_a0a1a8a1a2);
       final String result_jnk9az_a1a1a8a1a2 = languageElement.getAttributeValue("folder");
       result_jnk9az_a1a8a1a2.setMPSFolder(result_jnk9az_a1a1a8a1a2);
-      result_jnk9az_a1a2.getLanguages().add(languagePath);
+      result_jnk9az_a1a2.addModule(languagePath);
     }
 
     // project devkits 
@@ -175,7 +131,7 @@ public class ProjectDescriptorPersistence {
       result_jnk9az_a1a11a1a2.setPath(result_jnk9az_a0a1a11a1a2);
       final String result_jnk9az_a1a1a11a1a2 = languageElement.getAttributeValue("folder");
       result_jnk9az_a1a11a1a2.setMPSFolder(result_jnk9az_a1a1a11a1a2);
-      result_jnk9az_a1a2.getDevkits().add(devkitPath);
+      result_jnk9az_a1a2.addModule(devkitPath);
     }
 
     for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModels"))) {

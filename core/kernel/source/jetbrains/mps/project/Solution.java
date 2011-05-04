@@ -17,7 +17,10 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -39,11 +42,38 @@ public class Solution extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(Solution.class);
 
   private SolutionDescriptor mySolutionDescriptor;
+  private static final String SOLUTION_MODELS = "models";
 
   // -------------------------------------------------------------------
 
   private Solution() {
 
+  }
+
+  public static Solution createSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    Solution solution = new Solution();
+    SolutionDescriptor descriptor;
+    if (descriptorFile.exists()) {
+      descriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(descriptorFile);
+      if (descriptor.getUUID() == null) {
+        descriptor.setUUID(UUID.randomUUID().toString());
+        SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
+      }
+    } else {
+      descriptor = createNewDescriptor(namespace, descriptorFile);
+    }
+    solution.myDescriptorFile = descriptorFile;
+
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (repository.existsModule(descriptor.getModuleReference())) {
+      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
+      return repository.getSolution(descriptor.getModuleReference());
+    }
+
+    solution.setSolutionDescriptor(descriptor, false);
+    repository.addModule(solution, moduleOwner);
+
+    return solution;
   }
 
   //this is for stubs framework only
@@ -194,6 +224,24 @@ public class Solution extends AbstractModule {
     IFile file = getDescriptorFile();
     assert file != null;
     return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
+  }
+
+  private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
+    SolutionDescriptor descriptor = new SolutionDescriptor();
+    descriptor.setNamespace(namespace);
+    descriptor.setUUID(UUID.randomUUID().toString());
+
+    IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
+    if (modelsDir.exists()) {
+      throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
+    }
+
+    // default descriptorModel roots
+    ModelRoot modelRoot = new ModelRoot();
+    modelRoot.setPath(modelsDir.getPath());
+    modelRoot.setPrefix(namespace);
+    descriptor.getModelRoots().add(modelRoot);
+    return descriptor;
   }
 
   public BytecodeLocator getBytecodeLocator() {

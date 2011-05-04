@@ -72,7 +72,7 @@ public class NewLanguageUITest extends NewDialogsUITestsBase {
     final Language l = dialog.getResult();
     assertNotNull("Language is not created", l);
 
-    boolean isImported = myCreatedProject.getProjectLanguages().contains(l);
+    boolean isImported = myCreatedProject.getProjectModules(Language.class).contains(l);
     assertTrue("Language is not imported into project", isImported);
   }
 }

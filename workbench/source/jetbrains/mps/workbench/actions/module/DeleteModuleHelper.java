@@ -48,15 +48,7 @@ public class DeleteModuleHelper {
 
     //remove from project
     if (mpsProject.isProjectModule(module)) {
-      if (module instanceof Language) {
-        mpsProject.removeProjectLanguage((Language) module);
-      } else if (module instanceof Solution) {
-        mpsProject.removeProjectSolution((Solution) module);
-      } else if (module instanceof DevKit) {
-        mpsProject.removeProjectDevKit((DevKit) module);
-      } else {
-        reportUnsupportedModuleType(module);
-      }
+      mpsProject.removeProjectModule( module);
       project.save();
     }
 

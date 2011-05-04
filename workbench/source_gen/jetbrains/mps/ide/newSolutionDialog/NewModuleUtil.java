@@ -29,6 +29,7 @@ public class NewModuleUtil {
         SolutionDescriptorPersistence.saveSolutionDescriptor(solutionFile, solutionDescriptor);
       }
     });
-    return project.addProjectSolution(solutionFile);
+    return null;
+    //return project.addProjectSolution(solutionFile);
   }
 }

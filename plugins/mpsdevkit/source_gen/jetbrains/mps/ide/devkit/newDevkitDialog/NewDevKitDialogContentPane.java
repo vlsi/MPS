@@ -244,7 +244,6 @@ public class NewDevKitDialogContentPane extends JPanel {
         DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, devkitFile);
       }
     });
-    DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
-    return devkit;
+    return null;
   }
 }

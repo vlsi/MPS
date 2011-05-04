@@ -55,7 +55,7 @@ public class NewSolutionUITest extends NewDialogsUITestsBase {
     final Solution s = dialog.getResult();
     assertNotNull("Solution is not created", s);
 
-    boolean isImported = myCreatedProject.getProjectSolutions().contains(s);
+    boolean isImported = myCreatedProject.getProjectModules(Solution.class).contains(s);
     assertTrue("Solution is not imported into project", isImported);
   }
 }

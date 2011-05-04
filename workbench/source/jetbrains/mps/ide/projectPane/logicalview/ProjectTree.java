@@ -9,6 +9,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.Library;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -40,19 +41,25 @@ public class ProjectTree extends MPSTree {
     // setRootVisible(false);
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
-    List<Solution> solutions = project.getProjectSolutions();
+    List<Solution> solutions = project.getProjectModules(Solution.class);
     for (Solution solution : solutions) {
       ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, project);
       moduleNodes.add(solutionTreeNode);
     }
 
-    List<Language> languages = project.getProjectLanguages();
+    List<Language> languages = project.getProjectModules(Language.class);
     for (Language language : languages) {
       ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, project);
       moduleNodes.add(node);
     }
 
-    List<DevKit> devkits = project.getProjectDevKits();
+    List<Library> libs = project.getProjectModules(Library.class);
+    for (Library lib : libs) {
+      ProjectLibraryTreeNode node = new ProjectLibraryTreeNode(lib, project);
+      moduleNodes.add(node);
+    }
+
+    List<DevKit> devkits = project.getProjectModules(DevKit.class);
     for (DevKit devKit : devkits) {
       ProjectDevKitTreeNode node = new ProjectDevKitTreeNode(devKit, project);
       moduleNodes.add(node);

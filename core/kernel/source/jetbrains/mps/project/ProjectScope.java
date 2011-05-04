@@ -41,13 +41,11 @@ public class ProjectScope extends DefaultScope implements ProjectComponent {
     MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     Set<IModule> result = new HashSet<IModule>();
-    result.addAll(mpsProject.getProjectSolutions());
-    for (Language l : mpsProject.getProjectLanguages()) {
-      result.add(l);
+    result.addAll(mpsProject.getProjectModules(IModule.class));
+
+    for (Language l : mpsProject.getProjectModules(Language.class)) {
       result.addAll(l.getGenerators());
     }
-
-    result.addAll(mpsProject.getProjectDevKits());
     return result;
   }
 

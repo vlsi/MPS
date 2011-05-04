@@ -22,6 +22,7 @@ public class MPSExtentions {
   public static final String IDEAMODULE = "iml";
   public static final String LANGUAGE = "mpl";
   public static final String SOLUTION = "msd";
+  private static final String LIBRARY = "lib";
   public static final String DEVKIT = "devkit";
   public static final String MODEL = "mps";
   public static final String REFACTORINGS = "history";
@@ -43,4 +44,5 @@ public class MPSExtentions {
   public static final String DOT_IDEAWORKSPACE = "." + IDEAWORKSPACE;
   public static final String DOT_WORKSPACE = "." + WORKSPACE;
   public static final String DOT_IDEMODULE = "." + IDEAMODULE;
+  public static final String DOT_LIBRARY = "."+LIBRARY;
 }

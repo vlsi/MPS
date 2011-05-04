@@ -25,7 +25,9 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -70,8 +72,9 @@ public class ClassPathTest extends BaseMPSTest {
   public void testMPSSolutionsAreNotLoadingClasses() {
     ProjectDescriptor projectDescriptor = new ProjectDescriptor();
     ProjectDescriptorPersistence.loadProjectDescriptor(projectDescriptor, new File(MPS_CORE_PROJECT));
-    for (Path solutionPath : projectDescriptor.getSolutions()) {
-      IFile solutionFile = FileSystem.getInstance().getFileByPath(solutionPath.getPath());
+    for (Path path : projectDescriptor.getModules()) {
+      if (!path.getPath().endsWith(MPSExtentions.DOT_SOLUTION)) continue;
+      IFile solutionFile = FileSystem.getInstance().getFileByPath(path.getPath());
       SolutionDescriptor solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(solutionFile);
       assertTrue("Solution " + solutionDescriptor.getNamespace() + " is contained by core project, but has \"Don't load classes\" disabled", solutionDescriptor.isDontLoadClasses());
     }
@@ -96,7 +99,7 @@ public class ClassPathTest extends BaseMPSTest {
         List<IModule> modulesToCheck = new ArrayList<IModule>();
         modulesToCheck.addAll(MPSModuleRepository.getInstance().getAllLanguages());
         modulesToCheck.addAll(MPSModuleRepository.getInstance().getAllSolutions());
-        modulesToCheck.removeAll(project.getProjectSolutions());
+        modulesToCheck.removeAll(project.getProjectModules(Solution.class));
 
         //collect class2module info
         for (IModule m : modulesToCheck) {

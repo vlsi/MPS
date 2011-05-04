@@ -56,7 +56,7 @@ public class NewDevkitUITest extends NewDialogsUITestsBase {
     final DevKit devKit = dialog.getResult();
     Assert.assertNotNull("Devkit is not created", devKit);
 
-    boolean isImported = myCreatedProject.getProjectDevKits().contains(devKit);
+    boolean isImported = myCreatedProject.getProjectModules(DevKit.class).contains(devKit);
     Assert.assertTrue("Devkit is not imported into project", isImported);
   }
 }

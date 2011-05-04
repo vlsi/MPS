@@ -43,7 +43,6 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 @State(
@@ -122,9 +121,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
   private File myProjectFile;
   private ProjectDescriptor myProjectDescriptor;
 
-  private List<ModuleReference> mySolutions = new ArrayList<ModuleReference>();
-  private List<ModuleReference> myLanguages = new ArrayList<ModuleReference>();
-  private List<DevKit> myDevKits = new ArrayList<DevKit>();
+  private List<ModuleReference> myModules = new ArrayList<ModuleReference>();
 
   private String myErrors = null;
 
@@ -178,32 +175,19 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
   @NotNull
   public List<IModule> getModules() {
     List<IModule> result = new ArrayList<IModule>();
-    result.addAll(getProjectLanguages());
-    result.addAll(getProjectSolutions());
-    result.addAll(myDevKits);
+    for (ModuleReference ref : myModules) {
+      result.add(MPSModuleRepository.getInstance().getModule(ref));
+    }
     return result;
   }
 
   @NotNull
   public List<Path> getAllModulePaths() {
-    ArrayList<Path> result = new ArrayList<Path>();
-    result.addAll(myProjectDescriptor.getLanguages());
-    result.addAll(myProjectDescriptor.getSolutions());
-    result.addAll(myProjectDescriptor.getDevkits());
-    return result;
+    return Collections.unmodifiableList(myProjectDescriptor.getModules());
   }
 
   public boolean isProjectModule(@NotNull IModule module) {
-    if (module instanceof Language) {
-      return getProjectLanguages().contains(module);
-    }
-    if (module instanceof Solution) {
-      return getProjectSolutions().contains(module);
-    }
-    if (module instanceof DevKit) {
-      return myDevKits.contains((DevKit) module);
-    }
-    return false;
+    return myModules.contains(module.getModuleReference());
   }
 
   @Nullable
@@ -253,98 +237,33 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
 
   //--languages
 
-  public void addProjectLanguage(@NotNull Language language) {
+  public void addProjectModule(@NotNull IModule module) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    IFile descriptorFile = language.getDescriptorFile();
+    IFile descriptorFile = module.getDescriptorFile();
     assert descriptorFile != null;
-    projectDescriptor.addLanguage(descriptorFile.getPath());
+    projectDescriptor.addModule(descriptorFile.getPath());
     setProjectDescriptor(projectDescriptor);
   }
 
-  public void removeProjectLanguage(@NotNull Language language) {
+  public void removeProjectModule(@NotNull IModule module) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    IFile descriptorFile = language.getDescriptorFile();
+    IFile descriptorFile = module.getDescriptorFile();
     assert descriptorFile != null;
-    projectDescriptor.removeLanguage(descriptorFile.getPath());
+    projectDescriptor.removeModule(descriptorFile.getPath());
     setProjectDescriptor(projectDescriptor);
   }
 
   @NotNull
-  public List<Language> getProjectLanguages() {
-    List<Language> result = new ArrayList<Language>();
-    for (ModuleReference langRef : myLanguages) {
-      Language language = MPSModuleRepository.getInstance().getLanguage(langRef);
-      if (language != null) result.add(language);
+  public <T extends IModule> List<T> getProjectModules(Class<T> moduleClass) {
+    List<T> result = new ArrayList<T>();
+    for (ModuleReference mr : myModules) {
+      IModule module = MPSModuleRepository.getInstance().getModule(mr);
+      if (module == null) continue;
+      if (!moduleClass.isInstance(module)) continue;
+
+      result.add((T) module);
     }
     return result;
-  }
-
-  //--solutions
-
-  @NotNull
-  public Solution addProjectSolution(@NotNull IFile solutionDescriptionFile) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    projectDescriptor.addSolution(solutionDescriptionFile.getPath());
-    setProjectDescriptor(projectDescriptor);
-
-    for (Solution s : getProjectSolutions()) {
-      IFile descriptorFile = s.getDescriptorFile();
-      assert descriptorFile != null;
-      if (descriptorFile.getPath().equals(solutionDescriptionFile.getPath())) {
-        return s;
-      }
-    }
-
-    throw new RuntimeException("it can't happen");
-  }
-
-  public void removeProjectSolution(@NotNull Solution solution) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    IFile descriptorFile = solution.getDescriptorFile();
-    assert descriptorFile != null;
-    projectDescriptor.removeSolution(descriptorFile.getPath());
-    setProjectDescriptor(projectDescriptor);
-  }
-
-  @NotNull
-  public List<Solution> getProjectSolutions() {
-    List<Solution> result = new ArrayList<Solution>();
-    for (ModuleReference solRef : mySolutions) {
-      Solution solution = MPSModuleRepository.getInstance().getSolution(solRef);
-      if (solution != null) result.add(solution);
-    }
-    return result;
-  }
-
-  //--devkits
-
-  public DevKit addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    projectDescriptor.addDevkit(devKitDescriptorFile.getPath());
-    setProjectDescriptor(projectDescriptor);
-
-    for (DevKit dk : getProjectDevKits()) {
-      IFile descriptorFile = dk.getDescriptorFile();
-      assert descriptorFile != null;
-      if (descriptorFile.getPath().equals(devKitDescriptorFile.getPath())) {
-        return dk;
-      }
-    }
-
-    throw new RuntimeException("it can't happen");
-  }
-
-  public void removeProjectDevKit(@NotNull DevKit devkit) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    IFile descriptorFile = devkit.getDescriptorFile();
-    assert descriptorFile != null;
-    projectDescriptor.removeDevkit(descriptorFile.getPath());
-    setProjectDescriptor(projectDescriptor);
-  }
-
-  @NotNull
-  public List<DevKit> getProjectDevKits() {
-    return Collections.unmodifiableList(myDevKits);
   }
 
   //--ui
@@ -391,38 +310,29 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
     myErrors = null;
 
     // load solutions
-    mySolutions = new LinkedList<ModuleReference>();
-    for (Path solutionPath : myProjectDescriptor.getSolutions()) {
-      String path = solutionPath.getPath();
+    myModules = new ArrayList<ModuleReference>();
+    for (Path modulePath : myProjectDescriptor.getModules()) {
+      String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
       if (descriptorFile.exists()) {
-        mySolutions.add(MPSModuleRepository.getInstance().registerSolution(descriptorFile, this).getModuleReference());
-      } else {
-        error("Can't load solution from " + descriptorFile.getPath() + " File doesn't exist.");
-      }
-    }
+        Class type = null;
+        if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
+          type = Language.class;
+        } else if (path.endsWith(MPSExtentions.DOT_SOLUTION)) {
+          type = Solution.class;
+        } else if (path.endsWith(MPSExtentions.DOT_DEVKIT)) {
+          type = DevKit.class;
+        } else if (path.endsWith(MPSExtentions.DOT_LIBRARY)) {
+          type = Library.class;
+        }
 
-    // load languages
-    myLanguages = new LinkedList<ModuleReference>();
-    for (Path languagePath : myProjectDescriptor.getLanguages()) {
-      String path = languagePath.getPath();
-      IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
-      if (descriptorFile.exists()) {
-        myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this).getModuleReference());
+        if (type != null) {
+          myModules.add(MPSModuleRepository.getInstance().registerModule(descriptorFile, this, type).getModuleReference());
+        } else {
+          error("Can't load module from " + descriptorFile.getPath() + " Unknown file type.");
+        }
       } else {
-        error("Can't load language from " + descriptorFile.getPath() + " File doesn't exist.");
-      }
-    }
-
-    //load devkits
-    myDevKits = new LinkedList<DevKit>();
-    for (Path dk : myProjectDescriptor.getDevkits()) {
-      String path = dk.getPath();
-      IFile devKit = FileSystem.getInstance().getFileByPath(path);
-      if (devKit.exists()) {
-        myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
-      } else {
-        error("Can't load devkit from " + devKit.getPath() + " File doesn't exist");
+        error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
   }

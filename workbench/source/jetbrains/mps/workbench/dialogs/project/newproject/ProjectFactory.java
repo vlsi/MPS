@@ -83,13 +83,13 @@ public class ProjectFactory {
       public void run() {
         if (myOptions.getCreateNewLanguage()) {
           myCreatedLanguage = createNewLanguage(mpsProject);
-          mpsProject.addProjectLanguage(myCreatedLanguage);
+          mpsProject.addProjectModule(myCreatedLanguage);
           myCreatedLanguage.save();
         }
 
         if (myOptions.getCreateNewSolution()) {
-          IFile solutionDescriptorFile = createNewSolution();
-          myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile);
+          myCreatedSolution = createNewSolution(mpsProject);
+          mpsProject.addProjectModule(myCreatedSolution);
           myCreatedSolution.save();
         }
 
@@ -151,24 +151,23 @@ public class ProjectFactory {
     return null;
   }
 
-  private IFile createNewSolution() {
+  private Solution createNewSolution(MPSProject mpsProject) {
     String descriptorFileName = myOptions.getSolutionNamespace() + MPSExtentions.DOT_SOLUTION;
     String descriptorPath = myOptions.getSolutionPath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
-    String fileName = descriptorFile.getName();
 
-    SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
-    String name = fileName.substring(0, fileName.length() - 4);
-    solutionDescriptor.setNamespace(name);
+    Solution solution = Solution.createSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
+    SolutionDescriptor solutionDescriptor = solution.getModuleDescriptor();
 
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPrefix("");
     modelRoot.setPath(descriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
 
-    return descriptorFile;
+    solution.setSolutionDescriptor(solutionDescriptor,false);
+
+    return solution;
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {

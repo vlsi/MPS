@@ -96,7 +96,7 @@ public class FilterNode extends BaseNode {
     String filterName = filterXML.getAttribute(CLASS_NAME).getValue();
     try {
       Class filterClass = null;
-      for (Language l : project.getComponent(MPSProject.class).getProjectLanguages()) {
+      for (Language l : project.getComponent(MPSProject.class).getProjectModules(Language.class)) {
         filterClass = l.getClass(filterName);
         if (filterClass != null) break;
       }

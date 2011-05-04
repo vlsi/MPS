@@ -71,17 +71,6 @@ public class AddModuleToProject_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
-        if (module instanceof Language) {
-          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addProjectLanguage(((Language) module));
-        } else if (module instanceof Solution) {
-          IFile file = module.getDescriptorFile();
-          assert file != null;
-          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addProjectSolution(file);
-        } else if (module instanceof DevKit) {
-          IFile file = module.getDescriptorFile();
-          assert file != null;
-          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addProjectDevKit(file);
-        }
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

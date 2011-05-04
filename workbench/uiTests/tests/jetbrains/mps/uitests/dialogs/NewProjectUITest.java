@@ -66,13 +66,15 @@ public class NewProjectUITest extends NoProjectUITestsBase {
   }
 
   private void checkProject(MPSProject p) {
-    int langNum = p.getProjectLanguages().size();
+    List<Language> pl = p.getProjectModules(Language.class);
+    int langNum = pl.size();
     assertEquals("Project languages namber: " + langNum, 1, langNum);
-    int solNum = p.getProjectSolutions().size();
+    List<Solution> ps = p.getProjectModules(Solution.class);
+    int solNum = ps.size();
     assertEquals("Project solutions namber: " + solNum, 1, solNum);
 
-    Solution solution = p.getProjectSolutions().get(0);
-    Language language = p.getProjectLanguages().get(0);
+    Solution solution = ps.get(0);
+    Language language = pl.get(0);
     List<ModuleReference> languages = solution.getModuleDescriptor().getUsedLanguages();
     boolean imported = false;
     for (ModuleReference langRef:languages){

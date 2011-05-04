@@ -49,50 +49,14 @@ public class ProjectProperties {
   public boolean isSame(ProjectDescriptor projectDescriptor) {
     List<Path> paths = ListsFactory.createSortedList(ListsFactory.PATH_COMPARATOR);
     paths.clear();
-    paths.addAll(myProjectDescriptor.getLanguages());
-    if (!(paths.equals(myLanguages))) {
-      return false;
-    }
-    paths.clear();
-    paths.addAll(myProjectDescriptor.getSolutions());
-    if (!(paths.equals(mySolutions))) {
-      return false;
-    }
-    paths.clear();
-    paths.addAll(myProjectDescriptor.getDevkits());
-    if (!(paths.equals(myDevkits))) {
-      return false;
-    }
     return !(myTestConfigsChanged);
   }
 
   public void loadFrom(MPSProject project) {
     myProjectDescriptor = project.getProjectDescriptor();
-    mySolutions.clear();
-    mySolutions.addAll(myProjectDescriptor.getSolutions());
-    myLanguages.clear();
-    myLanguages.addAll(myProjectDescriptor.getLanguages());
-    myDevkits.clear();
-    myDevkits.addAll(myProjectDescriptor.getDevkits());
-    myTestConfigs.clear();
     myTestConfigs.addAll(myProjectDescriptor.getTestConfigurations());
   }
 
   public void saveTo(MPSProject project) {
-    myProjectDescriptor.getLanguages().clear();
-    for (Path path : myLanguages) {
-      myProjectDescriptor.addLanguage(path);
-    }
-    myProjectDescriptor.getSolutions().clear();
-    for (Path path : mySolutions) {
-      myProjectDescriptor.addSolution(path);
-    }
-    myProjectDescriptor.getDevkits().clear();
-    for (Path path : myDevkits) {
-      myProjectDescriptor.addDevkit(path);
-    }
-    myProjectDescriptor.getTestConfigurations().clear();
-    myProjectDescriptor.getTestConfigurations().addAll(myTestConfigs);
-    project.setProjectDescriptor(myProjectDescriptor);
   }
 }

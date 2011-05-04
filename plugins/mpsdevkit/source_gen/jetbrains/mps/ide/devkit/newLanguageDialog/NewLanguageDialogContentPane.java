@@ -303,7 +303,6 @@ public class NewLanguageDialogContentPane extends JPanel {
         language.save();
       }
     });
-    myThis.getProject().addProjectLanguage(language);
     myThis.setResult(language);
     return language;
   }

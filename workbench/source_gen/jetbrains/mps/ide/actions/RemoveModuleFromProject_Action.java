@@ -102,15 +102,6 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
       if (!(dialogWrapper.isOK())) {
         return;
       }
-      if (module instanceof Language) {
-        ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeProjectLanguage((Language) module);
-      } else
-      if (module instanceof Solution) {
-        ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeProjectSolution((Solution) module);
-      } else
-      if (module instanceof DevKit) {
-        ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeProjectDevKit((DevKit) module);
-      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);
