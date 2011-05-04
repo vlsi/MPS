@@ -41,6 +41,11 @@ public class Library extends AbstractModule {
 
   }
 
+  public static Library createLibrary(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    return null;
+  }
+
+
   //this is for stubs framework only
 
   public static Library newInstance(LibraryDescriptor descriptor, MPSModuleOwner moduleOwner) {
