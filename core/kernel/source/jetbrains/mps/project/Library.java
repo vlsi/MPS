@@ -17,7 +17,9 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.persistence.LibraryDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -42,9 +44,37 @@ public class Library extends AbstractModule {
   }
 
   public static Library createLibrary(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    return null;
+    Library lib = new Library();
+    LibraryDescriptor descriptor;
+    if (descriptorFile.exists()) {
+      descriptor = LibraryDescriptorPersistence.loadLibraryDescriptor(descriptorFile);
+      if (descriptor.getUUID() == null) {
+        descriptor.setUUID(UUID.randomUUID().toString());
+        LibraryDescriptorPersistence.saveLibraryDescriptor(descriptorFile,descriptor);
+      }
+    } else {
+      descriptor = createNewDescriptor(namespace, descriptorFile);
+    }
+    lib.myDescriptorFile = descriptorFile;
+
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (repository.existsModule(descriptor.getModuleReference())) {
+      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
+      return repository.getLibrary(descriptor.getModuleReference());
+    }
+
+    lib.setLibraryDescriptor(descriptor, false);
+    repository.addModule(lib, moduleOwner);
+
+    return lib;
   }
 
+  private static LibraryDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
+    LibraryDescriptor descriptor = new LibraryDescriptor();
+    descriptor.setNamespace(namespace);
+    descriptor.setUUID(UUID.randomUUID().toString());
+    return descriptor;
+  }
 
   //this is for stubs framework only
 

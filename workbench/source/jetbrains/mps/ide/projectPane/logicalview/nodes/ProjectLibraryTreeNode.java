@@ -45,7 +45,7 @@ public class ProjectLibraryTreeNode extends ProjectModuleTreeNode {
     IFile descriptorFile = myLibrary.getDescriptorFile();
     String id = descriptorFile == null ? myLibrary.getModuleFqName() : descriptorFile.getPath();
     setNodeIdentifier(id);
-    setIcon(Icons.SOLUTION_ICON);
+    setIcon(Icons.ACCESSORY_MODEL_ICON);
   }
 
   public Object getUserObject() {

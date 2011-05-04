@@ -33,6 +33,8 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
       return new ProjectSolutionTreeNode((AbstractModule) module, project, shortNameOnly);
     } else if (module instanceof DevKit) {
       return new ProjectDevKitTreeNode((DevKit) module, project);
+    }else if (module instanceof Library) {
+      return new ProjectLibraryTreeNode((Library) module, project);
     }
 
     return null;
