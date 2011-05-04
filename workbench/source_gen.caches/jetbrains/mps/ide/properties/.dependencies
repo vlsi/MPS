@@ -255,7 +255,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModuleValidator" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser" />
     <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.ImportProperties" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
@@ -332,7 +331,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.IncludedVCSDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.ImportProperties" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer" />

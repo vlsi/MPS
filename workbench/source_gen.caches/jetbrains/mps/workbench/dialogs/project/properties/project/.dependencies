@@ -3,11 +3,14 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" file="ProjectProperties.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="java.util.ArrayList" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" file="ProjectPropertiesComponent.java">
     <classNode dependClassName="java.lang.Throwable" />

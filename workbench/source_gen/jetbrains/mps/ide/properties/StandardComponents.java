@@ -84,7 +84,6 @@ import jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurat
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction;
 import jetbrains.mps.project.structure.project.Path;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer;
 import jetbrains.mps.InternalFlag;
@@ -461,28 +460,20 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createProjectSolutionsPanel(final IBindedDialog owner, final String caption, final List<Path> list) {
-    return StandardComponents.createProjectModulesPathsList(owner, caption, list, MPSExtentions.DOT_SOLUTION);
+  public static JPanel createProjectModulesPanel(final IBindedDialog owner, final String caption, final List<Path> list) {
+    return StandardComponents.createProjectModulesPathsList(owner, caption, list);
   }
 
-  public static JPanel createProjectLanguagesPanel(final IBindedDialog owner, final String caption, final List<Path> list) {
-    return StandardComponents.createProjectModulesPathsList(owner, caption, list, MPSExtentions.DOT_LANGUAGE);
-  }
-
-  public static JPanel createProjectDevkitsPanel(final IBindedDialog owner, final String caption, final List<Path> list) {
-    return StandardComponents.createProjectModulesPathsList(owner, caption, list, MPSExtentions.DOT_DEVKIT);
-  }
-
-  public static JPanel createProjectModulesPathsList(final IBindedDialog owner, final String caption, final List<Path> list, final String extension) {
+  public static JPanel createProjectModulesPathsList(final IBindedDialog owner, final String caption, final List<Path> list) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        final BoundListPanel result_wf5hwp_a0a0a12 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a12 = new ModulePathChooser(extension, owner);
-        result_wf5hwp_a0a0a12.setChooser(result_wf5hwp_a0a0a0a12);
-        final DefaultListCellRenderer result_wf5hwp_a1a0a0a12 = new PathRenderer();
-        result_wf5hwp_a0a0a12.setCellRenderer(result_wf5hwp_a1a0a0a12);
-        result_wf5hwp_a0a0a12.init();
-        return result_wf5hwp_a0a0a12;
+        final BoundListPanel result_wf5hwp_a0a0a91 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a91 = new ModulePathChooser(owner);
+        result_wf5hwp_a0a0a91.setChooser(result_wf5hwp_a0a0a0a91);
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a91 = new PathRenderer();
+        result_wf5hwp_a0a0a91.setCellRenderer(result_wf5hwp_a1a0a0a91);
+        result_wf5hwp_a0a0a91.init();
+        return result_wf5hwp_a0a0a91;
       }
     }.invoke();
   }

@@ -11,7 +11,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane" file="NewLanguageDialogContentPane.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="org.jdesktop.beansbinding.Property" />
     <classNode dependClassName="org.jdesktop.beansbinding.Bindings" />
     <classNode dependClassName="java.util.List" />

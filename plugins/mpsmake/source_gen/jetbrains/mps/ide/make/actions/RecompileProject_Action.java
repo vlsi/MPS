@@ -59,6 +59,7 @@ public class RecompileProject_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
+      SetSequence.fromSet(modules).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class)));
       ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Rebuilding", modules, true));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

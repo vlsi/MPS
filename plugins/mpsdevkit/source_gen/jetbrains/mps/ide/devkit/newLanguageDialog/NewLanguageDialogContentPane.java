@@ -23,7 +23,6 @@ import jetbrains.mps.ide.NewModuleCheckUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.Progressive;
@@ -244,21 +243,21 @@ public class NewLanguageDialogContentPane extends JPanel {
       return;
     }
     myThis.getDialog().dispose();
-    final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
+    final Language language = null;
     Project project = myThis.getProject().getProject();
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
       public void run(ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        language.value = myThis.createNewLanguage();
+        //language = myThis.createNewLanguage();
       }
     }, "Creating", false, project);
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
-        if (!(language.value.getSModelRoots().isEmpty())) {
-          LanguageAspect.STRUCTURE.createNew(language.value, false);
-          LanguageAspect.EDITOR.createNew(language.value, false);
-          LanguageAspect.CONSTRAINTS.createNew(language.value, false);
-          LanguageAspect.TYPESYSTEM.createNew(language.value, false);
+        if (!(language.getSModelRoots().isEmpty())) {
+          LanguageAspect.STRUCTURE.createNew(language, false);
+          LanguageAspect.EDITOR.createNew(language, false);
+          LanguageAspect.CONSTRAINTS.createNew(language, false);
+          LanguageAspect.TYPESYSTEM.createNew(language, false);
         }
         if (myThis.myNeedRuntime_f0.isSelected()) {
           Solution runtime = myThis.createRuntimeSolution();
@@ -303,6 +302,7 @@ public class NewLanguageDialogContentPane extends JPanel {
         language.save();
       }
     });
+    myThis.getProject().addProjectModule(language);
     myThis.setResult(language);
     return language;
   }

@@ -105,6 +105,7 @@
   <unitInfo fileName="Collapse_Action.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.Collapse_Action" />
   <unitInfo fileName="SetBookmark_Action.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark_Action" />
   <unitInfo fileName="QuickCreate_Action.java" startLine="26" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.QuickCreate_Action" />
+  <unitInfo fileName="AddModuleToProject_Action.java" startLine="19" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModuleToProject_Action" />
   <unitInfo fileName="SolutionProperties_Action.java" startLine="23" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionProperties_Action" />
   <unitInfo fileName="ModelProperties_Action.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelProperties_Action" />
   <unitInfo fileName="EditNodeExplicit_Action.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.actions.EditNodeExplicit_Action" />
@@ -123,7 +124,6 @@
   <unitInfo fileName="ProjectActions_ActionGroup.java" startLine="11" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
   <unitInfo fileName="DeleteModels_Action.java" startLine="24" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteModels_Action" />
   <unitInfo fileName="AddModelImportByRoot_Action.java" startLine="24" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModelImportByRoot_Action" />
-  <unitInfo fileName="AddModuleToProject_Action.java" startLine="23" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModuleToProject_Action" />
   <unitInfo fileName="HighlightInstances_Action.java" startLine="24" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightInstances_Action" />
   <unitInfo fileName="RenameModel_Action.java" startLine="25" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameModel_Action" />
   <unitInfo fileName="EditGivenNode_Action.java" startLine="19" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ide.actions.EditGivenNode_Action" />
@@ -146,10 +146,10 @@
   <unitInfo fileName="NewSubModel_Action.java" startLine="25" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.actions.NewSubModel_Action" />
   <unitInfo fileName="NewDirectory_Action.java" startLine="26" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.NewDirectory_Action" />
   <unitInfo fileName="NewFile_Action.java" startLine="26" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.NewFile_Action" />
+  <unitInfo fileName="RemoveModuleFromProject_Action.java" startLine="27" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
   <unitInfo fileName="MoveFileOrDirectory_Action.java" startLine="28" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action" />
   <unitInfo fileName="CutNode_Action.java" startLine="24" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.ide.actions.CutNode_Action" />
   <unitInfo fileName="NodeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
-  <unitInfo fileName="RemoveModuleFromProject_Action.java" startLine="30" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
   <unitInfo fileName="RenameFileOrDirectory_Action.java" startLine="24" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action" />
   <unitInfo fileName="ShowConceptInHierarchy_Action.java" startLine="23" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="12" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
@@ -1197,47 +1197,39 @@
     <unitInfo nodeId="1216126984989" fileName="SolutionProperties_Action.java" startLine="70" startPosition="47" endLine="74" endPosition="7" unitName="jetbrains.mps.ide.actions.SolutionProperties_Action$1" />
   </root>
   <root nodeId="1216127622518">
-    <nodeInfo nodeId="1216127838500" fileName="RemoveModuleFromProject_Action.java" startLine="40" startPosition="87" endLine="41" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216127868026" fileName="RemoveModuleFromProject_Action.java" startLine="42" startPosition="25" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216127819571" fileName="RemoveModuleFromProject_Action.java" startLine="44" startPosition="5" endLine="45" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216127884624" fileName="RemoveModuleFromProject_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6254140524585337314" fileName="RemoveModuleFromProject_Action.java" startLine="83" startPosition="101" endLine="84" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6254140524585438143" fileName="RemoveModuleFromProject_Action.java" startLine="86" startPosition="9" endLine="87" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6254140524585438151" fileName="RemoveModuleFromProject_Action.java" startLine="87" startPosition="49" endLine="88" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2905290274291261802" fileName="RemoveModuleFromProject_Action.java" startLine="92" startPosition="50" endLine="93" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2905290274291329856" fileName="RemoveModuleFromProject_Action.java" startLine="93" startPosition="57" endLine="94" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2905290274291329863" fileName="RemoveModuleFromProject_Action.java" startLine="94" startPosition="60" endLine="95" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2905290274291344465" fileName="RemoveModuleFromProject_Action.java" startLine="95" startPosition="47" endLine="96" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2905290274291336502" fileName="RemoveModuleFromProject_Action.java" startLine="96" startPosition="45" endLine="97" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2905290274291344475" fileName="RemoveModuleFromProject_Action.java" startLine="97" startPosition="32" endLine="98" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6254140524585337336" fileName="RemoveModuleFromProject_Action.java" startLine="100" startPosition="8" endLine="101" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6254140524585337342" fileName="RemoveModuleFromProject_Action.java" startLine="102" startPosition="36" endLine="103" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216127912895" fileName="RemoveModuleFromProject_Action.java" startLine="105" startPosition="39" endLine="106" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216127936506" fileName="RemoveModuleFromProject_Action.java" startLine="108" startPosition="39" endLine="109" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216127946630" fileName="RemoveModuleFromProject_Action.java" startLine="111" startPosition="37" endLine="112" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216127861611" fileName="RemoveModuleFromProject_Action.java" startLine="41" startPosition="99" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6254140524585337340" fileName="RemoveModuleFromProject_Action.java" startLine="101" startPosition="27" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216127946628" fileName="RemoveModuleFromProject_Action.java" startLine="110" startPosition="12" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216127936504" fileName="RemoveModuleFromProject_Action.java" startLine="107" startPosition="12" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216127901590" fileName="RemoveModuleFromProject_Action.java" startLine="104" startPosition="7" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6254140524585438125" fileName="RemoveModuleFromProject_Action.java" startLine="90" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="6254140524585375631" fileName="RemoveModuleFromProject_Action.java" startLine="84" startPosition="127" endLine="100" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <scopeInfo nodeId="1216127861612" fileName="RemoveModuleFromProject_Action.java" startLine="42" startPosition="25" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="6254140524585337341" fileName="RemoveModuleFromProject_Action.java" startLine="102" startPosition="36" endLine="103" endPosition="15" />
-    <scopeInfo nodeId="1216127901591" fileName="RemoveModuleFromProject_Action.java" startLine="105" startPosition="39" endLine="106" endPosition="111" />
-    <scopeInfo nodeId="1216127936505" fileName="RemoveModuleFromProject_Action.java" startLine="108" startPosition="39" endLine="109" endPosition="111" />
-    <scopeInfo nodeId="1216127946629" fileName="RemoveModuleFromProject_Action.java" startLine="111" startPosition="37" endLine="112" endPosition="107" />
-    <scopeInfo nodeId="6254140524585438142" fileName="RemoveModuleFromProject_Action.java" startLine="86" startPosition="9" endLine="88" endPosition="17" />
-    <scopeInfo nodeId="1216127809035" fileName="RemoveModuleFromProject_Action.java" startLine="40" startPosition="87" endLine="45" endPosition="97">
+    <nodeInfo nodeId="1216127838500" fileName="RemoveModuleFromProject_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216127868026" fileName="RemoveModuleFromProject_Action.java" startLine="39" startPosition="25" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216127819571" fileName="RemoveModuleFromProject_Action.java" startLine="41" startPosition="5" endLine="42" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216127884624" fileName="RemoveModuleFromProject_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6254140524585337314" fileName="RemoveModuleFromProject_Action.java" startLine="80" startPosition="101" endLine="81" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6254140524585438143" fileName="RemoveModuleFromProject_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6254140524585438151" fileName="RemoveModuleFromProject_Action.java" startLine="84" startPosition="49" endLine="85" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2905290274291261802" fileName="RemoveModuleFromProject_Action.java" startLine="89" startPosition="50" endLine="90" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2905290274291329856" fileName="RemoveModuleFromProject_Action.java" startLine="90" startPosition="57" endLine="91" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2905290274291329863" fileName="RemoveModuleFromProject_Action.java" startLine="91" startPosition="60" endLine="92" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2905290274291344465" fileName="RemoveModuleFromProject_Action.java" startLine="92" startPosition="47" endLine="93" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2905290274291336502" fileName="RemoveModuleFromProject_Action.java" startLine="93" startPosition="45" endLine="94" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2905290274291344475" fileName="RemoveModuleFromProject_Action.java" startLine="94" startPosition="32" endLine="95" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6254140524585337336" fileName="RemoveModuleFromProject_Action.java" startLine="97" startPosition="8" endLine="98" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6254140524585337342" fileName="RemoveModuleFromProject_Action.java" startLine="99" startPosition="36" endLine="100" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4543209876460270586" fileName="RemoveModuleFromProject_Action.java" startLine="101" startPosition="7" endLine="102" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216127861611" fileName="RemoveModuleFromProject_Action.java" startLine="38" startPosition="99" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6254140524585337340" fileName="RemoveModuleFromProject_Action.java" startLine="98" startPosition="27" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6254140524585438125" fileName="RemoveModuleFromProject_Action.java" startLine="87" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="6254140524585375631" fileName="RemoveModuleFromProject_Action.java" startLine="81" startPosition="127" endLine="97" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <scopeInfo nodeId="1216127861612" fileName="RemoveModuleFromProject_Action.java" startLine="39" startPosition="25" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="6254140524585337341" fileName="RemoveModuleFromProject_Action.java" startLine="99" startPosition="36" endLine="100" endPosition="15" />
+    <scopeInfo nodeId="6254140524585438142" fileName="RemoveModuleFromProject_Action.java" startLine="83" startPosition="9" endLine="85" endPosition="17" />
+    <scopeInfo nodeId="1216127809035" fileName="RemoveModuleFromProject_Action.java" startLine="37" startPosition="87" endLine="42" endPosition="97">
       <varInfo nodeId="1216127838501" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="6254140524585438129" fileName="RemoveModuleFromProject_Action.java" startLine="92" startPosition="50" endLine="98" endPosition="23">
+    <scopeInfo nodeId="6254140524585438129" fileName="RemoveModuleFromProject_Action.java" startLine="89" startPosition="50" endLine="95" endPosition="23">
       <varInfo nodeId="2905290274291261803" varName="panel" />
       <varInfo nodeId="2905290274291329857" varName="gbc" />
       <varInfo nodeId="2905290274291344466" varName="label" />
     </scopeInfo>
-    <scopeInfo nodeId="6254140524585438125" fileName="RemoveModuleFromProject_Action.java" startLine="90" startPosition="0" endLine="100" endPosition="0" />
-    <unitInfo nodeId="6254140524585438123" fileName="RemoveModuleFromProject_Action.java" startLine="85" startPosition="40" endLine="100" endPosition="7" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action$1" />
+    <scopeInfo nodeId="6254140524585438125" fileName="RemoveModuleFromProject_Action.java" startLine="87" startPosition="0" endLine="97" endPosition="0" />
+    <unitInfo nodeId="6254140524585438123" fileName="RemoveModuleFromProject_Action.java" startLine="82" startPosition="40" endLine="97" endPosition="7" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action$1" />
   </root>
   <root nodeId="1216128015035">
     <nodeInfo nodeId="5367190004202146564" fileName="SetModuleFolder_Action.java" startLine="31" startPosition="87" endLine="32" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1579,34 +1571,20 @@
     <nodeInfo nodeId="1236354699665" fileName="ShowBookmarksDialog_Action.java" startLine="53" startPosition="125" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1241020019659">
-    <nodeInfo nodeId="8918545961567434094" fileName="AddModuleToProject_Action.java" startLine="35" startPosition="104" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8918545961567434110" fileName="AddModuleToProject_Action.java" startLine="38" startPosition="5" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241020246052" fileName="AddModuleToProject_Action.java" startLine="74" startPosition="41" endLine="75" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241020312796" fileName="AddModuleToProject_Action.java" startLine="76" startPosition="48" endLine="77" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241020316366" fileName="AddModuleToProject_Action.java" startLine="77" startPosition="50" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1241020326952" fileName="AddModuleToProject_Action.java" startLine="78" startPosition="30" endLine="79" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241020402657" fileName="AddModuleToProject_Action.java" startLine="80" startPosition="46" endLine="81" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241020354573" fileName="AddModuleToProject_Action.java" startLine="81" startPosition="50" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1241020354577" fileName="AddModuleToProject_Action.java" startLine="82" startPosition="30" endLine="83" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8918545961567434030" fileName="AddModuleToProject_Action.java" startLine="34" startPosition="90" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8918545961567433997" fileName="AddModuleToProject_Action.java" startLine="33" startPosition="87" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1241020218838" fileName="AddModuleToProject_Action.java" startLine="73" startPosition="115" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241020173249" fileName="AddModuleToProject_Action.java" startLine="72" startPosition="9" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="8918545961567434031" fileName="AddModuleToProject_Action.java" startLine="35" startPosition="104" endLine="36" endPosition="21" />
-    <scopeInfo nodeId="1241020218840" fileName="AddModuleToProject_Action.java" startLine="74" startPosition="41" endLine="75" endPosition="112" />
-    <scopeInfo nodeId="8918545961567433998" fileName="AddModuleToProject_Action.java" startLine="34" startPosition="90" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1241020270357" fileName="AddModuleToProject_Action.java" startLine="76" startPosition="48" endLine="79" endPosition="97">
-      <varInfo nodeId="1241020312797" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="1241020354566" fileName="AddModuleToProject_Action.java" startLine="80" startPosition="46" endLine="83" endPosition="95">
-      <varInfo nodeId="1241020402658" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="8918545961567433997" fileName="AddModuleToProject_Action.java" startLine="33" startPosition="87" endLine="38" endPosition="5">
+    <nodeInfo nodeId="8918545961567434094" fileName="AddModuleToProject_Action.java" startLine="31" startPosition="104" endLine="32" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8918545961567434110" fileName="AddModuleToProject_Action.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4543209876460270560" fileName="AddModuleToProject_Action.java" startLine="69" startPosition="115" endLine="70" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8918545961567434030" fileName="AddModuleToProject_Action.java" startLine="30" startPosition="90" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241020173249" fileName="AddModuleToProject_Action.java" startLine="68" startPosition="9" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8918545961567433997" fileName="AddModuleToProject_Action.java" startLine="29" startPosition="87" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="8918545961567434031" fileName="AddModuleToProject_Action.java" startLine="31" startPosition="104" endLine="32" endPosition="21" />
+    <scopeInfo nodeId="1241020173252" fileName="AddModuleToProject_Action.java" startLine="69" startPosition="115" endLine="70" endPosition="95" />
+    <scopeInfo nodeId="8918545961567433998" fileName="AddModuleToProject_Action.java" startLine="30" startPosition="90" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="1241020173249" fileName="AddModuleToProject_Action.java" startLine="68" startPosition="9" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="8918545961567433997" fileName="AddModuleToProject_Action.java" startLine="29" startPosition="87" endLine="34" endPosition="5">
       <varInfo nodeId="8918545961567434001" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8918545961567366045" fileName="AddModuleToProject_Action.java" startLine="33" startPosition="87" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="1241020173252" fileName="AddModuleToProject_Action.java" startLine="73" startPosition="115" endLine="84" endPosition="9" />
-    <scopeInfo nodeId="1241020173249" fileName="AddModuleToProject_Action.java" startLine="72" startPosition="9" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="8918545961567366045" fileName="AddModuleToProject_Action.java" startLine="29" startPosition="87" endLine="35" endPosition="16" />
   </root>
   <root nodeId="1241020613337">
     <nodeInfo nodeId="3575273646046394900" fileName="DeleteModules_Action.java" startLine="36" startPosition="71" endLine="37" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

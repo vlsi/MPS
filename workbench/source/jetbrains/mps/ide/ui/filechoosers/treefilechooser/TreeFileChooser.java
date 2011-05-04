@@ -18,7 +18,6 @@ package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.IOperationContext;
@@ -63,10 +62,14 @@ public class TreeFileChooser {
     myMode = mode;
   }
 
-  public void setExtensionFileFilter(final String extension) {
+  public void setExtensionFileFilter(final String... extension) {
     myFileFilter = new IFileFilter() {
       public boolean accept(IFile file) {
-        return file.getName().toLowerCase().endsWith(extension) || file.isDirectory();
+        if (file.isDirectory()) return true;
+        for (String e : extension) {
+          if (file.getName().toLowerCase().endsWith(e)) return true;
+        }
+        return false;
       }
     };
   }

@@ -15,10 +15,6 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.DevKit;
 
 public class AddModuleToProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -71,6 +67,7 @@ public class AddModuleToProject_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
+        ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addProjectModule(module);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
