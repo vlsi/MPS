@@ -21,29 +21,13 @@ import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
-public class RuntimeSupport {
+public abstract class RuntimeSupport {
 
-  protected TypeChecker myTypeChecker;
+  public abstract SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak);
 
-  public RuntimeSupport(TypeChecker typeChecker) {
-    myTypeChecker = typeChecker;
-  }
+  public abstract SNode coerce_(SNode subtype, IMatchingPattern pattern);
 
-  public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
-    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, null);
-  }
+  public abstract SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak, TypeCheckingContext typeCheckingContext);
 
-  public SNode coerce_(SNode subtype, IMatchingPattern pattern) {
-    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, null);
-  }
-
-  public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak, TypeCheckingContext typeCheckingContext) {
-    EquationManager equationManager = typeCheckingContext == null ? null : typeCheckingContext.getEquationManager();
-    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, equationManager);
-  }
-
-  public SNode coerce_(SNode subtype, IMatchingPattern pattern, TypeCheckingContext typeCheckingContext) {
-    EquationManager equationManager = typeCheckingContext == null ? null : typeCheckingContext.getEquationManager();
-    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, equationManager);
-  }
+  public abstract SNode coerce_(SNode subtype, IMatchingPattern pattern, TypeCheckingContext typeCheckingContext);
 }

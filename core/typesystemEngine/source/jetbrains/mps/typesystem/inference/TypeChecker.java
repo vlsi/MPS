@@ -203,7 +203,7 @@ public class TypeChecker implements ApplicationComponent {
   private void disposeTracing() {
     if (myPerformanceTracer != null) {
       myPerformanceTracer = null;
-      myRuntimeSupport = new RuntimeSupport(this);
+      myRuntimeSupport = new RuntimeSupportNew(this);
       mySubtypingManager = new SubTypingManagerNew(this);
     }
   }

@@ -28,9 +28,10 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
  * Time: 1:27:52 PM
  */
 public class RuntimeSupportNew extends RuntimeSupport {
+  protected TypeChecker myTypeChecker;
 
   public RuntimeSupportNew(TypeChecker typeChecker) {
-    super(typeChecker);
+    myTypeChecker = typeChecker;
   }
 
   @Override

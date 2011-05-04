@@ -159,7 +159,10 @@ public class SubTypingManagerNew extends SubtypingManager {
         if (superType.matchesWith(ancestor)) {
           addToCache(subType, superType, true, isWeak);
           return true;
-        }
+        }     /*
+       if (superType instanceof NodeMatcher && isSubTypeByReplacementRules(ancestor, ((NodeMatcher)superType).getNode(), isWeak)) {
+          return true;
+        }       */
       }
       for (SNode passedNodeRaw : yetPassedRaw) {
         yetPassed.add(passedNodeRaw);

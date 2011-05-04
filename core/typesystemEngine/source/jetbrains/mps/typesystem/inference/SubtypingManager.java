@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class SubtypingManager {
+public abstract class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
 
   protected final TypeChecker myTypeChecker;
@@ -391,7 +391,7 @@ public class SubtypingManager {
     return toNodes(leastCommonSupertypesWrappers(toWrappers(types, null), isWeak));
   }
 
-  public Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
+  private Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
     if (types.size() == 1) return new THashSet<IWrapper>(types);
 
     /*if (types.size() == 2) {
@@ -563,77 +563,6 @@ System.out.println("alltypes = " + allTypes);*/
     return result_; //commonSupertypes;
   }
 
-  public SNode coerceSubtyping(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final EquationManager equationManager) {
-    if (subtype == null) return null;
-    if (pattern.match(subtype)) return subtype;
-    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
-      List<SNode> children = subtype.getChildren("argument");
-      for (SNode child : children) {
-        SNode result = coerceSubtyping(child, pattern, isWeak, equationManager);
-        if (result != null) return result;
-      }
-      return null;
-    }
-
-    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
-      List<SNode> children = subtype.getChildren("argument");
-      Set<IWrapper> wrappers = new THashSet<IWrapper>();
-      for (SNode child : children) {
-        wrappers.add(NodeWrapper.fromNode(child, equationManager));
-      }
-      IWrapper lcs = leastCommonSupertype(wrappers, isWeak, equationManager);
-      if (lcs == null) return null;
-      SNode result = coerceSubtyping(lcs.getNode(), pattern, isWeak, equationManager);
-      return result;
-    }
-
-    //asking the cache
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
-      public SNode compute() {
-
-        SubtypingCache cache = myTypeChecker.getSubtypingCache();
-        if (cache != null) {
-          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-          if (nodePair.o1) {
-            return nodePair.o2;
-          }
-        }
-        cache = myTypeChecker.getGlobalSubtypingCache();
-        if (cache != null) {
-          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-          if (nodePair.o1) {
-            return nodePair.o2;
-          }
-        }
-
-        CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
-        boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager, true), coersionMatcher, equationManager, null, isWeak);
-        SNode result;
-        if (!success) {
-          result = null;
-        } else {
-          result = coersionMatcher.getResult();
-        }
-
-        //writing to the cache
-        SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
-        if (subtypingCache != null) {
-          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
-        }
-        subtypingCache = myTypeChecker.getGlobalSubtypingCache();
-        if (subtypingCache != null) {
-          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
-        }
-
-        return result;
-      }
-    });
-  }
-
-  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, EquationManager equationManager) {
-    return coerceSubtyping(subtype, pattern, true, equationManager);
-  }
-
   public boolean isComparableWRTRules(IWrapper wrapper1, IWrapper wrapper2, EquationManager equationManager, EquationInfo errorInfo, boolean isWeak) {
     if (wrapper1 == null || wrapper2 == null) {
       return false;
@@ -658,17 +587,6 @@ System.out.println("alltypes = " + allTypes);*/
     }
 
     return false;
-  }
-
-  public SNode mostSpecificType(Set<SNode> nodes) {
-    Set<SNode> residualNodes = mostSpecificTypes(nodes);
-    if (residualNodes.size() == 1) {
-      return residualNodes.iterator().next();
-    }
-    if (residualNodes.size() > 1) {
-      return LatticeUtil.meetNodes(residualNodes);
-    }
-    return null;
   }
 
   public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
@@ -698,44 +616,5 @@ System.out.println("alltypes = " + allTypes);*/
       }
     }
     return residualNodes;
-  }
-
-
-  private static class CoersionMatcher implements IMatcher {
-    private final IMatchingPattern myPattern;
-    private SNode myResult;
-
-    public CoersionMatcher(IMatchingPattern pattern) {
-      myPattern = pattern;
-    }
-
-    public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, Object matchParameter) {
-      return matchesWith(wrapper, equationManager, errorInfo);
-    }
-
-    public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo) {
-      if (!(wrapper instanceof NodeWrapper)) {
-        return false;
-      }
-      NodeWrapper nodeWrapper = (NodeWrapper) wrapper;
-      SNode nodeToMatch = nodeWrapper.getNode();
-      boolean b = myPattern.match(nodeToMatch);
-      if (b) {
-        myResult = nodeToMatch;
-      }
-      return b;
-    }
-
-    public SNode getResult() {
-      return myResult;
-    }
-
-    public IMatchingPattern getMatchingPattern() {
-      return myPattern;
-    }
-
-    public String getConceptFQName() {
-      return myPattern.getConceptFQName();
-    }
   }
 }
