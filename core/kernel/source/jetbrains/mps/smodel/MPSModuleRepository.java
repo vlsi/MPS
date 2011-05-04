@@ -337,6 +337,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     return (Language) getModule(ref);
   }
 
+  public Library getLibrary(ModuleReference ref) {
+    return (Library) getModule(ref);
+  }
+
   public Generator getGenerator(ModuleReference ref) {
     return (Generator) getModule(ref);
   }

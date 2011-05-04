@@ -609,6 +609,14 @@ public abstract class AbstractModule implements IModule {
     return new ModuleScope();
   }
 
+  public String getGeneratorOutputPath() {
+    return null;
+  }
+
+  public String getTestsGeneratorOutputPath() {
+    return null;
+  }
+
   public class ModuleScope extends DefaultScope {
     protected ModuleScope() {
 
