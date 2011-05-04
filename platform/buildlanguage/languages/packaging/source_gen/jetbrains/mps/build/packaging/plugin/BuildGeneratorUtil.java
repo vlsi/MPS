@@ -86,7 +86,7 @@ public class BuildGeneratorUtil {
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor);
     return ModelAccess.instance().runWriteAction(new Computable<Solution>() {
       public Solution compute() {
-        return MPSModuleRepository.getInstance().registerSolution(solutionDescriptorFile, mpsProject);
+        return MPSModuleRepository.getInstance().registerModule(solutionDescriptorFile, mpsProject, Solution.class);
       }
     });
   }
