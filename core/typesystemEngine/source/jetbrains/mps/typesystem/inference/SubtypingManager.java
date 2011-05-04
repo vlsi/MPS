@@ -48,8 +48,8 @@ public abstract class SubtypingManager {
 
   //api
 
-  public abstract  boolean isSubtype(SNode subtype, SNode supertype);
-  public abstract boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak);
+  public abstract  boolean isSubtype(SNode subType, SNode superType);
+  public abstract boolean isSubtype(SNode subType, SNode superType, boolean isWeak);
 
   public abstract StructuralNodeSet<?> collectImmediateSupertypes(SNode term);
   public abstract StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak);
@@ -268,34 +268,7 @@ System.out.println("alltypes = " + allTypes);*/
     return result_; //commonSupertypes;
   }
 
-  public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
-    Set<SNode> residualNodes = new THashSet<SNode>(nodes);
-    while (residualNodes.size() > 1) {
-      List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);
-      boolean wasChange = false;
-      int size = nodesToIterate.size();
-      for (int i = 0; i < size; i++) {
-        for (int j = i + 1; j < size; j++) {
-          SNode node1 = nodesToIterate.get(i);
-          SNode node2 = nodesToIterate.get(j);
-          if (node1 == null || node2 == null) {
-            residualNodes.remove(null);
-          }
-          if (isSubtype(node1, node2)) {
-            residualNodes.remove(node2);
-            wasChange = true;
-          } else if (isSubtype(node2, node1)) {
-            residualNodes.remove(node1);
-            wasChange = true;
-          }
-        }
-      }
-      if (!wasChange) {
-        break;
-      }
-    }
-    return residualNodes;
-  }
+  public abstract Set<SNode> mostSpecificTypes(Set<SNode> nodes);
 
   private static Set<IWrapper> toWrappers(Set<SNode> nodes, final EquationManager equationManager) {
     Set<IWrapper> result = new THashSet<IWrapper>();

@@ -54,8 +54,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  public boolean isSubtype(SNode subtype, SNode supertype) {
-    return isSubtype(subtype, supertype, true);
+  public boolean isSubtype(SNode subType, SNode superType) {
+    return isSubtype(subType, superType, true);
   }
 
   public boolean isSubtype(SNode subType, SNode superType, boolean isWeak) {
@@ -359,6 +359,35 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
     return myCoercionManager.coerceSubTypingNew(subtype, pattern, isWeak, state);
+  }
+
+  public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
+    Set<SNode> residualNodes = new THashSet<SNode>(nodes);
+    while (residualNodes.size() > 1) {
+      List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);
+      boolean wasChange = false;
+      int size = nodesToIterate.size();
+      for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+          SNode node1 = nodesToIterate.get(i);
+          SNode node2 = nodesToIterate.get(j);
+          if (node1 == null || node2 == null) {
+            residualNodes.remove(null);
+          }
+          if (isSubtype(node1, node2)) {
+            residualNodes.remove(node2);
+            wasChange = true;
+          } else if (isSubtype(node2, node1)) {
+            residualNodes.remove(node1);
+            wasChange = true;
+          }
+        }
+      }
+      if (!wasChange) {
+        break;
+      }
+    }
+    return residualNodes;
   }
 
   private Boolean getCacheAnswer(SNode subType, SNode superType, boolean isWeak) {

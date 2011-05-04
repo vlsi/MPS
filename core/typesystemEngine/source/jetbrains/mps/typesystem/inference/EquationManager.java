@@ -1161,7 +1161,7 @@ public class EquationManager {
   }
 
   private boolean typeLessThanVar(IWrapper var, boolean isWeak, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
-    return typeLessThanThis(var, isWeak, new IActionPerformer() {
+    return false; /*typeLessThanThis(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         //  T,S <: c => c = lcs(T,S)
         Set<IWrapper> expandedSubtypes = new THashSet<IWrapper>();
@@ -1176,7 +1176,7 @@ public class EquationManager {
         addEquation(type, otherType,
           errorInfo);
       }
-    }, priority, minPriority, isShallow, prioritiesSynthesizer);
+    }, priority, minPriority, isShallow, prioritiesSynthesizer);      */
   }
 
   private boolean typeLessThanConcrete(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
