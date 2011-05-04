@@ -10,6 +10,7 @@ import jetbrains.mps.vfs.IFileUtils;
 
 public class MacrosFactory {
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
+  public static final String LIBRARY_DESCRIPTOR = "${library_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String PROJECT = "${project}";
@@ -20,6 +21,10 @@ public class MacrosFactory {
 
   public static Macros solutionDescriptor() {
     return new DescriptorMacros(SOLUTION_DESCRIPTOR);
+  }
+
+  public static Macros libraryDescriptor() {
+    return new DescriptorMacros(LIBRARY_DESCRIPTOR);
   }
 
   public static Macros devkitMacros() {

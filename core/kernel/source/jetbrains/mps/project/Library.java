@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.persistence.LibraryDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -61,10 +62,10 @@ public class Library extends AbstractModule {
     Library solution = new Library();
     LibraryDescriptor descriptor;
     if (descriptorFile.exists()) {
-      descriptor = null;//LibraryDescriptorPersistence.loadLibraryDescriptor(descriptorFile);
+      descriptor = LibraryDescriptorPersistence.loadLibraryDescriptor(descriptorFile);
       if (descriptor.getUUID() == null) {
         descriptor.setUUID(UUID.randomUUID().toString());
-        //LibraryDescriptorPersistence.saveLibraryDescriptor(descriptorFile, descriptor);
+        LibraryDescriptorPersistence.saveLibraryDescriptor(descriptorFile, descriptor);
       }
     } else {
       descriptor = new LibraryDescriptor();
@@ -132,7 +133,7 @@ public class Library extends AbstractModule {
   }
 
   public void save() {
-   // LibraryDescriptorPersistence.saveLibraryDescriptor(myDescriptorFile, getModuleDescriptor());
+    LibraryDescriptorPersistence.saveLibraryDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
   public String toString() {
@@ -146,7 +147,7 @@ public class Library extends AbstractModule {
   protected LibraryDescriptor loadDescriptor() {
     IFile file = getDescriptorFile();
     assert file != null;
-    return null;//LibraryDescriptorPersistence.loadLibraryDescriptor(file);
+    return LibraryDescriptorPersistence.loadLibraryDescriptor(file);
   }
 
   public BytecodeLocator getBytecodeLocator() {
