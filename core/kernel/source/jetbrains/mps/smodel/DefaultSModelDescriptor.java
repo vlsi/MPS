@@ -302,11 +302,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public void dispose() {
     UnregisteredNodes.instance().clear(getSModelReference());
-
-    if (mySModel != null) {
-      fireBeforeModelDisposed(mySModel);
-      mySModel.dispose();
-    }
     super.dispose();
   }
 

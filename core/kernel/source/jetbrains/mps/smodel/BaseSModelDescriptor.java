@@ -188,6 +188,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public void dispose() {
     ModelAccess.assertLegalWrite();
+    if (mySModel != null) {
+      fireBeforeModelDisposed(mySModel);
+      mySModel.dispose();
+    }
     clearListeners();
   }
 
