@@ -571,7 +571,7 @@
     <nodeInfo nodeId="1240833723654" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="70" startPosition="51" endLine="77" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1240833723646" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="68" startPosition="61" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1240833723645" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="67" startPosition="9" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240833723633" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="63" startPosition="79" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1240833723633" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="63" startPosition="91" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1240833723630" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="62" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1240833723701" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="84" startPosition="47" endLine="84" endPosition="47" />
     <scopeInfo nodeId="1240833723592" fileName="AntRunnerPreferences_AntRunner_PreferencesPage.java" startLine="38" startPosition="76" endLine="39" endPosition="196" />
@@ -591,8 +591,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1240833723646" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="68" startPosition="61" endLine="79" endPosition="0" />
     <scopeInfo nodeId="1240833723638" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="64" startPosition="101" endLine="79" endPosition="11" />
-    <scopeInfo nodeId="1240833723632" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="63" startPosition="79" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="1240833723633" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="63" startPosition="79" endLine="80" endPosition="7" />
+    <scopeInfo nodeId="1240833723632" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="63" startPosition="91" endLine="80" endPosition="7" />
+    <scopeInfo nodeId="1240833723633" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="63" startPosition="91" endLine="80" endPosition="7" />
     <scopeInfo nodeId="1240833723630" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="62" startPosition="5" endLine="81" endPosition="5" />
     <scopeInfo nodeId="1240833723607" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="56" startPosition="45" endLine="81" endPosition="5" />
     <unitInfo nodeId="1240833723646" fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="68" startPosition="49" endLine="79" endPosition="9" unitName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent$1" />

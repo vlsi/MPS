@@ -60,7 +60,7 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
     if (MPSCore.getInstance().isTestMode()) {
       return;
     }
-    for (Solution sln : ListSequence.fromList(project.getProjectSolutions())) {
+    for (Solution sln : ListSequence.fromList(project.getProjectModules(Solution.class))) {
       for (final SModelDescriptor descriptor : ListSequence.fromList(sln.getOwnModelDescriptors())) {
         if (!(SModelStereotype.isUserModel(descriptor))) {
           continue;
