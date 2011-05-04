@@ -27,8 +27,20 @@ import java.util.*;
  */
 public class PartitioningSolver {
 
+  /*
+   *   Dependencies graph. For each mapping contains a set of mappings which should be applied together or after
+   *   it (PriorityData.isStrict means only after).
+   */
   private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
-  private List<CoherentSetData> myCoherentMappings;
+
+  /*
+   *   Each entry defines a set of mappings, which should be applied together.
+   */
+  private final List<CoherentSetData> myCoherentMappings;
+
+  /*
+   *   result: Contains rules which caused conflicts.
+   */
   private final Set<TemplateMappingPriorityRule> myConflictingRules;
 
   public PartitioningSolver(Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap, List<CoherentSetData> coherentMappings, Set<TemplateMappingPriorityRule> conflictingRules) {
@@ -44,7 +56,7 @@ public class PartitioningSolver {
     }
 
     // process coherent mappings
-    myCoherentMappings = PriorityMapUtil.joinIntersectingCoherentMappings(myCoherentMappings);
+    PriorityMapUtil.joinIntersectingCoherentMappings(myCoherentMappings);
     PriorityMapUtil.makeLockedByAllCoherentIfLockedByOne(myCoherentMappings, myPriorityMap);
     PriorityMapUtil.makeLocksEqualsForCoherentMappings(myCoherentMappings, myPriorityMap, myConflictingRules);
 
@@ -81,7 +93,9 @@ public class PartitioningSolver {
               checkSelfLocking(lockedMapping_1);
               if (newLockAdded) {
                 // if new lock is a weak lock, then better start all over again (weak locks cleaning)
-                if (myPriorityMap.get(lockedMapping_1).get(weakLockMapping).isWeak()) {
+                PriorityData priorityData = myPriorityMap.get(lockedMapping_1).get(weakLockMapping);
+                // checkSelfLocking may removed it, check if not null
+                if (priorityData != null && priorityData.isWeak()) {
                   need_more_passes = true;
                   break iterate_all_mappings;
                 }

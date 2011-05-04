@@ -24,33 +24,33 @@ import jetbrains.mps.util.CollectionUtil;
 import java.util.*;
 
 class PriorityMapUtil {
-  public static List<CoherentSetData> joinIntersectingCoherentMappings(List<CoherentSetData> coherentMappings) {
-    List<CoherentSetData> input = coherentMappings;
-    List<CoherentSetData> result = joinIntersectingCoherentMappings_internal(input);
-    while (result.size() != input.size()) {
-      input = result;
-      result = joinIntersectingCoherentMappings_internal(input);
-    }
-    return result;
-  }
 
-  private static List<CoherentSetData> joinIntersectingCoherentMappings_internal(List<CoherentSetData> coherentMappings) {
-    List<CoherentSetData> result = new ArrayList<CoherentSetData>();
-    for (CoherentSetData coherentSetData : coherentMappings) {
-      boolean joined = false;
-      for (CoherentSetData resultCoherentSetData : result) {
-        if (CollectionUtil.intersects(coherentSetData.myMappings, resultCoherentSetData.myMappings)) {
-          resultCoherentSetData.myMappings.addAll(coherentSetData.myMappings);
-          resultCoherentSetData.myCauseRules.addAll(coherentSetData.myCauseRules);
-          joined = true;
+  /*
+   *   Merges sets.
+   */
+  public static void joinIntersectingCoherentMappings(List<CoherentSetData> coherentMappings) {
+    Map<TemplateMappingConfiguration, CoherentSetData> myMappingToSet = new HashMap<TemplateMappingConfiguration, CoherentSetData>();
+    boolean executeOneMore = true;
+
+    outer:
+    while(executeOneMore) {
+      executeOneMore = false;
+      myMappingToSet.clear();
+      for(CoherentSetData data : coherentMappings) {
+        for (TemplateMappingConfiguration mapping : data.myMappings) {
+          CoherentSetData original = myMappingToSet.get(mapping);
+          if(original != null && original != data) {
+            // merge sets
+            original.myMappings.addAll(data.myMappings);
+            original.myCauseRules.addAll(data.myCauseRules);
+            coherentMappings.remove(data);
+            executeOneMore = true;
+            continue outer;
+          }
+          myMappingToSet.put(mapping, data);
         }
       }
-      if (!joined) {
-        result.add(coherentSetData);
-      }
     }
-
-    return result;
   }
 
   public static void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap, Set<TemplateMappingPriorityRule> conflictingRules) {
@@ -85,7 +85,7 @@ class PriorityMapUtil {
       // update
       for (TemplateMappingConfiguration coherentMapping : coherentMappingSet) {
         // make deep copy
-        Map<TemplateMappingConfiguration, PriorityData> joinedLocks_1 = new HashMap<TemplateMappingConfiguration, PriorityData>();
+        Map<TemplateMappingConfiguration, PriorityData> joinedLocks_1 = new HashMap<TemplateMappingConfiguration, PriorityData>(joinedLocks.size());
         for (Map.Entry<TemplateMappingConfiguration, PriorityData> entry : joinedLocks.entrySet()) {
           joinedLocks_1.put(entry.getKey(), new PriorityData(entry.getValue()));
         }
@@ -94,7 +94,7 @@ class PriorityMapUtil {
     }
   }
 
-  /**
+  /*
    * mappings locked by any of 'coherent mapping' should be locked by all 'coherent mappings'
    */
   public static void makeLockedByAllCoherentIfLockedByOne(List<CoherentSetData> coherentMappings, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
@@ -119,6 +119,7 @@ class PriorityMapUtil {
           PriorityData priorityData = locks.get(coherentMapping);
           if (priorityData != null) {
             priorityData.myCauseRules.addAll(coherentSetData.myCauseRules);
+            if(isStrict) priorityData.myStrict = true;
           } else {
             locks.put(coherentMapping, new PriorityData(isStrict, coherentSetData.myCauseRules));
           }
@@ -189,20 +190,18 @@ class PriorityMapUtil {
    */
   static void replaceWeakLock(TemplateMappingConfiguration lockedMapping, TemplateMappingConfiguration weakLockMapping, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
     Map<TemplateMappingConfiguration, PriorityData> locksToUpdate = priorityMap.get(lockedMapping);
-    PriorityData dataToKeep = locksToUpdate.get(weakLockMapping);
-    locksToUpdate.remove(weakLockMapping);
+    PriorityData dataToKeep = locksToUpdate.remove(weakLockMapping);
 
     Map<TemplateMappingConfiguration, PriorityData> locksToAdd = priorityMap.get(weakLockMapping);
     for (TemplateMappingConfiguration lockMappingToAdd : locksToAdd.keySet()) {
       PriorityData priorityData = locksToUpdate.get(lockMappingToAdd);
       if (priorityData != null) {
         priorityData.update(locksToAdd.get(lockMappingToAdd));
-        priorityData.update(dataToKeep);
       } else {
         priorityData = new PriorityData(locksToAdd.get(lockMappingToAdd));
-        priorityData.update(dataToKeep);
         locksToUpdate.put(lockMappingToAdd, priorityData);
       }
+      priorityData.update(dataToKeep);
     }
   }
 }
