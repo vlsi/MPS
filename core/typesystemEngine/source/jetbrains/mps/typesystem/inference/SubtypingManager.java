@@ -84,16 +84,6 @@ public abstract class SubtypingManager {
     return result;
   }
 
-  public IWrapper leastCommonSupertype(Set<IWrapper> types, boolean isWeak, EquationManager equationManager) {
-    Set<IWrapper> lcss = leastCommonSupertypesWrappers(types, isWeak);
-    if (lcss.size() != 1) {
-      /* RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
-    type.setErrorText("uncomparable types");
-    return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);*/
-      return null; //todo error
-    }
-    return lcss.iterator().next();
-  }
   public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
     return toNodes(leastCommonSupertypesWrappers(toWrappers(types, null), isWeak));
   }

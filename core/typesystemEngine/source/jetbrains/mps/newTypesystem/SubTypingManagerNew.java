@@ -186,6 +186,7 @@ public class SubTypingManagerNew extends SubtypingManager {
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
     return collectImmediateSupertypes(term, true);
   }
+
   public StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak) {
     StructuralNodeSet result = new StructuralNodeSet();
     collectImmediateSuperTypes(term, isWeak, result, null);

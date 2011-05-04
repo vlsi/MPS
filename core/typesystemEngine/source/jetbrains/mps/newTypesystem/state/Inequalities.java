@@ -53,7 +53,7 @@ public class Inequalities {  //
 
   public void printAll() {
     System.out.println("Relations");
-    for (Block node: getRelationsToSolve()) {
+    for (Block node : getRelationsToSolve()) {
       System.out.println(node.getExpandedPresentation(myState));
     }
   }
@@ -64,13 +64,13 @@ public class Inequalities {  //
         return node;
       }
     }
-     /*
-    System.out.println("cycle");
-    for (SNode node: unsorted) {
-      System.out.println(myState.expand(node));
-    }
-    printAll();
-       */
+    /*
+ System.out.println("cycle");
+ for (SNode node: unsorted) {
+   System.out.println(myState.expand(node));
+ }
+ printAll();
+    */
     return unsorted.iterator().next();
   }
 
@@ -101,9 +101,9 @@ public class Inequalities {  //
     if (!TypesUtil.isVariable(input)) return;
     if (!TypesUtil.isVariable(output)) return;
     if (input == output) return;
-  /*  if (input.getName().equals(output.getName())) {
-      System.out.println("Variable " + input.getName());
-    } */
+    /*  if (input.getName().equals(output.getName())) {
+     System.out.println("Variable " + input.getName());
+   } */
     myInputsToOutputs.addLink(input, output);
   }
 
@@ -115,7 +115,7 @@ public class Inequalities {  //
       if (inequality.isCheckOnly()) {
         continue;
       }
-      for (Pair<SNode, SNode> pair: inequality.getInputsAndOutputs()) {
+      for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
         SNode input = myState.getRepresentative(pair.first);
         SNode output = myState.getRepresentative(pair.second);
         if (input != null) {
@@ -129,7 +129,7 @@ public class Inequalities {  //
             addVariablesLink(input, output);
             myNodesToBlocks.addLink(input, inequality);
             if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
-              List<SNode> inputVariables= TypesUtil.getVariables(input);
+              List<SNode> inputVariables = TypesUtil.getVariables(input);
               List<SNode> outputVariables = TypesUtil.getVariables(output);
               myNodes.addAll(inputVariables);
               myNodes.addAll(outputVariables);
@@ -164,7 +164,7 @@ public class Inequalities {  //
     while (myNodes.size() > 0) {
       SNode current = getNodeWithNoInput(myInputsToOutputs, myNodes);
       if (solveRelationsForNode(current)) {
-       return true;
+        return true;
       }
       myNodes.remove(current);
       myInputsToOutputs.clearFirst(current);

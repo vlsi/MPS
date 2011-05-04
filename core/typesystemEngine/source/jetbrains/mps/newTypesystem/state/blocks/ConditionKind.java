@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.state;
+package jetbrains.mps.newTypesystem.state.blocks;
 
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.*;

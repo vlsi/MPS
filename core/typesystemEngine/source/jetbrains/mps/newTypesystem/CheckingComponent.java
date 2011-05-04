@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
@@ -90,7 +89,7 @@ public abstract class CheckingComponent {
       synchronized (ACCESS_LOCK) {
         reportAccess();
         myAccessedNodes.add(node);
-        if (child!=null){
+        if (child != null) {
           myAccessedNodes.add(child);
         }
       }
@@ -107,7 +106,7 @@ public abstract class CheckingComponent {
       synchronized (ACCESS_LOCK) {
         reportAccess();
         myAccessedNodes.add(node);
-        if (referent!=null){
+        if (referent != null) {
           myAccessedNodes.add(referent);
         }
       }

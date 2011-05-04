@@ -17,7 +17,6 @@ package jetbrains.mps.newTypesystem.state.blocks;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.state.ConditionKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
