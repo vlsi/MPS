@@ -193,7 +193,7 @@ public class TestCollector {
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
-              return !(SPropertyOperations.getBoolean(cls, "abstractClass")) && !(ListSequence.fromList(SLinkOperations.getTargets(cls, "annotation", true)).any(new IWhereFilter<SNode>() {
+              return !(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) && !(SPropertyOperations.getBoolean(cls, "abstractClass")) && !(ListSequence.fromList(SLinkOperations.getTargets(cls, "annotation", true)).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
@@ -246,7 +246,7 @@ public class TestCollector {
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#junit.framework(MPS.Classpath/junit.framework@java_stub)"), SNodeId.fromString("~Test")));
+          quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#junit.framework(MPS.Classpath/junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
           result = quotedNode1_2;
         }
         return result;
