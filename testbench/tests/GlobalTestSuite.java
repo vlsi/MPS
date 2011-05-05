@@ -23,13 +23,30 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({"jetbrains.mps.tests.TestModule_closures_test",
+@SuiteClassSymbols({"jetbrains.mps.DiskMemoryConflictsTest",
+  "jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
+  "jetbrains.mps.dataFlow.lang.LivenessAnalysisTest",
+  "jetbrains.mps.dataFlow.lang.ProgramTest",
+  "jetbrains.mps.dataFlow.lang.ReachabilityAnaysisTest",
+  "jetbrains.mps.dataFlow.lang.ReachingDefinitionsTest",
+  "jetbrains.mps.dataFlow.lang.StructuralProgramBuilderTest",
+  "jetbrains.mps.diff.DiffTestCase",
+  "jetbrains.mps.ide.blame.command.YouTrackURLTest",
+  "jetbrains.mps.ide.messages.MessageViewListModelTest",
+  "jetbrains.mps.make.TestMakeOnRealProject",
+  "jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase",
+  "jetbrains.mps.make.dependencies.GraphTestCase",
+  "jetbrains.mps.packaged.PackagedLanguageTest",
+  "jetbrains.mps.refactoring.RefactoringTest",
+  "jetbrains.mps.runtime.BundleLoadingTest",
+  "jetbrains.mps.runtime.BundleTest",
+  "jetbrains.mps.tests.TestModule_closures_test",
   "jetbrains.mps.tests.TestModule_collections_trove_test",
   "jetbrains.mps.tests.TestModule_collections_unittest",
   "jetbrains.mps.tests.TestModule_dates_unittest",
   "jetbrains.mps.tests.TestModule_internalCollections_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_closures_unittest",
-  "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_math_runtime",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_math_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_regexp_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test",
@@ -38,6 +55,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_graphLayout_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_table_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_pattern_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_smodel_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_makeTest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_make_tests",
@@ -45,7 +63,15 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests",
-  "jetbrains.mps.tests.TestModule_ypath_test"})
+  "jetbrains.mps.tests.TestModule_ypath_test",
+  "jetbrains.mps.vcs.diff.MergeConceptAndImportsTest",
+  "jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest",
+  "jetbrains.mps.vcs.diff.MergeRefactoringTest",
+  "jetbrains.mps.vcs.diff.MergeReferencesTest",
+  "jetbrains.mps.vcs.diff.MergeSymmetricChangesTest",
+  "jetbrains.mps.vfs.VfsTest",
+  "jetbrains.mps.workbench.ProjectCreationTest",
+  "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest"})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
