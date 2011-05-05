@@ -13,6 +13,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.Library;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
@@ -339,75 +340,119 @@ public class StandardDialogs {
     }.invoke();
   }
 
-  public static ModelPropertiesDialog createModelPropertiesDialog(final SModelDescriptor d, final IOperationContext context) {
-    return new _FunctionTypes._return_P0_E0<ModelPropertiesDialog>() {
-      public ModelPropertiesDialog invoke() {
-        final ModelPropertiesDialog result_960thj_a0a0a4 = new ModelPropertiesDialog(d, context);
-        ModelPropertiesDialog dialog = result_960thj_a0a0a4;
+  public static LibraryPropertiesDialog createLibraryPropertiesDialog(final Library s, final IOperationContext context) {
+    return new _FunctionTypes._return_P0_E0<LibraryPropertiesDialog>() {
+      public LibraryPropertiesDialog invoke() {
+        final LibraryPropertiesDialog result_960thj_a0a0a4 = new LibraryPropertiesDialog(s, context);
+        LibraryPropertiesDialog dialog = result_960thj_a0a0a4;
         final BaseTabbedBindedDialog.DialogTab result_960thj_a1a0a0a4 = new BaseTabbedBindedDialog.DialogTab("Common");
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a0a1a0a0a4 = dialog.createNamePanel();
+        final JComponent result_960thj_a0a0a1a0a0a4 = StandardComponents.createNamespacePanel(dialog, "Name:", dialog.myProperties, ModuleProperties.NAMESPACE);
         result_960thj_a0a1a0a0a4.setComponent(result_960thj_a0a0a1a0a0a4);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a0a0a4 = BaseBindedDialog.ConstraintsType.FIELD;
         result_960thj_a0a1a0a0a4.setConstraints(result_960thj_a1a0a1a0a0a4);
         result_960thj_a1a0a0a4.addComponent(result_960thj_a0a1a0a0a4);
-        if (dialog.myModel instanceof EditableSModelDescriptor) {
-          final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-          final JComponent result_960thj_a0a0a1a1a0a0a4 = StandardComponents.createFilePanel("Model File:", ((EditableSModelDescriptor) dialog.myModel).getModelFile());
-          result_960thj_a0a1a1a0a0a4.setComponent(result_960thj_a0a0a1a1a0a0a4);
-          final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a1a0a0a4 = BaseBindedDialog.ConstraintsType.FIELD;
-          result_960thj_a0a1a1a0a0a4.setConstraints(result_960thj_a1a0a1a1a0a0a4);
-          result_960thj_a1a0a0a4.addComponent(result_960thj_a0a1a1a0a0a4);
-
-        }
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a1a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a1a1a0a0a4 = StandardComponents.createFilePanel("Library File:", dialog.myLibrary.getDescriptorFile());
+        result_960thj_a1a1a0a0a4.setComponent(result_960thj_a0a1a1a0a0a4);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a1a1a0a0a4 = BaseBindedDialog.ConstraintsType.FIELD;
+        result_960thj_a1a1a0a0a4.setConstraints(result_960thj_a1a1a1a0a0a4);
+        result_960thj_a1a0a0a4.addComponent(result_960thj_a1a1a0a0a4);
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a2a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a2a1a0a0a4 = StandardComponents.createModelsPanel(dialog, "Imported Models", dialog.myPresenter.getImportedModels(), dialog.getImportedModelsRemoveCondition());
+        final JComponent result_960thj_a0a2a1a0a0a4 = StandardComponents.createStubRootsPanel(dialog, "Model Roots", dialog.myProperties.getStubModels());
         result_960thj_a2a1a0a0a4.setComponent(result_960thj_a0a2a1a0a0a4);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a2a1a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a2a1a0a0a4.setConstraints(result_960thj_a1a2a1a0a0a4);
         result_960thj_a1a0a0a4.addComponent(result_960thj_a2a1a0a0a4);
-        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a3a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a3a1a0a0a4 = StandardComponents.createLanguagesPanel(dialog, "Used Languages", dialog.myPresenter.getUsedLanguages(), dialog.getUsedLanguageRemoveCondition());
-        result_960thj_a3a1a0a0a4.setComponent(result_960thj_a0a3a1a0a0a4);
-        final BaseBindedDialog.ConstraintsType result_960thj_a1a3a1a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
-        result_960thj_a3a1a0a0a4.setConstraints(result_960thj_a1a3a1a0a0a4);
-        result_960thj_a1a0a0a4.addComponent(result_960thj_a3a1a0a0a4);
-        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a4a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a4a1a0a0a4 = StandardComponents.createDevKitsPanel(dialog, "Used DevKits", dialog.myPresenter.getUsedDevKits());
-        result_960thj_a4a1a0a0a4.setComponent(result_960thj_a0a4a1a0a0a4);
-        final BaseBindedDialog.ConstraintsType result_960thj_a1a4a1a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
-        result_960thj_a4a1a0a0a4.setConstraints(result_960thj_a1a4a1a0a0a4);
-        result_960thj_a1a0a0a4.addComponent(result_960thj_a4a1a0a0a4);
-        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a5a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a5a1a0a0a4 = dialog.createAdditionalButtonsComponent();
-        result_960thj_a5a1a0a0a4.setComponent(result_960thj_a0a5a1a0a0a4);
-        final BaseBindedDialog.ConstraintsType result_960thj_a1a5a1a0a0a4 = BaseBindedDialog.ConstraintsType.FIELD;
-        result_960thj_a5a1a0a0a4.setConstraints(result_960thj_a1a5a1a0a0a4);
-        result_960thj_a1a0a0a4.addComponent(result_960thj_a5a1a0a0a4);
         result_960thj_a0a0a4.addTab(result_960thj_a1a0a0a4);
-        final BaseTabbedBindedDialog.DialogTab result_960thj_a2a0a0a4 = new BaseTabbedBindedDialog.DialogTab("Advanced");
+        final BaseTabbedBindedDialog.DialogTab result_960thj_a2a0a0a4 = new BaseTabbedBindedDialog.DialogTab("Dependencies");
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a2a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a0a2a0a0a4 = StandardComponents.createLanguagesPanel(dialog, "Languages Engaged On Generation", dialog.myPresenter.getLanguagesEngagedOnGeneration());
+        final JComponent result_960thj_a0a0a2a0a0a4 = StandardComponents.createLanguagesPanel(dialog, "Used Languages", dialog.myProperties.getUsedLanguages());
         result_960thj_a0a2a0a0a4.setComponent(result_960thj_a0a0a2a0a0a4);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a0a2a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a0a2a0a0a4.setConstraints(result_960thj_a1a0a2a0a0a4);
         result_960thj_a2a0a0a4.addComponent(result_960thj_a0a2a0a0a4);
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a1a2a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a1a2a0a0a4 = dialog.createDoNotGenerateCheckBox();
+        final JComponent result_960thj_a0a1a2a0a0a4 = StandardComponents.createDepsPanel(dialog, "Dependencies", dialog.myProperties.getDependencies());
         result_960thj_a1a2a0a0a4.setComponent(result_960thj_a0a1a2a0a0a4);
-        final BaseBindedDialog.ConstraintsType result_960thj_a1a1a2a0a0a4 = BaseBindedDialog.ConstraintsType.FIELD;
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a1a2a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a1a2a0a0a4.setConstraints(result_960thj_a1a1a2a0a0a4);
         result_960thj_a2a0a0a4.addComponent(result_960thj_a1a2a0a0a4);
         result_960thj_a0a0a4.addTab(result_960thj_a2a0a0a4);
-        final BaseTabbedBindedDialog.DialogTab result_960thj_a3a0a0a4 = new BaseTabbedBindedDialog.DialogTab("Info");
-        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a3a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a0a3a0a0a4 = dialog.createInfoComponent();
-        result_960thj_a0a3a0a0a4.setComponent(result_960thj_a0a0a3a0a0a4);
-        final BaseBindedDialog.ConstraintsType result_960thj_a1a0a3a0a0a4 = BaseBindedDialog.ConstraintsType.FIELD;
-        result_960thj_a0a3a0a0a4.setConstraints(result_960thj_a1a0a3a0a0a4);
-        result_960thj_a3a0a0a4.addComponent(result_960thj_a0a3a0a0a4);
-        result_960thj_a0a0a4.addTab(result_960thj_a3a0a0a4);
         return result_960thj_a0a0a4;
+      }
+    }.invoke();
+  }
+
+  public static ModelPropertiesDialog createModelPropertiesDialog(final SModelDescriptor d, final IOperationContext context) {
+    return new _FunctionTypes._return_P0_E0<ModelPropertiesDialog>() {
+      public ModelPropertiesDialog invoke() {
+        final ModelPropertiesDialog result_960thj_a0a0a5 = new ModelPropertiesDialog(d, context);
+        ModelPropertiesDialog dialog = result_960thj_a0a0a5;
+        final BaseTabbedBindedDialog.DialogTab result_960thj_a1a0a0a5 = new BaseTabbedBindedDialog.DialogTab("Common");
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a0a1a0a0a5 = dialog.createNamePanel();
+        result_960thj_a0a1a0a0a5.setComponent(result_960thj_a0a0a1a0a0a5);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a0a0a5 = BaseBindedDialog.ConstraintsType.FIELD;
+        result_960thj_a0a1a0a0a5.setConstraints(result_960thj_a1a0a1a0a0a5);
+        result_960thj_a1a0a0a5.addComponent(result_960thj_a0a1a0a0a5);
+        if (dialog.myModel instanceof EditableSModelDescriptor) {
+          final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+          final JComponent result_960thj_a0a0a1a1a0a0a5 = StandardComponents.createFilePanel("Model File:", ((EditableSModelDescriptor) dialog.myModel).getModelFile());
+          result_960thj_a0a1a1a0a0a5.setComponent(result_960thj_a0a0a1a1a0a0a5);
+          final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a1a0a0a5 = BaseBindedDialog.ConstraintsType.FIELD;
+          result_960thj_a0a1a1a0a0a5.setConstraints(result_960thj_a1a0a1a1a0a0a5);
+          result_960thj_a1a0a0a5.addComponent(result_960thj_a0a1a1a0a0a5);
+
+        }
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a2a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a2a1a0a0a5 = StandardComponents.createModelsPanel(dialog, "Imported Models", dialog.myPresenter.getImportedModels(), dialog.getImportedModelsRemoveCondition());
+        result_960thj_a2a1a0a0a5.setComponent(result_960thj_a0a2a1a0a0a5);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a2a1a0a0a5 = BaseBindedDialog.ConstraintsType.LIST;
+        result_960thj_a2a1a0a0a5.setConstraints(result_960thj_a1a2a1a0a0a5);
+        result_960thj_a1a0a0a5.addComponent(result_960thj_a2a1a0a0a5);
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a3a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a3a1a0a0a5 = StandardComponents.createLanguagesPanel(dialog, "Used Languages", dialog.myPresenter.getUsedLanguages(), dialog.getUsedLanguageRemoveCondition());
+        result_960thj_a3a1a0a0a5.setComponent(result_960thj_a0a3a1a0a0a5);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a3a1a0a0a5 = BaseBindedDialog.ConstraintsType.LIST;
+        result_960thj_a3a1a0a0a5.setConstraints(result_960thj_a1a3a1a0a0a5);
+        result_960thj_a1a0a0a5.addComponent(result_960thj_a3a1a0a0a5);
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a4a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a4a1a0a0a5 = StandardComponents.createDevKitsPanel(dialog, "Used DevKits", dialog.myPresenter.getUsedDevKits());
+        result_960thj_a4a1a0a0a5.setComponent(result_960thj_a0a4a1a0a0a5);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a4a1a0a0a5 = BaseBindedDialog.ConstraintsType.LIST;
+        result_960thj_a4a1a0a0a5.setConstraints(result_960thj_a1a4a1a0a0a5);
+        result_960thj_a1a0a0a5.addComponent(result_960thj_a4a1a0a0a5);
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a5a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a5a1a0a0a5 = dialog.createAdditionalButtonsComponent();
+        result_960thj_a5a1a0a0a5.setComponent(result_960thj_a0a5a1a0a0a5);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a5a1a0a0a5 = BaseBindedDialog.ConstraintsType.FIELD;
+        result_960thj_a5a1a0a0a5.setConstraints(result_960thj_a1a5a1a0a0a5);
+        result_960thj_a1a0a0a5.addComponent(result_960thj_a5a1a0a0a5);
+        result_960thj_a0a0a5.addTab(result_960thj_a1a0a0a5);
+        final BaseTabbedBindedDialog.DialogTab result_960thj_a2a0a0a5 = new BaseTabbedBindedDialog.DialogTab("Advanced");
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a2a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a0a2a0a0a5 = StandardComponents.createLanguagesPanel(dialog, "Languages Engaged On Generation", dialog.myPresenter.getLanguagesEngagedOnGeneration());
+        result_960thj_a0a2a0a0a5.setComponent(result_960thj_a0a0a2a0a0a5);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a0a2a0a0a5 = BaseBindedDialog.ConstraintsType.LIST;
+        result_960thj_a0a2a0a0a5.setConstraints(result_960thj_a1a0a2a0a0a5);
+        result_960thj_a2a0a0a5.addComponent(result_960thj_a0a2a0a0a5);
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a1a2a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a1a2a0a0a5 = dialog.createDoNotGenerateCheckBox();
+        result_960thj_a1a2a0a0a5.setComponent(result_960thj_a0a1a2a0a0a5);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a1a2a0a0a5 = BaseBindedDialog.ConstraintsType.FIELD;
+        result_960thj_a1a2a0a0a5.setConstraints(result_960thj_a1a1a2a0a0a5);
+        result_960thj_a2a0a0a5.addComponent(result_960thj_a1a2a0a0a5);
+        result_960thj_a0a0a5.addTab(result_960thj_a2a0a0a5);
+        final BaseTabbedBindedDialog.DialogTab result_960thj_a3a0a0a5 = new BaseTabbedBindedDialog.DialogTab("Info");
+        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a3a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
+        final JComponent result_960thj_a0a0a3a0a0a5 = dialog.createInfoComponent();
+        result_960thj_a0a3a0a0a5.setComponent(result_960thj_a0a0a3a0a0a5);
+        final BaseBindedDialog.ConstraintsType result_960thj_a1a0a3a0a0a5 = BaseBindedDialog.ConstraintsType.FIELD;
+        result_960thj_a0a3a0a0a5.setConstraints(result_960thj_a1a0a3a0a0a5);
+        result_960thj_a3a0a0a5.addComponent(result_960thj_a0a3a0a0a5);
+        result_960thj_a0a0a5.addTab(result_960thj_a3a0a0a5);
+        return result_960thj_a0a0a5;
       }
     }.invoke();
   }

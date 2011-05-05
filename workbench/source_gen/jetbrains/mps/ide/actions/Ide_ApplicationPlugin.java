@@ -62,6 +62,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToRule_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
+    addAction(new LibraryProperties_Action());
     addAction(new MPSProjectPaths_Action());
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
@@ -137,6 +138,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new JUnitTestMethodActions_ActionGroup());
     addGroup(new LanguageActions_ActionGroup());
     addGroup(new LanguageNewActions_ActionGroup());
+    addGroup(new LibraryActions_ActionGroup());
     addGroup(new ModelActionsInternal_ActionGroup());
     addGroup(new ModelActions_ActionGroup());
     addGroup(new ModelNewActions_ActionGroup());
