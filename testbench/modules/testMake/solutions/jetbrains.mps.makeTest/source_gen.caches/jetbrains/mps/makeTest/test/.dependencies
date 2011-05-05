@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
@@ -19,11 +19,11 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="jetbrains.mps.makeTest.test.ChangeModel" />
-    <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />

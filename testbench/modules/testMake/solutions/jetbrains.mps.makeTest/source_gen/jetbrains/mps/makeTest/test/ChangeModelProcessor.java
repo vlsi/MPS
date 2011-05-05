@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.ModuleContext;
@@ -102,7 +102,7 @@ public class ChangeModelProcessor {
     final List<String> results = ListSequence.fromList(new ArrayList<String>());
     List<SModelDescriptor> models = Collections.singletonList(model);
     IMessageHandler handler = new IMessageHandler() {
-      public void handle(Message msg) {
+      public void handle(IMessage msg) {
         if (msg.getKind() == MessageKind.ERROR) {
           ListSequence.fromList(results).addElement(msg.getText());
         }

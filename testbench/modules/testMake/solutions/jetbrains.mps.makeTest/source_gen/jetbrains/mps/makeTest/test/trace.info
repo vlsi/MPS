@@ -269,7 +269,7 @@
     <nodeInfo nodeId="7196776143116393485" fileName="ChangeModelProcessor.java" startLine="137" startPosition="25" endLine="138" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7196776143116393495" fileName="ChangeModelProcessor.java" startLine="140" startPosition="7" endLine="141" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7196776143116382611" fileName="ChangeModelProcessor.java" startLine="81" startPosition="10" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7196776143116382720" fileName="ChangeModelProcessor.java" startLine="105" startPosition="39" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7196776143116382720" fileName="ChangeModelProcessor.java" startLine="105" startPosition="40" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4526112498887464191" fileName="ChangeModelProcessor.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
     <nodeInfo nodeId="7196776143116385112" fileName="ChangeModelProcessor.java" startLine="49" startPosition="55" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7196776143116386521" fileName="ChangeModelProcessor.java" startLine="62" startPosition="55" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -287,7 +287,7 @@
     <nodeInfo nodeId="7196776143116382623" fileName="ChangeModelProcessor.java" startLine="83" startPosition="5" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7196776143116393482" fileName="ChangeModelProcessor.java" startLine="135" startPosition="46" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7196776143116381097" fileName="ChangeModelProcessor.java" startLine="37" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeModelProcessor#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljetbrains/mps/makeTest/test/ChangeModel;)V" />
-    <nodeInfo nodeId="7196776143116382714" fileName="ChangeModelProcessor.java" startLine="104" startPosition="53" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/Message;)V" />
+    <nodeInfo nodeId="340028429655532660" fileName="ChangeModelProcessor.java" startLine="104" startPosition="53" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
     <nodeInfo nodeId="7196776143116382786" fileName="ChangeModelProcessor.java" startLine="119" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptorByName#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModelDescriptor;" />
     <nodeInfo nodeId="7196776143116385103" fileName="ChangeModelProcessor.java" startLine="47" startPosition="37" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7196776143116386514" fileName="ChangeModelProcessor.java" startLine="60" startPosition="37" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -312,7 +312,7 @@
     <scopeInfo nodeId="7196776143116393436" fileName="ChangeModelProcessor.java" startLine="126" startPosition="32" endLine="127" endPosition="43" />
     <scopeInfo nodeId="7196776143116393203" fileName="ChangeModelProcessor.java" startLine="130" startPosition="36" endLine="131" endPosition="47" />
     <scopeInfo nodeId="7196776143116393484" fileName="ChangeModelProcessor.java" startLine="137" startPosition="25" endLine="138" endPosition="47" />
-    <scopeInfo nodeId="7196776143116382719" fileName="ChangeModelProcessor.java" startLine="105" startPosition="39" endLine="108" endPosition="9" />
+    <scopeInfo nodeId="340028429655532665" fileName="ChangeModelProcessor.java" startLine="105" startPosition="40" endLine="108" endPosition="9" />
     <scopeInfo nodeId="4526112498887464191" fileName="ChangeModelProcessor.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="7196776143116382789" fileName="ChangeModelProcessor.java" startLine="120" startPosition="65" endLine="123" endPosition="58">
       <varInfo nodeId="7196776143116382804" varName="file" />
@@ -339,8 +339,8 @@
       <varInfo nodeId="7196776143116382918" varName="baseModelName" />
       <varInfo nodeId="7196776143116385044" varName="changeModel" />
     </scopeInfo>
-    <scopeInfo nodeId="7196776143116382714" fileName="ChangeModelProcessor.java" startLine="104" startPosition="53" endLine="110" endPosition="0">
-      <varInfo nodeId="7196776143116382717" varName="msg" />
+    <scopeInfo nodeId="340028429655532660" fileName="ChangeModelProcessor.java" startLine="104" startPosition="53" endLine="110" endPosition="0">
+      <varInfo nodeId="340028429655532663" varName="msg" />
     </scopeInfo>
     <scopeInfo nodeId="7196776143116382786" fileName="ChangeModelProcessor.java" startLine="119" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="7196776143116382790" varName="name" />
