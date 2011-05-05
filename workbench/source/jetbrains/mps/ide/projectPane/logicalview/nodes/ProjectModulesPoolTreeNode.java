@@ -90,6 +90,16 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       builder.fillNode(devkits);
       add(devkits);
     }
+
+    {
+      ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
+      TextTreeNode libs = new TextTreeNode("Libraries");
+      for (Library lib : CollectionUtil.filter(Library.class, modules)) {
+        builder.addNode(new ProjectLibraryTreeNode(lib, myProject, true));
+      }
+      builder.fillNode(libs);
+      add(libs);
+    }
   }
 
   private List<IModule> collectModules() {
@@ -103,19 +113,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
         return NameUtil.namespaceFromLongName(generator.getSourceLanguage().getModuleFqName());
       }
 
-      if (node.getModule() instanceof Solution) {
-        return NameUtil.namespaceFromLongName(node.getModule().toString());
-      }
-
-      if (node.getModule() instanceof DevKit) {
-        return NameUtil.namespaceFromLongName(node.getModule().toString());
-      }
-
-      if (node.getModule() instanceof Language || node.getModule() instanceof ProjectStructureModule) {
-        return NameUtil.namespaceFromLongName(node.getModule().getModuleFqName());
-      }
-
-      return "Others." + node.getModule().getModuleFqName();
+      return NameUtil.namespaceFromLongName(node.getModule().getModuleFqName());
     }
   }
 }
