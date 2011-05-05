@@ -19990,7 +19990,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="6206760327435512761">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8lme.~BasePropertiesDialog%d&lt;init&gt;(java%dlang%dString,jetbrains%dmps%dsmodel%dIOperationContext)" resolveInfo="BasePropertiesDialog" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6206760327435512762">
-            <property name="value" nameId="tpee.1070475926801" value=" Properties" />
+            <property name="value" nameId="tpee.1070475926801" value="Library Properties" />
           </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6206760327435512763">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6206760327435512758" resolveInfo="operationContext" />

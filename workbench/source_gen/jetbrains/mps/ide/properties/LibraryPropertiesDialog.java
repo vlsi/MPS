@@ -13,7 +13,7 @@ public class LibraryPropertiesDialog extends BasePropertiesDialog {
   public LibraryProperties myProperties;
 
   /*package*/ LibraryPropertiesDialog(Library solution, IOperationContext operationContext) {
-    super("Solution Properties", operationContext);
+    super("Library Properties", operationContext);
     myLibrary = solution;
     collectSolutionProperties();
   }

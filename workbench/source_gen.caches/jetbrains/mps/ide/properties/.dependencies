@@ -22,15 +22,15 @@
     <classNode extendsClassName="jetbrains.mps.ide.properties.ModuleProperties" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.EditOperandDialog" file="EditOperandDialog.java">
-    <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JScrollPane" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet" />
+    <classNode dependClassName="javax.swing.tree.DefaultTreeModel" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
@@ -42,9 +42,9 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
-    <classNode dependClassName="java.util.Enumeration" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="com.intellij.ide.DataManager" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="jetbrains.mps.ide.properties.MappingSelectTree" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
-    <classNode dependClassName="javax.swing.tree.DefaultTreeModel" />
+    <classNode dependClassName="java.util.Enumeration" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.GeneratorProperties" file="GeneratorProperties.java">
@@ -136,28 +136,28 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.MappingSelectTree" file="MappingSelectTree.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.awt.event.ItemEvent" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="javax.swing.UIManager" />
     <classNode dependClassName="java.awt.event.ItemListener" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
-    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="javax.swing.UIManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode extendsClassName="jetbrains.mps.ide.properties.NodeData" />
-    <classNode extendsClassName="javax.swing.AbstractCellEditor" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode extendsClassName="javax.swing.tree.TreeCellRenderer" />
+    <classNode extendsClassName="javax.swing.AbstractCellEditor" />
+    <classNode extendsClassName="jetbrains.mps.ide.properties.NodeData" />
     <classNode extendsClassName="javax.swing.tree.TreeCellEditor" />
     <classNode extendsClassName="javax.swing.JTree" />
   </dependency>
