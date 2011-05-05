@@ -1,3 +1,5 @@
++testbench:**/TestModule*.java
+
 +miscTests:**/*Test.java
 +**/test/*_Test.java
 +**/refactoringTest/*_Test.java

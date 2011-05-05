@@ -46,6 +46,7 @@
   <import index="7zm0" modelUID="r:2d0fbdb5-e73c-4db3-b9e8-fb2e93925820(graphTest)" version="-1" />
   <import index="th8p" modelUID="r:e4338979-215b-4b9c-a1e7-b887743c18eb(layeredLayoutTest)" version="-1" />
   <import index="k802" modelUID="r:aaa157bb-ca55-4102-b902-1e3083b4020b(internalTest)" version="-1" />
+  <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126776551" />
@@ -70,6 +71,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126777012" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126777019" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126777022" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="340028429655518789" />
   </roots>
   <root id="1178539434126776551">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1178539434126776552">
@@ -1440,6 +1442,18 @@
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1178539434126777023">
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.graphLayout.test" />
       <property name="moduleID" nameId="pop3.1280144168199506910" value="1cf9ab03-28e6-49cc-b765-555cd6dcfc28" />
+    </node>
+  </root>
+  <root id="340028429655518789">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="340028429655518790">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.makeTest" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="8e87e036-7d3f-4e47-809f-c244e2a938e8" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655518791">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="vz87.1957199320903967715" resolveInfo="CheckDependencies_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655518792">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="vz87.1957199320903968411" resolveInfo="NotMake_Test" />
     </node>
   </root>
 </model>
