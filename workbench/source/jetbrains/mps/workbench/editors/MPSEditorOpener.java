@@ -134,19 +134,19 @@ public class MPSEditorOpener {
     });
   }
 
-  public IEditor editNode(final SNode node, final IOperationContext context) {
+  public IEditor editNode(@NotNull final SNode node, final IOperationContext context) {
     return editNode(node, context, true);
   }
 
-  public IEditor editNodeExplicitly(final SNode node, final IOperationContext context) {
+  public IEditor editNodeExplicitly(@NotNull final SNode node, final IOperationContext context) {
     return editNode(node, context, false);
   }
 
-  public IEditor openNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+  public IEditor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     return openNode(node, context, focus, select, true);
   }
 
-  public IEditor openNodeExplicitly(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+  public IEditor openNodeExplicitly(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     return openNode(node, context, focus, select, false);
   }
 
