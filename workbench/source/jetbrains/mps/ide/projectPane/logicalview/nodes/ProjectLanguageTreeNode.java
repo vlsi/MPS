@@ -41,11 +41,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private boolean myShortNameOnly;
   private boolean myInitialized;
 
-  public ProjectLanguageTreeNode(Language language, MPSProject project) {
-    this(language, project, false);
-  }
-
-  public ProjectLanguageTreeNode(@NotNull Language language, MPSProject project, boolean shortNameOnly) {
+  protected ProjectLanguageTreeNode(@NotNull Language language, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(language, project));
     myShortNameOnly = shortNameOnly;
     myLanguage = language;

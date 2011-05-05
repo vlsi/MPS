@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
-import jetbrains.mps.ide.projectPane.*;
+import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.ProjectStructureModule;
@@ -63,8 +64,8 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode solutions = new TextTreeNode("Solutions");
       for (IModule s : modules) {
-        if(s instanceof Solution || s instanceof ProjectStructureModule) {
-          builder.addNode(new ProjectSolutionTreeNode((AbstractModule) s, myProject, true));
+        if (s instanceof Solution || s instanceof ProjectStructureModule) {
+          builder.addNode(ProjectModuleTreeNode.createFor(myProject, s, true));
         }
       }
       builder.fillNode(solutions);
@@ -75,7 +76,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode languages = new TextTreeNode("Languages");
       for (Language l : CollectionUtil.filter(Language.class, modules)) {
-        builder.addNode(new ProjectLanguageTreeNode(l, myProject, true));
+        builder.addNode(ProjectModuleTreeNode.createFor(myProject, l, true));
       }
       builder.fillNode(languages);
       add(languages);
@@ -85,7 +86,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode devkits = new TextTreeNode("DevKits");
       for (DevKit devKit : CollectionUtil.filter(DevKit.class, modules)) {
-        builder.addNode(new ProjectDevKitTreeNode(devKit, myProject, true));
+        builder.addNode(ProjectModuleTreeNode.createFor(myProject, devKit, true));
       }
       builder.fillNode(devkits);
       add(devkits);
@@ -95,7 +96,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode libs = new TextTreeNode("Libraries");
       for (Library lib : CollectionUtil.filter(Library.class, modules)) {
-        builder.addNode(new ProjectLibraryTreeNode(lib, myProject, true));
+        builder.addNode(ProjectModuleTreeNode.createFor(myProject, lib, true));
       }
       builder.fillNode(libs);
       add(libs);

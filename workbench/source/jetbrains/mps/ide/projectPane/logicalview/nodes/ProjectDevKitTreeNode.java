@@ -30,11 +30,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   private boolean myShortNameOnly;
   private boolean myInitialized;
 
-  public ProjectDevKitTreeNode(DevKit devkit, MPSProject project) {
-    this(devkit, project, false);
-  }
-
-  public ProjectDevKitTreeNode(DevKit devkit, MPSProject project, boolean shortNameOnly) {
+  protected ProjectDevKitTreeNode(DevKit devkit, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(devkit, project));
     myShortNameOnly = shortNameOnly;
     myDevKit = devkit;

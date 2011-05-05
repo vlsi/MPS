@@ -33,11 +33,7 @@ public class ProjectLibraryTreeNode extends ProjectModuleTreeNode {
 
   private boolean myInitialized;
 
-  public ProjectLibraryTreeNode(AbstractModule library, MPSProject project) {
-    this(library, project, false);
-  }
-
-  public ProjectLibraryTreeNode(AbstractModule library, MPSProject project, boolean shortNameOnly) {
+  protected ProjectLibraryTreeNode(AbstractModule library, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(library, project));
     myShortNameOnly = shortNameOnly;
     myLibrary = library;
