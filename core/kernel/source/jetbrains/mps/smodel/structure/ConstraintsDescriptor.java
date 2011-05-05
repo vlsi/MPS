@@ -17,32 +17,94 @@ package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.smodel.constraints.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
+
 public abstract class ConstraintsDescriptor {
-  public abstract boolean canBeAChild(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  public enum CanBeRoles {
+    CHILD("canBeChild", BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class),
+    PARENT("canBeParent", BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class),
+    ROOT("canBeRoot", BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class),
+    ANCESTOR("canBeAncestor", BehaviorConstants.CAN_BE_AN_ANCESTOR_METHOD_NAME, IOperationContext.class, CanBeAnAncestorContext.class);
 
-  public abstract boolean canBeAParent(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+    public final String roleNameInConstraints;
+    public final String methodName;
+    public final Class[] parameterTypes;
 
-  public abstract boolean canBeARoot(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+    CanBeRoles(String roleNameInConstraints, String methodName, Class... parameterTypes) {
+      this.roleNameInConstraints = roleNameInConstraints;
+      this.methodName = methodName;
+      this.parameterTypes = parameterTypes;
+    }
+  }
 
-  public abstract boolean canBeAnAncestor(IOperationContext operationContext, CanBeAnAncestorContext _context, @Nullable CheckingNodeContext checkingNodeContext);
+  @Nullable
+  public abstract CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod();
+
+  @Nullable
+  public abstract CanBeASomethingMethod<CanBeARootContext> getCanBeARootMethod();
+
+  @Nullable
+  public abstract CanBeASomethingMethod<CanBeAParentContext> getCanBeAParentMethod();
+
+  @Nullable
+  public abstract CanBeASomethingMethod<CanBeAnAncestorContext> getCanBeAnAncestorMethod();
+
+  @Nullable
+  public CanBeASomethingMethod<?> getCanBeASomethingMethod(CanBeRoles role) {
+    switch (role) {
+      case ANCESTOR:
+        return getCanBeAnAncestorMethod();
+      case PARENT:
+        return getCanBeAParentMethod();
+      case CHILD:
+        return getCanBeAChildMethod();
+      case ROOT:
+        return getCanBeARootMethod();
+    }
+
+    // not possible
+    return null;
+  }
 
   // property
-  public abstract INodePropertyGetter getNodePropertyGetter(String propertyName);
+  public abstract Map<String, INodePropertyGetter> getNodePropertyGetters();
 
-  public abstract INodePropertySetter getNodePropertySetter(String propertyName);
+  public INodePropertyGetter getNodePropertyGetter(String name) {
+    return getNodePropertyGetters().get(name);
+  }
 
-  public abstract INodePropertyValidator getNodePropertyValidator(String propertyName);
+  public abstract Map<String, INodePropertySetter> getNodePropertySetters();
+
+  public INodePropertySetter getNodePropertySetter(String propertyName) {
+    return getNodePropertySetters().get(propertyName);
+  }
+
+
+  public abstract Map<String, INodePropertyValidator> getNodePropertyValidators();
+
+  public INodePropertyValidator getNodePropertyValidator(String propertyName) {
+    return getNodePropertyValidators().get(propertyName);
+  }
 
   //  search scope
-  public abstract INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider();
+  public abstract Map<String, INodeReferentSearchScopeProvider> getNodeNonDefaultSearchScopeProviders();
 
-  public abstract INodeReferentSearchScopeProvider getNodeNonDefaultSearchScopeProvider(String referentRole);
+  public INodeReferentSearchScopeProvider getNodeNonDefaultSearchScopeProvider(String referentRole) {
+    return getNodeNonDefaultSearchScopeProviders().get(referentRole);
+  }
 
   // referent node set event handler
-  public abstract INodeReferentSetEventHandler getNodeReferentSetEventHandler(String referentRole);
+  public abstract Map<String, INodeReferentSetEventHandler> getNodeReferentSetEventHandlers();
+
+  public INodeReferentSetEventHandler getNodeReferentSetEventHandler(String referentRole) {
+    return getNodeReferentSetEventHandlers().get(referentRole);
+  }
+
+  public abstract INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider();
 
   // todo: remove/move this methods
   public abstract boolean isAlternativeIcon();

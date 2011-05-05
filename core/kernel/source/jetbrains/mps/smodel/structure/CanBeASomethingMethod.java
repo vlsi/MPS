@@ -15,15 +15,9 @@
  */
 package jetbrains.mps.smodel.structure;
 
-public class InterpretedConstraintsProvider extends DescriptorProvider<ConstraintsDescriptor> {
-  @Override
-  public ConstraintsDescriptor getDescriptor(String fqName) {
-    return new InterpretedConstraints(fqName);
-  }
+import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.Nullable;
 
-  private static class InterpretedConstraints extends DataHolderConstraintsDescriptor{
-    InterpretedConstraints(String fqName) {
-      super(new InterpretedConstraintsDataHolder(fqName));
-    }
-  }
+public interface CanBeASomethingMethod<T> {
+  boolean canBe(IOperationContext operationContext, T context, @Nullable CheckingNodeContext checkingNodeContext);
 }

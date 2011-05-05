@@ -16,6 +16,9 @@
 package jetbrains.mps.smodel.structure;
 
 public class LazyConceptDescriptorProvider extends DescriptorProvider<ConceptDescriptor> {
+  // todo: static lock is =(
+  private static final Object lock = new Object();
+
   private final DescriptorProvider<StructureDescriptor> structureDescriptorProvider;
   private final DescriptorProvider<BehaviorDescriptor> behaviorDescriptorProvider;
   private final DescriptorProvider<ConstraintsDescriptor> constraintsDescriptorProvider;
@@ -40,8 +43,6 @@ public class LazyConceptDescriptorProvider extends DescriptorProvider<ConceptDes
     private StructureDescriptor structure;
     private BehaviorDescriptor behavior;
     private ConstraintsDescriptor constraints;
-
-    private final Object lock = new Object();
 
     public LazyConceptDescriptor(String fqName) {
       this.fqName = fqName;

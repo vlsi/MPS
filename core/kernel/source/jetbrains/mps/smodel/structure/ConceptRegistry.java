@@ -10,6 +10,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static com.google.common.collect.Maps.newHashMap;
 
@@ -20,22 +21,17 @@ public class ConceptRegistry implements ApplicationComponent {
   private static final DescriptorProvider<BehaviorDescriptor> COMPILED_BEHAVIOR = new CompiledBehaviorDescriptorProvider();
 
   private static final DescriptorProvider<ConstraintsDescriptor> INTERPRETED_CONSTRAINTS = new InterpretedConstraintsProvider();
+  private static final DescriptorProvider<ConstraintsDescriptor> COMPILED_CONSTRAINTS = new CompiledConstraintsProvider();
 
-  private static final DescriptorProvider<ConceptDescriptor> INTERPRETED_CONCEPT_DESCRIPTOR = new SimpleConceptDescriptorProvider(
-    INTERPRETED_STRUCTURE,
-    INTERPRETED_BEHAVIOR,
-    INTERPRETED_CONSTRAINTS
-  );
-
-  private static final DescriptorProvider<ConceptDescriptor> INTERPRETED_STRUCTURE_COMPILE_BEHAVIOR_CONCEPT_DESCRIPTOR = new SimpleConceptDescriptorProvider(
+  private final DescriptorProvider<ConceptDescriptor> conceptDescriptorProvider = new LazyConceptDescriptorProvider(
     INTERPRETED_STRUCTURE,
     MixedDescriptorProvider.of(COMPILED_BEHAVIOR, INTERPRETED_BEHAVIOR),
-    INTERPRETED_CONSTRAINTS
+    MixedDescriptorProvider.of(COMPILED_CONSTRAINTS, INTERPRETED_CONSTRAINTS)
   );
 
-  private final DescriptorProvider<ConceptDescriptor> conceptDescriptorProvider = INTERPRETED_STRUCTURE_COMPILE_BEHAVIOR_CONCEPT_DESCRIPTOR;
+  private final Map<String, ConceptDescriptor> descriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
 
-  private final Map<String, ConceptDescriptor> descriptors = new THashMap();
+  private final Object lock = new Object();
 
   public ConceptRegistry(ClassLoaderManager classLoaderManager) {
     classLoaderManager.addReloadHandler(new ReloadAdapter() {
@@ -72,9 +68,15 @@ public class ConceptRegistry implements ApplicationComponent {
     if (descriptors.containsKey(fqName)) {
       return descriptors.get(fqName);
     } else {
-      ConceptDescriptor descriptor = conceptDescriptorProvider.getDescriptor(fqName);
-      descriptors.put(fqName, descriptor);
-      return descriptor;
+      synchronized (lock) {
+        if (descriptors.containsKey(fqName)) {
+          return descriptors.get(fqName);
+        } else {
+          ConceptDescriptor descriptor = conceptDescriptorProvider.getDescriptor(fqName);
+          descriptors.put(fqName, descriptor);
+          return descriptor;
+        }
+      }
     }
   }
 

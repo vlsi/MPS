@@ -15,16 +15,19 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import com.google.common.collect.ImmutableMap;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.structure.CanBeASomethingMethod;
 import jetbrains.mps.smodel.structure.CheckingNodeContext;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
@@ -40,6 +43,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ModelConstraintsManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
+
+  private final static CanBeASomethingMethod<Object> ALWAYS_TRUE_CAN_BE_A_SOMETHING_METHOD = new CanBeASomethingMethod<Object>() {
+    @Override
+    public boolean canBe(IOperationContext operationContext, Object context, @Nullable CheckingNodeContext checkingNodeContext) {
+      return true;
+    }
+  };
 
   private static final BaseNodeReferenceSearchScopeProvider EMPTY_REFERENT_SEARCH_SCOPE_PROVIDER = new BaseNodeReferenceSearchScopeProvider() {
     public void registerSelf(ModelConstraintsManager manager) {
@@ -69,13 +79,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new ConcurrentHashMap<String, List<IModelConstraints>>();
 
-  private Map<Pair<String, String>, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new ConcurrentHashMap<Pair<String, String>, INodeReferentSetEventHandler>();
+  private Map<String, Map<String, INodeReferentSetEventHandler>> myNodeReferentSetEventHandlersMap = new ConcurrentHashMap<String, Map<String, INodeReferentSetEventHandler>>();
 
-  private Map<Pair<String, String>, INodePropertyGetter> myNodePropertyGettersMap = new ConcurrentHashMap<Pair<String, String>, INodePropertyGetter>();
-  private Map<Pair<String, String>, INodePropertySetter> myNodePropertySettersMap = new ConcurrentHashMap<Pair<String, String>, INodePropertySetter>();
-  private Map<Pair<String, String>, INodePropertyValidator> myNodePropertyValidatorsMap = new ConcurrentHashMap<Pair<String, String>, INodePropertyValidator>();
+  private Map<String, Map<String, INodePropertyGetter>> myNodePropertyGettersMap = new ConcurrentHashMap<String, Map<String, INodePropertyGetter>>();
+  private Map<String, Map<String, INodePropertySetter>> myNodePropertySettersMap = new ConcurrentHashMap<String, Map<String, INodePropertySetter>>();
+  private Map<String, Map<String, INodePropertyValidator>> myNodePropertyValidatorsMap = new ConcurrentHashMap<String, Map<String, INodePropertyValidator>>();
 
-  private Map<Pair<String, String>, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new ConcurrentHashMap<Pair<String, String>, INodeReferentSearchScopeProvider>();
+  private Map<String, Map<String, INodeReferentSearchScopeProvider>> myNodeReferentSearchScopeProvidersMap = new ConcurrentHashMap<String, Map<String, INodeReferentSearchScopeProvider>>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
 
   public ModelConstraintsManager() {
@@ -99,18 +109,21 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   // register/unregister stuff
   public static <T extends IModelConstraints> void registerNodeIModelConstraints(String conceptFqName, String name, T constraints,
-                                                                                 Map<Pair<String, String>, T> constraintsMap) {
-    Pair<String, String> key = Pair.create(conceptFqName, name);
-    T old = constraintsMap.put(key, constraints);
+                                                                                 Map<String, Map<String, T>> constraintsMap) {
+    // todo: sync!
+    if (!constraintsMap.containsKey(conceptFqName)) {
+      constraintsMap.put(conceptFqName, new ConcurrentHashMap<String, T>());
+    }
+
+    T old = constraintsMap.get(conceptFqName).put(name, constraints);
     if (old != null) {
-      LOG.error("model constraints is already registered for key '" + key + "' : " + old);
+      LOG.error("model constraints is already registered for key '(" + conceptFqName + ", " + name + ")' : " + old);
     }
   }
 
-  public static <T extends IModelConstraints> void unRegisterNodeIModelConstraints(String conceptFqName, String propertyName,
-                                                                                   Map<Pair<String, String>, T> constraintsMap) {
-    Pair<String, String> key = new Pair<String, String>(conceptFqName, propertyName);
-    constraintsMap.remove(key);
+  public static <T extends IModelConstraints> void unRegisterNodeIModelConstraints(String conceptFqName, String name,
+                                                                                   Map<String, Map<String, T>> constraintsMap) {
+    constraintsMap.get(conceptFqName).remove(name);
   }
 
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {
@@ -166,34 +179,43 @@ public class ModelConstraintsManager implements ApplicationComponent {
   // end register/unregister stuff
 
   // api for InterpretedConstraintsProvider, this methods don't use concept hierarchy
-  @Nullable
-  public INodePropertyGetter getDirectNodePropertyGetter(String conceptFqName, String propertyName) {
-    return myNodePropertyGettersMap.get(Pair.create(conceptFqName, propertyName));
+  public <K, V> Map<K, V> notNull(Map<K, V> map) {
+    if (map == null) {
+      return ImmutableMap.of();
+    } else {
+      return map;
+    }
   }
 
-  @Nullable
-  public INodePropertySetter getDirectNodePropertySetter(String conceptFqName, String propertyName) {
-    return myNodePropertySettersMap.get(Pair.create(conceptFqName, propertyName));
+  public Map<String, INodePropertyGetter> getDirectNodePropertyGetters(String conceptFqName) {
+    ensureLanguageAdded(NameUtil.namespaceFromConceptFQName(conceptFqName));
+    return notNull(myNodePropertyGettersMap.get(conceptFqName));
   }
 
-  @Nullable
-  public INodePropertyValidator getDirectNodePropertyValidator(String conceptFqName, String propertyName) {
-    return myNodePropertyValidatorsMap.get(Pair.create(conceptFqName, propertyName));
+  public Map<String, INodePropertySetter> getDirectNodePropertySetters(String conceptFqName) {
+    ensureLanguageAdded(NameUtil.namespaceFromConceptFQName(conceptFqName));
+    return notNull(myNodePropertySettersMap.get(conceptFqName));
+  }
+
+  public Map<String, INodePropertyValidator> getDirectNodePropertyValidators(String conceptFqName) {
+    ensureLanguageAdded(NameUtil.namespaceFromConceptFQName(conceptFqName));
+    return notNull(myNodePropertyValidatorsMap.get(conceptFqName));
   }
 
   @Nullable
   public INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(String conceptFqName) {
+    ensureLanguageAdded(NameUtil.namespaceFromConceptFQName(conceptFqName));
     return myNodeDefaultSearchScopeProvidersMap.get(conceptFqName);
   }
 
-  @Nullable
-  public INodeReferentSearchScopeProvider getNodeNonDefaultSearchScopeProvider(String conceptFqName, String referentRole) {
-    return myNodeReferentSearchScopeProvidersMap.get(Pair.create(conceptFqName, referentRole));
+  public Map<String, INodeReferentSearchScopeProvider> getNodeNonDefaultSearchScopeProviders(String conceptFqName) {
+    ensureLanguageAdded(NameUtil.namespaceFromConceptFQName(conceptFqName));
+    return notNull(myNodeReferentSearchScopeProvidersMap.get(conceptFqName));
   }
 
-  @Nullable
-  public INodeReferentSetEventHandler getDirectNodeReferentSetEventHandler(String conceptFqName, String referentRole) {
-    return myNodeReferentSetEventHandlersMap.get(Pair.create(conceptFqName, referentRole));
+  public Map<String, INodeReferentSetEventHandler> getDirectNodeReferentSetEventHandlers(String conceptFqName) {
+    ensureLanguageAdded(NameUtil.namespaceFromConceptFQName(conceptFqName));
+    return notNull(myNodeReferentSetEventHandlersMap.get(conceptFqName));
   }
   // end api
 
@@ -229,6 +251,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private void clearAll() {
+    for (List<IModelConstraints> loadedConstraints : myAddedLanguageNamespaces.values()) {
+      for (IModelConstraints constraints : loadedConstraints) {
+        constraints.unRegisterSelf(this);
+      }
+    }
+
     myNodePropertyGettersMap.clear();
     myNodePropertySettersMap.clear();
     myNodePropertyValidatorsMap.clear();
@@ -236,15 +264,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodeDefaultSearchScopeProvidersMap.clear();
     myNodeReferentSetEventHandlersMap.clear();
 
-    for (List<IModelConstraints> loadedConstraints : myAddedLanguageNamespaces.values()) {
-      for (IModelConstraints constraints : loadedConstraints) {
-        constraints.unRegisterSelf(this);
-      }
-    }
     myAddedLanguageNamespaces.clear();
   }
 
-  private Class getOldConstraintsDescriptor(String languageNamespace) {
+  public static Class getOldConstraintsDescriptor(String languageNamespace) {
     Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     assert l != null;
     String packageName = languageNamespace + ".constraints";
@@ -273,16 +296,41 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
   // end language watching stuff
 
+  private static boolean isBootstrapProperty(String fqName, String propertyName) {
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+
+    // 'bootstrap' properties
+    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.property_INamedConcept_name)
+      && !fqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
+      return true;
+    }
+
+    if (fqName.equals("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+      // helgins ku-ku!
+      return true;
+    }
+
+    return false;
+  }
+
   public static INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
     return ConceptRegistry.getInstance().getConceptDescriptor(node.getConceptFqName()).constraints().getNodeReferentSetEventHandler(referentRole);
   }
 
   public static INodePropertyGetter getNodePropertyGetter(String conceptFqName, String propertyName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).constraints().getNodePropertyGetter(propertyName);
+    if (isBootstrapProperty(conceptFqName, propertyName)) {
+      return null;
+    } else {
+      return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).constraints().getNodePropertyGetter(propertyName);
+    }
   }
 
   public static INodePropertySetter getNodePropertySetter(String conceptFqName, String propertyName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).constraints().getNodePropertySetter(propertyName);
+    if (isBootstrapProperty(conceptFqName, propertyName)) {
+      return null;
+    } else {
+      return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).constraints().getNodePropertySetter(propertyName);
+    }
   }
 
   public static boolean hasGetter(String conceptFqName, String property) {
@@ -320,6 +368,15 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   // canBeASomething section
+  @NotNull
+  public static <T> CanBeASomethingMethod<T> notNull(@Nullable CanBeASomethingMethod<T> method) {
+    if (method == null) {
+      return (CanBeASomethingMethod<T>) ALWAYS_TRUE_CAN_BE_A_SOMETHING_METHOD;
+    } else {
+      return method;
+    }
+  }
+
   public static boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
     SNode currentNode = parentNode;
 
@@ -328,7 +385,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     while (currentNode != null) {
       ConstraintsDescriptor descriptor = registry.getConceptDescriptorForInstanceNode(currentNode).constraints();
 
-      if (!descriptor.canBeAnAncestor(context, new CanBeAnAncestorContext(currentNode, childConcept), checkingNodeContext)) {
+      if (!notNull(descriptor.getCanBeAnAncestorMethod()).canBe(context, new CanBeAnAncestorContext(currentNode, childConcept), checkingNodeContext)) {
         return false;
       }
 
@@ -348,7 +405,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeParent(ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
-    return descriptor.canBeAParent(context, new CanBeAParentContext(parentNode, childConcept, link), checkingNodeContext);
+    return notNull(descriptor.getCanBeAParentMethod()).canBe(context, new CanBeAParentContext(parentNode, childConcept, link), checkingNodeContext);
   }
 
   public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
@@ -358,7 +415,23 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public static boolean canBeChild(ConstraintsDescriptor descriptor, String fqName, IOperationContext context, SNode parentNode, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
     SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
-    return descriptor.canBeAChild(context, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
+    return notNull(descriptor.getCanBeAChildMethod()).canBe(context, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
+  }
+
+  private static boolean canBeRootByIsRootProperty(final String fqName, @Nullable final CheckingNodeContext checkingNodeContext) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        SNode concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
+        boolean result = SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept);
+
+        if (!result && checkingNodeContext != null) {
+          checkingNodeContext.breakingNodePointer = new SNodePointer(concept);
+        }
+
+        return result;
+      }
+    });
   }
 
   public static boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
@@ -367,6 +440,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeRoot(ConstraintsDescriptor descriptor, IOperationContext context, String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    return descriptor.canBeARoot(context, new CanBeARootContext(model), checkingNodeContext);
+    return canBeRootByIsRootProperty(conceptFqName, checkingNodeContext) && notNull(descriptor.getCanBeARootMethod()).canBe(context, new CanBeARootContext(model), checkingNodeContext);
   }
 }
