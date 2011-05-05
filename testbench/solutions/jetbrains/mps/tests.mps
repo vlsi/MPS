@@ -67,7 +67,6 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126773733" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126773736" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126773751" />
-    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126773754" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126773757" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126773763" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126773770" />
@@ -1445,15 +1444,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126773753">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpml.1454355863982978612" resolveInfo="Mapper_Test" />
-    </node>
-  </root>
-  <root id="1178539434126773754">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1178539434126773755">
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.xmlUnitTest.sandbox" />
-      <property name="moduleID" nameId="pop3.1280144168199506910" value="9087b8ba-fc20-49de-975b-5cbdd2063b0b" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126773756">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ajlw.9070985627710925999" resolveInfo="Sample_Test" />
     </node>
   </root>
   <root id="1178539434126773757">
