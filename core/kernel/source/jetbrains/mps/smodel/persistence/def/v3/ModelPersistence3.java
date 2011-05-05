@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def.v3;
 
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
@@ -62,7 +59,7 @@ public class ModelPersistence3 implements IModelPersistence {
     return stereotype;
   }
 
-  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state) {
+  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
     return null;
   }
 

@@ -42,12 +42,13 @@ public class ModelReader7 implements IModelReader {
     return 7;
   }
 
-  public SModel readModel(Document document) {
+  public SModel readModel(Document document, SModelHeader header) {
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     SModel model = new SModel(modelReference,new RegularNodeIdMap());
     model.setPersistenceVersion(getVersion());
+    model.getSModelHeader().updateDefaults(header);
     model.getSModelHeader().setVersion(AttributeUtils.integerWithDefault(rootElement.getAttributeValue(SModelHeader.VERSION), -1));
     model.getSModelHeader().setDoNotGenerate(AttributeUtils.booleanWithDefault(rootElement.getAttributeValue(SModelHeader.DO_NOT_GENERATE), false));
     myHelper = new ReadHelper(modelReference);

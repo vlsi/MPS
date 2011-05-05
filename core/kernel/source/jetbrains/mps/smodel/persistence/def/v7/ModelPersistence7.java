@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -39,8 +40,8 @@ public class ModelPersistence7 extends ModelPersistence6 {
     return new HashProvider7();
   }
 
-  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state) {
-    return new ModelReader7Handler(state);
+  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
+    return new ModelReader7Handler(state, header);
   }
 
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {

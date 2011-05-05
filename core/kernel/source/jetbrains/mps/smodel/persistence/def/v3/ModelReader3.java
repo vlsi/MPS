@@ -63,12 +63,13 @@ public class ModelReader3 implements IModelReader {
     return 3;
   }
 
-  public SModel readModel(Document document) {
+  public SModel readModel(Document document, SModelHeader header) {
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     SModel model = new SModel(modelReference);
     model.setPersistenceVersion(getVersion());
+    model.getSModelHeader().updateDefaults(header);
 
     model.setLoading(true);
     try {

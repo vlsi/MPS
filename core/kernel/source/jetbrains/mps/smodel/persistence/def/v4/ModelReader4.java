@@ -21,7 +21,6 @@ import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -60,13 +59,14 @@ public class ModelReader4 implements IModelReader {
     return 4;
   }
 
-  public SModel readModel(Document document) {
+  public SModel readModel(Document document, SModelHeader header) {
     SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     SModel model = new SModel(modelReference);
     model.setPersistenceVersion(getVersion());
+    model.getSModelHeader().updateDefaults(header);
 
     model.setLoading(true);
     try {

@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModel;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
@@ -37,11 +38,13 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
   private Locator myLocator;
   private BaseSModelDescriptor.ModelLoadResult myResult;
   private ModelLoadingState fieldtoState;
+  private SModelHeader fieldheader;
   private SModel fieldmodel;
   private VersionUtil fieldhelper;
 
-  public ModelReader6Handler(ModelLoadingState toState) {
+  public ModelReader6Handler(ModelLoadingState toState, SModelHeader header) {
     fieldtoState = toState;
+    fieldheader = header;
   }
 
   public BaseSModelDescriptor.ModelLoadResult getResult() {
@@ -157,6 +160,7 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     protected BaseSModelDescriptor.ModelLoadResult createObject(Attributes attrs) {
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
+      fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldmodel.setLoading(true);
       fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
       return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);

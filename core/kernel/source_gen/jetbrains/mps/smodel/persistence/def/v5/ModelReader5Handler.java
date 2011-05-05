@@ -6,6 +6,7 @@ import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import java.util.Stack;
 import org.xml.sax.Locator;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
@@ -39,12 +40,14 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private BaseSModelDescriptor.ModelLoadResult myResult;
+  private SModelHeader fieldheader;
   private SModelVersionsInfo fieldversionsInfo;
   private ArrayList<IReferencePersister> fieldreferenceDescriptors;
   private SAXVisibleModelElements fieldvisibleModelElements;
   private SModel fieldmodel;
 
-  public ModelReader5Handler() {
+  public ModelReader5Handler(SModelHeader header) {
+    fieldheader = header;
   }
 
   public BaseSModelDescriptor.ModelLoadResult getResult() {
@@ -163,6 +166,7 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       fieldvisibleModelElements = new SAXVisibleModelElements();
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(5);
+      fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldmodel.setLoading(true);
       return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.FULLY_LOADED);
     }

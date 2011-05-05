@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v5;
 
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
@@ -34,8 +35,8 @@ public class ModelPersistence5 extends ModelPersistence4 {
     return new ModelReader5();
   }
 
-  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state) {
-    return new ModelReader5Handler();
+  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
+    return new ModelReader5Handler(header);
   }
 
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {

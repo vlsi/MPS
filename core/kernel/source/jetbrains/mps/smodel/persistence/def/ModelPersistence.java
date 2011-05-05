@@ -215,7 +215,7 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static ModelLoadResult readModel(SModelHeader header, @NotNull IFile file, ModelLoadingState state) {
+  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull IFile file, ModelLoadingState state) {
 
     InputSource source;
     try {
@@ -233,11 +233,11 @@ public class ModelPersistence {
     return readModel(header, source, state);
   }
 
-  public static ModelLoadResult readModel(SModelHeader header, InputSource source, ModelLoadingState state) {
+  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) {
     IModelPersistence mp = getModelPersistence(header);
     if (mp != null) {
       // first try to use SAX parser
-      XMLSAXHandler<ModelLoadResult> handler = mp.getModelReaderHandler(state);
+      XMLSAXHandler<ModelLoadResult> handler = mp.getModelReaderHandler(state, header);
       if (handler != null) {
         try {
           JDOMUtil.createSAXParser().parse(source, handler);
@@ -253,7 +253,7 @@ public class ModelPersistence {
       IModelReader reader = mp.getModelReader();
       if (reader != null) {
         Document document = loadModelDocument(source);
-        return new ModelLoadResult(reader.readModel(document), ModelLoadingState.FULLY_LOADED);
+        return new ModelLoadResult(reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
       }
     }
     return handleNullReaderForPersistence(header.getUID());

@@ -39,8 +39,9 @@
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" />
     <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.SAXVisibleModelElements" />
@@ -55,7 +56,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.IReferencePersister" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelVersionsInfo" />
-    <classNode dependClassName="org.xml.sax.SAXException" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v5.ElementHandler" />
     <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.XMLSAXHandler" />
   </dependency>

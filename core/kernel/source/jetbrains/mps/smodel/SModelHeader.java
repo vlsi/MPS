@@ -69,4 +69,9 @@ public class SModelHeader {
     header.setPersistenceVersion(persistenceVersion);
     return header;
   }
+
+  public void updateDefaults(SModelHeader header) {
+    myVersion = header.getVersion();
+    doNotGenerate = header.isDoNotGenerate();
+  }
 }

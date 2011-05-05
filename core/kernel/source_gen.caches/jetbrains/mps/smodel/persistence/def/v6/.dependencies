@@ -24,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="java.lang.String" />
