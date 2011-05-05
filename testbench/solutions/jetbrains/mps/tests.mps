@@ -57,7 +57,6 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126776625" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126776629" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126776632" />
-    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126776636" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126776648" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126776654" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126776899" />
@@ -72,6 +71,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126777019" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1178539434126777022" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="340028429655518789" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="340028429655966099" />
   </roots>
   <root id="1178539434126776551">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1178539434126776552">
@@ -326,42 +326,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776635">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="1tja.1227886714783" resolveInfo="ClosureLiteralDataFlow" />
-    </node>
-  </root>
-  <root id="1178539434126776636">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1178539434126776637">
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="closures.test" />
-      <property name="moduleID" nameId="pop3.1280144168199506910" value="7a0c7a21-43a3-4bb4-b898-a819ebed44a5" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776638">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201432919093" resolveInfo="YieldClosures_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776639">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201439711541" resolveInfo="ClosuresBase_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776640">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201632597646" resolveInfo="FunctionTypes_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776641">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201773926206" resolveInfo="SequenceFunctionTypes_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776642">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201777863134" resolveInfo="AdvancedFunctionTypes_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776643">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1202741841877" resolveInfo="ClassifierAdapters_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776644">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1202834707004" resolveInfo="ExternalReferences_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776645">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1213266193343" resolveInfo="ThisExpression_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776646">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1226351732110" resolveInfo="FinalClosureParameter_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1178539434126776647">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.5902225204490666277" resolveInfo="WhileBreak_Test" />
     </node>
   </root>
   <root id="1178539434126776648">
@@ -1448,6 +1412,42 @@
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="340028429655518790">
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.makeTest" />
       <property name="moduleID" nameId="pop3.1280144168199506910" value="8e87e036-7d3f-4e47-809f-c244e2a938e8" />
+    </node>
+  </root>
+  <root id="340028429655966099">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="340028429655966100">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="closures.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="7a0c7a21-43a3-4bb4-b898-a819ebed44a5" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966101">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201432919093" resolveInfo="YieldClosures_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966102">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201439711541" resolveInfo="ClosuresBase_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966103">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201632597646" resolveInfo="FunctionTypes_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966104">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201773926206" resolveInfo="SequenceFunctionTypes_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966105">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1201777863134" resolveInfo="AdvancedFunctionTypes_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966106">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1202741841877" resolveInfo="ClassifierAdapters_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966107">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1202834707004" resolveInfo="ExternalReferences_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966108">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1213266193343" resolveInfo="ThisExpression_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966109">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.1226351732110" resolveInfo="FinalClosureParameter_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="340028429655966110">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp67.5902225204490666277" resolveInfo="WhileBreak_Test" />
     </node>
   </root>
 </model>
