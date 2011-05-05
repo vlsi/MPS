@@ -269,16 +269,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
   }
 
-  @Override
-  public void setDoNotGenerate(boolean value) {
-    setAttribute(SModelHeader.DO_NOT_GENERATE, "" + value);
-  }
-
-  @Override
-  public boolean isDoNotGenerate() {
-    return Boolean.parseBoolean(getAttribute(SModelHeader.DO_NOT_GENERATE));
-  }
-
   private void replaceModel(SModel newModel, ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
     if (newModel == mySModel) return;
@@ -320,6 +310,28 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     super.dispose();
   }
 
+  @Override
+  public void setDoNotGenerate(boolean value) {
+    ModelAccess.assertLegalWrite();
+
+    getSModelHeader().setDoNotGenerate(value);
+  }
+
+  @Override
+  public boolean isDoNotGenerate() {
+    return getSModelHeader().isDoNotGenerate();
+  }
+
+  public int getVersion() {
+    return getSModelHeader().getVersion();
+  }
+
+  public void setVersion(int newVersion) {
+    ModelAccess.assertLegalWrite();
+
+    getSModelHeader().setVersion(newVersion);
+  }
+
   public String getAttribute(String key) {
     return myMetadata.get(key);
   }
@@ -344,20 +356,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public Map<String, String> getMetaData() {
     return Collections.unmodifiableMap(myMetadata);
-  }
-
-  public int getVersion() {
-    String attributeValue = getAttribute(SModelHeader.VERSION);
-    if (attributeValue == null) return -1;
-    try {
-      return Integer.parseInt(attributeValue);
-    } catch (NumberFormatException e) {
-      return -1;
-    }
-  }
-
-  public void setVersion(int newVersion) {
-    setAttribute(SModelHeader.VERSION, "" + newVersion);
   }
 
   protected void checkModelDuplication() {

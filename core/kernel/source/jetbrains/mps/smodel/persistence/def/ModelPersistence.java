@@ -194,16 +194,15 @@ public class ModelPersistence {
     Map<String, String> metadata = loadMetadata(file);
     if (metadata != null) {
       result.setMetadata(metadata);
-// TODO migrate
-//      if(metadata.containsKey(SModelHeader.VERSION)) {
-//        try {
-//          result.setVersion(Integer.parseInt(metadata.get(SModelHeader.VERSION)));
-//        } catch (NumberFormatException ex) {
-//        }
-//      }
-//      if(metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
-//        result.setDoNotGenerate(Boolean.parseBoolean(metadata.get(SModelHeader.DO_NOT_GENERATE)));
-//      }
+      if(metadata.containsKey(SModelHeader.VERSION)) {
+        try {
+          result.setVersion(Integer.parseInt(metadata.remove(SModelHeader.VERSION)));
+        } catch (NumberFormatException ex) {
+        }
+      }
+      if(metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
+        result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
+      }
     }
 
     try {
@@ -309,19 +308,33 @@ public class ModelPersistence {
     }
 
 
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor instanceof DefaultSModelDescriptor) {
-      DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
-      saveMetadata(md.getModelFile(), md.getMetaData());
-    }
-
     // upgrade?
     int oldVersion = model.getPersistenceVersion();
     if (oldVersion != persistenceVersion) {
       model.setPersistenceVersion(persistenceVersion);
     }
 
-    // save
+    // save metadata
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    if (modelDescriptor instanceof DefaultSModelDescriptor) {
+      DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
+      Map<String,String> metadata = md.getMetaData();
+
+      // for old persistence, push version/doNotGenerator options => metadata back
+      SModelHeader header = model.getSModelHeader();
+      if(persistenceVersion < 7 && (header.getVersion() != -1 || header.isDoNotGenerate())) {
+        metadata = new HashMap<String,String>(metadata);
+        if(header.getVersion() != -1) {
+          metadata.put(SModelHeader.VERSION, Integer.toString(header.getVersion()));
+        }
+        if(header.isDoNotGenerate()) {
+          metadata.put(SModelHeader.DO_NOT_GENERATE, "true");
+        }
+      }
+      saveMetadata(md.getModelFile(), metadata);
+    }
+
+    // save model
     Document document = saveModel(model);
     try {
       JDOMUtil.writeDocument(document, file);
