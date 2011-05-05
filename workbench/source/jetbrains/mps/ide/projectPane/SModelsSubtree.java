@@ -27,17 +27,21 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.MutableTreeNode;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.List;
 
 public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
     IModule module = operationContext.getModule();
     assert module != null;
-    create(rootTreeNode, operationContext, module.getOwnModelDescriptors());
+    create(rootTreeNode, operationContext, module.getOwnModelDescriptors(), false);
   }
 
-  public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext, List<SModelDescriptor> models) {
+  public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext, List<SModelDescriptor> models, boolean dropMiddleNodes) {
     List<SModelDescriptor> regularModels = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> tests = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> stubs = new ArrayList<SModelDescriptor>();
@@ -60,11 +64,10 @@ public class SModelsSubtree {
       }
     }
 
-    SModelNamespaceTreeBuilder builder;
     List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext, isNeedBuildChildModels(rootTreeNode));
     if (!regularModelNodes.isEmpty()) {
       if (rootTreeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectSolutionTreeNode) {
-        builder = new SModelNamespaceTreeBuilder();
+        SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
         for (SModelTreeNode treeNode : regularModelNodes) {
           builder.addNode(treeNode);
         }
@@ -92,7 +95,7 @@ public class SModelsSubtree {
     }
 
     if (!tests.isEmpty()) {
-      builder = new SModelNamespaceTreeBuilder();
+      SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
 
       List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, operationContext, isNeedBuildChildModels(rootTreeNode));
       for (SModelTreeNode testNode : testNodes) {
@@ -102,11 +105,18 @@ public class SModelsSubtree {
       TestsTreeNode testsNode = new TestsTreeNode(operationContext);
       builder.fillNode(testsNode);
 
-      rootTreeNode.add(testsNode);
+      if (!dropMiddleNodes){
+        rootTreeNode.add(testsNode);
+      }else{
+        Enumeration children = testsNode.children();
+        while (children.hasMoreElements()){
+          rootTreeNode.add((MutableTreeNode) children.nextElement());
+        }
+      }
     }
 
     if (!stubs.isEmpty()) {
-      builder = new SModelNamespaceTreeBuilder();
+      SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
       List<SModelTreeNode> stubNodes = getRootModelTreeNodes(stubs, operationContext, isNeedBuildChildModels(rootTreeNode));
       for (SModelTreeNode treeNode : stubNodes) {
         builder.addNode(treeNode);
@@ -115,7 +125,14 @@ public class SModelsSubtree {
       StubsTreeNode stubsNode = new StubsTreeNode(operationContext);
       builder.fillNode(stubsNode);
 
-      rootTreeNode.add(stubsNode);
+      if (!dropMiddleNodes){
+        rootTreeNode.add(stubsNode);
+      }else{
+        Enumeration children = stubsNode.children();
+        while (children.hasMoreElements()){
+          rootTreeNode.add((MutableTreeNode) children.nextElement());
+        }
+      }
     }
   }
 

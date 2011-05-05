@@ -131,7 +131,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     if (myLanguage.getUtilModels().size() > 0) {
       TextTreeNode utilModels = new SModelGroupTreeNode(this, operationContext);
-      SModelsSubtree.create(utilModels, operationContext, (List) myLanguage.getUtilModels());
+      SModelsSubtree.create(utilModels, operationContext, (List) myLanguage.getUtilModels(), false);
       this.add(utilModels);
     }
 

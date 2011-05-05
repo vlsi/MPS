@@ -83,6 +83,6 @@ public class ProjectLibraryTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    SModelsSubtree.create(this, getOperationContext());
+    SModelsSubtree.create(this, getOperationContext(), myLibrary.getOwnModelDescriptors(), true);
   }
 }
