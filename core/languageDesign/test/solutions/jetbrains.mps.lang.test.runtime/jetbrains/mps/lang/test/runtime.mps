@@ -70,6 +70,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1215696484420">
       <property name="name" nameId="tpck.1169194664001" value="BaseTransformationTest" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1215702258119">
       <property name="name" nameId="tpck.1169194664001" value="ProjectContainer" />

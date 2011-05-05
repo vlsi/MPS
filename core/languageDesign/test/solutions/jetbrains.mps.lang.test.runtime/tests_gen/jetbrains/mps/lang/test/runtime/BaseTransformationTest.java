@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.lang.reflect.InvocationTargetException;
 
-public class BaseTransformationTest extends TestCase {
+public abstract class BaseTransformationTest extends TestCase {
   private static ProjectContainer myContainer = new ProjectContainer();
   public static final String PATH_MACRO_PREFIX = "path.macro.";
   private static StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");

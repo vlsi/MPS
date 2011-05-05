@@ -180,7 +180,7 @@
     <unitInfo nodeId="1215078243118" fileName="SubtreeChecker.java" startLine="32" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker" />
   </root>
   <root nodeId="1215696484420">
-    <nodeInfo nodeId="1216230018581" fileName="BaseTransformationTest.java" startLine="34" startPosition="54" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myContainer" />
+    <nodeInfo nodeId="1216230018581" fileName="BaseTransformationTest.java" startLine="34" startPosition="63" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myContainer" />
     <nodeInfo nodeId="2379153299285136289" fileName="BaseTransformationTest.java" startLine="35" startPosition="71" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH_MACRO_PREFIX" />
     <nodeInfo nodeId="577165239384693854" fileName="BaseTransformationTest.java" startLine="36" startPosition="63" endLine="37" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_CLIPBOARD_CONTENT" />
     <nodeInfo nodeId="1217253536786" fileName="BaseTransformationTest.java" startLine="38" startPosition="0" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
