@@ -24,6 +24,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1196351886658(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -468,5 +470,9 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+
+  public static TemplateModel getDescriptor(TemplateModule module) {
+    return new TemplateModelImpl(module);
   }
 }
