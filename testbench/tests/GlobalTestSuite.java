@@ -44,7 +44,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests",
-  "jetbrains.mps.tests.TestModule_mpslite_sandbox",
   "jetbrains.mps.tests.TestModule_ypath_test"})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
