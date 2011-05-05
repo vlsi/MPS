@@ -62,6 +62,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTransformationTest" file="BaseTransformationTest.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="java.lang.Class" />
