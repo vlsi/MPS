@@ -353,7 +353,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool" file="ModelCheckerTool_Tool.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.IComponentDisposer" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.INavigateableTool" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
@@ -374,6 +373,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckBeforeGenerationDialog" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerViewer" />
     <classNode dependClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />

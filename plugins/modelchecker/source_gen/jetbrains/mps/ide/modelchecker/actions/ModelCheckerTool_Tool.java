@@ -28,7 +28,7 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.lang.plugin.structure.IComponentDisposer;
+import jetbrains.mps.plugins.pluginparts.tool.IComponentDisposer;
 
 public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   private static final Icon ICON = new ImageIcon(ModelCheckerTool_Tool.class.getResource("modelChecker.png"));

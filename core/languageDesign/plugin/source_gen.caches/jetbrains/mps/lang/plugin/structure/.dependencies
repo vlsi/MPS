@@ -1371,9 +1371,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.structure.IComponentDisposer" file="IComponentDisposer.java">
-    <classNode dependClassName="javax.swing.JComponent" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration" file="IEnhancedRunConfiguration.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />

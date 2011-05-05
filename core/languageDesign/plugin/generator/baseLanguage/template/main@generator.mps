@@ -11743,7 +11743,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3062002558005753451">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6423922349611078578" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3062002558005753454">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2f20.~GeneratedTabbedTool%daddTab(javax%dswing%dJComponent,java%dlang%dString,javax%dswing%dIcon,jetbrains%dmps%dlang%dplugin%dstructure%dIComponentDisposer)%cvoid" resolveInfo="addTab" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2f20.~GeneratedTabbedTool%daddTab(javax%dswing%dJComponent,java%dlang%dString,javax%dswing%dIcon,jetbrains%dmps%dplugins%dpluginparts%dtool%dIComponentDisposer)%cvoid" resolveInfo="addTab" />
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="3062002558005753490" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8383992355238314327">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8383992355238345799">

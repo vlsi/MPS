@@ -21,14 +21,12 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.workbench.tools.BaseTool;
-import jetbrains.mps.lang.plugin.structure.IComponentDisposer;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
   private List<IDisposableTab> myTabList = new ArrayList<IDisposableTab>();

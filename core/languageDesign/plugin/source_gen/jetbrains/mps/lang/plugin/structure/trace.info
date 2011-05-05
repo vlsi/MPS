@@ -244,12 +244,5 @@
   <unitInfo fileName="BaseToolDeclaration.java" startLine="17" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
   <unitInfo fileName="RunConfigurationDeclaration.java" startLine="17" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
   <unitInfo fileName="ActionDeclaration.java" startLine="16" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
-  <root nodeId="485694842829280671">
-    <nodeInfo nodeId="485694842829280677" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(null)V" />
-    <scopeInfo nodeId="485694842829280677" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44">
-      <varInfo nodeId="485694842829280681" varName="component" />
-    </scopeInfo>
-    <unitInfo nodeId="485694842829280671" fileName="IComponentDisposer.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IComponentDisposer" />
-  </root>
 </debugInfo>
 
