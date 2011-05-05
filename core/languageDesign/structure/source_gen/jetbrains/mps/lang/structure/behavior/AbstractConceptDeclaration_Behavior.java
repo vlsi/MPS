@@ -26,6 +26,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -283,6 +284,27 @@ public class AbstractConceptDeclaration_Behavior {
       return SConceptOperations.isSuperConceptOf(expectedConcept, NameUtil.nodeFQName(thisNode));
     }
     return false;
+  }
+
+  public static SNode call_computeInHierarchy_4184580446578561998(SNode thisNode, _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> predicate) {
+    // todo: comment method!, use generics 
+    SNode result = predicate.invoke(thisNode);
+    if (result != null) {
+      return result;
+    }
+
+    for (SNode superconcept : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    })) {
+      SNode superconceptResult = AbstractConceptDeclaration_Behavior.call_computeInHierarchy_4184580446578561998(superconcept, predicate);
+      if (superconceptResult != null) {
+        return superconceptResult;
+      }
+    }
+
+    return null;
   }
 
   public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
