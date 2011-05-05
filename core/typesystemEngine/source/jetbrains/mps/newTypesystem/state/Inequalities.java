@@ -225,9 +225,9 @@ public class Inequalities {  //
   }
 
   public Map<Set<SNode>, Set<InequalityBlock>> getInequalityGroups(Set<Block> inequalities) {
-    Map<SNode, Set<SNode>> components = new THashMap<SNode, Set<SNode>>(1);
-    Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new THashMap<Set<SNode>, Set<InequalityBlock>>();
-    Set<SNode> emptySet = new THashSet<SNode>(1);
+    Map<SNode, Set<SNode>> components = new HashMap<SNode, Set<SNode>>(1);
+    Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new HashMap<Set<SNode>, Set<InequalityBlock>>();
+    Set<SNode> emptySet = new HashSet<SNode>(1);
     for (Block block : inequalities) {
       InequalityBlock inequality = (InequalityBlock) block;
 
@@ -236,15 +236,15 @@ public class Inequalities {  //
       if (variables.size() == 0) {
         Set<InequalityBlock> emptyBlocks = groupsToInequalities.get(emptySet);
         if (emptyBlocks == null) {
-          emptyBlocks = new THashSet<InequalityBlock>(1);
+          emptyBlocks = new HashSet<InequalityBlock>(1);
           groupsToInequalities.put(emptySet, emptyBlocks);
         }
         emptyBlocks.add(inequality);
         continue;
       }
-      Set<SNode> currentResult = new THashSet<SNode>();
+      Set<SNode> currentResult = new HashSet<SNode>();
 
-      Set<InequalityBlock> currentInequalities = new THashSet<InequalityBlock>();
+      Set<InequalityBlock> currentInequalities = new HashSet<InequalityBlock>();
       currentInequalities.add(inequality);
       for (SNode var : variables) {
         var = myState.getRepresentative(var);
