@@ -26,10 +26,22 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
+  <dependency className="jetbrains.mps.nanoc.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" file="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.nanoc.plugin.ExecutableFileRunConfiguration_ConfigurationType" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
+    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+  </dependency>
   <dependency className="jetbrains.mps.nanoc.plugin.Nanoc_ApplicationPlugin" file="Nanoc_ApplicationPlugin.java">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.nanoc.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
     <classNode dependClassName="java.util.ArrayList" />

@@ -18,7 +18,6 @@
   <unitInfo fileName="RemoveSetElementOperation_Editor.java" startLine="94" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.RemoveSetElementOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_10" />
   <unitInfo fileName="SingleArgumentSequenceOperation_Editor.java" startLine="98" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SingleArgumentSequenceOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_19" />
   <unitInfo fileName="PageOperation_Editor.java" startLine="104" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.PageOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_1" />
-  <unitInfo fileName="JoinOperation_Editor.java" startLine="114" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.JoinOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_18" />
   <unitInfo fileName="SubSetOperation_Editor.java" startLine="115" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SubSetOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_17" />
   <unitInfo fileName="SetElementOperation_Editor.java" startLine="115" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SetElementOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_8" />
   <unitInfo fileName="InsertElementOperation_Editor.java" startLine="115" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.InsertElementOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_7" />
@@ -27,6 +26,7 @@
   <unitInfo fileName="SubListOperation_Editor.java" startLine="121" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SubListOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_20" />
   <unitInfo fileName="ComparatorSortOperation_Editor.java" startLine="123" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ComparatorSortOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_6" />
   <unitInfo fileName="SortOperation_Editor.java" startLine="123" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SortOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_3" />
+  <unitInfo fileName="JoinOperation_Editor.java" startLine="150" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.JoinOperation_Editor$ReplaceWith_SequenceOperation_cellMenu_a0a0_18" />
   <unitInfo fileName="HashMapCreator_editorComponent.java" startLine="265" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent$ReplaceWith_HashMapCreator_cellMenu_a0a0" />
   <unitInfo fileName="AbstractContainerCreator_Component.java" startLine="392" startPosition="0" endLine="400" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Component$ReplaceWith_AbstractContainerCreator_cellMenu_a0a0" />
   <unitInfo fileName="AbstractContainerCreator_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Editor" />
@@ -114,7 +114,6 @@
   <unitInfo fileName="SetType_Editor.java" startLine="28" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SetType_Editor" />
   <unitInfo fileName="ListType_Editor.java" startLine="28" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ListType_Editor" />
   <unitInfo fileName="MappingType_Editor.java" startLine="22" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MappingType_Editor" />
-  <unitInfo fileName="JoinOperation_Editor.java" startLine="25" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.JoinOperation_Editor" />
   <unitInfo fileName="SetElementOperation_Editor.java" startLine="24" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SetElementOperation_Editor" />
   <unitInfo fileName="InsertElementOperation_Editor.java" startLine="24" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.InsertElementOperation_Editor" />
   <unitInfo fileName="MapType_Editor.java" startLine="22" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapType_Editor" />
@@ -127,6 +126,7 @@
   <unitInfo fileName="ComparatorSortOperation_Editor.java" startLine="25" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ComparatorSortOperation_Editor" />
   <unitInfo fileName="SortOperation_Editor.java" startLine="25" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SortOperation_Editor" />
   <unitInfo fileName="SequenceType_Editor.java" startLine="29" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceType_Editor" />
+  <unitInfo fileName="JoinOperation_Editor.java" startLine="25" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.JoinOperation_Editor" />
   <unitInfo fileName="CustomContainers_Editor.java" startLine="28" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.CustomContainers_Editor" />
   <unitInfo fileName="CustomContainerDeclaration_Editor.java" startLine="27" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.CustomContainerDeclaration_Editor" />
   <unitInfo fileName="HashMapCreator_editorComponent.java" startLine="34" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent" />
@@ -169,8 +169,8 @@
     <scopeInfo nodeId="1229428480520" fileName="SequenceCreator_add_initializer.java" startLine="60" startPosition="146" endLine="61" endPosition="126" />
   </root>
   <root nodeId="1240687606670">
-    <nodeInfo nodeId="1240687785199" fileName="JoinOperation_Editor.java" startLine="110" startPosition="111" endLine="111" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1240687684404" fileName="JoinOperation_Editor.java" startLine="110" startPosition="111" endLine="111" endPosition="72" />
+    <nodeInfo nodeId="1240687785199" fileName="JoinOperation_Editor.java" startLine="146" startPosition="111" endLine="147" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1240687684404" fileName="JoinOperation_Editor.java" startLine="146" startPosition="111" endLine="147" endPosition="72" />
   </root>
   <root nodeId="1562299158921811349">
     <nodeInfo nodeId="1434634659123233078" fileName="HashMapCreator_editorComponent.java" startLine="241" startPosition="112" endLine="242" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

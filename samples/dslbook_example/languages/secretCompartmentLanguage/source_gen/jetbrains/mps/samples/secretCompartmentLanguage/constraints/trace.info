@@ -3,12 +3,15 @@
   <unitInfo fileName="Event_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.Event_Behavior" />
   <unitInfo fileName="State_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.State_Behavior" />
   <unitInfo fileName="StateMachine_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachine_Behavior" />
+  <unitInfo fileName="StateMachineTest_Constraints.java" startLine="39" startPosition="27" endLine="43" endPosition="5" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachineTest_Constraints$1" />
+  <unitInfo fileName="State_Constraints.java" startLine="40" startPosition="27" endLine="44" endPosition="5" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.State_Constraints$1" />
+  <unitInfo fileName="Event_Constraints.java" startLine="40" startPosition="27" endLine="44" endPosition="5" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.Event_Constraints$1" />
+  <unitInfo fileName="StateMachine_Constraints.java" startLine="40" startPosition="27" endLine="44" endPosition="5" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachine_Constraints$1" />
   <unitInfo fileName="StateMachineTest_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachineTest_Behavior" />
-  <unitInfo fileName="StateMachineTest_name_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachineTest_name_PropertyConstraint" />
-  <unitInfo fileName="State_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.State_name_PropertyConstraint" />
-  <unitInfo fileName="Event_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.Event_name_PropertyConstraint" />
-  <unitInfo fileName="StateMachine_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachine_name_PropertyConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="StateMachineTest_Constraints.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachineTest_Constraints" />
+  <unitInfo fileName="State_Constraints.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.State_Constraints" />
+  <unitInfo fileName="Event_Constraints.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.Event_Constraints" />
+  <unitInfo fileName="StateMachine_Constraints.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachine_Constraints" />
   <root nodeId="1197166592844">
     <scopeInfo nodeId="1197166592846" fileName="StateMachine_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
@@ -24,20 +27,20 @@
     <scopeInfo nodeId="1197251245698" fileName="StateMachineTest_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="121" />
   </root>
   <root nodeId="1213107435705">
-    <nodeInfo nodeId="1213107435709" fileName="StateMachine_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107435708" fileName="StateMachine_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="86" />
+    <nodeInfo nodeId="1213107435709" fileName="StateMachine_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107435708" fileName="StateMachine_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="90" />
   </root>
   <root nodeId="1213107435908">
-    <nodeInfo nodeId="1213107435912" fileName="StateMachineTest_name_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107435911" fileName="StateMachineTest_name_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="106" />
+    <nodeInfo nodeId="1213107435912" fileName="StateMachineTest_Constraints.java" startLine="40" startPosition="84" endLine="41" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107435911" fileName="StateMachineTest_Constraints.java" startLine="40" startPosition="84" endLine="41" endPosition="110" />
   </root>
   <root nodeId="1213107436125">
-    <nodeInfo nodeId="1213107436129" fileName="Event_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107436128" fileName="Event_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" />
+    <nodeInfo nodeId="1213107436129" fileName="Event_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107436128" fileName="Event_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="64" />
   </root>
   <root nodeId="1213107437474">
-    <nodeInfo nodeId="1213107437478" fileName="State_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107437477" fileName="State_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" />
+    <nodeInfo nodeId="1213107437478" fileName="State_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107437477" fileName="State_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="64" />
   </root>
 </debugInfo>
 

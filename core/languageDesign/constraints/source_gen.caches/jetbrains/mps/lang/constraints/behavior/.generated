@@ -89,7 +89,6 @@
     <file name="ConstraintFunction_CanBeAChild_Behavior.java" />
   </source>
   <source id="1213877399321" name="NodeReferentConstraint_Behavior" hash="-n9jk0p1o4w49coy4mrnzbs5k6u0wx7">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />

@@ -1,74 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MatrixIndexWildcard_Constraints.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixIndexWildcard_Constraints" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.ConstraintsDescriptor" />
-  <unitInfo fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_indexRef_ReferentConstraint" />
-  <unitInfo fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_index_ReferentConstraint" />
+  <unitInfo fileName="MatrixIndexWildcard_Constraints.java" startLine="47" startPosition="15" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixIndexWildcard_Constraints$1" />
+  <unitInfo fileName="MathSymbolIndexReference_Constraints.java" startLine="65" startPosition="31" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$1" />
+  <unitInfo fileName="MatrixElementAccessExpression_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixElementAccessExpression_Constraints" />
+  <unitInfo fileName="MatrixInitializerIndexReference_Constraints.java" startLine="68" startPosition="28" endLine="114" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$1" />
+  <unitInfo fileName="MathSymbolIndexReference_Constraints.java" startLine="23" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints" />
+  <unitInfo fileName="MatrixIndexWildcard_Constraints.java" startLine="24" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixIndexWildcard_Constraints" />
+  <unitInfo fileName="MatrixInitializerIndexReference_Constraints.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints" />
   <root nodeId="1236430656078">
-    <nodeInfo nodeId="1237828450002" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237825752846" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="29" startPosition="141" endLine="30" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237825752852" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="30" startPosition="83" endLine="31" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237825752863" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="31" startPosition="99" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1237825752100" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="28" startPosition="132" endLine="32" endPosition="15">
+    <nodeInfo nodeId="1237828450002" fileName="MathSymbolIndexReference_Constraints.java" startLine="72" startPosition="136" endLine="73" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237825752846" fileName="MathSymbolIndexReference_Constraints.java" startLine="73" startPosition="145" endLine="74" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237825752852" fileName="MathSymbolIndexReference_Constraints.java" startLine="74" startPosition="87" endLine="75" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237825752863" fileName="MathSymbolIndexReference_Constraints.java" startLine="75" startPosition="103" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1237825752100" fileName="MathSymbolIndexReference_Constraints.java" startLine="72" startPosition="136" endLine="76" endPosition="19">
       <varInfo nodeId="1237828450003" varName="ms" />
       <varInfo nodeId="1237825752847" varName="msi" />
     </scopeInfo>
   </root>
   <root nodeId="6219660258344759919">
-    <nodeInfo nodeId="6219660258344773969" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258344773979" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="32" startPosition="155" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="35" startPosition="7" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="37" startPosition="9" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="39" startPosition="11" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="41" startPosition="54" endLine="42" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258345571162" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="45" startPosition="39" endLine="46" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258345571169" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="46" startPosition="126" endLine="47" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="48" startPosition="18" endLine="49" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="50" startPosition="13" endLine="51" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="52" startPosition="56" endLine="53" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="56" startPosition="41" endLine="57" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6219660258345571182" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="56" startPosition="41" endLine="57" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344774076" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="61" startPosition="7" endLine="62" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344774050" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="63" startPosition="5" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="45" startPosition="39" endLine="47" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="40" startPosition="50" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="51" startPosition="52" endLine="54" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="55" startPosition="13" endLine="58" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="38" startPosition="49" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="49" startPosition="51" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="48" startPosition="16" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="44" startPosition="11" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="36" startPosition="44" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="34" startPosition="23" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6219660258344774054" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="33" startPosition="49" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="41" startPosition="54" endLine="42" endPosition="185" />
-    <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="52" startPosition="56" endLine="53" endPosition="187" />
-    <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="56" startPosition="41" endLine="57" endPosition="128" />
-    <scopeInfo nodeId="6219660258345571160" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="56" startPosition="41" endLine="57" endPosition="128" />
-    <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="45" startPosition="39" endLine="47" endPosition="126" />
-    <scopeInfo nodeId="6219660258345571155" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="45" startPosition="39" endLine="47" endPosition="126" />
-    <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="39" startPosition="11" endLine="43" endPosition="13" />
-    <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="50" startPosition="13" endLine="54" endPosition="15" />
-    <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="48" startPosition="18" endLine="58" endPosition="13" />
-    <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="37" startPosition="9" endLine="59" endPosition="11" />
-    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="35" startPosition="7" endLine="60" endPosition="9" />
-    <scopeInfo nodeId="6219660258344774056" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="34" startPosition="23" endLine="62" endPosition="126" />
-    <scopeInfo nodeId="6219660258344759924" fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="31" startPosition="132" endLine="64" endPosition="19">
+    <nodeInfo nodeId="6219660258344773969" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="75" startPosition="136" endLine="76" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258344773979" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="76" startPosition="159" endLine="77" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="79" startPosition="11" endLine="80" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="81" startPosition="13" endLine="82" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="83" startPosition="15" endLine="84" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="85" startPosition="58" endLine="86" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258345571162" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="89" startPosition="43" endLine="90" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258345571169" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="90" startPosition="130" endLine="91" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="92" startPosition="22" endLine="93" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="94" startPosition="17" endLine="95" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="96" startPosition="60" endLine="97" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="100" startPosition="45" endLine="101" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6219660258345571182" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="100" startPosition="45" endLine="101" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344774076" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="105" startPosition="11" endLine="106" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344774050" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="107" startPosition="9" endLine="108" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="89" startPosition="43" endLine="91" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="84" startPosition="54" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="95" startPosition="56" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="99" startPosition="17" endLine="102" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="82" startPosition="53" endLine="88" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="93" startPosition="55" endLine="99" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="92" startPosition="20" endLine="103" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="88" startPosition="15" endLine="103" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="80" startPosition="48" endLine="104" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="78" startPosition="27" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6219660258344774054" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="77" startPosition="53" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="85" startPosition="58" endLine="86" endPosition="189" />
+    <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="96" startPosition="60" endLine="97" endPosition="191" />
+    <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="100" startPosition="45" endLine="101" endPosition="132" />
+    <scopeInfo nodeId="6219660258345571160" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="100" startPosition="45" endLine="101" endPosition="132" />
+    <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="89" startPosition="43" endLine="91" endPosition="130" />
+    <scopeInfo nodeId="6219660258345571155" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="89" startPosition="43" endLine="91" endPosition="130" />
+    <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="83" startPosition="15" endLine="87" endPosition="17" />
+    <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="94" startPosition="17" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="92" startPosition="22" endLine="102" endPosition="17" />
+    <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="81" startPosition="13" endLine="103" endPosition="15" />
+    <scopeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="79" startPosition="11" endLine="104" endPosition="13" />
+    <scopeInfo nodeId="6219660258344774056" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="78" startPosition="27" endLine="106" endPosition="130" />
+    <scopeInfo nodeId="6219660258344759924" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="75" startPosition="136" endLine="108" endPosition="23">
       <varInfo nodeId="6219660258344773970" varName="n" />
       <varInfo nodeId="6219660258344773980" varName="indices" />
     </scopeInfo>
   </root>
   <root nodeId="964810815943407926">
-    <nodeInfo nodeId="964810815943408825" fileName="MatrixIndexWildcard_Constraints.java" startLine="14" startPosition="143" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="964810815943408830" fileName="MatrixIndexWildcard_Constraints.java" startLine="16" startPosition="12" endLine="17" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="964810815943408843" fileName="MatrixIndexWildcard_Constraints.java" startLine="17" startPosition="141" endLine="18" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="964810815943408828" fileName="MatrixIndexWildcard_Constraints.java" startLine="16" startPosition="10" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="964810815943408815" fileName="MatrixIndexWildcard_Constraints.java" startLine="13" startPosition="114" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="964810815943408816" fileName="MatrixIndexWildcard_Constraints.java" startLine="14" startPosition="143" endLine="15" endPosition="19" />
-    <scopeInfo nodeId="964810815943408829" fileName="MatrixIndexWildcard_Constraints.java" startLine="16" startPosition="12" endLine="18" endPosition="191">
+    <nodeInfo nodeId="964810815943408825" fileName="MatrixIndexWildcard_Constraints.java" startLine="86" startPosition="143" endLine="87" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="964810815943408830" fileName="MatrixIndexWildcard_Constraints.java" startLine="88" startPosition="12" endLine="89" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="964810815943408843" fileName="MatrixIndexWildcard_Constraints.java" startLine="89" startPosition="141" endLine="90" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="964810815943408828" fileName="MatrixIndexWildcard_Constraints.java" startLine="88" startPosition="10" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="964810815943408815" fileName="MatrixIndexWildcard_Constraints.java" startLine="85" startPosition="114" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="964810815943408816" fileName="MatrixIndexWildcard_Constraints.java" startLine="86" startPosition="143" endLine="87" endPosition="19" />
+    <scopeInfo nodeId="964810815943408829" fileName="MatrixIndexWildcard_Constraints.java" startLine="88" startPosition="12" endLine="90" endPosition="191">
       <varInfo nodeId="964810815943408831" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="964810815943407928" fileName="MatrixIndexWildcard_Constraints.java" startLine="13" startPosition="114" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="964810815943407928" fileName="MatrixIndexWildcard_Constraints.java" startLine="85" startPosition="114" endLine="91" endPosition="5" />
   </root>
 </debugInfo>
 

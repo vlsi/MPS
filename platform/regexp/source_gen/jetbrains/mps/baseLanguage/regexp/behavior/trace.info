@@ -3,20 +3,20 @@
   <unitInfo fileName="ReplaceRegexpOperation_Behavior.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
   <unitInfo fileName="SymbolClassRegexpAndPart_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_Behavior" />
   <unitInfo fileName="Replacement_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_Behavior" />
-  <unitInfo fileName="IntervalSymbolClassPart_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_Behavior" />
-  <unitInfo fileName="IntersectionSymbolClassPart_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_Behavior" />
   <unitInfo fileName="CharacterSymbolClassPart_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_Behavior" />
-  <unitInfo fileName="UnicodeCharacterRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_Behavior" />
-  <unitInfo fileName="ParensRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_Behavior" />
-  <unitInfo fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_Behavior" />
+  <unitInfo fileName="IntersectionSymbolClassPart_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_Behavior" />
+  <unitInfo fileName="IntervalSymbolClassPart_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_Behavior" />
   <unitInfo fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_Behavior" />
-  <unitInfo fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_Behavior" />
-  <unitInfo fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_Behavior" />
+  <unitInfo fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_Behavior" />
+  <unitInfo fileName="ParensRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_Behavior" />
+  <unitInfo fileName="UnicodeCharacterRegexp_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_Behavior" />
   <unitInfo fileName="LookRegexp_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_Behavior" />
+  <unitInfo fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_Behavior" />
+  <unitInfo fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_Behavior" />
   <unitInfo fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_Behavior" />
-  <unitInfo fileName="NTimesRegexp_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_Behavior" />
-  <unitInfo fileName="AtLeastNTimesRegexp_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_Behavior" />
   <unitInfo fileName="FromNToMTimesRegexp_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_Behavior" />
+  <unitInfo fileName="AtLeastNTimesRegexp_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_Behavior" />
+  <unitInfo fileName="NTimesRegexp_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_Behavior" />
   <unitInfo fileName="UnaryRegexp_Behavior.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
   <unitInfo fileName="SeqRegexp_Behavior.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_Behavior" />
   <unitInfo fileName="OrRegexp_Behavior.java" startLine="13" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior" />
@@ -86,8 +86,8 @@
     <scopeInfo nodeId="4204903511793602686" fileName="MatchParensRegexp_Behavior.java" startLine="34" startPosition="70" endLine="35" endPosition="46" />
     <scopeInfo nodeId="1222435297324" fileName="MatchParensRegexp_Behavior.java" startLine="22" startPosition="90" endLine="24" endPosition="127" />
     <scopeInfo nodeId="1223361984348" fileName="MatchParensRegexp_Behavior.java" startLine="27" startPosition="65" endLine="31" endPosition="65">
-      <varInfo nodeId="1223362558350" varName="parens" />
       <varInfo nodeId="1223362558376" varName="parensList" />
+      <varInfo nodeId="1223362558350" varName="parens" />
     </scopeInfo>
   </root>
   <root nodeId="1213877492182">

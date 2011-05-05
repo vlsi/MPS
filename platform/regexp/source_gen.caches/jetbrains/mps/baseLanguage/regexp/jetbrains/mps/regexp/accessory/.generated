@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4guci35wir2ecgxr4whpi371uqps22p">
-  <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" hash="bmft5c3uidzv8dfv74owfzta3wv5e0g" />
-  <common hash="-nay8bdrkmeay53ko9x5x6epudmum3m" />
+<dependencies version="2" modelHash="-awi790bp651hzxfxv2s3hsux0vb95xb">
+  <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" hash="bd1h11o81cm1z453mcleykkd5t1iji5" />
+  <common hash="-dcb2jiy9rfv10cvjn4u2tukpwgzyaty" />
   <source id="1174554673597" hash="-dk898vra610bl1wzs6hvtcvh9fakyqs">
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
   </source>

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.ConstraintsDescriptor" />
-  <unitInfo fileName="IResolveInfo_resolveInfo_PropertyConstraint.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_resolveInfo_PropertyConstraint" />
+  <unitInfo fileName="IResolveInfo_Constraints.java" startLine="40" startPosition="34" endLine="44" endPosition="5" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints$1" />
+  <unitInfo fileName="IResolveInfo_Constraints.java" startLine="50" startPosition="34" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints$2" />
+  <unitInfo fileName="BaseConcept_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.BaseConcept_Constraints" />
+  <unitInfo fileName="IResolveInfo_Constraints.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints" />
   <root nodeId="1213104856824">
-    <nodeInfo nodeId="1213104856828" fileName="IResolveInfo_resolveInfo_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636454277" fileName="IResolveInfo_resolveInfo_PropertyConstraint.java" startLine="30" startPosition="124" endLine="31" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <scopeInfo nodeId="1213104856827" fileName="IResolveInfo_resolveInfo_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="26" />
-    <scopeInfo nodeId="1213104856834" fileName="IResolveInfo_resolveInfo_PropertyConstraint.java" startLine="30" startPosition="124" endLine="31" endPosition="42" />
+    <nodeInfo nodeId="1213104856828" fileName="IResolveInfo_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636454277" fileName="IResolveInfo_Constraints.java" startLine="51" startPosition="128" endLine="52" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <scopeInfo nodeId="1213104856827" fileName="IResolveInfo_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="30" />
+    <scopeInfo nodeId="1213104856834" fileName="IResolveInfo_Constraints.java" startLine="51" startPosition="128" endLine="52" endPosition="46" />
   </root>
 </debugInfo>
 

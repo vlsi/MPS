@@ -20,6 +20,9 @@ public class ExecutableFileRunConfiguration_ConfigurationType implements Configu
 
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
+  public ExecutableFileRunConfiguration_ConfigurationType() {
+  }
+
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new SourceNanocConfiguration_Factory(this));

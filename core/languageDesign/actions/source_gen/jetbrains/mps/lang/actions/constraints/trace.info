@@ -1,91 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CopyPasteHandlers_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.CopyPasteHandlers_Constraints" />
-  <unitInfo fileName="SubstituteMenuPart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SubstituteMenuPart_Constraints" />
-  <unitInfo fileName="SideTransformMenuPart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformMenuPart_Constraints" />
-  <unitInfo fileName="SideTransformHintSubstituteActions_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformHintSubstituteActions_Constraints" />
-  <unitInfo fileName="PasteWrappers_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.PasteWrappers_Constraints" />
-  <unitInfo fileName="NodeSubstituteActions_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeSubstituteActions_Constraints" />
-  <unitInfo fileName="NodeFactories_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeFactories_Constraints" />
-  <unitInfo fileName="NodeFactory_alias_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeFactory_alias_PropertyConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.ConstraintsDescriptor" />
-  <unitInfo fileName="NodeFactory_applicableConcept_ReferentConstraint.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeFactory_applicableConcept_ReferentConstraint" />
-  <unitInfo fileName="SmartActionParameterReference_smartActionParameter_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SmartActionParameterReference_smartActionParameter_ReferentConstraint" />
-  <unitInfo fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint" />
-  <unitInfo fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint" />
+  <unitInfo fileName="NodeFactory_Constraints.java" startLine="48" startPosition="28" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.NodeFactory_Constraints$1" />
+  <unitInfo fileName="CopyPasteHandlers_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.CopyPasteHandlers_Constraints$1" />
+  <unitInfo fileName="SubstituteMenuPart_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.SubstituteMenuPart_Constraints$1" />
+  <unitInfo fileName="SideTransformMenuPart_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.SideTransformMenuPart_Constraints$1" />
+  <unitInfo fileName="SideTransformHintSubstituteActions_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.SideTransformHintSubstituteActions_Constraints$1" />
+  <unitInfo fileName="PasteWrappers_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.PasteWrappers_Constraints$1" />
+  <unitInfo fileName="NodeSubstituteActions_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.NodeSubstituteActions_Constraints$1" />
+  <unitInfo fileName="NodeFactories_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.NodeFactories_Constraints$1" />
+  <unitInfo fileName="NodeFactory_Constraints.java" startLine="73" startPosition="40" endLine="90" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.NodeFactory_Constraints$2" />
+  <unitInfo fileName="SmartActionParameterReference_Constraints.java" startLine="66" startPosition="43" endLine="84" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.SmartActionParameterReference_Constraints$1" />
+  <unitInfo fileName="SideTransformVariableReference_Constraints.java" startLine="67" startPosition="42" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.SideTransformVariableReference_Constraints$1" />
+  <unitInfo fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="67" startPosition="42" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.SubstituteNodeBuilderVariableReference_Constraints$1" />
+  <unitInfo fileName="ConceptPart_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.ConceptPart_Constraints" />
+  <unitInfo fileName="SmartActionParameterReference_Constraints.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SmartActionParameterReference_Constraints" />
+  <unitInfo fileName="CopyPasteHandlers_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.CopyPasteHandlers_Constraints" />
+  <unitInfo fileName="SubstituteMenuPart_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SubstituteMenuPart_Constraints" />
+  <unitInfo fileName="SideTransformMenuPart_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformMenuPart_Constraints" />
+  <unitInfo fileName="SideTransformHintSubstituteActions_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformHintSubstituteActions_Constraints" />
+  <unitInfo fileName="PasteWrappers_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.PasteWrappers_Constraints" />
+  <unitInfo fileName="NodeSubstituteActions_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeSubstituteActions_Constraints" />
+  <unitInfo fileName="NodeFactories_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeFactories_Constraints" />
+  <unitInfo fileName="SideTransformVariableReference_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformVariableReference_Constraints" />
+  <unitInfo fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SubstituteNodeBuilderVariableReference_Constraints" />
+  <unitInfo fileName="NodeFactory_Constraints.java" startLine="26" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeFactory_Constraints" />
   <root nodeId="1213104855837">
-    <nodeInfo nodeId="1213104855841" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104855849" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="31" startPosition="160" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104855857" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="33" startPosition="26" endLine="34" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213104855867" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104855855" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="32" startPosition="46" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1213104855856" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="33" startPosition="26" endLine="34" endPosition="124" />
-    <scopeInfo nodeId="1213104855840" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="16">
+    <nodeInfo nodeId="1213104855841" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="74" startPosition="136" endLine="75" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104855849" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="75" startPosition="164" endLine="76" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104855857" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="77" startPosition="30" endLine="78" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104855867" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="79" startPosition="9" endLine="80" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104855855" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="76" startPosition="50" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213104855856" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="77" startPosition="30" endLine="78" endPosition="128" />
+    <scopeInfo nodeId="1213104855840" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="74" startPosition="136" endLine="80" endPosition="20">
       <varInfo nodeId="1213104855850" varName="vars" />
       <varInfo nodeId="1213104855842" varName="builder" />
     </scopeInfo>
   </root>
   <root nodeId="1213104859086">
-    <nodeInfo nodeId="1213104859090" fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104859096" fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="31" startPosition="46" endLine="32" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104859107" fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="33" startPosition="26" endLine="34" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213104859117" fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104859105" fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="32" startPosition="172" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1213104859106" fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="33" startPosition="26" endLine="34" endPosition="124" />
-    <scopeInfo nodeId="1213104859089" fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="16">
+    <nodeInfo nodeId="1213104859090" fileName="SideTransformVariableReference_Constraints.java" startLine="74" startPosition="136" endLine="75" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104859096" fileName="SideTransformVariableReference_Constraints.java" startLine="75" startPosition="50" endLine="76" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104859107" fileName="SideTransformVariableReference_Constraints.java" startLine="77" startPosition="30" endLine="78" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104859117" fileName="SideTransformVariableReference_Constraints.java" startLine="79" startPosition="9" endLine="80" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104859105" fileName="SideTransformVariableReference_Constraints.java" startLine="76" startPosition="176" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213104859106" fileName="SideTransformVariableReference_Constraints.java" startLine="77" startPosition="30" endLine="78" endPosition="128" />
+    <scopeInfo nodeId="1213104859089" fileName="SideTransformVariableReference_Constraints.java" startLine="74" startPosition="136" endLine="80" endPosition="20">
       <varInfo nodeId="1213104859091" varName="vars" />
       <varInfo nodeId="1213104859097" varName="builder" />
     </scopeInfo>
   </root>
   <root nodeId="1213104859350">
-    <nodeInfo nodeId="1213104859354" fileName="NodeFactory_alias_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636453539" fileName="NodeFactory_applicableConcept_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1213104859363" fileName="NodeFactory_applicableConcept_ReferentConstraint.java" startLine="28" startPosition="35" endLine="29" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104859371" fileName="NodeFactory_applicableConcept_ReferentConstraint.java" startLine="29" startPosition="104" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104859379" fileName="NodeFactory_applicableConcept_ReferentConstraint.java" startLine="30" startPosition="79" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213104859353" fileName="NodeFactory_alias_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="88" />
-    <scopeInfo nodeId="1213104859362" fileName="NodeFactory_applicableConcept_ReferentConstraint.java" startLine="27" startPosition="132" endLine="31" endPosition="53">
+    <nodeInfo nodeId="1213104859354" fileName="NodeFactory_Constraints.java" startLine="49" startPosition="84" endLine="50" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636453539" fileName="NodeFactory_Constraints.java" startLine="80" startPosition="136" endLine="81" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1213104859363" fileName="NodeFactory_Constraints.java" startLine="81" startPosition="39" endLine="82" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104859371" fileName="NodeFactory_Constraints.java" startLine="82" startPosition="108" endLine="83" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104859379" fileName="NodeFactory_Constraints.java" startLine="83" startPosition="83" endLine="84" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213104859353" fileName="NodeFactory_Constraints.java" startLine="49" startPosition="84" endLine="50" endPosition="92" />
+    <scopeInfo nodeId="1213104859362" fileName="NodeFactory_Constraints.java" startLine="80" startPosition="136" endLine="84" endPosition="57">
       <varInfo nodeId="1213104859364" varName="language" />
       <varInfo nodeId="1213104859372" varName="structureModel" />
     </scopeInfo>
   </root>
   <root nodeId="1227088772782">
-    <nodeInfo nodeId="1227088774989" fileName="NodeFactories_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227088774550" fileName="NodeFactories_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" />
+    <nodeInfo nodeId="1227088774989" fileName="NodeFactories_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227088774550" fileName="NodeFactories_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" />
   </root>
   <root nodeId="1227088788504">
-    <nodeInfo nodeId="1227088789867" fileName="NodeSubstituteActions_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227088789866" fileName="NodeSubstituteActions_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" />
+    <nodeInfo nodeId="1227088789867" fileName="NodeSubstituteActions_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227088789866" fileName="NodeSubstituteActions_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" />
   </root>
   <root nodeId="1227088799046">
-    <nodeInfo nodeId="1227088800236" fileName="PasteWrappers_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227088800235" fileName="PasteWrappers_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" />
+    <nodeInfo nodeId="1227088800236" fileName="PasteWrappers_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227088800235" fileName="PasteWrappers_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" />
   </root>
   <root nodeId="1227088806632">
-    <nodeInfo nodeId="1227088809668" fileName="SideTransformHintSubstituteActions_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227088809667" fileName="SideTransformHintSubstituteActions_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" />
+    <nodeInfo nodeId="1227088809668" fileName="SideTransformHintSubstituteActions_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227088809667" fileName="SideTransformHintSubstituteActions_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" />
   </root>
   <root nodeId="1235053871244">
-    <nodeInfo nodeId="1235053906821" fileName="SmartActionParameterReference_smartActionParameter_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235054548815" fileName="SmartActionParameterReference_smartActionParameter_ReferentConstraint.java" startLine="31" startPosition="29" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235054475481" fileName="SmartActionParameterReference_smartActionParameter_ReferentConstraint.java" startLine="33" startPosition="5" endLine="34" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235054537946" fileName="SmartActionParameterReference_smartActionParameter_ReferentConstraint.java" startLine="30" startPosition="151" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1235054537947" fileName="SmartActionParameterReference_smartActionParameter_ReferentConstraint.java" startLine="31" startPosition="29" endLine="32" endPosition="67" />
-    <scopeInfo nodeId="1235053874372" fileName="SmartActionParameterReference_smartActionParameter_ReferentConstraint.java" startLine="29" startPosition="132" endLine="34" endPosition="78">
+    <nodeInfo nodeId="1235053906821" fileName="SmartActionParameterReference_Constraints.java" startLine="73" startPosition="136" endLine="74" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235054548815" fileName="SmartActionParameterReference_Constraints.java" startLine="75" startPosition="33" endLine="76" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235054475481" fileName="SmartActionParameterReference_Constraints.java" startLine="77" startPosition="9" endLine="78" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235054537946" fileName="SmartActionParameterReference_Constraints.java" startLine="74" startPosition="155" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1235054537947" fileName="SmartActionParameterReference_Constraints.java" startLine="75" startPosition="33" endLine="76" endPosition="71" />
+    <scopeInfo nodeId="1235053874372" fileName="SmartActionParameterReference_Constraints.java" startLine="73" startPosition="136" endLine="78" endPosition="82">
       <varInfo nodeId="1235053906822" varName="ancestor" />
     </scopeInfo>
   </root>
   <root nodeId="1371735981988471173">
-    <nodeInfo nodeId="1371735981988471176" fileName="SideTransformMenuPart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1371735981988471175" fileName="SideTransformMenuPart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="169" />
+    <nodeInfo nodeId="1371735981988471176" fileName="SideTransformMenuPart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1371735981988471175" fileName="SideTransformMenuPart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="169" />
   </root>
   <root nodeId="1371735981988685426">
-    <nodeInfo nodeId="1371735981988685430" fileName="SubstituteMenuPart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1371735981988685428" fileName="SubstituteMenuPart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="156" />
+    <nodeInfo nodeId="1371735981988685430" fileName="SubstituteMenuPart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1371735981988685428" fileName="SubstituteMenuPart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="156" />
   </root>
   <root nodeId="5948027493682790754">
-    <nodeInfo nodeId="5948027493682790757" fileName="CopyPasteHandlers_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5948027493682790756" fileName="CopyPasteHandlers_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="58" />
+    <nodeInfo nodeId="5948027493682790757" fileName="CopyPasteHandlers_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5948027493682790756" fileName="CopyPasteHandlers_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="58" />
   </root>
 </debugInfo>
 

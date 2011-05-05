@@ -12,13 +12,8 @@
     <nodeInfo nodeId="7157723551789065876" fileName="Constraints_TabDescriptor.java" startLine="76" startPosition="66" endLine="77" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7157723551789065890" fileName="Constraints_TabDescriptor.java" startLine="65" startPosition="147" endLine="69" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7157723551789065873" fileName="Constraints_TabDescriptor.java" startLine="38" startPosition="32" endLine="38" endPosition="32" />
-    <scopeInfo nodeId="7157723551789065861" fileName="Constraints_TabDescriptor.java" startLine="41" startPosition="40" endLine="42" endPosition="53" />
-    <scopeInfo nodeId="7157723551789065866" fileName="Constraints_TabDescriptor.java" startLine="45" startPosition="43" endLine="46" endPosition="115" />
     <scopeInfo nodeId="7157723551789065900" fileName="Constraints_TabDescriptor.java" startLine="72" startPosition="52" endLine="73" endPosition="171" />
     <scopeInfo nodeId="7157723551789065875" fileName="Constraints_TabDescriptor.java" startLine="76" startPosition="66" endLine="77" endPosition="202" />
-    <scopeInfo nodeId="7157723551789065882" fileName="Constraints_TabDescriptor.java" startLine="64" startPosition="36" endLine="69" endPosition="6">
-      <varInfo nodeId="7157723551789065884" varName="nodes" />
-    </scopeInfo>
   </root>
 </debugInfo>
 

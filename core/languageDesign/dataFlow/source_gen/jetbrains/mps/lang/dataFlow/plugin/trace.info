@@ -41,13 +41,8 @@
     <nodeInfo nodeId="3911341278723469322" fileName="Data_Flow_TabDescriptor.java" startLine="76" startPosition="66" endLine="77" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3911341278723469336" fileName="Data_Flow_TabDescriptor.java" startLine="65" startPosition="145" endLine="69" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3911341278723469319" fileName="Data_Flow_TabDescriptor.java" startLine="38" startPosition="32" endLine="38" endPosition="32" />
-    <scopeInfo nodeId="3911341278723469307" fileName="Data_Flow_TabDescriptor.java" startLine="41" startPosition="40" endLine="42" endPosition="53" />
-    <scopeInfo nodeId="3911341278723469312" fileName="Data_Flow_TabDescriptor.java" startLine="45" startPosition="43" endLine="46" endPosition="115" />
     <scopeInfo nodeId="3911341278723469346" fileName="Data_Flow_TabDescriptor.java" startLine="72" startPosition="52" endLine="73" endPosition="176" />
     <scopeInfo nodeId="3911341278723469321" fileName="Data_Flow_TabDescriptor.java" startLine="76" startPosition="66" endLine="77" endPosition="205" />
-    <scopeInfo nodeId="3911341278723469328" fileName="Data_Flow_TabDescriptor.java" startLine="64" startPosition="36" endLine="69" endPosition="6">
-      <varInfo nodeId="3911341278723469330" varName="nodes" />
-    </scopeInfo>
   </root>
 </debugInfo>
 

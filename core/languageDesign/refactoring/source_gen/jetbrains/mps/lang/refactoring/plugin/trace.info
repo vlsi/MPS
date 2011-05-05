@@ -165,8 +165,6 @@
     <nodeInfo nodeId="3911341278723465044" fileName="Refactorings_TabDescriptor.java" startLine="55" startPosition="52" endLine="56" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3911341278723465037" fileName="Refactorings_TabDescriptor.java" startLine="59" startPosition="66" endLine="60" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3911341278723465034" fileName="Refactorings_TabDescriptor.java" startLine="35" startPosition="32" endLine="35" endPosition="32" />
-    <scopeInfo nodeId="3911341278723465022" fileName="Refactorings_TabDescriptor.java" startLine="38" startPosition="40" endLine="39" endPosition="53" />
-    <scopeInfo nodeId="3911341278723465027" fileName="Refactorings_TabDescriptor.java" startLine="42" startPosition="43" endLine="43" endPosition="115" />
     <scopeInfo nodeId="3911341278723465049" fileName="Refactorings_TabDescriptor.java" startLine="51" startPosition="43" endLine="52" endPosition="135" />
     <scopeInfo nodeId="3911341278723465043" fileName="Refactorings_TabDescriptor.java" startLine="55" startPosition="52" endLine="56" endPosition="93" />
     <scopeInfo nodeId="3911341278723465036" fileName="Refactorings_TabDescriptor.java" startLine="59" startPosition="66" endLine="60" endPosition="106" />
