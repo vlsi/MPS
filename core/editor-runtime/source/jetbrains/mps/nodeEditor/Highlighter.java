@@ -68,6 +68,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   protected Thread myThread;
   private Set<BaseEditorChecker> myCheckers = new LinkedHashSet<BaseEditorChecker>(3);
   private Set<BaseEditorChecker> myCheckersToRemove = new LinkedHashSet<BaseEditorChecker>();
+  private volatile boolean myForceUpdateInPowerSaveModeFlag = false;
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
   private boolean myInspectorMessagesCreated = false;
@@ -295,17 +296,37 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     // to avoid inconsistency between checkers, we collect them from fields here
     // in the synchronized block and then do not read the fields in this iteration anymore
     synchronized (CHECKERS_LOCK) {
-      checkers.addAll(myCheckers);
+      if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
+        // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
+        // explicit update action (available in powerSafeMode only)
+        checkers.addAll(myCheckers);
+        myForceUpdateInPowerSaveModeFlag = false;
+      }
       checkersToRemove.addAll(myCheckersToRemove);
       myCheckersToRemove.clear();
+    }
+
+    final List<EditorComponent> allEditorComponents = getAllEditorComponents();
+    runUpdateMessagesAction(new Runnable() {
+      @Override
+      public void run() {
+        if (EditorSettings.getInstance().isPowerSaveMode()) {
+          // if we are in powerSaveMode then next editor checkers execution should
+          // recheck all editors completely
+          myCheckedOnceEditors.clear();
+          myInspectorMessagesCreated = false;
+        } else {
+          cleanupCheckedOnce(allEditorComponents);
+        }
+      }
+    });
+    if (checkers.isEmpty() && checkersToRemove.isEmpty()) {
+      return;
     }
 
     boolean isUpdated = false;
     boolean inspectorIsUpdated = false;
     EditorComponent inspector = null;
-    List<EditorComponent> allEditorComponents = getAllEditorComponents();
-    cleanupCheckedOnce(allEditorComponents);
-
     try {
       TypeChecker.getInstance().enableGlobalSubtypingCache();
       for (EditorComponent editorComponent : allEditorComponents) {
@@ -452,6 +473,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   public void resetCheckedState(final EditorComponent editorComponent) {
     runUpdateMessagesAction(new Runnable() {
       public void run() {
+        myForceUpdateInPowerSaveModeFlag = true;
         if (editorComponent instanceof InspectorEditorComponent) {
           myInspectorMessagesCreated = false;
           return;
