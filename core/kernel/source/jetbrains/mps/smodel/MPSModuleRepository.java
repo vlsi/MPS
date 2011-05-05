@@ -158,12 +158,13 @@ public class MPSModuleRepository implements ApplicationComponent {
         module = Language.createLanguage(null, file, owner);
       } else if (cls == Solution.class) {
         module = Solution.newInstance(file, owner);
-      } else {
+      } else if (cls == Library.class) {
+        module = Library.newInstance(file, owner);
+      } else if (cls == DevKit.class){
         module = DevKit.newInstance(file, owner);
+      } else{
+        throw new IllegalArgumentException("Unknown class "+cls.getName());
       }
-      /* if (module instanceof AbstractModule) {
-        ((AbstractModule)module).convertRenamedDependencies();
-      }*/
     } else {
       if (!cls.isInstance(module)) {
         LOG.error("can't register module " + module + " : module of another kind with the same name already exists", module);
