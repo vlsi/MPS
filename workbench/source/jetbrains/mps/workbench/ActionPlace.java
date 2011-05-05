@@ -24,6 +24,7 @@ public enum ActionPlace {
   PROJECT_PANE_LANGUAGE("MPS_ProjectPane_Language"),
   PROJECT_PANE_DEVKIT("MPS_ProjectPane_Devkit"),
   PROJECT_PANE_SOLUTION("MPS_ProjectPane_Solution"),
+  PROJECT_PANE_LIBRARY("MPS_ProjectPane_Library"),
   PROJECT_PANE_PROJECT("MPS_ProjectPane_Project"),
   PROJECT_PANE_GENERATOR("MPS_ProjectPane_Generator"),
   PROJECT_PANE_TRANSIENT_MODULES("MPS_ProjectPane_TransientModels"),

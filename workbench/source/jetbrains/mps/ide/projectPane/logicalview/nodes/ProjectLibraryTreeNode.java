@@ -61,7 +61,7 @@ public class ProjectLibraryTreeNode extends ProjectModuleTreeNode {
   }
 
   public ActionGroup getActionGroup() {
-    return null;
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_LIB_ACTIONS);
   }
 
   protected String getModulePresentation() {
