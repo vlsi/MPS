@@ -5,7 +5,7 @@ package jetbrains.mps.tests;
 import jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite;
 import org.junit.runner.RunWith;
 
-@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"ypath_test1.XMLTreeSimple_Test", "ypath.traversalTests.TestFeatures_Test", "ypath.traversalTests.GenericFeatures_Test"}, tests = {"test_single,test_children,test_descendants,test_defautProperty,test_sibling_descendants", "test_nodesAndAttributes", "test_generic"})
+@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"ypath.traversalTests.TestFeatures_Test", "ypath.traversalTests.GenericFeatures_Test", "ypath_test1.XMLTreeSimple_Test"}, tests = {"test_nodesAndAttributes", "test_generic", "test_single,test_children,test_descendants,test_defautProperty,test_sibling_descendants"})
 @ModuleSymbolicSuite.ModuleReference("26af8f6b-3531-46d0-8700-83a313e4566e(ypath.test)")
 @RunWith(ModuleSymbolicSuite.class)
 public class TestModule_ypath_test {
