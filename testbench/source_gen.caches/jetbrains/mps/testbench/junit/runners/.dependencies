@@ -36,8 +36,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="org.junit.runner.Description" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="java.lang.annotation.Target" />
     <classNode dependClassName="org.junit.runner.notification.Failure" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
