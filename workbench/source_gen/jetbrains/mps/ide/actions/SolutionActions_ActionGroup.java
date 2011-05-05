@@ -113,8 +113,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         SolutionActions_ActionGroup.this.addAction(action);
       }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SolutionProperties_Action");
-      SolutionActions_ActionGroup.this.addSeparator();
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModuleProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

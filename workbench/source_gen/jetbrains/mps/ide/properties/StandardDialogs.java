@@ -9,7 +9,6 @@ import jetbrains.mps.workbench.dialogs.project.BaseTabbedBindedDialog;
 import javax.swing.JComponent;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
 import javax.swing.JPanel;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
@@ -128,10 +127,10 @@ public class StandardDialogs {
     }.invoke();
   }
 
-  public static GeneratorPropertiesDialog createGeneratorPropertiesDialog(final Project p, final Generator g) {
+  public static GeneratorPropertiesDialog createGeneratorPropertiesDialog(final Generator g, final IOperationContext context) {
     return new _FunctionTypes._return_P0_E0<GeneratorPropertiesDialog>() {
       public GeneratorPropertiesDialog invoke() {
-        final GeneratorPropertiesDialog result_960thj_a0a0a1 = new GeneratorPropertiesDialog(p, g);
+        final GeneratorPropertiesDialog result_960thj_a0a0a1 = new GeneratorPropertiesDialog(context.getProject(), g);
         GeneratorPropertiesDialog dialog = result_960thj_a0a0a1;
         final BaseTabbedBindedDialog.DialogTab result_960thj_a1a0a0a1 = new BaseTabbedBindedDialog.DialogTab("Common");
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a0a0a1 = new BaseTabbedBindedDialog.ComponentDescriptor();

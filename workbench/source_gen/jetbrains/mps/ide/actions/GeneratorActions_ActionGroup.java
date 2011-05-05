@@ -18,7 +18,6 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_check = ID + "check";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_scripts = ID + "scripts";
-  public static final String LABEL_ID_properties = ID + "properties";
 
   public GeneratorActions_ActionGroup() {
     super("GeneratorActions", ID);
@@ -75,12 +74,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
         GeneratorActions_ActionGroup.this.addAction(action);
       }
       GeneratorActions_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_properties);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        GeneratorActions_ActionGroup.this.addAction(action);
-      }
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModuleProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

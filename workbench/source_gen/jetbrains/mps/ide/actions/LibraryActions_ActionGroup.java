@@ -58,8 +58,7 @@ public class LibraryActions_ActionGroup extends GeneratedActionGroup {
         LibraryActions_ActionGroup.this.addAction(action);
       }
       LibraryActions_ActionGroup.this.addSeparator();
-      LibraryActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LibraryProperties_Action");
-      LibraryActions_ActionGroup.this.addSeparator();
+      LibraryActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModuleProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -15,7 +15,6 @@ public class LanguageActionsEx_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       LanguageActionsEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.LanguageHierarchy_Action");
-      LanguageActionsEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.LanguageProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -62,10 +62,10 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToRule_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
-    addAction(new LibraryProperties_Action());
     addAction(new MPSProjectPaths_Action());
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
+    addAction(new ModuleProperties_Action());
     addAction(new MoveFileOrDirectory_Action());
     addAction(new NewDirectory_Action());
     addAction(new NewFile_Action());
@@ -106,7 +106,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowParameters_Action());
     addAction(new ShowReferencesToMissingStuff_Action());
     addAction(new ShowStructure_Action());
-    addAction(new SolutionProperties_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
     addGroup(new AddToFavoritesGroup_ActionGroup());
@@ -144,7 +143,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ModelNewActions_ActionGroup());
     addGroup(new ModelRefactoring_ActionGroup());
     addGroup(new ModuleActions_ActionGroup());
-    addGroup(new ModulePropertiesGroup_ActionGroup());
     addGroup(new NamespaceActions_ActionGroup());
     addGroup(new NamespaceInternalActions_ActionGroup());
     addGroup(new NamespaceMakeActions_ActionGroup());

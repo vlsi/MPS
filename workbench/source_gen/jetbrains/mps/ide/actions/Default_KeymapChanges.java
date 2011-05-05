@@ -42,6 +42,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightUsages_Action", getShortcut("ctrl shift F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.MPSProjectPaths_Action", getShortcut("alt ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ModelProperties_Action", getShortcut("alt ENTER"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.ModuleProperties_Action", getShortcut("alt ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.MoveFileOrDirectory_Action", getShortcut(" F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.PasteNode_Action", getShortcut("ctrl V"));
     addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("alt INSERT"));
@@ -60,7 +61,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", getShortcut("ctrl Q"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowParameters_Action", getShortcut("ctrl P"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowStructure_Action", getShortcut("ctrl F10"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.SolutionProperties_Action", getShortcut("alt ENTER"));
     // simple parameterized 
     addComplexShortcut("jetbrains.mps.ide.actions.FileDelete_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut(" DELETE")));
     addComplexShortcut("jetbrains.mps.ide.actions.GoToAction_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl shift A")));

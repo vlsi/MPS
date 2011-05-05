@@ -13,7 +13,6 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions_ActionGroup";
   public static final String LABEL_ID_migration = ID + "migration";
   public static final String LABEL_ID_favorites = ID + "favorites";
-  public static final String LABEL_ID_properties = ID + "properties";
 
   public DevkitActions_ActionGroup() {
     super("DevkitActions", ID);
@@ -42,12 +41,7 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
         DevkitActions_ActionGroup.this.addAction(action);
       }
       DevkitActions_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(DevkitActions_ActionGroup.LABEL_ID_properties);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        DevkitActions_ActionGroup.this.addAction(action);
-      }
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModuleProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

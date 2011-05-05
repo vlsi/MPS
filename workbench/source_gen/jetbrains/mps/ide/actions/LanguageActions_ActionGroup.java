@@ -24,7 +24,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_migration = ID + "migration";
   public static final String LABEL_ID_scripts = ID + "scripts";
   public static final String LABEL_ID_find_javastub_usages = ID + "find_javastub_usages";
-  public static final String LABEL_ID_properties = ID + "properties";
+  public static final String LABEL_ID_ex = ID + "ex";
 
   public LanguageActions_ActionGroup() {
     super("LanguageActions", ID);
@@ -131,12 +131,12 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       }
       LanguageActions_ActionGroup.this.addSeparator();
       {
-        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_properties);
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_ex);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         LanguageActions_ActionGroup.this.addAction(action);
       }
-      LanguageActions_ActionGroup.this.addSeparator();
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModuleProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
