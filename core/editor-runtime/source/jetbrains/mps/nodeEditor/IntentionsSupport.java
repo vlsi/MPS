@@ -28,6 +28,7 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.intentions.*;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
+import jetbrains.mps.intentions.icons.Icons;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.Selection;
@@ -355,7 +356,7 @@ public class IntentionsSupport {
         typeToShow = pair.first.getType();
       }
     }
-    showLightBulbComponent(typeToShow.getIcon());
+    showLightBulbComponent(typeToShow == IntentionType.NORMAL ? Icons.INTENTION : typeToShow.getIcon());
   }
 
   private boolean hasIntentions() {

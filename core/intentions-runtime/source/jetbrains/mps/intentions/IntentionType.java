@@ -20,7 +20,7 @@ import jetbrains.mps.intentions.icons.Icons;
 import javax.swing.Icon;
 
 public enum IntentionType {
-  NORMAL(Icons.INTENTION, 3),
+  NORMAL(Icons.REAL_INTENTION, 3),
   MIGRATION(Icons.MIGRATION, 2),
   QUICKFIX(Icons.QUICKFIX, 1), //todo remove
   ERROR(Icons.ERROR_INTENTION, 0);

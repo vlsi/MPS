@@ -19,9 +19,10 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class Icons {
-  public static final Icon INTENTION = new ImageIcon(jetbrains.mps.intentions.icons.Icons.class.getResource("intentionBulb.png"));
-  public static final Icon ERROR_INTENTION = new ImageIcon(jetbrains.mps.intentions.icons.Icons.class.getResource("quickfixBulb.png"));
-  public static final Icon INTENTION_OFF = new ImageIcon(jetbrains.mps.intentions.icons.Icons.class.getResource("intentionOffBulb.png"));
-  public static final Icon MIGRATION = new ImageIcon(jetbrains.mps.intentions.icons.Icons.class.getResource("migrationBulb.png"));
+  public static final Icon INTENTION = new ImageIcon(Icons.class.getResource("intentionBulb.png"));
+  public static final Icon REAL_INTENTION = new ImageIcon(Icons.class.getResource("realIntentionBulb.png"));
+  public static final Icon ERROR_INTENTION = new ImageIcon(Icons.class.getResource("quickfixBulb.png"));
+  public static final Icon INTENTION_OFF = new ImageIcon(Icons.class.getResource("intentionOffBulb.png"));
+  public static final Icon MIGRATION = new ImageIcon(Icons.class.getResource("migrationBulb.png"));
   public static final Icon QUICKFIX = INTENTION;
 }
