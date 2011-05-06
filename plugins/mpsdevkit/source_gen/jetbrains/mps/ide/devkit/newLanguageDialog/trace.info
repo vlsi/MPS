@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="NewLanguageDialogContentPane.java" startLine="54" startPosition="32" endLine="60" endPosition="3" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$1" />
   <unitInfo fileName="NewLanguageDialog.java" startLine="12" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialog" />
-  <unitInfo fileName="NewLanguageDialogContentPane.java" startLine="40" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane" />
+  <unitInfo fileName="NewLanguageDialogContentPane.java" startLine="40" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane" />
   <root nodeId="1203685087824">
     <nodeInfo nodeId="1203686051499" fileName="NewLanguageDialogContentPane.java" startLine="72" startPosition="31" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203686057306" fileName="NewLanguageDialogContentPane.java" startLine="73" startPosition="36" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
