@@ -63,23 +63,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action" file="ShowInequationsForCell_Action.java">
-    <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.InequationSystem" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" file="ShowInferredNodeType_Action.java">
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -156,12 +139,6 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" file="TypesystemEditorPopupInternal_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup" file="TypesystemNodeActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -175,22 +152,19 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" file="Typesystem_ApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />

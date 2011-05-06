@@ -53,10 +53,6 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1205244470519">
       <property name="name" nameId="tpck.1169194664001" value="TypesystemNodeActions" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1205245331359">
-      <property name="name" nameId="tpck.1169194664001" value="TypesystemEditorPopupInternal" />
-      <property name="isInternal" nameId="tp4k.1205160838084" value="true" />
-    </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1206101816406">
       <property name="name" nameId="tpck.1169194664001" value="GoToTypeErrorRule" />
       <property name="caption" nameId="tp4k.1205250923097" value="Go to Rule Which Caused Error" />
@@ -71,11 +67,6 @@
     </node>
     <node type="tp4k.ProjectPluginDeclaration" typeId="tp4k.1206110063106" id="1206189513856">
       <property name="name" nameId="tpck.1169194664001" value="TypesystemPlugin" />
-    </node>
-    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1230214426481">
-      <property name="name" nameId="tpck.1169194664001" value="ShowInequationsForCell" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Inequalities for Cell" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7796696880649589009">
       <property name="name" nameId="tpck.1169194664001" value="ShowNodeType" />
@@ -141,16 +132,6 @@
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148360291">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1206107912144">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1206101816406" resolveInfo="GoToTypeErrorRule" />
-      </node>
-    </node>
-  </root>
-  <root id="1205245331359">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205245368690">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991232446" resolveInfo="EditorInternal" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148358868">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1230216511092">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1230214426481" resolveInfo="ShowInequationsForCell" />
       </node>
     </node>
   </root>
@@ -588,96 +569,6 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1493771845191590949" />
               <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="1493771845191590950">
                 <link role="member" roleId="tp4f.1205756909548" targetNodeId="1493771845191585519" resolveInfo="myHighlighter" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="1230214426481">
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1230214590204">
-      <property name="name" nameId="tpck.1169194664001" value="selectedCell" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dEDITOR_CELL" resolveInfo="EDITOR_CELL" />
-    </node>
-    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1230214426482">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230214426483">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1230214614445">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230214614446">
-            <property name="name" nameId="tpck.1169194664001" value="substituteInfo" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230214614447">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="av73.~NodeSubstituteInfo" resolveInfo="NodeSubstituteInfo" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230214614448">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230214614449">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1230214614450" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1230214614451">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="1230214590204" resolveInfo="selectedCell" />
-                </node>
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230214614452">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="supv.~EditorCell%dgetSubstituteInfo()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteInfo" resolveInfo="getSubstituteInfo" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1230214997211">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230214997212">
-            <property name="name" nameId="tpck.1169194664001" value="inequationSystem" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230214997213">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="m9wl.~InequationSystem" resolveInfo="InequationSystem" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230214997214">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230214997215">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230214614446" resolveInfo="substituteInfo" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230214997216">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="av73.~NodeSubstituteInfo%dgetInequationSystem(jetbrains%dmps%dnodeEditor%dcells%dEditorCell)%cjetbrains%dmps%dtypesystem%dinference%dInequationSystem" resolveInfo="getInequationSystem" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230214997217">
-                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1230214997218" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1230214997219">
-                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="1230214590204" resolveInfo="selectedCell" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1230215568466">
-          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230215568467">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1230216309719">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230216336167">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JOptionPane%dshowMessageDialog(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="showMessageDialog" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dbrf.~JOptionPane" resolveInfo="JOptionPane" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1230216339902" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1230216347389">
-                  <property name="value" nameId="tpee.1070475926801" value="no inequation system" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1230215602372">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1230215605515" />
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230215583753">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230214997212" resolveInfo="inequationSystem" />
-            </node>
-          </node>
-          <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="1230215611392">
-            <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230215611393">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1230216359703">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230216367142">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JOptionPane%dshowMessageDialog(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="showMessageDialog" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dbrf.~JOptionPane" resolveInfo="JOptionPane" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1230216369143" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230216374475">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230216374099">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230214997212" resolveInfo="inequationSystem" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230216380978">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="m9wl.~InequationSystem%dgetPresentation()%cjava%dlang%dString[]" resolveInfo="getPresentation" />
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
           </node>

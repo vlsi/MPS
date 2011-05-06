@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Typesystem_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_Order" />
-  <unitInfo fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" />
   <unitInfo fileName="TypesystemNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup" />
   <unitInfo fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Default_KeymapChanges" />
   <unitInfo fileName="Typesystem_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin" />
   <unitInfo fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" />
-  <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
-  <unitInfo fileName="ShowInequationsForCell_Action.java" startLine="18" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action" />
+  <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
   <unitInfo fileName="GoToTypeErrorRule_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action" />
   <unitInfo fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
   <unitInfo fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup" />
@@ -24,9 +22,6 @@
   </root>
   <root nodeId="1205244470519">
     <nodeInfo nodeId="1206107912144" fileName="TypesystemNodeActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  </root>
-  <root nodeId="1205245331359">
-    <nodeInfo nodeId="1230216511092" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1206101816406">
     <nodeInfo nodeId="1206105127535" fileName="GoToTypeErrorRule_Action.java" startLine="29" startPosition="87" endLine="30" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -63,16 +58,6 @@
     <scopeInfo nodeId="1211475120409" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="26" startPosition="74" endLine="28" endPosition="68" />
     <scopeInfo nodeId="1206190085403" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="25" startPosition="45" endLine="29" endPosition="5" />
     <scopeInfo nodeId="1206190084323" fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="17" startPosition="42" endLine="22" endPosition="5" />
-  </root>
-  <root nodeId="1230214426481">
-    <nodeInfo nodeId="1230214614445" fileName="ShowInequationsForCell_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230214997211" fileName="ShowInequationsForCell_Action.java" startLine="50" startPosition="126" endLine="51" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230216309719" fileName="ShowInequationsForCell_Action.java" startLine="52" startPosition="37" endLine="53" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230216359703" fileName="ShowInequationsForCell_Action.java" startLine="54" startPosition="14" endLine="55" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230215611392" fileName="ShowInequationsForCell_Action.java" startLine="54" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230215568466" fileName="ShowInequationsForCell_Action.java" startLine="51" startPosition="142" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1230215568467" fileName="ShowInequationsForCell_Action.java" startLine="52" startPosition="37" endLine="53" endPosition="68" />
-    <scopeInfo nodeId="1230215611393" fileName="ShowInequationsForCell_Action.java" startLine="54" startPosition="14" endLine="55" endPosition="80" />
   </root>
   <root nodeId="4290387479601509657">
     <nodeInfo nodeId="4290387479601537361" fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errorId" />

@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,14 +24,12 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new GoToTypeErrorRule_Action());
-    addAction(new ShowInequationsForCell_Action());
     addAction(new ShowInferredNodeType_Action());
     addAction(new ShowNodeType_Action());
     addAction(new ShowRulesWhichAffectNodeType_Action());
     // groups 
     addGroup(new GoToTypeErrorGroup_ActionGroup());
     addGroup(new TypesystemActions_ActionGroup());
-    addGroup(new TypesystemEditorPopupInternal_ActionGroup());
     addGroup(new TypesystemNodeActions_ActionGroup());
   }
 
@@ -41,7 +38,6 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemNodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(TypesystemEditorPopupInternal_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
