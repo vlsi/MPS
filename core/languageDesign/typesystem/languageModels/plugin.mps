@@ -477,13 +477,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1493771845191590939">
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1493771845191590940">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1493771845191590941">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x32m.~TypesEditorChecker%d&lt;init&gt;(jetbrains%dmps%dnodeEditor%dHighlighter)" resolveInfo="TypesEditorChecker" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1493771845191590942">
-                      <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1493771845191590943" />
-                      <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="1493771845191590944">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="1493771845191585519" resolveInfo="myHighlighter" />
-                      </node>
-                    </node>
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x32m.~TypesEditorChecker%d&lt;init&gt;()" resolveInfo="TypesEditorChecker" />
                   </node>
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1493771845191590945">

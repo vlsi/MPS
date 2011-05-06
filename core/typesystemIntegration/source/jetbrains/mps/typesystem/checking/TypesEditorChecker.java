@@ -46,20 +46,9 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
   private boolean myMessagesChanged = false;
-  private HighlighterListener myHighlighterListener = new HighlighterListener() {
-    public void checkingIterationFinished() {
-      myMessagesChanged = false;
-    }
-  };
-  private Highlighter myHighlighter;
-
-  public TypesEditorChecker(Highlighter highlighter) {
-    myHighlighter = highlighter;
-  }
 
   public Set<EditorMessage> createMessages(final SNode node, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
-    myHighlighter.addHighlighterListener(myHighlighterListener);
     final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     final TypeCheckingContext context = editorContext.getNodeEditorComponent().getTypeCheckingContext();
     if (context == null) return messages;
@@ -195,11 +184,6 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
     return true; //processed in another place
-  }
-
-  public void doDispose() {
-    myHighlighter.removeHighlighterListener(myHighlighterListener);
-    super.doDispose();
   }
 
   public boolean areMessagesChanged() {

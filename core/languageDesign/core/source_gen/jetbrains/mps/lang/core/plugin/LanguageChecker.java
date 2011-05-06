@@ -17,8 +17,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.nodeEditor.HighlighterListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -63,27 +61,17 @@ public class LanguageChecker extends BaseEditorChecker {
     }
   };
   private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
-  private Highlighter myHighlighter;
-  private final HighlighterListener myHighlighterListener = new HighlighterListener() {
-    public void checkingIterationFinished() {
-      myMessagesChanged = false;
-    }
-  };
 
-  public LanguageChecker(Highlighter highlighter) {
-    this.myHighlighter = highlighter;
-
+  public LanguageChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(new RefScopeChecker());
     SetSequence.fromSet(myRules).addElement(new CardinalitiesChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
 
     SModelRepository.getInstance().addModelRepositoryListener(this.myRepositoryListener);
-    myHighlighter.addHighlighterListener(this.myHighlighterListener);
   }
 
   public void doDispose() {
-    myHighlighter.removeHighlighterListener(this.myHighlighterListener);
     for (SNode root : MapSequence.fromMap(myRootsToComponents).keySet()) {
       MapSequence.fromMap(myRootsToComponents).get(root).dispose();
     }
@@ -147,6 +135,7 @@ public class LanguageChecker extends BaseEditorChecker {
   }
 
   public Set<EditorMessage> createMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
+    myMessagesChanged = false;
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     SNode root = node.getContainingRoot();
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());

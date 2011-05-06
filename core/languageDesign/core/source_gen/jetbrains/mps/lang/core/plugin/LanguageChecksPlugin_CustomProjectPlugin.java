@@ -16,7 +16,7 @@ public class LanguageChecksPlugin_CustomProjectPlugin extends BaseCustomProjectP
   public void doInit(MPSProject project) {
     LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter = project.getProject().getComponent(Highlighter.class);
     if (LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter != null) {
-      LanguageChecksPlugin_CustomProjectPlugin.this.myChecker = new LanguageChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter);
+      LanguageChecksPlugin_CustomProjectPlugin.this.myChecker = new LanguageChecker();
       LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
     }
   }

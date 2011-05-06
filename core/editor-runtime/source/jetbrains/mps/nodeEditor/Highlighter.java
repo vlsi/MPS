@@ -74,7 +74,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private boolean myInspectorMessagesCreated = false;
   private InspectorTool myInspectorTool;
   private List<Runnable> myPendingActions = new ArrayList<Runnable>();
-  private List<HighlighterListener> myListeners = new ArrayList();
 
   private volatile long myLastCommandTime = 0;
 
@@ -199,18 +198,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         r.run();
       }
       myPendingActions.clear();
-    }
-  }
-
-  public void addHighlighterListener(HighlighterListener l) {
-    synchronized (CHECKERS_LOCK) {
-      myListeners.add(l);
-    }
-  }
-
-  public void removeHighlighterListener(HighlighterListener l) {
-    synchronized (CHECKERS_LOCK) {
-      myListeners.remove(l);
     }
   }
 
@@ -363,10 +350,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     if (inspectorIsUpdated) {
       inspector.repaint();
       inspector.getMessagesGutter().repaint();
-    }
-
-    for (HighlighterListener listener : myListeners) {
-      listener.checkingIterationFinished();
     }
   }
 

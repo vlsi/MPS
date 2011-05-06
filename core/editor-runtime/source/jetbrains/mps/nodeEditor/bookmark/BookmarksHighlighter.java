@@ -29,7 +29,6 @@ import java.util.Set;
 
 public class BookmarksHighlighter extends EditorCheckerAdapter implements EditorMessageOwner {
   private BookmarkManager myBookmarkManager;
-  private Highlighter myHighlighter;
   private boolean myChanged = true;
   private BookmarkListener myListener = new BookmarkListener() {
     public void bookmarkAdded(int number, SNode node) {
@@ -40,28 +39,19 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
       myChanged = true;
     }
   };
-  private HighlighterListener myHighlightListener = new HighlighterListener() {
-    public void checkingIterationFinished() {
-      myChanged = false;
-    }
-  };
 
-  public BookmarksHighlighter(BookmarkManager bookmarkManager, Highlighter highlighter) {
+  public BookmarksHighlighter(BookmarkManager bookmarkManager) {
     myBookmarkManager = bookmarkManager;
-    myHighlighter = highlighter;
-
     myBookmarkManager.addBookmarkListener(myListener);
-    myHighlighter.addHighlighterListener(myHighlightListener);
   }
 
   public void doDispose() {
-    myHighlighter.removeHighlighterListener(myHighlightListener);
     myBookmarkManager.removeBookmarkListener(myListener);
-
     super.doDispose();
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
+    myChanged = false;
     Set<EditorMessage> result = new HashSet<EditorMessage>();
     List<Pair<SNode, Integer>> bookmarks = myBookmarkManager.getBookmarks(rootNode);
     for (Pair<SNode, Integer> bookmark : bookmarks) {

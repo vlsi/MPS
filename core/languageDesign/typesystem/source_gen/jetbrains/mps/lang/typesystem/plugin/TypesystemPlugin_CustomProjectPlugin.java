@@ -17,7 +17,7 @@ public class TypesystemPlugin_CustomProjectPlugin extends BaseCustomProjectPlugi
   public void doInit(MPSProject project) {
     TypesystemPlugin_CustomProjectPlugin.this.myHighlighter = project.getProject().getComponent(Highlighter.class);
     if (TypesystemPlugin_CustomProjectPlugin.this.myHighlighter != null) {
-      TypesystemPlugin_CustomProjectPlugin.this.myChecker = new TypesEditorChecker(TypesystemPlugin_CustomProjectPlugin.this.myHighlighter);
+      TypesystemPlugin_CustomProjectPlugin.this.myChecker = new TypesEditorChecker();
       TypesystemPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
     }
   }

@@ -95,7 +95,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   }
 
   public void initComponent() {
-    myChecker = new BookmarksHighlighter(this, myHighlighter);
+    myChecker = new BookmarksHighlighter(this);
     myHighlighter.addChecker(myChecker);
   }
 
