@@ -43,7 +43,7 @@ public class UpdateModelClause_Constraints extends ConstraintsDataHolder {
   @Override
   public CanBeASomethingMethod<CanBeAnAncestorContext> getCanBeAnAncestorMethod() {
     return new CanBeASomethingMethod<CanBeAnAncestorContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:c03e12cc-40cb-4fd7-b1c4-b6a7c2554b5f(jetbrains.mps.lang.refactoring.constraints@2_0)", "2210862369564128647");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "2210862369564128647");
 
       public boolean canBe(IOperationContext operationContext, CanBeAnAncestorContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAnAncestor(operationContext, _context);

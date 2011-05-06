@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ClassConcept_DefaultSearchScope.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="constraintLanguageSandbox.model.ClassConcept_DefaultSearchScope" />
+  <unitInfo fileName="ClassConcept_Constraints.java" startLine="64" startPosition="15" endLine="85" endPosition="5" unitName="constraintLanguageSandbox.model.ClassConcept_Constraints$1" />
+  <unitInfo fileName="ClassConcept_Constraints.java" startLine="22" startPosition="0" endLine="93" endPosition="0" unitName="constraintLanguageSandbox.model.ClassConcept_Constraints" />
   <root nodeId="3025230698924756387">
-    <nodeInfo nodeId="3025230698924771939" fileName="ClassConcept_DefaultSearchScope.java" startLine="36" startPosition="129" endLine="37" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="3025230698924756390" fileName="ClassConcept_DefaultSearchScope.java" startLine="25" startPosition="132" endLine="25" endPosition="132" />
-    <scopeInfo nodeId="3025230698924771938" fileName="ClassConcept_DefaultSearchScope.java" startLine="36" startPosition="129" endLine="37" endPosition="137" />
+    <nodeInfo nodeId="3025230698924771939" fileName="ClassConcept_Constraints.java" startLine="69" startPosition="133" endLine="70" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3025230698924756390" fileName="ClassConcept_Constraints.java" startLine="79" startPosition="136" endLine="79" endPosition="136" />
+    <scopeInfo nodeId="3025230698924771938" fileName="ClassConcept_Constraints.java" startLine="69" startPosition="133" endLine="70" endPosition="141" />
   </root>
 </debugInfo>
 

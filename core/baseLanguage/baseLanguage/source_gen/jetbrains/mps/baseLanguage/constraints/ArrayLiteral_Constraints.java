@@ -44,7 +44,7 @@ public class ArrayLiteral_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:909d95de-cd8e-42a4-9aad-d7272467dab3(jetbrains.mps.baseLanguage.constraints@2_0)", "5536314641534779167");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "5536314641534779167");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

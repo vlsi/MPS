@@ -47,7 +47,7 @@ public class DataFlowBuilderDeclaration_Constraints extends ConstraintsDataHolde
   @Nullable
   public CanBeASomethingMethod<CanBeARootContext> getCanBeARootMethod() {
     return new CanBeASomethingMethod<CanBeARootContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:85bee396-2ba7-4da2-9728-92abfdf83d0f(jetbrains.mps.lang.dataFlow.constraints@2_0)", "1227089120379");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)", "1227089120379");
 
       public boolean canBe(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeARoot(operationContext, _context);

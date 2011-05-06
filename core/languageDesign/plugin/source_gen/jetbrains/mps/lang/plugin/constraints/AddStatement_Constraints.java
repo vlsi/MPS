@@ -44,7 +44,7 @@ public class AddStatement_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:221b624d-4e65-4533-a19d-c8f562e9936e(jetbrains.mps.lang.plugin.constraints@2_0)", "1227013118716");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227013118716");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);
@@ -60,7 +60,7 @@ public class AddStatement_Constraints extends ConstraintsDataHolder {
   @Override
   public CanBeASomethingMethod<CanBeAParentContext> getCanBeAParentMethod() {
     return new CanBeASomethingMethod<CanBeAParentContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:221b624d-4e65-4533-a19d-c8f562e9936e(jetbrains.mps.lang.plugin.constraints@2_0)", "1227014460147");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227014460147");
 
       public boolean canBe(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAParent(operationContext, _context);

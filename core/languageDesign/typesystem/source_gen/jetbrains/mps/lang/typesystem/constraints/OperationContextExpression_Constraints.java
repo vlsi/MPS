@@ -43,7 +43,7 @@ public class OperationContextExpression_Constraints extends ConstraintsDataHolde
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:d51fbd63-969a-4e61-a085-3dda02e44c53(jetbrains.mps.lang.typesystem.constraints@2_0)", "5622704259074443415");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "5622704259074443415");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

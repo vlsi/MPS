@@ -43,7 +43,7 @@ public class EnclosingContextCompartmentExpression_Constraints extends Constrain
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:10103794-d293-4edd-b2a3-ffca325493a1(jetbrains.mps.ui.constraints@2_0)", "5894005964488415082");
+      private SNodePointer breakingNode = new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "5894005964488415082");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

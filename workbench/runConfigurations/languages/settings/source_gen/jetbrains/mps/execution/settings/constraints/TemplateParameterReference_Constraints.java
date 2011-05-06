@@ -49,7 +49,7 @@ public class TemplateParameterReference_Constraints extends ConstraintsDataHolde
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:aee547d8-55f5-414d-9695-2a7bb2290b19(jetbrains.mps.execution.settings.constraints@5_0)", "946964771156067068");
+      private SNodePointer breakingNode = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067068");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

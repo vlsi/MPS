@@ -45,7 +45,7 @@ public class StaticFieldDeclaration_Constraints extends ConstraintsDataHolder {
   @Override
   public CanBeASomethingMethod<CanBeAParentContext> getCanBeAParentMethod() {
     return new CanBeASomethingMethod<CanBeAParentContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:909d95de-cd8e-42a4-9aad-d7272467dab3(jetbrains.mps.baseLanguage.constraints@2_0)", "267392325913486103");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "267392325913486103");
 
       public boolean canBe(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAParent(operationContext, _context);

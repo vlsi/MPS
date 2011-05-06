@@ -50,7 +50,7 @@ public class PatternVariableReference_Constraints extends ConstraintsDataHolder 
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:e3515476-edbc-43c8-bec2-ff4d7c1df1c0(jetbrains.mps.lang.pattern.constraints@1_0)", "2248628811136240168");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "2248628811136240168");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

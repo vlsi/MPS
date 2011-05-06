@@ -2139,7 +2139,6 @@
     <file name="LocalVariableDeclaration_TextGen.java" />
   </source>
   <source id="1236013739107" name="StringTextGen" hash="-7dv9902jfd6n29j2egv6n0bel15ak2d">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

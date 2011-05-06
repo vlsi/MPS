@@ -44,7 +44,7 @@ public class ActionAsPattern_Constraints extends ConstraintsDataHolder {
   @Override
   public CanBeASomethingMethod<CanBeAParentContext> getCanBeAParentMethod() {
     return new CanBeASomethingMethod<CanBeAParentContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:e3515476-edbc-43c8-bec2-ff4d7c1df1c0(jetbrains.mps.lang.pattern.constraints@1_0)", "1483902774837520155");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "1483902774837520155");
 
       public boolean canBe(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAParent(operationContext, _context);

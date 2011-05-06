@@ -43,7 +43,7 @@ public class ComparisonRule_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeARootContext> getCanBeARootMethod() {
     return new CanBeASomethingMethod<CanBeARootContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:d51fbd63-969a-4e61-a085-3dda02e44c53(jetbrains.mps.lang.typesystem.constraints@2_0)", "1227088546714");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1227088546714");
 
       public boolean canBe(IOperationContext operationContext, CanBeARootContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeARoot(operationContext, _context);

@@ -43,7 +43,7 @@ public class AskExpression_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:c03e12cc-40cb-4fd7-b1c4-b6a7c2554b5f(jetbrains.mps.lang.refactoring.constraints@2_0)", "5497648299878742061");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "5497648299878742061");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

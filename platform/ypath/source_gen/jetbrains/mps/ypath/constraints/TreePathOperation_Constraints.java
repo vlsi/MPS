@@ -44,7 +44,7 @@ public class TreePathOperation_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:0d9ce683-7e7b-4890-91e1-15175f7f7fe3(jetbrains.mps.ypath.constraints@2_0)", "5626852792500016115");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "5626852792500016115");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

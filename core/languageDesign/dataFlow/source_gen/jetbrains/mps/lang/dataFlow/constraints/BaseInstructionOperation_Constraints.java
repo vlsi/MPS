@@ -46,7 +46,7 @@ public class BaseInstructionOperation_Constraints extends ConstraintsDataHolder 
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:85bee396-2ba7-4da2-9728-92abfdf83d0f(jetbrains.mps.lang.dataFlow.constraints@2_0)", "1823319949748058983");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)", "1823319949748058983");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

@@ -51,7 +51,7 @@ public class ImplicitAnnotationInstanceValue_Constraints extends ConstraintsData
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:909d95de-cd8e-42a4-9aad-d7272467dab3(jetbrains.mps.baseLanguage.constraints@2_0)", "2580416627845354230");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2580416627845354230");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

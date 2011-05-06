@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BlockBodyPart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mpslite.constraints.BlockBodyPart_Constraints" />
-  <unitInfo fileName="TypePart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mpslite.constraints.TypePart_Constraints" />
-  <unitInfo fileName="NamePropertyNamePart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mpslite.constraints.NamePropertyNamePart_Constraints" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mpslite.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="BlockBodyPart_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mpslite.constraints.BlockBodyPart_Constraints$1" />
+  <unitInfo fileName="TypePart_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mpslite.constraints.TypePart_Constraints$1" />
+  <unitInfo fileName="NamePropertyNamePart_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mpslite.constraints.NamePropertyNamePart_Constraints$1" />
+  <unitInfo fileName="ConceptContainer_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mpslite.constraints.ConceptContainer_Constraints" />
+  <unitInfo fileName="BlockBodyPart_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mpslite.constraints.BlockBodyPart_Constraints" />
+  <unitInfo fileName="TypePart_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mpslite.constraints.TypePart_Constraints" />
+  <unitInfo fileName="NamePropertyNamePart_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mpslite.constraints.NamePropertyNamePart_Constraints" />
   <root nodeId="1239372651883">
-    <nodeInfo nodeId="1239372669150" fileName="NamePropertyNamePart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1239372656614" fileName="NamePropertyNamePart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="136" />
+    <nodeInfo nodeId="1239372669150" fileName="NamePropertyNamePart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1239372656614" fileName="NamePropertyNamePart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="136" />
   </root>
   <root nodeId="1239373526635">
-    <nodeInfo nodeId="1239373541518" fileName="TypePart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1239373528521" fileName="TypePart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="136" />
+    <nodeInfo nodeId="1239373541518" fileName="TypePart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1239373528521" fileName="TypePart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="136" />
   </root>
   <root nodeId="1239939929600">
-    <nodeInfo nodeId="1239939932037" fileName="BlockBodyPart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1239939932036" fileName="BlockBodyPart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="133" />
+    <nodeInfo nodeId="1239939932037" fileName="BlockBodyPart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1239939932036" fileName="BlockBodyPart_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="133" />
   </root>
 </debugInfo>
 

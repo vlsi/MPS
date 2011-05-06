@@ -50,7 +50,7 @@ public class SLinkImplicitSelect_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:6b4331e2-1568-4a8a-9182-f164954ab232(jetbrains.mps.lang.smodel.constraints@2_0)", "8405512791876074476");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074476");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);
