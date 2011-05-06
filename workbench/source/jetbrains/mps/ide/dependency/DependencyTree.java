@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.ide.dependency;
 
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.actions.ModuleProperties_Action;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
@@ -57,7 +55,13 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(MPSTreeNode treeNode) {
-    return null;
+    DefaultActionGroup group = new DefaultActionGroup();
+    String id = new ModuleProperties_Action().getActionId();
+    if (id == null) return null;
+    AnAction action = ActionManager.getInstance().getAction(id);
+    if (action == null) return null;
+    group.add(action);
+    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
   public Object getData(@NonNls String dataId) {
