@@ -20,7 +20,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.actions.ModulePropertiesGroup_ActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
@@ -58,8 +57,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(MPSTreeNode treeNode) {
-    DefaultActionGroup group = (DefaultActionGroup) ActionManager.getInstance().getAction(ModulePropertiesGroup_ActionGroup.ID);
-    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
+    return null;
   }
 
   public Object getData(@NonNls String dataId) {
