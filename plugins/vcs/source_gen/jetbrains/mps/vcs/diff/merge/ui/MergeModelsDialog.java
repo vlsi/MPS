@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
@@ -31,7 +32,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -67,7 +67,11 @@ public class MergeModelsDialog extends BaseDialog {
     myProject = project;
     myOperationContext = operationContext;
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
-    myInitialState = myMergeContext.getCurrentState();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myInitialState = myMergeContext.getCurrentState();
+      }
+    });
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
     myMergeTree.setMultipleRootNames(true);
 
