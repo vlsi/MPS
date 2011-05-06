@@ -205,8 +205,8 @@
       <varInfo nodeId="1560298786499493136" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493104" fileName="ClassPathChooser.java" startLine="20" startPosition="41" endLine="30" endPosition="18">
-      <varInfo nodeId="1560298786499493116" varName="files" />
       <varInfo nodeId="1560298786499493128" varName="result" />
+      <varInfo nodeId="1560298786499493116" varName="files" />
       <varInfo nodeId="1560298786499493106" varName="chooser" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493100" fileName="ClassPathChooser.java" startLine="19" startPosition="0" endLine="32" endPosition="0" />
@@ -269,8 +269,8 @@
       <varInfo nodeId="1560298786499495788" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499495756" fileName="StubRootChooser.java" startLine="21" startPosition="42" endLine="32" endPosition="18">
-      <varInfo nodeId="1560298786499495768" varName="files" />
       <varInfo nodeId="1560298786499495780" varName="result" />
+      <varInfo nodeId="1560298786499495768" varName="files" />
       <varInfo nodeId="1560298786499495758" varName="chooser" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499495752" fileName="StubRootChooser.java" startLine="20" startPosition="0" endLine="34" endPosition="0" />

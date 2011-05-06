@@ -4,9 +4,6 @@ package jetbrains.mps.ide.java.parser;
 
 import jetbrains.mps.logging.Logger;
 import java.util.Map;
-
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootUtil;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import java.util.HashMap;
 import java.util.Set;
@@ -48,6 +45,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.project.structure.model.ModelRootUtil;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.IErrorHandlingPolicy;

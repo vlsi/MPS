@@ -123,9 +123,9 @@
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser" file="StubRootChooser.java">
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.StubModelsEntry" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="java.util.ArrayList" />

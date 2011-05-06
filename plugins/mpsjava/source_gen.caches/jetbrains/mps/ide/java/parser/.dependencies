@@ -72,11 +72,11 @@
     <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootUtil" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="java.lang.Character" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.StubModelsEntry" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.reloading.CommonPaths" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ClassPathEntry" />

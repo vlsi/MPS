@@ -1492,8 +1492,8 @@
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1809539929827629631">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1809539929827629632">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
+          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4455495789557392640">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
           </node>
         </node>
       </node>
@@ -1572,8 +1572,8 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1809539929827629626" resolveInfo="owner" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7355563316698764236">
-                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ho7a.~StubModelsEntry%dMANAGER" resolveInfo="MANAGER" />
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kl60.~ModelRoot%dMANAGER" resolveInfo="MANAGER" />
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7355563316698764237">
                           <property name="value" nameId="tpee.1070475926801" value="Manager" />
@@ -13531,8 +13531,8 @@
       <property name="name" nameId="tpck.1169194664001" value="myRuntimeStubModels" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075043970">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075043971">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4455495789557378619">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5923576889075043972" />
@@ -13641,7 +13641,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qtg4.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5923576889075044025">
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qtg4.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qtg4.1560298786499493645" resolveInfo="STUB_MODEL_ENTRY_COMPARATOR" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qtg4.1560298786499493557" resolveInfo="MODEL_ROOT_COMPARATOR" />
               </node>
             </node>
           </node>
@@ -13775,8 +13775,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075044092" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044093">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044094">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4455495789557378627">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5923576889075044095">
@@ -14005,8 +14005,8 @@
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5923576889075044228">
             <property name="name" nameId="tpck.1169194664001" value="entry" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044229">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4455495789557378628">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5923576889075044230">
@@ -14029,7 +14029,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5923576889075044228" resolveInfo="entry" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5923576889075044243">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~StubModelsEntry%dgetCopy()%cjetbrains%dmps%dproject%dstructure%dmodules%dStubModelsEntry" resolveInfo="getCopy" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kl60.~ModelRoot%dgetCopy()%cjetbrains%dmps%dproject%dstructure%dmodel%dModelRoot" resolveInfo="getCopy" />
                       </node>
                     </node>
                     <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5923576889075044244" />
@@ -14706,8 +14706,8 @@
       <property name="name" nameId="tpck.1169194664001" value="myStubModels" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044598">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044599">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4455495789557378684">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5923576889075044600" />
@@ -14800,7 +14800,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qtg4.1560298786499493749" resolveInfo="create" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5923576889075044654">
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="qtg4.1560298786499493498" resolveInfo="ListsFactory" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qtg4.1560298786499493645" resolveInfo="STUB_MODEL_ENTRY_COMPARATOR" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="qtg4.1560298786499493557" resolveInfo="MODEL_ROOT_COMPARATOR" />
               </node>
             </node>
           </node>
@@ -15097,8 +15097,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075044848" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044849">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044850">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4455495789557378692">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5923576889075044851">
@@ -15117,8 +15117,8 @@
         <property name="name" nameId="tpck.1169194664001" value="stubModels" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044860">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044861">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
+          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4455495789557378693">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
           </node>
         </node>
       </node>
@@ -15313,8 +15313,8 @@
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5923576889075044998">
             <property name="name" nameId="tpck.1169194664001" value="entry" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044999">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ho7a.~StubModelsEntry" resolveInfo="StubModelsEntry" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4455495789557378694">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kl60.~ModelRoot" resolveInfo="ModelRoot" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5923576889075045000">
@@ -15337,7 +15337,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5923576889075044998" resolveInfo="entry" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5923576889075045013">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~StubModelsEntry%dgetCopy()%cjetbrains%dmps%dproject%dstructure%dmodules%dStubModelsEntry" resolveInfo="getCopy" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kl60.~ModelRoot%dgetCopy()%cjetbrains%dmps%dproject%dstructure%dmodel%dModelRoot" resolveInfo="getCopy" />
                       </node>
                     </node>
                     <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5923576889075045014" />

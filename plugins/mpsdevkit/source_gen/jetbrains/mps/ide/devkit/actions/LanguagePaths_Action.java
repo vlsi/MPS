@@ -4,9 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +18,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.BoxLayout;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootUtil;
 import java.util.ArrayList;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;

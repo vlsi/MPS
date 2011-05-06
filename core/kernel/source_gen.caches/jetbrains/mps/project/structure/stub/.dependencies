@@ -6,10 +6,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.StubModelsEntry" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -24,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -31,7 +31,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet" />
   </dependency>
 </dependenciesRoot>
 

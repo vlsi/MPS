@@ -4,7 +4,6 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 
 import com.intellij.openapi.util.Computable;
 import java.util.List;
-
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
