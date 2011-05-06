@@ -42,7 +42,6 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.IncludedVCSDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.ImportProperties;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor;
@@ -254,10 +253,8 @@ public class StandardComponents {
 
         final ColumnDescriptor result_wf5hwp_a2a0a0a9 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
         result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a2a0a0a9);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a9 = new IncludedVCSDescriptor(ClassPathEntry.INCLUDED, "Included in VCS", 200);
+        final ColumnDescriptor result_wf5hwp_a3a0a0a9 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
         result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a3a0a0a9);
-        final ColumnDescriptor result_wf5hwp_a4a0a0a9 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
-        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a4a0a0a9);
         result_wf5hwp_a0a0a9.init();
         return result_wf5hwp_a0a0a9;
       }

@@ -358,7 +358,7 @@ public class StandardDialogs {
         result_960thj_a1a1a0a0a4.setConstraints(result_960thj_a1a1a1a0a0a4);
         result_960thj_a1a0a0a4.addComponent(result_960thj_a1a1a0a0a4);
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a2a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a2a1a0a0a4 = StandardComponents.createStubRootsPanel(dialog, "Model Roots", dialog.myProperties.getStubModels());
+        final JComponent result_960thj_a0a2a1a0a0a4 = StandardComponents.createStubRootsPanel(dialog, "Model Roots", dialog.myProperties.getModelRoots());
         result_960thj_a2a1a0a0a4.setComponent(result_960thj_a0a2a1a0a0a4);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a2a1a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a2a1a0a0a4.setConstraints(result_960thj_a1a2a1a0a0a4);

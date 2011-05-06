@@ -14,8 +14,10 @@ import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.LanguageID;
+import java.util.List;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.OutputStream;
 
 public class LibraryDescriptorPersistence {
@@ -47,18 +49,14 @@ public class LibraryDescriptorPersistence {
 
           result_u6e1uy_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "models")).first(), "modelRoot"), file, macros));
 
-          if (ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "stubModelEntries")).isNotEmpty()) {
-            result_u6e1uy_a0a0g0c0a.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(libraryElement, "stubModelEntries"), file, macros));
-          }
+          List<Dependency> depList = ModuleDescriptorPersistence.loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "dependencies")).first());
+          result_u6e1uy_a0a0g0c0a.getDependencies().addAll(depList);
 
-          ModuleDescriptorPersistence.loadDependencies(result_u6e1uy_a0a0g0c0a, libraryElement);
-          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "runtimeClassPath")).first(), "entry")))) {
-            // runtime classpath left for compatibility 
-            ModelRoot entry = new ModelRoot();
-            entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
-            entry.setManager(LanguageID.JAVA_MANAGER);
-            result_u6e1uy_a0a0g0c0a.getStubModelEntries().add(entry);
-          }
+          result_u6e1uy_a0a0g0c0a.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "usedLanguages")).first(), "usedLanguage")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+            public ModuleReference select(Element ul) {
+              return ModuleReference.fromString(ul.getText());
+            }
+          }).toListSequence());
           return result_u6e1uy_a0a0g0c0a;
         }
       }.invoke();
@@ -93,12 +91,6 @@ public class LibraryDescriptorPersistence {
         final Element result_u6e1uy_a3a0a0d0b = new Element("models");
         ModuleDescriptorPersistence.saveModelRoots(result_u6e1uy_a3a0a0d0b, descriptor.getModelRoots(), file, macros);
         result_u6e1uy_a0a0d0b.addContent(result_u6e1uy_a3a0a0d0b);
-
-        if (!(descriptor.getStubModelEntries().isEmpty())) {
-          final Element result_u6e1uy_a0a5a0a0d0b = new Element("stubModelEntries");
-          ModuleDescriptorPersistence.saveStubModelEntries(result_u6e1uy_a0a5a0a0d0b, descriptor.getStubModelEntries(), file, macros);
-          result_u6e1uy_a0a0d0b.addContent(result_u6e1uy_a0a5a0a0d0b);
-        }
 
         ModuleDescriptorPersistence.saveDependencies(result_u6e1uy_a0a0d0b, descriptor);
         return result_u6e1uy_a0a0d0b;

@@ -344,7 +344,6 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.StubSolution" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.IncludedVCSDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.ImportProperties" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />

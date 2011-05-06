@@ -32,13 +32,6 @@ public class ModuleDescriptorPersistence {
       }
     }).toListSequence());
 
-    // Left for compatibility. Change was between 1.0 and 1.1 
-    descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguages")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
-      public ModuleReference select(Element ul) {
-        return ModuleReference.fromString(ul.getText());
-      }
-    }).toListSequence());
-
     descriptor.getUsedDevkits().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedDevKits")).first(), "usedDevKit")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element udk) {
         return ModuleReference.fromString(udk.getText());
@@ -91,7 +84,7 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  private static List<Dependency> loadDependenciesList(Element depElement) {
+  public static List<Dependency> loadDependenciesList(Element depElement) {
     return ListSequence.fromList(AttributeUtils.elementChildren(depElement, "dependency")).<Dependency>select(new ISelector<Element, Dependency>() {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {

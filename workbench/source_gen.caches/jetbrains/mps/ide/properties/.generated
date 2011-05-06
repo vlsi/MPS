@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3alj62c9z5ehjaaqqq12ndssm5134sg">
+<dependencies version="2" modelHash="cry87s5ymmp46wkg0dtw2lc6bofpair">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi(MPS.Classpath/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
@@ -63,7 +63,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" />
   </common>
-  <source id="4060390951635972879" name="StandardComponents" hash="259e3rxfaun3yqibnv07y4sltj00cga">
+  <source id="4060390951635972879" name="StandardComponents" hash="-cggohanopffn3lhikplfjy2rxezmqqx">
     <dep root="4060390951636292591" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi(MPS.Classpath/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
@@ -115,7 +115,7 @@
   <source id="3201642974933570432" name="Dialogs" hash="ahx4nwxe1k4oli0wpnxrhfepjwslszs">
     <dep model="r:4b167889-df24-4961-8154-58229bf745a9(jetbrains.mps.baseLanguage.builders.generator.template.main@generator)" />
   </source>
-  <source id="3201642974933960738" name="StandardDialogs" hash="-exge3rhhr3a7xzj8qii2t0971i2832s">
+  <source id="3201642974933960738" name="StandardDialogs" hash="cgxhtn2i0dl3ybz0uetlupibyll0oz3">
     <dep root="3201642974933570432" />
     <dep root="4060390951636292591" />
     <dep root="5923576889075039038" />
