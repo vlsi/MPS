@@ -31,6 +31,7 @@ class CurrentLinePainter extends EditorCellPainter<SNode> {
   @NotNull
   private final SNode myNode;
   private boolean myInvisible = false;
+  private Rectangle myCachedCoverageArea = null;
 
   public CurrentLinePainter(SNode pointer) {
     myNode = pointer;
@@ -65,10 +66,13 @@ class CurrentLinePainter extends EditorCellPainter<SNode> {
   @Override
   public Rectangle getCoverageArea(EditorComponent editorComponent) {
     if (myInvisible) return null;
+    if (myCachedCoverageArea != null) {
+      return myCachedCoverageArea;
+    }
     EditorCell_Label cell = findCell(editorComponent);
     if (cell == null) return null;
-    Rectangle bounds = getBounds(editorComponent, cell);
-    return bounds;//new Rectangle(bounds.x + 1, bounds.y + 1, bounds.width - 1, bounds.height - 1);
+    myCachedCoverageArea = getBounds(editorComponent, cell);
+    return myCachedCoverageArea;//new Rectangle(bounds.x + 1, bounds.y + 1, bounds.width - 1, bounds.height - 1);
   }
 
   @Override
@@ -93,10 +97,17 @@ class CurrentLinePainter extends EditorCellPainter<SNode> {
 
   public void setVisible(boolean visible) {
     myInvisible = !visible;
+    myCachedCoverageArea = null;
   }
 
   @Override
   public boolean paintsBackground() {
     return !myInvisible;
+  }
+
+  @Override
+  public void beforeRemoval(EditorComponent editorComponent) {
+    super.beforeRemoval(editorComponent);
+    myCachedCoverageArea = null;
   }
 }
