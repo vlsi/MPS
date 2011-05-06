@@ -366,15 +366,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void onModuleLoad() {
-    boolean needToSave = false;
-
-    if (updateSModelReferences()) {
-      needToSave = true;
-    }
-
-    if (updateModuleReferences()) {
-      needToSave = true;
-    }
+    updateSModelReferences();
+    updateModuleReferences();
 
     if (isPackaged()) {
       updatePackagedDescriptorClasspath();
@@ -384,22 +377,12 @@ public abstract class AbstractModule implements IModule {
       for (StubModelsEntry e : getModuleDescriptor().getStubModelEntries()) {
         if (visited.contains(e)) {
           remove.add(e);
-          needToSave = true;
         }
 
         visited.add(e);
       }
 
       getModuleDescriptor().getStubModelEntries().removeAll(remove);
-    }
-
-    if (needToSave && !isPackaged()) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          save();
-        }
-      });
     }
   }
 
