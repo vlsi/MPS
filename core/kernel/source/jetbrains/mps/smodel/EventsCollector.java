@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import org.jetbrains.annotations.NotNull;
@@ -65,8 +66,7 @@ public class EventsCollector {
 
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
-
-            if (!myIsInCommand) {
+            if (!myIsInCommand && !(e instanceof SModelFileChangedEvent)) {
               throw new IllegalStateException("Event outside of a command");
             }
 
