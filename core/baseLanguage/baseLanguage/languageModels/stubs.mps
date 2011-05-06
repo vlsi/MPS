@@ -18,10 +18,9 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="n3kn" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" implicit="yes" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" implicit="yes" />
-  <import index="rh7d" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" implicit="yes" />
+  <import index="nupp" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" implicit="yes" />
   <import index="ho7a" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
-  <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="n3kn.StubsCreatorDeclaration" typeId="n3kn.3671542447677113727" id="5516999836374025628">
       <property name="name" nameId="tpck.1169194664001" value="JavaStubs" />
@@ -251,17 +250,12 @@
                           <link role="member" roleId="tp4f.1205756909548" targetNodeId="2470070441756629101" resolveInfo="getLanguageId" />
                         </node>
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5700691190903632634">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7386602969022074379">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7386602969022074378">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6209672816070764665" resolveInfo="location" />
-                          </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7386602969022074383">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ltn8.~StubLocation%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
-                          </node>
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7386602969022074379">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7386602969022074378">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6209672816070764665" resolveInfo="location" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5700691190903632638">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~IModule%dgetModuleReference()%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="getModuleReference" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7386602969022074383">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ltn8.~StubLocation%dgetModuleRef()%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="getModuleRef" />
                         </node>
                       </node>
                     </node>
@@ -390,7 +384,7 @@
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="450238327190364859">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="450238327190364860">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ltn8.~StubLocation%d&lt;init&gt;(java%dlang%dString,java%dlang%dString,jetbrains%dmps%dproject%dIModule)" resolveInfo="StubLocation" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ltn8.~StubLocation%d&lt;init&gt;(java%dlang%dString,java%dlang%dString,jetbrains%dmps%dproject%dstructure%dmodules%dModuleReference)" resolveInfo="StubLocation" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="450238327190364861">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="450238327190364862">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6209672816070764665" resolveInfo="location" />
@@ -407,7 +401,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6209672816070764665" resolveInfo="location" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="450238327190364867">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ltn8.~StubLocation%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ltn8.~StubLocation%dgetModuleRef()%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="getModuleRef" />
                       </node>
                     </node>
                   </node>
@@ -684,8 +678,8 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="625258459142344280">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="625258459142344281">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="rh7d.~BaseLanguage_Language" resolveInfo="BaseLanguage_Language" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="rh7d.~BaseLanguage_Language%dMODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nupp.~BaseLanguage_Language" resolveInfo="BaseLanguage_Language" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nupp.~BaseLanguage_Language%dMODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
               </node>
             </node>
           </node>
@@ -853,8 +847,8 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="625258459142332631">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="625258459142344126">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="rh7d.~BaseLanguage_Language" resolveInfo="BaseLanguage_Language" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="rh7d.~BaseLanguage_Language%dMODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nupp.~BaseLanguage_Language" resolveInfo="BaseLanguage_Language" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nupp.~BaseLanguage_Language%dMODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
               </node>
             </node>
           </node>

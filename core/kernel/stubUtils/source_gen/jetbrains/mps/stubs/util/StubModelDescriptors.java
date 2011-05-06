@@ -51,7 +51,7 @@ public class StubModelDescriptors {
           SetSequence.fromSet(result).addElement(desc);
         }
       }
-      collectDescriptors(new StubLocation(stubLoc.getPath(), subpkg, loc.getModule()), getPathItem, result);
+      collectDescriptors(new StubLocation(stubLoc.getPath(), subpkg, loc.getModuleRef()), getPathItem, result);
     }
   }
 

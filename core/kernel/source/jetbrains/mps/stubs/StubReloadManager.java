@@ -52,9 +52,10 @@ public class StubReloadManager implements ApplicationComponent {
   public List<StubDescriptor> getRootNodeDescriptors(AbstractModule module) {
     List<StubDescriptor> result = new ArrayList<StubDescriptor>();
 
-    for (StubPath path : myLoadedStubPaths.get(module.getModuleReference().getModuleId())) {
-      PathData pd = myPath2Data.get(path).get(module.getModuleReference().getModuleId());
-      StubLocation location = new StubLocation(path.getPath(), "", module);
+    ModuleReference ref = module.getModuleReference();
+    for (StubPath path : myLoadedStubPaths.get(ref.getModuleId())) {
+      PathData pd = myPath2Data.get(path).get(ref.getModuleId());
+      StubLocation location = new StubLocation(path.getPath(), "", ref);
       result.addAll(pd.getModelRootManager().getRootNodeDescriptors(location));
     }
 

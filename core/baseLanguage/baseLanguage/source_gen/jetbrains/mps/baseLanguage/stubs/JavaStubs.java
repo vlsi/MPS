@@ -87,7 +87,7 @@ public class JavaStubs extends BaseStubModelRootManager {
 
     for (String subpackage : cpItem.getSubpackages(pack)) {
       if (cpItem.getRootClasses(subpackage).iterator().hasNext()) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, JavaStubs.this.getLanguageId(), location.getModule().getModuleReference());
+        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, JavaStubs.this.getLanguageId(), location.getModuleRef());
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
           assert descriptor instanceof BaseStubModelDescriptor;
@@ -96,7 +96,7 @@ public class JavaStubs extends BaseStubModelRootManager {
           result.add(new BaseStubModelDescriptor(JavaStubs.this, null, modelReference));
         }
       }
-      StubLocation newLocation = new StubLocation(location.getPath(), subpackage, location.getModule());
+      StubLocation newLocation = new StubLocation(location.getPath(), subpackage, location.getModuleRef());
       JavaStubs.this.getModelDescriptorsInternal(newLocation, result);
     }
   }
