@@ -32,7 +32,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.lang.reflect.InvocationTargetException;
 
 public abstract class BaseTransformationTest extends TestCase {
-  private static ProjectContainer myContainer = new ProjectContainer();
   public static final String PATH_MACRO_PREFIX = "path.macro.";
   private static StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
 
@@ -57,7 +56,7 @@ public abstract class BaseTransformationTest extends TestCase {
     clearSystemClipboard();
     // see MPS-10568 
     readSystemMacro();
-    this.myProject = myContainer.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null)));
+    this.myProject = TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null)));
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -157,9 +156,5 @@ public abstract class BaseTransformationTest extends TestCase {
       exception = e.getCause();
     }
     return exception;
-  }
-
-  public static ProjectContainer getProjectContainer() {
-    return myContainer;
   }
 }

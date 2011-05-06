@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import jetbrains.mps.TestMain;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
@@ -81,6 +81,6 @@ public class GlobalTestSuite extends TestSuite {
 
   @AfterClass
   public static void shutdown() {
-    BaseTransformationTest.getProjectContainer().clear();
+    TestMain.PROJECT_CONTAINER.clear();
   }
 }

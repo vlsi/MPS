@@ -62,6 +62,7 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -73,6 +74,8 @@ import java.util.*;
 
 public class TestMain {
   private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs"};
+
+  public static final ProjectContainer PROJECT_CONTAINER = new ProjectContainer();
 
   public static void main(String[] args) {
     if (args.length != 1) {
@@ -753,4 +756,55 @@ public class TestMain {
       return writer.getBuffer();
     }
   }
+
+  public static class ProjectContainer {
+  private String projectName;
+  private MPSProject lastProject;
+
+  public ProjectContainer() {
+  }
+
+  public void clear() {
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          ProjectContainer.this.lastProject.dispose();
+          ProjectContainer.this.lastProject = null;
+          ProjectContainer.this.projectName = null;
+        }
+      });
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public MPSProject getProject(String name) {
+    if (eq_v52ock_a0a0b(name, this.projectName)) {
+      return this.lastProject;
+    } else {
+      MPSProject p = TestMain.loadProject(new File(name));
+      if (this.lastProject != null) {
+        try {
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+              ProjectContainer.this.lastProject.dispose();
+            }
+          });
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+      this.lastProject = p;
+      this.projectName = name;
+      return p;
+    }
+  }
+
+  private static boolean eq_v52ock_a0a0b(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+}
 }
