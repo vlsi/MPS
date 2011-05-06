@@ -53,10 +53,12 @@ public class JavaDebugger extends AbstractDebugger implements ApplicationCompone
   @Override
   public void initComponent() {
     super.init();
+    myJavaBreakpointsProvider.init();
   }
 
   @Override
   public void disposeComponent() {
+    myJavaBreakpointsProvider.dispose();
     super.dispose();
   }
 }
