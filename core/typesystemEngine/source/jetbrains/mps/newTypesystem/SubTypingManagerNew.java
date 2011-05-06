@@ -451,6 +451,14 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   //--old LCS section --
 
+  public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
+    HashSet<SNode> nodes = new HashSet<SNode>();
+    nodes.add(createLCS(new ArrayList<SNode>(types), null));
+    return nodes;
+    //return toNodes(leastCommonSupertypesWrappers(toWrappers(types), isWeak));
+  }            /*
+
+
   private StructuralWrapperSet collectImmediateSupertypes(IWrapper term, boolean isWeak) {
     StructuralWrapperSet result = new StructuralWrapperSet();
     if (term == null) {
@@ -479,12 +487,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
     return result;
   }
-  public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
-    HashSet<SNode> nodes = new HashSet<SNode>();
-    nodes.add(createLCS(new ArrayList<SNode>(types), null));
-    return nodes;
-    //return toNodes(leastCommonSupertypesWrappers(toWrappers(types), isWeak));
-  }
+
   private Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
     if (types.size() == 1) return new THashSet<IWrapper>(types);
     //remove subtypes
@@ -539,8 +542,6 @@ public class SubTypingManagerNew extends SubtypingManager {
       newFrontier = new THashSet<IWrapper>();
     }
 
-    /* System.out.println("alltypes size = " + allTypes.size());
-System.out.println("alltypes = " + allTypes);*/
 
     for (IWrapper node2 : allTypes) { // transitive closure
       for (IWrapper node1 : allTypes) {
@@ -652,7 +653,7 @@ System.out.println("alltypes = " + allTypes);*/
     }
     return result;
   }
-
+*/
   //--------------------
 
 }

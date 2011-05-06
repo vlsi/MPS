@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.HashSet;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 
 public class AutoResolver extends EditorCheckerAdapter {
   public AutoResolver() {
@@ -40,7 +41,9 @@ public class AutoResolver extends EditorCheckerAdapter {
     try {
       Set<SReference> badReferences = collectBadReferences(rootNode);
       if (!(badReferences.isEmpty())) {
+        TypeContextManager.getInstance().setComputeInNormalMode(true);
         yetBadReferences = Resolver.resolveReferences(badReferences, editorContext.getOperationContext(), resolveResultArrayList, false);
+        TypeContextManager.getInstance().setComputeInNormalMode(false);
         for (Iterator<ResolveResult> it = resolveResultArrayList.iterator(); it.hasNext();) {
           ResolveResult resolveResult = it.next();
           if (isNewTargetFromAnotherModel(resolveResult)) {

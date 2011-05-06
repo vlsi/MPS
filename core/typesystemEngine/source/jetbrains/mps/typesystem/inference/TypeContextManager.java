@@ -22,12 +22,10 @@ import java.util.*;
 
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
-  private static final boolean useOldTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_OLD_TYPESYSTEM));
-  //minor
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
     new THashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
-
+  private boolean myComputeInNormalMode = false;
   private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
 
   private TypeChecker myTypeChecker;
@@ -238,6 +236,12 @@ public class TypeContextManager implements ApplicationComponent {
 
     TypeCheckingContext context = getOrCreateContext(root, owner, true);
     try {
+      if (myComputeInNormalMode) {
+        myComputeInNormalMode = false;
+        SNode type = context.getTypeOf_normalMode(node);
+        myComputeInNormalMode = true;
+        return type;
+      }
       if (!resolve.isEmpty()) {
         if (context == null || !context.isNonTypesystemComputation()) {
           TypeCheckingContext resolveContext = createTypeCheckingContextForResolve(node);
@@ -252,5 +256,9 @@ public class TypeContextManager implements ApplicationComponent {
     } finally {
       removeOwnerForRootNodeContext(node, owner);
     }
+  }
+
+  public void setComputeInNormalMode(boolean computeInNormalMode) {
+    myComputeInNormalMode = computeInNormalMode;
   }
 }
