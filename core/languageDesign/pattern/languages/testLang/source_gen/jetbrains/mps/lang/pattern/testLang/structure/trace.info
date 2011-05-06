@@ -7,6 +7,6 @@
   <unitInfo fileName="VariableValue.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.VariableValue" />
   <unitInfo fileName="PropertyValue.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.PropertyValue" />
   <unitInfo fileName="ListValue.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.ListValue" />
-  <unitInfo fileName="PatternTest.java" startLine="17" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.PatternTest" />
+  <unitInfo fileName="PatternTest.java" startLine="19" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.PatternTest" />
 </debugInfo>
 

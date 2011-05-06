@@ -39,6 +39,7 @@
   <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
   <import index="tp7h" modelUID="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)" version="-1" />
   <import index="kyp0" modelUID="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)" version="-1" />
+  <import index="srq7" modelUID="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4196622492220356091" />
@@ -64,6 +65,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4196622492220356571" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4196622492220356616" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="8689114597818807021" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7885114646737546357" />
   </roots>
   <root id="4196622492220356091">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="4196622492220356092">
@@ -1521,6 +1523,36 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="8689114597818807023">
       <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="kyp0.1650644170366801770" resolveInfo="IntervalTest" />
+    </node>
+  </root>
+  <root id="7885114646737546357">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7885114646737546358">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.lang.pattern.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="d4650c60-7bd2-4b0f-94fb-1b0e16cc8290" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7885114646737546359">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="srq7.815823070325240409" resolveInfo="v2" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7885114646737546360">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="srq7.1563914226484855981" resolveInfo="v3" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7885114646737546361">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="srq7.1563914226484862621" resolveInfo="ListPattern" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7885114646737546362">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="srq7.1563914226484895490" resolveInfo="Property" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7885114646737546363">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="srq7.1563914226484981153" resolveInfo="v1" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7885114646737546364">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="srq7.2879868312063084275" resolveInfo="OrPattern" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7885114646737546365">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="srq7.4855904478357165289" resolveInfo="OrPattern2" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7885114646737546366">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="srq7.8263735385373599995" resolveInfo="MultipleOr" />
     </node>
   </root>
 </model>

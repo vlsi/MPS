@@ -15,9 +15,11 @@
     <classNode dependClassName="jetbrains.mps.lang.pattern.testLang.structure.VariableValue" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.testLang.structure.PropertyValue" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.structure.PatternExpression" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
@@ -25,7 +27,7 @@
     <classNode dependClassName="jetbrains.mps.lang.pattern.testLang.structure.ListValue" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.ITestCase" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.pattern.testLang.structure.PropertyValue" file="PropertyValue.java">
