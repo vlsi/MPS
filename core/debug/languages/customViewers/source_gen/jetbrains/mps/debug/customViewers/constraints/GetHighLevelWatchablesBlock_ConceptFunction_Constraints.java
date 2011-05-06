@@ -43,7 +43,7 @@ public class GetHighLevelWatchablesBlock_ConceptFunction_Constraints extends Con
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:1cf4ee63-2307-4b63-98d4-82eeff89d664(jetbrains.mps.debug.customViewers.constraints@4_0)", "43370322128276361");
+      private SNodePointer breakingNode = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debug.customViewers.constraints)", "43370322128276361");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);
