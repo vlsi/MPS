@@ -43,7 +43,7 @@ public class SimpleBuilderPropertyExpression_Constraints extends ConstraintsData
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:2b8f1676-0792-4548-9193-cf144d0a706f(jetbrains.mps.baseLanguage.builders.constraints@2_0)", "5389689214217242853");
+      private SNodePointer breakingNode = new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "5389689214217242853");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

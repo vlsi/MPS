@@ -56,7 +56,7 @@ public class LocalExtendedMethodCall_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:2d92270d-f437-4062-854a-2f33ee143cd3(jetbrains.mps.baseLanguage.extensionMethods.constraints@2_0)", "7685333756920187172");
+      private SNodePointer breakingNode = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7685333756920187172");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

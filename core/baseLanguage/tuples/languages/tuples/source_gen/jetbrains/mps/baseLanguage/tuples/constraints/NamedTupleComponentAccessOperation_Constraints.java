@@ -55,7 +55,7 @@ public class NamedTupleComponentAccessOperation_Constraints extends ConstraintsD
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:836fc5c5-f810-4f6f-9258-d93cf61b49b4(jetbrains.mps.baseLanguage.tuples.constraints@2_0)", "1239576963984");
+      private SNodePointer breakingNode = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576963984");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

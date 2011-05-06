@@ -46,7 +46,7 @@ public class TypeExtension_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:2d92270d-f437-4062-854a-2f33ee143cd3(jetbrains.mps.baseLanguage.extensionMethods.constraints@2_0)", "1550313277220707355");
+      private SNodePointer breakingNode = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "1550313277220707355");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);
@@ -62,7 +62,7 @@ public class TypeExtension_Constraints extends ConstraintsDataHolder {
   @Override
   public CanBeASomethingMethod<CanBeAParentContext> getCanBeAParentMethod() {
     return new CanBeASomethingMethod<CanBeAParentContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:2d92270d-f437-4062-854a-2f33ee143cd3(jetbrains.mps.baseLanguage.extensionMethods.constraints@2_0)", "5617464356391443670");
+      private SNodePointer breakingNode = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "5617464356391443670");
 
       public boolean canBe(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAParent(operationContext, _context);

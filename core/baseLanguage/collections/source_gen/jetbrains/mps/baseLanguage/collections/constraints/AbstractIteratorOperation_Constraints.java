@@ -46,7 +46,7 @@ public class AbstractIteratorOperation_Constraints extends ConstraintsDataHolder
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:7e786c33-6a6c-4152-958c-f32de6dd3654(jetbrains.mps.baseLanguage.collections.constraints@2_0)", "1237470771518");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1237470771518");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

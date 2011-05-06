@@ -44,7 +44,7 @@ public class ExtensionMethodDeclaration_Constraints extends ConstraintsDataHolde
   @Override
   public CanBeASomethingMethod<CanBeAParentContext> getCanBeAParentMethod() {
     return new CanBeASomethingMethod<CanBeAParentContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:2d92270d-f437-4062-854a-2f33ee143cd3(jetbrains.mps.baseLanguage.extensionMethods.constraints@2_0)", "2763618064981525309");
+      private SNodePointer breakingNode = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "2763618064981525309");
 
       public boolean canBe(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAParent(operationContext, _context);

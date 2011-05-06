@@ -47,7 +47,7 @@ public class ThisClassifierExpression_Constraints extends ConstraintsDataHolder 
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:da9c40bd-64a8-4207-8b23-a4f8adf413ca(jetbrains.mps.baseLanguage.classifiers.constraints@2_0)", "1213107438050");
+      private SNodePointer breakingNode = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1213107438050");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

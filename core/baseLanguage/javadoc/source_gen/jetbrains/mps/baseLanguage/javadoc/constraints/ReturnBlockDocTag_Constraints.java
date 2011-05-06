@@ -44,7 +44,7 @@ public class ReturnBlockDocTag_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:0c8b4715-852a-45a2-a74c-d96af699ad1c(jetbrains.mps.baseLanguage.javadoc.constraints@1_0)", "8970989240998521777");
+      private SNodePointer breakingNode = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "8970989240998521777");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);

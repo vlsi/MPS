@@ -107,7 +107,6 @@
   </source>
   <source id="4815887568697030517" name="VectorType" hash="-c8tswbupphs3fgvbqy14d9pxs42i5fr">
     <dep root="1237218038292" />
-    <dep root="4815887568697030518" />
     <dep root="5853558151363197539" />
     <dep root="6219660258345553845" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -319,7 +318,6 @@
     <file name="TransposeOperation.java" />
   </source>
   <source id="6219660258344738888" name="MatrixInitializer" hash="-54sjwnxyceh3dlwbfkd0is8wv3b62po">
-    <dep root="4815887568697030518" />
     <dep root="6219660258344759893" />
     <dep root="6219660258345553845" />
     <dep root="6219660258345570625" />
@@ -748,7 +746,6 @@
     <file name="MatrixIndexWildcard.java" />
   </source>
   <source id="6219660258345553845" name="VectorInitializer" hash="-7pgpegz1c2uxsylh55fs8vy8xybe97l">
-    <dep root="4815887568697030518" />
     <dep root="6219660258344759893" />
     <dep root="6219660258345570625" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -819,7 +816,6 @@
     <file name="BigMaxExpression.java" />
   </source>
   <source id="1236589266912" name="AbstractIndex" hash="-am68nnvoqfgl3lbngr63hkavkw7es6l">
-    <dep root="4815887568697030518" />
     <dep root="6219660258344759893" />
     <dep root="6219660258345553845" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -854,7 +850,6 @@
     <file name="MatrixOrVectorInitializer.java" />
   </source>
   <source id="6219660258344759893" name="MatrixInitializerIndex" hash="-ega8v8tn7jluk0inx0zdq4r4gh9unaj">
-    <dep root="4815887568697030518" />
     <dep root="6219660258345553845" />
     <dep root="6219660258345570625" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

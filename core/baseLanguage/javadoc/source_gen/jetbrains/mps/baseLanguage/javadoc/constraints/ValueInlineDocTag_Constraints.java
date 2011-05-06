@@ -42,7 +42,7 @@ public class ValueInlineDocTag_Constraints extends ConstraintsDataHolder {
   @Override
   public CanBeASomethingMethod<CanBeAParentContext> getCanBeAParentMethod() {
     return new CanBeASomethingMethod<CanBeAParentContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:0c8b4715-852a-45a2-a74c-d96af699ad1c(jetbrains.mps.baseLanguage.javadoc.constraints@1_0)", "3941416111380671266");
+      private SNodePointer breakingNode = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "3941416111380671266");
 
       public boolean canBe(IOperationContext operationContext, CanBeAParentContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAParent(operationContext, _context);
