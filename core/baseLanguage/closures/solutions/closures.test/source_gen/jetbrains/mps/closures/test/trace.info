@@ -7,7 +7,7 @@
   <unitInfo fileName="ClosuresBase_Test.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.closures.test.ClosuresBase_Test" />
   <unitInfo fileName="AdvancedFunctionTypes_Test.java" startLine="9" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test" />
   <unitInfo fileName="WhileBreak_Test.java" startLine="9" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.closures.test.WhileBreak_Test" />
-  <unitInfo fileName="ExternalReferences_Test.java" startLine="12" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.closures.test.ExternalReferences_Test" />
+  <unitInfo fileName="ExternalReferences_Test.java" startLine="14" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.closures.test.ExternalReferences_Test" />
   <unitInfo fileName="SequenceFunctionTypes_Test.java" startLine="14" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.closures.test.SequenceFunctionTypes_Test" />
   <unitInfo fileName="FunctionTypes_Test.java" startLine="13" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.closures.test.FunctionTypes_Test" />
   <unitInfo fileName="ClassifierAdapters_Test.java" startLine="24" startPosition="0" endLine="492" endPosition="0" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test" />
