@@ -19,8 +19,8 @@
   <unitInfo fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="54" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule$QuotationClass_jo2b2o_a0a2a0" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_method_InferenceRule.java" startLine="57" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_ConceptFunctionParameter_method_InferenceRule$QuotationClass_79hskf_a0a0a1a0" />
   <unitInfo fileName="typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule.java" startLine="64" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule$QuotationClass_fjdzuh_a0a1a2a0" />
-  <unitInfo fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNodeList_InferenceRule" />
-  <unitInfo fileName="check_CellModel_RefNode_InferenceRule.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNode_InferenceRule" />
+  <unitInfo fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNodeList_InferenceRule" />
+  <unitInfo fileName="check_CellModel_RefNode_InferenceRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNode_InferenceRule" />
   <unitInfo fileName="IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule" />
   <unitInfo fileName="typeof_AbstractOperationArguments_InferenceRule.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_AbstractOperationArguments_InferenceRule" />
   <unitInfo fileName="typeof_CellKeyMap_FunctionParm_selectedNodes_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_CellKeyMap_FunctionParm_selectedNodes_InferenceRule" />
@@ -132,8 +132,8 @@
     <nodeInfo nodeId="1223982086138" fileName="typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule.java" startLine="21" startPosition="97" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1223982086138" fileName="typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="256" />
     <scopeInfo nodeId="1179766709152" fileName="typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule.java" startLine="19" startPosition="117" endLine="26" endPosition="5">
-      <varInfo nodeId="1179767884897" varName="parameterObjectType" />
       <varInfo nodeId="1179767863276" varName="ancestor" />
+      <varInfo nodeId="1179767884897" varName="parameterObjectType" />
     </scopeInfo>
   </root>
   <root nodeId="1180280189216">
@@ -144,30 +144,30 @@
     <scopeInfo nodeId="1180280189217" fileName="check_CellModel_RefCell_InferenceRule.java" startLine="21" startPosition="120" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1180280630650">
-    <nodeInfo nodeId="1180280684076" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="21" startPosition="120" endLine="22" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180280667546" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="23" startPosition="88" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180280667546" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="24" startPosition="58" endLine="25" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180280735244" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="27" startPosition="155" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180280735244" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="28" startPosition="58" endLine="29" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180280667546" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="22" startPosition="81" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1180280735244" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="26" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1180280667546" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="23" startPosition="88" endLine="25" endPosition="234" />
-    <scopeInfo nodeId="1180280735244" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="27" startPosition="155" endLine="29" endPosition="236" />
-    <scopeInfo nodeId="1180280630651" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="21" startPosition="120" endLine="30" endPosition="5">
+    <nodeInfo nodeId="1180280684076" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="22" startPosition="120" endLine="23" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180280667546" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="24" startPosition="88" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180280667546" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="25" startPosition="58" endLine="26" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180280735244" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="28" startPosition="73" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180280735244" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="29" startPosition="58" endLine="30" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180280667546" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="23" startPosition="81" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1180280735244" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="27" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1180280667546" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="24" startPosition="88" endLine="26" endPosition="234" />
+    <scopeInfo nodeId="1180280735244" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="28" startPosition="73" endLine="30" endPosition="236" />
+    <scopeInfo nodeId="1180280630651" fileName="check_CellModel_RefNode_InferenceRule.java" startLine="22" startPosition="120" endLine="31" endPosition="5">
       <varInfo nodeId="1180280684077" varName="lnk" />
     </scopeInfo>
   </root>
   <root nodeId="1180295398625">
-    <nodeInfo nodeId="1180295464573" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="21" startPosition="124" endLine="22" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180295464579" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="23" startPosition="88" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180295464579" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="24" startPosition="58" endLine="25" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180295464588" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="27" startPosition="158" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180295464588" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="28" startPosition="58" endLine="29" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180295464579" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="22" startPosition="85" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1180295464588" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="26" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1180295464579" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="23" startPosition="88" endLine="25" endPosition="238" />
-    <scopeInfo nodeId="1180295464588" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="27" startPosition="158" endLine="29" endPosition="242" />
-    <scopeInfo nodeId="1180295398626" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="21" startPosition="124" endLine="30" endPosition="5">
+    <nodeInfo nodeId="1180295464573" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="22" startPosition="124" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180295464579" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="24" startPosition="88" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180295464579" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="25" startPosition="58" endLine="26" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180295464588" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="28" startPosition="76" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180295464588" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="29" startPosition="58" endLine="30" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180295464579" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="23" startPosition="85" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1180295464588" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="27" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1180295464579" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="24" startPosition="88" endLine="26" endPosition="238" />
+    <scopeInfo nodeId="1180295464588" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="28" startPosition="76" endLine="30" endPosition="242" />
+    <scopeInfo nodeId="1180295398626" fileName="check_CellModel_RefNodeList_InferenceRule.java" startLine="22" startPosition="124" endLine="31" endPosition="5">
       <varInfo nodeId="1180295464574" varName="lnk" />
     </scopeInfo>
   </root>

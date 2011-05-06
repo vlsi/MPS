@@ -25,7 +25,8 @@ public class LinkDeclaration_Behavior {
   }
 
   public static boolean call_isSingular_1213877254557(SNode thisNode) {
-    return SPropertyOperations.hasValue(thisNode, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(thisNode, "sourceCardinality", "1", "0..1");
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(thisNode);
+    return SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1");
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
