@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dfo0gn78zyh5wth80d35d9525g13hxw">
+<dependencies version="2" modelHash="89dlmqw9c26oq1heirpx2zqhk93evxu">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.behaviour(MPS.Classpath/jetbrains.mps.smodel.behaviour@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2p780og5m0gbxc8o1jqevoem9o3jenx" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="3no283k6nij96luy59k8pjje8hkvvkk" />
@@ -57,7 +57,7 @@
   <source id="1198766482059" name="reduce_PropertyValueParameter_to_MethodParameterReference_by_Alias" hash="-7uwzv8rogzjuymuwz23fnu0b22d4s4n">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1213106217514" name="ConstraintsClass" hash="d9xxn2l02i6dympc3vp2njgh0ijd9w4">
+  <source id="1213106217514" name="ConstraintsClass" hash="-90vwep9pshavhr3nxiajdd7z6q2aw3y">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="5979740912231381158" name="BaseNodeReferenceSearchScopeProvider" hash="-8yarocxp4gnba5ctnvqjdl6aoche2sw">

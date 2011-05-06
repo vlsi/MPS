@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -64,7 +64,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3043699116664632734(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "canBeChild", true)).getSModelReference().toString();
+    return _context.getOriginalInputModel().getSModelReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_3043699116664632747(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -72,7 +72,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3043699116664636418(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true)).getSModelReference().toString();
+    return _context.getOriginalInputModel().getSModelReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_3043699116664636433(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -80,7 +80,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2208901195979134456(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "canBeParent", true)).getSModelReference().toString();
+    return _context.getOriginalInputModel().getSModelReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2208901195979134471(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -88,7 +88,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2208901195979134550(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "canBeAncestor", true)).getSModelReference().toString();
+    return _context.getOriginalInputModel().getSModelReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2208901195979134565(final IOperationContext operationContext, final PropertyMacroContext _context) {
