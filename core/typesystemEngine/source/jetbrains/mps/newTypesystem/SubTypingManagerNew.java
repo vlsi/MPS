@@ -308,7 +308,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     while (types.size() > newNodesSize) {
       SNode left = types.remove(0);
       SNode right = types.remove(0);
-      Set<SNode> newNodes = leastCommonSuperTypes(left, right, context);
+      List<SNode> newNodes = eliminateSubOrSuperTypes(leastCommonSuperTypes(left, right, context), true);
       newNodesSize = newNodes.size();
       types.addAll(newNodes);
     }
@@ -327,7 +327,10 @@ public class SubTypingManagerNew extends SubtypingManager {
   public SNode createLCS(List<SNode> types, TypeCheckingContextNew context) {
     if (types.size() == 1) {
       return types.iterator().next();
-    }
+    }    /*
+    Set<SNode> sNodes = leastCommonSupertypes(new HashSet<SNode>(types), true);
+    return sNodes.iterator().next();
+        */
     if (types.size() > 1) {
       Collections.sort(types, new Comparator<SNode>() {
         public int compare(SNode node1, SNode node2) {
@@ -443,6 +446,11 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }
 
+
+
+
+  //--old LCS section --
+
   private StructuralWrapperSet collectImmediateSupertypes(IWrapper term, boolean isWeak) {
     StructuralWrapperSet result = new StructuralWrapperSet();
     if (term == null) {
@@ -469,33 +477,14 @@ public class SubTypingManagerNew extends SubtypingManager {
         }
       }
     }
-
     return result;
   }
-
   public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
     return toNodes(leastCommonSupertypesWrappers(toWrappers(types), isWeak));
   }
   private Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
     if (types.size() == 1) return new THashSet<IWrapper>(types);
-
-    /*if (types.size() == 2) {
-      Iterator<IWrapper> iterator = types.iterator();
-      IWrapper type1 = iterator.next();
-      IWrapper type2 = iterator.next();
-      if (isSubtype(type1.getNode(), type2.getNode())) {
-        HashSet<IWrapper> result = new HashSet<IWrapper>();
-        result.add(type2);
-        return result;
-      }
-      if (isSubtype(type2.getNode(), type1.getNode())) {
-        HashSet<IWrapper> result = new HashSet<IWrapper>();
-        result.add(type1);
-        return result;
-      }
-    }*/
-
-
+    //remove subtypes
     //hack: for types which are subtypes only according to replacement rules, such as nulltype
     //such as above but for any quantity of types
     Set<IWrapper> initialTypes = new THashSet<IWrapper>(types);
@@ -661,6 +650,6 @@ System.out.println("alltypes = " + allTypes);*/
     return result;
   }
 
-
+  //--------------------
 
 }
