@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CustomViewersDescriptor.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.CustomViewersDescriptor" />
+  <unitInfo fileName="Tuples_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.Tuples_ProjectPlugin" />
   <unitInfo fileName="TuplesWatchables.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.TuplesWatchables$MyWatchable_element" />
   <unitInfo fileName="TuplesWatchables.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.TuplesWatchables" />
+  <unitInfo fileName="Tuples_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.Tuples_ApplicationPlugin" />
+  <unitInfo fileName="CustomViewersInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.CustomViewersInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="IndexedTupleViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory$IndexedTupleViewerWrapper" />
   <unitInfo fileName="IndexedTupleViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.plugin.IndexedTupleViewer_WrapperFactory" />
   <root nodeId="2603491487853694400">

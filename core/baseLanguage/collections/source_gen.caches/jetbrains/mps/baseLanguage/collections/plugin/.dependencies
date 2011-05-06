@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersInitializer_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
@@ -52,13 +53,18 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersDescriptor" file="CustomViewersDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" />
+  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersInitializer_CustomApplicationPlugin" file="CustomViewersInitializer_CustomApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.CustomViewersDescriptor" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.debug.customViewers.CustomViewersManager" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" file="ListViewer_WrapperFactory.java">
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />

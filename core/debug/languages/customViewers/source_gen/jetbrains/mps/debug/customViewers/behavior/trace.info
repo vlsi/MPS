@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="HighLevelCustomViewer_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debug.customViewers.behavior.HighLevelCustomViewer_Behavior" />
+  <unitInfo fileName="HighLevelCustomViewer_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.customViewers.behavior.HighLevelCustomViewer_Behavior" />
   <root nodeId="43370322128260019">
-    <nodeInfo nodeId="43370322128270482" fileName="HighLevelCustomViewer_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="43370322128260021" fileName="HighLevelCustomViewer_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="43370322128260025" fileName="HighLevelCustomViewer_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="92" />
+    <nodeInfo nodeId="43370322128270482" fileName="HighLevelCustomViewer_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7570572250661284606" fileName="HighLevelCustomViewer_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7570572250661287368" fileName="HighLevelCustomViewer_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="43370322128260021" fileName="HighLevelCustomViewer_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="43370322128260025" fileName="HighLevelCustomViewer_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="92" />
+    <scopeInfo nodeId="7570572250661284603" fileName="HighLevelCustomViewer_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="79" />
+    <scopeInfo nodeId="7570572250661287365" fileName="HighLevelCustomViewer_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="147" />
   </root>
 </debugInfo>
 

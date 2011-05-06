@@ -49,7 +49,7 @@ public class JavaValueOperation_Constraints extends ConstraintsDataHolder {
   @Nullable
   public CanBeASomethingMethod<CanBeAChildContext> getCanBeAChildMethod() {
     return new CanBeASomethingMethod<CanBeAChildContext>() {
-      private SNodePointer breakingNode = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debug.customViewers.constraints)", "7744028807303050615");
+      private SNodePointer breakingNode = new SNodePointer("r:1cf4ee63-2307-4b63-98d4-82eeff89d664(jetbrains.mps.debug.customViewers.constraints@4_0)", "7744028807303050615");
 
       public boolean canBe(IOperationContext operationContext, CanBeAChildContext _context, @Nullable CheckingNodeContext checkingNodeContext) {
         boolean result = canBeAChild(operationContext, _context);
