@@ -4,6 +4,9 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +21,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.BoxLayout;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
+
 import java.util.ArrayList;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
@@ -61,22 +64,22 @@ public class LanguagePaths_Action extends GeneratedAction {
       dialog.add(sp);
       mainp.setLayout(new BoxLayout(mainp, BoxLayout.Y_AXIS));
       for (Language lang : ListSequence.fromList(languages)) {
-        List<StubModelsEntry> cp = StubModelsEntry.filterJava(lang.getModuleDescriptor().getStubModelEntries());
-        List<StubModelsEntry> rcp = StubModelsEntry.filterJava(lang.getModuleDescriptor().getRuntimeStubModels());
+        List<ModelRoot> cp = ModelRootUtil.filterJava(lang.getModuleDescriptor().getStubModelEntries());
+        List<ModelRoot> rcp = ModelRootUtil.filterJava(lang.getModuleDescriptor().getRuntimeStubModels());
 
         List<String> cpu = new ArrayList();
-        for (StubModelsEntry i : ListSequence.fromList(cp)) {
+        for (ModelRoot i : ListSequence.fromList(cp)) {
           cpu.add(i.getPath());
         }
-        for (StubModelsEntry i : ListSequence.fromList(rcp)) {
+        for (ModelRoot i : ListSequence.fromList(rcp)) {
           cpu.remove(i.getPath());
         }
 
         List<String> rcpu = new ArrayList();
-        for (StubModelsEntry i : ListSequence.fromList(rcp)) {
+        for (ModelRoot i : ListSequence.fromList(rcp)) {
           rcpu.add(i.getPath());
         }
-        for (StubModelsEntry i : ListSequence.fromList(cp)) {
+        for (ModelRoot i : ListSequence.fromList(cp)) {
           rcpu.remove(i.getPath());
         }
 

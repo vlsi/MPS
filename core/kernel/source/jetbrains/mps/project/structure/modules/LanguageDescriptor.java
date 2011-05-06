@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private List<GeneratorDescriptor> myGenerators;
   private List<ModuleReference> myExtendedLanguages;
   private List<Dependency> myRuntimeModules;
-  private List<StubModelsEntry> myRuntimeStubModels;
+  private List<ModelRoot> myRuntimeStubModels;
   private List<StubSolution> myStubSolutions;
   private boolean myDoNotGenerateAdapters = false;
 
@@ -37,7 +38,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
     myGenerators = new ArrayList<GeneratorDescriptor>();
     myExtendedLanguages = new ArrayList<ModuleReference>();
     myRuntimeModules = new ArrayList<Dependency>();
-    myRuntimeStubModels = new ArrayList<StubModelsEntry>();
+    myRuntimeStubModels = new ArrayList<ModelRoot>();
     myStubSolutions = new ArrayList<StubSolution>();
   }
 
@@ -65,7 +66,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
     return myRuntimeModules;
   }
 
-  public List<StubModelsEntry> getRuntimeStubModels() {
+  public List<ModelRoot> getRuntimeStubModels() {
     return myRuntimeStubModels;
   }
 

@@ -26,18 +26,18 @@ public class ModuleDescriptor {
   private String myTimestamp;
   private boolean myCompileInMPS = true;
 
-  private List<ModelRoot> myModelRoots;
+  private List<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
   private List<Dependency> myDependencies;
   private List<ModuleReference> myUsedLanguages;
   private List<ModuleReference> myUsedDevkits;
-  private List<StubModelsEntry> myStubModels;
+  private List<ModelRoot> myStubModels;
 
   public ModuleDescriptor() {
-    myModelRoots = new ArrayList<ModelRoot>();
+    myModelRoots = new ArrayList<jetbrains.mps.project.structure.model.ModelRoot>();
     myDependencies = new ArrayList<Dependency>();
     myUsedLanguages = new ArrayList<ModuleReference>();
     myUsedDevkits = new ArrayList<ModuleReference>();
-    myStubModels = new ArrayList<StubModelsEntry>();
+    myStubModels = new ArrayList<ModelRoot>();
   }
 
   public String getUUID() {
@@ -76,7 +76,7 @@ public class ModuleDescriptor {
     myCompileInMPS = compileInMPS;
   }
 
-  public List<ModelRoot> getModelRoots() {
+  public List<jetbrains.mps.project.structure.model.ModelRoot> getModelRoots() {
     return myModelRoots;
   }
 
@@ -92,7 +92,7 @@ public class ModuleDescriptor {
     return myUsedDevkits;
   }
 
-  public List<StubModelsEntry> getStubModelEntries() {
+  public List<ModelRoot> getStubModelEntries() {
     return myStubModels;
   }
 

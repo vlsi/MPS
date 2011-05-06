@@ -5,9 +5,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -84,8 +84,7 @@ public class StubReloadManager implements ApplicationComponent {
       SolutionDescriptor sd = solution.getModuleDescriptor();
 
       for (String path : d.getPaths()) {
-        StubModelsEntry sme = new StubModelsEntry();
-        sme.setIncludedInVCS(false);
+        ModelRoot sme = new ModelRoot();
         sme.setPath(path);
         sme.setManager(d.getManager());
         sd.getStubModelEntries().add(sme);

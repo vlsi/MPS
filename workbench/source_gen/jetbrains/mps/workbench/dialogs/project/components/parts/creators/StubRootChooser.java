@@ -4,27 +4,28 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 
 import com.intellij.openapi.util.Computable;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
+
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageID;
 
-public class StubRootChooser implements Computable<List<StubModelsEntry>> {
+public class StubRootChooser implements Computable<List<ModelRoot>> {
   private final IBindedDialog myOwner;
 
   public StubRootChooser(IBindedDialog owner) {
     myOwner = owner;
   }
 
-  public List<StubModelsEntry> compute() {
+  public List<ModelRoot> compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
     List<IFile> files = chooser.showMultiSelectionDialog(myOwner.getMainComponent());
-    List<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
+    List<ModelRoot> result = new ArrayList<ModelRoot>();
     for (IFile file : files) {
-      StubModelsEntry sme = new StubModelsEntry();
+      ModelRoot sme = new ModelRoot();
       sme.setPath(file.getPath());
       sme.setManager(LanguageID.JAVA_MANAGER);
       result.add(sme);

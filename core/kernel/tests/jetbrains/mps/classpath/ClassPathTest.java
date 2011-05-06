@@ -30,8 +30,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootUtil;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -103,9 +104,9 @@ public class ClassPathTest extends BaseMPSTest {
 
         //collect class2module info
         for (IModule m : modulesToCheck) {
-          List<StubModelsEntry> stubs = StubModelsEntry.filterJava(m.getModuleDescriptor().getStubModelEntries());
+          List<ModelRoot> stubs = ModelRootUtil.filterJava(m.getModuleDescriptor().getStubModelEntries());
 
-          for (StubModelsEntry entry : stubs) {
+          for (ModelRoot entry : stubs) {
             String path = entry.getPath();
             IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path);
             if (pathItem == null) continue;
