@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project.structure.model;
 
+import org.apache.commons.lang.ObjectUtils;
+
 public class ModelRoot {
   public static final String PATH = "path";
   public static final String PREFIX = "prefix";
@@ -46,6 +48,24 @@ public class ModelRoot {
 
   public void setManager(ModelRootManager manager) {
     myManager = manager;
+  }
+
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    ModelRoot that = (ModelRoot) o;
+
+    if (!ObjectUtils.equals(myManager, that.myManager)) return false;
+    if (!ObjectUtils.equals(myPath, that.myPath)) return false;
+
+    return true;
+  }
+
+  public int hashCode() {
+    int result = myPath != null ? myPath.hashCode() : 0;
+    result = 31 * result + (myManager != null ? myManager.hashCode() : 0);
+    return result;
   }
 
   public ModelRoot getCopy() {
