@@ -480,7 +480,10 @@ public class SubTypingManagerNew extends SubtypingManager {
     return result;
   }
   public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
-    return toNodes(leastCommonSupertypesWrappers(toWrappers(types), isWeak));
+    HashSet<SNode> nodes = new HashSet<SNode>();
+    nodes.add(createLCS(new ArrayList<SNode>(types), null));
+    return nodes;
+    //return toNodes(leastCommonSupertypesWrappers(toWrappers(types), isWeak));
   }
   private Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
     if (types.size() == 1) return new THashSet<IWrapper>(types);
