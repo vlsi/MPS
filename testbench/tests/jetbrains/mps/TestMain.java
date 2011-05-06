@@ -171,9 +171,10 @@ public class TestMain {
     ModelAccess.instance().flushEventQueue();
   }
 
+  @NotNull
   public static MPSProject loadProject(File projectFile) {
     if (!projectFile.exists()) {
-      throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
+      throw new RuntimeException("Can't find project file " + projectFile.getAbsolutePath());
     }
 
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
@@ -197,7 +198,10 @@ public class TestMain {
       }
     });
 
-    assert project[0] != null;
+    if (project[0] == null) {
+      // this actually happens
+      throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath());
+    }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
