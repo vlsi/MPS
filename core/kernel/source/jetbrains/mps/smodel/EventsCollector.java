@@ -32,11 +32,11 @@ public class EventsCollector {
   private ModelAccessListener myModelAccessListener = new MyModelAccessAdapter();
   private boolean myDisposed;
 
-  private boolean isInCommand;
+  private boolean myIsInCommand;
 
   public EventsCollector() {
     ModelAccess.instance().addCommandListener(myModelAccessListener);
-    isInCommand = ModelAccess.instance().isInsideCommand();
+    myIsInCommand = ModelAccess.instance().isInsideCommand();
   }
 
   private SModelListener createCommandEventsCollector() {
@@ -66,7 +66,7 @@ public class EventsCollector {
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
 
-            if (!isInCommand) {
+            if (!myIsInCommand) {
               throw new IllegalStateException("Event outside of a command");
             }
 
@@ -129,12 +129,12 @@ public class EventsCollector {
   private class MyModelAccessAdapter extends ModelAccessAdapter {
     public void commandStarted() {
       myEvents.clear();
-      isInCommand = true;
+      myIsInCommand = true;
     }
 
     public void beforeCommandFinished() {
       flush();
-      isInCommand = false;
+      myIsInCommand = false;
     }
   }
 }
