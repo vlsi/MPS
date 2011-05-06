@@ -6,6 +6,10 @@ import jetbrains.mps.project.MPSProject;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.TestMain;
 import java.io.File;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 
 public class ProjectContainer {
   private String projectName;
@@ -18,9 +22,11 @@ public class ProjectContainer {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          ProjectContainer.this.lastProject.dispose();
-          ProjectContainer.this.lastProject = null;
-          ProjectContainer.this.projectName = null;
+          if (ProjectContainer.this.lastProject != null) {
+            ProjectContainer.this.lastProject.dispose();
+            ProjectContainer.this.lastProject = null;
+            ProjectContainer.this.projectName = null;
+          }
         }
       });
     } catch (Exception e) {
@@ -32,7 +38,7 @@ public class ProjectContainer {
     if (eq_v52ock_a0a0b(name, this.projectName)) {
       return this.lastProject;
     } else {
-      MPSProject p = TestMain.loadProject(new File(name));
+      MPSProject p = this.loadProjectInternal(name);
       if (this.lastProject != null) {
         try {
           SwingUtilities.invokeAndWait(new Runnable() {
@@ -47,6 +53,20 @@ public class ProjectContainer {
       this.lastProject = p;
       this.projectName = name;
       return p;
+    }
+  }
+
+  private MPSProject loadProjectInternal(String name) {
+    try {
+      return TestMain.loadProject(new File(name));
+    } catch (Throwable throwable) {
+      // well, we could try to load a dummy project, if we cant load the real one 
+      Project project = ProjectManager.getInstance().getDefaultProject();
+      File projectFile = FileUtil.createTmpFile();
+      MPSProject mpsProject = new MPSProject(project);
+      mpsProject.init(projectFile, new ProjectDescriptor());
+      projectFile.deleteOnExit();
+      return mpsProject;
     }
   }
 

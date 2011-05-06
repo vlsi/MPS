@@ -17,6 +17,8 @@ import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import com.intellij.openapi.application.PathManager;
+import java.io.File;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.PathMacros;
 
@@ -69,7 +71,22 @@ public class NodesTestCase_Behavior {
         ListSequence.fromList(result).addElement(path.getPath());
       }
     }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(NodesTestCase_Behavior.getPluginsClassPath_2937573621172202149()));
     return result;
+  }
+
+  public static List<String> getPluginsClassPath_2937573621172202149() {
+    List<String> path = ListSequence.fromList(new ArrayList<String>());
+    String pluginsPath = PathManager.getPreinstalledPluginsPath();
+    File pluginsDir = new File(pluginsPath);
+    for (File pluginDir : pluginsDir.listFiles()) {
+      if (pluginDir.isDirectory()) {
+        ListSequence.fromList(path).addElement(new File(pluginDir, "classes").getAbsolutePath());
+      } else {
+        ListSequence.fromList(path).addElement(pluginDir.getAbsolutePath());
+      }
+    }
+    return path;
   }
 
   public static TestRunParameters getTestRunParameters_1217424543047() {
