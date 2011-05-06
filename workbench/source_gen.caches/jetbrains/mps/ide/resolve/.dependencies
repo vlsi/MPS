@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.resolve.AutoResolver" file="AutoResolver.java">
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.util.HashSet" />

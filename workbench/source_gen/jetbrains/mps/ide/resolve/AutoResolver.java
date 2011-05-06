@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SReference;
 import java.util.ArrayList;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import java.util.Iterator;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.project.Project;
@@ -21,7 +22,6 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.HashSet;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 
 public class AutoResolver extends EditorCheckerAdapter {
   public AutoResolver() {
