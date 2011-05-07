@@ -27,17 +27,16 @@
     <dependency reexport="false">7597197a-bad8-4672-9806-215a3efe8740(jetbrains.mps.lang.editor.tests)</dependency>
     <dependency reexport="false">69de002c-bbba-40be-be5b-f3a6e61ea828(jetbrains.mps.lang.editor.table.tests)</dependency>
     <dependency reexport="false">ad44d830-d9b6-4c92-9e56-821fcc11b493(jetbrains.mps.make.tests)</dependency>
+    <dependency reexport="false">d4650c60-7bd2-4b0f-94fb-1b0e16cc8290(jetbrains.mps.lang.pattern.test)</dependency>
     <dependency reexport="false">d2213aeb-6827-43e6-8179-d5886cfd0bb6(jetbrains.mps.smodel.test)</dependency>
     <dependency reexport="false">d51c8d2d-7b6e-4d93-9eee-b55b04c5886b(jetbrains.mps.lang.smodel.unittest)</dependency>
     <dependency reexport="false">d5e1eadc-0b90-46d3-ad09-aafe577e509d(dates_unittest)</dependency>
+    <dependency reexport="false">1cf9ab03-28e6-49cc-b765-555cd6dcfc28(jetbrains.mps.graphLayout.test)</dependency>
+    <dependency reexport="false">9cc656d8-ed07-4493-9531-69f1c9c308c5(jetbrains.mps.baseLanguage.math.tests)</dependency>
     <dependency reexport="false">19cb79b5-ebc3-43ce-9f4c-d4bdce7013ab(jetbrains.mps.baseLanguage.regexp.unittest)</dependency>
     <dependency reexport="false">8243a5aa-ceff-484d-8124-da694e9f8ef4(jetbrains.mps.ui.unittest)</dependency>
     <dependency reexport="false">2f499867-d42a-4e31-a93d-33e16883e187(jetbrains.mps.xml.tests)</dependency>
     <dependency reexport="false">26af8f6b-3531-46d0-8700-83a313e4566e(ypath.test)</dependency>
-    <dependency reexport="false">8e87e036-7d3f-4e47-809f-c244e2a938e8(jetbrains.mps.makeTest)</dependency>
-    <dependency reexport="false">9cc656d8-ed07-4493-9531-69f1c9c308c5(jetbrains.mps.baseLanguage.math.tests)</dependency>
-    <dependency reexport="false">d4650c60-7bd2-4b0f-94fb-1b0e16cc8290(jetbrains.mps.lang.pattern.test)</dependency>
-    <dependency reexport="false">1cf9ab03-28e6-49cc-b765-555cd6dcfc28(jetbrains.mps.graphLayout.test)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
