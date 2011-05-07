@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+<model modelUID="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)" version="0">
   <persistence version="7" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -46,6 +46,7 @@
   <import index="205" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="toof" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
+  <import index="gela" modelUID="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)" version="-1" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -1268,9 +1269,9 @@
                         </node>
                       </node>
                     </node>
-                    <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2090008153514921082">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.3911101295254075326" resolveInfo="isNewDiffEnabled" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="p37l.3724655318819677795" resolveInfo="ModelDifferenceDialog" />
+                    <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1547210892702469998">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gela.1547210892702467201" resolveInfo="isNewDiffEnabled" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="gela.4124845871897257719" resolveInfo="ModelDiffTool" />
                     </node>
                     <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2090008153514921083">
                       <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2090008153514921084">
@@ -1624,9 +1625,9 @@
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2090008153514954404" />
               </node>
-              <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2090008153514954407">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.3911101295254075326" resolveInfo="isNewDiffEnabled" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="p37l.3724655318819677795" resolveInfo="ModelDifferenceDialog" />
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1547210892702472260">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gela.1547210892702467201" resolveInfo="isNewDiffEnabled" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="gela.4124845871897257719" resolveInfo="ModelDiffTool" />
               </node>
               <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2090008153514954411">
                 <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2090008153514954412">

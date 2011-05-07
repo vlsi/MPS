@@ -60,7 +60,7 @@ public class ModelDiffTool implements DiffTool {
           }
           boolean modal = !(request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
-          if (ModelDifferenceDialog.isNewDiffEnabled()) {
+          if (isNewDiffEnabled()) {
             return new ModelDifferenceDialog(request.getProject(), context, oldModel, newModel, request);
           } else {
             final OldModelDifferenceDialog d = new OldModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
@@ -124,6 +124,10 @@ public class ModelDiffTool implements DiffTool {
       }
     }
     return ModelUtils.readModel(content.getBytes(), path);
+  }
+
+  public static boolean isNewDiffEnabled() {
+    return !("false".equals(System.getProperty("mps.newdiff")));
   }
 
   public static class ReadException extends IOException {

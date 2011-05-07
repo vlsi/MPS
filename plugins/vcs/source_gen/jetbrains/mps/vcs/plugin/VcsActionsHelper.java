@@ -16,8 +16,9 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
@@ -50,7 +51,7 @@ public class VcsActionsHelper {
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
       final SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), model.getModelDescriptor());
-      if (ModelDifferenceDialog.isNewDiffEnabled()) {
+      if (ModelDiffTool.isNewDiffEnabled()) {
         final Wrappers._T<ModelDifferenceDialog> modelDialog = new Wrappers._T<ModelDifferenceDialog>();
         final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
         ModelAccess.instance().runReadAction(new Runnable() {

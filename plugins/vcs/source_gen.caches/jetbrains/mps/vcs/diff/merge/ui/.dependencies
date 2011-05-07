@@ -105,7 +105,6 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContextState" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeRootsDialog" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
@@ -119,7 +118,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeRootsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="javax.swing.JComponent" />

@@ -59,7 +59,7 @@ public class ModelMergeTool implements DiffTool {
         return;
       }
       IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
-      if (MergeModelsDialog.isNewMergeEnabled()) {
+      if (isNewMergeEnabled()) {
         final MergeModelsDialog dialog = new MergeModelsDialog(request.getProject(), context, baseModel, mineModel, newModel, mrequest);
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
@@ -95,5 +95,9 @@ public class ModelMergeTool implements DiffTool {
 
   public boolean canShow(DiffRequest request) {
     return request instanceof ModelMergeRequest;
+  }
+
+  public static boolean isNewMergeEnabled() {
+    return !("false".equals(System.getProperty("mps.newmerge")));
   }
 }

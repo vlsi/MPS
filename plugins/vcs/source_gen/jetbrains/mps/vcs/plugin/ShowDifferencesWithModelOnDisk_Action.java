@@ -16,6 +16,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
@@ -80,7 +81,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
       final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).getModelFile(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          if (ModelDifferenceDialog.isNewDiffEnabled()) {
+          if (ModelDiffTool.isNewDiffEnabled()) {
             new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), disk, memory, new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory")).showDialog();
           } else {
             new OldModelDifferenceDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((Frame) MapSequence.fromMap(_params).get("frame")), disk, memory, "Model Difference Between Disk and Memory", true, new String[]{"Disk", "Memory"}).showDialog();

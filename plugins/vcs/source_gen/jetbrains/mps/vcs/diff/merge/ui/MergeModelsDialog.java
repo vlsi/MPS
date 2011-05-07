@@ -185,10 +185,6 @@ public class MergeModelsDialog extends BaseDialog {
     rebuildLater();
   }
 
-  public static boolean isNewMergeEnabled() {
-    return !("false".equals(System.getProperty("mps.newmerge")));
-  }
-
   private class MergeModelsTree extends DiffModelTree {
     private MergeModelsTree() {
       super(myOperationContext);
