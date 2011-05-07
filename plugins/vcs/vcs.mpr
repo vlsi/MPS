@@ -20,11 +20,9 @@
     </favorites_list>
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/jetbrains.mps.vcs.msd" />
-    </projectSolutions>
-    <projectLanguages />
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/jetbrains.mps.vcs.msd" />
+    </projectModules>
     <genConfs>
       <genConfModule name="vcs" moduleRef="jetbrains.mps.vcs" />
     </genConfs>
