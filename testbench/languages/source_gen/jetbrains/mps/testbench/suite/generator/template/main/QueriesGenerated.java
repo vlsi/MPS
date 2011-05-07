@@ -5,6 +5,7 @@ package jetbrains.mps.testbench.suite.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.testbench.suite.behavior.ITestRef_Behavior;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior;
@@ -15,11 +16,20 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2956932267233365622(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ITestRef_Behavior.call_fqClassName_2956932267233324537(_context.getNode());
+    String fqn = ITestRef_Behavior.call_fqClassName_2956932267233324537(_context.getNode());
+    if (StringUtils.isEmpty(fqn)) {
+      _context.showErrorMessage(_context.getNode(), "no class name");
+      return "NO CLASS NAME";
+    }
+    return fqn;
   }
 
   public static Object propertyMacro_GetPropertyValue_4089647634161018296(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IterableUtils.join(Sequence.fromIterable(ITestRef_Behavior.call_testNames_4089647634160960707(_context.getNode())), ",");
+    String tns = IterableUtils.join(Sequence.fromIterable(ITestRef_Behavior.call_testNames_4089647634160960707(_context.getNode())), ",");
+    if (StringUtils.isEmpty(tns)) {
+      _context.showWarningMessage(_context.getNode(), "empty test case");
+    }
+    return tns;
   }
 
   public static Object propertyMacro_GetPropertyValue_4089647634160960602(final IOperationContext operationContext, final PropertyMacroContext _context) {
