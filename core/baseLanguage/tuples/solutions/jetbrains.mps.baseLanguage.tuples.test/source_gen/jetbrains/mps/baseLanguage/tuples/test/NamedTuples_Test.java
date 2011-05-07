@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.tuples.util.SharedPair;
 import jetbrains.mps.baseLanguage.tuples.shared.GlobalSharedPair;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -124,23 +123,8 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(99, i);
   }
 
-  public void test_sharedPair() throws Exception {
-    SharedPair<Integer, String> p = new SharedPair<Integer, String>(1, "a");
-    Assert.assertSame(1, p.first());
-    Assert.assertEquals("a", p.second());
-    SharedPair<Integer, String> pp = p;
-    // <node> 
-    Assert.assertSame(1, pp.first());
-    Assert.assertEquals("a", pp.second());
-  }
-
   public void test_vararg1() throws Exception {
     String string = this.getString(new Pair<String, String>("a", "A"), new Pair<String, String>("b", "B"), new Pair<String, String>("c", "C"));
-    Assert.assertEquals("a=A, b=B, c=C", string);
-  }
-
-  public void test_vararg2() throws Exception {
-    String string = this.getString(new SharedPair<String, String>("a", "A"), new SharedPair<String, String>("b", "B"), new SharedPair<String, String>("c", "C"));
     Assert.assertEquals("a=A, b=B, c=C", string);
   }
 
@@ -200,14 +184,6 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("<42>", sample.getSample());
     ISample s = sample;
     Assert.assertEquals("<42>", s.getSample());
-  }
-
-  public String getString(SharedPair<String, String>... tuples) {
-    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<SharedPair<String, String>, String>() {
-      public String select(SharedPair<String, String> t) {
-        return t.first() + "=" + t.second();
-      }
-    }), ", ");
   }
 
   public String getString(Pair<String, String>... tuples) {
