@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.errors.messageTargets.ChildrenMessageTarget;
+import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -82,7 +82,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       cell.paintSelection(graphics, getColor(), false);
       repaintConflictedMessages(graphics, cell);
     } else {
-      if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
+      if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
         drawDeletedChild(graphics, cell);
       } else {
         Rectangle bounds = cell.getBounds();
@@ -114,8 +114,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   private void drawDeletedChild(Graphics graphics, EditorCell cell) {
     Rectangle bounds = cell.getBounds();
     if (myMessageTarget.getRole().equals(cell.getRole())) {
-      int index = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
-      assert index == ((ChildrenMessageTarget) myMessageTarget).getEndIndex();
+      int index = ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex();
       if (index != -1) {
         EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
 
@@ -172,17 +171,17 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   public Bounds getBounds(EditorComponent component) {
-    if (myMessageTarget.getTarget() != MessageTargetEnum.CHILDREN) {
+    if (myMessageTarget.getTarget() != MessageTargetEnum.DELETED_CHILD) {
       return getBoundsSuper(component);
     } else {
-      ChildrenMessageTarget cmt = ((ChildrenMessageTarget) myMessageTarget);
+      DeletedNodeMessageTarget cmt = ((DeletedNodeMessageTarget) myMessageTarget);
       EditorCell cell = getCell(component);
       if (cell == null) {
         return new Bounds(-1, -1);
       }
       if (cmt.getRole().equals(cell.getRole())) {
         if (hasChildrenWithDifferentNode(cell)) {
-          return getBoundsForChild((EditorCell_Collection) cell, cmt.getBeginIndex());
+          return getBoundsForChild((EditorCell_Collection) cell, cmt.getNextChildIndex());
         } else {
           return getBoundsSuper(component);
         }
@@ -326,7 +325,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       if (beginIndex == endIndex) {
         // delete nodes 
         id = parentId;
-        messageTarget = new ChildrenMessageTarget(role, beginIndex, beginIndex, changeChildren);
+        messageTarget = new DeletedNodeMessageTarget(role, beginIndex);
       } else {
         List<SNode> editedChildren = editedModel.getNodeById(parentId).getChildren(role);
         for (int i = beginIndex; i < endIndex; i++) {

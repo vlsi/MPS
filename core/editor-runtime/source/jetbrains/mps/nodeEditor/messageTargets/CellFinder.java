@@ -75,12 +75,9 @@ public class CellFinder {
   }
 
   @Nullable
-  public static EditorCell getCellForChild(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role, @Nullable Set<SNode> children) {
+  public static EditorCell getCellForChild(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role) {
     EditorCell rawCell = getRawCell(editorComponent, node);
     if (rawCell == null) {
-      if (children != null && editorComponent != null && children.contains(editorComponent.getEditedNode()) ) {
-        return editorComponent.getRootCell();
-      }
       return null;
     }
     EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {

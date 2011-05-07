@@ -21600,18 +21600,12 @@
                       </node>
                       <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6608786863704941925">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6608786863704941926">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~ChildrenMessageTarget%d&lt;init&gt;(java%dlang%dString,int,int,java%dutil%dList)" resolveInfo="ChildrenMessageTarget" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~DeletedNodeMessageTarget%d&lt;init&gt;(java%dlang%dString,int)" resolveInfo="DeletedNodeMessageTarget" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6608786863704941927">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6608786863704941645" resolveInfo="role" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6608786863704941928">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6608786863704941824" resolveInfo="beginIndex" />
-                          </node>
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6608786863704941931">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6608786863704941824" resolveInfo="beginIndex" />
-                          </node>
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6608786863704941930">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6608786863704941651" resolveInfo="changeChildren" />
                           </node>
                         </node>
                       </node>
@@ -22057,8 +22051,8 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~MessageTarget%dgetTarget()%cjetbrains%dmps%derrors%dmessageTargets%dMessageTargetEnum" resolveInfo="getTarget" />
                     </node>
                   </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="317966498942356861">
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="e759.~MessageTargetEnum%dCHILDREN" resolveInfo="CHILDREN" />
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4356718134454892690">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="e759.~MessageTargetEnum%dDELETED_CHILD" resolveInfo="DELETED_CHILD" />
                     <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="e759.~MessageTargetEnum" resolveInfo="MessageTargetEnum" />
                   </node>
                 </node>
@@ -22396,36 +22390,14 @@
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6993184913940256705">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vxft.~EditorMessageWithTarget%dmyMessageTarget" resolveInfo="myMessageTarget" />
                       </node>
-                      <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6993184913940256706">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e759.~ChildrenMessageTarget" resolveInfo="ChildrenMessageTarget" />
+                      <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4356718134454883168">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e759.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
                       </node>
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6993184913940256707">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~ChildrenMessageTarget%dgetBeginIndex()%cint" resolveInfo="getBeginIndex" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~DeletedNodeMessageTarget%dgetNextChildIndex()%cint" resolveInfo="getNextChildIndex" />
                   </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.AssertStatement" typeId="tpee.1160998861373" id="6993184913940256708">
-              <node role="condition" roleId="tpee.1160998896846" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="6993184913940256709">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6993184913940256710">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6993184913940256711">
-                    <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6993184913940256712">
-                      <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6993184913940256713">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vxft.~EditorMessageWithTarget%dmyMessageTarget" resolveInfo="myMessageTarget" />
-                      </node>
-                      <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6993184913940256714">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e759.~ChildrenMessageTarget" resolveInfo="ChildrenMessageTarget" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6993184913940256715">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~ChildrenMessageTarget%dgetEndIndex()%cint" resolveInfo="getEndIndex" />
-                  </node>
-                </node>
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6993184913940256716">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6993184913940256685" resolveInfo="index" />
                 </node>
               </node>
             </node>
@@ -23371,9 +23343,9 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~MessageTarget%dgetTarget()%cjetbrains%dmps%derrors%dmessageTargets%dMessageTargetEnum" resolveInfo="getTarget" />
               </node>
             </node>
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6993184913940243950">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4356718134454892689">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="e759.~MessageTargetEnum%dDELETED_CHILD" resolveInfo="DELETED_CHILD" />
               <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="e759.~MessageTargetEnum" resolveInfo="MessageTargetEnum" />
-              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="e759.~MessageTargetEnum%dCHILDREN" resolveInfo="CHILDREN" />
             </node>
           </node>
           <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6236996727608098671">
@@ -23381,16 +23353,16 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6993184913940243952">
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6993184913940243953">
                   <property name="name" nameId="tpck.1169194664001" value="cmt" />
-                  <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6993184913940243954">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e759.~ChildrenMessageTarget" resolveInfo="ChildrenMessageTarget" />
+                  <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4356718134454883170">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e759.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6993184913940243955">
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6993184913940243956">
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6993184913940243957">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vxft.~EditorMessageWithTarget%dmyMessageTarget" resolveInfo="myMessageTarget" />
                       </node>
-                      <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6993184913940243958">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e759.~ChildrenMessageTarget" resolveInfo="ChildrenMessageTarget" />
+                      <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4356718134454883171">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e759.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
                       </node>
                     </node>
                   </node>
@@ -23457,7 +23429,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6993184913940243953" resolveInfo="cmt" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6993184913940256679">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~ChildrenMessageTarget%dgetBeginIndex()%cint" resolveInfo="getBeginIndex" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~DeletedNodeMessageTarget%dgetNextChildIndex()%cint" resolveInfo="getNextChildIndex" />
                             </node>
                           </node>
                         </node>
@@ -23537,7 +23509,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6993184913940243953" resolveInfo="cmt" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6993184913940244132">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~ChildrenMessageTarget%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e759.~DeletedNodeMessageTarget%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6993184913940254607">
