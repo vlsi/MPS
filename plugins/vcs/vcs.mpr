@@ -22,6 +22,7 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${project}/jetbrains.mps.vcs.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.vcs.mergedriver/mergedriver.msd" folder="" />
     </projectModules>
     <genConfs>
       <genConfModule name="vcs" moduleRef="jetbrains.mps.vcs" />
