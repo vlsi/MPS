@@ -169,6 +169,16 @@
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6036237525966243744" />
     </node>
+    <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4816137365279714858">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="4816137365279714859" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4816137365279714860">
+        <property name="text" nameId="tpc2.1073389577007" value="show context:" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="2205814982759343480" resolveInfo="Header" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4816137365279714862">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8sls.6036237525966243739" resolveInfo="isShowContext" />
+      </node>
+    </node>
   </root>
   <root id="6036237525966315976">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="6036237525966315978">
