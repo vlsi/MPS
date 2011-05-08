@@ -456,7 +456,7 @@ public class Transformator {
         finished = false;
       } else {
         if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(binaryOperation, "leftExpression", true))) {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.RTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0a2a1a61_0().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.RTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0a2a1a61().createNode()))) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.RTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.RTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0a0a2a1a61().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q_0().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.LTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0a2a1a61().createNode()))) {
             SLinkOperations.setTarget(binaryOperation, "leftExpression", new Transformator.QuotationClass_rxfadt_a0a0a0a0a0a2a1a61().createNode(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
             finished = false;
           } else {
@@ -465,7 +465,7 @@ public class Transformator {
           }
         }
         if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(binaryOperation, "rightExpression", true))) {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.LTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0b0a2a1a61_0().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.LTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), new Transformator.QuotationClass_rxfadt_a1a0a0a0b0a2a1a61().createNode()))) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.LTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.LTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0b0a2a1a61().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), new Transformator.QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q_0().createNode())) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(binaryOperation.getChild(Transformator.RTYPE), new Transformator.QuotationClass_rxfadt_a1a0a0a0b0a2a1a61().createNode()))) {
             SLinkOperations.setTarget(binaryOperation, "rightExpression", new Transformator.QuotationClass_rxfadt_a0a0a0a0b0a2a1a61().createNode(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
             finished = false;
 
@@ -1140,26 +1140,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0a0a0a2a1a61 {
-    public QuotationClass_rxfadt_a1a0a0a0a0a2a1a61() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~PrimitiveValueProxy")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_rxfadt_a1a0a0a0a0a2a1a61_0 {
-    public QuotationClass_rxfadt_a1a0a0a0a0a2a1a61_0() {
+  public static class QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q {
+    public QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q() {
     }
 
     public SNode createNode() {
@@ -1176,8 +1158,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q {
-    public QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q() {
+  public static class QuotationClass_rxfadt_a1a0a0a0a0a0a2a1a61 {
+    public QuotationClass_rxfadt_a1a0a0a0a0a0a2a1a61() {
     }
 
     public SNode createNode() {
@@ -1187,6 +1169,42 @@ public class Transformator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q_0 {
+    public QuotationClass_rxfadt_a1a0a0a0a0a0c0b0q_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~PrimitiveValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_rxfadt_a1a0a0a0a0a2a1a61 {
+    public QuotationClass_rxfadt_a1a0a0a0a0a2a1a61() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
         result = quotedNode1_2;
       }
       return result;
@@ -1355,15 +1373,15 @@ public class Transformator {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~PrimitiveValueProxy")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
         result = quotedNode1_2;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q {
-    public QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q() {
+  public static class QuotationClass_rxfadt_a1a0a0a0a0b0a2a1a61 {
+    public QuotationClass_rxfadt_a1a0a0a0a0b0a2a1a61() {
     }
 
     public SNode createNode() {
@@ -1379,8 +1397,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0a0b0a2a1a61_0 {
-    public QuotationClass_rxfadt_a1a0a0a0b0a2a1a61_0() {
+  public static class QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q {
+    public QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q() {
     }
 
     public SNode createNode() {
@@ -1391,6 +1409,24 @@ public class Transformator {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q_0 {
+    public QuotationClass_rxfadt_a1a0a0a0a1a0c0b0q_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~PrimitiveValueProxy")));
         result = quotedNode1_2;
       }
       return result;
