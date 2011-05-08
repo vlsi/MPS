@@ -54,7 +54,6 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707832483" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707832508" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707832514" />
-    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707832554" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707832565" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707844815" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707847775" />
@@ -70,6 +69,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707965320" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707965330" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707965968" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1209025552055518728" />
   </roots>
   <root id="2712670354707830840">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707830841">
@@ -1133,24 +1133,6 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tp82.1522217801069635840" resolveInfo="ReduceFold_Test" />
     </node>
   </root>
-  <root id="2712670354707832554">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707832555">
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.baseLanguage.tuples.test" />
-      <property name="moduleID" nameId="pop3.1280144168199506910" value="993e3b08-9f44-43cf-b983-e474ac66855b" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832556">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.1238952260515" resolveInfo="IndexedTuples_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832557">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.1239714501613" resolveInfo="NamedTuples_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832559">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.1239977019775" resolveInfo="GenericNamedTuples_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832564">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.4483021482224672488" resolveInfo="ExtendedNamedTuples_Test" />
-    </node>
-  </root>
   <root id="2712670354707832565">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707832566">
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.debug.tests" />
@@ -1674,6 +1656,24 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707965977">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpk3.1178886476824" resolveInfo="XMLTreeSimple_Test" />
+    </node>
+  </root>
+  <root id="1209025552055518728">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1209025552055518729">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.baseLanguage.tuples.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="993e3b08-9f44-43cf-b983-e474ac66855b" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1209025552055518730">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.1238952260515" resolveInfo="IndexedTuples_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1209025552055518731">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.1239714501613" resolveInfo="NamedTuples_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1209025552055518732">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.1239977019775" resolveInfo="GenericNamedTuples_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1209025552055518733">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.4483021482224672488" resolveInfo="ExtendedNamedTuples_Test" />
     </node>
   </root>
 </model>

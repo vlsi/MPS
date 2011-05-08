@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TestModule_jetbrains_mps_baseLanguage_tuples_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test" />
   <unitInfo fileName="TestModule_ypath_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_ypath_test" />
   <unitInfo fileName="TestModule_jetbrains_mps_xml_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests" />
   <unitInfo fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest" />
@@ -15,7 +16,6 @@
   <unitInfo fileName="TestModule_jetbrains_mps_lang_editor_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests" />
   <unitInfo fileName="TestModule_jetbrains_mps_traceInfo_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test" />
   <unitInfo fileName="TestModule_jetbrains_mps_debug_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_debug_tests" />
-  <unitInfo fileName="TestModule_jetbrains_mps_baseLanguage_tuples_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test" />
   <unitInfo fileName="TestModule_internalCollections_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_internalCollections_test" />
   <unitInfo fileName="TestModule_collections_trove_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_collections_trove_test" />
   <unitInfo fileName="TestModule_collections_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_collections_unittest" />
