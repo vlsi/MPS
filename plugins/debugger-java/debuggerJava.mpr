@@ -15,20 +15,17 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="evaluation" />
-      <solutionPath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" folder="evaluation" />
-      <solutionPath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${mps_home}/core/debug-api/languages/api/api.mpl" folder="api" />
-      <languagePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" />
-      <languagePath path="${mps_home}/core/debug/languages/evaluation/evaluation.mpl" folder="evaluation" />
-      <languagePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="evaluation" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="evaluation" />
+      <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" folder="evaluation" />
+      <modulePath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
+      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
+      <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" folder="api" />
+      <modulePath path="${mps_home}/core/debug/languages/customViewers/customViewers.mpl" />
+      <modulePath path="${mps_home}/core/debug/languages/evaluation/evaluation.mpl" folder="evaluation" />
+      <modulePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="evaluation" />
+    </projectModules>
     <genConfs>
       <genConfModule name="customViewers" moduleRef="jetbrains.mps.debug.customViewers" />
       <genConfModule name="evaluation" moduleRef="jetbrains.mps.debug.evaluation" />
