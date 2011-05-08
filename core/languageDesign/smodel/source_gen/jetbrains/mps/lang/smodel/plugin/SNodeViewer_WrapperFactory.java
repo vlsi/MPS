@@ -71,8 +71,10 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
         }
       }
 
-      for (IObjectValueProxy child : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getChildren", "(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;", getThreadReference(), value)))) {
-        result.add(new SNodeWatchables.MyWatchable_child(JavaObjectValue.fromJDIValue(child.getJDIValue(), getThreadReference()), "child"));
+      IObjectValueProxy currentChild = ((IObjectValueProxy) value.getFieldValue("myFirstChild"));
+      while (!(ProxyEqualsUtil.javaEquals(currentChild, null))) {
+        result.add(new SNodeWatchables.MyWatchable_child(JavaObjectValue.fromJDIValue(currentChild.getJDIValue(), getThreadReference()), "child"));
+        currentChild = ((IObjectValueProxy) currentChild.getFieldValue("myNextSibling"));
       }
 
       IArrayValueProxy references = ((IArrayValueProxy) value.getFieldValue("myReferences"));

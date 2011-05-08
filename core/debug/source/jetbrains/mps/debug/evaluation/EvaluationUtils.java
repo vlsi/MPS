@@ -129,6 +129,9 @@ public class EvaluationUtils {
 
   public static boolean isInstanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException {
     if (jniSignature.equals("Ljava/lang/Object;")) return true;
+    if (what.signature().equals(jniSignature)) {
+      return true;
+    }
     return EvaluationUtils.handleInvocationExceptions(new Invocatable<Boolean>() {
       @Override
       public Boolean invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException {
@@ -302,7 +305,7 @@ public class EvaluationUtils {
       return invocatable.invoke();
     } catch (InvocationException e) {
       if (invocatable instanceof ThreadInvocatable) {
-        throw new TargetVMEvaluationException(e, ((ThreadInvocatable)invocatable).getCurrentThreadReference());
+        throw new TargetVMEvaluationException(e, ((ThreadInvocatable) invocatable).getCurrentThreadReference());
       } else {
         throw new TargetVMEvaluationException(e);
       }
