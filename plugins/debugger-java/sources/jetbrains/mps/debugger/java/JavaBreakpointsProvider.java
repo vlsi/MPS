@@ -18,13 +18,13 @@ package jetbrains.mps.debugger.java;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
-import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.BreakpointManagerListener;
+import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.debug.breakpoints.*;
@@ -50,16 +50,28 @@ import java.util.Map;
 
 public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpoint, JavaBreakpointKind> {
   private final Map<IBreakpoint, Icon> myBreakpointsIconsCache = new HashMap<IBreakpoint, Icon>();
-  private final BreakpointManagerListener myBreakpointsListener = new BreakpointManagerListener() {
+  private final IBreakpointListener myBreakpointListener = new IBreakpointListener() {
     @Override
-    public void breakpointsChanged() {
-      myBreakpointsIconsCache.clear();
+    public void breakpointEnabledStateToggled(IBreakpoint breakpoint, boolean enabled) {
+      myBreakpointsIconsCache.remove(breakpoint); //todo centralize all listeners
+    }
+  };
+  private final IBreakpointManagerListener myBreakpointsManagerListener = new IBreakpointManagerListener() {
+    @Override
+    public void breakpointAdded(@NotNull IBreakpoint breakpoint) {
+      breakpoint.addBreakpointListener(myBreakpointListener);
+    }
+
+    @Override
+    public void breakpointRemoved(@NotNull IBreakpoint breakpoint) {
+      breakpoint.removeBreakpointListener(myBreakpointListener);
+      myBreakpointsIconsCache.remove(breakpoint);
     }
   };
   private final ProjectManagerAdapter myProjectListener = new ProjectManagerAdapter() {
     @Override
     public void projectOpened(Project project) {
-      BreakpointManagerComponent.getInstance(project).addChangeListener(myBreakpointsListener);
+      BreakpointManagerComponent.getInstance(project).addChangeListener(myBreakpointsManagerListener);
     }
 
     @Override
@@ -68,7 +80,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
 
     @Override
     public void projectClosing(Project project) {
-      BreakpointManagerComponent.getInstance(project).removeChangeListener(myBreakpointsListener);
+      BreakpointManagerComponent.getInstance(project).removeChangeListener(myBreakpointsManagerListener);
     }
   };
 
@@ -124,6 +136,12 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   @Override
   @Nullable
   public JavaBreakpoint loadFromState(Element state, JavaBreakpointKind kind, final Project project) {
+    final JavaBreakpoint javaBreakpoint = loadFromStateInternal(state, kind, project);
+    javaBreakpoint.addBreakpointListener(myBreakpointListener);
+    return javaBreakpoint;
+  }
+
+  private JavaBreakpoint loadFromStateInternal(Element state, JavaBreakpointKind kind, Project project) {
     switch (kind) {
       case LINE_BREAKPOINT: {
         final JavaBreakpointInfo breakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
