@@ -3,8 +3,8 @@
   <dependency className="jetbrains.mps.debugger.java.run.sandbox.BaseClass" file="BaseClass.java" />
   <dependency className="jetbrains.mps.debugger.java.run.sandbox.Data" file="Data.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
   </dependency>
@@ -28,12 +28,12 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.run.sandbox.DebugObjects" file="DebugObjects.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.run.sandbox.Data" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.run.sandbox.Data" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.run.sandbox.DerivedClass" file="DerivedClass.java">
     <classNode dependClassName="java.lang.Integer" />

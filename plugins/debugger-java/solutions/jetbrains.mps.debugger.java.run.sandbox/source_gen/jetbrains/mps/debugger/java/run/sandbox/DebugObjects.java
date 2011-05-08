@@ -15,6 +15,8 @@ public class DebugObjects {
     this.myNonStaticField = myStaticField;
     Data tuple = new Data("42", "239");
     Tuples._2<Integer, String> indexedTuple = MultiTuple.<Integer,String>from(2, "4");
+    boolean var = true;
+    System.err.println(var);
     System.err.println("tuple = " + tuple);
     System.err.println("tuple = " + indexedTuple);
   }

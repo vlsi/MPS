@@ -53,7 +53,7 @@
   </root>
   <root nodeId="7757449281563189239">
     <nodeInfo nodeId="7757449281563189386" fileName="AbstractEvaluationModel.java" startLine="62" startPosition="47" endLine="63" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EVALUATOR_NAME" />
-    <nodeInfo nodeId="7757449281563189907" fileName="AbstractEvaluationModel.java" startLine="63" startPosition="67" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IS_DEVELOPER_MODE" />
+    <nodeInfo nodeId="7757449281563189907" fileName="AbstractEvaluationModel.java" startLine="63" startPosition="67" endLine="64" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IS_DEVELOPER_MODE" />
     <nodeInfo nodeId="7757449281563189400" fileName="AbstractEvaluationModel.java" startLine="65" startPosition="0" endLine="66" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUiState" />
     <nodeInfo nodeId="7757449281563189403" fileName="AbstractEvaluationModel.java" startLine="66" startPosition="34" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
     <nodeInfo nodeId="7757449281563189406" fileName="AbstractEvaluationModel.java" startLine="67" startPosition="46" endLine="68" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
