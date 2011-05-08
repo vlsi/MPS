@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverInstaller" file="MergeDriverInstaller.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.io.RandomAccessFile" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="java.io.PrintWriter" />
+    <classNode dependClassName="java.io.FileNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverMain" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsRoot" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.util.Scanner" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverMain" file="MergeDriverMain.java">
     <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

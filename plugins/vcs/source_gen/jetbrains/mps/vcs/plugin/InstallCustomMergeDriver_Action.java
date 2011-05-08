@@ -8,34 +8,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.vcs.mergedriver.MergeDriverInstaller;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import com.intellij.openapi.vcs.VcsRoot;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.WorkbenchPathManager;
-import java.io.File;
-import com.intellij.openapi.ui.Messages;
-import java.util.Scanner;
-import java.io.RandomAccessFile;
-import jetbrains.mps.vcs.mergedriver.MergeDriverMain;
-import java.io.IOException;
-import jetbrains.mps.util.NameUtil;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import java.io.PrintWriter;
 
 public class InstallCustomMergeDriver_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -48,11 +25,7 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return Sequence.fromIterable(Sequence.fromArray(((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectLevelVcsManager.class).getAllVcsRoots())).any(new IWhereFilter<VcsRoot>() {
-      public boolean accept(VcsRoot root) {
-        return "Git".equals(root.vcs.getName());
-      }
-    });
+    return MergeDriverInstaller.isApplicable(((Project) MapSequence.fromMap(_params).get("project")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -82,190 +55,11 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-
-      String globalConfigPath = WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig";
-      if (!(new File(globalConfigPath).exists())) {
-        Messages.showErrorDialog(((Project) MapSequence.fromMap(_params).get("project")), "Git config (~/.gitconfig) file is not present", "No Git Config");
-        return;
-      }
-      boolean globalAlreadyInstalled = false;
-      Scanner sc = new Scanner(new File(globalConfigPath));
-      while (sc.hasNextLine()) {
-        String line = sc.nextLine();
-        if (line.matches("\\s*\\[merge\\s+\"mps\"\\]\\s*")) {
-          globalAlreadyInstalled = true;
-          break;
-        }
-      }
-      sc.close();
-      if (!(globalAlreadyInstalled)) {
-        RandomAccessFile raf = null;
-        try {
-          raf = new RandomAccessFile(globalConfigPath, "rw");
-          raf.seek(raf.length());
-          String stringToWrite = "\n[merge \"mps\"]\tname = MPS merge driver\n\tdriver = %s %%O %%A %%B %%L\n";
-          stringToWrite = String.format(stringToWrite, MergeDriverMain.getCommandLine());
-          stringToWrite = stringToWrite.replace("\n", System.getProperty("line.separator"));
-          stringToWrite = stringToWrite.replace("\\", "\\\\");
-          raf.write(stringToWrite.getBytes("utf-8"));
-          raf.close();
-        } catch (IOException e) {
-          if (log.isErrorEnabled()) {
-            log.error("Writing gitconfig file failed", e);
-          }
-          Messages.showErrorDialog(((Project) MapSequence.fromMap(_params).get("project")), "Writing gitconfig file failed because of IOException:" + e.getMessage(), "Writing .gitconfig Failed");
-          return;
-        } finally {
-          if (raf != null) {
-            try {
-              raf.close();
-            } catch (IOException e) {
-              if (log.isErrorEnabled()) {
-                log.error("Exception during close", e);
-              }
-            }
-          }
-        }
-      }
-
-      String globalMessage = (globalAlreadyInstalled ?
-        "Global merge driver is already installed." :
-        "Global merge driver have been successfully installed."
-      );
-
-      Iterable<VcsRoot> rootsToUpdate = Sequence.fromIterable(Sequence.fromArray(((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectLevelVcsManager.class).getAllVcsRoots())).where(new IWhereFilter<VcsRoot>() {
-        public boolean accept(VcsRoot root) {
-          return "Git".equals(root.vcs.getName()) && !(InstallCustomMergeDriver_Action.this.isAlreadyInstalled(root.path, _params));
-        }
-      });
-      if (Sequence.fromIterable(rootsToUpdate).isEmpty()) {
-        Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), globalMessage, "Merge Driver");
-        return;
-      }
-
-      String repositories = NameUtil.formatNumericalString(Sequence.fromIterable(rootsToUpdate).count(), "Git repository");
-      int answer = Messages.showYesNoDialog(((Project) MapSequence.fromMap(_params).get("project")), globalMessage + "\nDo you want to to update MPS files attributes in the following Git repositories?\n" + StringUtils.join(Sequence.fromIterable(rootsToUpdate).<String>select(new ISelector<VcsRoot, String>() {
-        public String select(VcsRoot r) {
-          return r.path.getPath();
-        }
-      }).toListSequence(), "\n"), "Update Git " + ((Sequence.fromIterable(rootsToUpdate).count() == 1 ?
-        "Repository" :
-        "Repositories"
-      )), null);
-      if (answer == 0) {
-        Sequence.fromIterable(rootsToUpdate).visitAll(new IVisitor<VcsRoot>() {
-          public void visit(VcsRoot root) {
-            InstallCustomMergeDriver_Action.this.install(root.path, _params);
-          }
-        });
-        Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "Successfully updated attributes for " + repositories, "Attributes");
-      }
+      MergeDriverInstaller.installWhereNeeded(((Project) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "InstallCustomMergeDriver", t);
       }
-    }
-  }
-
-  private boolean isAlreadyInstalled(VirtualFile path, final Map<String, Object> _params) {
-    return InstallCustomMergeDriver_Action.this.install(path, true, _params);
-  }
-
-  private void install(VirtualFile path, final Map<String, Object> _params) {
-    InstallCustomMergeDriver_Action.this.install(path, false, _params);
-  }
-
-  private boolean install(VirtualFile path, boolean dryRun, final Map<String, Object> _params) {
-    VirtualFile attributesFile = path.findChild(".gitattributes");
-    if (attributesFile == null || attributesFile.isDirectory()) {
-      return false;
-    }
-    try {
-      final Wrappers._T<List<String>> lines = new Wrappers._T<List<String>>(ListSequence.fromList(new ArrayList<String>()));
-      if (attributesFile.exists()) {
-        final Scanner sc = new Scanner(attributesFile.getInputStream());
-        lines.value = Sequence.fromIterable(new _FunctionTypes._return_P0_E0<Iterable<String>>() {
-          public Iterable<String> invoke() {
-            return new Iterable<String>() {
-              public Iterator<String> iterator() {
-                return new YieldingIterator<String>() {
-                  private int __CP__ = 0;
-
-                  protected boolean moveToNext() {
-__loop__:
-                    do {
-__switch__:
-                      switch (this.__CP__) {
-                        case -1:
-                          assert false : "Internal error";
-                          return false;
-                        case 2:
-                          if (sc.hasNextLine()) {
-                            this.__CP__ = 3;
-                            break;
-                          }
-                          this.__CP__ = 1;
-                          break;
-                        case 4:
-                          this.__CP__ = 2;
-                          this.yield(((String) sc.nextLine()));
-                          return true;
-                        case 0:
-                          this.__CP__ = 2;
-                          break;
-                        case 3:
-                          this.__CP__ = 4;
-                          break;
-                        default:
-                          break __loop__;
-                      }
-                    } while (true);
-                    return false;
-                  }
-                };
-              }
-            };
-          }
-        }.invoke()).toListSequence();
-        sc.close();
-      }
-
-      List<String> extensions = ListSequence.fromListAndArray(new ArrayList<String>(), "mps", "mpl", "msd");
-      if (dryRun) {
-        return ListSequence.fromList(extensions).all(new IWhereFilter<String>() {
-          public boolean accept(final String ext) {
-            return ListSequence.fromList(lines.value).any(new IWhereFilter<String>() {
-              public boolean accept(String line) {
-                return line.matches("\\s*\\*\\." + ext + ".+merge=mps\\s*");
-              }
-            });
-          }
-        });
-      }
-      ListSequence.fromList(extensions).visitAll(new IVisitor<String>() {
-        public void visit(String ext) {
-          boolean updated = false;
-          for (int i = 0; i < ListSequence.fromList(lines.value).count(); i++) {
-            if (ListSequence.fromList(lines.value).getElement(i).matches("\\s*\\*\\." + ext + ".*") && !(ListSequence.fromList(lines.value).getElement(i).contains("merge=mps"))) {
-              ListSequence.fromList(lines.value).setElement(i, ListSequence.fromList(lines.value).getElement(i) + " merge=mps");
-              updated = true;
-            }
-          }
-          if (!(updated)) {
-            ListSequence.fromList(lines.value).addElement("*." + ext + " merge=mps");
-          }
-        }
-      });
-      final PrintWriter wr = new PrintWriter(attributesFile.getOutputStream(null));
-      ListSequence.fromList(lines.value).visitAll(new IVisitor<String>() {
-        public void visit(String line) {
-          wr.println(line);
-        }
-      });
-      wr.close();
-      return true;
-    } catch (IOException e) {
-      return false;
     }
   }
 }
