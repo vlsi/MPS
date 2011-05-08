@@ -6423,29 +6423,15 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8638796163619040059" resolveInfo="sum" />
                   </node>
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1555673226663390354">
-                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1555673226663390355">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
-                    </node>
+                    <node role="type" roleId="tpee.1070534934091" type="tpee.StringType" typeId="tpee.1225271177708" id="4587766555754816245" />
                     <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="1555673226663390356">
                       <property name="methodName" nameId="tp68.1174294288199" value="getJavaValue" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1555673226663390357">
                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                       </node>
-                      <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="1555673226663390358">
-                        <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
-                        <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1555673226663390359">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="l352.~IValueProxy" resolveInfo="IValueProxy" />
-                        </node>
-                        <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1555673226663390360">
-                          <node role="expression" roleId="tpee.1079359253376" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1555673226663390374">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8638796163619040063" resolveInfo="s" />
-                          </node>
-                        </node>
-                        <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1555673226663390372">
-                          <property name="value" nameId="tpee.1070475926801" value="toString" />
-                        </node>
-                        <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1555673226663390373">
-                          <property name="value" nameId="tpee.1070475926801" value="()Ljava/lang/String;" />
+                      <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="4587766555754837069">
+                        <node role="expression" roleId="tpee.1079359253376" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4587766555754837071">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8638796163619040063" resolveInfo="s" />
                         </node>
                       </node>
                     </node>
