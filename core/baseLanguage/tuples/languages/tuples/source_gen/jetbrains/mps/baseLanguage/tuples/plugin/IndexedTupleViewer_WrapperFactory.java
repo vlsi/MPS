@@ -72,7 +72,7 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
     }
 
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
-      return "tuple " + (String) (((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;"))).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue();
+      return "tuple " + (String) (((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;"))).getJavaValue();
     }
   }
 }

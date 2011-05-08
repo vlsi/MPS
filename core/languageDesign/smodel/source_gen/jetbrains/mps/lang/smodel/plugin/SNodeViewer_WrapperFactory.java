@@ -96,11 +96,11 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
       IObjectValueProxy containingRole = ((IObjectValueProxy) value.getFieldValue("myRoleInParent"));
       if (!(ProxyEqualsUtil.javaEquals(containingRole, null))) {
-        containingRole = ((IObjectValueProxy) MirrorUtil.getValueProxyFromJavaValue(" in role: " + (String) (containingRole).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue(), getThreadReference()));
+        containingRole = ((IObjectValueProxy) MirrorUtil.getValueProxyFromJavaValue(" in role: " + (String) (containingRole).getJavaValue(), getThreadReference()));
       } else {
         containingRole = ((IObjectValueProxy) MirrorUtil.getValueProxyFromJavaValue("", getThreadReference()));
       }
-      return "node<" + (String) (((IObjectValueProxy) value.getFieldValue("myConceptFqName"))).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue() + ">" + (String) (containingRole).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue();
+      return "node<" + (String) (((IObjectValueProxy) value.getFieldValue("myConceptFqName"))).getJavaValue() + ">" + (String) (containingRole).getJavaValue();
     }
   }
 }

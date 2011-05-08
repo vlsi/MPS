@@ -76,10 +76,10 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
       IObjectValueProxy entryValue = ((IObjectValueProxy) value.invokeMethod("getValue", "()Ljava/lang/Object;"));
       return "[" + ((ProxyEqualsUtil.javaEquals(key, null) ?
         "null" :
-        key
+        ((IObjectValueProxy) key.invokeMethod("toString", "()Ljava/lang/String;"))
       )) + "] = " + ((ProxyEqualsUtil.javaEquals(entryValue, null) ?
         "null" :
-        entryValue
+        ((IObjectValueProxy) entryValue.invokeMethod("toString", "()Ljava/lang/String;"))
       ));
     }
   }
