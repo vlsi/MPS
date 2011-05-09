@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -44,7 +44,7 @@ public class SearchScopesChecker extends SpecificChecker {
       })) {
         SNode targetNode = SLinkOperations.getTargetNode(ref);
         try {
-          SNode genuineLinkDeclaration = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(SLinkOperations.findLinkDeclaration(ref));
+          SNode genuineLinkDeclaration = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.findLinkDeclaration(ref), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_getGenuineLink_1213877254523", new Class[]{SNode.class}));
 
           IModule thisModelModule = model.getModelDescriptor().getModule();
           if (checkScope(concept, node, targetNode, genuineLinkDeclaration, operationContext)) {

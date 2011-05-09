@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 
@@ -46,7 +46,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
           if (targetSModelReference != null && targetSModelReference.getStereotype().equals("java_stub")) {
             SNode target = SLinkOperations.getTargetNode(ref);
             if ((target != null) && SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-              String qualifiedName = INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+              String qualifiedName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
               if ("jetbrains.mps.smodel.INodeAdapter".equals(qualifiedName) || "jetbrains.mps.smodel.BaseAdapter".equals(qualifiedName)) {
                 addIssue(results, node, "Reference to " + qualifiedName + " in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
               }

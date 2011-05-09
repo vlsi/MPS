@@ -3596,196 +3596,196 @@
     <scopeInfo nodeId="314042019269983284" fileName="FoldSelection_Action.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
   </root>
   <root nodeId="7824118464175996831">
-    <nodeInfo nodeId="7824118464175996921" fileName="BaseAddMethodDialog.java" startLine="43" startPosition="62" endLine="44" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="7824118464175996934" fileName="BaseAddMethodDialog.java" startLine="46" startPosition="37" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175996947" fileName="BaseAddMethodDialog.java" startLine="51" startPosition="109" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7824118464175996950" fileName="BaseAddMethodDialog.java" startLine="52" startPosition="28" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175996956" fileName="BaseAddMethodDialog.java" startLine="53" startPosition="24" endLine="54" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175996978" fileName="BaseAddMethodDialog.java" startLine="56" startPosition="49" endLine="57" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997000" fileName="BaseAddMethodDialog.java" startLine="61" startPosition="50" endLine="62" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997013" fileName="BaseAddMethodDialog.java" startLine="67" startPosition="48" endLine="68" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997020" fileName="BaseAddMethodDialog.java" startLine="68" startPosition="54" endLine="69" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997029" fileName="BaseAddMethodDialog.java" startLine="69" startPosition="46" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997038" fileName="BaseAddMethodDialog.java" startLine="70" startPosition="44" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997044" fileName="BaseAddMethodDialog.java" startLine="74" startPosition="32" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997169" fileName="BaseAddMethodDialog.java" startLine="90" startPosition="40" endLine="91" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448048380177" fileName="BaseAddMethodDialog.java" startLine="92" startPosition="79" endLine="93" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448048380205" fileName="BaseAddMethodDialog.java" startLine="94" startPosition="5" endLine="95" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448048421992" fileName="BaseAddMethodDialog.java" startLine="95" startPosition="52" endLine="96" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448048504062" fileName="BaseAddMethodDialog.java" startLine="96" startPosition="100" endLine="97" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448048422069" fileName="BaseAddMethodDialog.java" startLine="99" startPosition="44" endLine="100" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448048484602" fileName="BaseAddMethodDialog.java" startLine="102" startPosition="15" endLine="103" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448048503896" fileName="BaseAddMethodDialog.java" startLine="103" startPosition="51" endLine="104" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448048504006" fileName="BaseAddMethodDialog.java" startLine="104" startPosition="107" endLine="105" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448048503936" fileName="BaseAddMethodDialog.java" startLine="107" startPosition="46" endLine="108" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448048504013" fileName="BaseAddMethodDialog.java" startLine="110" startPosition="17" endLine="111" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448048504068" fileName="BaseAddMethodDialog.java" startLine="112" startPosition="7" endLine="113" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448048504080" fileName="BaseAddMethodDialog.java" startLine="114" startPosition="5" endLine="115" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997297" fileName="BaseAddMethodDialog.java" startLine="118" startPosition="82" endLine="119" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997308" fileName="BaseAddMethodDialog.java" startLine="122" startPosition="43" endLine="123" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997314" fileName="BaseAddMethodDialog.java" startLine="123" startPosition="24" endLine="124" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997320" fileName="BaseAddMethodDialog.java" startLine="124" startPosition="23" endLine="125" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997326" fileName="BaseAddMethodDialog.java" startLine="125" startPosition="29" endLine="126" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997334" fileName="BaseAddMethodDialog.java" startLine="126" startPosition="53" endLine="127" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997345" fileName="BaseAddMethodDialog.java" startLine="128" startPosition="35" endLine="129" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997347" fileName="BaseAddMethodDialog.java" startLine="130" startPosition="5" endLine="131" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997354" fileName="BaseAddMethodDialog.java" startLine="131" startPosition="49" endLine="132" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997369" fileName="BaseAddMethodDialog.java" startLine="132" startPosition="101" endLine="133" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997380" fileName="BaseAddMethodDialog.java" startLine="133" startPosition="123" endLine="134" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997387" fileName="BaseAddMethodDialog.java" startLine="134" startPosition="54" endLine="135" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997393" fileName="BaseAddMethodDialog.java" startLine="135" startPosition="47" endLine="136" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997399" fileName="BaseAddMethodDialog.java" startLine="136" startPosition="51" endLine="137" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997405" fileName="BaseAddMethodDialog.java" startLine="137" startPosition="56" endLine="138" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997411" fileName="BaseAddMethodDialog.java" startLine="142" startPosition="22" endLine="143" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997426" fileName="BaseAddMethodDialog.java" startLine="145" startPosition="25" endLine="146" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4110797572879836596" fileName="BaseAddMethodDialog.java" startLine="146" startPosition="98" endLine="147" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997458" fileName="BaseAddMethodDialog.java" startLine="149" startPosition="90" endLine="150" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648674000049788333" fileName="BaseAddMethodDialog.java" startLine="154" startPosition="108" endLine="155" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997467" fileName="BaseAddMethodDialog.java" startLine="157" startPosition="11" endLine="158" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997480" fileName="BaseAddMethodDialog.java" startLine="159" startPosition="32" endLine="160" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997527" fileName="BaseAddMethodDialog.java" startLine="162" startPosition="34" endLine="163" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997536" fileName="BaseAddMethodDialog.java" startLine="163" startPosition="38" endLine="164" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997489" fileName="BaseAddMethodDialog.java" startLine="165" startPosition="16" endLine="166" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997502" fileName="BaseAddMethodDialog.java" startLine="166" startPosition="56" endLine="167" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997511" fileName="BaseAddMethodDialog.java" startLine="167" startPosition="38" endLine="168" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997518" fileName="BaseAddMethodDialog.java" startLine="168" startPosition="34" endLine="169" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997547" fileName="BaseAddMethodDialog.java" startLine="176" startPosition="26" endLine="177" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175996837" fileName="BaseAddMethodDialog.java" startLine="180" startPosition="57" endLine="181" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="7824118464175996845" fileName="BaseAddMethodDialog.java" startLine="183" startPosition="37" endLine="184" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7824118464175996847" fileName="BaseAddMethodDialog.java" startLine="184" startPosition="18" endLine="185" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175996853" fileName="BaseAddMethodDialog.java" startLine="185" startPosition="20" endLine="186" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175996863" fileName="BaseAddMethodDialog.java" startLine="186" startPosition="46" endLine="187" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175996877" fileName="BaseAddMethodDialog.java" startLine="191" startPosition="58" endLine="192" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
-    <nodeInfo nodeId="7824118464175996885" fileName="BaseAddMethodDialog.java" startLine="194" startPosition="41" endLine="195" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7824118464175996887" fileName="BaseAddMethodDialog.java" startLine="195" startPosition="18" endLine="196" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175996893" fileName="BaseAddMethodDialog.java" startLine="196" startPosition="24" endLine="197" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175996903" fileName="BaseAddMethodDialog.java" startLine="197" startPosition="48" endLine="198" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175996917" fileName="BaseAddMethodDialog.java" startLine="201" startPosition="30" endLine="202" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997050" fileName="BaseAddMethodDialog.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#()Ljava/util/List;" />
-    <nodeInfo nodeId="7824118464175997055" fileName="BaseAddMethodDialog.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareMethods#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="7824118464175997063" fileName="BaseAddMethodDialog.java" startLine="81" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="7824118464175997071" fileName="BaseAddMethodDialog.java" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464175997085" fileName="BaseAddMethodDialog.java" startLine="85" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="7824118464175997093" fileName="BaseAddMethodDialog.java" startLine="87" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7824118464175996971" fileName="BaseAddMethodDialog.java" startLine="55" startPosition="45" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448048380167" fileName="BaseAddMethodDialog.java" startLine="91" startPosition="77" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7824118464175997340" fileName="BaseAddMethodDialog.java" startLine="127" startPosition="69" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464175997451" fileName="BaseAddMethodDialog.java" startLine="148" startPosition="37" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464175997475" fileName="BaseAddMethodDialog.java" startLine="158" startPosition="94" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464175996930" fileName="BaseAddMethodDialog.java" startLine="45" startPosition="42" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
-    <nodeInfo nodeId="7824118464175996994" fileName="BaseAddMethodDialog.java" startLine="60" startPosition="56" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="7824118464175997040" fileName="BaseAddMethodDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshTree#()V" />
-    <nodeInfo nodeId="5797068448048422067" fileName="BaseAddMethodDialog.java" startLine="98" startPosition="91" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="5797068448048503921" fileName="BaseAddMethodDialog.java" startLine="106" startPosition="87" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="7824118464175997293" fileName="BaseAddMethodDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="7648674000049788325" fileName="BaseAddMethodDialog.java" startLine="153" startPosition="92" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/ide/actions/BaseAddMethodDialog/MethodTreeNode;Ljetbrains/mps/ide/actions/BaseAddMethodDialog/MethodTreeNode;)I" />
-    <nodeInfo nodeId="7824118464175996913" fileName="BaseAddMethodDialog.java" startLine="200" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethod#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464175996924" fileName="BaseAddMethodDialog.java" startLine="44" startPosition="34" endLine="49" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="7824118464175996964" fileName="BaseAddMethodDialog.java" startLine="54" startPosition="45" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7824118464175996985" fileName="BaseAddMethodDialog.java" startLine="59" startPosition="5" endLine="64" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997446" fileName="BaseAddMethodDialog.java" startLine="147" startPosition="138" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7648674000049788318" fileName="BaseAddMethodDialog.java" startLine="152" startPosition="9" endLine="157" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997487" fileName="BaseAddMethodDialog.java" startLine="165" startPosition="14" endLine="170" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7824118464175997543" fileName="BaseAddMethodDialog.java" startLine="174" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
-    <nodeInfo nodeId="7824118464175996840" fileName="BaseAddMethodDialog.java" startLine="182" startPosition="0" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7824118464175996880" fileName="BaseAddMethodDialog.java" startLine="193" startPosition="0" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodTreeNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7824118464175997008" fileName="BaseAddMethodDialog.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolbarActions#()Ljava/util/List;" />
-    <nodeInfo nodeId="5797068448048503911" fileName="BaseAddMethodDialog.java" startLine="105" startPosition="94" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7824118464175997481" fileName="BaseAddMethodDialog.java" startLine="161" startPosition="9" endLine="170" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464175996938" fileName="BaseAddMethodDialog.java" startLine="50" startPosition="0" endLine="65" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseAddMethodDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5797068448048422060" fileName="BaseAddMethodDialog.java" startLine="97" startPosition="52" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7824118464175997304" fileName="BaseAddMethodDialog.java" startLine="121" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7824118464175997097" fileName="BaseAddMethodDialog.java" startLine="89" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildOurTree#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
-    <nodeInfo nodeId="7824118464175997422" fileName="BaseAddMethodDialog.java" startLine="144" startPosition="67" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7824118464175997415" fileName="BaseAddMethodDialog.java" startLine="143" startPosition="14" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997407" fileName="BaseAddMethodDialog.java" startLine="140" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
-    <scopeInfo nodeId="7824118464175996933" fileName="BaseAddMethodDialog.java" startLine="46" startPosition="37" endLine="47" endPosition="30" />
-    <scopeInfo nodeId="7824118464175996977" fileName="BaseAddMethodDialog.java" startLine="56" startPosition="49" endLine="57" endPosition="39" />
-    <scopeInfo nodeId="7824118464175996999" fileName="BaseAddMethodDialog.java" startLine="61" startPosition="50" endLine="62" endPosition="15" />
-    <scopeInfo nodeId="7824118464175997043" fileName="BaseAddMethodDialog.java" startLine="74" startPosition="32" endLine="75" endPosition="26" />
-    <scopeInfo nodeId="5797068448048380170" fileName="BaseAddMethodDialog.java" startLine="92" startPosition="79" endLine="93" endPosition="64" />
-    <scopeInfo nodeId="5797068448048422068" fileName="BaseAddMethodDialog.java" startLine="99" startPosition="44" endLine="100" endPosition="39" />
-    <scopeInfo nodeId="5797068448048503922" fileName="BaseAddMethodDialog.java" startLine="107" startPosition="46" endLine="108" endPosition="38" />
-    <scopeInfo nodeId="5797068448048503914" fileName="BaseAddMethodDialog.java" startLine="110" startPosition="17" endLine="111" endPosition="65" />
-    <scopeInfo nodeId="7824118464175997296" fileName="BaseAddMethodDialog.java" startLine="118" startPosition="82" endLine="119" endPosition="77" />
-    <scopeInfo nodeId="7824118464175997344" fileName="BaseAddMethodDialog.java" startLine="128" startPosition="35" endLine="129" endPosition="24" />
-    <scopeInfo nodeId="7824118464175997457" fileName="BaseAddMethodDialog.java" startLine="149" startPosition="90" endLine="150" endPosition="124" />
-    <scopeInfo nodeId="7648674000049788332" fileName="BaseAddMethodDialog.java" startLine="154" startPosition="108" endLine="155" endPosition="66" />
-    <scopeInfo nodeId="7824118464175997479" fileName="BaseAddMethodDialog.java" startLine="159" startPosition="32" endLine="160" endPosition="17" />
-    <scopeInfo nodeId="7824118464175997546" fileName="BaseAddMethodDialog.java" startLine="176" startPosition="26" endLine="177" endPosition="14" />
-    <scopeInfo nodeId="7824118464175996916" fileName="BaseAddMethodDialog.java" startLine="201" startPosition="30" endLine="202" endPosition="22" />
-    <scopeInfo nodeId="7824118464175997050" fileName="BaseAddMethodDialog.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997055" fileName="BaseAddMethodDialog.java" startLine="79" startPosition="0" endLine="81" endPosition="0">
+    <nodeInfo nodeId="7824118464175996921" fileName="BaseAddMethodDialog.java" startLine="44" startPosition="62" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
+    <nodeInfo nodeId="7824118464175996934" fileName="BaseAddMethodDialog.java" startLine="47" startPosition="37" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175996947" fileName="BaseAddMethodDialog.java" startLine="52" startPosition="109" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7824118464175996950" fileName="BaseAddMethodDialog.java" startLine="53" startPosition="28" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175996956" fileName="BaseAddMethodDialog.java" startLine="54" startPosition="24" endLine="55" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175996978" fileName="BaseAddMethodDialog.java" startLine="57" startPosition="49" endLine="58" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997000" fileName="BaseAddMethodDialog.java" startLine="62" startPosition="50" endLine="63" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997013" fileName="BaseAddMethodDialog.java" startLine="68" startPosition="48" endLine="69" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997020" fileName="BaseAddMethodDialog.java" startLine="69" startPosition="54" endLine="70" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997029" fileName="BaseAddMethodDialog.java" startLine="70" startPosition="46" endLine="71" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997038" fileName="BaseAddMethodDialog.java" startLine="71" startPosition="44" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997044" fileName="BaseAddMethodDialog.java" startLine="75" startPosition="32" endLine="76" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997169" fileName="BaseAddMethodDialog.java" startLine="91" startPosition="40" endLine="92" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448048380177" fileName="BaseAddMethodDialog.java" startLine="93" startPosition="79" endLine="94" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448048380205" fileName="BaseAddMethodDialog.java" startLine="95" startPosition="5" endLine="96" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448048421992" fileName="BaseAddMethodDialog.java" startLine="96" startPosition="52" endLine="97" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448048504062" fileName="BaseAddMethodDialog.java" startLine="97" startPosition="100" endLine="98" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448048422069" fileName="BaseAddMethodDialog.java" startLine="100" startPosition="44" endLine="101" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448048484602" fileName="BaseAddMethodDialog.java" startLine="103" startPosition="15" endLine="104" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448048503896" fileName="BaseAddMethodDialog.java" startLine="104" startPosition="51" endLine="105" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448048504006" fileName="BaseAddMethodDialog.java" startLine="105" startPosition="107" endLine="106" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448048503936" fileName="BaseAddMethodDialog.java" startLine="108" startPosition="46" endLine="109" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448048504013" fileName="BaseAddMethodDialog.java" startLine="111" startPosition="17" endLine="112" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448048504068" fileName="BaseAddMethodDialog.java" startLine="113" startPosition="7" endLine="114" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448048504080" fileName="BaseAddMethodDialog.java" startLine="115" startPosition="5" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997297" fileName="BaseAddMethodDialog.java" startLine="119" startPosition="82" endLine="120" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997308" fileName="BaseAddMethodDialog.java" startLine="123" startPosition="43" endLine="124" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997314" fileName="BaseAddMethodDialog.java" startLine="124" startPosition="24" endLine="125" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997320" fileName="BaseAddMethodDialog.java" startLine="125" startPosition="23" endLine="126" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997326" fileName="BaseAddMethodDialog.java" startLine="126" startPosition="29" endLine="127" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997334" fileName="BaseAddMethodDialog.java" startLine="127" startPosition="53" endLine="128" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997345" fileName="BaseAddMethodDialog.java" startLine="129" startPosition="35" endLine="130" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997347" fileName="BaseAddMethodDialog.java" startLine="131" startPosition="5" endLine="132" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997354" fileName="BaseAddMethodDialog.java" startLine="132" startPosition="49" endLine="133" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997369" fileName="BaseAddMethodDialog.java" startLine="133" startPosition="101" endLine="134" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997380" fileName="BaseAddMethodDialog.java" startLine="134" startPosition="123" endLine="135" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997387" fileName="BaseAddMethodDialog.java" startLine="135" startPosition="54" endLine="136" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997393" fileName="BaseAddMethodDialog.java" startLine="136" startPosition="47" endLine="137" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997399" fileName="BaseAddMethodDialog.java" startLine="137" startPosition="51" endLine="138" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997405" fileName="BaseAddMethodDialog.java" startLine="138" startPosition="56" endLine="139" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997411" fileName="BaseAddMethodDialog.java" startLine="143" startPosition="22" endLine="144" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997426" fileName="BaseAddMethodDialog.java" startLine="146" startPosition="25" endLine="147" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4110797572879836596" fileName="BaseAddMethodDialog.java" startLine="147" startPosition="98" endLine="148" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997458" fileName="BaseAddMethodDialog.java" startLine="150" startPosition="90" endLine="151" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7648674000049788333" fileName="BaseAddMethodDialog.java" startLine="155" startPosition="108" endLine="156" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997467" fileName="BaseAddMethodDialog.java" startLine="158" startPosition="11" endLine="159" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997480" fileName="BaseAddMethodDialog.java" startLine="160" startPosition="32" endLine="161" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997527" fileName="BaseAddMethodDialog.java" startLine="163" startPosition="34" endLine="164" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997536" fileName="BaseAddMethodDialog.java" startLine="164" startPosition="38" endLine="165" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997489" fileName="BaseAddMethodDialog.java" startLine="166" startPosition="16" endLine="167" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997502" fileName="BaseAddMethodDialog.java" startLine="167" startPosition="56" endLine="168" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997511" fileName="BaseAddMethodDialog.java" startLine="168" startPosition="38" endLine="169" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997518" fileName="BaseAddMethodDialog.java" startLine="169" startPosition="34" endLine="170" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997547" fileName="BaseAddMethodDialog.java" startLine="177" startPosition="26" endLine="178" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175996837" fileName="BaseAddMethodDialog.java" startLine="181" startPosition="57" endLine="182" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7824118464175996845" fileName="BaseAddMethodDialog.java" startLine="184" startPosition="37" endLine="185" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7824118464175996847" fileName="BaseAddMethodDialog.java" startLine="185" startPosition="18" endLine="186" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175996853" fileName="BaseAddMethodDialog.java" startLine="186" startPosition="20" endLine="187" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175996863" fileName="BaseAddMethodDialog.java" startLine="187" startPosition="46" endLine="188" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175996877" fileName="BaseAddMethodDialog.java" startLine="192" startPosition="58" endLine="193" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
+    <nodeInfo nodeId="7824118464175996885" fileName="BaseAddMethodDialog.java" startLine="195" startPosition="41" endLine="196" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7824118464175996887" fileName="BaseAddMethodDialog.java" startLine="196" startPosition="18" endLine="197" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175996893" fileName="BaseAddMethodDialog.java" startLine="197" startPosition="24" endLine="198" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175996903" fileName="BaseAddMethodDialog.java" startLine="198" startPosition="48" endLine="199" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175996917" fileName="BaseAddMethodDialog.java" startLine="202" startPosition="30" endLine="203" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997050" fileName="BaseAddMethodDialog.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#()Ljava/util/List;" />
+    <nodeInfo nodeId="7824118464175997055" fileName="BaseAddMethodDialog.java" startLine="80" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareMethods#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="7824118464175997063" fileName="BaseAddMethodDialog.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="7824118464175997071" fileName="BaseAddMethodDialog.java" startLine="84" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464175997085" fileName="BaseAddMethodDialog.java" startLine="86" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="7824118464175997093" fileName="BaseAddMethodDialog.java" startLine="88" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="7824118464175996971" fileName="BaseAddMethodDialog.java" startLine="56" startPosition="45" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5797068448048380167" fileName="BaseAddMethodDialog.java" startLine="92" startPosition="77" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7824118464175997340" fileName="BaseAddMethodDialog.java" startLine="128" startPosition="69" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464175997451" fileName="BaseAddMethodDialog.java" startLine="149" startPosition="37" endLine="152" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464175997475" fileName="BaseAddMethodDialog.java" startLine="159" startPosition="94" endLine="162" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464175996930" fileName="BaseAddMethodDialog.java" startLine="46" startPosition="42" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="7824118464175996994" fileName="BaseAddMethodDialog.java" startLine="61" startPosition="56" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7824118464175997040" fileName="BaseAddMethodDialog.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshTree#()V" />
+    <nodeInfo nodeId="5797068448048422067" fileName="BaseAddMethodDialog.java" startLine="99" startPosition="91" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="5797068448048503921" fileName="BaseAddMethodDialog.java" startLine="107" startPosition="87" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="7824118464175997293" fileName="BaseAddMethodDialog.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
+    <nodeInfo nodeId="7648674000049788325" fileName="BaseAddMethodDialog.java" startLine="154" startPosition="92" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/ide/actions/BaseAddMethodDialog/MethodTreeNode;Ljetbrains/mps/ide/actions/BaseAddMethodDialog/MethodTreeNode;)I" />
+    <nodeInfo nodeId="7824118464175996913" fileName="BaseAddMethodDialog.java" startLine="201" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethod#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464175996924" fileName="BaseAddMethodDialog.java" startLine="45" startPosition="34" endLine="50" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="7824118464175996964" fileName="BaseAddMethodDialog.java" startLine="55" startPosition="45" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7824118464175996985" fileName="BaseAddMethodDialog.java" startLine="60" startPosition="5" endLine="65" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997446" fileName="BaseAddMethodDialog.java" startLine="148" startPosition="138" endLine="153" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7648674000049788318" fileName="BaseAddMethodDialog.java" startLine="153" startPosition="9" endLine="158" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997487" fileName="BaseAddMethodDialog.java" startLine="166" startPosition="14" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7824118464175997543" fileName="BaseAddMethodDialog.java" startLine="175" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
+    <nodeInfo nodeId="7824118464175996840" fileName="BaseAddMethodDialog.java" startLine="183" startPosition="0" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7824118464175996880" fileName="BaseAddMethodDialog.java" startLine="194" startPosition="0" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodTreeNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7824118464175997008" fileName="BaseAddMethodDialog.java" startLine="67" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolbarActions#()Ljava/util/List;" />
+    <nodeInfo nodeId="5797068448048503911" fileName="BaseAddMethodDialog.java" startLine="106" startPosition="94" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7824118464175997481" fileName="BaseAddMethodDialog.java" startLine="162" startPosition="9" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464175996938" fileName="BaseAddMethodDialog.java" startLine="51" startPosition="0" endLine="66" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseAddMethodDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5797068448048422060" fileName="BaseAddMethodDialog.java" startLine="98" startPosition="52" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7824118464175997304" fileName="BaseAddMethodDialog.java" startLine="122" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="7824118464175997097" fileName="BaseAddMethodDialog.java" startLine="90" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildOurTree#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="7824118464175997422" fileName="BaseAddMethodDialog.java" startLine="145" startPosition="67" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7824118464175997415" fileName="BaseAddMethodDialog.java" startLine="144" startPosition="14" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997407" fileName="BaseAddMethodDialog.java" startLine="141" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
+    <scopeInfo nodeId="7824118464175996933" fileName="BaseAddMethodDialog.java" startLine="47" startPosition="37" endLine="48" endPosition="30" />
+    <scopeInfo nodeId="7824118464175996977" fileName="BaseAddMethodDialog.java" startLine="57" startPosition="49" endLine="58" endPosition="39" />
+    <scopeInfo nodeId="7824118464175996999" fileName="BaseAddMethodDialog.java" startLine="62" startPosition="50" endLine="63" endPosition="15" />
+    <scopeInfo nodeId="7824118464175997043" fileName="BaseAddMethodDialog.java" startLine="75" startPosition="32" endLine="76" endPosition="26" />
+    <scopeInfo nodeId="5797068448048380170" fileName="BaseAddMethodDialog.java" startLine="93" startPosition="79" endLine="94" endPosition="64" />
+    <scopeInfo nodeId="5797068448048422068" fileName="BaseAddMethodDialog.java" startLine="100" startPosition="44" endLine="101" endPosition="39" />
+    <scopeInfo nodeId="5797068448048503922" fileName="BaseAddMethodDialog.java" startLine="108" startPosition="46" endLine="109" endPosition="38" />
+    <scopeInfo nodeId="5797068448048503914" fileName="BaseAddMethodDialog.java" startLine="111" startPosition="17" endLine="112" endPosition="65" />
+    <scopeInfo nodeId="7824118464175997296" fileName="BaseAddMethodDialog.java" startLine="119" startPosition="82" endLine="120" endPosition="77" />
+    <scopeInfo nodeId="7824118464175997344" fileName="BaseAddMethodDialog.java" startLine="129" startPosition="35" endLine="130" endPosition="24" />
+    <scopeInfo nodeId="7824118464175997457" fileName="BaseAddMethodDialog.java" startLine="150" startPosition="90" endLine="151" endPosition="124" />
+    <scopeInfo nodeId="7648674000049788332" fileName="BaseAddMethodDialog.java" startLine="155" startPosition="108" endLine="156" endPosition="66" />
+    <scopeInfo nodeId="7824118464175997479" fileName="BaseAddMethodDialog.java" startLine="160" startPosition="32" endLine="161" endPosition="17" />
+    <scopeInfo nodeId="7824118464175997546" fileName="BaseAddMethodDialog.java" startLine="177" startPosition="26" endLine="178" endPosition="14" />
+    <scopeInfo nodeId="7824118464175996916" fileName="BaseAddMethodDialog.java" startLine="202" startPosition="30" endLine="203" endPosition="22" />
+    <scopeInfo nodeId="7824118464175997050" fileName="BaseAddMethodDialog.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997055" fileName="BaseAddMethodDialog.java" startLine="80" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="7824118464175997058" varName="m1" />
       <varInfo nodeId="7824118464175997060" varName="m2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997063" fileName="BaseAddMethodDialog.java" startLine="81" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="7824118464175997063" fileName="BaseAddMethodDialog.java" startLine="82" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="7824118464175997067" varName="paths" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997071" fileName="BaseAddMethodDialog.java" startLine="83" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="7824118464175997071" fileName="BaseAddMethodDialog.java" startLine="84" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="7824118464175997074" varName="bm" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997085" fileName="BaseAddMethodDialog.java" startLine="85" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="7824118464175997085" fileName="BaseAddMethodDialog.java" startLine="86" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="7824118464175997088" varName="c1" />
       <varInfo nodeId="7824118464175997090" varName="c2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997093" fileName="BaseAddMethodDialog.java" startLine="87" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997526" fileName="BaseAddMethodDialog.java" startLine="162" startPosition="34" endLine="164" endPosition="38">
+    <scopeInfo nodeId="7824118464175997093" fileName="BaseAddMethodDialog.java" startLine="88" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997526" fileName="BaseAddMethodDialog.java" startLine="163" startPosition="34" endLine="165" endPosition="38">
       <varInfo nodeId="7824118464175997528" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175996970" fileName="BaseAddMethodDialog.java" startLine="55" startPosition="45" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="5797068448048380167" fileName="BaseAddMethodDialog.java" startLine="91" startPosition="77" endLine="94" endPosition="5" />
-    <scopeInfo nodeId="7824118464175997450" fileName="BaseAddMethodDialog.java" startLine="148" startPosition="37" endLine="151" endPosition="11" />
-    <scopeInfo nodeId="7824118464175996930" fileName="BaseAddMethodDialog.java" startLine="45" startPosition="42" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="7824118464175996994" fileName="BaseAddMethodDialog.java" startLine="60" startPosition="56" endLine="64" endPosition="0">
+    <scopeInfo nodeId="7824118464175996970" fileName="BaseAddMethodDialog.java" startLine="56" startPosition="45" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="5797068448048380167" fileName="BaseAddMethodDialog.java" startLine="92" startPosition="77" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="7824118464175997450" fileName="BaseAddMethodDialog.java" startLine="149" startPosition="37" endLine="152" endPosition="11" />
+    <scopeInfo nodeId="7824118464175996930" fileName="BaseAddMethodDialog.java" startLine="46" startPosition="42" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="7824118464175996994" fileName="BaseAddMethodDialog.java" startLine="61" startPosition="56" endLine="65" endPosition="0">
       <varInfo nodeId="7824118464175996997" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997012" fileName="BaseAddMethodDialog.java" startLine="67" startPosition="48" endLine="71" endPosition="18">
+    <scopeInfo nodeId="7824118464175997012" fileName="BaseAddMethodDialog.java" startLine="68" startPosition="48" endLine="72" endPosition="18">
       <varInfo nodeId="7824118464175997014" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997040" fileName="BaseAddMethodDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="5797068448048422067" fileName="BaseAddMethodDialog.java" startLine="98" startPosition="91" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="5797068448048503921" fileName="BaseAddMethodDialog.java" startLine="106" startPosition="87" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997293" fileName="BaseAddMethodDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="7648674000049788325" fileName="BaseAddMethodDialog.java" startLine="153" startPosition="92" endLine="157" endPosition="0">
+    <scopeInfo nodeId="7824118464175997040" fileName="BaseAddMethodDialog.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="5797068448048422067" fileName="BaseAddMethodDialog.java" startLine="99" startPosition="91" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="5797068448048503921" fileName="BaseAddMethodDialog.java" startLine="107" startPosition="87" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997293" fileName="BaseAddMethodDialog.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="7648674000049788325" fileName="BaseAddMethodDialog.java" startLine="154" startPosition="92" endLine="158" endPosition="0">
       <varInfo nodeId="7648674000049788328" varName="m1" />
       <varInfo nodeId="7648674000049788330" varName="m2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997488" fileName="BaseAddMethodDialog.java" startLine="165" startPosition="16" endLine="169" endPosition="45">
+    <scopeInfo nodeId="7824118464175997488" fileName="BaseAddMethodDialog.java" startLine="166" startPosition="16" endLine="170" endPosition="45">
       <varInfo nodeId="7824118464175997503" varName="last" />
       <varInfo nodeId="7824118464175997490" varName="first" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175996844" fileName="BaseAddMethodDialog.java" startLine="183" startPosition="37" endLine="187" endPosition="42" />
-    <scopeInfo nodeId="7824118464175996884" fileName="BaseAddMethodDialog.java" startLine="194" startPosition="41" endLine="198" endPosition="91" />
-    <scopeInfo nodeId="7824118464175996913" fileName="BaseAddMethodDialog.java" startLine="200" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="7824118464175996964" fileName="BaseAddMethodDialog.java" startLine="54" startPosition="45" endLine="59" endPosition="5">
+    <scopeInfo nodeId="7824118464175996844" fileName="BaseAddMethodDialog.java" startLine="184" startPosition="37" endLine="188" endPosition="42" />
+    <scopeInfo nodeId="7824118464175996884" fileName="BaseAddMethodDialog.java" startLine="195" startPosition="41" endLine="199" endPosition="235" />
+    <scopeInfo nodeId="7824118464175996913" fileName="BaseAddMethodDialog.java" startLine="201" startPosition="0" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="7824118464175996964" fileName="BaseAddMethodDialog.java" startLine="55" startPosition="45" endLine="60" endPosition="5">
       <varInfo nodeId="7824118464175996968" varName="ks" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997446" fileName="BaseAddMethodDialog.java" startLine="147" startPosition="138" endLine="152" endPosition="9">
+    <scopeInfo nodeId="7824118464175997446" fileName="BaseAddMethodDialog.java" startLine="148" startPosition="138" endLine="153" endPosition="9">
       <varInfo nodeId="7824118464175997448" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997543" fileName="BaseAddMethodDialog.java" startLine="174" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="7824118464175996840" fileName="BaseAddMethodDialog.java" startLine="182" startPosition="0" endLine="188" endPosition="5">
+    <scopeInfo nodeId="7824118464175997543" fileName="BaseAddMethodDialog.java" startLine="175" startPosition="0" endLine="180" endPosition="0" />
+    <scopeInfo nodeId="7824118464175996840" fileName="BaseAddMethodDialog.java" startLine="183" startPosition="0" endLine="189" endPosition="5">
       <varInfo nodeId="7824118464175996842" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175996880" fileName="BaseAddMethodDialog.java" startLine="193" startPosition="0" endLine="199" endPosition="5">
+    <scopeInfo nodeId="7824118464175996880" fileName="BaseAddMethodDialog.java" startLine="194" startPosition="0" endLine="200" endPosition="5">
       <varInfo nodeId="7824118464175996882" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997008" fileName="BaseAddMethodDialog.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5797068448048503911" fileName="BaseAddMethodDialog.java" startLine="105" startPosition="94" endLine="112" endPosition="7" />
-    <scopeInfo nodeId="5797068448048422063" fileName="BaseAddMethodDialog.java" startLine="102" startPosition="15" endLine="113" endPosition="21">
+    <scopeInfo nodeId="7824118464175997008" fileName="BaseAddMethodDialog.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="5797068448048503911" fileName="BaseAddMethodDialog.java" startLine="106" startPosition="94" endLine="113" endPosition="7" />
+    <scopeInfo nodeId="5797068448048422063" fileName="BaseAddMethodDialog.java" startLine="103" startPosition="15" endLine="114" endPosition="21">
       <varInfo nodeId="5797068448048484603" varName="methods" />
       <varInfo nodeId="5797068448048504007" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175996946" fileName="BaseAddMethodDialog.java" startLine="51" startPosition="109" endLine="64" endPosition="87">
+    <scopeInfo nodeId="7824118464175996946" fileName="BaseAddMethodDialog.java" startLine="52" startPosition="109" endLine="65" endPosition="87">
       <varInfo nodeId="7824118464175996957" varName="inputMap" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175996938" fileName="BaseAddMethodDialog.java" startLine="50" startPosition="0" endLine="65" endPosition="3">
+    <scopeInfo nodeId="7824118464175996938" fileName="BaseAddMethodDialog.java" startLine="51" startPosition="0" endLine="66" endPosition="3">
       <varInfo nodeId="7824118464175996944" varName="title" />
       <varInfo nodeId="7824118464175996940" varName="context" />
       <varInfo nodeId="7824118464175996942" varName="mainFrame" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997307" fileName="BaseAddMethodDialog.java" startLine="122" startPosition="43" endLine="138" endPosition="21">
+    <scopeInfo nodeId="7824118464175997307" fileName="BaseAddMethodDialog.java" startLine="123" startPosition="43" endLine="139" endPosition="21">
       <varInfo nodeId="7824118464175997370" varName="toolbar" />
       <varInfo nodeId="7824118464175997381" varName="mainPanel" />
       <varInfo nodeId="7824118464175997355" varName="group" />
@@ -3793,269 +3793,269 @@
       <varInfo nodeId="7824118464175997348" varName="actions" />
       <varInfo nodeId="7824118464175997335" varName="optionsComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448048422060" fileName="BaseAddMethodDialog.java" startLine="97" startPosition="52" endLine="114" endPosition="5" />
-    <scopeInfo nodeId="7824118464175997304" fileName="BaseAddMethodDialog.java" startLine="121" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997100" fileName="BaseAddMethodDialog.java" startLine="90" startPosition="40" endLine="115" endPosition="16">
+    <scopeInfo nodeId="5797068448048422060" fileName="BaseAddMethodDialog.java" startLine="98" startPosition="52" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="7824118464175997304" fileName="BaseAddMethodDialog.java" startLine="122" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997100" fileName="BaseAddMethodDialog.java" startLine="91" startPosition="40" endLine="116" endPosition="16">
       <varInfo nodeId="5797068448048380206" varName="containers" />
       <varInfo nodeId="5797068448048504063" varName="root" />
       <varInfo nodeId="7824118464175997170" varName="methodsByContainer" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997425" fileName="BaseAddMethodDialog.java" startLine="145" startPosition="25" endLine="170" endPosition="9">
+    <scopeInfo nodeId="7824118464175997425" fileName="BaseAddMethodDialog.java" startLine="146" startPosition="25" endLine="171" endPosition="9">
       <varInfo nodeId="7824118464175997468" varName="methods" />
       <varInfo nodeId="7824118464175997427" varName="paths" />
       <varInfo nodeId="4110797572879836597" varName="methodNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997097" fileName="BaseAddMethodDialog.java" startLine="89" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997422" fileName="BaseAddMethodDialog.java" startLine="144" startPosition="67" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997410" fileName="BaseAddMethodDialog.java" startLine="142" startPosition="22" endLine="172" endPosition="7" />
-    <scopeInfo nodeId="7824118464175997407" fileName="BaseAddMethodDialog.java" startLine="140" startPosition="0" endLine="174" endPosition="0" />
-    <unitInfo nodeId="7824118464175996929" fileName="BaseAddMethodDialog.java" startLine="45" startPosition="31" endLine="49" endPosition="3" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$1" />
-    <unitInfo nodeId="7824118464175996993" fileName="BaseAddMethodDialog.java" startLine="60" startPosition="38" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$2" />
-    <unitInfo nodeId="5797068448048422067" fileName="BaseAddMethodDialog.java" startLine="98" startPosition="70" endLine="102" endPosition="5" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$4" />
-    <unitInfo nodeId="5797068448048503921" fileName="BaseAddMethodDialog.java" startLine="106" startPosition="66" endLine="110" endPosition="7" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$3" />
-    <unitInfo nodeId="7648674000049788323" fileName="BaseAddMethodDialog.java" startLine="153" startPosition="42" endLine="157" endPosition="9" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$6" />
-    <unitInfo nodeId="7824118464175996834" fileName="BaseAddMethodDialog.java" startLine="180" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$NodeTreeNode" />
-    <unitInfo nodeId="7824118464175996874" fileName="BaseAddMethodDialog.java" startLine="191" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$MethodTreeNode" />
-    <unitInfo nodeId="7824118464175997421" fileName="BaseAddMethodDialog.java" startLine="144" startPosition="55" endLine="172" endPosition="5" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$5" />
-    <unitInfo nodeId="7824118464175996831" fileName="BaseAddMethodDialog.java" startLine="43" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog" />
+    <scopeInfo nodeId="7824118464175997097" fileName="BaseAddMethodDialog.java" startLine="90" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997422" fileName="BaseAddMethodDialog.java" startLine="145" startPosition="67" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997410" fileName="BaseAddMethodDialog.java" startLine="143" startPosition="22" endLine="173" endPosition="7" />
+    <scopeInfo nodeId="7824118464175997407" fileName="BaseAddMethodDialog.java" startLine="141" startPosition="0" endLine="175" endPosition="0" />
+    <unitInfo nodeId="7824118464175996929" fileName="BaseAddMethodDialog.java" startLine="46" startPosition="31" endLine="50" endPosition="3" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$1" />
+    <unitInfo nodeId="7824118464175996993" fileName="BaseAddMethodDialog.java" startLine="61" startPosition="38" endLine="65" endPosition="5" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$2" />
+    <unitInfo nodeId="5797068448048422067" fileName="BaseAddMethodDialog.java" startLine="99" startPosition="70" endLine="103" endPosition="5" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$4" />
+    <unitInfo nodeId="5797068448048503921" fileName="BaseAddMethodDialog.java" startLine="107" startPosition="66" endLine="111" endPosition="7" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$3" />
+    <unitInfo nodeId="7648674000049788323" fileName="BaseAddMethodDialog.java" startLine="154" startPosition="42" endLine="158" endPosition="9" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$6" />
+    <unitInfo nodeId="7824118464175996834" fileName="BaseAddMethodDialog.java" startLine="181" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$NodeTreeNode" />
+    <unitInfo nodeId="7824118464175996874" fileName="BaseAddMethodDialog.java" startLine="192" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$MethodTreeNode" />
+    <unitInfo nodeId="7824118464175997421" fileName="BaseAddMethodDialog.java" startLine="145" startPosition="55" endLine="173" endPosition="5" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog$5" />
+    <unitInfo nodeId="7824118464175996831" fileName="BaseAddMethodDialog.java" startLine="44" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog" />
   </root>
   <root nodeId="7824118464175997551">
-    <nodeInfo nodeId="7824118464175997715" fileName="StratergyAddMethodDialog.java" startLine="30" startPosition="67" endLine="31" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainerStrategy" />
-    <nodeInfo nodeId="7824118464175997718" fileName="StratergyAddMethodDialog.java" startLine="31" startPosition="73" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAdditionStrategy" />
-    <nodeInfo nodeId="7824118464175997721" fileName="StratergyAddMethodDialog.java" startLine="32" startPosition="71" endLine="33" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCollectStrategy" />
-    <nodeInfo nodeId="7824118464175997724" fileName="StratergyAddMethodDialog.java" startLine="33" startPosition="76" endLine="34" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySortByNameAction" />
-    <nodeInfo nodeId="4151408063400001366" fileName="StratergyAddMethodDialog.java" startLine="34" startPosition="71" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="7824118464175997742" fileName="StratergyAddMethodDialog.java" startLine="37" startPosition="287" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7824118464175997748" fileName="StratergyAddMethodDialog.java" startLine="38" startPosition="59" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997754" fileName="StratergyAddMethodDialog.java" startLine="39" startPosition="44" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997760" fileName="StratergyAddMethodDialog.java" startLine="40" startPosition="40" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4151408063400001379" fileName="StratergyAddMethodDialog.java" startLine="41" startPosition="42" endLine="42" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176218641" fileName="StratergyAddMethodDialog.java" startLine="42" startPosition="59" endLine="43" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4151408063400001311" fileName="StratergyAddMethodDialog.java" startLine="47" startPosition="105" endLine="48" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4151408063400000254" fileName="StratergyAddMethodDialog.java" startLine="48" startPosition="110" endLine="49" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4151408063400001413" fileName="StratergyAddMethodDialog.java" startLine="50" startPosition="29" endLine="51" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7346552127093467483" fileName="StratergyAddMethodDialog.java" startLine="52" startPosition="63" endLine="53" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7346552127093467490" fileName="StratergyAddMethodDialog.java" startLine="53" startPosition="59" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7346552127093467501" fileName="StratergyAddMethodDialog.java" startLine="54" startPosition="20" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7346552127093467512" fileName="StratergyAddMethodDialog.java" startLine="55" startPosition="54" endLine="56" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7346552127093467524" fileName="StratergyAddMethodDialog.java" startLine="57" startPosition="16" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4151408063400000277" fileName="StratergyAddMethodDialog.java" startLine="59" startPosition="9" endLine="60" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4151408063400000284" fileName="StratergyAddMethodDialog.java" startLine="60" startPosition="109" endLine="61" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4151408063400001438" fileName="StratergyAddMethodDialog.java" startLine="65" startPosition="10" endLine="66" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4151408063400001341" fileName="StratergyAddMethodDialog.java" startLine="69" startPosition="59" endLine="70" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997772" fileName="StratergyAddMethodDialog.java" startLine="74" startPosition="52" endLine="75" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997788" fileName="StratergyAddMethodDialog.java" startLine="78" startPosition="48" endLine="79" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997795" fileName="StratergyAddMethodDialog.java" startLine="79" startPosition="54" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997800" fileName="StratergyAddMethodDialog.java" startLine="80" startPosition="45" endLine="81" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997807" fileName="StratergyAddMethodDialog.java" startLine="81" startPosition="35" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997853" fileName="StratergyAddMethodDialog.java" startLine="86" startPosition="45" endLine="87" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997871" fileName="StratergyAddMethodDialog.java" startLine="87" startPosition="72" endLine="88" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997883" fileName="StratergyAddMethodDialog.java" startLine="88" startPosition="72" endLine="89" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997825" fileName="StratergyAddMethodDialog.java" startLine="90" startPosition="12" endLine="91" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997833" fileName="StratergyAddMethodDialog.java" startLine="91" startPosition="65" endLine="92" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997841" fileName="StratergyAddMethodDialog.java" startLine="92" startPosition="65" endLine="93" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997895" fileName="StratergyAddMethodDialog.java" startLine="97" startPosition="89" endLine="98" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997902" fileName="StratergyAddMethodDialog.java" startLine="98" startPosition="48" endLine="99" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4151408063400001462" fileName="StratergyAddMethodDialog.java" startLine="100" startPosition="71" endLine="101" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997914" fileName="StratergyAddMethodDialog.java" startLine="101" startPosition="44" endLine="102" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997923" fileName="StratergyAddMethodDialog.java" startLine="103" startPosition="5" endLine="104" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7840389369972895333" fileName="StratergyAddMethodDialog.java" startLine="105" startPosition="90" endLine="106" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448048504121" fileName="StratergyAddMethodDialog.java" startLine="106" startPosition="44" endLine="107" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4151408063400001473" fileName="StratergyAddMethodDialog.java" startLine="108" startPosition="107" endLine="109" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997938" fileName="StratergyAddMethodDialog.java" startLine="110" startPosition="7" endLine="111" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997945" fileName="StratergyAddMethodDialog.java" startLine="111" startPosition="30" endLine="112" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997961" fileName="StratergyAddMethodDialog.java" startLine="113" startPosition="5" endLine="114" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997969" fileName="StratergyAddMethodDialog.java" startLine="117" startPosition="39" endLine="118" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175998003" fileName="StratergyAddMethodDialog.java" startLine="121" startPosition="55" endLine="122" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175998015" fileName="StratergyAddMethodDialog.java" startLine="125" startPosition="59" endLine="126" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997599" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="45" endLine="130" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464175997603" fileName="StratergyAddMethodDialog.java" startLine="130" startPosition="36" endLine="131" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464175997609" fileName="StratergyAddMethodDialog.java" startLine="131" startPosition="48" endLine="132" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="7824118464175997625" fileName="StratergyAddMethodDialog.java" startLine="132" startPosition="107" endLine="133" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="7824118464175997558" fileName="StratergyAddMethodDialog.java" startLine="134" startPosition="40" endLine="135" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySource" />
-    <nodeInfo nodeId="7824118464175997561" fileName="StratergyAddMethodDialog.java" startLine="135" startPosition="29" endLine="136" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="7824118464175997571" fileName="StratergyAddMethodDialog.java" startLine="138" startPosition="57" endLine="139" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997577" fileName="StratergyAddMethodDialog.java" startLine="139" startPosition="26" endLine="140" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997587" fileName="StratergyAddMethodDialog.java" startLine="143" startPosition="32" endLine="144" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997595" fileName="StratergyAddMethodDialog.java" startLine="147" startPosition="32" endLine="148" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464175997635" fileName="StratergyAddMethodDialog.java" startLine="154" startPosition="44" endLine="155" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7824118464175997639" fileName="StratergyAddMethodDialog.java" startLine="155" startPosition="29" endLine="156" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7824118464175997643" fileName="StratergyAddMethodDialog.java" startLine="156" startPosition="57" endLine="157" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7824118464175997653" fileName="StratergyAddMethodDialog.java" startLine="160" startPosition="50" endLine="161" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="7824118464176219398" fileName="StratergyAddMethodDialog.java" startLine="164" startPosition="55" endLine="165" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="7824118464175997670" fileName="StratergyAddMethodDialog.java" startLine="167" startPosition="41" endLine="168" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7824118464175997672" fileName="StratergyAddMethodDialog.java" startLine="168" startPosition="35" endLine="169" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176219401" fileName="StratergyAddMethodDialog.java" startLine="169" startPosition="68" endLine="170" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997685" fileName="StratergyAddMethodDialog.java" startLine="173" startPosition="48" endLine="174" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464176218627" fileName="StratergyAddMethodDialog.java" startLine="177" startPosition="61" endLine="178" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997703" fileName="StratergyAddMethodDialog.java" startLine="178" startPosition="25" endLine="179" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464175997711" fileName="StratergyAddMethodDialog.java" startLine="182" startPosition="33" endLine="183" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464176218609" fileName="StratergyAddMethodDialog.java" startLine="186" startPosition="44" endLine="187" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7346552127093467522" fileName="StratergyAddMethodDialog.java" startLine="57" startPosition="14" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4151408063400000325" fileName="StratergyAddMethodDialog.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4151408063400001479" fileName="StratergyAddMethodDialog.java" startLine="107" startPosition="45" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4151408063400000291" fileName="StratergyAddMethodDialog.java" startLine="61" startPosition="109" endLine="65" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464175997767" fileName="StratergyAddMethodDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#()Ljava/util/List;" />
-    <nodeInfo nodeId="7824118464175997823" fileName="StratergyAddMethodDialog.java" startLine="90" startPosition="10" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7824118464175997909" fileName="StratergyAddMethodDialog.java" startLine="99" startPosition="49" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7824118464175997963" fileName="StratergyAddMethodDialog.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464175997995" fileName="StratergyAddMethodDialog.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="7824118464175998011" fileName="StratergyAddMethodDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7824118464175997564" fileName="StratergyAddMethodDialog.java" startLine="137" startPosition="0" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodAddition#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7824118464175997583" fileName="StratergyAddMethodDialog.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464175997591" fileName="StratergyAddMethodDialog.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464175997679" fileName="StratergyAddMethodDialog.java" startLine="172" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="7824118464175997707" fileName="StratergyAddMethodDialog.java" startLine="181" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" />
-    <nodeInfo nodeId="7824118464176218601" fileName="StratergyAddMethodDialog.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
-    <nodeInfo nodeId="7824118464175997667" fileName="StratergyAddMethodDialog.java" startLine="166" startPosition="0" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortByNameAction#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="7824118464175997689" fileName="StratergyAddMethodDialog.java" startLine="176" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="7824118464175997783" fileName="StratergyAddMethodDialog.java" startLine="77" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolbarActions#()Ljava/util/List;" />
-    <nodeInfo nodeId="7824118464175997729" fileName="StratergyAddMethodDialog.java" startLine="36" startPosition="0" endLine="44" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StratergyAddMethodDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/ContainerStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/CollectMethodsStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/AdditionStrategy;)V" />
-    <nodeInfo nodeId="7346552127093467464" fileName="StratergyAddMethodDialog.java" startLine="51" startPosition="116" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464175997817" fileName="StratergyAddMethodDialog.java" startLine="85" startPosition="52" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464175997933" fileName="StratergyAddMethodDialog.java" startLine="104" startPosition="125" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7824118464175997809" fileName="StratergyAddMethodDialog.java" startLine="84" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareMethods#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="4151408063400000260" fileName="StratergyAddMethodDialog.java" startLine="49" startPosition="73" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464175997887" fileName="StratergyAddMethodDialog.java" startLine="96" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="4151408063400001299" fileName="StratergyAddMethodDialog.java" startLine="46" startPosition="77" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4151408063399997079" fileName="StratergyAddMethodDialog.java" startLine="45" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVariableNames#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="7346552127093467523" fileName="StratergyAddMethodDialog.java" startLine="57" startPosition="16" endLine="58" endPosition="54" />
-    <scopeInfo nodeId="4151408063400000326" fileName="StratergyAddMethodDialog.java" startLine="69" startPosition="59" endLine="70" endPosition="41" />
-    <scopeInfo nodeId="7824118464175997771" fileName="StratergyAddMethodDialog.java" startLine="74" startPosition="52" endLine="75" endPosition="97" />
-    <scopeInfo nodeId="4151408063400001480" fileName="StratergyAddMethodDialog.java" startLine="108" startPosition="107" endLine="109" endPosition="91" />
-    <scopeInfo nodeId="7824118464175997968" fileName="StratergyAddMethodDialog.java" startLine="117" startPosition="39" endLine="118" endPosition="48" />
-    <scopeInfo nodeId="7824118464175998002" fileName="StratergyAddMethodDialog.java" startLine="121" startPosition="55" endLine="122" endPosition="57" />
-    <scopeInfo nodeId="7824118464175998014" fileName="StratergyAddMethodDialog.java" startLine="125" startPosition="59" endLine="126" endPosition="65" />
-    <scopeInfo nodeId="7824118464175997599" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="45" endLine="130" endPosition="36" />
-    <scopeInfo nodeId="7824118464175997603" fileName="StratergyAddMethodDialog.java" startLine="130" startPosition="36" endLine="131" endPosition="48">
+    <nodeInfo nodeId="7824118464175997715" fileName="StratergyAddMethodDialog.java" startLine="29" startPosition="67" endLine="30" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainerStrategy" />
+    <nodeInfo nodeId="7824118464175997718" fileName="StratergyAddMethodDialog.java" startLine="30" startPosition="73" endLine="31" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAdditionStrategy" />
+    <nodeInfo nodeId="7824118464175997721" fileName="StratergyAddMethodDialog.java" startLine="31" startPosition="71" endLine="32" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCollectStrategy" />
+    <nodeInfo nodeId="7824118464175997724" fileName="StratergyAddMethodDialog.java" startLine="32" startPosition="76" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySortByNameAction" />
+    <nodeInfo nodeId="4151408063400001366" fileName="StratergyAddMethodDialog.java" startLine="33" startPosition="71" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="7824118464175997742" fileName="StratergyAddMethodDialog.java" startLine="36" startPosition="287" endLine="37" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7824118464175997748" fileName="StratergyAddMethodDialog.java" startLine="37" startPosition="59" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997754" fileName="StratergyAddMethodDialog.java" startLine="38" startPosition="44" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997760" fileName="StratergyAddMethodDialog.java" startLine="39" startPosition="40" endLine="40" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4151408063400001379" fileName="StratergyAddMethodDialog.java" startLine="40" startPosition="42" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176218641" fileName="StratergyAddMethodDialog.java" startLine="41" startPosition="59" endLine="42" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4151408063400001311" fileName="StratergyAddMethodDialog.java" startLine="46" startPosition="105" endLine="47" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4151408063400000254" fileName="StratergyAddMethodDialog.java" startLine="47" startPosition="110" endLine="48" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4151408063400001413" fileName="StratergyAddMethodDialog.java" startLine="49" startPosition="29" endLine="50" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7346552127093467483" fileName="StratergyAddMethodDialog.java" startLine="51" startPosition="63" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7346552127093467490" fileName="StratergyAddMethodDialog.java" startLine="52" startPosition="59" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7346552127093467501" fileName="StratergyAddMethodDialog.java" startLine="53" startPosition="20" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7346552127093467512" fileName="StratergyAddMethodDialog.java" startLine="54" startPosition="54" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7346552127093467524" fileName="StratergyAddMethodDialog.java" startLine="56" startPosition="16" endLine="57" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4151408063400000277" fileName="StratergyAddMethodDialog.java" startLine="58" startPosition="9" endLine="59" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4151408063400000284" fileName="StratergyAddMethodDialog.java" startLine="59" startPosition="271" endLine="60" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4151408063400001438" fileName="StratergyAddMethodDialog.java" startLine="64" startPosition="10" endLine="65" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4151408063400001341" fileName="StratergyAddMethodDialog.java" startLine="68" startPosition="59" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997772" fileName="StratergyAddMethodDialog.java" startLine="73" startPosition="52" endLine="74" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997788" fileName="StratergyAddMethodDialog.java" startLine="77" startPosition="48" endLine="78" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997795" fileName="StratergyAddMethodDialog.java" startLine="78" startPosition="54" endLine="79" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997800" fileName="StratergyAddMethodDialog.java" startLine="79" startPosition="45" endLine="80" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997807" fileName="StratergyAddMethodDialog.java" startLine="80" startPosition="35" endLine="81" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997853" fileName="StratergyAddMethodDialog.java" startLine="85" startPosition="45" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997871" fileName="StratergyAddMethodDialog.java" startLine="86" startPosition="72" endLine="87" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997883" fileName="StratergyAddMethodDialog.java" startLine="87" startPosition="72" endLine="88" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997825" fileName="StratergyAddMethodDialog.java" startLine="89" startPosition="12" endLine="90" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997833" fileName="StratergyAddMethodDialog.java" startLine="90" startPosition="65" endLine="91" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997841" fileName="StratergyAddMethodDialog.java" startLine="91" startPosition="65" endLine="92" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997895" fileName="StratergyAddMethodDialog.java" startLine="96" startPosition="89" endLine="97" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997902" fileName="StratergyAddMethodDialog.java" startLine="97" startPosition="48" endLine="98" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4151408063400001462" fileName="StratergyAddMethodDialog.java" startLine="99" startPosition="71" endLine="100" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997914" fileName="StratergyAddMethodDialog.java" startLine="100" startPosition="44" endLine="101" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997923" fileName="StratergyAddMethodDialog.java" startLine="102" startPosition="5" endLine="103" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7840389369972895333" fileName="StratergyAddMethodDialog.java" startLine="104" startPosition="90" endLine="105" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5797068448048504121" fileName="StratergyAddMethodDialog.java" startLine="105" startPosition="44" endLine="106" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4151408063400001473" fileName="StratergyAddMethodDialog.java" startLine="107" startPosition="107" endLine="108" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997938" fileName="StratergyAddMethodDialog.java" startLine="109" startPosition="7" endLine="110" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997945" fileName="StratergyAddMethodDialog.java" startLine="110" startPosition="30" endLine="111" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997961" fileName="StratergyAddMethodDialog.java" startLine="112" startPosition="5" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997969" fileName="StratergyAddMethodDialog.java" startLine="116" startPosition="39" endLine="117" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175998003" fileName="StratergyAddMethodDialog.java" startLine="120" startPosition="55" endLine="121" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175998015" fileName="StratergyAddMethodDialog.java" startLine="124" startPosition="59" endLine="125" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997599" fileName="StratergyAddMethodDialog.java" startLine="128" startPosition="45" endLine="129" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464175997603" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="36" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464175997609" fileName="StratergyAddMethodDialog.java" startLine="130" startPosition="48" endLine="131" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="7824118464175997625" fileName="StratergyAddMethodDialog.java" startLine="131" startPosition="107" endLine="132" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="7824118464175997558" fileName="StratergyAddMethodDialog.java" startLine="133" startPosition="40" endLine="134" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySource" />
+    <nodeInfo nodeId="7824118464175997561" fileName="StratergyAddMethodDialog.java" startLine="134" startPosition="29" endLine="135" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
+    <nodeInfo nodeId="7824118464175997571" fileName="StratergyAddMethodDialog.java" startLine="137" startPosition="57" endLine="138" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997577" fileName="StratergyAddMethodDialog.java" startLine="138" startPosition="26" endLine="139" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997587" fileName="StratergyAddMethodDialog.java" startLine="142" startPosition="32" endLine="143" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997595" fileName="StratergyAddMethodDialog.java" startLine="146" startPosition="32" endLine="147" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464175997635" fileName="StratergyAddMethodDialog.java" startLine="153" startPosition="44" endLine="154" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7824118464175997639" fileName="StratergyAddMethodDialog.java" startLine="154" startPosition="29" endLine="155" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="7824118464175997643" fileName="StratergyAddMethodDialog.java" startLine="155" startPosition="57" endLine="156" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7824118464175997653" fileName="StratergyAddMethodDialog.java" startLine="159" startPosition="50" endLine="160" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="7824118464176219398" fileName="StratergyAddMethodDialog.java" startLine="163" startPosition="55" endLine="164" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="7824118464175997670" fileName="StratergyAddMethodDialog.java" startLine="166" startPosition="41" endLine="167" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7824118464175997672" fileName="StratergyAddMethodDialog.java" startLine="167" startPosition="35" endLine="168" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176219401" fileName="StratergyAddMethodDialog.java" startLine="168" startPosition="68" endLine="169" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997685" fileName="StratergyAddMethodDialog.java" startLine="172" startPosition="48" endLine="173" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464176218627" fileName="StratergyAddMethodDialog.java" startLine="176" startPosition="61" endLine="177" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997703" fileName="StratergyAddMethodDialog.java" startLine="177" startPosition="25" endLine="178" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464175997711" fileName="StratergyAddMethodDialog.java" startLine="181" startPosition="33" endLine="182" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464176218609" fileName="StratergyAddMethodDialog.java" startLine="185" startPosition="44" endLine="186" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7346552127093467522" fileName="StratergyAddMethodDialog.java" startLine="56" startPosition="14" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4151408063400000325" fileName="StratergyAddMethodDialog.java" startLine="67" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4151408063400001479" fileName="StratergyAddMethodDialog.java" startLine="106" startPosition="45" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4151408063400000291" fileName="StratergyAddMethodDialog.java" startLine="60" startPosition="271" endLine="64" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464175997767" fileName="StratergyAddMethodDialog.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#()Ljava/util/List;" />
+    <nodeInfo nodeId="7824118464175997823" fileName="StratergyAddMethodDialog.java" startLine="89" startPosition="10" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7824118464175997909" fileName="StratergyAddMethodDialog.java" startLine="98" startPosition="49" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7824118464175997963" fileName="StratergyAddMethodDialog.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464175997995" fileName="StratergyAddMethodDialog.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="7824118464175998011" fileName="StratergyAddMethodDialog.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="7824118464175997564" fileName="StratergyAddMethodDialog.java" startLine="136" startPosition="0" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodAddition#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7824118464175997583" fileName="StratergyAddMethodDialog.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464175997591" fileName="StratergyAddMethodDialog.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464175997679" fileName="StratergyAddMethodDialog.java" startLine="171" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="7824118464175997707" fileName="StratergyAddMethodDialog.java" startLine="180" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" />
+    <nodeInfo nodeId="7824118464176218601" fileName="StratergyAddMethodDialog.java" startLine="184" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
+    <nodeInfo nodeId="7824118464175997667" fileName="StratergyAddMethodDialog.java" startLine="165" startPosition="0" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortByNameAction#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="7824118464175997689" fileName="StratergyAddMethodDialog.java" startLine="175" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="7824118464175997783" fileName="StratergyAddMethodDialog.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolbarActions#()Ljava/util/List;" />
+    <nodeInfo nodeId="7824118464175997729" fileName="StratergyAddMethodDialog.java" startLine="35" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StratergyAddMethodDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/ContainerStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/CollectMethodsStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/AdditionStrategy;)V" />
+    <nodeInfo nodeId="7346552127093467464" fileName="StratergyAddMethodDialog.java" startLine="50" startPosition="269" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464175997817" fileName="StratergyAddMethodDialog.java" startLine="84" startPosition="52" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464175997933" fileName="StratergyAddMethodDialog.java" startLine="103" startPosition="125" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7824118464175997809" fileName="StratergyAddMethodDialog.java" startLine="83" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareMethods#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="4151408063400000260" fileName="StratergyAddMethodDialog.java" startLine="48" startPosition="73" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464175997887" fileName="StratergyAddMethodDialog.java" startLine="95" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="4151408063400001299" fileName="StratergyAddMethodDialog.java" startLine="45" startPosition="77" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4151408063399997079" fileName="StratergyAddMethodDialog.java" startLine="44" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVariableNames#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="7346552127093467523" fileName="StratergyAddMethodDialog.java" startLine="56" startPosition="16" endLine="57" endPosition="54" />
+    <scopeInfo nodeId="4151408063400000326" fileName="StratergyAddMethodDialog.java" startLine="68" startPosition="59" endLine="69" endPosition="41" />
+    <scopeInfo nodeId="7824118464175997771" fileName="StratergyAddMethodDialog.java" startLine="73" startPosition="52" endLine="74" endPosition="97" />
+    <scopeInfo nodeId="4151408063400001480" fileName="StratergyAddMethodDialog.java" startLine="107" startPosition="107" endLine="108" endPosition="91" />
+    <scopeInfo nodeId="7824118464175997968" fileName="StratergyAddMethodDialog.java" startLine="116" startPosition="39" endLine="117" endPosition="48" />
+    <scopeInfo nodeId="7824118464175998002" fileName="StratergyAddMethodDialog.java" startLine="120" startPosition="55" endLine="121" endPosition="57" />
+    <scopeInfo nodeId="7824118464175998014" fileName="StratergyAddMethodDialog.java" startLine="124" startPosition="59" endLine="125" endPosition="65" />
+    <scopeInfo nodeId="7824118464175997599" fileName="StratergyAddMethodDialog.java" startLine="128" startPosition="45" endLine="129" endPosition="36" />
+    <scopeInfo nodeId="7824118464175997603" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="36" endLine="130" endPosition="48">
       <varInfo nodeId="7824118464175997606" varName="methodDecl" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997609" fileName="StratergyAddMethodDialog.java" startLine="131" startPosition="48" endLine="132" endPosition="107">
+    <scopeInfo nodeId="7824118464175997609" fileName="StratergyAddMethodDialog.java" startLine="130" startPosition="48" endLine="131" endPosition="107">
       <varInfo nodeId="7824118464175997613" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997625" fileName="StratergyAddMethodDialog.java" startLine="132" startPosition="107" endLine="133" endPosition="53">
+    <scopeInfo nodeId="7824118464175997625" fileName="StratergyAddMethodDialog.java" startLine="131" startPosition="107" endLine="132" endPosition="53">
       <varInfo nodeId="7824118464175997628" varName="c1" />
       <varInfo nodeId="7824118464175997630" varName="c2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997586" fileName="StratergyAddMethodDialog.java" startLine="143" startPosition="32" endLine="144" endPosition="24" />
-    <scopeInfo nodeId="7824118464175997594" fileName="StratergyAddMethodDialog.java" startLine="147" startPosition="32" endLine="148" endPosition="24" />
-    <scopeInfo nodeId="7824118464175997635" fileName="StratergyAddMethodDialog.java" startLine="154" startPosition="44" endLine="155" endPosition="29" />
-    <scopeInfo nodeId="7824118464175997639" fileName="StratergyAddMethodDialog.java" startLine="155" startPosition="29" endLine="156" endPosition="57" />
-    <scopeInfo nodeId="7824118464175997643" fileName="StratergyAddMethodDialog.java" startLine="156" startPosition="57" endLine="157" endPosition="63">
+    <scopeInfo nodeId="7824118464175997586" fileName="StratergyAddMethodDialog.java" startLine="142" startPosition="32" endLine="143" endPosition="24" />
+    <scopeInfo nodeId="7824118464175997594" fileName="StratergyAddMethodDialog.java" startLine="146" startPosition="32" endLine="147" endPosition="24" />
+    <scopeInfo nodeId="7824118464175997635" fileName="StratergyAddMethodDialog.java" startLine="153" startPosition="44" endLine="154" endPosition="29" />
+    <scopeInfo nodeId="7824118464175997639" fileName="StratergyAddMethodDialog.java" startLine="154" startPosition="29" endLine="155" endPosition="57" />
+    <scopeInfo nodeId="7824118464175997643" fileName="StratergyAddMethodDialog.java" startLine="155" startPosition="57" endLine="156" endPosition="63">
       <varInfo nodeId="7824118464175997646" varName="sourceMethod" />
       <varInfo nodeId="7824118464175997648" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997653" fileName="StratergyAddMethodDialog.java" startLine="160" startPosition="50" endLine="161" endPosition="68">
+    <scopeInfo nodeId="7824118464175997653" fileName="StratergyAddMethodDialog.java" startLine="159" startPosition="50" endLine="160" endPosition="68">
       <varInfo nodeId="7824118464175997657" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997684" fileName="StratergyAddMethodDialog.java" startLine="173" startPosition="48" endLine="174" endPosition="26" />
-    <scopeInfo nodeId="7824118464175997710" fileName="StratergyAddMethodDialog.java" startLine="182" startPosition="33" endLine="183" endPosition="164" />
-    <scopeInfo nodeId="7824118464176218604" fileName="StratergyAddMethodDialog.java" startLine="186" startPosition="44" endLine="187" endPosition="165" />
-    <scopeInfo nodeId="7824118464175997913" fileName="StratergyAddMethodDialog.java" startLine="100" startPosition="71" endLine="102" endPosition="26">
+    <scopeInfo nodeId="7824118464175997684" fileName="StratergyAddMethodDialog.java" startLine="172" startPosition="48" endLine="173" endPosition="26" />
+    <scopeInfo nodeId="7824118464175997710" fileName="StratergyAddMethodDialog.java" startLine="181" startPosition="33" endLine="182" endPosition="164" />
+    <scopeInfo nodeId="7824118464176218604" fileName="StratergyAddMethodDialog.java" startLine="185" startPosition="44" endLine="186" endPosition="165" />
+    <scopeInfo nodeId="7824118464175997913" fileName="StratergyAddMethodDialog.java" startLine="99" startPosition="71" endLine="101" endPosition="26">
       <varInfo nodeId="4151408063400001463" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997570" fileName="StratergyAddMethodDialog.java" startLine="138" startPosition="57" endLine="140" endPosition="26" />
-    <scopeInfo nodeId="7824118464175997696" fileName="StratergyAddMethodDialog.java" startLine="177" startPosition="61" endLine="179" endPosition="50" />
-    <scopeInfo nodeId="4151408063400000325" fileName="StratergyAddMethodDialog.java" startLine="68" startPosition="5" endLine="71" endPosition="5">
+    <scopeInfo nodeId="7824118464175997570" fileName="StratergyAddMethodDialog.java" startLine="137" startPosition="57" endLine="139" endPosition="26" />
+    <scopeInfo nodeId="7824118464175997696" fileName="StratergyAddMethodDialog.java" startLine="176" startPosition="61" endLine="178" endPosition="50" />
+    <scopeInfo nodeId="4151408063400000325" fileName="StratergyAddMethodDialog.java" startLine="67" startPosition="5" endLine="70" endPosition="5">
       <varInfo nodeId="4151408063400000329" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997846" fileName="StratergyAddMethodDialog.java" startLine="86" startPosition="45" endLine="89" endPosition="21">
+    <scopeInfo nodeId="7824118464175997846" fileName="StratergyAddMethodDialog.java" startLine="85" startPosition="45" endLine="88" endPosition="21">
       <varInfo nodeId="7824118464175997872" varName="i2" />
       <varInfo nodeId="7824118464175997854" varName="i1" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997824" fileName="StratergyAddMethodDialog.java" startLine="90" startPosition="12" endLine="93" endPosition="30">
+    <scopeInfo nodeId="7824118464175997824" fileName="StratergyAddMethodDialog.java" startLine="89" startPosition="12" endLine="92" endPosition="30">
       <varInfo nodeId="7824118464175997826" varName="n1" />
       <varInfo nodeId="7824118464175997834" varName="n2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997669" fileName="StratergyAddMethodDialog.java" startLine="167" startPosition="41" endLine="170" endPosition="20" />
-    <scopeInfo nodeId="7346552127093467465" fileName="StratergyAddMethodDialog.java" startLine="52" startPosition="63" endLine="56" endPosition="26">
+    <scopeInfo nodeId="7824118464175997669" fileName="StratergyAddMethodDialog.java" startLine="166" startPosition="41" endLine="169" endPosition="20" />
+    <scopeInfo nodeId="7346552127093467465" fileName="StratergyAddMethodDialog.java" startLine="51" startPosition="63" endLine="55" endPosition="26">
       <varInfo nodeId="7346552127093467484" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997767" fileName="StratergyAddMethodDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997787" fileName="StratergyAddMethodDialog.java" startLine="78" startPosition="48" endLine="82" endPosition="18">
+    <scopeInfo nodeId="7824118464175997767" fileName="StratergyAddMethodDialog.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997787" fileName="StratergyAddMethodDialog.java" startLine="77" startPosition="48" endLine="81" endPosition="18">
       <varInfo nodeId="7824118464175997789" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997909" fileName="StratergyAddMethodDialog.java" startLine="99" startPosition="49" endLine="103" endPosition="5">
+    <scopeInfo nodeId="7824118464175997909" fileName="StratergyAddMethodDialog.java" startLine="98" startPosition="49" endLine="102" endPosition="5">
       <varInfo nodeId="7824118464175997911" varName="methodNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997963" fileName="StratergyAddMethodDialog.java" startLine="116" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="7824118464175997963" fileName="StratergyAddMethodDialog.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="7824118464175997966" varName="bm" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997995" fileName="StratergyAddMethodDialog.java" startLine="120" startPosition="0" endLine="124" endPosition="0">
+    <scopeInfo nodeId="7824118464175997995" fileName="StratergyAddMethodDialog.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="7824118464175997998" varName="c1" />
       <varInfo nodeId="7824118464175998000" varName="c2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175998011" fileName="StratergyAddMethodDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997564" fileName="StratergyAddMethodDialog.java" startLine="137" startPosition="0" endLine="141" endPosition="7">
+    <scopeInfo nodeId="7824118464175998011" fileName="StratergyAddMethodDialog.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997564" fileName="StratergyAddMethodDialog.java" startLine="136" startPosition="0" endLine="140" endPosition="7">
       <varInfo nodeId="7824118464175997568" varName="result" />
       <varInfo nodeId="7824118464175997566" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997583" fileName="StratergyAddMethodDialog.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997591" fileName="StratergyAddMethodDialog.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997679" fileName="StratergyAddMethodDialog.java" startLine="172" startPosition="0" endLine="176" endPosition="0">
+    <scopeInfo nodeId="7824118464175997583" fileName="StratergyAddMethodDialog.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997591" fileName="StratergyAddMethodDialog.java" startLine="145" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997679" fileName="StratergyAddMethodDialog.java" startLine="171" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="7824118464175997682" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997707" fileName="StratergyAddMethodDialog.java" startLine="181" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="7824118464176218601" fileName="StratergyAddMethodDialog.java" startLine="185" startPosition="0" endLine="189" endPosition="0">
+    <scopeInfo nodeId="7824118464175997707" fileName="StratergyAddMethodDialog.java" startLine="180" startPosition="0" endLine="184" endPosition="0" />
+    <scopeInfo nodeId="7824118464176218601" fileName="StratergyAddMethodDialog.java" startLine="184" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="7824118464176218607" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997667" fileName="StratergyAddMethodDialog.java" startLine="166" startPosition="0" endLine="171" endPosition="5">
+    <scopeInfo nodeId="7824118464175997667" fileName="StratergyAddMethodDialog.java" startLine="165" startPosition="0" endLine="170" endPosition="5">
       <varInfo nodeId="7824118464176219395" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997689" fileName="StratergyAddMethodDialog.java" startLine="176" startPosition="0" endLine="181" endPosition="0">
+    <scopeInfo nodeId="7824118464175997689" fileName="StratergyAddMethodDialog.java" startLine="175" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="7824118464175997692" varName="e" />
       <varInfo nodeId="7824118464175997694" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997741" fileName="StratergyAddMethodDialog.java" startLine="37" startPosition="287" endLine="43" endPosition="82" />
-    <scopeInfo nodeId="7824118464175997783" fileName="StratergyAddMethodDialog.java" startLine="77" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997937" fileName="StratergyAddMethodDialog.java" startLine="105" startPosition="90" endLine="112" endPosition="65">
+    <scopeInfo nodeId="7824118464175997741" fileName="StratergyAddMethodDialog.java" startLine="36" startPosition="287" endLine="42" endPosition="82" />
+    <scopeInfo nodeId="7824118464175997783" fileName="StratergyAddMethodDialog.java" startLine="76" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997937" fileName="StratergyAddMethodDialog.java" startLine="104" startPosition="90" endLine="111" endPosition="65">
       <varInfo nodeId="5797068448048504122" varName="sourceMethod" />
       <varInfo nodeId="7840389369972895334" varName="addedMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997729" fileName="StratergyAddMethodDialog.java" startLine="36" startPosition="0" endLine="44" endPosition="3">
+    <scopeInfo nodeId="7824118464175997729" fileName="StratergyAddMethodDialog.java" startLine="35" startPosition="0" endLine="43" endPosition="3">
       <varInfo nodeId="7824118464175997735" varName="containerStrategy" />
       <varInfo nodeId="7824118464175997737" varName="collectStrategy" />
       <varInfo nodeId="7824118464175997731" varName="context" />
       <varInfo nodeId="7824118464175997733" varName="mainFrame" />
       <varInfo nodeId="7824118464175997739" varName="additionStrategy" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997816" fileName="StratergyAddMethodDialog.java" startLine="85" startPosition="52" endLine="94" endPosition="5" />
-    <scopeInfo nodeId="7824118464175997933" fileName="StratergyAddMethodDialog.java" startLine="104" startPosition="125" endLine="113" endPosition="5">
+    <scopeInfo nodeId="7824118464175997816" fileName="StratergyAddMethodDialog.java" startLine="84" startPosition="52" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="7824118464175997933" fileName="StratergyAddMethodDialog.java" startLine="103" startPosition="125" endLine="112" endPosition="5">
       <varInfo nodeId="7824118464175997935" varName="added" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997809" fileName="StratergyAddMethodDialog.java" startLine="84" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="7824118464175997809" fileName="StratergyAddMethodDialog.java" startLine="83" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="7824118464175997812" varName="m1" />
       <varInfo nodeId="7824118464175997814" varName="m2" />
     </scopeInfo>
-    <scopeInfo nodeId="4151408063400000261" fileName="StratergyAddMethodDialog.java" startLine="50" startPosition="29" endLine="66" endPosition="78">
+    <scopeInfo nodeId="4151408063400000261" fileName="StratergyAddMethodDialog.java" startLine="49" startPosition="29" endLine="65" endPosition="78">
       <varInfo nodeId="4151408063400000292" varName="mainName" />
       <varInfo nodeId="4151408063400000278" varName="prefix" />
       <varInfo nodeId="4151408063400001414" varName="name" />
       <varInfo nodeId="4151408063400000285" varName="suffix" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997894" fileName="StratergyAddMethodDialog.java" startLine="97" startPosition="89" endLine="114" endPosition="18">
+    <scopeInfo nodeId="7824118464175997894" fileName="StratergyAddMethodDialog.java" startLine="96" startPosition="89" endLine="113" endPosition="18">
       <varInfo nodeId="7824118464175997903" varName="methods" />
       <varInfo nodeId="7824118464175997896" varName="result" />
       <varInfo nodeId="7824118464175997924" varName="addedMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="4151408063400001300" fileName="StratergyAddMethodDialog.java" startLine="47" startPosition="105" endLine="67" endPosition="7">
+    <scopeInfo nodeId="4151408063400001300" fileName="StratergyAddMethodDialog.java" startLine="46" startPosition="105" endLine="66" endPosition="7">
       <varInfo nodeId="4151408063400000255" varName="nodeType" />
       <varInfo nodeId="4151408063400001312" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997887" fileName="StratergyAddMethodDialog.java" startLine="96" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="7824118464175997887" fileName="StratergyAddMethodDialog.java" startLine="95" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="7824118464175997891" varName="methodNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="4151408063399997082" fileName="StratergyAddMethodDialog.java" startLine="46" startPosition="77" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="4151408063399997079" fileName="StratergyAddMethodDialog.java" startLine="45" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="4151408063399997082" fileName="StratergyAddMethodDialog.java" startLine="45" startPosition="77" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="4151408063399997079" fileName="StratergyAddMethodDialog.java" startLine="44" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1031120732049525628" varName="usedNames" />
       <varInfo nodeId="4151408063400000237" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7824118464175997651" fileName="StratergyAddMethodDialog.java" startLine="160" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$CollectMethodsStrategy" />
-    <unitInfo nodeId="7824118464175997633" fileName="StratergyAddMethodDialog.java" startLine="154" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$AdditionStrategy" />
-    <unitInfo nodeId="7824118464175997556" fileName="StratergyAddMethodDialog.java" startLine="134" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog.ContainerStrategy$MethodAddition" />
-    <unitInfo nodeId="7824118464175997554" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$ContainerStrategy" />
-    <unitInfo nodeId="7824118464175997660" fileName="StratergyAddMethodDialog.java" startLine="164" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$SortByNameAction" />
-    <unitInfo nodeId="7824118464175997551" fileName="StratergyAddMethodDialog.java" startLine="30" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
+    <unitInfo nodeId="7824118464175997651" fileName="StratergyAddMethodDialog.java" startLine="159" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$CollectMethodsStrategy" />
+    <unitInfo nodeId="7824118464175997633" fileName="StratergyAddMethodDialog.java" startLine="153" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$AdditionStrategy" />
+    <unitInfo nodeId="7824118464175997556" fileName="StratergyAddMethodDialog.java" startLine="133" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog.ContainerStrategy$MethodAddition" />
+    <unitInfo nodeId="7824118464175997554" fileName="StratergyAddMethodDialog.java" startLine="128" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$ContainerStrategy" />
+    <unitInfo nodeId="7824118464175997660" fileName="StratergyAddMethodDialog.java" startLine="163" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$SortByNameAction" />
+    <unitInfo nodeId="7824118464175997551" fileName="StratergyAddMethodDialog.java" startLine="29" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
   </root>
   <root nodeId="7824118464176019393">
     <nodeInfo nodeId="7824118464176019396" fileName="AddClassMethodStrategy.java" startLine="17" startPosition="91" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassConcept" />
@@ -4631,48 +4631,48 @@
     <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="27" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy" />
   </root>
   <root nodeId="8300784086089079504">
-    <nodeInfo nodeId="4393431345217255364" fileName="ImplementMethodStrategy.java" startLine="15" startPosition="51" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8300784086089079516" fileName="ImplementMethodStrategy.java" startLine="19" startPosition="28" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5394250374101437992" fileName="ImplementMethodStrategy.java" startLine="23" startPosition="56" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5394250374101437997" fileName="ImplementMethodStrategy.java" startLine="24" startPosition="35" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5394250374101438005" fileName="ImplementMethodStrategy.java" startLine="25" startPosition="66" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5394250374101438012" fileName="ImplementMethodStrategy.java" startLine="26" startPosition="38" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6359127068906170518" fileName="ImplementMethodStrategy.java" startLine="27" startPosition="40" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5394250374101438019" fileName="ImplementMethodStrategy.java" startLine="28" startPosition="24" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6359127068906225543" fileName="ImplementMethodStrategy.java" startLine="32" startPosition="62" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4083654666616179684" fileName="ImplementMethodStrategy.java" startLine="33" startPosition="45" endLine="34" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5137877746012876088" fileName="ImplementMethodStrategy.java" startLine="35" startPosition="38" endLine="36" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8300784086089079506" fileName="ImplementMethodStrategy.java" startLine="14" startPosition="71" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImplementMethodStrategy#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="4083654666616179765" fileName="ImplementMethodStrategy.java" startLine="34" startPosition="152" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8300784086089079512" fileName="ImplementMethodStrategy.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8300784086089079539" fileName="ImplementMethodStrategy.java" startLine="31" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8300784086089079518" fileName="ImplementMethodStrategy.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="8300784086089079509" fileName="ImplementMethodStrategy.java" startLine="15" startPosition="51" endLine="16" endPosition="19" />
-    <scopeInfo nodeId="8300784086089079515" fileName="ImplementMethodStrategy.java" startLine="19" startPosition="28" endLine="20" endPosition="30" />
-    <scopeInfo nodeId="4083654666616179766" fileName="ImplementMethodStrategy.java" startLine="35" startPosition="38" endLine="36" endPosition="174" />
-    <scopeInfo nodeId="8300784086089079506" fileName="ImplementMethodStrategy.java" startLine="14" startPosition="71" endLine="17" endPosition="3">
+    <nodeInfo nodeId="4393431345217255364" fileName="ImplementMethodStrategy.java" startLine="16" startPosition="51" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8300784086089079516" fileName="ImplementMethodStrategy.java" startLine="20" startPosition="28" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5394250374101437992" fileName="ImplementMethodStrategy.java" startLine="24" startPosition="56" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5394250374101437997" fileName="ImplementMethodStrategy.java" startLine="25" startPosition="35" endLine="26" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5394250374101438005" fileName="ImplementMethodStrategy.java" startLine="26" startPosition="66" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5394250374101438012" fileName="ImplementMethodStrategy.java" startLine="27" startPosition="38" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6359127068906170518" fileName="ImplementMethodStrategy.java" startLine="28" startPosition="40" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5394250374101438019" fileName="ImplementMethodStrategy.java" startLine="29" startPosition="24" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6359127068906225543" fileName="ImplementMethodStrategy.java" startLine="33" startPosition="62" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4083654666616179684" fileName="ImplementMethodStrategy.java" startLine="34" startPosition="45" endLine="35" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5137877746012876088" fileName="ImplementMethodStrategy.java" startLine="36" startPosition="38" endLine="37" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8300784086089079506" fileName="ImplementMethodStrategy.java" startLine="15" startPosition="71" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImplementMethodStrategy#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4083654666616179765" fileName="ImplementMethodStrategy.java" startLine="35" startPosition="298" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8300784086089079512" fileName="ImplementMethodStrategy.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8300784086089079539" fileName="ImplementMethodStrategy.java" startLine="32" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8300784086089079518" fileName="ImplementMethodStrategy.java" startLine="23" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="8300784086089079509" fileName="ImplementMethodStrategy.java" startLine="16" startPosition="51" endLine="17" endPosition="19" />
+    <scopeInfo nodeId="8300784086089079515" fileName="ImplementMethodStrategy.java" startLine="20" startPosition="28" endLine="21" endPosition="30" />
+    <scopeInfo nodeId="4083654666616179766" fileName="ImplementMethodStrategy.java" startLine="36" startPosition="38" endLine="37" endPosition="174" />
+    <scopeInfo nodeId="8300784086089079506" fileName="ImplementMethodStrategy.java" startLine="15" startPosition="71" endLine="18" endPosition="3">
       <varInfo nodeId="4393431345217255494" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079512" fileName="ImplementMethodStrategy.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8300784086089079542" fileName="ImplementMethodStrategy.java" startLine="32" startPosition="62" endLine="37" endPosition="5">
+    <scopeInfo nodeId="8300784086089079512" fileName="ImplementMethodStrategy.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="8300784086089079542" fileName="ImplementMethodStrategy.java" startLine="33" startPosition="62" endLine="38" endPosition="5">
       <varInfo nodeId="4083654666616179685" varName="defaultReturnExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079521" fileName="ImplementMethodStrategy.java" startLine="23" startPosition="56" endLine="29" endPosition="20">
+    <scopeInfo nodeId="8300784086089079521" fileName="ImplementMethodStrategy.java" startLine="24" startPosition="56" endLine="30" endPosition="20">
       <varInfo nodeId="5394250374101437993" varName="optPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079539" fileName="ImplementMethodStrategy.java" startLine="31" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="8300784086089079539" fileName="ImplementMethodStrategy.java" startLine="32" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="3359611512358152403" varName="sourceMethod" />
       <varInfo nodeId="8300784086089079543" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079518" fileName="ImplementMethodStrategy.java" startLine="22" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="8300784086089079504" fileName="ImplementMethodStrategy.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.actions.ImplementMethodStrategy" />
+    <scopeInfo nodeId="8300784086089079518" fileName="ImplementMethodStrategy.java" startLine="23" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="8300784086089079504" fileName="ImplementMethodStrategy.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.actions.ImplementMethodStrategy" />
   </root>
   <root nodeId="8300784086089115127">
-    <nodeInfo nodeId="8300784086089115180" fileName="MethodsToImplementStrategy.java" startLine="14" startPosition="67" endLine="15" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8300784086089115180" fileName="MethodsToImplementStrategy.java" startLine="14" startPosition="67" endLine="15" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8300784086089115129" fileName="MethodsToImplementStrategy.java" startLine="10" startPosition="100" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodsToImplementStrategy#()V" />
     <nodeInfo nodeId="8300784086089115134" fileName="MethodsToImplementStrategy.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="8300784086089115132" fileName="MethodsToImplementStrategy.java" startLine="11" startPosition="39" endLine="11" endPosition="39" />
-    <scopeInfo nodeId="8300784086089115138" fileName="MethodsToImplementStrategy.java" startLine="14" startPosition="67" endLine="15" endPosition="174" />
+    <scopeInfo nodeId="8300784086089115138" fileName="MethodsToImplementStrategy.java" startLine="14" startPosition="67" endLine="15" endPosition="326" />
     <scopeInfo nodeId="8300784086089115129" fileName="MethodsToImplementStrategy.java" startLine="10" startPosition="100" endLine="12" endPosition="3" />
     <scopeInfo nodeId="8300784086089115134" fileName="MethodsToImplementStrategy.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="8300784086089115151" varName="container" />
@@ -4680,11 +4680,11 @@
     <unitInfo nodeId="8300784086089115127" fileName="MethodsToImplementStrategy.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ide.actions.MethodsToImplementStrategy" />
   </root>
   <root nodeId="8300784086089115201">
-    <nodeInfo nodeId="5418393554803903420" fileName="MethodsToOverrideStrategy.java" startLine="14" startPosition="67" endLine="15" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5418393554803903420" fileName="MethodsToOverrideStrategy.java" startLine="14" startPosition="67" endLine="15" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8300784086089115230" fileName="MethodsToOverrideStrategy.java" startLine="10" startPosition="99" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodsToOverrideStrategy#()V" />
     <nodeInfo nodeId="8300784086089115202" fileName="MethodsToOverrideStrategy.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="8300784086089115233" fileName="MethodsToOverrideStrategy.java" startLine="11" startPosition="38" endLine="11" endPosition="38" />
-    <scopeInfo nodeId="8300784086089115206" fileName="MethodsToOverrideStrategy.java" startLine="14" startPosition="67" endLine="15" endPosition="173" />
+    <scopeInfo nodeId="8300784086089115206" fileName="MethodsToOverrideStrategy.java" startLine="14" startPosition="67" endLine="15" endPosition="325" />
     <scopeInfo nodeId="8300784086089115230" fileName="MethodsToOverrideStrategy.java" startLine="10" startPosition="99" endLine="12" endPosition="3" />
     <scopeInfo nodeId="8300784086089115202" fileName="MethodsToOverrideStrategy.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="8300784086089115227" varName="container" />

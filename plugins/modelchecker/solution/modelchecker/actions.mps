@@ -370,6 +370,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1453248744423272180" resolveInfo="concept" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1453248744423272192">
+                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.1213877394480" resolveInfo="getLinkDeclarations" />
                 </node>
               </node>
@@ -539,6 +540,7 @@
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1453248744423272189" resolveInfo="link" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1453248744423272264">
+                      <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.3386205146660812199" resolveInfo="isAtLeastOneCardinality" />
                     </node>
                   </node>
@@ -548,6 +550,7 @@
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1453248744423272189" resolveInfo="link" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1453248744423272268">
+                        <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.1213877254557" resolveInfo="isSingular" />
                       </node>
                     </node>
@@ -1599,6 +1602,7 @@
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Reference_GetLinkDeclarationOperation" typeId="tp25.1547759872598425067" id="1453248744423272725" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1453248744423272726">
+                            <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.1213877254523" resolveInfo="getGenuineLink" />
                           </node>
                         </node>
@@ -2379,6 +2383,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1453248744423273032" resolveInfo="concept" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1453248744423273048">
+                            <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
                           </node>
                         </node>
@@ -12310,6 +12315,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6550340959293398372">
+                                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
                                 </node>
                               </node>

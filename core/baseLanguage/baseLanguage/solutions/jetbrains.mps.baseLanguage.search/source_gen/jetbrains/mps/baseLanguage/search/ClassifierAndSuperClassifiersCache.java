@@ -26,7 +26,7 @@ import jetbrains.mps.generator.JavaModelUtil_new;
 import java.util.Iterator;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 /*package*/ final class ClassifierAndSuperClassifiersCache extends AbstractCache {
@@ -392,7 +392,7 @@ forEachInAllMethods:
           result.append(',');
         }
         if (type != null) {
-          result.append(Type_Behavior.call_getErasureSignature_1213877337313(type));
+          result.append(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
         } else {
           result.append("");
         }

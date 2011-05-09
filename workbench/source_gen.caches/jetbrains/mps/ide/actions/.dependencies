@@ -242,11 +242,13 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -257,7 +259,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="com.intellij.ui.treeStructure.actions.CollapseAllAction" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="javax.swing.JComponent" />
@@ -1572,13 +1574,16 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ImplementMethodStrategy" file="ImplementMethodStrategy.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="javax.swing.BoxLayout" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.actions.BaseMethodUpdateStrategy" />
   </dependency>
@@ -1690,19 +1695,23 @@
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.MethodsToImplementStrategy" file="MethodsToImplementStrategy.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode extendsClassName="jetbrains.mps.ide.actions.CollectMethodsStrategy" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.MethodsToOverrideStrategy" file="MethodsToOverrideStrategy.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode extendsClassName="jetbrains.mps.ide.actions.CollectMethodsStrategy" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" file="ModelActionsInternal_ActionGroup.java">
@@ -3070,7 +3079,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.StratergyAddMethodDialog" file="StratergyAddMethodDialog.java">
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -3078,7 +3087,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.IconContainer" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="java.awt.Frame" />
@@ -3086,17 +3095,18 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.IconContainer" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent" />
     <classNode dependClassName="java.awt.HeadlessException" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior" />
     <classNode extendsClassName="jetbrains.mps.ide.actions.BaseAddMethodDialog" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
   </dependency>

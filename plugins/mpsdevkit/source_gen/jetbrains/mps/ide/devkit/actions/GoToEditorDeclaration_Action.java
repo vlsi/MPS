@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper;
 import jetbrains.mps.smodel.IScope;
@@ -113,7 +113,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
         }
       });
       if (l.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Couldn't find declaring language for concept " + INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Couldn't find declaring language for concept " + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})), "Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
       final Wrappers._T<SNode> conceptDeclaration = new Wrappers._T<SNode>();

@@ -38,7 +38,8 @@ import javax.swing.tree.TreePath;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class BaseAddMethodDialog extends BaseDialog {
   private EditorContext myContext;
@@ -195,7 +196,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
       super(null);
       myMethod = method;
       setIcon(IconManager.getIconFor(myMethod));
-      setNodeIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(myMethod));
+      setNodeIdentifier(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(myMethod, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class})));
     }
 
     public SNode getMethod() {

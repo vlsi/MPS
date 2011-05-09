@@ -10,8 +10,7 @@ import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_Behavior;
-import jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -60,7 +59,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
       return;
     }
     if (statementList != beforeStatement) {
-      List<SNode> varElements = ILocalVariableElementList_Behavior.call_getLocalVariableElements_1238805763253(statementList);
+      List<SNode> varElements = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(statementList, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}));
       for (SNode sNode : varElements) {
         if (!((SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement")))) {
           continue;
@@ -69,7 +68,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
         if (statement == beforeStatement) {
           break;
         }
-        SNode declNode = ILocalVariableElement_Behavior.call_getLocalVariableDeclaration_1238803857389(statement);
+        SNode declNode = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"), "virtual_getLocalVariableDeclaration_1238803857389", new Class[]{SNode.class}));
         if (declNode != null) {
           result.add(declNode);
         }

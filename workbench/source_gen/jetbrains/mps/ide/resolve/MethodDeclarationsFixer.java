@@ -30,7 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
@@ -222,11 +222,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
-    return IMethodCall_Behavior.call_getTypesByTypeVars_851115533308208851(methodCall);
+    return ((Map<SNode, SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(methodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getTypesByTypeVars_851115533308208851", new Class[]{SNode.class}));
   }
 
   public List<SNode> getCandidates(SNode methodCall, String methodName) {
-    return IMethodCall_Behavior.call_getAvailableMethodDeclarations_5776618742611315379(methodCall, methodName);
+    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(methodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, methodName));
   }
 
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {

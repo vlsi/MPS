@@ -7,7 +7,8 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -31,7 +32,7 @@ public class ImplementMethodStrategy extends BaseMethodUpdateStrategy {
 
   public void updateMethod(SNode sourceMethod, SNode method) {
     super.updateMethod(sourceMethod, method);
-    SNode defaultReturnExpr = Type_Behavior.call_createDefaultTypeExpression_3359611512358152580(SLinkOperations.getTarget(method, "returnType", true));
+    SNode defaultReturnExpr = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}));
     if ((defaultReturnExpr != null)) {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultReturnExpr));
     }

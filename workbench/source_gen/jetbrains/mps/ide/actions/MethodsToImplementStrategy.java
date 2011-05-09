@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MethodsToImplementStrategy implements StratergyAddMethodDialog.CollectMethodsStrategy {
@@ -12,6 +12,6 @@ public class MethodsToImplementStrategy implements StratergyAddMethodDialog.Coll
   }
 
   public List<SNode> collectImplementableMethods(SNode container) {
-    return IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.structure.IMemberContainer"));
+    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToImplement_5418393554803775106", new Class[]{SNode.class}));
   }
 }

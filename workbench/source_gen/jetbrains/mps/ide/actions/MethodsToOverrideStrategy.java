@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MethodsToOverrideStrategy implements StratergyAddMethodDialog.CollectMethodsStrategy {
@@ -12,6 +12,6 @@ public class MethodsToOverrideStrategy implements StratergyAddMethodDialog.Colle
   }
 
   public List<SNode> collectImplementableMethods(SNode container) {
-    return IMemberContainer_Behavior.call_getMethodsToOverride_5418393554803767537(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.structure.IMemberContainer"));
+    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToOverride_5418393554803767537", new Class[]{SNode.class}));
   }
 }

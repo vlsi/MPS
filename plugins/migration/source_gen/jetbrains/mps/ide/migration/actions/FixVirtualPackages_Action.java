@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
@@ -67,7 +67,7 @@ public class FixVirtualPackages_Action extends GeneratedAction {
       SModel structure = language.getStructureModelDescriptor().getSModel();
       List<SNode> concepts = SModelOperations.getRoots(structure, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       for (SNode concept : concepts) {
-        List<SNode> aspects = AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(concept);
+        List<SNode> aspects = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findAllAspects_7754459869734028917", new Class[]{SNode.class}));
         for (SNode aspect : aspects) {
           if (!(SNodeOperations.isInstanceOf(aspect, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
             continue;

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UnavailableConceptsChecker extends SpecificChecker {
   public UnavailableConceptsChecker() {
@@ -26,7 +26,7 @@ public class UnavailableConceptsChecker extends SpecificChecker {
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
       if (concept == null) {
-        addIssue(results, node, "Cannot find concept \"" + INamedConcept_Behavior.call_getFqName_1213877404258(concept) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
+        addIssue(results, node, "Cannot find concept \"" + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(concept, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
       }
     }
 

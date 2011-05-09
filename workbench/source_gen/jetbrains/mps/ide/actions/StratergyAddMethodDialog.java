@@ -11,13 +11,12 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -48,7 +47,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       SNode variable = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       SNode nodeType = SLinkOperations.getTarget(variable, "type", true);
       if (nodeType != null) {
-        String name = ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType)).first();
+        String name = ListSequence.fromList(((List<String>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(nodeType, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", new Class[]{SNode.class}))).first();
         if (MapSequence.fromMap(usedNames).containsKey(name)) {
           int i = MapSequence.fromMap(usedNames).get(name);
           i = i + 1;
@@ -57,8 +56,8 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
         } else {
           MapSequence.fromMap(usedNames).put(name, 0);
         }
-        String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(variable, myProject);
-        String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(variable, myProject);
+        String prefix = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_getPrefix_3012473318495495520", new Class[]{SNode.class, Project.class}, myProject));
+        String suffix = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_getSuffix_3012473318495499856", new Class[]{SNode.class, Project.class}, myProject));
         String mainName = (StringUtils.isEmpty(prefix) ?
           name :
           NameUtil.capitalize(name)

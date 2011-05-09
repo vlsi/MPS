@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.ui.LayeredIcon;
 import com.intellij.ui.RowIcon;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -125,9 +125,9 @@ public class IconManager {
         RowIcon result = new RowIcon(2);
         result.setIcon(mainIcon, 0);
         if (!(withoutAdditional)) {
-          result.setIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node), 1);
+          result.setIcon(((Icon) BehaviorManager.getInstance().invoke(Object.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class})), 1);
         }
-        List<Icon> markIcons = BaseConcept_Behavior.call_getMarkIcons_3923831204883340393(node);
+        List<Icon> markIcons = ((List<Icon>) BehaviorManager.getInstance().invoke(Object.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}));
         if (markIcons != null) {
           LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
           layeredIcon.setIcon(result, 0);

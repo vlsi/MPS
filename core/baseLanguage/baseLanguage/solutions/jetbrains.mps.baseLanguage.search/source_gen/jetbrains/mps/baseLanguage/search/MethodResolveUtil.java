@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Map;
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -95,7 +95,7 @@ public class MethodResolveUtil {
           } else {
             SNode desc = SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
             SNode anc = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-            if (Classifier_Behavior.call_isDescendant_7165541881557222913(desc, anc)) {
+            if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_isDescendant_7165541881557222913", new Class[]{SNode.class, SNode.class}, anc))) {
               goodMethods.add(method);
             } else {
               badMethods.add(method);

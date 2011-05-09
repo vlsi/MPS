@@ -290,7 +290,7 @@
     <nodeInfo nodeId="3161373106581139107" fileName="ClassifierAndSuperClassifiersCache.java" startLine="388" startPosition="80" endLine="389" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3161373106581139113" fileName="ClassifierAndSuperClassifiersCache.java" startLine="389" startPosition="67" endLine="390" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581139126" fileName="ClassifierAndSuperClassifiersCache.java" startLine="391" startPosition="34" endLine="392" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9107121562752364578" fileName="ClassifierAndSuperClassifiersCache.java" startLine="394" startPosition="27" endLine="395" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9107121562752364578" fileName="ClassifierAndSuperClassifiersCache.java" startLine="394" startPosition="27" endLine="395" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581139137" fileName="ClassifierAndSuperClassifiersCache.java" startLine="396" startPosition="16" endLine="397" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581139151" fileName="ClassifierAndSuperClassifiersCache.java" startLine="399" startPosition="7" endLine="400" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7055390039634077143" fileName="ClassifierAndSuperClassifiersCache.java" startLine="405" startPosition="116" endLine="406" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -505,7 +505,7 @@
     <scopeInfo nodeId="3161373106581139031" fileName="ClassifierAndSuperClassifiersCache.java" startLine="370" startPosition="44" endLine="371" endPosition="74" />
     <scopeInfo nodeId="3161373106581139072" fileName="ClassifierAndSuperClassifiersCache.java" startLine="377" startPosition="29" endLine="378" endPosition="21" />
     <scopeInfo nodeId="3161373106581139125" fileName="ClassifierAndSuperClassifiersCache.java" startLine="391" startPosition="34" endLine="392" endPosition="29" />
-    <scopeInfo nodeId="3161373106581139142" fileName="ClassifierAndSuperClassifiersCache.java" startLine="394" startPosition="27" endLine="395" endPosition="84" />
+    <scopeInfo nodeId="3161373106581139142" fileName="ClassifierAndSuperClassifiersCache.java" startLine="394" startPosition="27" endLine="395" endPosition="231" />
     <scopeInfo nodeId="3161373106581139136" fileName="ClassifierAndSuperClassifiersCache.java" startLine="396" startPosition="16" endLine="397" endPosition="28" />
     <scopeInfo nodeId="7055390039634077126" fileName="ClassifierAndSuperClassifiersCache.java" startLine="405" startPosition="116" endLine="406" endPosition="17" />
     <scopeInfo nodeId="3161373106581139198" fileName="ClassifierAndSuperClassifiersCache.java" startLine="412" startPosition="42" endLine="413" endPosition="17" />
@@ -1498,197 +1498,197 @@
     <unitInfo nodeId="3161373106581140178" fileName="StaticMethodReferenceInfoResolver.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.StaticMethodReferenceInfoResolver" />
   </root>
   <root nodeId="3161373106581140309">
-    <nodeInfo nodeId="3161373106581140312" fileName="LocalVariablesScope.java" startLine="20" startPosition="62" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextNode" />
-    <nodeInfo nodeId="3161373106581140315" fileName="LocalVariablesScope.java" startLine="21" startPosition="30" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocalVariables" />
-    <nodeInfo nodeId="3161373106581140324" fileName="LocalVariablesScope.java" startLine="24" startPosition="49" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140346" fileName="LocalVariablesScope.java" startLine="30" startPosition="40" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140354" fileName="LocalVariablesScope.java" startLine="31" startPosition="53" endLine="32" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140367" fileName="LocalVariablesScope.java" startLine="33" startPosition="34" endLine="34" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140375" fileName="LocalVariablesScope.java" startLine="34" startPosition="277" endLine="35" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140384" fileName="LocalVariablesScope.java" startLine="36" startPosition="7" endLine="37" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140397" fileName="LocalVariablesScope.java" startLine="38" startPosition="34" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140405" fileName="LocalVariablesScope.java" startLine="40" startPosition="7" endLine="41" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140418" fileName="LocalVariablesScope.java" startLine="42" startPosition="32" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140431" fileName="LocalVariablesScope.java" startLine="46" startPosition="58" endLine="47" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140435" fileName="LocalVariablesScope.java" startLine="48" startPosition="5" endLine="49" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140460" fileName="LocalVariablesScope.java" startLine="51" startPosition="32" endLine="52" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140465" fileName="LocalVariablesScope.java" startLine="54" startPosition="5" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140542" fileName="LocalVariablesScope.java" startLine="59" startPosition="32" endLine="60" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140548" fileName="LocalVariablesScope.java" startLine="62" startPosition="43" endLine="63" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140572" fileName="LocalVariablesScope.java" startLine="65" startPosition="117" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3161373106581140573" fileName="LocalVariablesScope.java" startLine="67" startPosition="9" endLine="68" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140584" fileName="LocalVariablesScope.java" startLine="69" startPosition="43" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3016439687263122395" fileName="LocalVariablesScope.java" startLine="71" startPosition="9" endLine="72" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140596" fileName="LocalVariablesScope.java" startLine="73" startPosition="31" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140601" fileName="LocalVariablesScope.java" startLine="77" startPosition="5" endLine="78" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140612" fileName="LocalVariablesScope.java" startLine="79" startPosition="38" endLine="80" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140619" fileName="LocalVariablesScope.java" startLine="80" startPosition="151" endLine="81" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140650" fileName="LocalVariablesScope.java" startLine="87" startPosition="44" endLine="88" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3161373106581140656" fileName="LocalVariablesScope.java" startLine="90" startPosition="113" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140663" fileName="LocalVariablesScope.java" startLine="92" startPosition="7" endLine="93" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140676" fileName="LocalVariablesScope.java" startLine="94" startPosition="41" endLine="95" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140683" fileName="LocalVariablesScope.java" startLine="97" startPosition="5" endLine="98" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140696" fileName="LocalVariablesScope.java" startLine="99" startPosition="33" endLine="100" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140718" fileName="LocalVariablesScope.java" startLine="104" startPosition="93" endLine="105" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140724" fileName="LocalVariablesScope.java" startLine="106" startPosition="28" endLine="107" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140731" fileName="LocalVariablesScope.java" startLine="108" startPosition="5" endLine="109" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140744" fileName="LocalVariablesScope.java" startLine="110" startPosition="40" endLine="111" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140784" fileName="LocalVariablesScope.java" startLine="120" startPosition="38" endLine="121" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140802" fileName="LocalVariablesScope.java" startLine="124" startPosition="55" endLine="125" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140804" fileName="LocalVariablesScope.java" startLine="127" startPosition="11" endLine="128" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140774" fileName="LocalVariablesScope.java" startLine="131" startPosition="5" endLine="132" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140479" fileName="LocalVariablesScope.java" startLine="135" startPosition="74" endLine="136" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140496" fileName="LocalVariablesScope.java" startLine="138" startPosition="50" endLine="139" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140517" fileName="LocalVariablesScope.java" startLine="142" startPosition="104" endLine="143" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3161373106581140518" fileName="LocalVariablesScope.java" startLine="145" startPosition="7" endLine="146" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140524" fileName="LocalVariablesScope.java" startLine="147" startPosition="5" endLine="148" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140319" fileName="LocalVariablesScope.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariablesScope#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3161373106581140392" fileName="LocalVariablesScope.java" startLine="37" startPosition="272" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140413" fileName="LocalVariablesScope.java" startLine="41" startPosition="250" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140426" fileName="LocalVariablesScope.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140454" fileName="LocalVariablesScope.java" startLine="50" startPosition="46" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140537" fileName="LocalVariablesScope.java" startLine="58" startPosition="104" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140565" fileName="LocalVariablesScope.java" startLine="64" startPosition="39" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140579" fileName="LocalVariablesScope.java" startLine="68" startPosition="116" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140591" fileName="LocalVariablesScope.java" startLine="72" startPosition="114" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140642" fileName="LocalVariablesScope.java" startLine="86" startPosition="68" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140651" fileName="LocalVariablesScope.java" startLine="89" startPosition="7" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140671" fileName="LocalVariablesScope.java" startLine="93" startPosition="159" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161373106581140691" fileName="LocalVariablesScope.java" startLine="98" startPosition="293" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140711" fileName="LocalVariablesScope.java" startLine="105" startPosition="86" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140739" fileName="LocalVariablesScope.java" startLine="109" startPosition="284" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140779" fileName="LocalVariablesScope.java" startLine="119" startPosition="90" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140794" fileName="LocalVariablesScope.java" startLine="123" startPosition="100" endLine="126" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140488" fileName="LocalVariablesScope.java" startLine="137" startPosition="30" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140508" fileName="LocalVariablesScope.java" startLine="141" startPosition="107" endLine="144" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140362" fileName="LocalVariablesScope.java" startLine="32" startPosition="280" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140607" fileName="LocalVariablesScope.java" startLine="78" startPosition="271" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140447" fileName="LocalVariablesScope.java" startLine="49" startPosition="76" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161373106581140786" fileName="LocalVariablesScope.java" startLine="122" startPosition="11" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161373106581140500" fileName="LocalVariablesScope.java" startLine="140" startPosition="7" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140702" fileName="LocalVariablesScope.java" startLine="103" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_populateLocalVariablesForCatch#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="3161373106581140483" fileName="LocalVariablesScope.java" startLine="136" startPosition="32" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3161373106581140635" fileName="LocalVariablesScope.java" startLine="85" startPosition="81" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161373106581140767" fileName="LocalVariablesScope.java" startLine="118" startPosition="43" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3161373106581140555" fileName="LocalVariablesScope.java" startLine="63" startPosition="126" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161373106581140763" fileName="LocalVariablesScope.java" startLine="117" startPosition="164" endLine="130" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140758" fileName="LocalVariablesScope.java" startLine="116" startPosition="100" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140339" fileName="LocalVariablesScope.java" startLine="29" startPosition="59" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140543" fileName="LocalVariablesScope.java" startLine="61" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581140468" fileName="LocalVariablesScope.java" startLine="134" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findThisOrParent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3161373106581140626" fileName="LocalVariablesScope.java" startLine="84" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_populateLocalVariables#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="3161373106581140750" fileName="LocalVariablesScope.java" startLine="114" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceInfoResolver#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
-    <nodeInfo nodeId="3161373106581140526" fileName="LocalVariablesScope.java" startLine="57" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_populateLocalVariables#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="3161373106581140331" fileName="LocalVariablesScope.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <scopeInfo nodeId="3161373106581140323" fileName="LocalVariablesScope.java" startLine="24" startPosition="49" endLine="25" endPosition="37" />
-    <scopeInfo nodeId="3161373106581140396" fileName="LocalVariablesScope.java" startLine="38" startPosition="34" endLine="39" endPosition="75" />
-    <scopeInfo nodeId="3161373106581140417" fileName="LocalVariablesScope.java" startLine="42" startPosition="32" endLine="43" endPosition="81" />
-    <scopeInfo nodeId="3161373106581140430" fileName="LocalVariablesScope.java" startLine="46" startPosition="58" endLine="47" endPosition="35" />
-    <scopeInfo nodeId="3161373106581140459" fileName="LocalVariablesScope.java" startLine="51" startPosition="32" endLine="52" endPosition="25" />
-    <scopeInfo nodeId="3161373106581140541" fileName="LocalVariablesScope.java" startLine="59" startPosition="32" endLine="60" endPosition="13" />
-    <scopeInfo nodeId="3161373106581140571" fileName="LocalVariablesScope.java" startLine="65" startPosition="117" endLine="66" endPosition="19" />
-    <scopeInfo nodeId="3161373106581140583" fileName="LocalVariablesScope.java" startLine="69" startPosition="43" endLine="70" endPosition="16" />
-    <scopeInfo nodeId="3161373106581140595" fileName="LocalVariablesScope.java" startLine="73" startPosition="31" endLine="74" endPosition="31" />
-    <scopeInfo nodeId="3161373106581140649" fileName="LocalVariablesScope.java" startLine="87" startPosition="44" endLine="88" endPosition="17" />
-    <scopeInfo nodeId="3161373106581140655" fileName="LocalVariablesScope.java" startLine="90" startPosition="113" endLine="91" endPosition="26" />
-    <scopeInfo nodeId="3161373106581140675" fileName="LocalVariablesScope.java" startLine="94" startPosition="41" endLine="95" endPosition="27" />
-    <scopeInfo nodeId="3161373106581140695" fileName="LocalVariablesScope.java" startLine="99" startPosition="33" endLine="100" endPosition="59" />
-    <scopeInfo nodeId="3161373106581140717" fileName="LocalVariablesScope.java" startLine="106" startPosition="28" endLine="107" endPosition="28" />
-    <scopeInfo nodeId="3161373106581140743" fileName="LocalVariablesScope.java" startLine="110" startPosition="40" endLine="111" endPosition="74" />
-    <scopeInfo nodeId="3161373106581140783" fileName="LocalVariablesScope.java" startLine="120" startPosition="38" endLine="121" endPosition="24" />
-    <scopeInfo nodeId="3161373106581140801" fileName="LocalVariablesScope.java" startLine="124" startPosition="55" endLine="125" endPosition="26" />
-    <scopeInfo nodeId="3161373106581140495" fileName="LocalVariablesScope.java" startLine="138" startPosition="50" endLine="139" endPosition="24" />
-    <scopeInfo nodeId="3161373106581140516" fileName="LocalVariablesScope.java" startLine="142" startPosition="104" endLine="143" endPosition="16" />
-    <scopeInfo nodeId="3161373106581140366" fileName="LocalVariablesScope.java" startLine="33" startPosition="34" endLine="35" endPosition="93">
+    <nodeInfo nodeId="3161373106581140312" fileName="LocalVariablesScope.java" startLine="19" startPosition="62" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextNode" />
+    <nodeInfo nodeId="3161373106581140315" fileName="LocalVariablesScope.java" startLine="20" startPosition="30" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocalVariables" />
+    <nodeInfo nodeId="3161373106581140324" fileName="LocalVariablesScope.java" startLine="23" startPosition="49" endLine="24" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140346" fileName="LocalVariablesScope.java" startLine="29" startPosition="40" endLine="30" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140354" fileName="LocalVariablesScope.java" startLine="30" startPosition="53" endLine="31" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140367" fileName="LocalVariablesScope.java" startLine="32" startPosition="34" endLine="33" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140375" fileName="LocalVariablesScope.java" startLine="33" startPosition="277" endLine="34" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140384" fileName="LocalVariablesScope.java" startLine="35" startPosition="7" endLine="36" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140397" fileName="LocalVariablesScope.java" startLine="37" startPosition="34" endLine="38" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140405" fileName="LocalVariablesScope.java" startLine="39" startPosition="7" endLine="40" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140418" fileName="LocalVariablesScope.java" startLine="41" startPosition="32" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140431" fileName="LocalVariablesScope.java" startLine="45" startPosition="58" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140435" fileName="LocalVariablesScope.java" startLine="47" startPosition="5" endLine="48" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140460" fileName="LocalVariablesScope.java" startLine="50" startPosition="32" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140465" fileName="LocalVariablesScope.java" startLine="53" startPosition="5" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140542" fileName="LocalVariablesScope.java" startLine="58" startPosition="32" endLine="59" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140548" fileName="LocalVariablesScope.java" startLine="61" startPosition="43" endLine="62" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140572" fileName="LocalVariablesScope.java" startLine="64" startPosition="117" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3161373106581140573" fileName="LocalVariablesScope.java" startLine="66" startPosition="9" endLine="67" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140584" fileName="LocalVariablesScope.java" startLine="68" startPosition="43" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3016439687263122395" fileName="LocalVariablesScope.java" startLine="70" startPosition="9" endLine="71" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140596" fileName="LocalVariablesScope.java" startLine="72" startPosition="31" endLine="73" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140601" fileName="LocalVariablesScope.java" startLine="76" startPosition="5" endLine="77" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140612" fileName="LocalVariablesScope.java" startLine="78" startPosition="38" endLine="79" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140619" fileName="LocalVariablesScope.java" startLine="79" startPosition="151" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140650" fileName="LocalVariablesScope.java" startLine="86" startPosition="44" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3161373106581140656" fileName="LocalVariablesScope.java" startLine="89" startPosition="113" endLine="90" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140663" fileName="LocalVariablesScope.java" startLine="91" startPosition="7" endLine="92" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140676" fileName="LocalVariablesScope.java" startLine="93" startPosition="41" endLine="94" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140683" fileName="LocalVariablesScope.java" startLine="96" startPosition="5" endLine="97" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140696" fileName="LocalVariablesScope.java" startLine="98" startPosition="33" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140718" fileName="LocalVariablesScope.java" startLine="103" startPosition="93" endLine="104" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140724" fileName="LocalVariablesScope.java" startLine="105" startPosition="28" endLine="106" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140731" fileName="LocalVariablesScope.java" startLine="107" startPosition="5" endLine="108" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140744" fileName="LocalVariablesScope.java" startLine="109" startPosition="40" endLine="110" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140784" fileName="LocalVariablesScope.java" startLine="119" startPosition="38" endLine="120" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140802" fileName="LocalVariablesScope.java" startLine="123" startPosition="55" endLine="124" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140804" fileName="LocalVariablesScope.java" startLine="126" startPosition="11" endLine="127" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140774" fileName="LocalVariablesScope.java" startLine="130" startPosition="5" endLine="131" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140479" fileName="LocalVariablesScope.java" startLine="134" startPosition="74" endLine="135" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140496" fileName="LocalVariablesScope.java" startLine="137" startPosition="50" endLine="138" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140517" fileName="LocalVariablesScope.java" startLine="141" startPosition="104" endLine="142" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3161373106581140518" fileName="LocalVariablesScope.java" startLine="144" startPosition="7" endLine="145" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581140524" fileName="LocalVariablesScope.java" startLine="146" startPosition="5" endLine="147" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140319" fileName="LocalVariablesScope.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariablesScope#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3161373106581140392" fileName="LocalVariablesScope.java" startLine="36" startPosition="272" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140413" fileName="LocalVariablesScope.java" startLine="40" startPosition="250" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140426" fileName="LocalVariablesScope.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140454" fileName="LocalVariablesScope.java" startLine="49" startPosition="46" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140537" fileName="LocalVariablesScope.java" startLine="57" startPosition="104" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140565" fileName="LocalVariablesScope.java" startLine="63" startPosition="39" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140579" fileName="LocalVariablesScope.java" startLine="67" startPosition="116" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140591" fileName="LocalVariablesScope.java" startLine="71" startPosition="260" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140642" fileName="LocalVariablesScope.java" startLine="85" startPosition="68" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140651" fileName="LocalVariablesScope.java" startLine="88" startPosition="7" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140671" fileName="LocalVariablesScope.java" startLine="92" startPosition="159" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161373106581140691" fileName="LocalVariablesScope.java" startLine="97" startPosition="293" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140711" fileName="LocalVariablesScope.java" startLine="104" startPosition="86" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140739" fileName="LocalVariablesScope.java" startLine="108" startPosition="284" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140779" fileName="LocalVariablesScope.java" startLine="118" startPosition="90" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140794" fileName="LocalVariablesScope.java" startLine="122" startPosition="100" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140488" fileName="LocalVariablesScope.java" startLine="136" startPosition="30" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140508" fileName="LocalVariablesScope.java" startLine="140" startPosition="107" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140362" fileName="LocalVariablesScope.java" startLine="31" startPosition="280" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140607" fileName="LocalVariablesScope.java" startLine="77" startPosition="271" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140447" fileName="LocalVariablesScope.java" startLine="48" startPosition="76" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161373106581140786" fileName="LocalVariablesScope.java" startLine="121" startPosition="11" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161373106581140500" fileName="LocalVariablesScope.java" startLine="139" startPosition="7" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140702" fileName="LocalVariablesScope.java" startLine="102" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_populateLocalVariablesForCatch#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="3161373106581140483" fileName="LocalVariablesScope.java" startLine="135" startPosition="32" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3161373106581140635" fileName="LocalVariablesScope.java" startLine="84" startPosition="81" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161373106581140767" fileName="LocalVariablesScope.java" startLine="117" startPosition="43" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3161373106581140555" fileName="LocalVariablesScope.java" startLine="62" startPosition="278" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161373106581140763" fileName="LocalVariablesScope.java" startLine="116" startPosition="164" endLine="129" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140758" fileName="LocalVariablesScope.java" startLine="115" startPosition="100" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140339" fileName="LocalVariablesScope.java" startLine="28" startPosition="59" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140543" fileName="LocalVariablesScope.java" startLine="60" startPosition="5" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581140468" fileName="LocalVariablesScope.java" startLine="133" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findThisOrParent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3161373106581140626" fileName="LocalVariablesScope.java" startLine="83" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_populateLocalVariables#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="3161373106581140750" fileName="LocalVariablesScope.java" startLine="113" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceInfoResolver#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
+    <nodeInfo nodeId="3161373106581140526" fileName="LocalVariablesScope.java" startLine="56" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_populateLocalVariables#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="3161373106581140331" fileName="LocalVariablesScope.java" startLine="26" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <scopeInfo nodeId="3161373106581140323" fileName="LocalVariablesScope.java" startLine="23" startPosition="49" endLine="24" endPosition="37" />
+    <scopeInfo nodeId="3161373106581140396" fileName="LocalVariablesScope.java" startLine="37" startPosition="34" endLine="38" endPosition="75" />
+    <scopeInfo nodeId="3161373106581140417" fileName="LocalVariablesScope.java" startLine="41" startPosition="32" endLine="42" endPosition="81" />
+    <scopeInfo nodeId="3161373106581140430" fileName="LocalVariablesScope.java" startLine="45" startPosition="58" endLine="46" endPosition="35" />
+    <scopeInfo nodeId="3161373106581140459" fileName="LocalVariablesScope.java" startLine="50" startPosition="32" endLine="51" endPosition="25" />
+    <scopeInfo nodeId="3161373106581140541" fileName="LocalVariablesScope.java" startLine="58" startPosition="32" endLine="59" endPosition="13" />
+    <scopeInfo nodeId="3161373106581140571" fileName="LocalVariablesScope.java" startLine="64" startPosition="117" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="3161373106581140583" fileName="LocalVariablesScope.java" startLine="68" startPosition="43" endLine="69" endPosition="16" />
+    <scopeInfo nodeId="3161373106581140595" fileName="LocalVariablesScope.java" startLine="72" startPosition="31" endLine="73" endPosition="31" />
+    <scopeInfo nodeId="3161373106581140649" fileName="LocalVariablesScope.java" startLine="86" startPosition="44" endLine="87" endPosition="17" />
+    <scopeInfo nodeId="3161373106581140655" fileName="LocalVariablesScope.java" startLine="89" startPosition="113" endLine="90" endPosition="26" />
+    <scopeInfo nodeId="3161373106581140675" fileName="LocalVariablesScope.java" startLine="93" startPosition="41" endLine="94" endPosition="27" />
+    <scopeInfo nodeId="3161373106581140695" fileName="LocalVariablesScope.java" startLine="98" startPosition="33" endLine="99" endPosition="59" />
+    <scopeInfo nodeId="3161373106581140717" fileName="LocalVariablesScope.java" startLine="105" startPosition="28" endLine="106" endPosition="28" />
+    <scopeInfo nodeId="3161373106581140743" fileName="LocalVariablesScope.java" startLine="109" startPosition="40" endLine="110" endPosition="74" />
+    <scopeInfo nodeId="3161373106581140783" fileName="LocalVariablesScope.java" startLine="119" startPosition="38" endLine="120" endPosition="24" />
+    <scopeInfo nodeId="3161373106581140801" fileName="LocalVariablesScope.java" startLine="123" startPosition="55" endLine="124" endPosition="26" />
+    <scopeInfo nodeId="3161373106581140495" fileName="LocalVariablesScope.java" startLine="137" startPosition="50" endLine="138" endPosition="24" />
+    <scopeInfo nodeId="3161373106581140516" fileName="LocalVariablesScope.java" startLine="141" startPosition="104" endLine="142" endPosition="16" />
+    <scopeInfo nodeId="3161373106581140366" fileName="LocalVariablesScope.java" startLine="32" startPosition="34" endLine="34" endPosition="93">
       <varInfo nodeId="3161373106581140368" varName="currentStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140611" fileName="LocalVariablesScope.java" startLine="79" startPosition="38" endLine="81" endPosition="79" />
-    <scopeInfo nodeId="3161373106581140319" fileName="LocalVariablesScope.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+    <scopeInfo nodeId="3161373106581140611" fileName="LocalVariablesScope.java" startLine="78" startPosition="38" endLine="80" endPosition="79" />
+    <scopeInfo nodeId="3161373106581140319" fileName="LocalVariablesScope.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="3161373106581140321" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140453" fileName="LocalVariablesScope.java" startLine="50" startPosition="46" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="3161373106581140671" fileName="LocalVariablesScope.java" startLine="93" startPosition="159" endLine="96" endPosition="7">
+    <scopeInfo nodeId="3161373106581140453" fileName="LocalVariablesScope.java" startLine="49" startPosition="46" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="3161373106581140671" fileName="LocalVariablesScope.java" startLine="92" startPosition="159" endLine="95" endPosition="7">
       <varInfo nodeId="3161373106581140673" varName="child_" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140793" fileName="LocalVariablesScope.java" startLine="123" startPosition="100" endLine="126" endPosition="13" />
-    <scopeInfo nodeId="3161373106581140507" fileName="LocalVariablesScope.java" startLine="141" startPosition="107" endLine="144" endPosition="9" />
-    <scopeInfo nodeId="3161373106581140447" fileName="LocalVariablesScope.java" startLine="49" startPosition="76" endLine="54" endPosition="5">
+    <scopeInfo nodeId="3161373106581140793" fileName="LocalVariablesScope.java" startLine="122" startPosition="100" endLine="125" endPosition="13" />
+    <scopeInfo nodeId="3161373106581140507" fileName="LocalVariablesScope.java" startLine="140" startPosition="107" endLine="143" endPosition="9" />
+    <scopeInfo nodeId="3161373106581140447" fileName="LocalVariablesScope.java" startLine="48" startPosition="76" endLine="53" endPosition="5">
       <varInfo nodeId="3161373106581140451" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140786" fileName="LocalVariablesScope.java" startLine="122" startPosition="11" endLine="127" endPosition="11">
+    <scopeInfo nodeId="3161373106581140786" fileName="LocalVariablesScope.java" startLine="121" startPosition="11" endLine="126" endPosition="11">
       <varInfo nodeId="3161373106581140791" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140710" fileName="LocalVariablesScope.java" startLine="104" startPosition="93" endLine="112" endPosition="5">
+    <scopeInfo nodeId="3161373106581140710" fileName="LocalVariablesScope.java" startLine="103" startPosition="93" endLine="111" endPosition="5">
       <varInfo nodeId="3161373106581140732" varName="containingCatchClause" />
       <varInfo nodeId="3161373106581140719" varName="throwable" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140778" fileName="LocalVariablesScope.java" startLine="119" startPosition="90" endLine="128" endPosition="22" />
-    <scopeInfo nodeId="3161373106581140487" fileName="LocalVariablesScope.java" startLine="137" startPosition="30" endLine="146" endPosition="53" />
-    <scopeInfo nodeId="3161373106581140641" fileName="LocalVariablesScope.java" startLine="86" startPosition="68" endLine="96" endPosition="7">
+    <scopeInfo nodeId="3161373106581140778" fileName="LocalVariablesScope.java" startLine="118" startPosition="90" endLine="127" endPosition="22" />
+    <scopeInfo nodeId="3161373106581140487" fileName="LocalVariablesScope.java" startLine="136" startPosition="30" endLine="145" endPosition="53" />
+    <scopeInfo nodeId="3161373106581140641" fileName="LocalVariablesScope.java" startLine="85" startPosition="68" endLine="95" endPosition="7">
       <varInfo nodeId="3161373106581140664" varName="moreChildren" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140559" fileName="LocalVariablesScope.java" startLine="64" startPosition="39" endLine="75" endPosition="9">
+    <scopeInfo nodeId="3161373106581140559" fileName="LocalVariablesScope.java" startLine="63" startPosition="39" endLine="74" endPosition="9">
       <varInfo nodeId="3161373106581140574" varName="statement" />
       <varInfo nodeId="3016439687263122396" varName="declNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140702" fileName="LocalVariablesScope.java" startLine="103" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="3161373106581140702" fileName="LocalVariablesScope.java" startLine="102" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="3161373106581140707" varName="result" />
       <varInfo nodeId="3161373106581140705" varName="tryCatchStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140635" fileName="LocalVariablesScope.java" startLine="85" startPosition="81" endLine="97" endPosition="5">
+    <scopeInfo nodeId="3161373106581140635" fileName="LocalVariablesScope.java" startLine="84" startPosition="81" endLine="96" endPosition="5">
       <varInfo nodeId="3161373106581140639" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140767" fileName="LocalVariablesScope.java" startLine="118" startPosition="43" endLine="130" endPosition="0">
+    <scopeInfo nodeId="3161373106581140767" fileName="LocalVariablesScope.java" startLine="117" startPosition="43" endLine="129" endPosition="0">
       <varInfo nodeId="3161373106581140772" varName="targetModelReference" />
       <varInfo nodeId="3161373106581140770" varName="referenceInfo" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140555" fileName="LocalVariablesScope.java" startLine="63" startPosition="126" endLine="76" endPosition="7">
+    <scopeInfo nodeId="3161373106581140555" fileName="LocalVariablesScope.java" startLine="62" startPosition="278" endLine="75" endPosition="7">
       <varInfo nodeId="3161373106581140557" varName="sNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140762" fileName="LocalVariablesScope.java" startLine="117" startPosition="164" endLine="130" endPosition="8" />
-    <scopeInfo nodeId="3161373106581140478" fileName="LocalVariablesScope.java" startLine="135" startPosition="74" endLine="148" endPosition="16">
+    <scopeInfo nodeId="3161373106581140762" fileName="LocalVariablesScope.java" startLine="116" startPosition="164" endLine="129" endPosition="8" />
+    <scopeInfo nodeId="3161373106581140478" fileName="LocalVariablesScope.java" startLine="134" startPosition="74" endLine="147" endPosition="16">
       <varInfo nodeId="3161373106581140480" varName="testNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140345" fileName="LocalVariablesScope.java" startLine="30" startPosition="40" endLine="44" endPosition="7">
+    <scopeInfo nodeId="3161373106581140345" fileName="LocalVariablesScope.java" startLine="29" startPosition="40" endLine="43" endPosition="7">
       <varInfo nodeId="3161373106581140355" varName="statementList" />
       <varInfo nodeId="3161373106581140406" varName="catchClause" />
       <varInfo nodeId="3161373106581140385" varName="loopStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140547" fileName="LocalVariablesScope.java" startLine="62" startPosition="43" endLine="76" endPosition="7">
+    <scopeInfo nodeId="3161373106581140547" fileName="LocalVariablesScope.java" startLine="61" startPosition="43" endLine="75" endPosition="7">
       <varInfo nodeId="3161373106581140549" varName="varElements" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140634" fileName="LocalVariablesScope.java" startLine="85" startPosition="81" endLine="101" endPosition="5">
+    <scopeInfo nodeId="3161373106581140634" fileName="LocalVariablesScope.java" startLine="84" startPosition="81" endLine="100" endPosition="5">
       <varInfo nodeId="3161373106581140684" varName="containingLoop" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140757" fileName="LocalVariablesScope.java" startLine="116" startPosition="100" endLine="132" endPosition="72" />
-    <scopeInfo nodeId="3161373106581140468" fileName="LocalVariablesScope.java" startLine="134" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="3161373106581140757" fileName="LocalVariablesScope.java" startLine="115" startPosition="100" endLine="131" endPosition="72" />
+    <scopeInfo nodeId="3161373106581140468" fileName="LocalVariablesScope.java" startLine="133" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="3161373106581140475" varName="concept" />
       <varInfo nodeId="3161373106581140473" varName="sourceNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140626" fileName="LocalVariablesScope.java" startLine="84" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="3161373106581140626" fileName="LocalVariablesScope.java" startLine="83" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="3161373106581140631" varName="result" />
       <varInfo nodeId="3161373106581140629" varName="loopStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140750" fileName="LocalVariablesScope.java" startLine="114" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="3161373106581140750" fileName="LocalVariablesScope.java" startLine="113" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="3161373106581140753" varName="referenceNode" />
       <varInfo nodeId="3161373106581140755" varName="targetConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140536" fileName="LocalVariablesScope.java" startLine="58" startPosition="104" endLine="82" endPosition="5">
+    <scopeInfo nodeId="3161373106581140536" fileName="LocalVariablesScope.java" startLine="57" startPosition="104" endLine="81" endPosition="5">
       <varInfo nodeId="3161373106581140602" varName="containingStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140338" fileName="LocalVariablesScope.java" startLine="29" startPosition="59" endLine="55" endPosition="18">
+    <scopeInfo nodeId="3161373106581140338" fileName="LocalVariablesScope.java" startLine="28" startPosition="59" endLine="54" endPosition="18">
       <varInfo nodeId="3161373106581140436" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140526" fileName="LocalVariablesScope.java" startLine="57" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="3161373106581140526" fileName="LocalVariablesScope.java" startLine="56" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="3161373106581140529" varName="statementList" />
       <varInfo nodeId="3161373106581140533" varName="result" />
       <varInfo nodeId="3161373106581140531" varName="beforeStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140331" fileName="LocalVariablesScope.java" startLine="27" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="3161373106581140331" fileName="LocalVariablesScope.java" startLine="26" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="3161373106581140335" varName="condition" />
     </scopeInfo>
-    <unitInfo nodeId="3161373106581140766" fileName="LocalVariablesScope.java" startLine="118" startPosition="17" endLine="130" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.LocalVariablesScope$1" />
-    <unitInfo nodeId="3161373106581140309" fileName="LocalVariablesScope.java" startLine="20" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.LocalVariablesScope" />
+    <unitInfo nodeId="3161373106581140766" fileName="LocalVariablesScope.java" startLine="117" startPosition="17" endLine="129" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.LocalVariablesScope$1" />
+    <unitInfo nodeId="3161373106581140309" fileName="LocalVariablesScope.java" startLine="19" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.LocalVariablesScope" />
   </root>
   <root nodeId="3161373106581140806">
     <nodeInfo nodeId="3161373106581140809" fileName="ClassifierAndSuperClassifiersScope.java" startLine="20" startPosition="82" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTopClassifier" />
@@ -2243,7 +2243,7 @@
     <nodeInfo nodeId="2706803607794580285" fileName="MethodResolveUtil.java" startLine="93" startPosition="89" endLine="94" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2706803607794580292" fileName="MethodResolveUtil.java" startLine="95" startPosition="18" endLine="96" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2706803607794580300" fileName="MethodResolveUtil.java" startLine="96" startPosition="130" endLine="97" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2706803607794580310" fileName="MethodResolveUtil.java" startLine="98" startPosition="87" endLine="99" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2706803607794580310" fileName="MethodResolveUtil.java" startLine="98" startPosition="249" endLine="99" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2706803607794580321" fileName="MethodResolveUtil.java" startLine="100" startPosition="20" endLine="101" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2706803607794580330" fileName="MethodResolveUtil.java" startLine="105" startPosition="89" endLine="106" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2706803607794580344" fileName="MethodResolveUtil.java" startLine="107" startPosition="18" endLine="108" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2365,7 +2365,7 @@
     <scopeInfo nodeId="2706803607794580258" fileName="MethodResolveUtil.java" startLine="87" startPosition="107" endLine="88" endPosition="36" />
     <scopeInfo nodeId="2706803607794580265" fileName="MethodResolveUtil.java" startLine="89" startPosition="18" endLine="90" endPosition="35" />
     <scopeInfo nodeId="2706803607794580284" fileName="MethodResolveUtil.java" startLine="93" startPosition="89" endLine="94" endPosition="36" />
-    <scopeInfo nodeId="2706803607794580309" fileName="MethodResolveUtil.java" startLine="98" startPosition="87" endLine="99" endPosition="38" />
+    <scopeInfo nodeId="2706803607794580309" fileName="MethodResolveUtil.java" startLine="98" startPosition="249" endLine="99" endPosition="38" />
     <scopeInfo nodeId="2706803607794580320" fileName="MethodResolveUtil.java" startLine="100" startPosition="20" endLine="101" endPosition="37" />
     <scopeInfo nodeId="2706803607794580329" fileName="MethodResolveUtil.java" startLine="105" startPosition="89" endLine="106" endPosition="36" />
     <scopeInfo nodeId="2706803607794580343" fileName="MethodResolveUtil.java" startLine="107" startPosition="18" endLine="108" endPosition="35" />

@@ -20,100 +20,100 @@
   <unitInfo fileName="CheckModule_Action.java" startLine="21" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckModule_Action" />
   <unitInfo fileName="ModelCheckerTool_Tool.java" startLine="33" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool" />
   <root nodeId="1453248744423272137">
-    <nodeInfo nodeId="1453248744423272152" fileName="ConstraintsChecker.java" startLine="29" startPosition="142" endLine="30" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423272161" fileName="ConstraintsChecker.java" startLine="30" startPosition="124" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423272167" fileName="ConstraintsChecker.java" startLine="33" startPosition="160" endLine="34" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1453248744423272179" fileName="ConstraintsChecker.java" startLine="35" startPosition="7" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423272185" fileName="ConstraintsChecker.java" startLine="36" startPosition="66" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423272186" fileName="ConstraintsChecker.java" startLine="37" startPosition="0" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1453248744423272200" fileName="ConstraintsChecker.java" startLine="42" startPosition="91" endLine="43" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272238" fileName="ConstraintsChecker.java" startLine="46" startPosition="100" endLine="47" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272318" fileName="ConstraintsChecker.java" startLine="55" startPosition="50" endLine="56" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272324" fileName="ConstraintsChecker.java" startLine="58" startPosition="19" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423272336" fileName="ConstraintsChecker.java" startLine="64" startPosition="7" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423272346" fileName="ConstraintsChecker.java" startLine="67" startPosition="41" endLine="68" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423272384" fileName="ConstraintsChecker.java" startLine="75" startPosition="48" endLine="76" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272390" fileName="ConstraintsChecker.java" startLine="78" startPosition="17" endLine="79" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423272398" fileName="ConstraintsChecker.java" startLine="83" startPosition="7" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423272420" fileName="ConstraintsChecker.java" startLine="88" startPosition="36" endLine="89" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272428" fileName="ConstraintsChecker.java" startLine="89" startPosition="70" endLine="90" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423272439" fileName="ConstraintsChecker.java" startLine="95" startPosition="5" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423272440" fileName="ConstraintsChecker.java" startLine="96" startPosition="0" endLine="97" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423272138" fileName="ConstraintsChecker.java" startLine="24" startPosition="57" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstraintsChecker#()V" />
-    <nodeInfo nodeId="1453248744423272165" fileName="ConstraintsChecker.java" startLine="32" startPosition="92" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423272198" fileName="ConstraintsChecker.java" startLine="41" startPosition="92" endLine="44" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423272236" fileName="ConstraintsChecker.java" startLine="45" startPosition="18" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423272234" fileName="ConstraintsChecker.java" startLine="45" startPosition="16" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1453248744423272316" fileName="ConstraintsChecker.java" startLine="54" startPosition="136" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1453248744423272344" fileName="ConstraintsChecker.java" startLine="66" startPosition="121" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1453248744423272382" fileName="ConstraintsChecker.java" startLine="74" startPosition="156" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1453248744423272302" fileName="ConstraintsChecker.java" startLine="53" startPosition="38" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272371" fileName="ConstraintsChecker.java" startLine="73" startPosition="36" endLine="78" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272418" fileName="ConstraintsChecker.java" startLine="87" startPosition="173" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
-    <nodeInfo nodeId="1453248744423272407" fileName="ConstraintsChecker.java" startLine="86" startPosition="105" endLine="92" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272405" fileName="ConstraintsChecker.java" startLine="85" startPosition="101" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423272196" fileName="ConstraintsChecker.java" startLine="40" startPosition="94" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423272300" fileName="ConstraintsChecker.java" startLine="52" startPosition="357" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
-    <nodeInfo nodeId="1453248744423272369" fileName="ConstraintsChecker.java" startLine="72" startPosition="200" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
-    <nodeInfo nodeId="1453248744423272272" fileName="ConstraintsChecker.java" startLine="51" startPosition="91" endLine="61" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272356" fileName="ConstraintsChecker.java" startLine="71" startPosition="109" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423272399" fileName="ConstraintsChecker.java" startLine="84" startPosition="0" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1453248744423272270" fileName="ConstraintsChecker.java" startLine="50" startPosition="82" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423272354" fileName="ConstraintsChecker.java" startLine="70" startPosition="11" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423272337" fileName="ConstraintsChecker.java" startLine="65" startPosition="0" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1453248744423272194" fileName="ConstraintsChecker.java" startLine="39" startPosition="139" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423272188" fileName="ConstraintsChecker.java" startLine="38" startPosition="21" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1453248744423272162" fileName="ConstraintsChecker.java" startLine="31" startPosition="0" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1453248744423272143" fileName="ConstraintsChecker.java" startLine="28" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/ide/modelchecker/actions/ProgressContext;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
-    <scopeInfo nodeId="1453248744423272141" fileName="ConstraintsChecker.java" startLine="26" startPosition="31" endLine="26" endPosition="31" />
-    <scopeInfo nodeId="1453248744423272166" fileName="ConstraintsChecker.java" startLine="33" startPosition="160" endLine="34" endPosition="14" />
-    <scopeInfo nodeId="1453248744423272199" fileName="ConstraintsChecker.java" startLine="42" startPosition="91" endLine="43" endPosition="270" />
-    <scopeInfo nodeId="1453248744423272237" fileName="ConstraintsChecker.java" startLine="46" startPosition="100" endLine="47" endPosition="196" />
-    <scopeInfo nodeId="1453248744423272317" fileName="ConstraintsChecker.java" startLine="55" startPosition="50" endLine="56" endPosition="54" />
-    <scopeInfo nodeId="1453248744423272345" fileName="ConstraintsChecker.java" startLine="67" startPosition="41" endLine="68" endPosition="52" />
-    <scopeInfo nodeId="1453248744423272383" fileName="ConstraintsChecker.java" startLine="75" startPosition="48" endLine="76" endPosition="52" />
-    <scopeInfo nodeId="1453248744423272419" fileName="ConstraintsChecker.java" startLine="88" startPosition="36" endLine="90" endPosition="26" />
-    <scopeInfo nodeId="1453248744423272138" fileName="ConstraintsChecker.java" startLine="24" startPosition="57" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="1453248744423272197" fileName="ConstraintsChecker.java" startLine="41" startPosition="92" endLine="44" endPosition="13" />
-    <scopeInfo nodeId="1453248744423272235" fileName="ConstraintsChecker.java" startLine="45" startPosition="18" endLine="48" endPosition="13" />
-    <scopeInfo nodeId="1453248744423272316" fileName="ConstraintsChecker.java" startLine="54" startPosition="136" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1453248744423272344" fileName="ConstraintsChecker.java" startLine="66" startPosition="121" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1453248744423272382" fileName="ConstraintsChecker.java" startLine="74" startPosition="156" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1453248744423272418" fileName="ConstraintsChecker.java" startLine="87" startPosition="173" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1453248744423272301" fileName="ConstraintsChecker.java" startLine="53" startPosition="38" endLine="59" endPosition="28" />
-    <scopeInfo nodeId="1453248744423272370" fileName="ConstraintsChecker.java" startLine="73" startPosition="36" endLine="79" endPosition="26" />
-    <scopeInfo nodeId="1453248744423272406" fileName="ConstraintsChecker.java" startLine="86" startPosition="105" endLine="92" endPosition="13" />
-    <scopeInfo nodeId="1453248744423272404" fileName="ConstraintsChecker.java" startLine="85" startPosition="101" endLine="93" endPosition="9" />
-    <scopeInfo nodeId="1453248744423272195" fileName="ConstraintsChecker.java" startLine="40" startPosition="94" endLine="49" endPosition="11" />
-    <scopeInfo nodeId="1453248744423272300" fileName="ConstraintsChecker.java" startLine="52" startPosition="357" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1453248744423272369" fileName="ConstraintsChecker.java" startLine="72" startPosition="200" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="1453248744423272271" fileName="ConstraintsChecker.java" startLine="51" startPosition="91" endLine="61" endPosition="15" />
-    <scopeInfo nodeId="1453248744423272355" fileName="ConstraintsChecker.java" startLine="71" startPosition="109" endLine="81" endPosition="13" />
-    <scopeInfo nodeId="1453248744423272399" fileName="ConstraintsChecker.java" startLine="84" startPosition="0" endLine="94" endPosition="7" />
-    <scopeInfo nodeId="1453248744423272269" fileName="ConstraintsChecker.java" startLine="50" startPosition="82" endLine="62" endPosition="11" />
-    <scopeInfo nodeId="1453248744423272353" fileName="ConstraintsChecker.java" startLine="70" startPosition="11" endLine="82" endPosition="9" />
-    <scopeInfo nodeId="1453248744423272337" fileName="ConstraintsChecker.java" startLine="65" startPosition="0" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="1453248744423272193" fileName="ConstraintsChecker.java" startLine="39" startPosition="139" endLine="63" endPosition="9" />
-    <scopeInfo nodeId="1453248744423272188" fileName="ConstraintsChecker.java" startLine="38" startPosition="21" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="1453248744423272164" fileName="ConstraintsChecker.java" startLine="32" startPosition="92" endLine="94" endPosition="7">
+    <nodeInfo nodeId="1453248744423272152" fileName="ConstraintsChecker.java" startLine="28" startPosition="142" endLine="29" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423272161" fileName="ConstraintsChecker.java" startLine="29" startPosition="124" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423272167" fileName="ConstraintsChecker.java" startLine="32" startPosition="160" endLine="33" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1453248744423272179" fileName="ConstraintsChecker.java" startLine="34" startPosition="7" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423272185" fileName="ConstraintsChecker.java" startLine="35" startPosition="66" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423272186" fileName="ConstraintsChecker.java" startLine="36" startPosition="0" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1453248744423272200" fileName="ConstraintsChecker.java" startLine="41" startPosition="91" endLine="42" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272238" fileName="ConstraintsChecker.java" startLine="45" startPosition="100" endLine="46" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272318" fileName="ConstraintsChecker.java" startLine="54" startPosition="50" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272324" fileName="ConstraintsChecker.java" startLine="57" startPosition="19" endLine="58" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423272336" fileName="ConstraintsChecker.java" startLine="63" startPosition="7" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423272346" fileName="ConstraintsChecker.java" startLine="66" startPosition="41" endLine="67" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423272384" fileName="ConstraintsChecker.java" startLine="74" startPosition="48" endLine="75" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272390" fileName="ConstraintsChecker.java" startLine="77" startPosition="17" endLine="78" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423272398" fileName="ConstraintsChecker.java" startLine="82" startPosition="7" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423272420" fileName="ConstraintsChecker.java" startLine="87" startPosition="36" endLine="88" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272428" fileName="ConstraintsChecker.java" startLine="88" startPosition="70" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423272439" fileName="ConstraintsChecker.java" startLine="94" startPosition="5" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423272440" fileName="ConstraintsChecker.java" startLine="95" startPosition="0" endLine="96" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423272138" fileName="ConstraintsChecker.java" startLine="23" startPosition="57" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstraintsChecker#()V" />
+    <nodeInfo nodeId="1453248744423272165" fileName="ConstraintsChecker.java" startLine="31" startPosition="92" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423272198" fileName="ConstraintsChecker.java" startLine="40" startPosition="92" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423272236" fileName="ConstraintsChecker.java" startLine="44" startPosition="18" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423272234" fileName="ConstraintsChecker.java" startLine="44" startPosition="16" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1453248744423272316" fileName="ConstraintsChecker.java" startLine="53" startPosition="136" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1453248744423272344" fileName="ConstraintsChecker.java" startLine="65" startPosition="121" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1453248744423272382" fileName="ConstraintsChecker.java" startLine="73" startPosition="156" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1453248744423272302" fileName="ConstraintsChecker.java" startLine="52" startPosition="38" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272371" fileName="ConstraintsChecker.java" startLine="72" startPosition="36" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272418" fileName="ConstraintsChecker.java" startLine="86" startPosition="173" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
+    <nodeInfo nodeId="1453248744423272407" fileName="ConstraintsChecker.java" startLine="85" startPosition="105" endLine="91" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272405" fileName="ConstraintsChecker.java" startLine="84" startPosition="101" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423272196" fileName="ConstraintsChecker.java" startLine="39" startPosition="242" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423272300" fileName="ConstraintsChecker.java" startLine="51" startPosition="357" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
+    <nodeInfo nodeId="1453248744423272369" fileName="ConstraintsChecker.java" startLine="71" startPosition="200" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
+    <nodeInfo nodeId="1453248744423272272" fileName="ConstraintsChecker.java" startLine="50" startPosition="91" endLine="60" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272356" fileName="ConstraintsChecker.java" startLine="70" startPosition="109" endLine="80" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423272399" fileName="ConstraintsChecker.java" startLine="83" startPosition="0" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1453248744423272270" fileName="ConstraintsChecker.java" startLine="49" startPosition="230" endLine="61" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423272354" fileName="ConstraintsChecker.java" startLine="69" startPosition="11" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423272337" fileName="ConstraintsChecker.java" startLine="64" startPosition="0" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1453248744423272194" fileName="ConstraintsChecker.java" startLine="38" startPosition="290" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423272188" fileName="ConstraintsChecker.java" startLine="37" startPosition="21" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1453248744423272162" fileName="ConstraintsChecker.java" startLine="30" startPosition="0" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1453248744423272143" fileName="ConstraintsChecker.java" startLine="27" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/ide/modelchecker/actions/ProgressContext;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <scopeInfo nodeId="1453248744423272141" fileName="ConstraintsChecker.java" startLine="25" startPosition="31" endLine="25" endPosition="31" />
+    <scopeInfo nodeId="1453248744423272166" fileName="ConstraintsChecker.java" startLine="32" startPosition="160" endLine="33" endPosition="14" />
+    <scopeInfo nodeId="1453248744423272199" fileName="ConstraintsChecker.java" startLine="41" startPosition="91" endLine="42" endPosition="270" />
+    <scopeInfo nodeId="1453248744423272237" fileName="ConstraintsChecker.java" startLine="45" startPosition="100" endLine="46" endPosition="196" />
+    <scopeInfo nodeId="1453248744423272317" fileName="ConstraintsChecker.java" startLine="54" startPosition="50" endLine="55" endPosition="54" />
+    <scopeInfo nodeId="1453248744423272345" fileName="ConstraintsChecker.java" startLine="66" startPosition="41" endLine="67" endPosition="52" />
+    <scopeInfo nodeId="1453248744423272383" fileName="ConstraintsChecker.java" startLine="74" startPosition="48" endLine="75" endPosition="52" />
+    <scopeInfo nodeId="1453248744423272419" fileName="ConstraintsChecker.java" startLine="87" startPosition="36" endLine="89" endPosition="26" />
+    <scopeInfo nodeId="1453248744423272138" fileName="ConstraintsChecker.java" startLine="23" startPosition="57" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1453248744423272197" fileName="ConstraintsChecker.java" startLine="40" startPosition="92" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="1453248744423272235" fileName="ConstraintsChecker.java" startLine="44" startPosition="18" endLine="47" endPosition="13" />
+    <scopeInfo nodeId="1453248744423272316" fileName="ConstraintsChecker.java" startLine="53" startPosition="136" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1453248744423272344" fileName="ConstraintsChecker.java" startLine="65" startPosition="121" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1453248744423272382" fileName="ConstraintsChecker.java" startLine="73" startPosition="156" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1453248744423272418" fileName="ConstraintsChecker.java" startLine="86" startPosition="173" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="1453248744423272301" fileName="ConstraintsChecker.java" startLine="52" startPosition="38" endLine="58" endPosition="28" />
+    <scopeInfo nodeId="1453248744423272370" fileName="ConstraintsChecker.java" startLine="72" startPosition="36" endLine="78" endPosition="26" />
+    <scopeInfo nodeId="1453248744423272406" fileName="ConstraintsChecker.java" startLine="85" startPosition="105" endLine="91" endPosition="13" />
+    <scopeInfo nodeId="1453248744423272404" fileName="ConstraintsChecker.java" startLine="84" startPosition="101" endLine="92" endPosition="9" />
+    <scopeInfo nodeId="1453248744423272195" fileName="ConstraintsChecker.java" startLine="39" startPosition="242" endLine="48" endPosition="11" />
+    <scopeInfo nodeId="1453248744423272300" fileName="ConstraintsChecker.java" startLine="51" startPosition="357" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1453248744423272369" fileName="ConstraintsChecker.java" startLine="71" startPosition="200" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1453248744423272271" fileName="ConstraintsChecker.java" startLine="50" startPosition="91" endLine="60" endPosition="15" />
+    <scopeInfo nodeId="1453248744423272355" fileName="ConstraintsChecker.java" startLine="70" startPosition="109" endLine="80" endPosition="13" />
+    <scopeInfo nodeId="1453248744423272399" fileName="ConstraintsChecker.java" startLine="83" startPosition="0" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="1453248744423272269" fileName="ConstraintsChecker.java" startLine="49" startPosition="230" endLine="61" endPosition="11" />
+    <scopeInfo nodeId="1453248744423272353" fileName="ConstraintsChecker.java" startLine="69" startPosition="11" endLine="81" endPosition="9" />
+    <scopeInfo nodeId="1453248744423272337" fileName="ConstraintsChecker.java" startLine="64" startPosition="0" endLine="82" endPosition="7" />
+    <scopeInfo nodeId="1453248744423272193" fileName="ConstraintsChecker.java" startLine="38" startPosition="290" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="1453248744423272188" fileName="ConstraintsChecker.java" startLine="37" startPosition="21" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="1453248744423272164" fileName="ConstraintsChecker.java" startLine="31" startPosition="92" endLine="93" endPosition="7">
       <varInfo nodeId="1453248744423272180" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423272162" fileName="ConstraintsChecker.java" startLine="31" startPosition="0" endLine="95" endPosition="5" />
-    <scopeInfo nodeId="1453248744423272151" fileName="ConstraintsChecker.java" startLine="29" startPosition="142" endLine="97" endPosition="19">
+    <scopeInfo nodeId="1453248744423272162" fileName="ConstraintsChecker.java" startLine="30" startPosition="0" endLine="94" endPosition="5" />
+    <scopeInfo nodeId="1453248744423272151" fileName="ConstraintsChecker.java" startLine="28" startPosition="142" endLine="96" endPosition="19">
       <varInfo nodeId="1453248744423272153" varName="results" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423272143" fileName="ConstraintsChecker.java" startLine="28" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="1453248744423272143" fileName="ConstraintsChecker.java" startLine="27" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1453248744423272144" varName="model" />
       <varInfo nodeId="1453248744423272148" varName="operationContext" />
       <varInfo nodeId="1453248744423272146" varName="progressContext" />
     </scopeInfo>
-    <unitInfo nodeId="1453248744423272316" fileName="ConstraintsChecker.java" startLine="54" startPosition="117" endLine="58" endPosition="17" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$2" />
-    <unitInfo nodeId="1453248744423272344" fileName="ConstraintsChecker.java" startLine="66" startPosition="98" endLine="70" endPosition="7" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$3" />
-    <unitInfo nodeId="1453248744423272382" fileName="ConstraintsChecker.java" startLine="74" startPosition="137" endLine="78" endPosition="15" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$3" />
-    <unitInfo nodeId="1453248744423272418" fileName="ConstraintsChecker.java" startLine="87" startPosition="153" endLine="92" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$4" />
-    <unitInfo nodeId="1453248744423272300" fileName="ConstraintsChecker.java" startLine="52" startPosition="337" endLine="61" endPosition="13" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$1" />
-    <unitInfo nodeId="1453248744423272369" fileName="ConstraintsChecker.java" startLine="72" startPosition="180" endLine="81" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$2" />
-    <unitInfo nodeId="1453248744423272137" fileName="ConstraintsChecker.java" startLine="23" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker" />
+    <unitInfo nodeId="1453248744423272316" fileName="ConstraintsChecker.java" startLine="53" startPosition="117" endLine="57" endPosition="17" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$2" />
+    <unitInfo nodeId="1453248744423272344" fileName="ConstraintsChecker.java" startLine="65" startPosition="98" endLine="69" endPosition="7" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$3" />
+    <unitInfo nodeId="1453248744423272382" fileName="ConstraintsChecker.java" startLine="73" startPosition="137" endLine="77" endPosition="15" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$3" />
+    <unitInfo nodeId="1453248744423272418" fileName="ConstraintsChecker.java" startLine="86" startPosition="153" endLine="91" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$4" />
+    <unitInfo nodeId="1453248744423272300" fileName="ConstraintsChecker.java" startLine="51" startPosition="337" endLine="60" endPosition="13" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$1" />
+    <unitInfo nodeId="1453248744423272369" fileName="ConstraintsChecker.java" startLine="71" startPosition="180" endLine="80" endPosition="11" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker$2" />
+    <unitInfo nodeId="1453248744423272137" fileName="ConstraintsChecker.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ConstraintsChecker" />
   </root>
   <root nodeId="1453248744423272447">
     <nodeInfo nodeId="1453248744423272466" fileName="ModelPropertiesChecker.java" startLine="22" startPosition="142" endLine="23" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -178,8 +178,8 @@
     <nodeInfo nodeId="1453248744423272686" fileName="SearchScopesChecker.java" startLine="38" startPosition="66" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1453248744423272696" fileName="SearchScopesChecker.java" startLine="41" startPosition="46" endLine="42" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423272711" fileName="SearchScopesChecker.java" startLine="44" startPosition="11" endLine="45" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423272719" fileName="SearchScopesChecker.java" startLine="46" startPosition="13" endLine="47" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423272727" fileName="SearchScopesChecker.java" startLine="47" startPosition="142" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423272719" fileName="SearchScopesChecker.java" startLine="46" startPosition="13" endLine="47" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423272727" fileName="SearchScopesChecker.java" startLine="47" startPosition="287" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1453248744423272728" fileName="SearchScopesChecker.java" startLine="48" startPosition="0" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1453248744423272760" fileName="SearchScopesChecker.java" startLine="52" startPosition="18" endLine="53" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423272778" fileName="SearchScopesChecker.java" startLine="55" startPosition="31" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -329,7 +329,7 @@
     <nodeInfo nodeId="1453248744423273010" fileName="UnavailableConceptsChecker.java" startLine="21" startPosition="124" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1453248744423273019" fileName="UnavailableConceptsChecker.java" startLine="24" startPosition="153" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1453248744423273031" fileName="UnavailableConceptsChecker.java" startLine="26" startPosition="7" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423273039" fileName="UnavailableConceptsChecker.java" startLine="28" startPosition="28" endLine="29" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273039" fileName="UnavailableConceptsChecker.java" startLine="28" startPosition="28" endLine="29" endPosition="330" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423273056" fileName="UnavailableConceptsChecker.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1453248744423273057" fileName="UnavailableConceptsChecker.java" startLine="32" startPosition="0" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423272986" fileName="UnavailableConceptsChecker.java" startLine="16" startPosition="65" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnavailableConceptsChecker#()V" />
@@ -339,7 +339,7 @@
     <nodeInfo nodeId="1453248744423272992" fileName="UnavailableConceptsChecker.java" startLine="19" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/ide/modelchecker/actions/ProgressContext;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
     <scopeInfo nodeId="1453248744423272989" fileName="UnavailableConceptsChecker.java" startLine="17" startPosition="39" endLine="17" endPosition="39" />
     <scopeInfo nodeId="1453248744423273018" fileName="UnavailableConceptsChecker.java" startLine="24" startPosition="153" endLine="25" endPosition="14" />
-    <scopeInfo nodeId="1453248744423273038" fileName="UnavailableConceptsChecker.java" startLine="28" startPosition="28" endLine="29" endPosition="186" />
+    <scopeInfo nodeId="1453248744423273038" fileName="UnavailableConceptsChecker.java" startLine="28" startPosition="28" endLine="29" endPosition="330" />
     <scopeInfo nodeId="1453248744423272986" fileName="UnavailableConceptsChecker.java" startLine="16" startPosition="65" endLine="18" endPosition="3" />
     <scopeInfo nodeId="1453248744423273016" fileName="UnavailableConceptsChecker.java" startLine="23" startPosition="86" endLine="30" endPosition="7">
       <varInfo nodeId="1453248744423273032" varName="concept" />
@@ -1996,7 +1996,7 @@
     <nodeInfo nodeId="6550340959293398058" fileName="AdapterUsagesFinder.java" startLine="42" startPosition="9" endLine="43" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6550340959293398140" fileName="AdapterUsagesFinder.java" startLine="44" startPosition="91" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6550340959293398188" fileName="AdapterUsagesFinder.java" startLine="46" startPosition="107" endLine="47" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6550340959293398366" fileName="AdapterUsagesFinder.java" startLine="48" startPosition="128" endLine="49" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6550340959293398366" fileName="AdapterUsagesFinder.java" startLine="48" startPosition="128" endLine="49" endPosition="316" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6550340959293398401" fileName="AdapterUsagesFinder.java" startLine="50" startPosition="138" endLine="51" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6550340959293398197" fileName="AdapterUsagesFinder.java" startLine="52" startPosition="15" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6550340959293398490" fileName="AdapterUsagesFinder.java" startLine="54" startPosition="166" endLine="55" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2005,7 +2005,7 @@
     <nodeInfo nodeId="6550340959293397990" fileName="AdapterUsagesFinder.java" startLine="22" startPosition="66" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AdapterUsagesFinder#()V" />
     <nodeInfo nodeId="6550340959293398011" fileName="AdapterUsagesFinder.java" startLine="31" startPosition="68" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AdapterUsagesChecker#()V" />
     <nodeInfo nodeId="6550340959293398044" fileName="AdapterUsagesFinder.java" startLine="39" startPosition="88" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6550340959293398374" fileName="AdapterUsagesFinder.java" startLine="49" startPosition="172" endLine="52" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6550340959293398374" fileName="AdapterUsagesFinder.java" startLine="49" startPosition="316" endLine="52" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6550340959293398445" fileName="AdapterUsagesFinder.java" startLine="53" startPosition="0" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6550340959293397995" fileName="AdapterUsagesFinder.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSpecificCheckers#()Ljava/util/List;" />
     <nodeInfo nodeId="6550340959293398195" fileName="AdapterUsagesFinder.java" startLine="47" startPosition="62" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
