@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.ide;
 
+import com.intellij.openapi.editor.Document;
+import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +36,12 @@ public class NodeEditor extends BaseNodeEditor {
       return Collections.emptyList();
     }
     return Collections.singletonList(getCurrentlyEditedNode());
+  }
+
+  @Override
+  public List<Document> getAllEditedDocuments() {
+    final MPSNodeVirtualFile virtualFile = getCurrentEditorComponent().getVirtualFile();
+    return virtualFile != null ? Collections.singletonList(MPSUndoUtil.getDoc(virtualFile)) : Collections.<Document>emptyList();
   }
 
   public void showNode(SNode node, boolean select) {

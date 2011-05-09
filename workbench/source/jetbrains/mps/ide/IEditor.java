@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide;
 
+import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -34,6 +35,8 @@ public interface IEditor{
   SNodePointer getCurrentlyEditedNode();
 
   List<SNodePointer> getAllEditedNodes();
+
+  List<Document> getAllEditedDocuments();
 
   EditorContext getEditorContext();
 

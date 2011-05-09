@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Separator;
+import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
@@ -42,6 +43,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.BorderLayout;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -88,6 +90,12 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
 
   public List<SNodePointer> getAllEditedNodes() {
     return myTabsComponent.getAllEditedNodes();
+  }
+
+  @Override
+  public List<Document> getAllEditedDocuments() {
+    // TODO: implement this method
+    return Collections.emptyList();
   }
 
   public void showNode(SNode node, boolean select) {

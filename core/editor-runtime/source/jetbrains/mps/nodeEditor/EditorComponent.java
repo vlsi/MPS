@@ -78,6 +78,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -217,6 +218,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private LeftEditorHighlighter myLeftHighlighter;
   @Nullable
   protected SNode myNode;
+  @Nullable
+  private MPSNodeVirtualFile myVirtualFile;
   private EditorContext myEditorContext;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
@@ -636,6 +639,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myNode;
   }
 
+  public MPSNodeVirtualFile getVirtualFile() {
+    return myVirtualFile;
+  }
+
   public SNodePointer getEditedNodePointer() {
     return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
       public SNodePointer compute() {
@@ -771,6 +778,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
         myNode = node;
+        myVirtualFile = myNode != null ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
