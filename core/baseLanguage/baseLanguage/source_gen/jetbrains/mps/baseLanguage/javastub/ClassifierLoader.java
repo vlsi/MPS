@@ -69,7 +69,7 @@ public class ClassifierLoader {
       }
 
       boolean isPrivate = (cn.access & Opcodes.ACC_PRIVATE) != 0;
-      if (isPrivate && ASMModelLoader.SKIP_PRIVATE) {
+      if (isPrivate && myUpdater.isSkipPrivate()) {
         continue;
       }
 

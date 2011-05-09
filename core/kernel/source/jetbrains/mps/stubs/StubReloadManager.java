@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
@@ -69,6 +70,27 @@ public class StubReloadManager implements ApplicationComponent {
 
   private boolean needsFullReload(BaseStubModelDescriptor model) {
     return model.isNeedsReloading();
+  }
+
+  //-----hack for vars evaluation speedup------
+
+  @Hack
+  @Deprecated
+  //TODO replace with incremental getModelDescriptors()
+  //must not be used anywhere except var eval in debugger
+  //added just because we don't want to refactor stubs reloading before 1.5.
+  //models loaded using this method MUST not intersect with other stub models
+  //you MUST new model descriptor every time, not get them from repository
+  public void loadImmediately(AbstractModule m, Set<StubPath> stubs) {
+    for (StubPath sp : stubs) {
+      BaseStubModelRootManager manager = createStubManager(m, sp);
+      if (manager == null) {
+        LOG.warning("Manager for path " + sp + " can't be created. Path will be ignored.");
+        continue;
+      }
+
+      manager.updateModels(sp.getPath(), "", m);
+    }
   }
 
   //---------stub solutions reloading----------

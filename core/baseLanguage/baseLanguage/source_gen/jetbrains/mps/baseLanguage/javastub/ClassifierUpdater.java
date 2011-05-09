@@ -44,7 +44,6 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
@@ -57,8 +56,12 @@ public class ClassifierUpdater {
   private static Logger LOG = Logger.getLogger(ClassifierUpdater.class);
 
   private IModule myModule;
+  private final boolean mySkipPrivate;
+  private String myLanguageId;
 
-  public ClassifierUpdater() {
+  public ClassifierUpdater(String languageId, boolean skipPrivate) {
+    myLanguageId = languageId;
+    mySkipPrivate = skipPrivate;
   }
 
   public void updateClassifier(IModule module, final SNode clsfr, ASMClass ac) {
@@ -173,7 +176,7 @@ public class ClassifierUpdater {
 
   private void updateInstanceFields(ASMClass refCls, SNode cls) {
     for (ASMField field : refCls.getDeclaredFields()) {
-      if (field.isPrivate() && ASMModelLoader.SKIP_PRIVATE) {
+      if (field.isPrivate() && mySkipPrivate) {
         continue;
       }
       if (field.isStatic()) {
@@ -195,7 +198,7 @@ public class ClassifierUpdater {
 
   private void updateStaticFields(ASMClass ac, SNode cls) {
     for (ASMField field : ac.getDeclaredFields()) {
-      if (field.isPrivate() && ASMModelLoader.SKIP_PRIVATE) {
+      if (field.isPrivate() && mySkipPrivate) {
         continue;
       }
       if (!(field.isStatic())) {
@@ -249,7 +252,7 @@ public class ClassifierUpdater {
 
   private void updateConstructors(ASMClass ac, final SNode cls) {
     for (ASMMethod c : ac.getDeclaredConstructors()) {
-      if (c.isPrivate() && ASMModelLoader.SKIP_PRIVATE) {
+      if (c.isPrivate() && mySkipPrivate) {
         continue;
       }
       SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a1a0a11().createNode(createVisibility(c), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, "name"));
@@ -298,7 +301,7 @@ public class ClassifierUpdater {
 
   private void updateInstanceMethods(ASMClass ac, SNode cls) {
     for (ASMMethod m : ac.getDeclaredMethods()) {
-      if (m.isPrivate() && ASMModelLoader.SKIP_PRIVATE) {
+      if (m.isPrivate() && mySkipPrivate) {
         continue;
       }
       if (m.isStatic()) {
@@ -323,7 +326,7 @@ public class ClassifierUpdater {
 
   private void updateStaticMethods(ASMClass ac, SNode cls) {
     for (ASMMethod m : ac.getDeclaredMethods()) {
-      if (m.isPrivate() && ASMModelLoader.SKIP_PRIVATE) {
+      if (m.isPrivate() && mySkipPrivate) {
         continue;
       }
       if (!(m.isStatic())) {
@@ -635,7 +638,7 @@ public class ClassifierUpdater {
   }
 
   public SModelReference getModelReferenceFor(String packageName, SModel model) {
-    ModuleReference module = myModule.getModuleFor(packageName, LanguageID.JAVA);
+    ModuleReference module = myModule.getModuleFor(packageName, this.getLanguageId());
     if (module == null) {
       Tuples._2<String, String> p = MultiTuple.<String,String>from(packageName, myModule.getModuleFqName());
       if (!(SetSequence.fromSet(reported).contains(p))) {
@@ -645,9 +648,17 @@ public class ClassifierUpdater {
         }
       }
     }
-    SModelReference ref = StubHelper.uidForPackageInStubs(packageName, LanguageID.JAVA, module);
+    SModelReference ref = StubHelper.uidForPackageInStubs(packageName, this.getLanguageId(), module);
     model.addModelImport(ref, false);
     return ref;
+  }
+
+  private String getLanguageId() {
+    return this.myLanguageId;
+  }
+
+  public boolean isSkipPrivate() {
+    return mySkipPrivate;
   }
 
   private static boolean eq_ol94f8_a0a0a0a0a0a0a3(Object a, Object b) {

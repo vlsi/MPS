@@ -6,25 +6,33 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.stubs.StubLocation;
+import jetbrains.mps.smodel.LanguageID;
 
 public class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
-  public static final boolean SKIP_PRIVATE = false;
 
-  private IClassPathItem myCpItem;
-  private SModel myModel;
-  private StubLocation myLocation;
+  private final IClassPathItem myCpItem;
+  private final SModel myModel;
+  private final StubLocation myLocation;
+  private final boolean mySkipPrivate;
+  private final String myLanguageId;
 
   public ASMModelLoader(StubLocation location, IClassPathItem classPathItem, SModel model) {
+    this(location, classPathItem, model, LanguageID.JAVA, true);
+  }
+
+  public ASMModelLoader(StubLocation location, IClassPathItem classPathItem, SModel model, String languageId, boolean skipPrivate) {
     myLocation = location;
     myCpItem = classPathItem;
     myModel = model;
+    myLanguageId = languageId;
+    mySkipPrivate = skipPrivate;
   }
 
   public void updateModel() {
     try {
       String pack = myModel.getLongName();
-      ClassifierLoader loader = new ClassifierLoader(myLocation, myModel, myCpItem, new ClassifierUpdater());
+      ClassifierLoader loader = new ClassifierLoader(myLocation, myModel, myCpItem, new ClassifierUpdater(myLanguageId, mySkipPrivate));
       for (String name : myCpItem.getRootClasses(pack)) {
         if (myModel.getNodeById(ASMNodeId.createId(name)) != null) {
           continue;
