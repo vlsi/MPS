@@ -9,6 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModuleSuite_Behavior {
   public static void init(SNode thisNode) {
@@ -40,5 +43,13 @@ public class ModuleSuite_Behavior {
     }
 
     return module.getOwnModelDescriptors();
+  }
+
+  public static Iterable<SNode> call_getNotMutedTests_8605005254686521789(SNode thisNode) {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testRef", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SPropertyOperations.getBoolean(it, "muted"));
+      }
+    });
   }
 }

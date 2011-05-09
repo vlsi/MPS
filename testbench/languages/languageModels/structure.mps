@@ -88,7 +88,12 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4504141816188599482" resolveInfo="IRef" />
     </node>
   </root>
-  <root id="4504141816188599482" />
+  <root id="4504141816188599482">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8605005254686522462">
+      <property name="name" nameId="tpck.1169194664001" value="muted" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+  </root>
   <root id="1280144168199506908">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1280144168199506909">
       <property name="name" nameId="tpck.1169194664001" value="moduleFQName" />

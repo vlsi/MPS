@@ -17,6 +17,7 @@ public class JUnit4TestCaseRef extends BaseConcept implements ITestRef {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String MUTED = "muted";
   public static final String KLASS = "klass";
   public static final String _$ATTRIBUTE = "_$attribute";
 
@@ -46,6 +47,14 @@ public class JUnit4TestCaseRef extends BaseConcept implements ITestRef {
 
   public void setVirtualPackage(String value) {
     this.setProperty(JUnit4TestCaseRef.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getMuted() {
+    return this.getBooleanProperty(JUnit4TestCaseRef.MUTED);
+  }
+
+  public void setMuted(boolean value) {
+    this.setBooleanProperty(JUnit4TestCaseRef.MUTED, value);
   }
 
   public ClassConcept getKlass() {

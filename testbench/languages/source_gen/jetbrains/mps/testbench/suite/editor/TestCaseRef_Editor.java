@@ -8,10 +8,14 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -31,6 +35,20 @@ public class TestCaseRef_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_aryab1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ITestCase");
     editorCell.setCellId("Constant_aryab1_a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
+        public Boolean calculate(EditorCell cell) {
+          return TestCaseRef_Editor._StyleParameter_QueryFunction_aryab1_a0a0((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -51,6 +69,10 @@ public class TestCaseRef_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_aryab1_a0a0(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(node, "muted");
   }
 
   public static class _Inline_aryab1_a1a extends InlineCellProvider {

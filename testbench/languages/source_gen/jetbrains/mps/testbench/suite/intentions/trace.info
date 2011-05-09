@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.testbench.suite.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="editoMute_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.testbench.suite.intentions.editoMute_Intention" />
+  <root nodeId="8605005254686393770">
+    <nodeInfo nodeId="8605005254686437218" fileName="editoMute_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8605005254686445845" fileName="editoMute_Intention.java" startLine="39" startPosition="98" endLine="40" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8605005254686437205" fileName="editoMute_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8605005254686393774" fileName="editoMute_Intention.java" startLine="38" startPosition="76" endLine="40" endPosition="66" />
+    <scopeInfo nodeId="8605005254686393772" fileName="editoMute_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
+  </root>
+</debugInfo>
+

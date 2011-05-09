@@ -6,4 +6,8 @@ import jetbrains.mps.smodel.INodeAdapter;
 
 public interface ITestRef extends INodeAdapter {
   public static final String concept = "jetbrains.mps.testbench.suite.structure.ITestRef";
+  public static final String MUTED = "muted";
+
+  public boolean getMuted();
+  public void setMuted(boolean value);
 }

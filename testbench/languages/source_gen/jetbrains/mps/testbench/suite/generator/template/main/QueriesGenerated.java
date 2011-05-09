@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2956932267233365622(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -41,10 +42,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_2956932267233365615(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "testRef", true);
+    return ModuleSuite_Behavior.call_getNotMutedTests_8605005254686521789(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_4089647634161018289(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "testRef", true);
+    return ModuleSuite_Behavior.call_getNotMutedTests_8605005254686521789(_context.getNode());
   }
 }
