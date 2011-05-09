@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2076500701550101066">
-    <nodeInfo nodeId="2076500701550101069" fileName="AllMembersJavaStubs.java" startLine="13" startPosition="52" endLine="14" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEBUG_JAVA_ID" />
-    <nodeInfo nodeId="2076500701550101081" fileName="AllMembersJavaStubs.java" startLine="19" startPosition="36" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2076500701550101093" fileName="AllMembersJavaStubs.java" startLine="23" startPosition="104" endLine="24" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2076500701550101107" fileName="AllMembersJavaStubs.java" startLine="25" startPosition="25" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2076500701550101108" fileName="AllMembersJavaStubs.java" startLine="27" startPosition="5" endLine="28" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2076500701550101073" fileName="AllMembersJavaStubs.java" startLine="15" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AllMembersJavaStubs#()V" />
-    <nodeInfo nodeId="2076500701550101102" fileName="AllMembersJavaStubs.java" startLine="24" startPosition="94" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2076500701550101077" fileName="AllMembersJavaStubs.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2076500701550101083" fileName="AllMembersJavaStubs.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/stubs/StubLocation;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/stubs/StubSource;)V" />
-    <scopeInfo nodeId="2076500701550101076" fileName="AllMembersJavaStubs.java" startLine="16" startPosition="32" endLine="16" endPosition="32" />
-    <scopeInfo nodeId="2076500701550101080" fileName="AllMembersJavaStubs.java" startLine="19" startPosition="36" endLine="20" endPosition="25" />
-    <scopeInfo nodeId="2076500701550101106" fileName="AllMembersJavaStubs.java" startLine="25" startPosition="25" endLine="26" endPosition="13" />
-    <scopeInfo nodeId="2076500701550101073" fileName="AllMembersJavaStubs.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="2076500701550101077" fileName="AllMembersJavaStubs.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2076500701550101092" fileName="AllMembersJavaStubs.java" startLine="23" startPosition="104" endLine="28" endPosition="86">
-      <varInfo nodeId="2076500701550101094" varName="cpItem" />
-    </scopeInfo>
-    <scopeInfo nodeId="2076500701550101083" fileName="AllMembersJavaStubs.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="2076500701550101088" varName="model" />
-      <varInfo nodeId="2076500701550101090" varName="source" />
-      <varInfo nodeId="2076500701550101086" varName="location" />
-    </scopeInfo>
-    <unitInfo nodeId="2076500701550101066" fileName="AllMembersJavaStubs.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.AllMembersJavaStubs" />
-  </root>
   <root nodeId="9071178110302103533">
     <nodeInfo nodeId="9071178110302103549" fileName="EvaluationAuxModule.java" startLine="33" startPosition="0" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="9071178110302103552" fileName="EvaluationAuxModule.java" startLine="34" startPosition="28" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInvocationContext" />

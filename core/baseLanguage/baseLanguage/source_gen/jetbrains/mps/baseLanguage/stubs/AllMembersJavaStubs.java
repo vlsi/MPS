@@ -18,10 +18,9 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.stubs.StubDescriptor;
-import jetbrains.mps.smodel.LanguageID;
 
-public class JavaStubs extends BaseStubModelRootManager {
-  public JavaStubs() {
+public class AllMembersJavaStubs extends BaseStubModelRootManager {
+  public AllMembersJavaStubs() {
   }
 
   protected Set<Language> getLanguagesToImport() {
@@ -45,11 +44,14 @@ public class JavaStubs extends BaseStubModelRootManager {
     if (cpItem == null) {
       return;
     }
-    new ASMModelLoader(location, cpItem, model).updateModel();
+    // this is the only place where this stubs are different from JavaStubs 
+    // this stubs have different id and do load private memebers 
+    // to be used in fix of MPS-10626 
+    new ASMModelLoader(location, cpItem, model, AllMembersJavaStubs.this.getLanguageId(), false).updateModel();
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    return JavaStubsUtil.getModelDescriptors(JavaStubs.this, location, JavaStubs.this.getLanguageId());
+    return JavaStubsUtil.getModelDescriptors(AllMembersJavaStubs.this, location, AllMembersJavaStubs.this.getLanguageId());
   }
 
   protected String getSelfModuleId() {
@@ -65,7 +67,7 @@ public class JavaStubs extends BaseStubModelRootManager {
     return JavaStubsUtil.iterateClassPath(item);
   }
 
-  protected String getLanguageId() {
-    return LanguageID.JAVA;
+  public String getLanguageId() {
+    return "debugger_java";
   }
 }

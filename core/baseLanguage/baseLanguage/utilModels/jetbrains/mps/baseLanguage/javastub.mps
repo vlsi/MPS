@@ -102,6 +102,16 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7241381882860002288">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="2076500701550165117">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="2076500701550165119">
+            <property name="text" nameId="tpee.6329021646629104958" value="during fix of MPS-10626 would be changed to true" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="2076500701550165122">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="2076500701550165123">
+            <property name="text" nameId="tpee.6329021646629104958" value="but do not touch it before that" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="353338984289721911">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="353338984289716879" resolveInfo="ASMModelLoader" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="353338984289721912">

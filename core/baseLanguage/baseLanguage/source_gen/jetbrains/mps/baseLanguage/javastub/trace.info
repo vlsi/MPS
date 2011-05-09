@@ -2289,53 +2289,55 @@
     <nodeInfo nodeId="5700691190903488485" fileName="ASMModelLoader.java" startLine="15" startPosition="31" endLine="16" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocation" />
     <nodeInfo nodeId="353338984289721919" fileName="ASMModelLoader.java" startLine="16" startPosition="40" endLine="17" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySkipPrivate" />
     <nodeInfo nodeId="8658938141517388526" fileName="ASMModelLoader.java" startLine="17" startPosition="38" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageId" />
-    <nodeInfo nodeId="353338984289721911" fileName="ASMModelLoader.java" startLine="20" startPosition="92" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="353338984289716888" fileName="ASMModelLoader.java" startLine="24" startPosition="132" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="353338984289716892" fileName="ASMModelLoader.java" startLine="25" startPosition="26" endLine="26" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="353338984289716896" fileName="ASMModelLoader.java" startLine="26" startPosition="29" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8658938141517453396" fileName="ASMModelLoader.java" startLine="27" startPosition="20" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="353338984289721924" fileName="ASMModelLoader.java" startLine="28" startPosition="30" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7241381882860002331" fileName="ASMModelLoader.java" startLine="33" startPosition="9" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4350187567640399910" fileName="ASMModelLoader.java" startLine="34" startPosition="42" endLine="35" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1654569470761175064" fileName="ASMModelLoader.java" startLine="37" startPosition="68" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4350187567640399918" fileName="ASMModelLoader.java" startLine="39" startPosition="9" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7241381882860002314" fileName="ASMModelLoader.java" startLine="42" startPosition="27" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7241381882860002280" fileName="ASMModelLoader.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMModelLoader#(Ljetbrains/mps/stubs/StubLocation;Ljetbrains/mps/reloading/IClassPathItem;Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="1654569470761175047" fileName="ASMModelLoader.java" startLine="36" startPosition="57" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860002345" fileName="ASMModelLoader.java" startLine="35" startPosition="136" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="353338984289716879" fileName="ASMModelLoader.java" startLine="23" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMModelLoader#(Ljetbrains/mps/stubs/StubLocation;Ljetbrains/mps/reloading/IClassPathItem;Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="7241381882860002311" fileName="ASMModelLoader.java" startLine="32" startPosition="29" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7241381882860002307" fileName="ASMModelLoader.java" startLine="31" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#()V" />
-    <scopeInfo nodeId="7241381882860002288" fileName="ASMModelLoader.java" startLine="20" startPosition="92" endLine="21" endPosition="64" />
-    <scopeInfo nodeId="1654569470761175048" fileName="ASMModelLoader.java" startLine="37" startPosition="68" endLine="38" endPosition="19" />
-    <scopeInfo nodeId="7241381882860002312" fileName="ASMModelLoader.java" startLine="42" startPosition="0" endLine="43" endPosition="32">
+    <nodeInfo nodeId="2076500701550165117" fileName="ASMModelLoader.java" startLine="20" startPosition="92" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2076500701550165122" fileName="ASMModelLoader.java" startLine="21" startPosition="56" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="353338984289721911" fileName="ASMModelLoader.java" startLine="22" startPosition="39" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="353338984289716888" fileName="ASMModelLoader.java" startLine="26" startPosition="132" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="353338984289716892" fileName="ASMModelLoader.java" startLine="27" startPosition="26" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="353338984289716896" fileName="ASMModelLoader.java" startLine="28" startPosition="29" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8658938141517453396" fileName="ASMModelLoader.java" startLine="29" startPosition="20" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="353338984289721924" fileName="ASMModelLoader.java" startLine="30" startPosition="30" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7241381882860002331" fileName="ASMModelLoader.java" startLine="35" startPosition="9" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4350187567640399910" fileName="ASMModelLoader.java" startLine="36" startPosition="42" endLine="37" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1654569470761175064" fileName="ASMModelLoader.java" startLine="39" startPosition="68" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4350187567640399918" fileName="ASMModelLoader.java" startLine="41" startPosition="9" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7241381882860002314" fileName="ASMModelLoader.java" startLine="44" startPosition="27" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1654569470761175047" fileName="ASMModelLoader.java" startLine="38" startPosition="57" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7241381882860002280" fileName="ASMModelLoader.java" startLine="19" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMModelLoader#(Ljetbrains/mps/stubs/StubLocation;Ljetbrains/mps/reloading/IClassPathItem;Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="7241381882860002345" fileName="ASMModelLoader.java" startLine="37" startPosition="136" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="353338984289716879" fileName="ASMModelLoader.java" startLine="25" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMModelLoader#(Ljetbrains/mps/stubs/StubLocation;Ljetbrains/mps/reloading/IClassPathItem;Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="7241381882860002311" fileName="ASMModelLoader.java" startLine="34" startPosition="29" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7241381882860002307" fileName="ASMModelLoader.java" startLine="33" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#()V" />
+    <scopeInfo nodeId="1654569470761175048" fileName="ASMModelLoader.java" startLine="39" startPosition="68" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="7241381882860002312" fileName="ASMModelLoader.java" startLine="44" startPosition="0" endLine="45" endPosition="32">
       <varInfo nodeId="7241381882860002320" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860002313" fileName="ASMModelLoader.java" startLine="42" startPosition="27" endLine="43" endPosition="32" />
-    <scopeInfo nodeId="7241381882860002280" fileName="ASMModelLoader.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
+    <scopeInfo nodeId="7241381882860002313" fileName="ASMModelLoader.java" startLine="44" startPosition="27" endLine="45" endPosition="32" />
+    <scopeInfo nodeId="7241381882860002288" fileName="ASMModelLoader.java" startLine="20" startPosition="92" endLine="23" endPosition="65" />
+    <scopeInfo nodeId="7241381882860002349" fileName="ASMModelLoader.java" startLine="38" startPosition="57" endLine="42" endPosition="40" />
+    <scopeInfo nodeId="7241381882860002280" fileName="ASMModelLoader.java" startLine="19" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="7241381882860002286" varName="model" />
       <varInfo nodeId="5700691190903488482" varName="location" />
       <varInfo nodeId="7241381882860002282" varName="classPathItem" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860002349" fileName="ASMModelLoader.java" startLine="36" startPosition="57" endLine="40" endPosition="40" />
-    <scopeInfo nodeId="353338984289716887" fileName="ASMModelLoader.java" startLine="24" startPosition="132" endLine="29" endPosition="32" />
-    <scopeInfo nodeId="7241381882860002345" fileName="ASMModelLoader.java" startLine="35" startPosition="136" endLine="41" endPosition="7">
+    <scopeInfo nodeId="353338984289716887" fileName="ASMModelLoader.java" startLine="26" startPosition="132" endLine="31" endPosition="32" />
+    <scopeInfo nodeId="7241381882860002345" fileName="ASMModelLoader.java" startLine="37" startPosition="136" endLine="43" endPosition="7">
       <varInfo nodeId="7241381882860002347" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="353338984289716879" fileName="ASMModelLoader.java" startLine="23" startPosition="0" endLine="30" endPosition="3">
+    <scopeInfo nodeId="353338984289716879" fileName="ASMModelLoader.java" startLine="25" startPosition="0" endLine="32" endPosition="3">
       <varInfo nodeId="353338984289716900" varName="skipPrivate" />
       <varInfo nodeId="353338984289716885" varName="model" />
       <varInfo nodeId="353338984289716881" varName="location" />
       <varInfo nodeId="8658938141517388523" varName="languageId" />
       <varInfo nodeId="353338984289716883" varName="classPathItem" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860002322" fileName="ASMModelLoader.java" startLine="33" startPosition="9" endLine="41" endPosition="7">
+    <scopeInfo nodeId="7241381882860002322" fileName="ASMModelLoader.java" startLine="35" startPosition="9" endLine="43" endPosition="7">
       <varInfo nodeId="4350187567640399911" varName="loader" />
       <varInfo nodeId="7241381882860002332" varName="pack" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860002310" fileName="ASMModelLoader.java" startLine="32" startPosition="29" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="7241381882860002307" fileName="ASMModelLoader.java" startLine="31" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="7241381882860001930" fileName="ASMModelLoader.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.ASMModelLoader" />
+    <scopeInfo nodeId="7241381882860002310" fileName="ASMModelLoader.java" startLine="34" startPosition="29" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="7241381882860002307" fileName="ASMModelLoader.java" startLine="33" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="7241381882860001930" fileName="ASMModelLoader.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.ASMModelLoader" />
   </root>
   <root nodeId="7241381882860008238">
     <nodeInfo nodeId="7241381882860008249" fileName="ASMNodeId.java" startLine="27" startPosition="54" endLine="28" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

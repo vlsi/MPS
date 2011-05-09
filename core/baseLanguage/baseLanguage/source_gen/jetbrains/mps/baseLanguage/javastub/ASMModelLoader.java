@@ -18,7 +18,9 @@ public class ASMModelLoader {
   private final String myLanguageId;
 
   public ASMModelLoader(StubLocation location, IClassPathItem classPathItem, SModel model) {
-    this(location, classPathItem, model, LanguageID.JAVA, true);
+    // during fix of MPS-10626 would be changed to true 
+    // but do not touch it before that 
+    this(location, classPathItem, model, LanguageID.JAVA, false);
   }
 
   public ASMModelLoader(StubLocation location, IClassPathItem classPathItem, SModel model, String languageId, boolean skipPrivate) {
