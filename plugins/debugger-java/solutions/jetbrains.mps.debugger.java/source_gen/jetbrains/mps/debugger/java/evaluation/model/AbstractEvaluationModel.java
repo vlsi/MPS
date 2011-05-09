@@ -30,10 +30,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
+import jetbrains.mps.project.IModule;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.debug.evaluation.Evaluator;
@@ -53,7 +53,6 @@ import jetbrains.mps.generator.GenerationOptions;
 import com.intellij.openapi.util.Disposer;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
@@ -178,7 +177,7 @@ public abstract class AbstractEvaluationModel {
         if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
           return getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)) + suffix;
         }
-        return BaseConcept_Behavior.call_getPresentation_1213877396640(lastStatement) + suffix;
+        return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(lastStatement, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class})) + suffix;
       }
     });
   }
@@ -200,12 +199,12 @@ public abstract class AbstractEvaluationModel {
       return "\"" + SPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value") + "\"";
     }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")) {
-      return "new " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true));
+      return "new " + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
     }
     if (SConceptPropertyOperations.getBoolean(expression, "constant")) {
-      return Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(expression, getModule()) + "";
+      return ((Object) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_getCompileTimeConstantValue_1238860310638", new Class[]{SNode.class, IModule.class}, getModule())) + "";
     }
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(expression);
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(expression, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
   }
 
   private String getOperationPresentation(@Nullable SNode operation) {
@@ -225,7 +224,7 @@ public abstract class AbstractEvaluationModel {
         }
       }) + ")";
     }
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(operation);
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
   }
 
   @Nullable

@@ -1530,6 +1530,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1400711440828889730" resolveInfo="lastStatement" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1400711440828889723">
+                                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396640" resolveInfo="getPresentation" />
                               </node>
                             </node>
@@ -1757,6 +1758,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6647443673251191224">
+                    <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396640" resolveInfo="getPresentation" />
                   </node>
                 </node>
@@ -1789,6 +1791,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="864648422614446818" resolveInfo="expression" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3451429699316823898">
+                    <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1238860310638" resolveInfo="getCompileTimeConstantValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="3451429699316823899">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7757449281563189533" resolveInfo="getModule" />
@@ -1813,6 +1816,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="864648422614446818" resolveInfo="expression" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="864648422614491043">
+              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396640" resolveInfo="getPresentation" />
             </node>
           </node>
@@ -1984,6 +1988,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5439191097839083283" resolveInfo="operation" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5439191097839093370">
+              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396640" resolveInfo="getPresentation" />
             </node>
           </node>
@@ -3395,6 +3400,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2874440605879599976">
+                                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wbvt.3822000666564591112" resolveInfo="getUnitName" />
                                 </node>
                               </node>
@@ -6521,6 +6527,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2416198621220215563">
+                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
                 </node>
               </node>

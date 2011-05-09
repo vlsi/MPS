@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -103,7 +103,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           return false;
         }
 
-        String nodesUnitName = UnitConcept_Behavior.call_getUnitName_3822000666564591112(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UnitConcept"));
+        String nodesUnitName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UnitConcept"), "jetbrains.mps.lang.textGen.structure.UnitConcept"), "virtual_getUnitName_3822000666564591112", new Class[]{SNode.class}));
         if (StringUtils.isEmpty(nodesUnitName)) {
           return false;
         }

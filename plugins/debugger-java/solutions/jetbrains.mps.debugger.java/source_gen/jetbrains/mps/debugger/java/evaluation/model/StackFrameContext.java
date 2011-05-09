@@ -43,7 +43,7 @@ import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.debug.evaluation.transform.TransformationUtil;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -260,7 +260,7 @@ public class StackFrameContext extends EvaluationContext {
     if (StringUtils.isEmpty(staticContextTypeName)) {
       return false;
     }
-    return staticContextTypeName.equals(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)));
+    return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
   }
 
   private static boolean eq_4zsmpx_a0a0a0a0a1a01(Object a, Object b) {

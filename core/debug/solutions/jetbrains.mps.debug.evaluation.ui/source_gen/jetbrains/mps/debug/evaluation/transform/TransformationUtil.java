@@ -16,14 +16,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -213,7 +211,7 @@ public class TransformationUtil {
     if (ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).contains(classConcept)) {
       fqNameNode = new TransformationUtil.QuotationClass_crriw5_a0a0a2a02().createNode();
     } else {
-      fqNameNode = createStringLiteral(INamedConcept_Behavior.call_getFqName_1213877404258(classConcept));
+      fqNameNode = createStringLiteral(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(classConcept, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
     }
     return fqNameNode;
   }
@@ -293,20 +291,20 @@ public class TransformationUtil {
       // we have to deal with the fact that inners in stubs are not inners 
       String realFqName;
       if (SPropertyOperations.getString(classifier, "name").contains(".")) {
-        String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(classifier);
+        String fqName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(classifier, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
         realFqName = fqName.substring(0, fqName.length() - SPropertyOperations.getString(classifier, "name").length()) + SPropertyOperations.getString(classifier, "name").replace(".", "$");
       } else {
         SNode rootClassifier = classifier;
         String suffix = "";
-        while (Classifier_Behavior.call_isInner_521412098689998677(rootClassifier)) {
+        while (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(rootClassifier, "jetbrains.mps.baseLanguage.structure.Classifier"), "call_isInner_521412098689998677", new Class[]{SNode.class}))) {
           suffix = "$" + SPropertyOperations.getString(rootClassifier, "name");
           rootClassifier = SNodeOperations.cast(SNodeOperations.getParent(rootClassifier), "jetbrains.mps.baseLanguage.structure.Classifier");
         }
-        realFqName = (INamedConcept_Behavior.call_getFqName_1213877404258(rootClassifier).replace(".", "/")) + suffix;
+        realFqName = (((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(rootClassifier, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})).replace(".", "/")) + suffix;
       }
       return "L" + realFqName + ";";
     } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      return getJniSignatureFromType(Type_Behavior.call_getJavaType_1213877337345(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")));
+      return getJniSignatureFromType(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getJavaType_1213877337345", new Class[]{SNode.class})));
     } else {
       LOG.error("Unknown type, assuming it's void", type);
     }
