@@ -11,6 +11,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="module" module-name="intentions-runtime" />
   </component>
 </module>
 
