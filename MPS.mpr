@@ -15,9 +15,7 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions />
-    <projectLanguages />
-    <projectDevkits />
+    <projectModules />
     <genConfs />
   </component>
   <component name="ProjectLibraryManager">
