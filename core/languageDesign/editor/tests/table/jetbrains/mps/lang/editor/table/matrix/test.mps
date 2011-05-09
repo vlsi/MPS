@@ -13,7 +13,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="4379396156287837026">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/core/languageDesign/editor/editor.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="4379396156287837027">
       <property name="name" nameId="tpck.1169194664001" value="Create" />

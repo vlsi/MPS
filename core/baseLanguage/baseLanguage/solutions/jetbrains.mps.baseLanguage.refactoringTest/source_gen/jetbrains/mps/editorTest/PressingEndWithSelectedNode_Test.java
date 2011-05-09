@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class PressingEndWithSelectedNode_Test extends BaseTransformationTest {
   @Test
   public void test_PressingEndWithSelectedNode() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest("jetbrains.mps.editorTest.PressingEndWithSelectedNode_Test$TestBody", "testMethod", false);
   }
 

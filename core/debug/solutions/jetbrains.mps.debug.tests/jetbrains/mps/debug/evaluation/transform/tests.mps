@@ -35,7 +35,7 @@
       <property name="name" nameId="tpck.1169194664001" value="TransformationUtil_Complex" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="7744266994038462827">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/plugins/debugger-java/debuggerJava.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
     </node>
   </roots>
   <root id="5543996881668550053">

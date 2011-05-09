@@ -20,7 +20,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ClosureLiteralDataFlow" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="4402508398720854500">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/core/baseLanguage/closures/closures.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
     </node>
   </roots>
   <root id="1227886714745">

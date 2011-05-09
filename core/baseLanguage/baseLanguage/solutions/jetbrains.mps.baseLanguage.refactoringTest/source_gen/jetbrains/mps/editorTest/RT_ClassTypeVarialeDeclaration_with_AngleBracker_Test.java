@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test extends BaseTransformationTest {
   @Test
   public void test_RT_ClassTypeVarialeDeclaration_with_AngleBracker() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest("jetbrains.mps.editorTest.RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test$TestBody", "testMethod", false);
   }
 

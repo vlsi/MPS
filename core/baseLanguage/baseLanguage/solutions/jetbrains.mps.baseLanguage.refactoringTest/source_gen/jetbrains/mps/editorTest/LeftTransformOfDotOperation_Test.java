@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class LeftTransformOfDotOperation_Test extends BaseTransformationTest {
   @Test
   public void test_LeftTransformOfDotOperation() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest("jetbrains.mps.editorTest.LeftTransformOfDotOperation_Test$TestBody", "testMethod", false);
   }
 

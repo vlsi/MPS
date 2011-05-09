@@ -23,37 +23,37 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class SLinkImplicitSelect_Test extends BaseTransformationTest {
   @Test
   public void test_empty() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
+    this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_empty", true);
   }
 
   @Test
   public void test_singleChild() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
+    this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_singleChild", true);
   }
 
   @Test
   public void test_multipleChildren() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
+    this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_multipleChildren", true);
   }
 
   @Test
   public void test_operationsOnList() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
+    this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_operationsOnList", true);
   }
 
   @Test
   public void test_specializedLinks() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
+    this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_specializedLinks", true);
   }
 
   @Test
   public void test_inheritedLinks() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
+    this.initTest("${mps_home}/MPS.mpr", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_inheritedLinks", true);
   }
 

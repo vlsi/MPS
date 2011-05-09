@@ -25,7 +25,7 @@
       <property name="name" nameId="tpck.1169194664001" value="SLinkImplicitSelect" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="1056377966671533635">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/core/languageDesign/smodel/smodel.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
     </node>
     <node type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="2282909602806268536">
       <property name="name" nameId="tpck.1169194664001" value="SLinkListAccess_ListModifyingOperaions" />

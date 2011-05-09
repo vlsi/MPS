@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class IfStatementWithReturns_Test extends BaseTransformationTest {
   @Test
   public void test_TypesCheck1220013512724() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.IfStatementWithReturns_Test$TestBody", "test_TypesCheck1220013512724", true);
   }
 

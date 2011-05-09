@@ -26,175 +26,175 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class TransformationUtil_Expressions_Test extends BaseTransformationTest {
   @Test
   public void test_lowLevelVariable() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_lowLevelVariable", true);
   }
 
   @Test
   public void test_variableInternal() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_variableInternal", true);
   }
 
   @Test
   public void test_evaluatorsThisExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_evaluatorsThisExpression", true);
   }
 
   @Test
   public void test_thisInternalExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_thisInternalExpression", true);
   }
 
   @Test
   public void test_field() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_field", true);
   }
 
   @Test
   public void test_fieldInternal() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_fieldInternal", true);
   }
 
   @Test
   public void test_localField() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_localField", true);
   }
 
   @Test
   public void test_staticField() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticField", true);
   }
 
   @Test
   public void test_staticFieldInternal() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticFieldInternal", true);
   }
 
   @Test
   public void test_localStaticField() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_localStaticField", true);
   }
 
   @Test
   public void test_method() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_method", true);
   }
 
   @Test
   public void test_methodInternal() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_methodInternal", true);
   }
 
   @Test
   public void test_localMethod() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_localMethod", true);
   }
 
   @Test
   public void test_staticMethod() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticMethod", true);
   }
 
   @Test
   public void test_staticMethodInternal() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticMethodInternal", true);
   }
 
   @Test
   public void test_staticLocalMethod() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticLocalMethod", true);
   }
 
   @Test
   public void test_arrayAccessOperation() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_arrayAccessOperation", true);
   }
 
   @Test
   public void test_arrayLengthOperation() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_arrayLengthOperation", true);
   }
 
   @Test
   public void test_instanceof() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_instanceof", true);
   }
 
   @Test
   public void test_super() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_super", true);
   }
 
   @Test
   public void test_constructor() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_constructor", true);
   }
 
   @Test
   public void test_constructorInternal() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_constructorInternal", true);
   }
 
   @Test
   public void test_plusExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_plusExpression", true);
   }
 
   @Test
   public void test_plusStringExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_plusStringExpression", true);
   }
 
   @Test
   public void test_equalsExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_equalsExpression", true);
   }
 
   @Test
   public void test_notEqualsExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_notEqualsExpression", true);
   }
 
   @Test
   public void test_notExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_notExpression", true);
   }
 
   @Test
   public void test_classExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_classExpression", true);
   }
 
   @Test
   public void test_classInternalExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_classInternalExpression", true);
   }
 

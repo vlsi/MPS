@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class CreateY_Test extends BaseTransformationTest {
   @Test
   public void test_CreateY() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)");
     this.runTest("jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test$TestBody", "testMethod", false);
   }
 

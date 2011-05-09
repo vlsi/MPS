@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class IntelligentInputWithSubstitutionChooser_Test extends BaseTransformationTest {
   @Test
   public void test_IntelligentInputWithSubstitutionChooser() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest("jetbrains.mps.editorTest.IntelligentInputWithSubstitutionChooser_Test$TestBody", "testMethod", false);
   }
 

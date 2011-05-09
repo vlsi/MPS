@@ -107,7 +107,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="dataFlow" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="5097124989039164757">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
     </node>
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="1326302914272879450">
       <property name="testCaseName" nameId="tpe3.1171931851045" value="TestSafeEquals" />

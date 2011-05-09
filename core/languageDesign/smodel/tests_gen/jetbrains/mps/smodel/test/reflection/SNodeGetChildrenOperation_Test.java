@@ -22,49 +22,49 @@ import java.util.List;
 public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
   @Test
   public void test_childContainingLinks() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingLinks", true);
   }
 
   @Test
   public void test_childContaininLinksForSpecializedChildren() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContaininLinksForSpecializedChildren", true);
   }
 
   @Test
   public void test_childContainingRoles() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingRoles", true);
   }
 
   @Test
   public void test_unspecifiedChildren() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_unspecifiedChildren", true);
   }
 
   @Test
   public void test_childOperationsOnNull() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childOperationsOnNull", true);
   }
 
   @Test
   public void test_childrenByLinkDeclaration() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclaration", true);
   }
 
   @Test
   public void test_childrenByLinkDeclarationSpecialized() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationSpecialized", true);
   }
 
   @Test
   public void test_childrenByLinkDeclarationOnNull() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationOnNull", true);
   }
 

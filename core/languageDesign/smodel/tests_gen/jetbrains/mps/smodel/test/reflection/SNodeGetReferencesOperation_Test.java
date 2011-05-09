@@ -21,55 +21,55 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
   @Test
   public void test_size() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_size", true);
   }
 
   @Test
   public void test_target() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_target", true);
   }
 
   @Test
   public void test_linkDeclaration() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_linkDeclaration", true);
   }
 
   @Test
   public void test_forSpecializedLink() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_forSpecializedLink", true);
   }
 
   @Test
   public void test_roles() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_roles", true);
   }
 
   @Test
   public void test_resolveInfo() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_resolveInfo", true);
   }
 
   @Test
   public void test_unspecifiedReferences() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_unspecifiedReferences", true);
   }
 
   @Test
   public void test_unresolvedReference() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_unresolvedReference", true);
   }
 
   @Test
   public void test_forNull() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_forNull", true);
   }
 

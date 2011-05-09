@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class RemoveCell_Test extends BaseTransformationTest {
   @Test
   public void test_RemoveCell() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test$TestBody", "testMethod", false);
   }
 

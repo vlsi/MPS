@@ -330,7 +330,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Memento" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="418758558327350365">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3727822333335494274">
       <property name="name" nameId="tpck.1169194664001" value="NodeAfterSubstitutionHasNoErrorCell" />

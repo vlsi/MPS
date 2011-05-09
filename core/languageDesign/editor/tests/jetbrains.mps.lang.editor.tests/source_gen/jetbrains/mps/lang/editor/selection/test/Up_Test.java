@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class Up_Test extends BaseTransformationTest {
   @Test
   public void test_Up() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
     this.runTest("jetbrains.mps.lang.editor.selection.test.Up_Test$TestBody", "testMethod", false);
   }
 

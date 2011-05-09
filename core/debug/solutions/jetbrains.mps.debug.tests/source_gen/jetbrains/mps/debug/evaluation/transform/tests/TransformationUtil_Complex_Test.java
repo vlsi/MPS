@@ -18,187 +18,187 @@ import jetbrains.mps.smodel.SNode;
 public class TransformationUtil_Complex_Test extends BaseTransformationTest {
   @Test
   public void test_localIntVariableDeclaration() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localIntVariableDeclaration", true);
   }
 
   @Test
   public void test_localBoxedIntVariableDeclaration() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localBoxedIntVariableDeclaration", true);
   }
 
   @Test
   public void test_localBoxedIntVariableSecondDeclaration() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localBoxedIntVariableSecondDeclaration", true);
   }
 
   @Test
   public void test_localIntVariableAssignment() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localIntVariableAssignment", true);
   }
 
   @Test
   public void test_localBoxedIntVariableAssignment() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localBoxedIntVariableAssignment", true);
   }
 
   @Test
   public void test_localObjectVariableDeclaration() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localObjectVariableDeclaration", true);
   }
 
   @Test
   public void test_localObjectVariableAssignment() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localObjectVariableAssignment", true);
   }
 
   @Test
   public void test_localUnBoxedIntVarAssignment() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localUnBoxedIntVarAssignment", true);
   }
 
   @Test
   public void test_localUnBoxedIntVarDeclaration() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_localUnBoxedIntVarDeclaration", true);
   }
 
   @Test
   public void test_andAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_andAssignmentExpression", true);
   }
 
   @Test
   public void test_divAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_divAssignmentExpression", true);
   }
 
   @Test
   public void test_leftShiftAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_leftShiftAssignmentExpression", true);
   }
 
   @Test
   public void test_minusAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_minusAssignmentExpression", true);
   }
 
   @Test
   public void test_mulAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_mulAssignmentExpression", true);
   }
 
   @Test
   public void test_orAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_orAssignmentExpression", true);
   }
 
   @Test
   public void test_plusAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_plusAssignmentExpression", true);
   }
 
   @Test
   public void test_remAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_remAssignmentExpression", true);
   }
 
   @Test
   public void test_rightShiftAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_rightShiftAssignmentExpression", true);
   }
 
   @Test
   public void test_xorAssignmentExpression() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_xorAssignmentExpression", true);
   }
 
   @Test
   public void test_lowLevelVariableInForeach() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_lowLevelVariableInForeach", true);
   }
 
   @Test
   public void test_lowLevelIntVariableInForeach() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_lowLevelIntVariableInForeach", true);
   }
 
   @Test
   public void test_notNullString() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_notNullString", true);
   }
 
   @Test
   public void test_nodeReferenceCountViewer() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_nodeReferenceCountViewer", true);
   }
 
   @Test
   public void test_arrayInForeach() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_arrayInForeach", true);
   }
 
   @Test
   public void test_newArrayOfString() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_newArrayOfString", true);
   }
 
   @Test
   public void test_newEmptyArrayOfString() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_newEmptyArrayOfString", true);
   }
 
   @Test
   public void test_newEmptyArrayOfInt() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_newEmptyArrayOfInt", true);
   }
 
   @Test
   public void test_optimizeToStringForString() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_optimizeToStringForString", true);
   }
 
   @Test
   public void test_ternaryOperatorForString() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_ternaryOperatorForString", true);
   }
 
   @Test
   public void test_ternaryOperatorForStringIfTrue() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_ternaryOperatorForStringIfTrue", true);
   }
 
   @Test
   public void test_ternaryOperatorForStringCondition() throws Throwable {
-    this.initTest("${mps_home}/plugins/debugger-java/debuggerJava.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody", "test_ternaryOperatorForStringCondition", true);
   }
 

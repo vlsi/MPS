@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ClosureLiteralDataFlow_Test extends BaseTransformationTest {
   @Test
   public void test_ClosureLiteralDataFlow() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/closures/closures.mpr", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test)");
     this.runTest("jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test$TestBody", "test_ClosureLiteralDataFlow", true);
   }
 

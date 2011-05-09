@@ -17,19 +17,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ReturnStatement_Test extends BaseTransformationTest {
   @Test
   public void test_alwaysReturn() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_alwaysReturn", true);
   }
 
   @Test
   public void test_retunInAnonymousClass() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_retunInAnonymousClass", true);
   }
 
   @Test
   public void test_notAlwaysReturn() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_notAlwaysReturn", true);
   }
 

@@ -17,31 +17,31 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
   @Test
   public void test_empty() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_empty", true);
   }
 
   @Test
   public void test_byLinkDeclaration() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_byLinkDeclaration", true);
   }
 
   @Test
   public void test_bySpecializedLinkDeclaration() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_bySpecializedLinkDeclaration", true);
   }
 
   @Test
   public void test_forNull() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_forNull", true);
   }
 
   @Test
   public void test_invalidLinkDeclaration() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
+    this.initTest("${mps_home}/MPS.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_invalidLinkDeclaration", true);
   }
 
