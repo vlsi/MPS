@@ -17,8 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CopyThisDown_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -80,11 +79,11 @@ public class CopyThisDown_Action extends GeneratedAction {
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);
           String role = nodeToCopy.getRole_();
-          SNode link = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), role);
+          SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
           if (link == null) {
             return;
           }
-          if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(link))) {
+          if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class})))) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
             parent.insertChild(nodeToCopy, role, copy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectWRTFocusPolicy(copy);
@@ -98,7 +97,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
         String role = firstNode.getRole_();
         SNode parent = SNodeOperations.getParent(firstNode);
-        SNode link = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), role);
+        SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
         if (link == null) {
           return;
         }

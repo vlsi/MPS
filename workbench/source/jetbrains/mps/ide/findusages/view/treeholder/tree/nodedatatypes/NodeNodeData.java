@@ -25,11 +25,11 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Element;
 
@@ -114,7 +114,7 @@ public class NodeNodeData extends BaseNodeData {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         try {
-          String presentation = BaseConcept_Behavior.call_getPresentation_1213877396640(node);
+          String presentation = SNodeUtil.getPresentation(node);
           String result = (presentation != null) ? presentation : node.toString();
           LOG.assertLog(result != null);
           result = StringEscapeUtils.escapeHtml(result);

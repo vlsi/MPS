@@ -4,6 +4,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,6 +49,10 @@ public class SNodeUtil {
 
   public static boolean isDefaultSubstitutable(SNode node) {
     return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_isDefaultSubstitutable_7429110134803670673", new Class[]{SNode.class}));
+  }
+
+  public static List<SNode> findAllAspects(SNode node) {
+    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findAllAspects_7754459869734028917", new Class[]{SNode.class}));
   }
 
   public static int getMetaLevel(SNode node) {

@@ -8,7 +8,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -173,7 +172,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
             String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
             sourceNode.o1.setProperty(SModelTreeNode.PACK, fullTargetPack);
             if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
-              List<SNode> allAspects = AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(sourceNode.o1);
+              List<SNode> allAspects = SNodeUtil.findAllAspects(sourceNode.o1);
               for (SNode aspect : allAspects) {
                 aspect.setProperty(SModelTreeNode.PACK, fullTargetPack);
               }

@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorActionUtils {
   public EditorActionUtils() {
@@ -125,7 +125,7 @@ public class EditorActionUtils {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode linkDeclaration = SNodeOperations.getContainingLinkDeclaration(((SNode) cell.getSNode()));
-        result[0] = linkDeclaration != null && LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration);
+        result[0] = linkDeclaration != null && ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(linkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}));
       }
     });
     return result[0];
