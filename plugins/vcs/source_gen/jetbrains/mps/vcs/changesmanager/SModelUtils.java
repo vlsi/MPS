@@ -12,9 +12,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -39,9 +38,9 @@ public class SModelUtils {
         return SPropertyOperations.hasValue(annotationLinkDeclaration, "sourceCardinality", "0..1", "0..1");
       }
     } else {
-      SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), childRole);
+      SNode linkDeclaration = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, childRole));
       if ((linkDeclaration != null)) {
-        return LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration);
+        return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(linkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}));
       }
     }
     return false;

@@ -27,6 +27,7 @@
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="actions-runtime" />
   </component>
 </module>
 

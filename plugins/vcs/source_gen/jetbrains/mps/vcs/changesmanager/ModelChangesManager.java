@@ -38,7 +38,7 @@ import jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
 import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
 import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.AddNodeChange;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -58,7 +58,6 @@ import jetbrains.mps.vcs.diff.DiffBuilder;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.oldchanges.SubstituteNodeChange;
@@ -433,7 +432,7 @@ public class ModelChangesManager {
             if (parent == null || !(SetSequence.fromSet(addedNodes).contains(parent.getSNodeId()))) {
               if (parent == null) {
                 ListSequence.fromList(changeList.value).addElement(new AddRootChange(conceptFqName, nodeId));
-              } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(node))) {
+              } else if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
                 SNode thisNodeInBase = myBaseVersionModel.getNodeById(nodeId);
                 if (thisNodeInBase != null && parent.getSNodeId().equals(check_fh1co9_a0a0a1a0a0h0c0a6a0e0y(SNodeOperations.getParent(thisNodeInBase))) && SNodeOperations.getContainingLinkRole(node).equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
                   continue;
@@ -511,7 +510,7 @@ __switch__:
             Change newCh = ch;
             if (ch instanceof DeleteNodeChange) {
               SNode deletedNode = myBaseVersionModel.getNodeById(ch.getAffectedNodeId());
-              if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(deletedNode))) {
+              if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(deletedNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
                 newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ((DeleteNodeChange) ch).getChildren(), check_fh1co9_c0a0a0b0b0a0a0a9a0e0y(SNodeOperations.getParent(deletedNode)), SNodeOperations.getContainingLinkRole(deletedNode), -1);
               }
             }
@@ -544,7 +543,7 @@ __switch__:
 
       if (change instanceof AddNodeChange || change instanceof DeleteNodeChange) {
         SNode parentNode = SNodeOperations.getParent(node);
-        if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.getContainingLinkDeclaration(node))) && parentNode != null) {
+        if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) && parentNode != null) {
           Tuples._2<SNodeId, String> pair = MultiTuple.<SNodeId,String>from(parentNode.getSNodeId(), SNodeOperations.getContainingLinkRole(node));
           if (MapSequence.fromMap(myMultipleChildChanges).containsKey(pair)) {
             ListSequence.fromList(MapSequence.fromMap(myMultipleChildChanges).get(pair)).addElement(change);
@@ -729,7 +728,7 @@ __switch__:
     if (AttributesRolesUtil.isAttributeRole(role)) {
       return parentNode.getChildren(role);
     }
-    return SNodeOperations.getChildren(parentNode, AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parentNode), role));
+    return SNodeOperations.getChildren(parentNode, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(parentNode), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role)));
   }
 
   private void refreshMultipleChildChanges(SNode parentNode, String role, boolean silent) {
