@@ -221,12 +221,21 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.runConfigurations">
-    <mkdir dir="core/baseLanguage/runConfigurations/classes" />
+    <mkdir dir="core/baseLanguage/runConfigurations/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.runConfigurations.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/runConfigurations/runConfigurations.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/runConfigurations" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/baseLanguage/runConfigurations/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/runConfigurations/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <zipfileset dir="core/baseLanguage/runConfigurations/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.runConfigurations.runtime">
+    <mkdir dir="core/baseLanguage/runConfigurations/classes" />
+    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.runConfigurations.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/runConfigurations/runtime/runtime.msd" prefix="module" />
+      <zipfileset dir="core/baseLanguage/runConfigurations/runtime" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/baseLanguage/runConfigurations/runtime/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/baseLanguage/runConfigurations/classes" />
     </jar>
   </target>

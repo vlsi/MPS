@@ -19,6 +19,7 @@
   <property name="jetbrains.mps.baseLanguage.regexp.classes" value="platform/regexp/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.regexp.examples.classes" value="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.regexp.runtime.classes" value="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+  <property name="jetbrains.mps.baseLanguage.runConfigurations.classes" value="core/baseLanguage/runConfigurations/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.unitTest.classes" value="core/baseLanguage/unitTest/classes_gen" />
   <property name="jetbrains.mps.baseLanguageInternal.classes" value="core/baseLanguage/baseLanguageInternal/classes_gen" />
   <property name="jetbrains.mps.bash.classes" value="platform/bash/languages/bash/classes_gen" />
@@ -165,6 +166,7 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp_tjc.src">
     <path path="platform/regexp/source_gen" />
+    <path path="core/baseLanguage/runConfigurations/source_gen" />
     <path path="core/baseLanguage/unitTest/source_gen" />
     <path path="core/languageDesign/pattern/source_gen" />
     <path path="core/languageDesign/pattern/languages/testLang/source_gen" />
@@ -355,6 +357,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -457,6 +460,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -559,6 +563,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -661,6 +666,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -763,6 +769,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -865,6 +872,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -971,6 +979,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1077,6 +1086,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1179,6 +1189,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1281,6 +1292,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1384,6 +1396,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1489,6 +1502,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1592,6 +1606,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1696,6 +1711,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1799,6 +1815,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -1883,6 +1900,7 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp_tjc.classpaths">
     <path path="platform/regexp/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/languageDesign/pattern/classes_gen" />
     <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
@@ -1907,6 +1925,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2009,6 +2028,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2112,6 +2132,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2214,6 +2235,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2316,6 +2338,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2419,6 +2442,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2535,6 +2559,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2646,6 +2671,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2760,6 +2786,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2868,6 +2895,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -2970,6 +2998,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3072,6 +3101,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3174,6 +3204,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3276,6 +3307,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3378,6 +3410,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3482,6 +3515,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3584,6 +3618,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3686,6 +3721,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3788,6 +3824,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3890,6 +3927,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -3992,6 +4030,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4094,6 +4133,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4196,6 +4236,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4298,6 +4339,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4402,6 +4444,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4504,6 +4547,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4606,6 +4650,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4708,6 +4753,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4810,6 +4856,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -4912,6 +4959,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5014,6 +5062,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5116,6 +5165,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5219,6 +5269,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5324,6 +5375,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5429,6 +5481,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5538,6 +5591,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5642,6 +5696,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5755,6 +5810,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5859,6 +5915,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -5973,6 +6030,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6077,6 +6135,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6181,6 +6240,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6283,6 +6343,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6386,6 +6447,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6488,6 +6550,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6591,6 +6654,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6693,6 +6757,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6795,6 +6860,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -6898,6 +6964,7 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -7231,6 +7298,7 @@
   <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc" depends="compile.cycle.jetbrains.mps.lang.intentions_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.regexp.classes}.tmp" />
     <mkdir dir="platform/regexp/source_gen" />
+    <mkdir dir="core/baseLanguage/runConfigurations/source_gen" />
     <mkdir dir="core/baseLanguage/unitTest/source_gen" />
     <mkdir dir="core/languageDesign/pattern/source_gen" />
     <mkdir dir="core/languageDesign/pattern/languages/testLang/source_gen" />
@@ -7239,6 +7307,7 @@
     <mkdir dir="core/languageDesign/typesystem/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.regexp.classes}" />
+    <mkdir dir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <mkdir dir="${jetbrains.mps.lang.pattern.classes}" />
     <mkdir dir="${jetbrains.mps.lang.pattern.testLang.classes}" />
@@ -7251,6 +7320,11 @@
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.classes}">
       <src>
         <path path="platform/regexp/source_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.classes}">
+      <src>
+        <path path="core/baseLanguage/runConfigurations/source_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.classes}">
@@ -7430,7 +7504,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.debug.apiLang_tjc" depends="compile.cycle.jetbrains.mps.build.custommps_tjc">
+  <target name="compile.cycle.jetbrains.mps.debug.apiLang_tjc" depends="compile.cycle.jetbrains.mps.lang.script_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debug.apiLang.classes}.tmp" />
     <mkdir dir="core/debug-api/languages/api/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -7475,7 +7549,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.debug.privateMembers_tjc" depends="compile.cycle.jetbrains.mps.debug.apiLang_tjc">
+  <target name="compile.cycle.jetbrains.mps.debug.privateMembers_tjc" depends="compile.cycle.jetbrains.mps.build.custommps_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debug.privateMembers.classes}.tmp" />
     <mkdir dir="core/debug/languages/privateMembers/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -7552,7 +7626,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc" depends="compile.cycle.jetbrains.mps.lang.script_tjc">
+  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc" depends="compile.cycle.jetbrains.mps.debug.apiLang_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ide.uiLanguage.runtime.classes}.tmp" />
     <mkdir dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
     <mkdir dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
@@ -8102,6 +8176,7 @@
     <delete dir="${jetbrains.mps.baseLanguage.money.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.regexp.classes}" />
+    <delete dir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <delete dir="${jetbrains.mps.lang.pattern.classes}" />
     <delete dir="${jetbrains.mps.lang.pattern.testLang.classes}" />

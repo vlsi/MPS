@@ -139,7 +139,6 @@
       <project file="${mps.home}/core/baseLanguage/javadoc/javadoc.mpr"/>
       <project file="${mps.home}/core/baseLanguage/logging/logging.mpr"/>
       <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/runConfigurations/runConfigurations.mpr"/>
       <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
       <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
       <project file="${mps.home}/core/languageDesign/behavior/behavior.mpr"/>
