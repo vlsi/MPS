@@ -5,6 +5,7 @@
   <unitInfo fileName="StyleSheet_StyleSheet.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet" />
   <unitInfo fileName="ExtractStatementListInnerExpression_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStatementListInnerExpression_Editor" />
   <unitInfo fileName="ExtractToConstantRefExpression_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantRefExpression_Editor$_Inline_4woyb4_a0a" />
+  <unitInfo fileName="WeakClassReference_Editor.java" startLine="88" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.WeakClassReference_Editor$_Inline_j4ha0g_a2a" />
   <unitInfo fileName="InternalClassifierType_Editor.java" startLine="222" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor$_Inline_7zoim2_a3a0" />
   <unitInfo fileName="InternalClassifierType_Editor.java" startLine="255" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor$_Inline_7zoim2_a3a0_0" />
   <unitInfo fileName="InternalNewExpression_Editor.java" startLine="260" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor$parameterListHandler_svbh7s_g0" />
@@ -18,6 +19,7 @@
   <unitInfo fileName="TypeHintExpression_Editor.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.TypeHintExpression_Editor" />
   <unitInfo fileName="ExtractStaticMethod_CallExpression_Editor.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethod_CallExpression_Editor" />
   <unitInfo fileName="InternalVariableReference_Editor.java" startLine="29" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalVariableReference_Editor" />
+  <unitInfo fileName="WeakClassReference_Editor.java" startLine="20" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.WeakClassReference_Editor" />
   <unitInfo fileName="ExtractStatementListExpression_Editor.java" startLine="22" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStatementListExpression_Editor" />
   <unitInfo fileName="ExtractToConstantExpression_Editor.java" startLine="20" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantExpression_Editor" />
   <unitInfo fileName="ExtractStaticMethodExpression_Editor.java" startLine="23" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethodExpression_Editor" />

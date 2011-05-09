@@ -10,11 +10,13 @@
   <unitInfo fileName="typeof_InternalVariableReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalVariableReference_InferenceRule" />
   <unitInfo fileName="typeof_InternalStaticMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalStaticMethodCall_InferenceRule" />
   <unitInfo fileName="typeof_InternalPartialInstanceMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalPartialInstanceMethodCall_InferenceRule" />
+  <unitInfo fileName="typeof_WeakClassReference_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_WeakClassReference_InferenceRule$QuotationClass_ptbbvb_a0a0a0" />
   <unitInfo fileName="check_ExtractStaticMethodCall_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.check_ExtractStaticMethodCall_NonTypesystemRule" />
   <unitInfo fileName="typeof_InternalNewExpression_InferenceRule.java" startLine="53" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalNewExpression_InferenceRule$QuotationClass_8luvtd_a0a0a0b0a" />
   <unitInfo fileName="typeof_InternalThisExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalThisExpression_InferenceRule" />
+  <unitInfo fileName="typeof_WeakClassReference_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_WeakClassReference_InferenceRule" />
   <unitInfo fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalClassExpression_InferenceRule$QuotationClass_qvdecd_a0a0a0" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_InternalNewExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalNewExpression_InferenceRule" />
   <unitInfo fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalClassExpression_InferenceRule" />
   <root nodeId="1196525371871">
@@ -139,6 +141,14 @@
     <nodeInfo nodeId="7738261905749582065" fileName="typeof_ExtractStaticInnerClassExpression_InferenceRule.java" startLine="18" startPosition="123" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="7738261905749582065" fileName="typeof_ExtractStaticInnerClassExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="450" />
     <scopeInfo nodeId="7738261905749582063" fileName="typeof_ExtractStaticInnerClassExpression_InferenceRule.java" startLine="18" startPosition="123" endLine="23" endPosition="5" />
+  </root>
+  <root nodeId="8791205313600585964">
+    <nodeInfo nodeId="8791205313600585971" fileName="typeof_WeakClassReference_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8791205313600585971" fileName="typeof_WeakClassReference_InferenceRule.java" startLine="22" startPosition="56" endLine="23" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8791205313600585971" fileName="typeof_WeakClassReference_InferenceRule.java" startLine="23" startPosition="211" endLine="24" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8791205313600585971" fileName="typeof_WeakClassReference_InferenceRule.java" startLine="20" startPosition="127" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="8791205313600585971" fileName="typeof_WeakClassReference_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="358" />
+    <scopeInfo nodeId="8791205313600585965" fileName="typeof_WeakClassReference_InferenceRule.java" startLine="20" startPosition="127" endLine="25" endPosition="5" />
   </root>
   <root nodeId="8881995820265138570">
     <nodeInfo nodeId="8881995820265138612" fileName="check_ExtractStaticMethodCall_NonTypesystemRule.java" startLine="23" startPosition="123" endLine="24" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

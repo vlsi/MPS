@@ -6,7 +6,6 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import java.util.List;
@@ -26,7 +25,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class EvaluationAuxModule extends AbstractModule {
   @NotNull
-  private static final ModelRootManager STUBS_MANAGER = new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), JavaStubs.class.getName());
+  private static final ModelRootManager STUBS_MANAGER = new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs");
 
   private Project myProject;
   private IModule myInvocationContext;
