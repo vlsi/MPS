@@ -21,7 +21,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.Language;
 
 public class BuildGeneratorUtil {
   public BuildGeneratorUtil() {
@@ -92,7 +91,6 @@ public class BuildGeneratorUtil {
   }
 
   public static ModuleReference getPackagingLanguageReference() {
-    Language packagingLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging");
-    return packagingLanguage.getModuleReference();
+    return MPSModuleRepository.getInstance().getLanguage(ModuleReference.fromString("4e6c5313-7662-4c44-9bc7-b488cec17508")).getModuleReference();
   }
 }

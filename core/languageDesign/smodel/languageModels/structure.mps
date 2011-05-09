@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -734,6 +734,16 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="name" nameId="tpck.1169194664001" value="Model_GetModule" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4040588429969021681">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="reference.module" />
+      <property name="name" nameId="tpck.1169194664001" value="ModuleReferenceExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4040588429969069898">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="reference.module" />
+      <property name="name" nameId="tpck.1169194664001" value="LanguageReferenceExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="4040588429969021681" resolveInfo="ModuleReferenceExpression" />
     </node>
   </roots>
   <root id="1138055754698">
@@ -3126,6 +3136,26 @@
       <node role="target" roleId="tpce.1105736901241" type="tp25.SNodeType" typeId="1138055754698" id="6995935425733782647">
         <link role="concept" roleId="1138405853777" targetNodeId="hypd.6370754048397540894" resolveInfo="Module" />
       </node>
+    </node>
+  </root>
+  <root id="4040588429969021681">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4040588429969021682">
+      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4040588429969021683">
+      <property name="name" nameId="tpck.1169194664001" value="moduleId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4040588429969021687">
+      <property name="value" nameId="tpce.1105725733873" value="module" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="4040588429969069898">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4040588429969069899">
+      <property name="value" nameId="tpce.1105725733873" value="language" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

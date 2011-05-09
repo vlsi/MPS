@@ -50,6 +50,7 @@
   <unitInfo fileName="AbstractOperationParameter_Editor.java" startLine="17" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.AbstractOperationParameter_Editor" />
   <unitInfo fileName="AllAttributeQualifier_Editor.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.AllAttributeQualifier_Editor" />
   <unitInfo fileName="AllAttributesQualifier_Editor.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.AllAttributesQualifier_Editor" />
+  <unitInfo fileName="ModuleReferenceExpression_Editor.java" startLine="143" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ModuleReferenceExpression_Editor$ModuleReferenceExpression_generic_cellMenu_a0c0" />
   <unitInfo fileName="OperationParm_LinkQualifier_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.OperationParm_LinkQualifier_Editor" />
   <unitInfo fileName="SNodeListCreator_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SNodeListCreator_Editor" />
   <unitInfo fileName="Node_GetIndexInParentOperation_Editor.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_GetIndexInParentOperation_Editor" />
@@ -194,6 +195,7 @@
   <unitInfo fileName="_LinkAccessT_Editor.java" startLine="18" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor._LinkAccessT_Editor" />
   <unitInfo fileName="Model_CreateNewRootNodeOperation_Editor.java" startLine="28" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Model_CreateNewRootNodeOperation_Editor" />
   <unitInfo fileName="Model_CreateNewNodeOperation_Editor.java" startLine="28" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Model_CreateNewNodeOperation_Editor" />
+  <unitInfo fileName="ModuleReferenceExpression_Editor.java" startLine="31" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ModuleReferenceExpression_Editor" />
   <unitInfo fileName="Node_GetChildrenOperation_Editor.java" startLine="17" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_GetChildrenOperation_Editor" />
   <unitInfo fileName="Node_IsRoleOperation_Editor.java" startLine="26" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_IsRoleOperation_Editor" />
   <unitInfo fileName="StaticConceptMethodCall_Editor.java" startLine="33" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.StaticConceptMethodCall_Editor" />
@@ -267,6 +269,14 @@
       <varInfo nodeId="1883223317721105913" varName="variableSuffixes" />
       <varInfo nodeId="1883223317721105904" varName="nodeConcept" />
     </scopeInfo>
+  </root>
+  <root nodeId="4040588429969021684">
+    <nodeInfo nodeId="4040588429969394471" fileName="ModuleReferenceExpression_Editor.java" startLine="147" startPosition="105" endLine="148" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4040588429969394490" fileName="ModuleReferenceExpression_Editor.java" startLine="155" startPosition="165" endLine="156" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4040588429969394483" fileName="ModuleReferenceExpression_Editor.java" startLine="167" startPosition="69" endLine="168" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="4040588429969374491" fileName="ModuleReferenceExpression_Editor.java" startLine="147" startPosition="105" endLine="148" endPosition="104" />
+    <scopeInfo nodeId="4040588429969374493" fileName="ModuleReferenceExpression_Editor.java" startLine="155" startPosition="165" endLine="156" endPosition="111" />
+    <scopeInfo nodeId="4040588429969394482" fileName="ModuleReferenceExpression_Editor.java" startLine="167" startPosition="69" endLine="168" endPosition="47" />
   </root>
   <root nodeId="4357968816427527969">
     <nodeInfo nodeId="5073169472575819931" fileName="CheckedModuleReference_Editor.java" startLine="98" startPosition="105" endLine="99" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

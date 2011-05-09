@@ -25,6 +25,7 @@
   <unitInfo fileName="AttributeAccess_Behavior.java" startLine="81" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeAccess_Behavior$QuotationClass_q663c8_a0a1a5" />
   <unitInfo fileName="SLinkAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkAccess_Behavior" />
   <unitInfo fileName="SLinkListAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkListAccess_Behavior" />
+  <unitInfo fileName="ModuleReferenceExpression_Behavior.java" startLine="16" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior" />
   <unitInfo fileName="SEnumMemberType_Behavior.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SEnumMemberType_Behavior" />
   <unitInfo fileName="SConceptType_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SConceptType_Behavior" />
   <unitInfo fileName="OperationParm_LinkQualifier_Behavior.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.OperationParm_LinkQualifier_Behavior" />
@@ -504,6 +505,28 @@
   </root>
   <root nodeId="4024382256428848844">
     <scopeInfo nodeId="4024382256428848846" fileName="ILinkAccess_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+  </root>
+  <root nodeId="4040588429969043134">
+    <nodeInfo nodeId="4040588429969066445" fileName="ModuleReferenceExpression_Behavior.java" startLine="29" startPosition="76" endLine="30" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4040588429969394462" fileName="ModuleReferenceExpression_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4040588429969394435" fileName="ModuleReferenceExpression_Behavior.java" startLine="48" startPosition="83" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4040588429969394442" fileName="ModuleReferenceExpression_Behavior.java" startLine="49" startPosition="75" endLine="50" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4040588429969394449" fileName="ModuleReferenceExpression_Behavior.java" startLine="50" startPosition="96" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="4040588429969043136" fileName="ModuleReferenceExpression_Behavior.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
+    <scopeInfo nodeId="4040588429969043140" fileName="ModuleReferenceExpression_Behavior.java" startLine="29" startPosition="76" endLine="30" endPosition="133" />
+    <scopeInfo nodeId="4040588429969394407" fileName="ModuleReferenceExpression_Behavior.java" startLine="34" startPosition="107" endLine="35" endPosition="91" />
+    <scopeInfo nodeId="4040588429969394434" fileName="ModuleReferenceExpression_Behavior.java" startLine="48" startPosition="83" endLine="51" endPosition="18">
+      <varInfo nodeId="4040588429969394436" varName="result" />
+    </scopeInfo>
+  </root>
+  <root nodeId="4040588429969441025">
+    <nodeInfo nodeId="4040588429969441041" fileName="LanguageReferenceExpression_Behavior.java" startLine="19" startPosition="107" endLine="20" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4040588429969441048" fileName="LanguageReferenceExpression_Behavior.java" startLine="20" startPosition="75" endLine="21" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4040588429969441055" fileName="LanguageReferenceExpression_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="4040588429969441027" fileName="LanguageReferenceExpression_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="4040588429969441031" fileName="LanguageReferenceExpression_Behavior.java" startLine="19" startPosition="107" endLine="22" endPosition="18">
+      <varInfo nodeId="4040588429969441042" varName="result" />
+    </scopeInfo>
   </root>
   <root nodeId="5815925154349132185">
     <nodeInfo nodeId="5815925154349134246" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="25" startPosition="77" endLine="26" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
