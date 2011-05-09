@@ -102,7 +102,7 @@
       <zipfileset file="${info.plist.tmp}" prefix="${root.folder.dest}/Contents" />
       <zipfileset file="${icon.file}" prefix="${root.folder.dest}/Contents/Resources" />
       <zipfileset file="${mps_home}/build/resources/mps.icns" prefix="${root.folder.dest}/Contents/Resources" />
-      <zipfileset file="${java.application.stub}" prefix="${root.folder.dest}/Contents/MacOs" filemode="755" />
+      <zipfileset file="${java.application.stub}" prefix="${root.folder.dest}/Contents/MacOS" filemode="755" />
       <zipfileset file="${unix.startup.script}" prefix="${root.folder.dest}" filemode="755" />
       <zipfileset file="${scripts.folder}/mps.vmoptions" prefix="${root.folder.dest}/bin" />
       <zipfileset file="${help.file}" fullpath="${root.folder.dest}/help/mpshelp.jar" />

@@ -5069,7 +5069,7 @@
               <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811860" resolveInfo="prefix" />
               <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1234535981106">
                 <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1234535981107">
-                  <property name="value" nameId="tpsk.1196861024475" value="/Contents/MacOs" />
+                  <property name="value" nameId="tpsk.1196861024475" value="/Contents/MacOS" />
                 </node>
                 <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1234535981108">
                   <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1234519528999" resolveInfo="root.folder.dest" />
