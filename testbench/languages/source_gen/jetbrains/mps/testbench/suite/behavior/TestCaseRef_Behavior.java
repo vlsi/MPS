@@ -5,6 +5,8 @@ package jetbrains.mps.testbench.suite.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
@@ -18,7 +20,13 @@ public class TestCaseRef_Behavior {
   }
 
   public static Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
-    return ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SLinkOperations.getTarget(thisNode, "testCase", false))).<String>select(new ISelector<SNode, String>() {
+    List<SNode> testMethods;
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "testCase", false), "jetbrains.mps.lang.test.structure.NodesTestCase")) {
+      testMethods = ITestCase_Behavior.call_getTestSet_1216130724401(SLinkOperations.getTarget(thisNode, "testCase", false));
+    } else {
+      testMethods = ITestCase_Behavior.call_getTestMethods_2148145109766218395(SLinkOperations.getTarget(thisNode, "testCase", false));
+    }
+    return ListSequence.fromList(testMethods).<String>select(new ISelector<SNode, String>() {
       public String select(SNode m) {
         return ITestMethod_Behavior.call_getTestName_1216136419751(m);
       }
