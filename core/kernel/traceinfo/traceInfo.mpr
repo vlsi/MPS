@@ -15,16 +15,13 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${mps_home}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/textGen/textGen.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="" />
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <modulePath path="${mps_home}/core/languageDesign/textGen/textGen.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="info" moduleRef="jetbrains.mps.traceInfo" />
       <genConfModule name="test" moduleRef="jetbrains.mps.traceInfo.test" />

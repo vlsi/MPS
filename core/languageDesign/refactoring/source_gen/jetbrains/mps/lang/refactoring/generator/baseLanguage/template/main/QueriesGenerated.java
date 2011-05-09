@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -153,7 +152,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212245181527(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false));
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class}));
   }
 
   public static Object propertyMacro_GetPropertyValue_478744034994714493(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -133,20 +133,17 @@
     <option name="warnings" value="true" />
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" />
-      <solutionPath path="${project}/languages/table/runtime/jetbrains.mps.table.runtime.msd" />
-      <solutionPath path="${project}/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
-      <solutionPath path="${mps_home}/plugins/mpseditor/solution/jetbrains.mps.ide.editor.msd" folder="" />
-      <solutionPath path="${project}/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="" />
-      <solutionPath path="${mps_home}/core/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/editor.mpl" />
-      <languagePath path="${project}/languages/table/table.mpl" folder="" />
-      <languagePath path="${project}/languages/tableTests/tableTests.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" />
+      <modulePath path="${project}/languages/table/runtime/jetbrains.mps.table.runtime.msd" />
+      <modulePath path="${project}/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
+      <modulePath path="${mps_home}/plugins/mpseditor/solution/jetbrains.mps.ide.editor.msd" folder="" />
+      <modulePath path="${project}/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="" />
+      <modulePath path="${mps_home}/core/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="" />
+      <modulePath path="${project}/editor.mpl" />
+      <modulePath path="${project}/languages/table/table.mpl" folder="" />
+      <modulePath path="${project}/languages/tableTests/tableTests.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="editor" moduleRef="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
       <genConfModule name="table.runtime" moduleRef="jetbrains.mps.lang.editor.table.runtime" />

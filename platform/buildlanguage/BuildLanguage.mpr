@@ -30,23 +30,20 @@
     <option name="warnings" value="true" />
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${mps_home}/platform/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="bash" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="customMPS" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="ant" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${mps_home}/platform/bash/languages/bash/bash.mpl" folder="bash" />
-      <languagePath path="${project}/languages/buildlanguage/buildlanguage.mpl" folder="buildlanguage" />
-      <languagePath path="${project}/languages/custommps/custommps.mpl" folder="customMPS" />
-      <languagePath path="${project}/languages/dependency/dependency.mpl" folder="packaging" />
-      <languagePath path="${project}/languages/distrib/distrib.mpl" folder="customMPS" />
-      <languagePath path="${project}/languages/generictasks/generictasks.mpl" folder="buildlanguage" />
-      <languagePath path="${project}/languages/packaging/packaging.mpl" folder="packaging" />
-      <languagePath path="${project}/languages/property/property.mpl" folder="buildlanguage" />
-      <languagePath path="${project}/languages/packmps/packmps.mpl" folder="customMPS" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${mps_home}/platform/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="bash" />
+      <modulePath path="${project}/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="customMPS" />
+      <modulePath path="${project}/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="ant" />
+      <modulePath path="${mps_home}/platform/bash/languages/bash/bash.mpl" folder="bash" />
+      <modulePath path="${project}/languages/buildlanguage/buildlanguage.mpl" folder="buildlanguage" />
+      <modulePath path="${project}/languages/custommps/custommps.mpl" folder="customMPS" />
+      <modulePath path="${project}/languages/dependency/dependency.mpl" folder="packaging" />
+      <modulePath path="${project}/languages/distrib/distrib.mpl" folder="customMPS" />
+      <modulePath path="${project}/languages/generictasks/generictasks.mpl" folder="buildlanguage" />
+      <modulePath path="${project}/languages/packaging/packaging.mpl" folder="packaging" />
+      <modulePath path="${project}/languages/property/property.mpl" folder="buildlanguage" />
+      <modulePath path="${project}/languages/packmps/packmps.mpl" folder="customMPS" />
+    </projectModules>
     <genConfs>
       <genConfModule name="generate buildLanguage" moduleRef="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
       <genConfModule name="generate custommps" moduleRef="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)" />

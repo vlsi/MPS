@@ -30,14 +30,11 @@
     <option name="warnings" value="true" />
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/test/test.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/pattern.mpl" />
-      <languagePath path="${project}/languages/testLang/testLang.mpl" folder="" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/test/test.msd" folder="" />
+      <modulePath path="${project}/pattern.mpl" />
+      <modulePath path="${project}/languages/testLang/testLang.mpl" folder="" />
+    </projectModules>
     <genConfs>
       <genConfModule name="pattern" moduleRef="jetbrains.mps.lang.pattern" />
     </genConfs>

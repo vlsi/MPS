@@ -18,6 +18,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class MacroIntentionsUtil {
+  public MacroIntentionsUtil() {
+  }
+
   public static SNode getContextNodeConcept(SNode contextNode) {
     SNode enclosingMacro = findOuterMacro(contextNode);
     if ((enclosingMacro == null)) {

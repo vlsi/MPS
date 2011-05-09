@@ -15,14 +15,11 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/languages/testRefactoring/testRefactoring.mpl" />
-      <languagePath path="${project}/languages/testRefactoringTargetLang/testRefactoringTargetLang.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" />
+      <modulePath path="${project}/languages/testRefactoring/testRefactoring.mpl" />
+      <modulePath path="${project}/languages/testRefactoringTargetLang/testRefactoringTargetLang.mpl" />
+    </projectModules>
     <genConfs />
   </component>
   <component name="ProjectDetails">

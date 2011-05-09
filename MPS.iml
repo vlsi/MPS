@@ -11,16 +11,12 @@
     <orderEntry type="library" exported="" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
-    <orderEntry type="module" module-name="typesystem" exported="" />
     <orderEntry type="module" module-name="sharedConcepts" exported="" />
     <orderEntry type="module" module-name="smodel" exported="" />
     <orderEntry type="module" module-name="structure" exported="" />
-    <orderEntry type="module" module-name="findUsages" exported="" />
     <orderEntry type="module" module-name="core" exported="" />
     <orderEntry type="module" module-name="plugin-runtime" exported="" />
     <orderEntry type="module" module-name="collections" exported="" />
-    <orderEntry type="module" module-name="pattern" exported="" />
-    <orderEntry type="module" module-name="quotation" exported="" />
     <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntry type="module" module-name="plugin" exported="" />

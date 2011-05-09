@@ -30,7 +30,6 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="typesystem" />
   </component>
 </module>
 

@@ -16,6 +16,7 @@
       <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/patternRuntime/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

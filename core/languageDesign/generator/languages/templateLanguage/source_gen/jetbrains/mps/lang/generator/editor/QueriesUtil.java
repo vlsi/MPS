@@ -19,6 +19,9 @@ import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
 public class QueriesUtil {
+  public QueriesUtil() {
+  }
+
   public static boolean isNodeMacroApplicable(SNode node) {
     return isAnyMacroApplicable(node);
   }

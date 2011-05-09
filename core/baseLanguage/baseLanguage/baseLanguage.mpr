@@ -15,20 +15,16 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/sandbox/sandbox.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.index/jetbrains.mps.baseLanguage.index.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/baseLanguage.mpl" />
-      <languagePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/editor/languages/editorTest/editorTest.mpl" />
-    </projectLanguages>
-    <projectDevkits>
-      <devkitPath path="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
-    </projectDevkits>
+    <projectModules>
+      <modulePath path="${project}/sandbox/sandbox.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.baseLanguage.index/jetbrains.mps.baseLanguage.index.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="" />
+      <modulePath path="${project}/baseLanguage.mpl" />
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
+      <modulePath path="${mps_home}/core/languageDesign/editor/languages/editorTest/editorTest.mpl" />
+      <modulePath path="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+    </projectModules>
     <genConfs>
       <genConfModule name="baseLanguage" moduleRef="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
       <genConfModule name="editorTest" moduleRef="jetbrains.mps.lang.editor.editorTest" />

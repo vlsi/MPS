@@ -6,6 +6,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
+import jetbrains.mps.ide.make.StartupModuleMaker;
 import org.jdom.Element;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
@@ -28,7 +29,7 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
   private FindUsagesOptions myDefaultSearchOptions = createDefaultOptions();
   private Project myProject;
 
-  public DefaultSearchOptionsComponent(Project project) {
+  public DefaultSearchOptionsComponent(Project project, StartupModuleMaker maker) {
     myProject = project;
   }
 

@@ -27,21 +27,18 @@
     <option name="warnings" value="true" />
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/languages/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="" />
-      <solutionPath path="${project}/solutions/samples/smodelLanguage-samples.msd" />
-      <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
-      <solutionPath path="${project}/solutions/typetest/smodelLanguage_typetest.msd" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
-      <languagePath path="${project}/languages/smodelTests/smodelTests.mpl" />
-      <languagePath path="${project}/smodel.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/structure/languageDescriptor.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/languages/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="" />
+      <modulePath path="${project}/solutions/samples/smodelLanguage-samples.msd" />
+      <modulePath path="${project}/solutions/sandbox/sandbox.msd" />
+      <modulePath path="${project}/solutions/typetest/smodelLanguage_typetest.msd" />
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <modulePath path="${project}/languages/smodelTests/smodelTests.mpl" />
+      <modulePath path="${project}/smodel.mpl" />
+      <modulePath path="${mps_home}/core/languageDesign/structure/languageDescriptor.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="smodel language" moduleRef="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
     </genConfs>

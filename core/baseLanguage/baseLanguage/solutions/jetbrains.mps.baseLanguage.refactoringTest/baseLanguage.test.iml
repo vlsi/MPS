@@ -14,13 +14,11 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="smodel" />
-    <orderEntry type="module" module-name="typesystem" />
     <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="structure" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="dataFlow" />
-    <orderEntry type="module" module-name="pattern" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="editor-runtime" />

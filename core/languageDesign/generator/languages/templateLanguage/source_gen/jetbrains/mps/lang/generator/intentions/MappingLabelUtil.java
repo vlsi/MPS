@@ -14,6 +14,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class MappingLabelUtil {
+  public MappingLabelUtil() {
+  }
+
   public static SNode findOrCreateMappingLabelForName(SNode templateNode, String labelName) {
     SNode mappingLabel = null;
     List<SNode> mappingConfigurations = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(templateNode), GlobalScope.getInstance(), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
