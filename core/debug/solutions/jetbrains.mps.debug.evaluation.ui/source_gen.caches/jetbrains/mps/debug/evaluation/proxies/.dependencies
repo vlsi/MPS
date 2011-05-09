@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.ArrayValueProxy" file="ArrayValueProxy.java">
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="com.sun.jdi.ClassType" />
+    <classNode dependClassName="com.sun.jdi.ClassNotLoadedException" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="com.sun.jdi.InvalidTypeException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.sun.jdi.ArrayReference" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.INullValueProxy" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="com.sun.jdi.InvocationException" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
+    <classNode dependClassName="com.sun.jdi.Method" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.ValueProxy" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy" file="IArrayValueProxy.java">
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.INullValueProxy" file="INullValueProxy.java">
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" file="IObjectValueProxy.java">
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.IValueProxy" file="IValueProxy.java">
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.IterableArrayProxy" file="IterableArrayProxy.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode extendsClassName="java.lang.Iterable" />
+    <classNode extendsClassName="java.util.Iterator" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.IterableProxy" file="IterableProxy.java">
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationRuntimeException" />
+    <classNode extendsClassName="java.lang.Iterable" />
+    <classNode extendsClassName="java.util.Iterator" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" file="MirrorUtil.java">
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.NullValueProxy" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="com.sun.jdi.CharValue" />
+    <classNode dependClassName="java.lang.Double" />
+    <classNode dependClassName="com.sun.jdi.ObjectReference" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.sun.jdi.BooleanValue" />
+    <classNode dependClassName="java.lang.Byte" />
+    <classNode dependClassName="com.sun.jdi.Field" />
+    <classNode dependClassName="com.sun.jdi.StringReference" />
+    <classNode dependClassName="com.sun.jdi.PrimitiveValue" />
+    <classNode dependClassName="java.lang.Short" />
+    <classNode dependClassName="com.sun.jdi.DoubleValue" />
+    <classNode dependClassName="java.lang.Float" />
+    <classNode dependClassName="com.sun.jdi.ShortValue" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.VoidValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy" />
+    <classNode dependClassName="com.sun.jdi.LongValue" />
+    <classNode dependClassName="com.sun.jdi.VoidValue" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.ValueProxy" />
+    <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="com.sun.jdi.VirtualMachine" />
+    <classNode dependClassName="com.sun.jdi.FloatValue" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.ObjectValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.ArrayValueProxy" />
+    <classNode dependClassName="com.sun.jdi.ArrayReference" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.lang.Long" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="com.sun.jdi.ByteValue" />
+    <classNode dependClassName="com.sun.jdi.IntegerValue" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.NullValueProxy" file="NullValueProxy.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.NullPointerException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.INullValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.ObjectValueProxy" file="ObjectValueProxy.java">
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="com.sun.jdi.ClassType" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.sun.jdi.ClassNotLoadedException" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
+    <classNode dependClassName="com.sun.jdi.Field" />
+    <classNode dependClassName="com.sun.jdi.InvalidTypeException" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="com.sun.jdi.ObjectReference" />
+    <classNode dependClassName="com.sun.jdi.InvocationException" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
+    <classNode dependClassName="com.sun.jdi.Method" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.ValueProxy" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy" file="PrimitiveValueProxy.java">
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.INullValueProxy" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="com.sun.jdi.PrimitiveValue" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.ValueProxy" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.ProxyEqualsUtil" file="ProxyEqualsUtil.java">
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.INullValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.ValueProxy" file="ValueProxy.java">
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.proxies.VoidValueProxy" file="VoidValueProxy.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.ValueProxy" />
+    <classNode extendsClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+  </dependency>
+</dependenciesRoot>
+
