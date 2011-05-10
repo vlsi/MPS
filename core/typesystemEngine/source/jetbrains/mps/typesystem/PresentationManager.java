@@ -21,25 +21,12 @@ import jetbrains.mps.typesystem.inference.NodeWrapper;
 
 public class PresentationManager {
   // param is SNode or IWrapper
-  public static String toString(Object type) {
+  public static String toString(SNode type) {
     if (type == null) return null;
-    SNode typeNode = null;
-    if (type instanceof NodeWrapper) {
-      typeNode = ((NodeWrapper) type).getNode();
+    if (HUtil.isRuntimeTypeVariable(type)) {
+      return (type).getName();
     }
-    if (type instanceof SNode) {
-      typeNode = ((SNode) type);
-    }
-    if (HUtil.isRuntimeErrorType(typeNode)) {
-      return "ERROR(" + HUtil.getErrorText(typeNode) + ")";
-    }
-    if (HUtil.isRuntimeTypeVariable(typeNode)) {
-      return (typeNode).getName();
-    }
-    if (typeNode != null) {
-      return typeNode.getPresentation(true);
-    }
-    return null;
+    return type.getPresentation(true);
   }
 
 }
