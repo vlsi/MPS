@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.build.antsupport" uuid="77c9a130-703f-4530-bf21-6580757768d0" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/platform/buildlanguage/ant/sources_gen">
+<solution name="jetbrains.mps.build.antsupport" uuid="77c9a130-703f-4530-bf21-6580757768d0" compileInMPS="false" generatorOutputPath="${mps_home}/platform/buildlanguage/ant/sources_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
@@ -21,6 +21,7 @@
     <usedLanguage>0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</usedLanguage>
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
     <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
+    <usedLanguage>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguage>
   </usedLanguages>
 </solution>
 

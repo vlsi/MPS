@@ -99,7 +99,6 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.library.Library" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
