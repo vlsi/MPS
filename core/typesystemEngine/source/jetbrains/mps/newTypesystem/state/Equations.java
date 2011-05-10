@@ -142,10 +142,10 @@ public class Equations {
   }
 
   public SNode expandNode(final SNode node, boolean finalExpansion) {
-    return expandNode(node, new THashSet<SNode>(), finalExpansion);
+    return expandNode(node, new THashSet<SNode>(), finalExpansion, true);
   }
 
-  private SNode expandNode(final SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
+  private SNode expandNode(final SNode node, Set<SNode> variablesMet, boolean finalExpansion, boolean copy) {
     //todo copy
     if (node == null) {
       return null;
@@ -159,23 +159,23 @@ public class Equations {
       return type;
     }
     if (type != node) {
-      SNode result = expandNode(type, variablesMet, finalExpansion);
+      SNode result = expandNode(type, variablesMet, finalExpansion, copy);
       variablesMet.remove(type);
       return result;
     } else {
-      SNode result = myState.getTypeCheckingContext().isInTraceMode() ? CopyUtil.copy(node) : node; //todo
+      SNode result = copy ? CopyUtil.copy(node) : node; //todo
       // In trace mode there should be node copy (because the node will be expanded and presentation will not be correct)
       // Copying node in generation mode leads to generation errors
-      replaceChildren(result, variablesMet, finalExpansion);
+      replaceChildren(result, variablesMet, finalExpansion, copy);
       replaceReferences(result, variablesMet, finalExpansion);
       return result;
     }
   }
 
-  private void replaceChildren(SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
+  private void replaceChildren(SNode node, Set<SNode> variablesMet, boolean finalExpansion, boolean copy) {
     Map<SNode, SNode> childrenReplacement = new THashMap<SNode, SNode>();
     for (SNode child : node.getChildren()) {
-      SNode newChild = expandNode(child, variablesMet, finalExpansion);
+      SNode newChild = expandNode(child, variablesMet, finalExpansion, copy);
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -193,7 +193,7 @@ public class Equations {
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (TypesUtil.isVariable(oldNode)) {
-        SNode newNode = expandNode(oldNode, variablesMet, finalExpansion);
+        SNode newNode = expandNode(oldNode, variablesMet, finalExpansion, false);
         if (finalExpansion && TypesUtil.isVariable(newNode)) {
           newNode = convertReferentVariable(node, reference.getRole(), newNode);
         }
