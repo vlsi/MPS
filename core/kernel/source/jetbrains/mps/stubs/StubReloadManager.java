@@ -36,11 +36,7 @@ public class StubReloadManager implements ApplicationComponent {
     myModuleRepository = moduleRepository;
   }
 
-  private boolean loaded  = false;
   public void reload() {
-    if (loaded) return;
-
-    loaded = true;
     loadNewStubSolutions();
     buildUnchangedPaths();
     disposeStubManagers();
@@ -144,11 +140,9 @@ public class StubReloadManager implements ApplicationComponent {
   //----------------------------------------
 
   private void markOldStubs() {
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
-      BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
-      if (modelPathsAffected(baseDescriptor)) {
-        baseDescriptor.markReload();
+    for (BaseStubModelDescriptor sm : getAllStubModels()) {
+      if (modelPathsAffected(sm)) {
+        sm.markReload();
       }
     }
   }
@@ -176,8 +170,7 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private void releaseOldStubDescriptors() {
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
+    for (SModelDescriptor sm : getAllStubModels()) {
       if (!needsFullReload(((BaseStubModelDescriptor) sm))) continue;
 
       SModelRepository.getInstance().removeModelDescriptor(sm);
@@ -301,6 +294,7 @@ public class StubReloadManager implements ApplicationComponent {
     List<AbstractModule> modules = new ArrayList<AbstractModule>();
     for (IModule m : myModuleRepository.getAllModules()) {
       if (!(m instanceof AbstractModule)) continue;
+      if (m instanceof Library) continue;
       modules.add(((AbstractModule) m));
     }
     return modules;
@@ -310,6 +304,7 @@ public class StubReloadManager implements ApplicationComponent {
     List<BaseStubModelDescriptor> result = new ArrayList<BaseStubModelDescriptor>();
     for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
       if (!(d instanceof BaseStubModelDescriptor)) continue;
+      if (d.getModule() instanceof Library) continue;
       result.add(((BaseStubModelDescriptor) d));
     }
     return result;
