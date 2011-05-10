@@ -36,14 +36,7 @@ public class EquationInfo {
   private String myRuleModel;
   private String myRuleId;
   private Stack<Pair<String, String>> myOuterRulesIds = null;
-  private String myInequationGroup = "default";
-  private Set<Pair<String, String>> myInequationIdsBefore = null;
-  private Set<Pair<String, String>> myInequationIdsAfter = null;
-  private Set<String> myInequationGroupsBefore = null;
-  private Set<String> myInequationGroupsAfter = null;
-  private Set<String> mySkippedRules = null;
 
-  private QuickFixProvider myIntentionProvider;
   private List<QuickFixProvider> myIntentionProviders;
 
   private int myInequationPriority;
@@ -106,14 +99,6 @@ public class EquationInfo {
     return myRuleId;
   }
 
-  public String getInequationGroup() {
-    return myInequationGroup;
-  }
-
-  public int getInequationPriority() {
-    return myInequationPriority;
-  }
-
   public void setIntentionProvider(QuickFixProvider intentionProvider) {
     addIntentionProvider(intentionProvider);
   }
@@ -123,12 +108,6 @@ public class EquationInfo {
       myIntentionProviders = new ArrayList<QuickFixProvider>(1);
     }
     myIntentionProviders.add(intentionProvider);
-  }
-
-  public QuickFixProvider getIntentionProvider() {
-    if (myIntentionProviders == null) return null;
-    if (myIntentionProviders.isEmpty()) return null;
-    return myIntentionProviders.get(0);
   }
 
   public List<QuickFixProvider> getIntentionProviders() {
@@ -168,70 +147,11 @@ public class EquationInfo {
     return modelDescriptor.getSModel().getNodeById(myRuleId);
   }
 
-  public void addInequationIdBefore(String modelId, String equationId) {
-    if (myInequationIdsBefore == null) {
-      myInequationIdsBefore = new THashSet<Pair<String, String>>(2);
-    }
-    myInequationIdsBefore.add(new Pair<String, String>(modelId, equationId));
-  }
-
-  public void addInequationIdAfter(String modelId, String equationId) {
-    if (myInequationIdsAfter == null) {
-      myInequationIdsAfter = new THashSet<Pair<String, String>>(2);
-    }
-    myInequationIdsAfter.add(new Pair<String, String>(modelId, equationId));
-  }
-
-  public void addInequationGroupBefore(String groupId) {
-    if (myInequationGroupsBefore == null) {
-      myInequationGroupsBefore = new THashSet<String>(2);
-    }
-    myInequationGroupsBefore.add(groupId);
-  }
-
-  public void addInequationGroupAfter(String groupId) {
-    if (myInequationGroupsAfter == null) {
-      myInequationGroupsAfter = new THashSet<String>(2);
-    }
-    myInequationGroupsAfter.add(groupId);
-  }
-
-  public void setInequationGroup(String inequationGroup) {
-    myInequationGroup = inequationGroup;
-  }
-
-  public void addRuleToSkip(String ruleClass) {
-    if (mySkippedRules == null) {
-      mySkippedRules = new THashSet<String>(1);
-    }
-    mySkippedRules.add(ruleClass);
-  }
-
   boolean isStrong() {
     return myIsStrong;
   }
 
   void setStrong() {
     myIsStrong = true;
-  }
-
-  public Set<Pair<String, String>> getInequationIdsAfter() {
-    return myInequationIdsAfter == null ? new THashSet<Pair<String, String>>() : myInequationIdsAfter;
-  }
-
-  public Set<Pair<String, String>> getInequationIdsBefore() {
-    return myInequationIdsBefore == null ? new THashSet<Pair<String, String>>() : myInequationIdsBefore;
-  }
-
-  public Set<String> getInequationGroupsAfter() {
-    return myInequationGroupsAfter == null ? new THashSet<String>() : myInequationGroupsAfter;
-  }
-
-  public Set<String> getInequationGroupsBefore() {
-    return myInequationGroupsBefore == null ? new THashSet<String>() : myInequationGroupsBefore;
-  }
-
-  public Set<String> getSkippedRules() {
-    return mySkippedRules == null ? new THashSet<String>() : mySkippedRules;
   }
 }
