@@ -169,6 +169,7 @@
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier" file="RefactoringNodeMembersAccessModifier.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationData" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />

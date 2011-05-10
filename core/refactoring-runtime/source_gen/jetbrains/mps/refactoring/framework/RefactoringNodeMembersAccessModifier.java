@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.refactoring.StructureModificationData;
@@ -28,6 +29,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   private Set<Pair<String, String>> myAbsentReferentRoles = new HashSet<Pair<String, String>>();
   private Set<Pair<String, String>> myAbsentPropertyNames = new HashSet<Pair<String, String>>();
   private Set<SModel> myModifiableModels = new HashSet<SModel>();
+  private Set<String> myOldNames = SetSequence.fromSet(new HashSet<String>());
 
   public RefactoringNodeMembersAccessModifier() {
   }
@@ -40,16 +42,19 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   public void addChildRoleChange(String conceptFQName, String oldRole, String newRole) {
     LOG.assertCanWrite();
     myChildrenRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
+    SetSequence.fromSet(myOldNames).addElement(oldRole);
   }
 
   public void addReferentRoleChange(String conceptFQName, String oldRole, String newRole) {
     LOG.assertCanWrite();
     myReferencesRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
+    SetSequence.fromSet(myOldNames).addElement(oldRole);
   }
 
   public void addPropertyNameChange(String conceptFQName, String oldName, String newName) {
     LOG.assertCanWrite();
     myPropertiesNamesMap.put(new Pair<String, String>(conceptFQName, oldName), newName);
+    SetSequence.fromSet(myOldNames).addElement(oldName);
   }
 
   private String getNewFeatureRole_internal(@NotNull String conceptFQName, @NotNull String oldRole, StructureModificationData.ConceptFeatureKind conceptFeatureKind) {
@@ -95,46 +100,37 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     return null;
   }
 
-  private boolean isModificationMode(SModel model) {
-    return myModifiableModels.contains(model);
+  private boolean isModificationMode(SModel model, String oldName) {
+    return myModifiableModels.contains(model) && SetSequence.fromSet(myOldNames).contains(oldName);
   }
 
   public String getNewChildRole(SModel model, String conceptFQName, String role) {
-    if (isModificationMode(model)) {
+    if (isModificationMode(model, role)) {
       String newRole = getNewFeatureRole_internal(conceptFQName, role, StructureModificationData.ConceptFeatureKind.CHILD);
-      if (newRole == null) {
-        return role;
-      } else {
+      if (newRole != null) {
         return newRole;
       }
-    } else {
-      return role;
     }
+    return role;
   }
 
   public String getNewReferentRole(SModel model, String conceptFQName, String role) {
-    if (isModificationMode(model)) {
+    if (isModificationMode(model, role)) {
       String newRole = getNewFeatureRole_internal(conceptFQName, role, StructureModificationData.ConceptFeatureKind.REFERENCE);
-      if (newRole == null) {
-        return role;
-      } else {
+      if (newRole != null) {
         return newRole;
       }
-    } else {
-      return role;
     }
+    return role;
   }
 
   public String getNewPropertyName(SModel model, String conceptFQName, String propertyName) {
-    if (isModificationMode(model)) {
-      String newRole = getNewFeatureRole_internal(conceptFQName, propertyName, StructureModificationData.ConceptFeatureKind.PROPERTY);
-      if (newRole == null) {
-        return propertyName;
-      } else {
-        return newRole;
+    if (isModificationMode(model, propertyName)) {
+      String newName = getNewFeatureRole_internal(conceptFQName, propertyName, StructureModificationData.ConceptFeatureKind.PROPERTY);
+      if (newName != null) {
+        return newName;
       }
-    } else {
-      return propertyName;
     }
+    return propertyName;
   }
 }
