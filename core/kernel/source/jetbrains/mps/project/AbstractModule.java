@@ -23,7 +23,10 @@ import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -56,7 +59,6 @@ public abstract class AbstractModule implements IModule {
   protected IFile myDescriptorFile;
   private ModuleReference myModuleReference;
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
-  private Set<String> myIncludedStubPaths;
   private ModuleScope myScope = createScope();
 
   private CompositeClassPathItem myCachedClassPathItem;
@@ -211,9 +213,9 @@ public abstract class AbstractModule implements IModule {
   public List<StubPath> getStubPaths() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      List<StubModelsEntry> stubModelEntries = getModuleDescriptor().getStubModelEntries();
+      List<ModelRoot> stubModelEntries = getModuleDescriptor().getStubModelEntries();
       ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
-      for (StubModelsEntry entry : stubModelEntries) {
+      for (ModelRoot entry : stubModelEntries) {
         result.add(new StubPath(entry.getPath(), entry.getManager()));
       }
       return result;
@@ -222,51 +224,14 @@ public abstract class AbstractModule implements IModule {
     return Collections.emptyList();
   }
 
-  protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
+  protected List<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
     return getModuleDescriptor().getStubModelEntries();
-  }
-
-  private Set<String> getIncludedStubPaths() {
-    LinkedHashSet<String> result = new LinkedHashSet<String>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      for (StubModelsEntry entry : getStubModelEntriesToIncludeOrExclude()) {
-        if (entry.isIncludedInVCS()) result.add(entry.getPath());
-      }
-    }
-    return result;
-  }
-
-  private void setIncludedStubPath() {
-    for (StubModelsEntry entry : getStubModelEntriesToIncludeOrExclude()) {
-      if (myIncludedStubPaths.contains(entry.getPath())) {
-        entry.setIncludedInVCS(true);
-      } else {
-        entry.setIncludedInVCS(false);
-      }
-    }
-  }
-
-  public boolean isStubPathExcluded(String path) {
-    return !myIncludedStubPaths.contains(path);
-  }
-
-  public boolean setStubPathExcluded(String path, boolean exclude) {
-    boolean changed = exclude ? myIncludedStubPaths.remove(path) : myIncludedStubPaths.add(path);
-
-    setIncludedStubPath();
-    if (changed) {
-      save();
-    }
-
-    return changed;
   }
 
   //----classpath
 
   public void updateClassPath() {
     myCachedClassPathItem = null;
-    myIncludedStubPaths = getIncludedStubPaths();
   }
 
   public void invalidateClassPath() {
@@ -290,9 +255,9 @@ public abstract class AbstractModule implements IModule {
 
     boolean hasClasspath = false, skipClasspath = false;
     List<String> innerJars = new ArrayList<String>();
-    List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+    List<ModelRoot> remove = new ArrayList<ModelRoot>();
 
-    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
+    for (ModelRoot entry : descriptor.getStubModelEntries()) {
       String path = entry.getPath();
       if (path.endsWith(".jar")) {
         IFile cp = FileSystem.getInstance().getFileByPath(path);
@@ -312,13 +277,13 @@ public abstract class AbstractModule implements IModule {
     if (hasClasspath && !skipClasspath) {
       ClassPathEntry bundleHome = new ClassPathEntry();
       bundleHome.setPath(bundleHomeFile.getPath());
-      descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
+      descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(bundleHome));
     }
 
     for (String jar : innerJars) {
       ClassPathEntry innerJar = new ClassPathEntry();
       innerJar.setPath(bundleHomeFile.getPath() + "!/" + jar);
-      descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(innerJar));
+      descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(innerJar));
     }
   }
 
@@ -372,9 +337,9 @@ public abstract class AbstractModule implements IModule {
     if (isPackaged()) {
       updatePackagedDescriptorClasspath();
     } else {
-      Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
-      List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
-      for (StubModelsEntry e : getModuleDescriptor().getStubModelEntries()) {
+      Set<ModelRoot> visited = new HashSet<ModelRoot>();
+      List<ModelRoot> remove = new ArrayList<ModelRoot>();
+      for (ModelRoot e : getModuleDescriptor().getStubModelEntries()) {
         if (visited.contains(e)) {
           remove.add(e);
         }
@@ -442,8 +407,8 @@ public abstract class AbstractModule implements IModule {
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      List<ModelRoot> roots = descriptor.getModelRoots();
-      for (ModelRoot modelRoot : roots) {
+      List<jetbrains.mps.project.structure.model.ModelRoot> roots = descriptor.getModelRoots();
+      for (jetbrains.mps.project.structure.model.ModelRoot modelRoot : roots) {
         try {
           SModelRoot root = new SModelRoot(modelRoot);
           mySModelRoots.add(root);

@@ -24,14 +24,10 @@ public class StubLocation {
   private String myPrefix;
   private ModuleReference myModuleReference;
 
-  public StubLocation(String path, String prefix, IModule module) {
+  public StubLocation(String path, String prefix, ModuleReference moduleRef) {
     myPath = path;
     myPrefix = prefix;
-    if (module == null) {
-      myModuleReference = null;
-    } else {
-      myModuleReference = module.getModuleReference();
-    }
+    myModuleReference = moduleRef;
   }
 
   public String getPath() {

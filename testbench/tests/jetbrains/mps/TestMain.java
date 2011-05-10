@@ -42,9 +42,9 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.structure.model.*;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
@@ -251,7 +251,7 @@ public class TestMain {
     LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
     ClassPathEntry cpEntry = new ClassPathEntry();
     cpEntry.setPath(classpath);
-    languageDescriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpEntry));
+    languageDescriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(cpEntry));
     l.setLanguageDescriptor(languageDescriptor, false);
   }
 

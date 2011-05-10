@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.StubSolution;
@@ -83,8 +83,7 @@ public class LanguageDescriptorPersistence {
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeClassPath")).first(), "entry")))) {
             // runtimeClassPath was left for compatibility 
-            StubModelsEntry entry = new StubModelsEntry();
-            entry.setIncludedInVCS(AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false));
+            ModelRoot entry = new ModelRoot();
             entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
             entry.setManager(LanguageID.JAVA_MANAGER);
             result_v3r4p8_a0a0d0d0a.getStubModelEntries().add(entry);
@@ -95,8 +94,7 @@ public class LanguageDescriptorPersistence {
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "languageRuntimeClassPath")).first(), "entry"))) {
-            StubModelsEntry entry = new StubModelsEntry();
-            entry.setIncludedInVCS(AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false));
+            ModelRoot entry = new ModelRoot();
             entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
             entry.setManager(LanguageID.JAVA_MANAGER);
             result_v3r4p8_a0a0d0d0a.getRuntimeStubModels().add(entry);
@@ -104,7 +102,7 @@ public class LanguageDescriptorPersistence {
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).isNotEmpty()) {
             for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).first(), "stubModelEntry"))) {
-              final StubModelsEntry result_v3r4p8_a0a0a32a0a0d0d0a = new StubModelsEntry();
+              final ModelRoot result_v3r4p8_a0a0a32a0a0d0d0a = new ModelRoot();
               final String result_v3r4p8_a0a0a0a32a0a0d0d0a = macros.expandPath(entryElement.getAttributeValue("path"), file);
               result_v3r4p8_a0a0a32a0a0d0d0a.setPath(result_v3r4p8_a0a0a0a32a0a0d0d0a);
               final ModelRootManager result_v3r4p8_a1a0a0a32a0a0d0d0a = new ModelRootManager();
@@ -113,8 +111,6 @@ public class LanguageDescriptorPersistence {
               final String result_v3r4p8_a1a1a0a0a32a0a0d0d0a = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("className"), "");
               result_v3r4p8_a1a0a0a32a0a0d0d0a.setClassName(result_v3r4p8_a1a1a0a0a32a0a0d0d0a);
               result_v3r4p8_a0a0a32a0a0d0d0a.setManager(result_v3r4p8_a1a0a0a32a0a0d0d0a);
-              final boolean result_v3r4p8_a2a0a0a32a0a0d0d0a = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
-              result_v3r4p8_a0a0a32a0a0d0d0a.setIncludedInVCS(result_v3r4p8_a2a0a0a32a0a0d0d0a);
               result_v3r4p8_a0a0d0d0a.getRuntimeStubModels().add(result_v3r4p8_a0a0a32a0a0d0d0a);
             }
           }
@@ -201,18 +197,16 @@ public class LanguageDescriptorPersistence {
 
         if (!(descriptor.getRuntimeStubModels().isEmpty())) {
           final Element result_v3r4p8_a0a41a0a0d0c = new Element("runtimeStubModels");
-          for (StubModelsEntry entry : ListSequence.fromList(descriptor.getRuntimeStubModels())) {
+          for (ModelRoot entry : ListSequence.fromList(descriptor.getRuntimeStubModels())) {
             final Element result_v3r4p8_a0a0a0a41a0a0d0c = new Element("stubModelEntry");
             final String result_v3r4p8_a0a0a0a0a41a0a0d0c = macros.shrinkPath(entry.getPath(), file);
             result_v3r4p8_a0a0a0a41a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a0a41a0a0d0c);
-            final boolean result_v3r4p8_a1a0a0a0a41a0a0d0c = entry.isIncludedInVCS();
-            result_v3r4p8_a0a0a0a41a0a0d0c.setAttribute("include", "" + result_v3r4p8_a1a0a0a0a41a0a0d0c);
-            final Element result_v3r4p8_a2a0a0a0a41a0a0d0c = new Element("manager");
-            final String result_v3r4p8_a0a2a0a0a0a41a0a0d0c = entry.getManager().getModuleId();
-            result_v3r4p8_a2a0a0a0a41a0a0d0c.setAttribute("moduleId", "" + result_v3r4p8_a0a2a0a0a0a41a0a0d0c);
-            final String result_v3r4p8_a1a2a0a0a0a41a0a0d0c = entry.getManager().getClassName();
-            result_v3r4p8_a2a0a0a0a41a0a0d0c.setAttribute("className", "" + result_v3r4p8_a1a2a0a0a0a41a0a0d0c);
-            result_v3r4p8_a0a0a0a41a0a0d0c.addContent(result_v3r4p8_a2a0a0a0a41a0a0d0c);
+            final Element result_v3r4p8_a1a0a0a0a41a0a0d0c = new Element("manager");
+            final String result_v3r4p8_a0a1a0a0a0a41a0a0d0c = entry.getManager().getModuleId();
+            result_v3r4p8_a1a0a0a0a41a0a0d0c.setAttribute("moduleId", "" + result_v3r4p8_a0a1a0a0a0a41a0a0d0c);
+            final String result_v3r4p8_a1a1a0a0a0a41a0a0d0c = entry.getManager().getClassName();
+            result_v3r4p8_a1a0a0a0a41a0a0d0c.setAttribute("className", "" + result_v3r4p8_a1a1a0a0a0a41a0a0d0c);
+            result_v3r4p8_a0a0a0a41a0a0d0c.addContent(result_v3r4p8_a1a0a0a0a41a0a0d0c);
             result_v3r4p8_a0a41a0a0d0c.addContent(result_v3r4p8_a0a0a0a41a0a0d0c);
           }
           result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a41a0a0d0c);

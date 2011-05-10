@@ -7,7 +7,6 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
@@ -24,7 +23,7 @@ public class ModuleProperties {
   private List<ModuleReference> myUsedLanguages;
   private List<ModuleReference> myUsedDevkits;
   private List<ClassPathEntry> myClassPaths;
-  private List<StubModelsEntry> myStubModels;
+  private List<ModelRoot> myStubModels;
 
   public ModuleProperties() {
     myModelRoots = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
@@ -32,7 +31,7 @@ public class ModuleProperties {
     myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myUsedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
-    myStubModels = ListsFactory.create(ListsFactory.STUB_MODEL_ENTRY_COMPARATOR);
+    myStubModels = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
   }
 
   public String getNamespace() {
@@ -91,11 +90,11 @@ public class ModuleProperties {
     myClassPaths = classPaths;
   }
 
-  public List<StubModelsEntry> getStubModels() {
+  public List<ModelRoot> getStubModels() {
     return myStubModels;
   }
 
-  public void setStubModels(List<StubModelsEntry> stubModels) {
+  public void setStubModels(List<ModelRoot> stubModels) {
     myStubModels = stubModels;
   }
 
@@ -116,7 +115,7 @@ public class ModuleProperties {
     }
     myUsedLanguages.addAll(descriptor.getUsedLanguages());
     myUsedDevkits.addAll(descriptor.getUsedDevkits());
-    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
+    for (ModelRoot entry : descriptor.getStubModelEntries()) {
       myStubModels.add((entry != null ?
         entry.getCopy() :
         null

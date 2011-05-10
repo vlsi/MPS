@@ -121,14 +121,6 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 
-  @Override
-  public boolean isStubPathExcluded(String path) {
-    if (!getSourceLanguage().isStubPathExcluded(path)) {
-      return false;
-    }
-    return super.isStubPathExcluded(path);
-  }
-
   public void dispose() {
     super.dispose();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);

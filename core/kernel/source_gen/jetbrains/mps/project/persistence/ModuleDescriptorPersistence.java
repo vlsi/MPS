@@ -16,7 +16,6 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 
@@ -28,13 +27,6 @@ public class ModuleDescriptorPersistence {
     descriptor.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
 
     descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguage")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
-      public ModuleReference select(Element ul) {
-        return ModuleReference.fromString(ul.getText());
-      }
-    }).toListSequence());
-
-    // Left for compatibility. Change was between 1.0 and 1.1 
-    descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguages")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element ul) {
         return ModuleReference.fromString(ul.getText());
       }
@@ -92,7 +84,7 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  private static List<Dependency> loadDependenciesList(Element depElement) {
+  public static List<Dependency> loadDependenciesList(Element depElement) {
     return ListSequence.fromList(AttributeUtils.elementChildren(depElement, "dependency")).<Dependency>select(new ISelector<Element, Dependency>() {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
@@ -156,18 +148,18 @@ public class ModuleDescriptorPersistence {
     }.invoke();
   }
 
-  public static List<StubModelsEntry> loadStubModelEntries(List<Element> stubModelEntryElements, final IFile file, final Macros macros) {
-    return ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(stubModelEntryElements).first(), "stubModelEntry")).<StubModelsEntry>select(new ISelector<Element, StubModelsEntry>() {
-      public StubModelsEntry select(Element mre) {
+  public static List<ModelRoot> loadStubModelEntries(List<Element> stubModelEntryElements, final IFile file, final Macros macros) {
+    return ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(stubModelEntryElements).first(), "stubModelEntry")).<ModelRoot>select(new ISelector<Element, ModelRoot>() {
+      public ModelRoot select(Element mre) {
         return loadModelEntry(mre, file, macros);
       }
     }).toListSequence();
   }
 
-  private static StubModelsEntry loadModelEntry(final Element modelRootElement, final IFile file, final Macros macros) {
-    return new _FunctionTypes._return_P0_E0<StubModelsEntry>() {
-      public StubModelsEntry invoke() {
-        final StubModelsEntry result_dxyzb6_a0a0a7 = new StubModelsEntry();
+  private static ModelRoot loadModelEntry(final Element modelRootElement, final IFile file, final Macros macros) {
+    return new _FunctionTypes._return_P0_E0<ModelRoot>() {
+      public ModelRoot invoke() {
+        final ModelRoot result_dxyzb6_a0a0a7 = new ModelRoot();
         final String result_dxyzb6_a0a0a0a7 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
         result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a0a0a0a7);
         final ModelRootManager result_dxyzb6_a1a0a0a7 = new ModelRootManager();
@@ -176,8 +168,6 @@ public class ModuleDescriptorPersistence {
         final String result_dxyzb6_a1a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
         result_dxyzb6_a1a0a0a7.setClassName(result_dxyzb6_a1a1a0a0a7);
         result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a1a0a0a7);
-        final boolean result_dxyzb6_a2a0a0a7 = AttributeUtils.booleanWithDefault(modelRootElement.getAttributeValue("include"), false);
-        result_dxyzb6_a0a0a7.setIncludedInVCS(result_dxyzb6_a2a0a0a7);
         return result_dxyzb6_a0a0a7;
       }
     }.invoke();
@@ -209,23 +199,21 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static void saveStubModelEntries(Element modelsElement, List<StubModelsEntry> modelRoots, IFile file, Macros macros) {
+  public static void saveStubModelEntries(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a9 = modelsElement;
-    for (StubModelsEntry root : ListSequence.fromList(modelRoots)) {
+    for (ModelRoot root : ListSequence.fromList(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a9 = new Element("stubModelEntry");
       final String result_dxyzb6_a0a0a0a0a9 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
       result_dxyzb6_a0a0a0a9.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a9);
-      final boolean result_dxyzb6_a1a0a0a0a9 = root.isIncludedInVCS();
-      result_dxyzb6_a0a0a0a9.setAttribute("include", "" + result_dxyzb6_a1a0a0a0a9);
-      final Element result_dxyzb6_a2a0a0a0a9 = new Element("manager");
-      final String result_dxyzb6_a0a2a0a0a0a9 = root.getManager().getModuleId();
-      result_dxyzb6_a2a0a0a0a9.setAttribute("moduleId", "" + result_dxyzb6_a0a2a0a0a0a9);
-      final String result_dxyzb6_a1a2a0a0a0a9 = root.getManager().getClassName();
-      result_dxyzb6_a2a0a0a0a9.setAttribute("className", "" + result_dxyzb6_a1a2a0a0a0a9);
-      result_dxyzb6_a0a0a0a9.addContent(result_dxyzb6_a2a0a0a0a9);
+      final Element result_dxyzb6_a1a0a0a0a9 = new Element("manager");
+      final String result_dxyzb6_a0a1a0a0a0a9 = root.getManager().getModuleId();
+      result_dxyzb6_a1a0a0a0a9.setAttribute("moduleId", "" + result_dxyzb6_a0a1a0a0a0a9);
+      final String result_dxyzb6_a1a1a0a0a0a9 = root.getManager().getClassName();
+      result_dxyzb6_a1a0a0a0a9.setAttribute("className", "" + result_dxyzb6_a1a1a0a0a0a9);
+      result_dxyzb6_a0a0a0a9.addContent(result_dxyzb6_a1a0a0a0a9);
       result_dxyzb6_a0a9.addContent(result_dxyzb6_a0a0a0a9);
     }
   }

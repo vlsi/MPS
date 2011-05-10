@@ -107,10 +107,6 @@ public interface IModule extends ModelOwner {
 
   boolean needReloading();
 
-  boolean isStubPathExcluded(String path);
-
-  boolean setStubPathExcluded(String path, boolean b);
-
   ModuleReference getModuleFor(String packageName, String langID);
 
   //-----todo ret rid of

@@ -13,6 +13,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="1xpa" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.internal.compiler.impl(MPS.Classpath/org.eclipse.jdt.internal.compiler.impl@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="kl60" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.model(MPS.Classpath/jetbrains.mps.project.structure.model@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" implicit="yes" />
   <import index="fmu4" modelUID="f:java_stub#5d6bee4c-f891-4a93-a0c9-e2268726ae47#jetbrains.mps.ide.ui(jetbrains.mps.uiLanguage/jetbrains.mps.ide.ui@java_stub)" version="-1" implicit="yes" />
@@ -28049,10 +28050,10 @@
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420332840">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" />
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5646944109420332841">
-                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ho7a.~StubModelsEntry" />
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ho7a.~StubModelsEntry%dfromClassPathEntry(jetbrains%dmps%dproject%dstructure%dmodules%dClassPathEntry)%cjetbrains%dmps%dproject%dstructure%dmodules%dStubModelsEntry" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5646944109420332842">
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4455495789557402902">
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kl60.~ModelRootUtil%dfromClassPathEntry(jetbrains%dmps%dproject%dstructure%dmodules%dClassPathEntry)%cjetbrains%dmps%dproject%dstructure%dmodel%dModelRoot" resolveInfo="fromClassPathEntry" />
+                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="kl60.~ModelRootUtil" resolveInfo="ModelRootUtil" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4455495789557402903">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420332786" resolveInfo="cpe" />
                                     </node>
                                   </node>

@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
@@ -49,7 +49,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         errors.add("Can't find runtime module: " + runtimeModule.getModuleRef().getModuleFqName());
       }
     }
-    for (StubModelsEntry stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {
+    for (ModelRoot stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {
       IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
       if (file == null || !file.exists()) {
         errors.add("Can't find runtime library: " + stubModelsEntry.getPath());

@@ -5,9 +5,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -53,9 +53,10 @@ public class StubReloadManager implements ApplicationComponent {
   public List<StubDescriptor> getRootNodeDescriptors(AbstractModule module) {
     List<StubDescriptor> result = new ArrayList<StubDescriptor>();
 
-    for (StubPath path : myLoadedStubPaths.get(module.getModuleReference().getModuleId())) {
-      PathData pd = myPath2Data.get(path).get(module.getModuleReference().getModuleId());
-      StubLocation location = new StubLocation(path.getPath(), "", module);
+    ModuleReference ref = module.getModuleReference();
+    for (StubPath path : myLoadedStubPaths.get(ref.getModuleId())) {
+      PathData pd = myPath2Data.get(path).get(ref.getModuleId());
+      StubLocation location = new StubLocation(path.getPath(), "", ref);
       result.addAll(pd.getModelRootManager().getRootNodeDescriptors(location));
     }
 
@@ -106,8 +107,7 @@ public class StubReloadManager implements ApplicationComponent {
       SolutionDescriptor sd = solution.getModuleDescriptor();
 
       for (String path : d.getPaths()) {
-        StubModelsEntry sme = new StubModelsEntry();
-        sme.setIncludedInVCS(false);
+        ModelRoot sme = new ModelRoot();
         sme.setPath(path);
         sme.setManager(d.getManager());
         sd.getStubModelEntries().add(sme);
@@ -162,11 +162,9 @@ public class StubReloadManager implements ApplicationComponent {
   //----------------------------------------
 
   private void markOldStubs() {
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
-      BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
-      if (modelPathsAffected(baseDescriptor)) {
-        baseDescriptor.markReload();
+    for (BaseStubModelDescriptor sm : getAllStubModels()) {
+      if (modelPathsAffected(sm)) {
+        sm.markReload();
       }
     }
   }
@@ -194,8 +192,7 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private void releaseOldStubDescriptors() {
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
+    for (SModelDescriptor sm : getAllStubModels()) {
       if (!needsFullReload(((BaseStubModelDescriptor) sm))) continue;
 
       SModelRepository.getInstance().removeModelDescriptor(sm);
@@ -319,6 +316,7 @@ public class StubReloadManager implements ApplicationComponent {
     List<AbstractModule> modules = new ArrayList<AbstractModule>();
     for (IModule m : myModuleRepository.getAllModules()) {
       if (!(m instanceof AbstractModule)) continue;
+      if (m instanceof Library) continue;
       modules.add(((AbstractModule) m));
     }
     return modules;
@@ -328,6 +326,7 @@ public class StubReloadManager implements ApplicationComponent {
     List<BaseStubModelDescriptor> result = new ArrayList<BaseStubModelDescriptor>();
     for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
       if (!(d instanceof BaseStubModelDescriptor)) continue;
+      if (d.getModule() instanceof Library) continue;
       result.add(((BaseStubModelDescriptor) d));
     }
     return result;

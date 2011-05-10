@@ -44,7 +44,7 @@ import jetbrains.mps.stubs.StubDescriptor;
           result.add(new BaseStubModelDescriptor(stubCreator, null, modelReference));
         }
       }
-      StubLocation newLocation = new StubLocation(location.getPath(), subpackage, location.getModule());
+      StubLocation newLocation = new StubLocation(location.getPath(), subpackage, location.getModuleRef());
       getModelDescriptors(stubCreator, newLocation, languageId, result);
     }
   }

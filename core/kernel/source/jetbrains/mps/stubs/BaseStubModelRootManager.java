@@ -50,11 +50,11 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   }
 
   public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
-    throw new IllegalStateException("stub manager is called on module load");
+    updateModels(root.getPath(), root.getPrefix(), module);
   }
 
   public final Set<BaseStubModelDescriptor> updateModels(String path, String prefix, @NotNull IModule module) {
-    myLocation = new StubLocation(path, prefix, module);
+    myLocation = new StubLocation(path, prefix, module.getModuleReference());
 
     Set<BaseStubModelDescriptor> models = new HashSet<BaseStubModelDescriptor>();
 
@@ -71,7 +71,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   public void updateModels(String path, String prefix, @NotNull IModule module, Set<BaseStubModelDescriptor> models) {
     if (myLocation == null) {
-      myLocation = new StubLocation(path, prefix, module);
+      myLocation = new StubLocation(path, prefix, module.getModuleReference());
     }
 
     SModelRepository repository = SModelRepository.getInstance();

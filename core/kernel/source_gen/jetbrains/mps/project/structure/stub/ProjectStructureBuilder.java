@@ -18,9 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
-import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -76,7 +75,7 @@ public abstract class ProjectStructureBuilder {
     for (Dependency dep : source.getRuntimeModules()) {
       SLinkOperations.getTargets(result, "runtimeModules", true).add(convert(dep));
     }
-    for (StubModelsEntry entry : source.getRuntimeStubModels()) {
+    for (ModelRoot entry : source.getRuntimeStubModels()) {
       SLinkOperations.getTargets(result, "runtimeStubModels", true).add(convert(entry));
     }
     for (StubSolution sol : source.getStubSolutions()) {
@@ -149,7 +148,7 @@ public abstract class ProjectStructureBuilder {
     for (ModuleReference ref : source.getUsedLanguages()) {
       SLinkOperations.getTargets(module, "usedLanguages", true).add(convert(ref));
     }
-    for (StubModelsEntry entry : source.getStubModelEntries()) {
+    for (ModelRoot entry : source.getStubModelEntries()) {
       SLinkOperations.getTargets(module, "stubModels", true).add(convert(entry));
     }
   }
@@ -158,14 +157,6 @@ public abstract class ProjectStructureBuilder {
     SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelRoot", null);
     SPropertyOperations.set(result, "path", source.getPath());
     SPropertyOperations.set(result, "prefix", source.getPrefix());
-    SLinkOperations.setTarget(result, "manager", convert(source.getManager()), true);
-    return result;
-  }
-
-  private SNode convert(StubModelsEntry source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.StubEntry", null);
-    SPropertyOperations.set(result, "path", source.getPath());
-    SPropertyOperations.set(result, "includedInVCS", "" + source.isIncludedInVCS());
     SLinkOperations.setTarget(result, "manager", convert(source.getManager()), true);
     return result;
   }

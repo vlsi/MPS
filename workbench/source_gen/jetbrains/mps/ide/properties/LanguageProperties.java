@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -22,7 +22,7 @@ public class LanguageProperties extends ModuleProperties {
   private List<ModuleReference> myExtendedLanguages;
   private List<Dependency> myRuntimeModules;
   private List<ClassPathEntry> myRuntimeClassPaths;
-  private List<StubModelsEntry> myRuntimeStubModels;
+  private List<ModelRoot> myRuntimeStubModels;
   private boolean myDoNotGenerateAdapters = false;
   private List<StubSolution> myStubSolutions;
 
@@ -32,7 +32,7 @@ public class LanguageProperties extends ModuleProperties {
     myRuntimeModules = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
     myRuntimeClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
     myStubSolutions = ListsFactory.create(ListsFactory.STUB_SOLUTIONS_ENTRY_COMPARATOR);
-    myRuntimeStubModels = ListsFactory.create(ListsFactory.STUB_MODEL_ENTRY_COMPARATOR);
+    myRuntimeStubModels = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
   }
 
   public String getGenPath() {
@@ -63,7 +63,7 @@ public class LanguageProperties extends ModuleProperties {
     return myRuntimeClassPaths;
   }
 
-  public List<StubModelsEntry> getRuntimeStubModels() {
+  public List<ModelRoot> getRuntimeStubModels() {
     return myRuntimeStubModels;
   }
 
@@ -91,7 +91,7 @@ public class LanguageProperties extends ModuleProperties {
         null
       ));
     }
-    for (StubModelsEntry entry : d.getRuntimeStubModels()) {
+    for (ModelRoot entry : d.getRuntimeStubModels()) {
       myRuntimeStubModels.add((entry != null ?
         entry.getCopy() :
         null

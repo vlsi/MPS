@@ -25,7 +25,6 @@ import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -215,7 +214,7 @@ public class ModulesMiner {
       }
     }
 
-    for (ModelRoot root : descriptor.getModelRoots()) {
+    for (jetbrains.mps.project.structure.model.ModelRoot root : descriptor.getModelRoots()) {
       excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
     }
 
@@ -224,7 +223,7 @@ public class ModulesMiner {
       excludes.add(classesGen);
     }
 
-    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
+    for (ModelRoot entry : descriptor.getStubModelEntries()) {
       excludes.add(FileSystem.getInstance().getFileByPath(entry.getPath()));
     }
   }

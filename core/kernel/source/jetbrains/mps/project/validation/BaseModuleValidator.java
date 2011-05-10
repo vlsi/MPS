@@ -16,10 +16,10 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -58,7 +58,7 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
     if (descriptor == null) return errors;
 
     if (descriptor.getStubModelEntries() != null) {
-      for (StubModelsEntry stubModelsEntry : descriptor.getStubModelEntries()) {
+      for (ModelRoot stubModelsEntry : descriptor.getStubModelEntries()) {
         IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
         if (file == null || !file.exists()) {
           errors.add("Can't find library: " + stubModelsEntry.getPath());
