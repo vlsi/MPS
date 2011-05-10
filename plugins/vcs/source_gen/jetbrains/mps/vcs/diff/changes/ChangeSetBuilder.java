@@ -80,7 +80,7 @@ public class ChangeSetBuilder {
       if (eq_nbyrtw_a0a0c0e0b(check_nbyrtw_a0a0c0e0b(oldReference), check_nbyrtw_a0a0c0e0b_0(newReference)) && eq_nbyrtw_a0a0c0e0b_0(check_nbyrtw_a0a0c0e0b_1(oldReference), check_nbyrtw_a0a0c0e0b_2(newReference)) && eq_nbyrtw_a0a2a4a1(check_nbyrtw_a0a2a4a1(oldReference), check_nbyrtw_a0a2a4a1_0(newReference))) {
         // same references 
       } else {
-        SModelReference targetModel = newReference.getTargetSModelReference();
+        SModelReference targetModel = check_nbyrtw_a0a0a2a4a1(newReference);
         if (eq_nbyrtw_a0b0a2a4a1(SNodeOperations.getModel(newNode).getSModelReference(), targetModel)) {
           // This is internal reference 
           targetModel = null;
@@ -226,6 +226,13 @@ public class ChangeSetBuilder {
   private static String check_nbyrtw_a0a2a4a1_0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
+    }
+    return null;
+  }
+
+  private static SModelReference check_nbyrtw_a0a0a2a4a1(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }

@@ -1136,7 +1136,7 @@
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8228188657872669880">
                     <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8228188657872669881">
                       <property name="name" nameId="tpck.1169194664001" value="targetModel" />
-                      <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8228188657872669882">
+                      <node role="initializer" roleId="tpee.1068431790190" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="572687202609931981">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8228188657872669883">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2732852465125742227" resolveInfo="newReference" />
                         </node>
