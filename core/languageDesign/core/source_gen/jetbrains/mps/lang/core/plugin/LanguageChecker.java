@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -42,9 +44,15 @@ public class LanguageChecker extends BaseEditorChecker {
   private Map<SNodePointer, LanguageErrorsComponent> myRootsToComponents = MapSequence.fromMap(new HashMap<SNodePointer, LanguageErrorsComponent>());
   private Set<EditorComponent> myEditorComponents = SetSequence.fromSet(new HashSet<EditorComponent>());
   private EditorComponent.EditorDisposeListener myDisposeListener = new EditorComponent.EditorDisposeListener() {
-    public void editorWillBeDisposed(EditorComponent editorComponent) {
+    public void editorWillBeDisposed(final EditorComponent editorComponent) {
       SetSequence.fromSet(myEditorComponents).removeElement(editorComponent);
-      MapSequence.fromMap(myRootsToComponents).removeKey(new SNodePointer(editorComponent.getEditedNode()));
+      final Wrappers._T<SNodePointer> snp = new Wrappers._T<SNodePointer>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          snp.value = new SNodePointer(editorComponent.getEditedNode());
+        }
+      });
+      MapSequence.fromMap(myRootsToComponents).removeKey(snp.value);
     }
   };
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
@@ -138,7 +146,7 @@ public class LanguageChecker extends BaseEditorChecker {
   public Set<EditorMessage> createMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     myMessagesChanged = false;
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
-    SNode root = node.getContainingRoot();
+    final SNode root = node.getContainingRoot();
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     if (root == null) {
       LOG.error("containing root for node " + node + " is null");
@@ -150,12 +158,17 @@ public class LanguageChecker extends BaseEditorChecker {
       // after model is replaced but before it is disposed (this can happen asyncronously) 
       return result;
     }
-    SNodePointer rootPointer = new SNodePointer(root);
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(rootPointer);
+    final Wrappers._T<SNodePointer> rootPointer = new Wrappers._T<SNodePointer>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        rootPointer.value = new SNodePointer(root);
+      }
+    });
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(rootPointer.value);
 
     if (errorsComponent == null) {
       errorsComponent = new LanguageErrorsComponent(editorComponent.getEditedNode());
-      MapSequence.fromMap(myRootsToComponents).put(rootPointer, errorsComponent);
+      MapSequence.fromMap(myRootsToComponents).put(rootPointer.value, errorsComponent);
     }
     if (!(editorComponent instanceof InspectorEditorComponent) && !(SetSequence.fromSet(myEditorComponents).contains(editorComponent))) {
       SetSequence.fromSet(myEditorComponents).addElement(editorComponent);
@@ -193,11 +206,17 @@ public class LanguageChecker extends BaseEditorChecker {
     if (node == null) {
       return;
     }
-    SNode containingRoot = node.getContainingRoot();
+    final SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) {
       return;
     }
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(new SNodePointer(containingRoot));
+    final Wrappers._T<SNodePointer> snp = new Wrappers._T<SNodePointer>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        snp.value = new SNodePointer(containingRoot);
+      }
+    });
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(snp.value);
     if (errorsComponent == null) {
       return;
     }
