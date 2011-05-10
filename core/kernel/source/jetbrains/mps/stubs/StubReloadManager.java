@@ -36,7 +36,11 @@ public class StubReloadManager implements ApplicationComponent {
     myModuleRepository = moduleRepository;
   }
 
+  private boolean loaded  = false;
   public void reload() {
+    if (loaded) return;
+
+    loaded = true;
     loadNewStubSolutions();
     buildUnchangedPaths();
     disposeStubManagers();
