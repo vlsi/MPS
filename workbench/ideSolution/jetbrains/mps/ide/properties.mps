@@ -4784,23 +4784,6 @@
           </node>
         </node>
       </node>
-      <node role="property" roleId="pmg0.5389689214217081351" type="pmg0.SimpleBuilderProperty" typeId="pmg0.5389689214216990954" id="8805873473707326927">
-        <property name="name" nameId="tpck.1169194664001" value="readonly" />
-        <node role="type" roleId="pmg0.5389689214216997399" type="tpee.BooleanType" typeId="tpee.1070534644030" id="8805873473707329443" />
-        <node role="set" roleId="pmg0.5389689214217175694" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8805873473707329444">
-          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8805873473707329445">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8805873473707329449">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8805873473707329451">
-                <node role="operand" roleId="tpee.1197027771414" type="pmg0.SimpleBuilderPropertyParent" typeId="pmg0.5389689214217248368" id="8805873473707329450" />
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8805873473707329455">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8lme.~BaseTabbedBindedDialog$ComponentDescriptor%dsetReadOnly()%cvoid" resolveInfo="setReadOnly" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" roleId="tpee.1068580123160" type="pmg0.SimpleBuilderPropertyValue" typeId="pmg0.5389689214217248394" id="8805873473707329448" />
-        </node>
-      </node>
     </node>
   </root>
   <root id="3201642974933960738">
