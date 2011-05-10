@@ -17,36 +17,35 @@ package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.typesystem.debug.ISlicer;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 import javax.swing.*;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
 import java.awt.Color;
-import java.awt.event.*;
-import java.util.List;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.Pair;
+import java.util.List;
 
 public class TypecheckerStateViewComponent extends JPanel {
   private static final Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
 
   private IOperationContext myOperationContext;
 
-  private ISlicer mySlicer;
   private SNode myNodeToSliceWith = null;
   private List<EquationLogItem> myCurrentSlice = new ArrayList<EquationLogItem>();
 
@@ -91,7 +90,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     upperPanelConstraints.anchor = GridBagConstraints.NORTHWEST;
     upperPanel.add(debugCurrentRootButton, upperPanelConstraints);
 
-    String text = mySlicer == null ? "no info collected" : "info collected for " + mySlicer.getRootInfo();
+    String text = "no info collected";
     upperPanelConstraints.gridx = 1;
     upperPanel.add(new JLabel(text));
 
@@ -121,7 +120,7 @@ public class TypecheckerStateViewComponent extends JPanel {
 
       innerConstraints.gridx = 1;
       innerConstraints.gridwidth = GridBagConstraints.REMAINDER;
-      SNodeTree initialTypeTree = new SNodeTree(mySlicer.getInitialNodeType(myNodeToSliceWith));
+      SNodeTree initialTypeTree = new SNodeTree(null);
       innerPanel.add(initialTypeTree, innerConstraints);
       initialTypeTree.rebuildNow();
 
@@ -155,20 +154,8 @@ public class TypecheckerStateViewComponent extends JPanel {
   }
 
   public void debugRoot(final SNode currentRoot) {
-    
-  }
 
-  public void sliceWithNode(SNode node) {
-    if (node == null) return;
-    if (mySlicer == null) {
-      debugRoot(node.getContainingRoot());
-    }
-    myNodeToSliceWith = node;
-    if (mySlicer == null) return;
-    myCurrentSlice = mySlicer.getSlice(node);
-    rebuild();
   }
-
 
   private void openRule(String ruleModel, final String ruleID) {
     if (ruleModel == null || ruleID == null) return;

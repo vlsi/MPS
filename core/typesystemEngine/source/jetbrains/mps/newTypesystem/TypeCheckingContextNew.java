@@ -28,7 +28,6 @@ import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
 
@@ -365,11 +364,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public boolean isNonTypesystemComputation() {
     return myIsNonTypesystemComputation;
-  }
-
-  @Override
-  public ISlicer getCurrentSlicer() {
-    return null;
   }
 
   @Override

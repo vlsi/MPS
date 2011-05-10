@@ -22,7 +22,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,8 +47,6 @@ public abstract class TypeCheckingContext {
   public abstract void resetIsNonTypesystemComputation();
 
   public abstract boolean isNonTypesystemComputation();
-
-  public abstract ISlicer getCurrentSlicer();
 
   //errors reporting
   public abstract IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget);

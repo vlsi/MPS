@@ -24,7 +24,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
