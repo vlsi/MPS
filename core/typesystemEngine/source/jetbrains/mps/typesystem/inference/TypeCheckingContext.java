@@ -127,15 +127,6 @@ public abstract class TypeCheckingContext {
 
   public abstract void createEquation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
 
-  @Deprecated
-  public abstract void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo);
-
-  @Deprecated
-  public abstract void createEquation(IWrapper wrapper1, SNode node2, EquationInfo equationInfo);
-
-  @Deprecated
-  public abstract void createEquation(IWrapper wrapper1, IWrapper wrapper2, EquationInfo equationInfo);
-
   public abstract void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
 
   public abstract void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);

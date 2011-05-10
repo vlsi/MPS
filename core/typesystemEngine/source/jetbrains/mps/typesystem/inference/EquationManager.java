@@ -194,28 +194,7 @@ public class EquationManager {
   }
 
   public IWrapper getRepresentatorWrapper(IWrapper type_) {
-    IWrapper representator = myTypeCheckingContext.getNodeTypesComponent().getHoleWrapperRepresentator(type_);
-    if (representator != null) {
-      return representator;
-    }
-    IWrapper type = type_;
-    IWrapper parent = getParent(type);
-    if (parent != null) {
-      final List<IWrapper> path = new ArrayList<IWrapper>(4);
-      while (parent != null) {
-        path.add(type);
-        type = parent;
-        parent = getParent(parent);
-      }
-      // shortening the paths
-      if (path.size() > 1) {
-        for (IWrapper typeOnPath : path) {
-          setParent(typeOnPath, type);
-        }
-      }
-    }
-    jetbrains.mps.typesystemEngine.util.LatticeUtil.processMeetsAndJoins(type);
-    return type;
+    return null;
   }
 
   public SNode getRepresentator(SNode type_) {

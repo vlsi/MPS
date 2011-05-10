@@ -249,21 +249,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo) {
-    createEquation(node1, wrapper2.getNode(), equationInfo);
-  }
-
-  @Override
-  public void createEquation(IWrapper wrapper1, SNode node2, EquationInfo equationInfo) {
-    createEquation(wrapper1.getNode(), node2, equationInfo);
-  }
-
-  @Override
-  public void createEquation(IWrapper wrapper1, IWrapper wrapper2, EquationInfo equationInfo) {
-    createEquation(wrapper1.getNode(), wrapper2.getNode(), equationInfo);
-  }
-
-  @Override
   public void createComparableEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
     myState.addComparable(node1, node2, true, false, equationInfo);
   }

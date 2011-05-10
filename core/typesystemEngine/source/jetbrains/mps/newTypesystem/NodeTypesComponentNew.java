@@ -232,11 +232,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
   }
 
   @Override
-  public String getNewVarName() {
-    return null;
-  }
-
-  @Override
   public SNode[] getVariables(String varName) {
     return new SNode[0];
   }
@@ -246,18 +241,9 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
 
   }
 
-  @Override
-  public ISlicer getSlicer() {
-    return null;
-  }
 
   @Override
   public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
-    return null;
-  }
-
-  @Override
-  public IWrapper getHoleWrapperRepresentator(IWrapper wrapper) {
     return null;
   }
 
