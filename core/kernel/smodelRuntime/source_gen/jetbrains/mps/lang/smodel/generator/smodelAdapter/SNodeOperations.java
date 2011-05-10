@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.util.NameUtil;
@@ -507,26 +507,24 @@ public class SNodeOperations {
 
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
-      String role = attribute.getRole_();
-      if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
-        String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
-        if (SModelSearchUtil.findPropertyDeclaration(newChild.getConceptDeclarationNode(), propertyName) == null) {
+      if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute")) {
+        String propertyName = AttributeOperations.getPropertyName(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
+        if ((((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findPropertyDeclaration_1219835742593", new Class[]{SNode.class, String.class}, propertyName)) == null)) {
           // no such property in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConceptShortName(), newChild);
           continue;
         }
       }
-      if (AttributesRolesUtil.isLinkAttributeRole(role)) {
-        String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
-        if (SModelSearchUtil.findLinkDeclaration(newChild.getConceptDeclarationNode(), linkRole) == null) {
+      if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute")) {
+        String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"));
+        if ((((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, linkRole)) == null)) {
           // no such link in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConceptShortName(), newChild);
           continue;
         }
       }
 
-      SNode newAttribute = CopyUtil.copy(attribute);
-      newChild.addChild(role, newAttribute);
+      newChild.addChild(SNodeOperations.getContainingLinkRole(attribute), SNodeOperations.copyNode(attribute));
     }
   }
 
