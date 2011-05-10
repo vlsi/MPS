@@ -18,41 +18,23 @@
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="ant" />
-    <orderEntry type="module" module-name="Closures" />
     <orderEntry type="module" module-name="collections" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="runtime" />
     <orderEntry type="module" module-name="workbench" />
-    <orderEntry type="module" module-name="Tuples" />
-    <orderEntry type="module" module-name="baseLanguage.test" />
     <orderEntry type="module" module-name="analyzers" />
-    <orderEntry type="module" module-name="debugTests" />
-    <orderEntry type="module" module-name="actions" />
     <orderEntry type="module" module-name="baseLanguage" />
-    <orderEntry type="module" module-name="behavior" />
-    <orderEntry type="module" module-name="classifiers" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="dataFlow" />
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="distrib" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="packaging" />
-    <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="resources" />
-    <orderEntry type="module" module-name="javaRunConfigurations" />
-    <orderEntry type="module" module-name="sharedConcepts" />
-    <orderEntry type="module" module-name="smodel" />
-    <orderEntry type="module" module-name="structure" />
     <orderEntry type="module" module-name="test" />
-    <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="vcs" />
-    <orderEntry type="module" module-name="make" />
-    <orderEntry type="module" module-name="editor.tests" />
-    <orderEntry type="module" module-name="editor.table.tests" />
     <orderEntry type="module" module-name="miscTests" />
     <orderEntry type="module" module-name="migration" />
     <orderEntry type="module" module-name="mpseditor" />

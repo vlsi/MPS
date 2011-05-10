@@ -11,27 +11,16 @@
     <orderEntry type="library" exported="" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
-    <orderEntry type="module" module-name="sharedConcepts" exported="" />
-    <orderEntry type="module" module-name="smodel" exported="" />
-    <orderEntry type="module" module-name="structure" exported="" />
-    <orderEntry type="module" module-name="core" exported="" />
     <orderEntry type="module" module-name="plugin-runtime" exported="" />
     <orderEntry type="module" module-name="collections" exported="" />
     <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntry type="module" module-name="kernel" exported="" />
-    <orderEntry type="module" module-name="plugin" exported="" />
-    <orderEntry type="module" module-name="textgen" exported="" />
-    <orderEntry type="module" module-name="classifiers" exported="" />
-    <orderEntry type="module" module-name="dataFlow" exported="" />
     <orderEntry type="library" exported="" name="commons-lang" level="project" />
-    <orderEntry type="module" module-name="Closures" exported="" />
     <orderEntry type="module" module-name="Closures-runtime" exported="" />
     <orderEntry type="module" module-name="resources" exported="" />
     <orderEntry type="module" module-name="test" exported="" />
     <orderEntry type="library" exported="" name="JDOM" level="project" />
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
-    <orderEntry type="module" module-name="actions" exported="" />
-    <orderEntry type="module" module-name="behavior" exported="" />
     <orderEntry type="library" exported="" name="Commons-codec" level="project" />
     <orderEntry type="library" exported="" name="Commons-net" level="project" />
     <orderEntry type="library" exported="" name="Commons-collections" level="project" />

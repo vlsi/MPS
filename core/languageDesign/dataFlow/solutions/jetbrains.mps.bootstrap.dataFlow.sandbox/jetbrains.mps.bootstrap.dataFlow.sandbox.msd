@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.bootstrap.dataFlow.sandbox" uuid="9355b575-5511-434f-b686-74fc7b87cd19" compileInMPS="false" java-stubs-enabled="false">
+<solution name="jetbrains.mps.bootstrap.dataFlow.sandbox" uuid="9355b575-5511-434f-b686-74fc7b87cd19" compileInMPS="true" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

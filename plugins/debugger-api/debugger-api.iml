@@ -14,8 +14,15 @@
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="MPS-platform" />
-    <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="runConfigurations" exported="" />
+    <orderEntry type="module" module-name="plugin-runtime" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="workbench" />
+    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="module" module-name="typesystemEngine" />
   </component>
 </module>
 

@@ -84,6 +84,7 @@ public class CommonPaths {
     CompositeClassPathItem result = new CompositeClassPathItem();
     result.add(getBaseMPSClassPath());
 
+    addIfExists(result, "/core/analyzers/classes");
     addIfExists(result, "/core/idea-patch/classes");
     addIfExists(result, "/core/kernel/classes");
     addIfExists(result, "/core/generator/classes");
