@@ -331,30 +331,7 @@ public class EquationManager {
       NodeWrapper representatorCopy = NodeWrapper.fromNode(CopyUtil.copy(supertypeNodeWrapper.getNode()), this);
       supertypeRepresentator = expandWrapper(null, representatorCopy, typesModel);
     }
-              /*
-    // if subtyping
-    if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak)) {
-      return;
-    }
-                                      */
-    IErrorReporter errorReporter;
-    String errorString = equationInfo.getErrorString();
-    String ruleModel = equationInfo.getRuleModel();
-    String ruleId = equationInfo.getRuleId();
-    SNode nodeWithError = equationInfo.getNodeWithError();
-    if (errorString == null) {
-      String strongString = isWeak ? "" : " strong";
-      errorReporter = new EquationErrorReporter(nodeWithError, this, "type ", subtypeRepresentator,
-        " is not a" + strongString + " subtype of ", supertypeRepresentator, "", ruleModel, ruleId);
-    } else {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
-    }
-    errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
-    errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
-    myTypeCheckingContext.reportMessage(nodeWithError, errorReporter);
 
-    //4debug
-    //  myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
   }
 
   private static void processInequationWithReplacementRule(InequationReplacementRule_Runtime rule,
@@ -457,14 +434,11 @@ public class EquationManager {
     SNode nodeWithError = errorInfo.getNodeWithError();
     if (errorString == null) {
       String strongString = isWeak ? "" : " strongly";
-      errorReporter = new EquationErrorReporter(nodeWithError, this, "type ", representator1, " is not" + strongString + " comparable with ",
-        representator2, "", ruleModel, ruleId);
+
     } else {
       errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
     }
-    errorReporter.setIntentionProvider(errorInfo.getIntentionProvider());
-    errorReporter.setAdditionalRulesIds(errorInfo.getAdditionalRulesIds());
-    myTypeCheckingContext.reportMessage(nodeWithError, errorReporter);
+
   }
 
   public WhenConcreteEntity getWhenConcreteEntity(IWrapper wrapper) {
@@ -631,8 +605,6 @@ public class EquationManager {
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
 
     // no equation needed
-    if (ObjectUtils.equals(rhsRepresentator, lhsRepresentator)) return;
-    if (rhsRepresentator == null || lhsRepresentator == null) return;
 
     // add var to type's multieq
     SNode varRhs = rhsRepresentator.getVariable();
@@ -661,7 +633,7 @@ public class EquationManager {
     if (lhsRepresentator instanceof ConceptWrapper && rhsRepresentator instanceof ConceptWrapper) {
       ConceptWrapper conceptWrapper = ((ConceptWrapper) lhsRepresentator).combineWith((ConceptWrapper) rhsRepresentator, this, errorInfo);
       if (conceptWrapper == null) {
-        reportEquationBroken(errorInfo, lhsRepresentator, rhsRepresentator);
+        //reportEquationBroken(errorInfo, lhsRepresentator, rhsRepresentator);
       } else {
         processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
         processEquation(lhsRepresentator, conceptWrapper, errorInfo);
@@ -671,7 +643,7 @@ public class EquationManager {
 
     // solve equation
     if (!compareWrappers(rhsRepresentator, lhsRepresentator, errorInfo)) {
-      reportEquationBroken(errorInfo, lhsRepresentator, rhsRepresentator);
+      //reportEquationBroken(errorInfo, lhsRepresentator, rhsRepresentator);
     } else {
       if (lhsRepresentator instanceof ConceptWrapper) {
         processEquation(lhsRepresentator, rhsRepresentator, errorInfo);
@@ -681,26 +653,6 @@ public class EquationManager {
     }
   }
 
-  private void reportEquationBroken(EquationInfo errorInfo, IWrapper lhsRepresentator, IWrapper rhsRepresentator) {
-    IErrorReporter errorReporter;
-    SNode nodeWithError = errorInfo == null ? null : errorInfo.getNodeWithError();
-    QuickFixProvider intentionProvider = errorInfo == null ? null : errorInfo.getIntentionProvider();
-    String errorString = errorInfo == null ? null : errorInfo.getErrorString();
-    String ruleModel = errorInfo == null ? null : errorInfo.getRuleModel();
-    String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
-    List<Pair<String, String>> ids = errorInfo == null ? null : errorInfo.getAdditionalRulesIds();
-
-    if (errorString != null) {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
-    } else {
-      errorReporter =
-        new EquationErrorReporter(nodeWithError, this, "incompatible types: ",
-          rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
-    }
-    errorReporter.setIntentionProvider(intentionProvider);
-    errorReporter.setAdditionalRulesIds(ids);
-    processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeWithError);
-  }
 
   void addChildEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
     ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
@@ -1030,305 +982,11 @@ public class EquationManager {
     return result;
   }
 
-  public void solveInequations() {
-
-    InequationsPrioritiesSynthesizer prioritiesSynthesizer = new InequationsPrioritiesSynthesizer(this);
-    prioritiesSynthesizer.fillAllInequations(mySubtypesToSupertypesMap,
-      mySubtypesToSupertypesMapStrong,
-      mySupertypesToSubtypesMap,
-      mySupertypesToSubtypesMapStrong);
-    prioritiesSynthesizer.splitByLayers();
-
-    eliminateConcretePartsOfInequations(false, prioritiesSynthesizer);
-    Set<IWrapper> types = eliminateConcretePartsOfInequations(true, prioritiesSynthesizer);
-
-    ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
-    for (IWrapper type : types) {
-      if (type == null) continue;
-      assert !type.isConcrete();
-
-      Map<IWrapper, EquationInfo> supertypes = mySubtypesToSupertypesMap.get(type);
-      if (supertypes != null) {
-        mySubtypesToSupertypesMap.remove(type);
-        for (IWrapper supertype : supertypes.keySet()) {
-          mySupertypesToSubtypesMap.get(supertype).remove(type);
-          EquationInfo errorInfo = supertypes.get(supertype);
-          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
-          addEquation(type, supertype, errorInfo);
-        }
-      }
-      Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(type);
-      if (subtypes != null) {
-        mySupertypesToSubtypesMap.remove(type);
-        for (IWrapper subtype : subtypes.keySet()) {
-          mySubtypesToSupertypesMap.get(subtype).remove(type);
-          EquationInfo errorInfo = subtypes.get(subtype);
-          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
-          addEquation(type, subtype, errorInfo);
-        }
-      }
-      Map<IWrapper, EquationInfo> supertypesStrong = mySubtypesToSupertypesMapStrong.get(type);
-      if (supertypesStrong != null) {
-        mySubtypesToSupertypesMapStrong.remove(type);
-        for (IWrapper supertype : supertypesStrong.keySet()) {
-          mySupertypesToSubtypesMapStrong.get(supertype).remove(type);
-          EquationInfo errorInfo = supertypesStrong.get(supertype);
-          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), supertype.getNode(), errorInfo);
-          addEquation(type, supertype, errorInfo);
-        }
-      }
-      Map<IWrapper, EquationInfo> subtypesStrong = mySupertypesToSubtypesMapStrong.get(type);
-      if (subtypesStrong != null) {
-        mySupertypesToSubtypesMapStrong.remove(type);
-        for (IWrapper subtype : subtypesStrong.keySet()) {
-          mySubtypesToSupertypesMapStrong.get(subtype).remove(type);
-          EquationInfo errorInfo = subtypesStrong.get(subtype);
-          slicer.beforeInequationTriggeredEquationAdded(type.getNode(), subtype.getNode(), errorInfo);
-          addEquation(type, subtype, errorInfo);
-        }
-      }
-    }
-
-    processCheckingEquations();
-  }
-
-  private Set<IWrapper> eliminateConcretePartsOfInequations(boolean shallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
-    Set<IWrapper> types = subtypingGraphVertices();
-    boolean hasConcreteTypes = true;
-    int priority = 0;
-    while (hasConcreteTypes) {
-      int[] minPriority = new int[]{Integer.MAX_VALUE};
-      startCollectingConcretes();
-      hasConcreteTypes = false;
-      for (IWrapper type : types) {
-        if (type == null) continue;
-        if (!type.isConcrete()) {
-          typeLessThanVar(type, true, priority, minPriority, shallow, prioritiesSynthesizer);
-          typeLessThanVar(type, false, priority, minPriority, shallow, prioritiesSynthesizer);
-          varLessThanType(type, true, priority, minPriority, shallow, prioritiesSynthesizer);
-          varLessThanType(type, false, priority, minPriority, shallow, prioritiesSynthesizer);
-        } else if ((shallow && type.isConcrete()) || (!shallow && isConcrete(type))) {
-          if (shallow) {
-            hasConcreteTypes = true;
-          }
-          hasConcreteTypes = typeLessThanConcrete(type, true, priority, minPriority, shallow, prioritiesSynthesizer) || hasConcreteTypes;
-          hasConcreteTypes = typeLessThanConcrete(type, false, priority, minPriority, shallow, prioritiesSynthesizer) || hasConcreteTypes;
-          hasConcreteTypes = concreteLessThanType(type, true, priority, minPriority, shallow, prioritiesSynthesizer) || hasConcreteTypes;
-          hasConcreteTypes = concreteLessThanType(type, false, priority, minPriority, shallow, prioritiesSynthesizer) || hasConcreteTypes;
-        }
-      }
-      processConcretes();
-      if (minPriority[0] < Integer.MAX_VALUE && minPriority[0] > priority) {
-        priority = minPriority[0];
-      }
-      types = subtypingGraphVertices();
-    }
-    return types;
-  }
-
-  private void processCheckingEquations() {
-    for (IWrapper wrapper : new THashSet<IWrapper>(mySubtypesToSupertypesMap_check.keySet())) {
-      keepInequationsAndEffects(wrapper, wrapper, true);
-    }
-    for (IWrapper wrapper : new THashSet<IWrapper>(mySubtypesToSupertypesMapStrong_check.keySet())) {
-      keepInequationsAndEffects(wrapper, wrapper, true);
-    }
-  }
-
-  private interface IActionPerformer {
+   private interface IActionPerformer {
     public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo);
   }
 
-  private boolean typeLessThanVar(IWrapper var, boolean isWeak, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
-    return false; /*typeLessThanThis(var, isWeak, new IActionPerformer() {
-      public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
-        //  T,S <: c => c = lcs(T,S)
-        Set<IWrapper> expandedSubtypes = new THashSet<IWrapper>();
-        for (IWrapper subtype : concreteSubtypes) {
-          IWrapper expanded = expandWrapper(null, subtype, myTypeChecker.getRuntimeTypesModel());
-          expandedSubtypes.add(expanded);
-        }
-        ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
-        IWrapper otherType = myTypeChecker.getSubtypingManager().leastCommonSupertype(expandedSubtypes, isWeak, EquationManager.this);
-        SNode node = otherType == null ? null : otherType.getNode();
-        slicer.beforeInequationsSolvedForType(type.getNode(), node, new ArrayList<EquationInfo>(errorInfoMap.values()));
-        addEquation(type, otherType,
-          errorInfo);
-      }
-    }, priority, minPriority, isShallow, prioritiesSynthesizer);      */
-  }
-
-  private boolean typeLessThanConcrete(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
-    return typeLessThanThis(concreteType, isWeak, new IActionPerformer() {
-      public void performAction(IWrapper type, Set<IWrapper> concreteSubtypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
-        for (IWrapper subtype : concreteSubtypes) {
-          // "T <: S" => T <: S
-          addInequation(subtype, type, errorInfoMap.get(subtype), isWeak, false);
-        }
-      }
-    }, priority, minPriority, isShallow, prioritiesSynthesizer);
-  }
-
-  private boolean typeLessThanThis(IWrapper thisType, boolean isWeak, IActionPerformer action, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
-    final Map<IWrapper, Map<IWrapper, EquationInfo>> supertypesToSubtypesMap;
-    final Map<IWrapper, Map<IWrapper, EquationInfo>> subtypesToSupertypesMap;
-    if (isWeak) {
-      supertypesToSubtypesMap = mySupertypesToSubtypesMap;
-      subtypesToSupertypesMap = mySubtypesToSupertypesMap;
-    } else {
-      supertypesToSubtypesMap = mySupertypesToSubtypesMapStrong;
-      subtypesToSupertypesMap = mySubtypesToSupertypesMapStrong;
-    }
-
-
-    Map<IWrapper, EquationInfo> subtypes = supertypesToSubtypesMap.get(thisType);
-    if (subtypes == null) {
-      return false;
-    }
-    if (subtypes.isEmpty()) {
-      supertypesToSubtypesMap.remove(thisType);
-      return false;
-    }
-    Set<IWrapper> concreteSubtypes = new THashSet<IWrapper>();
-    boolean hasShallowConcreteSubtypesWithSubtypes = false;
-    for (IWrapper subtypeNode : new THashSet<IWrapper>(subtypes.keySet())) {
-      if (subtypeNode == null) {
-        subtypes.remove(subtypeNode);
-        continue;
-      }
-      int inequationPriority = prioritiesSynthesizer.getInequationSyntheticRank(subtypes.get(subtypeNode));
-/*
-
-      // if subtype node contains type vars and has subtypes, it can become fully concrete then
-      // so don't perform actions with it
-      if (isShallow && subtypeNode.isConcrete() && !isConcrete(subtypeNode)) {
-        Map<IWrapper, EquationInfo> subtypesOfSubtype = mySupertypesToSubtypesMap.get(subtypeNode);
-        if (subtypesOfSubtype != null && !subtypesOfSubtype.isEmpty()) {
-          hasShallowConcreteSubtypesWithSubtypes = true;
-          continue;
-        }
-      }
-*/
-
-      if (subtypeNode.isConcrete() && isShallow || isConcrete(subtypeNode)) {
-        minPriority[0] = Math.min(minPriority[0], inequationPriority);
-        if (inequationPriority <= priority) {
-          concreteSubtypes.add(subtypeNode);
-        }
-      }
-    }
-    if (concreteSubtypes.isEmpty()) return false; // hasShallowConcreteSubtypesWithSubtypes;
-
-    Map<IWrapper, EquationInfo> equationInfoMap = new THashMap<IWrapper, EquationInfo>();
-    for (IWrapper concreteSubtype : concreteSubtypes) {
-      EquationInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtype).get(thisType);
-      equationInfoMap.put(concreteSubtype, errorInfo);
-    }
-    EquationInfo equationInfo = subtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(thisType);
-
-    for (IWrapper subtypeNode : concreteSubtypes) {
-      supertypesToSubtypesMap.get(thisType).remove(subtypeNode);
-      subtypesToSupertypesMap.get(subtypeNode).remove(thisType);
-    }
-    action.performAction(thisType, concreteSubtypes, equationInfoMap, isWeak, equationInfo);
-    return true;
-  }
-
-  private boolean varLessThanType(IWrapper var, boolean isWeak, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
-    return thisLessThanType(var, isWeak, new IActionPerformer() {
-      public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
-        // c :< T => c = T
-        ISlicer slicer = null;
-        if (myTypeCheckingContext != null) {
-          slicer = myTypeCheckingContext.getCurrentSlicer();
-        } else {
-          LOG.error("type checking context is null");
-        }
-        IWrapper otherType = decideIfIsLineAndReturnInfimum(concreteSupertypes);
-        if (slicer != null) {
-          if (otherType != null) {
-            slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
-          }
-        } else {
-          LOG.error("slicer is null");
-        }
-        addEquation(type,  /*concreteSupertypes.iterator().next()*/otherType, errorInfo);
-      }
-    }, priority, minPriority, isShallow, prioritiesSynthesizer);
-  }
-
-  private boolean concreteLessThanType(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
-    /*if (isShallow && !isConcrete(concreteType)) {
-      Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(concreteType);
-      if (subtypes != null && !subtypes.isEmpty()) {
-        return true;
-      }
-    }*/
-    return thisLessThanType(concreteType, isWeak, new IActionPerformer() {
-      public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
-        for (IWrapper supertype : concreteSupertypes) {
-          // "T <: S" => T <: S
-          addInequation(type, supertype, errorInfoMap.get(supertype), isWeak, false);
-        }
-      }
-    }, priority, minPriority, isShallow, prioritiesSynthesizer);
-  }
-
-  private boolean thisLessThanType(IWrapper thisType, boolean isWeak, IActionPerformer actionPerformer, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
-    final Map<IWrapper, Map<IWrapper, EquationInfo>> supertypesToSubtypesMap;
-    final Map<IWrapper, Map<IWrapper, EquationInfo>> subtypesToSupertypesMap;
-    if (isWeak) {
-      supertypesToSubtypesMap = mySupertypesToSubtypesMap;
-      subtypesToSupertypesMap = mySubtypesToSupertypesMap;
-    } else {
-      supertypesToSubtypesMap = mySupertypesToSubtypesMapStrong;
-      subtypesToSupertypesMap = mySubtypesToSupertypesMapStrong;
-    }
-
-    Map<IWrapper, EquationInfo> supertypes = subtypesToSupertypesMap.get(thisType);
-    if (supertypes == null) {
-      return false;
-    }
-    if (supertypes.isEmpty()) {
-      subtypesToSupertypesMap.remove(thisType);
-      return false;
-    }
-    Set<IWrapper> concreteSupertypes = new THashSet<IWrapper>();
-    for (IWrapper supertypeNode : new THashSet<IWrapper>(supertypes.keySet())) {
-      if (supertypeNode == null) {
-        supertypes.remove(supertypeNode);
-        continue;
-      }
-      int inequationPriority = prioritiesSynthesizer.getInequationSyntheticRank(supertypes.get(supertypeNode));
-      if (supertypeNode.isConcrete() && isShallow || isConcrete(supertypeNode)) {
-        minPriority[0] = Math.min(minPriority[0], inequationPriority);
-        if (inequationPriority <= priority) {
-          concreteSupertypes.add(supertypeNode);
-        }
-      }
-    }
-    if (concreteSupertypes.isEmpty()) return false;
-
-    Map<IWrapper, EquationInfo> equationInfoMap = new THashMap<IWrapper, EquationInfo>();
-    for (IWrapper concreteSupertype : concreteSupertypes) {
-      EquationInfo errorInfo = supertypesToSubtypesMap.get(concreteSupertype).get(thisType);
-      equationInfoMap.put(concreteSupertype, errorInfo);
-    }
-
-    IWrapper supertype = concreteSupertypes.iterator().next();
-    EquationInfo equationInfo = supertypes.get(supertype);
-    assert equationInfo == equationInfoMap.get(supertype);
-    equationInfo = equationInfoMap.get(supertype);
-
-    for (IWrapper supertypeNode : concreteSupertypes) {
-      subtypesToSupertypesMap.get(thisType).remove(supertypeNode);
-      supertypesToSubtypesMap.get(supertypeNode).remove(thisType);
-    }
-    actionPerformer.performAction(thisType, concreteSupertypes, equationInfoMap, isWeak, equationInfo);
-    return true;
-  }
-
-  /*package*/ IWrapper expandWrapper(SNode term, IWrapper type, SModel typesModel) {
+   /*package*/ IWrapper expandWrapper(SNode term, IWrapper type, SModel typesModel) {
     return expandWrapper(term, type, typesModel, false, null);
   }
 
