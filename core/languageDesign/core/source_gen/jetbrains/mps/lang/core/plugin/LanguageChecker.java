@@ -8,7 +8,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -19,12 +19,13 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.errors.IErrorReporter;
@@ -38,12 +39,12 @@ public class LanguageChecker extends BaseEditorChecker {
 
   private boolean myMessagesChanged = false;
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
-  private Map<SNode, LanguageErrorsComponent> myRootsToComponents = MapSequence.fromMap(new HashMap<SNode, LanguageErrorsComponent>());
+  private Map<SNodePointer, LanguageErrorsComponent> myRootsToComponents = MapSequence.fromMap(new HashMap<SNodePointer, LanguageErrorsComponent>());
   private Set<EditorComponent> myEditorComponents = SetSequence.fromSet(new HashSet<EditorComponent>());
   private EditorComponent.EditorDisposeListener myDisposeListener = new EditorComponent.EditorDisposeListener() {
     public void editorWillBeDisposed(EditorComponent editorComponent) {
       SetSequence.fromSet(myEditorComponents).removeElement(editorComponent);
-      MapSequence.fromMap(myRootsToComponents).removeKey(editorComponent.getEditedNode());
+      MapSequence.fromMap(myRootsToComponents).removeKey(new SNodePointer(editorComponent.getEditedNode()));
     }
   };
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
@@ -72,8 +73,8 @@ public class LanguageChecker extends BaseEditorChecker {
   }
 
   public void doDispose() {
-    for (SNode root : MapSequence.fromMap(myRootsToComponents).keySet()) {
-      MapSequence.fromMap(myRootsToComponents).get(root).dispose();
+    for (LanguageErrorsComponent comp : MapSequence.fromMap(myRootsToComponents).values()) {
+      comp.dispose();
     }
     for (EditorComponent component : myEditorComponents) {
       component.removeDisposeListener(myDisposeListener);
@@ -105,8 +106,8 @@ public class LanguageChecker extends BaseEditorChecker {
   }
 
   private void clearForModel(SModelReference modelReference) {
-    for (SNode root : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myRootsToComponents).keySet())) {
-      if (SNodeOperations.getModel(root).getSModelReference().equals(modelReference)) {
+    for (SNodePointer root : SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), MapSequence.fromMap(myRootsToComponents).keySet())) {
+      if (root.getModelReference().equals(modelReference)) {
         MapSequence.fromMap(myRootsToComponents).get(root).dispose();
         MapSequence.fromMap(myRootsToComponents).removeKey(root);
       }
@@ -149,11 +150,12 @@ public class LanguageChecker extends BaseEditorChecker {
       // after model is replaced but before it is disposed (this can happen asyncronously) 
       return result;
     }
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(root);
+    SNodePointer rootPointer = new SNodePointer(root);
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(rootPointer);
 
     if (errorsComponent == null) {
       errorsComponent = new LanguageErrorsComponent(editorComponent.getEditedNode());
-      MapSequence.fromMap(myRootsToComponents).put(root, errorsComponent);
+      MapSequence.fromMap(myRootsToComponents).put(rootPointer, errorsComponent);
     }
     if (!(editorComponent instanceof InspectorEditorComponent) && !(SetSequence.fromSet(myEditorComponents).contains(editorComponent))) {
       SetSequence.fromSet(myEditorComponents).addElement(editorComponent);
@@ -195,7 +197,7 @@ public class LanguageChecker extends BaseEditorChecker {
     if (containingRoot == null) {
       return;
     }
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(containingRoot);
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(new SNodePointer(containingRoot));
     if (errorsComponent == null) {
       return;
     }
