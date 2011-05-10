@@ -118,10 +118,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return myModelFile;
   }
 
-  public void setModelFile(IFile file) {
-    myModelFile = file;
-  }
-
   public boolean isChanged() {
     return myChanged;
   }

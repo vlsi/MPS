@@ -26,8 +26,6 @@ public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable
   @Nullable
   IFile getModelFile();
 
-  void setModelFile(IFile file);
-
   long lastChangeTime();
 
   boolean isChanged();
