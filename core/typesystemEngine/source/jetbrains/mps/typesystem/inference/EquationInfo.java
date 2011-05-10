@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
@@ -25,7 +24,6 @@ import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.Stack;
 
 public class EquationInfo {

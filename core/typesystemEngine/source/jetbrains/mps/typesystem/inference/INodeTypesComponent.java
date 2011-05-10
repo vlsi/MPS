@@ -18,21 +18,13 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 2/14/11
- * Time: 1:57 PM
- */
 public interface INodeTypesComponent {
-
 
   //compute types
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode);

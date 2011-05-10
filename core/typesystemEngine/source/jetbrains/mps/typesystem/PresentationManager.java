@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.NodeWrapper;
 
 public class PresentationManager {
   // param is SNode or IWrapper

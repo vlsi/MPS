@@ -118,7 +118,7 @@ public class RulesManager {
 
       // TODO temp hack, unless MPS-12321 is fixed
       typesystemDescriptor = new LanguageRuntimeInterpreted(MPSModuleRepository.getInstance().getLanguage(languageNamespace)).getTypesystem();
-      if(typesystemDescriptor != null) {
+      if (typesystemDescriptor != null) {
         LOG.error("critical: language classpath failure");
       }
     }

@@ -30,12 +30,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 4/12/11
- * Time: 12:37 PM
- */
 public abstract class TypeCheckingContext {
   public abstract SubtypingManager getSubtypingManager();
 
@@ -144,11 +138,13 @@ public abstract class TypeCheckingContext {
   public void createLessThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, EquationInfo equationInfo) {
     createLessThanInequality(node1, node2, checkOnly, isWeak, true, equationInfo);
   }
+
   public void createGreaterThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, EquationInfo equationInfo) {
     createGreaterThanInequality(node1, node2, checkOnly, isWeak, false, equationInfo);
   }
 
   public abstract void createLessThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThan, EquationInfo equationInfo);
+
   public abstract void createGreaterThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThan, EquationInfo equationInfo);
 
   public abstract SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType);
