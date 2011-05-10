@@ -21,6 +21,8 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.SimpleModelDataSource;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -38,7 +40,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
+public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private Map<String, String> myMetadata;
@@ -49,9 +51,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private long myLastChange;
 
-  private long myDiskTimestamp = -1;
-
-  private IFile myModelFile;
   private boolean myChanged = false;
 
   private final Object myFullLoadSync = new Object();
@@ -75,8 +74,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
-    super(manager, modelReference, checkDup);
-    myModelFile = modelFile;
+    super(manager, modelReference,new RegularModelDataSource(modelFile), checkDup);
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
     updateLastChange();
@@ -114,49 +112,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
   }
 
-  public IFile getModelFile() {
-    return myModelFile;
-  }
-
   public boolean isChanged() {
     return myChanged;
   }
 
   public void setChanged(boolean changed) {
     myChanged = changed;
-  }
-
-  public void reloadFromDiskSafe() {
-    if (isChanged()) {
-      resolveDiskConflict();
-    } else {
-      reloadFromDisk();
-    }
-  }
-
-  /**
-   * This method should be called either in EDT, inside WriteAction or in any other thread
-   */
-  public void reloadFromDisk() {
-    ModelAccess.assertLegalWrite();
-
-    IFile modelFile = getModelFile();
-
-    if (modelFile == null || !modelFile.exists()) {
-      SModelRepository.getInstance().deleteModel(this);
-      return;
-    }
-
-    DescriptorLoadResult dr = ModelPersistence.loadDescriptor(modelFile);
-    myHeader = dr.getHeader();
-    myMetadata = dr.getMetadata();
-
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
-
-    ModelLoadResult result = load(getLoadingState());
-    replaceModel(result.getModel(), getLoadingState());
-    updateLastChange();
-    LOG.assertLog(!needsReloading());
   }
 
   public int getPersistenceVersion() {
@@ -181,14 +142,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     myModelRootManager.saveModelRefactorings(this, log);
   }
 
-  public long lastChangeTime() {
-    return myLastChange;
-  }
-
   private void resolveDiskConflict() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
+        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(getModelFile(), mySModel);
         if (needSave) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
@@ -236,11 +193,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateDiskTimestamp();
 
     fireModelSaved();
-  }
-
-  public boolean needsReloading() {
-    if (myDiskTimestamp == -1) return false;
-    return fileTimestamp() != myDiskTimestamp;
   }
 
   public boolean isPackaged() {
@@ -353,7 +305,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (anotherModel != null) {
       String message = "Model already registered: " + myModelReference + "\n";
-      message += "file = " + myModelFile + "\n";
+      message += "source = " + getSource() + "\n";
 
       if (anotherModel instanceof EditableSModelDescriptor) {
         message += "another model's file = " + ((EditableSModelDescriptor) anotherModel).getModelFile();
@@ -364,27 +316,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
   }
 
-  protected void updateDiskTimestamp() {
-    myDiskTimestamp = fileTimestamp();
-  }
-
   public void changeModelFile(IFile newModelFile) {
     ModelAccess.assertLegalWrite();
+    if (getModelFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = myModelFile;
-    if (oldFile.getPath().equals(newModelFile.getPath())) return;
-
     SModel model = getSModel();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
     myModelFile = newModelFile;
     updateDiskTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-  }
-
-  private long fileTimestamp() {
-    IFile file = getModelFile();
-    if (file == null || !file.exists()) return -1;
-    return file.lastModified();
   }
 
   private void tryFixingVersion() {
@@ -402,8 +343,65 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return getSModelReference().toString();
   }
 
+  //----------------------
+  private long fileTimestamp() {
+    IFile file = getModelFile();
+    if (file == null || !file.exists()) return -1;
+    return file.lastModified();
+  }
+
+  public long lastChangeTime() {
+    return myLastChange;
+  }
+
+  public IFile getModelFile() {
+    return ((RegularModelDataSource) getSource()).getFile();
+  }
+
+  public void reloadFromDiskSafe() {
+    if (isChanged()) {
+      resolveDiskConflict();
+    } else {
+      reloadFromDisk();
+    }
+  }
+
+  /**
+   * This method should be called either in EDT, inside WriteAction or in any other thread
+   */
+  public void reloadFromDisk() {
+    ModelAccess.assertLegalWrite();
+
+    IFile modelFile = getModelFile();
+
+    if (modelFile == null || !modelFile.exists()) {
+      SModelRepository.getInstance().deleteModel(this);
+      return;
+    }
+
+    DescriptorLoadResult dr = ModelPersistence.loadDescriptor(modelFile);
+    myHeader = dr.getHeader();
+    myMetadata = dr.getMetadata();
+
+    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+
+    ModelLoadResult result = load(getLoadingState());
+    replaceModel(result.getModel(), getLoadingState());
+    updateLastChange();
+    LOG.assertLog(!needsReloading());
+  }
+
+  protected void updateDiskTimestamp() {
+      myDiskTimestamp = fileTimestamp();
+    }
+
   private void updateLastChange() {
-    myLastChange = myModelFile != null ? myModelFile.lastModified() : System.currentTimeMillis();
+    myLastChange = getModelFile().lastModified();
     myDiskTimestamp = myLastChange;
   }
+  public boolean needsReloading() {
+    if (myDiskTimestamp == -1) return false;
+    return fileTimestamp() != myDiskTimestamp;
+  }
+
 }

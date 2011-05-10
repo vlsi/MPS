@@ -4,6 +4,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import jetbrains.mps.vfs.IFile;
@@ -11,17 +12,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public final class BaseStubModelDescriptor extends BaseSModelDescriptor implements Cloneable {
+public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
 
-  private List<StubPath> myStubPaths;
   private boolean myNeedsReloading = true;
   private String myManagerClass;
 
   private final Object myUpdatersLock = new Object();
   private Set<ModelUpdater> myUpdaters = null;
-
-  private final StubSource mySource;
 
   //todo left for compatibility. Should be removed
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
@@ -132,18 +130,5 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
       LOG.error("Error on model load. Model: " + model.getLongName(), t);
     }
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-  }
-
-  @ImmutableObject
-  public static class FileStubSource implements StubSource {
-    private IFile myFile;
-
-    public FileStubSource(IFile file) {
-      myFile = file;
-    }
-
-    public IFile getFile() {
-      return myFile;
-    }
   }
 }
