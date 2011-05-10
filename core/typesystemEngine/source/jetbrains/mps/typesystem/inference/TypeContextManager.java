@@ -227,7 +227,7 @@ public class TypeContextManager implements ApplicationComponent {
       if (context == null) return null;
 
       try {
-        return context.getTypeOf(node, myTypeChecker);
+        return context.getTypeOf_generationMode(node);
       } finally {
         context.dispose();
       }
@@ -236,7 +236,7 @@ public class TypeContextManager implements ApplicationComponent {
 
     TypeCheckingContext context = getOrCreateContext(root, owner, true);
     try {
-      if (myComputeInNormalMode) {
+      if (myComputeInNormalMode && context != null && context.isCheckedRoot(false)) {
         myComputeInNormalMode = false;
         SNode type = context.getTypeOf_normalMode(node);
         myComputeInNormalMode = true;
