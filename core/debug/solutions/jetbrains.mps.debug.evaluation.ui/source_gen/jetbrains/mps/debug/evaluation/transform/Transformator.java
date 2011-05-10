@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.baseLanguage.textGen.LastStatementUtil;
+//import jetbrains.mps.baseLanguage.textGen.LastStatementUtil;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -192,9 +192,9 @@ public class Transformator {
 
     // last statement might become return statement during generation 
     SNode statement = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(evaluateMethod, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getLastStatement_1239354409446", new Class[]{SNode.class}));
-    if (LastStatementUtil.canMakeReturnStatement(statement)) {
-      TransformationUtil.replaceReturnedExpressionIfNeeded(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
-    }
+//    if (LastStatementUtil.canMakeReturnStatement(statement)) {
+//      TransformationUtil.replaceReturnedExpressionIfNeeded(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
+//    }
 
   }
 

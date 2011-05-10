@@ -11,7 +11,7 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
-import jetbrains.mps.baseLanguage.plugin.AnalyzeStacktraceDialog;
+// TODO import jetbrains.mps.baseLanguage.plugin.AnalyzeStacktraceDialog;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
@@ -463,8 +463,8 @@ abstract class MessageList implements IMessageList {
     toShow.printStackTrace(new PrintWriter(writer));
     StringSelection contents = new StringSelection(writer.toString());
     CopyPasteManagerEx.getInstanceEx().setContents(contents);
-    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
-    dialog.showDialog();
+//    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
+//    dialog.showDialog();
   }
 
   private Project getProject() {

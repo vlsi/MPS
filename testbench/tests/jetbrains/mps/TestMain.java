@@ -26,7 +26,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.generator.GenerationOptions;
@@ -531,7 +530,7 @@ public class TestMain {
             final Class testClass = Class.forName(className, true, classLoader);
             if (Modifier.isAbstract(testClass.getModifiers()) || Modifier.isInterface(testClass.getModifiers())) continue;
             if (Modifier.isPrivate(testClass.getModifiers())) continue;
-            if (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null) continue;
+            if (testClass.getAnnotation(classLoader.loadClass("jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch")) != null) continue;
 
             List<Method> testMethods = new ArrayList<Method>();
             Class<TestCase> testCaseClass = (Class<TestCase>) classLoader.loadClass(TestCase.class.getName());

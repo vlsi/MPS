@@ -59,7 +59,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.ConditionalIterable;
 import java.lang.reflect.Modifier;
-import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import junit.framework.TestCase;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import java.util.LinkedHashMap;
@@ -417,7 +416,7 @@ public class TestGenerationWorker extends MpsWorker {
           if (Modifier.isPrivate(testClass.getModifiers())) {
             continue;
           }
-          if (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null) {
+          if (testClass.getAnnotation(classLoader.loadClass("jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch")) != null) {
             continue;
           }
           Class<TestCase> testCaseClass = (Class<TestCase>) classLoader.loadClass(TestCase.class.getName());
