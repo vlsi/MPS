@@ -2,6 +2,7 @@
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="498" startPosition="49" endLine="513" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$1" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="517" startPosition="49" endLine="532" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$2" />
+  <unitInfo fileName="ConvertCastToSModelCast_QuickFix.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.ConvertCastToSModelCast_QuickFix" />
   <unitInfo fileName="check_Node_DetachOperation_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Node_DetachOperation_NonTypesystemRule" />
   <unitInfo fileName="check_Link_DeleteChildOperation_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Link_DeleteChildOperation_NonTypesystemRule" />
   <unitInfo fileName="check_Link_SetNewChildOperation_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Link_SetNewChildOperation_NonTypesystemRule" />
