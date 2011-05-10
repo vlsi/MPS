@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -56,7 +57,11 @@ public class AddReferenceMacroParam_link_Intention extends BaseIntention impleme
     if (sm == null || !(sm.getModule() instanceof Generator)) {
       return false;
     }
-    return QueriesUtil.isReferenceMacroApplicable(node, editorContext.getSelectedCell());
+    EditorCell editorCell = editorContext.getSelectedCell();
+    if (editorCell == null) {
+      return false;
+    }
+    return QueriesUtil.isReferenceMacroApplicable(node, editorCell);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
