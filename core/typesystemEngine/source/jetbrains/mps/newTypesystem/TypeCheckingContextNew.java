@@ -249,11 +249,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public EquationManager getEquationManager() {
-    return null;
-  }
-
-  @Override
   public void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo) {
     createEquation(node1, wrapper2.getNode(), equationInfo);
   }

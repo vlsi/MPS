@@ -43,8 +43,6 @@ public abstract class TypeCheckingContext {
 
   public abstract Map<SNode, SNode> getMainContext();
 
-  public abstract EquationManager getEquationManager();
-
   public abstract SNode getRepresentative(SNode node);
 
   public abstract boolean isIncrementalMode();

@@ -17,8 +17,6 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public abstract class RuntimeSupport {

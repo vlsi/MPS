@@ -88,9 +88,6 @@ public interface INodeTypesComponent {
 
   public boolean isCheckedNonTypesystem();
 
-  //old; will be deprecated
-  public EquationManager getEquationManager();
-
   public String getNewVarName();
 
   public SNode[] getVariables(String varName);

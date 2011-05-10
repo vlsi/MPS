@@ -231,11 +231,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
     return result;
   }
 
-  //------------Deprecated--------------------
-  public EquationManager getEquationManager() {
-    return null;
-  }
-
   @Override
   public String getNewVarName() {
     return null;
