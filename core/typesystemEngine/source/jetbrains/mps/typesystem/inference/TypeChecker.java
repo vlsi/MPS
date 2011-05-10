@@ -231,13 +231,6 @@ public class TypeChecker implements ApplicationComponent {
     return null;
   }
 
-  public InequationSystem getInequationsForHole(SNode hole, boolean holeIsAType) {
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
-    InequationSystem inequationSystem = typeCheckingContext.getBaseNodeTypesComponent().computeInequationsForHole(hole, holeIsAType);
-    typeCheckingContext.dispose();
-    return inequationSystem;
-  }
-
   public SNode getInferredTypeOf(final SNode node) {
     if (node == null) return null;
     TypeCheckingContext typeCheckingContext =

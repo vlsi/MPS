@@ -241,12 +241,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
 
   }
 
-
-  @Override
-  public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
-    return null;
-  }
-
   //--------------------------------------------------
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
     Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();

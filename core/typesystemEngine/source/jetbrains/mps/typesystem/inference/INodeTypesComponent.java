@@ -91,7 +91,4 @@ public interface INodeTypesComponent {
   public SNode[] getVariables(String varName);
 
   public void registerTypeVariable(SNode variable);
-
-  public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType);
-
 }

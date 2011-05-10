@@ -44,8 +44,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     NodeWrapper result;
     if (HUtil.isRuntimeTypeVariable(node)) {
       result = new VariableWrapper(node, equationManager, equationManagerNullable);
-    } else if (HUtil.isRuntimeHoleType(node)) {
-      result = new HoleWrapper(node, equationManager, null);
+
     } else {
       result = new NodeWrapper(node);
     }

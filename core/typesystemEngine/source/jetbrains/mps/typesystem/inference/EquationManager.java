@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -65,8 +64,6 @@ public class EquationManager {
 
   private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new THashMap<IWrapper, Set<IWrapperListener>>(32);
   private boolean myCollectConcretes = false;
-
-  private InequationSystem myInequationSystem = null;
 
   private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new THashSet<WhenConcreteEntity>();
   private TypeCheckingContext myTypeCheckingContext;
@@ -224,16 +221,7 @@ public class EquationManager {
     variables.add(variable);
   }
 
-  InequationSystem getInequationSystem() {
-    return myInequationSystem;
-  }
-
-  void putInequationSystem(InequationSystem inequationSystem) {
-    myInequationSystem = inequationSystem;
-  }
-
-
-  public void addInequation(SNode subType, SNode supertype, EquationInfo errorInfo, boolean isWeak, boolean checkOnly) {
+   public void addInequation(SNode subType, SNode supertype, EquationInfo errorInfo, boolean isWeak, boolean checkOnly) {
     addInequation(NodeWrapper.createWrapperFromNode(subType, this), NodeWrapper.createWrapperFromNode(supertype, this), errorInfo, isWeak, true, checkOnly);
   }
 
@@ -269,17 +257,6 @@ public class EquationManager {
     boolean subtypeHasNonConcreteVars = !isConcrete(subtypeRepresentator);
     boolean supertypeHasNonConcreteVars = !isConcrete(supertypeRepresentator);
 
-    //holes (should be on top)
-    if (subtypeRepresentator instanceof HoleWrapper) {
-      HoleWrapper subHole = (HoleWrapper) subtypeRepresentator;
-      subHole.getInequationSystem().addSupertype(supertypeRepresentator, isWeak);
-      return;
-    }
-    if (supertypeRepresentator instanceof HoleWrapper) {
-      HoleWrapper superHole = (HoleWrapper) supertypeRepresentator;
-      superHole.getInequationSystem().addSubtype(subtypeRepresentator, isWeak);
-      return;
-    }
 
     //if check only
     if (checkOnly && myUsesCheckOnly) {
@@ -619,15 +596,7 @@ public class EquationManager {
       }
     }
 
-    //holes
-    if (rhsRepresentator instanceof HoleWrapper) {
-      ((HoleWrapper) rhsRepresentator).getInequationSystem().addEquation(lhsRepresentator);
-      return;
-    }
-    if (lhsRepresentator instanceof HoleWrapper) {
-      ((HoleWrapper) lhsRepresentator).getInequationSystem().addEquation(rhsRepresentator);
-      return;
-    }
+
 
     //both are concept wrappers
     if (lhsRepresentator instanceof ConceptWrapper && rhsRepresentator instanceof ConceptWrapper) {
