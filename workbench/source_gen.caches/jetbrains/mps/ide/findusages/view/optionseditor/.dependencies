@@ -14,6 +14,7 @@
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="java.lang.Class" />
@@ -21,7 +22,7 @@
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.ide.make.StartupModuleMaker" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
