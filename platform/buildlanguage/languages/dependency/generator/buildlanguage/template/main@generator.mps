@@ -668,6 +668,18 @@
             <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="763186553349438279" resolveInfo="classes.dump" />
           </node>
         </node>
+        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="12914745170303510">
+          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813687" resolveInfo="fork" />
+          <node role="value" roleId="ddum.353793545802643468" type="tpsk.BooleanLiteral" typeId="tpsk.1196865966685" id="353793545802813688">
+            <property name="value" nameId="tpsk.1196866040780" value="true" />
+          </node>
+        </node>
+        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="12914745170303504">
+          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813701" resolveInfo="memorymaximumsize" />
+          <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="12914745170303509">
+            <property name="value" nameId="tpsk.1196861024475" value="1024m" />
+          </node>
+        </node>
         <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1216908720841">
           <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813728" resolveInfo="src" />
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1216908723859">
@@ -790,6 +802,18 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="12914745170303514">
+          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813687" resolveInfo="fork" />
+          <node role="value" roleId="ddum.353793545802643468" type="tpsk.BooleanLiteral" typeId="tpsk.1196865966685" id="12914745170303515">
+            <property name="value" nameId="tpsk.1196866040780" value="true" />
+          </node>
+        </node>
+        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="12914745170303516">
+          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813701" resolveInfo="memorymaximumsize" />
+          <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="12914745170303517">
+            <property name="value" nameId="tpsk.1196861024475" value="1024m" />
           </node>
         </node>
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="763186553349438319">

@@ -5135,289 +5135,289 @@
     <mkdir dir="${jetbrains.mps.xmlSchema.classes}" />
     <mkdir dir="${jetbrains.mps.ypath.classes}" />
     <mkdir dir="${jetbrains.mps.ypath.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.analyzers_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/analyzers/languages/analyzers/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/baseLanguage/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.blTypes.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.blTypes.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/blTypes/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.builders.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.builders.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/builders/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.checkedDots.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.checkedDots.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/checkDot/languages/checkedDots/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.classifiers.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.classifiers.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/classifiers/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.closures.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.closures.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/closures/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.collections.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.collections.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/collections/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.collections.trove.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.collections.trove.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/collections/languages/trove/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.javadoc.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.javadoc.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/javadoc/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.logging.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.logging.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/logging/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/regexp/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
         <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/runConfigurations/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/runConfigurations/runtime/source_gen" />
         <path path="core/baseLanguage/runConfigurations/runtime/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.tuples.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.tuples.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/tuples/languages/tuples/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/unitTest/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguageInternal.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguageInternal.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/baseLanguageInternal/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.apiLang.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.apiLang.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/debug-api/languages/api/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.customViewers.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.customViewers.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/debug/languages/customViewers/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.evaluation.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.evaluation.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/debug/languages/evaluation/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.privateMembers.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.privateMembers.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/debug/languages/privateMembers/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/gtext/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/gtext/runtime/source_gen" />
         <path path="platform/gtext/runtime/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
         <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.actions.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.actions.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/actions/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.behavior.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.behavior.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/behavior/languages/behavior/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.constraints.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.constraints.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/constraints/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.core.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.core.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/core/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.dataFlow.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.dataFlow.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/dataFlow/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/editor/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.findUsages.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.findUsages.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/findUsages/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.generator.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.generator.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/generator/languages/templateLanguage/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.generator.generationContext.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.generator.generationContext.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/generator/languages/generationContext/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.generator.generationParameters.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.generator.generationParameters.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/generator/languages/generationParameters/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.intentions.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.intentions.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/intentions/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.pattern.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.pattern.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/pattern/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.pattern.testLang.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.pattern.testLang.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/pattern/languages/testLang/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.plugin.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.plugin.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/plugin/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.project.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.project.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/project/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.quotation.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.quotation.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/quotation/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.refactoring.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.refactoring.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/refactoring/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.script.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.script.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/script/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.sharedConcepts.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.sharedConcepts.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/sharedConcepts/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.smodel.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.smodel.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/smodel/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.structure.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.structure.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/structure/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.test.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.test.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/test/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.textGen.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.textGen.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/textGen/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.typesystem.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.typesystem.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/typesystem/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.uiLanguage.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.uiLanguage.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/uiLanguage/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/xml/xml/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlInternal.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlInternal.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/xml/xmlInternal/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlQuery.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlQuery.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/xml/xmlQuery/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlSchema.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlSchema.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/xml/xmlSchema/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ypath.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ypath.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ypath/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ypath.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ypath.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" />
         <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/test_gen" />
@@ -5430,10 +5430,10 @@
     <mkdir dir="core/baseLanguage/constructors/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.constructors.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.constructors_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.constructors.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.constructors.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/constructors/source_gen" />
       </src>
@@ -5445,10 +5445,10 @@
     <mkdir dir="platform/contracts/languages/contracts/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.contracts.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.contracts_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.contracts.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.contracts.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/contracts/languages/contracts/source_gen" />
       </src>
@@ -5465,21 +5465,21 @@
     <mkdir dir="${jetbrains.mps.baseLanguage.dates.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.dates.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.datesInternal.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.dates_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/dates/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/dates/runtime/source_gen" />
         <path path="platform/dates/runtime/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.datesInternal.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.datesInternal.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/dates/internal/source_gen" />
       </src>
@@ -5491,10 +5491,10 @@
     <mkdir dir="platform/extensionMethod/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.extensionMethods.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.extensionMethods.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.extensionMethods.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/extensionMethod/source_gen" />
       </src>
@@ -5506,10 +5506,10 @@
     <mkdir dir="platform/math/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.math.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.math_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.math.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.math.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/math/source_gen" />
       </src>
@@ -5522,10 +5522,10 @@
     <mkdir dir="platform/math/runtimeSolution/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.math.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.math.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.math.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/math/runtimeSolution/source_gen" />
         <path path="platform/math/runtimeSolution/test_gen" />
@@ -5538,10 +5538,10 @@
     <mkdir dir="platform/money/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.money.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.money_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.money.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.money.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/money/source_gen" />
       </src>
@@ -5554,10 +5554,10 @@
     <mkdir dir="platform/money/runtimeSolution/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.money.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.money.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.money.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/money/runtimeSolution/source_gen" />
         <path path="platform/money/runtimeSolution/test_gen" />
@@ -5570,10 +5570,10 @@
     <mkdir dir="core/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
       </src>
@@ -5586,10 +5586,10 @@
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.regexp.examples.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.examples.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.examples.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
         <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
@@ -5602,10 +5602,10 @@
     <mkdir dir="platform/bash/languages/bash/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.bash.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.bash_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.bash_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.bash_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.bash_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.bash.classes}">
+    <javac classpathref="cycle.jetbrains.mps.bash_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.bash.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/bash/languages/bash/source_gen" />
       </src>
@@ -5617,10 +5617,10 @@
     <mkdir dir="platform/buildlanguage/languages/custommps/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.custommps.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.custommps_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/buildlanguage/languages/custommps/source_gen" />
       </src>
@@ -5634,15 +5634,15 @@
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.dependency.classes}" />
     <mkdir dir="${jetbrains.mps.build.packaging.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.build.dependency_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.build.dependency_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.dependency_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.dependency_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.dependency.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.dependency_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.dependency.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/buildlanguage/languages/dependency/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.dependency_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.packaging.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.dependency_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.packaging.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/buildlanguage/languages/packaging/source_gen" />
       </src>
@@ -5654,10 +5654,10 @@
     <mkdir dir="platform/buildlanguage/languages/distrib/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.distrib.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.build.distrib_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.build.distrib_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.distrib_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.distrib_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.distrib.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.distrib_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.distrib.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/buildlanguage/languages/distrib/source_gen" />
       </src>
@@ -5673,20 +5673,20 @@
     <mkdir dir="${jetbrains.mps.build.generictasks.classes}" />
     <mkdir dir="${jetbrains.mps.build.property.classes}" />
     <mkdir dir="${jetbrains.mps.buildlanguage.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.generictasks_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.generictasks.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.generictasks.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/buildlanguage/languages/generictasks/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.property.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.property.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/buildlanguage/languages/property/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.buildlanguage.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.buildlanguage.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/buildlanguage/languages/buildlanguage/source_gen" />
       </src>
@@ -5698,10 +5698,10 @@
     <mkdir dir="platform/gwtsupport/languages/client/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.gwt.client.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.gwt.client_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.gwt.client_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.gwt.client_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.gwt.client_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gwt.client.classes}">
+    <javac classpathref="cycle.jetbrains.mps.gwt.client_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gwt.client.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/gwtsupport/languages/client/source_gen" />
       </src>
@@ -5713,10 +5713,10 @@
     <mkdir dir="workbench/ideUiLanguage/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ide.uiLanguage.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.ide.uiLanguage_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="workbench/ideUiLanguage/source_gen" />
       </src>
@@ -5728,10 +5728,10 @@
     <mkdir dir="core/languageDesign/editor/languages/editorTest/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.lang.editor.editorTest.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.editor.editorTest_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.editorTest.classes}">
+    <javac classpathref="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.editorTest.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/editor/languages/editorTest/source_gen" />
       </src>
@@ -5743,10 +5743,10 @@
     <mkdir dir="core/languageDesign/editor/languages/table/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.lang.editor.table.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.editor.table_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.classes}">
+    <javac classpathref="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/editor/languages/table/source_gen" />
       </src>
@@ -5759,10 +5759,10 @@
     <mkdir dir="core/languageDesign/editor/languages/table/runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.table.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/editor/languages/table/runtime/source_gen" />
         <path path="core/languageDesign/editor/languages/table/runtime/test_gen" />
@@ -5775,10 +5775,10 @@
     <mkdir dir="core/languageDesign/smodel/languages/smodelTests/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.lang.smodelTests.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.smodelTests_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.smodelTests.classes}">
+    <javac classpathref="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.smodelTests.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/smodel/languages/smodelTests/source_gen" />
       </src>
@@ -5790,10 +5790,10 @@
     <mkdir dir="core/languageDesign/stubs/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.lang.stubs.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.lang.stubs_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.lang.stubs_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.stubs_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.lang.stubs_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.stubs.classes}">
+    <javac classpathref="cycle.jetbrains.mps.lang.stubs_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.stubs.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/stubs/source_gen" />
       </src>
@@ -5805,10 +5805,10 @@
     <mkdir dir="core/languageDesign/make/languages/facet/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.make.facet.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.make.facet_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.make.facet_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.make.facet_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.make.facet_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.make.facet.classes}">
+    <javac classpathref="cycle.jetbrains.mps.make.facet_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.make.facet.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/make/languages/facet/source_gen" />
       </src>
@@ -5820,10 +5820,10 @@
     <mkdir dir="core/languageDesign/make/languages/script/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.make.script.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.make.script_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.make.script_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.make.script_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.make.script_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.make.script.classes}">
+    <javac classpathref="cycle.jetbrains.mps.make.script_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.make.script.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="core/languageDesign/make/languages/script/source_gen" />
       </src>
@@ -5835,10 +5835,10 @@
     <mkdir dir="platform/mps-lite/languages/nanoj/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.nanoj.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.nanoj_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.nanoj_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.nanoj_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.nanoj_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.nanoj.classes}">
+    <javac classpathref="cycle.jetbrains.mps.nanoj_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.nanoj.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/mps-lite/languages/nanoj/source_gen" />
       </src>
@@ -5850,10 +5850,10 @@
     <mkdir dir="platform/conf/languages/conf/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.platform.conf.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.platform.conf_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.platform.conf_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.platform.conf_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.platform.conf_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.platform.conf.classes}">
+    <javac classpathref="cycle.jetbrains.mps.platform.conf_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.platform.conf.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/conf/languages/conf/source_gen" />
       </src>
@@ -5866,10 +5866,10 @@
     <mkdir dir="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.quickQuery.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.quickQuery.runtime_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.quickQuery.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.quickQuery.runtime_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.quickQuery.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQuery.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.quickQuery.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQuery.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" />
         <path path="platform/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/test_gen" />
@@ -5882,10 +5882,10 @@
     <mkdir dir="platform/quickQueryLanguage/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.quickQueryLanguage.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.quickQueryLanguage_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQueryLanguage.classes}">
+    <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQueryLanguage.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/quickQueryLanguage/source_gen" />
       </src>
@@ -5899,15 +5899,15 @@
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ui.classes}" />
     <mkdir dir="${jetbrains.mps.ui.internal.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.ui_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ui/languages/ui/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.internal.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ui_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.internal.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ui/languages/internal/source_gen" />
       </src>
@@ -5919,10 +5919,10 @@
     <mkdir dir="platform/ui/languages/gwt/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ui.gwt.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ui.gwt_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.ui.gwt_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.ui.gwt_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui.gwt_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.gwt.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ui.gwt_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.gwt.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ui/languages/gwt/source_gen" />
       </src>
@@ -5934,10 +5934,10 @@
     <mkdir dir="platform/ui/languages/meta/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ui.modeling.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ui.modeling_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.ui.modeling_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.ui.modeling_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui.modeling_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.modeling.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ui.modeling_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.modeling.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ui/languages/meta/source_gen" />
       </src>
@@ -5949,10 +5949,10 @@
     <mkdir dir="platform/ui/languages/swing/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ui.swing.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ui.swing_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.ui.swing_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.ui.swing_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui.swing_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swing.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ui.swing_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swing.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ui/languages/swing/source_gen" />
       </src>
@@ -5965,10 +5965,10 @@
     <mkdir dir="platform/ui/languages/swing/runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ui.swing.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.ui.swing.runtime_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swing.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swing.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ui/languages/swing/runtime/source_gen" />
         <path path="platform/ui/languages/swing/runtime/test_gen" />
@@ -5981,10 +5981,10 @@
     <mkdir dir="platform/ui/languages/swt/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ui.swt.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ui.swt_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.ui.swt_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.ui.swt_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui.swt_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ui.swt_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ui/languages/swt/source_gen" />
       </src>
@@ -5997,10 +5997,10 @@
     <mkdir dir="platform/ui/languages/swt/runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ui.swt.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.ui.swt.runtime_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ui.swt.runtime.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ui/languages/swt/runtime/source_gen" />
         <path path="platform/ui/languages/swt/runtime/test_gen" />
@@ -6013,10 +6013,10 @@
     <mkdir dir="platform/xmlDeprecated/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.xml.deprecated.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.xml.deprecated_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.deprecated.classes}">
+    <javac classpathref="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.deprecated.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/xmlDeprecated/source_gen" />
       </src>
@@ -6028,10 +6028,10 @@
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.xmlUnitTest.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.xmlUnitTest_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlUnitTest.classes}">
+    <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlUnitTest.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
       </src>
@@ -6043,10 +6043,10 @@
     <mkdir dir="platform/mps-lite/languages/mpslite/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mpslite.classes}" />
-    <javac classpathref="cycle.jetbrains.mpslite_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.jetbrains.mpslite_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mpslite_tjc.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mpslite_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mpslite.classes}">
+    <javac classpathref="cycle.jetbrains.mpslite_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mpslite.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/mps-lite/languages/mpslite/source_gen" />
       </src>
@@ -6059,10 +6059,10 @@
     <mkdir dir="platform/ypath/solutions/main/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${ypath.main.classes}" />
-    <javac classpathref="cycle.ypath.main_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.ypath.main_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.ypath.main_tjc.src" />
     </javac>
-    <javac classpathref="cycle.ypath.main_tjc.classpaths" classpath="${classes.dump}" destdir="${ypath.main.classes}">
+    <javac classpathref="cycle.ypath.main_tjc.classpaths" classpath="${classes.dump}" destdir="${ypath.main.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ypath/solutions/main/source_gen" />
         <path path="platform/ypath/solutions/main/test_gen" />
@@ -6076,10 +6076,10 @@
     <mkdir dir="platform/ypath/solutions/test/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${ypath.test.classes}" />
-    <javac classpathref="cycle.ypath.test_tjc.classpaths" destdir="${classes.dump}">
+    <javac classpathref="cycle.ypath.test_tjc.classpaths" destdir="${classes.dump}" fork="true" memorymaximumsize="1024m">
       <src refid="cycle.ypath.test_tjc.src" />
     </javac>
-    <javac classpathref="cycle.ypath.test_tjc.classpaths" classpath="${classes.dump}" destdir="${ypath.test.classes}">
+    <javac classpathref="cycle.ypath.test_tjc.classpaths" classpath="${classes.dump}" destdir="${ypath.test.classes}" fork="true" memorymaximumsize="1024m">
       <src>
         <path path="platform/ypath/solutions/test/source_gen" />
         <path path="platform/ypath/solutions/test/test_gen" />
