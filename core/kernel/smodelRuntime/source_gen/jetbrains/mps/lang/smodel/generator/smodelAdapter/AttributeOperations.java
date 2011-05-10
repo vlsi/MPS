@@ -27,7 +27,6 @@ public class AttributeOperations {
     } else {
       return AttributesRolesUtil.childRoleFromAttributeRole(SConceptPropertyOperations.getString(node, "role"));
     }
-    // <node> 
   }
 
   public static boolean isNewAttributeInOldRole(SNode node, String oldRole) {

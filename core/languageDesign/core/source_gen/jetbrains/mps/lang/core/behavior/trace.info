@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IResolveInfo_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IResolveInfo_Behavior" />
-  <unitInfo fileName="Attribute_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.Attribute_Behavior" />
   <unitInfo fileName="IMetaLevelChanger_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_Behavior" />
   <unitInfo fileName="ExportScopeModule_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeModule_Behavior" />
   <unitInfo fileName="ExportScopePublic_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopePublic_Behavior" />
   <unitInfo fileName="ExportScopeNamespace_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_Behavior" />
-  <unitInfo fileName="NodeAttribute_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.NodeAttribute_Behavior" />
-  <unitInfo fileName="PropertyAttribute_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior" />
-  <unitInfo fileName="LinkAttribute_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior" />
   <unitInfo fileName="INamedConcept_Behavior.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
   <unitInfo fileName="IDeprecatable_Behavior.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior" />
   <unitInfo fileName="ExportScope_Behavior.java" startLine="22" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" />
@@ -144,24 +140,6 @@
     <nodeInfo nodeId="402007580867615906" fileName="ExportScopeNamespace_Behavior.java" startLine="18" startPosition="123" endLine="19" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="402007580867615877" fileName="ExportScopeNamespace_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="402007580867615880" fileName="ExportScopeNamespace_Behavior.java" startLine="18" startPosition="123" endLine="19" endPosition="156" />
-  </root>
-  <root nodeId="6407023681583030894">
-    <scopeInfo nodeId="6407023681583030896" fileName="Attribute_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-  </root>
-  <root nodeId="6407023681583031042">
-    <nodeInfo nodeId="6407023681583031049" fileName="NodeAttribute_Behavior.java" startLine="19" startPosition="88" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6407023681583031044" fileName="NodeAttribute_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="6407023681583031047" fileName="NodeAttribute_Behavior.java" startLine="19" startPosition="88" endLine="20" endPosition="114" />
-  </root>
-  <root nodeId="6407023681583031061">
-    <nodeInfo nodeId="6407023681583031068" fileName="LinkAttribute_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6407023681583031063" fileName="LinkAttribute_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="6407023681583031066" fileName="LinkAttribute_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="171" />
-  </root>
-  <root nodeId="6407023681583031132">
-    <nodeInfo nodeId="6407023681583031139" fileName="PropertyAttribute_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6407023681583031134" fileName="PropertyAttribute_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="6407023681583031137" fileName="PropertyAttribute_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="179" />
   </root>
 </debugInfo>
 

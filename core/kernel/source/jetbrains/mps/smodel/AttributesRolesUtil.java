@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
+/**
+ * @deprecated after new "attribute" child in BaseConcept, use AtributeOperations class
+ */
+@Deprecated
 public class AttributesRolesUtil {
   public static final String DEFAULT_ATTRIBUTE_ROLE = "_attr_";
   public static final String STEREOTYPE_DELIM = "$";
@@ -75,10 +79,8 @@ public class AttributesRolesUtil {
   }
 
   public static boolean isAttributeRole(String role) {
-    return role != null && role.contains(AttributesRolesUtil.STEREOTYPE_DELIM) &&
-      (AttributesRolesUtil.isNodeAttributeRole(role) ||
-        AttributesRolesUtil.isLinkAttributeRole(role) ||
-        AttributesRolesUtil.isPropertyAttributeRole(role));
+    return role != null && role.contains(STEREOTYPE_DELIM) &&
+      (isNodeAttributeRole(role) || isLinkAttributeRole(role) || isPropertyAttributeRole(role));
   }
 
   public static String replaceLinkRoleInLinkAttributeRole(String attributeRole, String linkRole) {
