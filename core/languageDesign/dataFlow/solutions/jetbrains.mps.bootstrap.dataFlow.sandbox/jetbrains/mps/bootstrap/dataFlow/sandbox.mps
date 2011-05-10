@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895905c5(jetbrains.mps.bootstrap.dataFlow.sandbox)">
+<model modelUID="r:00000000-0000-4000-0000-011c895905c5(jetbrains.mps.bootstrap.dataFlow.sandbox)" doNotGenerate="true">
   <persistence version="7" />
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
