@@ -25,7 +25,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -39,7 +38,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.beans.PropertyChangeListener;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEditor {
@@ -220,17 +218,11 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   }
 
   public Document[] getDocuments() {
-    final List<Document> result = new LinkedList<Document>();
     if (!isDisposed()) {
-      ModelAccess.instance().tryRead(new Runnable() {
-        public void run() {
-          for (SNodePointer node : myNodeEditor.getAllEditedNodes()) {
-            result.add(MPSUndoUtil.getDoc(node));
-          }
-        }
-      });
+      List<Document> result = myNodeEditor.getAllEditedDocuments();
+      return result.toArray(new Document[result.size()]);
     }
-    return result.toArray(new Document[result.size()]);
+    return new Document[0];
   }
 
   private class MPSFileNodeEditorComponent extends JPanel implements DataProvider {

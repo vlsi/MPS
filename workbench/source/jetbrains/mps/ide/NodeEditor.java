@@ -32,10 +32,11 @@ public class NodeEditor extends BaseNodeEditor {
   }
 
   public List<SNodePointer> getAllEditedNodes() {
-    if (getCurrentlyEditedNode() == null) {
+    SNodePointer editedNodePointer = getCurrentlyEditedNode();
+    if (editedNodePointer == null) {
       return Collections.emptyList();
     }
-    return Collections.singletonList(getCurrentlyEditedNode());
+    return Collections.singletonList(editedNodePointer);
   }
 
   @Override

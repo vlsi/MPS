@@ -94,8 +94,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
 
   @Override
   public List<Document> getAllEditedDocuments() {
-    // TODO: implement this method
-    return Collections.emptyList();
+    return myTabsComponent.getAllEditedDocuments();
   }
 
   public void showNode(SNode node, boolean select) {

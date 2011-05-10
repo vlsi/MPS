@@ -220,6 +220,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected SNode myNode;
   @Nullable
   private MPSNodeVirtualFile myVirtualFile;
+  @Nullable
+  private SNodePointer myNodePointer;
   private EditorContext myEditorContext;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
@@ -644,11 +646,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public SNodePointer getEditedNodePointer() {
-    return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-      public SNodePointer compute() {
-        return new SNodePointer(myNode);
-      }
-    });
+    return myNodePointer;
   }
 
   public String getMPSTooltipText(final MouseEvent event) {
@@ -778,6 +776,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
         myNode = node;
+        myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
         myVirtualFile = myNode != null ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));

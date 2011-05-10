@@ -34,6 +34,8 @@ public interface IEditor{
 
   SNodePointer getCurrentlyEditedNode();
 
+  //  looks like getAllEditedDocuments() is sufficient
+  @Deprecated
   List<SNodePointer> getAllEditedNodes();
 
   List<Document> getAllEditedDocuments();

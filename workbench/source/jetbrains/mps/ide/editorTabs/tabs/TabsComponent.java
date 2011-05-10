@@ -17,9 +17,11 @@ package jetbrains.mps.ide.editorTabs.tabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabs.baseListening.ModelListener;
+import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -41,6 +43,8 @@ public abstract class TabsComponent extends JPanel {
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
+  private List<Document> myEditedDocuments = new ArrayList<Document>();
+  private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
   private JComponent myToolbar = null;
   private JComponent myShortcutComponent;
 
@@ -98,20 +102,17 @@ public abstract class TabsComponent extends JPanel {
   }
 
   public List<SNodePointer> getAllEditedNodes() {
-    List<SNodePointer> result = new ArrayList<SNodePointer>();
-    SNode baseNode = myBaseNode.getNode();
-    if (baseNode == null) return result;
-    for (EditorTab tab : myRealTabs) {
-      for (SNode node : tab.getDescriptor().getNodes(baseNode)) {
-        assert node != null;
-        result.add(new SNodePointer(node.getContainingRoot()));
-      }
-    }
-    return result;
+    return myEditedNodes;
+  }
+
+  public List<Document> getAllEditedDocuments() {
+    return myEditedDocuments;
   }
 
   private void updateTabs() {
     myRealTabs.clear();
+    List<Document> editedDocumentsNew = new ArrayList<Document>();
+    List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
     myTabRemovalListener.clearAspects();
 
     ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
@@ -123,11 +124,16 @@ public abstract class TabsComponent extends JPanel {
 
       for (SNode node : nodes) {
         myTabRemovalListener.aspectAdded(node.getContainingRoot());
+        SNodePointer nodePointer = new SNodePointer(node);
+        editedNodesNew.add(nodePointer);
+        editedDocumentsNew.add(MPSUndoUtil.getDoc(nodePointer));
       }
 
       final EditorTab tab = new EditorTab(this, myRealTabs.size(), d, myBaseNode);
       myRealTabs.add(tab);
     }
+    myEditedDocuments = editedDocumentsNew;
+    myEditedNodes = editedNodesNew;
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(myAddButton.getAction());
