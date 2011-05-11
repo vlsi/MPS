@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
@@ -162,7 +162,7 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
 
   public String getFqName(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      return INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"));
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     } else {
       String longName = SNodeOperations.getModel(node).getLongName();
       if (longName.equals("")) {

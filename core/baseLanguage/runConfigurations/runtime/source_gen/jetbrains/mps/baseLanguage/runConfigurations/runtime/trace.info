@@ -445,7 +445,7 @@
     <nodeInfo nodeId="6937689104170748836" fileName="MainNodeChooser.java" startLine="152" startPosition="12" endLine="153" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6937689104170748845" fileName="MainNodeChooser.java" startLine="155" startPosition="27" endLine="156" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2178855608171473858" fileName="MainNodeChooser.java" startLine="159" startPosition="5" endLine="160" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7247071346992929418" fileName="MainNodeChooser.java" startLine="164" startPosition="96" endLine="165" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7247071346992929418" fileName="MainNodeChooser.java" startLine="164" startPosition="96" endLine="165" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7247071346992929428" fileName="MainNodeChooser.java" startLine="166" startPosition="12" endLine="167" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7247071346992929439" fileName="MainNodeChooser.java" startLine="168" startPosition="32" endLine="169" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7247071346992929447" fileName="MainNodeChooser.java" startLine="170" startPosition="7" endLine="171" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -519,7 +519,7 @@
     <scopeInfo nodeId="2178855608171473512" fileName="MainNodeChooser.java" startLine="142" startPosition="30" endLine="143" endPosition="13" />
     <scopeInfo nodeId="3416915311942173065" fileName="MainNodeChooser.java" startLine="149" startPosition="14" endLine="150" endPosition="22" />
     <scopeInfo nodeId="6937689104170748844" fileName="MainNodeChooser.java" startLine="155" startPosition="27" endLine="156" endPosition="56" />
-    <scopeInfo nodeId="7247071346992929400" fileName="MainNodeChooser.java" startLine="164" startPosition="96" endLine="165" endPosition="144" />
+    <scopeInfo nodeId="7247071346992929400" fileName="MainNodeChooser.java" startLine="164" startPosition="96" endLine="165" endPosition="288" />
     <scopeInfo nodeId="7247071346992929438" fileName="MainNodeChooser.java" startLine="168" startPosition="32" endLine="169" endPosition="44" />
     <scopeInfo nodeId="2178855608171471901" fileName="MainNodeChooser.java" startLine="175" startPosition="80" endLine="176" endPosition="65" />
     <scopeInfo nodeId="2178855608171472397" fileName="MainNodeChooser.java" startLine="179" startPosition="74" endLine="180" endPosition="68" />

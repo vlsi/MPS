@@ -372,6 +372,45 @@ public class TransformationUtil {
     return null;
   }
 
+  public static boolean canMakeReturnStatement(SNode lastStatement) {
+    if (!(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+      return false;
+    }
+
+    SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(lastStatement), "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNode parent = SNodeOperations.getParent(statementList);
+    while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+      SNode blockStatement = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BlockStatement");
+      parent = SNodeOperations.getParent(blockStatement);
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.StatementList")) {
+        SNode bsStatementList = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.StatementList");
+        List<SNode> statements = SLinkOperations.getTargets(bsStatementList, "statement", true);
+        if (ListSequence.fromList(statements).getElement(ListSequence.fromList(statements).count() - 1) == blockStatement) {
+          parent = SNodeOperations.getParent(bsStatementList);
+        }
+      }
+    }
+
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.CatchClause") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.SwitchCase")) {
+      return false;
+    }
+
+    boolean canAdjust = false;
+    SNode returnType = null;
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      SNode methodDeclaration = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      returnType = SLinkOperations.getTarget(methodDeclaration, "returnType", true);
+    } else
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
+      SNode conceptFunction = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction");
+      returnType = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(conceptFunction, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}));
+    }
+    if (returnType != null && !(SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+      canAdjust = true;
+    }
+    return canAdjust;
+  }
+
   public static class QuotationClass_crriw5_a0a0a0 {
     public QuotationClass_crriw5_a0a0a0() {
     }
