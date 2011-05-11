@@ -66,10 +66,10 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1235747312129">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CompactInvokeFunctionExpression" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="81108310549037922">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="81108310549037922">
       <property name="name" nameId="tpck.1169194664001" value="check_ClosureLiteralDataFlow" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="100821637069280483">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="100821637069280483">
       <property name="name" nameId="tpck.1169194664001" value="check_FunctionType" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="5612111951671426599">

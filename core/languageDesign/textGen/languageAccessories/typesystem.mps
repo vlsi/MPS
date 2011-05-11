@@ -27,11 +27,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_CallInnerFunctionOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1234279018939">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1234279018939">
       <property name="name" nameId="tpck.1169194664001" value="check_CallInnerFunctionOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1234529451905">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1234529451905">
       <property name="name" nameId="tpck.1169194664001" value="check_CallPrivateFunction" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236687895620">

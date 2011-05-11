@@ -215,7 +215,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1174648085619" resolveInfo="AbstractRule" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1195214364922">
-      <property name="name" nameId="tpck.1169194664001" value="CheckingRule" />
+      <property name="name" nameId="tpck.1169194664001" value="NonTypesystemRule" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/nontypesystem.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />

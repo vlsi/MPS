@@ -61,7 +61,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_AuxObjectAccessOp" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1719339442171052931">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1719339442171052931">
       <property name="name" nameId="tpck.1169194664001" value="check_UIObject_consistent_belongsTo" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2459884175399838932">
@@ -80,7 +80,7 @@
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="5572604531249544171">
       <property name="name" nameId="tpck.1169194664001" value="fix_IAspectParameterHolder" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="5572604531249544180">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="5572604531249544180">
       <property name="name" nameId="tpck.1169194664001" value="check_IAspectParameterHolder" />
     </node>
   </roots>

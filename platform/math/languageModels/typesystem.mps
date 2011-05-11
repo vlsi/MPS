@@ -16,12 +16,12 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="m9wl" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="epq1" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(java.math@java_stub)" version="-1" />
-  <import index="tpd5" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
+  <import index="tpd5" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1235747425214">
       <property name="name" nameId="tpck.1169194664001" value="IntervalSupertypes" />
@@ -71,7 +71,7 @@
       <property name="name" nameId="tpck.1169194664001" value="vector_vector_replacement_rule" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1238333113144">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1238333113144">
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="highlight_complex_to_real_casts" />
     </node>
@@ -109,7 +109,7 @@
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6389121991274973534">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6389121991274973534">
       <property name="name" nameId="tpck.1169194664001" value="vector_element_must_be_number" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>
@@ -154,7 +154,7 @@
       <property name="isWeak" nameId="tpd4.1175607673137" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3498370411873289205">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3498370411873289205">
       <property name="name" nameId="tpck.1169194664001" value="matrix_element_must_be_number" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>
@@ -179,7 +179,7 @@
       <property name="name" nameId="tpck.1169194664001" value="DimensionUtil" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="964810815943258162">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="964810815943258162">
       <property name="name" nameId="tpck.1169194664001" value="matrix_index_lvalue" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236427996767">
@@ -224,7 +224,7 @@
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7676695779583721427">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7676695779583721427">
       <property name="name" nameId="tpck.1169194664001" value="check_dimensions" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>

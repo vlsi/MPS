@@ -114,7 +114,7 @@
   <unitInfo fileName="MatchStatement.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MatchStatement" />
   <unitInfo fileName="CoerceStatement.java" startLine="13" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CoerceStatement" />
   <unitInfo fileName="InequationPriority.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
-  <unitInfo fileName="CheckingRule.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CheckingRule" />
+  <unitInfo fileName="NonTypesystemRule.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" />
   <unitInfo fileName="SubtypingRule.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.SubtypingRule" />
   <unitInfo fileName="WasSelectedNodeOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation" />
   <unitInfo fileName="CaretPositionOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CaretPositionOperation" />

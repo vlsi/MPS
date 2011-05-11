@@ -117,7 +117,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ActionDataParameterDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1217414699163">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1217414699163">
       <property name="name" nameId="tpck.1169194664001" value="ActionParameterTypeIsNotClassifier" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
     </node>
@@ -129,11 +129,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ToStringParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1227019655262">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1227019655262">
       <property name="name" nameId="tpck.1169194664001" value="HighlightObjectConstructorParamsWithoutToString" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1227032271475">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1227032271475">
       <property name="name" nameId="tpck.1169194664001" value="check_ParametersCount" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups.GroupMembers" />
     </node>
@@ -157,7 +157,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ComponentReference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="RunConfigs.Configuration.Editor" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3452826078639226163">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3452826078639226163">
       <property name="name" nameId="tpck.1169194664001" value="check_executeBlock_returns" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="RunConfigs.Configuration.Execute.Statements" />
     </node>
@@ -173,7 +173,7 @@
       <property name="name" nameId="tpck.1169194664001" value="FixNamingPolicy_property_once" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CheckedName" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1628770029971140714">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1628770029971140714">
       <property name="name" nameId="tpck.1169194664001" value="check_NamingPolicy" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CheckedName" />
     </node>
@@ -272,7 +272,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_Parameter_FunctionParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="RunConfigs.Configuration.Execute.Parametrized" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4923436771431072775">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4923436771431072775">
       <property name="name" nameId="tpck.1169194664001" value="check_CommandClosureLiteral" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3339131993542062578">
@@ -283,7 +283,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_GetPreferencesComponentInProjectOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Preference" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2195473424935456956">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2195473424935456956">
       <property name="name" nameId="tpck.1169194664001" value="check_RunConfigurationEditor" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3273619486685465076">
@@ -296,7 +296,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_DebuggableNode" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6986911548761815246">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6986911548761815246">
       <property name="name" nameId="tpck.1169194664001" value="check_RunConfigurationIcon" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3205675194086619708">
@@ -308,7 +308,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5527296032508935549">
       <property name="name" nameId="tpck.1169194664001" value="typeof_PersistentPropertyDeclaration" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8255351389870627565">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8255351389870627565">
       <property name="name" nameId="tpck.1169194664001" value="check_RunConfigurationCreatesDebugSession" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4089570349960676054">
@@ -333,7 +333,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_KeystrokeCreator" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2450897840534903557">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2450897840534903557">
       <property name="name" nameId="tpck.1169194664001" value="check_OrderConstraints" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
     </node>

@@ -25,7 +25,7 @@
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3570824963050586846">
       <property name="name" nameId="tpck.1169194664001" value="DebuggerTypeIsDebuggerType" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4030433165041852571">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4030433165041852571">
       <property name="name" nameId="tpck.1169194664001" value="check_DebuggerReferenceThrowableIsCaught" />
     </node>
   </roots>

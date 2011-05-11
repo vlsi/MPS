@@ -40,14 +40,14 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1178176661409">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ThisNodeExpression" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1198233312425">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1198233312425">
       <property name="name" nameId="tpck.1169194664001" value="check_ConceptBehavior" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3906442776579556508">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConstraintFunctionParameter_parameterNode" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2990203945683059232">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2990203945683059232">
       <property name="name" nameId="tpck.1169194664001" value="check_ConstraintFunction_ReferentSearchScope_Validator" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
     </node>

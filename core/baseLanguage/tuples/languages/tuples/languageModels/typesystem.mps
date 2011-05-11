@@ -57,16 +57,16 @@
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtype" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1239881381603">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1239881381603">
       <property name="name" nameId="tpck.1169194664001" value="check_NamedTupleType" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="checks" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1240403513227">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1240403513227">
       <property name="name" nameId="tpck.1169194664001" value="check_NamedTupleComponent_final" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="checks" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8197465398807013607">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8197465398807013607">
       <property name="name" nameId="tpck.1169194664001" value="check_TupleComponentIsInScope" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="checks" />
     </node>
@@ -75,7 +75,7 @@
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtype" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7367153454745440810">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7367153454745440810">
       <property name="name" nameId="tpck.1169194664001" value="check_NamedTupleDeclaration_extends" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="checks" />
     </node>

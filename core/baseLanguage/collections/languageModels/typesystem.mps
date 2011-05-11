@@ -409,7 +409,7 @@
       <property name="name" nameId="tpck.1169194664001" value="sorted_set_subtypeOf_set" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1240319956157">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1240319956157">
       <property name="name" nameId="tpck.1169194664001" value="check_container_creator_not_primitive_array" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1240325939754">
@@ -553,7 +553,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_TailListOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="list" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="5192033827214196961">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="5192033827214196961">
       <property name="name" nameId="tpck.1169194664001" value="check_CustomContainerCreator_elementType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="customContainers" />
     </node>

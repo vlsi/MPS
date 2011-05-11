@@ -52,7 +52,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode nonTypesystemRule = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.CheckingRule", null);
+    SNode nonTypesystemRule = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", null);
     SPropertyOperations.set(nonTypesystemRule, "overrides", "" + (SPropertyOperations.getBoolean(node, "overrides")));
     SPropertyOperations.set(nonTypesystemRule, "name", SPropertyOperations.getString(node, "name"));
     SLinkOperations.setTarget(nonTypesystemRule, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true)), true);

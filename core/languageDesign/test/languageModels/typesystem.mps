@@ -25,7 +25,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1211980347427">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AssertMatch" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1217855694003">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1217855694003">
       <property name="name" nameId="tpck.1169194664001" value="CheckTestMethodDataflow" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225984593084">

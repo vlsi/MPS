@@ -28,10 +28,10 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1196866827112">
       <property name="name" nameId="tpck.1169194664001" value="typeof_PropertyAntiquotation" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1202840492692">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1202840492692">
       <property name="name" nameId="tpck.1169194664001" value="check_Antiquotation" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1202840527640">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1202840527640">
       <property name="name" nameId="tpck.1169194664001" value="check_ListAntiquotation" />
     </node>
   </roots>

@@ -6,12 +6,12 @@
   <accessoryModels />
   <generators />
   <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/classes_gen">
+    <stubModelEntry path="${language_descriptor}/classes_gen" include="false">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>
   <runtimeStubModels>
-    <stubModelEntry path="${language_descriptor}/classes_gen">
+    <stubModelEntry path="${language_descriptor}/classes_gen" include="false">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </runtimeStubModels>
@@ -20,7 +20,6 @@
     <dependency reexport="false">73736c50-f124-433b-b789-2828a15a0adc(jetbrains.mps.baseLanguage.collections.trove)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
-    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</usedLanguage>

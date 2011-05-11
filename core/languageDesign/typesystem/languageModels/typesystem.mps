@@ -78,19 +78,19 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_FindSourceBlockParameter" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1195217152344">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1195217152344">
       <property name="name" nameId="tpck.1169194664001" value="check_TypeofExpression" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1195217354263">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1195217354263">
       <property name="name" nameId="tpck.1169194664001" value="check_AbstractEquation" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1195223535553">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1195223535553">
       <property name="name" nameId="tpck.1169194664001" value="check_WhenConcreteStatement" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1196099050518">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1196099050518">
       <property name="name" nameId="tpck.1169194664001" value="check_NodeInferTypeOperation" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1196178213544">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1196178213544">
       <property name="name" nameId="tpck.1169194664001" value="check_MethodCall" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1196960479928">
@@ -99,7 +99,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1201618373412">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ErrorInfoExpression" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1201618417551">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1201618417551">
       <property name="name" nameId="tpck.1169194664001" value="check_ErrorInfoExpression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1202486750493">
@@ -118,25 +118,25 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_WhenConcreteVariableDeclaration" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1206297681151">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1206297681151">
       <property name="name" nameId="tpck.1169194664001" value="check_MethodDeclaration" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1207055628316">
       <property name="name" nameId="tpck.1169194664001" value="typeof_WarningStatement" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1207314759346">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207314759346">
       <property name="name" nameId="tpck.1169194664001" value="check_AbstractCheckingRule" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1207314836437">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207314836437">
       <property name="name" nameId="tpck.1169194664001" value="check_AbstractSubtypingRule" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1207316035496">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207316035496">
       <property name="name" nameId="tpck.1169194664001" value="check_ComparisonRule_ExpectedReturns" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1207316078727">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207316078727">
       <property name="name" nameId="tpck.1169194664001" value="check_SubtypingRule_ExpectedReturns" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1207316363415">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207316363415">
       <property name="name" nameId="tpck.1169194664001" value="check_WhenConcreteStatement_DF" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1210785545106">
@@ -187,7 +187,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1240580117889">
       <property name="name" nameId="tpck.1169194664001" value="typeof_NormalTypeClause" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="5049504262569597078">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="5049504262569597078">
       <property name="name" nameId="tpck.1169194664001" value="check_MessageStatementWithinCheckingRule" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="8124453027370845367">
@@ -196,10 +196,10 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5622704259074446614">
       <property name="name" nameId="tpck.1169194664001" value="typeof_OperationContextExpression" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1035511193819763968">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1035511193819763968">
       <property name="name" nameId="tpck.1169194664001" value="check_TypesystemIntentionWithoutDescription" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6359146168314207367">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6359146168314207367">
       <property name="name" nameId="tpck.1169194664001" value="check_NodeTypeOperation" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="8058965347377019251">
@@ -222,10 +222,10 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1076452857760008244">
       <property name="name" nameId="tpck.1169194664001" value="typeof_WasSelectedNodeOperation" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4258793651770337950">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4258793651770337950">
       <property name="name" nameId="tpck.1169194664001" value="check_AbstractEquation_QuickFix" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4258793651770372643">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4258793651770372643">
       <property name="name" nameId="tpck.1169194664001" value="check_MessageStatement_QuickFix" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="8290446284380616546">

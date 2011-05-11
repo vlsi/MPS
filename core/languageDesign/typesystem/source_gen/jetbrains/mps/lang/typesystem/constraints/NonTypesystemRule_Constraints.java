@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.LanguageAspect;
 
-public class CheckingRule_Constraints extends ConstraintsDataHolder {
-  public CheckingRule_Constraints() {
+public class NonTypesystemRule_Constraints extends ConstraintsDataHolder {
+  public NonTypesystemRule_Constraints() {
   }
 
   public String getAlternativeIcon(SNode node) {
@@ -32,11 +32,11 @@ public class CheckingRule_Constraints extends ConstraintsDataHolder {
   }
 
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.typesystem.structure.CheckingRule";
+    return "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule";
   }
 
   public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.lang.typesystem.structure.CheckingRule";
+    return "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule";
   }
 
   @Override

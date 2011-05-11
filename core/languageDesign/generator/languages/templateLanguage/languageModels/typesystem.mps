@@ -34,7 +34,7 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1178666070052">
       <property name="name" nameId="tpck.1169194664001" value="QueriesUtil" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1195601047105">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1195601047105">
       <property name="name" nameId="tpck.1169194664001" value="check_MappingConfiguration" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1200921388036">
@@ -49,16 +49,16 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_TemplateFunctionParameter_outputNode" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="functionParameter" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1225934347908">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1225934347908">
       <property name="name" nameId="tpck.1169194664001" value="check_PropertyMacro" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226346278934">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226346278934">
       <property name="name" nameId="tpck.1169194664001" value="check_ReferenceMacro" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226346325144">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226346325144">
       <property name="name" nameId="tpck.1169194664001" value="check_NodeMacro" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226664040798">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226664040798">
       <property name="name" nameId="tpck.1169194664001" value="check_WeaveEach_RuleConsequence" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1241017459780">
@@ -89,7 +89,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1510949579267745151">
       <property name="name" nameId="tpck.1169194664001" value="typeof_TemplateCallMacro" />
     </node>
-    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7648411942405144477">
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7648411942405144477">
       <property name="name" nameId="tpck.1169194664001" value="check_LoopMacro" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5005282049925943809">

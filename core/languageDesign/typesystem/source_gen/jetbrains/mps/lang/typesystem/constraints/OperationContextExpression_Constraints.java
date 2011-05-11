@@ -81,6 +81,6 @@ public class OperationContextExpression_Constraints extends ConstraintsDataHolde
   }
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.typesystem.structure.CheckingRule", true, false) != null);
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", true, false) != null);
   }
 }

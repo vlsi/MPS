@@ -5,7 +5,7 @@
   <unitInfo fileName="MessageStatement_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.MessageStatement_Constraints$1" />
   <unitInfo fileName="ConceptTypeClause_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptTypeClause_Constraints$1" />
   <unitInfo fileName="SubtypingRule_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.SubtypingRule_Constraints$1" />
-  <unitInfo fileName="CheckingRule_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.CheckingRule_Constraints$1" />
+  <unitInfo fileName="NonTypesystemRule_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.NonTypesystemRule_Constraints$1" />
   <unitInfo fileName="InequationReplacementRule_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReplacementRule_Constraints$1" />
   <unitInfo fileName="TypesystemQuickFix_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemQuickFix_Constraints$1" />
   <unitInfo fileName="ComparisonRule_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.typesystem.constraints.ComparisonRule_Constraints$1" />
@@ -36,7 +36,7 @@
   <unitInfo fileName="MessageStatement_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.MessageStatement_Constraints" />
   <unitInfo fileName="ConceptTypeClause_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ConceptTypeClause_Constraints" />
   <unitInfo fileName="SubtypingRule_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.SubtypingRule_Constraints" />
-  <unitInfo fileName="CheckingRule_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.CheckingRule_Constraints" />
+  <unitInfo fileName="NonTypesystemRule_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.NonTypesystemRule_Constraints" />
   <unitInfo fileName="InequationReplacementRule_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.InequationReplacementRule_Constraints" />
   <unitInfo fileName="TypesystemQuickFix_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.TypesystemQuickFix_Constraints" />
   <unitInfo fileName="ComparisonRule_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ComparisonRule_Constraints" />
@@ -296,8 +296,8 @@
     <scopeInfo nodeId="1227088585371" fileName="InequationReplacementRule_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="61" />
   </root>
   <root nodeId="1227088611953">
-    <nodeInfo nodeId="1227088613441" fileName="CheckingRule_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227088613159" fileName="CheckingRule_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="61" />
+    <nodeInfo nodeId="1227088613441" fileName="NonTypesystemRule_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227088613159" fileName="NonTypesystemRule_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="61" />
   </root>
   <root nodeId="1227088639814">
     <nodeInfo nodeId="1227088641395" fileName="SubtypingRule_Constraints.java" startLine="83" startPosition="112" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -494,8 +494,8 @@
     <unitInfo nodeId="1998873705041900381" fileName="ListVarScope.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.typesystem.constraints.ListVarScope" />
   </root>
   <root nodeId="5622704259074443414">
-    <nodeInfo nodeId="5622704259074443963" fileName="OperationContextExpression_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5622704259074443416" fileName="OperationContextExpression_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="144" />
+    <nodeInfo nodeId="5622704259074443963" fileName="OperationContextExpression_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5622704259074443416" fileName="OperationContextExpression_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="149" />
   </root>
   <root nodeId="7857223919215948959">
     <nodeInfo nodeId="7857223919215949539" fileName="InequationReference_Constraints.java" startLine="70" startPosition="106" endLine="71" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
