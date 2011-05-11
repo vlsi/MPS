@@ -129,8 +129,13 @@ public class SModelsSubtree {
         rootTreeNode.add(stubsNode);
       }else{
         Enumeration children = stubsNode.children();
+        List<MutableTreeNode> tmpList = new ArrayList<MutableTreeNode>();
         while (children.hasMoreElements()){
-          rootTreeNode.add((MutableTreeNode) children.nextElement());
+          tmpList.add((MutableTreeNode) children.nextElement());
+        }
+
+        for (MutableTreeNode child:tmpList){
+          rootTreeNode.add(child);
         }
       }
     }
