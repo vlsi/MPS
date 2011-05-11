@@ -25,6 +25,7 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" implicit="yes" />
+  <import index="757c" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jebtrains.mps.ide.util.gotoByName(MPS.Classpath/jebtrains.mps.ide.util.gotoByName@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="742486944792820722">
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
@@ -142,7 +143,7 @@
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="742486944792820761">
                   <property name="name" nameId="tpck.1169194664001" value="" />
                   <link role="classifier" roleId="tpee.1170346070688" targetNodeId="k6aj.~SmartChooseByNamePanel" resolveInfo="SmartChooseByNamePanel" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k6aj.~SmartChooseByNamePanel%d&lt;init&gt;(com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel,boolean,com%dintellij%dide%dutil%dgotoByName%dmatchers%dEntityMatcher)" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k6aj.~SmartChooseByNamePanel%d&lt;init&gt;(com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel,boolean,jebtrains%dmps%dide%dutil%dgotoByName%dmatchers%dEntityMatcher)" resolveInfo="SmartChooseByNamePanel" />
                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="742486944792820762">
                     <property name="name" nameId="tpck.1169194664001" value="isShowListForEmptyPattern" />
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="742486944792820763" />
@@ -160,10 +161,10 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="742486944792820731" resolveInfo="myModel" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="742486944792820766" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="742486944792820767">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="j08o.~DefaultMatcherFactory" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j08o.~DefaultMatcherFactory%dcreateIdeaMatcher(com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel)%ccom%dintellij%dide%dutil%dgotoByName%dmatchers%dEntityMatcher" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="742486944792820768">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="251586092485061459">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j08o.~DefaultMatcherFactory%dcreateIdeaMatcher(com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel)%cjebtrains%dmps%dide%dutil%dgotoByName%dmatchers%dEntityMatcher" resolveInfo="createIdeaMatcher" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="j08o.~DefaultMatcherFactory" resolveInfo="DefaultMatcherFactory" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="251586092485061460">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="742486944792820731" resolveInfo="myModel" />
                     </node>
                   </node>
@@ -178,7 +179,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="742486944792820725" resolveInfo="myPanel" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="742486944792820772">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bsou.~ChooseByNameBaseMPS%dinvoke(com%dintellij%dide%dutil%dgotoByName%dChooseByNamePopupComponent$Callback,com%dintellij%dopenapi%dapplication%dModalityState,boolean)%cvoid" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="757c.~ChooseByNameBaseMPS%dinvoke(com%dintellij%dide%dutil%dgotoByName%dChooseByNamePopupComponent$Callback,com%dintellij%dopenapi%dapplication%dModalityState,boolean)%cvoid" resolveInfo="invoke" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="742486944792820773">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="742486944792820774">
                   <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="742486944792820775">
@@ -310,7 +311,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="742486944792820725" resolveInfo="myPanel" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="742486944792820824">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bsou.~ChooseByNameBaseMPS%dgetChosenElement()%cjava%dlang%dObject" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="757c.~ChooseByNameBaseMPS%dgetChosenElement()%cjava%dlang%dObject" resolveInfo="getChosenElement" />
                 </node>
               </node>
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="742486944792820825">
