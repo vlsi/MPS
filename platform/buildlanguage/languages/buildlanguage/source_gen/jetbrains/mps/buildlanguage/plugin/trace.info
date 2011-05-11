@@ -26,7 +26,7 @@
   <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="59" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration" />
   <root nodeId="1225567253971">
     <nodeInfo nodeId="1225567253972" fileName="BuildScriptRunner.java" startLine="23" startPosition="51" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
-    <nodeInfo nodeId="1447676209062946461" fileName="BuildScriptRunner.java" startLine="26" startPosition="66" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="251586092484904411" fileName="BuildScriptRunner.java" startLine="26" startPosition="66" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1225567254084" fileName="BuildScriptRunner.java" startLine="27" startPosition="16" endLine="28" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2444892561513738612" fileName="BuildScriptRunner.java" startLine="31" startPosition="50" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225567253979" fileName="BuildScriptRunner.java" startLine="32" startPosition="44" endLine="33" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
