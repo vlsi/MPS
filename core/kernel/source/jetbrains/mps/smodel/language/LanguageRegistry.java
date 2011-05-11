@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,12 +37,14 @@ public class LanguageRegistry implements ApplicationComponent {
   private Map<Language, String> myLanguageToNamespace;
   private Map<String, LanguageRuntime> myLanguages;
 
+  private final ConceptRegistry myConceptRegistry;
+
   public static LanguageRegistry getInstance() {
     return ApplicationManager.getApplication().getComponent(LanguageRegistry.class);
   }
 
-  public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager) {
-
+  public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry) {
+    myConceptRegistry = registry;
   }
 
   @Override
@@ -63,9 +66,10 @@ public class LanguageRegistry implements ApplicationComponent {
               // avoid duplicates in registry
               if (!myLanguages.containsKey(namespace)) {
                 LanguageRuntime runtime = createRuntime(l, true);
-                if(runtime != null) {
+                if (runtime != null) {
                   myLanguages.put(namespace, runtime);
                   myLanguageToNamespace.put(l, namespace);
+                  myConceptRegistry.loadLanguages(Collections.singleton(runtime));
                 }
               }
             }
@@ -84,8 +88,12 @@ public class LanguageRegistry implements ApplicationComponent {
             if (module instanceof Language) {
               Language l = (Language) module;
               String namespace = myLanguageToNamespace.get(l);
-              if (namespace != null && myLanguages.remove(namespace) != null) {
-                myLanguageToNamespace.remove(l);
+              if (namespace != null) {
+                LanguageRuntime runtime = myLanguages.remove(namespace);
+                if (runtime != null) {
+                  myLanguageToNamespace.remove(l);
+                  myConceptRegistry.unloadLanguages(Collections.singleton(runtime), false);
+                }
               }
             }
           }
@@ -104,6 +112,7 @@ public class LanguageRegistry implements ApplicationComponent {
   public void reloadLanguages() {
     ModelAccess.assertLegalWrite();
 
+    myConceptRegistry.unloadLanguages(myLanguages.values(), true);
     myLanguages.clear();
     Set<Language> existing = new HashSet<Language>(myLanguageToNamespace.keySet());
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
@@ -119,6 +128,8 @@ public class LanguageRegistry implements ApplicationComponent {
     for (Language l : existing) {
       myLanguageToNamespace.remove(l);
     }
+
+    myConceptRegistry.loadLanguages(myLanguages.values());
   }
 
   private static LanguageRuntime createRuntime(Language l, boolean tryToLoad) {
@@ -127,9 +138,9 @@ public class LanguageRegistry implements ApplicationComponent {
       String className = l.getModuleFqName() + ".Language";
 
       // TODO FIXME hack to avoid errors in LOG
-      if(tryToLoad) {
+      if (tryToLoad) {
         ClassLoader cl = ClassLoaderManager.getInstance().getClassLoaderFor(l, false);
-        if(cl == null) {
+        if (cl == null) {
           return null;
         }
       }
@@ -151,6 +162,7 @@ public class LanguageRegistry implements ApplicationComponent {
   public void disposeComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        myConceptRegistry.unloadLanguages(myLanguages.values(), true);
         myLanguageToNamespace.clear();
         myLanguages.clear();
       }
@@ -185,7 +197,7 @@ public class LanguageRegistry implements ApplicationComponent {
 
   @Nullable
   public LanguageRuntime getLanguage(SNode node) {
-    if(node == null) {
+    if (node == null) {
       return null;
     }
 
@@ -193,7 +205,6 @@ public class LanguageRegistry implements ApplicationComponent {
     return getLanguage(namespace);
   }
 
-  @Deprecated
   public LanguageRuntime getLanguage(Language language) {
     return getLanguage(language.getModuleFqName());
   }

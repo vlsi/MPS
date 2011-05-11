@@ -16,14 +16,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.ide.findusages.FindersManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_7991477654791680147(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -84,9 +84,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7991477654791693978(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = _context.getOriginalInputModel().getModelDescriptor().getModule();
-    assert module instanceof Language;
-    return FindersManager.getDescriptorClassName(module.getModuleReference());
+    SNode module = SModelOperations.getModuleStub(_context.getOriginalInputModel());
+    assert SNodeOperations.isInstanceOf(module, "jetbrains.mps.lang.project.structure.Language");
+    return "FindUsagesDescriptor";
   }
 
   public static Object referenceMacro_GetReferent_7991477654791738442(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -191,6 +191,10 @@ public class QueriesGenerated {
         return SPropertyOperations.getString(it, "name");
       }
     }, true);
+  }
+
+  public static TemplateModel getDescriptor(TemplateModule module) {
+    return new TemplateModelImpl(module);
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a0m(Object a, Object b) {

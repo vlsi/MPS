@@ -5,7 +5,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="main" generatorUID="jetbrains.mps.lang.descriptor#9020561928507175817" uuid="3ac18869-0828-4401-abad-822a47bf83f1">
+    <generator name="main" generatorUID="jetbrains.mps.lang.descriptor#9020561928507175817" uuid="3ac18869-0828-4401-abad-822a47bf83f1" generate-templates="true">
       <models>
         <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.lang.descriptor.generator.template" />
       </models>

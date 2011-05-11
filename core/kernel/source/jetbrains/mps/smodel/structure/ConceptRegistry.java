@@ -2,17 +2,15 @@ package jetbrains.mps.smodel.structure;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import gnu.trove.THashMap;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import static com.google.common.collect.Maps.newHashMap;
 
 public class ConceptRegistry implements ApplicationComponent {
   private static final DescriptorProvider<StructureDescriptor> INTERPRETED_STRUCTURE = new InterpretedStructureProvider();
@@ -34,14 +32,6 @@ public class ConceptRegistry implements ApplicationComponent {
   private final Object lock = new Object();
 
   public ConceptRegistry(ClassLoaderManager classLoaderManager) {
-    classLoaderManager.addReloadHandler(new ReloadAdapter() {
-      @Override
-      public void unload() {
-        // todo: clear only language and it descendents
-//        System.out.println("Concept in concept registry count on class reload: " + descriptors.size());
-        descriptors.clear();
-      }
-    });
   }
 
   public static ConceptRegistry getInstance() {
@@ -56,12 +46,10 @@ public class ConceptRegistry implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    // ?
   }
 
   @Override
   public void disposeComponent() {
-    // ?
   }
 
   public ConceptDescriptor getConceptDescriptor(String fqName) {
@@ -86,5 +74,14 @@ public class ConceptRegistry implements ApplicationComponent {
 
   public ConceptDescriptor getConceptDescriptor(SNode node) {
     return getConceptDescriptor(NameUtil.nodeFQName(node));
+  }
+
+  public void loadLanguages(Iterable<LanguageRuntime> languages) {
+    ModelAccess.assertLegalWrite();
+
+  }
+
+  public void unloadLanguages(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+    descriptors.clear();
   }
 }

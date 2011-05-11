@@ -80,7 +80,7 @@ public class TypeChecker implements ApplicationComponent {
 
   private static final boolean useOldTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_OLD_TYPESYSTEM));
 
-  public TypeChecker(ClassLoaderManager manager) {
+  public TypeChecker(ClassLoaderManager manager, LanguageRegistry languageRegistry) {
     myClassLoaderManager = manager;
     myRuntimeSupport = new RuntimeSupportNew(this);
     mySubtypingManager = new SubTypingManagerNew(this);
@@ -88,6 +88,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void initComponent() {
+    // TODO listen language registry instead of class loader
     myClassLoaderManager.addReloadHandler(myReloadHandler);
     loadAllLanguages();
   }

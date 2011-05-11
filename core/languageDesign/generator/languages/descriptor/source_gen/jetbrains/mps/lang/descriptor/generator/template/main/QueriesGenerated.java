@@ -38,6 +38,8 @@ import java.util.Collections;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_8780540425167326385(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -70,6 +72,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5828571963818937562(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace") + ".typesystem.TypesystemDescriptor";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2838795720286867776(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace") + ".findUsages.FindUsagesDescriptor";
   }
 
   public static Object propertyMacro_GetPropertyValue_1820665478710840122(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -156,6 +162,24 @@ public class QueriesGenerated {
       return false;
     }
     return ListSequence.fromList(SModelOperations.getRoots(m, null)).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_2838795720286867781(final IOperationContext operationContext, final IfMacroContext _context) {
+    Language l = MPSModuleRepository.getInstance().getLanguage(ModuleReference.fromString(Module_Behavior.call_getModuleReference_9020561928507315628(SLinkOperations.getTarget(_context.getNode(), "language", true))));
+    if (l == null) {
+      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
+      return false;
+    }
+    SModelDescriptor ts = LanguageAspect.FIND_USAGES.get(l);
+    if (ts == null) {
+      return false;
+    }
+    SModel m = ts.getSModel();
+    if (m == null) {
+      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + ts.getLongName());
+      return false;
+    }
+    return ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_5102832340571716533(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -249,7 +273,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0sb(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0ub(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -301,7 +325,11 @@ public class QueriesGenerated {
     return SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Language");
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0sb(Object a, Object b) {
+  public static TemplateModel getDescriptor(TemplateModule module) {
+    return new TemplateModelImpl(module);
+  }
+
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0ub(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
