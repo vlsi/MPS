@@ -5500,8 +5500,8 @@
   <root nodeId="5499146221536151101">
     <nodeInfo nodeId="5499146221536151127" fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="16" startPosition="34" endLine="17" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5499146221536151106" fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="20" startPosition="35" endLine="21" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5499146221536151112" fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="21" startPosition="119" endLine="22" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5499146221536151118" fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="22" startPosition="188" endLine="23" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5499146221536151112" fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="21" startPosition="119" endLine="22" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5499146221536151118" fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="22" startPosition="228" endLine="23" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="5499146221536151126" fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="16" startPosition="34" endLine="17" endPosition="51" />
     <scopeInfo nodeId="5499146221536151105" fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="20" startPosition="35" endLine="23" endPosition="179">
       <varInfo nodeId="5499146221536151107" varName="instance" />
