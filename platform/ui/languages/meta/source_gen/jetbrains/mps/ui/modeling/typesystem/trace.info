@@ -11,12 +11,12 @@
   <unitInfo fileName="typeof_PropertyValue_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_PropertyValue_InferenceRule" />
   <unitInfo fileName="typeof_ThisUIObject_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_ThisUIObject_InferenceRule" />
   <unitInfo fileName="typeof_ExpressionWithUnit_InferenceRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_ExpressionWithUnit_InferenceRule" />
-  <unitInfo fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.check_UIObject_consistent_belongsTo_NonTypesystemRule" />
-  <unitInfo fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.check_IAspectParameterHolder_NonTypesystemRule" />
+  <unitInfo fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.check_UIObject_consistent_belongsTo_CheckingRule" />
+  <unitInfo fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.check_IAspectParameterHolder_CheckingRule" />
   <unitInfo fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="45" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_LayoutConstraintExpression_InferenceRule$QuotationClass_vm1bpd_a0a0a0" />
   <unitInfo fileName="typeof_ContextUIObjectParam_InferenceRule.java" startLine="20" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_ContextUIObjectParam_InferenceRule" />
   <unitInfo fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_LayoutConstraintExpression_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_PropertyChangeHandlerParam_InferenceRule.java" startLine="46" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_PropertyChangeHandlerParam_InferenceRule$QuotationClass_eijps6_a0a0a0" />
   <unitInfo fileName="typeof_EventHandlerParam_InferenceRule.java" startLine="52" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_EventHandlerParam_InferenceRule$QuotationClass_3reh76_a0a2a0" />
   <unitInfo fileName="typeof_PropertyChangeHandlerParam_InferenceRule.java" startLine="19" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_PropertyChangeHandlerParam_InferenceRule" />
@@ -38,14 +38,14 @@
     <scopeInfo nodeId="1412244996131808500" fileName="typeof_AuxObjectAccessOp_InferenceRule.java" startLine="18" startPosition="115" endLine="23" endPosition="5" />
   </root>
   <root nodeId="1719339442171052931">
-    <nodeInfo nodeId="1719339442171055341" fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="22" startPosition="116" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1719339442171055290" fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="25" startPosition="158" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1719339442171055290" fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="26" startPosition="60" endLine="27" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1719339442171055290" fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="24" startPosition="88" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1719339442171054977" fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="23" startPosition="77" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1719339442171055290" fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="25" startPosition="158" endLine="27" endPosition="235" />
-    <scopeInfo nodeId="1719339442171054979" fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="24" startPosition="88" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="1719339442171052932" fileName="check_UIObject_consistent_belongsTo_NonTypesystemRule.java" startLine="22" startPosition="116" endLine="29" endPosition="5">
+    <nodeInfo nodeId="1719339442171055341" fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="22" startPosition="116" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1719339442171055290" fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="25" startPosition="158" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1719339442171055290" fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="26" startPosition="60" endLine="27" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1719339442171055290" fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="24" startPosition="88" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1719339442171054977" fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="23" startPosition="77" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1719339442171055290" fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="25" startPosition="158" endLine="27" endPosition="235" />
+    <scopeInfo nodeId="1719339442171054979" fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="24" startPosition="88" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="1719339442171052932" fileName="check_UIObject_consistent_belongsTo_CheckingRule.java" startLine="22" startPosition="116" endLine="29" endPosition="5">
       <varInfo nodeId="1719339442171055342" varName="mbt" />
     </scopeInfo>
   </root>
@@ -113,16 +113,16 @@
     <scopeInfo nodeId="5572604531249544173" fileName="fix_IAspectParameterHolder_QuickFix.java" startLine="12" startPosition="35" endLine="12" endPosition="35" />
   </root>
   <root nodeId="5572604531249544180">
-    <nodeInfo nodeId="5572604531249544259" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="25" startPosition="37" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5572604531249544236" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="28" startPosition="21" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5572604531249544236" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="29" startPosition="58" endLine="30" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5572604531249544257" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="24" startPosition="373" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5572604531249544236" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="23" startPosition="116" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="5572604531249544258" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="25" startPosition="37" endLine="26" endPosition="65" />
-    <scopeInfo nodeId="5572604531249544236" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="28" startPosition="21" endLine="30" endPosition="234" />
-    <scopeInfo nodeId="5572604531249544257" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="24" startPosition="373" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5572604531249544181" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="23" startPosition="116" endLine="31" endPosition="5" />
-    <unitInfo nodeId="5572604531249544257" fileName="check_IAspectParameterHolder_NonTypesystemRule.java" startLine="24" startPosition="346" endLine="28" endPosition="5" unitName="jetbrains.mps.ui.modeling.typesystem.check_IAspectParameterHolder_NonTypesystemRule$1" />
+    <nodeInfo nodeId="5572604531249544259" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="25" startPosition="37" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5572604531249544236" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="28" startPosition="21" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5572604531249544236" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="29" startPosition="58" endLine="30" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5572604531249544257" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="24" startPosition="373" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5572604531249544236" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="23" startPosition="116" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="5572604531249544258" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="25" startPosition="37" endLine="26" endPosition="65" />
+    <scopeInfo nodeId="5572604531249544236" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="28" startPosition="21" endLine="30" endPosition="234" />
+    <scopeInfo nodeId="5572604531249544257" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="24" startPosition="373" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5572604531249544181" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="23" startPosition="116" endLine="31" endPosition="5" />
+    <unitInfo nodeId="5572604531249544257" fileName="check_IAspectParameterHolder_CheckingRule.java" startLine="24" startPosition="346" endLine="28" endPosition="5" unitName="jetbrains.mps.ui.modeling.typesystem.check_IAspectParameterHolder_CheckingRule$1" />
   </root>
   <root nodeId="5703963167136660808">
     <nodeInfo nodeId="5703963167136662737" fileName="typeof_EventProducerParam_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
