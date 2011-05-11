@@ -17,6 +17,7 @@ import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.ChangeProvider;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.vcs.VcsException;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.GeneratorManager;
@@ -127,15 +128,12 @@ public class MPSVcsManager implements ProjectComponent {
     }
 
     public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
-      //todo
-/*
       for (SModelDescriptor smodelDescriptor : inputModels) {
-        if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
-          ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
+        if (smodelDescriptor instanceof EditableSModelDescriptor && ((DefaultSModelDescriptor) smodelDescriptor).getSource().needsReloading()) {
+          ((DefaultSModelDescriptor) smodelDescriptor).getSource().reloadFromDisk();
           MPSVcsManager.LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }
-*/
     }
 
     public void modelsGenerated(List<SModelDescriptor> models, boolean success) {

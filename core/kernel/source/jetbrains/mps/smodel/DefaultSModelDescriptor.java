@@ -333,6 +333,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //----------------------
 
+  @Deprecated
   public IFile getModelFile() {
     return ((RegularModelDataSource) getSource()).getFile();
   }

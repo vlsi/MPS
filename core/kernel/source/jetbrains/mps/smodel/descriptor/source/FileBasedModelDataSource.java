@@ -15,9 +15,21 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 public abstract class FileBasedModelDataSource implements ModelDataSource {
+  private DefaultSModelDescriptor myDescriptor = null;
+
+  public DefaultSModelDescriptor getDescriptor() {
+    return myDescriptor;
+  }
+
+  public void setDescriptor(DefaultSModelDescriptor d) {
+    assert myDescriptor == null;
+    myDescriptor = d;
+  }
+
   public abstract boolean containFile(IFile file);
 
   public abstract void reload();

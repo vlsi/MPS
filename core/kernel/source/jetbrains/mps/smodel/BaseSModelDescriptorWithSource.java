@@ -30,7 +30,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     mySource.startListening();
   }
 
-  protected ModelDataSource getSource(){
+  public ModelDataSource getSource(){
     return mySource;
   }
 

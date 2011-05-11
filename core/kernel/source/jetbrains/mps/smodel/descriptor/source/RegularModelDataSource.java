@@ -31,19 +31,9 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   private final IFile myFile;
   private long myDiskTimestamp = -1;
-  private DefaultSModelDescriptor myDescriptor = null;
 
   public RegularModelDataSource(@NotNull IFile file) {
     myFile = file;
-  }
-
-  public DefaultSModelDescriptor getDescriptor() {
-    return myDescriptor;
-  }
-
-  public void setDescriptor(DefaultSModelDescriptor d) {
-    assert myDescriptor == null;
-    myDescriptor = d;
   }
 
   @Deprecated  //todo remove
@@ -63,14 +53,14 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   public void reload() {
     if (!needsReloading()) return;
 
-    reloadfromdisk / orsafe
+    reloadFromDisk();
     updateDiskTimestamp();
     updateModelModified();
   }
 
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
-      LOG.warning("Model file " + myDescriptor.getSModel().getSModelFqName() + " was modified externally!\n" +
+      LOG.warning("Model file " + getDescriptor().getSModel().getSModelFqName() + " was modified externally!\n" +
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
       return false;
@@ -89,7 +79,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   }
 
   private void updateModelModified() {
-    myDescriptor.setLastModified(myDiskTimestamp);
+    getDescriptor().setLastModified(myDiskTimestamp);
   }
 
   private void updateDiskTimestamp() {
@@ -101,13 +91,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile.lastModified();
   }
 
-  public void reloadFromDiskSafe() {
-    if (myDescriptor.isChanged()) {
-      resolveDiskConflict();
-    } else {
-      reloadFromDisk();
-    }
-  }
 
   /**
    * This method should be called either in EDT, inside WriteAction or in any other thread
@@ -116,23 +99,23 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     ModelAccess.assertLegalWrite();
 
     if (myFile == null || !myFile.exists()) {
-      SModelRepository.getInstance().deleteModel(myDescriptor);
+      SModelRepository.getInstance().deleteModel(getDescriptor());
       return;
     }
 
-    myDescriptor.reload();
+    getDescriptor().reload();
     LOG.assertLog(!needsReloading());
   }
 
   public void resolveDiskConflict() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myFile, myDescriptor.getSModel());
+        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myFile, getDescriptor().getSModel());
         if (needSave) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               updateDiskTimestamp();
-              myDescriptor.save();
+              getDescriptor().save();
             }
           });
         } else {

@@ -19,7 +19,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
-import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
@@ -31,7 +30,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import org.junit.Assert;
@@ -61,7 +59,7 @@ public class DiskMemoryConflictsTest {
   private Project myProject;
   private Solution myModule;
   private SNode myNodeBackup;
-  private EditableSModelDescriptor myModelDescriptor;
+  private DefaultSModelDescriptor myModelDescriptor;
   private static final String FIELD_DEFAULT_NAME = "theField";
   private static final String FIELD_NAME_IN_FILE = "theFieldInFile";
   private static final String FIELD_NAME_IN_MODEL = "theFieldInModel";
@@ -77,10 +75,9 @@ public class DiskMemoryConflictsTest {
         try {
           myProject = project.getProject();
           ApplicationManager.getApplication().getComponent(PersistenceSettings.class).setMaxPersistenceVersion();
-          myModelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
+          myModelDescriptor = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
           myModule = (Solution) myModelDescriptor.getModule();
           ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
             public void run() {
               myNodeBackup = CopyUtil.copyAndPreserveId(myModelDescriptor.getSModel().rootsIterator().next());
             }
@@ -118,7 +115,6 @@ public class DiskMemoryConflictsTest {
   private String processFieldNameInModel(final String nameToWrite) {
     final String[] result = new String[1];
     ModelAccess.instance().runCommandInEDT(new Runnable() {
-      @Override
       public void run() {
         if (SModelRepository.getInstance().getModelDescriptor(myModelDescriptor.getSModelReference()) != null) {
           try {
@@ -255,7 +251,11 @@ public class DiskMemoryConflictsTest {
       // reload conflict
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
-          myModelDescriptor.reloadFromDiskSafe();
+          if (myModelDescriptor.isChanged()) {
+            myModelDescriptor.getSource().resolveDiskConflict();
+          } else {
+            myModelDescriptor.getSource().reloadFromDisk();
+          }
         }
       });
     }
@@ -263,8 +263,8 @@ public class DiskMemoryConflictsTest {
     ModelAccess.instance().flushEventQueue();
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
         public void run() {
+
         }
       });
     } catch (InterruptedException e) {
@@ -302,17 +302,15 @@ public class DiskMemoryConflictsTest {
 
       refreshVfs();
       ModelAccess.instance().runWriteAction(new Runnable() {
-        @Override
         public void run() {
-          myModelDescriptor.reloadFromDisk();
+          myModelDescriptor.getSource().reloadFromDisk();
         }
       });
     } else {
       // Restore model
       ModelAccess.instance().runCommandInEDT(new Runnable() {
-        @Override
         public void run() {
-          myModelDescriptor = myModule.createModel(MODEL_REFERENCE.getSModelFqName(), myModule.getSModelRoots().get(0));
+          myModelDescriptor = ((DefaultSModelDescriptor) myModule.createModel(MODEL_REFERENCE.getSModelFqName(), myModule.getSModelRoots().get(0)));
           myModelDescriptor.getSModel().addRoot(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }

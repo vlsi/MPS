@@ -15,24 +15,44 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.vfs.IFile;
 
-public interface ModelDataSource {
-  void startListening();
+import java.util.Set;
 
-  void stopListening();
+public class StubModelDataSource extends FileBasedModelDataSource{
+  private Set<IFile> myFiles = new THashSet<IFile>();
 
-  void setDescriptor(DefaultSModelDescriptor d);
+  public boolean containFile(IFile file) {
+    return myFiles.contains(file);
+  }
 
-  DefaultSModelDescriptor getDescriptor();
+  public void reload() {
 
-  //------todo try to get rid of
+  }
 
-  boolean checkAndResolveConflictOnSave();
+  public void setDescriptor(DefaultSModelDescriptor d) {
 
-  boolean needsReloading();
+  }
 
-  void reloadFromDisk();
+  public DefaultSModelDescriptor getDescriptor() {
+    return null;
+  }
 
-  void resolveDiskConflict();
+  public boolean checkAndResolveConflictOnSave() {
+    return false;
+  }
+
+  public boolean needsReloading() {
+    return false;
+  }
+
+  public void reloadFromDisk() {
+
+  }
+
+  public void resolveDiskConflict() {
+
+  }
 }
