@@ -11,9 +11,9 @@
   <unitInfo fileName="typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule$QuotationClass_oa0aia_a0a1a0" />
   <unitInfo fileName="typeof_NodeSetupFunction_NewNode_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.typeof_NodeSetupFunction_NewNode_InferenceRule$QuotationClass_m8wzz3_a0a2a0" />
   <unitInfo fileName="typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule$QuotationClass_c12rs2_a0a2a0" />
-  <unitInfo fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.check_ConceptSubstitutePart_NonTypesystemRule" />
+  <unitInfo fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="20" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.check_ConceptSubstitutePart_CheckingRule" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_parameterObject_InferenceRule.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_parameterObject_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_InferenceRule" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.actions.typesystem.typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule" />
@@ -102,16 +102,16 @@
     </scopeInfo>
   </root>
   <root nodeId="1197895626287">
-    <nodeInfo nodeId="1197895958593" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="25" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197895975949" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="25" startPosition="144" endLine="26" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197895921829" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="26" startPosition="93" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="30" startPosition="60" endLine="31" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="28" startPosition="101" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197896004428" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="27" startPosition="82" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="31" endPosition="312" />
-    <scopeInfo nodeId="1197896004429" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="28" startPosition="101" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="1197895626288" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="33" endPosition="5">
+    <nodeInfo nodeId="1197895958593" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="24" startPosition="124" endLine="25" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197895975949" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="25" startPosition="144" endLine="26" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197895921829" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="26" startPosition="93" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="29" startPosition="7" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="30" startPosition="60" endLine="31" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="28" startPosition="101" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1197896004428" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="27" startPosition="82" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="29" startPosition="7" endLine="31" endPosition="312" />
+    <scopeInfo nodeId="1197896004429" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="28" startPosition="101" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="1197895626288" fileName="check_ConceptSubstitutePart_CheckingRule.java" startLine="24" startPosition="124" endLine="33" endPosition="5">
       <varInfo nodeId="1197895921830" varName="conceptToAdd" />
       <varInfo nodeId="1197895958594" varName="builder" />
       <varInfo nodeId="1197895975950" varName="substituteConcept" />
