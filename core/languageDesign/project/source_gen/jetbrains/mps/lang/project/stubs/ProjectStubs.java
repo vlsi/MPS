@@ -51,17 +51,6 @@ public class ProjectStubs extends BaseStubModelRootManager {
   }
 
   protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
-    IFile file = ((BaseStubModelDescriptor.FileStubSource) source).getFile();
-    final ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
-    new ProjectStructureBuilder(descriptor, file, model) {
-      public Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor d) {
-        return Sequence.fromIterable(((Iterable<ModelRoot>) d.getModelRoots())).<SModelReference>translate(new ITranslator2<ModelRoot, SModelReference>() {
-          public Iterable<SModelReference> translate(ModelRoot it) {
-            return ProjectStubs.this.loadModels(it);
-          }
-        });
-      }
-    }.convert();
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
