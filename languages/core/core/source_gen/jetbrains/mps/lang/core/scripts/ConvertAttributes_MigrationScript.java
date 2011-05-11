@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
   private static Logger LOG = Logger.getLogger(ConvertAttributes_MigrationScript.class);
@@ -34,7 +34,7 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         String role = SNodeOperations.getContainingLinkRole(node);
-        return role != null && role.contains("$") && SNodeOperations.getContainingLinkDeclaration(node) != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute");
+        return role != null && role.contains("$") && !(role.equals("_$attribute"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -71,6 +71,7 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
           }
         } else {
           LOG.warning("Link looks similar to attribute: " + role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]");
+          return;
         }
         node.setRoleInParent("_$attribute");
         // doesn't want to save all models without this: 
@@ -172,6 +173,33 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
         SNode attr = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.AttributeAccess", null);
         SLinkOperations.setTarget(attr, "qualifier", SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", null), true);
         SNodeOperations.replaceWithAnother(node, attr);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Rename _$attribute role to smodelAttribute";
+      }
+
+      public String getAdditionalInfo() {
+        return "Rename _$attribute role to smodelAttribute";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.core.structure.Attribute";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        String role = SNodeOperations.getContainingLinkRole(node);
+        return role != null && role.equals("_$attribute");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        node.setRoleInParent("_$attribute");
+        SModelRepository.getInstance().markChanged(SNodeOperations.getModel(node));
       }
 
       public boolean isShowAsIntention() {
