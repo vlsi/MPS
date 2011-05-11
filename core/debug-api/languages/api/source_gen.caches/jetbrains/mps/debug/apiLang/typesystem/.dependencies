@@ -14,15 +14,13 @@
   </dependency>
   <dependency className="jetbrains.mps.debug.apiLang.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerReference_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.debug.apiLang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.debug.apiLang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.debug.apiLang.typesystem.typeof_CreateBreakpointOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.debug.apiLang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.apiLang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" file="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.debug.apiLang.typesystem.check_DebuggerReferenceThrowableIsCaught_CheckingRule" file="check_DebuggerReferenceThrowableIsCaught_CheckingRule.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -38,7 +36,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.debug.apiLang.typesystem.typeof_CreateBreakpointOperation_InferenceRule" file="typeof_CreateBreakpointOperation_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
