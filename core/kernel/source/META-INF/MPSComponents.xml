@@ -366,7 +366,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.execution.configurations.RunConfigurationsStateManager</implementation-class>
+      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager</implementation-class>
     </component>
 
     <component>

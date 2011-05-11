@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider" file="LegacyBeforeTaskProvider.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.NoSuchMethodException" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.ClassCastException" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="com.intellij.execution.BeforeRunTaskProvider" />
+    <classNode extendsClassName="com.intellij.execution.BeforeRunTask" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner" file="MPSProgramRunner.java">
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunProfile" />
+    <classNode extendsClassName="com.intellij.execution.runners.DefaultProgramRunner" />
+  </dependency>
+</dependenciesRoot>
+

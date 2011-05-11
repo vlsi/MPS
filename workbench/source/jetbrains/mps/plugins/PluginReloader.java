@@ -18,7 +18,7 @@ package jetbrains.mps.plugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.execution.configurations.RunConfigurationsStateManager;
+import jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -65,7 +65,7 @@ public class PluginReloader implements ApplicationComponent {
       return;
     }
     for (Project p : myProjectManager.getOpenProjects()) {
-      p.getComponent(RunConfigurationsStateManager.class).initRunConfigurations();
+      p.getComponent(jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager.class).initRunConfigurations();
     }
   }
 

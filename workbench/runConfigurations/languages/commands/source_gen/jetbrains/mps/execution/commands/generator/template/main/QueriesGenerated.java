@@ -663,7 +663,7 @@ public class QueriesGenerated {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_3;
-          quotedNode1_8.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.commands.runtime(MPS.Classpath/jetbrains.mps.execution.commands.runtime@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.append(java.lang.String):jetbrains.mps.execution.commands.runtime.ProcessHandlerBuilder")));
+          quotedNode1_8.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.commands.runtime(MPS.Classpath/jetbrains.mps.execution.commands.runtime@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.append(java.lang.String):jetbrains.mps.execution.api.commands.ProcessHandlerBuilder")));
           {
             quotedNode_5 = (SNode) parameter_11;
             SNode quotedNode1_9;
@@ -753,7 +753,7 @@ public class QueriesGenerated {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_3;
-          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.commands.runtime(MPS.Classpath/jetbrains.mps.execution.commands.runtime@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.appendKey(java.lang.String,java.lang.String...):jetbrains.mps.execution.commands.runtime.ProcessHandlerBuilder")));
+          quotedNode1_9.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.commands.runtime(MPS.Classpath/jetbrains.mps.execution.commands.runtime@java_stub)"), SNodeId.fromString("~ProcessHandlerBuilder.appendKey(java.lang.String,java.lang.String...):jetbrains.mps.execution.api.commands.ProcessHandlerBuilder")));
           {
             quotedNode_5 = (SNode) parameter_13;
             SNode quotedNode1_10;

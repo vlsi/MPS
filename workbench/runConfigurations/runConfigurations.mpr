@@ -24,17 +24,20 @@
       <modulePath path="${project}/languages/configurations/configurations.mpl" />
       <modulePath path="${project}/languages/demo/demo.mpl" folder="usages" />
       <modulePath path="${project}/languages/settings/settings.mpl" folder="" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.configurations.lib2/jetbrains.mps.execution.configurations.lib.msd" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.runtime/jetbrains.mps.execution.runtime.msd" folder="" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="runtime" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.configurations.lib2/jetbrains.mps.execution.configurations.lib.msd" folder="library" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="usages" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="library" />
     </projectModules>
     <genConfs>
+      <genConfModule name="api" moduleRef="jetbrains.mps.execution.api" />
       <genConfModule name="commands" moduleRef="jetbrains.mps.execution.commands" />
       <genConfModule name="common" moduleRef="jetbrains.mps.execution.common" />
       <genConfModule name="configurations" moduleRef="jetbrains.mps.execution.configurations" />
       <genConfModule name="configurations.lib" moduleRef="jetbrains.mps.execution.configurations.lib" />
       <genConfModule name="demo" moduleRef="jetbrains.mps.execution.demo" />
+      <genConfModule name="impl" moduleRef="jetbrains.mps.execution.impl" />
       <genConfModule name="lib" moduleRef="jetbrains.mps.execution.lib" />
       <genConfModule name="runConfigurations" moduleRef="jetbrains.mps.baseLanguage.runConfigurations" />
       <genConfModule name="runtime" moduleRef="jetbrains.mps.baseLanguage.runConfigurations.runtime" />

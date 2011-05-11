@@ -54,7 +54,7 @@
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ClassRunner" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.execution.commands.runtime.ProcessHandlerBuilder" />
+    <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
