@@ -43,7 +43,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-public class TypeChecker implements ApplicationComponent {
+public class TypeChecker implements ApplicationComponent, LanguageRegistryListener {
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
   private static final String TYPES_MODEL_NAME = "typesModel";
   private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
@@ -66,20 +66,7 @@ public class TypeChecker implements ApplicationComponent {
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 
-  private LanguageRegistry myLanguageRegistry;
-  private LanguageRegistryListener myLanguageListener = new LanguageRegistryListener() {
-    @Override
-    public void languagesLoaded(Iterable<LanguageRuntime> languages) {
-      for (LanguageRuntime l : languages) {
-        myRulesManager.loadLanguage(l.getNamespace());
-      }
-    }
-
-    @Override
-    public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
-      myRulesManager.clear();
-    }
-  };
+  private final LanguageRegistry myLanguageRegistry;
 
   private static final boolean useOldTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_OLD_TYPESYSTEM));
 
@@ -100,14 +87,27 @@ public class TypeChecker implements ApplicationComponent {
             myRulesManager.loadLanguage(l.getNamespace());
           }
         }
-        myLanguageRegistry.addRegistryListener(myLanguageListener);
+        myLanguageRegistry.addRegistryListener(TypeChecker.this);
       }
     });
   }
 
   public void disposeComponent() {
-    myLanguageRegistry.removeRegistryListener(myLanguageListener);
+    myLanguageRegistry.removeRegistryListener(this);
   }
+
+  @Override
+  public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+    for (LanguageRuntime l : languages) {
+      myRulesManager.loadLanguage(l.getNamespace());
+    }
+  }
+
+  @Override
+  public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+    myRulesManager.clear();
+  }
+
 
   @NonNls
   @NotNull
