@@ -54,10 +54,8 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_tg6zfx_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tg6zfx_b0a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_tg6zfx_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_tg6zfx_c0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tg6zfx_d0a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_tg6zfx_e0a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_tg6zfx_f0a(editorContext, node));
     return editorCell;
   }
 
@@ -135,44 +133,24 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tg6zfx_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "non");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "validation");
     editorCell.setCellId("Constant_tg6zfx_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, false);
-    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tg6zfx_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
     editorCell.setCellId("Constant_tg6zfx_b0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_tg6zfx_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "system");
-    editorCell.setCellId("Constant_tg6zfx_c0a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_tg6zfx_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
-    editorCell.setCellId("Constant_tg6zfx_d0a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_tg6zfx_f0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_tg6zfx_f0a");
+    editorCell.setCellId("Constant_tg6zfx_d0a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -310,7 +288,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_tg6zfx_e0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_tg6zfx_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -321,7 +299,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new NonTypesystemRule_Editor.NonTypesystemRule_name_cellMenu_a0e0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new NonTypesystemRule_Editor.NonTypesystemRule_name_cellMenu_a0c0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -350,8 +328,8 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class NonTypesystemRule_name_cellMenu_a0e0a extends AbstractCellMenuPart_PropertyValues {
-    public NonTypesystemRule_name_cellMenu_a0e0a() {
+  public static class NonTypesystemRule_name_cellMenu_a0c0a extends AbstractCellMenuPart_PropertyValues {
+    public NonTypesystemRule_name_cellMenu_a0c0a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {

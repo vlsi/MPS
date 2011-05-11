@@ -22,7 +22,7 @@
   <unitInfo fileName="TypeCheckerAccessExpression_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypeCheckerAccessExpression_Editor" />
   <unitInfo fileName="ErrorInfoExpression_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ErrorInfoExpression_Editor" />
   <unitInfo fileName="ConceptReference_Editor.java" startLine="148" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ConceptReference_Editor$ConceptReference_name_postfixCellMenu_a0e0" />
-  <unitInfo fileName="NonTypesystemRule_Editor.java" startLine="353" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor$NonTypesystemRule_name_cellMenu_a0e0a" />
+  <unitInfo fileName="NonTypesystemRule_Editor.java" startLine="331" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor$NonTypesystemRule_name_cellMenu_a0c0a" />
   <unitInfo fileName="InferenceRule_Editor.java" startLine="399" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InferenceRule_Editor$InferenceRule_name_cellMenu_a0b0a" />
   <unitInfo fileName="TypesystemStyles_StyleSheet.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemStyles_StyleSheet" />
   <unitInfo fileName="OrStatement_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OrStatement_Editor" />
@@ -148,7 +148,7 @@
   <unitInfo fileName="DependentComputationItem_Editor.java" startLine="21" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.DependentComputationItem_Editor" />
   <unitInfo fileName="SubtypingRule_Editor.java" startLine="23" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.SubtypingRule_Editor" />
   <unitInfo fileName="AbstractComparableStatement_Editor.java" startLine="34" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractComparableStatement_Editor" />
-  <unitInfo fileName="NonTypesystemRule_Editor.java" startLine="34" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor" />
+  <unitInfo fileName="NonTypesystemRule_Editor.java" startLine="34" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor" />
   <unitInfo fileName="InferenceRule_Editor.java" startLine="42" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InferenceRule_Editor" />
   <unitInfo fileName="OverloadedOperatorTypeRule_Editor.java" startLine="31" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OverloadedOperatorTypeRule_Editor" />
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="31" startPosition="0" endLine="478" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor" />
@@ -215,18 +215,18 @@
     <scopeInfo nodeId="7739208407757214268" fileName="CoerceExpression_Editor.java" startLine="152" startPosition="111" endLine="153" endPosition="136" />
   </root>
   <root nodeId="1195214383471">
-    <nodeInfo nodeId="1195214394153" fileName="NonTypesystemRule_Editor.java" startLine="357" startPosition="105" endLine="358" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214394162" fileName="NonTypesystemRule_Editor.java" startLine="359" startPosition="158" endLine="360" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195214394173" fileName="NonTypesystemRule_Editor.java" startLine="361" startPosition="90" endLine="362" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214394182" fileName="NonTypesystemRule_Editor.java" startLine="362" startPosition="111" endLine="363" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195214394206" fileName="NonTypesystemRule_Editor.java" startLine="365" startPosition="7" endLine="366" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195214394171" fileName="NonTypesystemRule_Editor.java" startLine="360" startPosition="207" endLine="364" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195214394160" fileName="NonTypesystemRule_Editor.java" startLine="358" startPosition="75" endLine="365" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1195214394172" fileName="NonTypesystemRule_Editor.java" startLine="361" startPosition="90" endLine="363" endPosition="110" />
-    <scopeInfo nodeId="1195214394161" fileName="NonTypesystemRule_Editor.java" startLine="359" startPosition="158" endLine="364" endPosition="9">
+    <nodeInfo nodeId="1195214394153" fileName="NonTypesystemRule_Editor.java" startLine="335" startPosition="105" endLine="336" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214394162" fileName="NonTypesystemRule_Editor.java" startLine="337" startPosition="158" endLine="338" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195214394173" fileName="NonTypesystemRule_Editor.java" startLine="339" startPosition="90" endLine="340" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214394182" fileName="NonTypesystemRule_Editor.java" startLine="340" startPosition="111" endLine="341" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195214394206" fileName="NonTypesystemRule_Editor.java" startLine="343" startPosition="7" endLine="344" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195214394171" fileName="NonTypesystemRule_Editor.java" startLine="338" startPosition="207" endLine="342" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195214394160" fileName="NonTypesystemRule_Editor.java" startLine="336" startPosition="75" endLine="343" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1195214394172" fileName="NonTypesystemRule_Editor.java" startLine="339" startPosition="90" endLine="341" endPosition="110" />
+    <scopeInfo nodeId="1195214394161" fileName="NonTypesystemRule_Editor.java" startLine="337" startPosition="158" endLine="342" endPosition="9">
       <varInfo nodeId="1195214394163" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1195214394152" fileName="NonTypesystemRule_Editor.java" startLine="357" startPosition="105" endLine="366" endPosition="20">
+    <scopeInfo nodeId="1195214394152" fileName="NonTypesystemRule_Editor.java" startLine="335" startPosition="105" endLine="344" endPosition="20">
       <varInfo nodeId="1195214394154" varName="result" />
     </scopeInfo>
   </root>
