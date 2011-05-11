@@ -15,13 +15,17 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import gnu.trove.THashSet;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReloadableSources {
+  private static Logger LOG = Logger.getLogger(ReloadableSources.class);
+
   private static ReloadableSources ourInstance = new ReloadableSources();
 
   public static ReloadableSources getInstance() {
@@ -58,10 +62,20 @@ public class ReloadableSources {
     }
   }
 
-  public void reload() {
-    for (FileBasedModelDataSource source : myInvalidatedSources) {
-      source.reload();
+  public void reload(ProgressIndicator progressIndicator) {
+    for (FileBasedModelDataSource source : new ArrayList<FileBasedModelDataSource>(myInvalidatedSources)) {
+      try {
+        String text = "Reloading " + source.getDescriptor().getSModelReference().getSModelFqName();
+        progressIndicator.setText2(text);
+        source.reload();
+      } catch (RuntimeException e) {
+        LOG.error("error on reloading model", e);
+      }
     }
     myInvalidatedSources.clear();
+  }
+
+  public boolean hasInvalidated() {
+    return !myInvalidatedSources.isEmpty();
   }
 }

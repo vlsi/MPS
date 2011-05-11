@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -34,6 +35,10 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   public RegularModelDataSource(@NotNull IFile file) {
     myFile = file;
+  }
+
+  public DefaultSModelDescriptor getDescriptor() {
+    return myDescriptor;
   }
 
   public void setDescriptor(DefaultSModelDescriptor d) {

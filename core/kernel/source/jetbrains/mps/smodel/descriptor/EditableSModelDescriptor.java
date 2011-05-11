@@ -13,12 +13,6 @@ import org.jetbrains.annotations.Nullable;
  * Maybe this kind of descriptor will be splitted to a number of descriptors in future.
  */
 public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable, MetadataContainer {
-  boolean needsReloading();
-
-  void reloadFromDisk();
-
-  void reloadFromDiskSafe();
-
   void save();
 
   int getPersistenceVersion();

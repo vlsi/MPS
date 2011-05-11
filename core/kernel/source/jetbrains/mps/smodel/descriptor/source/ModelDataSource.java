@@ -24,5 +24,7 @@ public interface ModelDataSource {
 
   void setDescriptor(DefaultSModelDescriptor d);
 
+  DefaultSModelDescriptor getDescriptor();
+
   boolean checkAndResolveConflictOnSave();
 }
