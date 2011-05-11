@@ -14,9 +14,10 @@
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="ant" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="library" name="commons-lang" level="project" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS-platform" />
-    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="ant" />
     <orderEntry type="module" module-name="collections" />
     <orderEntry type="module" module-name="kernel" />
@@ -40,6 +41,14 @@
     <orderEntry type="module" module-name="mpseditor" />
     <orderEntry type="library" name="java-diff-utils" level="project" />
     <orderEntry type="module" module-name="typesystemUi" />
+    <orderEntry type="library" name="PicoContainer" level="project" />
+    <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="library" name="XStream" level="project" />
+    <orderEntry type="library" name="Commons-net" level="project" />
+    <orderEntry type="library" name="XmlRpc" level="project" />
+    <orderEntry type="library" name="Commons-collections" level="project" />
+    <orderEntry type="library" name="Commons-codec" level="project" />
+    <orderEntry type="library" name="JDOM" level="project" />
   </component>
 </module>
 

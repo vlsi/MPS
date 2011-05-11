@@ -9,7 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
   </component>

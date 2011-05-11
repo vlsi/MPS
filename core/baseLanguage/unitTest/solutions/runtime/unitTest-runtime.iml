@@ -9,7 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" exported="" name="JUnit4" level="project" />

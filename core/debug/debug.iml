@@ -11,7 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="library" exported="" name="tools" level="project" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="Tuples-runtime" />

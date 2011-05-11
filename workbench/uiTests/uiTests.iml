@@ -7,6 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="MPS-platform" />
+    <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module-library" exported="">
       <library name="jfcunit">
         <CLASSES>
@@ -18,9 +20,9 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
-    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="library" name="commons-lang" level="project" />
   </component>
 </module>
 
