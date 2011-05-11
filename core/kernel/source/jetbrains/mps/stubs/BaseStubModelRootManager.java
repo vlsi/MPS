@@ -20,6 +20,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -140,7 +141,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      updateModel(myLocation, model);
+      updateModel(myLocation, model, descriptor.getSource());
     } catch (Throwable t) {
       LOG.error(t);
     } finally {
@@ -156,6 +157,10 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   @Deprecated
   protected void updateModel(StubLocation location, SModel model) {
+  }
+
+  protected void updateModel(StubLocation location, SModel model, ModelDataSource source) {
+    updateModel(location, model);
   }
 
   protected abstract Set<Language> getLanguagesToImport();
