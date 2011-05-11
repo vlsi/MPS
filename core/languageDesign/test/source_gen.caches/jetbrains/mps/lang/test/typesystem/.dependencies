@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.test.typesystem.CheckTestMethodDataflow_CheckingRule" file="CheckTestMethodDataflow_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.test.typesystem.CheckTestMethodDataflow_NonTypesystemRule" file="CheckTestMethodDataflow_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -9,15 +9,17 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.DataFlowUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_EditorExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.test.typesystem.CheckTestMethodDataflow_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_ModelExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_AssertMatch_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_TestNodeReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_EditorComponentExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.test.typesystem.typeof_ProjectExpression_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>

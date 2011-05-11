@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="449" startPosition="49" endLine="464" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$1" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="468" startPosition="49" endLine="483" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$2" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="498" startPosition="49" endLine="513" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$1" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="517" startPosition="49" endLine="532" endPosition="7" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor$2" />
   <unitInfo fileName="ConvertCastToSModelCast_QuickFix.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.ConvertCastToSModelCast_QuickFix" />
-  <unitInfo fileName="check_Node_DetachOperation_CheckingRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Node_DetachOperation_CheckingRule" />
-  <unitInfo fileName="check_Link_DeleteChildOperation_CheckingRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Link_DeleteChildOperation_CheckingRule" />
-  <unitInfo fileName="check_Link_SetNewChildOperation_CheckingRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Link_SetNewChildOperation_CheckingRule" />
-  <unitInfo fileName="check_SNodeOperation_CheckingRule.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SNodeOperation_CheckingRule" />
+  <unitInfo fileName="check_Node_DetachOperation_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Node_DetachOperation_NonTypesystemRule" />
+  <unitInfo fileName="check_Link_DeleteChildOperation_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Link_DeleteChildOperation_NonTypesystemRule" />
+  <unitInfo fileName="check_Link_SetNewChildOperation_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Link_SetNewChildOperation_NonTypesystemRule" />
+  <unitInfo fileName="check_SNodeOperation_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SNodeOperation_NonTypesystemRule" />
   <unitInfo fileName="typeof_SEnumOperationInvocation_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnumOperationInvocation_InferenceRule" />
   <unitInfo fileName="typeof_PoundExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_PoundExpression_InferenceRule" />
   <unitInfo fileName="typeof_AttributeAccessOperation_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_AttributeAccessOperation_InferenceRule" />
@@ -70,9 +70,9 @@
   <unitInfo fileName="typeof_Property_SetOperation_InferenceRule.java" startLine="195" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Property_SetOperation_InferenceRule$QuotationClass_txyj5n_a0a0a0a0a0a0a0g0a" />
   <unitInfo fileName="typeof_Property_SetOperation_InferenceRule.java" startLine="224" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Property_SetOperation_InferenceRule$QuotationClass_txyj5n_a0a0a0a0a0a0a0a6a0" />
   <unitInfo fileName="typeof_Property_SetOperation_InferenceRule.java" startLine="253" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Property_SetOperation_InferenceRule$QuotationClass_txyj5n_a0a0a0a0a0a0a0a0g0a" />
-  <unitInfo fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SConceptLinkAccess_CheckingRule" />
+  <unitInfo fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SConceptLinkAccess_NonTypesystemRule" />
   <unitInfo fileName="supertypesOf_SNodeType_BaseConcept_SubtypingRule.java" startLine="82" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_BaseConcept_SubtypingRule$Pattern_7ci8rs_a0a0a0a2" />
-  <unitInfo fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SConceptPropertyAccess_CheckingRule" />
+  <unitInfo fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SConceptPropertyAccess_NonTypesystemRule" />
   <unitInfo fileName="typeof_SPropertyAccess_InferenceRule.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SPropertyAccess_InferenceRule" />
   <unitInfo fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SReferenceType_SubtypingRule$QuotationClass_kps41k_a0a0a" />
   <unitInfo fileName="supertypesOf_SearchScopeType_ISearchScope_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SearchScopeType_ISearchScope_SubtypingRule$QuotationClass_dug57h_a0a0a" />
@@ -157,17 +157,17 @@
   <unitInfo fileName="typeof_SemanticDowncastExpression_InferenceRule.java" startLine="168" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule$QuotationClass_kyl6z5_a0a0a0a0a3a0a0" />
   <unitInfo fileName="typeof_SemanticDowncastExpression_InferenceRule.java" startLine="244" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule$QuotationClass_kyl6z5_a0a0a0a0a0a3a0a0" />
   <unitInfo fileName="typeof_PropertyRefQualifier_InferenceRule.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_PropertyRefQualifier_InferenceRule" />
-  <unitInfo fileName="check_LinkRefExpression_CheckingRule.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_LinkRefExpression_CheckingRule" />
-  <unitInfo fileName="check_SLinkAccess_CheckingRule.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SLinkAccess_CheckingRule" />
-  <unitInfo fileName="check_SLinkListAccess_CheckingRule.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SLinkListAccess_CheckingRule" />
-  <unitInfo fileName="check_SPropertyAccess_CheckingRule.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SPropertyAccess_CheckingRule" />
-  <unitInfo fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_PropertyAttributeAccessQualifier_CheckingRule" />
+  <unitInfo fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_LinkRefExpression_NonTypesystemRule" />
+  <unitInfo fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SLinkAccess_NonTypesystemRule" />
+  <unitInfo fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SLinkListAccess_NonTypesystemRule" />
+  <unitInfo fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SPropertyAccess_NonTypesystemRule" />
+  <unitInfo fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_PropertyAttributeAccessQualifier_NonTypesystemRule" />
   <unitInfo fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="55" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule$Pattern_vbthi0_a0a0a0a3" />
   <unitInfo fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="77" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule$Pattern_6gcjzy_a0a0a0a2" />
   <unitInfo fileName="supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.java" startLine="77" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule$Pattern_fggx2c_a0a0a0a2" />
   <unitInfo fileName="supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.java" startLine="77" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule$Pattern_qc0dd6_a0a0a0a2" />
   <unitInfo fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.interface_node_types_are_comparable_ComparisonRule" />
-  <unitInfo fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="20" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Node_GetReferentSearchScopeOperation_CheckingRule" />
+  <unitInfo fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Node_GetReferentSearchScopeOperation_NonTypesystemRule" />
   <unitInfo fileName="typeOf_Link_SetTargetOperation_InferenceRule.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeOf_Link_SetTargetOperation_InferenceRule" />
   <unitInfo fileName="typeOf_LinkList_InsertChildFirstOperation_InferenceRule.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeOf_LinkList_InsertChildFirstOperation_InferenceRule" />
   <unitInfo fileName="typeOf_LinkList_AddChildOperation_InferenceRule.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeOf_LinkList_AddChildOperation_InferenceRule" />
@@ -277,7 +277,7 @@
   <unitInfo fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="21" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeOf_Concept_GetAllSubConcepts_InferenceRule" />
   <unitInfo fileName="typeof_SemanticDowncastExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule" />
   <unitInfo fileName="typeof_Property_SetOperation_InferenceRule.java" startLine="23" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Property_SetOperation_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="14" startPosition="0" endLine="488" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="15" startPosition="0" endLine="537" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor" />
   <root nodeId="1178287490257">
     <nodeInfo nodeId="7376433222636453273" fileName="RulesUtil.java" startLine="41" startPosition="136" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1186695082038" fileName="RulesUtil.java" startLine="42" startPosition="40" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2301,134 +2301,134 @@
     </scopeInfo>
   </root>
   <root nodeId="1226066843640">
-    <nodeInfo nodeId="1226067516603" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="25" startPosition="124" endLine="26" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226067538825" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="27" startPosition="106" endLine="28" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226067240382" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="28" startPosition="163" endLine="29" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226067188690" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="29" startPosition="181" endLine="30" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226067188695" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="30" startPosition="50" endLine="31" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226067188701" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="32" startPosition="76" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226067188701" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="33" startPosition="60" endLine="34" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226067188701" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="31" startPosition="136" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1226067609145" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="26" startPosition="90" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1226067188701" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="32" startPosition="76" endLine="34" endPosition="306" />
-    <scopeInfo nodeId="1226067609146" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="27" startPosition="106" endLine="35" endPosition="7">
+    <nodeInfo nodeId="1226067516603" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="25" startPosition="124" endLine="26" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226067538825" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="27" startPosition="106" endLine="28" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226067240382" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="28" startPosition="163" endLine="29" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226067188690" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="29" startPosition="181" endLine="30" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226067188695" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="30" startPosition="50" endLine="31" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226067188701" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="32" startPosition="76" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226067188701" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="33" startPosition="60" endLine="34" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226067188701" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="31" startPosition="136" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1226067609145" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="26" startPosition="90" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1226067188701" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="32" startPosition="76" endLine="34" endPosition="306" />
+    <scopeInfo nodeId="1226067609146" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="27" startPosition="106" endLine="35" endPosition="7">
       <varInfo nodeId="1226067188691" varName="inputNodeConcept" />
       <varInfo nodeId="1226067240383" varName="conceptDeclaration" />
       <varInfo nodeId="1226067538826" varName="property" />
       <varInfo nodeId="1226067188696" varName="declaredProperties" />
     </scopeInfo>
-    <scopeInfo nodeId="1226066843641" fileName="check_PropertyAttributeAccessQualifier_CheckingRule.java" startLine="25" startPosition="124" endLine="36" endPosition="5">
+    <scopeInfo nodeId="1226066843641" fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="25" startPosition="124" endLine="36" endPosition="5">
       <varInfo nodeId="1226067516604" varName="propQ" />
     </scopeInfo>
   </root>
   <root nodeId="1226068607116">
-    <nodeInfo nodeId="7376433222636454115" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="24" startPosition="115" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1226068687978" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="25" startPosition="32" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226068687986" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="28" startPosition="93" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226068687986" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="29" startPosition="60" endLine="30" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226068687995" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="31" startPosition="7" endLine="32" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226069786866" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="32" startPosition="102" endLine="33" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226068688008" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="33" startPosition="73" endLine="34" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226068688014" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="35" startPosition="71" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226068688014" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="36" startPosition="60" endLine="37" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226068687986" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="27" startPosition="27" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1226068688014" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="34" startPosition="127" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1226068687984" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="26" startPosition="81" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1226068687986" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="28" startPosition="93" endLine="30" endPosition="232" />
-    <scopeInfo nodeId="1226068688014" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="35" startPosition="71" endLine="37" endPosition="299" />
-    <scopeInfo nodeId="1226068687985" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="27" startPosition="27" endLine="38" endPosition="7">
+    <nodeInfo nodeId="7376433222636454115" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="24" startPosition="115" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1226068687978" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="25" startPosition="32" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226068687986" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="28" startPosition="93" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226068687986" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="29" startPosition="60" endLine="30" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226068687995" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="31" startPosition="7" endLine="32" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226069786866" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="32" startPosition="102" endLine="33" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226068688008" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="33" startPosition="73" endLine="34" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226068688014" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="35" startPosition="71" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226068688014" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="36" startPosition="60" endLine="37" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226068687986" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="27" startPosition="27" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1226068688014" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="34" startPosition="127" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1226068687984" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="26" startPosition="81" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1226068687986" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="28" startPosition="93" endLine="30" endPosition="232" />
+    <scopeInfo nodeId="1226068688014" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="35" startPosition="71" endLine="37" endPosition="299" />
+    <scopeInfo nodeId="1226068687985" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="27" startPosition="27" endLine="38" endPosition="7">
       <varInfo nodeId="1226069786867" varName="inputNodeConcept" />
       <varInfo nodeId="1226068688009" varName="declaredLinks" />
     </scopeInfo>
-    <scopeInfo nodeId="1226068607117" fileName="check_Node_GetReferentSearchScopeOperation_CheckingRule.java" startLine="24" startPosition="115" endLine="39" endPosition="5">
+    <scopeInfo nodeId="1226068607117" fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="24" startPosition="115" endLine="39" endPosition="5">
       <varInfo nodeId="1226068687979" varName="linkDecl" />
     </scopeInfo>
   </root>
   <root nodeId="1226069950608">
-    <nodeInfo nodeId="1226070484724" fileName="check_SPropertyAccess_CheckingRule.java" startLine="25" startPosition="69" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226069952476" fileName="check_SPropertyAccess_CheckingRule.java" startLine="26" startPosition="73" endLine="27" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226069952482" fileName="check_SPropertyAccess_CheckingRule.java" startLine="27" startPosition="136" endLine="28" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226069952488" fileName="check_SPropertyAccess_CheckingRule.java" startLine="28" startPosition="72" endLine="29" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226069952494" fileName="check_SPropertyAccess_CheckingRule.java" startLine="30" startPosition="76" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226069952494" fileName="check_SPropertyAccess_CheckingRule.java" startLine="31" startPosition="60" endLine="32" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226069952494" fileName="check_SPropertyAccess_CheckingRule.java" startLine="29" startPosition="83" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1226069952461" fileName="check_SPropertyAccess_CheckingRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1226069952494" fileName="check_SPropertyAccess_CheckingRule.java" startLine="30" startPosition="76" endLine="32" endPosition="332" />
-    <scopeInfo nodeId="1226069952462" fileName="check_SPropertyAccess_CheckingRule.java" startLine="25" startPosition="69" endLine="33" endPosition="7">
+    <nodeInfo nodeId="1226070484724" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="25" startPosition="69" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226069952476" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="26" startPosition="73" endLine="27" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226069952482" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="27" startPosition="136" endLine="28" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226069952488" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="28" startPosition="72" endLine="29" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226069952494" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="30" startPosition="76" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226069952494" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="31" startPosition="60" endLine="32" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226069952494" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="29" startPosition="83" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1226069952461" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1226069952494" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="30" startPosition="76" endLine="32" endPosition="332" />
+    <scopeInfo nodeId="1226069952462" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="25" startPosition="69" endLine="33" endPosition="7">
       <varInfo nodeId="1226070484725" varName="inputNodeConcept" />
       <varInfo nodeId="1226069952483" varName="property" />
       <varInfo nodeId="1226069952477" varName="declaredProperties" />
       <varInfo nodeId="1226069952489" varName="conceptName" />
     </scopeInfo>
-    <scopeInfo nodeId="1226069950609" fileName="check_SPropertyAccess_CheckingRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1226069950609" fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5" />
   </root>
   <root nodeId="1226070689784">
-    <nodeInfo nodeId="1226070801979" fileName="check_SLinkListAccess_CheckingRule.java" startLine="24" startPosition="115" endLine="25" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226070801987" fileName="check_SLinkListAccess_CheckingRule.java" startLine="26" startPosition="27" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1226070842801" fileName="check_SLinkListAccess_CheckingRule.java" startLine="28" startPosition="5" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226070777615" fileName="check_SLinkListAccess_CheckingRule.java" startLine="29" startPosition="71" endLine="30" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226070777621" fileName="check_SLinkListAccess_CheckingRule.java" startLine="31" startPosition="69" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226070777621" fileName="check_SLinkListAccess_CheckingRule.java" startLine="32" startPosition="58" endLine="33" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226070801985" fileName="check_SLinkListAccess_CheckingRule.java" startLine="25" startPosition="72" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1226070777621" fileName="check_SLinkListAccess_CheckingRule.java" startLine="30" startPosition="125" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1226070801986" fileName="check_SLinkListAccess_CheckingRule.java" startLine="26" startPosition="27" endLine="27" endPosition="13" />
-    <scopeInfo nodeId="1226070777621" fileName="check_SLinkListAccess_CheckingRule.java" startLine="31" startPosition="69" endLine="33" endPosition="297" />
-    <scopeInfo nodeId="1226070689785" fileName="check_SLinkListAccess_CheckingRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5">
+    <nodeInfo nodeId="1226070801979" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="24" startPosition="115" endLine="25" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226070801987" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="26" startPosition="27" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226070842801" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="28" startPosition="5" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226070777615" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="29" startPosition="71" endLine="30" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226070777621" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="31" startPosition="69" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226070777621" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="32" startPosition="58" endLine="33" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226070801985" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="25" startPosition="72" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1226070777621" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="30" startPosition="125" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1226070801986" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="26" startPosition="27" endLine="27" endPosition="13" />
+    <scopeInfo nodeId="1226070777621" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="31" startPosition="69" endLine="33" endPosition="297" />
+    <scopeInfo nodeId="1226070689785" fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5">
       <varInfo nodeId="1226070842802" varName="inputNodeConcept" />
       <varInfo nodeId="1226070801980" varName="linkDecl" />
       <varInfo nodeId="1226070777616" varName="declaredLinks" />
     </scopeInfo>
   </root>
   <root nodeId="1226070974800">
-    <nodeInfo nodeId="1226071021012" fileName="check_SLinkAccess_CheckingRule.java" startLine="24" startPosition="115" endLine="25" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071021020" fileName="check_SLinkAccess_CheckingRule.java" startLine="26" startPosition="27" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1226071082606" fileName="check_SLinkAccess_CheckingRule.java" startLine="28" startPosition="5" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071051969" fileName="check_SLinkAccess_CheckingRule.java" startLine="29" startPosition="71" endLine="30" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071051975" fileName="check_SLinkAccess_CheckingRule.java" startLine="31" startPosition="69" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071051975" fileName="check_SLinkAccess_CheckingRule.java" startLine="32" startPosition="58" endLine="33" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071021018" fileName="check_SLinkAccess_CheckingRule.java" startLine="25" startPosition="72" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1226071051975" fileName="check_SLinkAccess_CheckingRule.java" startLine="30" startPosition="125" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1226071021019" fileName="check_SLinkAccess_CheckingRule.java" startLine="26" startPosition="27" endLine="27" endPosition="13" />
-    <scopeInfo nodeId="1226071051975" fileName="check_SLinkAccess_CheckingRule.java" startLine="31" startPosition="69" endLine="33" endPosition="297" />
-    <scopeInfo nodeId="1226070974801" fileName="check_SLinkAccess_CheckingRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5">
+    <nodeInfo nodeId="1226071021012" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="24" startPosition="115" endLine="25" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071021020" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="26" startPosition="27" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226071082606" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="28" startPosition="5" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071051969" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="29" startPosition="71" endLine="30" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071051975" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="31" startPosition="69" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071051975" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="32" startPosition="58" endLine="33" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071021018" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="25" startPosition="72" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1226071051975" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="30" startPosition="125" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1226071021019" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="26" startPosition="27" endLine="27" endPosition="13" />
+    <scopeInfo nodeId="1226071051975" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="31" startPosition="69" endLine="33" endPosition="297" />
+    <scopeInfo nodeId="1226070974801" fileName="check_SLinkAccess_NonTypesystemRule.java" startLine="24" startPosition="115" endLine="34" endPosition="5">
       <varInfo nodeId="1226071082607" varName="inputNodeConcept" />
       <varInfo nodeId="1226071021013" varName="linkDecl" />
       <varInfo nodeId="1226071051970" varName="declaredLinks" />
     </scopeInfo>
   </root>
   <root nodeId="1226071491798">
-    <nodeInfo nodeId="1226071815005" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="18" startPosition="115" endLine="19" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071815014" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="20" startPosition="38" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1226071804497" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="22" startPosition="5" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071858412" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="23" startPosition="100" endLine="24" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071804506" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="24" startPosition="69" endLine="25" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226071804513" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="25" startPosition="167" endLine="26" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1226071815012" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="19" startPosition="94" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1226071815013" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="20" startPosition="38" endLine="21" endPosition="13" />
-    <scopeInfo nodeId="1226071491799" fileName="check_SConceptPropertyAccess_CheckingRule.java" startLine="18" startPosition="115" endLine="26" endPosition="146">
+    <nodeInfo nodeId="1226071815005" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="18" startPosition="115" endLine="19" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071815014" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="20" startPosition="38" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226071804497" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="22" startPosition="5" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071858412" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="23" startPosition="100" endLine="24" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071804506" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="24" startPosition="69" endLine="25" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226071804513" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="25" startPosition="167" endLine="26" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226071815012" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="19" startPosition="94" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1226071815013" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="20" startPosition="38" endLine="21" endPosition="13" />
+    <scopeInfo nodeId="1226071491799" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="18" startPosition="115" endLine="26" endPosition="146">
       <varInfo nodeId="1226071815006" varName="conceptPropertyDecl" />
       <varInfo nodeId="1226071804507" varName="declaringConcept" />
       <varInfo nodeId="1226071858413" varName="concreteConcept" />
     </scopeInfo>
   </root>
   <root nodeId="1226071920272">
-    <nodeInfo nodeId="1226072030641" fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="18" startPosition="115" endLine="19" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226072030649" fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="20" startPosition="34" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1226072046721" fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="22" startPosition="5" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226072015538" fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="23" startPosition="69" endLine="24" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226072015546" fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="24" startPosition="163" endLine="25" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1226072030647" fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="19" startPosition="97" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1226072030648" fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="20" startPosition="34" endLine="21" endPosition="13" />
-    <scopeInfo nodeId="1226071920273" fileName="check_SConceptLinkAccess_CheckingRule.java" startLine="18" startPosition="115" endLine="25" endPosition="146">
+    <nodeInfo nodeId="1226072030641" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="18" startPosition="115" endLine="19" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226072030649" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="20" startPosition="34" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226072046721" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="22" startPosition="5" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226072015538" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="23" startPosition="69" endLine="24" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226072015546" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="24" startPosition="163" endLine="25" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226072030647" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="19" startPosition="97" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1226072030648" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="20" startPosition="34" endLine="21" endPosition="13" />
+    <scopeInfo nodeId="1226071920273" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="18" startPosition="115" endLine="25" endPosition="146">
       <varInfo nodeId="1226072030642" varName="conceptLinkDecl" />
       <varInfo nodeId="1226072015539" varName="declaringConcept" />
       <varInfo nodeId="1226072046722" varName="concreteConcept" />
     </scopeInfo>
   </root>
   <root nodeId="1226074920318">
-    <nodeInfo nodeId="1226074998136" fileName="check_SNodeOperation_CheckingRule.java" startLine="16" startPosition="115" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1226074998140" fileName="check_SNodeOperation_CheckingRule.java" startLine="17" startPosition="69" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1226074920319" fileName="check_SNodeOperation_CheckingRule.java" startLine="16" startPosition="115" endLine="18" endPosition="65" />
+    <nodeInfo nodeId="1226074998136" fileName="check_SNodeOperation_NonTypesystemRule.java" startLine="16" startPosition="115" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226074998140" fileName="check_SNodeOperation_NonTypesystemRule.java" startLine="17" startPosition="69" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1226074920319" fileName="check_SNodeOperation_NonTypesystemRule.java" startLine="16" startPosition="115" endLine="18" endPosition="65" />
   </root>
   <root nodeId="1226359745588">
     <nodeInfo nodeId="1226359792159" fileName="typeof_LinkRefExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2439,29 +2439,29 @@
     <scopeInfo nodeId="1226359745589" fileName="typeof_LinkRefExpression_InferenceRule.java" startLine="23" startPosition="117" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1226359941188">
-    <nodeInfo nodeId="1226360171242" fileName="check_LinkRefExpression_CheckingRule.java" startLine="24" startPosition="117" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226359998889" fileName="check_LinkRefExpression_CheckingRule.java" startLine="25" startPosition="81" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226360036453" fileName="check_LinkRefExpression_CheckingRule.java" startLine="27" startPosition="42" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1226360207680" fileName="check_LinkRefExpression_CheckingRule.java" startLine="29" startPosition="5" endLine="30" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226360207686" fileName="check_LinkRefExpression_CheckingRule.java" startLine="31" startPosition="65" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226360207686" fileName="check_LinkRefExpression_CheckingRule.java" startLine="32" startPosition="58" endLine="33" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226360025569" fileName="check_LinkRefExpression_CheckingRule.java" startLine="26" startPosition="75" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1226360207686" fileName="check_LinkRefExpression_CheckingRule.java" startLine="30" startPosition="116" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1226360025570" fileName="check_LinkRefExpression_CheckingRule.java" startLine="27" startPosition="42" endLine="28" endPosition="13" />
-    <scopeInfo nodeId="1226360207686" fileName="check_LinkRefExpression_CheckingRule.java" startLine="31" startPosition="65" endLine="33" endPosition="285" />
-    <scopeInfo nodeId="1226359941189" fileName="check_LinkRefExpression_CheckingRule.java" startLine="24" startPosition="117" endLine="34" endPosition="5">
+    <nodeInfo nodeId="1226360171242" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="24" startPosition="117" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226359998889" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="25" startPosition="81" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226360036453" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="27" startPosition="42" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226360207680" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="29" startPosition="5" endLine="30" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226360207686" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="31" startPosition="65" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226360207686" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="32" startPosition="58" endLine="33" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226360025569" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="26" startPosition="75" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1226360207686" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="30" startPosition="116" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1226360025570" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="27" startPosition="42" endLine="28" endPosition="13" />
+    <scopeInfo nodeId="1226360207686" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="31" startPosition="65" endLine="33" endPosition="285" />
+    <scopeInfo nodeId="1226359941189" fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="24" startPosition="117" endLine="34" endPosition="5">
       <varInfo nodeId="1226360171243" varName="concept" />
       <varInfo nodeId="1226359998890" varName="link" />
       <varInfo nodeId="1226360207681" varName="declaredLinks" />
     </scopeInfo>
   </root>
   <root nodeId="1226666581264">
-    <nodeInfo nodeId="1226666608768" fileName="check_Link_SetNewChildOperation_CheckingRule.java" startLine="16" startPosition="115" endLine="17" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1226666581265" fileName="check_Link_SetNewChildOperation_CheckingRule.java" startLine="16" startPosition="115" endLine="17" endPosition="77" />
+    <nodeInfo nodeId="1226666608768" fileName="check_Link_SetNewChildOperation_NonTypesystemRule.java" startLine="16" startPosition="115" endLine="17" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1226666581265" fileName="check_Link_SetNewChildOperation_NonTypesystemRule.java" startLine="16" startPosition="115" endLine="17" endPosition="77" />
   </root>
   <root nodeId="1226666660944">
-    <nodeInfo nodeId="1226666692542" fileName="check_Link_DeleteChildOperation_CheckingRule.java" startLine="16" startPosition="115" endLine="17" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1226666660945" fileName="check_Link_DeleteChildOperation_CheckingRule.java" startLine="16" startPosition="115" endLine="17" endPosition="77" />
+    <nodeInfo nodeId="1226666692542" fileName="check_Link_DeleteChildOperation_NonTypesystemRule.java" startLine="16" startPosition="115" endLine="17" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1226666660945" fileName="check_Link_DeleteChildOperation_NonTypesystemRule.java" startLine="16" startPosition="115" endLine="17" endPosition="77" />
   </root>
   <root nodeId="1227265506201">
     <nodeInfo nodeId="1227265514974" fileName="typeof_EqualsStructurallyExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2496,36 +2496,36 @@
     <scopeInfo nodeId="1228341901782" fileName="typeof_Node_DetachOperation_InferenceRule.java" startLine="21" startPosition="117" endLine="32" endPosition="5" />
   </root>
   <root nodeId="1228490012587">
-    <nodeInfo nodeId="1228490047841" fileName="TypesystemDescriptor.java" startLine="451" startPosition="30" endLine="452" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371378882" fileName="TypesystemDescriptor.java" startLine="454" startPosition="110" endLine="455" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371378889" fileName="TypesystemDescriptor.java" startLine="456" startPosition="11" endLine="457" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1232371378896" fileName="TypesystemDescriptor.java" startLine="457" startPosition="154" endLine="458" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228490164836" fileName="TypesystemDescriptor.java" startLine="461" startPosition="101" endLine="462" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371129758" fileName="TypesystemDescriptor.java" startLine="470" startPosition="30" endLine="471" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371344778" fileName="TypesystemDescriptor.java" startLine="473" startPosition="113" endLine="474" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371129760" fileName="TypesystemDescriptor.java" startLine="475" startPosition="11" endLine="476" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1232371129767" fileName="TypesystemDescriptor.java" startLine="476" startPosition="167" endLine="477" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1232371170099" fileName="TypesystemDescriptor.java" startLine="480" startPosition="101" endLine="481" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228490043313" fileName="TypesystemDescriptor.java" startLine="450" startPosition="108" endLine="453" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1232371378880" fileName="TypesystemDescriptor.java" startLine="453" startPosition="11" endLine="456" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1232371129755" fileName="TypesystemDescriptor.java" startLine="469" startPosition="108" endLine="472" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1232371323950" fileName="TypesystemDescriptor.java" startLine="472" startPosition="11" endLine="475" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1228490043315" fileName="TypesystemDescriptor.java" startLine="451" startPosition="30" endLine="452" endPosition="25" />
-    <scopeInfo nodeId="1232371378881" fileName="TypesystemDescriptor.java" startLine="454" startPosition="110" endLine="455" endPosition="25" />
-    <scopeInfo nodeId="1228490020138" fileName="TypesystemDescriptor.java" startLine="461" startPosition="101" endLine="462" endPosition="135" />
-    <scopeInfo nodeId="1232371129757" fileName="TypesystemDescriptor.java" startLine="470" startPosition="30" endLine="471" endPosition="25" />
-    <scopeInfo nodeId="1232371323951" fileName="TypesystemDescriptor.java" startLine="473" startPosition="113" endLine="474" endPosition="25" />
-    <scopeInfo nodeId="1232371120694" fileName="TypesystemDescriptor.java" startLine="480" startPosition="101" endLine="481" endPosition="135" />
-    <scopeInfo nodeId="1228490020136" fileName="TypesystemDescriptor.java" startLine="450" startPosition="108" endLine="458" endPosition="37">
+    <nodeInfo nodeId="1228490047841" fileName="TypesystemDescriptor.java" startLine="500" startPosition="30" endLine="501" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371378882" fileName="TypesystemDescriptor.java" startLine="503" startPosition="110" endLine="504" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371378889" fileName="TypesystemDescriptor.java" startLine="505" startPosition="11" endLine="506" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1232371378896" fileName="TypesystemDescriptor.java" startLine="506" startPosition="154" endLine="507" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228490164836" fileName="TypesystemDescriptor.java" startLine="510" startPosition="101" endLine="511" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371129758" fileName="TypesystemDescriptor.java" startLine="519" startPosition="30" endLine="520" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371344778" fileName="TypesystemDescriptor.java" startLine="522" startPosition="113" endLine="523" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371129760" fileName="TypesystemDescriptor.java" startLine="524" startPosition="11" endLine="525" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1232371129767" fileName="TypesystemDescriptor.java" startLine="525" startPosition="167" endLine="526" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1232371170099" fileName="TypesystemDescriptor.java" startLine="529" startPosition="101" endLine="530" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228490043313" fileName="TypesystemDescriptor.java" startLine="499" startPosition="108" endLine="502" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1232371378880" fileName="TypesystemDescriptor.java" startLine="502" startPosition="11" endLine="505" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1232371129755" fileName="TypesystemDescriptor.java" startLine="518" startPosition="108" endLine="521" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1232371323950" fileName="TypesystemDescriptor.java" startLine="521" startPosition="11" endLine="524" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1228490043315" fileName="TypesystemDescriptor.java" startLine="500" startPosition="30" endLine="501" endPosition="25" />
+    <scopeInfo nodeId="1232371378881" fileName="TypesystemDescriptor.java" startLine="503" startPosition="110" endLine="504" endPosition="25" />
+    <scopeInfo nodeId="1228490020138" fileName="TypesystemDescriptor.java" startLine="510" startPosition="101" endLine="511" endPosition="135" />
+    <scopeInfo nodeId="1232371129757" fileName="TypesystemDescriptor.java" startLine="519" startPosition="30" endLine="520" endPosition="25" />
+    <scopeInfo nodeId="1232371323951" fileName="TypesystemDescriptor.java" startLine="522" startPosition="113" endLine="523" endPosition="25" />
+    <scopeInfo nodeId="1232371120694" fileName="TypesystemDescriptor.java" startLine="529" startPosition="101" endLine="530" endPosition="135" />
+    <scopeInfo nodeId="1228490020136" fileName="TypesystemDescriptor.java" startLine="499" startPosition="108" endLine="507" endPosition="37">
       <varInfo nodeId="1232371378890" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1232371120692" fileName="TypesystemDescriptor.java" startLine="469" startPosition="108" endLine="477" endPosition="37">
+    <scopeInfo nodeId="1232371120692" fileName="TypesystemDescriptor.java" startLine="518" startPosition="108" endLine="526" endPosition="37">
       <varInfo nodeId="1232371129761" varName="concept" />
     </scopeInfo>
   </root>
   <root nodeId="1230333307270">
-    <nodeInfo nodeId="1230334060414" fileName="check_Node_DetachOperation_CheckingRule.java" startLine="16" startPosition="115" endLine="17" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1230333307271" fileName="check_Node_DetachOperation_CheckingRule.java" startLine="16" startPosition="115" endLine="17" endPosition="78" />
+    <nodeInfo nodeId="1230334060414" fileName="check_Node_DetachOperation_NonTypesystemRule.java" startLine="16" startPosition="115" endLine="17" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1230333307271" fileName="check_Node_DetachOperation_NonTypesystemRule.java" startLine="16" startPosition="115" endLine="17" endPosition="78" />
   </root>
   <root nodeId="1238600305269">
     <nodeInfo nodeId="1238600319726" fileName="typeof_Node_DeleteOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

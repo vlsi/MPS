@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CheckTestMethodDataflow_CheckingRule.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.CheckTestMethodDataflow_CheckingRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="CheckTestMethodDataflow_NonTypesystemRule.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.CheckTestMethodDataflow_NonTypesystemRule" />
   <unitInfo fileName="typeof_AssertMatch_InferenceRule.java" startLine="76" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_AssertMatch_InferenceRule$QuotationClass_qwyt5f_a0a0a0a0" />
   <unitInfo fileName="typeof_AssertMatch_InferenceRule.java" startLine="105" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_AssertMatch_InferenceRule$QuotationClass_qwyt5f_a0a0a1a0" />
   <unitInfo fileName="typeof_EditorComponentExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_EditorComponentExpression_InferenceRule$QuotationClass_1lf6x4_a0a0a0" />
@@ -9,6 +8,7 @@
   <unitInfo fileName="typeof_ModelExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_ModelExpression_InferenceRule$QuotationClass_1hffo4_a0a0a0" />
   <unitInfo fileName="typeof_EditorExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_EditorExpression_InferenceRule$QuotationClass_a3jan8_a0a0a0" />
   <unitInfo fileName="typeof_TestNodeReference_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_TestNodeReference_InferenceRule$QuotationClass_4fdfzz_a0a1a0" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_EditorComponentExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_EditorComponentExpression_InferenceRule" />
   <unitInfo fileName="typeof_ProjectExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_ProjectExpression_InferenceRule" />
   <unitInfo fileName="typeof_ModelExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.typesystem.typeof_ModelExpression_InferenceRule" />
@@ -72,8 +72,8 @@
     <scopeInfo nodeId="1211980347428" fileName="typeof_AssertMatch_InferenceRule.java" startLine="23" startPosition="124" endLine="58" endPosition="5" />
   </root>
   <root nodeId="1217855694003">
-    <nodeInfo nodeId="1223643137089" fileName="CheckTestMethodDataflow_CheckingRule.java" startLine="18" startPosition="128" endLine="19" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1217855694004" fileName="CheckTestMethodDataflow_CheckingRule.java" startLine="18" startPosition="128" endLine="19" endPosition="110" />
+    <nodeInfo nodeId="1223643137089" fileName="CheckTestMethodDataflow_NonTypesystemRule.java" startLine="18" startPosition="128" endLine="19" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1217855694004" fileName="CheckTestMethodDataflow_NonTypesystemRule.java" startLine="18" startPosition="128" endLine="19" endPosition="110" />
   </root>
   <root nodeId="1225984593084">
     <nodeInfo nodeId="1225984944721" fileName="typeof_EditorExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

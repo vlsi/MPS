@@ -9,9 +9,9 @@
   <unitInfo fileName="typeof_FoundErrorOperation_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_FoundErrorOperation_InferenceRule$QuotationClass_qfrptg_a0a0a0" />
   <unitInfo fileName="typeof_AbstractTextGenParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_AbstractTextGenParameter_InferenceRule" />
   <unitInfo fileName="typeof_NodeParameter_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_NodeParameter_InferenceRule$QuotationClass_x08ckn_a0a1a0" />
-  <unitInfo fileName="check_CallPrivateFunction_CheckingRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.check_CallPrivateFunction_CheckingRule" />
-  <unitInfo fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.check_CallInnerFunctionOperation_CheckingRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.check_CallPrivateFunction_NonTypesystemRule" />
+  <unitInfo fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.check_CallInnerFunctionOperation_NonTypesystemRule" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_NodePart_InferenceRule.java" startLine="44" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_NodePart_InferenceRule$QuotationClass_3guvy4_a0a0a0" />
   <unitInfo fileName="typeof_AbstractAppendPart_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_AbstractAppendPart_InferenceRule" />
   <unitInfo fileName="typeof_SimplestTextGenOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.typesystem.typeof_SimplestTextGenOperation_InferenceRule" />
@@ -51,31 +51,31 @@
     </scopeInfo>
   </root>
   <root nodeId="1234279018939">
-    <nodeInfo nodeId="1234279064964" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="23" startPosition="128" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234279064970" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="24" startPosition="96" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234279064974" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="25" startPosition="21" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234279064980" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="26" startPosition="109" endLine="27" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234279064988" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="28" startPosition="191" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234279065010" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="30" startPosition="12" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="34" startPosition="7" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="35" startPosition="60" endLine="36" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234279065040" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="40" startPosition="44" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234279065008" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1234279065038" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1234279064986" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="27" startPosition="97" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1234279065036" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="38" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1234279065020" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="32" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1234279064987" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="28" startPosition="191" endLine="29" endPosition="117" />
-    <scopeInfo nodeId="1234279065009" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="30" startPosition="12" endLine="31" endPosition="113" />
-    <scopeInfo nodeId="1234279065039" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="40" startPosition="44" endLine="41" endPosition="60" />
-    <scopeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="34" startPosition="7" endLine="36" endPosition="246" />
-    <scopeInfo nodeId="1234279065037" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1234279065038" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7">
+    <nodeInfo nodeId="1234279064964" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="23" startPosition="128" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234279064970" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="24" startPosition="96" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234279064974" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="25" startPosition="21" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234279064980" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="26" startPosition="109" endLine="27" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234279064988" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="28" startPosition="191" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234279065010" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="30" startPosition="12" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="35" startPosition="60" endLine="36" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234279065040" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="40" startPosition="44" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234279065008" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1234279065038" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1234279064986" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="27" startPosition="97" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234279065036" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234279065020" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="32" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1234279064987" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="28" startPosition="191" endLine="29" endPosition="117" />
+    <scopeInfo nodeId="1234279065009" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="30" startPosition="12" endLine="31" endPosition="113" />
+    <scopeInfo nodeId="1234279065039" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="40" startPosition="44" endLine="41" endPosition="60" />
+    <scopeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="36" endPosition="246" />
+    <scopeInfo nodeId="1234279065037" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="1234279065038" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7">
       <varInfo nodeId="1234279065043" varName="actual" />
     </scopeInfo>
-    <scopeInfo nodeId="1234279065021" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1234279018940" fileName="check_CallInnerFunctionOperation_CheckingRule.java" startLine="23" startPosition="128" endLine="43" endPosition="5">
+    <scopeInfo nodeId="1234279065021" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="1234279018940" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="23" startPosition="128" endLine="43" endPosition="5">
       <varInfo nodeId="1234279064975" varName="parameterDeclarations" />
       <varInfo nodeId="1234279064971" varName="b" />
       <varInfo nodeId="1234279064965" varName="baseMethodDeclaration" />
@@ -83,31 +83,31 @@
     </scopeInfo>
   </root>
   <root nodeId="1234529451905">
-    <nodeInfo nodeId="1234529496672" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="23" startPosition="132" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234529496678" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="24" startPosition="100" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234529496682" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="25" startPosition="21" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234529496688" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="26" startPosition="109" endLine="27" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234529496696" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="28" startPosition="191" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234529496718" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="30" startPosition="12" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="34" startPosition="7" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="35" startPosition="60" endLine="36" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234529496739" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="40" startPosition="44" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234529496716" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1234529496737" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1234529496694" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="27" startPosition="101" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1234529496735" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="38" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1234529496728" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="32" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1234529496695" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="28" startPosition="191" endLine="29" endPosition="117" />
-    <scopeInfo nodeId="1234529496717" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="30" startPosition="12" endLine="31" endPosition="113" />
-    <scopeInfo nodeId="1234529496738" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="40" startPosition="44" endLine="41" endPosition="60" />
-    <scopeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="34" startPosition="7" endLine="36" endPosition="250" />
-    <scopeInfo nodeId="1234529496736" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1234529496737" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7">
+    <nodeInfo nodeId="1234529496672" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234529496678" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="24" startPosition="100" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234529496682" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="25" startPosition="21" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234529496688" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="26" startPosition="109" endLine="27" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234529496696" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="28" startPosition="191" endLine="29" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234529496718" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="30" startPosition="12" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="35" startPosition="60" endLine="36" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234529496739" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="40" startPosition="44" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234529496716" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1234529496737" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1234529496694" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="27" startPosition="101" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234529496735" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234529496728" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="32" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1234529496695" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="28" startPosition="191" endLine="29" endPosition="117" />
+    <scopeInfo nodeId="1234529496717" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="30" startPosition="12" endLine="31" endPosition="113" />
+    <scopeInfo nodeId="1234529496738" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="40" startPosition="44" endLine="41" endPosition="60" />
+    <scopeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="36" endPosition="250" />
+    <scopeInfo nodeId="1234529496736" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="1234529496737" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="39" startPosition="128" endLine="42" endPosition="7">
       <varInfo nodeId="1234529496742" varName="actual" />
     </scopeInfo>
-    <scopeInfo nodeId="1234529496729" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1234529451906" fileName="check_CallPrivateFunction_CheckingRule.java" startLine="23" startPosition="132" endLine="43" endPosition="5">
+    <scopeInfo nodeId="1234529496729" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="33" startPosition="15" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="1234529451906" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="43" endPosition="5">
       <varInfo nodeId="1234529496683" varName="parameterDeclarations" />
       <varInfo nodeId="1234529496679" varName="b" />
       <varInfo nodeId="1234529496673" varName="baseMethodDeclaration" />

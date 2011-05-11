@@ -47,8 +47,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SNodeTypeCastExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Concept_NewInstance_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_LinkList_InsertChildFirstOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_PropertyAttributeAccessQualifier_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SLinkAccess_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_LinkList_AddChildOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_LinkAttributeAccessQualifier_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_CheckedModuleReference_InferenceRule" />
@@ -57,36 +59,40 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SReferenceType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SNodeCreator_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_DeleteOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Concept_IsSuperConceptOfOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Node_GetAdapterOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_ReplaceWithAnotherOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_LinkList_AddNewChildOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_NodeAttributeAccessQualifier_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Concept_FindInstances_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Model_RootsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_LinkList_RemoveAllChildrenOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnumOperationInvocation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetIndexInParentOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_BaseConcept_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_NodeRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeListType_ListType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ConceptFqNameRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_AttributeAccess_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberForValueOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SConceptLinkAccess_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetChildrenOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SConceptPropertyAccess_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetDescendantsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Concept_GetAllSubConcepts_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SLinkAccess_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SearchScope_ContainsOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberForValueOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Property_SetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SNodeType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberForNameOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_AttributeAccessOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SLinkAccess_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeListType_SNodeListType_SubtypingRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetAncestorsOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SLinkListAccess_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Model_CreateNewNodeOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_Link_DeleteChildOperation_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberForValueOperation_checkArg_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Model_AddRootOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Model_NodesOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Property_HasValue_Simple_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule" />
@@ -94,22 +100,25 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_DetachOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_ConceptMethodCall_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Concept_IsSubConceptOfOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_InsertNewPrevSiblingOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_Node_DetachOperation_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Reference_GetTargetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SConceptType_SNodeType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_PropertyNameRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_InsertPrevSiblingOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_EqualsStructurallyExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_NodeAttributeAccessQualifier_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_LinkRefExpression_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ConceptProperty_SetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SLinkImplicitSelect_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_IsInstanceOfOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Reference_GetLinkDeclarationOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_AttributeAccessOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_IfInstanceOfStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SConceptLinkAccess_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_OperationParm_Concept_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_Node_GetReferentSearchScopeOperation_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_ConceptRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_LanguageReferenceExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SEnumMemberType_SubtypingRule" />
@@ -119,28 +128,30 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ConceptPropertyNameRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetConceptOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetReferentSearchScopeOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_BaseConcept_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetAncestorsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Model_NodesIncludingImportedOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ModuleReferenceExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_InsertNextSiblingOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeListType_ClassifierListType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SearchScope_ContainsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ListType_ListType_elementSNode_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.IVariableConverter_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SearchScopeType_ISearchScope_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_InsertNewNextSiblingOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Concept_FindInstances_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SLinkListAccess_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Reference_GetResolveInfo_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_PoundExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Link_SetNewChildOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ModuleReferenceExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_LinkList_InsertChildFirstOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.interface_node_types_are_comparable_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SConceptPropertyAccess_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Link_SetTargetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_EnumMember_ValueOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_ReplaceWithNewOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Node_GetAncestorOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_InsertNewPrevSiblingOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Node_CopyOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_EnumMemberReference_InferenceRule" />
@@ -153,18 +164,20 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_LinkRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Reference_GetRoleOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_PropertyRefQualifier_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Node_GetAdapterOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SPropertyAccess_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_EqualsStructurallyExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Reference_GetLinkDeclarationOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Concept_IsSuperConceptOfOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SNodeOperation_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Link_DeleteChildOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SNodeTypeCastExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_IsInstanceOfOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_Link_SetNewChildOperation_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_IfInstanceOfVariable_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetChildrenOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_NodeRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_PropertyAttributeAccessQualifier_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_LinkRefExpression_CheckingRule" file="check_LinkRefExpression_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_LinkRefExpression_NonTypesystemRule" file="check_LinkRefExpression_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -179,9 +192,9 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_Link_DeleteChildOperation_CheckingRule" file="check_Link_DeleteChildOperation_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_Link_DeleteChildOperation_NonTypesystemRule" file="check_Link_DeleteChildOperation_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -189,9 +202,9 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_Link_SetNewChildOperation_CheckingRule" file="check_Link_SetNewChildOperation_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_Link_SetNewChildOperation_NonTypesystemRule" file="check_Link_SetNewChildOperation_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -199,9 +212,9 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_Node_DetachOperation_CheckingRule" file="check_Node_DetachOperation_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_Node_DetachOperation_NonTypesystemRule" file="check_Node_DetachOperation_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -209,9 +222,9 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_Node_GetReferentSearchScopeOperation_CheckingRule" file="check_Node_GetReferentSearchScopeOperation_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_Node_GetReferentSearchScopeOperation_NonTypesystemRule" file="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
@@ -227,9 +240,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_PropertyAttributeAccessQualifier_CheckingRule" file="check_PropertyAttributeAccessQualifier_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_PropertyAttributeAccessQualifier_NonTypesystemRule" file="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
@@ -246,9 +259,9 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SConceptLinkAccess_CheckingRule" file="check_SConceptLinkAccess_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SConceptLinkAccess_NonTypesystemRule" file="check_SConceptLinkAccess_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -258,9 +271,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SConceptPropertyAccess_CheckingRule" file="check_SConceptPropertyAccess_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SConceptPropertyAccess_NonTypesystemRule" file="check_SConceptPropertyAccess_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -270,9 +283,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SLinkAccess_CheckingRule" file="check_SLinkAccess_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SLinkAccess_NonTypesystemRule" file="check_SLinkAccess_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
@@ -288,9 +301,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SLinkListAccess_CheckingRule" file="check_SLinkListAccess_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SLinkListAccess_NonTypesystemRule" file="check_SLinkListAccess_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
@@ -306,9 +319,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SNodeOperation_CheckingRule" file="check_SNodeOperation_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SNodeOperation_NonTypesystemRule" file="check_SNodeOperation_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -316,9 +329,9 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SPropertyAccess_CheckingRule" file="check_SPropertyAccess_CheckingRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.check_SPropertyAccess_NonTypesystemRule" file="check_SPropertyAccess_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
@@ -334,7 +347,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.RulesUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule" file="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java">
     <classNode dependClassName="java.lang.String" />

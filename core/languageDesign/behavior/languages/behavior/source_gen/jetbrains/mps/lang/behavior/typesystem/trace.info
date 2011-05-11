@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="FixMethodSignature_QuickFix.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.FixMethodSignature_QuickFix" />
   <unitInfo fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="45" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_SuperNodeExpression_InferenceRule$QuotationClass_ts3rwu_a0a1a0" />
   <unitInfo fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_ThisNodeExpression_InferenceRule$QuotationClass_b2r2xa_a0a1a0" />
-  <unitInfo fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptMethodDeclaration_CheckingRule" />
-  <unitInfo fileName="check_ConceptBehavior_CheckingRule.java" startLine="23" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehavior_CheckingRule" />
+  <unitInfo fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptMethodDeclaration_NonTypesystemRule" />
+  <unitInfo fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehavior_NonTypesystemRule" />
   <unitInfo fileName="typeof_LocalBehaviorMethodCall_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_LocalBehaviorMethodCall_InferenceRule" />
   <unitInfo fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_SuperNodeExpression_InferenceRule" />
   <unitInfo fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_ThisNodeExpression_InferenceRule" />
   <root nodeId="1225195203269">
-    <nodeInfo nodeId="1225195203271" fileName="check_ConceptBehavior_CheckingRule.java" startLine="27" startPosition="124" endLine="28" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203282" fileName="check_ConceptBehavior_CheckingRule.java" startLine="29" startPosition="118" endLine="30" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195203290" fileName="check_ConceptBehavior_CheckingRule.java" startLine="32" startPosition="167" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195203299" fileName="check_ConceptBehavior_CheckingRule.java" startLine="35" startPosition="65" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203310" fileName="check_ConceptBehavior_CheckingRule.java" startLine="38" startPosition="109" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_CheckingRule.java" startLine="43" startPosition="9" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_CheckingRule.java" startLine="44" startPosition="62" endLine="45" endPosition="370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_CheckingRule.java" startLine="51" startPosition="9" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_CheckingRule.java" startLine="52" startPosition="62" endLine="53" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203280" fileName="check_ConceptBehavior_CheckingRule.java" startLine="28" startPosition="209" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203288" fileName="check_ConceptBehavior_CheckingRule.java" startLine="31" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203308" fileName="check_ConceptBehavior_CheckingRule.java" startLine="37" startPosition="43" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_CheckingRule.java" startLine="42" startPosition="34" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_CheckingRule.java" startLine="50" startPosition="67" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195203303" fileName="check_ConceptBehavior_CheckingRule.java" startLine="36" startPosition="44" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1225195203321" fileName="check_ConceptBehavior_CheckingRule.java" startLine="41" startPosition="7" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203343" fileName="check_ConceptBehavior_CheckingRule.java" startLine="49" startPosition="79" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203341" fileName="check_ConceptBehavior_CheckingRule.java" startLine="48" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1225195203297" fileName="check_ConceptBehavior_CheckingRule.java" startLine="34" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1225195203281" fileName="check_ConceptBehavior_CheckingRule.java" startLine="29" startPosition="118" endLine="30" endPosition="13" />
-    <scopeInfo nodeId="1225195203289" fileName="check_ConceptBehavior_CheckingRule.java" startLine="32" startPosition="167" endLine="33" endPosition="13" />
-    <scopeInfo nodeId="1225195203309" fileName="check_ConceptBehavior_CheckingRule.java" startLine="38" startPosition="109" endLine="39" endPosition="39" />
-    <scopeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_CheckingRule.java" startLine="43" startPosition="9" endLine="45" endPosition="370" />
-    <scopeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_CheckingRule.java" startLine="51" startPosition="9" endLine="53" endPosition="250" />
-    <scopeInfo nodeId="1225195203307" fileName="check_ConceptBehavior_CheckingRule.java" startLine="37" startPosition="43" endLine="40" endPosition="9" />
-    <scopeInfo nodeId="1225195203322" fileName="check_ConceptBehavior_CheckingRule.java" startLine="42" startPosition="34" endLine="46" endPosition="9" />
-    <scopeInfo nodeId="1225195203344" fileName="check_ConceptBehavior_CheckingRule.java" startLine="50" startPosition="67" endLine="54" endPosition="9" />
-    <scopeInfo nodeId="1225195203303" fileName="check_ConceptBehavior_CheckingRule.java" startLine="36" startPosition="44" endLine="41" endPosition="7">
+    <nodeInfo nodeId="1225195203271" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="27" startPosition="124" endLine="28" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225195203282" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="29" startPosition="118" endLine="30" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225195203290" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="32" startPosition="167" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225195203299" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="35" startPosition="65" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225195203310" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="38" startPosition="109" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="43" startPosition="9" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="44" startPosition="62" endLine="45" endPosition="370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="51" startPosition="9" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="52" startPosition="62" endLine="53" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225195203280" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="28" startPosition="209" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225195203288" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225195203308" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="37" startPosition="43" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="42" startPosition="34" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="50" startPosition="67" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1225195203303" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="36" startPosition="44" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1225195203321" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="41" startPosition="7" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225195203343" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="49" startPosition="79" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225195203341" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="48" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1225195203297" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1225195203281" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="29" startPosition="118" endLine="30" endPosition="13" />
+    <scopeInfo nodeId="1225195203289" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="32" startPosition="167" endLine="33" endPosition="13" />
+    <scopeInfo nodeId="1225195203309" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="38" startPosition="109" endLine="39" endPosition="39" />
+    <scopeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="43" startPosition="9" endLine="45" endPosition="370" />
+    <scopeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="51" startPosition="9" endLine="53" endPosition="250" />
+    <scopeInfo nodeId="1225195203307" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="37" startPosition="43" endLine="40" endPosition="9" />
+    <scopeInfo nodeId="1225195203322" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="42" startPosition="34" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="1225195203344" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="50" startPosition="67" endLine="54" endPosition="9" />
+    <scopeInfo nodeId="1225195203303" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="36" startPosition="44" endLine="41" endPosition="7">
       <varInfo nodeId="1225195203305" varName="cm" />
     </scopeInfo>
-    <scopeInfo nodeId="1225195203342" fileName="check_ConceptBehavior_CheckingRule.java" startLine="49" startPosition="79" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="1225195203341" fileName="check_ConceptBehavior_CheckingRule.java" startLine="48" startPosition="5" endLine="56" endPosition="5">
+    <scopeInfo nodeId="1225195203342" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="49" startPosition="79" endLine="55" endPosition="7" />
+    <scopeInfo nodeId="1225195203341" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="48" startPosition="5" endLine="56" endPosition="5">
       <varInfo nodeId="1225195203354" varName="cmd" />
     </scopeInfo>
-    <scopeInfo nodeId="1225195203298" fileName="check_ConceptBehavior_CheckingRule.java" startLine="35" startPosition="65" endLine="47" endPosition="7">
+    <scopeInfo nodeId="1225195203298" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="35" startPosition="65" endLine="47" endPosition="7">
       <varInfo nodeId="1225195203300" varName="notImplementedMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1225195203270" fileName="check_ConceptBehavior_CheckingRule.java" startLine="27" startPosition="124" endLine="56" endPosition="5">
+    <scopeInfo nodeId="1225195203270" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="27" startPosition="124" endLine="56" endPosition="5">
       <varInfo nodeId="1225195203272" varName="methodDeclarations" />
     </scopeInfo>
   </root>
@@ -74,18 +74,18 @@
     </scopeInfo>
   </root>
   <root nodeId="1227262734777">
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="24" startPosition="60" endLine="25" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="26" startPosition="9" endLine="27" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="27" startPosition="153" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="28" startPosition="65" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="25" startPosition="272" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="22" startPosition="95" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227262761173" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="21" startPosition="119" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="26" startPosition="9" endLine="29" endPosition="71" />
-    <scopeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="23" startPosition="7" endLine="30" endPosition="9" />
-    <scopeInfo nodeId="1227262761175" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="22" startPosition="95" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1227262734778" fileName="check_ConceptMethodDeclaration_CheckingRule.java" startLine="21" startPosition="119" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="27" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="27" startPosition="153" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="28" startPosition="65" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="25" startPosition="272" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="22" startPosition="95" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227262761173" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="21" startPosition="119" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="29" endPosition="71" />
+    <scopeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="30" endPosition="9" />
+    <scopeInfo nodeId="1227262761175" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="22" startPosition="95" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="1227262734778" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="21" startPosition="119" endLine="32" endPosition="5" />
   </root>
   <root nodeId="3834658221333152923">
     <nodeInfo nodeId="3834658221333152931" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="34" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
