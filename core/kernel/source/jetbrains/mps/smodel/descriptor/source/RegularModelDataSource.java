@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.descriptor.source;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-public class RegularModelDataSource implements ModelDataSource {
+public class RegularModelDataSource extends FileBasedModelDataSource{
   private final IFile myFile;
   private long myDiskTimestamp = -1;
 

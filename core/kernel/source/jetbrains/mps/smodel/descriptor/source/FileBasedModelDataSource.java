@@ -15,24 +15,11 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import gnu.trove.THashSet;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.vfs.IFile;
 
-import java.util.Collection;
-import java.util.Set;
+import java.util.List;
 
-public class SimpleModelDataSource extends FileBasedModelDataSource{
-  private Set<ModelRoot> myModelRoots = new THashSet<ModelRoot>(1);
-
-  public SimpleModelDataSource(Collection<ModelRoot> modelRoots) {
-    myModelRoots = new THashSet<ModelRoot>(modelRoots);
-  }
-
-  public void startListening() {
-    123
-  }
-
-  public void stopListening() {
-    123
-  }
+public abstract class FileBasedModelDataSource implements ModelDataSource{
+  public abstract boolean containFile(IFile file);
+  public abstract void reload();
 }
