@@ -146,7 +146,6 @@ public class Equations {
   }
 
   private SNode expandNode(final SNode node, Set<SNode> variablesMet, boolean finalExpansion, boolean copy) {
-    //todo copy
     if (node == null) {
       return null;
     }
@@ -163,9 +162,7 @@ public class Equations {
       variablesMet.remove(type);
       return result;
     } else {
-      SNode result = copy ? CopyUtil.copy(node) : node; //todo
-      // In trace mode there should be node copy (because the node will be expanded and presentation will not be correct)
-      // Copying node in generation mode leads to generation errors
+      SNode result = copy ? CopyUtil.copy(node) : node;
       replaceChildren(result, variablesMet, finalExpansion, copy);
       replaceReferences(result, variablesMet, finalExpansion);
       return result;
@@ -225,15 +222,6 @@ public class Equations {
   public void clear() {
     myRepresentatives.clear();
     myNamesToNodes.clear();
-  }
-
-  public List<String> getListPresentation() {
-    List<String> result = new LinkedList<String>();
-    for (Map.Entry<SNode, SNode> entry : myRepresentatives.entrySet()) {
-      result.add(entry.getKey() + " = " + entry.getValue());
-    }
-    Collections.sort(result);
-    return result;
   }
 
   public Set<Entry<SNode, Set<SNode>>> getEquationGroups() {
