@@ -17851,7 +17851,7 @@
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpd4.1195214364922" resolveInfo="NonTypesystemRule" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1222182327918">
-        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1222182340218">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5622163437269772586">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4pgi.~AbstractNonTypesystemRule_Runtime" resolveInfo="AbstractNonTypesystemRule_Runtime" />
         </node>
       </node>
