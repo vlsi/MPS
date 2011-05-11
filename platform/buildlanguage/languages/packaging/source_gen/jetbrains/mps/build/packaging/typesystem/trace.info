@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.TypesystemDescriptor" />
-  <unitInfo fileName="NonEmptyFolderName_CheckingRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyFolderName_CheckingRule" />
-  <unitInfo fileName="NonEmptyFileName_CheckingRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyFileName_CheckingRule" />
-  <unitInfo fileName="NonEmptyArchiveName_CheckingRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyArchiveName_CheckingRule" />
-  <unitInfo fileName="NotExisingModule_CheckingRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NotExisingModule_CheckingRule" />
-  <unitInfo fileName="DuplicateModule_CheckingRule.java" startLine="19" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.DuplicateModule_CheckingRule" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyFolderName_NonTypesystemRule" />
+  <unitInfo fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyFileName_NonTypesystemRule" />
+  <unitInfo fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyArchiveName_NonTypesystemRule" />
+  <unitInfo fileName="NotExisingModule_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NotExisingModule_NonTypesystemRule" />
+  <unitInfo fileName="DuplicateModule_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.DuplicateModule_NonTypesystemRule" />
   <root nodeId="1205349754730">
-    <nodeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_CheckingRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_CheckingRule.java" startLine="23" startPosition="60" endLine="24" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_CheckingRule.java" startLine="21" startPosition="66" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205349801907" fileName="NonEmptyArchiveName_CheckingRule.java" startLine="20" startPosition="116" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_CheckingRule.java" startLine="22" startPosition="7" endLine="24" endPosition="243" />
-    <scopeInfo nodeId="1205349801909" fileName="NonEmptyArchiveName_CheckingRule.java" startLine="21" startPosition="66" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="1205349754731" fileName="NonEmptyArchiveName_CheckingRule.java" startLine="20" startPosition="116" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="21" startPosition="66" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205349801907" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="20" startPosition="116" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="243" />
+    <scopeInfo nodeId="1205349801909" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="21" startPosition="66" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="1205349754731" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="20" startPosition="116" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1205350407971">
-    <nodeInfo nodeId="1205350407988" fileName="NonEmptyFileName_CheckingRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205350407988" fileName="NonEmptyFileName_CheckingRule.java" startLine="23" startPosition="60" endLine="24" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205350407988" fileName="NonEmptyFileName_CheckingRule.java" startLine="21" startPosition="136" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205350407973" fileName="NonEmptyFileName_CheckingRule.java" startLine="20" startPosition="117" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1205350407988" fileName="NonEmptyFileName_CheckingRule.java" startLine="22" startPosition="7" endLine="24" endPosition="244" />
-    <scopeInfo nodeId="1205350407987" fileName="NonEmptyFileName_CheckingRule.java" startLine="21" startPosition="136" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="1205350407972" fileName="NonEmptyFileName_CheckingRule.java" startLine="20" startPosition="117" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="1205350407988" fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205350407988" fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205350407988" fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="21" startPosition="136" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205350407973" fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="20" startPosition="117" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1205350407988" fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="244" />
+    <scopeInfo nodeId="1205350407987" fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="21" startPosition="136" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="1205350407972" fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="20" startPosition="117" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1205350446240">
-    <nodeInfo nodeId="1205350446257" fileName="NonEmptyFolderName_CheckingRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205350446257" fileName="NonEmptyFolderName_CheckingRule.java" startLine="23" startPosition="60" endLine="24" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205350446257" fileName="NonEmptyFolderName_CheckingRule.java" startLine="21" startPosition="140" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205350446242" fileName="NonEmptyFolderName_CheckingRule.java" startLine="20" startPosition="119" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1205350446257" fileName="NonEmptyFolderName_CheckingRule.java" startLine="22" startPosition="7" endLine="24" endPosition="248" />
-    <scopeInfo nodeId="1205350446256" fileName="NonEmptyFolderName_CheckingRule.java" startLine="21" startPosition="140" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="1205350446241" fileName="NonEmptyFolderName_CheckingRule.java" startLine="20" startPosition="119" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="1205350446257" fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205350446257" fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205350446257" fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="21" startPosition="140" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205350446242" fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="20" startPosition="119" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1205350446257" fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="248" />
+    <scopeInfo nodeId="1205350446256" fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="21" startPosition="140" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="1205350446241" fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="20" startPosition="119" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1209458877820">
-    <nodeInfo nodeId="1209459089369" fileName="DuplicateModule_CheckingRule.java" startLine="28" startPosition="13" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209459089369" fileName="DuplicateModule_CheckingRule.java" startLine="29" startPosition="66" endLine="30" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209459118583" fileName="DuplicateModule_CheckingRule.java" startLine="32" startPosition="13" endLine="33" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209459118583" fileName="DuplicateModule_CheckingRule.java" startLine="33" startPosition="66" endLine="34" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209459089369" fileName="DuplicateModule_CheckingRule.java" startLine="27" startPosition="83" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1209459118583" fileName="DuplicateModule_CheckingRule.java" startLine="31" startPosition="13" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1209459021769" fileName="DuplicateModule_CheckingRule.java" startLine="26" startPosition="25" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209459010975" fileName="DuplicateModule_CheckingRule.java" startLine="25" startPosition="110" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209459001995" fileName="DuplicateModule_CheckingRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1209458967633" fileName="DuplicateModule_CheckingRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="1209459089369" fileName="DuplicateModule_CheckingRule.java" startLine="28" startPosition="13" endLine="30" endPosition="275" />
-    <scopeInfo nodeId="1209459118583" fileName="DuplicateModule_CheckingRule.java" startLine="32" startPosition="13" endLine="34" endPosition="277" />
-    <scopeInfo nodeId="1209459021771" fileName="DuplicateModule_CheckingRule.java" startLine="27" startPosition="83" endLine="35" endPosition="13" />
-    <scopeInfo nodeId="1209459010977" fileName="DuplicateModule_CheckingRule.java" startLine="26" startPosition="25" endLine="36" endPosition="11" />
-    <scopeInfo nodeId="1209459001998" fileName="DuplicateModule_CheckingRule.java" startLine="25" startPosition="110" endLine="37" endPosition="9" />
-    <scopeInfo nodeId="1209458967636" fileName="DuplicateModule_CheckingRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1209459001995" fileName="DuplicateModule_CheckingRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1209458877821" fileName="DuplicateModule_CheckingRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1209458967633" fileName="DuplicateModule_CheckingRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" />
+    <nodeInfo nodeId="1209459089369" fileName="DuplicateModule_NonTypesystemRule.java" startLine="28" startPosition="13" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209459089369" fileName="DuplicateModule_NonTypesystemRule.java" startLine="29" startPosition="66" endLine="30" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209459118583" fileName="DuplicateModule_NonTypesystemRule.java" startLine="32" startPosition="13" endLine="33" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209459118583" fileName="DuplicateModule_NonTypesystemRule.java" startLine="33" startPosition="66" endLine="34" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209459089369" fileName="DuplicateModule_NonTypesystemRule.java" startLine="27" startPosition="83" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1209459118583" fileName="DuplicateModule_NonTypesystemRule.java" startLine="31" startPosition="13" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1209459021769" fileName="DuplicateModule_NonTypesystemRule.java" startLine="26" startPosition="25" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1209459010975" fileName="DuplicateModule_NonTypesystemRule.java" startLine="25" startPosition="110" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1209459001995" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1209458967633" fileName="DuplicateModule_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="1209459089369" fileName="DuplicateModule_NonTypesystemRule.java" startLine="28" startPosition="13" endLine="30" endPosition="275" />
+    <scopeInfo nodeId="1209459118583" fileName="DuplicateModule_NonTypesystemRule.java" startLine="32" startPosition="13" endLine="34" endPosition="277" />
+    <scopeInfo nodeId="1209459021771" fileName="DuplicateModule_NonTypesystemRule.java" startLine="27" startPosition="83" endLine="35" endPosition="13" />
+    <scopeInfo nodeId="1209459010977" fileName="DuplicateModule_NonTypesystemRule.java" startLine="26" startPosition="25" endLine="36" endPosition="11" />
+    <scopeInfo nodeId="1209459001998" fileName="DuplicateModule_NonTypesystemRule.java" startLine="25" startPosition="110" endLine="37" endPosition="9" />
+    <scopeInfo nodeId="1209458967636" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1209459001995" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1209458877821" fileName="DuplicateModule_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="1209458967633" fileName="DuplicateModule_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" />
   </root>
   <root nodeId="1209470392210">
-    <nodeInfo nodeId="1209470451391" fileName="NotExisingModule_CheckingRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209470451391" fileName="NotExisingModule_CheckingRule.java" startLine="24" startPosition="60" endLine="25" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209470451391" fileName="NotExisingModule_CheckingRule.java" startLine="22" startPosition="71" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1209470426542" fileName="NotExisingModule_CheckingRule.java" startLine="21" startPosition="119" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1209470451391" fileName="NotExisingModule_CheckingRule.java" startLine="23" startPosition="7" endLine="25" endPosition="282" />
-    <scopeInfo nodeId="1209470426544" fileName="NotExisingModule_CheckingRule.java" startLine="22" startPosition="71" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="1209470392211" fileName="NotExisingModule_CheckingRule.java" startLine="21" startPosition="119" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="1209470451391" fileName="NotExisingModule_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209470451391" fileName="NotExisingModule_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209470451391" fileName="NotExisingModule_NonTypesystemRule.java" startLine="22" startPosition="71" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1209470426542" fileName="NotExisingModule_NonTypesystemRule.java" startLine="21" startPosition="119" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1209470451391" fileName="NotExisingModule_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="25" endPosition="282" />
+    <scopeInfo nodeId="1209470426544" fileName="NotExisingModule_NonTypesystemRule.java" startLine="22" startPosition="71" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="1209470392211" fileName="NotExisingModule_NonTypesystemRule.java" startLine="21" startPosition="119" endLine="27" endPosition="5" />
   </root>
 </debugInfo>
 

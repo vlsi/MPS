@@ -3,8 +3,10 @@
   <dependency className="jetbrains.mps.ui.modeling.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_PropertyChangeHandlerParam_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_AspectParameterRef_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_ThisUIObject_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.check_UIObject_consistent_belongsTo_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_ThatUIObjectParameter_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_Property_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_EventParam_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_LayoutConstraintExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
@@ -14,11 +16,12 @@
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_ExpressionWithUnit_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_EventProducerParam_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_AuxObjectAccessOp_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_Property_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.check_IAspectParameterHolder_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_ThisUIObject_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.typesystem.typeof_BeforeUIObjectParam_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ui.modeling.typesystem.check_IAspectParameterHolder_CheckingRule" file="check_IAspectParameterHolder_CheckingRule.java">
+  <dependency className="jetbrains.mps.ui.modeling.typesystem.check_IAspectParameterHolder_NonTypesystemRule" file="check_IAspectParameterHolder_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -32,9 +35,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.ui.modeling.typesystem.check_UIObject_consistent_belongsTo_CheckingRule" file="check_UIObject_consistent_belongsTo_CheckingRule.java">
+  <dependency className="jetbrains.mps.ui.modeling.typesystem.check_UIObject_consistent_belongsTo_NonTypesystemRule" file="check_UIObject_consistent_belongsTo_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -47,7 +50,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.typesystem.fix_IAspectParameterHolder_QuickFix" file="fix_IAspectParameterHolder_QuickFix.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
