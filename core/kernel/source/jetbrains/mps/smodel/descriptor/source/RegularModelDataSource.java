@@ -17,9 +17,7 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -30,7 +28,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   private static final Logger LOG = Logger.getLogger(RegularModelDataSource.class);
 
   private final IFile myFile;
-  private long myDiskTimestamp = -1;
 
   public RegularModelDataSource(@NotNull IFile file) {
     myFile = file;
@@ -49,15 +46,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile.getPath().equals(file.getPath());
   }
 
-
-  public void reload() {
-    if (!needsReloading()) return;
-
-    reloadFromDisk();
-    updateDiskTimestamp();
-    updateModelModified();
-  }
-
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
       LOG.warning("Model file " + getDescriptor().getSModel().getSModelFqName() + " was modified externally!\n" +
@@ -71,26 +59,10 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return true;
   }
 
-  //----------------------------
-
-  public boolean needsReloading() {
-    if (myDiskTimestamp == -1) return false;
-    return fileTimestamp() != myDiskTimestamp;
-  }
-
-  private void updateModelModified() {
-    getDescriptor().setLastModified(myDiskTimestamp);
-  }
-
-  private void updateDiskTimestamp() {
-    myDiskTimestamp = fileTimestamp();
-  }
-
-  private long fileTimestamp() {
+  protected long getTimestamp() {
     if (myFile == null || !myFile.exists()) return -1;
     return myFile.lastModified();
   }
-
 
   /**
    * This method should be called either in EDT, inside WriteAction or in any other thread

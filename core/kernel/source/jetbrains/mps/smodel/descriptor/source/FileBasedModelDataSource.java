@@ -20,6 +20,7 @@ import jetbrains.mps.vfs.IFile;
 
 public abstract class FileBasedModelDataSource implements ModelDataSource {
   private DefaultSModelDescriptor myDescriptor = null;
+  private long myDiskTimestamp = -1;
 
   public DefaultSModelDescriptor getDescriptor() {
     return myDescriptor;
@@ -30,9 +31,13 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
     myDescriptor = d;
   }
 
-  public abstract boolean containFile(IFile file);
+  public void reload() {
+    if (!needsReloading()) return;
 
-  public abstract void reload();
+    reloadFromDisk();
+    updateDiskTimestamp();
+    getDescriptor().setLastModified(myDiskTimestamp);
+  }
 
   public void startListening() {
     ReloadableSources.getInstance().addSource(this);
@@ -41,4 +46,17 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
   public void stopListening() {
     ReloadableSources.getInstance().removeSource(this);
   }
+
+  public boolean needsReloading() {
+    if (myDiskTimestamp == -1) return false;
+    return getTimestamp() != myDiskTimestamp;
+  }
+
+  public void updateDiskTimestamp() {
+    myDiskTimestamp = getTimestamp();
+  }
+
+  protected abstract long getTimestamp();
+
+  public abstract boolean containFile(IFile file);
 }

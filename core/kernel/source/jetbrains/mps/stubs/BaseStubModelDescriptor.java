@@ -5,7 +5,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
+import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -21,23 +26,17 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   private final Object myUpdatersLock = new Object();
   private Set<ModelUpdater> myUpdaters = null;
 
-  //todo left for compatibility. Should be removed
-  public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    this(manager, modelReference, true, modelFile != null ? new FileStubSource(modelFile) : null);
+  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, @Nullable ModelDataSource source) {
+    this(manager, modelReference, true, source);
   }
 
-  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, @Nullable StubSource stubSource) {
-    this(manager, modelReference, true, stubSource);
-  }
-
-  protected BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, boolean checkDup, StubSource source) {
-    super(manager, modelReference, checkDup);
-    this.mySource = source;
+  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, boolean checkDup, ModelDataSource source) {
+    super(manager, modelReference,source, checkDup);
     updateManagerId();
   }
 
   public BaseStubModelDescriptor copy(BaseStubModelRootManager manager) {
-    return new BaseStubModelDescriptor(manager, myModelReference, false, mySource);
+    return new BaseStubModelDescriptor(manager, myModelReference, false, getSource());
   }
 
   private void updateAfterLoad(SModel model) {
@@ -70,18 +69,10 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
     }
   }
 
+  @Hack
   public void addStubPath(StubPath sp) {
-    if (myStubPaths == null) {
-      myStubPaths = new ArrayList<StubPath>();
-    }
-
-    if (myStubPaths.contains(sp)) return;
-
-    myStubPaths.add(sp);
-  }
-
-  public List<StubPath> getPaths() {
-    return myStubPaths == null ? Collections.<StubPath>emptyList() : myStubPaths;
+    //todo this is a hack. we need to do it another way
+    ((StubModelDataSource) getSource()).addPath(sp);
   }
 
   public boolean isNeedsReloading() {
@@ -110,12 +101,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
     myManagerClass = myModelRootManager.getClass().getName();
   }
 
-  public StubSource getSource() {
-    return mySource;
-  }
-
   //------------common descriptor stuff-------------------
-
 
   protected void setLoadingState(ModelLoadingState state) {
     assert state != ModelLoadingState.ROOTS_LOADED : "this state can't be used for stub models for now";

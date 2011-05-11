@@ -10,6 +10,9 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
@@ -292,7 +295,8 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private boolean modelPathsAffected(BaseStubModelDescriptor sm) {
-    for (StubPath s : sm.getPaths()) {
+    ModelDataSource source = sm.getSource();
+    for (StubPath s : ((StubModelDataSource) source).getStubPaths()) {
       if (!myUnchangedStubPaths.contains(s)) {
         return true;
       }

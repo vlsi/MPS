@@ -16,43 +16,87 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.StubPath;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
+import java.util.Collection;
 import java.util.Set;
 
-public class StubModelDataSource extends FileBasedModelDataSource{
-  private Set<IFile> myFiles = new THashSet<IFile>();
+public class StubModelDataSource extends FileBasedModelDataSource {
+  private static Logger LOG = Logger.getLogger(StubModelDataSource.class);
+
+  private final Set<StubPath> myStubPaths;
+
+  public StubModelDataSource(Collection<StubPath> stubPaths) {
+    myStubPaths = new THashSet<StubPath>(stubPaths);
+  }
+
+  public String toString() {
+    //todo
+    return "stub model data source";
+  }
 
   public boolean containFile(IFile file) {
-    return myFiles.contains(file);
-  }
-
-  public void reload() {
-
-  }
-
-  public void setDescriptor(DefaultSModelDescriptor d) {
-
-  }
-
-  public DefaultSModelDescriptor getDescriptor() {
-    return null;
+    for (StubPath p:myStubPaths){
+      if (FileSystem.getInstance().getFileByPath(p.getPath())==file) return true;
+    }
+    return false;
   }
 
   public boolean checkAndResolveConflictOnSave() {
-    return false;
+    return true;
   }
 
-  public boolean needsReloading() {
-    return false;
+  protected long getTimestamp() {
+    long max = -1;
+    for (StubPath path : myStubPaths) {
+      long ts = getTimestampRecursive(FileSystem.getInstance().getFileByPath(path.getPath()));
+      max = Math.max(max, ts);
+    }
+    return max;
   }
 
+  private static long getTimestampRecursive(IFile path) {
+    long max = path.lastModified();
+    if (path.isDirectory()) {
+      for (IFile child : path.getChildren()) {
+        long timestamp = getTimestampRecursive(child);
+        if (timestamp > max) {
+          max = timestamp;
+        }
+      }
+    }
+    return max;
+  }
+
+  /**
+   * This method should be called either in EDT, inside WriteAction or in any other thread
+   */
   public void reloadFromDisk() {
+    ModelAccess.assertLegalWrite();
 
+    if (myStubPaths.isEmpty()) {
+      SModelRepository.getInstance().deleteModel(getDescriptor());
+      return;
+    }
+
+    getDescriptor().reload();
+    LOG.assertLog(!needsReloading());
   }
 
   public void resolveDiskConflict() {
+    throw new IllegalStateException();
+  }
 
+  public Collection<StubPath> getStubPaths() {
+    return myStubPaths;
+  }
+
+  public void addPath(StubPath sp) {
+    myStubPaths.add(sp);
   }
 }

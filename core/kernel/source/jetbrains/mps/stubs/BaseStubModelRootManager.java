@@ -140,7 +140,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      updateModel(myLocation, model, descriptor.getSource());
+      updateModel(myLocation, model);
     } catch (Throwable t) {
       LOG.error(t);
     } finally {
@@ -156,10 +156,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   @Deprecated
   protected void updateModel(StubLocation location, SModel model) {
-  }
-
-  protected void updateModel(StubLocation location, SModel model, StubSource source) {
-    updateModel(location, model);
   }
 
   protected abstract Set<Language> getLanguagesToImport();

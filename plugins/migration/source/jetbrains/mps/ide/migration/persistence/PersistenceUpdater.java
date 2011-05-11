@@ -50,7 +50,7 @@ public class PersistenceUpdater {
           assert file != null;
           SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file, false);
           ModelPersistence.saveModel(model, file, toVersion);
-          modelDescriptor.reloadFromDisk();
+          ((DefaultSModelDescriptor) modelDescriptor).getSource().reloadFromDisk();
         }
       }
     });

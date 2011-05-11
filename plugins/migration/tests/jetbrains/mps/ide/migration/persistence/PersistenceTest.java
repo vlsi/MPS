@@ -22,11 +22,8 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -103,8 +100,8 @@ public class PersistenceTest extends BaseMPSTest {
 
               final EditableSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<EditableSModelDescriptor>() {
                 public EditableSModelDescriptor compute() {
-                  EditableSModelDescriptor modelDescr = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-                  modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
+                  DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                  modelDescr.getSource().reloadFromDisk();   // no way to remove model from repository, so reloading
                   assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                   return modelDescr;
                 }

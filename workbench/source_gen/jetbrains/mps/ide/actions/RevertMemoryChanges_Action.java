@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -55,7 +57,7 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).reloadFromDisk();
+      ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getSource().reloadFromDisk();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);

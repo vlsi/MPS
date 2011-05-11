@@ -21,6 +21,7 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -286,6 +287,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void changeModelFile(IFile newModelFile) {
+/*
     ModelAccess.assertLegalWrite();
     if (getModelFile().getPath().equals(newModelFile.getPath())) return;
 
@@ -295,6 +297,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     myModelFile = newModelFile;
     updateDiskTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+*/
   }
 
   private void tryFixingVersion() {
@@ -335,6 +338,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Deprecated
   public IFile getModelFile() {
-    return ((RegularModelDataSource) getSource()).getFile();
+    ModelDataSource source = getSource();
+    if (!(source instanceof RegularModelDataSource)) return null;
+    return ((RegularModelDataSource) source).getFile();
   }
 }
