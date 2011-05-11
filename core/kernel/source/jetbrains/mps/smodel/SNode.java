@@ -514,12 +514,12 @@ public final class SNode {
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
-    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
+    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
         foundChild = child;
         count++;
-      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
+      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
         foundChild = child;
         count++;
       }
@@ -561,11 +561,11 @@ public final class SNode {
     }
     int count = 0;
 
-    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
+    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
         count++;
-      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
+      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
         count++;
       }
     }
@@ -670,13 +670,13 @@ public final class SNode {
     if (firstChild == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
 
-    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
+    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = firstChild; child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
         result.add(child);
         child.fireNodeReadAccess();
         NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
-      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
+      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
         result.add(child);
         child.fireNodeReadAccess();
         NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);

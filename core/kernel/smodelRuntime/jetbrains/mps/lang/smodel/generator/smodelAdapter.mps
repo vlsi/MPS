@@ -13065,6 +13065,26 @@
         </node>
       </node>
     </node>
+    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5342347949602254341">
+      <property name="name" nameId="tpck.1169194664001" value="isOldAttributeRole" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="5342347949602254345" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5342347949602254343" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5342347949602254344">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5342347949602254353">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5342347949602254354">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~AttributesRolesUtil%disAttributeRole(java%dlang%dString)%cboolean" resolveInfo="isAttributeRole" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lkfb.~AttributesRolesUtil" resolveInfo="AttributesRolesUtil" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5342347949602254355">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5342347949602254346" resolveInfo="role" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5342347949602254346">
+        <property name="name" nameId="tpck.1169194664001" value="role" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5342347949602254347" />
+      </node>
+    </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5451601117033243837">
       <property name="name" nameId="tpck.1169194664001" value="getOldRole" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
@@ -13173,10 +13193,10 @@
           </node>
         </node>
       </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6407023681583031163" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5342347949602254359" />
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5451601117033243833">
-      <property name="name" nameId="tpck.1169194664001" value="isNewAttributeInOldRole" />
+      <property name="name" nameId="tpck.1169194664001" value="isOldRoleForNewAttribute" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6407023681583031180" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6407023681583031181">
@@ -14018,10 +14038,9 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6407023681583065770">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.OrExpression" typeId="tpee.1080223426719" id="1287809918884479995">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1287809918884479999">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~AttributesRolesUtil%disAttributeRole(java%dlang%dString)%cboolean" resolveInfo="isAttributeRole" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lkfb.~AttributesRolesUtil" resolveInfo="AttributesRolesUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8647109073523580015">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="5342347949602254357">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5342347949602254341" resolveInfo="isOldAttributeRole" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5342347949602254358">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8647109073523579963" resolveInfo="role" />
               </node>
             </node>
