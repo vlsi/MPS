@@ -9,6 +9,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.make.facet.typesystem.TypesystemDescriptor;
+import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)");
@@ -26,6 +27,11 @@ public class Language extends LanguageRuntime {
   @Override
   public IHelginsDescriptor getTypesystem() {
     return new TypesystemDescriptor();
+  }
+
+  @Override
+  public BaseFindUsagesDescriptor getFindUsages() {
+    return null;
   }
 
   public Collection<TemplateModule> getGenerators() {

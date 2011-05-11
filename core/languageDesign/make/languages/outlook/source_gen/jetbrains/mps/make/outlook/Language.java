@@ -8,6 +8,7 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a(jetbrains.mps.make.outlook)");
@@ -24,6 +25,11 @@ public class Language extends LanguageRuntime {
 
   @Override
   public IHelginsDescriptor getTypesystem() {
+    return null;
+  }
+
+  @Override
+  public BaseFindUsagesDescriptor getFindUsages() {
     return null;
   }
 

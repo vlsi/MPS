@@ -9,6 +9,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.samples.lambdaCalculus.typesystem.TypesystemDescriptor;
+import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("7c9e2807-94ad-4afc-adf0-aaee45eb2895(jetbrains.mps.samples.lambdaCalculus)");
@@ -26,6 +27,11 @@ public class Language extends LanguageRuntime {
   @Override
   public IHelginsDescriptor getTypesystem() {
     return new TypesystemDescriptor();
+  }
+
+  @Override
+  public BaseFindUsagesDescriptor getFindUsages() {
+    return null;
   }
 
   public Collection<TemplateModule> getGenerators() {

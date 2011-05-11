@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -31,6 +32,10 @@ public abstract class LanguageRuntime {
   public IHelginsDescriptor getTypesystem() {
     // TODO generate
     return new LanguageRuntimeInterpreted(MPSModuleRepository.getInstance().getLanguage(getNamespace())).getTypesystem();
+  }
+
+  public BaseFindUsagesDescriptor getFindUsages() {
+    return null;
   }
 
   public abstract Collection<TemplateModule> getGenerators();

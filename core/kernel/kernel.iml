@@ -43,6 +43,7 @@
     <orderEntry type="library" name="java-diff-utils" level="project" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="library" name="Trove" level="project" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
 </module>
 
