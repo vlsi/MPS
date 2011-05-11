@@ -16,10 +16,10 @@
 package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
-import com.intellij.ide.util.gotoByName.ChooseByNameBaseMPS;
+import jebtrains.mps.ide.util.gotoByName.ChooseByNameBaseMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
-import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
+import jebtrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;

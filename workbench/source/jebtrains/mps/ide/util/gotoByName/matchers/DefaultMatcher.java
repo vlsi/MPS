@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.intellij.ide.util.gotoByName.matchers;
+package jebtrains.mps.ide.util.gotoByName.matchers;
 
-import com.intellij.ide.util.gotoByName.ChooseByNameBaseMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.CustomMatcherModel;
 import com.intellij.openapi.util.Comparing;
@@ -28,6 +27,7 @@ import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.util.Function;
 import com.intellij.util.SmartList;
 import com.intellij.util.containers.ContainerUtil;
+import jebtrains.mps.ide.util.gotoByName.ChooseByNameBaseMPS;
 
 import java.lang.ref.WeakReference;
 import java.util.*;

@@ -16,8 +16,8 @@
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
-import com.intellij.ide.util.gotoByName.matchers.DefaultMatcher;
-import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
+import jebtrains.mps.ide.util.gotoByName.matchers.DefaultMatcher;
+import jebtrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 public class DefaultMatcherFactory {

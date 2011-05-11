@@ -14,14 +14,16 @@
  * limitations under the License.
  */
 
-package com.intellij.ide.util.gotoByName;
+package jebtrains.mps.ide.util.gotoByName;
 
 import com.intellij.Patches;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.actions.CopyReferenceAction;
 import com.intellij.ide.ui.UISettings;
-import com.intellij.ide.util.gotoByName.matchers.DefaultMatcher;
-import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
+import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
+import jebtrains.mps.ide.util.gotoByName.matchers.DefaultMatcher;
+import jebtrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.MnemonicHelper;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
@@ -89,7 +91,7 @@ public abstract class ChooseByNameBaseMPS {
   private List<Pair<String, Integer>> myHistory;
   private List<Pair<String, Integer>> myFuture;
 
-  protected ChooseByNamePopupComponent.Callback myActionListener;
+  protected Callback myActionListener;
 
   protected final Alarm myAlarm = new Alarm();
 
@@ -165,7 +167,7 @@ public abstract class ChooseByNameBaseMPS {
     myToolArea = toolArea;
   }
 
-  public void invoke(final ChooseByNamePopupComponent.Callback callback,
+  public void invoke(final Callback callback,
                      final ModalityState modalityState,
                      boolean allowMultipleSelection) {
     initUI(callback, modalityState, allowMultipleSelection);
@@ -262,7 +264,7 @@ public abstract class ChooseByNameBaseMPS {
    * @param modalityState          - if not null rebuilds list in given {@link com.intellij.openapi.application.ModalityState}
    * @param allowMultipleSelection
    */
-  protected void initUI(final ChooseByNamePopupComponent.Callback callback,
+  protected void initUI(final Callback callback,
                         final ModalityState modalityState,
                         boolean allowMultipleSelection) {
     myPreviouslyFocusedComponent = WindowManagerEx.getInstanceEx().getFocusedComponent(myProject);

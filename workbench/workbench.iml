@@ -34,6 +34,7 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="baseLanguage" />
+    <orderEntry type="library" name="commons-logging" level="project" />
   </component>
 </module>
 

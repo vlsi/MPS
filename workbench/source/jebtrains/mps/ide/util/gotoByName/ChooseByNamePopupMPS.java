@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.intellij.ide.util.gotoByName;
+package jebtrains.mps.ide.util.gotoByName;
 
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
+import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import jebtrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.ComponentPopupBuilder;
