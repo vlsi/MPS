@@ -17,10 +17,8 @@ package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -72,6 +70,10 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   }
 
   public void dispose() {
+  }
+
+  public DescriptorLoadResult loadDescriptor(DefaultSModelDescriptor defaultSModelDescriptor) {
+    throw new UnsupportedOperationException();
   }
 
   public void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile) {

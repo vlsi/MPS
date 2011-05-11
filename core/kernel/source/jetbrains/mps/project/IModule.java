@@ -62,8 +62,6 @@ public interface IModule extends ModelOwner {
 
   List<SModelDescriptor> getHiddenModelDescriptors();
 
-  List<SModelDescriptor> getEditableUserModels();
-
   List<SModelRoot> getSModelRoots();
 
   String getOutputFor(SModelDescriptor model);

@@ -397,7 +397,7 @@ public class StandardDialogs {
         result_960thj_a1a0a0a5.addComponent(result_960thj_a0a1a0a0a5);
         if (dialog.myModel instanceof EditableSModelDescriptor) {
           final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
-          final JComponent result_960thj_a0a0a1a1a0a0a5 = StandardComponents.createFilePanel("Model File:", ((EditableSModelDescriptor) dialog.myModel).getModelFile());
+          final JComponent result_960thj_a0a0a1a1a0a0a5 = StandardComponents.createFilePanel("Model File:", ((EditableSModelDescriptor) dialog.myModel).getSource());
           result_960thj_a0a1a1a0a0a5.setComponent(result_960thj_a0a0a1a1a0a0a5);
           final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a1a0a0a5 = BaseBindedDialog.ConstraintsType.FIELD;
           result_960thj_a0a1a1a0a0a5.setConstraints(result_960thj_a1a0a1a1a0a0a5);

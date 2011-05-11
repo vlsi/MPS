@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -65,4 +66,6 @@ public interface IModelRootManager {
   void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile);
 
   void dispose();
+
+  DescriptorLoadResult loadDescriptor(DefaultSModelDescriptor defaultSModelDescriptor);
 }

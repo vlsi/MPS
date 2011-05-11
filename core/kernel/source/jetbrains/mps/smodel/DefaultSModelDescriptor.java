@@ -15,13 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -30,9 +26,6 @@ import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -74,7 +67,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
-    super(manager, modelReference,new RegularModelDataSource(modelFile), checkDup);
+    super(manager, modelReference, new RegularModelDataSource(modelFile), checkDup);
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
     getSource().setDescriptor(this);
@@ -165,19 +158,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     fireModelSaved();
   }
 
-  public boolean isPackaged() {
-    return FileSystem.getInstance().isPackaged(getModelFile());
-  }
-
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !isPackaged() && SModelStereotype.isUserModel(this);
-  }
-
-  public String getModelHash() {
-    IFile file = getModelFile();
-    if (file == null) return null;
-
-    return ModelDigestUtil.hash(file);
+    return !isDoNotGenerate() && !getSource().isPackaged() && SModelStereotype.isUserModel(this);
   }
 
   //this method should be called only with a fully loaded model as parameter
@@ -261,7 +243,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   public SModelHeader getSModelHeader() {
     SModel model = mySModel;
-    if(model != null) {
+    if (model != null) {
       return model.getSModelHeader();
     }
     return myHeader;
@@ -278,7 +260,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       message += "source = " + getSource() + "\n";
 
       if (anotherModel instanceof EditableSModelDescriptor) {
-        message += "another model's file = " + ((EditableSModelDescriptor) anotherModel).getModelFile();
+        message += "another model's source = " + ((EditableSModelDescriptor) anotherModel).getSource();
       } else {
         message += "another model is non-editable";
       }
@@ -287,7 +269,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void changeModelFile(IFile newModelFile) {
-/*
     ModelAccess.assertLegalWrite();
     if (getModelFile().getPath().equals(newModelFile.getPath())) return;
 
@@ -297,7 +278,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     myModelFile = newModelFile;
     updateDiskTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-*/
   }
 
   private void tryFixingVersion() {
@@ -324,7 +304,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //should be called only from model's source
   public void reload() {
-    DescriptorLoadResult dr = ModelPersistence.loadDescriptor(getModelFile());
+    DescriptorLoadResult dr = getModelRootManager().loadDescriptor(this);
     myHeader = dr.getHeader();
     myMetadata = dr.getMetadata();
 
@@ -332,14 +312,5 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     ModelLoadResult result = load(getLoadingState());
     replaceModel(result.getModel(), getLoadingState());
-  }
-
-  //----------------------
-
-  @Deprecated
-  public IFile getModelFile() {
-    ModelDataSource source = getSource();
-    if (!(source instanceof RegularModelDataSource)) return null;
-    return ((RegularModelDataSource) source).getFile();
   }
 }

@@ -92,6 +92,14 @@ public class StubModelDataSource extends FileBasedModelDataSource {
     throw new IllegalStateException();
   }
 
+  public boolean isPackaged() {
+    return true;
+  }
+
+  public String getModelHash() {
+    return null;
+  }
+
   public Collection<StubPath> getStubPaths() {
     return myStubPaths;
   }

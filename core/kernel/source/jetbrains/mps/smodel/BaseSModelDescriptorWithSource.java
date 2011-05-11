@@ -30,6 +30,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     mySource.startListening();
   }
 
+  @NotNull
   public ModelDataSource getSource(){
     return mySource;
   }

@@ -17,10 +17,12 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -44,6 +46,15 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   public boolean containFile(IFile file) {
     return myFile.getPath().equals(file.getPath());
+  }
+
+  public boolean isPackaged() {
+    return FileSystem.getInstance().isPackaged(myFile);
+  }
+
+  public String getModelHash() {
+    if (myFile == null) return null;
+    return ModelDigestUtil.hash(myFile);
   }
 
   public boolean checkAndResolveConflictOnSave() {

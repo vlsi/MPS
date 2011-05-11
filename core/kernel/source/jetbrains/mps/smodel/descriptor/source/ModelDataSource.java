@@ -35,4 +35,8 @@ public interface ModelDataSource {
   void reloadFromDisk();
 
   void resolveDiskConflict();
+
+  boolean isPackaged();
+
+  String getModelHash();
 }

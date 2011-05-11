@@ -25,6 +25,8 @@ import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -142,6 +144,11 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   public boolean isFindUsagesSupported() {
     return true;
+  }
+
+  @Override
+  public DescriptorLoadResult loadDescriptor(DefaultSModelDescriptor d) {
+    return ModelPersistence.loadDescriptor(((RegularModelDataSource) d.getSource()).getFile());
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
