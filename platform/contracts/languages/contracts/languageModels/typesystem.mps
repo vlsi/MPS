@@ -28,7 +28,7 @@
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="8892289062513982023">
       <property name="name" nameId="tpck.1169194664001" value="fixMethodConditions" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8892289062513982026">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8892289062513982026">
       <property name="name" nameId="tpck.1169194664001" value="checkMethodConditions" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2329648364425265334">

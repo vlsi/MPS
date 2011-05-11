@@ -13,27 +13,27 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1205349754730">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1205349754730">
       <property name="name" nameId="tpck.1169194664001" value="NonEmptyArchiveName" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1205350407971">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1205350407971">
       <property name="name" nameId="tpck.1169194664001" value="NonEmptyFileName" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1205350446240">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1205350446240">
       <property name="name" nameId="tpck.1169194664001" value="NonEmptyFolderName" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1209458877820">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1209458877820">
       <property name="name" nameId="tpck.1169194664001" value="DuplicateModule" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1209470392210">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1209470392210">
       <property name="name" nameId="tpck.1169194664001" value="NotExisingModule" />
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />

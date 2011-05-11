@@ -318,47 +318,47 @@
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="1224686720631">
       <property name="name" nameId="tpck.1169194664001" value="ConvertCastToSModelCast" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226066843640">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226066843640">
       <property name="name" nameId="tpck.1169194664001" value="check_PropertyAttributeAccessQualifier" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226068607116">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226068607116">
       <property name="name" nameId="tpck.1169194664001" value="check_Node_GetReferentSearchScopeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226069950608">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226069950608">
       <property name="name" nameId="tpck.1169194664001" value="check_SPropertyAccess" />
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226070689784">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226070689784">
       <property name="name" nameId="tpck.1169194664001" value="check_SLinkListAccess" />
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226070974800">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226070974800">
       <property name="name" nameId="tpck.1169194664001" value="check_SLinkAccess" />
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226071491798">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226071491798">
       <property name="name" nameId="tpck.1169194664001" value="check_SConceptPropertyAccess" />
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226071920272">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226071920272">
       <property name="name" nameId="tpck.1169194664001" value="check_SConceptLinkAccess" />
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226074920318">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226074920318">
       <property name="name" nameId="tpck.1169194664001" value="check_SNodeOperation" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1226359745588">
       <property name="name" nameId="tpck.1169194664001" value="typeof_LinkRefExpression" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226359941188">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226359941188">
       <property name="name" nameId="tpck.1169194664001" value="check_LinkRefExpression" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226666581264">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226666581264">
       <property name="name" nameId="tpck.1169194664001" value="check_Link_SetNewChildOperation" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1226666660944">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1226666660944">
       <property name="name" nameId="tpck.1169194664001" value="check_Link_DeleteChildOperation" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1227265506201">
@@ -371,7 +371,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
     </node>
     <node type="tpd4.VariableConvertersContainer" typeId="tpd4.1228482838236" id="1228490012587" />
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1230333307270">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1230333307270">
       <property name="name" nameId="tpck.1169194664001" value="check_Node_DetachOperation" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1238600305269">

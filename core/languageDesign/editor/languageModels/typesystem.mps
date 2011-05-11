@@ -62,10 +62,10 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_CaretPositionParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4575971948964591931">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4575971948964591931">
       <property name="name" nameId="tpck.1169194664001" value="IndentLayoutShouldntBeUsedWithBraces" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1901504820902746966">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1901504820902746966">
       <property name="name" nameId="tpck.1169194664001" value="RightTransformActionDeprecated" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4531786690999948571">

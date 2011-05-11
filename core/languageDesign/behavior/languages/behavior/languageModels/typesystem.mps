@@ -19,7 +19,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1225195203269">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1225195203269">
       <property name="name" nameId="tpck.1169194664001" value="check_ConceptBehavior" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225195239759">
@@ -28,7 +28,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225196556158">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ThisNodeExpression" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1227262734777">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1227262734777">
       <property name="name" nameId="tpck.1169194664001" value="check_ConceptMethodDeclaration" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="3834658221333152923">

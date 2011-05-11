@@ -21,25 +21,25 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1212181746947">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1212181746947">
       <property name="name" nameId="tpck.1169194664001" value="check_LinkDeclaration" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1212181908803">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1212181908803">
       <property name="name" nameId="tpck.1169194664001" value="check_PropertyDeclaration" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1235133131950">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1235133131950">
       <property name="name" nameId="tpck.1169194664001" value="check_ExtendedConceptsAreInExtendedLanguages" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2854075155749507956">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2854075155749507956">
       <property name="name" nameId="tpck.1169194664001" value="check_LinkDeclaration_SpecializedLinkMetaclass" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8258695653169408455">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8258695653169408455">
       <property name="name" nameId="tpck.1169194664001" value="check_UnimplementedBehaviorInConceptDeclaration" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3236994869862084815">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3236994869862084815">
       <property name="name" nameId="tpck.1169194664001" value="check_LinkDeclaration_SpecializedLinkGeneration" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6519915829969160778">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6519915829969160778">
       <property name="name" nameId="tpck.1169194664001" value="check_EditorForNonAbstractConcept" />
     </node>
   </roots>

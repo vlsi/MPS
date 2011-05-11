@@ -18,27 +18,27 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="ecih" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.tempoptions(MPS.Classpath/jetbrains.mps.tempoptions@java_stub)" version="-1" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
   <roots>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1225206150541">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1225206150541">
       <property name="name" nameId="tpck.1169194664001" value="check_DeprecatedReference" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8524227390952646882">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8524227390952646882">
       <property name="name" nameId="tpck.1169194664001" value="check_InstanceOfDeprecated" />
     </node>
     <node type="tpd4.InequationsGroupsRegistry" typeId="tpd4.1320713984677547791" id="1759628044690732296" />
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4942048232752368510">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4942048232752368510">
       <property name="name" nameId="tpck.1169194664001" value="check_ReferencesScope" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="3618120580763130707">
       <property name="name" nameId="tpck.1169194664001" value="RemoveUndeclaredProperty" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1556973682253867610">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1556973682253867610">
       <property name="name" nameId="tpck.1169194664001" value="check_UnknownLinks" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="1556973682253870204">
@@ -50,13 +50,13 @@
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="1556973682253891011">
       <property name="name" nameId="tpck.1169194664001" value="RemoveUnnecessaryChildrenInSingleRole" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7283836008113024215">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7283836008113024215">
       <property name="name" nameId="tpck.1169194664001" value="check_InstanceOfAbstract" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="376024488709664742">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="376024488709664742">
       <property name="name" nameId="tpck.1169194664001" value="check_Export" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7815324287109263445">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7815324287109263445">
       <property name="name" nameId="tpck.1169194664001" value="check_TargetConcepts" />
     </node>
   </roots>

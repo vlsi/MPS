@@ -19,7 +19,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1216860931280">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1216860931280">
       <property name="name" nameId="tpck.1169194664001" value="check_GenerationContextOp_Base" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1216860931317">
@@ -49,7 +49,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1221219721844">
       <property name="name" nameId="tpck.1169194664001" value="typeof_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1221220308822">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1221220308822">
       <property name="name" nameId="tpck.1169194664001" value="check_op_inside_refMacro" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1229478029842">

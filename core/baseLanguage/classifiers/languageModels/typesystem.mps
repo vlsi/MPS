@@ -21,7 +21,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_DefaultMethodCallOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Methods" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1205853960046">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1205853960046">
       <property name="name" nameId="tpck.1169194664001" value="check_IMemberOperation" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1214001475035">

@@ -327,11 +327,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_AnonymousClassCreator" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1195494591077">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1195494591077">
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="check_ClassifierType" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1196159284896">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1196159284896">
       <property name="name" nameId="tpck.1169194664001" value="check_BaseMethodDeclaration_UnreachableStatements" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
     </node>
@@ -343,7 +343,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_FieldReferenceOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1197313434315">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1197313434315">
       <property name="name" nameId="tpck.1169194664001" value="check_ConceptFunctionParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
     </node>
@@ -364,7 +364,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_Property" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="property" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1201700941924">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1201700941924">
       <property name="name" nameId="tpck.1169194664001" value="check_ThisExpression" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1202594219548">
@@ -395,11 +395,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ElsifClause" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="if" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1206984232961">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1206984232961">
       <property name="name" nameId="tpck.1169194664001" value="check_ConceptFunction" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207556276911">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1207556276911">
       <property name="name" nameId="tpck.1169194664001" value="check_InstanceInitializer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
@@ -417,11 +417,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ArrayCreator" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1210175778925">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1210175778925">
       <property name="name" nameId="tpck.1169194664001" value="checkThrowsOfMethodIsCaught" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1210182292392">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1210182292392">
       <property name="name" nameId="tpck.1169194664001" value="checkThrowedByThrowIsCaught" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1212689018464">
@@ -450,11 +450,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_IOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="dotExpression" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1219921316999">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1219921316999">
       <property name="name" nameId="tpck.1169194664001" value="check_VariableArityType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1219948071216">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1219948071216">
       <property name="name" nameId="tpck.1169194664001" value="check_parametersCount" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
     </node>
@@ -473,16 +473,16 @@
     <node type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1220523233382">
       <property name="name" nameId="tpck.1169194664001" value="subtypesOfClassifierTypeWWildcards" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1221566468365">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1221566468365">
       <property name="name" nameId="tpck.1169194664001" value="check_StringLiteral" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="string" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1221637809819">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1221637809819">
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="typeof_ClassConcept" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1221737503734">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1221737503734">
       <property name="name" nameId="tpck.1169194664001" value="check_StaticInitializer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
@@ -497,7 +497,7 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_EnumValueOfExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="enumOperations" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1225197179133">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1225197179133">
       <property name="name" nameId="tpck.1169194664001" value="check_StringTypeClassifierType" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1225276837971">
@@ -538,17 +538,17 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1225895339531">
       <property name="name" nameId="tpck.1169194664001" value="typeof_BitwiseNotExpression" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1228301715997">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1228301715997">
       <property name="name" nameId="tpck.1169194664001" value="check_AntiquotationContents" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="1228302110245">
       <property name="name" nameId="tpck.1169194664001" value="ReplaceClassAntiquotationWithClassifierType" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1228406942093">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1228406942093">
       <property name="name" nameId="tpck.1169194664001" value="check_AbstractMethodsInClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method.instance" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1228992488875">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1228992488875">
       <property name="name" nameId="tpck.1169194664001" value="check_LocalStaticMethodCall" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method.static" />
     </node>
@@ -566,14 +566,14 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236696569510">
       <property name="name" nameId="tpck.1169194664001" value="typeof_VarVariableDeclaration" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1239122804127">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1239122804127">
       <property name="name" nameId="tpck.1169194664001" value="NonFinalVariablesInAnonymousClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="anonymousClass" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1239212909416">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1239212909416">
       <property name="name" nameId="tpck.1169194664001" value="check_ExpressionStatement" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1239631684045">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1239631684045">
       <property name="name" nameId="tpck.1169194664001" value="check_FieldIsNeverUsedOrAssigned" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
@@ -582,7 +582,7 @@
       <property name="overrides" nameId="tpd4.1195213689297" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="prefix/postfix" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1240394564106">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1240394564106">
       <property name="name" nameId="tpck.1169194664001" value="NonFinalParametersInAnonymousClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
     </node>
@@ -594,10 +594,10 @@
       <property name="name" nameId="tpck.1169194664001" value="any_type_supertypeof_bottom" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1241543390448">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1241543390448">
       <property name="name" nameId="tpck.1169194664001" value="check_EnumConstantHasConstructorDeclaration" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1241543745974">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1241543745974">
       <property name="name" nameId="tpck.1169194664001" value="check_ConstructorInvocationStatementHasConstructor" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
@@ -612,39 +612,39 @@
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="prefix/postfix" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="5091709661843944852">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="5091709661843944852">
       <property name="name" nameId="tpck.1169194664001" value="checkAbstractClassCreators" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2782601603365239753">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2782601603365239753">
       <property name="name" nameId="tpck.1169194664001" value="check_HasSuperConstructorCall" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4646069078285986155">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4646069078285986155">
       <property name="name" nameId="tpck.1169194664001" value="voidArraysAreIllegal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6778605776626937114">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6778605776626937114">
       <property name="name" nameId="tpck.1169194664001" value="CheckBinaryOperationPriority" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="6778605776626487870">
       <property name="name" nameId="tpck.1169194664001" value="BinaryExpressionPriority" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6495695326613132490">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6495695326613132490">
       <property name="name" nameId="tpck.1169194664001" value="check_ThisExpression_ClassConceptSpecified_InGenerator" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6658278290515545914">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AsExpression" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4539702814067106471">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4539702814067106471">
       <property name="name" nameId="tpck.1169194664001" value="check_CorrectScope" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6935810692634462740">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6935810692634462740">
       <property name="name" nameId="tpck.1169194664001" value="check_NonStaticInnerClassCreation" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6935810692634693777">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6935810692634693777">
       <property name="name" nameId="tpck.1169194664001" value="check_InnerClassesCantHaveStaticInnerClasses" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3637195266922472263">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3637195266922472263">
       <property name="name" nameId="tpck.1169194664001" value="CheckExcessTypeCasts" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="3637195266922531731">
@@ -658,27 +658,27 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_BaseVariableReference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1906502351318602269">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1906502351318602269">
       <property name="name" nameId="tpck.1169194664001" value="check_DuplicateMethods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3293010995237496520">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3293010995237496520">
       <property name="name" nameId="tpck.1169194664001" value="check_ClassDoesNotExtendFinalClass" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1032178265900242657">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1032178265900242657">
       <property name="name" nameId="tpck.1169194664001" value="check_ForeachWithErasure" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3115327157609992976">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3115327157609992976">
       <property name="name" nameId="tpck.1169194664001" value="check_DuplicatedConstructors" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3545977178604749608">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3545977178604749608">
       <property name="name" nameId="tpck.1169194664001" value="checkUnnecessaryInstanceof" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2925336694746290132">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2925336694746290132">
       <property name="name" nameId="tpck.1169194664001" value="check_AnonymousClassHasConstructorDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="anonymousClass" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2925336694746295105">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2925336694746295105">
       <property name="name" nameId="tpck.1169194664001" value="check_AnonymousClassHasArgumentsInGoodRole" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="anonymousClass" />
     </node>
@@ -686,21 +686,21 @@
       <property name="name" nameId="tpck.1169194664001" value="FixParametersInAnonymousClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="anonymousClass" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7411612096156021729">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7411612096156021729">
       <property name="name" nameId="tpck.1169194664001" value="check_LongLiteral_within_range" />
     </node>
     <node type="tpd4.ComparisonRule" typeId="tpd4.1188811367543" id="2792650810919436247">
       <property name="name" nameId="tpck.1169194664001" value="typevar_comparable_with_classifier_type" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="498633765598940459">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="498633765598940459">
       <property name="name" nameId="tpck.1169194664001" value="check_InnerClassesCantHaveStaticMethods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method.static" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="498633765599287313">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="498633765599287313">
       <property name="name" nameId="tpck.1169194664001" value="check_InnerClassesCantHaveStaticInitializer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="498633765599292945">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="498633765599292945">
       <property name="name" nameId="tpck.1169194664001" value="check_InnerClassesCantHaveStaticFields" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="498633765599637389">
@@ -711,7 +711,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MakeStaticFieldNotStatic" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="498633765600365418">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="498633765600365418">
       <property name="name" nameId="tpck.1169194664001" value="check_InnerClassesCantHaveStaticDeclarations" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
@@ -723,14 +723,14 @@
       <property name="name" nameId="tpck.1169194664001" value="MakeStaticInitializerNotStatic" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3759381730162150198">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3759381730162150198">
       <property name="name" nameId="tpck.1169194664001" value="check_CaughtWasThrown" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8620077627875074983">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8620077627875074983">
       <property name="name" nameId="tpck.1169194664001" value="check_UnusedPrivateMethods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1260930188116714148">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1260930188116714148">
       <property name="name" nameId="tpck.1169194664001" value="PrimitiveTypesInInstanceOfNotAllowed" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="4746245540142329635">
@@ -740,24 +740,24 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_AdditionalForLoopVariable" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8218132442157467380">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8218132442157467380">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ThisConstructorInvocation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8218132442157478804">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8218132442157478804">
       <property name="name" nameId="tpck.1169194664001" value="check_ConstructorInvocationStatementIsFirstStatement" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4914488904501091779">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4914488904501091779">
       <property name="name" nameId="tpck.1169194664001" value="check_FinalVariableReferenceNotAssigned" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6624237184120284147">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6624237184120284147">
       <property name="name" nameId="tpck.1169194664001" value="check_AnnotationMethodDeclarationReturnType" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6624237184121136115">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6624237184121136115">
       <property name="name" nameId="tpck.1169194664001" value="check_AnnotationInstanceHasAllValues" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3256208460069601930">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3256208460069601930">
       <property name="name" nameId="tpck.1169194664001" value="check_AbstractClassifierReference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
@@ -768,11 +768,11 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5915179142332645884">
       <property name="name" nameId="tpck.1169194664001" value="checkTypesInForStatement" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4276006055364077538">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4276006055364077538">
       <property name="name" nameId="tpck.1169194664001" value="check_BaseMethodDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3207444945806619117">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3207444945806619117">
       <property name="name" nameId="tpck.1169194664001" value="check_SynchronizedStatement_NonFinalFields" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4663972844383684974">
@@ -781,17 +781,17 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1387988544209571090">
       <property name="name" nameId="tpck.1169194664001" value="typeof_BinaryOperation" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8945315740752657245">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8945315740752657245">
       <property name="name" nameId="tpck.1169194664001" value="check_EqualsMethodTypes" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6654001062452780370">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="6654001062452780370">
       <property name="name" nameId="tpck.1169194664001" value="CheckVariableDoubling" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2089334432679049932">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2089334432679049932">
       <property name="name" nameId="tpck.1169194664001" value="check_ExceptionWasNotCaught" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2089334432680122742">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2089334432680122742">
       <property name="name" nameId="tpck.1169194664001" value="check_DuplicateEnumConstants" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4940013265625385407">
@@ -803,15 +803,15 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ArrayCloneOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8559617843245215451">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8559617843245215451">
       <property name="name" nameId="tpck.1169194664001" value="check_VariableAssignedToItself" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="543449459583345868">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="543449459583345868">
       <property name="name" nameId="tpck.1169194664001" value="check_UnusedStaticFields" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7243599812675827514">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7243599812675827514">
       <property name="name" nameId="tpck.1169194664001" value="check_ConceptFunctionReturns" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
     </node>
@@ -828,21 +828,21 @@
       <property name="name" nameId="tpck.1169194664001" value="supertypesOfUpperBoundType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3073231036166000665">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3073231036166000665">
       <property name="name" nameId="tpck.1169194664001" value="check_UsingStatement" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="419889540470201426">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="419889540470201426">
       <property name="name" nameId="tpck.1169194664001" value="check_AnnotationForVoidMethod" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8974945326827873994">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8974945326827873994">
       <property name="name" nameId="tpck.1169194664001" value="check_ClassShouldHaveConstructor" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="7468068125290968523">
       <property name="name" nameId="tpck.1169194664001" value="RemoveUnusedAssignment" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3791846458263577202">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3791846458263577202">
       <property name="name" nameId="tpck.1169194664001" value="check_NullableStates" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4957392803029437211">
@@ -850,14 +850,14 @@
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7152041109751465917">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7152041109751465917">
       <property name="name" nameId="tpck.1169194664001" value="check_DefaultSuperConstructorThrowables" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7854098281915049056">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7854098281915049056">
       <property name="name" nameId="tpck.1169194664001" value="check_InstanceOf" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3511256318310404914">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3511256318310404914">
       <property name="name" nameId="tpck.1169194664001" value="check_NonStaticClassInInterface" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
@@ -866,18 +866,18 @@
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3306910260423123726">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3306910260423123726">
       <property name="name" nameId="tpck.1169194664001" value="check_switchArgument" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2792291462223192819">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2792291462223192819">
       <property name="name" nameId="tpck.1169194664001" value="check_ClassifierOverridingMethods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1596333951698899849">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="1596333951698899849">
       <property name="name" nameId="tpck.1169194664001" value="check_ClassifierOverridingFinalMethods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3434914349253195687">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="3434914349253195687">
       <property name="name" nameId="tpck.1169194664001" value="check_OverrideNullAnnotations" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
     </node>
@@ -892,11 +892,11 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7970711249077251764">
       <property name="name" nameId="tpck.1169194664001" value="CheckingUtil" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="843236768047671205">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="843236768047671205">
       <property name="name" nameId="tpck.1169194664001" value="check_FinalFieldWasAssigned" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="843236768047679839">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="843236768047679839">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
       <property name="name" nameId="tpck.1169194664001" value="check_StaticFinalFieldWasAssigned" />
     </node>
@@ -918,26 +918,26 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variable" />
       <property name="name" nameId="tpck.1169194664001" value="VariableReferenceUtil" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8918460683225653166">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8918460683225653166">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
       <property name="name" nameId="tpck.1169194664001" value="genericArrayCreatorsAreIllegal" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8695552310379793081">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="8695552310379793081">
       <property name="name" nameId="tpck.1169194664001" value="check_AnnotationTarget" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4540477783368644589">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4540477783368644589">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
       <property name="name" nameId="tpck.1169194664001" value="check_ClassifierOverrideAnnotations" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2108863436754358969">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="2108863436754358969">
       <property name="name" nameId="tpck.1169194664001" value="check_TypeInVarDecl" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7868761255934363861">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="7868761255934363861">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
       <property name="name" nameId="tpck.1169194664001" value="check_FinalAndAbstractMethod" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4299454829930171451">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="4299454829930171451">
       <property name="name" nameId="tpck.1169194664001" value="check_ConstructorRecursiveInvocation" />
     </node>
     <node type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="1790843000908443483">

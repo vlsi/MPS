@@ -30,7 +30,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5379647004618398324">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CustomConstructorParameterReference" />
     </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="960932673514536096">
+    <node type="tpd4.CheckingRule" typeId="tpd4.1195214364922" id="960932673514536096">
       <property name="name" nameId="tpck.1169194664001" value="checkNumberOfArgs" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4739047193854376701">
