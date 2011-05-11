@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -39,7 +40,7 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
     myLanguage = language;
 
     List<Generator> generators = language.getGenerators();
-    if(generators.isEmpty()) {
+    if (generators.isEmpty()) {
       myTemplateModules = null;
     } else {
       myTemplateModules = new ArrayList<TemplateModule>(generators.size());
@@ -60,16 +61,34 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
       SModelDescriptor helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(myLanguage);
       if (helginsModelDescriptor == null) return null;
       String packageName = helginsModelDescriptor.getLongName();
-      Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) myLanguage.getClass(packageName + ".TypesystemDescriptor");
+      Class<?> c = (Class<?>) myLanguage.getClass(packageName + ".TypesystemDescriptor");
       if (c == null) {
-        c = (Class<? extends IHelginsDescriptor>) myLanguage.getClass(packageName + ".HelginsDescriptor");
+        c = (Class<?>) myLanguage.getClass(packageName + ".HelginsDescriptor");
       }
       if (c == null) {
         return null;
       }
-      return c.newInstance();
-    } catch(Throwable ex) {
+      return (IHelginsDescriptor) c.newInstance();
+    } catch (Throwable ex) {
       //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
+      return null;
+    }
+  }
+
+  @Override
+  public BaseFindUsagesDescriptor getFindUsages() {
+    try {
+      SModelDescriptor findUsages = LanguageAspect.FIND_USAGES.get(myLanguage);
+      if (findUsages == null) return null;
+      String packageName = findUsages.getLongName();
+
+      Class<?> cls = myLanguage.getClass(packageName + ".FindUsagesDescriptor");
+      if (cls == null) {
+        return null;
+      }
+      return (BaseFindUsagesDescriptor) cls.newInstance();
+    } catch (Throwable ex) {
+      //     LOG.error("fail to instantiate findUsages for language " + l.getNamespace());
       return null;
     }
   }

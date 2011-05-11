@@ -143,21 +143,21 @@ public class LanguageRegistry implements ApplicationComponent {
 
     for(LanguageRegistryListener l : myLanguageListeners) {
       try {
-        l.unloadLanguages(languages, unloadAll);
+        l.languagesUnloaded(languages, unloadAll);
       } catch(Exception ex) {
         LOG.error(ex);
       }
     }
-    myConceptRegistry.unloadLanguages(languages, unloadAll);
+    myConceptRegistry.languagesUnloaded(languages, unloadAll);
   }
 
   private void notifyLoad(Collection<LanguageRuntime> languages) {
     if(languages.isEmpty()) return;
 
-    myConceptRegistry.loadLanguages(languages);
+    myConceptRegistry.languagesLoaded(languages);
     for(LanguageRegistryListener l : myLanguageListeners) {
       try {
-        l.loadLanguages(languages);
+        l.languagesLoaded(languages);
       } catch(Exception ex) {
         LOG.error(ex);
       }

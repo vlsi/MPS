@@ -22,36 +22,27 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistryListener;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class FindersManager implements ApplicationComponent {
+public class FindersManager implements ApplicationComponent, LanguageRegistryListener {
   private static final Logger LOG = Logger.getLogger(FindersManager.class);
-
-  public static String getDescriptorClassName(ModuleReference langRef) {
-    return "FindUsagesDescriptor";
-  }
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
   private Map<GeneratedFinder, SNodePointer> myNodesByFinder = new HashMap<GeneratedFinder, SNodePointer>();
   private boolean myLoaded = false;
 
-  private ClassLoaderManager myClassLoaderManager;
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
-    public void unload() {
-      clear();
-    }
-  };
+  private LanguageRegistry myLanguageRegistry;
 
-  public FindersManager(ClassLoaderManager manager) {
-    myClassLoaderManager = manager;
-
+  public FindersManager(LanguageRegistry registry) {
+    myLanguageRegistry = registry;
   }
 
   public Set<ReloadableFinder> getAvailableFinders(final SNode node) {
@@ -76,7 +67,7 @@ public class FindersManager implements ApplicationComponent {
               }
             }
           }
-          return (Set<ReloadableFinder>) Collections.unmodifiableSet(result);
+          return Collections.unmodifiableSet(result);
         }
       });
   }
@@ -130,9 +121,12 @@ public class FindersManager implements ApplicationComponent {
   }
 
   private void load() {
-    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-      String className = getDescriptorClassName(language.getModuleReference());
-      initFindersDescriptor(language, LanguageAspect.FIND_USAGES, className);
+    Collection<LanguageRuntime> availableLanguages = LanguageRegistry.getInstance().getAvailableLanguages();
+    if(availableLanguages == null) {
+      return;
+    }
+    for (LanguageRuntime language : availableLanguages) {
+      initFindersDescriptor(language);
     }
   }
 
@@ -146,15 +140,14 @@ public class FindersManager implements ApplicationComponent {
     });
   }
 
-  private void initFindersDescriptor(Language language, LanguageAspect aspect, String classShortName) {
+  private void initFindersDescriptor(LanguageRuntime language) {
     try {
-      Class<?> cls = language.getClass(language.getModuleFqName() + "." + aspect.getName() + "." + classShortName);
-      if (cls != null) {
-        BaseFindUsagesDescriptor desc = (BaseFindUsagesDescriptor) cls.newInstance();
-        desc.init();
+      BaseFindUsagesDescriptor descr = language.getFindUsages();
+      if(descr != null) {
+        descr.init();
       }
     } catch (Throwable throwable) {
-      LOG.error("Error while initializing find usages descriptor for language " + language.getModuleFqName(), throwable);
+      LOG.error("Error while initializing find usages descriptor for language " + language.getNamespace(), throwable);
     }
   }
 
@@ -164,17 +157,26 @@ public class FindersManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(FindersManager.class);
   }
 
-  public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
-  }
-
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Finders Manager";
   }
 
+  public void initComponent() {
+    myLanguageRegistry.addRegistryListener(this);
+  }
+
   public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    myLanguageRegistry.removeRegistryListener(this);
+  }
+
+  @Override
+  public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+  }
+
+  @Override
+  public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+    clear();
   }
 }

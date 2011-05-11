@@ -77,12 +77,13 @@ public class ConceptRegistry implements ApplicationComponent, LanguageRegistryLi
     return getConceptDescriptor(NameUtil.nodeFQName(node));
   }
 
-  public void loadLanguages(Iterable<LanguageRuntime> languages) {
+  public void languagesLoaded(Iterable<LanguageRuntime> languages) {
     ModelAccess.assertLegalWrite();
 
+    // TODO load descriptors
   }
 
-  public void unloadLanguages(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+  public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
     descriptors.clear();
   }
 }

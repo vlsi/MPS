@@ -69,14 +69,14 @@ public class TypeChecker implements ApplicationComponent {
   private LanguageRegistry myLanguageRegistry;
   private LanguageRegistryListener myLanguageListener = new LanguageRegistryListener() {
     @Override
-    public void loadLanguages(Iterable<LanguageRuntime> languages) {
+    public void languagesLoaded(Iterable<LanguageRuntime> languages) {
       for (LanguageRuntime l : languages) {
         myRulesManager.loadLanguage(l.getNamespace());
       }
     }
 
     @Override
-    public void unloadLanguages(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+    public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
       myRulesManager.clear();
     }
   };
@@ -95,8 +95,8 @@ public class TypeChecker implements ApplicationComponent {
       @Override
       public void run() {
         Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
-        if(availableLanguages != null) {
-          for(LanguageRuntime l : availableLanguages) {
+        if (availableLanguages != null) {
+          for (LanguageRuntime l : availableLanguages) {
             myRulesManager.loadLanguage(l.getNamespace());
           }
         }
