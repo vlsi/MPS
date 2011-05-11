@@ -29,6 +29,8 @@ import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
@@ -136,8 +138,8 @@ public class TypeChecker implements ApplicationComponent {
   private void loadAllLanguages() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
-          myRulesManager.loadLanguage(l);
+        for (LanguageRuntime l : LanguageRegistry.getInstance().getAvailableLanguages()) {
+          myRulesManager.loadLanguage(l.getNamespace());
         }
       }
     });

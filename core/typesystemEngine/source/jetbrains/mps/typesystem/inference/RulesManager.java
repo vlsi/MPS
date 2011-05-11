@@ -90,38 +90,15 @@ public class RulesManager {
     myModelsWithLoadedRules.add(modelReference);
   }
 
-  public boolean loadLanguage(String languageNamespace) {
-    if (myLoadedLanguages.contains(languageNamespace)) {
-      return true;
-    }
-    Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
-    if (l == null) {
-      return false;
-    }
-    return loadLanguage(l);
-  }
-
   //todo: we should not change language models while loading language
-  public boolean loadLanguage(final Language l) {
+  public boolean loadLanguage(final String languageNamespace) {
     // synchronized (RULES_LOCK) {
-    String languageNamespace = l.getModuleFqName();
     if (myLoadedLanguages.contains(languageNamespace)) {
       return true;
     }
     LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageNamespace);
     if (language == null) return false;
-    IHelginsDescriptor typesystemDescriptor = null;
-    try {
-      typesystemDescriptor = language.getTypesystem();
-    } catch (Throwable t) {
-      LOG.error("fail to instantiate HelginsDescriptor for language " + languageNamespace + ": " + t.toString());
-
-      // TODO temp hack, unless MPS-12321 is fixed
-      typesystemDescriptor = new LanguageRuntimeInterpreted(MPSModuleRepository.getInstance().getLanguage(languageNamespace)).getTypesystem();
-      if (typesystemDescriptor != null) {
-        LOG.error("critical: language classpath failure");
-      }
-    }
+    IHelginsDescriptor typesystemDescriptor = language.getTypesystem();
 
     if (typesystemDescriptor == null) return false;
     try {

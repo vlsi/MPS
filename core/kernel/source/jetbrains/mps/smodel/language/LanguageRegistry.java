@@ -19,11 +19,9 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -178,9 +176,25 @@ public class LanguageRegistry implements ApplicationComponent {
     return myLanguages.values();
   }
 
+  @Nullable
   public LanguageRuntime getLanguage(String namespace) {
     ModelAccess.assertLegalRead();
 
     return myLanguages.get(namespace);
+  }
+
+  @Nullable
+  public LanguageRuntime getLanguage(SNode node) {
+    if(node == null) {
+      return null;
+    }
+
+    String namespace = node.getLanguageNamespace();
+    return getLanguage(namespace);
+  }
+
+  @Deprecated
+  public LanguageRuntime getLanguage(Language language) {
+    return getLanguage(language.getModuleFqName());
   }
 }

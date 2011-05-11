@@ -73,6 +73,7 @@ public final class SNode {
 
   private Object[] myUserObjects; // key,value,key,value ; !copy-on-write
 
+  @NotNull
   private String myConceptFqName;
 
   private BaseAdapter myAdapter;
@@ -1312,6 +1313,7 @@ public final class SNode {
     return NameUtil.shortNameFromLongName(myConceptFqName);
   }
 
+  @NotNull
   public String getLanguageNamespace() {
     ModelAccess.assertLegalRead(this);
 
