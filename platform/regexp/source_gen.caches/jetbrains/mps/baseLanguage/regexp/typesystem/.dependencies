@@ -100,25 +100,22 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_MatchRegexpOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_SplitOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_FindMatchExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_InlineRegexpExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.FindMatchStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_ReplaceRegexpOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpStatement_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.check_StringLiteralRegexp_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.SplitExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.ReplaceWithRegexpExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_MatchRegexpOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchVariableReference_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.MatchRegexpExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.FindMatchStatement_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_SplitOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.ForEachMatchStatement_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_InlineRegexpExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.typesystem.check_LiteralReplacement_NonTypesystemRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.typesystem.check_LiteralReplacement_NonTypesystemRule" file="check_LiteralReplacement_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.typesystem.check_LiteralReplacement_CheckingRule" file="check_LiteralReplacement_CheckingRule.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
@@ -129,9 +126,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.typesystem.check_StringLiteralRegexp_NonTypesystemRule" file="check_StringLiteralRegexp_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.regexp.typesystem.check_StringLiteralRegexp_CheckingRule" file="check_StringLiteralRegexp_CheckingRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
@@ -142,7 +139,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.typesystem.typeof_FindMatchExpression_InferenceRule" file="typeof_FindMatchExpression_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />

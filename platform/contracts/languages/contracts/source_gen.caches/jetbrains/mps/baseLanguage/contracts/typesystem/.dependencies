@@ -2,15 +2,13 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.contracts.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.contracts.typesystem.typeof_ContractThisExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.contracts.typesystem.typeof_ResultExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.contracts.typesystem.typeof_Precondition_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.contracts.typesystem.typeof_Postcondition_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.contracts.typesystem.typeof_Precondition_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.contracts.typesystem.checkMethodConditions_NonTypesystemRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.contracts.typesystem.typeof_ResultExpression_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.contracts.typesystem.checkMethodConditions_NonTypesystemRule" file="checkMethodConditions_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.contracts.typesystem.checkMethodConditions_CheckingRule" file="checkMethodConditions_CheckingRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
@@ -22,7 +20,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.contracts.typesystem.fixMethodConditions_QuickFix" file="fixMethodConditions_QuickFix.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

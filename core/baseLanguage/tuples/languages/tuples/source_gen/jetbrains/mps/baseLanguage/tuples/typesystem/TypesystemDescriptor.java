@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.tuples.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 
@@ -25,22 +24,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InferenceRule_Runtime inferenceRule = new typeof_NamedTupleLiteral_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_NamedTupleComponent_final_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_NamedTupleDeclaration_extends_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_NamedTupleType_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_TupleComponentIsInScope_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
       SubtypingRule_Runtime subtypingRule = new NamedTuple_subtypeOf_extended_SubtypingRule();

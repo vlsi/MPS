@@ -3,12 +3,10 @@
   <dependency className="jetbrains.mps.baseLanguageInternal.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalPartialInstanceMethodCall_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalClassExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.check_ExtractStaticMethodCall_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalNewExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalVariableReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_ExtractStaticMethodExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_ExtractStaticInnerClassExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_WeakClassReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalStaticMethodCall_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
@@ -20,7 +18,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalThisExpression_InferenceRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguageInternal.typesystem.check_ExtractStaticMethodCall_NonTypesystemRule" file="check_ExtractStaticMethodCall_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguageInternal.typesystem.check_ExtractStaticMethodCall_CheckingRule" file="check_ExtractStaticMethodCall_CheckingRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -34,7 +32,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.typesystem.typeof_ExtractStatementList_InferenceRule" file="typeof_ExtractStatementList_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />

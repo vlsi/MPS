@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.math.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
@@ -139,26 +138,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InferenceRule_Runtime inferenceRule = new typeof_VectorInitializer_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_dimensions_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new highlight_complex_to_real_casts_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new matrix_element_must_be_number_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new matrix_index_lvalue_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new vector_element_must_be_number_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
       SubtypingRule_Runtime subtypingRule = new IntervalSupertypes_SubtypingRule();

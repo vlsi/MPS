@@ -3,14 +3,12 @@
   <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_ThisClassifierExpresson_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_SuperClassifierExpresson_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultMethodCallOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultClassifierFieldAccessOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_NonTypesystemRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_NonTypesystemRule" file="check_IMemberOperation_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_CheckingRule" file="check_IMemberOperation_CheckingRule.java">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -27,7 +25,7 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultClassifierFieldAccessOperation_InferenceRule" file="typeof_DefaultClassifierFieldAccessOperation_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
