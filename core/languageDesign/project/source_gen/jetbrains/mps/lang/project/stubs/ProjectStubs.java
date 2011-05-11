@@ -50,7 +50,7 @@ public class ProjectStubs extends BaseStubModelRootManager {
     return result;
   }
 
-  protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
+  protected void updateModel(final StubLocation location, final SModel model, final ModelDataSource source) {
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
