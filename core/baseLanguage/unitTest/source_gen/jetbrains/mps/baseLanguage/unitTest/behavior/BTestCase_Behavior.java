@@ -50,7 +50,7 @@ public class BTestCase_Behavior {
   public static TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
     for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)) {
       for (SNode annotationInstance : SLinkOperations.getTargets(method, "annotation", true)) {
-        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)", "8492459591399146889"))) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)", "~MPSLaunch"))) {
           return NodesTestCase_Behavior.getTestRunParameters_1217424543047();
         }
       }

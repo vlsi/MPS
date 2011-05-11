@@ -34,7 +34,7 @@
     <nodeInfo nodeId="8084800926155112059" fileName="BTestCase_Behavior.java" startLine="37" startPosition="51" endLine="38" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8084800926155112073" fileName="BTestCase_Behavior.java" startLine="42" startPosition="8" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216136251476" fileName="BTestCase_Behavior.java" startLine="46" startPosition="75" endLine="47" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7691748101595472042" fileName="BTestCase_Behavior.java" startLine="53" startPosition="222" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7691748101595472042" fileName="BTestCase_Behavior.java" startLine="53" startPosition="290" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7691748101595472046" fileName="BTestCase_Behavior.java" startLine="57" startPosition="5" endLine="58" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3324600636006964338" fileName="BTestCase_Behavior.java" startLine="61" startPosition="88" endLine="62" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3324600636006964349" fileName="BTestCase_Behavior.java" startLine="63" startPosition="71" endLine="64" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -57,7 +57,7 @@
     <scopeInfo nodeId="1213877487743" fileName="BTestCase_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
     <scopeInfo nodeId="8084800926155112058" fileName="BTestCase_Behavior.java" startLine="37" startPosition="51" endLine="38" endPosition="218" />
     <scopeInfo nodeId="1216136232489" fileName="BTestCase_Behavior.java" startLine="46" startPosition="75" endLine="47" endPosition="73" />
-    <scopeInfo nodeId="7691748101595466460" fileName="BTestCase_Behavior.java" startLine="53" startPosition="222" endLine="54" endPosition="77" />
+    <scopeInfo nodeId="7691748101595466460" fileName="BTestCase_Behavior.java" startLine="53" startPosition="290" endLine="54" endPosition="77" />
     <scopeInfo nodeId="3324600636006964374" fileName="BTestCase_Behavior.java" startLine="65" startPosition="205" endLine="66" endPosition="319" />
     <scopeInfo nodeId="4520990320128651402" fileName="BTestCase_Behavior.java" startLine="78" startPosition="81" endLine="79" endPosition="59" />
     <scopeInfo nodeId="8084800926155111949" fileName="BTestCase_Behavior.java" startLine="30" startPosition="264" endLine="32" endPosition="86">
