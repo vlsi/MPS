@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -25,11 +26,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * evgeny, 3/11/11
  */
 public class LanguageRegistry implements ApplicationComponent {
+
+  private static final Logger LOG = Logger.getLogger(LanguageRegistry.class);
 
   /*
   *  Language namespace can be changed.
@@ -38,6 +42,8 @@ public class LanguageRegistry implements ApplicationComponent {
   private Map<String, LanguageRuntime> myLanguages;
 
   private final ConceptRegistry myConceptRegistry;
+
+  private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
   public static LanguageRegistry getInstance() {
     return ApplicationManager.getApplication().getComponent(LanguageRegistry.class);
@@ -69,7 +75,7 @@ public class LanguageRegistry implements ApplicationComponent {
                 if (runtime != null) {
                   myLanguages.put(namespace, runtime);
                   myLanguageToNamespace.put(l, namespace);
-                  myConceptRegistry.loadLanguages(Collections.singleton(runtime));
+                  notifyLoad(Collections.singleton(runtime));
                 }
               }
             }
@@ -92,7 +98,7 @@ public class LanguageRegistry implements ApplicationComponent {
                 LanguageRuntime runtime = myLanguages.remove(namespace);
                 if (runtime != null) {
                   myLanguageToNamespace.remove(l);
-                  myConceptRegistry.unloadLanguages(Collections.singleton(runtime), false);
+                  notifyUnload(Collections.singleton(runtime), false);
                 }
               }
             }
@@ -112,7 +118,7 @@ public class LanguageRegistry implements ApplicationComponent {
   public void reloadLanguages() {
     ModelAccess.assertLegalWrite();
 
-    myConceptRegistry.unloadLanguages(myLanguages.values(), true);
+    notifyUnload(myLanguages.values(), true);
     myLanguages.clear();
     Set<Language> existing = new HashSet<Language>(myLanguageToNamespace.keySet());
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
@@ -129,7 +135,33 @@ public class LanguageRegistry implements ApplicationComponent {
       myLanguageToNamespace.remove(l);
     }
 
-    myConceptRegistry.loadLanguages(myLanguages.values());
+    notifyLoad(myLanguages.values());
+  }
+
+  private void notifyUnload(Collection<LanguageRuntime> languages, boolean unloadAll) {
+    if(languages.isEmpty()) return;
+
+    for(LanguageRegistryListener l : myLanguageListeners) {
+      try {
+        l.unloadLanguages(languages, unloadAll);
+      } catch(Exception ex) {
+        LOG.error(ex);
+      }
+    }
+    myConceptRegistry.unloadLanguages(languages, unloadAll);
+  }
+
+  private void notifyLoad(Collection<LanguageRuntime> languages) {
+    if(languages.isEmpty()) return;
+
+    myConceptRegistry.loadLanguages(languages);
+    for(LanguageRegistryListener l : myLanguageListeners) {
+      try {
+        l.loadLanguages(languages);
+      } catch(Exception ex) {
+        LOG.error(ex);
+      }
+    }
   }
 
   private static LanguageRuntime createRuntime(Language l, boolean tryToLoad) {
@@ -162,7 +194,7 @@ public class LanguageRegistry implements ApplicationComponent {
   public void disposeComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myConceptRegistry.unloadLanguages(myLanguages.values(), true);
+        notifyUnload(myLanguages.values(), true);
         myLanguageToNamespace.clear();
         myLanguages.clear();
       }
@@ -179,13 +211,21 @@ public class LanguageRegistry implements ApplicationComponent {
     return "component: " + getComponentName();
   }
 
+  public void addRegistryListener(LanguageRegistryListener listener) {
+    myLanguageListeners.add(listener);
+  }
+
+  public void removeRegistryListener(LanguageRegistryListener listener) {
+    myLanguageListeners.remove(listener);
+  }
+
   /*
    *   Collection is valid until the end of the current read action.
    */
   public Collection<LanguageRuntime> getAvailableLanguages() {
     ModelAccess.assertLegalRead();
 
-    return myLanguages.values();
+    return myLanguages == null ? null : myLanguages.values();
   }
 
   @Nullable

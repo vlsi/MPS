@@ -26,10 +26,9 @@ import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
@@ -40,6 +39,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -61,46 +61,58 @@ public class TypeChecker implements ApplicationComponent {
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
-  private ClassLoaderManager myClassLoaderManager;
-
   private boolean myIsGeneration = false;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
-    public void unload() {
-      myRulesManager.clear();
+
+  private LanguageRegistry myLanguageRegistry;
+  private LanguageRegistryListener myLanguageListener = new LanguageRegistryListener() {
+    @Override
+    public void loadLanguages(Iterable<LanguageRuntime> languages) {
+      for (LanguageRuntime l : languages) {
+        myRulesManager.loadLanguage(l.getNamespace());
+      }
     }
 
     @Override
-    public void load() {
-      loadAllLanguages();
+    public void unloadLanguages(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+      myRulesManager.clear();
     }
   };
 
   private static final boolean useOldTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_OLD_TYPESYSTEM));
 
-  public TypeChecker(ClassLoaderManager manager, LanguageRegistry languageRegistry) {
-    myClassLoaderManager = manager;
+  public TypeChecker(LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
     myRuntimeSupport = new RuntimeSupportNew(this);
     mySubtypingManager = new SubTypingManagerNew(this);
     myRulesManager = new RulesManager(this);
   }
 
   public void initComponent() {
-    // TODO listen language registry instead of class loader
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
-    loadAllLanguages();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
+        if(availableLanguages != null) {
+          for(LanguageRuntime l : availableLanguages) {
+            myRulesManager.loadLanguage(l.getNamespace());
+          }
+        }
+        myLanguageRegistry.addRegistryListener(myLanguageListener);
+      }
+    });
+  }
+
+  public void disposeComponent() {
+    myLanguageRegistry.removeRegistryListener(myLanguageListener);
   }
 
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Type Checker";
-  }
-
-  public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   public static TypeChecker getInstance() {
@@ -134,16 +146,6 @@ public class TypeChecker implements ApplicationComponent {
 
   public RulesManager getRulesManager() {
     return myRulesManager;
-  }
-
-  private void loadAllLanguages() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (LanguageRuntime l : LanguageRegistry.getInstance().getAvailableLanguages()) {
-          myRulesManager.loadLanguage(l.getNamespace());
-        }
-      }
-    });
   }
 
   public void enableTypesComputingForCompletion() {
