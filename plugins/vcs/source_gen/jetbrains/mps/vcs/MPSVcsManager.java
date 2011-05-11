@@ -127,12 +127,15 @@ public class MPSVcsManager implements ProjectComponent {
     }
 
     public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
+      //todo
+/*
       for (SModelDescriptor smodelDescriptor : inputModels) {
         if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
           ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
           MPSVcsManager.LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }
+*/
     }
 
     public void modelsGenerated(List<SModelDescriptor> models, boolean success) {
