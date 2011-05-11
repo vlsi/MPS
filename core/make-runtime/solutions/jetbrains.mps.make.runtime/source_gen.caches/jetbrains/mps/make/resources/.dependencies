@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.resources.IResource" file="IResource.java" />
+  <dependency className="jetbrains.mps.make.resources.IResourceClusterizer" file="IResourceClusterizer.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+  </dependency>
 </dependenciesRoot>
 

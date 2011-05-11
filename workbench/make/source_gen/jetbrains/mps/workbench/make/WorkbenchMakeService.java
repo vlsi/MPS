@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import dependencies.ModulesClusterizer;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
@@ -100,12 +102,26 @@ public class WorkbenchMakeService implements IMakeService {
         SModelRepository.getInstance().saveAll();
       }
     });
-
+    final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        clInput.value = new ModulesClusterizer().clusterize(Sequence.fromIterable(inputRes).<IResource>select(new ISelector<IResource, IResource>() {
+          public IResource select(IResource r) {
+            return (IResource) r;
+          }
+        }));
+      }
+    });
     final IScriptController ctl = this.completeController(scrName, mh, controller);
     final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
     doExecute(new Runnable() {
       public void run() {
-        res.value = script.execute(ctl, inputRes);
+        for (Iterable<IResource> cl : clInput.value) {
+          res.value = script.execute(ctl, cl);
+          if (!(res.value.isSucessful())) {
+            break;
+          }
+        }
       }
     });
 

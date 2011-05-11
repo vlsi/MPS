@@ -47,7 +47,12 @@ public abstract class GraphAnalyzer<V> {
 
   public List<List<V>> findCycles() {
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
-    return this.collectCycles(this.topoSort(ws));
+    return this.collectCycles(this.topoSort(ws), false);
+  }
+
+  public List<List<V>> totalOrder() {
+    Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
+    return this.collectCycles(this.topoSort(ws), true);
   }
 
   public Iterable<V> topologicalSort() {
@@ -105,7 +110,7 @@ public abstract class GraphAnalyzer<V> {
     return res;
   }
 
-  private List<List<V>> collectCycles(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
+  private List<List<V>> collectCycles(Iterable<GraphAnalyzer.Wrapper<V>> ws, final boolean trivial) {
     final List<List<V>> cycles = ListSequence.fromList(new ArrayList<List<V>>());
     Sequence.fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
       public void visit(GraphAnalyzer.Wrapper<V> w) {
@@ -126,7 +131,7 @@ public abstract class GraphAnalyzer<V> {
             }
           }
         }, backward);
-        if (ListSequence.fromList(w.successors).isNotEmpty()) {
+        if (trivial || ListSequence.fromList(w.successors).isNotEmpty()) {
           ListSequence.fromList(cycles).addElement(collectSuccessors(w, ListSequence.fromListAndArray(new ArrayList<V>(), w.vertex)));
         }
       }

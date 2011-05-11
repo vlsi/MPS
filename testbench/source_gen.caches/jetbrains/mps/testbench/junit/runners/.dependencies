@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.testbench.junit.runners.FilepathParameterized" file="FilepathParameterized.java">
-    <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="org.junit.runners.model.TestClass" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="org.junit.runners.model.FrameworkMethod" />
-    <classNode dependClassName="java.lang.reflect.Modifier" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="java.lang.ClassCastException" />
-    <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.junit.runners.model.Statement" />
+    <classNode dependClassName="java.lang.reflect.Modifier" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode dependClassName="org.junit.runners.Parameterized" />
+    <classNode dependClassName="org.junit.runners.model.FrameworkMethod" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="org.junit.runners.model.Statement" />
+    <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="org.junit.runners.BlockJUnit4ClassRunner" />
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" file="ModuleSymbolicSuite.java">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="java.lang.annotation.Retention" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.lang.annotation.ElementType" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.annotation.ElementType" />
+    <classNode dependClassName="java.lang.annotation.Retention" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="java.lang.annotation.Target" />
-    <classNode dependClassName="org.junit.runner.notification.Failure" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runner.notification.Failure" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="java.lang.annotation.Annotation" />
     <classNode extendsClassName="org.junit.runner.Runner" />
     <classNode extendsClassName="org.junit.runners.ParentRunner" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.SymbolicSuite" file="SymbolicSuite.java">
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
-    <classNode dependClassName="java.lang.annotation.Retention" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.lang.annotation.ElementType" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="org.junit.runner.Description" />
-    <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.annotation.ElementType" />
+    <classNode dependClassName="java.lang.annotation.Retention" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="org.junit.internal.builders.AllDefaultPossibilitiesBuilder" />
+    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="java.lang.annotation.Annotation" />
     <classNode extendsClassName="org.junit.runners.ParentRunner" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.WatchingParameterized" file="WatchingParameterized.java">
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.junit.runner.manipulation.Sortable" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.OrderComparator" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
-    <classNode dependClassName="org.junit.runner.manipulation.Sorter" />
     <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runner.manipulation.Sortable" />
+    <classNode dependClassName="org.junit.runner.manipulation.Sorter" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.FilepathParameterized" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.WatchingSuite" file="WatchingSuite.java">
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
+    <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
-    <classNode dependClassName="org.junit.runner.Runner" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.SymbolicSuite" />
   </dependency>
 </dependenciesRoot>

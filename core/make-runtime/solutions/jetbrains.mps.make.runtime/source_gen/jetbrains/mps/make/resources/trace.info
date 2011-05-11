@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="1077540970775387639">
+    <nodeInfo nodeId="1077540970775387641" fileName="IResourceClusterizer.java" startLine="6" startPosition="39" endLine="7" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clusterize#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="1077540970775387641" fileName="IResourceClusterizer.java" startLine="6" startPosition="39" endLine="7" endPosition="85">
+      <varInfo nodeId="1077540970775387650" varName="res" />
+    </scopeInfo>
+    <unitInfo nodeId="1077540970775387639" fileName="IResourceClusterizer.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.resources.IResourceClusterizer" />
+  </root>
   <root nodeId="6168415856807657256">
     <unitInfo nodeId="6168415856807657256" fileName="IResource.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.resources.IResource" />
   </root>
