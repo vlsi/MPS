@@ -139,7 +139,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveFirstElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_HeadSetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetValuesOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SubSetOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MappingsSetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ClassifierTypeList_ListType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.RulesFunctions_Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.iterator_subtypeOf_iterator_InequationReplacementRule" />
@@ -147,7 +147,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_TailListOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_KeyAccessOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveAllSetElementsOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ClearSetOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AddElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_DowncastExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.IMapping_interface_supertypeOf_mappingType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule" />
@@ -155,7 +155,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_TailSetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_comparableWith_Set_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ForEachVariable_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_supertypeOf_map_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ClearSetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.map_type_comparableWith_Map_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_PushOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetLastOperation_InferenceRule" />
@@ -165,27 +165,28 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MappingOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.stack_supertypeOf_deque_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ReduceLeftOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_linkedlist_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_equivalent_to_subconcepts_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ReduceRightOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SubSetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.queue_type_comparableWith_Queue_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_JoinOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_IteratorType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_TakeOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_supertypeOf_queue_SubtypingRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MoveNextOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AllOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.sorted_set_subtypeOf_set_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetCurrentOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AddSetElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_HasNextOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AddElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_DequeType_ClassiType_Deque_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.java_util_Map_extends_map_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveSetElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_DistinctOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MapClearOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MoveNextOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_WhereOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetSizeOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_IsEmptyOperation_InferenceRule" />
@@ -193,9 +194,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ClassifierType_Iterator_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SetElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_QueueType_ClassiType_Queue_SubtypingRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_equivalent_to_subconcepts_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_IEnumerator_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveAllElementsOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.check_container_creator_not_primitive_array_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MapRemoveOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ClassifierTypeList_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.enumerator_subtypeOf_enumerator_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ClearAllElementsOperation_InferenceRule" />
@@ -210,27 +213,26 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetEnumeratorOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_CustomContainerDeclaration_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AddFirstElementOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_SequenceType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_FoldLeftOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.setType_with_vars_subtypeOf_setType_InequationReplacementRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_SequenceType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_supertypeOf_map_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.SortedMap_comparableTo_sorted_map_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AbstractContainerCreator_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.set_weakSupertypeOf_ClassifierType_Set_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SelectOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveWhereOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MappingsSetOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.check_CustomContainerCreator_elementType_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_subtypeOf_sequence_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_HeadMapOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ContainsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_EnumeratorType_IteratorType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_TreeSetCreator_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AllOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_StackType_ClassiType_Deque_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ValueAccessOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MapRemoveOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_linkedlist_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SmartClosureParameterDeclaration_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MapElement_InferenceRule" />
@@ -243,6 +245,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AddAllSetElementsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_FindFirstOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_StackType_StackType_withWildcard_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveLastElementOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SubMapOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.util.AbstractDependency_Runtime" />
@@ -275,7 +278,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.listType_with_vars_subtypeOf_listType_InequationReplacementRule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.check_CustomContainerCreator_elementType_CheckingRule" file="check_CustomContainerCreator_elementType_CheckingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.check_CustomContainerCreator_elementType_NonTypesystemRule" file="check_CustomContainerCreator_elementType_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -287,9 +290,9 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.check_container_creator_not_primitive_array_CheckingRule" file="check_container_creator_not_primitive_array_CheckingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.check_container_creator_not_primitive_array_NonTypesystemRule" file="check_container_creator_not_primitive_array_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -304,7 +307,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.Rule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.containerIterator_subtrypeOf_containerIterator_InequationReplacementRule" file="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.String" />

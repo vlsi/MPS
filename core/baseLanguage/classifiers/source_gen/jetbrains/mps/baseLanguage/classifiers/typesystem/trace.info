@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_DefaultClassifierFieldAccessOperation_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultClassifierFieldAccessOperation_InferenceRule" />
   <unitInfo fileName="typeof_SuperClassifierExpresson_InferenceRule.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_SuperClassifierExpresson_InferenceRule" />
   <unitInfo fileName="typeof_ThisClassifierExpresson_InferenceRule.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_ThisClassifierExpresson_InferenceRule" />
-  <unitInfo fileName="check_IMemberOperation_CheckingRule.java" startLine="22" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_CheckingRule" />
+  <unitInfo fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_NonTypesystemRule" />
   <unitInfo fileName="typeof_DefaultMethodCallOperation_InferenceRule.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultMethodCallOperation_InferenceRule" />
   <root nodeId="1205753100058">
     <nodeInfo nodeId="1205753102905" fileName="typeof_ThisClassifierExpresson_InferenceRule.java" startLine="22" startPosition="124" endLine="23" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -66,21 +66,21 @@
     <scopeInfo nodeId="1205769672846" fileName="typeof_DefaultMethodCallOperation_InferenceRule.java" startLine="23" startPosition="124" endLine="55" endPosition="5" />
   </root>
   <root nodeId="1205853960046">
-    <nodeInfo nodeId="1225121628861" fileName="check_IMemberOperation_CheckingRule.java" startLine="26" startPosition="124" endLine="27" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_CheckingRule.java" startLine="28" startPosition="5" endLine="29" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_CheckingRule.java" startLine="29" startPosition="157" endLine="30" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205921883388" fileName="check_IMemberOperation_CheckingRule.java" startLine="33" startPosition="11" endLine="34" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205921883388" fileName="check_IMemberOperation_CheckingRule.java" startLine="34" startPosition="64" endLine="35" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_CheckingRule.java" startLine="38" startPosition="12" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205921883388" fileName="check_IMemberOperation_CheckingRule.java" startLine="32" startPosition="200" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205921883376" fileName="check_IMemberOperation_CheckingRule.java" startLine="31" startPosition="42" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_CheckingRule.java" startLine="30" startPosition="122" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_CheckingRule.java" startLine="27" startPosition="124" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1205921883388" fileName="check_IMemberOperation_CheckingRule.java" startLine="33" startPosition="11" endLine="35" endPosition="259" />
-    <scopeInfo nodeId="1205921883387" fileName="check_IMemberOperation_CheckingRule.java" startLine="32" startPosition="200" endLine="36" endPosition="11" />
-    <scopeInfo nodeId="1205921883375" fileName="check_IMemberOperation_CheckingRule.java" startLine="31" startPosition="42" endLine="37" endPosition="9" />
-    <scopeInfo nodeId="1205921883368" fileName="check_IMemberOperation_CheckingRule.java" startLine="28" startPosition="5" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="1205853960047" fileName="check_IMemberOperation_CheckingRule.java" startLine="26" startPosition="124" endLine="40" endPosition="5">
+    <nodeInfo nodeId="1225121628861" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="26" startPosition="124" endLine="27" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="28" startPosition="5" endLine="29" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="29" startPosition="157" endLine="30" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205921883388" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="33" startPosition="11" endLine="34" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205921883388" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="34" startPosition="64" endLine="35" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="38" startPosition="12" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205921883388" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="32" startPosition="200" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205921883376" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="31" startPosition="42" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="30" startPosition="122" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205921883368" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="27" startPosition="124" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1205921883388" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="33" startPosition="11" endLine="35" endPosition="259" />
+    <scopeInfo nodeId="1205921883387" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="32" startPosition="200" endLine="36" endPosition="11" />
+    <scopeInfo nodeId="1205921883375" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="31" startPosition="42" endLine="37" endPosition="9" />
+    <scopeInfo nodeId="1205921883368" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="28" startPosition="5" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="1205853960047" fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="26" startPosition="124" endLine="40" endPosition="5">
       <varInfo nodeId="1225121628862" varName="operandType" />
     </scopeInfo>
   </root>

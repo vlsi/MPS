@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_CustomConstructorParameterReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorParameterReference_InferenceRule" />
   <unitInfo fileName="typeof_CustomConstructorParameter_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorParameter_InferenceRule" />
   <unitInfo fileName="typeof_CustomConstructor_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructor_InferenceRule" />
-  <unitInfo fileName="checkNumberOfArgs_CheckingRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.checkNumberOfArgs_CheckingRule" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.checkNumberOfArgs_NonTypesystemRule" />
   <unitInfo fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_CustomConstructorUsage_InferenceRule" />
   <unitInfo fileName="typeof_ListCustomParameter_InferenceRule.java" startLine="45" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_ListCustomParameter_InferenceRule$QuotationClass_c9qmyp_a0a0a0" />
   <unitInfo fileName="typeof_ListCustomParameter_InferenceRule.java" startLine="18" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.typesystem.typeof_ListCustomParameter_InferenceRule" />
@@ -70,16 +70,16 @@
     <scopeInfo nodeId="7085790726146865268" fileName="typeof_CustomConstructor_InferenceRule.java" startLine="18" startPosition="130" endLine="23" endPosition="5" />
   </root>
   <root nodeId="960932673514536096">
-    <nodeInfo nodeId="960932673514559333" fileName="checkNumberOfArgs_CheckingRule.java" startLine="22" startPosition="135" endLine="23" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="960932673514559399" fileName="checkNumberOfArgs_CheckingRule.java" startLine="26" startPosition="9" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="960932673514559399" fileName="checkNumberOfArgs_CheckingRule.java" startLine="27" startPosition="62" endLine="28" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="960932673514559399" fileName="checkNumberOfArgs_CheckingRule.java" startLine="25" startPosition="293" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="960932673514559354" fileName="checkNumberOfArgs_CheckingRule.java" startLine="24" startPosition="119" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="960932673514559342" fileName="checkNumberOfArgs_CheckingRule.java" startLine="23" startPosition="141" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="960932673514559399" fileName="checkNumberOfArgs_CheckingRule.java" startLine="26" startPosition="9" endLine="28" endPosition="272" />
-    <scopeInfo nodeId="960932673514559355" fileName="checkNumberOfArgs_CheckingRule.java" startLine="25" startPosition="293" endLine="29" endPosition="9" />
-    <scopeInfo nodeId="960932673514559343" fileName="checkNumberOfArgs_CheckingRule.java" startLine="24" startPosition="119" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="960932673514536097" fileName="checkNumberOfArgs_CheckingRule.java" startLine="22" startPosition="135" endLine="31" endPosition="5">
+    <nodeInfo nodeId="960932673514559333" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="22" startPosition="135" endLine="23" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="960932673514559399" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="960932673514559399" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="27" startPosition="62" endLine="28" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="960932673514559399" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="25" startPosition="293" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="960932673514559354" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="24" startPosition="119" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="960932673514559342" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="23" startPosition="141" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="960932673514559399" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="28" endPosition="272" />
+    <scopeInfo nodeId="960932673514559355" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="25" startPosition="293" endLine="29" endPosition="9" />
+    <scopeInfo nodeId="960932673514559343" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="24" startPosition="119" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="960932673514536097" fileName="checkNumberOfArgs_NonTypesystemRule.java" startLine="22" startPosition="135" endLine="31" endPosition="5">
       <varInfo nodeId="960932673514559334" varName="args" />
     </scopeInfo>
   </root>
