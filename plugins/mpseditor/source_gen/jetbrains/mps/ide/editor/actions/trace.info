@@ -26,11 +26,11 @@
   <unitInfo fileName="MoveRight_Action.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveRight_Action" />
   <unitInfo fileName="MoveLeft_Action.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveLeft_Action" />
   <unitInfo fileName="MoveDown_Action.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveDown_Action" />
-  <unitInfo fileName="Escape_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Escape_Action" />
   <unitInfo fileName="InsertBefore_Action.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.InsertBefore_Action" />
   <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Editor_ApplicationPlugin" />
   <unitInfo fileName="Insert_Action.java" startLine="19" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Insert_Action" />
   <unitInfo fileName="ExtractComponent_Action.java" startLine="20" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" />
+  <unitInfo fileName="Escape_Action.java" startLine="16" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Escape_Action" />
   <unitInfo fileName="SelectLocalHome_Action.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action" />
   <unitInfo fileName="SelectLocalEnd_Action.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" />
   <unitInfo fileName="CopyThisDown_Action.java" startLine="22" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" />
@@ -213,16 +213,22 @@
     </scopeInfo>
   </root>
   <root nodeId="6743831156946309831">
-    <nodeInfo nodeId="7238523569671042613" fileName="Escape_Action.java" startLine="26" startPosition="87" endLine="27" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6743831156946467480" fileName="Escape_Action.java" startLine="57" startPosition="107" endLine="58" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6743831156946560669" fileName="Escape_Action.java" startLine="59" startPosition="7" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7238523569671014248" fileName="Escape_Action.java" startLine="60" startPosition="0" endLine="61" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7238523569671014261" fileName="Escape_Action.java" startLine="61" startPosition="215" endLine="62" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7238523569671042622" fileName="Escape_Action.java" startLine="62" startPosition="89" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3020095668761808905" fileName="Escape_Action.java" startLine="63" startPosition="0" endLine="64" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6743831156946467463" fileName="Escape_Action.java" startLine="56" startPosition="9" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="7238523569671042612" fileName="Escape_Action.java" startLine="26" startPosition="87" endLine="27" endPosition="230" />
-    <scopeInfo nodeId="6743831156946467464" fileName="Escape_Action.java" startLine="57" startPosition="107" endLine="58" endPosition="110" />
+    <nodeInfo nodeId="2361149359400133413" fileName="Escape_Action.java" startLine="27" startPosition="223" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2361149359400133459" fileName="Escape_Action.java" startLine="30" startPosition="73" endLine="31" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2361149359400133479" fileName="Escape_Action.java" startLine="32" startPosition="5" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6743831156946467480" fileName="Escape_Action.java" startLine="67" startPosition="107" endLine="68" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6743831156946560669" fileName="Escape_Action.java" startLine="69" startPosition="7" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7238523569671014248" fileName="Escape_Action.java" startLine="70" startPosition="0" endLine="71" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7238523569671014261" fileName="Escape_Action.java" startLine="71" startPosition="215" endLine="72" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7238523569671042622" fileName="Escape_Action.java" startLine="72" startPosition="89" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3020095668761808905" fileName="Escape_Action.java" startLine="73" startPosition="0" endLine="74" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2361149359400128220" fileName="Escape_Action.java" startLine="26" startPosition="87" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2361149359400133452" fileName="Escape_Action.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6743831156946467463" fileName="Escape_Action.java" startLine="66" startPosition="9" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="2361149359400128221" fileName="Escape_Action.java" startLine="27" startPosition="223" endLine="28" endPosition="19" />
+    <scopeInfo nodeId="2361149359400133453" fileName="Escape_Action.java" startLine="30" startPosition="73" endLine="31" endPosition="135" />
+    <scopeInfo nodeId="6743831156946467464" fileName="Escape_Action.java" startLine="67" startPosition="107" endLine="68" endPosition="110" />
+    <scopeInfo nodeId="7238523569671042612" fileName="Escape_Action.java" startLine="26" startPosition="87" endLine="33" endPosition="16" />
   </root>
   <root nodeId="7791284463049069745">
     <nodeInfo nodeId="9150544359732032915" fileName="EditorActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

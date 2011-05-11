@@ -24,7 +24,13 @@ public class Escape_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible()) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog());
+    if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
+      return false;
+    }
+    if (((Boolean) MapSequence.fromMap(_params).get("isModalContext"))) {
+      return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize() > 1;
+    }
+    return true;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -47,6 +53,10 @@ public class Escape_Action extends GeneratedAction {
     }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("isModalContext", event.getData(MPSDataKeys.IS_MODAL_CONTEXT));
+    if (MapSequence.fromMap(_params).get("isModalContext") == null) {
       return false;
     }
     return true;
