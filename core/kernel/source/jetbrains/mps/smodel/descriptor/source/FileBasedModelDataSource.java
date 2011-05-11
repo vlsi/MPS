@@ -17,9 +17,16 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.vfs.IFile;
 
-import java.util.List;
-
-public abstract class FileBasedModelDataSource implements ModelDataSource{
+public abstract class FileBasedModelDataSource implements ModelDataSource {
   public abstract boolean containFile(IFile file);
+
   public abstract void reload();
+
+  public void startListening() {
+    ReloadableSources.getInstance().addSource(this);
+  }
+
+  public void stopListening() {
+    ReloadableSources.getInstance().removeSource(this);
+  }
 }

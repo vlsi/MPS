@@ -15,8 +15,14 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+
 public interface ModelDataSource {
   void startListening();
 
   void stopListening();
+
+  void setDescriptor(DefaultSModelDescriptor d);
+
+  boolean checkAndResolveConflictOnSave();
 }
