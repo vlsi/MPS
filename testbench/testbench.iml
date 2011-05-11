@@ -49,6 +49,9 @@
     <orderEntry type="library" name="Commons-collections" level="project" />
     <orderEntry type="library" name="Commons-codec" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="library" name="Trove" level="project" />
+    <orderEntry type="module" module-name="make-runtime" />
   </component>
 </module>
 
