@@ -19,6 +19,11 @@
     <orderEntry type="library" name="OROMatcher" level="project" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="module" module-name="plugin-runtime" />
   </component>
 </module>
 
