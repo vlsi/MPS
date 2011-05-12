@@ -89,8 +89,8 @@ public class ProjectFactory {
 
         if (myOptions.getCreateNewSolution()) {
           myCreatedSolution = createNewSolution(mpsProject);
-          mpsProject.addProjectModule(myCreatedSolution);
           myCreatedSolution.save();
+          mpsProject.addProjectModule(myCreatedSolution);
         }
 
         if (myCreatedSolution != null && myCreatedLanguage != null) {
