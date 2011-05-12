@@ -5,13 +5,10 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/sandbox/jetbrains.mps.samples.sampleLanguage.sandbox.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/sampleLanguage.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/sandbox/jetbrains.mps.samples.sampleLanguage.sandbox.msd" folder="" />
+      <modulePath path="${project}/sampleLanguage.mpl" />
+    </projectModules>
     <genConfs />
   </component>
   <component name="ProjectModuleManager">
