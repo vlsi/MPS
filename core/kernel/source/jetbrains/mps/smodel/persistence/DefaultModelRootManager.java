@@ -147,8 +147,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   @Override
-  public DescriptorLoadResult loadDescriptor(DefaultSModelDescriptor d) {
-    return ModelPersistence.loadDescriptor(((RegularModelDataSource) d.getSource()).getFile());
+  public DescriptorLoadResult loadDescriptor(IFile file) {
+    return ModelPersistence.loadDescriptor(file);
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {

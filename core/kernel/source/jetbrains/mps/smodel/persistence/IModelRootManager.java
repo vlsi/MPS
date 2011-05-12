@@ -20,6 +20,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -67,5 +68,5 @@ public interface IModelRootManager {
 
   void dispose();
 
-  DescriptorLoadResult loadDescriptor(DefaultSModelDescriptor defaultSModelDescriptor);
+  DescriptorLoadResult loadDescriptor(IFile file);
 }

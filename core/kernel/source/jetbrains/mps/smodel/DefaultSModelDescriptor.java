@@ -304,7 +304,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //should be called only from model's source
   public void reload() {
-    DescriptorLoadResult dr = getModelRootManager().loadDescriptor(this);
+    DescriptorLoadResult dr = getModelRootManager().loadDescriptor(((RegularModelDataSource) getSource()).getFile());
     myHeader = dr.getHeader();
     myMetadata = dr.getMetadata();
 

@@ -72,7 +72,7 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public void dispose() {
   }
 
-  public DescriptorLoadResult loadDescriptor(DefaultSModelDescriptor defaultSModelDescriptor) {
+  public DescriptorLoadResult loadDescriptor(IFile file) {
     throw new UnsupportedOperationException();
   }
 
