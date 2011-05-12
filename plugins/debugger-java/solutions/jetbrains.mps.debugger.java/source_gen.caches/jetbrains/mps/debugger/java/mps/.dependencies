@@ -21,8 +21,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="org.jdom.Element" />
-    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
+    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
@@ -59,7 +59,8 @@
   <dependency className="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration_RunProfileState" file="MPSInstance_Configuration_RunProfileState.java">
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration" />
@@ -72,14 +73,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
-    <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
-    <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
-    <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.debugger.java.mps.Mps_Command" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.settings.LocalConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />

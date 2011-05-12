@@ -41,10 +41,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="java.io.PrintWriter" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ClassRunner" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
+    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
