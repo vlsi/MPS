@@ -59,7 +59,7 @@ public class ProjectCreationTest {
     PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/typesystem" + MPSExtentions.DOT_MODEL,
 
     PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION,
-    PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + "/models/sandbox" + MPSExtentions.DOT_MODEL
+    PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + "models/sandbox" + MPSExtentions.DOT_MODEL
   );
 
   private IFile myTmpDir;
