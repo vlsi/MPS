@@ -178,33 +178,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return true;
   }
 
-  public boolean isEmpty(SModelDescriptor sm) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    IFile modelFile = dsm.getModelFile();
-    if (!modelFile.exists()) return true;
-    Reader reader = null;
-    try {
-      BufferedReader r = new BufferedReader(new InputStreamReader(modelFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
-      String line;
-      while ((line = r.readLine()) != null) {
-        if (line.contains("<node")) {
-          return false;
-        }
-      }
-    } catch (IOException e) {
-      LOG.error(e);
-    } finally {
-      if (reader != null) {
-        try {
-          reader.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-    }
-    return true;
-  }
-
   public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
     return containsSomeString(modelDescriptor, CollectionUtil.set(string));
   }

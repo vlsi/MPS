@@ -56,7 +56,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       if (myLoadingState != ModelLoadingState.NOT_LOADED) return mySModel;
 
       oldState = myLoadingState;
-      ModelLoadResult result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>(){
+      ModelLoadResult result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
         @Override
         public ModelLoadResult compute() {
           return initialLoad();
@@ -151,11 +151,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public boolean isEmpty() {
-    if (getLoadingState().compareTo(ModelLoadingState.ROOTS_LOADED) >= 0) {
-      return getSModel().rootsCount() == 0;
-    }
-
-    return myModelRootManager.isEmpty(this);
+    return getSModel().rootsCount() == 0;
   }
 
   protected void checkModelDuplication() {
