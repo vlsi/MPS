@@ -133,7 +133,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tg6zfx_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "validation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "checking");
     editorCell.setCellId("Constant_tg6zfx_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
