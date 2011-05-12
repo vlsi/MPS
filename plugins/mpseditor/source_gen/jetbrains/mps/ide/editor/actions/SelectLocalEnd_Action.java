@@ -78,6 +78,7 @@ public class SelectLocalEnd_Action extends GeneratedAction {
         SNode node = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNode();
         selectionManager.pushSelection(selectionManager.createRangeSelection(node, node));
       }
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).scrollToCell(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SelectLocalEnd", t);
