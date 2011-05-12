@@ -26,7 +26,7 @@ public class SelectLocalHome_Action extends GeneratedAction {
   public SelectLocalHome_Action() {
     super("Move Caret to Previous Word with Selection", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

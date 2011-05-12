@@ -131,13 +131,11 @@
       <property name="name" nameId="tpck.1169194664001" value="SelectLocalEnd" />
       <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Next Word with Selection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049070003">
       <property name="name" nameId="tpck.1169194664001" value="SelectLocalHome" />
       <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Previous Word with Selection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049070082">
       <property name="name" nameId="tpck.1169194664001" value="SelectUp" />

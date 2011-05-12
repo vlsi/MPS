@@ -26,7 +26,7 @@ public class SelectLocalEnd_Action extends GeneratedAction {
   public SelectLocalEnd_Action() {
     super("Move Caret to Next Word with Selection", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
