@@ -428,15 +428,15 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.core">
-    <mkdir dir="languages/languageDesign/core/classes_gen" />
+    <mkdir dir="languages/core/core/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.core.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="languages/languageDesign/core/languageDescriptor.mpl" prefix="module" />
-      <zipfileset dir="languages/languageDesign/core" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="languages/languageDesign/core/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="languages/languageDesign/core/classes_gen" />
+      <zipfileset file="languages/core/core/languageDescriptor.mpl" prefix="module" />
+      <zipfileset dir="languages/core/core" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="languages/core/core/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="languages/core/core/classes_gen" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.core.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="languages/languageDesign/core/classes_gen" />
+      <fileset dir="languages/core/core/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.refactoring">
