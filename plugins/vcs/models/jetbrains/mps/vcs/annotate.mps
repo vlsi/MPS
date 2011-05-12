@@ -1378,8 +1378,13 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="391337651435690240">
             <property name="name" nameId="tpck.1169194664001" value="x" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="391337651435690241" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="391337651435690243">
-              <property name="value" nameId="tpee.1068580320021" value="1" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="4103734331133083220">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4103734331133083223">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lguk.~AbstractLeftColumn%dgetX()%cint" resolveInfo="getX" />
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="391337651435690243">
+                <property name="value" nameId="tpee.1068580320021" value="1" />
+              </node>
             </node>
           </node>
         </node>
@@ -1597,8 +1602,8 @@
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7306828316422020745">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Graphics%dfillRect(int,int,int,int)%cvoid" resolveInfo="fillRect" />
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7306828316422020746">
-                                  <property name="value" nameId="tpee.1068580320021" value="0" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5253914323066144321">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lguk.~AbstractLeftColumn%dgetX()%cint" resolveInfo="getX" />
                                 </node>
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ListElementAccessExpression" typeId="tp2q.1225711141656" id="7306828316422020747">
                                   <node role="index" roleId="tp2q.1225711191269" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7306828316422020748">

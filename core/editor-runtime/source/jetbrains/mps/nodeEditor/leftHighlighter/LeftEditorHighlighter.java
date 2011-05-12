@@ -69,6 +69,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private static final int MIN_RIGHT_FOLDING_AREA_WIDTH = 4;
   private static final int GAP_BETWEEN_ICONS = 3;
   private static final int LEFT_GAP = 1;
+  private static final int FOLDING_LINE_WIDTH = 1;
   private static final Comparator<AbstractFoldingAreaPainter> FOLDING_AREA_PAINTERS_COMPARATOR = new Comparator<AbstractFoldingAreaPainter>() {
     @Override
     public int compare(AbstractFoldingAreaPainter afap1, AbstractFoldingAreaPainter afap2) {
@@ -104,10 +105,12 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private int myRightFoldingAreaWidth;
   private int myWidth;
   private int myHeight;
+  private boolean myRightToLeft;
 
-  public LeftEditorHighlighter(@NotNull EditorComponent editorComponent) {
+  public LeftEditorHighlighter(@NotNull EditorComponent editorComponent, boolean rightToLeft) {
     setBackground(BACKGROUND_COLOR);
     myEditorComponent = editorComponent;
+    myRightToLeft = rightToLeft;
     addMouseListener(new MouseAdapter() {
       @Override
       public void mouseExited(MouseEvent e) {
@@ -119,7 +122,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       public void mouseEntered(MouseEvent e) {
         if (isInFoldingArea(e)) {
           mouseMovedInFoldingArea(e);
-        } if (isInTextArea(e)) {
+        } else if (isInTextArea(e)) {
           mouseMovedInTextArea(e);
         } else {
           mouseMovedInIconsArea(e);
@@ -177,7 +180,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         }
       }
     });
-    myBracketsPainter = new BracketsPainter(this);
+    myBracketsPainter = new BracketsPainter(this, myRightToLeft);
     myFoldingButtonsPainter = new FoldingButtonsPainter(this);
 
     myFoldingAreaPainters.add(myBracketsPainter);
@@ -195,6 +198,32 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   public int getFoldingLineX() {
     return myFoldingLineX;
+  }
+
+  private int getIconRenderersOffset() {
+    return myRightToLeft ? getFoldingAreaWidth() : myTextColumnWidth;
+  }
+
+  private int getFoldingAreaOffset() {
+    return myRightToLeft ? 0 : myTextColumnWidth + myIconRenderersWidth;
+  }
+
+  private int getTextColumnOffset() {
+    return myRightToLeft ? getFoldingAreaWidth() + myIconRenderersWidth : 0;
+  }
+
+  private int getFoldingAreaWidth() {
+    return myLeftFoldingAreaWidth + FOLDING_LINE_WIDTH + myRightFoldingAreaWidth;
+  }
+
+  private boolean isInside(int offset, int width, int x) {
+    return offset <= x && x < offset + width;
+  }
+
+  private boolean hasIntersection(int x1, int width1, Rectangle rectangle) {
+    int x2 = rectangle.x;
+    int width2 = rectangle.width;
+    return x1 <= x2 ? x1 + width1 >= x2 : x2 + width2 >= x1;
   }
 
   public void dispose() {
@@ -241,17 +270,13 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   public void addLeftColumn(AbstractLeftColumn column) {
     myLeftColumns.add(column);
-    recalculateTextColumnWidth();
-    recalculateIconRenderersWidth();
-    updateSeparatorLinePosition();
+    relayoutOnLeftColumnChange();
     repaint();
   }
 
   public void removeLeftColumn(AbstractLeftColumn column) {
     myLeftColumns.remove(column);
-    recalculateTextColumnWidth();
-    recalculateIconRenderersWidth();
-    updateSeparatorLinePosition();
+    relayoutOnLeftColumnChange();
     repaint();
   }
 
@@ -269,7 +294,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private void paintFoldingArea(Graphics g, Rectangle clipBounds) {
-    if (clipBounds.x + clipBounds.width < myIconRenderersWidth + myTextColumnWidth) {
+    if (!hasIntersection(getFoldingAreaOffset(), getFoldingAreaWidth(), clipBounds)) {
       return;
     }
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
@@ -293,7 +318,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         g.setColor(EditorComponent.CARET_ROW_COLOR);
         g.fillRect(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight);
         // Drawing folding line
-        UIUtil.drawVDottedLine(g2d, myFoldingLineX,  clipBounds.y, selectedCellY, getBackground(), Color.gray);
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, selectedCellY, getBackground(), Color.gray);
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR, Color.gray);
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, clipBounds.y + clipBounds.height, getBackground(), Color.gray);
         return;
@@ -304,7 +329,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private void paintIconRenderers(final Graphics g, Rectangle clipBounds) {
-    if (clipBounds.x > myIconRenderersWidth + myTextColumnWidth) {
+    if (!hasIntersection(getIconRenderersOffset(), myIconRenderersWidth, clipBounds)) {
       return;
     }
     final int startY = clipBounds.y;
@@ -323,7 +348,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private void paintTextColumns(Graphics g, Rectangle clipBounds) {
-    if (clipBounds.x > myTextColumnWidth) {
+    if (!hasIntersection(getTextColumnOffset(), myTextColumnWidth, clipBounds)) {
       return;
     }
     for (AbstractLeftColumn column : myLeftColumns) {
@@ -331,7 +356,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         continue;
       }
       column.paint(g);
-      UIUtil.drawVDottedLine((Graphics2D) g, column.getX() + column.getWidth() - 1,
+      UIUtil.drawVDottedLine((Graphics2D) g, myRightToLeft ? column.getX() : column.getX() + column.getWidth() - 1,
         (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
     }
   }
@@ -364,7 +389,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private void removeBookmark(int number) {
-    for (EditorMessageIconRenderer renderer: myIconRenderers) {
+    for (EditorMessageIconRenderer renderer : myIconRenderers) {
       if (renderer instanceof BookmarkIconRenderer && ((BookmarkIconRenderer) renderer).getNumber() == number) {
         removeIconRenderer(renderer);
         return;
@@ -378,7 +403,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       //   LOG.error("can't find a cell for node " + node);
       return;
     }
-    for (EditorMessageIconRenderer renderer: myIconRenderers) {
+    for (EditorMessageIconRenderer renderer : myIconRenderers) {
       if (renderer instanceof BookmarkIconRenderer) {
         BookmarkIconRenderer bookmarkIconRenderer = (BookmarkIconRenderer) renderer;
         if (bookmarkIconRenderer.getNumber() == -1 && bookmarkIconRenderer.getNode() == node) {
@@ -391,21 +416,59 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   public void relayout(boolean updateFolding) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
-    if (updateFolding) {
-      for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
-        painter.relayout();
+    if (myRightToLeft) {
+      recalculateFoldingAreaWidth();
+      updateSeparatorLinePosition();
+      if (updateFolding) {
+        for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
+          painter.relayout();
+        }
+        // wee need to recalculateIconRenderersWidth only if one of collections was folded/unfolded
+        recalculateIconRenderersWidth();
       }
-      // wee need to recalculateIconRenderersWidth only if one of collections was folded/unfolded
-      recalculateIconRenderersWidth();
+      recalculateTextColumnWidth();
+    } else {
+      recalculateTextColumnWidth();
+      if (updateFolding) {
+        for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
+          painter.relayout();
+        }
+        // wee need to recalculateIconRenderersWidth only if one of collections was folded/unfolded
+        recalculateIconRenderersWidth();
+      }
+      recalculateFoldingAreaWidth();
+      updateSeparatorLinePosition();
     }
-    recalculateTextColumnWidth();
-    recalculateFoldingAreaWidth();
-    updateSeparatorLinePosition();
+    updatePreferredSize();
+  }
+
+  // Optimization: partly layouting
+  private void relayoutOnIconRendererChanges() {
+    if (myRightToLeft) {
+      recalculateIconRenderersWidth();
+      recalculateTextColumnWidth();
+    } else {
+      recalculateIconRenderersWidth();
+      updateSeparatorLinePosition();
+    }
+    updatePreferredSize();
+  }
+
+  // Optimization: partly layouting
+  private void relayoutOnLeftColumnChange() {
+    if (myRightToLeft) {
+      recalculateTextColumnWidth();
+    } else {
+      recalculateTextColumnWidth();
+      recalculateIconRenderersWidth();
+      updateSeparatorLinePosition();
+    }
+    updatePreferredSize();
   }
 
   private void recalculateFoldingAreaWidth() {
-    myLeftFoldingAreaWidth = MIN_LEFT_FOLDING_AREA_WIDTH;
-    myRightFoldingAreaWidth = MIN_RIGHT_FOLDING_AREA_WIDTH;
+    myLeftFoldingAreaWidth = myRightToLeft ? MIN_RIGHT_FOLDING_AREA_WIDTH : MIN_LEFT_FOLDING_AREA_WIDTH;
+    myRightFoldingAreaWidth = myRightToLeft ? MIN_LEFT_FOLDING_AREA_WIDTH : MIN_RIGHT_FOLDING_AREA_WIDTH;
     // Layouting painters
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       myLeftFoldingAreaWidth = Math.max(myLeftFoldingAreaWidth, painter.getLeftAreaWidth());
@@ -429,22 +492,19 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   public void addIconRenderer(EditorMessageIconRenderer renderer) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.addIconRenderer() should be called in eventDispatchThread";
     myIconRenderers.add(renderer);
-    recalculateIconRenderersWidth();
-    updateSeparatorLinePosition();
+    relayoutOnIconRendererChanges();
   }
 
   public void addAllIconRenderers(Collection<EditorMessageIconRenderer> renderers) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.addAllIconRenderers() should be called in eventDispatchThread";
     myIconRenderers.addAll(renderers);
-    recalculateIconRenderersWidth();
-    updateSeparatorLinePosition();
+    relayoutOnIconRendererChanges();
   }
 
   public void removeIconRenderer(EditorMessageIconRenderer renderer) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeIconRenderer() should be called in eventDispatchThread";
     if (myIconRenderers.remove(renderer)) {
-      recalculateIconRenderersWidth();
-      updateSeparatorLinePosition();
+      relayoutOnIconRendererChanges();
     }
   }
 
@@ -459,16 +519,14 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       }
     }
     if (wasModified) {
-      recalculateIconRenderersWidth();
-      updateSeparatorLinePosition();
+      relayoutOnIconRendererChanges();
     }
   }
 
   public void removeAllIconRenderers(Collection<EditorMessageIconRenderer> renderers) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeAllIconRenderers() should be called in eventDispatchThread";
     if (myIconRenderers.removeAll(renderers)) {
-      recalculateIconRenderersWidth();
-      updateSeparatorLinePosition();
+      relayoutOnIconRendererChanges();
     }
   }
 
@@ -483,8 +541,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       }
     }
     if (wasModified) {
-      recalculateIconRenderersWidth();
-      updateSeparatorLinePosition();
+      relayoutOnIconRendererChanges();
     }
   }
 
@@ -507,14 +564,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     myMaxIconHeight = 0;
     int[] sortedYCoordinates = myLineToRenderersMap.keys();
     Arrays.sort(sortedYCoordinates);
-/*
- * LeftHighlighter layout was changed: now each icon row will start from the beggining (LEFT_GAP)
- * if you'd like to return original layout and prevent icon rows overlapping - uncomment this and
- * following code block.
- *
-    int lastRowLowerBound = -1;
-    int lastRowWidth = -1;
-*/
+
+    int initialOffset = getIconRenderersOffset();
     for (int y : sortedYCoordinates) {
       List<IconRendererLayoutConstraint> row = myLineToRenderersMap.get(y);
       assert row.size() != 0;
@@ -523,18 +574,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         maxIconHeight = Math.max(maxIconHeight, rendererConstraint.getIconRenderer().getIcon().getIconHeight());
       }
       myMaxIconHeight = Math.max(myMaxIconHeight, maxIconHeight);
-/*
- * LeftHighlighter layout was changed (see above)
- *
-      int rowUpperBoundY = y - maxIconHeight / 2;
-      int offset;
-      if (lastRowLowerBound > 0 && lastRowLowerBound >= rowUpperBoundY) {
-        offset = lastRowWidth + GAP_BETWEEN_ICONS;
-      } else {
-        offset = LEFT_GAP;
-      }
-*/
-      int offset = LEFT_GAP + myTextColumnWidth;
+      int offset = initialOffset + LEFT_GAP;
       for (Iterator<IconRendererLayoutConstraint> it = row.iterator(); it.hasNext();) {
         IconRendererLayoutConstraint rendererConstraint = it.next();
         rendererConstraint.setX(offset);
@@ -543,30 +583,27 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
           offset += GAP_BETWEEN_ICONS;
         }
       }
-/*
- * LeftHighlighter layout was changed (see above)
- *
-      lastRowLowerBound = rowUpperBoundY + maxIconHeight;
-      lastRowWidth = offset;
- */
-      myIconRenderersWidth = Math.max(myIconRenderersWidth, offset - myTextColumnWidth);
+      myIconRenderersWidth = Math.max(myIconRenderersWidth, offset - initialOffset);
     }
   }
 
   private void recalculateTextColumnWidth() {
-    int offset = 0;
+    int initialOffset = getTextColumnOffset();
+    int offset = initialOffset;
     for (AbstractLeftColumn column : myLeftColumns) {
       column.setX(offset);
       column.relayout();
       offset += column.getWidth();
     }
-    myTextColumnWidth = Math.max(MIN_LEFT_TEXT_WIDTH, offset);
+    myTextColumnWidth = Math.max(MIN_LEFT_TEXT_WIDTH, offset - initialOffset);
   }
 
   private void updateSeparatorLinePosition() {
-    // adding 1 pixel for folding line itself
-    myFoldingLineX = myTextColumnWidth + myIconRenderersWidth + myLeftFoldingAreaWidth + 1;
-    int newWidth = myFoldingLineX + myRightFoldingAreaWidth;
+    myFoldingLineX = getFoldingAreaOffset() + myLeftFoldingAreaWidth;
+  }
+
+  private void updatePreferredSize() {
+    int newWidth = myTextColumnWidth + myIconRenderersWidth + getFoldingAreaWidth();
     int newHeight = myEditorComponent.getPreferredSize().height;
     if (myWidth != newWidth || myHeight != newHeight) {
       myWidth = newWidth;
@@ -740,17 +777,17 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private boolean isInFoldingArea(MouseEvent e) {
-    return myFoldingLineX - myLeftFoldingAreaWidth <= e.getX() && e.getX() <= myFoldingLineX + myRightFoldingAreaWidth;
+    return isInside(getFoldingAreaOffset(), getFoldingAreaWidth(), e.getX());
   }
 
   private boolean isInTextArea(MouseEvent e) {
-    return e.getX() < myTextColumnWidth;
+    return isInside(getTextColumnOffset(), myTextColumnWidth, e.getX());
   }
 
   private EditorMessageIconRenderer getIconRendererUnderMouse(MouseEvent e) {
     final int mouseX = e.getX();
     final int mouseY = e.getY();
-    final EditorMessageIconRenderer[] theRenderer = new EditorMessageIconRenderer[] {null};
+    final EditorMessageIconRenderer[] theRenderer = new EditorMessageIconRenderer[]{null};
     myLineToRenderersMap.forEachEntry(new TIntObjectProcedure<List<IconRendererLayoutConstraint>>() {
       @Override
       public boolean execute(int y, List<IconRendererLayoutConstraint> layoutConstraints) {
@@ -855,10 +892,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       if (anchorCell1 == anchorCell2 && renderer1 instanceof EditorMessage && renderer2 instanceof EditorMessage) {
         EditorMessage editorMessage1 = (EditorMessage) renderer1;
         EditorMessage editorMessage2 = (EditorMessage) renderer2;
-        assert false : 
+        assert false :
           "Two EditorMessages with same type are attached to the same EditorCell: m1 = " +
-          editorMessage1 + ", m2 = " + editorMessage2 +
-          "; owner1 = " + editorMessage1.getOwner() + ", owner2 = " + editorMessage2.getOwner();
+            editorMessage1 + ", m2 = " + editorMessage2 +
+            "; owner1 = " + editorMessage1.getOwner() + ", owner2 = " + editorMessage2.getOwner();
       }
       // [--] Debugging assertion
       if (anchorCell1 != null) {

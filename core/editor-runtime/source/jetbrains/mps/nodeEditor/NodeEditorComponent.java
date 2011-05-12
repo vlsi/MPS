@@ -38,7 +38,7 @@ public class NodeEditorComponent extends EditorComponent {
   private SNode myLastInspectedNode = null;
 
   public NodeEditorComponent(final IOperationContext operationContext) {
-    super(operationContext, true);
+    super(operationContext, true, false);
 
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override

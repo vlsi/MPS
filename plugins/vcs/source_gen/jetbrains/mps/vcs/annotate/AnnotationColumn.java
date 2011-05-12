@@ -220,7 +220,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     graphics.setFont(myFont);
     EditorComponent.turnOnAliasingIfPossible((Graphics2D) graphics);
     final Map<AnnotationAspectSubcolumn, Integer> subcolumnToX = MapSequence.fromMap(new HashMap<AnnotationAspectSubcolumn, Integer>());
-    int x = 1;
+    int x = getX() + 1;
     for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       MapSequence.fromMap(subcolumnToX).put(subcolumn, x);
       if (subcolumn.isEnabled() || myShowAdditionalInfo) {
@@ -244,7 +244,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
             if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
               String author = myAuthorAnnotationAspect.getValue(fileLine);
               graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
-              graphics.fillRect(0, ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
+              graphics.fillRect(getX(), ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
             }
 
             graphics.setColor(ANNOTATION_COLOR);

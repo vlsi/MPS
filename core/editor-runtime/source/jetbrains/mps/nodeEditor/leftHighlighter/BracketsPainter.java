@@ -15,24 +15,35 @@ import java.util.Map.Entry;
  * Date: 02.03.2010
  */
 public class BracketsPainter extends AbstractFoldingAreaPainter {
-  private int myLeftAreaWidth = -1;
+  private int myAreaWidth = -1;
   private HashMap<CellInfo, HighlighterBracket> myBrackets = new HashMap<CellInfo, HighlighterBracket>();
+  private boolean myRightToLeft;
 
-  public BracketsPainter(LeftEditorHighlighter leftEditorHighlighter) {
+  public BracketsPainter(LeftEditorHighlighter leftEditorHighlighter, boolean rightToLeft) {
     super(leftEditorHighlighter);
+    myRightToLeft = rightToLeft;
   }
 
   @Override
   public int getLeftAreaWidth() {
-    if (myLeftAreaWidth < 0) {
-      myLeftAreaWidth = relayoutBrackets();
+    return myRightToLeft ? super.getLeftAreaWidth() : getAreaWidth();
+  }
+
+  @Override
+  public int getRightAreaWidth() {
+    return myRightToLeft ? getAreaWidth() : super.getRightAreaWidth();
+  }
+
+  private int getAreaWidth() {
+    if (myAreaWidth < 0) {
+      myAreaWidth = relayoutBrackets();
     }
-    return myLeftAreaWidth;
+    return myAreaWidth;
   }
 
   @Override
   public void relayout() {
-    myLeftAreaWidth = -1;
+    myAreaWidth = -1;
   }
 
   private int relayoutBrackets() {
@@ -110,13 +121,13 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
 
   public void removeBracket(EditorCell cell) {
     myBrackets.remove(cell.getCellInfo());
-    myLeftAreaWidth = -1;
+    myAreaWidth = -1;
   }
 
   public void addBracket(EditorCell cell, EditorCell secondCell, Color c) {
     CellInfo info1 = cell.getCellInfo();
     CellInfo info2 = secondCell.getCellInfo();
-    myBrackets.put(info1, new HighlighterBracket(info1, info2, c, getEditorComponent()));
-    myLeftAreaWidth = -1;
+    myBrackets.put(info1, new HighlighterBracket(info1, info2, c, getEditorComponent(), myRightToLeft));
+    myAreaWidth = -1;
   }
 }

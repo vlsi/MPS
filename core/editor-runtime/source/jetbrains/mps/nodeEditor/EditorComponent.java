@@ -243,10 +243,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
   public EditorComponent(IOperationContext operationContext) {
-    this(operationContext, false);
+    this(operationContext, false, false);
   }
 
-  public EditorComponent(final IOperationContext operationContext, boolean showErrorsGutter) {
+  public EditorComponent(final IOperationContext operationContext, boolean showErrorsGutter, boolean rightToLeft) {
     assert operationContext == null || operationContext.getModule() != null || operationContext.isTestMode() : "No module for operation context: " + operationContext;
     myOperationContext = operationContext;
     setEditorContext(new EditorContext(this, null, operationContext));
@@ -282,6 +282,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     setDoubleBuffered(true);
     myScrollPane = new JScrollPane();
+    if (rightToLeft) {
+      myScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+    }
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setVerticalScrollBar(myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL));
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -442,7 +445,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
 
-    myLeftHighlighter = new LeftEditorHighlighter(this);
+    myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
     myLeftHighlighter.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent e) {

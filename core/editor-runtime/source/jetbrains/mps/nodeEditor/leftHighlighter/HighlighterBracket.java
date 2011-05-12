@@ -25,16 +25,18 @@ public class HighlighterBracket {
   private CellInfo mySecondCellInfo;
   // level should be at least 1 
   private int myLevel = 1;
+  private boolean myRightToLeft;
 
   public static int getBracketWidth(int level) {
     return 2 * BRACKET_LINE_THICKNESS + (level - 1) * BRACKET_LINE_THICKNESS * 3 / 2 + ADDITIONAL_HORIZONTAL_SHIFT;
   }
 
-  public HighlighterBracket(CellInfo cellInfo, CellInfo secondCellInfo, Color c, EditorComponent editorComponent) {
+  public HighlighterBracket(CellInfo cellInfo, CellInfo secondCellInfo, Color c, EditorComponent editorComponent, boolean rightToLeft) {
     myColor = c;
     myEditor = editorComponent;
     myCellInfo = cellInfo;
     mySecondCellInfo = secondCellInfo;
+    myRightToLeft = rightToLeft;
     relayout();
   }
 
@@ -68,15 +70,24 @@ public class HighlighterBracket {
       return;
     }
     int bracketWidth = getBracketWidth(getLevel());
-    if (clipBounds.x + clipBounds.width < -bracketWidth || clipBounds.x > 0) {
+    if (clipBounds.x + clipBounds.width < (myRightToLeft ? 0 : -bracketWidth) || clipBounds.x > (myRightToLeft ? bracketWidth : 0)) {
       return;
     }
     g.setColor(myColor);
-    int horizontalSegmentStart = bracketWidth - BRACKET_LINE_THICKNESS;
-    int horizontalSegmentWidth = bracketWidth - BRACKET_LINE_THICKNESS - ADDITIONAL_HORIZONTAL_SHIFT;
-    g.fillRect(-horizontalSegmentStart, getY1(), horizontalSegmentWidth, BRACKET_LINE_THICKNESS);
-    g.fillRect(-bracketWidth, getY1(), BRACKET_LINE_THICKNESS, getY2() - getY1());
-    g.fillRect(-horizontalSegmentStart, getY2() - BRACKET_LINE_THICKNESS, horizontalSegmentWidth, BRACKET_LINE_THICKNESS);
+    int horizontalSegmentLength = bracketWidth - BRACKET_LINE_THICKNESS - ADDITIONAL_HORIZONTAL_SHIFT;
+    g.fillRect(getHorizontalSegmentStartX(horizontalSegmentLength), getY1(), horizontalSegmentLength, BRACKET_LINE_THICKNESS);
+    g.fillRect(getVerticalSegmentStartX(bracketWidth), getY1(), BRACKET_LINE_THICKNESS, getY2() - getY1());
+    g.fillRect(getHorizontalSegmentStartX(horizontalSegmentLength), getY2() - BRACKET_LINE_THICKNESS, horizontalSegmentLength, BRACKET_LINE_THICKNESS);
+  }
+
+  private int getHorizontalSegmentStartX(int horizontalSegmentLength) {
+    // +1 is added here because of Graphics.fillRect() specific see javadoc for details
+    return myRightToLeft ? ADDITIONAL_HORIZONTAL_SHIFT + 1 : -horizontalSegmentLength - ADDITIONAL_HORIZONTAL_SHIFT;
+  }
+
+  private int getVerticalSegmentStartX(int bracketWidth) {
+    // +1 is added here because of Graphics.fillRect() specific see javadoc for details
+    return myRightToLeft ? bracketWidth - BRACKET_LINE_THICKNESS + 1 : -bracketWidth;
   }
 
   public CellInfo getCell() {
