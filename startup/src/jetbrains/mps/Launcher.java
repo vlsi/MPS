@@ -68,6 +68,8 @@ public class Launcher {
       classPath.add(mpsJar.toURI().toURL());
     }
 
+    // WF?
+
     File baseLanguageFolder = new File(homePath + File.separator + "core" + File.separator + "baseLanguage");
     ClassloaderUtil.addLibraries(classPath, baseLanguageFolder, selfRootUrl);
 

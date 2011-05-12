@@ -90,14 +90,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
         return WorkbenchPathManager.getWorkbenchPath();
       }
     });
-
-    //todo replace with lib contributor
-    result.add(new Library("mps.languages") {
-      @NotNull
-      public String getPath() {
-        return WorkbenchPathManager.getLanguagesPath();
-      }
-    });
     return result;
   }
 

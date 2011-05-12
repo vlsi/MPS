@@ -42,6 +42,7 @@ public class LibraryInitializer {
   public void update(boolean refreshFiles) {
     Set<String> newLibs = new HashSet<String>();
     newLibs.add(PathManager.getBootstrapPath());
+    newLibs.add(PathManager.getLanguagesPath());
 
     for (LibraryContributor lc : myContributors) {
       for (String s : lc.getLibraries()) {
@@ -100,6 +101,7 @@ public class LibraryInitializer {
   public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
     List<M> result = new ArrayList<M>();
     result.addAll(myRepo.getModules(myLibsToOwners.get(PathManager.getBootstrapPath()), cls));
+    result.addAll(myRepo.getModules(myLibsToOwners.get(PathManager.getLanguagesPath()), cls));
 
     addGenerators(cls, result);
 
