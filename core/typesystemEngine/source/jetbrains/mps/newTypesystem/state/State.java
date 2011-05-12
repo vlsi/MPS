@@ -21,6 +21,7 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -366,9 +367,12 @@ public class State {
         if (!wCBlock.isSkipError()) {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
           if (node != null) {
-            SimpleErrorReporter errorReporter = new SimpleErrorReporter(node, "argument of WHEN CONCRETE block is never concrete",
-              wCBlock.getNodeModel(), wCBlock.getNodeId());
-            myTypeCheckingContext.reportMessage(node, errorReporter);
+            SNode concept = node.getConceptDeclarationNode();
+            if (!SConceptPropertyOperations.getBoolean(concept, "abstract")) {
+              SimpleErrorReporter errorReporter = new SimpleErrorReporter(node, "argument of WHEN CONCRETE block is never concrete",
+                wCBlock.getNodeModel(), wCBlock.getNodeId());
+              myTypeCheckingContext.reportMessage(node, errorReporter);
+            }
           }
         }
       }
