@@ -18,15 +18,20 @@ package jetbrains.mps.smodel.descriptor.source;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 
 public interface ModelDataSource {
+
+  //--------listening for changes--------
+
   void startListening();
 
   void stopListening();
+
+  //--------corresponding descriptor--------
 
   void setDescriptor(DefaultSModelDescriptor d);
 
   DefaultSModelDescriptor getDescriptor();
 
-  //------todo try to get rid of
+  //--------reloading stuff--------
 
   boolean checkAndResolveConflictOnSave();
 
@@ -35,6 +40,9 @@ public interface ModelDataSource {
   void reloadFromDisk();
 
   void resolveDiskConflict();
+
+  //------todo try to get rid of
+
 
   boolean isPackaged();
 

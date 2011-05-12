@@ -59,7 +59,7 @@ public class PersistenceTest extends BaseMPSTest {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
               try {
-                EditableSModelDescriptor testModel = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                 assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                 SModel model = testModel.getSModel();
                 for (int i = START_PERSISTENCE_TEST_VERSION; i <= PersistenceSettings.MAX_VERSION; ++i) {
@@ -98,8 +98,8 @@ public class PersistenceTest extends BaseMPSTest {
           new ProjectRunnable() {
             public boolean execute(final MPSProject project) {
 
-              final EditableSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<EditableSModelDescriptor>() {
-                public EditableSModelDescriptor compute() {
+              final DefaultSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<DefaultSModelDescriptor>() {
+                public DefaultSModelDescriptor compute() {
                   DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                   modelDescr.getSource().reloadFromDisk();   // no way to remove model from repository, so reloading
                   assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
@@ -107,7 +107,7 @@ public class PersistenceTest extends BaseMPSTest {
                 }
               });
 
-              List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
+              List<DefaultSModelDescriptor> list = new ArrayList<DefaultSModelDescriptor>(1);
               list.add(testModel);
 
               if (version[0] > START_PERSISTENCE_TEST_VERSION) {

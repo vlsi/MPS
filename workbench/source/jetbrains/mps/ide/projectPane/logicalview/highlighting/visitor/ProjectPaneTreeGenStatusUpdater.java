@@ -111,7 +111,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   private boolean isPackaged(SModelTreeNode node) {
     SModelDescriptor md = node.getSModelDescriptor();
     if (!(md instanceof EditableSModelDescriptor)) return false;
-    return ((EditableSModelDescriptor) md).isPackaged();
+    return ((EditableSModelDescriptor) md).getSource().isPackaged();
   }
 
   private boolean isDoNotGenerate(SModelTreeNode node) {

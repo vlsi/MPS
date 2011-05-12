@@ -39,4 +39,9 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     mySource.stopListening();
     super.dispose();
   }
+
+  @Override
+  public String getModelHash() {
+    return mySource.getModelHash();
+  }
 }

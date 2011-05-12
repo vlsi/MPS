@@ -64,7 +64,7 @@ public abstract class AbstractMigrationScriptHelper {
       if (!((model instanceof EditableSModelDescriptor))) {
         return;
       }
-      if (((EditableSModelDescriptor) model).isPackaged()) {
+      if (((EditableSModelDescriptor) model).getSource().isPackaged()) {
         return;
       }
       if (model.getStereotype() != null) {

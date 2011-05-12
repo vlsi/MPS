@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence;
 
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.library.ModelsMiner;
 import jetbrains.mps.library.ModelsMiner.ModelHandle;
 import jetbrains.mps.logging.Logger;
@@ -70,6 +71,17 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     return loadModel(modelDescriptor, ModelLoadingState.FULLY_LOADED).getModel();
   }
+
+  public boolean isPackaged() {
+    return FileSystem.getInstance().isPackaged(myFile);
+  }
+
+  public String getModelHash() {
+    if (myFile == null) return null;
+    return ModelDigestUtil.hash(myFile);
+  }
+
+
 
   @NotNull
   public ModelLoadResult loadModel(final @NotNull SModelDescriptor sm, ModelLoadingState state) {

@@ -48,15 +48,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile.getPath().equals(file.getPath());
   }
 
-  public boolean isPackaged() {
-    return FileSystem.getInstance().isPackaged(myFile);
-  }
-
-  public String getModelHash() {
-    if (myFile == null) return null;
-    return ModelDigestUtil.hash(myFile);
-  }
-
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
       LOG.warning("Model file " + getDescriptor().getSModel().getSModelFqName() + " was modified externally!\n" +

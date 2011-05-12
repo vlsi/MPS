@@ -31,11 +31,11 @@ import java.util.List;
 import java.util.Set;
 
 public class PersistenceUpdater {
-  public void upgradePersistence(final List<EditableSModelDescriptor> modelDescriptors, final int toVersion) {
+  public void upgradePersistence(final List<DefaultSModelDescriptor> modelDescriptors, final int toVersion) {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
+        for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
           IFile file = modelDescriptor.getModelFile();
           if (file != null && file.isReadOnly()) continue;
 
@@ -57,7 +57,7 @@ public class PersistenceUpdater {
   }
 
   public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe) {
-    final List<EditableSModelDescriptor> modelDescriptors = new ArrayList<EditableSModelDescriptor>();
+    final List<DefaultSModelDescriptor> modelDescriptors = new ArrayList<DefaultSModelDescriptor>();
     final List<SModelDescriptor> scopeModelDescriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -82,7 +82,7 @@ public class PersistenceUpdater {
         }
       }
       if (persistenceVersion != -1 && persistenceVersion < PersistenceSettings.MAX_VERSION) {
-        modelDescriptors.add((EditableSModelDescriptor) modelDescriptor);
+        modelDescriptors.add((DefaultSModelDescriptor) modelDescriptor);
       }
     }
 

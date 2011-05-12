@@ -280,6 +280,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
 
+  public IFile getModelFile() {
+    if (!(getSource() instanceof RegularModelDataSource)) return null;
+    return ((RegularModelDataSource) getSource()).getFile();
+  }
+
   private void tryFixingVersion() {
     if (getVersion() != -1) return;
 

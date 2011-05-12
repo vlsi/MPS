@@ -128,7 +128,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
         models.remove(model);
       } else if (!SModelStereotype.isUserModel(model)) {
         models.remove(model);
-      } else if (((EditableSModelDescriptor) model).isPackaged()) {
+      } else if (((EditableSModelDescriptor) model).getSource().isPackaged()) {
         models.remove(model);
       } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
         models.remove(model);

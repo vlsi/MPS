@@ -214,7 +214,7 @@ public class GeneratorUIFacade {
             public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
               if (!(sm instanceof EditableSModelDescriptor)) return null;
               EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-              if (esm.isPackaged()) return null;
+              if (esm.getSource().isPackaged()) return null;
               if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
 
               IFile modelFile = esm.getModelFile();
