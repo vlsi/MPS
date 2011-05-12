@@ -101,7 +101,7 @@ public class PersistenceTest extends BaseMPSTest {
               final DefaultSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<DefaultSModelDescriptor>() {
                 public DefaultSModelDescriptor compute() {
                   DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-                  modelDescr.getSource().reloadFromDisk();   // no way to remove model from repository, so reloading
+                  modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
                   assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                   return modelDescr;
                 }

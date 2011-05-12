@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.descriptor.source;
 import com.intellij.openapi.progress.ProgressIndicator;
 import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.descriptor.source.changes.FileSourceChangeWatcher;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
@@ -38,24 +39,24 @@ public class ReloadableSources {
 
   //--------------
 
-  private final List<FileBasedModelDataSource> mySources = new ArrayList<FileBasedModelDataSource>();
-  private final List<FileBasedModelDataSource> myInvalidatedSources = new ArrayList<FileBasedModelDataSource>();
+  private final List<FileSourceChangeWatcher> mySources = new ArrayList<FileSourceChangeWatcher>();
+  private final List<FileSourceChangeWatcher> myInvalidatedSources = new ArrayList<FileSourceChangeWatcher>();
 
-  public void addSource(FileBasedModelDataSource source) {
+  public void addSource(FileSourceChangeWatcher source) {
     mySources.add(source);
   }
 
-  public void removeSource(FileBasedModelDataSource source) {
+  public void removeSource(FileSourceChangeWatcher source) {
     mySources.remove(source);
   }
 
   //--------------
 
   public void invalidate(IFile file) {
-    THashSet<FileBasedModelDataSource> validSources = new THashSet<FileBasedModelDataSource>(mySources);
+    THashSet<FileSourceChangeWatcher> validSources = new THashSet<FileSourceChangeWatcher>(mySources);
     validSources.removeAll(myInvalidatedSources);
 
-    for (FileBasedModelDataSource source : validSources) {
+    for (FileSourceChangeWatcher source : validSources) {
       if (source.containFile(file)) {
         myInvalidatedSources.add(source);
       }
@@ -63,11 +64,9 @@ public class ReloadableSources {
   }
 
   public void reload(ProgressIndicator progressIndicator) {
-    for (FileBasedModelDataSource source : new ArrayList<FileBasedModelDataSource>(myInvalidatedSources)) {
+    for (FileSourceChangeWatcher source : new ArrayList<FileSourceChangeWatcher>(myInvalidatedSources)) {
       try {
-        String text = "Reloading " + source.getDescriptor().getSModelReference().getSModelFqName();
-        progressIndicator.setText2(text);
-        source.reload();
+        source.changed(progressIndicator);
       } catch (RuntimeException e) {
         LOG.error("error on reloading model", e);
       }

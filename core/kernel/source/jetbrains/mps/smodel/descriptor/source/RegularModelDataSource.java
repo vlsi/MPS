@@ -15,20 +15,13 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 public class RegularModelDataSource extends FileBasedModelDataSource {
-  private static final Logger LOG = Logger.getLogger(RegularModelDataSource.class);
-
   private final IFile myFile;
 
   public RegularModelDataSource(@NotNull IFile file) {
@@ -48,58 +41,21 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile.getPath().equals(file.getPath());
   }
 
-  public boolean checkAndResolveConflictOnSave() {
-    if (needsReloading()) {
-      LOG.warning("Model file " + getDescriptor().getSModel().getSModelFqName() + " was modified externally!\n" +
-        "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
-      resolveDiskConflict();
-      return false;
-    }
-
-    // Paranoid check to avoid saving model during update (hack for MPS-6772)
-    if (needsReloading()) return false;
-    return true;
+  public boolean isPackaged() {
+    return FileSystem.getInstance().isPackaged(myFile);
   }
 
-  protected long getTimestamp() {
+  public String getModelHash() {
+    if (myFile == null) return null;
+    return ModelDigestUtil.hash(myFile);
+  }
+
+  public long getTimestamp() {
     if (myFile == null || !myFile.exists()) return -1;
     return myFile.lastModified();
   }
 
-  /**
-   * This method should be called either in EDT, inside WriteAction or in any other thread
-   */
-  public void reloadFromDisk() {
-    ModelAccess.assertLegalWrite();
-
-    if (myFile == null || !myFile.exists()) {
-      SModelRepository.getInstance().deleteModel(getDescriptor());
-      return;
-    }
-
-    getDescriptor().reload();
-    LOG.assertLog(!needsReloading());
-  }
-
-  public void resolveDiskConflict() {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myFile, getDescriptor().getSModel());
-        if (needSave) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              updateDiskTimestamp();
-              getDescriptor().save();
-            }
-          });
-        } else {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              reloadFromDisk();
-            }
-          });
-        }
-      }
-    }, ModalityState.NON_MODAL);
+  public boolean hasModel(SModelDescriptor md) {
+    return myFile == null || !myFile.exists();
   }
 }

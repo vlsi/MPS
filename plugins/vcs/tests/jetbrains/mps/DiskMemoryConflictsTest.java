@@ -252,9 +252,9 @@ public class DiskMemoryConflictsTest {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           if (myModelDescriptor.isChanged()) {
-            myModelDescriptor.getSource().resolveDiskConflict();
+            myModelDescriptor.resolveDiskConflict();
           } else {
-            myModelDescriptor.getSource().reloadFromDisk();
+            myModelDescriptor.reloadFromDisk();
           }
         }
       });
@@ -303,7 +303,7 @@ public class DiskMemoryConflictsTest {
       refreshVfs();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          myModelDescriptor.getSource().reloadFromDisk();
+          myModelDescriptor.reloadFromDisk();
         }
       });
     } else {

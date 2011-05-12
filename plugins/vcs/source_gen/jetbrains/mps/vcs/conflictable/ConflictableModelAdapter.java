@@ -24,10 +24,10 @@ public class ConflictableModelAdapter extends Conflictable {
   }
 
   public void reloadFromDisk() {
-    myModel.getSource().reloadFromDisk();
+    myModel.reloadFromDisk();
   }
 
   public boolean needReloading() {
-    return myModel.getSource().needsReloading();
+    return myModel.needsReloading();
   }
 }

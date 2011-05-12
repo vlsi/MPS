@@ -15,48 +15,23 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.changes.FileSourceChangeWatcher;
+import jetbrains.mps.smodel.descriptor.source.changes.SourceChangeWatcher;
 import jetbrains.mps.vfs.IFile;
 
 public abstract class FileBasedModelDataSource implements ModelDataSource {
-  private DefaultSModelDescriptor myDescriptor = null;
-  private long myDiskTimestamp = -1;
+  private FileSourceChangeWatcher mySourceChangeWatcher = null;
 
-  public DefaultSModelDescriptor getDescriptor() {
-    return myDescriptor;
+  public SourceChangeWatcher getChangeWatcher() {
+    if (mySourceChangeWatcher == null) {
+      mySourceChangeWatcher = new FileSourceChangeWatcher() {
+        public boolean containFile(IFile file) {
+          return FileBasedModelDataSource.this.containFile(file);
+        }
+      };
+    }
+    return mySourceChangeWatcher;
   }
-
-  public void setDescriptor(DefaultSModelDescriptor d) {
-    assert myDescriptor == null;
-    myDescriptor = d;
-  }
-
-  public void reload() {
-    if (!needsReloading()) return;
-
-    reloadFromDisk();
-    updateDiskTimestamp();
-    getDescriptor().setLastModified(myDiskTimestamp);
-  }
-
-  public void startListening() {
-    ReloadableSources.getInstance().addSource(this);
-  }
-
-  public void stopListening() {
-    ReloadableSources.getInstance().removeSource(this);
-  }
-
-  public boolean needsReloading() {
-    if (myDiskTimestamp == -1) return false;
-    return getTimestamp() != myDiskTimestamp;
-  }
-
-  public void updateDiskTimestamp() {
-    myDiskTimestamp = getTimestamp();
-  }
-
-  protected abstract long getTimestamp();
 
   public abstract boolean containFile(IFile file);
 }

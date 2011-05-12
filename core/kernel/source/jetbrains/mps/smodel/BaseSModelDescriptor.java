@@ -177,10 +177,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
 
-  protected void updateDiskTimestamp() {
-
-  }
-
   @Override
   public void dispose() {
     ModelAccess.assertLegalWrite();

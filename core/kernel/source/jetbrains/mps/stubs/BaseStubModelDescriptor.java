@@ -117,4 +117,28 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
     }
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
+
+
+  //----------------------
+
+  /**
+   * This method should be called either in EDT, inside WriteAction or in any other thread
+   */
+  public void reloadFromDisk() {
+    ModelAccess.assertLegalWrite();
+
+    if (getSource().hasModel(this)) {
+      SModelRepository.getInstance().deleteModel(this);
+      return;
+    }
+
+    reload();
+    LOG.assertLog(!needsReloading());
+  }
+
+  private void reload() {
+    //todo
+    123
+  }
+
 }

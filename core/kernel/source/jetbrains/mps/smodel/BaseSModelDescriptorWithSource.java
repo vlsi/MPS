@@ -15,33 +15,64 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.BaseSModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.changes.ChangeListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
-  @NotNull private final ModelDataSource mySource;
+  @NotNull
+  private final ModelDataSource mySource;
+  private ChangeListener mySourceListener = new ChangeListener() {
+    public void changed(ProgressIndicator progressIndicator) {
+      if (!needsReloading()) return;
+
+      progressIndicator.setText2("Reloading " + getLongName());
+
+      reloadFromDisk();
+      updateDiskTimestamp();
+    }
+  };
+
 
   protected BaseSModelDescriptorWithSource(IModelRootManager manager, @NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
     super(manager, modelReference, checkDup);
     mySource = source;
-    mySource.startListening();
+    mySource.getChangeWatcher().startListening(mySourceListener);
   }
 
   @NotNull
-  public ModelDataSource getSource(){
+  public ModelDataSource getSource() {
     return mySource;
   }
 
   public void dispose() {
-    mySource.stopListening();
+    mySource.getChangeWatcher().stopListening(mySourceListener);
     super.dispose();
   }
 
-  @Override
   public String getModelHash() {
     return mySource.getModelHash();
+  }
+
+  //----------reloading stuff--------
+
+  private long mySourceTimestamp = -1;
+
+  protected abstract void reloadFromDisk();
+
+  protected long getSourceTimestamp(){
+    return mySourceTimestamp;
+  }
+
+  protected void updateDiskTimestamp() {
+    mySourceTimestamp = mySource.getTimestamp();
+  }
+
+  public boolean needsReloading() {
+    if (mySourceTimestamp == -1) return false;
+    return mySource.getTimestamp() != mySourceTimestamp;
   }
 }

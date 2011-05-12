@@ -19,6 +19,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -47,11 +48,7 @@ public class StubModelDataSource extends FileBasedModelDataSource {
     return false;
   }
 
-  public boolean checkAndResolveConflictOnSave() {
-    return true;
-  }
-
-  protected long getTimestamp() {
+  public long getTimestamp() {
     long max = -1;
     for (StubPath path : myStubPaths) {
       long ts = getTimestampRecursive(FileSystem.getInstance().getFileByPath(path.getPath()));
@@ -73,25 +70,6 @@ public class StubModelDataSource extends FileBasedModelDataSource {
     return max;
   }
 
-  /**
-   * This method should be called either in EDT, inside WriteAction or in any other thread
-   */
-  public void reloadFromDisk() {
-    ModelAccess.assertLegalWrite();
-
-    if (myStubPaths.isEmpty()) {
-      SModelRepository.getInstance().deleteModel(getDescriptor());
-      return;
-    }
-
-    getDescriptor().reload();
-    LOG.assertLog(!needsReloading());
-  }
-
-  public void resolveDiskConflict() {
-    throw new IllegalStateException();
-  }
-
   public boolean isPackaged() {
     return true;
   }
@@ -106,5 +84,10 @@ public class StubModelDataSource extends FileBasedModelDataSource {
 
   public void addPath(StubPath sp) {
     myStubPaths.add(sp);
+  }
+
+  //todo more precise
+  public boolean hasModel(SModelDescriptor md) {
+    return myStubPaths.isEmpty();
   }
 }

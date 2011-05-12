@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.library.ModelsMiner;
 import jetbrains.mps.library.ModelsMiner.ModelHandle;
 import jetbrains.mps.logging.Logger;
@@ -26,8 +25,6 @@ import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -71,17 +68,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     return loadModel(modelDescriptor, ModelLoadingState.FULLY_LOADED).getModel();
   }
-
-  public boolean isPackaged() {
-    return FileSystem.getInstance().isPackaged(myFile);
-  }
-
-  public String getModelHash() {
-    if (myFile == null) return null;
-    return ModelDigestUtil.hash(myFile);
-  }
-
-
 
   @NotNull
   public ModelLoadResult loadModel(final @NotNull SModelDescriptor sm, ModelLoadingState state) {
@@ -156,11 +142,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   public boolean isFindUsagesSupported() {
     return true;
-  }
-
-  @Override
-  public DescriptorLoadResult loadDescriptor(IFile file) {
-    return ModelPersistence.loadDescriptor(file);
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {

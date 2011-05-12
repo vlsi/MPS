@@ -13,21 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.descriptor.source;
+package jetbrains.mps.smodel.descriptor.source.changes;
 
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.changes.SourceChangeWatcher;
+public interface SourceChangeWatcher {
+  void startListening(ChangeListener l);
 
-public interface ModelDataSource {
-  SourceChangeWatcher getChangeWatcher();
-
-  boolean hasModel(SModelDescriptor md);
-
-  long getTimestamp();
-
-  //------todo try to get rid of
-
-  boolean isPackaged();
-
-  String getModelHash();
+  void stopListening(ChangeListener l);
 }

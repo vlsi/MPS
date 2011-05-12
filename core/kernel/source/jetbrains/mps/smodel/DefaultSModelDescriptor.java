@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -26,6 +28,7 @@ import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -70,7 +73,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     super(manager, modelReference, new RegularModelDataSource(modelFile), checkDup);
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
-    getSource().setDescriptor(this);
   }
 
   protected ModelLoadResult initialLoad() {
@@ -145,7 +147,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     LOG.info("Saving model " + mySModel.getSModelFqName());
 
-    if (!getSource().checkAndResolveConflictOnSave()) return;
+    if (!checkAndResolveConflictOnSave()) return;
 
     setChanged(false);
     SModel newData = myModelRootManager.saveModel(this);
@@ -210,7 +212,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public long lastChangeTime() {
-    return myLastChange;
+    return Math.max(myLastChange, getSourceTimestamp());
   }
 
   public boolean isDoNotGenerate() {
@@ -302,13 +304,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //----------------------
 
-  //should be called only from model's source
-  public void setLastModified(long lastModified) {
-    myLastChange = lastModified;
-  }
-
-  //should be called only from model's source
-  public void reload() {
+  protected void reload() {
     DescriptorLoadResult dr = getModelRootManager().loadDescriptor(((RegularModelDataSource) getSource()).getFile());
     myHeader = dr.getHeader();
     myMetadata = dr.getMetadata();
@@ -317,5 +313,52 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     ModelLoadResult result = load(getLoadingState());
     replaceModel(result.getModel(), getLoadingState());
+  }
+
+  public void resolveDiskConflict() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(getModelFile(), getSModel());
+        if (needSave) {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              updateDiskTimestamp();
+              save();
+            }
+          });
+        } else {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              reloadFromDisk();
+            }
+          });
+        }
+      }
+    }, ModalityState.NON_MODAL);
+  }
+
+  public void reloadFromDisk() {
+    ModelAccess.assertLegalWrite();
+
+    if (getSource().hasModel(this)) {
+      SModelRepository.getInstance().deleteModel(this);
+      return;
+    }
+
+    reload();
+    LOG.assertLog(!needsReloading());
+  }
+
+  public boolean checkAndResolveConflictOnSave() {
+    if (needsReloading()) {
+      LOG.warning("Model file " + getSModel().getSModelFqName() + " was modified externally!\n" +
+        "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
+      resolveDiskConflict();
+      return false;
+    }
+
+    // Paranoid check to avoid saving model during update (hack for MPS-6772)
+    if (needsReloading()) return false;
+    return true;
   }
 }
