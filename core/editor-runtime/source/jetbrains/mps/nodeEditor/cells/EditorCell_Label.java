@@ -513,6 +513,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     boolean result = getEditorContext().executeCommand(new ProcessTextActionCommand(type, allowErrors));
     if (result) {
       getEditorContext().flushEvents();
+      getEditor().relayout();
     }
     return result;
   }
