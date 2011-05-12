@@ -143,11 +143,11 @@
       <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
       <project file="${mps.home}/core/languageDesign/behavior/behavior.mpr"/>
       <project file="${mps.home}/core/languageDesign/constraints/constraints.mpr"/>
-      <project file="${mps.home}/core/languageDesign/core/core.mpr"/>
+      <project file="${mps.home}/languages/languageDesign/core/core.mpr"/>
       <project file="${mps.home}/core/languageDesign/dataFlow/dataFlow.mpr"/>
       <project file="${mps.home}/core/languageDesign/editor/editor.mpr"/>
       <project file="${mps.home}/core/languageDesign/findUsages/findUsages.mpr"/>
-      <project file="${mps.home}/core/languageDesign/generator/generator.mpr"/>
+      <project file="${mps.home}/languages/languageDesign/generator/generator.mpr"/>
       <project file="${mps.home}/core/languageDesign/intentions/intentions.mpr"/>
       <project file="${mps.home}/core/languageDesign/pattern/pattern.mpr"/>
       <project file="${mps.home}/core/languageDesign/plugin/plugin.mpr"/>

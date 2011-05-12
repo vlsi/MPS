@@ -42,11 +42,11 @@
 
     <!-- behavior -->
     <path path="core/languageDesign/behavior/languages/behavior/source_gen/jetbrains/mps/lang/behavior/behavior"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/behavior"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/behavior"/>
+    <path path="languages/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/behavior"/>
+    <path path="languages/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/behavior"/>
     <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/behavior"/>
     <path path="core/languageDesign/sharedConcepts/source_gen/jetbrains/mps/lang/sharedConcepts/behavior"/>
-    <path path="core/languageDesign/core/source_gen/jetbrains/mps/lang/core/behavior"/>
+    <path path="languages/languageDesign/core/source_gen/jetbrains/mps/lang/core/behavior"/>
     <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/behavior"/>
     <path path="core/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/behavior"/>
 
