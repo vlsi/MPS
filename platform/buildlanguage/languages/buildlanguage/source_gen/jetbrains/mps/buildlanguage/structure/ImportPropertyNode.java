@@ -18,7 +18,7 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY_NODE = "propertyNode";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ImportPropertyNode(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
     super.setReferent(ImportPropertyNode.PROPERTY_NODE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ImportPropertyNode._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ImportPropertyNode.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ImportPropertyNode._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ImportPropertyNode.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ImportPropertyNode._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ImportPropertyNode.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ImportPropertyNode._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ImportPropertyNode.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ImportPropertyNode._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ImportPropertyNode.SMODEL_ATTRIBUTE, node);
   }
 
   public static ImportPropertyNode newInstance(SModel sm, boolean init) {

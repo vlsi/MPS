@@ -17,7 +17,7 @@ public class RemoveAtElementOperation extends SequenceOperation implements IList
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INDEX = "index";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public RemoveAtElementOperation(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class RemoveAtElementOperation extends SequenceOperation implements IList
     super.setChild(RemoveAtElementOperation.INDEX, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(RemoveAtElementOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(RemoveAtElementOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, RemoveAtElementOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, RemoveAtElementOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, RemoveAtElementOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, RemoveAtElementOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(RemoveAtElementOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(RemoveAtElementOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, RemoveAtElementOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RemoveAtElementOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static RemoveAtElementOperation newInstance(SModel sm, boolean init) {

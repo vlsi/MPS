@@ -20,7 +20,7 @@ public class EditorOperationCall extends BaseConcept implements IOperation {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EDITOR_OPERATION_DECLARATION = "editorOperationDeclaration";
   public static final String ARGUMENTS = "arguments";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public EditorOperationCall(SNode node) {
     super(node);
@@ -78,24 +78,24 @@ public class EditorOperationCall extends BaseConcept implements IOperation {
     this.insertChild(prev, EditorOperationCall.ARGUMENTS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(EditorOperationCall._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(EditorOperationCall.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, EditorOperationCall._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, EditorOperationCall.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, EditorOperationCall._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, EditorOperationCall.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(EditorOperationCall._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(EditorOperationCall.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, EditorOperationCall._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EditorOperationCall.SMODEL_ATTRIBUTE, node);
   }
 
   public static EditorOperationCall newInstance(SModel sm, boolean init) {

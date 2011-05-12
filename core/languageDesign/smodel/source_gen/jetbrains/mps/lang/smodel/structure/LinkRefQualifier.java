@@ -18,7 +18,7 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LINK = "link";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public LinkRefQualifier(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
     super.setReferent(LinkRefQualifier.LINK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(LinkRefQualifier._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(LinkRefQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, LinkRefQualifier._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, LinkRefQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, LinkRefQualifier._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, LinkRefQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(LinkRefQualifier._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(LinkRefQualifier.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, LinkRefQualifier._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LinkRefQualifier.SMODEL_ATTRIBUTE, node);
   }
 
   public static LinkRefQualifier newInstance(SModel sm, boolean init) {

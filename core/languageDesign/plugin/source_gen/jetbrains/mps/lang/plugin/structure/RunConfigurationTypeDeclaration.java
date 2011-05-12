@@ -21,7 +21,7 @@ public class RunConfigurationTypeDeclaration extends BaseConcept implements INam
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public RunConfigurationTypeDeclaration(SNode node) {
     super(node);
@@ -83,24 +83,24 @@ public class RunConfigurationTypeDeclaration extends BaseConcept implements INam
     this.setProperty(RunConfigurationTypeDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(RunConfigurationTypeDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(RunConfigurationTypeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, RunConfigurationTypeDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, RunConfigurationTypeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, RunConfigurationTypeDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, RunConfigurationTypeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(RunConfigurationTypeDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(RunConfigurationTypeDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, RunConfigurationTypeDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RunConfigurationTypeDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static RunConfigurationTypeDeclaration newInstance(SModel sm, boolean init) {

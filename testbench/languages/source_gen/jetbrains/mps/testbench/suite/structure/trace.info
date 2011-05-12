@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IModuleRef.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.IModuleRef" />
-  <unitInfo fileName="ITestRef.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.ITestRef" />
+  <unitInfo fileName="ITestRef.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.ITestRef" />
   <unitInfo fileName="Suite_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.Suite_Language" />
-  <unitInfo fileName="JUnit4TestCaseRef.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef" />
-  <unitInfo fileName="JUnit3TestCaseRef.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef" />
   <unitInfo fileName="SolutionRef.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.SolutionRef" />
+  <unitInfo fileName="JUnit3TestCaseRef.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef" />
+  <unitInfo fileName="JUnit4TestCaseRef.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef" />
   <unitInfo fileName="TestCaseRef.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.TestCaseRef" />
   <unitInfo fileName="ModuleSuite.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.ModuleSuite" />
 </debugInfo>

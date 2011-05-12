@@ -17,7 +17,7 @@ public class AddTabOperation extends TabbedToolOperation implements IOperation {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TAB = "tab";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AddTabOperation(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class AddTabOperation extends TabbedToolOperation implements IOperation {
     super.setChild(AddTabOperation.TAB, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AddTabOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AddTabOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AddTabOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AddTabOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AddTabOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AddTabOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AddTabOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AddTabOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AddTabOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AddTabOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static AddTabOperation newInstance(SModel sm, boolean init) {

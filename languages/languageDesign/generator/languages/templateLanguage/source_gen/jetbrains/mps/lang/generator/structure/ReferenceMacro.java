@@ -18,7 +18,7 @@ public class ReferenceMacro extends LinkAttribute implements AbstractMacro {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REFERENT_FUNCTION = "referentFunction";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ReferenceMacro(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class ReferenceMacro extends LinkAttribute implements AbstractMacro {
     super.setChild(ReferenceMacro.REFERENT_FUNCTION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ReferenceMacro._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ReferenceMacro.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ReferenceMacro._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ReferenceMacro.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ReferenceMacro._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ReferenceMacro.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ReferenceMacro._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ReferenceMacro.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ReferenceMacro._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ReferenceMacro.SMODEL_ATTRIBUTE, node);
   }
 
   public static ReferenceMacro newInstance(SModel sm, boolean init) {

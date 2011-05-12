@@ -33,7 +33,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
   public static final String PARAMETER = "parameter";
   public static final String CONSTRUCTION_PARAMETER = "constructionParameter";
   public static final String PLACES = "places";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ActionDeclaration(SNode node) {
     super(node);
@@ -231,24 +231,24 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
     this.insertChild(prev, ActionDeclaration.PLACES, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ActionDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ActionDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ActionDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ActionDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ActionDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ActionDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ActionDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ActionDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ActionDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static ActionDeclaration newInstance(SModel sm, boolean init) {

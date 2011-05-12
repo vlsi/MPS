@@ -36,7 +36,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   public static final String PROPERTY = "property";
   public static final String EXECUTION_PARAMETER = "executionParameter";
   public static final String METHOD_DECLARATION = "methodDeclaration";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public RunConfigurationDeclaration(SNode node) {
     super(node);
@@ -230,24 +230,24 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
     this.insertChild(prev, RunConfigurationDeclaration.METHOD_DECLARATION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(RunConfigurationDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(RunConfigurationDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, RunConfigurationDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, RunConfigurationDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, RunConfigurationDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, RunConfigurationDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(RunConfigurationDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(RunConfigurationDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, RunConfigurationDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RunConfigurationDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static RunConfigurationDeclaration newInstance(SModel sm, boolean init) {

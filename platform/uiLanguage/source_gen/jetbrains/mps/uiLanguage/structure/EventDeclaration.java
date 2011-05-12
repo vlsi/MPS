@@ -22,7 +22,7 @@ public class EventDeclaration extends BaseConcept implements IMember {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARAMETER = "parameter";
   public static final String INITIALIZER = "initializer";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public EventDeclaration(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class EventDeclaration extends BaseConcept implements IMember {
     super.setChild(EventDeclaration.INITIALIZER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(EventDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(EventDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, EventDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, EventDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, EventDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, EventDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(EventDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(EventDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, EventDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EventDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static EventDeclaration newInstance(SModel sm, boolean init) {

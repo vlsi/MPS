@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-18xlciv6xovax8lqqww56uy8zq2wq9x">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
+  <common hash="5mten6zumfd10b1vhh7dgr8szwdcjev" />
+  <source id="8977668887014122504" name="MockPanel" hash="-deq85vqnwvuhl1mmc5sialq2wanxy0l">
+    <file name="MockPanel" />
+  </source>
+  <source id="8977668887014122506" name="MockWidget" hash="14wv7yw8x76klmbcuh2zojq7dmwjnfw">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="MockWidget" />
+  </source>
+  <source id="6469323859730975167" name="MockDockPanel" hash="8nr3x5w2brx01qf1qut6iso9mw2qq7s">
+    <file name="MockDockPanel" />
+  </source>
+  <source id="4343029777915763961" name="MockHPanel" hash="-8jnqb08t4agluhmqozfyrit4pmz1w9a">
+    <file name="MockHPanel" />
+  </source>
+  <source id="3633072329222834069" name="CMockWidget" hash="-2r250cjbgwmspogtvtq9mapk309ptwl">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="CMockWidget" />
+  </source>
+  <source id="3633072329222834073" name="CMockPanel" hash="-8vjd0v1xyws1r7qmdfi07fa8l4xcf5">
+    <file name="CMockPanel" />
+  </source>
+  <source id="2462638993234615716" name="MockTabPanel" hash="5im6byt58o0snbnkdlevsyef47x7e2g">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="MockTabPanel" />
+  </source>
+</dependencies>
+

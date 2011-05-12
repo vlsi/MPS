@@ -18,7 +18,7 @@ public class ListElements extends BaseConcept implements IComponentPart {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VALUE = "value";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ListElements(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class ListElements extends BaseConcept implements IComponentPart {
     super.setChild(ListElements.VALUE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ListElements._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ListElements.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ListElements._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ListElements.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ListElements._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ListElements.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ListElements._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ListElements.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ListElements._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ListElements.SMODEL_ATTRIBUTE, node);
   }
 
   public static ListElements newInstance(SModel sm, boolean init) {

@@ -16,7 +16,7 @@ public class InferenceRule extends AbstractCheckingRule implements IRuleWithOneN
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DEPENDENCY = "dependency";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InferenceRule(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class InferenceRule extends AbstractCheckingRule implements IRuleWithOneN
     this.insertChild(prev, InferenceRule.DEPENDENCY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InferenceRule._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InferenceRule.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InferenceRule._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InferenceRule.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InferenceRule._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InferenceRule.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InferenceRule._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InferenceRule.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InferenceRule._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InferenceRule.SMODEL_ATTRIBUTE, node);
   }
 
   public static InferenceRule newInstance(SModel sm, boolean init) {

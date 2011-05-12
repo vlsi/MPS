@@ -17,7 +17,7 @@ public class TestMethod extends InstanceMethodDeclaration implements ITestMethod
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public TestMethod(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class TestMethod extends InstanceMethodDeclaration implements ITestMethod
     this.setProperty(TestMethod.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(TestMethod._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(TestMethod.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, TestMethod._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, TestMethod.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, TestMethod._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, TestMethod.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(TestMethod._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(TestMethod.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TestMethod._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TestMethod.SMODEL_ATTRIBUTE, node);
   }
 
   public static TestMethod newInstance(SModel sm, boolean init) {

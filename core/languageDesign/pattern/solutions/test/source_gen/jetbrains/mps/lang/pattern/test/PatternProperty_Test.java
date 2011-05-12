@@ -124,7 +124,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
                 }
                 patternVar_method = nodeToMatch_ru5khm_a0a.getReferent("baseMethodDeclaration");
                 {
-                  String childRole_ru5khm__0 = "actualArgument";
+                  String childRole_ru5khm__0 = "smodelAttribute";
                   if (nodeToMatch_ru5khm_a0a.getChildCount(childRole_ru5khm__0) != 1) {
                     return false;
                   }
@@ -133,10 +133,54 @@ public class PatternProperty_Test extends BaseTransformationTest {
                     {
                       SNode nodeToMatch_ru5khm_a0a0;
                       nodeToMatch_ru5khm_a0a0 = childVar_ru5khm_a0a0;
-                      if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_ru5khm_a0a0.getConceptFqName()))) {
+                      if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_ru5khm_a0a0.getConceptFqName()))) {
                         return false;
                       }
-                      patternVar_printed = nodeToMatch_ru5khm_a0a0.getProperty("value");
+                      if (!("baseMethodDeclaration".equals(nodeToMatch_ru5khm_a0a0.getProperty("linkRole")))) {
+                        return false;
+                      }
+                      if (!("method".equals(nodeToMatch_ru5khm_a0a0.getProperty("varName")))) {
+                        return false;
+                      }
+                    }
+                  }
+                }
+                {
+                  String childRole_ru5khm__1 = "actualArgument";
+                  if (nodeToMatch_ru5khm_a0a.getChildCount(childRole_ru5khm__1) != 1) {
+                    return false;
+                  }
+                  {
+                    SNode childVar_ru5khm_a0a0_0 = nodeToMatch_ru5khm_a0a.getChildren(childRole_ru5khm__1).get(0);
+                    {
+                      SNode nodeToMatch_ru5khm_a0a0_0;
+                      nodeToMatch_ru5khm_a0a0_0 = childVar_ru5khm_a0a0_0;
+                      if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_ru5khm_a0a0_0.getConceptFqName()))) {
+                        return false;
+                      }
+                      patternVar_printed = nodeToMatch_ru5khm_a0a0_0.getProperty("value");
+                      {
+                        String childRole_ru5khm__2 = "smodelAttribute";
+                        if (nodeToMatch_ru5khm_a0a0_0.getChildCount(childRole_ru5khm__2) != 1) {
+                          return false;
+                        }
+                        {
+                          SNode childVar_ru5khm_a0a0a = nodeToMatch_ru5khm_a0a0_0.getChildren(childRole_ru5khm__2).get(0);
+                          {
+                            SNode nodeToMatch_ru5khm_a0a0a;
+                            nodeToMatch_ru5khm_a0a0a = childVar_ru5khm_a0a0a;
+                            if (!("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration".equals(nodeToMatch_ru5khm_a0a0a.getConceptFqName()))) {
+                              return false;
+                            }
+                            if (!("value".equals(nodeToMatch_ru5khm_a0a0a.getProperty("propertyName")))) {
+                              return false;
+                            }
+                            if (!("printed".equals(nodeToMatch_ru5khm_a0a0a.getProperty("varName")))) {
+                              return false;
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -144,12 +188,12 @@ public class PatternProperty_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_ru5khm__1 = "operand";
-            if (nodeToMatch_ru5khm_a0.getChildCount(childRole_ru5khm__1) != 1) {
+            String childRole_ru5khm__3 = "operand";
+            if (nodeToMatch_ru5khm_a0.getChildCount(childRole_ru5khm__3) != 1) {
               return false;
             }
             {
-              SNode childVar_ru5khm_a0a_0 = nodeToMatch_ru5khm_a0.getChildren(childRole_ru5khm__1).get(0);
+              SNode childVar_ru5khm_a0a_0 = nodeToMatch_ru5khm_a0.getChildren(childRole_ru5khm__3).get(0);
               {
                 SNode nodeToMatch_ru5khm_a0a_0;
                 nodeToMatch_ru5khm_a0a_0 = childVar_ru5khm_a0a_0;
@@ -158,6 +202,44 @@ public class PatternProperty_Test extends BaseTransformationTest {
                 }
                 patternVar_field = nodeToMatch_ru5khm_a0a_0.getReferent("variableDeclaration");
                 patternVar_className = nodeToMatch_ru5khm_a0a_0.getReferent("classifier");
+                {
+                  String childRole_ru5khm__4 = "smodelAttribute";
+                  if (nodeToMatch_ru5khm_a0a_0.getChildCount(childRole_ru5khm__4) != 2) {
+                    return false;
+                  }
+                  {
+                    SNode childVar_ru5khm_a0a0_1 = nodeToMatch_ru5khm_a0a_0.getChildren(childRole_ru5khm__4).get(0);
+                    {
+                      SNode nodeToMatch_ru5khm_a0a0_1;
+                      nodeToMatch_ru5khm_a0a0_1 = childVar_ru5khm_a0a0_1;
+                      if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_ru5khm_a0a0_1.getConceptFqName()))) {
+                        return false;
+                      }
+                      if (!("variableDeclaration".equals(nodeToMatch_ru5khm_a0a0_1.getProperty("linkRole")))) {
+                        return false;
+                      }
+                      if (!("field".equals(nodeToMatch_ru5khm_a0a0_1.getProperty("varName")))) {
+                        return false;
+                      }
+                    }
+                  }
+                  {
+                    SNode childVar_ru5khm_b0a0 = nodeToMatch_ru5khm_a0a_0.getChildren(childRole_ru5khm__4).get(1);
+                    {
+                      SNode nodeToMatch_ru5khm_b0a0;
+                      nodeToMatch_ru5khm_b0a0 = childVar_ru5khm_b0a0;
+                      if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_ru5khm_b0a0.getConceptFqName()))) {
+                        return false;
+                      }
+                      if (!("classifier".equals(nodeToMatch_ru5khm_b0a0.getProperty("linkRole")))) {
+                        return false;
+                      }
+                      if (!("className".equals(nodeToMatch_ru5khm_b0a0.getProperty("varName")))) {
+                        return false;
+                      }
+                    }
+                  }
+                }
               }
             }
           }

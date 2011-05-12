@@ -18,7 +18,7 @@ public class SplitOperation extends BaseConcept implements IOperation, RegexpUsi
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REGEXP = "regexp";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public SplitOperation(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class SplitOperation extends BaseConcept implements IOperation, RegexpUsi
     super.setChild(SplitOperation.REGEXP, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(SplitOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(SplitOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, SplitOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, SplitOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, SplitOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, SplitOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(SplitOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(SplitOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SplitOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SplitOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static SplitOperation newInstance(SModel sm, boolean init) {

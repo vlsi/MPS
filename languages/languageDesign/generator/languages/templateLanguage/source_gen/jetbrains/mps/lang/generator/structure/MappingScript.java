@@ -21,7 +21,7 @@ public class MappingScript extends BaseConcept implements INamedConcept {
   public static final String MODIFIES_MODEL = "modifiesModel";
   public static final String SCRIPT_KIND = "scriptKind";
   public static final String CODE_BLOCK = "codeBlock";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public MappingScript(SNode node) {
     super(node);
@@ -84,24 +84,24 @@ public class MappingScript extends BaseConcept implements INamedConcept {
     super.setChild(MappingScript.CODE_BLOCK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(MappingScript._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(MappingScript.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, MappingScript._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, MappingScript.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, MappingScript._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, MappingScript.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(MappingScript._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(MappingScript.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, MappingScript._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MappingScript.SMODEL_ATTRIBUTE, node);
   }
 
   public static MappingScript newInstance(SModel sm, boolean init) {

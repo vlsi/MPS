@@ -24,7 +24,7 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
   public static final String ATTRIBUTE = "attribute";
   public static final String METHOD = "method";
   public static final String CONSTRUCTOR = "constructor";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BeanDeclaration(SNode node) {
     super(node);
@@ -122,24 +122,24 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
     this.insertChild(prev, BeanDeclaration.CONSTRUCTOR, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(BeanDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BeanDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, BeanDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BeanDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, BeanDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BeanDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(BeanDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BeanDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BeanDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BeanDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static BeanDeclaration newInstance(SModel sm, boolean init) {

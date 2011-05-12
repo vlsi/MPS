@@ -19,7 +19,7 @@ public class MatchParensRegexp extends Regexp implements INamedConcept, IVariabl
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REGEXP = "regexp";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public MatchParensRegexp(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class MatchParensRegexp extends Regexp implements INamedConcept, IVariabl
     super.setChild(MatchParensRegexp.REGEXP, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(MatchParensRegexp._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(MatchParensRegexp.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, MatchParensRegexp._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, MatchParensRegexp.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, MatchParensRegexp._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, MatchParensRegexp.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(MatchParensRegexp._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(MatchParensRegexp.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, MatchParensRegexp._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MatchParensRegexp.SMODEL_ATTRIBUTE, node);
   }
 
   public static MatchParensRegexp newInstance(SModel sm, boolean init) {

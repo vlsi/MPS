@@ -19,7 +19,7 @@ public class DocumentTypeDeclaration extends BaseConcept implements INamedConcep
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXTERNAL_I_D = "externalID";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public DocumentTypeDeclaration(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class DocumentTypeDeclaration extends BaseConcept implements INamedConcep
     super.setChild(DocumentTypeDeclaration.EXTERNAL_I_D, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(DocumentTypeDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(DocumentTypeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, DocumentTypeDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, DocumentTypeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, DocumentTypeDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, DocumentTypeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(DocumentTypeDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(DocumentTypeDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DocumentTypeDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DocumentTypeDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static DocumentTypeDeclaration newInstance(SModel sm, boolean init) {

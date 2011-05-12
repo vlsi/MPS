@@ -299,8 +299,8 @@
   <root nodeId="1184864447477">
     <nodeInfo nodeId="1226062535459" fileName="NodeMacro_postfix.java" startLine="82" startPosition="31" endLine="83" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184865302348" fileName="NodeMacro_postfix.java" startLine="148" startPosition="111" endLine="149" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184865302354" fileName="NodeMacro_postfix.java" startLine="149" startPosition="40" endLine="150" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184865302359" fileName="NodeMacro_postfix.java" startLine="150" startPosition="40" endLine="151" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184865302354" fileName="NodeMacro_postfix.java" startLine="149" startPosition="40" endLine="150" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184865302359" fileName="NodeMacro_postfix.java" startLine="150" startPosition="44" endLine="151" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912703530" fileName="NodeMacro_postfix.java" startLine="154" startPosition="111" endLine="155" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3265704088513291261" fileName="NodeMacro_postfix.java" startLine="158" startPosition="111" endLine="159" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1226062535458" fileName="NodeMacro_postfix.java" startLine="82" startPosition="31" endLine="83" endPosition="31" />

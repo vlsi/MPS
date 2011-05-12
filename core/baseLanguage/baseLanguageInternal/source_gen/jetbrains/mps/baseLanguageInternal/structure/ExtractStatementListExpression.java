@@ -20,7 +20,7 @@ public class ExtractStatementListExpression extends Expression implements ILocal
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STMTS = "stmts";
   public static final String INNER_EXPR = "innerExpr";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ExtractStatementListExpression(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class ExtractStatementListExpression extends Expression implements ILocal
     super.setChild(ExtractStatementListExpression.INNER_EXPR, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ExtractStatementListExpression._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ExtractStatementListExpression.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ExtractStatementListExpression._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ExtractStatementListExpression.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ExtractStatementListExpression._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ExtractStatementListExpression.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ExtractStatementListExpression._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ExtractStatementListExpression.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ExtractStatementListExpression._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExtractStatementListExpression.SMODEL_ATTRIBUTE, node);
   }
 
   public static ExtractStatementListExpression newInstance(SModel sm, boolean init) {

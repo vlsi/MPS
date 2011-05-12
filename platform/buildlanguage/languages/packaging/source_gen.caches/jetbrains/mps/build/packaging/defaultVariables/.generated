@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-cpnbatcsyfih5aj2y0f7q0ryp8zok8z">
+  <common hash="e4c247wmbdn2pb4tqof159mckj583pe" />
+  <source id="5558646027962548291" name="basedir" hash="-b0vmwoeib77wxumggvv3kaf3g0ix1ld">
+    <file name="basedir" />
+  </source>
+  <source id="5558646027962551659" name=":" hash="-1y43t96t9stytiauc739su3ywjhj9pl">
+    <file name=":" />
+  </source>
+  <source id="5558646027962551660" name="/" hash="-eery18qku2yv1wy3xfmf2owv1fxgb3j">
+    <file name="/" />
+  </source>
+  <source id="5558646027962551661" name="date" hash="3thbr0o8rn51utovl5gmr9m4apj4wkr">
+    <file name="date" />
+  </source>
+  <source id="5558646027962551662" name="\n" hash="-drz4q9keg9y5eqw5611fa64tiw4rcfe">
+    <file name="\n" />
+  </source>
+</dependencies>
+

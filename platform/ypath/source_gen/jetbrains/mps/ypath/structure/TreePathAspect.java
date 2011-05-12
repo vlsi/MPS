@@ -26,7 +26,7 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
   public static final String PARENT_BLOCK = "parentBlock";
   public static final String CHILDREN_BLOCK = "childrenBlock";
   public static final String NODE_KINDS = "nodeKinds";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
   public static final String FEATURES = "features";
 
   public TreePathAspect(SNode node) {
@@ -125,24 +125,24 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
     this.insertChild(prev, TreePathAspect.NODE_KINDS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(TreePathAspect._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(TreePathAspect.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, TreePathAspect._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, TreePathAspect.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, TreePathAspect._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, TreePathAspect.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(TreePathAspect._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(TreePathAspect.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TreePathAspect._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TreePathAspect.SMODEL_ATTRIBUTE, node);
   }
 
   public int getFeaturesesCount() {

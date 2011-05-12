@@ -19,7 +19,7 @@ public class Antiquotation extends NodeAttribute implements AbstractAntiquotatio
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPRESSION = "expression";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Antiquotation(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class Antiquotation extends NodeAttribute implements AbstractAntiquotatio
     super.setChild(Antiquotation.EXPRESSION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Antiquotation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Antiquotation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Antiquotation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Antiquotation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Antiquotation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Antiquotation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Antiquotation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Antiquotation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Antiquotation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Antiquotation.SMODEL_ATTRIBUTE, node);
   }
 
   public static Antiquotation newInstance(SModel sm, boolean init) {

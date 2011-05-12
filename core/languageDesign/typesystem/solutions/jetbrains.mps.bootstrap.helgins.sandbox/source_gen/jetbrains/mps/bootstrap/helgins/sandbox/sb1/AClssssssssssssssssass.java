@@ -92,6 +92,28 @@ public class AClssssssssssssssssass {
           return false;
         }
         patternVar_class = nodeToMatch_axt657_a0a0b0a.getReferent("classifier");
+        {
+          String childRole_axt657_ = "smodelAttribute";
+          if (nodeToMatch_axt657_a0a0b0a.getChildCount(childRole_axt657_) != 1) {
+            return false;
+          }
+          {
+            SNode childVar_axt657_a0a0a1a0 = nodeToMatch_axt657_a0a0b0a.getChildren(childRole_axt657_).get(0);
+            {
+              SNode nodeToMatch_axt657_a0a0a1a0;
+              nodeToMatch_axt657_a0a0a1a0 = childVar_axt657_a0a0a1a0;
+              if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_axt657_a0a0a1a0.getConceptFqName()))) {
+                return false;
+              }
+              if (!("classifier".equals(nodeToMatch_axt657_a0a0a1a0.getProperty("linkRole")))) {
+                return false;
+              }
+              if (!("class".equals(nodeToMatch_axt657_a0a0a1a0.getProperty("varName")))) {
+                return false;
+              }
+            }
+          }
+        }
       }
       return true;
     }

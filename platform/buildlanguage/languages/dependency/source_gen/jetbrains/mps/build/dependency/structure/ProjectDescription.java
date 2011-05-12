@@ -22,7 +22,7 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
   public static final String CYCLE = "cycle";
   public static final String COMMON_CLASSPATH = "commonClasspath";
   public static final String MACRO = "macro";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ProjectDescription(SNode node) {
     super(node);
@@ -128,24 +128,24 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ProjectDescription.MACRO, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ProjectDescription._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ProjectDescription.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ProjectDescription._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ProjectDescription.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ProjectDescription._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ProjectDescription.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ProjectDescription._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ProjectDescription.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ProjectDescription._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ProjectDescription.SMODEL_ATTRIBUTE, node);
   }
 
   public static ProjectDescription newInstance(SModel sm, boolean init) {

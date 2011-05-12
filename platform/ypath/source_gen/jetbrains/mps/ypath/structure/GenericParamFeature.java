@@ -29,7 +29,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   public static final String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static final String TO_STRING_FUNCTION = "toStringFunction";
   public static final String CARDINAL = "cardinal";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public GenericParamFeature(SNode node) {
     super(node);
@@ -147,24 +147,24 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
     super.setChild(GenericParamFeature.CARDINAL, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(GenericParamFeature._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(GenericParamFeature.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, GenericParamFeature._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, GenericParamFeature.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, GenericParamFeature._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, GenericParamFeature.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(GenericParamFeature._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(GenericParamFeature.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GenericParamFeature._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GenericParamFeature.SMODEL_ATTRIBUTE, node);
   }
 
   public static GenericParamFeature newInstance(SModel sm, boolean init) {

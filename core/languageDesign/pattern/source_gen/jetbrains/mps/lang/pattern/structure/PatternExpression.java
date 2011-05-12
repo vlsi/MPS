@@ -19,7 +19,7 @@ public class PatternExpression extends Expression implements IMetaLevelChanger {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PATTERN_NODE = "patternNode";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public PatternExpression(SNode node) {
     super(node);
@@ -57,24 +57,24 @@ public class PatternExpression extends Expression implements IMetaLevelChanger {
     super.setChild(PatternExpression.PATTERN_NODE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(PatternExpression._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(PatternExpression.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, PatternExpression._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, PatternExpression.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, PatternExpression._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, PatternExpression.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(PatternExpression._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(PatternExpression.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, PatternExpression._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PatternExpression.SMODEL_ATTRIBUTE, node);
   }
 
   public static PatternExpression newInstance(SModel sm, boolean init) {

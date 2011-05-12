@@ -17,7 +17,7 @@ public class CStatement extends BaseConcept implements TraceableConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CStatement(SNode node) {
     super(node);
@@ -47,24 +47,24 @@ public class CStatement extends BaseConcept implements TraceableConcept {
     this.setProperty(CStatement.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static CStatement newInstance(SModel sm, boolean init) {

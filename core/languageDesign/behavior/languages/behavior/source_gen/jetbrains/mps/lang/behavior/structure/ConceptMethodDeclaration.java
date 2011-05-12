@@ -23,7 +23,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   public static final String IS_ABSTRACT = "isAbstract";
   public static final String OVERRIDDEN_METHOD = "overriddenMethod";
   public static final String VISIBILITY = "visibility";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ConceptMethodDeclaration(SNode node) {
     super(node);
@@ -93,24 +93,24 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
     super.setChild(ConceptMethodDeclaration.VISIBILITY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ConceptMethodDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ConceptMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ConceptMethodDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ConceptMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ConceptMethodDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ConceptMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ConceptMethodDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ConceptMethodDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConceptMethodDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptMethodDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static ConceptMethodDeclaration newInstance(SModel sm, boolean init) {

@@ -21,7 +21,7 @@ public class CopyPasteHandlers extends BaseConcept implements INamedConcept, ICo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String POST_PROCESSOR = "postProcessor";
   public static final String PRE_PROCESSOR = "preProcessor";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CopyPasteHandlers(SNode node) {
     super(node);
@@ -99,24 +99,24 @@ public class CopyPasteHandlers extends BaseConcept implements INamedConcept, ICo
     this.insertChild(prev, CopyPasteHandlers.PRE_PROCESSOR, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CopyPasteHandlers._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CopyPasteHandlers.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CopyPasteHandlers._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CopyPasteHandlers.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CopyPasteHandlers._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CopyPasteHandlers.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CopyPasteHandlers._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CopyPasteHandlers.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CopyPasteHandlers._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CopyPasteHandlers.SMODEL_ATTRIBUTE, node);
   }
 
   public static CopyPasteHandlers newInstance(SModel sm, boolean init) {

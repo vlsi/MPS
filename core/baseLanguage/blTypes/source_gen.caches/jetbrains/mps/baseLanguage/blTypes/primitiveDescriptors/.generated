@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="2o8d3fut7tqapsr7w940e9erxuznasb">
+  <common hash="-b56r8mfgw80hlc0uczrqbinh8uumq9w" />
+  <source id="1196683481013" name="Integral" hash="elgck4d9uhkq86yqda7hyqwy4vxyxal">
+    <file name="Integral" />
+  </source>
+  <source id="1196683630235" name="FloatingPoint" hash="-8yfs0bdlby0n9qau4qmtv3vvxehf6w">
+    <file name="FloatingPoint" />
+  </source>
+  <source id="1196683729865" name="Numeric" hash="-6vftiqp3q3xxkpqujmkgscadltn038a">
+    <file name="Numeric" />
+  </source>
+  <source id="1196683941620" name="Primitive" hash="-4kfwskxsxmkoq5jhc4q396aaezef4xa">
+    <file name="Primitive" />
+  </source>
+</dependencies>
+

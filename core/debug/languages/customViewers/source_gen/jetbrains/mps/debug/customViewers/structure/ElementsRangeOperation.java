@@ -20,7 +20,7 @@ public class ElementsRangeOperation extends BaseConcept implements IOperation {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String START_INDEX = "startIndex";
   public static final String END_INDEX = "endIndex";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ElementsRangeOperation(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class ElementsRangeOperation extends BaseConcept implements IOperation {
     super.setChild(ElementsRangeOperation.END_INDEX, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ElementsRangeOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ElementsRangeOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ElementsRangeOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ElementsRangeOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ElementsRangeOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ElementsRangeOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ElementsRangeOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ElementsRangeOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ElementsRangeOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ElementsRangeOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static ElementsRangeOperation newInstance(SModel sm, boolean init) {

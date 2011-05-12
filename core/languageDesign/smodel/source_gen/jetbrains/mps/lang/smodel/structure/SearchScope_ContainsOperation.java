@@ -19,7 +19,7 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NODE_TO_CHECK = "nodeToCheck";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public SearchScope_ContainsOperation(SNode node) {
     super(node);
@@ -57,24 +57,24 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
     super.setChild(SearchScope_ContainsOperation.NODE_TO_CHECK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(SearchScope_ContainsOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(SearchScope_ContainsOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, SearchScope_ContainsOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, SearchScope_ContainsOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, SearchScope_ContainsOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, SearchScope_ContainsOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(SearchScope_ContainsOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(SearchScope_ContainsOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SearchScope_ContainsOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SearchScope_ContainsOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static SearchScope_ContainsOperation newInstance(SModel sm, boolean init) {

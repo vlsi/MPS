@@ -20,7 +20,7 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VISIBILITY = "visibility";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public DefaultClassifierMethodDeclaration(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
     super.setChild(DefaultClassifierMethodDeclaration.VISIBILITY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(DefaultClassifierMethodDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(DefaultClassifierMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, DefaultClassifierMethodDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, DefaultClassifierMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, DefaultClassifierMethodDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, DefaultClassifierMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(DefaultClassifierMethodDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(DefaultClassifierMethodDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DefaultClassifierMethodDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DefaultClassifierMethodDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static DefaultClassifierMethodDeclaration newInstance(SModel sm, boolean init) {

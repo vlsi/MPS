@@ -19,7 +19,7 @@ public class DefaultClassifier extends BaseConcept implements IClassifier {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FIELD = "field";
   public static final String METHOD = "method";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public DefaultClassifier(SNode node) {
     super(node);
@@ -97,24 +97,24 @@ public class DefaultClassifier extends BaseConcept implements IClassifier {
     this.insertChild(prev, DefaultClassifier.METHOD, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(DefaultClassifier._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(DefaultClassifier.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, DefaultClassifier._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, DefaultClassifier.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, DefaultClassifier._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, DefaultClassifier.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(DefaultClassifier._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(DefaultClassifier.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DefaultClassifier._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DefaultClassifier.SMODEL_ATTRIBUTE, node);
   }
 
   public static DefaultClassifier newInstance(SModel sm, boolean init) {

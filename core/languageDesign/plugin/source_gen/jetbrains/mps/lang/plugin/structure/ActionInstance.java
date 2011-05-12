@@ -19,7 +19,7 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTION = "action";
   public static final String ACTUAL_PARAMETER = "actualParameter";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ActionInstance(SNode node) {
     super(node);
@@ -77,24 +77,24 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
     this.insertChild(prev, ActionInstance.ACTUAL_PARAMETER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ActionInstance._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ActionInstance.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ActionInstance._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ActionInstance.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ActionInstance._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ActionInstance.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ActionInstance._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ActionInstance.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ActionInstance._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionInstance.SMODEL_ATTRIBUTE, node);
   }
 
   public static ActionInstance newInstance(SModel sm, boolean init) {

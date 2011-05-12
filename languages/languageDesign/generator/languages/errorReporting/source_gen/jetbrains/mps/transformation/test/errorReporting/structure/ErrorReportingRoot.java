@@ -19,7 +19,7 @@ public class ErrorReportingRoot extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INTVAL = "intval";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ErrorReportingRoot(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class ErrorReportingRoot extends BaseConcept implements INamedConcept {
     this.setIntegerProperty(ErrorReportingRoot.INTVAL, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ErrorReportingRoot._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ErrorReportingRoot.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ErrorReportingRoot._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ErrorReportingRoot.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ErrorReportingRoot._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ErrorReportingRoot.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ErrorReportingRoot._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ErrorReportingRoot.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ErrorReportingRoot._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ErrorReportingRoot.SMODEL_ATTRIBUTE, node);
   }
 
   public static ErrorReportingRoot newInstance(SModel sm, boolean init) {

@@ -19,7 +19,7 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MEMBER = "member";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ActionConstructorParameterReferenceOperation(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
     this.setMember(node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ActionConstructorParameterReferenceOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ActionConstructorParameterReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ActionConstructorParameterReferenceOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ActionConstructorParameterReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ActionConstructorParameterReferenceOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ActionConstructorParameterReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ActionConstructorParameterReferenceOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ActionConstructorParameterReferenceOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ActionConstructorParameterReferenceOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionConstructorParameterReferenceOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static ActionConstructorParameterReferenceOperation newInstance(SModel sm, boolean init) {

@@ -20,7 +20,7 @@ public class DurationType extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String JODA_DURATION_FIELD_TYPE = "jodaDurationFieldType";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public DurationType(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class DurationType extends BaseConcept implements INamedConcept {
     super.setChild(DurationType.JODA_DURATION_FIELD_TYPE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(DurationType._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(DurationType.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, DurationType._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, DurationType.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, DurationType._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, DurationType.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(DurationType._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(DurationType.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DurationType._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DurationType.SMODEL_ATTRIBUTE, node);
   }
 
   public static DurationType newInstance(SModel sm, boolean init) {

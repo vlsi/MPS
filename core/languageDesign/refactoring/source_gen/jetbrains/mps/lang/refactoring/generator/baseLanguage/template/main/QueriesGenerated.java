@@ -876,6 +876,28 @@ public class QueriesGenerated {
           return false;
         }
         patternVar_concept = nodeToMatch_x583g4_a0a0a81.getReferent("concept");
+        {
+          String childRole_x583g4_ = "smodelAttribute";
+          if (nodeToMatch_x583g4_a0a0a81.getChildCount(childRole_x583g4_) != 1) {
+            return false;
+          }
+          {
+            SNode childVar_x583g4_a0a0a0s = nodeToMatch_x583g4_a0a0a81.getChildren(childRole_x583g4_).get(0);
+            {
+              SNode nodeToMatch_x583g4_a0a0a0s;
+              nodeToMatch_x583g4_a0a0a0s = childVar_x583g4_a0a0a0s;
+              if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_x583g4_a0a0a0s.getConceptFqName()))) {
+                return false;
+              }
+              if (!("concept".equals(nodeToMatch_x583g4_a0a0a0s.getProperty("linkRole")))) {
+                return false;
+              }
+              if (!("concept".equals(nodeToMatch_x583g4_a0a0a0s.getProperty("varName")))) {
+                return false;
+              }
+            }
+          }
+        }
       }
       return true;
     }

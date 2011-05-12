@@ -20,7 +20,7 @@ public class CustomStatement extends Statement implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INNER = "inner";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CustomStatement(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class CustomStatement extends Statement implements INamedConcept {
     super.setChild(CustomStatement.INNER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CustomStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CustomStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CustomStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CustomStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CustomStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CustomStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CustomStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CustomStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CustomStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CustomStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static CustomStatement newInstance(SModel sm, boolean init) {

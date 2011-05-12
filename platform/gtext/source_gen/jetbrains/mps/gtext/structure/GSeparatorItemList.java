@@ -17,7 +17,7 @@ public class GSeparatorItemList extends GItem implements GCompositeItem {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SEPARATOR = "separator";
   public static final String ITEM = "item";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public GSeparatorItemList(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class GSeparatorItemList extends GItem implements GCompositeItem {
     this.insertChild(prev, GSeparatorItemList.ITEM, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(GSeparatorItemList._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(GSeparatorItemList.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, GSeparatorItemList._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, GSeparatorItemList.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, GSeparatorItemList._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, GSeparatorItemList.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(GSeparatorItemList._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(GSeparatorItemList.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GSeparatorItemList._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GSeparatorItemList.SMODEL_ATTRIBUTE, node);
   }
 
   public static GSeparatorItemList newInstance(SModel sm, boolean init) {

@@ -419,8 +419,8 @@
       <varInfo nodeId="1144956008583624457" varName="behavior" />
     </scopeInfo>
     <scopeInfo nodeId="7923290658387314427" fileName="QueriesGenerated.java" startLine="546" startPosition="155" endLine="589" endPosition="7">
-      <varInfo nodeId="7923290658387314429" varName="generatedNameToConceptMethodDeclaration" />
       <varInfo nodeId="7923290658387314439" varName="methods" />
+      <varInfo nodeId="7923290658387314429" varName="generatedNameToConceptMethodDeclaration" />
       <varInfo nodeId="7923290658387314448" varName="extendsNode" />
     </scopeInfo>
     <unitInfo nodeId="1144956008583745038" fileName="QueriesGenerated.java" startLine="523" startPosition="100" endLine="527" endPosition="5" unitName="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$2" />

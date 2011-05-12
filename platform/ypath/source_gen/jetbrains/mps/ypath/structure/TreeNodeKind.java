@@ -20,7 +20,7 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TRIGGER = "trigger";
   public static final String PROPERTIES = "properties";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public TreeNodeKind(SNode node) {
     super(node);
@@ -86,24 +86,24 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
     this.insertChild(prev, TreeNodeKind.PROPERTIES, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(TreeNodeKind._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(TreeNodeKind.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, TreeNodeKind._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, TreeNodeKind.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, TreeNodeKind._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, TreeNodeKind.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(TreeNodeKind._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(TreeNodeKind.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TreeNodeKind._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TreeNodeKind.SMODEL_ATTRIBUTE, node);
   }
 
   public static TreeNodeKind newInstance(SModel sm, boolean init) {

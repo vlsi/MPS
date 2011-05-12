@@ -18,7 +18,7 @@ public class ElementPart extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ElementPart(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class ElementPart extends BaseConcept implements INamedConcept {
     this.setProperty(ElementPart.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ElementPart._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ElementPart.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ElementPart._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ElementPart.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ElementPart._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ElementPart.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ElementPart._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ElementPart.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ElementPart._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ElementPart.SMODEL_ATTRIBUTE, node);
   }
 
   public static ElementPart newInstance(SModel sm, boolean init) {

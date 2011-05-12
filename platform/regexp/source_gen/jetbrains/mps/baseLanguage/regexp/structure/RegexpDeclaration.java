@@ -20,7 +20,7 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REGEXP = "regexp";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public RegexpDeclaration(SNode node) {
     super(node);
@@ -74,24 +74,24 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
     super.setChild(RegexpDeclaration.REGEXP, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(RegexpDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(RegexpDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, RegexpDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, RegexpDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, RegexpDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, RegexpDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(RegexpDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(RegexpDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, RegexpDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RegexpDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static RegexpDeclaration newInstance(SModel sm, boolean init) {

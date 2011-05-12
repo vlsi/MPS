@@ -17,7 +17,7 @@ public class FileExistsCondition extends BaseConcept implements ICondition {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PATH_TO_CHECK = "pathToCheck";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public FileExistsCondition(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class FileExistsCondition extends BaseConcept implements ICondition {
     super.setChild(FileExistsCondition.PATH_TO_CHECK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(FileExistsCondition._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(FileExistsCondition.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, FileExistsCondition._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, FileExistsCondition.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, FileExistsCondition._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, FileExistsCondition.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(FileExistsCondition._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(FileExistsCondition.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FileExistsCondition._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FileExistsCondition.SMODEL_ATTRIBUTE, node);
   }
 
   public static FileExistsCondition newInstance(SModel sm, boolean init) {

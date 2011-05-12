@@ -19,7 +19,7 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FUNCTION = "function";
   public static final String PARAMETER = "parameter";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InvokeFunctionExpression(SNode node) {
     super(node);
@@ -77,24 +77,24 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
     this.insertChild(prev, InvokeFunctionExpression.PARAMETER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InvokeFunctionExpression._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InvokeFunctionExpression.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InvokeFunctionExpression._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InvokeFunctionExpression.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InvokeFunctionExpression._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InvokeFunctionExpression.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InvokeFunctionExpression._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InvokeFunctionExpression.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InvokeFunctionExpression._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InvokeFunctionExpression.SMODEL_ATTRIBUTE, node);
   }
 
   public static InvokeFunctionExpression newInstance(SModel sm, boolean init) {

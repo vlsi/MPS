@@ -18,7 +18,7 @@ public class InlineStyleDeclaration extends BaseConcept implements IStyleContain
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARENT_CLASS = "parentClass";
   public static final String STYLE_ITEM = "styleItem";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InlineStyleDeclaration(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class InlineStyleDeclaration extends BaseConcept implements IStyleContain
     this.insertChild(prev, InlineStyleDeclaration.STYLE_ITEM, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InlineStyleDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InlineStyleDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InlineStyleDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InlineStyleDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InlineStyleDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InlineStyleDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InlineStyleDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InlineStyleDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InlineStyleDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InlineStyleDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static InlineStyleDeclaration newInstance(SModel sm, boolean init) {

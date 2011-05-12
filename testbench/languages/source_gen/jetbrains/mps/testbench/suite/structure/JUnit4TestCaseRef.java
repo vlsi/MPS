@@ -19,7 +19,7 @@ public class JUnit4TestCaseRef extends BaseConcept implements ITestRef {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MUTED = "muted";
   public static final String KLASS = "klass";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public JUnit4TestCaseRef(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class JUnit4TestCaseRef extends BaseConcept implements ITestRef {
     super.setReferent(JUnit4TestCaseRef.KLASS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(JUnit4TestCaseRef._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(JUnit4TestCaseRef.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, JUnit4TestCaseRef._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, JUnit4TestCaseRef.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, JUnit4TestCaseRef._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, JUnit4TestCaseRef.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(JUnit4TestCaseRef._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(JUnit4TestCaseRef.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, JUnit4TestCaseRef._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, JUnit4TestCaseRef.SMODEL_ATTRIBUTE, node);
   }
 
   public static JUnit4TestCaseRef newInstance(SModel sm, boolean init) {

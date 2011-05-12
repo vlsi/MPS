@@ -19,7 +19,7 @@ public class AbstractCall extends BaseConcept implements IProjectComponent, ICom
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INTERNAL_TEXT = "internalText";
   public static final String NESTED = "nested";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AbstractCall(SNode node) {
     super(node);
@@ -85,24 +85,24 @@ public class AbstractCall extends BaseConcept implements IProjectComponent, ICom
     this.insertChild(prev, AbstractCall.NESTED, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AbstractCall._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AbstractCall.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AbstractCall._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AbstractCall.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AbstractCall._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AbstractCall.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AbstractCall._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AbstractCall.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AbstractCall._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractCall.SMODEL_ATTRIBUTE, node);
   }
 
   public static AbstractCall newInstance(SModel sm, boolean init) {

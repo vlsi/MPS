@@ -20,7 +20,7 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SOURCE_PATH = "sourcePath";
   public static final String ENTRY = "entry";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Folder(SNode node) {
     super(node);
@@ -102,24 +102,24 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
     this.insertChild(prev, Folder.ENTRY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Folder._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Folder.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Folder._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Folder.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Folder._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Folder.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Folder._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Folder.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Folder._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Folder.SMODEL_ATTRIBUTE, node);
   }
 
   public static Folder newInstance(SModel sm, boolean init) {

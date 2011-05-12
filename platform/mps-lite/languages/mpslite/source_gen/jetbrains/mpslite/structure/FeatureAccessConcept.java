@@ -20,7 +20,7 @@ public class FeatureAccessConcept extends BaseConcept implements IMPSLiteConcept
   public static final String ROOT = "root";
   public static final String ABSTRACT = "abstract";
   public static final String EXTENDS = "extends";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public FeatureAccessConcept(SNode node) {
     super(node);
@@ -82,24 +82,24 @@ public class FeatureAccessConcept extends BaseConcept implements IMPSLiteConcept
     super.setChild(FeatureAccessConcept.EXTENDS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(FeatureAccessConcept._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(FeatureAccessConcept.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, FeatureAccessConcept._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, FeatureAccessConcept.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, FeatureAccessConcept._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, FeatureAccessConcept.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(FeatureAccessConcept._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(FeatureAccessConcept.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FeatureAccessConcept._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FeatureAccessConcept.SMODEL_ATTRIBUTE, node);
   }
 
   public static FeatureAccessConcept newInstance(SModel sm, boolean init) {

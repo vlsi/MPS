@@ -20,7 +20,7 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String USE_ATTRIBUTE = "useAttribute";
   public static final String TYPE = "type";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AttributeDeclaration(SNode node) {
     super(node);
@@ -82,24 +82,24 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
     super.setChild(AttributeDeclaration.TYPE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AttributeDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AttributeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AttributeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AttributeDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AttributeDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AttributeDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AttributeDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {

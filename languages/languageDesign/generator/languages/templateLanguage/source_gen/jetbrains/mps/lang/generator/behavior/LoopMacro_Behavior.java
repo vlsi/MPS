@@ -51,6 +51,28 @@ public class LoopMacro_Behavior {
                 return false;
               }
               patternVar_concept = nodeToMatch_cdqxf8_a0a0a0a.getReferent("concept");
+              {
+                String childRole_cdqxf8__0 = "smodelAttribute";
+                if (nodeToMatch_cdqxf8_a0a0a0a.getChildCount(childRole_cdqxf8__0) != 1) {
+                  return false;
+                }
+                {
+                  SNode childVar_cdqxf8_a0a0a0a0 = nodeToMatch_cdqxf8_a0a0a0a.getChildren(childRole_cdqxf8__0).get(0);
+                  {
+                    SNode nodeToMatch_cdqxf8_a0a0a0a0;
+                    nodeToMatch_cdqxf8_a0a0a0a0 = childVar_cdqxf8_a0a0a0a0;
+                    if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_cdqxf8_a0a0a0a0.getConceptFqName()))) {
+                      return false;
+                    }
+                    if (!("concept".equals(nodeToMatch_cdqxf8_a0a0a0a0.getProperty("linkRole")))) {
+                      return false;
+                    }
+                    if (!("concept".equals(nodeToMatch_cdqxf8_a0a0a0a0.getProperty("varName")))) {
+                      return false;
+                    }
+                  }
+                }
+              }
             }
           }
         }

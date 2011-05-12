@@ -23,7 +23,7 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
   public static final String SET_SELECTION_BLOCK = "setSelectionBlock";
   public static final String QUICK_FIX_ARGUMENT = "quickFixArgument";
   public static final String QUICK_FIX_FIELD = "quickFixField";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public TypesystemQuickFix(SNode node) {
     super(node);
@@ -125,24 +125,24 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
     this.insertChild(prev, TypesystemQuickFix.QUICK_FIX_FIELD, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(TypesystemQuickFix._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(TypesystemQuickFix.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, TypesystemQuickFix._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, TypesystemQuickFix.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, TypesystemQuickFix._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, TypesystemQuickFix.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(TypesystemQuickFix._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(TypesystemQuickFix.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TypesystemQuickFix._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TypesystemQuickFix.SMODEL_ATTRIBUTE, node);
   }
 
   public static TypesystemQuickFix newInstance(SModel sm, boolean init) {

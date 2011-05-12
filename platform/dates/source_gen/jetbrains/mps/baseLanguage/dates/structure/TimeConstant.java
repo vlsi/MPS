@@ -25,7 +25,7 @@ public class TimeConstant extends Expression implements TypeDerivable {
   public static final String YEAR = "year";
   public static final String MONTH = "month";
   public static final String TIMEZONE = "timezone";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public TimeConstant(SNode node) {
     super(node);
@@ -111,24 +111,24 @@ public class TimeConstant extends Expression implements TypeDerivable {
     super.setChild(TimeConstant.TIMEZONE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(TimeConstant._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(TimeConstant.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, TimeConstant._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, TimeConstant.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, TimeConstant._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, TimeConstant.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(TimeConstant._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(TimeConstant.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TimeConstant._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TimeConstant.SMODEL_ATTRIBUTE, node);
   }
 
   public static TimeConstant newInstance(SModel sm, boolean init) {

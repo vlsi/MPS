@@ -21,7 +21,7 @@ public class DateFormat extends BaseConcept implements IDateFormat {
   public static final String IS_PUBLIC = "isPublic";
   public static final String DATE_FORMAT_VISIBILITY = "dateFormatVisibility";
   public static final String TOKEN = "token";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public DateFormat(SNode node) {
     super(node);
@@ -96,24 +96,24 @@ public class DateFormat extends BaseConcept implements IDateFormat {
     this.insertChild(prev, DateFormat.TOKEN, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(DateFormat._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(DateFormat.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, DateFormat._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, DateFormat.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, DateFormat._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, DateFormat.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(DateFormat._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(DateFormat.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DateFormat._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DateFormat.SMODEL_ATTRIBUTE, node);
   }
 
   public static DateFormat newInstance(SModel sm, boolean init) {

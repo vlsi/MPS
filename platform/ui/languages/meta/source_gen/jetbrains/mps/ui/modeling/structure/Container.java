@@ -21,7 +21,7 @@ public class Container extends BaseConcept implements INamedConcept, HasTemplate
   public static final String SPECIALIZES = "specializes";
   public static final String ALLOWS = "allows";
   public static final String REQUIRED_ASPECT = "requiredAspect";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Container(SNode node) {
     super(node);
@@ -95,24 +95,24 @@ public class Container extends BaseConcept implements INamedConcept, HasTemplate
     this.insertChild(prev, Container.REQUIRED_ASPECT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Container._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Container.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Container._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Container.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Container._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Container.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Container._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Container.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Container._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Container.SMODEL_ATTRIBUTE, node);
   }
 
   public static Container newInstance(SModel sm, boolean init) {

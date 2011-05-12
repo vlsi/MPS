@@ -23,7 +23,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public static final String ASCENDING = "ascending";
   public static final String OPPOSITE = "opposite";
   public static final String GETTER = "getter";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public GenericFeature(SNode node) {
     super(node);
@@ -101,24 +101,24 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
     super.setChild(GenericFeature.GETTER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(GenericFeature._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(GenericFeature.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, GenericFeature._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, GenericFeature.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, GenericFeature._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, GenericFeature.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(GenericFeature._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(GenericFeature.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GenericFeature._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GenericFeature.SMODEL_ATTRIBUTE, node);
   }
 
   public static GenericFeature newInstance(SModel sm, boolean init) {

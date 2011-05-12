@@ -17,7 +17,7 @@ public class LambdaAbstraction extends LambdaExpression implements VariableOwner
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BODY = "body";
   public static final String VARIABLE = "variable";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public LambdaAbstraction(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class LambdaAbstraction extends LambdaExpression implements VariableOwner
     this.insertChild(prev, LambdaAbstraction.VARIABLE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(LambdaAbstraction._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(LambdaAbstraction.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, LambdaAbstraction._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, LambdaAbstraction.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, LambdaAbstraction._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, LambdaAbstraction.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(LambdaAbstraction._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(LambdaAbstraction.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, LambdaAbstraction._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LambdaAbstraction.SMODEL_ATTRIBUTE, node);
   }
 
   public static LambdaAbstraction newInstance(SModel sm, boolean init) {

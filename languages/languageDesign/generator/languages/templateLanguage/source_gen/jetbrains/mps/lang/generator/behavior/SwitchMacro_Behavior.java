@@ -38,6 +38,28 @@ public class SwitchMacro_Behavior {
           return false;
         }
         patternVar_concept = nodeToMatch_i6m7ss_a0a0a0.getReferent("concept");
+        {
+          String childRole_i6m7ss_ = "smodelAttribute";
+          if (nodeToMatch_i6m7ss_a0a0a0.getChildCount(childRole_i6m7ss_) != 1) {
+            return false;
+          }
+          {
+            SNode childVar_i6m7ss_a0a0a0a = nodeToMatch_i6m7ss_a0a0a0.getChildren(childRole_i6m7ss_).get(0);
+            {
+              SNode nodeToMatch_i6m7ss_a0a0a0a;
+              nodeToMatch_i6m7ss_a0a0a0a = childVar_i6m7ss_a0a0a0a;
+              if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_i6m7ss_a0a0a0a.getConceptFqName()))) {
+                return false;
+              }
+              if (!("concept".equals(nodeToMatch_i6m7ss_a0a0a0a.getProperty("linkRole")))) {
+                return false;
+              }
+              if (!("concept".equals(nodeToMatch_i6m7ss_a0a0a0a.getProperty("varName")))) {
+                return false;
+              }
+            }
+          }
+        }
       }
       return true;
     }

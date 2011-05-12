@@ -21,7 +21,7 @@ public class BlockConcept extends BaseConcept implements IMPSLiteConcept {
   public static final String ABSTRACT = "abstract";
   public static final String CONCRETE_SYNTAX = "concreteSyntax";
   public static final String EXTENDS = "extends";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BlockConcept(SNode node) {
     super(node);
@@ -91,24 +91,24 @@ public class BlockConcept extends BaseConcept implements IMPSLiteConcept {
     super.setChild(BlockConcept.EXTENDS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(BlockConcept._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BlockConcept.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, BlockConcept._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BlockConcept.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, BlockConcept._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BlockConcept.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(BlockConcept._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BlockConcept.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BlockConcept._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BlockConcept.SMODEL_ATTRIBUTE, node);
   }
 
   public static BlockConcept newInstance(SModel sm, boolean init) {

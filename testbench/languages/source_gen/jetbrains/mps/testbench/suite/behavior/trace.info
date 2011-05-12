@@ -135,8 +135,8 @@
     <scopeInfo nodeId="4089647634160960833" fileName="JUnit4TestCaseRef_Behavior.java" startLine="33" startPosition="38" endLine="42" endPosition="12" />
     <scopeInfo nodeId="4089647634160960832" fileName="JUnit4TestCaseRef_Behavior.java" startLine="32" startPosition="163" endLine="44" endPosition="0" />
     <scopeInfo nodeId="4089647634160960812" fileName="JUnit4TestCaseRef_Behavior.java" startLine="28" startPosition="88" endLine="48" endPosition="7">
-      <varInfo nodeId="4089647634160991428" varName="testAnn" />
       <varInfo nodeId="1178539434126757425" varName="ignoreAnn" />
+      <varInfo nodeId="4089647634160991428" varName="testAnn" />
     </scopeInfo>
     <unitInfo nodeId="4089647634160960848" fileName="JUnit4TestCaseRef_Behavior.java" startLine="34" startPosition="96" endLine="38" endPosition="9" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$2" />
     <unitInfo nodeId="1178539434126757447" fileName="JUnit4TestCaseRef_Behavior.java" startLine="38" startPosition="97" endLine="42" endPosition="9" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$2" />

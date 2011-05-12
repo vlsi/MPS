@@ -19,7 +19,7 @@ public class RunConfigParameterReferenceOperation extends BaseConcept implements
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MEMBER = "member";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public RunConfigParameterReferenceOperation(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class RunConfigParameterReferenceOperation extends BaseConcept implements
     this.setMember(node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(RunConfigParameterReferenceOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(RunConfigParameterReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, RunConfigParameterReferenceOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, RunConfigParameterReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, RunConfigParameterReferenceOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, RunConfigParameterReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(RunConfigParameterReferenceOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(RunConfigParameterReferenceOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, RunConfigParameterReferenceOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RunConfigParameterReferenceOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static RunConfigParameterReferenceOperation newInstance(SModel sm, boolean init) {

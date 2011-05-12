@@ -24,7 +24,7 @@ public class ParseDateTimeExpression extends Expression implements TypeDerivable
   public static final String SOURCE = "source";
   public static final String ZONE = "zone";
   public static final String DEFAULT = "default";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ParseDateTimeExpression(SNode node) {
     super(node);
@@ -94,24 +94,24 @@ public class ParseDateTimeExpression extends Expression implements TypeDerivable
     super.setChild(ParseDateTimeExpression.DEFAULT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ParseDateTimeExpression._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ParseDateTimeExpression.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ParseDateTimeExpression._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ParseDateTimeExpression.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ParseDateTimeExpression._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ParseDateTimeExpression.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ParseDateTimeExpression._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ParseDateTimeExpression.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ParseDateTimeExpression._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ParseDateTimeExpression.SMODEL_ATTRIBUTE, node);
   }
 
   public static ParseDateTimeExpression newInstance(SModel sm, boolean init) {

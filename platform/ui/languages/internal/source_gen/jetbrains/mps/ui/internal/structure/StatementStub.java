@@ -24,7 +24,7 @@ public class StatementStub extends Statement implements IPartiallyDefinedStub {
   public static final String SELECTOR = "selector";
   public static final String ROLE = "role";
   public static final String TEMPLATE = "template";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public StatementStub(SNode node) {
     super(node);
@@ -86,24 +86,24 @@ public class StatementStub extends Statement implements IPartiallyDefinedStub {
     super.setReferent(StatementStub.TEMPLATE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(StatementStub._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(StatementStub.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, StatementStub._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, StatementStub.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, StatementStub._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, StatementStub.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(StatementStub._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(StatementStub.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, StatementStub._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StatementStub.SMODEL_ATTRIBUTE, node);
   }
 
   public static StatementStub newInstance(SModel sm, boolean init) {

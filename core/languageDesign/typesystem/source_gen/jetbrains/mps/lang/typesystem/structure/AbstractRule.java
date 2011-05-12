@@ -20,7 +20,7 @@ public class AbstractRule extends BaseConcept implements INamedConcept, IConcept
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String APPLICABLE_NODE = "applicableNode";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AbstractRule(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class AbstractRule extends BaseConcept implements INamedConcept, IConcept
     super.setChild(AbstractRule.APPLICABLE_NODE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AbstractRule._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AbstractRule.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AbstractRule._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AbstractRule.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AbstractRule._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AbstractRule.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AbstractRule._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AbstractRule.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AbstractRule._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractRule.SMODEL_ATTRIBUTE, node);
   }
 
   public static AbstractRule newInstance(SModel sm, boolean init) {

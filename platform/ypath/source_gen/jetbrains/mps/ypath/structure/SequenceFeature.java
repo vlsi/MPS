@@ -24,7 +24,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   public static final String OPPOSITE = "opposite";
   public static final String SEQUENCE_FUNCTION = "sequenceFunction";
   public static final String SIZE_FUNCTION = "sizeFunction";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public SequenceFeature(SNode node) {
     super(node);
@@ -110,24 +110,24 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
     super.setChild(SequenceFeature.SIZE_FUNCTION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(SequenceFeature._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(SequenceFeature.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, SequenceFeature._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, SequenceFeature.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, SequenceFeature._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, SequenceFeature.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(SequenceFeature._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(SequenceFeature.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SequenceFeature._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SequenceFeature.SMODEL_ATTRIBUTE, node);
   }
 
   public static SequenceFeature newInstance(SModel sm, boolean init) {

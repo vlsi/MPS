@@ -21,7 +21,7 @@ public class UniversalRunConfigCreator extends BaseConcept implements INamedConc
   public static final String RC_TYPE = "rcType";
   public static final String TARGET = "target";
   public static final String CREATE_BLOCK = "createBlock";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public UniversalRunConfigCreator(SNode node) {
     super(node);
@@ -83,24 +83,24 @@ public class UniversalRunConfigCreator extends BaseConcept implements INamedConc
     super.setChild(UniversalRunConfigCreator.CREATE_BLOCK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(UniversalRunConfigCreator._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(UniversalRunConfigCreator.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, UniversalRunConfigCreator._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, UniversalRunConfigCreator.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, UniversalRunConfigCreator._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, UniversalRunConfigCreator.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(UniversalRunConfigCreator._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(UniversalRunConfigCreator.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, UniversalRunConfigCreator._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UniversalRunConfigCreator.SMODEL_ATTRIBUTE, node);
   }
 
   public static UniversalRunConfigCreator newInstance(SModel sm, boolean init) {

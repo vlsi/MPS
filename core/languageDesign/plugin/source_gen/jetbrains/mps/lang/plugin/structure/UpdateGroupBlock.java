@@ -18,7 +18,7 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String UPDATE_FUNCTION = "updateFunction";
   public static final String ENUMERATE_FUNCTION = "enumerateFunction";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public UpdateGroupBlock(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
     super.setChild(UpdateGroupBlock.ENUMERATE_FUNCTION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(UpdateGroupBlock._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(UpdateGroupBlock.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, UpdateGroupBlock._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, UpdateGroupBlock.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, UpdateGroupBlock._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, UpdateGroupBlock.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(UpdateGroupBlock._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(UpdateGroupBlock.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, UpdateGroupBlock._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UpdateGroupBlock.SMODEL_ATTRIBUTE, node);
   }
 
   public static UpdateGroupBlock newInstance(SModel sm, boolean init) {

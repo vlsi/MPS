@@ -21,7 +21,7 @@ public class DefaultGeneratorParameter extends BaseConcept implements IGenerator
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TYPE = "type";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public DefaultGeneratorParameter(SNode node) {
     super(node);
@@ -67,24 +67,24 @@ public class DefaultGeneratorParameter extends BaseConcept implements IGenerator
     super.setChild(DefaultGeneratorParameter.TYPE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(DefaultGeneratorParameter._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(DefaultGeneratorParameter.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, DefaultGeneratorParameter._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, DefaultGeneratorParameter.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, DefaultGeneratorParameter._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, DefaultGeneratorParameter.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(DefaultGeneratorParameter._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(DefaultGeneratorParameter.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DefaultGeneratorParameter._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DefaultGeneratorParameter.SMODEL_ATTRIBUTE, node);
   }
 
   public static DefaultGeneratorParameter newInstance(SModel sm, boolean init) {

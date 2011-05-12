@@ -19,7 +19,7 @@ public class StyleSheet extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STYLE_CLASS = "styleClass";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public StyleSheet(SNode node) {
     super(node);
@@ -77,24 +77,24 @@ public class StyleSheet extends BaseConcept implements INamedConcept {
     this.insertChild(prev, StyleSheet.STYLE_CLASS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(StyleSheet._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(StyleSheet.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, StyleSheet._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, StyleSheet.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, StyleSheet._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, StyleSheet.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(StyleSheet._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(StyleSheet.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, StyleSheet._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StyleSheet.SMODEL_ATTRIBUTE, node);
   }
 
   public static StyleSheet newInstance(SModel sm, boolean init) {

@@ -26,7 +26,7 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   public static final String RIGHT_TARGET = "rightTarget";
   public static final String EXPRESSION_CONCEPT = "expressionConcept";
   public static final String EXTENDS = "extends";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BinaryOperationConcept(SNode node) {
     super(node);
@@ -136,24 +136,24 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
     super.setChild(BinaryOperationConcept.EXTENDS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(BinaryOperationConcept._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BinaryOperationConcept.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, BinaryOperationConcept._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BinaryOperationConcept.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, BinaryOperationConcept._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BinaryOperationConcept.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(BinaryOperationConcept._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BinaryOperationConcept.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BinaryOperationConcept._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BinaryOperationConcept.SMODEL_ATTRIBUTE, node);
   }
 
   public static BinaryOperationConcept newInstance(SModel sm, boolean init) {

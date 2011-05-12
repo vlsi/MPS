@@ -22,7 +22,7 @@ public class TimeZoneNameOperation extends BaseConcept implements IOperation {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LOCALE = "locale";
   public static final String INSTANT = "instant";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public TimeZoneNameOperation(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class TimeZoneNameOperation extends BaseConcept implements IOperation {
     super.setChild(TimeZoneNameOperation.INSTANT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(TimeZoneNameOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(TimeZoneNameOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, TimeZoneNameOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, TimeZoneNameOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, TimeZoneNameOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, TimeZoneNameOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(TimeZoneNameOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(TimeZoneNameOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TimeZoneNameOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TimeZoneNameOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static TimeZoneNameOperation newInstance(SModel sm, boolean init) {

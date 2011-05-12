@@ -19,7 +19,7 @@ public class WannabeClass extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String METHOD = "method";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public WannabeClass(SNode node) {
     super(node);
@@ -77,24 +77,24 @@ public class WannabeClass extends BaseConcept implements INamedConcept {
     this.insertChild(prev, WannabeClass.METHOD, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(WannabeClass._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(WannabeClass.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, WannabeClass._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, WannabeClass.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, WannabeClass._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, WannabeClass.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(WannabeClass._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(WannabeClass.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, WannabeClass._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, WannabeClass.SMODEL_ATTRIBUTE, node);
   }
 
   public static WannabeClass newInstance(SModel sm, boolean init) {

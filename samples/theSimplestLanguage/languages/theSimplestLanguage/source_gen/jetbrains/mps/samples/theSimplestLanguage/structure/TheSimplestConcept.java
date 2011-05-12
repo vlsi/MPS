@@ -19,7 +19,7 @@ public class TheSimplestConcept extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public TheSimplestConcept(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class TheSimplestConcept extends BaseConcept implements INamedConcept {
     this.setProperty(TheSimplestConcept.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(TheSimplestConcept._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(TheSimplestConcept.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, TheSimplestConcept._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, TheSimplestConcept.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, TheSimplestConcept._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, TheSimplestConcept.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(TheSimplestConcept._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(TheSimplestConcept.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TheSimplestConcept._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TheSimplestConcept.SMODEL_ATTRIBUTE, node);
   }
 
   public static TheSimplestConcept newInstance(SModel sm, boolean init) {

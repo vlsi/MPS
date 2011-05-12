@@ -19,7 +19,7 @@ public class ProcessStatement extends Statement implements ExecuteSpecific {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROCESS = "process";
   public static final String COMMAND = "command";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ProcessStatement(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class ProcessStatement extends Statement implements ExecuteSpecific {
     super.setChild(ProcessStatement.COMMAND, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ProcessStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ProcessStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ProcessStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ProcessStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ProcessStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ProcessStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ProcessStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ProcessStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ProcessStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ProcessStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static ProcessStatement newInstance(SModel sm, boolean init) {

@@ -22,7 +22,7 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DATE_TIME_PROPERTY_CARDINALITY = "dateTimePropertyCardinality";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public DateTimePropertyFormatType(SNode node) {
     super(node);
@@ -92,24 +92,24 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
     super.setReferent(DateTimePropertyFormatType.DATE_TIME_PROPERTY_CARDINALITY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(DateTimePropertyFormatType._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(DateTimePropertyFormatType.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, DateTimePropertyFormatType._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, DateTimePropertyFormatType.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, DateTimePropertyFormatType._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, DateTimePropertyFormatType.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(DateTimePropertyFormatType._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(DateTimePropertyFormatType.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DateTimePropertyFormatType._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DateTimePropertyFormatType.SMODEL_ATTRIBUTE, node);
   }
 
   public static DateTimePropertyFormatType newInstance(SModel sm, boolean init) {

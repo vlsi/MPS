@@ -19,7 +19,7 @@ public class CustomWatchable extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CustomWatchable(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class CustomWatchable extends BaseConcept implements INamedConcept {
     this.setProperty(CustomWatchable.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CustomWatchable._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CustomWatchable.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CustomWatchable._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CustomWatchable.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CustomWatchable._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CustomWatchable.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CustomWatchable._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CustomWatchable.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CustomWatchable._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CustomWatchable.SMODEL_ATTRIBUTE, node);
   }
 
   public static CustomWatchable newInstance(SModel sm, boolean init) {
