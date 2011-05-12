@@ -42,6 +42,9 @@ public class EditorCellLabelSelection extends EditorCellSelection {
 
   public EditorCellLabelSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
     super(editorComponent, properties, cellInfo);
+    if (!(getEditorCell() instanceof EditorCell_Label)) {
+      throw new SelectionRestoreException();
+    }
     myNonTrivialSelection = SelectionInfo.Util.getBooleanProperty(properties, HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME);
     if (getEditorCell().getCellInfo().equals(cellInfo)) {
       if (myNonTrivialSelection) {
