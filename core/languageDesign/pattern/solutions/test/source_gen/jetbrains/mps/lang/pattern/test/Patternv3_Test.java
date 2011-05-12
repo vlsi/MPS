@@ -107,18 +107,18 @@ public class Patternv3_Test extends BaseTransformationTest {
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_1fi_a0;
-          nodeToMatch_1fi_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_1fi_a0.getConceptFqName()))) {
+          SNode nodeToMatch_1fi_a0_0;
+          nodeToMatch_1fi_a0_0 = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_1fi_a0_0.getConceptFqName()))) {
             return false;
           }
           {
-            String childRole_1fi__0 = "operation";
-            if (nodeToMatch_1fi_a0.getChildCount(childRole_1fi__0) != 1) {
+            String childRole_1fi__4 = "operation";
+            if (nodeToMatch_1fi_a0_0.getChildCount(childRole_1fi__4) != 1) {
               return false;
             }
             {
-              SNode childVar_1fi_a0a_0 = nodeToMatch_1fi_a0.getChildren(childRole_1fi__0).get(0);
+              SNode childVar_1fi_a0a_0 = nodeToMatch_1fi_a0_0.getChildren(childRole_1fi__4).get(0);
               {
                 SNode nodeToMatch_1fi_a0a;
                 nodeToMatch_1fi_a0a = childVar_1fi_a0a_0;
@@ -127,12 +127,12 @@ public class Patternv3_Test extends BaseTransformationTest {
                 }
                 patternVar_method = nodeToMatch_1fi_a0a.getReferent("baseMethodDeclaration");
                 {
-                  String childRole_1fi__3 = "smodelAttribute";
-                  if (nodeToMatch_1fi_a0a.getChildCount(childRole_1fi__3) != 1) {
+                  String childRole_1fi__5 = "smodelAttribute";
+                  if (nodeToMatch_1fi_a0a.getChildCount(childRole_1fi__5) != 1) {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a0a0 = nodeToMatch_1fi_a0a.getChildren(childRole_1fi__3).get(0);
+                    SNode childVar_1fi_a0a0 = nodeToMatch_1fi_a0a.getChildren(childRole_1fi__5).get(0);
                     {
                       SNode nodeToMatch_1fi_a0a0;
                       nodeToMatch_1fi_a0a0 = childVar_1fi_a0a0;
@@ -163,11 +163,11 @@ public class Patternv3_Test extends BaseTransformationTest {
           }
           {
             String childRole_1fi__7 = "operand";
-            if (nodeToMatch_1fi_a0.getChildCount(childRole_1fi__7) != 1) {
+            if (nodeToMatch_1fi_a0_0.getChildCount(childRole_1fi__7) != 1) {
               return false;
             }
             {
-              SNode childVar_1fi_a0a_1 = nodeToMatch_1fi_a0.getChildren(childRole_1fi__7).get(0);
+              SNode childVar_1fi_a0a_1 = nodeToMatch_1fi_a0_0.getChildren(childRole_1fi__7).get(0);
               {
                 SNode nodeToMatch_1fi_a0a_0;
                 nodeToMatch_1fi_a0a_0 = childVar_1fi_a0a_1;

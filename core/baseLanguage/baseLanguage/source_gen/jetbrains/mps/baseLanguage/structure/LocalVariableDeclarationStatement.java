@@ -17,7 +17,7 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LOCAL_VARIABLE_DECLARATION = "localVariableDeclaration";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public LocalVariableDeclarationStatement(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
     super.setChild(LocalVariableDeclarationStatement.LOCAL_VARIABLE_DECLARATION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(LocalVariableDeclarationStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(LocalVariableDeclarationStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, LocalVariableDeclarationStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, LocalVariableDeclarationStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, LocalVariableDeclarationStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, LocalVariableDeclarationStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(LocalVariableDeclarationStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(LocalVariableDeclarationStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, LocalVariableDeclarationStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LocalVariableDeclarationStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static LocalVariableDeclarationStatement newInstance(SModel sm, boolean init) {

@@ -19,7 +19,7 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String IS_ABSTRACT = "isAbstract";
   public static final String VISIBILITY = "visibility";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InstanceMethodDeclaration(SNode node) {
     super(node);
@@ -73,24 +73,24 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
     super.setChild(InstanceMethodDeclaration.VISIBILITY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InstanceMethodDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InstanceMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InstanceMethodDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InstanceMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InstanceMethodDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InstanceMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InstanceMethodDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InstanceMethodDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InstanceMethodDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InstanceMethodDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static InstanceMethodDeclaration newInstance(SModel sm, boolean init) {

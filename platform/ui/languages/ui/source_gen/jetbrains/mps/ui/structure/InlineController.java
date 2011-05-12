@@ -17,7 +17,7 @@ public class InlineController extends Controller implements TypeDerivable {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EVENT_HANDLING_BLOCK = "eventHandlingBlock";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InlineController(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class InlineController extends Controller implements TypeDerivable {
     super.setChild(InlineController.EVENT_HANDLING_BLOCK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InlineController._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InlineController.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InlineController._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InlineController.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InlineController._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InlineController.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InlineController._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InlineController.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InlineController._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InlineController.SMODEL_ATTRIBUTE, node);
   }
 
   public static InlineController newInstance(SModel sm, boolean init) {

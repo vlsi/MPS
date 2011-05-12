@@ -20,7 +20,7 @@ public class CompartmentProviderStatement extends Statement implements IUIObject
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONTEXT = "context";
   public static final String BODY = "body";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CompartmentProviderStatement(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class CompartmentProviderStatement extends Statement implements IUIObject
     super.setChild(CompartmentProviderStatement.BODY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CompartmentProviderStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CompartmentProviderStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CompartmentProviderStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CompartmentProviderStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CompartmentProviderStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CompartmentProviderStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CompartmentProviderStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CompartmentProviderStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CompartmentProviderStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CompartmentProviderStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static CompartmentProviderStatement newInstance(SModel sm, boolean init) {

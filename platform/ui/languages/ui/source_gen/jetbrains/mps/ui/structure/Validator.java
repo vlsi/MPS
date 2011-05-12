@@ -18,7 +18,7 @@ public class Validator extends BaseConcept implements TypeDerivable {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VALIDATE_BLOCK = "validateBlock";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Validator(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class Validator extends BaseConcept implements TypeDerivable {
     super.setChild(Validator.VALIDATE_BLOCK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Validator._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Validator.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Validator._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Validator.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Validator._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Validator.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Validator._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Validator.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Validator._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Validator.SMODEL_ATTRIBUTE, node);
   }
 
   public static Validator newInstance(SModel sm, boolean init) {

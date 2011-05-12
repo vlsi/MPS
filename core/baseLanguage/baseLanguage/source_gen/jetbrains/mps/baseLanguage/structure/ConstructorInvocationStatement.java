@@ -17,7 +17,7 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ConstructorInvocationStatement(SNode node) {
     super(node);
@@ -83,24 +83,24 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
     this.insertChild(prev, ConstructorInvocationStatement.ACTUAL_ARGUMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ConstructorInvocationStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ConstructorInvocationStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ConstructorInvocationStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ConstructorInvocationStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ConstructorInvocationStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ConstructorInvocationStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ConstructorInvocationStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ConstructorInvocationStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConstructorInvocationStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConstructorInvocationStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static ConstructorInvocationStatement newInstance(SModel sm, boolean init) {

@@ -17,7 +17,7 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FIELD_DECLARATION = "fieldDeclaration";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public FieldReferenceOperation(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
     super.setReferent(FieldReferenceOperation.FIELD_DECLARATION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(FieldReferenceOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(FieldReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, FieldReferenceOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, FieldReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, FieldReferenceOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, FieldReferenceOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(FieldReferenceOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(FieldReferenceOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FieldReferenceOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FieldReferenceOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static FieldReferenceOperation newInstance(SModel sm, boolean init) {

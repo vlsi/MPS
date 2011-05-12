@@ -17,7 +17,7 @@ public class BaseMethodCall extends Expression implements IMethodCall {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BaseMethodCall(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class BaseMethodCall extends Expression implements IMethodCall {
     this.insertChild(prev, BaseMethodCall.ACTUAL_ARGUMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(BaseMethodCall._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BaseMethodCall.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, BaseMethodCall._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BaseMethodCall.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, BaseMethodCall._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BaseMethodCall.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(BaseMethodCall._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BaseMethodCall.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BaseMethodCall._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseMethodCall.SMODEL_ATTRIBUTE, node);
   }
 
   public static BaseMethodCall newInstance(SModel sm, boolean init) {

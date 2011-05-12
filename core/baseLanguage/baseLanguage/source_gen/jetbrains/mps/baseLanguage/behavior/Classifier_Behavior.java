@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import javax.swing.Icon;
@@ -25,6 +26,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class Classifier_Behavior {
   private static Class[] PARAMETERS_5039675756633081868 = {SNode.class};
@@ -35,6 +37,7 @@ public class Classifier_Behavior {
   private static Class[] PARAMETERS_1906502351318572840 = {SNode.class};
   private static Class[] PARAMETERS_5017341185733869650 = {SNode.class};
   private static Class[] PARAMETERS_3305065273710880775 = {SNode.class};
+  private static SNodePointer SNODE_POINTER_qw8l7c_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0c0b0c0a0a0b0a0a0r = new SNodePointer("r:b1b2261b-6786-4516-8cec-f858708cee55(jetbrains.mps.baseLanguage.behavior@1_0)", "3305065273710866775");
 
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -344,6 +347,47 @@ public class Classifier_Behavior {
           for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a61.getChildren(childRole_qw8l7c_)) {
             patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
+          }
+        }
+        {
+          String childRole_qw8l7c__0 = "smodelAttribute";
+          if (nodeToMatch_qw8l7c_a0a0a0a61.getChildCount(childRole_qw8l7c__0) != 1) {
+            return false;
+          }
+          {
+            SNode childVar_qw8l7c_a0a0a0a0q = nodeToMatch_qw8l7c_a0a0a0a61.getChildren(childRole_qw8l7c__0).get(0);
+            {
+              SNode nodeToMatch_qw8l7c_a0a0a0a0q;
+              nodeToMatch_qw8l7c_a0a0a0a0q = childVar_qw8l7c_a0a0a0a0q;
+              if (!("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation".equals(nodeToMatch_qw8l7c_a0a0a0a0q.getConceptFqName()))) {
+                return false;
+              }
+              if (!("classifier".equals(nodeToMatch_qw8l7c_a0a0a0a0q.getProperty("linkRole")))) {
+                return false;
+              }
+              {
+                String childRole_qw8l7c__1 = "expression";
+                if (nodeToMatch_qw8l7c_a0a0a0a0q.getChildCount(childRole_qw8l7c__1) != 1) {
+                  return false;
+                }
+                {
+                  SNode childVar_qw8l7c_a0a0a0a0a61 = nodeToMatch_qw8l7c_a0a0a0a0q.getChildren(childRole_qw8l7c__1).get(0);
+                  {
+                    SNode nodeToMatch_qw8l7c_a0a0a0a0a61;
+                    nodeToMatch_qw8l7c_a0a0a0a0a61 = childVar_qw8l7c_a0a0a0a0a61;
+                    if (!("jetbrains.mps.baseLanguage.structure.ParameterReference".equals(nodeToMatch_qw8l7c_a0a0a0a0a61.getConceptFqName()))) {
+                      return false;
+                    }
+                    {
+                      SNodePointer pointer = SNODE_POINTER_qw8l7c_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0c0b0c0a0a0b0a0a0r;
+                      if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_qw8l7c_a0a0a0a0a61.getReferent("variableDeclaration")))) {
+                        return false;
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

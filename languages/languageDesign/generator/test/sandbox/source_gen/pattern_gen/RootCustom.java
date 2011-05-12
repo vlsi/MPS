@@ -41,36 +41,12 @@ public class RootCustom {
         }
       }
       // Block 
-
-      {
-        // extraWorktrue extraWork 
-        int var12 = 55;
-      }
-      {
-        int e;
-        e = 5;
-      }
-      {
-        // myWork1true myWork1 
-        int var12 = 175 * (1 + e2);
-      }
-      {
-        int e;
-        e = 5;
-      }
-      {
-        // myWork2true myWork2 
-        int var12 = 175 * (1 + e2);
-      }
-      {
-        int e;
-        e = 5;
-      }
+/* error: statement w/o textGen:extraWork *//* error: statement w/o textGen:myWork1 *//* error: statement w/o textGen:myWork2 */
       int e33 = 42;
-      int e32 = (22 + "myWork1".length());
-      int e31 = 58 + ("extraWork".length());
+      int e32 = 42;
+      int e31 = 42;
       int e30 = 42;
-      int e29 = (12 + 58 + ("myWork2".length()));
+      int e29 = 42;
       int ya1 = 0;
       int ya2 = ya1 * 2;
     }

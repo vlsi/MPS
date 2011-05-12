@@ -29,7 +29,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable, UnitCon
   public static final String STATIC_METHOD = "staticMethod";
   public static final String IMPLEMENTED_INTERFACE = "implementedInterface";
   public static final String PROPERTY = "property";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ClassConcept(SNode node) {
     super(node);
@@ -223,24 +223,24 @@ public class ClassConcept extends Classifier implements IBLDeprecatable, UnitCon
     this.insertChild(prev, ClassConcept.PROPERTY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ClassConcept._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ClassConcept.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ClassConcept._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ClassConcept.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ClassConcept._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ClassConcept.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ClassConcept._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ClassConcept.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ClassConcept._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ClassConcept.SMODEL_ATTRIBUTE, node);
   }
 
   public static ClassConcept newInstance(SModel sm, boolean init) {
