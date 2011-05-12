@@ -749,7 +749,7 @@
         </node>
       </node>
     </node>
-    <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="2479108860611100191">
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="2479108860611100191">
       <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="2479108860611100192">
         <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="2479108860611100193">
           <property name="text" nameId="m373.8970989240999019144" value="TODO: merge with DefaultReferenceSubstituteInfo" />

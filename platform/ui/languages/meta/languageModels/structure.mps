@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)">
+<model modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
@@ -427,7 +427,7 @@
       <property name="role" nameId="tpce.1071599776563" value="runtimeType" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="sqp9.OverrideAnnotation" typeId="6247544121092588772" id="4849999735687542045" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="sqp9.OverrideAnnotation" typeId="6247544121092588772" id="4849999735687542045" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1642651187739181597">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

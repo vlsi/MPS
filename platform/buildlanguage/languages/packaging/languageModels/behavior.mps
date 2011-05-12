@@ -4293,7 +4293,7 @@
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tps4.PathHolder" typeId="tps4.1204737220833" id="1775602641705020800">
                 <property name="fullPath" nameId="tps4.1208952075958" value="fullPath" />
                 <property name="moduleRelativePath" nameId="tps4.4567890205662779918" value="moduleRelativePath" />
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="1775602641705024541">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="1775602641705024541">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="fullPath" />
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1775602641705024543">
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1218647682296" resolveInfo="ModuleUtil" />
@@ -4314,11 +4314,11 @@
                     </node>
                   </node>
                 </node>
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1775602641705024552">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1775602641705024552">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="module" />
                   <node role="expression" roleId="tp3r.1196350785111" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1775602641705024554" />
                 </node>
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="1775602641705024555">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="1775602641705024555">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="moduleRelativePath" />
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1775602641705024562">
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1218647682296" resolveInfo="ModuleUtil" />

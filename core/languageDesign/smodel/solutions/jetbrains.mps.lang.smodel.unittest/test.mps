@@ -35,7 +35,7 @@
       </node>
       <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="1835794636205189197">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1835794636205189198">
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1835794636205189204">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1835794636205189204">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -58,7 +58,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_InsertNextSiblingOperation" typeId="tp25.1143224066846" id="4997106363361386790">
                 <node role="insertedNode" roleId="tp25.1143224066849" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4997106363361416679">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.AbstractCreator" typeId="tpee.1145552809883" id="4997106363361416680">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4997106363361416681">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4997106363361416681">
                       <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
                       <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
                       <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />

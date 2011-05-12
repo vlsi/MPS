@@ -2753,7 +2753,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7974234327424532524">
           <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7974234327424532526">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tp4k.RunConfigType" typeId="tp4k.7974234327424524992" id="7974234327424532528">
-              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="335465233322016536">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="335465233322016536">
                 <property name="linkRole" nameId="tpck.1757699476691236116" value="runConfig" />
                 <node role="expression" roleId="tp3r.1196350785111" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="335465233322016538" />
               </node>
@@ -3633,7 +3633,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="862470364181513535">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="862470364181513536">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tp4k.ToolType" typeId="tp4k.1208528650020" id="862470364181513538">
-              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="862470364181513539">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="862470364181513539">
                 <property name="linkRole" nameId="tpck.1757699476691236116" value="tool" />
                 <node role="expression" roleId="tp3r.1196350785111" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="862470364181513541" />
               </node>

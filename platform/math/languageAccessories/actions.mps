@@ -346,7 +346,7 @@
                       <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="963844843316090106">
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="39kg.PowExpression" typeId="39kg.1238338031059" id="963844843316090108">
                           <node role="base" roleId="39kg.1238338314123" type="tpee.Expression" typeId="tpee.1068431790191" id="963844843316090109">
-                            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="963844843316090111">
+                            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="963844843316090111">
                               <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="963844843316090113" />
                             </node>
                           </node>
@@ -465,7 +465,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Concept_NewInstance" typeId="tpdg.7776141288922801652" id="2505098507105945419">
                         <node role="prototype" roleId="tpdg.3757480014665178932" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2505098507105945420">
                           <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.Expression" typeId="tpee.1068431790191" id="2505098507105945421">
-                            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2505098507105945422">
+                            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2505098507105945422">
                               <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2505098507105945423" />
                             </node>
                           </node>

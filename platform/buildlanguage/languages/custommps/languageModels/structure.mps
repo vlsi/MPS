@@ -86,7 +86,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2235195415637073417">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tps4.1240832649054" resolveInfo="INotBuildableComponent" />
     </node>
-    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpck.ExportScopeNamespace" typeId="tpck.2565736246230036151" id="8431776905956861662">
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpck.ExportScopeNamespace" typeId="tpck.2565736246230036151" id="8431776905956861662">
       <property name="namespace" nameId="tpck.2565736246230036153" value="jetbrains.mps.build" />
     </node>
   </root>
@@ -106,7 +106,7 @@
       <property name="name" nameId="tpck.1169194664001" value="name" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tps4.1223640176546" resolveInfo="StringWithoutSpaces" />
     </node>
-    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpck.ExportScopeModule" typeId="tpck.2565736246230036154" id="8431776905956861661" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpck.ExportScopeModule" typeId="tpck.2565736246230036154" id="8431776905956861661" />
   </root>
 </model>
 

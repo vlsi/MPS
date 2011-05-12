@@ -200,7 +200,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6832197706140863141">
                 <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6832197706140863150">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="m373.DocMethodParameterReference" typeId="m373.6832197706140518104" id="6832197706140863152">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6832197706140863157">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6832197706140863157">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="param" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="6832197706140863159">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8465538089690919858" resolveInfo="parameterDeclaration" />
@@ -278,7 +278,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2068944020170313350">
                 <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2068944020170313353">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="m373.DocTypeParameterReference" typeId="m373.6832197706140518107" id="2068944020170313358">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2068944020170313359">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2068944020170313359">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="param" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2068944020170313361">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="2068944020170311119" resolveInfo="typeVariableDeclaration" />
@@ -1049,7 +1049,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2068944020170493364">
                 <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2068944020170493367">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="m373.DocTypeParameterReference" typeId="m373.6832197706140518107" id="2068944020170493369">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2068944020170493370">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2068944020170493370">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="param" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2068944020170493372">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="2068944020170434438" resolveInfo="typeVariableDeclaration" />

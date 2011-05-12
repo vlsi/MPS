@@ -64,7 +64,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2663453265346703853">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="sqp9.LayoutConstraintExpression" typeId="sqp9.2663453265345757053" id="2663453265346703855">
                     <node role="constraint" roleId="sqp9.2663453265345757087" type="sqp9.LayoutConstraint" typeId="sqp9.2663453265345756626" id="2663453265346703856">
-                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2663453265346703858">
+                      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2663453265346703858">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2663453265346703877">
                           <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="2663453265346703878" />
                           <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Concept_NewInstance" typeId="tpdg.7776141288922801652" id="8427581592624635707" />
@@ -129,11 +129,11 @@
                     <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2663453265347863362">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="sqp9.ExpressionWithUnit" typeId="sqp9.2663453265347366854" id="2663453265347863363">
                         <node role="expression" roleId="sqp9.2663453265347375376" type="tpee.Expression" typeId="tpee.1068431790191" id="2663453265347863364">
-                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2663453265347863365">
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2663453265347863365">
                             <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2663453265347863366" />
                           </node>
                         </node>
-                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="2663453265347863367">
+                        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="2663453265347863367">
                           <property name="propertyName" nameId="tpck.1757699476691236117" value="unit" />
                           <node role="expression" roleId="tp3r.1196350785111" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2663453265347863368">
                             <property name="value" nameId="tpee.1070475926801" value="PERCENT" />
@@ -160,11 +160,11 @@
                     <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2663453265348314736">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="sqp9.ExpressionWithUnit" typeId="sqp9.2663453265347366854" id="2663453265348314737">
                         <node role="expression" roleId="sqp9.2663453265347375376" type="tpee.Expression" typeId="tpee.1068431790191" id="2663453265348314738">
-                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2663453265348314739">
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2663453265348314739">
                             <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2663453265348314740" />
                           </node>
                         </node>
-                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="2663453265348314741">
+                        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="2663453265348314741">
                           <property name="propertyName" nameId="tpck.1757699476691236117" value="unit" />
                           <node role="expression" roleId="tp3r.1196350785111" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2663453265348314742">
                             <property name="value" nameId="tpee.1070475926801" value="PIXEL" />

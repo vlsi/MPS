@@ -5555,7 +5555,7 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7797884084018607106" resolveInfo="LogReportingProgressStrategy.Log" />
         </node>
       </node>
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="7797884084018614315">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="7797884084018614315">
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="7797884084018614316">
           <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="7797884084018614317">
             <property name="text" nameId="m373.8970989240999019144" value="For testing only." />

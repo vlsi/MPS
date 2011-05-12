@@ -373,7 +373,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1240564807684">
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1240564807685">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1240564809747">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1240564813407">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1240564813407">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="1240564815624" />
                     </node>
@@ -455,7 +455,7 @@
                         <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6880792723345007014">
                           <node role="quotedNode" roleId="tp3r.1196350785114" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="6880792723345007016">
                             <node role="value" roleId="cx9y.1239560837729" type="tpee.Expression" typeId="tpee.1068431790191" id="6880792723345007017" />
-                            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6880792723345007018">
+                            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6880792723345007018">
                               <property name="linkRole" nameId="tpck.1757699476691236116" value="componentDeclaration" />
                               <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6880792723345007020">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6880792723345007010" resolveInfo="cmp" />
@@ -477,7 +477,7 @@
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="6880792723345003465">
                     <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="6880792723345028078">
                       <node role="value" roleId="cx9y.1239560837729" type="tpee.Expression" typeId="tpee.1068431790191" id="6880792723345028079" />
-                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="6880792723345028080">
+                      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="6880792723345028080">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6880792723345028083">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6880792723345028084">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6880792723345028085">
@@ -496,7 +496,7 @@
                         </node>
                       </node>
                     </node>
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6880792723345003466">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6880792723345003466">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="tupleDeclaration" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="6880792723345003468" />
                     </node>
@@ -575,7 +575,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6880792723345030614">
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6880792723345030615">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="6880792723345030617">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6880792723345030618">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6880792723345030618">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="6880792723345030620" />
                     </node>

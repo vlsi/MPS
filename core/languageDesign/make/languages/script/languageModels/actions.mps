@@ -281,7 +281,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3668957831723382079">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.ReportFeedbackStatement" typeId="q9ra.3668957831723333672" id="3668957831723382081">
                     <node role="message" roleId="q9ra.3668957831723336680" type="tpee.Expression" typeId="tpee.1068431790191" id="3668957831723382082" />
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="3668957831723382083">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="3668957831723382083">
                       <property name="propertyName" nameId="tpck.1757699476691236117" value="feedback" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3668957831723382086">
                         <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3668957831723382085" />
@@ -410,7 +410,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3297237684108474669">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="3297237684108474671">
                     <node role="amount" roleId="q9ra.187226666892735700" type="tpee.Expression" typeId="tpee.1068431790191" id="3297237684108474672" />
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="682890046602647186">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="682890046602647186">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="workStatement" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="682890046602647273" />
                     </node>
@@ -489,7 +489,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3297237684108506294">
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3297237684108506295">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="3297237684108506297">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="682890046602647275">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="682890046602647275">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="workStatement" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="682890046602647277" />
                     </node>

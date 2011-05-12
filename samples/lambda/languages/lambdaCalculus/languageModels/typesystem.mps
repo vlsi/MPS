@@ -230,14 +230,14 @@
               <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6997567109318355521">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="qjd.FunctionType" typeId="qjd.4530871765544139496" id="6997567109318355522">
                   <node role="domain" roleId="qjd.4530871765544139497" type="qjd.LambdaType" typeId="qjd.4530871765544139480" id="6997567109318355523">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="6997567109318355524">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="6997567109318355524">
                       <node role="expression" roleId="tp3r.1196350785111" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="6997567109318355529">
                         <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="6115593414628019700" resolveInfo="D" />
                       </node>
                     </node>
                   </node>
                   <node role="range" roleId="qjd.4530871765544139498" type="qjd.LambdaType" typeId="qjd.4530871765544139480" id="6997567109318355526">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="6997567109318355527">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="6997567109318355527">
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6997567109318355530">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="627759474950193489" resolveInfo="result" />
                       </node>
@@ -431,14 +431,14 @@
               <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="247065157659474815">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="qjd.FunctionType" typeId="qjd.4530871765544139496" id="247065157659474816">
                   <node role="domain" roleId="qjd.4530871765544139497" type="qjd.LambdaType" typeId="qjd.4530871765544139480" id="247065157659474817">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="247065157659474818">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="247065157659474818">
                       <node role="expression" roleId="tp3r.1196350785111" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="247065157659474819">
                         <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="247065157659474805" resolveInfo="D" />
                       </node>
                     </node>
                   </node>
                   <node role="range" roleId="qjd.4530871765544139498" type="qjd.LambdaType" typeId="qjd.4530871765544139480" id="247065157659474820">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="247065157659474821">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="247065157659474821">
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="247065157659474822">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="247065157659474778" resolveInfo="result" />
                       </node>

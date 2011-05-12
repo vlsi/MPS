@@ -84,25 +84,25 @@
     <node role="pattern" roleId="pnao.8707387027762047754" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="815823070325240427">
       <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.StatementList" typeId="tpee.1068580123136" id="815823070325240428">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="815823070325240429">
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.WildcardPattern" typeId="tp3t.1136720037783" id="815823070325240430" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.WildcardPattern" typeId="tp3t.1136720037783" id="815823070325240430" />
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="815823070325240431">
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="815823070325240435">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="815823070325240436" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.Expression" typeId="tpee.1068431790191" id="815823070325240437">
-              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="815823070325240438">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="815823070325240438">
                 <property name="varName" nameId="tp3t.1136720037780" value="p" />
               </node>
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8925839041031188835">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="8925839041031188836">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="8925839041031188836">
               <property name="varName" nameId="tp3t.1136720037780" value="ifbody" />
             </node>
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="815823070325240439">
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.WildcardPattern" typeId="tp3t.1136720037783" id="815823070325240440" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.WildcardPattern" typeId="tp3t.1136720037783" id="815823070325240440" />
         </node>
       </node>
     </node>
@@ -146,11 +146,11 @@
         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1563914226484890288">
           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484890298">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484890298">
             <property name="varName" nameId="tp3t.1137418571428" value="field" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
           </node>
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484892893">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484892893">
             <property name="varName" nameId="tp3t.1137418571428" value="className" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
           </node>
@@ -158,11 +158,11 @@
         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1563914226484890289">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln()%cvoid" resolveInfo="println" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="1563914226484890295">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1563914226484890296">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1563914226484890296">
               <property name="varName" nameId="tp3t.1136720037780" value="printed" />
             </node>
           </node>
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484890297">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484890297">
             <property name="varName" nameId="tp3t.1137418571428" value="method" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
           </node>
@@ -202,11 +202,11 @@
         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1563914226484929046">
           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484929047">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484929047">
             <property name="varName" nameId="tp3t.1137418571428" value="field" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
           </node>
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484929048">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484929048">
             <property name="varName" nameId="tp3t.1137418571428" value="className" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
           </node>
@@ -214,14 +214,14 @@
         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1563914226484929049">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln()%cvoid" resolveInfo="println" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="1563914226484929053">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.ListPattern" typeId="tp3t.1136727061274" id="1563914226484929054">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.ListPattern" typeId="tp3t.1136727061274" id="1563914226484929054">
               <property name="varName" nameId="tp3t.1136720037780" value="list" />
             </node>
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1563914226484929055">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1563914226484929055">
               <property name="varName" nameId="tp3t.1136720037780" value="ignore" />
             </node>
           </node>
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484929052">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484929052">
             <property name="varName" nameId="tp3t.1137418571428" value="method" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
           </node>
@@ -261,11 +261,11 @@
         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1563914226484895494">
           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484895495">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484895495">
             <property name="varName" nameId="tp3t.1137418571428" value="field" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
           </node>
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484895496">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484895496">
             <property name="varName" nameId="tp3t.1137418571428" value="className" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
           </node>
@@ -274,12 +274,12 @@
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1563914226484895505">
             <property name="value" nameId="tpee.1070475926801" value="" />
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PropertyPatternVariableDeclaration" typeId="tp3t.1136720037781" id="1563914226484895506">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PropertyPatternVariableDeclaration" typeId="tp3t.1136720037781" id="1563914226484895506">
               <property name="varName" nameId="tp3t.1136720037782" value="printed" />
               <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
             </node>
           </node>
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484895500">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484895500">
             <property name="varName" nameId="tp3t.1137418571428" value="method" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
           </node>
@@ -319,11 +319,11 @@
         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1563914226484981161">
           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484981162">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484981162">
             <property name="varName" nameId="tp3t.1137418571428" value="field" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
           </node>
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484981163">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484981163">
             <property name="varName" nameId="tp3t.1137418571428" value="className" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
           </node>
@@ -331,14 +331,14 @@
         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1563914226484981164">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln()%cvoid" resolveInfo="println" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="1563914226484981165">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.ListPattern" typeId="tp3t.1136727061274" id="1563914226484981166">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.ListPattern" typeId="tp3t.1136727061274" id="1563914226484981166">
               <property name="varName" nameId="tp3t.1136720037780" value="list" />
             </node>
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1563914226484981167">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1563914226484981167">
               <property name="varName" nameId="tp3t.1136720037780" value="ignore" />
             </node>
           </node>
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484981168">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1563914226484981168">
             <property name="varName" nameId="tp3t.1137418571428" value="method" />
             <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
           </node>
@@ -385,7 +385,7 @@
       <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.IfStatement" typeId="tpee.1068580123159" id="2879868312063084279">
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2879868312063084281">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="612919440683666600">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="612919440683690113">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="612919440683690113">
               <property name="varName" nameId="tp3t.1136720037780" value="body" />
             </node>
           </node>
@@ -441,7 +441,7 @@
       <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4855904478357165300">
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4855904478357165301">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4855904478357165302">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="4855904478357165303">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="4855904478357165303">
               <property name="varName" nameId="tp3t.1136720037780" value="body" />
             </node>
           </node>
@@ -508,7 +508,7 @@
           <node role="clause" roleId="tp3t.2879868312062970574" type="tp3t.OrPatternClause" typeId="tp3t.4855904478356877904" id="8297918475033174780">
             <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.AndExpression" typeId="tpee.1080120340718" id="8297918475033209968">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.Expression" typeId="tpee.1068431790191" id="8297918475033209969">
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.WildcardPattern" typeId="tp3t.1136720037783" id="8297918475033209976" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.WildcardPattern" typeId="tp3t.1136720037783" id="8297918475033209976" />
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="8297918475033209971">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8297918475033209975" />
@@ -521,7 +521,7 @@
           <node role="clause" roleId="tp3t.2879868312062970574" type="tp3t.OrPatternClause" typeId="tp3t.4855904478356877904" id="8297918475033210020">
             <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.AndExpression" typeId="tpee.1080120340718" id="8297918475033210021">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.Expression" typeId="tpee.1068431790191" id="8297918475033210022">
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.WildcardPattern" typeId="tp3t.1136720037783" id="8297918475033210033" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.WildcardPattern" typeId="tp3t.1136720037783" id="8297918475033210033" />
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="8297918475033210024">
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8297918475033210032" />

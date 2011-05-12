@@ -52,7 +52,7 @@
   </roots>
   <root id="6170050146384276051">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="2qyu.UltimateContainer" typeId="2qyu.5508804114499095504" id="6170050146384276052">
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384276053">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384276053">
         <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
         <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -116,7 +116,7 @@
             <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6170050146384276058" resolveInfo="e_2" />
           </node>
         </node>
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384276074">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384276074">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -164,7 +164,7 @@
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="6170050146384285894">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6170050146384285885" resolveInfo="e_0" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384285922">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384285922">
             <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -244,7 +244,7 @@
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="6767735723023410260">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="6767735723023410241" resolveInfo="anotherColumn" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6767735723023410261">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6767735723023410261">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="13" />
@@ -304,7 +304,7 @@
         <property name="condition" nameId="2qyu.763922957008729153" value="true" />
         <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="6170050146384285911">
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384285907" resolveInfo="s_0" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384300218">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384300218">
             <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -368,7 +368,7 @@
         <property name="condition" nameId="2qyu.763922957008729153" value="true" />
         <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="6767735723023410263">
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="6170050146384300230" resolveInfo="anotherRow" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6767735723023410264">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6767735723023410264">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="10" />
@@ -482,7 +482,7 @@
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="8017670888383389090" resolveInfo="e_2" />
         </node>
       </node>
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8017670888383389106">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8017670888383389106">
         <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
         <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -555,7 +555,7 @@
       </node>
       <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="8207994269122295133">
         <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="8207994269122295134">
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8207994269122295137">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8207994269122295137">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -629,7 +629,7 @@
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="9025751233592279045" resolveInfo="e_2" />
         </node>
       </node>
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348533414">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348533414">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
         <property name="cellId" nameId="tp5g.1229194968595" value="Table_qpt50r_c0_row_2_firstCell" />
       </node>
@@ -650,7 +650,7 @@
       </node>
       <node role="states" roleId="2qyu.763922957008726949" type="2qyu.State" typeId="2qyu.763922957008729154" id="5877647854348533441">
         <property name="name" nameId="tpck.1169194664001" value="newState" />
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348533442">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348533442">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="8" />
@@ -720,7 +720,7 @@
       </node>
       <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="5877647854348551019">
         <property name="name" nameId="tpck.1169194664001" value="e_1" />
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551042">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551042">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -783,7 +783,7 @@
         <property name="name" nameId="tpck.1169194664001" value="e_0" />
       </node>
       <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="5877647854348551069">
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551070">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551070">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -908,7 +908,7 @@
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="5877647854348551079" resolveInfo="e_2" />
         </node>
       </node>
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551095">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551095">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
         <property name="cellId" nameId="tp5g.1229194968595" value="Table_qpt50r_c0_row_2_firstCell" />
       </node>
@@ -952,7 +952,7 @@
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="5877647854348551105" resolveInfo="e_2" />
         </node>
       </node>
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551122">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551122">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
         <property name="cellId" nameId="tp5g.1229194968595" value="Table_qpt50r_c0_row_2_firstCell" />
       </node>
@@ -973,7 +973,7 @@
       </node>
       <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="5877647854348551131">
         <property name="name" nameId="tpck.1169194664001" value="e_1" />
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551175">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551175">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -1034,7 +1034,7 @@
       <property name="name" nameId="tpck.1169194664001" value="removeEvent" />
       <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="5877647854348551157">
         <property name="name" nameId="tpck.1169194664001" value="e_1" />
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551176">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551176">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
@@ -1131,7 +1131,7 @@
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="5877647854348554917">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="5877647854348554905" resolveInfo="e_1" />
         </node>
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348554922">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348554922">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -1182,7 +1182,7 @@
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="5877647854348554939">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="5877647854348554930" resolveInfo="e_0" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348554949">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348554949">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
@@ -1243,7 +1243,7 @@
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="3152271290514981447">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="3152271290514981438" resolveInfo="e_0" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3152271290514981456">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3152271290514981456">
             <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
@@ -1333,7 +1333,7 @@
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="3152271290514981466" resolveInfo="e_2" />
         </node>
       </node>
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3676708844864220432">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3676708844864220432">
         <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
         <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -1406,7 +1406,7 @@
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="3676708844864308454" resolveInfo="e_2" />
         </node>
       </node>
-      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3676708844864308470">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3676708844864308470">
         <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
         <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -1489,7 +1489,7 @@
         <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064547">
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064526" resolveInfo="s_0" />
         </node>
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7668835185988064548">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7668835185988064548">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />

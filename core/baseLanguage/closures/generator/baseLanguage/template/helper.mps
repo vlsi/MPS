@@ -6735,7 +6735,7 @@
                             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="6789088485022868978">
                               <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6789088485022868980">
                                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6789088485022868982">
-                                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6789088485022868983">
+                                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="6789088485022868983">
                                     <property name="label" nameId="tp3r.6489343236075007666" value="TypeVariableReference" />
                                     <property name="linkRole" nameId="tpck.1757699476691236116" value="typeVariableDeclaration" />
                                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6789088485022868985">

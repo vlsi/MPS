@@ -258,7 +258,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1213877219593">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877219594">
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1213877219595">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1213877219595">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1213877219596">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877219585" resolveInfo="targetConcept" />
@@ -279,7 +279,7 @@
               <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1213877219601">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.JoinType" typeId="tpd4.1179479408386" id="1213877219602">
                   <node role="argument" roleId="tpd4.1179479418730" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877219603">
-                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1213877219604">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1213877219604">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1213877219605">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877219585" resolveInfo="targetConcept" />
@@ -355,7 +355,7 @@
             <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1213877222927">
               <node role="patternNode" roleId="tp3t.1136720037778" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1213877222928">
                 <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877222929">
-                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877222930">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877222930">
                     <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                     <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                   </node>
@@ -517,7 +517,7 @@
             <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1213877284686">
               <node role="patternNode" roleId="tp3t.1136720037778" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1213877284687">
                 <node role="elementType" roleId="tp2q.1151688676805" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877284688">
-                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877284689">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877284689">
                     <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                     <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                   </node>
@@ -1521,7 +1521,7 @@
             <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1213877361824">
               <node role="patternNode" roleId="tp3t.1136720037778" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1213877361825">
                 <node role="elementType" roleId="tp2q.1151688676805" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877361826">
-                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877361827">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877361827">
                     <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                     <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                   </node>
@@ -1568,7 +1568,7 @@
             <property name="name" nameId="tpck.1169194664001" value="abc" />
             <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1213877378071">
               <node role="patternNode" roleId="tp3t.1136720037778" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877378072">
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877378073">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877378073">
                   <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                 </node>
@@ -1620,7 +1620,7 @@
             <property name="name" nameId="tpck.1169194664001" value="aa" />
             <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1213877426763">
               <node role="patternNode" roleId="tp3t.1136720037778" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877426764">
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877426765">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877426765">
                   <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                 </node>
@@ -1945,7 +1945,7 @@
             <property name="name" nameId="tpck.1169194664001" value="abc" />
             <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1213877522467">
               <node role="patternNode" roleId="tp3t.1136720037778" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877522468">
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877522469">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1213877522469">
                   <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                 </node>
@@ -2600,7 +2600,7 @@
             <property name="name" nameId="tpck.1169194664001" value="abc" />
             <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1510949579266902216">
               <node role="patternNode" roleId="tp3t.1136720037778" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1510949579266902217">
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1510949579266902218">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1510949579266902218">
                   <property name="varName" nameId="tp3t.1137418571428" value="concept" />
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                 </node>

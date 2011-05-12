@@ -40,7 +40,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1550462124899311620">
                 <property name="value" nameId="tpee.1070475926801" value="" />
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1550462124899311621">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1550462124899311621">
                   <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
                   <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
                   <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -65,7 +65,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1550462124899311628">
                 <property name="value" nameId="tpee.1070475926801" value="" />
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1550462124899316454">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1550462124899316454">
                   <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
                   <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
                   <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -124,7 +124,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1550462124899316463">
                 <property name="value" nameId="tpee.1070475926801" value="" />
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1550462124899316464">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1550462124899316464">
                   <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
                   <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
                   <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -149,7 +149,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1550462124899316471">
                 <property name="value" nameId="tpee.1070475926801" value="" />
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1550462124899316473">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1550462124899316473">
                   <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
                   <property name="cellId" nameId="tp5g.1229194968595" value="Collection_fgt3_a" />
                 </node>
@@ -191,7 +191,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="789834969242110802">
                 <property name="value" nameId="tpee.1070475926801" value="" />
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="789834969242110813">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="789834969242110813">
                   <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
                   <property name="cellId" nameId="tp5g.1229194968595" value="Collection_fgt3_a" />
                 </node>
@@ -214,7 +214,7 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="789834969242110810">
                 <property name="value" nameId="tpee.1070475926801" value="" />
               </node>
-              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="789834969242110814">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="789834969242110814">
                 <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
                 <property name="cellId" nameId="tp5g.1229194968595" value="Collection_jyer24_a" />
               </node>
@@ -244,7 +244,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="789834969242110851">
                 <property name="value" nameId="tpee.1070475926801" value="" />
-                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2139113728684621881">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2139113728684621881">
                   <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
                   <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
                   <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />

@@ -632,11 +632,11 @@
                     <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5776545240965910504">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="fb0y.CompartmentReferenceExpression" typeId="fb0y.5776545240964919716" id="5776545240965910508">
                         <node role="uiObject" roleId="fb0y.5776545240964919718" type="tpee.Expression" typeId="tpee.1068431790191" id="5776545240965910517">
-                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="5776545240965910519">
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="5776545240965910519">
                             <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="5776545240965910522" />
                           </node>
                         </node>
-                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5776545240965910523">
+                        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5776545240965910523">
                           <property name="linkRole" nameId="tpck.1757699476691236116" value="container" />
                           <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="5776545240965910526" />
                         </node>

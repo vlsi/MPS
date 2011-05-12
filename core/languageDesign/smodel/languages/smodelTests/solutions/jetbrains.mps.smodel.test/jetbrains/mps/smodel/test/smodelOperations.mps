@@ -636,7 +636,7 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="278471160714368807">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="yetq.Root" typeId="yetq.278471160714141637" id="278471160714368808">
         <property name="name" nameId="yetq.8758390115028851453" value="emptyRoot" />
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="416617593863815886">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="416617593863815886">
           <property name="name" nameId="tpck.1169194664001" value="empty" />
         </node>
       </node>
@@ -647,17 +647,17 @@
         <node role="child_1_n" roleId="yetq.278471160714141639" type="yetq.Child" typeId="yetq.278471160714141631" id="7551657168186489230">
           <property name="name" nameId="yetq.8758390115028851453" value="1_n[0]" />
           <node role="grandChild_1" roleId="yetq.278471160714141633" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186489231">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611650">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611650">
               <property name="name" nameId="tpck.1169194664001" value="1_n[0] 1" />
             </node>
           </node>
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186489232">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611656">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611656">
               <property name="name" nameId="tpck.1169194664001" value="1_n[0] 1_n[0]" />
             </node>
           </node>
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186611655">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611657">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611657">
               <property name="name" nameId="tpck.1169194664001" value="1_n[0] 1_n[1]" />
             </node>
           </node>
@@ -665,43 +665,43 @@
         <node role="child_1_n" roleId="yetq.278471160714141639" type="yetq.Child" typeId="yetq.278471160714141631" id="7551657168186611647">
           <property name="name" nameId="yetq.8758390115028851453" value="1_n[1]" />
           <node role="grandChild_0_n" roleId="yetq.278471160714141634" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186611659">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611660">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611660">
               <property name="name" nameId="tpck.1169194664001" value="1_n[1] 0_n" />
             </node>
           </node>
           <node role="grandChild_1" roleId="yetq.278471160714141633" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186611648">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611658">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611658">
               <property name="name" nameId="tpck.1169194664001" value="1_n[1] 1" />
             </node>
           </node>
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186611649">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611662">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611662">
               <property name="name" nameId="tpck.1169194664001" value="1_n[1] 1_n[0]" />
             </node>
           </node>
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186611661">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611663">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186611663">
               <property name="name" nameId="tpck.1169194664001" value="1_n[1] 1_n[1]" />
             </node>
           </node>
         </node>
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186489233">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186489233">
           <property name="name" nameId="tpck.1169194664001" value="nonEmptyTarget" />
         </node>
         <node role="child_0_n" roleId="yetq.278471160714141638" type="yetq.Child" typeId="yetq.278471160714141631" id="7551657168186489234">
           <property name="name" nameId="yetq.8758390115028851453" value="0_n" />
           <node role="grandChild_1" roleId="yetq.278471160714141633" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186489235">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186489237">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186489237">
               <property name="name" nameId="tpck.1169194664001" value="0_n 1" />
             </node>
           </node>
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186489236">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186489239">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186489239">
               <property name="name" nameId="tpck.1169194664001" value="0_n 1_n[0]" />
             </node>
           </node>
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="7551657168186489238">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186489240">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7551657168186489240">
               <property name="name" nameId="tpck.1169194664001" value="0_n 1_n[1]" />
             </node>
           </node>
@@ -712,12 +712,12 @@
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663958680465" />
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663958680466" />
           <node role="grandChild_0_n" roleId="yetq.278471160714141634" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663959152983">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663959152986">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663959152986">
               <property name="name" nameId="tpck.1169194664001" value="sub_0_n[0] 0_n[0]" />
             </node>
           </node>
           <node role="grandChild_0_n" roleId="yetq.278471160714141634" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663959152984">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663959152987">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663959152987">
               <property name="name" nameId="tpck.1169194664001" value="sub_0_n[0] 0_n[1]" />
             </node>
           </node>
@@ -727,7 +727,7 @@
           <node role="grandChild_1" roleId="yetq.278471160714141633" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663958680468" />
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663958680469" />
           <node role="grandChild_0_1" roleId="yetq.278471160714141632" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663958911397">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663958911402">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663958911402">
               <property name="name" nameId="tpck.1169194664001" value="sub_0_n[1] 0_1" />
             </node>
           </node>
@@ -735,14 +735,14 @@
         <node role="childSubConcept_0_n" roleId="yetq.34342663958604624" type="yetq.ChildSubConcept" typeId="yetq.34342663958604621" id="34342663958911398">
           <property name="name" nameId="yetq.8758390115028851453" value="sub0_n[2]" />
           <node role="grandChild_0_n" roleId="yetq.278471160714141634" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663959152985">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663959152988">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663959152988">
               <property name="name" nameId="tpck.1169194664001" value="sub_0_n[2] 0_n[0]" />
             </node>
           </node>
           <node role="grandChild_1" roleId="yetq.278471160714141633" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663958911399" />
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663958911400" />
           <node role="grandChild_0_1" roleId="yetq.278471160714141632" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="34342663958911401">
-            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663958911406">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="34342663958911406">
               <property name="name" nameId="tpck.1169194664001" value="sub_0_n[2] 0_1" />
             </node>
           </node>
@@ -764,11 +764,11 @@
           <property name="name" nameId="yetq.8758390115028851453" value="child2" />
           <node role="grandChild_1" roleId="yetq.278471160714141633" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="2282909602806391311" />
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="2282909602806391312" />
-          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2282909602806523830">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2282909602806523830">
             <property name="name" nameId="tpck.1169194664001" value="child2" />
           </node>
         </node>
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2282909602806268548">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2282909602806268548">
           <property name="name" nameId="tpck.1169194664001" value="root" />
         </node>
       </node>
@@ -781,7 +781,7 @@
           <node role="grandChild_1" roleId="yetq.278471160714141633" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="2282909602806423214" />
           <node role="grandChild_1_n" roleId="yetq.278471160714141635" type="yetq.GrandChild" typeId="yetq.278471160714141636" id="2282909602806423215" />
         </node>
-        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2282909602806423216">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2282909602806423216">
           <property name="name" nameId="tpck.1169194664001" value="anotherRoot" />
         </node>
       </node>
