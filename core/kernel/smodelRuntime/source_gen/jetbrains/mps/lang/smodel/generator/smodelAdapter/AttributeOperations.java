@@ -34,11 +34,11 @@ public class AttributeOperations {
   }
 
   public static boolean isOldRoleForNewAttribute(SNode node, String oldRole) {
-    return "_$attribute".equals(SNodeOperations.getContainingLinkRole(node)) && oldRole.equals(getOldRole(node));
+    return "smodelAttribute".equals(SNodeOperations.getContainingLinkRole(node)) && oldRole.equals(getOldRole(node));
   }
 
   public static Iterable<SNode> getAttributes(SNode node, final IAttributeDescriptor descriptor) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "_$attribute", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return descriptor.match(it);
       }
@@ -55,13 +55,13 @@ public class AttributeOperations {
   }
 
   public static SNode addAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
-    ListSequence.fromList(SLinkOperations.getTargets(node, "_$attribute", true)).addElement(value);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).addElement(value);
     descriptor.update(value);
     return value;
   }
 
   public static SNode insertAttribute(SNode node, SNode anchor, IAttributeDescriptor descriptor, SNode value) {
-    node.insertChild(anchor, "_$attribute", value);
+    node.insertChild(anchor, "smodelAttribute", value);
     descriptor.update(value);
     return value;
   }
@@ -131,11 +131,11 @@ public class AttributeOperations {
     if (role == null) {
       return false;
     }
-    return role.equals("_$attribute") || isOldAttributeRole(role);
+    return role.equals("smodelAttribute") || isOldAttributeRole(role);
   }
 
   public static List<SNode> getAllAttributes(SNode node) {
-    return SLinkOperations.getTargets(node, "_$attribute", true);
+    return SLinkOperations.getTargets(node, "smodelAttribute", true);
   }
 
   public static List<SNode> getNodeAttributes(SNode node) {
@@ -227,7 +227,7 @@ public class AttributeOperations {
     private IAttributeDescriptor myAttributeDescriptor;
 
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, "_$attribute", (List<SNode>) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
+      super(attributed, "smodelAttribute", (List<SNode>) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
 
