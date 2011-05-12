@@ -16,13 +16,13 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.changes.ChangeListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
+  protected IModelRootManager myModelRootManager;
   @NotNull
   private final ModelDataSource mySource;
   private ChangeListener mySourceListener = new ChangeListener() {
@@ -38,7 +38,8 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
 
   protected BaseSModelDescriptorWithSource(IModelRootManager manager, @NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
-    super(manager, modelReference, checkDup);
+    super(modelReference, checkDup);
+    myModelRootManager = manager;
     mySource = source;
     mySource.getChangeWatcher().startListening(mySourceListener);
   }
@@ -74,5 +75,11 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   public boolean needsReloading() {
     if (mySourceTimestamp == -1) return false;
     return mySource.getTimestamp() != mySourceTimestamp;
+  }
+
+  //--------------------
+
+  public IModelRootManager getModelRootManager(){
+    return myModelRootManager;
   }
 }

@@ -171,7 +171,7 @@ public class TestModule extends AbstractModule {
     private final SModel myToCopy;
 
     private TestSModelDescriptor(SModelFqName fqName, String longName, SModel toCopy) {
-      super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
+      super(new SModelReference(fqName, SModelId.generate()), false);
       myLongName = longName;
       myToCopy = toCopy;
     }

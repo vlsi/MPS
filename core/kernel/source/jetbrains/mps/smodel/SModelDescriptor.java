@@ -38,8 +38,6 @@ public interface SModelDescriptor {
 
   //------
 
-  IModelRootManager getModelRootManager();
-
   SModelReference getSModelReference();
 
   String getLongName();

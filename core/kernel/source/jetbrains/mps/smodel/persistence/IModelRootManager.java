@@ -28,8 +28,6 @@ import java.util.Collection;
 import java.util.Set;
 
 public interface IModelRootManager {
-  public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
-
   @Nullable
   Collection<SModelReference> collectModels(@NotNull SModelRoot root);
 

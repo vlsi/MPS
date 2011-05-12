@@ -243,7 +243,7 @@ public class TransientModelsModule extends AbstractModule {
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(SModelFqName fqName, String longName) {
-      super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
+      super(new SModelReference(fqName, SModelId.generate()), false);
       myLongName = longName;
     }
 

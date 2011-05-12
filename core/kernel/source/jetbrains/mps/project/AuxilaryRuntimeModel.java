@@ -59,7 +59,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
 
   private static class AuxModelDescriptor extends BaseSModelDescriptor {
     public AuxModelDescriptor() {
-      super(IModelRootManager.NULL_MANAGER, AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
+      super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
     }
 
     protected ModelLoadResult initialLoad() {

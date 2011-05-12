@@ -35,14 +35,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private final Object myLoadingLock = new Object();
 
   protected SModelReference myModelReference;
-  protected IModelRootManager myModelRootManager;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
   private List<SModelCommandListener> myModelCommandListeners = new CopyOnWriteArrayList<SModelCommandListener>();
 
-  protected BaseSModelDescriptor(IModelRootManager manager, @NotNull SModelReference modelReference, boolean checkDup) {
+  protected BaseSModelDescriptor(@NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
-    myModelRootManager = manager;
 
     if (checkDup) {
       checkModelDuplication();
@@ -121,10 +119,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected void setLoadingState(ModelLoadingState state) {
     myLoadingState = state;
-  }
-
-  public IModelRootManager getModelRootManager() {
-    return myModelRootManager;
   }
 
   public SModelReference getSModelReference() {
