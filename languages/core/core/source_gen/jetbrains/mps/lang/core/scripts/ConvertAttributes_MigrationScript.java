@@ -199,6 +199,7 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         node.setRoleInParent("_$attribute");
+        node.setRoleInParent("smodelAttribute");
         SModelRepository.getInstance().markChanged(SNodeOperations.getModel(node));
       }
 
