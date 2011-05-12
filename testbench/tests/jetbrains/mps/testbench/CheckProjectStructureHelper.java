@@ -311,9 +311,13 @@ public class CheckProjectStructureHelper {
         return new ModelValidator(sm.getSModel()).validate(scope);
       }
     });
-    for (String item : validationResult) {
-      errorMessages.append(item);
-      errorMessages.append("\n");
+    if(!validationResult.isEmpty()) {
+      errorMessages.append("errors in model: ").append(sm.getSModelReference().toString()).append("\n");
+      for (String item : validationResult) {
+        errorMessages.append("\t");
+        errorMessages.append(item);
+        errorMessages.append("\n");
+      }
     }
 
     for (SNode node : sm.getSModel().nodes()) {
