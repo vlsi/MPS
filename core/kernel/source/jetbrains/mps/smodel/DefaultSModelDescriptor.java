@@ -20,7 +20,6 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -117,7 +116,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @NotNull
-  public RegularModelDataSource getSource(){
+  public RegularModelDataSource getSource() {
     return ((RegularModelDataSource) super.getSource());
   }
 
@@ -152,9 +151,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     if (!checkAndResolveConflictOnSave()) return;
 
     setChanged(false);
-    SModel newData = getSource().saveModel(this);
-    if (newData != null) {
-      replaceModel(newData, getLoadingState());
+    boolean reload = getSource().saveModel(this);
+    if (reload) {
+      ModelLoadResult res = getSource().loadSModel(this, getLoadingState());
+      replaceModel(res.getModel(), res.getState());
     }
 
     updateDiskTimestamp();
