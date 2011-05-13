@@ -18,7 +18,7 @@ public class BaseVariableDeclaration extends BaseConcept implements IValidIdenti
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TYPE = "type";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BaseVariableDeclaration(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class BaseVariableDeclaration extends BaseConcept implements IValidIdenti
     super.setChild(BaseVariableDeclaration.TYPE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(BaseVariableDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(BaseVariableDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BaseVariableDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BaseVariableDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BaseVariableDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BaseVariableDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(BaseVariableDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(BaseVariableDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BaseVariableDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseVariableDeclaration._$ATTRIBUTE, node);
   }
 
   public static BaseVariableDeclaration newInstance(SModel sm, boolean init) {

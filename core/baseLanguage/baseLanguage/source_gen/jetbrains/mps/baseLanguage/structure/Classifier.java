@@ -27,7 +27,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public static final String METHOD = "method";
   public static final String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
   public static final String ANNOTATION = "annotation";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Classifier(SNode node) {
     super(node);
@@ -185,24 +185,24 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
     this.insertChild(prev, Classifier.ANNOTATION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Classifier.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Classifier._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Classifier.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Classifier._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Classifier.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Classifier._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Classifier.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Classifier._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Classifier.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Classifier._$ATTRIBUTE, node);
   }
 
   public static Classifier newInstance(SModel sm, boolean init) {

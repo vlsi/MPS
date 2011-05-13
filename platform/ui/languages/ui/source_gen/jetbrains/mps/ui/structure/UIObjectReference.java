@@ -18,7 +18,7 @@ public class UIObjectReference extends Expression implements ILocalReference {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DECLARATION = "declaration";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public UIObjectReference(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class UIObjectReference extends Expression implements ILocalReference {
     super.setReferent(UIObjectReference.DECLARATION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(UIObjectReference.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(UIObjectReference._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, UIObjectReference.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, UIObjectReference._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, UIObjectReference.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, UIObjectReference._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(UIObjectReference.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(UIObjectReference._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, UIObjectReference.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UIObjectReference._$ATTRIBUTE, node);
   }
 
   public static UIObjectReference newInstance(SModel sm, boolean init) {

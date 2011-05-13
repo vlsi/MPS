@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-ces1c2syb3wm4g9lzp1u042ybhc276o">
+  <dep model="r:00000000-0000-4000-0000-011c8959040c(jetbrains.mps.samples.agreementLanguage.generator.baseLanguage@generator)" hash="wl2ktea7p6wbsksr6jtzfmwkoem10m" />
+  <common hash="cyeeqqrhc1eqikm0s18m3paatgete8w">
+    <dep model="r:00000000-0000-4000-0000-011c8959040c(jetbrains.mps.samples.agreementLanguage.generator.baseLanguage@generator)" />
+  </common>
+  <source id="1112315976835" hash="-txb7u1s0cvlec89j9u03p373aj3zvs" />
+</dependencies>
+

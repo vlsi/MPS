@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="9gd83vfysf7ox2h2llsxauxtxjhi8pl">
+  <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" hash="4nrhr14qxfb34is5wo4z0m5si8qlblc" />
+  <common hash="b9pm1glb6oojmc4mn08kc2ziag1n5nq" />
+  <source id="353793545802852266" name="WsdlToDotnet" hash="-9uxbi1udrq25v3jdfvxdyqp8knm2xhz">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="WsdlToDotnet" />
+  </source>
+  <source id="353793545802852298" name="abstractaccesstask" hash="-7ixc46qrwt584axhf088nw9jb9peksq">
+    <file name="abstractaccesstask" />
+  </source>
+  <source id="353793545802852308" name="abstracthotdeploymenttool" hash="-5ymvkxatqpfebwnn7ap6c555zc9d5m4">
+    <file name="abstracthotdeploymenttool" />
+  </source>
+  <source id="353793545802852324" name="aggregatetransformer" hash="g6p6zkrd1hcva1blhfr8ppmfhn3fmt">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="aggregatetransformer" />
+  </source>
+  <source id="353793545802852340" name="antresolver" hash="-8vkumd1fcosnqxcfezg6d4p9ynp7vin">
+    <file name="antresolver" />
+  </source>
+  <source id="353793545802852348" name="attrib" hash="-5xzouplv3s9ibancd7zq0owny6e8fsn">
+    <file name="attrib" />
+  </source>
+  <source id="353793545802852372" name="attribute" hash="-3hyjz78z803335ritd8vxc6srp7jili">
+    <file name="attribute" />
+  </source>
+  <source id="353793545802852377" name="attribute" hash="-346of5lax2bt5vsqosw8o638iv6hm38">
+    <file name="attribute" />
+  </source>
+  <source id="353793545802852380" name="basetest" hash="-epz1e3slnlzuxyxi42z2r1zsqyqd10v">
+    <file name="basetest" />
+  </source>
+  <source id="353793545802852403" name="batchtest" hash="6tepvpen9m36cicbk0lsvkwei9u0g4">
+    <file name="batchtest" />
+  </source>
+  <source id="353793545802852409" name="blgenclient" hash="-5yll2nbedhtrf0bz4e4200lttyafwhb">
+    <file name="blgenclient" />
+  </source>
+  <source id="353793545802852429" name="borlanddeploymenttool" hash="8dkg5uqvonxq9wyhbc5mglw30zik9jd">
+    <file name="borlanddeploymenttool" />
+  </source>
+  <source id="353793545802852454" name="cab" hash="c9k4rtg0126tl42k0inbpilr9bhy8mh">
+    <file name="cab" />
+  </source>
+  <source id="353793545802852468" name="cccheckin" hash="-4go6zvdxlkl3qc5lp38k5poz9w7yac5">
+    <file name="cccheckin" />
+  </source>
+  <source id="353793545802852482" name="cccheckout" hash="-74urpi5vixnoemmcntv0ovfhcf7k0rk">
+    <file name="cccheckout" />
+  </source>
+  <source id="353793545802852502" name="cclock" hash="-50wrw4s0jhxe80pf3g14baiqxwgbc05">
+    <file name="cclock" />
+  </source>
+  <source id="353793545802852518" name="ccmcheck" hash="28mh3h28o4umaymdgdjyn07wos4wmhh">
+    <file name="ccmcheck" />
+  </source>
+  <source id="353793545802852528" name="ccmcheckin" hash="5jzx5drbunralivrsicrj6a71idmz1w">
+    <file name="ccmcheckin" />
+  </source>
+  <source id="353793545802852530" name="ccmcheckintask" hash="3o0g2z4aana3zaf08l5n8i1qcx2cz0g">
+    <file name="ccmcheckintask" />
+  </source>
+  <source id="353793545802852532" name="ccmcheckout" hash="-12n22lri8hmvad6x0e4y0lw5ieiwamj">
+    <file name="ccmcheckout" />
+  </source>
+  <source id="353793545802852534" name="ccmcreatetask" hash="-22t65d2gk996vctmsh9bgp1c4fuyipc">
+    <file name="ccmcreatetask" />
+  </source>
+  <source id="353793545802852555" name="ccmkattr" hash="ymbvexxciole2bgyhqowh8sao74mfu">
+    <file name="ccmkattr" />
+  </source>
+  <source id="353793545802852571" name="ccmkbl" hash="-2zlfl0tyyuacfbgj7pxj6qlncwszvqy">
+    <file name="ccmkbl" />
+  </source>
+  <source id="353793545802852587" name="ccmkdir" hash="98b3vktrtcadfnkfbet5l5i6ibcc7yw">
+    <file name="ccmkdir" />
+  </source>
+  <source id="353793545802852595" name="ccmkelem" hash="738lwr7hbi0bby7jkxpz5blhre33t93">
+    <file name="ccmkelem" />
+  </source>
+  <source id="353793545802852613" name="ccmklabel" hash="4s5x66i0fw9rn9hlbmdkfvx58qfbohq">
+    <file name="ccmklabel" />
+  </source>
+  <source id="353793545802852629" name="ccmklbtype" hash="8y53zv4uufrhdc7u8ct1dh9ujwbueha">
+    <file name="ccmklbtype" />
+  </source>
+  <source id="353793545802852649" name="ccmreconfigure" hash="8p6akc92cfsn9j6avfryhhk3hz98kzr">
+    <file name="ccmreconfigure" />
+  </source>
+  <source id="353793545802852657" name="ccrmtype" hash="-68ok8aqch65wb9dosc5zowd6ddqqbvi">
+    <file name="ccrmtype" />
+  </source>
+  <source id="353793545802852673" name="ccuncheckout" hash="6o9wtabuqb6qwzjdj5k4l4qfk52veez">
+    <file name="ccuncheckout" />
+  </source>
+  <source id="353793545802852677" name="ccunlock" hash="bxu757yzrxne57ek2xc4vb84oti3vo9">
+    <file name="ccunlock" />
+  </source>
+  <source id="353793545802852687" name="ccupdate" hash="-5pz02w03acqgs0wcxytmrqtysc4gntb">
+    <file name="ccupdate" />
+  </source>
+  <source id="353793545802852701" name="chgrp" hash="-2t8zk6c32udrt6oaa4p0gfx6h5r9nnd">
+    <file name="chgrp" />
+  </source>
+  <source id="353793545802852707" name="chown" hash="6zm2nupegq02sqq18o0ub5wb4jgan9e">
+    <file name="chown" />
+  </source>
+  <source id="353793545802852713" name="classargument" hash="-ccv1uei348y7mj2wr956vhssigjpxjv">
+    <file name="classargument" />
+  </source>
+  <source id="353793545802852716" name="classfileset" hash="-8qs4cy7gs2j8dmy2i6m3qkfdwpkk0zg">
+    <file name="classfileset" />
+  </source>
+  <source id="353793545802852728" name="classroot" hash="4ergvq7rjkzjuat6t70ezuvhelklqt5">
+    <file name="classroot" />
+  </source>
+  <source id="353793545802852731" name="clearcase" hash="8xq2yuq4524ea1wf6fshb2qg6oh6loj">
+    <file name="clearcase" />
+  </source>
+  <source id="353793545802852741" name="continuus" hash="-cvgl43eb6aruqxvju37na4zojorzcjl">
+    <file name="continuus" />
+  </source>
+  <source id="353793545802852747" name="csc" hash="ababa8o6tiljixcd8fxnku30tsm6f8">
+    <file name="csc" />
+  </source>
+  <source id="353793545802852769" name="depend" hash="-bgs8scer8r0egvp7m801qp6bfm6bq3t">
+    <file name="depend" />
+  </source>
+  <source id="353793545802852791" name="dotnetbasematchingtask" hash="-clvyj8ljkfoakfvyy3gkp7em7jijhqk">
+    <file name="dotnetbasematchingtask" />
+  </source>
+  <source id="353793545802852801" name="dotnetcompile" hash="4l9rtkx2bx7gr3syc408g6oufg3k3b8">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="dotnetcompile" />
+  </source>
+  <source id="353793545802852854" name="dotnetdefine" hash="45ootagoot8wx6qvcsrrqndwkhq742p">
+    <file name="dotnetdefine" />
+  </source>
+  <source id="353793545802852861" name="dotnetresource" hash="awb2wxmpy9r14j94tb0p6w3lkfkndfm">
+    <file name="dotnetresource" />
+  </source>
+  <source id="353793545802852874" name="dtdlocation" hash="-6lz9m9i4vejivteojvatd7v2una4fcf">
+    <file name="dtdlocation" />
+  </source>
+  <source id="353793545802852876" name="dtdlocation" hash="-a6ofr31w56z7ubluiltq0cd12ihzzfh">
+    <file name="dtdlocation" />
+  </source>
+  <source id="353793545802852878" name="dynamicconfigurator" hash="bbp57fmtkfmahqio7suffwontvng4yj">
+    <file name="dynamicconfigurator" />
+  </source>
+  <source id="353793545802852881" name="echoproperties" hash="44t4yszxp96prw4reizv4n2nbrdscee">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="echoproperties" />
+  </source>
+  <source id="353793545802852900" name="ejbdeploymenttool" hash="aqc428ektrbz5w49kfh6liyjuv7e6i8">
+    <file name="ejbdeploymenttool" />
+  </source>
+  <source id="353793545802852901" name="ejbjar" hash="-7i6w3vzn4mekbgctdnjylkbwix8qpej">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="ejbjar" />
+  </source>
+  <source id="353793545802852975" name="entry" hash="6qx928csjapp8al8tv00yssrr0a1vkd">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="entry" />
+  </source>
+  <source id="353793545802853007" name="executestreamhandler" hash="69essgpw99tidco6be64fdanflrdda3">
+    <file name="executestreamhandler" />
+  </source>
+  <source id="353793545802853008" name="extensionadapter" hash="8tyf7atfnvu250x1kxtw089v9ah6oqh">
+    <file name="extensionadapter" />
+  </source>
+  <source id="353793545802853026" name="extensionresolver" hash="5xs56qmg1nimvujnwca7fgibv78p2jq">
+    <file name="extensionresolver" />
+  </source>
+  <source id="353793545802853027" name="extensionset" hash="-8exbdugedng31enzcfq3g2n2proan6y">
+    <file name="extensionset" />
+  </source>
+  <source id="353793545802853039" name="extraattribute" hash="b3uj9v21h84gwmjg10qktgh8fys8ie0">
+    <file name="extraattribute" />
+  </source>
+  <source id="353793545802853044" name="formatterelement" hash="-act7uva6jttyzucn4wddh53ly3i7g94">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="formatterelement" />
+  </source>
+  <source id="353793545802853063" name="genericdeploymenttool" hash="-ds2ntsiwwrlevarfqtyd784z2hbxrhv">
+    <file name="genericdeploymenttool" />
+  </source>
+  <source id="353793545802853077" name="generichotdeploymenttool" hash="c3ca9ob9y8rctdeebhu6dumvzohprxq">
+    <file name="generichotdeploymenttool" />
+  </source>
+  <source id="353793545802853090" name="hotdeploymenttool" hash="5hjseiv30pid6g79x01wzio5wbz2ne9">
+    <file name="hotdeploymenttool" />
+  </source>
+  <source id="353793545802853091" name="ilasm" hash="htr9ozrqouyxdmiq6f823663ds6fcg">
+    <file name="ilasm" />
+  </source>
+  <source id="353793545802853119" name="ildasm" hash="-e886uhtdyyv5vhmgwibv0u5q3j943aa">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="ildasm" />
+  </source>
+  <source id="353793545802853159" name="importtypelib" hash="-6x4h305jbehvbydmg80u9d4cosvx667">
+    <file name="importtypelib" />
+  </source>
+  <source id="353793545802853173" name="iplanet-ejbc" hash="98kbiasgvruclsmbhoxekbll7m53zrk">
+    <file name="iplanet-ejbc" />
+  </source>
+  <source id="353793545802853193" name="iplanetdeploymenttool" hash="qlhi8clpfc2g59pd8wb95u9or8spw3">
+    <file name="iplanetdeploymenttool" />
+  </source>
+  <source id="353793545802853205" name="jarlib-available" hash="-78dlk1tl9fzm22bj9hlmje8m1zsabph">
+    <file name="jarlib-available" />
+  </source>
+  <source id="353793545802853219" name="jarlib-display" hash="-82d3b2ztna2fxcw4uqt80klg8vfgdc9">
+    <file name="jarlib-display" />
+  </source>
+  <source id="353793545802853225" name="jarlib-manifest" hash="e7t3o0dco4c76p7rxbn10hw7qwbz36j">
+    <file name="jarlib-manifest" />
+  </source>
+  <source id="353793545802853244" name="jarlib-resolve" hash="77ijlj7mv50pgyt6rr6vbvebs8xm4tb">
+    <file name="jarlib-resolve" />
+  </source>
+  <source id="353793545802853268" name="javacc" hash="4z7i6ej0fd9yroklfemvtr74d2x830b">
+    <file name="javacc" />
+  </source>
+  <source id="353793545802853320" name="javah" hash="-d1p2k1w8e7fsxz13o7dnlg0nrt3ek6j">
+    <file name="javah" />
+  </source>
+  <source id="353793545802853361" name="jbossdeploymenttool" hash="1l1885usbgv8ew4y4wuy08wbbgmtb0k">
+    <file name="jbossdeploymenttool" />
+  </source>
+  <source id="353793545802853365" name="jjdoc" hash="-3y6vg72tohzegbqj03amaan0pk4qxm8">
+    <file name="jjdoc" />
+  </source>
+  <source id="353793545802853377" name="jjtree" hash="-a73pus8luvr87ywg3495ogl9zieejxv">
+    <file name="jjtree" />
+  </source>
+  <source id="353793545802853409" name="jlink" hash="-cg51swbihg4lttdcwy6li3bploso20k">
+    <file name="jlink" />
+  </source>
+  <source id="353793545802853426" name="jonasdeploymenttool" hash="13wde6glh2k0w0xgckjez3xkyfwgngj">
+    <file name="jonasdeploymenttool" />
+  </source>
+  <source id="353793545802853456" name="jonashotdeploymenttool" hash="ejy3d9amqmxam7cyrkw660fh9dngu82">
+    <file name="jonashotdeploymenttool" />
+  </source>
+  <source id="353793545802853467" name="jsharpc" hash="-4nuns0g6vqjmg83x1eem2f7ke45t6j4">
+    <file name="jsharpc" />
+  </source>
+  <source id="353793545802853475" name="jspc" hash="bkm877f1dql051omm924i4699ju0cyb">
+    <file name="jspc" />
+  </source>
+  <source id="353793545802853518" name="junit" hash="-apizdt3p6ojl9jg3a1rs0lfd5mz4jgz">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="junit" />
+  </source>
+  <source id="353793545802853609" name="junitreport" hash="-9zls2g4g1infbjuv4k06w0tv655zjpi">
+    <file name="junitreport" />
+  </source>
+  <source id="353793545802853622" name="junittest" hash="-5hx73cacj1rgkd7m9tj4befrle1c56f">
+    <file name="junittest" />
+  </source>
+  <source id="353793545802853633" name="libfileset" hash="111yunhzdjcrtgfek1fpbu1lrgljlsw">
+    <file name="libfileset" />
+  </source>
+  <source id="353793545802853641" name="locationresolver" hash="3uate13cwk96rpcrznm0xuryul1svup">
+    <file name="locationresolver" />
+  </source>
+  <source id="353793545802853645" name="mimemail" hash="52aaeit2j2yvcchfw6am3cgmtyvuw18">
+    <file name="mimemail" />
+  </source>
+  <source id="353793545802853647" name="msvss" hash="-6jm7hykp28r5bykt54e5zbimkvwzzyb">
+    <file name="msvss" />
+  </source>
+  <source id="353793545802853660" name="msvssconstants" hash="4qz8mj3ettmqr7fzsz87d9rt6msd8oj">
+    <file name="msvssconstants" />
+  </source>
+  <source id="353793545802853661" name="native2ascii" hash="-4gdtal5zvgz4hye0zpbau33ck7qm08a">
+    <file name="native2ascii" />
+  </source>
+  <source id="353793545802853683" name="nestedelement" hash="-7d04n0ywxfo4o5aqp49bfyhtcsvixy7">
+    <file name="nestedelement" />
+  </source>
+  <source id="353793545802853690" name="netcommand" hash="-9gyme20zh5uvkmp0xa8x0ee36llvxav">
+    <file name="netcommand" />
+  </source>
+  <source id="353793545802853709" name="property" hash="-7z09x6is5lt7dcu9vzhe6gfz93qolmm">
+    <file name="property" />
+  </source>
+  <source id="353793545802853714" name="propertyfile" hash="7e73nm4mf3h63xs27gao9iwzhfkrpb">
+    <file name="propertyfile" />
+  </source>
+  <source id="353793545802853722" name="pvcs" hash="de6xl0ilnwexo7jzimxnxw2j1h0lag4">
+    <file name="pvcs" />
+  </source>
+  <source id="353793545802853754" name="pvcsproject" hash="-36gd4j84lllxs5i8f5kaoov59z2zh45">
+    <file name="pvcsproject" />
+  </source>
+  <source id="353793545802853757" name="renameext" hash="9eeunl47s0elab40h3798reb9r01gap">
+    <file name="renameext" />
+  </source>
+  <source id="353793545802853767" name="replaceregexp" hash="-ai6suz7xk0ymrh4u3fm892mbam57w4u">
+    <file name="replaceregexp" />
+  </source>
+  <source id="353793545802853789" name="rpm" hash="bgpmq6u6rghd0ou6txqxigcsh0n3ear">
+    <file name="rpm" />
+  </source>
+  <source id="353793545802853813" name="schema" hash="86xkarqrv4uvmn4zmnxxk1pnw6bbrq6">
+    <file name="schema" />
+  </source>
+  <source id="353793545802853820" name="schemalocation" hash="-91h1k57fvyfrj9l9kyz76vpy8maz5cn">
+    <file name="schemalocation" />
+  </source>
+  <source id="353793545802853827" name="schemavalidate" hash="dl93c0o6jjcksvl1vva1xi7er8jne90">
+    <file name="schemavalidate" />
+  </source>
+  <source id="353793545802853841" name="script" hash="bntq70mnpxxezdjqz41wp9uenkamz96">
+    <file name="script" />
+  </source>
+  <source id="353793545802853865" name="scriptdef" hash="-73e69edfs0do1yp8e9s97tz2ui6wxw9">
+    <file name="scriptdef" />
+  </source>
+  <source id="353793545802853887" name="scriptdefbase" hash="dmcqcvtgeqlgfycmcnss7gjwlc4ik4i">
+    <file name="scriptdefbase" />
+  </source>
+  <source id="353793545802853894" name="scriptselector" hash="7qomomxkjwex90vsmilxqjrdqz3esq6">
+    <file name="scriptselector" />
+  </source>
+  <source id="353793545802853920" name="serverdeploy" hash="e0j33pgcxhfsif13p8yt6nffckirdal">
+    <file name="serverdeploy" />
+  </source>
+  <source id="353793545802853938" name="setproxy" hash="ei3htv90lrcut6lvi4lyrueeshzkhnn">
+    <file name="setproxy" />
+  </source>
+  <source id="353793545802853954" name="sos" hash="1n0nm72h5metje86omh9m8xrj13hjrs">
+    <file name="sos" />
+  </source>
+  <source id="353793545802853979" name="soscheckin" hash="-5gc6tkw3natboo4etniempcsr8xl6pc">
+    <file name="soscheckin" />
+  </source>
+  <source id="353793545802853987" name="soscheckout" hash="-bg3gow15fdzeofiuzsj41zhdzr91uqw">
+    <file name="soscheckout" />
+  </source>
+  <source id="353793545802853993" name="soscmd" hash="-50ybt1tfsv3r2tzx4cxu6shyy07683i">
+    <file name="soscmd" />
+  </source>
+  <source id="353793545802853994" name="sosget" hash="-e7hfpltn8cufvm6i60jhf2si1lofp6m">
+    <file name="sosget" />
+  </source>
+  <source id="353793545802854004" name="soslabel" hash="bhro8jw9d8kq2b8mcy7b3jcy0m0xjbs">
+    <file name="soslabel" />
+  </source>
+  <source id="353793545802854012" name="string;" hash="2hp6dlsljcjr2kmfquvyhlofd2rtjg8">
+    <file name="string;" />
+  </source>
+  <source id="353793545802854015" name="symlink" hash="3upqjgw55cdaezcaohiu62qhnlgsem1">
+    <file name="symlink" />
+  </source>
+  <source id="353793545802854031" name="translate" hash="b8ratfhvnb6qncvvccfjd3ps00pkb8x">
+    <file name="translate" />
+  </source>
+  <source id="353793545802854057" name="urlresolver" hash="-cd6em01dol5pduh27r5oy1zxr323i6a">
+    <file name="urlresolver" />
+  </source>
+  <source id="353793545802854065" name="vbc" hash="epi3sj0hwfmpz30b89hb8cp8k7epwo">
+    <file name="vbc" />
+  </source>
+  <source id="353793545802854079" name="vssadd" hash="-6v23676xhi9irt13cvp945m04nygesu">
+    <file name="vssadd" />
+  </source>
+  <source id="353793545802854091" name="vsscheckin" hash="4kxp09qkk4zreftj657kin8g1hqwvcs">
+    <file name="vsscheckin" />
+  </source>
+  <source id="353793545802854103" name="vsscheckout" hash="-3897047hm4y07pqaciwre95q0xkwujs">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="vsscheckout" />
+  </source>
+  <source id="353793545802854131" name="vsscp" hash="-92500oy30e72dhnekwkg74w9w7c6j4q">
+    <file name="vsscp" />
+  </source>
+  <source id="353793545802854135" name="vsscreate" hash="1yw6xckgr6bhiimqs8t7itsbgzlvqur">
+    <file name="vsscreate" />
+  </source>
+  <source id="353793545802854143" name="vssget" hash="-7yjwfmxjj4tdmskecbmwlh5f5a6lsrx">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="vssget" />
+  </source>
+  <source id="353793545802854173" name="vsshistory" hash="-cph9mcvw8cdm72wqucov6migpmqff4j">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <file name="vsshistory" />
+  </source>
+  <source id="353793545802854200" name="vsslabel" hash="46h0vc4sneqqpabyjzywrjy373citps">
+    <file name="vsslabel" />
+  </source>
+  <source id="353793545802854210" name="webappparameter" hash="-7dc0nwcpe4ldhwkem9k32pavov5tvcw">
+    <file name="webappparameter" />
+  </source>
+  <source id="353793545802854213" name="weblogicdeploymenttool" hash="9iegt93g5cxd29sdk9aecowanteilz0">
+    <file name="weblogicdeploymenttool" />
+  </source>
+  <source id="353793545802854257" name="weblogichotdeploymenttool" hash="5sh21f6qk4k0fn0mgaz12cgmz1p82lj">
+    <file name="weblogichotdeploymenttool" />
+  </source>
+  <source id="353793545802854266" name="weblogictoplinkdeploymenttool" hash="-d6o93yrojmho334uzq9xy808atdceou">
+    <file name="weblogictoplinkdeploymenttool" />
+  </source>
+  <source id="353793545802854272" name="webspheredeploymenttool" hash="-1a74da1fklftd7o8uqq69mqwsno8ros">
+    <file name="webspheredeploymenttool" />
+  </source>
+  <source id="353793545802854318" name="wljspc" hash="cpy50vamnnmt801819cikv825qdlzns">
+    <file name="wljspc" />
+  </source>
+  <source id="353793545802854332" name="xmlconstants" hash="-wasnl5yact6cctltibw3f978uz3x6c">
+    <file name="xmlconstants" />
+  </source>
+  <source id="353793545802854333" name="xmlvalidate" hash="-9gc6rcjoxtc4zij1stw95kvzk5oulew">
+    <file name="xmlvalidate" />
+  </source>
+</dependencies>
+

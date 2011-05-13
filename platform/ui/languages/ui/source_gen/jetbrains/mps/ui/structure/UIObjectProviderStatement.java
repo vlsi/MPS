@@ -20,7 +20,7 @@ public class UIObjectProviderStatement extends Statement implements IUIObjectCon
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONTEXT = "context";
   public static final String BODY = "body";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public UIObjectProviderStatement(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class UIObjectProviderStatement extends Statement implements IUIObjectCon
     super.setChild(UIObjectProviderStatement.BODY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(UIObjectProviderStatement.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(UIObjectProviderStatement._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, UIObjectProviderStatement.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, UIObjectProviderStatement._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, UIObjectProviderStatement.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, UIObjectProviderStatement._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(UIObjectProviderStatement.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(UIObjectProviderStatement._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, UIObjectProviderStatement.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UIObjectProviderStatement._$ATTRIBUTE, node);
   }
 
   public static UIObjectProviderStatement newInstance(SModel sm, boolean init) {

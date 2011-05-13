@@ -17,7 +17,7 @@ public class TryCatchStatement extends Statement implements IContainsStatementLi
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BODY = "body";
   public static final String CATCH_CLAUSE = "catchClause";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TryCatchStatement(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class TryCatchStatement extends Statement implements IContainsStatementLi
     this.insertChild(prev, TryCatchStatement.CATCH_CLAUSE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(TryCatchStatement.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(TryCatchStatement._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, TryCatchStatement.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TryCatchStatement._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, TryCatchStatement.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TryCatchStatement._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(TryCatchStatement.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(TryCatchStatement._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TryCatchStatement.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TryCatchStatement._$ATTRIBUTE, node);
   }
 
   public static TryCatchStatement newInstance(SModel sm, boolean init) {

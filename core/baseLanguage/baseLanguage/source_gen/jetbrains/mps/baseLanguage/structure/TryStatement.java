@@ -18,7 +18,7 @@ public class TryStatement extends Statement implements IContainsStatementList, I
   public static final String BODY = "body";
   public static final String FINALLY_BODY = "finallyBody";
   public static final String CATCH_CLAUSE = "catchClause";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TryStatement(SNode node) {
     super(node);
@@ -84,24 +84,24 @@ public class TryStatement extends Statement implements IContainsStatementList, I
     this.insertChild(prev, TryStatement.CATCH_CLAUSE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(TryStatement.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(TryStatement._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, TryStatement.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TryStatement._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, TryStatement.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TryStatement._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(TryStatement.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(TryStatement._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TryStatement.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TryStatement._$ATTRIBUTE, node);
   }
 
   public static TryStatement newInstance(SModel sm, boolean init) {

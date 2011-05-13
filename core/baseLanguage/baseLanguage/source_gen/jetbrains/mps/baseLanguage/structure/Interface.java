@@ -18,7 +18,7 @@ public class Interface extends Classifier implements IBLDeprecatable, UnitConcep
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String EXTENDED_INTERFACE = "extendedInterface";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Interface(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class Interface extends Classifier implements IBLDeprecatable, UnitConcep
     this.insertChild(prev, Interface.EXTENDED_INTERFACE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Interface.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Interface._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Interface.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Interface._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Interface.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Interface._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Interface.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Interface._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Interface.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Interface._$ATTRIBUTE, node);
   }
 
   public static Interface newInstance(SModel sm, boolean init) {

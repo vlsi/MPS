@@ -73,7 +73,7 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
           LOG.warning("Link looks similar to attribute: " + role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]");
           return;
         }
-        node.setRoleInParent("smodelAttribute");
+        node.setRoleInParent("_$attribute");
         // doesn't want to save all models without this: 
         SModelRepository.getInstance().markChanged(SNodeOperations.getModel(node));
       }
@@ -198,6 +198,7 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
+        node.setRoleInParent("_$attribute");
         node.setRoleInParent("smodelAttribute");
         SModelRepository.getInstance().markChanged(SNodeOperations.getModel(node));
       }

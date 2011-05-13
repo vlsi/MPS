@@ -12,8 +12,8 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class WhileNotNull extends DataFlowConstructor {
-  private static SNodePointer SNODE_POINTER_pezsk4_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0c0a0a0a0 = new SNodePointer("r:f6dbb718-df3a-46e3-bc68-fb25b6c86684(jetbrains.mps.baseLanguage.dataFlow@1_0)", "6868777471677432047");
-  private static SNodePointer SNODE_POINTER_pezsk4_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0c0a0a0a0 = new SNodePointer("r:f6dbb718-df3a-46e3-bc68-fb25b6c86684(jetbrains.mps.baseLanguage.dataFlow@1_0)", "3295946704794756929");
+  private static SNodePointer SNODE_POINTER_pezsk4_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0c0a0a0a0 = new SNodePointer("r:4ecd46ec-a719-429f-a7df-7d3a52f8d827(jetbrains.mps.baseLanguage.dataFlow@1_0)", "6868777471677432047");
+  private static SNodePointer SNODE_POINTER_pezsk4_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0c0a0a0a0 = new SNodePointer("r:4ecd46ec-a719-429f-a7df-7d3a52f8d827(jetbrains.mps.baseLanguage.dataFlow@1_0)", "3295946704794756929");
 
   private GeneratedMatchingPattern myPattern = new WhileNotNull.Pattern_pezsk4_a0a();
 

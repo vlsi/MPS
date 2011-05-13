@@ -23,7 +23,7 @@ public class FacetDeclaration extends BaseConcept implements INamedConcept, IWil
   public static final String REQUIRED = "required";
   public static final String OPTIONAL = "optional";
   public static final String TARGET_DECLARATION = "targetDeclaration";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FacetDeclaration(SNode node) {
     super(node);
@@ -141,24 +141,24 @@ public class FacetDeclaration extends BaseConcept implements INamedConcept, IWil
     this.insertChild(prev, FacetDeclaration.TARGET_DECLARATION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(FacetDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(FacetDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, FacetDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FacetDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, FacetDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FacetDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(FacetDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(FacetDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FacetDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FacetDeclaration._$ATTRIBUTE, node);
   }
 
   public static FacetDeclaration newInstance(SModel sm, boolean init) {

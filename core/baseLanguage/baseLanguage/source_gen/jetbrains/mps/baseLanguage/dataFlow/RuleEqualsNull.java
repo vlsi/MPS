@@ -12,12 +12,12 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleEqualsNull extends DataFlowConstructor {
-  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0d0a0a0a0 = new SNodePointer("r:f6dbb718-df3a-46e3-bc68-fb25b6c86684(jetbrains.mps.baseLanguage.dataFlow@1_0)", "6868777471677432053");
-  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0d0a0a0a0 = new SNodePointer("r:f6dbb718-df3a-46e3-bc68-fb25b6c86684(jetbrains.mps.baseLanguage.dataFlow@1_0)", "5730083271929373147");
-  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0a0b0c0b0b0b0c0b0c0b0b0b0c0b0d0a0a0a0 = new SNodePointer("r:f6dbb718-df3a-46e3-bc68-fb25b6c86684(jetbrains.mps.baseLanguage.dataFlow@1_0)", "6868777471677432050");
-  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0a0b0c0b0b0b0c0b0c0b0b0b0c0b0d0a0a0a0 = new SNodePointer("r:f6dbb718-df3a-46e3-bc68-fb25b6c86684(jetbrains.mps.baseLanguage.dataFlow@1_0)", "5730083271929373147");
-  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0c0b0b0b0d0b0d0a0a0a0 = new SNodePointer("r:f6dbb718-df3a-46e3-bc68-fb25b6c86684(jetbrains.mps.baseLanguage.dataFlow@1_0)", "6868777471677432047");
-  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0c0b0b0b0d0b0d0a0a0a0 = new SNodePointer("r:f6dbb718-df3a-46e3-bc68-fb25b6c86684(jetbrains.mps.baseLanguage.dataFlow@1_0)", "5730083271929373147");
+  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0d0a0a0a0 = new SNodePointer("r:4ecd46ec-a719-429f-a7df-7d3a52f8d827(jetbrains.mps.baseLanguage.dataFlow@1_0)", "6868777471677432053");
+  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0d0a0a0a0 = new SNodePointer("r:4ecd46ec-a719-429f-a7df-7d3a52f8d827(jetbrains.mps.baseLanguage.dataFlow@1_0)", "5730083271929373147");
+  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0a0b0c0b0b0b0c0b0c0b0b0b0c0b0d0a0a0a0 = new SNodePointer("r:4ecd46ec-a719-429f-a7df-7d3a52f8d827(jetbrains.mps.baseLanguage.dataFlow@1_0)", "6868777471677432050");
+  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0a0b0c0b0b0b0c0b0c0b0b0b0c0b0d0a0a0a0 = new SNodePointer("r:4ecd46ec-a719-429f-a7df-7d3a52f8d827(jetbrains.mps.baseLanguage.dataFlow@1_0)", "5730083271929373147");
+  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0c0b0b0b0d0b0d0a0a0a0 = new SNodePointer("r:4ecd46ec-a719-429f-a7df-7d3a52f8d827(jetbrains.mps.baseLanguage.dataFlow@1_0)", "6868777471677432047");
+  private static SNodePointer SNODE_POINTER_vwsftd_a0a0a0a0b0c0b0b0b0b0b0c0b0b0b0b0b0c0b0b0b0c0b0c0b0b0b0a0b0c0b0b0b0a0b0c0b0b0b0d0b0d0a0a0a0 = new SNodePointer("r:4ecd46ec-a719-429f-a7df-7d3a52f8d827(jetbrains.mps.baseLanguage.dataFlow@1_0)", "5730083271929373147");
 
   private GeneratedMatchingPattern myPattern = new RuleEqualsNull.Pattern_vwsftd_a0a();
 

@@ -26,7 +26,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   public static final String BODY = "body";
   public static final String PARAMETER = "parameter";
   public static final String THROWS_ITEM = "throwsItem";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ANNOTATION = "annotation";
 
   public BaseMethodDeclaration(SNode node) {
@@ -145,24 +145,24 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
     this.insertChild(prev, BaseMethodDeclaration.THROWS_ITEM, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(BaseMethodDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(BaseMethodDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BaseMethodDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BaseMethodDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BaseMethodDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BaseMethodDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(BaseMethodDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(BaseMethodDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BaseMethodDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseMethodDeclaration._$ATTRIBUTE, node);
   }
 
   public int getAnnotationsCount() {

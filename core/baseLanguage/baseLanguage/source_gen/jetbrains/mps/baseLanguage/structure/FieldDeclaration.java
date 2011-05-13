@@ -22,7 +22,7 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   public static final String IS_TRANSIENT = "isTransient";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String VISIBILITY = "visibility";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FieldDeclaration(SNode node) {
     super(node);
@@ -92,24 +92,24 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
     super.setChild(FieldDeclaration.VISIBILITY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(FieldDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(FieldDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, FieldDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FieldDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, FieldDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FieldDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(FieldDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(FieldDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FieldDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FieldDeclaration._$ATTRIBUTE, node);
   }
 
   public static FieldDeclaration newInstance(SModel sm, boolean init) {

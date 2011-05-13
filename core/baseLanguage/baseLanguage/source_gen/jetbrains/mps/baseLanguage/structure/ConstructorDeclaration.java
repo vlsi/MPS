@@ -19,7 +19,7 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String VISIBILITY = "visibility";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConstructorDeclaration(SNode node) {
     super(node);
@@ -73,24 +73,24 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
     super.setChild(ConstructorDeclaration.VISIBILITY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ConstructorDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ConstructorDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ConstructorDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConstructorDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ConstructorDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConstructorDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ConstructorDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConstructorDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConstructorDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConstructorDeclaration._$ATTRIBUTE, node);
   }
 
   public static ConstructorDeclaration newInstance(SModel sm, boolean init) {

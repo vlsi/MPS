@@ -18,7 +18,7 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String VISIBILITY = "visibility";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StaticMethodDeclaration(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
     super.setChild(StaticMethodDeclaration.VISIBILITY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(StaticMethodDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(StaticMethodDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, StaticMethodDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StaticMethodDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, StaticMethodDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StaticMethodDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(StaticMethodDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(StaticMethodDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, StaticMethodDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StaticMethodDeclaration._$ATTRIBUTE, node);
   }
 
   public static StaticMethodDeclaration newInstance(SModel sm, boolean init) {

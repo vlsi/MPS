@@ -17,7 +17,7 @@ public class ExpressionStatement extends Statement implements IWrapper {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPRESSION = "expression";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ExpressionStatement(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class ExpressionStatement extends Statement implements IWrapper {
     super.setChild(ExpressionStatement.EXPRESSION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ExpressionStatement.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ExpressionStatement._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ExpressionStatement.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ExpressionStatement._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ExpressionStatement.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ExpressionStatement._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ExpressionStatement.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ExpressionStatement._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ExpressionStatement.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExpressionStatement._$ATTRIBUTE, node);
   }
 
   public static ExpressionStatement newInstance(SModel sm, boolean init) {

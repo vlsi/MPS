@@ -19,7 +19,7 @@ public class CatchClause extends BaseConcept implements ScopeConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String THROWABLE = "throwable";
   public static final String CATCH_BODY = "catchBody";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CatchClause(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class CatchClause extends BaseConcept implements ScopeConcept {
     super.setChild(CatchClause.CATCH_BODY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(CatchClause.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(CatchClause._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, CatchClause.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CatchClause._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, CatchClause.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CatchClause._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(CatchClause.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(CatchClause._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CatchClause.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CatchClause._$ATTRIBUTE, node);
   }
 
   public static CatchClause newInstance(SModel sm, boolean init) {

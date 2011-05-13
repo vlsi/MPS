@@ -22,7 +22,7 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   public static final String EXTENDS = "extends";
   public static final String BOUND = "bound";
   public static final String AUX_BOUNDS = "auxBounds";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TypeVariableDeclaration(SNode node) {
     super(node);
@@ -104,24 +104,24 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
     this.insertChild(prev, TypeVariableDeclaration.AUX_BOUNDS, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(TypeVariableDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(TypeVariableDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, TypeVariableDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TypeVariableDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, TypeVariableDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TypeVariableDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(TypeVariableDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(TypeVariableDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TypeVariableDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TypeVariableDeclaration._$ATTRIBUTE, node);
   }
 
   public static TypeVariableDeclaration newInstance(SModel sm, boolean init) {

@@ -22,7 +22,7 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
   public static final String TYPE = "type";
   public static final String PROPERTY_IMPLEMENTATION = "propertyImplementation";
   public static final String VISIBILITY = "visibility";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Property(SNode node) {
     super(node);
@@ -92,24 +92,24 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
     super.setChild(Property.VISIBILITY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Property.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Property._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Property.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Property._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Property.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Property._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Property.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Property._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Property.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Property._$ATTRIBUTE, node);
   }
 
   public static Property newInstance(SModel sm, boolean init) {
