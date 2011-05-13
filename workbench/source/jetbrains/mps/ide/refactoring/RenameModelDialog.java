@@ -27,6 +27,7 @@ import jetbrains.mps.refactoring.renameModel.ModelRenamer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,10 +40,10 @@ public class RenameModelDialog extends BaseDialog {
   private JCheckBox myUpdateAllReferences;
 
   private Project myProject;
-  private SModelDescriptor myModelDescriptor;
+  private EditableSModelDescriptor myModelDescriptor;
   private SModelRoot myModelRoot;
 
-  public RenameModelDialog(Project project, Frame frame, SModelRoot root, SModelDescriptor sm) throws HeadlessException {
+  public RenameModelDialog(Project project, Frame frame, SModelRoot root, EditableSModelDescriptor sm) throws HeadlessException {
     super(frame);
 
     myProject = project;

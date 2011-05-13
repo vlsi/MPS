@@ -271,18 +271,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     }
   }
 
-  public void changeModelFile(IFile newModelFile) {
-    ModelAccess.assertLegalWrite();
-    if (getModelFile().getPath().equals(newModelFile.getPath())) return;
-
-    IFile oldFile = myModelFile;
-    SModel model = getSModel();
-    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-    myModelFile = newModelFile;
-    updateDiskTimestamp();
-    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-  }
-
   public IFile getModelFile() {
     return getSource().getFile();
   }
@@ -296,6 +284,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       setVersion(latestVersion);
       LOG.error("Metadata file for model " + getSModelReference().getSModelFqName() + " wasn't present. Recreated a new one.");
     }
+  }
+
+  public void changeModelFile(IFile newModelFile) {
+    ModelAccess.assertLegalWrite();
+    if (getModelFile().getPath().equals(newModelFile.getPath())) return;
+
+    IFile oldFile = myModelFile;
+    SModel model = getSModel();
+    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    myModelFile = newModelFile;
+    updateDiskTimestamp();
+    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
 
   public String toString() {

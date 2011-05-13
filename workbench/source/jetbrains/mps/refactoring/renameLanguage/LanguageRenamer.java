@@ -72,10 +72,11 @@ public class LanguageRenamer {
 
     for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
 
       if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
         String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
-        sm.rename(SModelFqName.fromString(myNewName + suffix), false);
+        ((EditableSModelDescriptor) sm).rename(SModelFqName.fromString(myNewName + suffix), false);
       }
     }
 

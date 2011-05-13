@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.descriptor;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +22,8 @@ public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable
   void setChanged(boolean changed);
 
   void save();
+
+  public void rename(SModelFqName newModelFqName, boolean changeFile);
 
   @Deprecated
   IFile getModelFile();

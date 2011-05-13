@@ -16,15 +16,17 @@
 package jetbrains.mps.refactoring.renameModel;
 
 import jetbrains.mps.project.ReferenceUpdater;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class ModelRenamer {
-  private SModelDescriptor myModelDescriptor;
+  private EditableSModelDescriptor myModelDescriptor;
   private SModelFqName myModelFqName;
   private boolean myLazy;
 
-  public ModelRenamer(SModelDescriptor modelDescriptor, SModelFqName fqName, boolean lazy) {
+  public ModelRenamer(EditableSModelDescriptor modelDescriptor, SModelFqName fqName, boolean lazy) {
     myModelDescriptor = modelDescriptor;
     myModelFqName = fqName;
     myLazy = lazy;

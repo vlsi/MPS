@@ -19,6 +19,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
@@ -67,9 +68,11 @@ public class SModelRoot {
     myModelRoot.setPrefix(newPrefix);
     for (SModelDescriptor sm : owner.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
+
       if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldPrefix + ".")) {
         String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldPrefix.length());
-        sm.rename(SModelFqName.fromString(newPrefix + suffix), false);
+        ((EditableSModelDescriptor) sm).rename(SModelFqName.fromString(newPrefix + suffix), false);
       }
     }
   }
