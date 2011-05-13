@@ -41,6 +41,7 @@ public class StubModelDescriptors {
   }
 
   private void collectDescriptors(StubLocation loc, _FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem, Set<BaseStubModelDescriptor> result) {
+/*
     String pkg = loc.getPrefix();
     PathItem pi = getPathItem.invoke(loc.getPath());
     for (String subpkg : ListSequence.fromList(pi.subpackages(pkg))) {
@@ -58,6 +59,7 @@ public class StubModelDescriptors {
       }
       collectDescriptors(new StubLocation(stubLoc.getPath(), subpkg, loc.getModuleRef()), getPathItem, result);
     }
+*/
   }
 
   public SModelReference smodelRefWithId(String pkg) {
