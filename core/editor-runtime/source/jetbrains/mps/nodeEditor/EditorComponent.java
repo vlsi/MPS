@@ -472,8 +472,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     addFocusListener(new FocusListener() {
       public void focusGained(FocusEvent e) {
-        EditorCell selectedCell = getSelectedCell();
-        if (selectedCell == null) {
+        if (getSelectionManager().getSelection() == null) {
           EditorCell rootCell = getRootCell();
           if (rootCell instanceof EditorCell_Collection) {
             EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
@@ -943,14 +942,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void processPopupMenu(final MouseEvent e) {
-    EditorCell selectedCell = getSelectedCell();
-    if (selectedCell != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          showPopupMenu(e);
-        }
-      });
-    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        showPopupMenu(e);
+      }
+    });
   }
 
   private void showPopupMenu(MouseEvent e) {
