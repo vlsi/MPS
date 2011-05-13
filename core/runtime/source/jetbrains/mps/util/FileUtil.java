@@ -473,6 +473,15 @@ public class FileUtil {
     return new File(path).getAbsolutePath();
   }
 
+  public static void closeFileSafe(Closeable c) {
+    if (c != null) {
+      try {
+        c.close();
+      } catch (IOException ignored) {
+      }
+    }
+  }
+
   static class PathResolutionException extends RuntimeException {
     PathResolutionException(String msg) {
       super(msg);

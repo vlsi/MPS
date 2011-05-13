@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.VcsRoot;
 
 public class MergeDriverInstaller {
-  public MergeDriverInstaller() {
+  private MergeDriverInstaller() {
   }
 
   public static boolean isApplicable(Project project) {
