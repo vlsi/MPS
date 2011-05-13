@@ -26,11 +26,13 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface SModelDescriptor {
   /**
-   * After model loading call SModelRepostiory.fireModelRepositoryChanged
+   * After model loading call SModelRepository.fireModelRepositoryChanged
    */
   SModel getSModel();
 
   IModule getModule();
+
+  //------
 
   boolean isGeneratable();
 
