@@ -26,10 +26,17 @@ import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Set;
 
 public class RegularModelDataSource extends FileBasedModelDataSource {
   private static Logger LOG = Logger.getLogger(RegularModelDataSource.class);
@@ -145,4 +152,43 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     LOG.error(exception.getMessage(), newModel);
     return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
   }
+
+  public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    if (dsm.isChanged()) return true;
+
+    IFile modelFile = dsm.getModelFile();
+    if (!modelFile.exists()) return true;
+    BufferedReader r = null;
+    try {
+      r = new BufferedReader(new InputStreamReader(modelFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
+      String line;
+      boolean result = false;
+      while ((line = r.readLine()) != null) {
+        for (String s : strings) {
+          if (line.contains(s)) {
+            result = true;
+            break;
+          }
+        }
+      }
+      return result;
+    } catch (IOException e) {
+      LOG.error(e);
+    } finally {
+      if (r != null) {
+        try {
+          r.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
+    }
+    return true;
+  }
+
+  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
+    return containsSomeString(modelDescriptor, CollectionUtil.set(string));
+  }
+
 }

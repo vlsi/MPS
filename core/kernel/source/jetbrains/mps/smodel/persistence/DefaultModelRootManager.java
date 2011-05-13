@@ -76,48 +76,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
 
-  public boolean isFindUsagesSupported() {
-    return true;
-  }
-
-  public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    if (dsm.isChanged()) return true;
-
-    IFile modelFile = dsm.getModelFile();
-    if (!modelFile.exists()) return true;
-    BufferedReader r = null;
-    try {
-      r = new BufferedReader(new InputStreamReader(modelFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
-      String line;
-      boolean result = false;
-      while ((line = r.readLine()) != null) {
-        for (String s : strings) {
-          if (line.contains(s)) {
-            result = true;
-            break;
-          }
-        }
-      }
-      return result;
-    } catch (IOException e) {
-      LOG.error(e);
-    } finally {
-      if (r != null) {
-        try {
-          r.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-    }
-    return true;
-  }
-
-  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
-    return containsSomeString(modelDescriptor, CollectionUtil.set(string));
-  }
-
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {
     List<ModelHandle> models = new ArrayList<ModelHandle>();
     ModelsMiner.collectModelDescriptors(dir, modelRoot, models);
