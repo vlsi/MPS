@@ -7,8 +7,8 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -49,11 +49,11 @@ public class CreatePropertyAntiquotation_Intention extends BaseIntention impleme
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
-    SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
-    if (contextNode == null) {
+    if (!(selectedCell instanceof EditorCell_Property)) {
       return false;
     }
-    if (!(selectedCell instanceof EditorCell_Property)) {
+    SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
+    if (contextNode == null) {
       return false;
     }
     return true;
@@ -83,6 +83,7 @@ public class CreatePropertyAntiquotation_Intention extends BaseIntention impleme
       if (selectedCell.isSingleNodeCell()) {
         SPropertyOperations.set(propertyAntiquotation, "label", SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), "name"));
       }
+      editorContext.selectWRTFocusPolicy(propertyAntiquotation);
     }
   }
 
