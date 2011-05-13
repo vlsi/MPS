@@ -14,9 +14,6 @@ import org.jetbrains.annotations.Nullable;
  * Maybe this kind of descriptor will be splitted to a number of descriptors in future.
  */
 public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable, MetadataContainer {
-  @NotNull
-  ModelDataSource getSource();
-
   long lastChangeTime();
 
   boolean isChanged();

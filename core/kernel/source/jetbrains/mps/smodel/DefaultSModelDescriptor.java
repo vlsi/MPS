@@ -265,8 +265,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       String message = "Model already registered: " + myModelReference + "\n";
       message += "source = " + getSource() + "\n";
 
-      if (anotherModel instanceof EditableSModelDescriptor) {
-        message += "another model's source = " + ((EditableSModelDescriptor) anotherModel).getSource();
+      if (anotherModel instanceof BaseSModelDescriptorWithSource) {
+        message += "another model's source = " + ((BaseSModelDescriptorWithSource) anotherModel).getSource();
       } else {
         message += "another model is non-editable";
       }

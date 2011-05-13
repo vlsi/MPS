@@ -124,11 +124,11 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(SModelRepository.getInstance().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
-      if (!(model instanceof EditableSModelDescriptor)) {
+      if (!(model instanceof BaseSModelDescriptorWithSource)) {
         models.remove(model);
       } else if (!SModelStereotype.isUserModel(model)) {
         models.remove(model);
-      } else if (((EditableSModelDescriptor) model).getSource().isPackaged()) {
+      } else if (((BaseSModelDescriptorWithSource) model).getSource().isPackaged()) {
         models.remove(model);
       } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
         models.remove(model);

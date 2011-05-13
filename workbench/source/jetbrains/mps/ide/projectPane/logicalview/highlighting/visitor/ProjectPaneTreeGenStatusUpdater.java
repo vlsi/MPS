@@ -27,6 +27,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -110,8 +111,8 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private boolean isPackaged(SModelTreeNode node) {
     SModelDescriptor md = node.getSModelDescriptor();
-    if (!(md instanceof EditableSModelDescriptor)) return false;
-    return ((EditableSModelDescriptor) md).getSource().isPackaged();
+    if (!(md instanceof BaseSModelDescriptorWithSource)) return false;
+    return ((BaseSModelDescriptorWithSource) md).getSource().isPackaged();
   }
 
   private boolean isDoNotGenerate(SModelTreeNode node) {

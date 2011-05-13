@@ -212,12 +212,13 @@ public class GeneratorUIFacade {
           strategy = new IncrementalGenerationStrategy() {
             @Override
             public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
-              if (!(sm instanceof EditableSModelDescriptor)) return null;
-              EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+              if (!(sm instanceof BaseSModelDescriptorWithSource)) return null;
+              BaseSModelDescriptorWithSource esm = (BaseSModelDescriptorWithSource) sm;
               if (esm.getSource().isPackaged()) return null;
               if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
 
-              IFile modelFile = esm.getModelFile();
+              if (!(esm instanceof DefaultSModelDescriptor)) return null;
+              IFile modelFile = ((DefaultSModelDescriptor) esm).getModelFile();
               if (modelFile == null) return null;
 
               return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
