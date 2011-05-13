@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 
 public class MakeActionParameters {
   private IOperationContext context;
@@ -194,11 +196,7 @@ __switch__:
                     case 12:
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
-                          _14_modelsFromModule = Sequence.fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
-                            public boolean accept(SModelDescriptor it) {
-                              return it.isGeneratable();
-                            }
-                          });
+                          _14_modelsFromModule = modelsToMake(module);
                         }
                       });
                       this.__CP__ = 15;
@@ -210,18 +208,9 @@ __switch__:
                       this._21_modelsFromModules = null;
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
-                          if (MakeActionParameters.this.modules != null) {
-                            for (IModule mod : ListSequence.fromList(MakeActionParameters.this.modules)) {
-                              _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).concat(ListSequence.fromList(mod.getOwnModelDescriptors()));
-                            }
-                          } else if (MakeActionParameters.this.cmodule != null) {
-                            _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).concat(ListSequence.fromList(MakeActionParameters.this.cmodule.getOwnModelDescriptors()));
+                          for (IModule mod : ListSequence.fromList(MakeActionParameters.this.modules)) {
+                            _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).concat(Sequence.fromIterable(modelsToMake(mod)));
                           }
-                          _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).where(new IWhereFilter<SModelDescriptor>() {
-                            public boolean accept(SModelDescriptor it) {
-                              return it.isGeneratable();
-                            }
-                          });
                         }
                       });
                       this.__CP__ = 22;
@@ -245,6 +234,20 @@ __switch__:
       }
     });
     return new ModelsToResources(context, smds).resources(dirtyOnly);
+  }
+
+  public Iterable<SModelDescriptor> modelsToMake(IModule module) {
+    Iterable<SModelDescriptor> models = Sequence.fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return it.isGeneratable();
+      }
+    });
+    if (module instanceof Language) {
+      for (Generator gen : ListSequence.fromList(((Language) module).getGenerators())) {
+        models = Sequence.fromIterable(models).concat(Sequence.fromIterable(modelsToMake(gen)));
+      }
+    }
+    return models;
   }
 
   private IModule moduleToMake() {

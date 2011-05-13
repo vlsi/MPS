@@ -459,12 +459,13 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.MakeActionParameters" file="MakeActionParameters.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
+    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="java.util.List" />
@@ -477,6 +478,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.MakeAllModules_Action" file="MakeAllModules_Action.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
