@@ -28,7 +28,7 @@ import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.stubs.StubReloadManager;
+import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -115,7 +115,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       SModelRepository.getInstance().refreshModels();
 
       indicator.setText2("Updating stub models...");
-      StubReloadManager.getInstance().reload();
+      LibrariesLoader.getInstance().reload();
 
       indicator.setText2("Disposing old classes...");
       callListeners(new ListenerCaller() {

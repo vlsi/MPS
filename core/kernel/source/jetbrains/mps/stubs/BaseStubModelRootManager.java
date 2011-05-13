@@ -130,8 +130,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   }
 
   private void updateModelInLoadingState(BaseStubModelDescriptor descriptor, SModel model) {
-    if (!StubReloadManager.getInstance().needsUpdate(descriptor, myLocation)) return;
-
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {

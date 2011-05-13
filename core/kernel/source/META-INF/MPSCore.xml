@@ -27,7 +27,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.stubs.StubReloadManager</implementation-class>
+      <implementation-class>jetbrains.mps.stubs.LibrariesLoader</implementation-class>
     </component>
 
     <component>

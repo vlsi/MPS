@@ -30,6 +30,7 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -83,59 +84,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       return repository.getLanguage(languageDescriptor.getModuleReference());
     }
 
-    List<SolutionDescriptor> solutionDescriptors = createStubSolutionDescriptors(languageDescriptor);
-
-    addDepsOnStubSolutions(languageDescriptor, solutionDescriptors);
-
-    language.setLanguageDescriptor(languageDescriptor, false);
-    repository.addModule(language, moduleOwner);
-
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      Solution.newInstance(sd, language);
-    }
+    LibrariesLoader.createLanguageLibs(moduleOwner, language, languageDescriptor, repository);
 
     return language;
   }
 
   private Language() {
 
-  }
-
-  private static List<SolutionDescriptor> createStubSolutionDescriptors(LanguageDescriptor ld) {
-    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
-    for (StubSolution ss : ld.getStubSolutions()) {
-      SolutionDescriptor descriptor = new SolutionDescriptor();
-      descriptor.setUUID(ss.getId().toString());
-      descriptor.setNamespace(ss.getName());
-
-      descriptor.setCompileInMPS(false);
-
-      //todo what should be here?
-      descriptor.setDontLoadClasses(true);
-
-      result.add(descriptor);
-    }
-    return result;
-  }
-
-  private static void addDepsOnStubSolutions(LanguageDescriptor languageDescriptor, List<SolutionDescriptor> solutionDescriptors) {
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      List<Dependency> dependencies = languageDescriptor.getDependencies();
-
-      boolean hasDependency = false;
-      for (Dependency ld : dependencies) {
-        if (ObjectUtils.equals(ld.getModuleRef(), sd.getModuleReference())) {
-          hasDependency = true;
-          break;
-        }
-      }
-      if (hasDependency) continue;
-
-      Dependency dep = new Dependency();
-      dep.setModuleRef(sd.getModuleReference());
-      dep.setReexport(true);
-      dependencies.add(dep);
-    }
   }
 
   protected ModuleDepsManager createDepsManager() {

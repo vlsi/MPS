@@ -7,7 +7,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.stubs.StubDescriptor;
-import jetbrains.mps.stubs.StubReloadManager;
+import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -60,7 +60,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
   public List<BaseSNodeDescriptor> getSNodeDescriptors(final IModule m) {
     if (!myCache.containsKey(m)) {
-      List<StubDescriptor> list = StubReloadManager.getInstance().getRootNodeDescriptors(((AbstractModule) m));
+      List<StubDescriptor> list = new ArrayList<StubDescriptor>();//LibrariesLoader.getInstance().getRootNodeDescriptors(((AbstractModule) m));
       List<BaseSNodeDescriptor> result = new ArrayList<BaseSNodeDescriptor>(list.size());
       for (final StubDescriptor sd : list) {
         result.add(new BaseSNodeDescriptor(sd.getClassName(), 0, 0, null) {

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.vfs.LocalFileSystem;
-import jetbrains.mps.stubs.StubReloadManager;
+import jetbrains.mps.stubs.LibrariesLoader;
 
 public class ReloadStubs_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -56,7 +56,7 @@ public class ReloadStubs_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       LocalFileSystem.getInstance().refresh(false);
-      StubReloadManager.getInstance().reload();
+      LibrariesLoader.getInstance().reload();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ReloadStubs", t);

@@ -22,7 +22,7 @@ import com.intellij.openapi.components.Storage;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.stubs.StubReloadManager;
+import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.Nls;
@@ -47,7 +47,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubReloadManager loader, ClassLoaderManager clm) {
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, LibrariesLoader loader, ClassLoaderManager clm) {
     super(repo);
   }
 
