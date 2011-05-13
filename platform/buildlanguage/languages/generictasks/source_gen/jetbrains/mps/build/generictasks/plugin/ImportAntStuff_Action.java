@@ -56,7 +56,6 @@ public class ImportAntStuff_Action extends GeneratedAction {
     try {
       Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
       ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getGenerated(language), Generator.Modes.CORE, _params);
-      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.NODEPS, _params);
       ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.JUNIT, _params);
       LOG.info("Import completed.");
     } catch (Throwable t) {
