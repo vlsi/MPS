@@ -130,7 +130,7 @@ public abstract class AbstractModule implements IModule {
     dep.setModuleRef(moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
-    setModuleDescriptor(descriptor, true);
+//    setModuleDescriptor(descriptor, true);// removed as it follows to models disposing even after addChild()
     save();
   }
 
@@ -139,7 +139,7 @@ public abstract class AbstractModule implements IModule {
     if (descriptor.getUsedLanguages().contains(langRef)) return;
 
     descriptor.getUsedLanguages().add(langRef);
-    setModuleDescriptor(descriptor, true);
+//    setModuleDescriptor(descriptor, true);// removed as it follows to models disposing even after addChild()
     save();
   }
 
@@ -148,7 +148,7 @@ public abstract class AbstractModule implements IModule {
     if (descriptor.getUsedDevkits().contains(devkitRef)) return;
 
     descriptor.getUsedDevkits().add(devkitRef);
-    setModuleDescriptor(descriptor, true);
+//    setModuleDescriptor(descriptor, true);
     save();
   }
 
