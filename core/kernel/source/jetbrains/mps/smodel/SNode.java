@@ -165,7 +165,7 @@ public final class SNode {
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       String roleOf = child.getRole_();
       assert roleOf != null;
-      if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
+      if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
         augend.add(roleOf);
       }
     }
