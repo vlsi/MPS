@@ -39,7 +39,7 @@ import java.util.Set;
 public class RegularModelDataSource extends FileBasedModelDataSource {
   private static Logger LOG = Logger.getLogger(RegularModelDataSource.class);
 
-  private final IFile myFile;
+  private IFile myFile;
 
   public RegularModelDataSource(@NotNull IFile file) {
     myFile = file;
@@ -199,4 +199,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return RefactoringsPersistence.load(dsm.getModelFile());
   }
 
+  public void setFile(IFile file) {
+    myFile = file;
+  }
 }

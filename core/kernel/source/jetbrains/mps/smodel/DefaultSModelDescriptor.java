@@ -290,10 +290,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     ModelAccess.assertLegalWrite();
     if (getModelFile().getPath().equals(newModelFile.getPath())) return;
 
-    IFile oldFile = myModelFile;
+    IFile oldFile = getSource().getFile();
     SModel model = getSModel();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-    myModelFile = newModelFile;
+    getSource().setFile(newModelFile);
     updateDiskTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }

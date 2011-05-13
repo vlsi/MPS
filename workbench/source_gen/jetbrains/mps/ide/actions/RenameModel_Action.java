@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -84,7 +86,7 @@ public class RenameModel_Action extends GeneratedAction {
           root.value = ModelRootUtil.getSModelRoot(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
         }
       });
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), root.value, ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).showDialog();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), root.value, ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model"))).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameModel", t);
