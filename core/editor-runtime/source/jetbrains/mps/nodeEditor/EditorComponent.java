@@ -2489,7 +2489,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName()) && (isFocusOwner() || IdeMain.getTestMode() == TestMode.CORE_TEST))
       return new MyPasteProvider();
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
-      return new VirtualFile[]{MPSNodesVirtualFileSystem.getInstance().getFileFor(getEditedNodePointer())};
+      return getVirtualFile() != null ? new VirtualFile[]{getVirtualFile()} : new VirtualFile[0];
     }
 
     //not found
