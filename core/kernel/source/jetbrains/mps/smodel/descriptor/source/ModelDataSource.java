@@ -15,17 +15,31 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.descriptor.source.changes.SourceChangeWatcher;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 
 public interface ModelDataSource {
-  SourceChangeWatcher getChangeWatcher();
+  //------changes watching--------
 
-  boolean hasModel(SModelDescriptor md);
+  SourceChangeWatcher getChangeWatcher();
 
   long getTimestamp();
 
-  //------todo try to get rid of
+  //------model loading------
+
+  DescriptorLoadResult loadDescriptor(SModelFqName modelName);
+
+  ModelLoadResult loadSModel(SModelDescriptor descriptor, ModelLoadingState targetState);
+
+  void saveModel(SModelDescriptor descriptor);
+
+  //------other
+
+  boolean hasModel(SModelDescriptor md);
 
   boolean isPackaged();
 
