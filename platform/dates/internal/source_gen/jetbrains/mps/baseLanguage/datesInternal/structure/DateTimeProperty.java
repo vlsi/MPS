@@ -26,7 +26,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   public static final String JODA_PERIOD_TYPE = "jodaPeriodType";
   public static final String JODA_DURATION_TYPE = "jodaDurationType";
   public static final String PERIOD_FORMAT_METHOD = "periodFormatMethod";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DateTimeProperty(SNode node) {
     super(node);
@@ -112,24 +112,24 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
     super.setReferent(DateTimeProperty.PERIOD_FORMAT_METHOD, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(DateTimeProperty.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(DateTimeProperty._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, DateTimeProperty.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DateTimeProperty._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, DateTimeProperty.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DateTimeProperty._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(DateTimeProperty.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(DateTimeProperty._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DateTimeProperty.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DateTimeProperty._$ATTRIBUTE, node);
   }
 
   public static DateTimeProperty newInstance(SModel sm, boolean init) {

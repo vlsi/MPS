@@ -16,7 +16,7 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ParameterQueryFun(SNode node) {
     super(node);
@@ -46,24 +46,24 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
     this.setProperty(ParameterQueryFun.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ParameterQueryFun.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ParameterQueryFun._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ParameterQueryFun.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ParameterQueryFun._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ParameterQueryFun.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ParameterQueryFun._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ParameterQueryFun.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ParameterQueryFun._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ParameterQueryFun.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ParameterQueryFun._$ATTRIBUTE, node);
   }
 
   public static ParameterQueryFun newInstance(SModel sm, boolean init) {

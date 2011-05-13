@@ -20,7 +20,7 @@ public class ParametrizedExecuteBlock extends BaseConcept implements IExecuteCon
   public static final String EXECUTE_ACTIONS = "executeActions";
   public static final String EXECUTE_CONSOLE = "executeConsole";
   public static final String EXECUTE_PROCESS = "executeProcess";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ParametrizedExecuteBlock(SNode node) {
     super(node);
@@ -82,24 +82,24 @@ public class ParametrizedExecuteBlock extends BaseConcept implements IExecuteCon
     super.setChild(ParametrizedExecuteBlock.EXECUTE_PROCESS, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ParametrizedExecuteBlock.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ParametrizedExecuteBlock._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ParametrizedExecuteBlock.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ParametrizedExecuteBlock._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ParametrizedExecuteBlock.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ParametrizedExecuteBlock._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ParametrizedExecuteBlock.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ParametrizedExecuteBlock._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ParametrizedExecuteBlock.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ParametrizedExecuteBlock._$ATTRIBUTE, node);
   }
 
   public static ParametrizedExecuteBlock newInstance(SModel sm, boolean init) {

@@ -22,7 +22,7 @@ public class FormatPeriodExpression extends Expression implements TypeDerivable 
   public static final String FORMAT = "format";
   public static final String LOCALE = "locale";
   public static final String PERIOD = "period";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FormatPeriodExpression(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class FormatPeriodExpression extends Expression implements TypeDerivable 
     super.setChild(FormatPeriodExpression.PERIOD, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(FormatPeriodExpression.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(FormatPeriodExpression._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, FormatPeriodExpression.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FormatPeriodExpression._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, FormatPeriodExpression.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FormatPeriodExpression._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(FormatPeriodExpression.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(FormatPeriodExpression._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FormatPeriodExpression.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FormatPeriodExpression._$ATTRIBUTE, node);
   }
 
   public static FormatPeriodExpression newInstance(SModel sm, boolean init) {

@@ -23,7 +23,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept, IConce
   public static final String DEFAULT_CONSEQUENCE = "defaultConsequence";
   public static final String NULL_INPUT_MESSAGE = "nullInputMessage";
   public static final String REDUCTION_MAPPING_RULE = "reductionMappingRule";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TemplateSwitch(SNode node) {
     super(node);
@@ -105,24 +105,24 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept, IConce
     this.insertChild(prev, TemplateSwitch.REDUCTION_MAPPING_RULE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(TemplateSwitch.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(TemplateSwitch._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, TemplateSwitch.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TemplateSwitch._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, TemplateSwitch.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TemplateSwitch._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(TemplateSwitch.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(TemplateSwitch._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TemplateSwitch.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TemplateSwitch._$ATTRIBUTE, node);
   }
 
   public static TemplateSwitch newInstance(SModel sm, boolean init) {

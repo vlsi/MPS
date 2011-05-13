@@ -18,7 +18,7 @@ public class LetExpression extends LambdaExpression implements VariableOwner {
   public static final String VALUE = "value";
   public static final String EXPRESSION = "expression";
   public static final String VARIABLE = "variable";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LetExpression(SNode node) {
     super(node);
@@ -72,24 +72,24 @@ public class LetExpression extends LambdaExpression implements VariableOwner {
     super.setChild(LetExpression.VARIABLE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(LetExpression.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(LetExpression._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, LetExpression.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LetExpression._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, LetExpression.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LetExpression._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(LetExpression.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(LetExpression._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, LetExpression.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LetExpression._$ATTRIBUTE, node);
   }
 
   public static LetExpression newInstance(SModel sm, boolean init) {

@@ -24,7 +24,7 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   public static final String OPPOSITE = "opposite";
   public static final String GET_FUNCTION = "getFunction";
   public static final String SIZE_FUNCTION = "sizeFunction";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ListFeature(SNode node) {
     super(node);
@@ -110,24 +110,24 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
     super.setChild(ListFeature.SIZE_FUNCTION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ListFeature.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ListFeature._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ListFeature.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ListFeature._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ListFeature.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ListFeature._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ListFeature.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ListFeature._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ListFeature.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ListFeature._$ATTRIBUTE, node);
   }
 
   public static ListFeature newInstance(SModel sm, boolean init) {

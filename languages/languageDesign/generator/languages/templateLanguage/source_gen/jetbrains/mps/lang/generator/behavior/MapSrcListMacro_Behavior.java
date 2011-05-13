@@ -51,28 +51,6 @@ public class MapSrcListMacro_Behavior {
                 return false;
               }
               patternVar_concept = nodeToMatch_wn5chh_a0a0a0a.getReferent("concept");
-              {
-                String childRole_wn5chh__0 = "smodelAttribute";
-                if (nodeToMatch_wn5chh_a0a0a0a.getChildCount(childRole_wn5chh__0) != 1) {
-                  return false;
-                }
-                {
-                  SNode childVar_wn5chh_a0a0a0a0 = nodeToMatch_wn5chh_a0a0a0a.getChildren(childRole_wn5chh__0).get(0);
-                  {
-                    SNode nodeToMatch_wn5chh_a0a0a0a0;
-                    nodeToMatch_wn5chh_a0a0a0a0 = childVar_wn5chh_a0a0a0a0;
-                    if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_wn5chh_a0a0a0a0.getConceptFqName()))) {
-                      return false;
-                    }
-                    if (!("concept".equals(nodeToMatch_wn5chh_a0a0a0a0.getProperty("linkRole")))) {
-                      return false;
-                    }
-                    if (!("concept".equals(nodeToMatch_wn5chh_a0a0a0a0.getProperty("varName")))) {
-                      return false;
-                    }
-                  }
-                }
-              }
             }
           }
         }

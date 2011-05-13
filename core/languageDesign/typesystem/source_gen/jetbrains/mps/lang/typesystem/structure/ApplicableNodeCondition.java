@@ -18,7 +18,7 @@ public class ApplicableNodeCondition extends BaseConcept implements INamedConcep
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ApplicableNodeCondition(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class ApplicableNodeCondition extends BaseConcept implements INamedConcep
     this.setProperty(ApplicableNodeCondition.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ApplicableNodeCondition.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ApplicableNodeCondition._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ApplicableNodeCondition.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ApplicableNodeCondition._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ApplicableNodeCondition.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ApplicableNodeCondition._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ApplicableNodeCondition.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ApplicableNodeCondition._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ApplicableNodeCondition.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ApplicableNodeCondition._$ATTRIBUTE, node);
   }
 
   public static ApplicableNodeCondition newInstance(SModel sm, boolean init) {

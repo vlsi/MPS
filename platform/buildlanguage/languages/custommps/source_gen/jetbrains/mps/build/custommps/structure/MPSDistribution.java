@@ -25,7 +25,7 @@ public class MPSDistribution extends AbstractProjectComponent implements ICompos
   public static final String PATH_TO_BUILD_TOOLS_ZIP = "pathToBuildToolsZip";
   public static final String LICENCE_PATH = "licencePath";
   public static final String ENTRY = "entry";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MPSDistribution(SNode node) {
     super(node);
@@ -115,24 +115,24 @@ public class MPSDistribution extends AbstractProjectComponent implements ICompos
     this.insertChild(prev, MPSDistribution.ENTRY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(MPSDistribution.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(MPSDistribution._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, MPSDistribution.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MPSDistribution._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, MPSDistribution.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MPSDistribution._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(MPSDistribution.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(MPSDistribution._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, MPSDistribution.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MPSDistribution._$ATTRIBUTE, node);
   }
 
   public static MPSDistribution newInstance(SModel sm, boolean init) {

@@ -18,7 +18,7 @@ public class GContentBlock extends GItem implements INamedConcept, GCompositeIte
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ITEM = "item";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public GContentBlock(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class GContentBlock extends GItem implements INamedConcept, GCompositeIte
     this.insertChild(prev, GContentBlock.ITEM, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(GContentBlock.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(GContentBlock._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, GContentBlock.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, GContentBlock._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, GContentBlock.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, GContentBlock._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(GContentBlock.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(GContentBlock._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GContentBlock.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GContentBlock._$ATTRIBUTE, node);
   }
 
   public static GContentBlock newInstance(SModel sm, boolean init) {

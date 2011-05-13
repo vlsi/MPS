@@ -18,7 +18,7 @@ public class SimpleCommand extends AbstractCommand implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARAM_LIST = "paramList";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SimpleCommand(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class SimpleCommand extends AbstractCommand implements INamedConcept {
     super.setChild(SimpleCommand.PARAM_LIST, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(SimpleCommand.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(SimpleCommand._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, SimpleCommand.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SimpleCommand._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, SimpleCommand.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SimpleCommand._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(SimpleCommand.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(SimpleCommand._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SimpleCommand.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SimpleCommand._$ATTRIBUTE, node);
   }
 
   public static SimpleCommand newInstance(SModel sm, boolean init) {

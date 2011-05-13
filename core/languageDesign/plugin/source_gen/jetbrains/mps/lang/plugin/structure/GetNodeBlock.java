@@ -16,7 +16,7 @@ public class GetNodeBlock extends ConceptFunction implements NodesBlock {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public GetNodeBlock(SNode node) {
     super(node);
@@ -46,24 +46,24 @@ public class GetNodeBlock extends ConceptFunction implements NodesBlock {
     this.setProperty(GetNodeBlock.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(GetNodeBlock.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(GetNodeBlock._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, GetNodeBlock.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, GetNodeBlock._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, GetNodeBlock.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, GetNodeBlock._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(GetNodeBlock.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(GetNodeBlock._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GetNodeBlock.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GetNodeBlock._$ATTRIBUTE, node);
   }
 
   public static GetNodeBlock newInstance(SModel sm, boolean init) {

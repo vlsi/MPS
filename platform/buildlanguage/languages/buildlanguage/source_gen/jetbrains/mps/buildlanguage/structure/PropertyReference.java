@@ -18,7 +18,7 @@ public class PropertyReference extends PropertyValueExpression implements INamed
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY_DECLARATION = "propertyDeclaration";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PropertyReference(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class PropertyReference extends PropertyValueExpression implements INamed
     super.setReferent(PropertyReference.PROPERTY_DECLARATION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(PropertyReference.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(PropertyReference._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, PropertyReference.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PropertyReference._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, PropertyReference.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PropertyReference._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(PropertyReference.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(PropertyReference._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, PropertyReference.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PropertyReference._$ATTRIBUTE, node);
   }
 
   public static PropertyReference newInstance(SModel sm, boolean init) {

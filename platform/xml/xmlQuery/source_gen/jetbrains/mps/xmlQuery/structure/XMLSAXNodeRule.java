@@ -27,7 +27,7 @@ public class XMLSAXNodeRule extends BaseConcept implements INamedConcept {
   public static final String VALIDATOR = "validator";
   public static final String ATTRS = "attrs";
   public static final String CHILDREN = "children";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public XMLSAXNodeRule(SNode node) {
     super(node);
@@ -153,24 +153,24 @@ public class XMLSAXNodeRule extends BaseConcept implements INamedConcept {
     this.insertChild(prev, XMLSAXNodeRule.CHILDREN, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(XMLSAXNodeRule.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(XMLSAXNodeRule._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, XMLSAXNodeRule.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, XMLSAXNodeRule._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, XMLSAXNodeRule.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, XMLSAXNodeRule._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(XMLSAXNodeRule.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(XMLSAXNodeRule._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, XMLSAXNodeRule.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, XMLSAXNodeRule._$ATTRIBUTE, node);
   }
 
   public static XMLSAXNodeRule newInstance(SModel sm, boolean init) {

@@ -27,7 +27,7 @@ public class BuiltInTaskDeclaration extends BaseConcept implements ITaskDeclarat
   public static final String FAKE_DECLARATION = "fakeDeclaration";
   public static final String ATTRIBUTES_DECL = "attributesDecl";
   public static final String INTERFACES = "interfaces";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BuiltInTaskDeclaration(SNode node) {
     super(node);
@@ -193,24 +193,24 @@ public class BuiltInTaskDeclaration extends BaseConcept implements ITaskDeclarat
     this.insertChild(prev, BuiltInTaskDeclaration.INTERFACES, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(BuiltInTaskDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(BuiltInTaskDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BuiltInTaskDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BuiltInTaskDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BuiltInTaskDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BuiltInTaskDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(BuiltInTaskDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(BuiltInTaskDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BuiltInTaskDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BuiltInTaskDeclaration._$ATTRIBUTE, node);
   }
 
   public static BuiltInTaskDeclaration newInstance(SModel sm, boolean init) {

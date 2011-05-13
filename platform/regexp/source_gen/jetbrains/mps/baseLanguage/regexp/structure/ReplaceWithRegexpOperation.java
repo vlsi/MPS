@@ -19,7 +19,7 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REPLACE_BLOCK = "replaceBlock";
   public static final String REGEXP = "regexp";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ReplaceWithRegexpOperation(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
     super.setChild(ReplaceWithRegexpOperation.REGEXP, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ReplaceWithRegexpOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ReplaceWithRegexpOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ReplaceWithRegexpOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ReplaceWithRegexpOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ReplaceWithRegexpOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ReplaceWithRegexpOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ReplaceWithRegexpOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ReplaceWithRegexpOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ReplaceWithRegexpOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ReplaceWithRegexpOperation._$ATTRIBUTE, node);
   }
 
   public static ReplaceWithRegexpOperation newInstance(SModel sm, boolean init) {

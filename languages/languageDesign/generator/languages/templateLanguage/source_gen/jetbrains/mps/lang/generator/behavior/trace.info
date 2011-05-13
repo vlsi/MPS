@@ -22,25 +22,25 @@
   <unitInfo fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior" />
   <unitInfo fileName="TemplateDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_Behavior" />
   <unitInfo fileName="BaseMappingRule_Behavior.java" startLine="14" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Behavior" />
+  <unitInfo fileName="TemplateCallMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_Behavior$Pattern_4ckpni_a0a0a0a1" />
+  <unitInfo fileName="SwitchMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SwitchMacro_Behavior$Pattern_i6m7ss_a0a0a0a1" />
+  <unitInfo fileName="CopySrcNodeMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_Behavior$Pattern_7c1mz_a0a0a0a1" />
+  <unitInfo fileName="IncludeMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IncludeMacro_Behavior$Pattern_wfrqja_a0a0a0a1" />
   <unitInfo fileName="TemplateSwitch_Behavior.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateSwitch_Behavior" />
   <unitInfo fileName="TemplateArgumentQuery_Behavior.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_Behavior" />
-  <unitInfo fileName="TemplateCallMacro_Behavior.java" startLine="27" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_Behavior$Pattern_4ckpni_a0a0a0a1" />
-  <unitInfo fileName="SwitchMacro_Behavior.java" startLine="27" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SwitchMacro_Behavior$Pattern_i6m7ss_a0a0a0a1" />
-  <unitInfo fileName="CopySrcNodeMacro_Behavior.java" startLine="27" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_Behavior$Pattern_7c1mz_a0a0a0a1" />
-  <unitInfo fileName="IncludeMacro_Behavior.java" startLine="27" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IncludeMacro_Behavior$Pattern_wfrqja_a0a0a0a1" />
+  <unitInfo fileName="LoopMacro_Behavior.java" startLine="27" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior$Pattern_cdqxf8_a0a0a0a1" />
+  <unitInfo fileName="MapSrcListMacro_Behavior.java" startLine="27" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior$Pattern_wn5chh_a0a0a0a1" />
+  <unitInfo fileName="CopySrcListMacro_Behavior.java" startLine="28" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior$Pattern_26ny8p_a0a0a1a1" />
+  <unitInfo fileName="TemplateCallMacro_Behavior.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_Behavior" />
+  <unitInfo fileName="SwitchMacro_Behavior.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SwitchMacro_Behavior" />
+  <unitInfo fileName="CopySrcNodeMacro_Behavior.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_Behavior" />
+  <unitInfo fileName="IncludeMacro_Behavior.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IncludeMacro_Behavior" />
   <unitInfo fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior" />
   <unitInfo fileName="MappingConfiguration_Behavior.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior" />
-  <unitInfo fileName="LoopMacro_Behavior.java" startLine="27" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior$Pattern_cdqxf8_a0a0a0a1" />
-  <unitInfo fileName="MapSrcListMacro_Behavior.java" startLine="27" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior$Pattern_wn5chh_a0a0a0a1" />
-  <unitInfo fileName="CopySrcListMacro_Behavior.java" startLine="28" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior$Pattern_26ny8p_a0a0a1a1" />
-  <unitInfo fileName="TemplateCallMacro_Behavior.java" startLine="11" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_Behavior" />
-  <unitInfo fileName="SwitchMacro_Behavior.java" startLine="11" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SwitchMacro_Behavior" />
-  <unitInfo fileName="CopySrcNodeMacro_Behavior.java" startLine="11" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_Behavior" />
-  <unitInfo fileName="IncludeMacro_Behavior.java" startLine="11" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IncludeMacro_Behavior" />
+  <unitInfo fileName="LoopMacro_Behavior.java" startLine="11" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior" />
+  <unitInfo fileName="MapSrcListMacro_Behavior.java" startLine="11" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior" />
+  <unitInfo fileName="CopySrcListMacro_Behavior.java" startLine="11" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior" />
   <unitInfo fileName="NodeMacro_Behavior.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.NodeMacro_Behavior" />
-  <unitInfo fileName="LoopMacro_Behavior.java" startLine="11" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LoopMacro_Behavior" />
-  <unitInfo fileName="MapSrcListMacro_Behavior.java" startLine="11" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior" />
-  <unitInfo fileName="CopySrcListMacro_Behavior.java" startLine="11" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior" />
   <root nodeId="1213877219536">
     <nodeInfo nodeId="1213877219539" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877219547" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="21" startPosition="136" endLine="22" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

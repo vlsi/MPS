@@ -19,7 +19,7 @@ public class InlineEventHandler extends BaseConcept implements IComponentPart {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EVENT = "event";
   public static final String HANDLER = "handler";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InlineEventHandler(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class InlineEventHandler extends BaseConcept implements IComponentPart {
     super.setChild(InlineEventHandler.HANDLER, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(InlineEventHandler.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(InlineEventHandler._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, InlineEventHandler.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InlineEventHandler._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, InlineEventHandler.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InlineEventHandler._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(InlineEventHandler.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(InlineEventHandler._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InlineEventHandler.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InlineEventHandler._$ATTRIBUTE, node);
   }
 
   public static InlineEventHandler newInstance(SModel sm, boolean init) {

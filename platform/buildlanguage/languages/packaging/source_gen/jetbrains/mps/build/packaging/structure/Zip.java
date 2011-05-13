@@ -22,7 +22,7 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DELETE = "delete";
   public static final String ENTRY = "entry";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Zip(SNode node) {
     super(node);
@@ -120,24 +120,24 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
     this.insertChild(prev, Zip.ENTRY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Zip.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Zip._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Zip.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Zip._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Zip.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Zip._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Zip.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Zip._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Zip.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Zip._$ATTRIBUTE, node);
   }
 
   public static Zip newInstance(SModel sm, boolean init) {

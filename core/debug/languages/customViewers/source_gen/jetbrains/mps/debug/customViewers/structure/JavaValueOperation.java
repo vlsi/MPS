@@ -17,7 +17,7 @@ public class JavaValueOperation extends BaseConcept implements IOperation {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public JavaValueOperation(SNode node) {
     super(node);
@@ -47,24 +47,24 @@ public class JavaValueOperation extends BaseConcept implements IOperation {
     this.setProperty(JavaValueOperation.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(JavaValueOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(JavaValueOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, JavaValueOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, JavaValueOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, JavaValueOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, JavaValueOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(JavaValueOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(JavaValueOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, JavaValueOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, JavaValueOperation._$ATTRIBUTE, node);
   }
 
   public static JavaValueOperation newInstance(SModel sm, boolean init) {

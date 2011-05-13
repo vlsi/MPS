@@ -27,7 +27,7 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept, 
   public static final String DEFAULT = "default";
   public static final String ATTRIBUTE_TYPE = "attributeType";
   public static final String ENUM = "enum";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AttributeDeclaration(SNode node) {
     super(node);
@@ -105,24 +105,24 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept, 
     super.setChild(AttributeDeclaration.ENUM, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AttributeDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AttributeDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AttributeDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AttributeDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AttributeDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AttributeDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AttributeDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeDeclaration._$ATTRIBUTE, node);
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {

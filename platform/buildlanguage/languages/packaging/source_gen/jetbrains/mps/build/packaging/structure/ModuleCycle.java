@@ -20,7 +20,7 @@ public class ModuleCycle extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MODULE_REFERENCE = "moduleReference";
   public static final String DEPENDENCY = "dependency";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ModuleCycle(SNode node) {
     super(node);
@@ -98,24 +98,24 @@ public class ModuleCycle extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ModuleCycle.DEPENDENCY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ModuleCycle.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ModuleCycle._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ModuleCycle.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ModuleCycle._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ModuleCycle.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ModuleCycle._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ModuleCycle.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ModuleCycle._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ModuleCycle.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ModuleCycle._$ATTRIBUTE, node);
   }
 
   public static ModuleCycle newInstance(SModel sm, boolean init) {

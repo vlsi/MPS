@@ -21,7 +21,7 @@ public class AuxObjectTemplate extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RUNTIME_TYPE = "runtimeType";
   public static final String FACTORY = "factory";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AuxObjectTemplate(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class AuxObjectTemplate extends BaseConcept implements INamedConcept {
     super.setChild(AuxObjectTemplate.FACTORY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AuxObjectTemplate.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AuxObjectTemplate._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AuxObjectTemplate.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AuxObjectTemplate._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AuxObjectTemplate.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AuxObjectTemplate._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AuxObjectTemplate.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AuxObjectTemplate._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AuxObjectTemplate.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AuxObjectTemplate._$ATTRIBUTE, node);
   }
 
   public static AuxObjectTemplate newInstance(SModel sm, boolean init) {

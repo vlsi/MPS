@@ -16,7 +16,7 @@ public class Space extends BaseConcept implements IStringExpression {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Space(SNode node) {
     super(node);
@@ -46,24 +46,24 @@ public class Space extends BaseConcept implements IStringExpression {
     this.setProperty(Space.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Space.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Space._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Space.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Space._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Space.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Space._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Space.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Space._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Space.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Space._$ATTRIBUTE, node);
   }
 
   public static Space newInstance(SModel sm, boolean init) {

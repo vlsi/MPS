@@ -26,7 +26,7 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
   public static final String CONFIGURATION = "configuration";
   public static final String DEBUGGER = "debugger";
   public static final String EXECUTE = "execute";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public RunConfigurationExecutor(SNode node) {
     super(node);
@@ -104,24 +104,24 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
     super.setChild(RunConfigurationExecutor.EXECUTE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(RunConfigurationExecutor.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(RunConfigurationExecutor._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, RunConfigurationExecutor.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, RunConfigurationExecutor._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, RunConfigurationExecutor.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, RunConfigurationExecutor._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(RunConfigurationExecutor.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(RunConfigurationExecutor._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, RunConfigurationExecutor.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RunConfigurationExecutor._$ATTRIBUTE, node);
   }
 
   public static RunConfigurationExecutor newInstance(SModel sm, boolean init) {

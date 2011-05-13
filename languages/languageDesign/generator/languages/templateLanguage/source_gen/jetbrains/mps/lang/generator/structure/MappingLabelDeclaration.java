@@ -21,7 +21,7 @@ public class MappingLabelDeclaration extends BaseConcept implements INamedConcep
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SOURCE_CONCEPT = "sourceConcept";
   public static final String TARGET_CONCEPT = "targetConcept";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MappingLabelDeclaration(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class MappingLabelDeclaration extends BaseConcept implements INamedConcep
     super.setReferent(MappingLabelDeclaration.TARGET_CONCEPT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(MappingLabelDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(MappingLabelDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, MappingLabelDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MappingLabelDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, MappingLabelDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MappingLabelDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(MappingLabelDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(MappingLabelDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, MappingLabelDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MappingLabelDeclaration._$ATTRIBUTE, node);
   }
 
   public static MappingLabelDeclaration newInstance(SModel sm, boolean init) {

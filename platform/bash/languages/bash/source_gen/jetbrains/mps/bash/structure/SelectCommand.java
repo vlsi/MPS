@@ -18,7 +18,7 @@ public class SelectCommand extends AbstractCommand implements ICompoundCommand {
   public static final String VARIABLE = "variable";
   public static final String WORDS = "words";
   public static final String COMMANDS = "commands";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SelectCommand(SNode node) {
     super(node);
@@ -72,24 +72,24 @@ public class SelectCommand extends AbstractCommand implements ICompoundCommand {
     super.setChild(SelectCommand.COMMANDS, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(SelectCommand.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(SelectCommand._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, SelectCommand.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SelectCommand._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, SelectCommand.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SelectCommand._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(SelectCommand.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(SelectCommand._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SelectCommand.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SelectCommand._$ATTRIBUTE, node);
   }
 
   public static SelectCommand newInstance(SModel sm, boolean init) {

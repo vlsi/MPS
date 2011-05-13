@@ -21,7 +21,7 @@ public class ExtensionMethodDeclaration extends BaseMethodDeclaration implements
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXTENDED_TYPE = "extendedType";
   public static final String VISIBILITY = "visibility";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ExtensionMethodDeclaration(SNode node) {
     super(node);
@@ -67,24 +67,24 @@ public class ExtensionMethodDeclaration extends BaseMethodDeclaration implements
     super.setChild(ExtensionMethodDeclaration.VISIBILITY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ExtensionMethodDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ExtensionMethodDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ExtensionMethodDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ExtensionMethodDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ExtensionMethodDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ExtensionMethodDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ExtensionMethodDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ExtensionMethodDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ExtensionMethodDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExtensionMethodDeclaration._$ATTRIBUTE, node);
   }
 
   public static ExtensionMethodDeclaration newInstance(SModel sm, boolean init) {

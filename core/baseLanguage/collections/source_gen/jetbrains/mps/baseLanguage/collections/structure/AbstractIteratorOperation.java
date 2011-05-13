@@ -17,7 +17,7 @@ public class AbstractIteratorOperation extends BaseConcept implements IOperation
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AbstractIteratorOperation(SNode node) {
     super(node);
@@ -47,24 +47,24 @@ public class AbstractIteratorOperation extends BaseConcept implements IOperation
     this.setProperty(AbstractIteratorOperation.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AbstractIteratorOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AbstractIteratorOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AbstractIteratorOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AbstractIteratorOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AbstractIteratorOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AbstractIteratorOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AbstractIteratorOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AbstractIteratorOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AbstractIteratorOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractIteratorOperation._$ATTRIBUTE, node);
   }
 
   public static AbstractIteratorOperation newInstance(SModel sm, boolean init) {

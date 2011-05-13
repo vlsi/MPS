@@ -25,7 +25,7 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
   public static final String PATH_TO_BUILD_TOOLS_ZIP = "pathToBuildToolsZip";
   public static final String LICENCE_PATH = "licencePath";
   public static final String ENTRY = "entry";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MPSBuild(SNode node) {
     super(node);
@@ -115,24 +115,24 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
     this.insertChild(prev, MPSBuild.ENTRY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(MPSBuild.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(MPSBuild._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, MPSBuild.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MPSBuild._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, MPSBuild.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MPSBuild._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(MPSBuild.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(MPSBuild._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, MPSBuild.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MPSBuild._$ATTRIBUTE, node);
   }
 
   public static MPSBuild newInstance(SModel sm, boolean init) {

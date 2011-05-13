@@ -40,7 +40,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   public static final String STARTUP_DIRECTORY = "startupDirectory";
   public static final String VM_OPTIONS_DIR = "vmOptionsDir";
   public static final String SYSTEM_SPECIFIC_CONFIG = "systemSpecificConfig";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String MACRO = "macro";
 
   public DistribConfiguration(SNode node) {
@@ -219,24 +219,24 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
     this.insertChild(prev, DistribConfiguration.SYSTEM_SPECIFIC_CONFIG, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(DistribConfiguration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(DistribConfiguration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, DistribConfiguration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DistribConfiguration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, DistribConfiguration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DistribConfiguration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(DistribConfiguration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(DistribConfiguration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DistribConfiguration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DistribConfiguration._$ATTRIBUTE, node);
   }
 
   public int getMacrosCount() {

@@ -20,7 +20,7 @@ public class DateTimePropertyCardinality extends BaseConcept implements INamedCo
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NUMBER_OF_SYMBOLS = "numberOfSymbols";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DateTimePropertyCardinality(SNode node) {
     super(node);
@@ -74,24 +74,24 @@ public class DateTimePropertyCardinality extends BaseConcept implements INamedCo
     this.setIntegerProperty(DateTimePropertyCardinality.NUMBER_OF_SYMBOLS, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(DateTimePropertyCardinality.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(DateTimePropertyCardinality._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, DateTimePropertyCardinality.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DateTimePropertyCardinality._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, DateTimePropertyCardinality.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DateTimePropertyCardinality._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(DateTimePropertyCardinality.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(DateTimePropertyCardinality._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DateTimePropertyCardinality.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DateTimePropertyCardinality._$ATTRIBUTE, node);
   }
 
   public static DateTimePropertyCardinality newInstance(SModel sm, boolean init) {

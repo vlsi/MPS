@@ -26,7 +26,7 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   public static final String FORCE_MULTI_LINE = "forceMultiLine";
   public static final String BODY = "body";
   public static final String PARAMETER = "parameter";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ClosureLiteral(SNode node) {
     super(node);
@@ -92,24 +92,24 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
     this.insertChild(prev, ClosureLiteral.PARAMETER, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ClosureLiteral.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ClosureLiteral._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ClosureLiteral.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ClosureLiteral._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ClosureLiteral.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ClosureLiteral._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ClosureLiteral.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ClosureLiteral._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ClosureLiteral.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ClosureLiteral._$ATTRIBUTE, node);
   }
 
   public static ClosureLiteral newInstance(SModel sm, boolean init) {

@@ -21,7 +21,7 @@ public class BeanBuilder extends Builder implements IMethodCall {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BeanBuilder(SNode node) {
     super(node);
@@ -87,24 +87,24 @@ public class BeanBuilder extends Builder implements IMethodCall {
     this.insertChild(prev, BeanBuilder.ACTUAL_ARGUMENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(BeanBuilder.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(BeanBuilder._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BeanBuilder.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BeanBuilder._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BeanBuilder.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BeanBuilder._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(BeanBuilder.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(BeanBuilder._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BeanBuilder.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BeanBuilder._$ATTRIBUTE, node);
   }
 
   public static BeanBuilder newInstance(SModel sm, boolean init) {

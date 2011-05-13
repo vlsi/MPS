@@ -22,7 +22,7 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   public static final String INIT_BLOCK = "initBlock";
   public static final String DISPOSE_BLOCK = "disposeBlock";
   public static final String FIELD_DECLARATION = "fieldDeclaration";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ApplicationPluginDeclaration(SNode node) {
     super(node);
@@ -96,24 +96,24 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
     this.insertChild(prev, ApplicationPluginDeclaration.FIELD_DECLARATION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ApplicationPluginDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ApplicationPluginDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ApplicationPluginDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ApplicationPluginDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ApplicationPluginDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ApplicationPluginDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ApplicationPluginDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ApplicationPluginDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ApplicationPluginDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ApplicationPluginDeclaration._$ATTRIBUTE, node);
   }
 
   public static ApplicationPluginDeclaration newInstance(SModel sm, boolean init) {

@@ -19,7 +19,7 @@ public class OptionWithParam extends ExternalOptionDeclaration implements ISymbo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
   public static final String DESCRIPTION = "description";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public OptionWithParam(SNode node) {
     super(node);
@@ -73,24 +73,24 @@ public class OptionWithParam extends ExternalOptionDeclaration implements ISymbo
     this.setProperty(OptionWithParam.DESCRIPTION, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(OptionWithParam.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(OptionWithParam._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, OptionWithParam.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, OptionWithParam._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, OptionWithParam.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, OptionWithParam._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(OptionWithParam.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(OptionWithParam._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, OptionWithParam.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, OptionWithParam._$ATTRIBUTE, node);
   }
 
   public static OptionWithParam newInstance(SModel sm, boolean init) {

@@ -17,7 +17,7 @@ public class IORedirection extends Redirection implements IToWordRedirection {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String N = "n";
   public static final String WORD = "word";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public IORedirection(SNode node) {
     super(node);
@@ -63,24 +63,24 @@ public class IORedirection extends Redirection implements IToWordRedirection {
     super.setChild(IORedirection.WORD, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(IORedirection.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(IORedirection._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, IORedirection.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, IORedirection._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, IORedirection.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, IORedirection._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(IORedirection.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(IORedirection._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, IORedirection.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, IORedirection._$ATTRIBUTE, node);
   }
 
   public static IORedirection newInstance(SModel sm, boolean init) {

@@ -27,7 +27,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public static final String CONSTRUCTOR = "constructor";
   public static final String METHOD = "method";
   public static final String STATIC_METHOD = "staticMethod";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptBehavior(SNode node) {
     super(node);
@@ -121,24 +121,24 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
     this.insertChild(prev, ConceptBehavior.STATIC_METHOD, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ConceptBehavior.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptBehavior._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ConceptBehavior.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptBehavior._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ConceptBehavior.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptBehavior._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ConceptBehavior.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptBehavior._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConceptBehavior.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptBehavior._$ATTRIBUTE, node);
   }
 
   public static ConceptBehavior newInstance(SModel sm, boolean init) {

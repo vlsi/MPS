@@ -23,7 +23,7 @@ public class InternalPartialFieldReference extends Expression implements IOperat
   public static final String FIELD_TYPE = "fieldType";
   public static final String INSTANCE_TYPE = "instanceType";
   public static final String INSTANCE = "instance";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InternalPartialFieldReference(SNode node) {
     super(node);
@@ -85,24 +85,24 @@ public class InternalPartialFieldReference extends Expression implements IOperat
     super.setChild(InternalPartialFieldReference.INSTANCE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(InternalPartialFieldReference.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(InternalPartialFieldReference._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, InternalPartialFieldReference.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InternalPartialFieldReference._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, InternalPartialFieldReference.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InternalPartialFieldReference._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(InternalPartialFieldReference.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(InternalPartialFieldReference._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InternalPartialFieldReference.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InternalPartialFieldReference._$ATTRIBUTE, node);
   }
 
   public static InternalPartialFieldReference newInstance(SModel sm, boolean init) {

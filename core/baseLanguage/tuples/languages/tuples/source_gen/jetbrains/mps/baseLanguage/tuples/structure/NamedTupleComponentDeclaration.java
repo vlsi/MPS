@@ -27,7 +27,7 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String FINAL = "final";
   public static final String TYPE = "type";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ANNOTATION = "annotation";
 
   public NamedTupleComponentDeclaration(SNode node) {
@@ -90,24 +90,24 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
     super.setChild(NamedTupleComponentDeclaration.TYPE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(NamedTupleComponentDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(NamedTupleComponentDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, NamedTupleComponentDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, NamedTupleComponentDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, NamedTupleComponentDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, NamedTupleComponentDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(NamedTupleComponentDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(NamedTupleComponentDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, NamedTupleComponentDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NamedTupleComponentDeclaration._$ATTRIBUTE, node);
   }
 
   public int getAnnotationsCount() {

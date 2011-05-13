@@ -23,7 +23,7 @@ public class ReplaceRegexpOperation extends BaseConcept implements IOperation {
   public static final String GLOBAL_REPLACE = "globalReplace";
   public static final String SEARCH = "search";
   public static final String REPLACEMENT = "replacement";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ReplaceRegexpOperation(SNode node) {
     super(node);
@@ -113,24 +113,24 @@ public class ReplaceRegexpOperation extends BaseConcept implements IOperation {
     this.insertChild(prev, ReplaceRegexpOperation.REPLACEMENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ReplaceRegexpOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ReplaceRegexpOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ReplaceRegexpOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ReplaceRegexpOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ReplaceRegexpOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ReplaceRegexpOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ReplaceRegexpOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ReplaceRegexpOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ReplaceRegexpOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ReplaceRegexpOperation._$ATTRIBUTE, node);
   }
 
   public static ReplaceRegexpOperation newInstance(SModel sm, boolean init) {

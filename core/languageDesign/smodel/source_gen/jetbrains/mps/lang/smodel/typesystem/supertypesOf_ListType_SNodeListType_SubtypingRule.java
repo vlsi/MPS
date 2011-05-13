@@ -99,28 +99,6 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
                 return false;
               }
               patternVar_elem = nodeToMatch_iav8o_a0a0.getReferent("concept");
-              {
-                String childRole_iav8o__0 = "smodelAttribute";
-                if (nodeToMatch_iav8o_a0a0.getChildCount(childRole_iav8o__0) != 1) {
-                  return false;
-                }
-                {
-                  SNode childVar_iav8o_a0a0a = nodeToMatch_iav8o_a0a0.getChildren(childRole_iav8o__0).get(0);
-                  {
-                    SNode nodeToMatch_iav8o_a0a0a;
-                    nodeToMatch_iav8o_a0a0a = childVar_iav8o_a0a0a;
-                    if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_iav8o_a0a0a.getConceptFqName()))) {
-                      return false;
-                    }
-                    if (!("concept".equals(nodeToMatch_iav8o_a0a0a.getProperty("linkRole")))) {
-                      return false;
-                    }
-                    if (!("elem".equals(nodeToMatch_iav8o_a0a0a.getProperty("varName")))) {
-                      return false;
-                    }
-                  }
-                }
-              }
             }
           }
         }

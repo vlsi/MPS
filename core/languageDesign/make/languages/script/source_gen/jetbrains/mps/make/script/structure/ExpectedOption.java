@@ -21,7 +21,7 @@ public class ExpectedOption extends BaseConcept implements IExpected, INamedConc
   public static final String NAME = "name";
   public static final String DEFAULT_OPTION = "defaultOption";
   public static final String OPTION = "option";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ExpectedOption(SNode node) {
     super(node);
@@ -87,24 +87,24 @@ public class ExpectedOption extends BaseConcept implements IExpected, INamedConc
     this.insertChild(prev, ExpectedOption.OPTION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ExpectedOption.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ExpectedOption._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ExpectedOption.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ExpectedOption._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ExpectedOption.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ExpectedOption._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ExpectedOption.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ExpectedOption._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ExpectedOption.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExpectedOption._$ATTRIBUTE, node);
   }
 
   public static ExpectedOption newInstance(SModel sm, boolean init) {

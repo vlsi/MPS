@@ -24,7 +24,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   public static final String TARGET_DECLARATION = "targetDeclaration";
   public static final String DELETE = "delete";
   public static final String ENTRY = "entry";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Antcall(SNode node) {
     super(node);
@@ -122,24 +122,24 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
     this.insertChild(prev, Antcall.ENTRY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Antcall.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Antcall._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Antcall.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Antcall._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Antcall.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Antcall._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Antcall.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Antcall._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Antcall.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Antcall._$ATTRIBUTE, node);
   }
 
   public static Antcall newInstance(SModel sm, boolean init) {

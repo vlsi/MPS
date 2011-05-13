@@ -18,7 +18,7 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String HANDLER = "handler";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionHandler(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
     super.setChild(ActionHandler.HANDLER, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ActionHandler.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionHandler._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ActionHandler.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionHandler._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ActionHandler.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionHandler._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ActionHandler.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionHandler._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ActionHandler.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionHandler._$ATTRIBUTE, node);
   }
 
   public static ActionHandler newInstance(SModel sm, boolean init) {

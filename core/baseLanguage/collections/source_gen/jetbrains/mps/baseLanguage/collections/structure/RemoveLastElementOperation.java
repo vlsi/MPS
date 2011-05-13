@@ -15,7 +15,7 @@ public class RemoveLastElementOperation extends NoArgumentsSequenceOperation imp
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public RemoveLastElementOperation(SNode node) {
     super(node);
@@ -45,24 +45,24 @@ public class RemoveLastElementOperation extends NoArgumentsSequenceOperation imp
     this.setProperty(RemoveLastElementOperation.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(RemoveLastElementOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(RemoveLastElementOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, RemoveLastElementOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, RemoveLastElementOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, RemoveLastElementOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, RemoveLastElementOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(RemoveLastElementOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(RemoveLastElementOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, RemoveLastElementOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RemoveLastElementOperation._$ATTRIBUTE, node);
   }
 
   public static RemoveLastElementOperation newInstance(SModel sm, boolean init) {

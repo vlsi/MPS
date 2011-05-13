@@ -20,7 +20,7 @@ public class TaskCall extends AbstractCall implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DECLARATION = "declaration";
   public static final String ATRIBUTES = "atributes";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TaskCall(SNode node) {
     super(node);
@@ -94,24 +94,24 @@ public class TaskCall extends AbstractCall implements INamedConcept {
     this.insertChild(prev, TaskCall.ATRIBUTES, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(TaskCall.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(TaskCall._$ATTRIBUTE);
   }
 
-  public Iterator<jetbrains.mps.lang.core.structure.Attribute> smodelAttributes() {
-    return this.children(jetbrains.mps.lang.core.structure.Attribute.class, TaskCall.SMODEL_ATTRIBUTE);
+  public Iterator<jetbrains.mps.lang.core.structure.Attribute> _$attributes() {
+    return this.children(jetbrains.mps.lang.core.structure.Attribute.class, TaskCall._$ATTRIBUTE);
   }
 
-  public List<jetbrains.mps.lang.core.structure.Attribute> getSmodelAttributes() {
-    return this.getChildren(jetbrains.mps.lang.core.structure.Attribute.class, TaskCall.SMODEL_ATTRIBUTE);
+  public List<jetbrains.mps.lang.core.structure.Attribute> get_$attributes() {
+    return this.getChildren(jetbrains.mps.lang.core.structure.Attribute.class, TaskCall._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(jetbrains.mps.lang.core.structure.Attribute node) {
-    this.addChild(TaskCall.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(jetbrains.mps.lang.core.structure.Attribute node) {
+    this.addChild(TaskCall._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(jetbrains.mps.lang.core.structure.Attribute prev, jetbrains.mps.lang.core.structure.Attribute node) {
-    this.insertChild(prev, TaskCall.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(jetbrains.mps.lang.core.structure.Attribute prev, jetbrains.mps.lang.core.structure.Attribute node) {
+    this.insertChild(prev, TaskCall._$ATTRIBUTE, node);
   }
 
   public static TaskCall newInstance(SModel sm, boolean init) {

@@ -19,7 +19,7 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ANNOTATION_LINK = "annotationLink";
   public static final String LINK_QUALIFIER = "linkQualifier";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LinkAttributeAccessQualifier(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
     super.setChild(LinkAttributeAccessQualifier.LINK_QUALIFIER, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(LinkAttributeAccessQualifier.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(LinkAttributeAccessQualifier._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, LinkAttributeAccessQualifier.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LinkAttributeAccessQualifier._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, LinkAttributeAccessQualifier.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LinkAttributeAccessQualifier._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(LinkAttributeAccessQualifier.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(LinkAttributeAccessQualifier._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, LinkAttributeAccessQualifier.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LinkAttributeAccessQualifier._$ATTRIBUTE, node);
   }
 
   public static LinkAttributeAccessQualifier newInstance(SModel sm, boolean init) {

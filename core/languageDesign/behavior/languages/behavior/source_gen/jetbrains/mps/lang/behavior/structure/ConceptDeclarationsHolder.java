@@ -19,7 +19,7 @@ public class ConceptDeclarationsHolder extends BaseConcept implements INamedConc
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONCEPT = "concept";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptDeclarationsHolder(SNode node) {
     super(node);
@@ -77,24 +77,24 @@ public class ConceptDeclarationsHolder extends BaseConcept implements INamedConc
     this.insertChild(prev, ConceptDeclarationsHolder.CONCEPT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ConceptDeclarationsHolder.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptDeclarationsHolder._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ConceptDeclarationsHolder.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptDeclarationsHolder._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ConceptDeclarationsHolder.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptDeclarationsHolder._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ConceptDeclarationsHolder.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptDeclarationsHolder._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConceptDeclarationsHolder.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptDeclarationsHolder._$ATTRIBUTE, node);
   }
 
   public static ConceptDeclarationsHolder newInstance(SModel sm, boolean init) {

@@ -17,7 +17,7 @@ public class InspectorBlock extends BaseConcept implements IBaseTestBlock {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BLOCK = "block";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InspectorBlock(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class InspectorBlock extends BaseConcept implements IBaseTestBlock {
     super.setChild(InspectorBlock.BLOCK, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(InspectorBlock.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(InspectorBlock._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, InspectorBlock.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InspectorBlock._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, InspectorBlock.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InspectorBlock._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(InspectorBlock.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(InspectorBlock._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InspectorBlock.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InspectorBlock._$ATTRIBUTE, node);
   }
 
   public static InspectorBlock newInstance(SModel sm, boolean init) {

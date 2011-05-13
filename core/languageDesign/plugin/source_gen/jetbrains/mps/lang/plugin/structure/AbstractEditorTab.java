@@ -28,7 +28,7 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   public static final String INIT_BLOCK = "initBlock";
   public static final String ASK_BLOCK = "askBlock";
   public static final String CREATE_BLOCK = "createBlock";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AbstractEditorTab(SNode node) {
     super(node);
@@ -138,24 +138,24 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
     super.setChild(AbstractEditorTab.CREATE_BLOCK, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AbstractEditorTab.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AbstractEditorTab._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AbstractEditorTab.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AbstractEditorTab._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AbstractEditorTab.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AbstractEditorTab._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AbstractEditorTab.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AbstractEditorTab._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AbstractEditorTab.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractEditorTab._$ATTRIBUTE, node);
   }
 
   public static AbstractEditorTab newInstance(SModel sm, boolean init) {

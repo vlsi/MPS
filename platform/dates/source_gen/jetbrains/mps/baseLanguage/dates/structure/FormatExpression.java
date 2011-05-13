@@ -23,7 +23,7 @@ public class FormatExpression extends Expression implements TypeDerivable {
   public static final String LOCALE = "locale";
   public static final String DATE_EXPRESSION = "dateExpression";
   public static final String ZONE = "zone";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FormatExpression(SNode node) {
     super(node);
@@ -85,24 +85,24 @@ public class FormatExpression extends Expression implements TypeDerivable {
     super.setChild(FormatExpression.ZONE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(FormatExpression.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(FormatExpression._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, FormatExpression.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FormatExpression._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, FormatExpression.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FormatExpression._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(FormatExpression.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(FormatExpression._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FormatExpression.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FormatExpression._$ATTRIBUTE, node);
   }
 
   public static FormatExpression newInstance(SModel sm, boolean init) {

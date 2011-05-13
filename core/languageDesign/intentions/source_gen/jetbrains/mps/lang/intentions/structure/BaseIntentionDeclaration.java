@@ -28,7 +28,7 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
   public static final String CHILD_FILTER_FUNCTION = "childFilterFunction";
   public static final String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
   public static final String EXECUTE_FUNCTION = "executeFunction";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BaseIntentionDeclaration(SNode node) {
     super(node);
@@ -122,24 +122,24 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
     super.setChild(BaseIntentionDeclaration.EXECUTE_FUNCTION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(BaseIntentionDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(BaseIntentionDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BaseIntentionDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BaseIntentionDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BaseIntentionDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BaseIntentionDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(BaseIntentionDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(BaseIntentionDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BaseIntentionDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseIntentionDeclaration._$ATTRIBUTE, node);
   }
 
   public static BaseIntentionDeclaration newInstance(SModel sm, boolean init) {

@@ -21,7 +21,7 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
   public static final String CLASSES = "classes";
   public static final String SOURCES = "sources";
   public static final String CLASSPATH = "classpath";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ModuleDescription(SNode node) {
     super(node);
@@ -107,24 +107,24 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ModuleDescription.CLASSPATH, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ModuleDescription.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ModuleDescription._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ModuleDescription.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ModuleDescription._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ModuleDescription.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ModuleDescription._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ModuleDescription.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ModuleDescription._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ModuleDescription.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ModuleDescription._$ATTRIBUTE, node);
   }
 
   public static ModuleDescription newInstance(SModel sm, boolean init) {

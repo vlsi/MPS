@@ -18,7 +18,7 @@ public class BinaryArithmeticExpression extends ArithmeticExpression implements 
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LEFT_EXPRESSION = "leftExpression";
   public static final String RIGHT_EXPRESSION = "rightExpression";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BinaryArithmeticExpression(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class BinaryArithmeticExpression extends ArithmeticExpression implements 
     super.setChild(BinaryArithmeticExpression.RIGHT_EXPRESSION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(BinaryArithmeticExpression.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(BinaryArithmeticExpression._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BinaryArithmeticExpression.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BinaryArithmeticExpression._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BinaryArithmeticExpression.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BinaryArithmeticExpression._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(BinaryArithmeticExpression.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(BinaryArithmeticExpression._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BinaryArithmeticExpression.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BinaryArithmeticExpression._$ATTRIBUTE, node);
   }
 
   public static BinaryArithmeticExpression newInstance(SModel sm, boolean init) {

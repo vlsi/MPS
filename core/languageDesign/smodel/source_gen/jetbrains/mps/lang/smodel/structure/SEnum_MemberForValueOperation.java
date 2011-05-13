@@ -18,7 +18,7 @@ public class SEnum_MemberForValueOperation extends BaseConcept implements SEnumO
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VALUE_EXPRESSION = "valueExpression";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SEnum_MemberForValueOperation(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class SEnum_MemberForValueOperation extends BaseConcept implements SEnumO
     super.setChild(SEnum_MemberForValueOperation.VALUE_EXPRESSION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(SEnum_MemberForValueOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(SEnum_MemberForValueOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, SEnum_MemberForValueOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SEnum_MemberForValueOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, SEnum_MemberForValueOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SEnum_MemberForValueOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(SEnum_MemberForValueOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(SEnum_MemberForValueOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SEnum_MemberForValueOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SEnum_MemberForValueOperation._$ATTRIBUTE, node);
   }
 
   public static SEnum_MemberForValueOperation newInstance(SModel sm, boolean init) {

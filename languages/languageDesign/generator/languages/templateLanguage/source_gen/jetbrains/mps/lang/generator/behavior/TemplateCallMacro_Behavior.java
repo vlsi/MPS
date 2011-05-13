@@ -38,28 +38,6 @@ public class TemplateCallMacro_Behavior {
           return false;
         }
         patternVar_concept = nodeToMatch_4ckpni_a0a0a0.getReferent("concept");
-        {
-          String childRole_4ckpni_ = "smodelAttribute";
-          if (nodeToMatch_4ckpni_a0a0a0.getChildCount(childRole_4ckpni_) != 1) {
-            return false;
-          }
-          {
-            SNode childVar_4ckpni_a0a0a0a = nodeToMatch_4ckpni_a0a0a0.getChildren(childRole_4ckpni_).get(0);
-            {
-              SNode nodeToMatch_4ckpni_a0a0a0a;
-              nodeToMatch_4ckpni_a0a0a0a = childVar_4ckpni_a0a0a0a;
-              if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_4ckpni_a0a0a0a.getConceptFqName()))) {
-                return false;
-              }
-              if (!("concept".equals(nodeToMatch_4ckpni_a0a0a0a.getProperty("linkRole")))) {
-                return false;
-              }
-              if (!("concept".equals(nodeToMatch_4ckpni_a0a0a0a.getProperty("varName")))) {
-                return false;
-              }
-            }
-          }
-        }
       }
       return true;
     }

@@ -18,7 +18,7 @@ public class Component extends ConfigurationXmlNode implements IConfigurationEle
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IFACE_CLASS = "ifaceClass";
   public static final String IMPL_CLASS = "implClass";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Component(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class Component extends ConfigurationXmlNode implements IConfigurationEle
     super.setReferent(Component.IMPL_CLASS, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Component.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Component._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Component.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Component._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Component.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Component._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Component.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Component._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Component.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Component._$ATTRIBUTE, node);
   }
 
   public static Component newInstance(SModel sm, boolean init) {

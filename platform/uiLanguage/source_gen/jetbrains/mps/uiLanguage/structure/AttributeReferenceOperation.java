@@ -19,7 +19,7 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MEMBER = "member";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AttributeReferenceOperation(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
     this.setMember(node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AttributeReferenceOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AttributeReferenceOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AttributeReferenceOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AttributeReferenceOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AttributeReferenceOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AttributeReferenceOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AttributeReferenceOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AttributeReferenceOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AttributeReferenceOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeReferenceOperation._$ATTRIBUTE, node);
   }
 
   public static AttributeReferenceOperation newInstance(SModel sm, boolean init) {

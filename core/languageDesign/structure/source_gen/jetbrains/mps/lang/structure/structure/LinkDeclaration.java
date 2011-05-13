@@ -22,7 +22,7 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   public static final String SOURCE_CARDINALITY = "sourceCardinality";
   public static final String SPECIALIZED_LINK = "specializedLink";
   public static final String TARGET = "target";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LinkDeclaration(SNode node) {
     super(node);
@@ -102,24 +102,24 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
     super.setReferent(LinkDeclaration.TARGET, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(LinkDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(LinkDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, LinkDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LinkDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, LinkDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LinkDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(LinkDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(LinkDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, LinkDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LinkDeclaration._$ATTRIBUTE, node);
   }
 
   public static LinkDeclaration newInstance(SModel sm, boolean init) {

@@ -25,7 +25,7 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   public static final String CONCEPT_LINK = "conceptLink";
   public static final String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
   public static final String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AbstractConceptDeclaration(SNode node) {
     super(node);
@@ -191,24 +191,24 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
     this.insertChild(prev, AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AbstractConceptDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AbstractConceptDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AbstractConceptDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AbstractConceptDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AbstractConceptDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AbstractConceptDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AbstractConceptDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AbstractConceptDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AbstractConceptDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractConceptDeclaration._$ATTRIBUTE, node);
   }
 
   public static AbstractConceptDeclaration newInstance(SModel sm, boolean init) {

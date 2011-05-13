@@ -15,7 +15,7 @@ public class GFGetterParamFun extends GFGetterFun implements IParamFeatureFun, I
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public GFGetterParamFun(SNode node) {
     super(node);
@@ -45,24 +45,24 @@ public class GFGetterParamFun extends GFGetterFun implements IParamFeatureFun, I
     this.setProperty(GFGetterParamFun.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(GFGetterParamFun.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(GFGetterParamFun._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, GFGetterParamFun.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, GFGetterParamFun._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, GFGetterParamFun.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, GFGetterParamFun._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(GFGetterParamFun.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(GFGetterParamFun._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GFGetterParamFun.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GFGetterParamFun._$ATTRIBUTE, node);
   }
 
   public static GFGetterParamFun newInstance(SModel sm, boolean init) {

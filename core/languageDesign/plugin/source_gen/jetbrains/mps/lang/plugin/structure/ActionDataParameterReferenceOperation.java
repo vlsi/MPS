@@ -19,7 +19,7 @@ public class ActionDataParameterReferenceOperation extends BaseConcept implement
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MEMBER = "member";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionDataParameterReferenceOperation(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class ActionDataParameterReferenceOperation extends BaseConcept implement
     this.setMember(node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ActionDataParameterReferenceOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionDataParameterReferenceOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ActionDataParameterReferenceOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionDataParameterReferenceOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ActionDataParameterReferenceOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionDataParameterReferenceOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ActionDataParameterReferenceOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionDataParameterReferenceOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ActionDataParameterReferenceOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionDataParameterReferenceOperation._$ATTRIBUTE, node);
   }
 
   public static ActionDataParameterReferenceOperation newInstance(SModel sm, boolean init) {

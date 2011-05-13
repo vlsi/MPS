@@ -18,7 +18,7 @@ public class ConcretePropertyPart extends PropertyPart implements INamedConcept 
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY_TYPE = "propertyType";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConcretePropertyPart(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class ConcretePropertyPart extends PropertyPart implements INamedConcept 
     super.setProperty(ConcretePropertyPart.PROPERTY_TYPE, value.getValueAsString());
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ConcretePropertyPart.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ConcretePropertyPart._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ConcretePropertyPart.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConcretePropertyPart._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ConcretePropertyPart.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConcretePropertyPart._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ConcretePropertyPart.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConcretePropertyPart._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConcretePropertyPart.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConcretePropertyPart._$ATTRIBUTE, node);
   }
 
   public static ConcretePropertyPart newInstance(SModel sm, boolean init) {

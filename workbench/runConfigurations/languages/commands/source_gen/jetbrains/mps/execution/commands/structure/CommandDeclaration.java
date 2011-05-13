@@ -27,7 +27,7 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
   public static final String EXECUTE = "execute";
   public static final String METHOD = "method";
   public static final String PARAMETER_DECLARATION = "parameterDeclaration";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CommandDeclaration(SNode node) {
     super(node);
@@ -121,24 +121,24 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
     this.insertChild(prev, CommandDeclaration.PARAMETER_DECLARATION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(CommandDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(CommandDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, CommandDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CommandDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, CommandDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CommandDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(CommandDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(CommandDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CommandDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CommandDeclaration._$ATTRIBUTE, node);
   }
 
   public static CommandDeclaration newInstance(SModel sm, boolean init) {

@@ -22,7 +22,7 @@ public class FormatDateTimeExpression extends Expression implements TypeDerivabl
   public static final String DATE_FORMAT = "dateFormat";
   public static final String LOCALE = "locale";
   public static final String DATETIME = "datetime";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FormatDateTimeExpression(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class FormatDateTimeExpression extends Expression implements TypeDerivabl
     super.setChild(FormatDateTimeExpression.DATETIME, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(FormatDateTimeExpression.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(FormatDateTimeExpression._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, FormatDateTimeExpression.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FormatDateTimeExpression._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, FormatDateTimeExpression.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FormatDateTimeExpression._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(FormatDateTimeExpression.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(FormatDateTimeExpression._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FormatDateTimeExpression.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FormatDateTimeExpression._$ATTRIBUTE, node);
   }
 
   public static FormatDateTimeExpression newInstance(SModel sm, boolean init) {

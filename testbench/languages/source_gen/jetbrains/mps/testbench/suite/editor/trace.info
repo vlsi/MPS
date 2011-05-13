@@ -3,18 +3,16 @@
   <unitInfo fileName="SolutionRef_Editor.java" startLine="68" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor$ReplaceWith_SolutionRef_cellMenu_a0a0" />
   <unitInfo fileName="SolutionRef_Editor.java" startLine="77" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor$ReplaceWith_SolutionRef_cellMenu_a0b0" />
   <unitInfo fileName="TestCaseRef_Editor.java" startLine="40" startPosition="48" endLine="50" endPosition="7" unitName="jetbrains.mps.testbench.suite.editor.TestCaseRef_Editor$1" />
-  <unitInfo fileName="JUnit4TestCaseRef_Editor.java" startLine="40" startPosition="48" endLine="50" endPosition="7" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor$1" />
-  <unitInfo fileName="JUnit3TestCaseRef_Editor.java" startLine="40" startPosition="48" endLine="50" endPosition="7" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor$1" />
   <unitInfo fileName="SolutionRef_Editor.java" startLine="50" startPosition="83" endLine="61" endPosition="5" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor$1" />
+  <unitInfo fileName="JUnit3TestCaseRef_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor$_Inline_oadaxc_a1a" />
+  <unitInfo fileName="JUnit4TestCaseRef_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor$_Inline_hazblc_a1a" />
   <unitInfo fileName="TestCaseRef_Editor.java" startLine="78" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.TestCaseRef_Editor$_Inline_aryab1_a1a" />
-  <unitInfo fileName="JUnit4TestCaseRef_Editor.java" startLine="78" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor$_Inline_hazblc_a1a" />
-  <unitInfo fileName="JUnit3TestCaseRef_Editor.java" startLine="78" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor$_Inline_oadaxc_a1a" />
   <unitInfo fileName="ModuleSuite_Editor.java" startLine="81" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.ModuleSuite_Editor$testRefListHandler_of3p2o_c0" />
   <unitInfo fileName="ITestRef_Editor.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.ITestRef_Editor" />
   <unitInfo fileName="SolutionRef_Editor.java" startLine="24" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor" />
+  <unitInfo fileName="JUnit3TestCaseRef_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor" />
+  <unitInfo fileName="JUnit4TestCaseRef_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor" />
   <unitInfo fileName="TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.TestCaseRef_Editor" />
-  <unitInfo fileName="JUnit4TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit4TestCaseRef_Editor" />
-  <unitInfo fileName="JUnit3TestCaseRef_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.JUnit3TestCaseRef_Editor" />
   <unitInfo fileName="ModuleSuite_Editor.java" startLine="26" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.testbench.suite.editor.ModuleSuite_Editor" />
   <root nodeId="1280144168199457902">
     <nodeInfo nodeId="8605005254686534072" fileName="JUnit3TestCaseRef_Editor.java" startLine="74" startPosition="109" endLine="75" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

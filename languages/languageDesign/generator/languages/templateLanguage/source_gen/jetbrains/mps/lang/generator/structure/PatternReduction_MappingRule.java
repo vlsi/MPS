@@ -21,7 +21,7 @@ public class PatternReduction_MappingRule extends BaseConcept implements Reducti
   public static final String PATTERN = "pattern";
   public static final String RULE_CONSEQUENCE = "ruleConsequence";
   public static final String CONDITION_FUNCTION = "conditionFunction";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PatternReduction_MappingRule(SNode node) {
     super(node);
@@ -83,24 +83,24 @@ public class PatternReduction_MappingRule extends BaseConcept implements Reducti
     super.setChild(PatternReduction_MappingRule.CONDITION_FUNCTION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(PatternReduction_MappingRule.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(PatternReduction_MappingRule._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, PatternReduction_MappingRule.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PatternReduction_MappingRule._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, PatternReduction_MappingRule.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PatternReduction_MappingRule._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(PatternReduction_MappingRule.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(PatternReduction_MappingRule._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, PatternReduction_MappingRule.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PatternReduction_MappingRule._$ATTRIBUTE, node);
   }
 
   public static PatternReduction_MappingRule newInstance(SModel sm, boolean init) {

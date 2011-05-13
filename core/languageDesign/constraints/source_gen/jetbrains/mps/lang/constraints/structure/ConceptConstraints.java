@@ -31,7 +31,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   public static final String ALTERNATIVE_ICON = "alternativeIcon";
   public static final String PROPERTY = "property";
   public static final String REFERENT = "referent";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptConstraints(SNode node) {
     super(node);
@@ -173,24 +173,24 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
     this.insertChild(prev, ConceptConstraints.REFERENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ConceptConstraints.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptConstraints._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ConceptConstraints.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptConstraints._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ConceptConstraints.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptConstraints._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ConceptConstraints.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptConstraints._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConceptConstraints.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptConstraints._$ATTRIBUTE, node);
   }
 
   public static ConceptConstraints newInstance(SModel sm, boolean init) {

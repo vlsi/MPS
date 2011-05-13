@@ -16,7 +16,7 @@ public class QueryFunction_SideTransform_Icon extends ConceptFunction implements
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public QueryFunction_SideTransform_Icon(SNode node) {
     super(node);
@@ -46,24 +46,24 @@ public class QueryFunction_SideTransform_Icon extends ConceptFunction implements
     this.setProperty(QueryFunction_SideTransform_Icon.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(QueryFunction_SideTransform_Icon.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(QueryFunction_SideTransform_Icon._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, QueryFunction_SideTransform_Icon.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, QueryFunction_SideTransform_Icon._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, QueryFunction_SideTransform_Icon.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, QueryFunction_SideTransform_Icon._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(QueryFunction_SideTransform_Icon.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(QueryFunction_SideTransform_Icon._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, QueryFunction_SideTransform_Icon.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, QueryFunction_SideTransform_Icon._$ATTRIBUTE, node);
   }
 
   public static QueryFunction_SideTransform_Icon newInstance(SModel sm, boolean init) {

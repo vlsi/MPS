@@ -26,7 +26,7 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
   public static final String IS_INVISIBLE_WHEN_DISABLED = "isInvisibleWhenDisabled";
   public static final String CONTENTS = "contents";
   public static final String MODIFIER = "modifier";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionGroupDeclaration(SNode node) {
     super(node);
@@ -132,24 +132,24 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
     this.insertChild(prev, ActionGroupDeclaration.MODIFIER, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ActionGroupDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionGroupDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ActionGroupDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionGroupDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ActionGroupDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionGroupDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ActionGroupDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionGroupDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ActionGroupDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionGroupDeclaration._$ATTRIBUTE, node);
   }
 
   public static ActionGroupDeclaration newInstance(SModel sm, boolean init) {

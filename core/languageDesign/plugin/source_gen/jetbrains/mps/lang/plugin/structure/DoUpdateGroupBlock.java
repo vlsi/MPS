@@ -16,7 +16,7 @@ public class DoUpdateGroupBlock extends ConceptFunction implements GroupContents
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DoUpdateGroupBlock(SNode node) {
     super(node);
@@ -46,24 +46,24 @@ public class DoUpdateGroupBlock extends ConceptFunction implements GroupContents
     this.setProperty(DoUpdateGroupBlock.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(DoUpdateGroupBlock.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(DoUpdateGroupBlock._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, DoUpdateGroupBlock.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DoUpdateGroupBlock._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, DoUpdateGroupBlock.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DoUpdateGroupBlock._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(DoUpdateGroupBlock.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(DoUpdateGroupBlock._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DoUpdateGroupBlock.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DoUpdateGroupBlock._$ATTRIBUTE, node);
   }
 
   public static DoUpdateGroupBlock newInstance(SModel sm, boolean init) {

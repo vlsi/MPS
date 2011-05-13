@@ -22,7 +22,7 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
   public static final String MAIN_CONCEPT = "mainConcept";
   public static final String GET_MAIN_CONCEPT_BLOCK = "getMainConceptBlock";
   public static final String TABS = "tabs";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TabbedEditorDeclaration(SNode node) {
     super(node);
@@ -96,24 +96,24 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
     this.insertChild(prev, TabbedEditorDeclaration.TABS, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(TabbedEditorDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(TabbedEditorDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, TabbedEditorDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TabbedEditorDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, TabbedEditorDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TabbedEditorDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(TabbedEditorDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(TabbedEditorDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TabbedEditorDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TabbedEditorDeclaration._$ATTRIBUTE, node);
   }
 
   public static TabbedEditorDeclaration newInstance(SModel sm, boolean init) {

@@ -17,7 +17,7 @@ public class XInclude extends ConfigurationXmlNode implements IExternalConfigura
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DOCUMENT = "document";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public XInclude(SNode node) {
     super(node);
@@ -63,24 +63,24 @@ public class XInclude extends ConfigurationXmlNode implements IExternalConfigura
     super.setReferent(XInclude.DOCUMENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(XInclude.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(XInclude._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, XInclude.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, XInclude._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, XInclude.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, XInclude._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(XInclude.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(XInclude._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, XInclude.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, XInclude._$ATTRIBUTE, node);
   }
 
   public static XInclude newInstance(SModel sm, boolean init) {

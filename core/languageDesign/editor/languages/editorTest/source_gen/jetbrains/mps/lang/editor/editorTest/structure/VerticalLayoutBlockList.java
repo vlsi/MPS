@@ -15,7 +15,7 @@ public class VerticalLayoutBlockList extends TestBlockList implements IBaseTestB
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public VerticalLayoutBlockList(SNode node) {
     super(node);
@@ -45,24 +45,24 @@ public class VerticalLayoutBlockList extends TestBlockList implements IBaseTestB
     this.setProperty(VerticalLayoutBlockList.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(VerticalLayoutBlockList.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(VerticalLayoutBlockList._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, VerticalLayoutBlockList.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, VerticalLayoutBlockList._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, VerticalLayoutBlockList.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, VerticalLayoutBlockList._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(VerticalLayoutBlockList.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(VerticalLayoutBlockList._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, VerticalLayoutBlockList.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, VerticalLayoutBlockList._$ATTRIBUTE, node);
   }
 
   public static VerticalLayoutBlockList newInstance(SModel sm, boolean init) {

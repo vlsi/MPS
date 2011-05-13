@@ -21,7 +21,7 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   public static final String EXTENSION = "extension";
   public static final String ENCODING = "encoding";
   public static final String TEXT_GEN_BLOCK = "textGenBlock";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptTextGenDeclaration(SNode node) {
     super(node);
@@ -83,24 +83,24 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
     super.setChild(ConceptTextGenDeclaration.TEXT_GEN_BLOCK, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ConceptTextGenDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptTextGenDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ConceptTextGenDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptTextGenDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ConceptTextGenDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptTextGenDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ConceptTextGenDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptTextGenDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConceptTextGenDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptTextGenDeclaration._$ATTRIBUTE, node);
   }
 
   public static ConceptTextGenDeclaration newInstance(SModel sm, boolean init) {

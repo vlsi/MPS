@@ -22,7 +22,7 @@ public class AssertXMLEquals extends Statement implements MessageHolder {
   public static final String EXPECTED = "expected";
   public static final String ACTUAL = "actual";
   public static final String MESSAGE = "message";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AssertXMLEquals(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class AssertXMLEquals extends Statement implements MessageHolder {
     super.setChild(AssertXMLEquals.MESSAGE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AssertXMLEquals.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AssertXMLEquals._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AssertXMLEquals.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AssertXMLEquals._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AssertXMLEquals.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AssertXMLEquals._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AssertXMLEquals.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AssertXMLEquals._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AssertXMLEquals.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AssertXMLEquals._$ATTRIBUTE, node);
   }
 
   public static AssertXMLEquals newInstance(SModel sm, boolean init) {

@@ -21,7 +21,7 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
   public static final String EXPR = "expr";
   public static final String BODY = "body";
   public static final String REGEXP = "regexp";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FindMatchStatement(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
     super.setChild(FindMatchStatement.REGEXP, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(FindMatchStatement.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(FindMatchStatement._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, FindMatchStatement.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FindMatchStatement._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, FindMatchStatement.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FindMatchStatement._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(FindMatchStatement.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(FindMatchStatement._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FindMatchStatement.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FindMatchStatement._$ATTRIBUTE, node);
   }
 
   public static FindMatchStatement newInstance(SModel sm, boolean init) {

@@ -18,7 +18,7 @@ public class SimpleShortcutChange extends BaseConcept implements ShortcutChange 
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTION = "action";
   public static final String KEYSTROKE = "keystroke";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SimpleShortcutChange(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class SimpleShortcutChange extends BaseConcept implements ShortcutChange 
     this.insertChild(prev, SimpleShortcutChange.KEYSTROKE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(SimpleShortcutChange.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(SimpleShortcutChange._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, SimpleShortcutChange.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SimpleShortcutChange._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, SimpleShortcutChange.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SimpleShortcutChange._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(SimpleShortcutChange.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(SimpleShortcutChange._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SimpleShortcutChange.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SimpleShortcutChange._$ATTRIBUTE, node);
   }
 
   public static SimpleShortcutChange newInstance(SModel sm, boolean init) {

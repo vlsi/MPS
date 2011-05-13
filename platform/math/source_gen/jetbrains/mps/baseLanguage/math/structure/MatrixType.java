@@ -19,7 +19,7 @@ public class MatrixType extends MathPrimitiveType implements MatrixOrVectorType 
   public static final String ROWS = "rows";
   public static final String COLUMNS = "columns";
   public static final String ELEMENT_TYPE = "elementType";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MatrixType(SNode node) {
     super(node);
@@ -73,24 +73,24 @@ public class MatrixType extends MathPrimitiveType implements MatrixOrVectorType 
     super.setChild(MatrixType.ELEMENT_TYPE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(MatrixType.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(MatrixType._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, MatrixType.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MatrixType._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, MatrixType.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MatrixType._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(MatrixType.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(MatrixType._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, MatrixType.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MatrixType._$ATTRIBUTE, node);
   }
 
   public static MatrixType newInstance(SModel sm, boolean init) {

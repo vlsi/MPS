@@ -27,7 +27,7 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
   public static final String BODY = "body";
   public static final String VISIBILITY = "visibility";
   public static final String PARAMETER = "parameter";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ANNOTATION = "annotation";
 
   public ControlAbstractionDeclaration(SNode node) {
@@ -102,24 +102,24 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
     this.insertChild(prev, ControlAbstractionDeclaration.PARAMETER, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ControlAbstractionDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ControlAbstractionDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ControlAbstractionDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ControlAbstractionDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ControlAbstractionDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ControlAbstractionDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ControlAbstractionDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ControlAbstractionDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ControlAbstractionDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ControlAbstractionDeclaration._$ATTRIBUTE, node);
   }
 
   public int getAnnotationsCount() {

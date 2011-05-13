@@ -18,7 +18,7 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INPUT_EXPRESSION = "inputExpression";
   public static final String REGEXP = "regexp";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MatchRegexpExpression(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
     super.setChild(MatchRegexpExpression.REGEXP, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(MatchRegexpExpression.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(MatchRegexpExpression._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, MatchRegexpExpression.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MatchRegexpExpression._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, MatchRegexpExpression.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MatchRegexpExpression._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(MatchRegexpExpression.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(MatchRegexpExpression._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, MatchRegexpExpression.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MatchRegexpExpression._$ATTRIBUTE, node);
   }
 
   public static MatchRegexpExpression newInstance(SModel sm, boolean init) {

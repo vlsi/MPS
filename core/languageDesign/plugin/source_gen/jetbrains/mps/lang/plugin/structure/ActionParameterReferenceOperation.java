@@ -19,7 +19,7 @@ public class ActionParameterReferenceOperation extends BaseConcept implements IM
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MEMBER = "member";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionParameterReferenceOperation(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class ActionParameterReferenceOperation extends BaseConcept implements IM
     this.setMember(node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ActionParameterReferenceOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionParameterReferenceOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ActionParameterReferenceOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionParameterReferenceOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ActionParameterReferenceOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionParameterReferenceOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ActionParameterReferenceOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionParameterReferenceOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ActionParameterReferenceOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionParameterReferenceOperation._$ATTRIBUTE, node);
   }
 
   public static ActionParameterReferenceOperation newInstance(SModel sm, boolean init) {

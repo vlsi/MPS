@@ -17,7 +17,7 @@ public class SLinkListAccess extends SNodeOperation implements ILinkAccess {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LINK = "link";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SLinkListAccess(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class SLinkListAccess extends SNodeOperation implements ILinkAccess {
     super.setReferent(SLinkListAccess.LINK, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(SLinkListAccess.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(SLinkListAccess._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, SLinkListAccess.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SLinkListAccess._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, SLinkListAccess.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SLinkListAccess._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(SLinkListAccess.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(SLinkListAccess._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SLinkListAccess.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SLinkListAccess._$ATTRIBUTE, node);
   }
 
   public static SLinkListAccess newInstance(SModel sm, boolean init) {

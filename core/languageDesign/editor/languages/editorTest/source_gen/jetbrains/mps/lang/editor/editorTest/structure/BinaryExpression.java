@@ -18,7 +18,7 @@ public class BinaryExpression extends BaseConcept implements IBaseTestBlock {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LEFT = "left";
   public static final String RIGHT = "right";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BinaryExpression(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class BinaryExpression extends BaseConcept implements IBaseTestBlock {
     super.setChild(BinaryExpression.RIGHT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(BinaryExpression.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(BinaryExpression._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BinaryExpression.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BinaryExpression._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BinaryExpression.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BinaryExpression._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(BinaryExpression.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(BinaryExpression._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BinaryExpression.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BinaryExpression._$ATTRIBUTE, node);
   }
 
   public static BinaryExpression newInstance(SModel sm, boolean init) {

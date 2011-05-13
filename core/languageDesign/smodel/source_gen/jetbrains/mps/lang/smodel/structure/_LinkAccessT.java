@@ -21,7 +21,7 @@ public class _LinkAccessT extends Type implements IInternalType {
   public static final String SINGULAR_CRADINALITY = "singularCradinality";
   public static final String AGGREGATION = "aggregation";
   public static final String TARGET_CONCEPT = "targetConcept";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public _LinkAccessT(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class _LinkAccessT extends Type implements IInternalType {
     super.setReferent(_LinkAccessT.TARGET_CONCEPT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(_LinkAccessT.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(_LinkAccessT._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, _LinkAccessT.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, _LinkAccessT._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, _LinkAccessT.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, _LinkAccessT._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(_LinkAccessT.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(_LinkAccessT._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, _LinkAccessT.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, _LinkAccessT._$ATTRIBUTE, node);
   }
 
   public static _LinkAccessT newInstance(SModel sm, boolean init) {

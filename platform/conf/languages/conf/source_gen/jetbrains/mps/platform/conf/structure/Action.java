@@ -18,7 +18,7 @@ public class Action extends AbstractAction implements IActionItem {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTION_CLASS = "actionClass";
   public static final String SHORTCUT = "shortcut";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Action(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class Action extends AbstractAction implements IActionItem {
     this.insertChild(prev, Action.SHORTCUT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Action.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Action._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Action.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Action._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Action.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Action._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Action.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Action._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Action.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Action._$ATTRIBUTE, node);
   }
 
   public static Action newInstance(SModel sm, boolean init) {

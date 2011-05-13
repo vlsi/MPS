@@ -15,7 +15,7 @@ public class NonTypesystemRule extends AbstractCheckingRule implements IRuleWith
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public NonTypesystemRule(SNode node) {
     super(node);
@@ -45,24 +45,24 @@ public class NonTypesystemRule extends AbstractCheckingRule implements IRuleWith
     this.setProperty(NonTypesystemRule.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(NonTypesystemRule.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(NonTypesystemRule._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, NonTypesystemRule.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, NonTypesystemRule._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, NonTypesystemRule.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, NonTypesystemRule._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(NonTypesystemRule.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(NonTypesystemRule._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, NonTypesystemRule.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NonTypesystemRule._$ATTRIBUTE, node);
   }
 
   public static NonTypesystemRule newInstance(SModel sm, boolean init) {

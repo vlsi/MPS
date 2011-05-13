@@ -23,7 +23,7 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept,
   public static final String EVERY_MODEL = "everyModel";
   public static final String APPLICABLE_CONCEPT = "applicableConcept";
   public static final String ITEM = "item";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CellKeyMapDeclaration(SNode node) {
     super(node);
@@ -97,24 +97,24 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept,
     this.insertChild(prev, CellKeyMapDeclaration.ITEM, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(CellKeyMapDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(CellKeyMapDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, CellKeyMapDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CellKeyMapDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, CellKeyMapDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CellKeyMapDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(CellKeyMapDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(CellKeyMapDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CellKeyMapDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CellKeyMapDeclaration._$ATTRIBUTE, node);
   }
 
   public static CellKeyMapDeclaration newInstance(SModel sm, boolean init) {

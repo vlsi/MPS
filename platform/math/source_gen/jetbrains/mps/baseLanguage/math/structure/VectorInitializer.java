@@ -19,7 +19,7 @@ public class VectorInitializer extends Expression implements MatrixOrVectorIniti
   public static final String ROW_INDEX = "rowIndex";
   public static final String EXPRESSION = "expression";
   public static final String ROWS_COUNT = "rowsCount";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public VectorInitializer(SNode node) {
     super(node);
@@ -73,24 +73,24 @@ public class VectorInitializer extends Expression implements MatrixOrVectorIniti
     super.setChild(VectorInitializer.ROWS_COUNT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(VectorInitializer.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(VectorInitializer._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, VectorInitializer.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, VectorInitializer._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, VectorInitializer.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, VectorInitializer._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(VectorInitializer.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(VectorInitializer._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, VectorInitializer.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, VectorInitializer._$ATTRIBUTE, node);
   }
 
   public static VectorInitializer newInstance(SModel sm, boolean init) {

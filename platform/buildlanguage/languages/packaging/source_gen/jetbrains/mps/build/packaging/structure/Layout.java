@@ -29,7 +29,7 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
   public static final String VARIABLE = "variable";
   public static final String BUILT_IN_VARIABLE = "builtInVariable";
   public static final String CYCLE = "cycle";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String MACRO = "macro";
 
   public Layout(SNode node) {
@@ -208,24 +208,24 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
     this.insertChild(prev, Layout.CYCLE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Layout.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Layout._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Layout.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Layout._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Layout.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Layout._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Layout.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Layout._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Layout.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Layout._$ATTRIBUTE, node);
   }
 
   public int getMacrosCount() {

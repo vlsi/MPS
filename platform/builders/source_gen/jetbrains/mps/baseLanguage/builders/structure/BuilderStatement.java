@@ -19,7 +19,7 @@ public class BuilderStatement extends Statement implements BuilderContainer {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BUILDER = "builder";
   public static final String BODY = "body";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BuilderStatement(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class BuilderStatement extends Statement implements BuilderContainer {
     super.setChild(BuilderStatement.BODY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(BuilderStatement.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(BuilderStatement._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BuilderStatement.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BuilderStatement._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BuilderStatement.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BuilderStatement._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(BuilderStatement.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(BuilderStatement._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BuilderStatement.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BuilderStatement._$ATTRIBUTE, node);
   }
 
   public static BuilderStatement newInstance(SModel sm, boolean init) {

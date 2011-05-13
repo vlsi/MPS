@@ -19,7 +19,7 @@ public class TemplateCallMacro extends SourceSubstituteMacro implements ITemplat
   public static final String TEMPLATE = "template";
   public static final String SOURCE_NODE_QUERY = "sourceNodeQuery";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TemplateCallMacro(SNode node) {
     super(node);
@@ -85,24 +85,24 @@ public class TemplateCallMacro extends SourceSubstituteMacro implements ITemplat
     this.insertChild(prev, TemplateCallMacro.ACTUAL_ARGUMENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(TemplateCallMacro.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(TemplateCallMacro._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, TemplateCallMacro.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TemplateCallMacro._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, TemplateCallMacro.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TemplateCallMacro._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(TemplateCallMacro.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(TemplateCallMacro._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TemplateCallMacro.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TemplateCallMacro._$ATTRIBUTE, node);
   }
 
   public static TemplateCallMacro newInstance(SModel sm, boolean init) {

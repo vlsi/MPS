@@ -18,7 +18,7 @@ public class OptionType extends Type implements IWillBeClassifier {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPECTED_OPTION = "expectedOption";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public OptionType(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class OptionType extends Type implements IWillBeClassifier {
     super.setReferent(OptionType.EXPECTED_OPTION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(OptionType.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(OptionType._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, OptionType.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, OptionType._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, OptionType.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, OptionType._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(OptionType.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(OptionType._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, OptionType.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, OptionType._$ATTRIBUTE, node);
   }
 
   public static OptionType newInstance(SModel sm, boolean init) {

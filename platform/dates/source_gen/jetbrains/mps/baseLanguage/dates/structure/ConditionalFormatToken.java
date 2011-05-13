@@ -18,7 +18,7 @@ public class ConditionalFormatToken extends FormatToken implements INamedConcept
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONDITION_PAIR = "conditionPair";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConditionalFormatToken(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class ConditionalFormatToken extends FormatToken implements INamedConcept
     this.insertChild(prev, ConditionalFormatToken.CONDITION_PAIR, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ConditionalFormatToken.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ConditionalFormatToken._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ConditionalFormatToken.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConditionalFormatToken._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ConditionalFormatToken.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConditionalFormatToken._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ConditionalFormatToken.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConditionalFormatToken._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConditionalFormatToken.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConditionalFormatToken._$ATTRIBUTE, node);
   }
 
   public static ConditionalFormatToken newInstance(SModel sm, boolean init) {

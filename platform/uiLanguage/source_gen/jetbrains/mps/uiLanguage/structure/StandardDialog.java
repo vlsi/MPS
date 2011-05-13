@@ -19,7 +19,7 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   public static final String ROOT_COMPONENT = "rootComponent";
   public static final String BUTTON = "button";
   public static final String CONTENT = "content";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StandardDialog(SNode node) {
     super(node);
@@ -97,24 +97,24 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
     this.insertChild(prev, StandardDialog.CONTENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(StandardDialog.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(StandardDialog._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, StandardDialog.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StandardDialog._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, StandardDialog.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StandardDialog._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(StandardDialog.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(StandardDialog._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, StandardDialog.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StandardDialog._$ATTRIBUTE, node);
   }
 
   public static StandardDialog newInstance(SModel sm, boolean init) {

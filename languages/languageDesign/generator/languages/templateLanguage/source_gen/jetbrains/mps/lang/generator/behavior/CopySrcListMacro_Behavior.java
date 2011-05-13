@@ -52,28 +52,6 @@ public class CopySrcListMacro_Behavior {
                 return false;
               }
               patternVar_concept = nodeToMatch_26ny8p_a0a0b0a.getReferent("concept");
-              {
-                String childRole_26ny8p__0 = "smodelAttribute";
-                if (nodeToMatch_26ny8p_a0a0b0a.getChildCount(childRole_26ny8p__0) != 1) {
-                  return false;
-                }
-                {
-                  SNode childVar_26ny8p_a0a0a1a0 = nodeToMatch_26ny8p_a0a0b0a.getChildren(childRole_26ny8p__0).get(0);
-                  {
-                    SNode nodeToMatch_26ny8p_a0a0a1a0;
-                    nodeToMatch_26ny8p_a0a0a1a0 = childVar_26ny8p_a0a0a1a0;
-                    if (!("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(nodeToMatch_26ny8p_a0a0a1a0.getConceptFqName()))) {
-                      return false;
-                    }
-                    if (!("concept".equals(nodeToMatch_26ny8p_a0a0a1a0.getProperty("linkRole")))) {
-                      return false;
-                    }
-                    if (!("concept".equals(nodeToMatch_26ny8p_a0a0a1a0.getProperty("varName")))) {
-                      return false;
-                    }
-                  }
-                }
-              }
             }
           }
         }

@@ -24,7 +24,7 @@ public class PersistentConfiguration extends BaseConcept implements IPersistentP
   public static final String CHECK_PROPERTIES = "checkProperties";
   public static final String METHODS = "methods";
   public static final String PERSISTENT_PROPERTY = "persistentProperty";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PersistentConfiguration(SNode node) {
     super(node);
@@ -118,24 +118,24 @@ public class PersistentConfiguration extends BaseConcept implements IPersistentP
     this.insertChild(prev, PersistentConfiguration.PERSISTENT_PROPERTY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(PersistentConfiguration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(PersistentConfiguration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, PersistentConfiguration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PersistentConfiguration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, PersistentConfiguration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PersistentConfiguration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(PersistentConfiguration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(PersistentConfiguration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, PersistentConfiguration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PersistentConfiguration._$ATTRIBUTE, node);
   }
 
   public static PersistentConfiguration newInstance(SModel sm, boolean init) {

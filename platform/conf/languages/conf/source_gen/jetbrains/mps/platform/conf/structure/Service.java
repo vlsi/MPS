@@ -19,7 +19,7 @@ public class Service extends Extension implements HasLevel {
   public static final String LEVEL = "level";
   public static final String SERVICE_IFACE = "serviceIface";
   public static final String SERVICE_IMPL = "serviceImpl";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Service(SNode node) {
     super(node);
@@ -74,24 +74,24 @@ public class Service extends Extension implements HasLevel {
     super.setReferent(Service.SERVICE_IMPL, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Service.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Service._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Service.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Service._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Service.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Service._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Service.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Service._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Service.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Service._$ATTRIBUTE, node);
   }
 
   public static Service newInstance(SModel sm, boolean init) {

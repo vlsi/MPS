@@ -23,7 +23,7 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
   public static final String PARAMETERS = "parameters";
   public static final String NODES = "nodes";
   public static final String FIELDS = "fields";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public XMLSAXParser(SNode node) {
     super(node);
@@ -137,24 +137,24 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
     this.insertChild(prev, XMLSAXParser.FIELDS, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(XMLSAXParser.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(XMLSAXParser._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, XMLSAXParser.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, XMLSAXParser._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, XMLSAXParser.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, XMLSAXParser._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(XMLSAXParser.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(XMLSAXParser._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, XMLSAXParser.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, XMLSAXParser._$ATTRIBUTE, node);
   }
 
   public static XMLSAXParser newInstance(SModel sm, boolean init) {

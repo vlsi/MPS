@@ -19,7 +19,7 @@ public class CustomContainers extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONTAINER_DECLARATION = "containerDeclaration";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CustomContainers(SNode node) {
     super(node);
@@ -77,24 +77,24 @@ public class CustomContainers extends BaseConcept implements INamedConcept {
     this.insertChild(prev, CustomContainers.CONTAINER_DECLARATION, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(CustomContainers.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(CustomContainers._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, CustomContainers.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CustomContainers._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, CustomContainers.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CustomContainers._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(CustomContainers.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(CustomContainers._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CustomContainers.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CustomContainers._$ATTRIBUTE, node);
   }
 
   public static CustomContainers newInstance(SModel sm, boolean init) {

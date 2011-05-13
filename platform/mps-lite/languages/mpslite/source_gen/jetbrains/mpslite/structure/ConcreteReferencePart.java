@@ -18,7 +18,7 @@ public class ConcreteReferencePart extends ReferencePart implements INamedConcep
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONCEPT_REFERENCE = "conceptReference";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConcreteReferencePart(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class ConcreteReferencePart extends ReferencePart implements INamedConcep
     super.setChild(ConcreteReferencePart.CONCEPT_REFERENCE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ConcreteReferencePart.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ConcreteReferencePart._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ConcreteReferencePart.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConcreteReferencePart._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ConcreteReferencePart.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConcreteReferencePart._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ConcreteReferencePart.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConcreteReferencePart._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConcreteReferencePart.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConcreteReferencePart._$ATTRIBUTE, node);
   }
 
   public static ConcreteReferencePart newInstance(SModel sm, boolean init) {

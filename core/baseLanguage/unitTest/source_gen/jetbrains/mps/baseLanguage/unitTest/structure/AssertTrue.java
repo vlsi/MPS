@@ -19,7 +19,7 @@ public class AssertTrue extends Statement implements MessageHolder {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONDITION = "condition";
   public static final String MESSAGE = "message";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AssertTrue(SNode node) {
     super(node);
@@ -65,24 +65,24 @@ public class AssertTrue extends Statement implements MessageHolder {
     super.setChild(AssertTrue.MESSAGE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AssertTrue.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AssertTrue._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AssertTrue.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AssertTrue._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AssertTrue.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AssertTrue._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AssertTrue.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AssertTrue._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AssertTrue.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AssertTrue._$ATTRIBUTE, node);
   }
 
   public static AssertTrue newInstance(SModel sm, boolean init) {

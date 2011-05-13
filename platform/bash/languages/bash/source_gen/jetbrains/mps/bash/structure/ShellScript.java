@@ -20,7 +20,7 @@ public class ShellScript extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMMANDS = "commands";
   public static final String USED_VARS = "usedVars";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ShellScript(SNode node) {
     super(node);
@@ -86,24 +86,24 @@ public class ShellScript extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ShellScript.USED_VARS, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ShellScript.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ShellScript._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ShellScript.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ShellScript._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ShellScript.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ShellScript._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ShellScript.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ShellScript._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ShellScript.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ShellScript._$ATTRIBUTE, node);
   }
 
   public static ShellScript newInstance(SModel sm, boolean init) {

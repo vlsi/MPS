@@ -21,7 +21,7 @@ public class ExtensionMethodCall extends BaseConcept implements IOperation, IMet
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public ExtensionMethodCall(SNode node) {
@@ -68,24 +68,24 @@ public class ExtensionMethodCall extends BaseConcept implements IOperation, IMet
     this.setBaseMethodDeclaration(node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(ExtensionMethodCall.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(ExtensionMethodCall._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, ExtensionMethodCall.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ExtensionMethodCall._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, ExtensionMethodCall.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ExtensionMethodCall._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(ExtensionMethodCall.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(ExtensionMethodCall._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ExtensionMethodCall.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExtensionMethodCall._$ATTRIBUTE, node);
   }
 
   public int getActualArgumentsCount() {

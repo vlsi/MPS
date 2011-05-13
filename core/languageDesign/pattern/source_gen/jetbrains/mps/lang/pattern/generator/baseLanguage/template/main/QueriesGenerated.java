@@ -317,7 +317,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7207007552736297370(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "_$attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.pattern.structure.ListPattern"));
       }
@@ -326,7 +326,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7207007552736297774(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "_$attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.pattern.structure.ListPattern"));
       }
@@ -473,7 +473,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6283201779507549732(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "_$attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.pattern.structure.ListPattern"));
       }
@@ -482,7 +482,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6283201779507549776(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "_$attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.pattern.structure.ListPattern"));
       }

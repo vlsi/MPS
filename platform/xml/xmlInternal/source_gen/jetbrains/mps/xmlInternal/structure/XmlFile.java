@@ -24,7 +24,7 @@ public class XmlFile extends BaseConcept implements INamedConcept, XmlRoot {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SCHEMA = "schema";
   public static final String DOCUMENT = "document";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public XmlFile(SNode node) {
     super(node);
@@ -94,24 +94,24 @@ public class XmlFile extends BaseConcept implements INamedConcept, XmlRoot {
     super.setChild(XmlFile.DOCUMENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(XmlFile.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(XmlFile._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, XmlFile.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, XmlFile._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, XmlFile.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, XmlFile._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(XmlFile.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(XmlFile._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, XmlFile.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, XmlFile._$ATTRIBUTE, node);
   }
 
   public static XmlFile newInstance(SModel sm, boolean init) {

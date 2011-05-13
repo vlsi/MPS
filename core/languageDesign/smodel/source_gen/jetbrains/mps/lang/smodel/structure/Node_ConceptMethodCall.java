@@ -22,7 +22,7 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   public static final String DIRECT_CALL = "directCall";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Node_ConceptMethodCall(SNode node) {
     super(node);
@@ -96,24 +96,24 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
     this.insertChild(prev, Node_ConceptMethodCall.ACTUAL_ARGUMENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Node_ConceptMethodCall.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(Node_ConceptMethodCall._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Node_ConceptMethodCall.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Node_ConceptMethodCall._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Node_ConceptMethodCall.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Node_ConceptMethodCall._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Node_ConceptMethodCall.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(Node_ConceptMethodCall._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Node_ConceptMethodCall.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Node_ConceptMethodCall._$ATTRIBUTE, node);
   }
 
   public static Node_ConceptMethodCall newInstance(SModel sm, boolean init) {

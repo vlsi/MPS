@@ -18,7 +18,7 @@ public class SetElementOperation extends SequenceOperation implements IListOpera
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INDEX = "index";
   public static final String ELEMENT = "element";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SetElementOperation(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class SetElementOperation extends SequenceOperation implements IListOpera
     super.setChild(SetElementOperation.ELEMENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(SetElementOperation.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(SetElementOperation._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, SetElementOperation.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SetElementOperation._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, SetElementOperation.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SetElementOperation._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(SetElementOperation.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(SetElementOperation._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SetElementOperation.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SetElementOperation._$ATTRIBUTE, node);
   }
 
   public static SetElementOperation newInstance(SModel sm, boolean init) {

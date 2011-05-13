@@ -26,7 +26,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   public static final String CONCRETE_SYNTAX = "concreteSyntax";
   public static final String EXTENDS = "extends";
   public static final String SCOPE_BLOCK = "scopeBlock";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public VariableConcept(SNode node) {
     super(node);
@@ -148,24 +148,24 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
     this.insertChild(prev, VariableConcept.SCOPE_BLOCK, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(VariableConcept.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(VariableConcept._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, VariableConcept.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, VariableConcept._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, VariableConcept.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, VariableConcept._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(VariableConcept.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(VariableConcept._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, VariableConcept.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, VariableConcept._$ATTRIBUTE, node);
   }
 
   public static VariableConcept newInstance(SModel sm, boolean init) {

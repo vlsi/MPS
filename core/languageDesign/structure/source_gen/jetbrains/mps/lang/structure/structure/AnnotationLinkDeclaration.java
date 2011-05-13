@@ -23,7 +23,7 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   public static final String SOURCE_CARDINALITY = "sourceCardinality";
   public static final String SOURCE = "source";
   public static final String TARGET = "target";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AnnotationLinkDeclaration(SNode node) {
     super(node);
@@ -103,24 +103,24 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
     super.setReferent(AnnotationLinkDeclaration.TARGET, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(AnnotationLinkDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(AnnotationLinkDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, AnnotationLinkDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AnnotationLinkDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, AnnotationLinkDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AnnotationLinkDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(AnnotationLinkDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(AnnotationLinkDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AnnotationLinkDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AnnotationLinkDeclaration._$ATTRIBUTE, node);
   }
 
   public static AnnotationLinkDeclaration newInstance(SModel sm, boolean init) {

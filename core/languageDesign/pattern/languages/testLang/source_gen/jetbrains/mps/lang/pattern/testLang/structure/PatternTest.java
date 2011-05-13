@@ -28,7 +28,7 @@ public class PatternTest extends BaseConcept implements INamedConcept, ITestCase
   public static final String VARIABLE = "variable";
   public static final String PROPERTY = "property";
   public static final String LIST = "list";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PatternTest(SNode node) {
     super(node);
@@ -150,24 +150,24 @@ public class PatternTest extends BaseConcept implements INamedConcept, ITestCase
     this.insertChild(prev, PatternTest.LIST, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(PatternTest.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(PatternTest._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, PatternTest.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PatternTest._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, PatternTest.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PatternTest._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(PatternTest.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(PatternTest._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, PatternTest.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PatternTest._$ATTRIBUTE, node);
   }
 
   public static PatternTest newInstance(SModel sm, boolean init) {

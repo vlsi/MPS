@@ -27,7 +27,7 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
   public static final String RUNTIME_TYPE = "runtimeType";
   public static final String FACTORY = "factory";
   public static final String VISIBILITY = "visibility";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CustomContainerDeclaration(SNode node) {
     super(node);
@@ -97,24 +97,24 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
     super.setChild(CustomContainerDeclaration.VISIBILITY, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(CustomContainerDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(CustomContainerDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, CustomContainerDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CustomContainerDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, CustomContainerDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CustomContainerDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(CustomContainerDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(CustomContainerDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CustomContainerDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CustomContainerDeclaration._$ATTRIBUTE, node);
   }
 
   public static CustomContainerDeclaration newInstance(SModel sm, boolean init) {

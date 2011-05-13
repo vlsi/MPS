@@ -23,7 +23,7 @@ public class HighLevelCustomViewer extends BaseConcept implements INamedConcept 
   public static final String CAN_WRAP = "canWrap";
   public static final String GET_PRESENTATION = "getPresentation";
   public static final String GET_WATCHABLES = "getWatchables";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public HighLevelCustomViewer(SNode node) {
     super(node);
@@ -93,24 +93,24 @@ public class HighLevelCustomViewer extends BaseConcept implements INamedConcept 
     super.setChild(HighLevelCustomViewer.GET_WATCHABLES, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(HighLevelCustomViewer.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(HighLevelCustomViewer._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, HighLevelCustomViewer.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, HighLevelCustomViewer._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, HighLevelCustomViewer.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, HighLevelCustomViewer._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(HighLevelCustomViewer.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(HighLevelCustomViewer._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, HighLevelCustomViewer.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, HighLevelCustomViewer._$ATTRIBUTE, node);
   }
 
   public static HighLevelCustomViewer newInstance(SModel sm, boolean init) {

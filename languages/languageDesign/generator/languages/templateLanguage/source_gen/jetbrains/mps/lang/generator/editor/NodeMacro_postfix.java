@@ -147,7 +147,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   private static boolean renderingCondition_crgygw_a0a(SNode node, EditorContext editorContext, IScope scope) {
     String actualRole = node.getRole_();
-    String expectedRole = "smodelAttribute";
+    String expectedRole = "_$attribute";
     return !(actualRole.equals(expectedRole));
   }
 

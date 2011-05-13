@@ -24,7 +24,7 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
   public static final String FIND_MASTER_BLOCK = "findMasterBlock";
   public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
   public static final String IS_BLOCKING_BLOCK = "isBlockingBlock";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DependentComputationItem(SNode node) {
     super(node);
@@ -102,24 +102,24 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
     super.setChild(DependentComputationItem.IS_BLOCKING_BLOCK, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(DependentComputationItem.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(DependentComputationItem._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, DependentComputationItem.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DependentComputationItem._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, DependentComputationItem.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DependentComputationItem._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(DependentComputationItem.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(DependentComputationItem._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, DependentComputationItem.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DependentComputationItem._$ATTRIBUTE, node);
   }
 
   public static DependentComputationItem newInstance(SModel sm, boolean init) {

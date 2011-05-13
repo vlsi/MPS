@@ -22,7 +22,7 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   public static final String TASK_CALL = "taskCall";
   public static final String DEPENDS = "depends";
   public static final String PROPERTY_LIST = "propertyList";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TargetDeclaration(SNode node) {
     super(node);
@@ -136,24 +136,24 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
     this.insertChild(prev, TargetDeclaration.PROPERTY_LIST, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(TargetDeclaration.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(TargetDeclaration._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, TargetDeclaration.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TargetDeclaration._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, TargetDeclaration.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TargetDeclaration._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(TargetDeclaration.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(TargetDeclaration._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TargetDeclaration.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TargetDeclaration._$ATTRIBUTE, node);
   }
 
   public static TargetDeclaration newInstance(SModel sm, boolean init) {

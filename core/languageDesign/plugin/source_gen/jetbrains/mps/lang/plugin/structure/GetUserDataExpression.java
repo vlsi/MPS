@@ -17,7 +17,7 @@ public class GetUserDataExpression extends Expression implements ExecuteSpecific
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ARGUMENT = "argument";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public GetUserDataExpression(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class GetUserDataExpression extends Expression implements ExecuteSpecific
     super.setChild(GetUserDataExpression.ARGUMENT, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(GetUserDataExpression.SMODEL_ATTRIBUTE);
+  public int get_$attributesCount() {
+    return this.getChildCount(GetUserDataExpression._$ATTRIBUTE);
   }
 
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, GetUserDataExpression.SMODEL_ATTRIBUTE);
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, GetUserDataExpression._$ATTRIBUTE);
   }
 
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, GetUserDataExpression.SMODEL_ATTRIBUTE);
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, GetUserDataExpression._$ATTRIBUTE);
   }
 
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(GetUserDataExpression.SMODEL_ATTRIBUTE, node);
+  public void add_$attribute(Attribute node) {
+    this.addChild(GetUserDataExpression._$ATTRIBUTE, node);
   }
 
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GetUserDataExpression.SMODEL_ATTRIBUTE, node);
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GetUserDataExpression._$ATTRIBUTE, node);
   }
 
   public static GetUserDataExpression newInstance(SModel sm, boolean init) {
