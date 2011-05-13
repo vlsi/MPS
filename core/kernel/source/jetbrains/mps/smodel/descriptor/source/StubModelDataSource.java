@@ -17,17 +17,19 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.StubPath;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.Collection;
 import java.util.Set;
 
-public class StubModelDataSource extends FileBasedModelDataSource {
+public abstract class StubModelDataSource extends FileBasedModelDataSource {
   private static Logger LOG = Logger.getLogger(StubModelDataSource.class);
 
   private final Set<StubPath> myStubPaths;
@@ -57,6 +59,19 @@ public class StubModelDataSource extends FileBasedModelDataSource {
     return max;
   }
 
+  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) {
+    DescriptorLoadResult result = new DescriptorLoadResult();
+
+    SModelId modelId = SModelId.foreign(modelName.getStereotype(), module.getModuleReference().getModuleId().toString(), modelName.getLongName());
+    result.setUID(modelId.toString());
+
+    return result;
+  }
+
+  public final boolean saveModel(SModelDescriptor descriptor) {
+    throw new UnsupportedOperationException();
+  }
+
   private static long getTimestampRecursive(IFile path) {
     long max = path.lastModified();
     if (path.isDirectory()) {
@@ -72,10 +87,6 @@ public class StubModelDataSource extends FileBasedModelDataSource {
 
   public boolean isPackaged() {
     return true;
-  }
-
-  public String getModelHash() {
-    return null;
   }
 
   public Collection<StubPath> getStubPaths() {

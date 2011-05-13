@@ -54,10 +54,6 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     super.dispose();
   }
 
-  public String getModelHash() {
-    return mySource.getModelHash();
-  }
-
   //----------reloading stuff--------
 
   private long mySourceTimestamp = -1;
@@ -76,6 +72,8 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     if (mySourceTimestamp == -1) return false;
     return mySource.getTimestamp() != mySourceTimestamp;
   }
+
+  public abstract void replaceModel(@NotNull SModel newModel, ModelLoadingState loadingState);
 
   //--------------------
 

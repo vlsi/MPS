@@ -20,12 +20,12 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
-import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -104,7 +104,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
-    return ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
+    return getSource().loadSModel(this, loadingState);
   }
 
   public boolean isChanged() {
@@ -150,9 +150,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     if (!checkAndResolveConflictOnSave()) return;
 
     setChanged(false);
-    SModel newData = myModelRootManager.saveModel(this);
+    SModel newData = getSource().saveModel(this);
     if (newData != null) {
-      replaceModel(newData);
+      replaceModel(newData, getLoadingState());
     }
 
     updateDiskTimestamp();
@@ -164,12 +164,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return !isDoNotGenerate() && !getSource().isPackaged() && SModelStereotype.isUserModel(this);
   }
 
-  //this method should be called only with a fully loaded model as parameter
-  public void replaceModel(@NotNull SModel newModel) {
-    replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
-  }
-
-  private void replaceModel(SModel newModel, ModelLoadingState state) {
+  public void replaceModel(SModel newModel, ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
     if (newModel == mySModel) return;
     final SModel oldSModel = mySModel;
@@ -198,6 +193,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     } else {
       ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
     }
+  }
+
+  public String getModelHash() {
+    return ((RegularModelDataSource) getSource()).getModelHash();
   }
 
   public void dispose() {
@@ -305,7 +304,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   //----------------------
 
   protected void reload() {
-    DescriptorLoadResult dr = getModelRootManager().loadDescriptor(((RegularModelDataSource) getSource()).getFile());
+    DescriptorLoadResult dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
     myHeader = dr.getHeader();
     myMetadata = dr.getMetadata();
 

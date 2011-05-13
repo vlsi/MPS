@@ -63,64 +63,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     readModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, owner);
   }
 
-  @NotNull
-  @Override
-  public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
-    return loadModel(modelDescriptor, ModelLoadingState.FULLY_LOADED).getModel();
-  }
-
-  @NotNull
-  public ModelLoadResult loadModel(final @NotNull SModelDescriptor sm, ModelLoadingState state) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    SModelReference dsmRef = dsm.getSModelReference();
-
-    if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
-      SModel model = new SModel(dsmRef, new RegularNodeIdMap());
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-    }
-
-    ModelLoadResult result;
-    try {
-      result = ModelPersistence.readModel(dsm.getSModelHeader(), dsm.getModelFile(), state);
-      if (result.getState() == ModelLoadingState.NOT_LOADED) {
-        // TODO this is a temporary fix to enable invoking merge dialog for model with wrong markup
-        if (state != ModelLoadingState.NOT_LOADED) {
-          VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
-        }
-
-        return result;
-      }
-    } catch (ModelFileReadException t) {
-      return handleExceptionDuringModelRead(dsm, t, false);
-    } catch (PersistenceVersionNotFoundException e) {
-      LOG.error(e);
-      StubModel model = new StubModel(dsmRef);
-      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
-    }
-
-    SModel model = result.getModel();
-    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      try {
-        model.setLoading(true);
-        boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
-
-        if (needToSave && !dsm.getModelFile().isReadOnly()) {
-          SModelRepository.getInstance().markChanged(model);
-        }
-      } finally {
-        model.setLoading(false);
-      }
-    }
-
-    LOG.assertLog(model.getSModelReference().equals(dsmRef),
-      "\nError loading model from file: \"" + dsm.getModelFile() + "\"\n" +
-        "expected model UID     : \"" + dsmRef + "\"\n" +
-        "but was UID            : \"" + model.getSModelReference() + "\"\n" +
-        "the model will not be available.\n" +
-        "Make sure that all project's roots and/or the model namespace is correct");
-    return result;
-  }
-
   @Override
   public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationLog log) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
@@ -133,12 +75,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return RefactoringsPersistence.load(dsm.getModelFile());
   }
 
-  private ModelLoadResult handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
-    VcsMigrationUtil.getHandler().addSuspiciousModel(modelDescriptor, isConflictStateFixed);
-    SModel newModel = new StubModel(modelDescriptor.getSModelReference());
-    LOG.error(exception.getMessage(), newModel);
-    return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
-  }
 
   public boolean isFindUsagesSupported() {
     return true;
@@ -180,21 +116,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
     return containsSomeString(modelDescriptor, CollectionUtil.set(string));
-  }
-
-  /**
-   * returns upgraded model, or null
-   */
-  public SModel saveModel(@NotNull SModelDescriptor sm) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    SModel smodel = dsm.getSModel();
-    if (smodel instanceof StubModel) {
-      // we do not save stub model to do not overwrite the real model
-      return null;
-    }
-    IFile modelFile = dsm.getModelFile();
-    assert modelFile != null;
-    return ModelPersistence.saveModel(smodel, modelFile);
   }
 
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {

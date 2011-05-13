@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -31,17 +32,15 @@ public interface ModelDataSource {
 
   //------model loading------
 
-  DescriptorLoadResult loadDescriptor(SModelFqName modelName);
+  DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName);
 
   ModelLoadResult loadSModel(SModelDescriptor descriptor, ModelLoadingState targetState);
 
-  void saveModel(SModelDescriptor descriptor);
+  boolean saveModel(SModelDescriptor descriptor);
 
   //------other
 
   boolean hasModel(SModelDescriptor md);
 
   boolean isPackaged();
-
-  String getModelHash();
 }

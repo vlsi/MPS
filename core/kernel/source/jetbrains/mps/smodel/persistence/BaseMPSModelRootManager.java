@@ -20,7 +20,4 @@ import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public abstract class BaseMPSModelRootManager extends AbstractModelRootManager {
-  public ModelLoadResult loadModel(SModelDescriptor descriptor, ModelLoadingState state){
-    return new ModelLoadResult(loadModel(descriptor), ModelLoadingState.FULLY_LOADED);
-  }
 }

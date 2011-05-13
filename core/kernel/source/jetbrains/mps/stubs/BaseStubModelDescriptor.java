@@ -5,14 +5,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.util.annotation.ImmutableObject;
-import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -109,7 +106,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   }
 
   protected ModelLoadResult initialLoad() {
-    SModel model = myModelRootManager.loadModel(this);
+    SModel model = getSource().loadSModel(this, ModelLoadingState.FULLY_LOADED).getModel();
     try {
       updateAfterLoad(model);
     } catch (Throwable t) {
@@ -137,9 +134,35 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   }
 
   private void reload() {
-
-    //todo
-    123;
+    ModelLoadResult result = getSource().loadSModel(this,ModelLoadingState.FULLY_LOADED);
+    replaceModel(result.getModel(), getLoadingState());
   }
 
+  //todo remove duplication
+  public void replaceModel(@NotNull SModel newModel, ModelLoadingState loadingState) {
+    ModelAccess.assertLegalWrite();
+    if (newModel == mySModel) return;
+    final SModel oldSModel = mySModel;
+    if (oldSModel != null) {
+      oldSModel.setModelDescriptor(null);
+    }
+    mySModel = newModel;
+    if (mySModel != null) {
+      mySModel.setModelDescriptor(this);
+    }
+    MPSModuleRepository.getInstance().invalidateCaches();
+    Runnable modelReplacedNotifier = new Runnable() {
+      public void run() {
+        fireModelReplaced();
+        if (oldSModel != null) {
+          oldSModel.dispose();
+        }
+      }
+    };
+    if (ModelAccess.instance().isInEDT()) {
+      modelReplacedNotifier.run();
+    } else {
+      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
+    }
+  }
 }

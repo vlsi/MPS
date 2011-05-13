@@ -73,10 +73,6 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public void dispose() {
   }
 
-  public DescriptorLoadResult loadDescriptor(IFile file) {
-    throw new UnsupportedOperationException();
-  }
-
   public void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile) {
     throw new UnsupportedOperationException();
   }

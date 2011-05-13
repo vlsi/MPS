@@ -24,8 +24,6 @@ public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable
 
   void save();
 
-  void replaceModel(@NotNull SModel newModel);
-
   @Deprecated
   IFile getModelFile();
 }

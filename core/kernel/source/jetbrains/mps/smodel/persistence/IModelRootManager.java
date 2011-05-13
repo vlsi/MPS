@@ -33,11 +33,6 @@ public interface IModelRootManager {
 
   void updateModels(@NotNull SModelRoot root, @NotNull IModule owner);
 
-  @NotNull
-  SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
-
-  SModel saveModel(@NotNull SModelDescriptor modelDescriptor);
-
   StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
 
   void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationLog log);
@@ -65,6 +60,4 @@ public interface IModelRootManager {
   void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile);
 
   void dispose();
-
-  DescriptorLoadResult loadDescriptor(IFile file);
 }
