@@ -22,10 +22,7 @@ import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
-import jetbrains.mps.smodel.event.EventUtil;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -364,4 +361,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     if (needsReloading()) return false;
     return true;
   }
+
+  public void rename(SModelFqName newModelFqName, boolean changeFile) {
+    ModelAccess.assertLegalWrite();
+
+    SModelFqName oldFqName = getSModelReference().getSModelFqName();
+    SModel model = getSModel();
+    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+
+    SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
+    model.changeModelReference(newModelReference);
+    myModelRootManager.rename(this, newModelFqName, changeFile);
+    myModelReference = newModelReference;
+
+    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+  }
+
 }

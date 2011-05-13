@@ -144,31 +144,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return null;
   }
 
-  public boolean isEmpty() {
-    return getSModel().rootsCount() == 0;
-  }
-
   protected void checkModelDuplication() {
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (anotherModel != null) {
       String message = "Model already registered: " + myModelReference + "\n";
       LOG.error(message);
     }
-  }
-
-  public void rename(SModelFqName newModelFqName, boolean changeFile) {
-    ModelAccess.assertLegalWrite();
-
-    SModelFqName oldFqName = getSModelReference().getSModelFqName();
-    SModel model = getSModel();
-    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
-
-    SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
-    model.changeModelReference(newModelReference);
-    myModelRootManager.rename(this, newModelFqName, changeFile);
-    myModelReference = newModelReference;
-
-    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
 
   @Override
