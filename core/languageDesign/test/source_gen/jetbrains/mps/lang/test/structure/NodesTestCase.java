@@ -24,7 +24,7 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
   public static final String NODES_TO_CHECK = "nodesToCheck";
   public static final String TEST_METHODS = "testMethods";
   public static final String METHODS = "methods";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public NodesTestCase(SNode node) {
     super(node);
@@ -122,24 +122,24 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
     this.insertChild(prev, NodesTestCase.METHODS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(NodesTestCase._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(NodesTestCase.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, NodesTestCase._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, NodesTestCase.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, NodesTestCase._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, NodesTestCase.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(NodesTestCase._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(NodesTestCase.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, NodesTestCase._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NodesTestCase.SMODEL_ATTRIBUTE, node);
   }
 
   public static NodesTestCase newInstance(SModel sm, boolean init) {

@@ -20,7 +20,7 @@ public class Quotation extends Expression implements IMetaLevelChanger {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String QUOTED_NODE = "quotedNode";
   public static final String MODEL_TO_CREATE = "modelToCreate";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Quotation(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class Quotation extends Expression implements IMetaLevelChanger {
     super.setChild(Quotation.MODEL_TO_CREATE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Quotation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Quotation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Quotation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Quotation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Quotation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Quotation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Quotation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Quotation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Quotation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Quotation.SMODEL_ATTRIBUTE, node);
   }
 
   public static Quotation newInstance(SModel sm, boolean init) {

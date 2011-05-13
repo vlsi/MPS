@@ -21,7 +21,7 @@ public class MatrixInitializer extends Expression implements MatrixOrVectorIniti
   public static final String ROWS_COUNT = "rowsCount";
   public static final String COLS_COUNT = "colsCount";
   public static final String EXPRESSION = "expression";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public MatrixInitializer(SNode node) {
     super(node);
@@ -91,24 +91,24 @@ public class MatrixInitializer extends Expression implements MatrixOrVectorIniti
     super.setChild(MatrixInitializer.EXPRESSION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(MatrixInitializer._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(MatrixInitializer.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, MatrixInitializer._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, MatrixInitializer.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, MatrixInitializer._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, MatrixInitializer.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(MatrixInitializer._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(MatrixInitializer.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, MatrixInitializer._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MatrixInitializer.SMODEL_ATTRIBUTE, node);
   }
 
   public static MatrixInitializer newInstance(SModel sm, boolean init) {

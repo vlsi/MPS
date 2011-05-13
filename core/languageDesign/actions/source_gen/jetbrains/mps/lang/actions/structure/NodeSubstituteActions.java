@@ -20,7 +20,7 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept,
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTIONS_BUILDER = "actionsBuilder";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public NodeSubstituteActions(SNode node) {
     super(node);
@@ -78,24 +78,24 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept,
     this.insertChild(prev, NodeSubstituteActions.ACTIONS_BUILDER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(NodeSubstituteActions._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(NodeSubstituteActions.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, NodeSubstituteActions._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, NodeSubstituteActions.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, NodeSubstituteActions._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, NodeSubstituteActions.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(NodeSubstituteActions._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(NodeSubstituteActions.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, NodeSubstituteActions._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NodeSubstituteActions.SMODEL_ATTRIBUTE, node);
   }
 
   public static NodeSubstituteActions newInstance(SModel sm, boolean init) {

@@ -16,7 +16,7 @@ public class GLine extends GItem implements GCompositeItem {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ITEM = "item";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public GLine(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class GLine extends GItem implements GCompositeItem {
     this.insertChild(prev, GLine.ITEM, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(GLine._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(GLine.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, GLine._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, GLine.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, GLine._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, GLine.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(GLine._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(GLine.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GLine._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GLine.SMODEL_ATTRIBUTE, node);
   }
 
   public static GLine newInstance(SModel sm, boolean init) {

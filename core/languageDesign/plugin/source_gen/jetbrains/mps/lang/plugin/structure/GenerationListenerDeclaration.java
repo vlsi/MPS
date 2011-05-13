@@ -21,7 +21,7 @@ public class GenerationListenerDeclaration extends BaseConcept implements INamed
   public static final String BEFORE_GENERATION_BLOCK = "beforeGenerationBlock";
   public static final String MODELS_GENERATED_BLOCK = "modelsGeneratedBlock";
   public static final String AFTER_GENERATION_BLOCK = "afterGenerationBlock";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public GenerationListenerDeclaration(SNode node) {
     super(node);
@@ -83,24 +83,24 @@ public class GenerationListenerDeclaration extends BaseConcept implements INamed
     super.setChild(GenerationListenerDeclaration.AFTER_GENERATION_BLOCK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(GenerationListenerDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(GenerationListenerDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, GenerationListenerDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, GenerationListenerDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, GenerationListenerDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, GenerationListenerDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(GenerationListenerDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(GenerationListenerDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GenerationListenerDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GenerationListenerDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static GenerationListenerDeclaration newInstance(SModel sm, boolean init) {

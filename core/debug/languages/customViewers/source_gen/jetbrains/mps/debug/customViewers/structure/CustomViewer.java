@@ -21,7 +21,7 @@ public class CustomViewer extends BaseConcept implements INamedConcept {
   public static final String GET_WATCHABLES = "getWatchables";
   public static final String CAN_WRAP_BLOCK = "canWrapBlock";
   public static final String GET_PRESENTATION = "getPresentation";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CustomViewer(SNode node) {
     super(node);
@@ -83,24 +83,24 @@ public class CustomViewer extends BaseConcept implements INamedConcept {
     super.setChild(CustomViewer.GET_PRESENTATION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CustomViewer._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CustomViewer.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CustomViewer._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CustomViewer.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CustomViewer._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CustomViewer.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CustomViewer._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CustomViewer.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CustomViewer._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CustomViewer.SMODEL_ATTRIBUTE, node);
   }
 
   public static CustomViewer newInstance(SModel sm, boolean init) {

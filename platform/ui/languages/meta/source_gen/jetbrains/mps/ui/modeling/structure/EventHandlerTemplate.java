@@ -24,7 +24,7 @@ public class EventHandlerTemplate extends BaseConcept implements INamedConcept {
   public static final String PRODUCER_TYPE = "producerType";
   public static final String SETUP = "setup";
   public static final String PROPERTY_GETTER = "propertyGetter";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public EventHandlerTemplate(SNode node) {
     super(node);
@@ -114,24 +114,24 @@ public class EventHandlerTemplate extends BaseConcept implements INamedConcept {
     this.insertChild(prev, EventHandlerTemplate.PROPERTY_GETTER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(EventHandlerTemplate._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(EventHandlerTemplate.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, EventHandlerTemplate._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, EventHandlerTemplate.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, EventHandlerTemplate._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, EventHandlerTemplate.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(EventHandlerTemplate._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(EventHandlerTemplate.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, EventHandlerTemplate._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EventHandlerTemplate.SMODEL_ATTRIBUTE, node);
   }
 
   public static EventHandlerTemplate newInstance(SModel sm, boolean init) {

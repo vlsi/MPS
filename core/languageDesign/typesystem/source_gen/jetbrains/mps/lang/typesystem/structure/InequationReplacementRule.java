@@ -17,7 +17,7 @@ public class InequationReplacementRule extends AbstractSubtypingRule implements 
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SUPERTYPE_NODE = "supertypeNode";
   public static final String IS_APPLICABLE_CLAUSE = "isApplicableClause";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InequationReplacementRule(SNode node) {
     super(node);
@@ -63,24 +63,24 @@ public class InequationReplacementRule extends AbstractSubtypingRule implements 
     super.setChild(InequationReplacementRule.IS_APPLICABLE_CLAUSE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InequationReplacementRule._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InequationReplacementRule.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InequationReplacementRule._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InequationReplacementRule.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InequationReplacementRule._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InequationReplacementRule.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InequationReplacementRule._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InequationReplacementRule.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InequationReplacementRule._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InequationReplacementRule.SMODEL_ATTRIBUTE, node);
   }
 
   public static InequationReplacementRule newInstance(SModel sm, boolean init) {

@@ -19,7 +19,7 @@ public class EventVariable extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TYPE = "type";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public EventVariable(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class EventVariable extends BaseConcept implements INamedConcept {
     super.setProperty(EventVariable.TYPE, value.getValueAsString());
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(EventVariable._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(EventVariable.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, EventVariable._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, EventVariable.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, EventVariable._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, EventVariable.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(EventVariable._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(EventVariable.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, EventVariable._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EventVariable.SMODEL_ATTRIBUTE, node);
   }
 
   public static EventVariable newInstance(SModel sm, boolean init) {

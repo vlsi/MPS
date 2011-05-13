@@ -16,7 +16,7 @@ public class CommentedFollowingCommandList extends AbstractFollowingCommandList 
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMMAND = "command";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CommentedFollowingCommandList(SNode node) {
     super(node);
@@ -54,24 +54,24 @@ public class CommentedFollowingCommandList extends AbstractFollowingCommandList 
     super.setChild(CommentedFollowingCommandList.COMMAND, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CommentedFollowingCommandList._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CommentedFollowingCommandList.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CommentedFollowingCommandList._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CommentedFollowingCommandList.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CommentedFollowingCommandList._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CommentedFollowingCommandList.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CommentedFollowingCommandList._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CommentedFollowingCommandList.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CommentedFollowingCommandList._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CommentedFollowingCommandList.SMODEL_ATTRIBUTE, node);
   }
 
   public static CommentedFollowingCommandList newInstance(SModel sm, boolean init) {

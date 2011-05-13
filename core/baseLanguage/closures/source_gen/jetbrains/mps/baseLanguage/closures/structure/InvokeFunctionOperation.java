@@ -19,7 +19,7 @@ public class InvokeFunctionOperation extends BaseConcept implements IOperation {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARAMETER = "parameter";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InvokeFunctionOperation(SNode node) {
     super(node);
@@ -69,24 +69,24 @@ public class InvokeFunctionOperation extends BaseConcept implements IOperation {
     this.insertChild(prev, InvokeFunctionOperation.PARAMETER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InvokeFunctionOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InvokeFunctionOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InvokeFunctionOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InvokeFunctionOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InvokeFunctionOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InvokeFunctionOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InvokeFunctionOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InvokeFunctionOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InvokeFunctionOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InvokeFunctionOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static InvokeFunctionOperation newInstance(SModel sm, boolean init) {

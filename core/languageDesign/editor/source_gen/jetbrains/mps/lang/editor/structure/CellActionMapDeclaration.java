@@ -22,7 +22,7 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String APPLICABLE_CONCEPT = "applicableConcept";
   public static final String ITEM = "item";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CellActionMapDeclaration(SNode node) {
     super(node);
@@ -88,24 +88,24 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
     this.insertChild(prev, CellActionMapDeclaration.ITEM, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CellActionMapDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CellActionMapDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CellActionMapDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CellActionMapDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CellActionMapDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CellActionMapDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CellActionMapDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CellActionMapDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CellActionMapDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CellActionMapDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static CellActionMapDeclaration newInstance(SModel sm, boolean init) {

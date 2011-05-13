@@ -21,7 +21,7 @@ public class AnonymousClass extends ClassConcept implements IMethodCall, IContro
   public static final String PARAMETER = "parameter";
   public static final String TYPE_PARAMETER = "typeParameter";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AnonymousClass(SNode node) {
     super(node);
@@ -135,24 +135,24 @@ public class AnonymousClass extends ClassConcept implements IMethodCall, IContro
     this.insertChild(prev, AnonymousClass.ACTUAL_ARGUMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AnonymousClass._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AnonymousClass.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AnonymousClass._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AnonymousClass.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AnonymousClass._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AnonymousClass.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AnonymousClass._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AnonymousClass.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AnonymousClass._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AnonymousClass.SMODEL_ATTRIBUTE, node);
   }
 
   public static AnonymousClass newInstance(SModel sm, boolean init) {

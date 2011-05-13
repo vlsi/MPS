@@ -16,7 +16,7 @@ public class BracesStubBlock extends BaseConcept implements IBaseTestBlock {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BracesStubBlock(SNode node) {
     super(node);
@@ -46,24 +46,24 @@ public class BracesStubBlock extends BaseConcept implements IBaseTestBlock {
     this.setProperty(BracesStubBlock.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(BracesStubBlock._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BracesStubBlock.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, BracesStubBlock._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BracesStubBlock.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, BracesStubBlock._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BracesStubBlock.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(BracesStubBlock._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BracesStubBlock.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BracesStubBlock._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BracesStubBlock.SMODEL_ATTRIBUTE, node);
   }
 
   public static BracesStubBlock newInstance(SModel sm, boolean init) {

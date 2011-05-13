@@ -27,7 +27,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   public static final String OVERRIDES_DEFAULT_BLOCK = "overridesDefaultBlock";
   public static final String METHOD = "method";
   public static final String FIELD = "field";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public FileGeneratorDeclaration(SNode node) {
     super(node);
@@ -137,24 +137,24 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
     this.insertChild(prev, FileGeneratorDeclaration.FIELD, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(FileGeneratorDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(FileGeneratorDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, FileGeneratorDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, FileGeneratorDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, FileGeneratorDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, FileGeneratorDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(FileGeneratorDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(FileGeneratorDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, FileGeneratorDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FileGeneratorDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static FileGeneratorDeclaration newInstance(SModel sm, boolean init) {

@@ -18,7 +18,7 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STATEMENT_LIST = "statementList";
   public static final String VISIBILITY = "visibility";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InstanceInitializer(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
     super.setChild(InstanceInitializer.VISIBILITY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InstanceInitializer._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InstanceInitializer.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InstanceInitializer._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InstanceInitializer.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InstanceInitializer._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InstanceInitializer.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InstanceInitializer._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InstanceInitializer.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InstanceInitializer._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InstanceInitializer.SMODEL_ATTRIBUTE, node);
   }
 
   public static InstanceInitializer newInstance(SModel sm, boolean init) {

@@ -22,7 +22,7 @@ public class GWTModule extends BaseConcept implements INamedConcept, IResolveInf
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String RENAME_TO = "renameTo";
   public static final String ELEMENT = "element";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public GWTModule(SNode node) {
     super(node);
@@ -96,24 +96,24 @@ public class GWTModule extends BaseConcept implements INamedConcept, IResolveInf
     this.insertChild(prev, GWTModule.ELEMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(GWTModule._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(GWTModule.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, GWTModule._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, GWTModule.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, GWTModule._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, GWTModule.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(GWTModule._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(GWTModule.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GWTModule._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GWTModule.SMODEL_ATTRIBUTE, node);
   }
 
   public static GWTModule newInstance(SModel sm, boolean init) {

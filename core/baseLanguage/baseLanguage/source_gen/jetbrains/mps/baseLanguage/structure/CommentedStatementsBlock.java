@@ -17,7 +17,7 @@ public class CommentedStatementsBlock extends Statement implements ILocalVariabl
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STATEMENT = "statement";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CommentedStatementsBlock(SNode node) {
     super(node);
@@ -67,24 +67,24 @@ public class CommentedStatementsBlock extends Statement implements ILocalVariabl
     this.insertChild(prev, CommentedStatementsBlock.STATEMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CommentedStatementsBlock._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CommentedStatementsBlock.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CommentedStatementsBlock._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CommentedStatementsBlock.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CommentedStatementsBlock._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CommentedStatementsBlock.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CommentedStatementsBlock._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CommentedStatementsBlock.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CommentedStatementsBlock._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CommentedStatementsBlock.SMODEL_ATTRIBUTE, node);
   }
 
   public static CommentedStatementsBlock newInstance(SModel sm, boolean init) {

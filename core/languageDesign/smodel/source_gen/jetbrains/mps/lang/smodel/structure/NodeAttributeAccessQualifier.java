@@ -18,7 +18,7 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ANNOTATION_LINK = "annotationLink";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public NodeAttributeAccessQualifier(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
     super.setReferent(NodeAttributeAccessQualifier.ANNOTATION_LINK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(NodeAttributeAccessQualifier._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(NodeAttributeAccessQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, NodeAttributeAccessQualifier._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, NodeAttributeAccessQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, NodeAttributeAccessQualifier._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, NodeAttributeAccessQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(NodeAttributeAccessQualifier._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(NodeAttributeAccessQualifier.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, NodeAttributeAccessQualifier._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NodeAttributeAccessQualifier.SMODEL_ATTRIBUTE, node);
   }
 
   public static NodeAttributeAccessQualifier newInstance(SModel sm, boolean init) {

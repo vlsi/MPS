@@ -27,7 +27,7 @@ public class AnonymousCellAnnotation extends INodeAnnotattion implements INamedC
   public static final String SELECTION_END = "selectionEnd";
   public static final String NODE_RANGE_SELECTION_START = "nodeRangeSelectionStart";
   public static final String NODE_RANGE_SELECTION_END = "nodeRangeSelectionEnd";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AnonymousCellAnnotation(SNode node) {
     super(node);
@@ -137,24 +137,24 @@ public class AnonymousCellAnnotation extends INodeAnnotattion implements INamedC
     super.setReferent(AnonymousCellAnnotation.NODE_RANGE_SELECTION_END, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AnonymousCellAnnotation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AnonymousCellAnnotation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AnonymousCellAnnotation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AnonymousCellAnnotation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AnonymousCellAnnotation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AnonymousCellAnnotation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AnonymousCellAnnotation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AnonymousCellAnnotation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AnonymousCellAnnotation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AnonymousCellAnnotation.SMODEL_ATTRIBUTE, node);
   }
 
   public static AnonymousCellAnnotation newInstance(SModel sm, boolean init) {

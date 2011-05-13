@@ -18,7 +18,7 @@ public class Path extends PropertyValueExpression implements IPath {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MACRO = "macro";
   public static final String COMPOSITE_PATH_COMPONENT = "compositePathComponent";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Path(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class Path extends PropertyValueExpression implements IPath {
     super.setChild(Path.COMPOSITE_PATH_COMPONENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Path._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Path.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Path._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Path.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Path._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Path.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Path._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Path.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Path._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Path.SMODEL_ATTRIBUTE, node);
   }
 
   public static Path newInstance(SModel sm, boolean init) {

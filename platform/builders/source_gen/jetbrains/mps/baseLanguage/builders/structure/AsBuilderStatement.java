@@ -22,7 +22,7 @@ public class AsBuilderStatement extends Statement implements IContainsStatementL
   public static final String EXPRESSION = "expression";
   public static final String BUILDER = "builder";
   public static final String BODY = "body";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AsBuilderStatement(SNode node) {
     super(node);
@@ -76,24 +76,24 @@ public class AsBuilderStatement extends Statement implements IContainsStatementL
     super.setChild(AsBuilderStatement.BODY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AsBuilderStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AsBuilderStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AsBuilderStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AsBuilderStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AsBuilderStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AsBuilderStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AsBuilderStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AsBuilderStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AsBuilderStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AsBuilderStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static AsBuilderStatement newInstance(SModel sm, boolean init) {

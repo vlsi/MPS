@@ -16,7 +16,7 @@ public class GFCardinalFun extends ConceptFunction implements IDesignFunction {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public GFCardinalFun(SNode node) {
     super(node);
@@ -46,24 +46,24 @@ public class GFCardinalFun extends ConceptFunction implements IDesignFunction {
     this.setProperty(GFCardinalFun.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(GFCardinalFun._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(GFCardinalFun.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, GFCardinalFun._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, GFCardinalFun.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, GFCardinalFun._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, GFCardinalFun.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(GFCardinalFun._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(GFCardinalFun.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GFCardinalFun._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GFCardinalFun.SMODEL_ATTRIBUTE, node);
   }
 
   public static GFCardinalFun newInstance(SModel sm, boolean init) {

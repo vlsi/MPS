@@ -18,7 +18,7 @@ public class VariableDeclarationBlock extends BaseConcept implements INamedConce
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public VariableDeclarationBlock(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class VariableDeclarationBlock extends BaseConcept implements INamedConce
     this.setProperty(VariableDeclarationBlock.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(VariableDeclarationBlock._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(VariableDeclarationBlock.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, VariableDeclarationBlock._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, VariableDeclarationBlock.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, VariableDeclarationBlock._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, VariableDeclarationBlock.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(VariableDeclarationBlock._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(VariableDeclarationBlock.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, VariableDeclarationBlock._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, VariableDeclarationBlock.SMODEL_ATTRIBUTE, node);
   }
 
   public static VariableDeclarationBlock newInstance(SModel sm, boolean init) {

@@ -18,7 +18,7 @@ public class RuntimeListVariable extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public RuntimeListVariable(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class RuntimeListVariable extends BaseConcept implements INamedConcept {
     this.setProperty(RuntimeListVariable.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(RuntimeListVariable._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(RuntimeListVariable.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, RuntimeListVariable._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, RuntimeListVariable.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, RuntimeListVariable._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, RuntimeListVariable.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(RuntimeListVariable._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(RuntimeListVariable.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, RuntimeListVariable._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RuntimeListVariable.SMODEL_ATTRIBUTE, node);
   }
 
   public static RuntimeListVariable newInstance(SModel sm, boolean init) {

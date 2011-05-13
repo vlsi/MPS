@@ -20,7 +20,7 @@ public class AssertThrows extends Statement implements MessageHolder {
   public static final String STATEMENT = "statement";
   public static final String EXCEPTION_TYPE = "exceptionType";
   public static final String MESSAGE = "message";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AssertThrows(SNode node) {
     super(node);
@@ -74,24 +74,24 @@ public class AssertThrows extends Statement implements MessageHolder {
     super.setChild(AssertThrows.MESSAGE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AssertThrows._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AssertThrows.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AssertThrows._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AssertThrows.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AssertThrows._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AssertThrows.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AssertThrows._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AssertThrows.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AssertThrows._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AssertThrows.SMODEL_ATTRIBUTE, node);
   }
 
   public static AssertThrows newInstance(SModel sm, boolean init) {

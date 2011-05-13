@@ -18,7 +18,7 @@ public class NamedTupleComponentAccessOperation extends BaseConcept implements I
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMPONENT = "component";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public NamedTupleComponentAccessOperation(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class NamedTupleComponentAccessOperation extends BaseConcept implements I
     super.setReferent(NamedTupleComponentAccessOperation.COMPONENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(NamedTupleComponentAccessOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(NamedTupleComponentAccessOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, NamedTupleComponentAccessOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, NamedTupleComponentAccessOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, NamedTupleComponentAccessOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, NamedTupleComponentAccessOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(NamedTupleComponentAccessOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(NamedTupleComponentAccessOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, NamedTupleComponentAccessOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NamedTupleComponentAccessOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static NamedTupleComponentAccessOperation newInstance(SModel sm, boolean init) {

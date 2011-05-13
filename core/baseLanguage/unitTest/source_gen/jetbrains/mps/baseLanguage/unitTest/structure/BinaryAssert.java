@@ -20,7 +20,7 @@ public class BinaryAssert extends Statement implements MessageHolder {
   public static final String EXPECTED = "expected";
   public static final String ACTUAL = "actual";
   public static final String MESSAGE = "message";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BinaryAssert(SNode node) {
     super(node);
@@ -74,24 +74,24 @@ public class BinaryAssert extends Statement implements MessageHolder {
     super.setChild(BinaryAssert.MESSAGE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(BinaryAssert._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BinaryAssert.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, BinaryAssert._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BinaryAssert.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, BinaryAssert._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BinaryAssert.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(BinaryAssert._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BinaryAssert.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BinaryAssert._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BinaryAssert.SMODEL_ATTRIBUTE, node);
   }
 
   public static BinaryAssert newInstance(SModel sm, boolean init) {

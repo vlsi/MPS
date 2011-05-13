@@ -26,7 +26,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   public static final String ATTRIBUTE = "attribute";
   public static final String EVENT = "event";
   public static final String COMPONENT_METHOD = "componentMethod";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ComponentController(SNode node) {
     super(node);
@@ -148,24 +148,24 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
     this.insertChild(prev, ComponentController.COMPONENT_METHOD, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ComponentController._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ComponentController.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ComponentController._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ComponentController.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ComponentController._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ComponentController.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ComponentController._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ComponentController.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ComponentController._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ComponentController.SMODEL_ATTRIBUTE, node);
   }
 
   public static ComponentController newInstance(SModel sm, boolean init) {

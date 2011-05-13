@@ -21,7 +21,7 @@ public class ChildAspectDefinition extends BaseConcept implements INamedConcept 
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String OPTIONAL = "optional";
   public static final String ASPECT_TYPE = "aspectType";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ChildAspectDefinition(SNode node) {
     super(node);
@@ -75,24 +75,24 @@ public class ChildAspectDefinition extends BaseConcept implements INamedConcept 
     super.setChild(ChildAspectDefinition.ASPECT_TYPE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ChildAspectDefinition._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ChildAspectDefinition.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ChildAspectDefinition._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ChildAspectDefinition.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ChildAspectDefinition._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ChildAspectDefinition.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ChildAspectDefinition._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ChildAspectDefinition.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ChildAspectDefinition._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ChildAspectDefinition.SMODEL_ATTRIBUTE, node);
   }
 
   public static ChildAspectDefinition newInstance(SModel sm, boolean init) {

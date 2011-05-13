@@ -17,7 +17,7 @@ public class TestBlockList extends BaseConcept implements IBaseTestBlock {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STATEMENT = "statement";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public TestBlockList(SNode node) {
     super(node);
@@ -67,24 +67,24 @@ public class TestBlockList extends BaseConcept implements IBaseTestBlock {
     this.insertChild(prev, TestBlockList.STATEMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(TestBlockList._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(TestBlockList.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, TestBlockList._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, TestBlockList.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, TestBlockList._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, TestBlockList.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(TestBlockList._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(TestBlockList.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, TestBlockList._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TestBlockList.SMODEL_ATTRIBUTE, node);
   }
 
   public static TestBlockList newInstance(SModel sm, boolean init) {

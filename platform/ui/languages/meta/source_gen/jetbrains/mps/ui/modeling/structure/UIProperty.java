@@ -20,7 +20,7 @@ public class UIProperty extends BaseConcept implements INamedConcept, HasTemplat
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DATA_TYPE = "dataType";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public UIProperty(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class UIProperty extends BaseConcept implements INamedConcept, HasTemplat
     super.setChild(UIProperty.DATA_TYPE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(UIProperty._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(UIProperty.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, UIProperty._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, UIProperty.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, UIProperty._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, UIProperty.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(UIProperty._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(UIProperty.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, UIProperty._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UIProperty.SMODEL_ATTRIBUTE, node);
   }
 
   public static UIProperty newInstance(SModel sm, boolean init) {

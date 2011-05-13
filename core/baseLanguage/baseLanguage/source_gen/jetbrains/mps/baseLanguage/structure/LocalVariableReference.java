@@ -15,7 +15,7 @@ public class LocalVariableReference extends VariableReference implements ILocalR
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public LocalVariableReference(SNode node) {
     super(node);
@@ -53,24 +53,24 @@ public class LocalVariableReference extends VariableReference implements ILocalR
     this.setVariableDeclaration(node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(LocalVariableReference._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(LocalVariableReference.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, LocalVariableReference._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, LocalVariableReference.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, LocalVariableReference._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, LocalVariableReference.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(LocalVariableReference._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(LocalVariableReference.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, LocalVariableReference._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LocalVariableReference.SMODEL_ATTRIBUTE, node);
   }
 
   public static LocalVariableReference newInstance(SModel sm, boolean init) {

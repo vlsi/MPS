@@ -24,7 +24,7 @@ public class SchedulePeriod extends BaseConcept implements INamedConcept {
   public static final String DAY_OF_WEEK = "dayOfWeek";
   public static final String DAY_OF_MONTH = "dayOfMonth";
   public static final String MONTH = "month";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public SchedulePeriod(SNode node) {
     super(node);
@@ -110,24 +110,24 @@ public class SchedulePeriod extends BaseConcept implements INamedConcept {
     this.setBooleanProperty(SchedulePeriod.MONTH, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(SchedulePeriod._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(SchedulePeriod.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, SchedulePeriod._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, SchedulePeriod.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, SchedulePeriod._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, SchedulePeriod.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(SchedulePeriod._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(SchedulePeriod.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, SchedulePeriod._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SchedulePeriod.SMODEL_ATTRIBUTE, node);
   }
 
   public static SchedulePeriod newInstance(SModel sm, boolean init) {

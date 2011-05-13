@@ -21,7 +21,7 @@ public class AbstractStyledTextOperation extends BaseConcept implements IOperati
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AbstractStyledTextOperation(SNode node) {
     super(node);
@@ -71,24 +71,24 @@ public class AbstractStyledTextOperation extends BaseConcept implements IOperati
     this.insertChild(prev, AbstractStyledTextOperation.ACTUAL_ARGUMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AbstractStyledTextOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AbstractStyledTextOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AbstractStyledTextOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AbstractStyledTextOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AbstractStyledTextOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AbstractStyledTextOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AbstractStyledTextOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AbstractStyledTextOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AbstractStyledTextOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractStyledTextOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static AbstractStyledTextOperation newInstance(SModel sm, boolean init) {

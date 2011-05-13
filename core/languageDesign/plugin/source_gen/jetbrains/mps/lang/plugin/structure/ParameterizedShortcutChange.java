@@ -17,7 +17,7 @@ public class ParameterizedShortcutChange extends ConceptFunction implements Shor
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTION = "action";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ParameterizedShortcutChange(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class ParameterizedShortcutChange extends ConceptFunction implements Shor
     super.setReferent(ParameterizedShortcutChange.ACTION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ParameterizedShortcutChange._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ParameterizedShortcutChange.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ParameterizedShortcutChange._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ParameterizedShortcutChange.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ParameterizedShortcutChange._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ParameterizedShortcutChange.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ParameterizedShortcutChange._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ParameterizedShortcutChange.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ParameterizedShortcutChange._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ParameterizedShortcutChange.SMODEL_ATTRIBUTE, node);
   }
 
   public static ParameterizedShortcutChange newInstance(SModel sm, boolean init) {

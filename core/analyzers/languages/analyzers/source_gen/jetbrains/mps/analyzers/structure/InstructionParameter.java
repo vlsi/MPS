@@ -20,7 +20,7 @@ public class InstructionParameter extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TYPE = "type";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InstructionParameter(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class InstructionParameter extends BaseConcept implements INamedConcept {
     super.setChild(InstructionParameter.TYPE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InstructionParameter._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InstructionParameter.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InstructionParameter._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InstructionParameter.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InstructionParameter._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InstructionParameter.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InstructionParameter._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InstructionParameter.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InstructionParameter._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InstructionParameter.SMODEL_ATTRIBUTE, node);
   }
 
   public static InstructionParameter newInstance(SModel sm, boolean init) {

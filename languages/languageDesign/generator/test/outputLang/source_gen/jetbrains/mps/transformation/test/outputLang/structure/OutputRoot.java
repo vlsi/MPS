@@ -21,7 +21,7 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SPECIAL_CHILD = "specialChild";
   public static final String OUTPUT_CHILD = "outputChild";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public OutputRoot(SNode node) {
     super(node);
@@ -95,24 +95,24 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
     this.insertChild(prev, OutputRoot.OUTPUT_CHILD, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(OutputRoot._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(OutputRoot.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, OutputRoot._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, OutputRoot.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, OutputRoot._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, OutputRoot.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(OutputRoot._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(OutputRoot.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, OutputRoot._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, OutputRoot.SMODEL_ATTRIBUTE, node);
   }
 
   public static OutputRoot newInstance(SModel sm, boolean init) {

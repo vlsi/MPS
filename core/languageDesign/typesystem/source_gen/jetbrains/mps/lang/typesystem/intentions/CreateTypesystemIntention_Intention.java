@@ -96,7 +96,7 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
           SNode quotedNode1_8 = quotedNode_3;
           quotedNode1_8.setProperty("modelId", "jetbrains.mps.lang.typesystem.intentions");
           quotedNode1_8.setProperty("nodeId", "3302086321380616758");
-          quotedNode_1.addChild("_$attribute", quotedNode1_8);
+          quotedNode_1.addChild("smodelAttribute", quotedNode1_8);
         }
         result = quotedNode1_5;
       }

@@ -20,7 +20,7 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_PRIVATE = "isPrivate";
   public static final String VISIBILITY = "visibility";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public StaticConceptMethodDeclaration(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
     super.setChild(StaticConceptMethodDeclaration.VISIBILITY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(StaticConceptMethodDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(StaticConceptMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, StaticConceptMethodDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, StaticConceptMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, StaticConceptMethodDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, StaticConceptMethodDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(StaticConceptMethodDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(StaticConceptMethodDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, StaticConceptMethodDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StaticConceptMethodDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static StaticConceptMethodDeclaration newInstance(SModel sm, boolean init) {

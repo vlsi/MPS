@@ -30,7 +30,7 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
   public static final String NODES_BLOCK = "nodesBlock";
   public static final String CONCEPTS_BLOCK = "conceptsBlock";
   public static final String CREATE_BLOCK = "createBlock";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public EditorTab(SNode node) {
     super(node);
@@ -156,24 +156,24 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
     super.setChild(EditorTab.CREATE_BLOCK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(EditorTab._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(EditorTab.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, EditorTab._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, EditorTab.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, EditorTab._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, EditorTab.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(EditorTab._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(EditorTab.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, EditorTab._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EditorTab.SMODEL_ATTRIBUTE, node);
   }
 
   public static EditorTab newInstance(SModel sm, boolean init) {

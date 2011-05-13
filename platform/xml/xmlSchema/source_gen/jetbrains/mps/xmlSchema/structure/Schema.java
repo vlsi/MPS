@@ -24,7 +24,7 @@ public class Schema extends BaseConcept implements INamedConcept {
   public static final String ROOT_ELEMENT_REFERENCE = "rootElementReference";
   public static final String DEFAULT_NAMESPACE_DECLARATION = "defaultNamespaceDeclaration";
   public static final String DECLARATION_BLOCK = "declarationBlock";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Schema(SNode node) {
     super(node);
@@ -122,24 +122,24 @@ public class Schema extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Schema.DECLARATION_BLOCK, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Schema._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Schema.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Schema._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Schema.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Schema._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Schema.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Schema._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Schema.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Schema._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Schema.SMODEL_ATTRIBUTE, node);
   }
 
   public static Schema newInstance(SModel sm, boolean init) {

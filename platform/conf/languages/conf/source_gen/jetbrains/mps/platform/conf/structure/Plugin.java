@@ -26,7 +26,7 @@ public class Plugin extends IdeaPluginRoot implements IConfigurationFragment, IN
   public static final String HELPSET = "helpset";
   public static final String DEPENDS = "depends";
   public static final String DETAILS = "details";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Plugin(SNode node) {
     super(node);
@@ -152,24 +152,24 @@ public class Plugin extends IdeaPluginRoot implements IConfigurationFragment, IN
     this.insertChild(prev, Plugin.DETAILS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Plugin._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Plugin.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Plugin._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Plugin.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Plugin._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Plugin.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Plugin._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Plugin.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Plugin._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Plugin.SMODEL_ATTRIBUTE, node);
   }
 
   public static Plugin newInstance(SModel sm, boolean init) {

@@ -17,7 +17,7 @@ public class AnalyzerRunnerAnalyzeOperation extends BaseConcept implements IOper
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AnalyzerRunnerAnalyzeOperation(SNode node) {
     super(node);
@@ -47,24 +47,24 @@ public class AnalyzerRunnerAnalyzeOperation extends BaseConcept implements IOper
     this.setProperty(AnalyzerRunnerAnalyzeOperation.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AnalyzerRunnerAnalyzeOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AnalyzerRunnerAnalyzeOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AnalyzerRunnerAnalyzeOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AnalyzerRunnerAnalyzeOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AnalyzerRunnerAnalyzeOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AnalyzerRunnerAnalyzeOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AnalyzerRunnerAnalyzeOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AnalyzerRunnerAnalyzeOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AnalyzerRunnerAnalyzeOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AnalyzerRunnerAnalyzeOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static AnalyzerRunnerAnalyzeOperation newInstance(SModel sm, boolean init) {

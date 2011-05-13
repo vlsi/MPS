@@ -24,7 +24,7 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
   public static final String CONTENT_PANE = "contentPane";
   public static final String BUTTON = "button";
   public static final String CONTENT = "content";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public IDEDialog(SNode node) {
     super(node);
@@ -126,24 +126,24 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
     this.insertChild(prev, IDEDialog.CONTENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(IDEDialog._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(IDEDialog.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, IDEDialog._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, IDEDialog.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, IDEDialog._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, IDEDialog.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(IDEDialog._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(IDEDialog.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, IDEDialog._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, IDEDialog.SMODEL_ATTRIBUTE, node);
   }
 
   public static IDEDialog newInstance(SModel sm, boolean init) {

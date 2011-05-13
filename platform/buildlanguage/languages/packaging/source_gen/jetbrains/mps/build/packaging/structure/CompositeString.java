@@ -18,7 +18,7 @@ public class CompositeString extends BaseConcept implements IStringExpression {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LEFT = "left";
   public static final String RIGHT = "right";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CompositeString(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class CompositeString extends BaseConcept implements IStringExpression {
     super.setChild(CompositeString.RIGHT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CompositeString._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CompositeString.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CompositeString._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CompositeString.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CompositeString._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CompositeString.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CompositeString._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CompositeString.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CompositeString._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CompositeString.SMODEL_ATTRIBUTE, node);
   }
 
   public static CompositeString newInstance(SModel sm, boolean init) {

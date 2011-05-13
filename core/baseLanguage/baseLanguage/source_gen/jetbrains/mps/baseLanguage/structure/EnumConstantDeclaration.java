@@ -22,7 +22,7 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String VISIBILITY = "visibility";
   public static final String METHOD = "method";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
   public static final String ANNOTATION = "annotation";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
 
@@ -114,24 +114,24 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
     this.insertChild(prev, EnumConstantDeclaration.METHOD, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(EnumConstantDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(EnumConstantDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, EnumConstantDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, EnumConstantDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, EnumConstantDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, EnumConstantDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(EnumConstantDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(EnumConstantDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, EnumConstantDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EnumConstantDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public int getAnnotationsCount() {

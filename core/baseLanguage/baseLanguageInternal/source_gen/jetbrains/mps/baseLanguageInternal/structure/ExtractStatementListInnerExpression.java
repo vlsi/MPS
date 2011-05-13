@@ -18,7 +18,7 @@ public class ExtractStatementListInnerExpression extends Expression implements I
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INNER = "inner";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ExtractStatementListInnerExpression(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class ExtractStatementListInnerExpression extends Expression implements I
     super.setChild(ExtractStatementListInnerExpression.INNER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ExtractStatementListInnerExpression._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ExtractStatementListInnerExpression.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ExtractStatementListInnerExpression._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ExtractStatementListInnerExpression.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ExtractStatementListInnerExpression._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ExtractStatementListInnerExpression.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ExtractStatementListInnerExpression._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ExtractStatementListInnerExpression.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ExtractStatementListInnerExpression._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExtractStatementListInnerExpression.SMODEL_ATTRIBUTE, node);
   }
 
   public static ExtractStatementListInnerExpression newInstance(SModel sm, boolean init) {

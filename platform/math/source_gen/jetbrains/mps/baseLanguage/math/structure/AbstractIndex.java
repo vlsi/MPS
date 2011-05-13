@@ -18,7 +18,7 @@ public class AbstractIndex extends BaseConcept implements IValidIdentifier {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AbstractIndex(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class AbstractIndex extends BaseConcept implements IValidIdentifier {
     this.setProperty(AbstractIndex.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AbstractIndex._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AbstractIndex.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AbstractIndex._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AbstractIndex.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AbstractIndex._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AbstractIndex.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AbstractIndex._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AbstractIndex.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AbstractIndex._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractIndex.SMODEL_ATTRIBUTE, node);
   }
 
   public static AbstractIndex newInstance(SModel sm, boolean init) {

@@ -16,7 +16,7 @@ public class VariableReference extends LValue implements IGeneralizedWordUnit {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VARIABLE = "variable";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public VariableReference(SNode node) {
     super(node);
@@ -54,24 +54,24 @@ public class VariableReference extends LValue implements IGeneralizedWordUnit {
     super.setReferent(VariableReference.VARIABLE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(VariableReference._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(VariableReference.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, VariableReference._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, VariableReference.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, VariableReference._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, VariableReference.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(VariableReference._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(VariableReference.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, VariableReference._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, VariableReference.SMODEL_ATTRIBUTE, node);
   }
 
   public static VariableReference newInstance(SModel sm, boolean init) {

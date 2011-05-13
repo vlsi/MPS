@@ -17,7 +17,7 @@ public class NonEmptyProperty extends BaseConcept implements IBaseTestBlock {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public NonEmptyProperty(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class NonEmptyProperty extends BaseConcept implements IBaseTestBlock {
     this.setProperty(NonEmptyProperty.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(NonEmptyProperty._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(NonEmptyProperty.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, NonEmptyProperty._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, NonEmptyProperty.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, NonEmptyProperty._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, NonEmptyProperty.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(NonEmptyProperty._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(NonEmptyProperty.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, NonEmptyProperty._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NonEmptyProperty.SMODEL_ATTRIBUTE, node);
   }
 
   public static NonEmptyProperty newInstance(SModel sm, boolean init) {

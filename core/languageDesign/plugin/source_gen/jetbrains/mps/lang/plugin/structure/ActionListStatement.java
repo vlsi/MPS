@@ -18,7 +18,7 @@ public class ActionListStatement extends Statement implements ExecuteSpecific {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTIONS = "actions";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ActionListStatement(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class ActionListStatement extends Statement implements ExecuteSpecific {
     super.setChild(ActionListStatement.ACTIONS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ActionListStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ActionListStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ActionListStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ActionListStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ActionListStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ActionListStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ActionListStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ActionListStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ActionListStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionListStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static ActionListStatement newInstance(SModel sm, boolean init) {

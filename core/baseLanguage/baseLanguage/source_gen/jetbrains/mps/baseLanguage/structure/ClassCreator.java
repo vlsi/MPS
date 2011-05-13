@@ -18,7 +18,7 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String TYPE_PARAMETER = "typeParameter";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ClassCreator(SNode node) {
     super(node);
@@ -104,24 +104,24 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
     this.insertChild(prev, ClassCreator.ACTUAL_ARGUMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ClassCreator._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ClassCreator.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ClassCreator._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ClassCreator.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ClassCreator._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ClassCreator.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ClassCreator._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ClassCreator.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ClassCreator._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ClassCreator.SMODEL_ATTRIBUTE, node);
   }
 
   public static ClassCreator newInstance(SModel sm, boolean init) {

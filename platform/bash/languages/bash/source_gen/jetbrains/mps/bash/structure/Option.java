@@ -18,7 +18,7 @@ public class Option extends BaseConcept implements ISymbolConcept, IDescribedCon
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DESCRIPTION = "description";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Option(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class Option extends BaseConcept implements ISymbolConcept, IDescribedCon
     this.setProperty(Option.DESCRIPTION, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Option._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Option.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Option._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Option.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Option._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Option.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Option._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Option.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Option._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Option.SMODEL_ATTRIBUTE, node);
   }
 
   public static Option newInstance(SModel sm, boolean init) {

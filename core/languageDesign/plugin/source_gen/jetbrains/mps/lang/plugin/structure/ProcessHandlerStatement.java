@@ -18,7 +18,7 @@ public class ProcessHandlerStatement extends Statement implements ExecuteSpecifi
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROCESS_HANDLER = "processHandler";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ProcessHandlerStatement(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class ProcessHandlerStatement extends Statement implements ExecuteSpecifi
     super.setChild(ProcessHandlerStatement.PROCESS_HANDLER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ProcessHandlerStatement._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ProcessHandlerStatement.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ProcessHandlerStatement._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ProcessHandlerStatement.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ProcessHandlerStatement._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ProcessHandlerStatement.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ProcessHandlerStatement._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ProcessHandlerStatement.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ProcessHandlerStatement._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ProcessHandlerStatement.SMODEL_ATTRIBUTE, node);
   }
 
   public static ProcessHandlerStatement newInstance(SModel sm, boolean init) {

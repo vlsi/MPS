@@ -16,7 +16,7 @@ public class ConfigurationXmlRootNode extends ConfigurationXmlNode implements IC
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FRAGMENT = "fragment";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ConfigurationXmlRootNode(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class ConfigurationXmlRootNode extends ConfigurationXmlNode implements IC
     this.insertChild(prev, ConfigurationXmlRootNode.FRAGMENT, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ConfigurationXmlRootNode._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ConfigurationXmlRootNode.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ConfigurationXmlRootNode._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ConfigurationXmlRootNode.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ConfigurationXmlRootNode._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ConfigurationXmlRootNode.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ConfigurationXmlRootNode._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ConfigurationXmlRootNode.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ConfigurationXmlRootNode._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConfigurationXmlRootNode.SMODEL_ATTRIBUTE, node);
   }
 
   public static ConfigurationXmlRootNode newInstance(SModel sm, boolean init) {

@@ -27,7 +27,7 @@ public class UIObjectTemplate extends BaseConcept implements INamedConcept {
   public static final String PROPERTY_ACCESSOR = "propertyAccessor";
   public static final String ACTION_HANDLER = "actionHandler";
   public static final String CONTAINER_TEMPLATE = "containerTemplate";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public UIObjectTemplate(SNode node) {
     super(node);
@@ -177,24 +177,24 @@ public class UIObjectTemplate extends BaseConcept implements INamedConcept {
     this.insertChild(prev, UIObjectTemplate.CONTAINER_TEMPLATE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(UIObjectTemplate._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(UIObjectTemplate.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, UIObjectTemplate._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, UIObjectTemplate.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, UIObjectTemplate._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, UIObjectTemplate.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(UIObjectTemplate._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(UIObjectTemplate.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, UIObjectTemplate._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UIObjectTemplate.SMODEL_ATTRIBUTE, node);
   }
 
   public static UIObjectTemplate newInstance(SModel sm, boolean init) {

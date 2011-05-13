@@ -17,7 +17,7 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ATTRIBUTE_QUALIFIER = "attributeQualifier";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AttributeAccessOperation(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
     super.setChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AttributeAccessOperation._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AttributeAccessOperation.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AttributeAccessOperation._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AttributeAccessOperation.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AttributeAccessOperation._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AttributeAccessOperation.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AttributeAccessOperation._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AttributeAccessOperation.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AttributeAccessOperation._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeAccessOperation.SMODEL_ATTRIBUTE, node);
   }
 
   public static AttributeAccessOperation newInstance(SModel sm, boolean init) {

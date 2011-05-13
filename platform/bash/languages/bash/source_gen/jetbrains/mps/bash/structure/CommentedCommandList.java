@@ -16,7 +16,7 @@ public class CommentedCommandList extends InputLine implements IComment {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMMAND_LIST = "commandList";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CommentedCommandList(SNode node) {
     super(node);
@@ -54,24 +54,24 @@ public class CommentedCommandList extends InputLine implements IComment {
     super.setChild(CommentedCommandList.COMMAND_LIST, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(CommentedCommandList._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(CommentedCommandList.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, CommentedCommandList._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, CommentedCommandList.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, CommentedCommandList._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, CommentedCommandList.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(CommentedCommandList._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(CommentedCommandList.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, CommentedCommandList._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CommentedCommandList.SMODEL_ATTRIBUTE, node);
   }
 
   public static CommentedCommandList newInstance(SModel sm, boolean init) {

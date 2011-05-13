@@ -16,7 +16,7 @@ public class JavaConfigurationRunParameters_FunctionParameter extends ConceptFun
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public JavaConfigurationRunParameters_FunctionParameter(SNode node) {
     super(node);
@@ -46,24 +46,24 @@ public class JavaConfigurationRunParameters_FunctionParameter extends ConceptFun
     this.setProperty(JavaConfigurationRunParameters_FunctionParameter.VIRTUAL_PACKAGE, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(JavaConfigurationRunParameters_FunctionParameter._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(JavaConfigurationRunParameters_FunctionParameter.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, JavaConfigurationRunParameters_FunctionParameter._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, JavaConfigurationRunParameters_FunctionParameter.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, JavaConfigurationRunParameters_FunctionParameter._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, JavaConfigurationRunParameters_FunctionParameter.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(JavaConfigurationRunParameters_FunctionParameter._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(JavaConfigurationRunParameters_FunctionParameter.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, JavaConfigurationRunParameters_FunctionParameter._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, JavaConfigurationRunParameters_FunctionParameter.SMODEL_ATTRIBUTE, node);
   }
 
   public static JavaConfigurationRunParameters_FunctionParameter newInstance(SModel sm, boolean init) {

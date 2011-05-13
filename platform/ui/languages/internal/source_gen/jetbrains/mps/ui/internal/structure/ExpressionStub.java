@@ -24,7 +24,7 @@ public class ExpressionStub extends Expression implements IPartiallyDefinedStub 
   public static final String SELECTOR = "selector";
   public static final String ROLE = "role";
   public static final String TEMPLATE = "template";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ExpressionStub(SNode node) {
     super(node);
@@ -86,24 +86,24 @@ public class ExpressionStub extends Expression implements IPartiallyDefinedStub 
     super.setReferent(ExpressionStub.TEMPLATE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ExpressionStub._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ExpressionStub.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ExpressionStub._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ExpressionStub.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ExpressionStub._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ExpressionStub.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ExpressionStub._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ExpressionStub.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ExpressionStub._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExpressionStub.SMODEL_ATTRIBUTE, node);
   }
 
   public static ExpressionStub newInstance(SModel sm, boolean init) {

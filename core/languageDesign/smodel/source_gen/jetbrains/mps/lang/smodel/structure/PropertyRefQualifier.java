@@ -18,7 +18,7 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY = "property";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public PropertyRefQualifier(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
     super.setReferent(PropertyRefQualifier.PROPERTY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(PropertyRefQualifier._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(PropertyRefQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, PropertyRefQualifier._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, PropertyRefQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, PropertyRefQualifier._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, PropertyRefQualifier.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(PropertyRefQualifier._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(PropertyRefQualifier.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, PropertyRefQualifier._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PropertyRefQualifier.SMODEL_ATTRIBUTE, node);
   }
 
   public static PropertyRefQualifier newInstance(SModel sm, boolean init) {

@@ -17,7 +17,7 @@ public class AttractsFocusBlock extends BaseConcept implements IBaseTestBlock {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CHILD = "child";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public AttractsFocusBlock(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class AttractsFocusBlock extends BaseConcept implements IBaseTestBlock {
     super.setChild(AttractsFocusBlock.CHILD, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(AttractsFocusBlock._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(AttractsFocusBlock.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, AttractsFocusBlock._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, AttractsFocusBlock.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, AttractsFocusBlock._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, AttractsFocusBlock.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(AttractsFocusBlock._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(AttractsFocusBlock.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, AttractsFocusBlock._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttractsFocusBlock.SMODEL_ATTRIBUTE, node);
   }
 
   public static AttractsFocusBlock newInstance(SModel sm, boolean init) {

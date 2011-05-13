@@ -18,7 +18,7 @@ public class GroupingCommand extends AbstractCommand implements ICompoundCommand
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMMANDS = "commands";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public GroupingCommand(SNode node) {
     super(node);
@@ -56,24 +56,24 @@ public class GroupingCommand extends AbstractCommand implements ICompoundCommand
     super.setChild(GroupingCommand.COMMANDS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(GroupingCommand._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(GroupingCommand.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, GroupingCommand._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, GroupingCommand.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, GroupingCommand._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, GroupingCommand.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(GroupingCommand._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(GroupingCommand.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, GroupingCommand._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GroupingCommand.SMODEL_ATTRIBUTE, node);
   }
 
   public static GroupingCommand newInstance(SModel sm, boolean init) {

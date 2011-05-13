@@ -20,7 +20,7 @@ public class Outlook extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FACET = "facet";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Outlook(SNode node) {
     super(node);
@@ -78,24 +78,24 @@ public class Outlook extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Outlook.FACET, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Outlook._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Outlook.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Outlook._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Outlook.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Outlook._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Outlook.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Outlook._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Outlook.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Outlook._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Outlook.SMODEL_ATTRIBUTE, node);
   }
 
   public static Outlook newInstance(SModel sm, boolean init) {

@@ -21,7 +21,7 @@ public class Month extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DAYS = "days";
   public static final String NUMBER = "number";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Month(SNode node) {
     super(node);
@@ -83,24 +83,24 @@ public class Month extends BaseConcept implements INamedConcept {
     this.setIntegerProperty(Month.NUMBER, value);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(Month._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Month.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Month._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Month.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Month._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Month.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(Month._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Month.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Month._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Month.SMODEL_ATTRIBUTE, node);
   }
 
   public static Month newInstance(SModel sm, boolean init) {

@@ -20,7 +20,7 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String VISIBILITY = "visibility";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public StaticFieldDeclaration(SNode node) {
     super(node);
@@ -74,24 +74,24 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
     super.setChild(StaticFieldDeclaration.VISIBILITY, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(StaticFieldDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(StaticFieldDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, StaticFieldDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, StaticFieldDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, StaticFieldDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, StaticFieldDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(StaticFieldDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(StaticFieldDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, StaticFieldDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StaticFieldDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static StaticFieldDeclaration newInstance(SModel sm, boolean init) {

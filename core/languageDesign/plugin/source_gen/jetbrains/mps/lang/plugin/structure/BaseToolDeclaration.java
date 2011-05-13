@@ -29,7 +29,7 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
   public static final String TOOL_ICON = "toolIcon";
   public static final String METHOD_DECLARATION = "methodDeclaration";
   public static final String FIELD_DECLARATION = "fieldDeclaration";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BaseToolDeclaration(SNode node) {
     super(node);
@@ -164,24 +164,24 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
     this.insertChild(prev, BaseToolDeclaration.FIELD_DECLARATION, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(BaseToolDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BaseToolDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, BaseToolDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BaseToolDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, BaseToolDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BaseToolDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(BaseToolDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BaseToolDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BaseToolDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseToolDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static BaseToolDeclaration newInstance(SModel sm, boolean init) {

@@ -18,7 +18,7 @@ public class NodeMacro extends NodeAttribute implements AbstractMacro {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MAPPING_LABEL = "mappingLabel";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public NodeMacro(SNode node) {
     super(node);
@@ -64,24 +64,24 @@ public class NodeMacro extends NodeAttribute implements AbstractMacro {
     super.setReferent(NodeMacro.MAPPING_LABEL, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(NodeMacro._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(NodeMacro.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, NodeMacro._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, NodeMacro.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, NodeMacro._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, NodeMacro.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(NodeMacro._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(NodeMacro.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, NodeMacro._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NodeMacro.SMODEL_ATTRIBUTE, node);
   }
 
   public static NodeMacro newInstance(SModel sm, boolean init) {

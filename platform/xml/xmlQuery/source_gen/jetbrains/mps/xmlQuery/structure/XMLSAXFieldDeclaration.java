@@ -20,7 +20,7 @@ public class XMLSAXFieldDeclaration extends BaseConcept implements INamedConcept
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TYPE = "type";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public XMLSAXFieldDeclaration(SNode node) {
     super(node);
@@ -66,24 +66,24 @@ public class XMLSAXFieldDeclaration extends BaseConcept implements INamedConcept
     super.setChild(XMLSAXFieldDeclaration.TYPE, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(XMLSAXFieldDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(XMLSAXFieldDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, XMLSAXFieldDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, XMLSAXFieldDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, XMLSAXFieldDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, XMLSAXFieldDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(XMLSAXFieldDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(XMLSAXFieldDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, XMLSAXFieldDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, XMLSAXFieldDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static XMLSAXFieldDeclaration newInstance(SModel sm, boolean init) {

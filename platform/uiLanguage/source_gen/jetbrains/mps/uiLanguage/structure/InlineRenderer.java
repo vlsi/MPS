@@ -17,7 +17,7 @@ public class InlineRenderer extends BaseConcept implements IComponentPart {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RENDERER = "renderer";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public InlineRenderer(SNode node) {
     super(node);
@@ -55,24 +55,24 @@ public class InlineRenderer extends BaseConcept implements IComponentPart {
     super.setChild(InlineRenderer.RENDERER, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(InlineRenderer._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(InlineRenderer.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, InlineRenderer._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, InlineRenderer.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, InlineRenderer._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, InlineRenderer.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(InlineRenderer._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(InlineRenderer.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, InlineRenderer._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InlineRenderer.SMODEL_ATTRIBUTE, node);
   }
 
   public static InlineRenderer newInstance(SModel sm, boolean init) {

@@ -22,7 +22,7 @@ public class BaseExtensionMethodContainer extends GenericDeclaration implements 
   public static final String VISIBILITY = "visibility";
   public static final String METHODS = "methods";
   public static final String STATIC_FIELDS = "staticFields";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BaseExtensionMethodContainer(SNode node) {
     super(node);
@@ -100,24 +100,24 @@ public class BaseExtensionMethodContainer extends GenericDeclaration implements 
     this.insertChild(prev, BaseExtensionMethodContainer.STATIC_FIELDS, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(BaseExtensionMethodContainer._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BaseExtensionMethodContainer.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, BaseExtensionMethodContainer._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BaseExtensionMethodContainer.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, BaseExtensionMethodContainer._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BaseExtensionMethodContainer.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(BaseExtensionMethodContainer._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BaseExtensionMethodContainer.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BaseExtensionMethodContainer._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseExtensionMethodContainer.SMODEL_ATTRIBUTE, node);
   }
 
   public static BaseExtensionMethodContainer newInstance(SModel sm, boolean init) {

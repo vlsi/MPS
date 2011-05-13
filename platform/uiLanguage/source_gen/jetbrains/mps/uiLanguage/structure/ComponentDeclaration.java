@@ -26,7 +26,7 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static final String MAP_TO = "mapTo";
   public static final String ROOT = "root";
   public static final String RENDERER_INFO = "rendererInfo";
-  public static final String _$ATTRIBUTE = "_$attribute";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ComponentDeclaration(SNode node) {
     super(node);
@@ -120,24 +120,24 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
     super.setChild(ComponentDeclaration.RENDERER_INFO, node);
   }
 
-  public int get_$attributesCount() {
-    return this.getChildCount(ComponentDeclaration._$ATTRIBUTE);
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ComponentDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, ComponentDeclaration._$ATTRIBUTE);
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ComponentDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, ComponentDeclaration._$ATTRIBUTE);
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ComponentDeclaration.SMODEL_ATTRIBUTE);
   }
 
-  public void add_$attribute(Attribute node) {
-    this.addChild(ComponentDeclaration._$ATTRIBUTE, node);
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ComponentDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, ComponentDeclaration._$ATTRIBUTE, node);
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ComponentDeclaration.SMODEL_ATTRIBUTE, node);
   }
 
   public static ComponentDeclaration newInstance(SModel sm, boolean init) {
