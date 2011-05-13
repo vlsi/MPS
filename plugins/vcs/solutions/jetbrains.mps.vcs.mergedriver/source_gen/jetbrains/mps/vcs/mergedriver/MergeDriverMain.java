@@ -62,7 +62,7 @@ public class MergeDriverMain {
     cmd.append(PathUtil.getJarPathForClass(StringUtils.class)).append(File.pathSeparator);
     cmd.append(PathUtil.getJarPathForClass(FileUtil.class)).append(File.pathSeparator);
     cmd.append(PathUtil.getJarPathForClass(FSMergerBySequence.class));
-    cmd.append(" ").append(MergeDriverMain.class.getName()).append(" --git");
+    cmd.append(" ").append(MergeDriverMain.class.getName());
     return cmd.toString();
   }
 }
