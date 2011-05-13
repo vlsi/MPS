@@ -8,23 +8,16 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.vcs.mergedriver/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS-platform" />
-    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="library" name="OROMatcher" level="project" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="editor-runtime" />
-    <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="Closures-runtime" />
-    <orderEntry type="library" name="commons-logging" level="project" />
-    <orderEntry type="module" module-name="plugin-runtime" />
-    <orderEntry type="library" name="commons-lang" level="project" />
+    <orderEntry type="module" module-name="vcs-mergedriver" scope="RUNTIME" />
   </component>
 </module>
 
