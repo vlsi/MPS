@@ -63,17 +63,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     readModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, owner);
   }
 
-  @Override
-  public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationLog log) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    RefactoringsPersistence.save(dsm.getModelFile(), log);
-  }
-
-  @Override
-  public StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor sm) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    return RefactoringsPersistence.load(dsm.getModelFile());
-  }
 
 
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {

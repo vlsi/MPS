@@ -33,18 +33,6 @@ public interface IModelRootManager {
 
   void updateModels(@NotNull SModelRoot root, @NotNull IModule owner);
 
-  StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
-
-  void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationLog log);
-
-  boolean isFindUsagesSupported();
-
-  boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor,
-                             @NotNull Set<String> strings);
-
-  boolean containsString(@NotNull SModelDescriptor modelDescriptor,
-                         @NotNull String string);
-
   boolean isNewModelsSupported();
 
   /*

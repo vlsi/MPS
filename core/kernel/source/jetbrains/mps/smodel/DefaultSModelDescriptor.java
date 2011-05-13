@@ -120,10 +120,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @NotNull
+  public RegularModelDataSource getSource(){
+    return ((RegularModelDataSource) super.getSource());
+  }
+
+  @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
       if (myStructureModificationLog == null) {
-        myStructureModificationLog = myModelRootManager.loadModelRefactorings(this);
+        myStructureModificationLog = getSource().loadModelRefactorings(this);
       }
       if (myStructureModificationLog == null) {
         myStructureModificationLog = new StructureModificationLog();
@@ -134,7 +139,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
     myStructureModificationLog = log;
-    myModelRootManager.saveModelRefactorings(this, log);
+    getSource().saveModelRefactorings(this, log);
   }
 
   public void save() {
@@ -196,7 +201,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public String getModelHash() {
-    return ((RegularModelDataSource) getSource()).getModelHash();
+    return getSource().getModelHash();
   }
 
   public void dispose() {
@@ -282,8 +287,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public IFile getModelFile() {
-    if (!(getSource() instanceof RegularModelDataSource)) return null;
-    return ((RegularModelDataSource) getSource()).getFile();
+    return getSource().getFile();
   }
 
   private void tryFixingVersion() {

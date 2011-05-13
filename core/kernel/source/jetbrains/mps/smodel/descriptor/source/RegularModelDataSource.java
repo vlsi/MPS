@@ -18,14 +18,12 @@ package jetbrains.mps.smodel.descriptor.source;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
+import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -139,7 +137,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     }
     IFile modelFile = dsm.getModelFile();
     assert modelFile != null;
-    return ModelPersistence.saveModel(smodel, modelFile)!=null;
+    return ModelPersistence.saveModel(smodel, modelFile) != null;
   }
 
   public boolean hasModel(SModelDescriptor md) {
@@ -189,6 +187,16 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
     return containsSomeString(modelDescriptor, CollectionUtil.set(string));
+  }
+
+  public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationLog log) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    RefactoringsPersistence.save(dsm.getModelFile(), log);
+  }
+
+  public StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor sm) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    return RefactoringsPersistence.load(dsm.getModelFile());
   }
 
 }

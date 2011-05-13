@@ -27,22 +27,6 @@ import java.util.Collection;
 import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
-  public boolean isFindUsagesSupported() {
-    return false;
-  }
-
-  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
-    return false;
-  }
-
-  public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor,
-                                    @NotNull Set<String> strings) {
-    for (String identifier : strings) {
-      if (containsString(modelDescriptor, identifier)) return true;
-    }
-    return false;
-  }
-
   public boolean isNewModelsSupported() {
     return false;
   }
@@ -58,16 +42,6 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   @Override
   public Collection<SModelReference> collectModels(@NotNull SModelRoot root) {
     return null;
-  }
-
-  @Override
-  public StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
-    return null;
-  }
-
-  @Override
-  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationLog log) {
-    throw new UnsupportedOperationException();
   }
 
   public void dispose() {

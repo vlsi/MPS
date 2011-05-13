@@ -2,7 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.util.NameUtil;
 
@@ -11,14 +11,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModelFindOperations {
-  private BaseSModelDescriptorWithSource myModelDescriptor;
-  private boolean myFindUsagesSupported;
+  private SModelDescriptor myModelDescriptor;
   private RegularModelDataSource myDataSource;
   private boolean myNeedSearchForStrings;
 
-  public ModelFindOperations(BaseSModelDescriptorWithSource descriptor) {
+  public ModelFindOperations(SModelDescriptor descriptor) {
     myModelDescriptor = descriptor;
-    myDataSource = ((RegularModelDataSource) myModelDescriptor.getSource());
+    ModelDataSource source = descriptor instanceof BaseSModelDescriptorWithSource ? ((BaseSModelDescriptorWithSource) myModelDescriptor).getSource() : null;
+    myDataSource = source instanceof RegularModelDataSource ? (RegularModelDataSource) source : null;
     myNeedSearchForStrings = myModelDescriptor.getLoadingState() != ModelLoadingState.FULLY_LOADED;
     if (!myNeedSearchForStrings && myModelDescriptor instanceof EditableSModelDescriptor) {
       myNeedSearchForStrings = !((EditableSModelDescriptor) myModelDescriptor).isChanged();
@@ -26,7 +26,7 @@ public class ModelFindOperations {
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes) {
-    if (!myFindUsagesSupported) return Collections.emptySet();
+    if (myDataSource == null) return Collections.emptySet();
 
     if (myNeedSearchForStrings) {
       Set<String> strings = new HashSet<String>();
@@ -51,7 +51,7 @@ public class ModelFindOperations {
   }
 
   public boolean hasUsages(Set<SModelReference> models) {
-    if (!myFindUsagesSupported) return false;
+    if (myDataSource == null) return false;
 
     if (myNeedSearchForStrings) {
       Set<String> strings = new HashSet<String>();
@@ -77,7 +77,7 @@ public class ModelFindOperations {
   }
 
   public boolean hasImportedModel(SModelDescriptor modelDescriptor) {
-    if (!myFindUsagesSupported) return false;
+    if (myDataSource == null) return false;
     if (myNeedSearchForStrings && !myDataSource.containsString(myModelDescriptor, modelDescriptor.toString()))
       return false;
 
@@ -87,20 +87,8 @@ public class ModelFindOperations {
     return SModelOperations.getImportElement(model, modelDescriptor.getSModelReference()) != null;
   }
 
-  public boolean hasLanguage(Language language) {
-    if (!myFindUsagesSupported) return false;
-
-    if (myNeedSearchForStrings && !myDataSource.containsString(myModelDescriptor, language.getModuleFqName()))
-      return false;
-
-    SModel model = myModelDescriptor.getSModel();
-    if (model == null) return false;
-
-    return SModelOperations.hasLanguage(model,language.getModuleReference());
-  }
-
   public Set<SNode> findDescendants(SNode node, Set<SNode> descendantsKnownInModel) {
-    if (!myFindUsagesSupported) return new HashSet<SNode>();
+    if (myDataSource == null) return new HashSet<SNode>();
     boolean changed = false;
     if (myModelDescriptor instanceof EditableSModelDescriptor) {
       changed = ((EditableSModelDescriptor) myModelDescriptor).isChanged();
@@ -160,7 +148,7 @@ public class ModelFindOperations {
   }
 
   public Set<SNode> findInstances(SNode concept, IScope scope) {
-    if (!myFindUsagesSupported) return Collections.emptySet();
+    if (myDataSource == null) return Collections.emptySet();
 
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return Collections.emptySet();
@@ -173,7 +161,7 @@ public class ModelFindOperations {
   }
 
   public Set<SNode> findExactInstances(SNode concept, IScope scope) {
-    if (!myFindUsagesSupported) return Collections.emptySet();
+    if (myDataSource == null) return Collections.emptySet();
 
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return Collections.emptySet();
