@@ -6,16 +6,15 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
@@ -24,6 +23,9 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SurroundWithIntentions_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -35,9 +37,16 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return SurroundWithIntentions_Action.this.getAnchorCell(_params) != null;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "SurroundWithIntentions", t);
@@ -59,12 +68,10 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final EditorCell selectedCell = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell();
+      final EditorCell selectedCell = SurroundWithIntentions_Action.this.getAnchorCell(_params);
       int x = selectedCell.getX();
       int y = selectedCell.getY();
-      if (selectedCell instanceof EditorCell_Label) {
-        y += ((EditorCell_Label) selectedCell).getHeight();
-      }
+      y += selectedCell.getHeight();
       final DataContext dataContext = DataManager.getInstance().getDataContext(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), x, y);
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -88,5 +95,17 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
         log.error("User's action execute method failed. Action:" + "SurroundWithIntentions", t);
       }
     }
+  }
+
+  /*package*/ EditorCell getAnchorCell(final Map<String, Object> _params) {
+    Selection selection = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent().getSelectionManager().getSelection();
+    if (selection == null) {
+      return null;
+    }
+    List<EditorCell> selectedCells = selection.getSelectedCells();
+    if (ListSequence.fromList(selectedCells).isNotEmpty()) {
+      return ListSequence.fromList(selectedCells).first();
+    }
+    return null;
   }
 }
