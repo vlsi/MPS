@@ -4,16 +4,15 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.Language;
+
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.renameModel.ModelRenamer;
 
 public class RenameAspects_Action extends GeneratedAction {
@@ -64,6 +63,6 @@ public class RenameAspects_Action extends GeneratedAction {
     if (model == null) {
       return;
     }
-    new ModelRenamer(model, newFqName, false).rename();
+    new ModelRenamer(((DefaultSModelDescriptor) model), newFqName, false).rename();
   }
 }

@@ -395,9 +395,6 @@ public abstract class AbstractModule implements IModule {
     if (myModelsRead) return;
 
     myModelsRead = true;
-    for (SModelRoot root : mySModelRoots) {
-      root.dispose();
-    }
     mySModelRoots.clear();
 
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -419,9 +416,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void dispose() {
-    for (SModelRoot root : mySModelRoots) {
-      root.dispose();
-    }
     mySModelRoots.clear();
   }
 

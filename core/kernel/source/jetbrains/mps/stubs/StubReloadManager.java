@@ -181,13 +181,6 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private void disposeStubManagers() {
-    //dispose all created model root managers
-    for (Map<ModuleId, PathData> d : myPath2Data.values()) {
-      for (PathData data : d.values()) {
-        data.getModelRootManager().dispose();
-      }
-    }
-
     //clean references to old managers in stub models
     for (BaseStubModelDescriptor md : getAllStubModels()) {
       md.setModelRootManager(null);

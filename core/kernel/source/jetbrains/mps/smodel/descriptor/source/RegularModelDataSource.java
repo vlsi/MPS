@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.descriptor.source;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
@@ -26,12 +28,14 @@ import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Set;
@@ -202,4 +206,38 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   public void setFile(IFile file) {
     myFile = file;
   }
+
+  public void rename(SModelDescriptor sm, SModelFqName modelFqName, boolean changeFile) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    if (!changeFile) {
+      dsm.save();
+      return;
+    }
+    IFile oldFile = dsm.getModelFile();
+    SModelRoot root = ModelRootUtil.getSModelRoot(sm);
+    IFile newFile = createFileForModelUID(root, modelFqName);
+    newFile.getParent().mkdirs();
+    newFile.createNewFile();
+    dsm.changeModelFile(newFile);
+    dsm.save();
+    oldFile.delete();
+  }
+
+  public static IFile createFileForModelUID(SModelRoot root, SModelFqName fqName) {
+    String pathPrefix = root.getPrefix();
+    String path = root.getPath();
+
+    if (pathPrefix == null) pathPrefix = "";
+    if (pathPrefix.length() > 0 && !fqName.getLongName().startsWith(pathPrefix)) {
+      LOG.error("Model fqName \"" + fqName + "\" doesn't match name prefix \"" + pathPrefix + "\"");
+    }
+
+    String filenameSuffix = fqName.getLongName().substring(pathPrefix.length());
+    if (fqName.hasStereotype()) {
+      filenameSuffix = filenameSuffix + '@' + fqName.getStereotype();
+    }
+
+    return FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT_MODEL);
+  }
+
 }

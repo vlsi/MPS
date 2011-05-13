@@ -4,6 +4,8 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -113,6 +115,6 @@ public class TextPreviewModel_Action extends GeneratedAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).getSource().isPackaged());
+    return md instanceof EditableSModelDescriptor && !(((BaseSModelDescriptorWithSource) md).getSource().isPackaged());
   }
 }

@@ -371,7 +371,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
     model.changeModelReference(newModelReference);
-    myModelRootManager.rename(this, newModelFqName, changeFile);
+    getSource().rename(this, newModelFqName, changeFile);
     myModelReference = newModelReference;
 
     fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));

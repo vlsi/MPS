@@ -129,12 +129,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     return null;
   }
 
-  public final void dispose() {
-    for (BaseStubModelDescriptor sm : myDescriptorsWithListener) {
-      sm.removeModelUpdater(myInitializationListener);
-    }
-  }
-
   private void updateModelInLoadingState(BaseStubModelDescriptor descriptor, SModel model) {
     if (!StubReloadManager.getInstance().needsUpdate(descriptor, myLocation)) return;
 

@@ -81,10 +81,6 @@ public class SModelRoot {
     return fqName.getLongName().startsWith(getPrefix());
   }
 
-  public void dispose() {
-    myManager.dispose();
-  }
-
   public static class ManagerNotFoundException extends Exception {
     public ManagerNotFoundException(String message) {
       super(message);

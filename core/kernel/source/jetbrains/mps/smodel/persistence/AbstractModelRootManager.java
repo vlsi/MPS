@@ -38,14 +38,6 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
 
-  @Nullable
-  @Override
-  public Collection<SModelReference> collectModels(@NotNull SModelRoot root) {
-    return null;
-  }
-
-  public void dispose() {
-  }
 
   public void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile) {
     throw new UnsupportedOperationException();

@@ -28,9 +28,6 @@ import java.util.Collection;
 import java.util.Set;
 
 public interface IModelRootManager {
-  @Nullable
-  Collection<SModelReference> collectModels(@NotNull SModelRoot root);
-
   void updateModels(@NotNull SModelRoot root, @NotNull IModule owner);
 
   boolean isNewModelsSupported();
@@ -44,8 +41,4 @@ public interface IModelRootManager {
   SModelDescriptor createNewModel(@NotNull SModelRoot root,
                                   @NotNull SModelFqName fqName,
                                   @NotNull ModelOwner owner);
-
-  void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile);
-
-  void dispose();
 }
