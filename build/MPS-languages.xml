@@ -364,7 +364,6 @@
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.plugin.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/plugin/plugin.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/plugin" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/languageDesign/plugin/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="core/languageDesign/plugin/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/languageDesign/plugin/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="core/languageDesign/plugin/classes_gen" />
