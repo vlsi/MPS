@@ -1,30 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CodeStyleSettings">
-    <option name="fieldPrefix" value="my" />
-    <option name="fieldSuffix" value="" />
-    <option name="localVariablePrefix" value="" />
-    <option name="localVariableSuffix" value="" />
-    <option name="parameterPrefix" value="" />
-    <option name="parameterSuffix" value="" />
-    <option name="staticFieldPrefix" value="our" />
-    <option name="staticFieldSuffix" value="" />
-  </component>
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.geom/jetbrains.mps.graphLayout.geom.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.graph/jetbrains.mps.graphLayout.graph.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.layeredLayout/jetbrains.mps.graphLayout.layeredLayout.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.orthogonalLayout/jetbrains.mps.graphLayout.orthogonalLayout.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.planarization/jetbrains.mps.graphLayout.planarization.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.test/jetbrains.mps.graphLayout.test.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages />
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/jetbrains.mps.graphLayout.geom/jetbrains.mps.graphLayout.geom.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.graphLayout.graph/jetbrains.mps.graphLayout.graph.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.graphLayout.layeredLayout/jetbrains.mps.graphLayout.layeredLayout.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.graphLayout.orthogonalLayout/jetbrains.mps.graphLayout.orthogonalLayout.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.graphLayout.planarization/jetbrains.mps.graphLayout.planarization.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.graphLayout.test/jetbrains.mps.graphLayout.test.msd" folder="" />
+    </projectModules>
     <genConfs />
   </component>
   <component name="ProjectModuleManager">
@@ -67,7 +55,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
   </component>
 </project>
 
