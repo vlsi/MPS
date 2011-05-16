@@ -54,12 +54,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
