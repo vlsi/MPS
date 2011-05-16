@@ -49,12 +49,12 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).isNotEmpty() && ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.debug.apiLang.structure.DebugInfoProvider")).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).findFirst(new IWhereFilter<SNode>() {
+        if (ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).isNotEmpty() && ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.debug.apiLang.structure.BreakpointCreator")).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "createBreakpoint", true) != null);
           }
         }) != null) {
-          SNode debugInfoProvider = SConceptOperations.createNewNode("jetbrains.mps.debug.apiLang.structure.DebugInfoProvider", null);
+          SNode debugInfoProvider = SConceptOperations.createNewNode("jetbrains.mps.debug.apiLang.structure.BreakpointCreator", null);
           SModelOperations.addRootNode(SNodeOperations.getModel(node), debugInfoProvider);
           for (SNode conceptToDebug : ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true))) {
             ListSequence.fromList(SLinkOperations.getTargets(debugInfoProvider, "breakpointableConcepts", true)).addElement(new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a0a0c0a0e0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptToDebug, "createBreakpoint", true), "body", true), SLinkOperations.getTarget(conceptToDebug, "declaration", false), SLinkOperations.getTarget(conceptToDebug, "declaration", false)));

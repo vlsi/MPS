@@ -89,7 +89,7 @@
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="11eb" modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" implicit="yes" />
   <import index="bj1v" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" implicit="yes" />
-  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" implicit="yes" />
+  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1205247737002">
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguageModelActionsInternal" />
@@ -294,7 +294,7 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6868777471677670401">
       <property name="name" nameId="tpck.1169194664001" value="AnalyzersActions" />
     </node>
-    <node type="86gq.DebugInfoProvider" typeId="86gq.3157158168562217892" id="2566194812863059400" />
+    <node type="86gq.BreakpointCreator" typeId="86gq.3157158168562217892" id="2566194812863059400" />
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4670094048336708063">
       <property name="name" nameId="tpck.1169194664001" value="OverrideMethod" />
       <property name="caption" nameId="tp4k.1205250923097" value="Override Method..." />

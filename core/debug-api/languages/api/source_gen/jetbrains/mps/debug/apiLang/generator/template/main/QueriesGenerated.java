@@ -19,11 +19,11 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_7329423411587633024(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.debug.apiLang.structure.DebugInfoProvider");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.debug.apiLang.structure.BreakpointCreator");
   }
 
   public static boolean baseMappingRule_Condition_7329423411587656275(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.debug.apiLang.structure.DebugInfoProvider"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.debug.apiLang.structure.BreakpointCreator"));
   }
 
   public static Object propertyMacro_GetPropertyValue_6013762200472629077(final IOperationContext operationContext, final PropertyMacroContext _context) {

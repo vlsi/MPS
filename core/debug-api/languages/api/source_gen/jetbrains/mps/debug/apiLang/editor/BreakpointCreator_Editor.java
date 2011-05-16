@@ -7,11 +7,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -19,44 +23,29 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class DebugInfoProvider_Editor extends DefaultNodeEditor {
+public class BreakpointCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ozay25_a(editorContext, node);
+    return this.createCollection_q67mwo_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ozay25_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_q67mwo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_ozay25_a");
-    editorCell.addEditorCell(this.createConstant_ozay25_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ozay25_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ozay25_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ozay25_d0(editorContext, node));
+    editorCell.setCellId("Collection_q67mwo_a");
+    editorCell.addEditorCell(this.createConceptProperty_q67mwo_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_q67mwo_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ozay25_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Debug Information Provider");
-    editorCell.setCellId("Constant_ozay25_a0");
-    editorCell.setDefaultText("");
+  private EditorCell createCollection_q67mwo_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_q67mwo_b0");
+    editorCell.addEditorCell(this.createIndentCell_q67mwo_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_q67mwo_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ozay25_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_ozay25_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ozay25_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Breakpoints Creators");
-    editorCell.setCellId("Constant_ozay25_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_ozay25_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new DebugInfoProvider_Editor.breakpointableConceptsListHandler_ozay25_d0(node, "breakpointableConcepts", editorContext);
+  private EditorCell createRefNodeList_q67mwo_b1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BreakpointCreator_Editor.breakpointableConceptsListHandler_q67mwo_b1a(node, "breakpointableConcepts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_breakpointableConcepts");
     {
@@ -67,8 +56,31 @@ public class DebugInfoProvider_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class breakpointableConceptsListHandler_ozay25_d0 extends RefNodeListHandler {
-    public breakpointableConceptsListHandler_ozay25_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private EditorCell createIndentCell_q67mwo_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
+  private EditorCell createConceptProperty_q67mwo_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("conceptProperty_alias");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static class breakpointableConceptsListHandler_q67mwo_b1a extends RefNodeListHandler {
+    public breakpointableConceptsListHandler_q67mwo_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
