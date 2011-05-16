@@ -341,6 +341,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
   }
 
+  public SModelHeader getDescriptorSModelHeader() {
+    return myHeader;
+  }
+
   public SModelHeader getSModelHeader() {
     SModel model = mySModel;
     if(model != null) {
