@@ -140,29 +140,29 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_6v7ed2_a0a;
-        nodeToMatch_6v7ed2_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6v7ed2_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_1240824508544;
+        nodeToMatch_1240824508544 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1240824508544.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v7ed2_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1240824508544.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_6v7ed2_ = "parameter";
-          if (nodeToMatch_6v7ed2_a0a.getChildCount(childRole_6v7ed2_) != 2) {
+          String childRole_1240824508544 = "parameter";
+          if (nodeToMatch_1240824508544.getChildCount(childRole_1240824508544) != 2) {
             return false;
           }
           {
-            SNode childVar_6v7ed2_a0a0 = nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_).get(0);
-            this.patternVar_KEY = childVar_6v7ed2_a0a0;
+            SNode childVar_1240824509606 = nodeToMatch_1240824508544.getChildren(childRole_1240824508544).get(0);
+            this.patternVar_KEY = childVar_1240824509606;
           }
           {
-            SNode childVar_6v7ed2_b0a0 = nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_).get(1);
-            this.patternVar_VALUE = childVar_6v7ed2_b0a0;
+            SNode childVar_1240824512106 = nodeToMatch_1240824508544.getChildren(childRole_1240824508544).get(1);
+            this.patternVar_VALUE = childVar_1240824512106;
           }
         }
       }

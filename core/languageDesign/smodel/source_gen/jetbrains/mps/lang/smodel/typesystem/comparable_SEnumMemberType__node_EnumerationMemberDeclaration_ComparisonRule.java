@@ -58,14 +58,14 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_ityt7t_a0a;
-        nodeToMatch_ityt7t_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_ityt7t_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_1240341822707;
+        nodeToMatch_1240341822707 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_1240341822707.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_vbthi0_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ityt7t_a0a.getReferent("concept")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1240341822707.getReferent("concept")))) {
             return false;
           }
         }

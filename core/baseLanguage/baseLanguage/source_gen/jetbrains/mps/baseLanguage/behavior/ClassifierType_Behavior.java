@@ -240,14 +240,14 @@ public class ClassifierType_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_hz3823_a0a0a0a0j;
-        nodeToMatch_hz3823_a0a0a0a0j = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a0a0a0j.getConceptFqName()))) {
+        SNode nodeToMatch_1220440341916;
+        nodeToMatch_1220440341916 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1220440341916.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0a0b0b0a0a0k;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0j.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1220440341916.getReferent("classifier")))) {
             return false;
           }
         }
@@ -281,23 +281,23 @@ public class ClassifierType_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_hz3823_a0a1a9;
-        nodeToMatch_hz3823_a0a1a9 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a1a9.getConceptFqName()))) {
+        SNode nodeToMatch_1220440700179;
+        nodeToMatch_1220440700179 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1220440700179.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_hz3823_a0a0a1a9;
-          if (nodeToMatch_hz3823_a0a1a9.getReferent("classifier") != referent) {
+          if (nodeToMatch_1220440700179.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_hz3823_ = "parameter";
+          String childRole_1220440700179 = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_)) {
+          for (SNode childVar : nodeToMatch_1220440700179.getChildren(childRole_1220440700179)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

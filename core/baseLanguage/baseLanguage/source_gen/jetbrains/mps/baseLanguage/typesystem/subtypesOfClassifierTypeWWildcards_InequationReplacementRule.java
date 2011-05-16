@@ -172,23 +172,23 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_n8ubly_a0a0a0a;
-        nodeToMatch_n8ubly_a0a0a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_n8ubly_a0a0a0a.getConceptFqName()))) {
+        SNode nodeToMatch_1220523357854;
+        nodeToMatch_1220523357854 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1220523357854.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_n8ubly_a0a0a0a0a;
-          if (nodeToMatch_n8ubly_a0a0a0a.getReferent("classifier") != referent) {
+          if (nodeToMatch_1220523357854.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_n8ubly_ = "parameter";
+          String childRole_1220523357854 = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_n8ubly_a0a0a0a.getChildren(childRole_n8ubly_)) {
+          for (SNode childVar : nodeToMatch_1220523357854.getChildren(childRole_1220523357854)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
@@ -233,23 +233,23 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_n8ubly_a0a0a0a_0;
-        nodeToMatch_n8ubly_a0a0a0a_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_n8ubly_a0a0a0a_0.getConceptFqName()))) {
+        SNode nodeToMatch_2751254962088984281;
+        nodeToMatch_2751254962088984281 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2751254962088984281.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_n8ubly_a0a0a0a0a_0;
-          if (nodeToMatch_n8ubly_a0a0a0a_0.getReferent("classifier") != referent) {
+          if (nodeToMatch_2751254962088984281.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_n8ubly__0 = "parameter";
+          String childRole_2751254962088984281 = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_n8ubly_a0a0a0a_0.getChildren(childRole_n8ubly__0)) {
+          for (SNode childVar : nodeToMatch_2751254962088984281.getChildren(childRole_2751254962088984281)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

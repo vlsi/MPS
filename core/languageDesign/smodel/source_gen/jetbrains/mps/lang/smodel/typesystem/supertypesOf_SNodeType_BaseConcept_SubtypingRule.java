@@ -85,9 +85,9 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x4galq_a0a;
-        nodeToMatch_x4galq_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_x4galq_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_7414068155431225000;
+        nodeToMatch_7414068155431225000 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_7414068155431225000.getConceptFqName()))) {
           return false;
         }
       }

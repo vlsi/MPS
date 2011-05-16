@@ -9968,7 +9968,7 @@
   </root>
   <root id="5108199730660923207">
     <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5108199730660924411">
-      <property name="name" nameId="tpck.1169194664001" value="rightSeq" />
+      <property name="name" nameId="tpck.1169194664001" value="right" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1151689724996" resolveInfo="SequenceType" />
     </node>
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="5108199730660923209">
@@ -10012,7 +10012,7 @@
       </node>
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5108199730660923211">
-      <property name="name" nameId="tpck.1169194664001" value="leftSeq" />
+      <property name="name" nameId="tpck.1169194664001" value="left" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1151689724996" resolveInfo="SequenceType" />
     </node>
   </root>

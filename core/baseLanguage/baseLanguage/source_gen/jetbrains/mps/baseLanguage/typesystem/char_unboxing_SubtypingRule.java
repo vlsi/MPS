@@ -80,14 +80,14 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_gnae0c_a0a;
-        nodeToMatch_gnae0c_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_gnae0c_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_1177076557300;
+        nodeToMatch_1177076557300 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1177076557300.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_4wj0va_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_gnae0c_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1177076557300.getReferent("classifier")))) {
             return false;
           }
         }

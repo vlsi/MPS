@@ -112,19 +112,19 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_nbr2nf_a0a;
-        nodeToMatch_nbr2nf_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_nbr2nf_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_1228232375657;
+        nodeToMatch_1228232375657 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_1228232375657.getConceptFqName()))) {
           return false;
         }
         {
-          String childRole_nbr2nf_ = "elementType";
-          if (nodeToMatch_nbr2nf_a0a.getChildCount(childRole_nbr2nf_) != 1) {
+          String childRole_1228232375657 = "elementType";
+          if (nodeToMatch_1228232375657.getChildCount(childRole_1228232375657) != 1) {
             return false;
           }
           {
-            SNode childVar_nbr2nf_a0a0 = nodeToMatch_nbr2nf_a0a.getChildren(childRole_nbr2nf_).get(0);
-            this.patternVar_elementType = childVar_nbr2nf_a0a0;
+            SNode childVar_1228232375658 = nodeToMatch_1228232375657.getChildren(childRole_1228232375657).get(0);
+            this.patternVar_elementType = childVar_1228232375658;
           }
         }
       }
