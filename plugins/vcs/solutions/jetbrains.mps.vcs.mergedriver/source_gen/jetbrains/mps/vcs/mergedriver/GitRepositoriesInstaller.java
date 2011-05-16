@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.io.IOException;
 import com.intellij.openapi.vcs.VcsRoot;

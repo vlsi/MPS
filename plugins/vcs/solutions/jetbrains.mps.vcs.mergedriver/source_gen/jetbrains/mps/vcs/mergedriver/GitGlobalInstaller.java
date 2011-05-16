@@ -9,6 +9,7 @@ import jetbrains.mps.workbench.WorkbenchPathManager;
 import java.io.File;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
+import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.io.IOException;

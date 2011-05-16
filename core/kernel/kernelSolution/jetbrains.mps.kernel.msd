@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.kernel" uuid="2d3c70e9-aab2-4870-8d8d-6036800e4103" dontLoadClasses="true" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/core/kernel/source_gen">
+<solution name="jetbrains.mps.kernel" uuid="2d3c70e9-aab2-4870-8d8d-6036800e4103" dontLoadClasses="true" compileInMPS="false" generatorOutputPath="${mps_home}/core/kernel/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/core/kernel/source" include="false">
+    <stubModelEntry path="${mps_home}/core/kernel/source">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${mps_home}/lib/platform.jar" include="false">
+    <stubModelEntry path="${mps_home}/lib/platform.jar">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${mps_home}/lib/resources.jar" include="false">
+    <stubModelEntry path="${mps_home}/lib/resources.jar">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </stubModelEntry>
   </stubModelEntries>
@@ -20,6 +20,7 @@
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
     <dependency reexport="false">86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)</dependency>
     <dependency reexport="false">ef703a71-a5a3-42af-b53c-ddced816ad5c(jetbrains.mps.lang.stubs)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

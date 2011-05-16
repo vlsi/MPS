@@ -7,6 +7,7 @@ import java.io.File;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
+import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
