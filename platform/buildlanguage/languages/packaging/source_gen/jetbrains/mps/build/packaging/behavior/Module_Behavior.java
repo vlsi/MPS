@@ -111,6 +111,10 @@ public class Module_Behavior {
     return Module_Behavior.call_getPathHolder_1239195000114(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getPath());
   }
 
+  public static String call_getModuleFolderPath_2850282874221203279(SNode thisNode) {
+    return ModuleUtil.getRelativePath(AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath(), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode));
+  }
+
   public static String call_getRuntimeJarPath_1213877515126(SNode thisNode) {
     return ModuleUtil.getRelativePath(AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath(), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode)) + "." + MPSExtentions.RUNTIME_ARCH;
   }
@@ -153,7 +157,7 @@ public class Module_Behavior {
 
   public static SNode call_getPathHolder_1239195000114(SNode thisNode, String path) {
     path = path.replace(File.separator, Util.SEPARATOR);
-    SNode pathHolder = new Module_Behavior.QuotationClass_835h7m_a0a1a61().createNode(ModuleUtil.getRelativePath(path, AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath()), thisNode, ModuleUtil.getRelativePath(path, Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode)));
+    SNode pathHolder = new Module_Behavior.QuotationClass_835h7m_a0a1a71().createNode(ModuleUtil.getRelativePath(path, AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath()), thisNode, ModuleUtil.getRelativePath(path, Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode)));
     if (SPropertyOperations.getString(pathHolder, "fullPath").equals(path)) {
       ModuleUtil.findMacro(pathHolder, SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true));
     }
@@ -199,7 +203,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a91(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a02(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static List<IModule> getAllAvailableModules_1222444746697() {
@@ -224,15 +228,15 @@ public class Module_Behavior {
     return name.replace("/", "_").replace("\\", "_");
   }
 
-  private static String check_835h7m_a0a91(String checkedDotOperand, String separator, String SEPARATOR) {
+  private static String check_835h7m_a0a02(String checkedDotOperand, String separator, String SEPARATOR) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.replace(File.separator, Util.SEPARATOR);
     }
     return null;
   }
 
-  public static class QuotationClass_835h7m_a0a1a61 {
-    public QuotationClass_835h7m_a0a1a61() {
+  public static class QuotationClass_835h7m_a0a1a71 {
+    public QuotationClass_835h7m_a0a1a71() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4, Object parameter_5) {

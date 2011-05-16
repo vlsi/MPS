@@ -12,7 +12,7 @@
   <unitInfo fileName="CompositeString_RT.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositeString_RT" />
   <unitInfo fileName="MacroReference_MenuComponent.java" startLine="25" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.MacroReference_MenuComponent$MacroReference_generic_cellMenu_a0" />
   <unitInfo fileName="PathComponent_Editor.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PathComponent_Editor" />
-  <unitInfo fileName="Module_Editor.java" startLine="95" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_Editor$Module_generic_cellMenu_a0b0" />
+  <unitInfo fileName="Module_Editor.java" startLine="144" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_Editor$Module_generic_cellMenu_a0b0" />
   <unitInfo fileName="SimpleString_Editor.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.SimpleString_Editor" />
   <unitInfo fileName="Configuration_Editor.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Configuration_Editor" />
   <unitInfo fileName="MacroReference_MenuComponent.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.MacroReference_MenuComponent" />
@@ -66,11 +66,11 @@
   <unitInfo fileName="Plugin_Editor.java" startLine="18" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Plugin_Editor" />
   <unitInfo fileName="Variable_Editor.java" startLine="18" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Variable_Editor" />
   <unitInfo fileName="MacroReference_Editor.java" startLine="29" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.MacroReference_Editor" />
-  <unitInfo fileName="Module_Editor.java" startLine="26" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_Editor" />
   <unitInfo fileName="File_Editor.java" startLine="22" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.File_Editor" />
   <unitInfo fileName="IncludeExcludeEditorComponent.java" startLine="20" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent" />
   <unitInfo fileName="ConfigurationReferencesEditorComponent.java" startLine="26" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent" />
   <unitInfo fileName="Jar_Editor.java" startLine="22" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Jar_Editor" />
+  <unitInfo fileName="Module_Editor.java" startLine="29" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Module_Editor" />
   <unitInfo fileName="Echo_Editor.java" startLine="25" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Echo_Editor" />
   <unitInfo fileName="Replace_Editor.java" startLine="29" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Replace_Editor" />
   <unitInfo fileName="PathHolder_Editor.java" startLine="21" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.PathHolder_Editor" />
@@ -81,13 +81,13 @@
   <unitInfo fileName="Antcall_Editor.java" startLine="31" startPosition="0" endLine="363" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Antcall_Editor" />
   <unitInfo fileName="Layout_Editor.java" startLine="33" startPosition="0" endLine="585" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Layout_Editor" />
   <root nodeId="1203599720833">
-    <nodeInfo nodeId="1222444952574" fileName="Module_Editor.java" startLine="99" startPosition="105" endLine="100" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1222447273027" fileName="Module_Editor.java" startLine="107" startPosition="165" endLine="108" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222445443653" fileName="Module_Editor.java" startLine="108" startPosition="105" endLine="109" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222444967165" fileName="Module_Editor.java" startLine="120" startPosition="69" endLine="121" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1222444932159" fileName="Module_Editor.java" startLine="99" startPosition="105" endLine="100" endPosition="68" />
-    <scopeInfo nodeId="1222444963971" fileName="Module_Editor.java" startLine="120" startPosition="69" endLine="121" endPosition="68" />
-    <scopeInfo nodeId="1222444932161" fileName="Module_Editor.java" startLine="107" startPosition="165" endLine="109" endPosition="100" />
+    <nodeInfo nodeId="1222444952574" fileName="Module_Editor.java" startLine="148" startPosition="105" endLine="149" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222447273027" fileName="Module_Editor.java" startLine="156" startPosition="165" endLine="157" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222445443653" fileName="Module_Editor.java" startLine="157" startPosition="105" endLine="158" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222444967165" fileName="Module_Editor.java" startLine="169" startPosition="69" endLine="170" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1222444932159" fileName="Module_Editor.java" startLine="148" startPosition="105" endLine="149" endPosition="68" />
+    <scopeInfo nodeId="1222444963971" fileName="Module_Editor.java" startLine="169" startPosition="69" endLine="170" endPosition="68" />
+    <scopeInfo nodeId="1222444932161" fileName="Module_Editor.java" startLine="156" startPosition="165" endLine="158" endPosition="100" />
   </root>
   <root nodeId="1204015167480">
     <nodeInfo nodeId="1227800691592" fileName="Copy_Editor.java" startLine="271" startPosition="112" endLine="272" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
