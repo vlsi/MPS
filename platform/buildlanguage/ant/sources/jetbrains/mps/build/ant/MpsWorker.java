@@ -35,6 +35,9 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
@@ -77,6 +80,7 @@ public abstract class MpsWorker {
   private final AntLogger myLogger;
   private MpsWorker.MyMessageHandlerAppender myMessageHandler = new MyMessageHandlerAppender();
   private FileSystemProvider myWasFileSystemProvider;
+  private final List<BaseApplicationPlugin> myPlugins = new ArrayList<BaseApplicationPlugin>();
 
   private MpsWorker() {
     this(null, (AntLogger) null);
@@ -114,11 +118,13 @@ public abstract class MpsWorker {
     collectModelsToGenerate(go);
     reload();
 
+    if (go.getProjects().isEmpty()) {loadPlugins();}
     executeTask(project, go);
+    if (go.getProjects().isEmpty()) {disposePlugins();}
 
     disposeProjects(go.getProjects());
     dispose();
-    
+
     showStatistic();
   }
 
@@ -135,6 +141,7 @@ public abstract class MpsWorker {
   }
 
   protected void dispose() {
+    disposePlugins();
     for (int i = 0; i < 3; i++) {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
@@ -169,8 +176,7 @@ public abstract class MpsWorker {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     try {
       configureMPS("jetbrains.mps.vcs", "jetbrains.mps.ide.editor");
-    }
-    catch (Exception ex) {
+    } catch (Exception ex) {
       throw new RuntimeException(ex);
     }
 
@@ -232,6 +238,33 @@ public abstract class MpsWorker {
         ClassLoaderManager.getInstance().reloadAll(indicator);
       }
     });
+  }
+
+  private void loadPlugins() {
+    Set<IModule> modules = new HashSet<IModule>();
+    modules.add(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.make.facet"));
+
+    myPlugins.addAll(PluginUtil.createPlugins(modules, new ApplicationPluginCreator()));
+
+    for (BaseApplicationPlugin plugin : myPlugins) {
+      try {
+        plugin.createCustomParts();
+      } catch (Throwable t1) {
+        log("Plugin " + plugin + " threw an exception during initialization ", t1);
+      }
+    }
+  }
+
+  private void disposePlugins() {
+    Collections.reverse(myPlugins);
+    for (BaseApplicationPlugin plugin : myPlugins) {
+      try {
+        plugin.dispose();
+      } catch (Throwable t) {
+        log("Plugin " + plugin + " threw an exception during disposing ", t);
+      }
+    }
+    myPlugins.clear();
   }
 
   protected void startMake(Set<Library> compiledLibraries, Set<IModule> toCompile) {
@@ -326,8 +359,7 @@ public abstract class MpsWorker {
           Class<?> cls = Class.forName("jetbrains.mps.TestMain");
           Method meth = cls.getMethod("loadProject", File.class);
           project = (MPSProject) meth.invoke(null, projectFile);
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
           throw new RuntimeException(ex);
         }
 
@@ -556,7 +588,7 @@ public abstract class MpsWorker {
           LOG.debug(text);
           break;
         default:
-          LOG.fatal("[unknown level "+level+"] " +text);
+          LOG.fatal("[unknown level " + level + "] " + text);
           break;
       }
     }

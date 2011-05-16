@@ -271,6 +271,7 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
+  // todo we already have graphs, why do we need yet another implementation????
   public static class Graph<V> {
     private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());
     private Map<V, List<V>> fwEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
