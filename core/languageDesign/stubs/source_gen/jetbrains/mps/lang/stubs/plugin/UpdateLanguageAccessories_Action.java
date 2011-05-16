@@ -11,7 +11,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.MPSProject;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -47,8 +47,8 @@ public class UpdateLanguageAccessories_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
@@ -56,7 +56,7 @@ public class UpdateLanguageAccessories_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
+      for (Language l : ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModules(Language.class)) {
         Set<SModelReference> toRemove = SetSequence.fromSet(new HashSet<SModelReference>());
         Set<SModelReference> toAdd = SetSequence.fromSet(new HashSet<SModelReference>());
 

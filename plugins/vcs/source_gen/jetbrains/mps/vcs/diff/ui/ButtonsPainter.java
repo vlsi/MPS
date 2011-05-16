@@ -60,7 +60,18 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public int getLeftAreaWidth() {
-    return myWidth;
+    return (myHighlightLeft ?
+      0 :
+      myWidth
+    );
+  }
+
+  @Override
+  public int getRightAreaWidth() {
+    return (myHighlightLeft ?
+      myWidth :
+      0
+    );
   }
 
   @Override
@@ -99,13 +110,13 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public String getToolTipText() {
-    return check_of7u5x_a0a8(myCurrentButton);
+    return check_of7u5x_a0a9(myCurrentButton);
   }
 
   @Override
   public void mousePressed(MouseEvent event) {
     if (event.getButton() == MouseEvent.BUTTON1 && event.getID() == MouseEvent.MOUSE_CLICKED) {
-      check_of7u5x_a0a0a9(myCurrentButton);
+      check_of7u5x_a0a0a01(myCurrentButton);
       event.consume();
     }
   }
@@ -123,7 +134,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
     final int x = p.x - getLeftHighlighter().getFoldingLineX();
     return ListSequence.fromList(myButtons).findFirst(new IWhereFilter<FoldingAreaButton>() {
       public boolean accept(FoldingAreaButton b) {
-        return b.getX() - GAP / 2 < x && x < b.getX() + ICON_SIZE + GAP / 2 && b.getY() - ButtonsPainter.GAP / 2 < p.y && p.y < b.getY() + ButtonsPainter.ICON_SIZE + ButtonsPainter.GAP / 2;
+        return b.getX() - GAP / 2 < x && x < b.getX() + ICON_SIZE + GAP / 2 && b.getY() - GAP / 2 < p.y && p.y < b.getY() + ICON_SIZE + GAP / 2;
       }
     });
   }
@@ -133,18 +144,22 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
     myButtons = null;
   }
 
-  protected static int getX(int index) {
-    return (1 + index) * (-GAP - ICON_SIZE) - LEFT_MARGIN;
+  protected int getX(int index) {
+    int x = (1 + index) * (-GAP - ICON_SIZE) - LEFT_MARGIN;
+    if (myHighlightLeft) {
+      x = myWidth + x + ICON_SIZE;
+    }
+    return x;
   }
 
-  private static String check_of7u5x_a0a8(FoldingAreaButton checkedDotOperand) {
+  private static String check_of7u5x_a0a9(FoldingAreaButton checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getToolTipText();
     }
     return null;
   }
 
-  private static void check_of7u5x_a0a0a9(FoldingAreaButton checkedDotOperand) {
+  private static void check_of7u5x_a0a0a01(FoldingAreaButton checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.performAction();
     }

@@ -35,7 +35,11 @@ public class InspectorEditorComponent extends EditorComponent {
   private SNode myRoot;
 
   public InspectorEditorComponent() {
-    super(null);
+    this(false);
+  }
+
+  public InspectorEditorComponent(boolean rightToLeft) {
+    super(null, false, rightToLeft);
     myNode = null;
     reinitEditor();
   }

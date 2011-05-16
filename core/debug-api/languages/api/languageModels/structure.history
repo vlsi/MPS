@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" />
+    </dependencies>
+    <rename id="86gq.3157158168562217892" type="CONCEPT" from="DebugInfoProvider" to="BreakpointCreator" />
+  </StructureModification>
+</history>
+

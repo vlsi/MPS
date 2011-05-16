@@ -108,7 +108,7 @@
   <unitInfo fileName="EnumClass_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumClass_Behavior" />
   <unitInfo fileName="SuperMethodCall_Behavior.java" startLine="47" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SuperMethodCall_Behavior$QuotationClass_ypylvf_a0d0b" />
   <unitInfo fileName="ConstructorInvocationStatement_Behavior.java" startLine="54" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorInvocationStatement_Behavior$QuotationClass_teq92u_a0d0b" />
-  <unitInfo fileName="AnonymousClass_Behavior.java" startLine="124" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior$QuotationClass_mhnjwj_a0a0b" />
+  <unitInfo fileName="AnonymousClass_Behavior.java" startLine="124" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior$QuotationClass_mhnjwj_a0a0d" />
   <unitInfo fileName="IParameter_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IParameter_Behavior" />
   <unitInfo fileName="ExpressionStatement_Behavior.java" startLine="9" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior" />
   <unitInfo fileName="VariableArityType_Behavior.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableArityType_Behavior" />
@@ -194,67 +194,67 @@
   </root>
   <root nodeId="1213877220084">
     <nodeInfo nodeId="5681636232673824702" fileName="AnonymousClass_Behavior.java" startLine="28" startPosition="43" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240936666103" fileName="AnonymousClass_Behavior.java" startLine="32" startPosition="75" endLine="33" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4814759296880331798" fileName="AnonymousClass_Behavior.java" startLine="36" startPosition="123" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4814759296880331818" fileName="AnonymousClass_Behavior.java" startLine="38" startPosition="104" endLine="39" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4814759296880331842" fileName="AnonymousClass_Behavior.java" startLine="40" startPosition="12" endLine="41" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2977939203456928004" fileName="AnonymousClass_Behavior.java" startLine="45" startPosition="77" endLine="46" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4164197659856373774" fileName="AnonymousClass_Behavior.java" startLine="47" startPosition="29" endLine="48" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2977939203456928111" fileName="AnonymousClass_Behavior.java" startLine="49" startPosition="5" endLine="50" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4164197659856373647" fileName="AnonymousClass_Behavior.java" startLine="53" startPosition="88" endLine="54" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4164197659856373716" fileName="AnonymousClass_Behavior.java" startLine="54" startPosition="130" endLine="55" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4164197659856373660" fileName="AnonymousClass_Behavior.java" startLine="56" startPosition="104" endLine="57" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4164197659856373742" fileName="AnonymousClass_Behavior.java" startLine="60" startPosition="41" endLine="61" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4164197659856373754" fileName="AnonymousClass_Behavior.java" startLine="64" startPosition="5" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7448855087283494959" fileName="AnonymousClass_Behavior.java" startLine="68" startPosition="82" endLine="69" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7448855087283456781" fileName="AnonymousClass_Behavior.java" startLine="76" startPosition="72" endLine="77" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7523932196475740222" fileName="AnonymousClass_Behavior.java" startLine="84" startPosition="132" endLine="85" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7523932196475740226" fileName="AnonymousClass_Behavior.java" startLine="85" startPosition="36" endLine="86" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7523932196475740236" fileName="AnonymousClass_Behavior.java" startLine="87" startPosition="106" endLine="88" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7523932196475740253" fileName="AnonymousClass_Behavior.java" startLine="89" startPosition="5" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2496361171403550997" fileName="AnonymousClass_Behavior.java" startLine="93" startPosition="80" endLine="94" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4814759296880331832" fileName="AnonymousClass_Behavior.java" startLine="40" startPosition="10" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4164197659856373764" fileName="AnonymousClass_Behavior.java" startLine="46" startPosition="123" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7523932196475740234" fileName="AnonymousClass_Behavior.java" startLine="86" startPosition="143" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="59" startPosition="189" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7448855087283494968" fileName="AnonymousClass_Behavior.java" startLine="69" startPosition="136" endLine="73" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7448855087283456816" fileName="AnonymousClass_Behavior.java" startLine="77" startPosition="136" endLine="81" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4814759296880331806" fileName="AnonymousClass_Behavior.java" startLine="37" startPosition="80" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4164197659856373724" fileName="AnonymousClass_Behavior.java" startLine="58" startPosition="12" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4164197659856373671" fileName="AnonymousClass_Behavior.java" startLine="58" startPosition="10" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4164197659856373658" fileName="AnonymousClass_Behavior.java" startLine="55" startPosition="14" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2496361171403550997" fileName="AnonymousClass_Behavior.java" startLine="32" startPosition="80" endLine="33" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2977939203456928004" fileName="AnonymousClass_Behavior.java" startLine="36" startPosition="77" endLine="37" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4164197659856373774" fileName="AnonymousClass_Behavior.java" startLine="38" startPosition="29" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2977939203456928111" fileName="AnonymousClass_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240936666103" fileName="AnonymousClass_Behavior.java" startLine="44" startPosition="75" endLine="45" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4814759296880331798" fileName="AnonymousClass_Behavior.java" startLine="48" startPosition="123" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4814759296880331818" fileName="AnonymousClass_Behavior.java" startLine="50" startPosition="104" endLine="51" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4814759296880331842" fileName="AnonymousClass_Behavior.java" startLine="52" startPosition="12" endLine="53" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4164197659856373647" fileName="AnonymousClass_Behavior.java" startLine="57" startPosition="88" endLine="58" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4164197659856373716" fileName="AnonymousClass_Behavior.java" startLine="58" startPosition="130" endLine="59" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4164197659856373660" fileName="AnonymousClass_Behavior.java" startLine="60" startPosition="104" endLine="61" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4164197659856373742" fileName="AnonymousClass_Behavior.java" startLine="64" startPosition="41" endLine="65" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4164197659856373754" fileName="AnonymousClass_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7448855087283494959" fileName="AnonymousClass_Behavior.java" startLine="72" startPosition="82" endLine="73" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7448855087283456781" fileName="AnonymousClass_Behavior.java" startLine="80" startPosition="72" endLine="81" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7523932196475740222" fileName="AnonymousClass_Behavior.java" startLine="88" startPosition="132" endLine="89" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7523932196475740226" fileName="AnonymousClass_Behavior.java" startLine="89" startPosition="36" endLine="90" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7523932196475740236" fileName="AnonymousClass_Behavior.java" startLine="91" startPosition="106" endLine="92" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7523932196475740253" fileName="AnonymousClass_Behavior.java" startLine="93" startPosition="5" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4814759296880331832" fileName="AnonymousClass_Behavior.java" startLine="52" startPosition="10" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4164197659856373764" fileName="AnonymousClass_Behavior.java" startLine="37" startPosition="123" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7523932196475740234" fileName="AnonymousClass_Behavior.java" startLine="90" startPosition="143" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="63" startPosition="189" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7448855087283494968" fileName="AnonymousClass_Behavior.java" startLine="73" startPosition="136" endLine="77" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7448855087283456816" fileName="AnonymousClass_Behavior.java" startLine="81" startPosition="136" endLine="85" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4814759296880331806" fileName="AnonymousClass_Behavior.java" startLine="49" startPosition="80" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4164197659856373724" fileName="AnonymousClass_Behavior.java" startLine="62" startPosition="12" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4164197659856373671" fileName="AnonymousClass_Behavior.java" startLine="62" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4164197659856373658" fileName="AnonymousClass_Behavior.java" startLine="59" startPosition="14" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1213877220086" fileName="AnonymousClass_Behavior.java" startLine="28" startPosition="43" endLine="29" endPosition="62" />
-    <scopeInfo nodeId="1240936659088" fileName="AnonymousClass_Behavior.java" startLine="32" startPosition="75" endLine="33" endPosition="199" />
-    <scopeInfo nodeId="4814759296880331807" fileName="AnonymousClass_Behavior.java" startLine="38" startPosition="104" endLine="39" endPosition="148" />
-    <scopeInfo nodeId="4814759296880331833" fileName="AnonymousClass_Behavior.java" startLine="40" startPosition="12" endLine="41" endPosition="184" />
-    <scopeInfo nodeId="4164197659856373765" fileName="AnonymousClass_Behavior.java" startLine="47" startPosition="29" endLine="48" endPosition="75" />
-    <scopeInfo nodeId="4164197659856373659" fileName="AnonymousClass_Behavior.java" startLine="56" startPosition="104" endLine="57" endPosition="180" />
-    <scopeInfo nodeId="4164197659856373741" fileName="AnonymousClass_Behavior.java" startLine="60" startPosition="41" endLine="61" endPosition="126" />
-    <scopeInfo nodeId="7523932196475740235" fileName="AnonymousClass_Behavior.java" startLine="87" startPosition="106" endLine="88" endPosition="83" />
-    <scopeInfo nodeId="2496361171403550996" fileName="AnonymousClass_Behavior.java" startLine="93" startPosition="80" endLine="94" endPosition="82" />
-    <scopeInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="59" startPosition="189" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="2977939203456914074" fileName="AnonymousClass_Behavior.java" startLine="45" startPosition="77" endLine="50" endPosition="166">
+    <scopeInfo nodeId="2496361171403550996" fileName="AnonymousClass_Behavior.java" startLine="32" startPosition="80" endLine="33" endPosition="82" />
+    <scopeInfo nodeId="4164197659856373765" fileName="AnonymousClass_Behavior.java" startLine="38" startPosition="29" endLine="39" endPosition="75" />
+    <scopeInfo nodeId="1240936659088" fileName="AnonymousClass_Behavior.java" startLine="44" startPosition="75" endLine="45" endPosition="199" />
+    <scopeInfo nodeId="4814759296880331807" fileName="AnonymousClass_Behavior.java" startLine="50" startPosition="104" endLine="51" endPosition="148" />
+    <scopeInfo nodeId="4814759296880331833" fileName="AnonymousClass_Behavior.java" startLine="52" startPosition="12" endLine="53" endPosition="184" />
+    <scopeInfo nodeId="4164197659856373659" fileName="AnonymousClass_Behavior.java" startLine="60" startPosition="104" endLine="61" endPosition="180" />
+    <scopeInfo nodeId="4164197659856373741" fileName="AnonymousClass_Behavior.java" startLine="64" startPosition="41" endLine="65" endPosition="126" />
+    <scopeInfo nodeId="7523932196475740235" fileName="AnonymousClass_Behavior.java" startLine="91" startPosition="106" endLine="92" endPosition="83" />
+    <scopeInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="63" startPosition="189" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="2977939203456914074" fileName="AnonymousClass_Behavior.java" startLine="36" startPosition="77" endLine="41" endPosition="166">
       <varInfo nodeId="2977939203456928005" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="4164197659856373672" fileName="AnonymousClass_Behavior.java" startLine="58" startPosition="12" endLine="63" endPosition="31" />
-    <scopeInfo nodeId="2193927380279967695" fileName="AnonymousClass_Behavior.java" startLine="68" startPosition="82" endLine="73" endPosition="6">
+    <scopeInfo nodeId="4164197659856373672" fileName="AnonymousClass_Behavior.java" startLine="62" startPosition="12" endLine="67" endPosition="31" />
+    <scopeInfo nodeId="2193927380279967695" fileName="AnonymousClass_Behavior.java" startLine="72" startPosition="82" endLine="77" endPosition="6">
       <varInfo nodeId="7448855087283494960" varName="containingClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7523932196475787024" fileName="AnonymousClass_Behavior.java" startLine="76" startPosition="72" endLine="81" endPosition="6">
+    <scopeInfo nodeId="7523932196475787024" fileName="AnonymousClass_Behavior.java" startLine="80" startPosition="72" endLine="85" endPosition="6">
       <varInfo nodeId="7448855087283456782" varName="containingClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="4814759296880331000" fileName="AnonymousClass_Behavior.java" startLine="36" startPosition="123" endLine="42" endPosition="5">
+    <scopeInfo nodeId="4814759296880331000" fileName="AnonymousClass_Behavior.java" startLine="48" startPosition="123" endLine="54" endPosition="5">
       <varInfo nodeId="4814759296880331799" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7523932196475740200" fileName="AnonymousClass_Behavior.java" startLine="84" startPosition="132" endLine="90" endPosition="18">
+    <scopeInfo nodeId="7523932196475740200" fileName="AnonymousClass_Behavior.java" startLine="88" startPosition="132" endLine="94" endPosition="18">
       <varInfo nodeId="7523932196475740223" varName="result" />
       <varInfo nodeId="7523932196475740227" varName="containingMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="4164197659856373646" fileName="AnonymousClass_Behavior.java" startLine="53" startPosition="88" endLine="65" endPosition="17">
+    <scopeInfo nodeId="4164197659856373646" fileName="AnonymousClass_Behavior.java" startLine="57" startPosition="88" endLine="69" endPosition="17">
       <varInfo nodeId="4164197659856373717" varName="index" />
       <varInfo nodeId="4164197659856373648" varName="ancestor" />
     </scopeInfo>
-    <unitInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="59" startPosition="166" endLine="63" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior$1" />
+    <unitInfo nodeId="4164197659856373740" fileName="AnonymousClass_Behavior.java" startLine="63" startPosition="166" endLine="67" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior$1" />
   </root>
   <root nodeId="1213877221089">
     <scopeInfo nodeId="1213877221091" fileName="IValidIdentifier_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

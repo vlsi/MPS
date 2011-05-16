@@ -8,7 +8,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.FileUtil;
-import org.tmatesoft.svn.core.internal.wc.FSMergerBySequence;
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import com.intellij.ide.plugins.PluginManager;
+import com.intellij.openapi.extensions.PluginId;
 
 public class MergeDriverMain {
   private static final String CONFLICT_START = "<<<<<<<";
@@ -61,8 +63,14 @@ public class MergeDriverMain {
     cmd.append(PathUtil.getJarPathForClass(_FunctionTypes.class)).append(File.pathSeparator);
     cmd.append(PathUtil.getJarPathForClass(StringUtils.class)).append(File.pathSeparator);
     cmd.append(PathUtil.getJarPathForClass(FileUtil.class)).append(File.pathSeparator);
-    cmd.append(PathUtil.getJarPathForClass(FSMergerBySequence.class));
-    cmd.append(" ").append(MergeDriverMain.class.getName()).append(" --git");
+    IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
+    // TODO 
+    if (svnPlugin == null) {
+      assert false;
+      return null;
+    }
+    cmd.append(svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar");
+    cmd.append(" ").append(MergeDriverMain.class.getName());
     return cmd.toString();
   }
 }

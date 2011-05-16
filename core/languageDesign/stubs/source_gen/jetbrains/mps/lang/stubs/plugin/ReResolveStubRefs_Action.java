@@ -10,13 +10,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SModelReference;
+import java.util.HashMap;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.IModule;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
@@ -32,7 +34,7 @@ public class ReResolveStubRefs_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(ReResolveStubRefs_Action.class);
 
   public ReResolveStubRefs_Action() {
-    super("Re-resolve Stub Refs (1)", "", ICON);
+    super("Re-resolve Stub Refs", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -64,7 +66,8 @@ public class ReResolveStubRefs_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       int i = 0;
-      for (final SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
+      Map<String, SModelReference> cache = MapSequence.fromMap(new HashMap<String, SModelReference>());
+      for (final SModelDescriptor d : ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectScope.class).getModelDescriptors()) {
         if (!(d instanceof EditableSModelDescriptor)) {
           continue;
         }
@@ -93,27 +96,40 @@ public class ReResolveStubRefs_Action extends GeneratedAction {
               continue;
             }
 
-            for (SModelDescriptor md : module.getScope().getModelDescriptors()) {
-              SModelReference mdRef = md.getSModelReference();
-              SModelId mdId = mdRef.getSModelId();
-              if (mdId instanceof SModelId.RegularSModelId) {
-                continue;
-              }
-              if (!(ReResolveStubRefs_Action.this.matches(((SModelId.ForeignSModelId) modelId).getId(), ((SModelId.ForeignSModelId) mdId).getId(), _params))) {
-                continue;
-              }
-              if (md.getSModel().getNodeById(nodeId) == null) {
-                continue;
-              }
+            String oldId = ((SModelId.ForeignSModelId) modelId).getId();
+            SModelReference replacement = null;
 
+            SModelReference cachedReplacement = MapSequence.fromMap(cache).get(oldId);
+            if (cachedReplacement != null && module.getScope().getModelDescriptor(cachedReplacement) != null) {
+              replacement = cachedReplacement;
+            } else {
+              for (SModelDescriptor md : module.getScope().getModelDescriptors()) {
+                SModelReference mdRef = md.getSModelReference();
+                SModelId mdId = mdRef.getSModelId();
+                if (mdId instanceof SModelId.RegularSModelId) {
+                  continue;
+                }
+                if (!(ReResolveStubRefs_Action.this.matches(oldId, ((SModelId.ForeignSModelId) mdId).getId(), _params))) {
+                  continue;
+                }
+                if (md.getSModel().getNodeById(nodeId) == null) {
+                  continue;
+                }
+
+                replacement = md.getSModelReference();
+                MapSequence.fromMap(cache).put(oldId, replacement);
+                break;
+              }
+            }
+
+            if (replacement != null) {
               SetSequence.fromSet(toRemove).addElement(ref.getTargetSModelReference());
 
-              SModelReference mr = md.getSModelReference();
+              SModelReference mr = replacement;
               d.getSModel().addModelImport(mr, false);
               ref.setTargetSModelReference(mr);
 
               i++;
-              break;
             }
           }
         }

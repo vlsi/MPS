@@ -77,7 +77,7 @@ public class RootDifferenceDialog extends BaseDialog {
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(myModelDialog.getOperationContext(), model.getNodeById(myRootId), myModelDialog.getContentTitles()[index]);
+    final DiffEditor result = new DiffEditor(myModelDialog.getOperationContext(), model.getNodeById(myRootId), myModelDialog.getContentTitles()[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :

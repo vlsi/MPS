@@ -802,15 +802,15 @@
             <property name="name" nameId="tpck.1169194664001" value="applyX" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4124845871897266605" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4124845871897266606">
-              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="4124845871897266607">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.7617953927522680234" resolveInfo="getX" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897266608">
+              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5019205163935290250">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.5019205163935290164" resolveInfo="getX" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5019205163935290251">
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
               </node>
-              <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="4124845871897266609">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.7617953927522680234" resolveInfo="getX" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897266610">
+              <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5019205163935290260">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.5019205163935290164" resolveInfo="getX" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5019205163935290261">
                   <property name="value" nameId="tpee.1068580320021" value="1" />
                 </node>
               </node>
@@ -825,15 +825,15 @@
             <property name="name" nameId="tpck.1169194664001" value="excludeX" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4124845871897266614" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="4124845871897266615">
-              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="4124845871897266616">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.7617953927522680234" resolveInfo="getX" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897266617">
+              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5019205163935290257">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.5019205163935290164" resolveInfo="getX" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5019205163935290258">
                   <property name="value" nameId="tpee.1068580320021" value="1" />
                 </node>
               </node>
-              <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="4124845871897266618">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.7617953927522680234" resolveInfo="getX" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897266619">
+              <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5019205163935290263">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.5019205163935290164" resolveInfo="getX" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5019205163935290264">
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
               </node>
@@ -3937,6 +3937,14 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4124845871897268178">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4124845871897267880" resolveInfo="getContentTitles" />
                     </node>
+                  </node>
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5683154120631478611">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5683154120631478614">
+                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                  </node>
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5683154120631478610">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4124845871897268158" resolveInfo="index" />
                   </node>
                 </node>
               </node>

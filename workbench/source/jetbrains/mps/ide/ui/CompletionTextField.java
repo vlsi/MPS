@@ -142,8 +142,10 @@ public abstract class CompletionTextField extends JTextField {
   }
 
   public void removeNotify() {
-    myContainerWindow.removeComponentListener(myListener);
-    myContainerWindow = null;
+    if (myContainerWindow != null) {
+      myContainerWindow.removeComponentListener(myListener);
+      myContainerWindow = null;
+    }
     super.removeNotify();
   }
 

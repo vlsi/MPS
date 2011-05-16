@@ -17,17 +17,6 @@ import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
-import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class AbstractContainerCreator_Constraints extends ConstraintsDataHolder {
   public AbstractContainerCreator_Constraints() {
@@ -91,32 +80,9 @@ public class AbstractContainerCreator_Constraints extends ConstraintsDataHolder 
   }
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    final SNode dtype = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
-    final SNode avlbForCLdecl = ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "conceptLinkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return "availableFor".equals(SPropertyOperations.getString(it, "name"));
-      }
-    });
-    if ((dtype != null)) {
-      Iterable<SNode> avlbFor = ListSequence.fromList(SLinkOperations.getTargets(_context.getChildConcept(), "conceptLink", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode cl) {
-          return SLinkOperations.getTarget(cl, "conceptLinkDeclaration", false) == avlbForCLdecl;
-        }
-      }).<SNode>select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode cl) {
-          return (SNode) SLinkOperations.getTarget(SNodeOperations.cast(cl, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
-        }
-      });
-      return Sequence.fromIterable(avlbFor).isEmpty() || Sequence.fromIterable(avlbFor).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode trg) {
-          return SConceptOperations.isSuperConceptOf(SNodeOperations.getConceptDeclaration(dtype), NameUtil.nodeFQName(trg));
-        }
-      }) || (SNodeOperations.isInstanceOf(dtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") && Sequence.fromIterable(avlbFor).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode trg) {
-          return TypeChecker.getInstance().getSubtypingManager().isSubtype(SConceptOperations.createNewNode(NameUtil.nodeFQName(trg), dtype), dtype);
-        }
-      }));
-    }
+    // <node> 
+    // <node> 
+    // <node> 
     return true;
   }
 }

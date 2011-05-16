@@ -8,12 +8,14 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -44,13 +46,17 @@ public class FindDuplicatedStubs_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Map<String, List<SModelReference>> n2m = MapSequence.fromMap(new HashMap<String, List<SModelReference>>());
-      List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptors();
+      List<SModelDescriptor> models = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectScope.class).getModelDescriptors();
       ListSequence.fromList(models).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor it) {
           return SModelStereotype.isStubModelStereotype(it.getStereotype());

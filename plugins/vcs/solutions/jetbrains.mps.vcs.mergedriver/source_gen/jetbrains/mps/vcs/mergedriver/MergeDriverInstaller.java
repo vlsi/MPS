@@ -15,7 +15,7 @@ public class MergeDriverInstaller {
   public static boolean isApplicable(Project project) {
     return Sequence.fromIterable(Sequence.fromArray(project.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots())).any(new IWhereFilter<VcsRoot>() {
       public boolean accept(VcsRoot root) {
-        return "Git".equals(root.vcs.getName());
+        return "Git".equals(root.vcs.getName()) || "svn".equals(root.vcs.getName());
       }
     });
   }
@@ -25,5 +25,6 @@ public class MergeDriverInstaller {
     if (globalMessage != null) {
       GitRepositoriesInstaller.installForRepositoriesIfNeeded(project, globalMessage);
     }
+    SvnInstaller.install(project);
   }
 }
