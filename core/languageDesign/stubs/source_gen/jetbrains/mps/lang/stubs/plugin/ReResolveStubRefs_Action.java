@@ -13,7 +13,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.IModule;
@@ -33,7 +34,7 @@ public class ReResolveStubRefs_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(ReResolveStubRefs_Action.class);
 
   public ReResolveStubRefs_Action() {
-    super("Re-resolve Stub Refs (1)", "", ICON);
+    super("Re-resolve Stub Refs", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -66,7 +67,7 @@ public class ReResolveStubRefs_Action extends GeneratedAction {
     try {
       int i = 0;
       Map<String, SModelReference> cache = MapSequence.fromMap(new HashMap<String, SModelReference>());
-      for (final SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
+      for (final SModelDescriptor d : ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectScope.class).getModelDescriptors()) {
         if (!(d instanceof EditableSModelDescriptor)) {
           continue;
         }

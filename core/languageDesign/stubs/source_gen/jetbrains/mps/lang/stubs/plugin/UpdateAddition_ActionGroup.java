@@ -17,7 +17,6 @@ public class UpdateAddition_ActionGroup extends GeneratedActionGroup {
       UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.UpdateLanguageAccessories_Action");
       UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.ReResolveStubRefs_Action");
       UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.FindDuplicatedStubs_Action");
-      UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.EnableAutoRefsResolving_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
