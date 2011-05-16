@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="24" startPosition="47" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="150" startPosition="42" endLine="154" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="242" startPosition="45" endLine="246" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="270" startPosition="66" endLine="274" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$4" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="256" startPosition="45" endLine="261" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$3" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="139" startPosition="90" endLine="146" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="151" startPosition="42" endLine="155" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="235" startPosition="45" endLine="239" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="263" startPosition="66" endLine="267" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$4" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="249" startPosition="45" endLine="254" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$3" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="140" startPosition="90" endLine="147" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="21" startPosition="74" endLine="31" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$1" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="65" endLine="34" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="38" startPosition="65" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$2" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="279" startPosition="35" endLine="289" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$5" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="272" startPosition="35" endLine="282" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$5" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="159" startPosition="52" endLine="171" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="DefaultJavaApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Factory" />
   <unitInfo fileName="BaseLanguageNodeActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup" />
   <unitInfo fileName="BaseLanguageModelActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup" />
@@ -18,21 +19,20 @@
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="31" startPosition="18" endLine="46" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
   <unitInfo fileName="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup" />
   <unitInfo fileName="BaseLanguageToolsAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="348" startPosition="0" endLine="364" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyState" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="341" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyState" />
   <unitInfo fileName="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup" />
   <unitInfo fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="158" startPosition="52" endLine="178" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="RefactoringAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" />
   <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="365" startPosition="0" endLine="388" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="389" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="358" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="382" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
   <unitInfo fileName="TodoViewer_Tool.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
   <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
   <unitInfo fileName="ShowTodoViewer_Action.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
   <unitInfo fileName="JavaApplication_ConfigurationType.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
   <unitInfo fileName="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="304" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MySettingsEditor" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="297" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MySettingsEditor" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="AnalyzeStacktrace_Action.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" />
   <unitInfo fileName="ShowNullDFA_Action.java" startLine="21" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action" />
@@ -54,11 +54,11 @@
   <unitInfo fileName="ExtractMethod_Action.java" startLine="27" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action" />
   <unitInfo fileName="InlineLocalVariable_Action.java" startLine="21" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action" />
   <unitInfo fileName="CommentLine_Action.java" startLine="19" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="111" startPosition="15" endLine="205" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$1" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="112" startPosition="15" endLine="198" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$1" />
   <unitInfo fileName="GoToOverridenMethod_Action.java" startLine="34" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
   <unitInfo fileName="GoToInheritedClassifier_Action.java" startLine="33" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
   <unitInfo fileName="GoToOverridingMethod_Action.java" startLine="36" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
-  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="61" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="62" startPosition="0" endLine="408" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration" />
   <root nodeId="1108208212555615250">
     <nodeInfo nodeId="1108208212555653261" fileName="GoToOverridenMethod_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9093903716560055870" fileName="GoToOverridenMethod_Action.java" startLine="93" startPosition="9" endLine="94" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -667,8 +667,8 @@
     </scopeInfo>
     <scopeInfo nodeId="155142699038773183" fileName="ParenthesisUtil.java" startLine="16" startPosition="30" endLine="21" endPosition="0">
       <varInfo nodeId="155142699038773199" varName="expression" />
-      <varInfo nodeId="155142699038773204" varName="context" />
       <varInfo nodeId="155142699038773202" varName="opening" />
+      <varInfo nodeId="155142699038773204" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773227" fileName="ParenthesisUtil.java" startLine="25" startPosition="129" endLine="30" endPosition="124" />
     <scopeInfo nodeId="155142699038773748" fileName="ParenthesisUtil.java" startLine="161" startPosition="105" endLine="166" endPosition="7">
@@ -684,8 +684,8 @@
       <varInfo nodeId="155142699038773310" varName="parExpr" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773941" fileName="ParenthesisUtil.java" startLine="220" startPosition="93" endLine="230" endPosition="5">
-      <varInfo nodeId="155142699038773953" varName="nodeCell" />
       <varInfo nodeId="155142699038773947" varName="component" />
+      <varInfo nodeId="155142699038773953" varName="nodeCell" />
       <varInfo nodeId="155142699038773960" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773529" fileName="ParenthesisUtil.java" startLine="103" startPosition="30" endLine="114" endPosition="7">
@@ -746,8 +746,8 @@
       <varInfo nodeId="155142699038773836" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773208" fileName="ParenthesisUtil.java" startLine="22" startPosition="85" endLine="65" endPosition="19">
-      <varInfo nodeId="155142699038773367" varName="parExpr" />
       <varInfo nodeId="155142699038773255" varName="binOp" />
+      <varInfo nodeId="155142699038773367" varName="parExpr" />
       <varInfo nodeId="155142699038773356" varName="subtree" />
       <varInfo nodeId="155142699038773210" varName="current" />
       <varInfo nodeId="155142699038773287" varName="left" />
@@ -761,8 +761,8 @@
     <scopeInfo nodeId="155142699038773405" fileName="ParenthesisUtil.java" startLine="68" startPosition="106" endLine="121" endPosition="39">
       <varInfo nodeId="155142699038773417" varName="binOp" />
       <varInfo nodeId="155142699038773451" varName="backsideSubtree" />
-      <varInfo nodeId="155142699038773575" varName="binOpCheck" />
       <varInfo nodeId="155142699038773495" varName="sideSubtree" />
+      <varInfo nodeId="155142699038773575" varName="binOpCheck" />
       <varInfo nodeId="155142699038773437" varName="leaf" />
       <varInfo nodeId="155142699038773429" varName="sidemost" />
     </scopeInfo>
@@ -1060,37 +1060,21 @@
   <root nodeId="3607966867310228609">
     <nodeInfo nodeId="4462513030605202743" fileName="DefaultJavaApplication_Editor.java" startLine="33" startPosition="11" endLine="34" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4462513030605203752" fileName="DefaultJavaApplication_Editor.java" startLine="36" startPosition="29" endLine="37" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3607966867310300134" fileName="DefaultJavaApplication_Configuration.java" startLine="160" startPosition="21" endLine="161" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6796549325584737045" fileName="DefaultJavaApplication_Configuration.java" startLine="161" startPosition="79" endLine="162" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6796549325584737051" fileName="DefaultJavaApplication_Configuration.java" startLine="164" startPosition="39" endLine="165" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6918597921035680739" fileName="DefaultJavaApplication_Configuration.java" startLine="168" startPosition="48" endLine="169" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3607966867310344470" fileName="DefaultJavaApplication_Configuration.java" startLine="170" startPosition="19" endLine="171" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3607966867310344488" fileName="DefaultJavaApplication_Configuration.java" startLine="171" startPosition="75" endLine="172" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4462513030605202743" fileName="DefaultJavaApplication_Configuration.java" startLine="280" startPosition="35" endLine="281" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4462513030605203752" fileName="DefaultJavaApplication_Configuration.java" startLine="283" startPosition="33" endLine="284" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1769265426473404169" fileName="DefaultJavaApplication_Configuration.java" startLine="300" startPosition="46" endLine="301" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6918597921035680728" fileName="DefaultJavaApplication_Configuration.java" startLine="167" startPosition="21" endLine="170" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4462513030605202743" fileName="DefaultJavaApplication_Configuration.java" startLine="273" startPosition="35" endLine="274" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4462513030605203752" fileName="DefaultJavaApplication_Configuration.java" startLine="276" startPosition="33" endLine="277" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1769265426473404169" fileName="DefaultJavaApplication_Configuration.java" startLine="293" startPosition="46" endLine="294" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Editor.java" startLine="35" startPosition="61" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6796549325584737049" fileName="DefaultJavaApplication_Configuration.java" startLine="163" startPosition="71" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Configuration.java" startLine="282" startPosition="65" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2631534244821433264" fileName="DefaultJavaApplication_Configuration.java" startLine="161" startPosition="21" endLine="165" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Configuration.java" startLine="275" startPosition="65" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4462513030605202731" fileName="DefaultJavaApplication_Editor.java" startLine="34" startPosition="72" endLine="39" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796549325584737048" fileName="DefaultJavaApplication_Configuration.java" startLine="162" startPosition="82" endLine="167" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4462513030605202731" fileName="DefaultJavaApplication_Configuration.java" startLine="281" startPosition="76" endLine="286" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4462513030605202731" fileName="DefaultJavaApplication_Configuration.java" startLine="274" startPosition="76" endLine="279" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="4462513030605202733" fileName="DefaultJavaApplication_Editor.java" startLine="36" startPosition="29" endLine="37" endPosition="105" />
-    <scopeInfo nodeId="6796549325584737050" fileName="DefaultJavaApplication_Configuration.java" startLine="164" startPosition="39" endLine="165" endPosition="98" />
-    <scopeInfo nodeId="6918597921035680729" fileName="DefaultJavaApplication_Configuration.java" startLine="168" startPosition="48" endLine="169" endPosition="92" />
-    <scopeInfo nodeId="4462513030605202733" fileName="DefaultJavaApplication_Configuration.java" startLine="283" startPosition="33" endLine="284" endPosition="109" />
+    <scopeInfo nodeId="4462513030605202733" fileName="DefaultJavaApplication_Configuration.java" startLine="276" startPosition="33" endLine="277" endPosition="109" />
     <scopeInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Editor.java" startLine="35" startPosition="61" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="6796549325584737049" fileName="DefaultJavaApplication_Configuration.java" startLine="163" startPosition="71" endLine="167" endPosition="0" />
-    <scopeInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Configuration.java" startLine="282" startPosition="65" endLine="286" endPosition="0" />
-    <scopeInfo nodeId="3607966867310296665" fileName="DefaultJavaApplication_Configuration.java" startLine="160" startPosition="21" endLine="172" endPosition="114">
-      <varInfo nodeId="3607966867310344471" varName="process" />
-      <varInfo nodeId="3607966867310300135" varName="classRunner" />
-      <varInfo nodeId="6796549325584737046" varName="className" />
-    </scopeInfo>
+    <scopeInfo nodeId="3607966867310296665" fileName="DefaultJavaApplication_Configuration.java" startLine="161" startPosition="21" endLine="165" endPosition="92" />
+    <scopeInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Configuration.java" startLine="275" startPosition="65" endLine="279" endPosition="0" />
     <unitInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Editor.java" startLine="35" startPosition="49" endLine="39" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$3" />
-    <unitInfo nodeId="6796549325584737049" fileName="DefaultJavaApplication_Configuration.java" startLine="163" startPosition="59" endLine="167" endPosition="19" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$3" />
-    <unitInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Configuration.java" startLine="282" startPosition="53" endLine="286" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$6" />
+    <unitInfo nodeId="4462513030605202732" fileName="DefaultJavaApplication_Configuration.java" startLine="275" startPosition="53" endLine="279" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$6" />
   </root>
   <root nodeId="3836499504550259659">
     <nodeInfo nodeId="3836499504550260297" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="15" startPosition="126" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTooltip" />
