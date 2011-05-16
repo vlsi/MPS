@@ -29,7 +29,7 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.NodeData" />
-    <classNode extendsClassName="javax.swing.JTree" />
+    <classNode extendsClassName="com.intellij.ui.treeStructure.Tree" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.ConversionFailedException" file="ConversionFailedException.java">
     <classNode dependClassName="java.lang.String" />
@@ -365,6 +365,7 @@
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="javax.swing.DefaultListCellRenderer" />
+    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="org.jdesktop.observablecollections.ObservableList" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.awt.Frame" />

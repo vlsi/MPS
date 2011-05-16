@@ -44,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.util.WindowsUtil" />
     <classNode dependClassName="java.awt.event.FocusEvent" />
     <classNode dependClassName="javax.swing.JScrollPane" />
+    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="javax.swing.border.LineBorder" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="java.awt.Window" />

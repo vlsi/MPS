@@ -8,10 +8,11 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.awt.BorderLayout;
+import com.intellij.ui.treeStructure.Tree;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.tree.TreePath;
 
 public class CheckBoxTree<N extends NodeData> extends JPanel {
@@ -20,7 +21,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
 
   public CheckBoxTree(CheckBoxNode node) {
     super(new BorderLayout());
-    this.myTree = new JTree(node);
+    this.myTree = new Tree(node);
     this.myTree.setCellRenderer(new CheckBoxCellRenderrer());
     this.myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
     this.myTree.addMouseListener(new MouseAdapter() {
@@ -28,7 +29,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
         CheckBoxTree.this.mouseParessed(e.getX(), e.getY());
       }
     });
-    this.add(new JScrollPane(this.myTree), BorderLayout.CENTER);
+    this.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
   }
 
   public void mouseParessed(int x, int y) {

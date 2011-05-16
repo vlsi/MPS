@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.components.JBList;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -476,7 +478,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private final Color FOREGROUND_COLOR = Color.black;
     private final Color SELECTED_BACKGROUND_COLOR = new Color(0, 82, 164);
     private final Color SELECTED_FOREGROUND_COLOR = Color.white;
-    private JList myList = new JList(new DefaultListModel()) {
+    private JList myList = new JBList(new DefaultListModel()) {
       @Override
       public Dimension getPreferredScrollableViewportSize() {
         Dimension preferredSize = getPreferredSize();
@@ -490,7 +492,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       }
     };
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
-    private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    private JScrollPane myScroller = ScrollPaneFactory.createScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     private EditorCell myRelativeCell;
     ComponentAdapter myComponentListener = new ComponentAdapter() {
       public void componentMoved(ComponentEvent e) {

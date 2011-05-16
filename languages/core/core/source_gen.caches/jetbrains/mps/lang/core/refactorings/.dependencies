@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTree" />
-    <classNode extendsClassName="javax.swing.JScrollPane" />
+    <classNode extendsClassName="com.intellij.ui.components.JBScrollPane" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.refactorings.MoveNodes" file="MoveNodes.java">
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />

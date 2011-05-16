@@ -9,7 +9,7 @@ import java.awt.GridLayout;
 import javax.swing.JTextArea;
 import java.awt.Color;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -27,7 +27,7 @@ public class ProblemsDialog extends BaseDialog {
     area.setBackground(Color.WHITE);
     area.setLineWrap(true);
     this.myPanel.setBorder(new EmptyBorder(3, 3, 3, 3));
-    this.myPanel.add(new JScrollPane(area, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER));
+    this.myPanel.add(ScrollPaneFactory.createScrollPane(area, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER));
   }
 
   protected JComponent getMainComponent() {

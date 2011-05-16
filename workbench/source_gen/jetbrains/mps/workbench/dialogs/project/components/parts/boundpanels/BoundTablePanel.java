@@ -12,6 +12,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseVali
 import com.intellij.openapi.util.Computable;
 import javax.swing.JComponent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.DiffRowTable;
+import com.intellij.ui.table.JBTable;
 import org.jdesktop.swingbinding.JTableBinding;
 import org.jdesktop.swingbinding.SwingBindings;
 import org.jdesktop.beansbinding.AutoBinding;
@@ -65,7 +66,7 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
   protected JComponent initUIComponentAndBinding() {
     myTable = (myDiffRow ?
       new DiffRowTable() :
-      new JTable()
+      new JBTable()
     );
     JTableBinding<T, List<T>, JTable> tableBinding = SwingBindings.createJTableBinding(AutoBinding.UpdateStrategy.READ_WRITE, myList, myTable);
     for (final ColumnDescriptor d : myColumns) {

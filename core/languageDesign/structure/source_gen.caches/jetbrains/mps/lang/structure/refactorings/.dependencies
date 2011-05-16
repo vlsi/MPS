@@ -163,7 +163,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
-    <classNode extendsClassName="javax.swing.JScrollPane" />
+    <classNode extendsClassName="com.intellij.ui.components.JBScrollPane" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.refactorings.RenameConcept" file="RenameConcept.java">
     <classNode dependClassName="jetbrains.mps.lang.structure.refactorings.RenameConcept_Target" />

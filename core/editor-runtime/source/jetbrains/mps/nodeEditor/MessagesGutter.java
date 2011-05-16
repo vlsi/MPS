@@ -261,7 +261,7 @@ public class MessagesGutter extends JPanel {
       if (!scrollBar.isVisible()) {
         return getHeight();
       }
-      return scrollBar.getHeight() - scrollBar.getIncScrollButtonHeight() - scrollBar.getDecScrollButtonHeight();
+      return scrollBar.getHeight() - scrollBar.getIncScrollButtonHeight() - Math.max(scrollBar.getDecScrollButtonHeight(), getBounds().y);
     }
 
     private int getMessageHeight(EditorMessage msg) {

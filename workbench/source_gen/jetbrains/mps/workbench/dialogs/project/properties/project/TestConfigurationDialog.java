@@ -45,11 +45,13 @@ import jetbrains.mps.smodel.SModelReference;
 import org.jdesktop.observablecollections.ObservableCollections;
 import java.util.ArrayList;
 import javax.swing.JList;
+import com.intellij.ui.components.JBList;
 import javax.swing.DefaultListCellRenderer;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.Color;
 import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
@@ -286,7 +288,7 @@ public class TestConfigurationDialog extends BaseDialog {
     public ModelsPanel(Project project) {
       myProject = project;
       setLayout(new BorderLayout());
-      myModelsList = new JList();
+      myModelsList = new JBList();
       myModelsList.setCellRenderer(new DefaultListCellRenderer() {
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
           final SModelReference model = (SModelReference) value;
@@ -321,7 +323,7 @@ public class TestConfigurationDialog extends BaseDialog {
           return result;
         }
       });
-      JScrollPane scroller = new JScrollPane(myModelsList);
+      JScrollPane scroller = ScrollPaneFactory.createScrollPane(myModelsList);
       add(scroller, BorderLayout.CENTER);
       ListAddAction addAction = new ListAddAction(myModelsList) {
         @Override

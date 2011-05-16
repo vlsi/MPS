@@ -11,6 +11,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import java.util.Collections;
 import javax.swing.ListCellRenderer;
 import javax.swing.JList;
+import com.intellij.ui.components.JBList;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
@@ -61,7 +62,7 @@ public class GoToHelper {
     if (targets.size() == 1) {
       targets.get(0).navigate();
     } else {
-      final JList list = new JList(targets.toArray());
+      final JList list = new JBList(targets.toArray());
       list.setCellRenderer(listRenderer);
       new PopupChooserBuilder(list).setTitle(title).setMovable(true).setItemChoosenCallback(new Runnable() {
         public void run() {

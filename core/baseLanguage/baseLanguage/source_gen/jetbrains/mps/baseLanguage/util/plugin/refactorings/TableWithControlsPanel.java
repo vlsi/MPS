@@ -7,6 +7,7 @@ import javax.swing.JTable;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import com.intellij.ui.table.JBTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.JButton;
 import javax.swing.event.ListSelectionListener;
@@ -31,7 +32,7 @@ import javax.swing.table.TableModel;
     c.weightx = 1;
     c.weighty = 0;
     c.gridheight = 3;
-    this.myTable = new JTable(this.myTableModel);
+    this.myTable = new JBTable(this.myTableModel);
     this.myTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     this.add(this.myTable, c);
     // Add buttons 

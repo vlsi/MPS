@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -75,7 +76,7 @@ public class DependencyViewer extends BaseProjectTool {
     super.projectOpened();
 
     myTree = new DependencyTree(getProject());
-    JScrollPane scrollPane = new JScrollPane(myTree) {
+    JScrollPane scrollPane = new JBScrollPane(myTree) {
       public void addNotify() {
         super.addNotify();
         addListeners();

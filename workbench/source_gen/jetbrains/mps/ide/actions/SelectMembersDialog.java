@@ -15,6 +15,7 @@ import javax.swing.JComponent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -54,7 +55,7 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
         }
       }
     });
-    JScrollPane scrollPane = new JScrollPane(myTree);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTree);
     JPanel mainPanel = new JPanel(new BorderLayout());
     mainPanel.add(scrollPane, BorderLayout.CENTER);
     return mainPanel;

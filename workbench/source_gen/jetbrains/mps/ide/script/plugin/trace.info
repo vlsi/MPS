@@ -404,477 +404,477 @@
     <unitInfo nodeId="7316415153790565440" fileName="ScriptsActionGroupHelper.java" startLine="21" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper" />
   </root>
   <root nodeId="7316415153790566285">
-    <nodeInfo nodeId="7316415153790566472" fileName="RunMigrationScriptsDialog.java" startLine="45" startPosition="56" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScripts" />
-    <nodeInfo nodeId="7316415153790566476" fileName="RunMigrationScriptsDialog.java" startLine="46" startPosition="32" endLine="47" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedScriptIds" />
-    <nodeInfo nodeId="7316415153790566480" fileName="RunMigrationScriptsDialog.java" startLine="47" startPosition="42" endLine="48" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTable" />
-    <nodeInfo nodeId="7316415153790566483" fileName="RunMigrationScriptsDialog.java" startLine="48" startPosition="25" endLine="49" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckButton" />
-    <nodeInfo nodeId="7316415153790566486" fileName="RunMigrationScriptsDialog.java" startLine="49" startPosition="32" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUnCheckButton" />
-    <nodeInfo nodeId="7316415153790566489" fileName="RunMigrationScriptsDialog.java" startLine="50" startPosition="34" endLine="51" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunCheckedButton" />
-    <nodeInfo nodeId="7316415153790566492" fileName="RunMigrationScriptsDialog.java" startLine="51" startPosition="37" endLine="52" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpenSelectedButton" />
-    <nodeInfo nodeId="7316415153790566495" fileName="RunMigrationScriptsDialog.java" startLine="52" startPosition="39" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunChecked" />
-    <nodeInfo nodeId="7316415153790566498" fileName="RunMigrationScriptsDialog.java" startLine="53" startPosition="31" endLine="54" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpenSelected" />
-    <nodeInfo nodeId="7316415153790566513" fileName="RunMigrationScriptsDialog.java" startLine="56" startPosition="126" endLine="57" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7316415153790566517" fileName="RunMigrationScriptsDialog.java" startLine="57" startPosition="44" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566521" fileName="RunMigrationScriptsDialog.java" startLine="58" startPosition="24" endLine="59" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566525" fileName="RunMigrationScriptsDialog.java" startLine="59" startPosition="44" endLine="60" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566527" fileName="RunMigrationScriptsDialog.java" startLine="60" startPosition="11" endLine="61" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566530" fileName="RunMigrationScriptsDialog.java" startLine="61" startPosition="63" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566539" fileName="RunMigrationScriptsDialog.java" startLine="65" startPosition="23" endLine="66" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566546" fileName="RunMigrationScriptsDialog.java" startLine="66" startPosition="61" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566552" fileName="RunMigrationScriptsDialog.java" startLine="67" startPosition="46" endLine="68" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567754" fileName="RunMigrationScriptsDialog.java" startLine="70" startPosition="50" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566577" fileName="RunMigrationScriptsDialog.java" startLine="73" startPosition="76" endLine="74" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566584" fileName="RunMigrationScriptsDialog.java" startLine="74" startPosition="50" endLine="75" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566590" fileName="RunMigrationScriptsDialog.java" startLine="75" startPosition="48" endLine="76" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566595" fileName="RunMigrationScriptsDialog.java" startLine="76" startPosition="107" endLine="77" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566601" fileName="RunMigrationScriptsDialog.java" startLine="77" startPosition="29" endLine="78" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566606" fileName="RunMigrationScriptsDialog.java" startLine="78" startPosition="24" endLine="79" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566612" fileName="RunMigrationScriptsDialog.java" startLine="79" startPosition="60" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566620" fileName="RunMigrationScriptsDialog.java" startLine="80" startPosition="45" endLine="81" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566628" fileName="RunMigrationScriptsDialog.java" startLine="81" startPosition="49" endLine="82" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566636" fileName="RunMigrationScriptsDialog.java" startLine="82" startPosition="46" endLine="83" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566644" fileName="RunMigrationScriptsDialog.java" startLine="83" startPosition="61" endLine="84" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566649" fileName="RunMigrationScriptsDialog.java" startLine="84" startPosition="38" endLine="85" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566655" fileName="RunMigrationScriptsDialog.java" startLine="85" startPosition="41" endLine="86" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566661" fileName="RunMigrationScriptsDialog.java" startLine="86" startPosition="45" endLine="87" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566667" fileName="RunMigrationScriptsDialog.java" startLine="87" startPosition="52" endLine="88" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566673" fileName="RunMigrationScriptsDialog.java" startLine="88" startPosition="56" endLine="89" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566679" fileName="RunMigrationScriptsDialog.java" startLine="89" startPosition="47" endLine="90" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566684" fileName="RunMigrationScriptsDialog.java" startLine="90" startPosition="35" endLine="91" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566689" fileName="RunMigrationScriptsDialog.java" startLine="91" startPosition="37" endLine="92" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566694" fileName="RunMigrationScriptsDialog.java" startLine="92" startPosition="40" endLine="93" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566699" fileName="RunMigrationScriptsDialog.java" startLine="93" startPosition="42" endLine="94" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567758" fileName="RunMigrationScriptsDialog.java" startLine="96" startPosition="50" endLine="97" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567770" fileName="RunMigrationScriptsDialog.java" startLine="98" startPosition="28" endLine="99" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567778" fileName="RunMigrationScriptsDialog.java" startLine="104" startPosition="50" endLine="105" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567790" fileName="RunMigrationScriptsDialog.java" startLine="106" startPosition="28" endLine="107" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567798" fileName="RunMigrationScriptsDialog.java" startLine="112" startPosition="50" endLine="113" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567802" fileName="RunMigrationScriptsDialog.java" startLine="113" startPosition="28" endLine="114" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567808" fileName="RunMigrationScriptsDialog.java" startLine="118" startPosition="50" endLine="119" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567812" fileName="RunMigrationScriptsDialog.java" startLine="119" startPosition="30" endLine="120" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567818" fileName="RunMigrationScriptsDialog.java" startLine="124" startPosition="50" endLine="125" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566764" fileName="RunMigrationScriptsDialog.java" startLine="127" startPosition="7" endLine="128" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566771" fileName="RunMigrationScriptsDialog.java" startLine="128" startPosition="52" endLine="129" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566780" fileName="RunMigrationScriptsDialog.java" startLine="129" startPosition="67" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566786" fileName="RunMigrationScriptsDialog.java" startLine="130" startPosition="48" endLine="131" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567824" fileName="RunMigrationScriptsDialog.java" startLine="133" startPosition="51" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567829" fileName="RunMigrationScriptsDialog.java" startLine="138" startPosition="54" endLine="139" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566820" fileName="RunMigrationScriptsDialog.java" startLine="141" startPosition="7" endLine="142" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566826" fileName="RunMigrationScriptsDialog.java" startLine="145" startPosition="32" endLine="146" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566833" fileName="RunMigrationScriptsDialog.java" startLine="146" startPosition="43" endLine="147" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566837" fileName="RunMigrationScriptsDialog.java" startLine="147" startPosition="32" endLine="148" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566864" fileName="RunMigrationScriptsDialog.java" startLine="150" startPosition="61" endLine="151" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566859" fileName="RunMigrationScriptsDialog.java" startLine="152" startPosition="14" endLine="153" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566868" fileName="RunMigrationScriptsDialog.java" startLine="155" startPosition="5" endLine="156" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566873" fileName="RunMigrationScriptsDialog.java" startLine="156" startPosition="42" endLine="157" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566878" fileName="RunMigrationScriptsDialog.java" startLine="157" startPosition="46" endLine="158" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566887" fileName="RunMigrationScriptsDialog.java" startLine="158" startPosition="70" endLine="159" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566901" fileName="RunMigrationScriptsDialog.java" startLine="162" startPosition="43" endLine="163" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566908" fileName="RunMigrationScriptsDialog.java" startLine="163" startPosition="46" endLine="164" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566920" fileName="RunMigrationScriptsDialog.java" startLine="165" startPosition="28" endLine="166" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566932" fileName="RunMigrationScriptsDialog.java" startLine="166" startPosition="122" endLine="167" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566940" fileName="RunMigrationScriptsDialog.java" startLine="168" startPosition="5" endLine="169" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790566947" fileName="RunMigrationScriptsDialog.java" startLine="172" startPosition="42" endLine="173" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566954" fileName="RunMigrationScriptsDialog.java" startLine="173" startPosition="46" endLine="174" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790566983" fileName="RunMigrationScriptsDialog.java" startLine="176" startPosition="94" endLine="177" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566991" fileName="RunMigrationScriptsDialog.java" startLine="179" startPosition="5" endLine="180" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790566997" fileName="RunMigrationScriptsDialog.java" startLine="183" startPosition="33" endLine="184" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567003" fileName="RunMigrationScriptsDialog.java" startLine="187" startPosition="35" endLine="188" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567006" fileName="RunMigrationScriptsDialog.java" startLine="192" startPosition="27" endLine="193" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7316415153790567018" fileName="RunMigrationScriptsDialog.java" startLine="196" startPosition="56" endLine="197" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567028" fileName="RunMigrationScriptsDialog.java" startLine="201" startPosition="24" endLine="202" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567030" fileName="RunMigrationScriptsDialog.java" startLine="203" startPosition="7" endLine="204" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567039" fileName="RunMigrationScriptsDialog.java" startLine="208" startPosition="24" endLine="209" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567046" fileName="RunMigrationScriptsDialog.java" startLine="209" startPosition="72" endLine="210" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567058" fileName="RunMigrationScriptsDialog.java" startLine="212" startPosition="24" endLine="213" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567072" fileName="RunMigrationScriptsDialog.java" startLine="215" startPosition="24" endLine="216" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567090" fileName="RunMigrationScriptsDialog.java" startLine="221" startPosition="7" endLine="222" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567109" fileName="RunMigrationScriptsDialog.java" startLine="229" startPosition="64" endLine="230" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567130" fileName="RunMigrationScriptsDialog.java" startLine="231" startPosition="29" endLine="232" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567124" fileName="RunMigrationScriptsDialog.java" startLine="233" startPosition="14" endLine="234" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567135" fileName="RunMigrationScriptsDialog.java" startLine="235" startPosition="7" endLine="236" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566326" fileName="RunMigrationScriptsDialog.java" startLine="240" startPosition="84" endLine="241" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NONE" />
-    <nodeInfo nodeId="7316415153790566329" fileName="RunMigrationScriptsDialog.java" startLine="241" startPosition="38" endLine="242" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ASC" />
-    <nodeInfo nodeId="7316415153790566332" fileName="RunMigrationScriptsDialog.java" startLine="242" startPosition="37" endLine="243" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DESC" />
-    <nodeInfo nodeId="7316415153790566335" fileName="RunMigrationScriptsDialog.java" startLine="244" startPosition="0" endLine="245" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySortedColumn" />
-    <nodeInfo nodeId="7316415153790566338" fileName="RunMigrationScriptsDialog.java" startLine="245" startPosition="36" endLine="246" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySortingOrder" />
-    <nodeInfo nodeId="7316415153790566341" fileName="RunMigrationScriptsDialog.java" startLine="246" startPosition="38" endLine="247" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myViewToModelMap" />
-    <nodeInfo nodeId="7316415153790567148" fileName="RunMigrationScriptsDialog.java" startLine="252" startPosition="56" endLine="253" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567154" fileName="RunMigrationScriptsDialog.java" startLine="256" startPosition="48" endLine="257" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567158" fileName="RunMigrationScriptsDialog.java" startLine="260" startPosition="51" endLine="261" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567164" fileName="RunMigrationScriptsDialog.java" startLine="264" startPosition="64" endLine="265" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567170" fileName="RunMigrationScriptsDialog.java" startLine="265" startPosition="68" endLine="266" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567175" fileName="RunMigrationScriptsDialog.java" startLine="269" startPosition="39" endLine="270" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567187" fileName="RunMigrationScriptsDialog.java" startLine="274" startPosition="35" endLine="275" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567189" fileName="RunMigrationScriptsDialog.java" startLine="276" startPosition="7" endLine="277" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567199" fileName="RunMigrationScriptsDialog.java" startLine="281" startPosition="35" endLine="282" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567220" fileName="RunMigrationScriptsDialog.java" startLine="285" startPosition="48" endLine="286" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567222" fileName="RunMigrationScriptsDialog.java" startLine="288" startPosition="7" endLine="289" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567226" fileName="RunMigrationScriptsDialog.java" startLine="292" startPosition="45" endLine="293" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567414" fileName="RunMigrationScriptsDialog.java" startLine="296" startPosition="145" endLine="297" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567430" fileName="RunMigrationScriptsDialog.java" startLine="297" startPosition="149" endLine="298" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567480" fileName="RunMigrationScriptsDialog.java" startLine="300" startPosition="88" endLine="301" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567469" fileName="RunMigrationScriptsDialog.java" startLine="303" startPosition="89" endLine="304" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567460" fileName="RunMigrationScriptsDialog.java" startLine="305" startPosition="20" endLine="306" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567443" fileName="RunMigrationScriptsDialog.java" startLine="307" startPosition="20" endLine="308" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567490" fileName="RunMigrationScriptsDialog.java" startLine="309" startPosition="13" endLine="310" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567269" fileName="RunMigrationScriptsDialog.java" startLine="313" startPosition="7" endLine="314" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567493" fileName="RunMigrationScriptsDialog.java" startLine="316" startPosition="48" endLine="317" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567502" fileName="RunMigrationScriptsDialog.java" startLine="317" startPosition="55" endLine="318" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567516" fileName="RunMigrationScriptsDialog.java" startLine="319" startPosition="25" endLine="320" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567517" fileName="RunMigrationScriptsDialog.java" startLine="321" startPosition="11" endLine="322" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567546" fileName="RunMigrationScriptsDialog.java" startLine="324" startPosition="87" endLine="325" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567555" fileName="RunMigrationScriptsDialog.java" startLine="327" startPosition="86" endLine="328" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567564" fileName="RunMigrationScriptsDialog.java" startLine="330" startPosition="87" endLine="331" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567536" fileName="RunMigrationScriptsDialog.java" startLine="334" startPosition="87" endLine="335" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567531" fileName="RunMigrationScriptsDialog.java" startLine="336" startPosition="18" endLine="337" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567568" fileName="RunMigrationScriptsDialog.java" startLine="338" startPosition="11" endLine="339" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567587" fileName="RunMigrationScriptsDialog.java" startLine="340" startPosition="57" endLine="341" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567596" fileName="RunMigrationScriptsDialog.java" startLine="342" startPosition="11" endLine="343" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567607" fileName="RunMigrationScriptsDialog.java" startLine="344" startPosition="48" endLine="345" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567612" fileName="RunMigrationScriptsDialog.java" startLine="345" startPosition="61" endLine="346" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567288" fileName="RunMigrationScriptsDialog.java" startLine="352" startPosition="52" endLine="353" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567292" fileName="RunMigrationScriptsDialog.java" startLine="353" startPosition="29" endLine="354" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567302" fileName="RunMigrationScriptsDialog.java" startLine="356" startPosition="14" endLine="357" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567323" fileName="RunMigrationScriptsDialog.java" startLine="358" startPosition="49" endLine="359" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567336" fileName="RunMigrationScriptsDialog.java" startLine="360" startPosition="9" endLine="361" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7316415153790567619" fileName="RunMigrationScriptsDialog.java" startLine="363" startPosition="82" endLine="364" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567373" fileName="RunMigrationScriptsDialog.java" startLine="367" startPosition="28" endLine="368" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567376" fileName="RunMigrationScriptsDialog.java" startLine="369" startPosition="9" endLine="370" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567398" fileName="RunMigrationScriptsDialog.java" startLine="371" startPosition="49" endLine="372" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567411" fileName="RunMigrationScriptsDialog.java" startLine="374" startPosition="7" endLine="375" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566407" fileName="RunMigrationScriptsDialog.java" startLine="379" startPosition="44" endLine="380" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySize" />
-    <nodeInfo nodeId="7316415153790566410" fileName="RunMigrationScriptsDialog.java" startLine="380" startPosition="23" endLine="381" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myXoff" />
-    <nodeInfo nodeId="7316415153790566413" fileName="RunMigrationScriptsDialog.java" startLine="381" startPosition="27" endLine="382" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myYoff" />
-    <nodeInfo nodeId="7316415153790567631" fileName="RunMigrationScriptsDialog.java" startLine="384" startPosition="34" endLine="385" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567636" fileName="RunMigrationScriptsDialog.java" startLine="388" startPosition="66" endLine="389" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567642" fileName="RunMigrationScriptsDialog.java" startLine="389" startPosition="56" endLine="390" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567679" fileName="RunMigrationScriptsDialog.java" startLine="393" startPosition="31" endLine="394" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567684" fileName="RunMigrationScriptsDialog.java" startLine="397" startPosition="32" endLine="398" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790566441" fileName="RunMigrationScriptsDialog.java" startLine="402" startPosition="42" endLine="403" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySize" />
-    <nodeInfo nodeId="7316415153790566444" fileName="RunMigrationScriptsDialog.java" startLine="403" startPosition="23" endLine="404" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myXoff" />
-    <nodeInfo nodeId="7316415153790566447" fileName="RunMigrationScriptsDialog.java" startLine="404" startPosition="27" endLine="405" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myYoff" />
-    <nodeInfo nodeId="7316415153790567691" fileName="RunMigrationScriptsDialog.java" startLine="407" startPosition="32" endLine="408" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567696" fileName="RunMigrationScriptsDialog.java" startLine="411" startPosition="66" endLine="412" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567702" fileName="RunMigrationScriptsDialog.java" startLine="412" startPosition="56" endLine="413" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567744" fileName="RunMigrationScriptsDialog.java" startLine="416" startPosition="31" endLine="417" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567749" fileName="RunMigrationScriptsDialog.java" startLine="420" startPosition="32" endLine="421" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790566857" fileName="RunMigrationScriptsDialog.java" startLine="152" startPosition="12" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7316415153790567122" fileName="RunMigrationScriptsDialog.java" startLine="233" startPosition="12" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7316415153790566345" fileName="RunMigrationScriptsDialog.java" startLine="248" startPosition="0" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySortingTableModel#()V" />
-    <nodeInfo nodeId="7316415153790567441" fileName="RunMigrationScriptsDialog.java" startLine="307" startPosition="18" endLine="309" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7316415153790567765" fileName="RunMigrationScriptsDialog.java" startLine="97" startPosition="47" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7316415153790567785" fileName="RunMigrationScriptsDialog.java" startLine="105" startPosition="47" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7316415153790566972" fileName="RunMigrationScriptsDialog.java" startLine="175" startPosition="37" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790566291" fileName="RunMigrationScriptsDialog.java" startLine="191" startPosition="56" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTableModel#()V" />
-    <nodeInfo nodeId="7316415153790567023" fileName="RunMigrationScriptsDialog.java" startLine="200" startPosition="48" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567053" fileName="RunMigrationScriptsDialog.java" startLine="211" startPosition="7" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567182" fileName="RunMigrationScriptsDialog.java" startLine="273" startPosition="54" endLine="276" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567194" fileName="RunMigrationScriptsDialog.java" startLine="280" startPosition="54" endLine="283" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567213" fileName="RunMigrationScriptsDialog.java" startLine="284" startPosition="57" endLine="287" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567511" fileName="RunMigrationScriptsDialog.java" startLine="318" startPosition="65" endLine="321" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567541" fileName="RunMigrationScriptsDialog.java" startLine="323" startPosition="38" endLine="326" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567550" fileName="RunMigrationScriptsDialog.java" startLine="326" startPosition="13" endLine="329" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567559" fileName="RunMigrationScriptsDialog.java" startLine="329" startPosition="13" endLine="332" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567575" fileName="RunMigrationScriptsDialog.java" startLine="339" startPosition="55" endLine="342" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7316415153790567313" fileName="RunMigrationScriptsDialog.java" startLine="357" startPosition="84" endLine="360" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7316415153790567368" fileName="RunMigrationScriptsDialog.java" startLine="366" startPosition="11" endLine="369" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567386" fileName="RunMigrationScriptsDialog.java" startLine="370" startPosition="50" endLine="373" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7316415153790566416" fileName="RunMigrationScriptsDialog.java" startLine="383" startPosition="0" endLine="386" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDownIcon#(I)V" />
-    <nodeInfo nodeId="7316415153790566450" fileName="RunMigrationScriptsDialog.java" startLine="406" startPosition="0" endLine="409" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyUpIcon#(I)V" />
-    <nodeInfo nodeId="7316415153790566568" fileName="RunMigrationScriptsDialog.java" startLine="69" startPosition="77" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="7316415153790566759" fileName="RunMigrationScriptsDialog.java" startLine="123" startPosition="56" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="7316415153790566801" fileName="RunMigrationScriptsDialog.java" startLine="132" startPosition="71" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tableChanged#(Ljavax/swing/event/TableModelEvent;)V" />
-    <nodeInfo nodeId="7316415153790566815" fileName="RunMigrationScriptsDialog.java" startLine="137" startPosition="86" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/ListSelectionEvent;)V" />
-    <nodeInfo nodeId="7316415153790566915" fileName="RunMigrationScriptsDialog.java" startLine="164" startPosition="43" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7316415153790566993" fileName="RunMigrationScriptsDialog.java" startLine="182" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRunChecked#()Z" />
-    <nodeInfo nodeId="7316415153790566999" fileName="RunMigrationScriptsDialog.java" startLine="186" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOpenSelected#()Z" />
-    <nodeInfo nodeId="7316415153790566294" fileName="RunMigrationScriptsDialog.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCellEditable#(II)Z" />
-    <nodeInfo nodeId="7316415153790567034" fileName="RunMigrationScriptsDialog.java" startLine="207" startPosition="51" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567081" fileName="RunMigrationScriptsDialog.java" startLine="216" startPosition="113" endLine="220" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790567099" fileName="RunMigrationScriptsDialog.java" startLine="222" startPosition="123" endLine="226" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790566348" fileName="RunMigrationScriptsDialog.java" startLine="251" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCellEditable#(II)Z" />
-    <nodeInfo nodeId="7316415153790566355" fileName="RunMigrationScriptsDialog.java" startLine="255" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnClass#(I)Ljava/lang/Class;" />
-    <nodeInfo nodeId="7316415153790566361" fileName="RunMigrationScriptsDialog.java" startLine="259" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljava/lang/Object;" />
-    <nodeInfo nodeId="7316415153790566377" fileName="RunMigrationScriptsDialog.java" startLine="268" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChecked#(I)Z" />
-    <nodeInfo nodeId="7316415153790567456" fileName="RunMigrationScriptsDialog.java" startLine="302" startPosition="20" endLine="306" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567527" fileName="RunMigrationScriptsDialog.java" startLine="333" startPosition="18" endLine="337" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790567602" fileName="RunMigrationScriptsDialog.java" startLine="343" startPosition="59" endLine="347" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7316415153790567357" fileName="RunMigrationScriptsDialog.java" startLine="362" startPosition="80" endLine="366" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/util/Pair;Ljetbrains/mps/util/Pair;)I" />
-    <nodeInfo nodeId="7316415153790566432" fileName="RunMigrationScriptsDialog.java" startLine="392" startPosition="0" endLine="396" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconWidth#()I" />
-    <nodeInfo nodeId="7316415153790566435" fileName="RunMigrationScriptsDialog.java" startLine="396" startPosition="0" endLine="400" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconHeight#()I" />
-    <nodeInfo nodeId="7316415153790566466" fileName="RunMigrationScriptsDialog.java" startLine="415" startPosition="0" endLine="419" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconWidth#()I" />
-    <nodeInfo nodeId="7316415153790566469" fileName="RunMigrationScriptsDialog.java" startLine="419" startPosition="0" endLine="423" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconHeight#()I" />
-    <nodeInfo nodeId="7316415153790566561" fileName="RunMigrationScriptsDialog.java" startLine="68" startPosition="71" endLine="73" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566735" fileName="RunMigrationScriptsDialog.java" startLine="111" startPosition="63" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="7316415153790566747" fileName="RunMigrationScriptsDialog.java" startLine="117" startPosition="65" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="7316415153790566752" fileName="RunMigrationScriptsDialog.java" startLine="122" startPosition="7" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566792" fileName="RunMigrationScriptsDialog.java" startLine="131" startPosition="43" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566806" fileName="RunMigrationScriptsDialog.java" startLine="136" startPosition="7" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566846" fileName="RunMigrationScriptsDialog.java" startLine="149" startPosition="24" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790566962" fileName="RunMigrationScriptsDialog.java" startLine="174" startPosition="49" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7316415153790567118" fileName="RunMigrationScriptsDialog.java" startLine="230" startPosition="75" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790566368" fileName="RunMigrationScriptsDialog.java" startLine="263" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValueAt#(Ljava/lang/Object;II)V" />
-    <nodeInfo nodeId="7316415153790567201" fileName="RunMigrationScriptsDialog.java" startLine="283" startPosition="7" endLine="288" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7316415153790567525" fileName="RunMigrationScriptsDialog.java" startLine="333" startPosition="16" endLine="338" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7316415153790567348" fileName="RunMigrationScriptsDialog.java" startLine="361" startPosition="96" endLine="366" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566421" fileName="RunMigrationScriptsDialog.java" startLine="387" startPosition="0" endLine="392" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintIcon#(Ljava/awt/Component;Ljava/awt/Graphics;II)V" />
-    <nodeInfo nodeId="7316415153790566455" fileName="RunMigrationScriptsDialog.java" startLine="410" startPosition="0" endLine="415" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintIcon#(Ljava/awt/Component;Ljava/awt/Graphics;II)V" />
-    <nodeInfo nodeId="7316415153790566728" fileName="RunMigrationScriptsDialog.java" startLine="110" startPosition="7" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566740" fileName="RunMigrationScriptsDialog.java" startLine="116" startPosition="7" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566711" fileName="RunMigrationScriptsDialog.java" startLine="95" startPosition="58" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="7316415153790566723" fileName="RunMigrationScriptsDialog.java" startLine="103" startPosition="60" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="7316415153790566841" fileName="RunMigrationScriptsDialog.java" startLine="148" startPosition="34" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7316415153790566301" fileName="RunMigrationScriptsDialog.java" startLine="199" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnClass#(I)Ljava/lang/Class;" />
-    <nodeInfo nodeId="7316415153790567067" fileName="RunMigrationScriptsDialog.java" startLine="214" startPosition="7" endLine="221" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790566382" fileName="RunMigrationScriptsDialog.java" startLine="272" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertRowIndexToModel#(I)I" />
-    <nodeInfo nodeId="7316415153790567452" fileName="RunMigrationScriptsDialog.java" startLine="299" startPosition="43" endLine="306" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790566501" fileName="RunMigrationScriptsDialog.java" startLine="55" startPosition="0" endLine="63" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunMigrationScriptsDialog#(Ljava/awt/Frame;Ljava/util/List;Ljava/util/Set;)V" />
-    <nodeInfo nodeId="7316415153790566704" fileName="RunMigrationScriptsDialog.java" startLine="94" startPosition="33" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566716" fileName="RunMigrationScriptsDialog.java" startLine="102" startPosition="7" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566896" fileName="RunMigrationScriptsDialog.java" startLine="161" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedScripts#()Ljava/util/List;" />
-    <nodeInfo nodeId="7316415153790566314" fileName="RunMigrationScriptsDialog.java" startLine="228" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValueAt#(Ljava/lang/Object;II)V" />
-    <nodeInfo nodeId="7316415153790566942" fileName="RunMigrationScriptsDialog.java" startLine="171" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckedScripts#()Ljava/util/List;" />
-    <nodeInfo nodeId="7316415153790567437" fileName="RunMigrationScriptsDialog.java" startLine="298" startPosition="61" endLine="309" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790566387" fileName="RunMigrationScriptsDialog.java" startLine="279" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertRowIndexToView#(I)I" />
-    <nodeInfo nodeId="7316415153790567521" fileName="RunMigrationScriptsDialog.java" startLine="322" startPosition="79" endLine="338" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790566822" fileName="RunMigrationScriptsDialog.java" startLine="144" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateButtons#()V" />
-    <nodeInfo nodeId="7316415153790567254" fileName="RunMigrationScriptsDialog.java" startLine="295" startPosition="76" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
-    <nodeInfo nodeId="7316415153790567244" fileName="RunMigrationScriptsDialog.java" startLine="294" startPosition="62" endLine="312" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790567300" fileName="RunMigrationScriptsDialog.java" startLine="356" startPosition="12" endLine="374" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7316415153790567232" fileName="RunMigrationScriptsDialog.java" startLine="293" startPosition="60" endLine="313" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7316415153790567296" fileName="RunMigrationScriptsDialog.java" startLine="354" startPosition="30" endLine="374" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790566307" fileName="RunMigrationScriptsDialog.java" startLine="206" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljava/lang/Object;" />
-    <nodeInfo nodeId="7316415153790566397" fileName="RunMigrationScriptsDialog.java" startLine="351" startPosition="0" endLine="377" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sort#(II)V" />
-    <nodeInfo nodeId="7316415153790567282" fileName="RunMigrationScriptsDialog.java" startLine="315" startPosition="50" endLine="349" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseClicked#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="7316415153790567275" fileName="RunMigrationScriptsDialog.java" startLine="314" startPosition="57" endLine="349" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7316415153790566392" fileName="RunMigrationScriptsDialog.java" startLine="291" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Ljavax/swing/JTable;)V" />
-    <nodeInfo nodeId="7316415153790566535" fileName="RunMigrationScriptsDialog.java" startLine="64" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <scopeInfo nodeId="7316415153790567146" fileName="RunMigrationScriptsDialog.java" startLine="249" startPosition="35" endLine="249" endPosition="35" />
-    <scopeInfo nodeId="7316415153790567410" fileName="RunMigrationScriptsDialog.java" startLine="355" startPosition="26" endLine="355" endPosition="26" />
-    <scopeInfo nodeId="7316415153790567753" fileName="RunMigrationScriptsDialog.java" startLine="70" startPosition="50" endLine="71" endPosition="26" />
-    <scopeInfo nodeId="7316415153790567769" fileName="RunMigrationScriptsDialog.java" startLine="98" startPosition="28" endLine="99" endPosition="41" />
-    <scopeInfo nodeId="7316415153790567789" fileName="RunMigrationScriptsDialog.java" startLine="106" startPosition="28" endLine="107" endPosition="42" />
-    <scopeInfo nodeId="7316415153790567817" fileName="RunMigrationScriptsDialog.java" startLine="124" startPosition="50" endLine="125" endPosition="57" />
-    <scopeInfo nodeId="7316415153790567823" fileName="RunMigrationScriptsDialog.java" startLine="133" startPosition="51" endLine="134" endPosition="55" />
-    <scopeInfo nodeId="7316415153790567828" fileName="RunMigrationScriptsDialog.java" startLine="138" startPosition="54" endLine="139" endPosition="55" />
-    <scopeInfo nodeId="7316415153790566863" fileName="RunMigrationScriptsDialog.java" startLine="150" startPosition="61" endLine="151" endPosition="27" />
-    <scopeInfo nodeId="7316415153790566858" fileName="RunMigrationScriptsDialog.java" startLine="152" startPosition="14" endLine="153" endPosition="29" />
-    <scopeInfo nodeId="7316415153790566982" fileName="RunMigrationScriptsDialog.java" startLine="176" startPosition="94" endLine="177" endPosition="95" />
-    <scopeInfo nodeId="7316415153790566996" fileName="RunMigrationScriptsDialog.java" startLine="183" startPosition="33" endLine="184" endPosition="24" />
-    <scopeInfo nodeId="7316415153790567002" fileName="RunMigrationScriptsDialog.java" startLine="187" startPosition="35" endLine="188" endPosition="26" />
-    <scopeInfo nodeId="7316415153790567005" fileName="RunMigrationScriptsDialog.java" startLine="192" startPosition="27" endLine="193" endPosition="113" />
-    <scopeInfo nodeId="7316415153790567017" fileName="RunMigrationScriptsDialog.java" startLine="196" startPosition="56" endLine="197" endPosition="25" />
-    <scopeInfo nodeId="7316415153790567027" fileName="RunMigrationScriptsDialog.java" startLine="201" startPosition="24" endLine="202" endPosition="29" />
-    <scopeInfo nodeId="7316415153790567057" fileName="RunMigrationScriptsDialog.java" startLine="212" startPosition="24" endLine="213" endPosition="111" />
-    <scopeInfo nodeId="7316415153790567129" fileName="RunMigrationScriptsDialog.java" startLine="231" startPosition="29" endLine="232" endPosition="36" />
-    <scopeInfo nodeId="7316415153790567123" fileName="RunMigrationScriptsDialog.java" startLine="233" startPosition="14" endLine="234" endPosition="39" />
-    <scopeInfo nodeId="7316415153790567147" fileName="RunMigrationScriptsDialog.java" startLine="252" startPosition="56" endLine="253" endPosition="71" />
-    <scopeInfo nodeId="7316415153790567153" fileName="RunMigrationScriptsDialog.java" startLine="256" startPosition="48" endLine="257" endPosition="42" />
-    <scopeInfo nodeId="7316415153790567157" fileName="RunMigrationScriptsDialog.java" startLine="260" startPosition="51" endLine="261" endPosition="67" />
-    <scopeInfo nodeId="7316415153790567174" fileName="RunMigrationScriptsDialog.java" startLine="269" startPosition="39" endLine="270" endPosition="48" />
-    <scopeInfo nodeId="7316415153790567186" fileName="RunMigrationScriptsDialog.java" startLine="274" startPosition="35" endLine="275" endPosition="25" />
-    <scopeInfo nodeId="7316415153790567198" fileName="RunMigrationScriptsDialog.java" startLine="281" startPosition="35" endLine="282" endPosition="26" />
-    <scopeInfo nodeId="7316415153790567219" fileName="RunMigrationScriptsDialog.java" startLine="285" startPosition="48" endLine="286" endPosition="19" />
-    <scopeInfo nodeId="7316415153790567479" fileName="RunMigrationScriptsDialog.java" startLine="300" startPosition="88" endLine="301" endPosition="82" />
-    <scopeInfo nodeId="7316415153790567468" fileName="RunMigrationScriptsDialog.java" startLine="303" startPosition="89" endLine="304" endPosition="80" />
-    <scopeInfo nodeId="7316415153790567442" fileName="RunMigrationScriptsDialog.java" startLine="307" startPosition="20" endLine="308" endPosition="41" />
-    <scopeInfo nodeId="7316415153790567515" fileName="RunMigrationScriptsDialog.java" startLine="319" startPosition="25" endLine="320" endPosition="19" />
-    <scopeInfo nodeId="7316415153790567545" fileName="RunMigrationScriptsDialog.java" startLine="324" startPosition="87" endLine="325" endPosition="79" />
-    <scopeInfo nodeId="7316415153790567554" fileName="RunMigrationScriptsDialog.java" startLine="327" startPosition="86" endLine="328" endPosition="80" />
-    <scopeInfo nodeId="7316415153790567563" fileName="RunMigrationScriptsDialog.java" startLine="330" startPosition="87" endLine="331" endPosition="80" />
-    <scopeInfo nodeId="7316415153790567535" fileName="RunMigrationScriptsDialog.java" startLine="334" startPosition="87" endLine="335" endPosition="79" />
-    <scopeInfo nodeId="7316415153790567586" fileName="RunMigrationScriptsDialog.java" startLine="340" startPosition="57" endLine="341" endPosition="70" />
-    <scopeInfo nodeId="7316415153790567322" fileName="RunMigrationScriptsDialog.java" startLine="358" startPosition="49" endLine="359" endPosition="96" />
-    <scopeInfo nodeId="7316415153790567618" fileName="RunMigrationScriptsDialog.java" startLine="363" startPosition="82" endLine="364" endPosition="42" />
-    <scopeInfo nodeId="7316415153790567372" fileName="RunMigrationScriptsDialog.java" startLine="367" startPosition="28" endLine="368" endPosition="44" />
-    <scopeInfo nodeId="7316415153790567397" fileName="RunMigrationScriptsDialog.java" startLine="371" startPosition="49" endLine="372" endPosition="68" />
-    <scopeInfo nodeId="7316415153790567630" fileName="RunMigrationScriptsDialog.java" startLine="384" startPosition="34" endLine="385" endPosition="20" />
-    <scopeInfo nodeId="7316415153790567678" fileName="RunMigrationScriptsDialog.java" startLine="393" startPosition="31" endLine="394" endPosition="29" />
-    <scopeInfo nodeId="7316415153790567683" fileName="RunMigrationScriptsDialog.java" startLine="397" startPosition="32" endLine="398" endPosition="29" />
-    <scopeInfo nodeId="7316415153790567690" fileName="RunMigrationScriptsDialog.java" startLine="407" startPosition="32" endLine="408" endPosition="20" />
-    <scopeInfo nodeId="7316415153790567743" fileName="RunMigrationScriptsDialog.java" startLine="416" startPosition="31" endLine="417" endPosition="29" />
-    <scopeInfo nodeId="7316415153790567748" fileName="RunMigrationScriptsDialog.java" startLine="420" startPosition="32" endLine="421" endPosition="29" />
-    <scopeInfo nodeId="7316415153790567797" fileName="RunMigrationScriptsDialog.java" startLine="112" startPosition="50" endLine="114" endPosition="57" />
-    <scopeInfo nodeId="7316415153790567807" fileName="RunMigrationScriptsDialog.java" startLine="118" startPosition="50" endLine="120" endPosition="57" />
-    <scopeInfo nodeId="7316415153790566919" fileName="RunMigrationScriptsDialog.java" startLine="165" startPosition="28" endLine="167" endPosition="102">
+    <nodeInfo nodeId="7316415153790566472" fileName="RunMigrationScriptsDialog.java" startLine="46" startPosition="56" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScripts" />
+    <nodeInfo nodeId="7316415153790566476" fileName="RunMigrationScriptsDialog.java" startLine="47" startPosition="32" endLine="48" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedScriptIds" />
+    <nodeInfo nodeId="7316415153790566480" fileName="RunMigrationScriptsDialog.java" startLine="48" startPosition="42" endLine="49" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTable" />
+    <nodeInfo nodeId="7316415153790566483" fileName="RunMigrationScriptsDialog.java" startLine="49" startPosition="25" endLine="50" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckButton" />
+    <nodeInfo nodeId="7316415153790566486" fileName="RunMigrationScriptsDialog.java" startLine="50" startPosition="32" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUnCheckButton" />
+    <nodeInfo nodeId="7316415153790566489" fileName="RunMigrationScriptsDialog.java" startLine="51" startPosition="34" endLine="52" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunCheckedButton" />
+    <nodeInfo nodeId="7316415153790566492" fileName="RunMigrationScriptsDialog.java" startLine="52" startPosition="37" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpenSelectedButton" />
+    <nodeInfo nodeId="7316415153790566495" fileName="RunMigrationScriptsDialog.java" startLine="53" startPosition="39" endLine="54" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunChecked" />
+    <nodeInfo nodeId="7316415153790566498" fileName="RunMigrationScriptsDialog.java" startLine="54" startPosition="31" endLine="55" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpenSelected" />
+    <nodeInfo nodeId="7316415153790566513" fileName="RunMigrationScriptsDialog.java" startLine="57" startPosition="126" endLine="58" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7316415153790566517" fileName="RunMigrationScriptsDialog.java" startLine="58" startPosition="44" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566521" fileName="RunMigrationScriptsDialog.java" startLine="59" startPosition="24" endLine="60" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566525" fileName="RunMigrationScriptsDialog.java" startLine="60" startPosition="44" endLine="61" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566527" fileName="RunMigrationScriptsDialog.java" startLine="61" startPosition="11" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566530" fileName="RunMigrationScriptsDialog.java" startLine="62" startPosition="63" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566539" fileName="RunMigrationScriptsDialog.java" startLine="66" startPosition="23" endLine="67" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566546" fileName="RunMigrationScriptsDialog.java" startLine="67" startPosition="61" endLine="68" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566552" fileName="RunMigrationScriptsDialog.java" startLine="68" startPosition="46" endLine="69" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567754" fileName="RunMigrationScriptsDialog.java" startLine="71" startPosition="50" endLine="72" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566577" fileName="RunMigrationScriptsDialog.java" startLine="74" startPosition="76" endLine="75" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566584" fileName="RunMigrationScriptsDialog.java" startLine="75" startPosition="50" endLine="76" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566590" fileName="RunMigrationScriptsDialog.java" startLine="76" startPosition="48" endLine="77" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566595" fileName="RunMigrationScriptsDialog.java" startLine="77" startPosition="107" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566601" fileName="RunMigrationScriptsDialog.java" startLine="78" startPosition="30" endLine="79" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566606" fileName="RunMigrationScriptsDialog.java" startLine="79" startPosition="24" endLine="80" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566612" fileName="RunMigrationScriptsDialog.java" startLine="80" startPosition="60" endLine="81" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566620" fileName="RunMigrationScriptsDialog.java" startLine="81" startPosition="45" endLine="82" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566628" fileName="RunMigrationScriptsDialog.java" startLine="82" startPosition="49" endLine="83" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566636" fileName="RunMigrationScriptsDialog.java" startLine="83" startPosition="46" endLine="84" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566644" fileName="RunMigrationScriptsDialog.java" startLine="84" startPosition="80" endLine="85" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566649" fileName="RunMigrationScriptsDialog.java" startLine="85" startPosition="38" endLine="86" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566655" fileName="RunMigrationScriptsDialog.java" startLine="86" startPosition="41" endLine="87" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566661" fileName="RunMigrationScriptsDialog.java" startLine="87" startPosition="45" endLine="88" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566667" fileName="RunMigrationScriptsDialog.java" startLine="88" startPosition="52" endLine="89" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566673" fileName="RunMigrationScriptsDialog.java" startLine="89" startPosition="56" endLine="90" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566679" fileName="RunMigrationScriptsDialog.java" startLine="90" startPosition="47" endLine="91" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566684" fileName="RunMigrationScriptsDialog.java" startLine="91" startPosition="35" endLine="92" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566689" fileName="RunMigrationScriptsDialog.java" startLine="92" startPosition="37" endLine="93" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566694" fileName="RunMigrationScriptsDialog.java" startLine="93" startPosition="40" endLine="94" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566699" fileName="RunMigrationScriptsDialog.java" startLine="94" startPosition="42" endLine="95" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567758" fileName="RunMigrationScriptsDialog.java" startLine="97" startPosition="50" endLine="98" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567770" fileName="RunMigrationScriptsDialog.java" startLine="99" startPosition="28" endLine="100" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567778" fileName="RunMigrationScriptsDialog.java" startLine="105" startPosition="50" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567790" fileName="RunMigrationScriptsDialog.java" startLine="107" startPosition="28" endLine="108" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567798" fileName="RunMigrationScriptsDialog.java" startLine="113" startPosition="50" endLine="114" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567802" fileName="RunMigrationScriptsDialog.java" startLine="114" startPosition="28" endLine="115" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567808" fileName="RunMigrationScriptsDialog.java" startLine="119" startPosition="50" endLine="120" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567812" fileName="RunMigrationScriptsDialog.java" startLine="120" startPosition="30" endLine="121" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567818" fileName="RunMigrationScriptsDialog.java" startLine="125" startPosition="50" endLine="126" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566764" fileName="RunMigrationScriptsDialog.java" startLine="128" startPosition="7" endLine="129" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566771" fileName="RunMigrationScriptsDialog.java" startLine="129" startPosition="52" endLine="130" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566780" fileName="RunMigrationScriptsDialog.java" startLine="130" startPosition="67" endLine="131" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566786" fileName="RunMigrationScriptsDialog.java" startLine="131" startPosition="48" endLine="132" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567824" fileName="RunMigrationScriptsDialog.java" startLine="134" startPosition="51" endLine="135" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567829" fileName="RunMigrationScriptsDialog.java" startLine="139" startPosition="54" endLine="140" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566820" fileName="RunMigrationScriptsDialog.java" startLine="142" startPosition="7" endLine="143" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566826" fileName="RunMigrationScriptsDialog.java" startLine="146" startPosition="32" endLine="147" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566833" fileName="RunMigrationScriptsDialog.java" startLine="147" startPosition="43" endLine="148" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566837" fileName="RunMigrationScriptsDialog.java" startLine="148" startPosition="32" endLine="149" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566864" fileName="RunMigrationScriptsDialog.java" startLine="151" startPosition="61" endLine="152" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566859" fileName="RunMigrationScriptsDialog.java" startLine="153" startPosition="14" endLine="154" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566868" fileName="RunMigrationScriptsDialog.java" startLine="156" startPosition="5" endLine="157" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566873" fileName="RunMigrationScriptsDialog.java" startLine="157" startPosition="42" endLine="158" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566878" fileName="RunMigrationScriptsDialog.java" startLine="158" startPosition="46" endLine="159" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566887" fileName="RunMigrationScriptsDialog.java" startLine="159" startPosition="70" endLine="160" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566901" fileName="RunMigrationScriptsDialog.java" startLine="163" startPosition="43" endLine="164" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566908" fileName="RunMigrationScriptsDialog.java" startLine="164" startPosition="46" endLine="165" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566920" fileName="RunMigrationScriptsDialog.java" startLine="166" startPosition="28" endLine="167" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566932" fileName="RunMigrationScriptsDialog.java" startLine="167" startPosition="122" endLine="168" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566940" fileName="RunMigrationScriptsDialog.java" startLine="169" startPosition="5" endLine="170" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790566947" fileName="RunMigrationScriptsDialog.java" startLine="173" startPosition="42" endLine="174" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566954" fileName="RunMigrationScriptsDialog.java" startLine="174" startPosition="46" endLine="175" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790566983" fileName="RunMigrationScriptsDialog.java" startLine="177" startPosition="94" endLine="178" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566991" fileName="RunMigrationScriptsDialog.java" startLine="180" startPosition="5" endLine="181" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790566997" fileName="RunMigrationScriptsDialog.java" startLine="184" startPosition="33" endLine="185" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567003" fileName="RunMigrationScriptsDialog.java" startLine="188" startPosition="35" endLine="189" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567006" fileName="RunMigrationScriptsDialog.java" startLine="193" startPosition="27" endLine="194" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7316415153790567018" fileName="RunMigrationScriptsDialog.java" startLine="197" startPosition="56" endLine="198" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567028" fileName="RunMigrationScriptsDialog.java" startLine="202" startPosition="24" endLine="203" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567030" fileName="RunMigrationScriptsDialog.java" startLine="204" startPosition="7" endLine="205" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567039" fileName="RunMigrationScriptsDialog.java" startLine="209" startPosition="24" endLine="210" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567046" fileName="RunMigrationScriptsDialog.java" startLine="210" startPosition="72" endLine="211" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567058" fileName="RunMigrationScriptsDialog.java" startLine="213" startPosition="24" endLine="214" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567072" fileName="RunMigrationScriptsDialog.java" startLine="216" startPosition="24" endLine="217" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567090" fileName="RunMigrationScriptsDialog.java" startLine="222" startPosition="7" endLine="223" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567109" fileName="RunMigrationScriptsDialog.java" startLine="230" startPosition="64" endLine="231" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567130" fileName="RunMigrationScriptsDialog.java" startLine="232" startPosition="29" endLine="233" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567124" fileName="RunMigrationScriptsDialog.java" startLine="234" startPosition="14" endLine="235" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567135" fileName="RunMigrationScriptsDialog.java" startLine="236" startPosition="7" endLine="237" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566326" fileName="RunMigrationScriptsDialog.java" startLine="241" startPosition="84" endLine="242" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NONE" />
+    <nodeInfo nodeId="7316415153790566329" fileName="RunMigrationScriptsDialog.java" startLine="242" startPosition="38" endLine="243" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ASC" />
+    <nodeInfo nodeId="7316415153790566332" fileName="RunMigrationScriptsDialog.java" startLine="243" startPosition="37" endLine="244" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DESC" />
+    <nodeInfo nodeId="7316415153790566335" fileName="RunMigrationScriptsDialog.java" startLine="245" startPosition="0" endLine="246" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySortedColumn" />
+    <nodeInfo nodeId="7316415153790566338" fileName="RunMigrationScriptsDialog.java" startLine="246" startPosition="36" endLine="247" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySortingOrder" />
+    <nodeInfo nodeId="7316415153790566341" fileName="RunMigrationScriptsDialog.java" startLine="247" startPosition="38" endLine="248" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myViewToModelMap" />
+    <nodeInfo nodeId="7316415153790567148" fileName="RunMigrationScriptsDialog.java" startLine="253" startPosition="56" endLine="254" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567154" fileName="RunMigrationScriptsDialog.java" startLine="257" startPosition="48" endLine="258" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567158" fileName="RunMigrationScriptsDialog.java" startLine="261" startPosition="51" endLine="262" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567164" fileName="RunMigrationScriptsDialog.java" startLine="265" startPosition="64" endLine="266" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567170" fileName="RunMigrationScriptsDialog.java" startLine="266" startPosition="68" endLine="267" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567175" fileName="RunMigrationScriptsDialog.java" startLine="270" startPosition="39" endLine="271" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567187" fileName="RunMigrationScriptsDialog.java" startLine="275" startPosition="35" endLine="276" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567189" fileName="RunMigrationScriptsDialog.java" startLine="277" startPosition="7" endLine="278" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567199" fileName="RunMigrationScriptsDialog.java" startLine="282" startPosition="35" endLine="283" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567220" fileName="RunMigrationScriptsDialog.java" startLine="286" startPosition="48" endLine="287" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567222" fileName="RunMigrationScriptsDialog.java" startLine="289" startPosition="7" endLine="290" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567226" fileName="RunMigrationScriptsDialog.java" startLine="293" startPosition="45" endLine="294" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567414" fileName="RunMigrationScriptsDialog.java" startLine="297" startPosition="145" endLine="298" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567430" fileName="RunMigrationScriptsDialog.java" startLine="298" startPosition="149" endLine="299" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567480" fileName="RunMigrationScriptsDialog.java" startLine="301" startPosition="88" endLine="302" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567469" fileName="RunMigrationScriptsDialog.java" startLine="304" startPosition="89" endLine="305" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567460" fileName="RunMigrationScriptsDialog.java" startLine="306" startPosition="20" endLine="307" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567443" fileName="RunMigrationScriptsDialog.java" startLine="308" startPosition="20" endLine="309" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567490" fileName="RunMigrationScriptsDialog.java" startLine="310" startPosition="13" endLine="311" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567269" fileName="RunMigrationScriptsDialog.java" startLine="314" startPosition="7" endLine="315" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567493" fileName="RunMigrationScriptsDialog.java" startLine="317" startPosition="48" endLine="318" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567502" fileName="RunMigrationScriptsDialog.java" startLine="318" startPosition="55" endLine="319" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567516" fileName="RunMigrationScriptsDialog.java" startLine="320" startPosition="25" endLine="321" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567517" fileName="RunMigrationScriptsDialog.java" startLine="322" startPosition="11" endLine="323" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567546" fileName="RunMigrationScriptsDialog.java" startLine="325" startPosition="87" endLine="326" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567555" fileName="RunMigrationScriptsDialog.java" startLine="328" startPosition="86" endLine="329" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567564" fileName="RunMigrationScriptsDialog.java" startLine="331" startPosition="87" endLine="332" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567536" fileName="RunMigrationScriptsDialog.java" startLine="335" startPosition="87" endLine="336" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567531" fileName="RunMigrationScriptsDialog.java" startLine="337" startPosition="18" endLine="338" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567568" fileName="RunMigrationScriptsDialog.java" startLine="339" startPosition="11" endLine="340" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567587" fileName="RunMigrationScriptsDialog.java" startLine="341" startPosition="57" endLine="342" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567596" fileName="RunMigrationScriptsDialog.java" startLine="343" startPosition="11" endLine="344" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567607" fileName="RunMigrationScriptsDialog.java" startLine="345" startPosition="48" endLine="346" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567612" fileName="RunMigrationScriptsDialog.java" startLine="346" startPosition="61" endLine="347" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567288" fileName="RunMigrationScriptsDialog.java" startLine="353" startPosition="52" endLine="354" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567292" fileName="RunMigrationScriptsDialog.java" startLine="354" startPosition="29" endLine="355" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567302" fileName="RunMigrationScriptsDialog.java" startLine="357" startPosition="14" endLine="358" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567323" fileName="RunMigrationScriptsDialog.java" startLine="359" startPosition="49" endLine="360" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567336" fileName="RunMigrationScriptsDialog.java" startLine="361" startPosition="9" endLine="362" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790567619" fileName="RunMigrationScriptsDialog.java" startLine="364" startPosition="82" endLine="365" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567373" fileName="RunMigrationScriptsDialog.java" startLine="368" startPosition="28" endLine="369" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567376" fileName="RunMigrationScriptsDialog.java" startLine="370" startPosition="9" endLine="371" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567398" fileName="RunMigrationScriptsDialog.java" startLine="372" startPosition="49" endLine="373" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567411" fileName="RunMigrationScriptsDialog.java" startLine="375" startPosition="7" endLine="376" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566407" fileName="RunMigrationScriptsDialog.java" startLine="380" startPosition="44" endLine="381" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySize" />
+    <nodeInfo nodeId="7316415153790566410" fileName="RunMigrationScriptsDialog.java" startLine="381" startPosition="23" endLine="382" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myXoff" />
+    <nodeInfo nodeId="7316415153790566413" fileName="RunMigrationScriptsDialog.java" startLine="382" startPosition="27" endLine="383" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myYoff" />
+    <nodeInfo nodeId="7316415153790567631" fileName="RunMigrationScriptsDialog.java" startLine="385" startPosition="34" endLine="386" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567636" fileName="RunMigrationScriptsDialog.java" startLine="389" startPosition="66" endLine="390" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567642" fileName="RunMigrationScriptsDialog.java" startLine="390" startPosition="56" endLine="391" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567679" fileName="RunMigrationScriptsDialog.java" startLine="394" startPosition="31" endLine="395" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567684" fileName="RunMigrationScriptsDialog.java" startLine="398" startPosition="32" endLine="399" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790566441" fileName="RunMigrationScriptsDialog.java" startLine="403" startPosition="42" endLine="404" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySize" />
+    <nodeInfo nodeId="7316415153790566444" fileName="RunMigrationScriptsDialog.java" startLine="404" startPosition="23" endLine="405" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myXoff" />
+    <nodeInfo nodeId="7316415153790566447" fileName="RunMigrationScriptsDialog.java" startLine="405" startPosition="27" endLine="406" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myYoff" />
+    <nodeInfo nodeId="7316415153790567691" fileName="RunMigrationScriptsDialog.java" startLine="408" startPosition="32" endLine="409" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567696" fileName="RunMigrationScriptsDialog.java" startLine="412" startPosition="66" endLine="413" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567702" fileName="RunMigrationScriptsDialog.java" startLine="413" startPosition="56" endLine="414" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567744" fileName="RunMigrationScriptsDialog.java" startLine="417" startPosition="31" endLine="418" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567749" fileName="RunMigrationScriptsDialog.java" startLine="421" startPosition="32" endLine="422" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790566857" fileName="RunMigrationScriptsDialog.java" startLine="153" startPosition="12" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7316415153790567122" fileName="RunMigrationScriptsDialog.java" startLine="234" startPosition="12" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7316415153790566345" fileName="RunMigrationScriptsDialog.java" startLine="249" startPosition="0" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySortingTableModel#()V" />
+    <nodeInfo nodeId="7316415153790567441" fileName="RunMigrationScriptsDialog.java" startLine="308" startPosition="18" endLine="310" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7316415153790567765" fileName="RunMigrationScriptsDialog.java" startLine="98" startPosition="47" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7316415153790567785" fileName="RunMigrationScriptsDialog.java" startLine="106" startPosition="47" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7316415153790566972" fileName="RunMigrationScriptsDialog.java" startLine="176" startPosition="37" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790566291" fileName="RunMigrationScriptsDialog.java" startLine="192" startPosition="56" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTableModel#()V" />
+    <nodeInfo nodeId="7316415153790567023" fileName="RunMigrationScriptsDialog.java" startLine="201" startPosition="48" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567053" fileName="RunMigrationScriptsDialog.java" startLine="212" startPosition="7" endLine="215" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567182" fileName="RunMigrationScriptsDialog.java" startLine="274" startPosition="54" endLine="277" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567194" fileName="RunMigrationScriptsDialog.java" startLine="281" startPosition="54" endLine="284" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567213" fileName="RunMigrationScriptsDialog.java" startLine="285" startPosition="57" endLine="288" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567511" fileName="RunMigrationScriptsDialog.java" startLine="319" startPosition="65" endLine="322" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567541" fileName="RunMigrationScriptsDialog.java" startLine="324" startPosition="38" endLine="327" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567550" fileName="RunMigrationScriptsDialog.java" startLine="327" startPosition="13" endLine="330" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567559" fileName="RunMigrationScriptsDialog.java" startLine="330" startPosition="13" endLine="333" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567575" fileName="RunMigrationScriptsDialog.java" startLine="340" startPosition="55" endLine="343" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7316415153790567313" fileName="RunMigrationScriptsDialog.java" startLine="358" startPosition="84" endLine="361" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7316415153790567368" fileName="RunMigrationScriptsDialog.java" startLine="367" startPosition="11" endLine="370" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567386" fileName="RunMigrationScriptsDialog.java" startLine="371" startPosition="50" endLine="374" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7316415153790566416" fileName="RunMigrationScriptsDialog.java" startLine="384" startPosition="0" endLine="387" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDownIcon#(I)V" />
+    <nodeInfo nodeId="7316415153790566450" fileName="RunMigrationScriptsDialog.java" startLine="407" startPosition="0" endLine="410" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyUpIcon#(I)V" />
+    <nodeInfo nodeId="7316415153790566568" fileName="RunMigrationScriptsDialog.java" startLine="70" startPosition="77" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7316415153790566759" fileName="RunMigrationScriptsDialog.java" startLine="124" startPosition="56" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7316415153790566801" fileName="RunMigrationScriptsDialog.java" startLine="133" startPosition="71" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tableChanged#(Ljavax/swing/event/TableModelEvent;)V" />
+    <nodeInfo nodeId="7316415153790566815" fileName="RunMigrationScriptsDialog.java" startLine="138" startPosition="86" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/ListSelectionEvent;)V" />
+    <nodeInfo nodeId="7316415153790566915" fileName="RunMigrationScriptsDialog.java" startLine="165" startPosition="43" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7316415153790566993" fileName="RunMigrationScriptsDialog.java" startLine="183" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRunChecked#()Z" />
+    <nodeInfo nodeId="7316415153790566999" fileName="RunMigrationScriptsDialog.java" startLine="187" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOpenSelected#()Z" />
+    <nodeInfo nodeId="7316415153790566294" fileName="RunMigrationScriptsDialog.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCellEditable#(II)Z" />
+    <nodeInfo nodeId="7316415153790567034" fileName="RunMigrationScriptsDialog.java" startLine="208" startPosition="51" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567081" fileName="RunMigrationScriptsDialog.java" startLine="217" startPosition="113" endLine="221" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790567099" fileName="RunMigrationScriptsDialog.java" startLine="223" startPosition="123" endLine="227" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790566348" fileName="RunMigrationScriptsDialog.java" startLine="252" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCellEditable#(II)Z" />
+    <nodeInfo nodeId="7316415153790566355" fileName="RunMigrationScriptsDialog.java" startLine="256" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnClass#(I)Ljava/lang/Class;" />
+    <nodeInfo nodeId="7316415153790566361" fileName="RunMigrationScriptsDialog.java" startLine="260" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljava/lang/Object;" />
+    <nodeInfo nodeId="7316415153790566377" fileName="RunMigrationScriptsDialog.java" startLine="269" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChecked#(I)Z" />
+    <nodeInfo nodeId="7316415153790567456" fileName="RunMigrationScriptsDialog.java" startLine="303" startPosition="20" endLine="307" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567527" fileName="RunMigrationScriptsDialog.java" startLine="334" startPosition="18" endLine="338" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790567602" fileName="RunMigrationScriptsDialog.java" startLine="344" startPosition="59" endLine="348" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7316415153790567357" fileName="RunMigrationScriptsDialog.java" startLine="363" startPosition="80" endLine="367" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/util/Pair;Ljetbrains/mps/util/Pair;)I" />
+    <nodeInfo nodeId="7316415153790566432" fileName="RunMigrationScriptsDialog.java" startLine="393" startPosition="0" endLine="397" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconWidth#()I" />
+    <nodeInfo nodeId="7316415153790566435" fileName="RunMigrationScriptsDialog.java" startLine="397" startPosition="0" endLine="401" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconHeight#()I" />
+    <nodeInfo nodeId="7316415153790566466" fileName="RunMigrationScriptsDialog.java" startLine="416" startPosition="0" endLine="420" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconWidth#()I" />
+    <nodeInfo nodeId="7316415153790566469" fileName="RunMigrationScriptsDialog.java" startLine="420" startPosition="0" endLine="424" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconHeight#()I" />
+    <nodeInfo nodeId="7316415153790566561" fileName="RunMigrationScriptsDialog.java" startLine="69" startPosition="71" endLine="74" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566735" fileName="RunMigrationScriptsDialog.java" startLine="112" startPosition="63" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7316415153790566747" fileName="RunMigrationScriptsDialog.java" startLine="118" startPosition="65" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7316415153790566752" fileName="RunMigrationScriptsDialog.java" startLine="123" startPosition="7" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566792" fileName="RunMigrationScriptsDialog.java" startLine="132" startPosition="43" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566806" fileName="RunMigrationScriptsDialog.java" startLine="137" startPosition="7" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566846" fileName="RunMigrationScriptsDialog.java" startLine="150" startPosition="24" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790566962" fileName="RunMigrationScriptsDialog.java" startLine="175" startPosition="49" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7316415153790567118" fileName="RunMigrationScriptsDialog.java" startLine="231" startPosition="75" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790566368" fileName="RunMigrationScriptsDialog.java" startLine="264" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValueAt#(Ljava/lang/Object;II)V" />
+    <nodeInfo nodeId="7316415153790567201" fileName="RunMigrationScriptsDialog.java" startLine="284" startPosition="7" endLine="289" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7316415153790567525" fileName="RunMigrationScriptsDialog.java" startLine="334" startPosition="16" endLine="339" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7316415153790567348" fileName="RunMigrationScriptsDialog.java" startLine="362" startPosition="96" endLine="367" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566421" fileName="RunMigrationScriptsDialog.java" startLine="388" startPosition="0" endLine="393" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintIcon#(Ljava/awt/Component;Ljava/awt/Graphics;II)V" />
+    <nodeInfo nodeId="7316415153790566455" fileName="RunMigrationScriptsDialog.java" startLine="411" startPosition="0" endLine="416" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintIcon#(Ljava/awt/Component;Ljava/awt/Graphics;II)V" />
+    <nodeInfo nodeId="7316415153790566728" fileName="RunMigrationScriptsDialog.java" startLine="111" startPosition="7" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566740" fileName="RunMigrationScriptsDialog.java" startLine="117" startPosition="7" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566711" fileName="RunMigrationScriptsDialog.java" startLine="96" startPosition="58" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7316415153790566723" fileName="RunMigrationScriptsDialog.java" startLine="104" startPosition="60" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7316415153790566841" fileName="RunMigrationScriptsDialog.java" startLine="149" startPosition="34" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7316415153790566301" fileName="RunMigrationScriptsDialog.java" startLine="200" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnClass#(I)Ljava/lang/Class;" />
+    <nodeInfo nodeId="7316415153790567067" fileName="RunMigrationScriptsDialog.java" startLine="215" startPosition="7" endLine="222" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790566382" fileName="RunMigrationScriptsDialog.java" startLine="273" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertRowIndexToModel#(I)I" />
+    <nodeInfo nodeId="7316415153790567452" fileName="RunMigrationScriptsDialog.java" startLine="300" startPosition="43" endLine="307" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790566501" fileName="RunMigrationScriptsDialog.java" startLine="56" startPosition="0" endLine="64" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunMigrationScriptsDialog#(Ljava/awt/Frame;Ljava/util/List;Ljava/util/Set;)V" />
+    <nodeInfo nodeId="7316415153790566704" fileName="RunMigrationScriptsDialog.java" startLine="95" startPosition="33" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566716" fileName="RunMigrationScriptsDialog.java" startLine="103" startPosition="7" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566896" fileName="RunMigrationScriptsDialog.java" startLine="162" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedScripts#()Ljava/util/List;" />
+    <nodeInfo nodeId="7316415153790566314" fileName="RunMigrationScriptsDialog.java" startLine="229" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValueAt#(Ljava/lang/Object;II)V" />
+    <nodeInfo nodeId="7316415153790566942" fileName="RunMigrationScriptsDialog.java" startLine="172" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckedScripts#()Ljava/util/List;" />
+    <nodeInfo nodeId="7316415153790567437" fileName="RunMigrationScriptsDialog.java" startLine="299" startPosition="61" endLine="310" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790566387" fileName="RunMigrationScriptsDialog.java" startLine="280" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertRowIndexToView#(I)I" />
+    <nodeInfo nodeId="7316415153790567521" fileName="RunMigrationScriptsDialog.java" startLine="323" startPosition="79" endLine="339" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790566822" fileName="RunMigrationScriptsDialog.java" startLine="145" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateButtons#()V" />
+    <nodeInfo nodeId="7316415153790567254" fileName="RunMigrationScriptsDialog.java" startLine="296" startPosition="76" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
+    <nodeInfo nodeId="7316415153790567244" fileName="RunMigrationScriptsDialog.java" startLine="295" startPosition="62" endLine="313" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790567300" fileName="RunMigrationScriptsDialog.java" startLine="357" startPosition="12" endLine="375" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7316415153790567232" fileName="RunMigrationScriptsDialog.java" startLine="294" startPosition="60" endLine="314" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7316415153790567296" fileName="RunMigrationScriptsDialog.java" startLine="355" startPosition="30" endLine="375" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7316415153790566307" fileName="RunMigrationScriptsDialog.java" startLine="207" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljava/lang/Object;" />
+    <nodeInfo nodeId="7316415153790566397" fileName="RunMigrationScriptsDialog.java" startLine="352" startPosition="0" endLine="378" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sort#(II)V" />
+    <nodeInfo nodeId="7316415153790567282" fileName="RunMigrationScriptsDialog.java" startLine="316" startPosition="50" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseClicked#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="7316415153790567275" fileName="RunMigrationScriptsDialog.java" startLine="315" startPosition="57" endLine="350" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7316415153790566392" fileName="RunMigrationScriptsDialog.java" startLine="292" startPosition="0" endLine="352" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Ljavax/swing/JTable;)V" />
+    <nodeInfo nodeId="7316415153790566535" fileName="RunMigrationScriptsDialog.java" startLine="65" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <scopeInfo nodeId="7316415153790567146" fileName="RunMigrationScriptsDialog.java" startLine="250" startPosition="35" endLine="250" endPosition="35" />
+    <scopeInfo nodeId="7316415153790567410" fileName="RunMigrationScriptsDialog.java" startLine="356" startPosition="26" endLine="356" endPosition="26" />
+    <scopeInfo nodeId="7316415153790567753" fileName="RunMigrationScriptsDialog.java" startLine="71" startPosition="50" endLine="72" endPosition="26" />
+    <scopeInfo nodeId="7316415153790567769" fileName="RunMigrationScriptsDialog.java" startLine="99" startPosition="28" endLine="100" endPosition="41" />
+    <scopeInfo nodeId="7316415153790567789" fileName="RunMigrationScriptsDialog.java" startLine="107" startPosition="28" endLine="108" endPosition="42" />
+    <scopeInfo nodeId="7316415153790567817" fileName="RunMigrationScriptsDialog.java" startLine="125" startPosition="50" endLine="126" endPosition="57" />
+    <scopeInfo nodeId="7316415153790567823" fileName="RunMigrationScriptsDialog.java" startLine="134" startPosition="51" endLine="135" endPosition="55" />
+    <scopeInfo nodeId="7316415153790567828" fileName="RunMigrationScriptsDialog.java" startLine="139" startPosition="54" endLine="140" endPosition="55" />
+    <scopeInfo nodeId="7316415153790566863" fileName="RunMigrationScriptsDialog.java" startLine="151" startPosition="61" endLine="152" endPosition="27" />
+    <scopeInfo nodeId="7316415153790566858" fileName="RunMigrationScriptsDialog.java" startLine="153" startPosition="14" endLine="154" endPosition="29" />
+    <scopeInfo nodeId="7316415153790566982" fileName="RunMigrationScriptsDialog.java" startLine="177" startPosition="94" endLine="178" endPosition="95" />
+    <scopeInfo nodeId="7316415153790566996" fileName="RunMigrationScriptsDialog.java" startLine="184" startPosition="33" endLine="185" endPosition="24" />
+    <scopeInfo nodeId="7316415153790567002" fileName="RunMigrationScriptsDialog.java" startLine="188" startPosition="35" endLine="189" endPosition="26" />
+    <scopeInfo nodeId="7316415153790567005" fileName="RunMigrationScriptsDialog.java" startLine="193" startPosition="27" endLine="194" endPosition="113" />
+    <scopeInfo nodeId="7316415153790567017" fileName="RunMigrationScriptsDialog.java" startLine="197" startPosition="56" endLine="198" endPosition="25" />
+    <scopeInfo nodeId="7316415153790567027" fileName="RunMigrationScriptsDialog.java" startLine="202" startPosition="24" endLine="203" endPosition="29" />
+    <scopeInfo nodeId="7316415153790567057" fileName="RunMigrationScriptsDialog.java" startLine="213" startPosition="24" endLine="214" endPosition="111" />
+    <scopeInfo nodeId="7316415153790567129" fileName="RunMigrationScriptsDialog.java" startLine="232" startPosition="29" endLine="233" endPosition="36" />
+    <scopeInfo nodeId="7316415153790567123" fileName="RunMigrationScriptsDialog.java" startLine="234" startPosition="14" endLine="235" endPosition="39" />
+    <scopeInfo nodeId="7316415153790567147" fileName="RunMigrationScriptsDialog.java" startLine="253" startPosition="56" endLine="254" endPosition="71" />
+    <scopeInfo nodeId="7316415153790567153" fileName="RunMigrationScriptsDialog.java" startLine="257" startPosition="48" endLine="258" endPosition="42" />
+    <scopeInfo nodeId="7316415153790567157" fileName="RunMigrationScriptsDialog.java" startLine="261" startPosition="51" endLine="262" endPosition="67" />
+    <scopeInfo nodeId="7316415153790567174" fileName="RunMigrationScriptsDialog.java" startLine="270" startPosition="39" endLine="271" endPosition="48" />
+    <scopeInfo nodeId="7316415153790567186" fileName="RunMigrationScriptsDialog.java" startLine="275" startPosition="35" endLine="276" endPosition="25" />
+    <scopeInfo nodeId="7316415153790567198" fileName="RunMigrationScriptsDialog.java" startLine="282" startPosition="35" endLine="283" endPosition="26" />
+    <scopeInfo nodeId="7316415153790567219" fileName="RunMigrationScriptsDialog.java" startLine="286" startPosition="48" endLine="287" endPosition="19" />
+    <scopeInfo nodeId="7316415153790567479" fileName="RunMigrationScriptsDialog.java" startLine="301" startPosition="88" endLine="302" endPosition="82" />
+    <scopeInfo nodeId="7316415153790567468" fileName="RunMigrationScriptsDialog.java" startLine="304" startPosition="89" endLine="305" endPosition="80" />
+    <scopeInfo nodeId="7316415153790567442" fileName="RunMigrationScriptsDialog.java" startLine="308" startPosition="20" endLine="309" endPosition="41" />
+    <scopeInfo nodeId="7316415153790567515" fileName="RunMigrationScriptsDialog.java" startLine="320" startPosition="25" endLine="321" endPosition="19" />
+    <scopeInfo nodeId="7316415153790567545" fileName="RunMigrationScriptsDialog.java" startLine="325" startPosition="87" endLine="326" endPosition="79" />
+    <scopeInfo nodeId="7316415153790567554" fileName="RunMigrationScriptsDialog.java" startLine="328" startPosition="86" endLine="329" endPosition="80" />
+    <scopeInfo nodeId="7316415153790567563" fileName="RunMigrationScriptsDialog.java" startLine="331" startPosition="87" endLine="332" endPosition="80" />
+    <scopeInfo nodeId="7316415153790567535" fileName="RunMigrationScriptsDialog.java" startLine="335" startPosition="87" endLine="336" endPosition="79" />
+    <scopeInfo nodeId="7316415153790567586" fileName="RunMigrationScriptsDialog.java" startLine="341" startPosition="57" endLine="342" endPosition="70" />
+    <scopeInfo nodeId="7316415153790567322" fileName="RunMigrationScriptsDialog.java" startLine="359" startPosition="49" endLine="360" endPosition="96" />
+    <scopeInfo nodeId="7316415153790567618" fileName="RunMigrationScriptsDialog.java" startLine="364" startPosition="82" endLine="365" endPosition="42" />
+    <scopeInfo nodeId="7316415153790567372" fileName="RunMigrationScriptsDialog.java" startLine="368" startPosition="28" endLine="369" endPosition="44" />
+    <scopeInfo nodeId="7316415153790567397" fileName="RunMigrationScriptsDialog.java" startLine="372" startPosition="49" endLine="373" endPosition="68" />
+    <scopeInfo nodeId="7316415153790567630" fileName="RunMigrationScriptsDialog.java" startLine="385" startPosition="34" endLine="386" endPosition="20" />
+    <scopeInfo nodeId="7316415153790567678" fileName="RunMigrationScriptsDialog.java" startLine="394" startPosition="31" endLine="395" endPosition="29" />
+    <scopeInfo nodeId="7316415153790567683" fileName="RunMigrationScriptsDialog.java" startLine="398" startPosition="32" endLine="399" endPosition="29" />
+    <scopeInfo nodeId="7316415153790567690" fileName="RunMigrationScriptsDialog.java" startLine="408" startPosition="32" endLine="409" endPosition="20" />
+    <scopeInfo nodeId="7316415153790567743" fileName="RunMigrationScriptsDialog.java" startLine="417" startPosition="31" endLine="418" endPosition="29" />
+    <scopeInfo nodeId="7316415153790567748" fileName="RunMigrationScriptsDialog.java" startLine="421" startPosition="32" endLine="422" endPosition="29" />
+    <scopeInfo nodeId="7316415153790567797" fileName="RunMigrationScriptsDialog.java" startLine="113" startPosition="50" endLine="115" endPosition="57" />
+    <scopeInfo nodeId="7316415153790567807" fileName="RunMigrationScriptsDialog.java" startLine="119" startPosition="50" endLine="121" endPosition="57" />
+    <scopeInfo nodeId="7316415153790566919" fileName="RunMigrationScriptsDialog.java" startLine="166" startPosition="28" endLine="168" endPosition="102">
       <varInfo nodeId="7316415153790566921" varName="modelIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567038" fileName="RunMigrationScriptsDialog.java" startLine="208" startPosition="24" endLine="210" endPosition="60">
+    <scopeInfo nodeId="7316415153790567038" fileName="RunMigrationScriptsDialog.java" startLine="209" startPosition="24" endLine="211" endPosition="60">
       <varInfo nodeId="7316415153790567040" varName="script" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566345" fileName="RunMigrationScriptsDialog.java" startLine="248" startPosition="0" endLine="250" endPosition="5" />
-    <scopeInfo nodeId="7316415153790567163" fileName="RunMigrationScriptsDialog.java" startLine="264" startPosition="64" endLine="266" endPosition="40" />
-    <scopeInfo nodeId="7316415153790567606" fileName="RunMigrationScriptsDialog.java" startLine="344" startPosition="48" endLine="346" endPosition="68" />
-    <scopeInfo nodeId="7316415153790567635" fileName="RunMigrationScriptsDialog.java" startLine="388" startPosition="66" endLine="390" endPosition="151" />
-    <scopeInfo nodeId="7316415153790567695" fileName="RunMigrationScriptsDialog.java" startLine="411" startPosition="66" endLine="413" endPosition="171" />
-    <scopeInfo nodeId="7316415153790567765" fileName="RunMigrationScriptsDialog.java" startLine="97" startPosition="47" endLine="100" endPosition="9">
+    <scopeInfo nodeId="7316415153790566345" fileName="RunMigrationScriptsDialog.java" startLine="249" startPosition="0" endLine="251" endPosition="5" />
+    <scopeInfo nodeId="7316415153790567163" fileName="RunMigrationScriptsDialog.java" startLine="265" startPosition="64" endLine="267" endPosition="40" />
+    <scopeInfo nodeId="7316415153790567606" fileName="RunMigrationScriptsDialog.java" startLine="345" startPosition="48" endLine="347" endPosition="68" />
+    <scopeInfo nodeId="7316415153790567635" fileName="RunMigrationScriptsDialog.java" startLine="389" startPosition="66" endLine="391" endPosition="151" />
+    <scopeInfo nodeId="7316415153790567695" fileName="RunMigrationScriptsDialog.java" startLine="412" startPosition="66" endLine="414" endPosition="171" />
+    <scopeInfo nodeId="7316415153790567765" fileName="RunMigrationScriptsDialog.java" startLine="98" startPosition="47" endLine="101" endPosition="9">
       <varInfo nodeId="7316415153790567767" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567785" fileName="RunMigrationScriptsDialog.java" startLine="105" startPosition="47" endLine="108" endPosition="9">
+    <scopeInfo nodeId="7316415153790567785" fileName="RunMigrationScriptsDialog.java" startLine="106" startPosition="47" endLine="109" endPosition="9">
       <varInfo nodeId="7316415153790567787" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566971" fileName="RunMigrationScriptsDialog.java" startLine="175" startPosition="37" endLine="178" endPosition="7" />
-    <scopeInfo nodeId="7316415153790566291" fileName="RunMigrationScriptsDialog.java" startLine="191" startPosition="56" endLine="194" endPosition="5" />
-    <scopeInfo nodeId="7316415153790567212" fileName="RunMigrationScriptsDialog.java" startLine="284" startPosition="57" endLine="287" endPosition="9" />
-    <scopeInfo nodeId="7316415153790567575" fileName="RunMigrationScriptsDialog.java" startLine="339" startPosition="55" endLine="342" endPosition="11">
+    <scopeInfo nodeId="7316415153790566971" fileName="RunMigrationScriptsDialog.java" startLine="176" startPosition="37" endLine="179" endPosition="7" />
+    <scopeInfo nodeId="7316415153790566291" fileName="RunMigrationScriptsDialog.java" startLine="192" startPosition="56" endLine="195" endPosition="5" />
+    <scopeInfo nodeId="7316415153790567212" fileName="RunMigrationScriptsDialog.java" startLine="285" startPosition="57" endLine="288" endPosition="9" />
+    <scopeInfo nodeId="7316415153790567575" fileName="RunMigrationScriptsDialog.java" startLine="340" startPosition="55" endLine="343" endPosition="11">
       <varInfo nodeId="7316415153790567581" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567313" fileName="RunMigrationScriptsDialog.java" startLine="357" startPosition="84" endLine="360" endPosition="9">
+    <scopeInfo nodeId="7316415153790567313" fileName="RunMigrationScriptsDialog.java" startLine="358" startPosition="84" endLine="361" endPosition="9">
       <varInfo nodeId="7316415153790567317" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567386" fileName="RunMigrationScriptsDialog.java" startLine="370" startPosition="50" endLine="373" endPosition="9">
+    <scopeInfo nodeId="7316415153790567386" fileName="RunMigrationScriptsDialog.java" startLine="371" startPosition="50" endLine="374" endPosition="9">
       <varInfo nodeId="7316415153790567392" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566416" fileName="RunMigrationScriptsDialog.java" startLine="383" startPosition="0" endLine="386" endPosition="5">
+    <scopeInfo nodeId="7316415153790566416" fileName="RunMigrationScriptsDialog.java" startLine="384" startPosition="0" endLine="387" endPosition="5">
       <varInfo nodeId="7316415153790566419" varName="size" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566450" fileName="RunMigrationScriptsDialog.java" startLine="406" startPosition="0" endLine="409" endPosition="5">
+    <scopeInfo nodeId="7316415153790566450" fileName="RunMigrationScriptsDialog.java" startLine="407" startPosition="0" endLine="410" endPosition="5">
       <varInfo nodeId="7316415153790566453" varName="size" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566568" fileName="RunMigrationScriptsDialog.java" startLine="69" startPosition="77" endLine="73" endPosition="0">
+    <scopeInfo nodeId="7316415153790566568" fileName="RunMigrationScriptsDialog.java" startLine="70" startPosition="77" endLine="74" endPosition="0">
       <varInfo nodeId="7316415153790566571" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567757" fileName="RunMigrationScriptsDialog.java" startLine="96" startPosition="50" endLine="100" endPosition="9">
+    <scopeInfo nodeId="7316415153790567757" fileName="RunMigrationScriptsDialog.java" startLine="97" startPosition="50" endLine="101" endPosition="9">
       <varInfo nodeId="7316415153790567759" varName="ints" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567777" fileName="RunMigrationScriptsDialog.java" startLine="104" startPosition="50" endLine="108" endPosition="9">
+    <scopeInfo nodeId="7316415153790567777" fileName="RunMigrationScriptsDialog.java" startLine="105" startPosition="50" endLine="109" endPosition="9">
       <varInfo nodeId="7316415153790567779" varName="ints" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566759" fileName="RunMigrationScriptsDialog.java" startLine="123" startPosition="56" endLine="127" endPosition="0">
+    <scopeInfo nodeId="7316415153790566759" fileName="RunMigrationScriptsDialog.java" startLine="124" startPosition="56" endLine="128" endPosition="0">
       <varInfo nodeId="7316415153790566762" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566801" fileName="RunMigrationScriptsDialog.java" startLine="132" startPosition="71" endLine="136" endPosition="0">
+    <scopeInfo nodeId="7316415153790566801" fileName="RunMigrationScriptsDialog.java" startLine="133" startPosition="71" endLine="137" endPosition="0">
       <varInfo nodeId="7316415153790566804" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566815" fileName="RunMigrationScriptsDialog.java" startLine="137" startPosition="86" endLine="141" endPosition="0">
+    <scopeInfo nodeId="7316415153790566815" fileName="RunMigrationScriptsDialog.java" startLine="138" startPosition="86" endLine="142" endPosition="0">
       <varInfo nodeId="7316415153790566818" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566915" fileName="RunMigrationScriptsDialog.java" startLine="164" startPosition="43" endLine="168" endPosition="5">
+    <scopeInfo nodeId="7316415153790566915" fileName="RunMigrationScriptsDialog.java" startLine="165" startPosition="43" endLine="169" endPosition="5">
       <varInfo nodeId="7316415153790566917" varName="anInt" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566993" fileName="RunMigrationScriptsDialog.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="7316415153790566999" fileName="RunMigrationScriptsDialog.java" startLine="186" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="7316415153790566294" fileName="RunMigrationScriptsDialog.java" startLine="195" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="7316415153790566993" fileName="RunMigrationScriptsDialog.java" startLine="183" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="7316415153790566999" fileName="RunMigrationScriptsDialog.java" startLine="187" startPosition="0" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="7316415153790566294" fileName="RunMigrationScriptsDialog.java" startLine="196" startPosition="0" endLine="200" endPosition="0">
       <varInfo nodeId="7316415153790566299" varName="column" />
       <varInfo nodeId="7316415153790566297" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567022" fileName="RunMigrationScriptsDialog.java" startLine="200" startPosition="48" endLine="204" endPosition="42" />
-    <scopeInfo nodeId="7316415153790566348" fileName="RunMigrationScriptsDialog.java" startLine="251" startPosition="0" endLine="255" endPosition="0">
+    <scopeInfo nodeId="7316415153790567022" fileName="RunMigrationScriptsDialog.java" startLine="201" startPosition="48" endLine="205" endPosition="42" />
+    <scopeInfo nodeId="7316415153790566348" fileName="RunMigrationScriptsDialog.java" startLine="252" startPosition="0" endLine="256" endPosition="0">
       <varInfo nodeId="7316415153790566353" varName="column" />
       <varInfo nodeId="7316415153790566351" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566355" fileName="RunMigrationScriptsDialog.java" startLine="255" startPosition="0" endLine="259" endPosition="0">
+    <scopeInfo nodeId="7316415153790566355" fileName="RunMigrationScriptsDialog.java" startLine="256" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="7316415153790566359" varName="column" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566361" fileName="RunMigrationScriptsDialog.java" startLine="259" startPosition="0" endLine="263" endPosition="0">
+    <scopeInfo nodeId="7316415153790566361" fileName="RunMigrationScriptsDialog.java" startLine="260" startPosition="0" endLine="264" endPosition="0">
       <varInfo nodeId="7316415153790566366" varName="column" />
       <varInfo nodeId="7316415153790566364" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566377" fileName="RunMigrationScriptsDialog.java" startLine="268" startPosition="0" endLine="272" endPosition="0">
+    <scopeInfo nodeId="7316415153790566377" fileName="RunMigrationScriptsDialog.java" startLine="269" startPosition="0" endLine="273" endPosition="0">
       <varInfo nodeId="7316415153790566380" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567181" fileName="RunMigrationScriptsDialog.java" startLine="273" startPosition="54" endLine="277" endPosition="41" />
-    <scopeInfo nodeId="7316415153790567526" fileName="RunMigrationScriptsDialog.java" startLine="333" startPosition="18" endLine="337" endPosition="42" />
-    <scopeInfo nodeId="7316415153790567602" fileName="RunMigrationScriptsDialog.java" startLine="343" startPosition="59" endLine="347" endPosition="11">
+    <scopeInfo nodeId="7316415153790567181" fileName="RunMigrationScriptsDialog.java" startLine="274" startPosition="54" endLine="278" endPosition="41" />
+    <scopeInfo nodeId="7316415153790567526" fileName="RunMigrationScriptsDialog.java" startLine="334" startPosition="18" endLine="338" endPosition="42" />
+    <scopeInfo nodeId="7316415153790567602" fileName="RunMigrationScriptsDialog.java" startLine="344" startPosition="59" endLine="348" endPosition="11">
       <varInfo nodeId="7316415153790567604" varName="selectedRow" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567357" fileName="RunMigrationScriptsDialog.java" startLine="362" startPosition="80" endLine="366" endPosition="0">
+    <scopeInfo nodeId="7316415153790567357" fileName="RunMigrationScriptsDialog.java" startLine="363" startPosition="80" endLine="367" endPosition="0">
       <varInfo nodeId="7316415153790567364" varName="o2" />
       <varInfo nodeId="7316415153790567360" varName="o1" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566432" fileName="RunMigrationScriptsDialog.java" startLine="392" startPosition="0" endLine="396" endPosition="0" />
-    <scopeInfo nodeId="7316415153790566435" fileName="RunMigrationScriptsDialog.java" startLine="396" startPosition="0" endLine="400" endPosition="0" />
-    <scopeInfo nodeId="7316415153790566466" fileName="RunMigrationScriptsDialog.java" startLine="415" startPosition="0" endLine="419" endPosition="0" />
-    <scopeInfo nodeId="7316415153790566469" fileName="RunMigrationScriptsDialog.java" startLine="419" startPosition="0" endLine="423" endPosition="0" />
-    <scopeInfo nodeId="7316415153790566735" fileName="RunMigrationScriptsDialog.java" startLine="111" startPosition="63" endLine="116" endPosition="0">
+    <scopeInfo nodeId="7316415153790566432" fileName="RunMigrationScriptsDialog.java" startLine="393" startPosition="0" endLine="397" endPosition="0" />
+    <scopeInfo nodeId="7316415153790566435" fileName="RunMigrationScriptsDialog.java" startLine="397" startPosition="0" endLine="401" endPosition="0" />
+    <scopeInfo nodeId="7316415153790566466" fileName="RunMigrationScriptsDialog.java" startLine="416" startPosition="0" endLine="420" endPosition="0" />
+    <scopeInfo nodeId="7316415153790566469" fileName="RunMigrationScriptsDialog.java" startLine="420" startPosition="0" endLine="424" endPosition="0" />
+    <scopeInfo nodeId="7316415153790566735" fileName="RunMigrationScriptsDialog.java" startLine="112" startPosition="63" endLine="117" endPosition="0">
       <varInfo nodeId="7316415153790566738" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566747" fileName="RunMigrationScriptsDialog.java" startLine="117" startPosition="65" endLine="122" endPosition="0">
+    <scopeInfo nodeId="7316415153790566747" fileName="RunMigrationScriptsDialog.java" startLine="118" startPosition="65" endLine="123" endPosition="0">
       <varInfo nodeId="7316415153790566750" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566845" fileName="RunMigrationScriptsDialog.java" startLine="149" startPosition="24" endLine="154" endPosition="7" />
-    <scopeInfo nodeId="7316415153790566962" fileName="RunMigrationScriptsDialog.java" startLine="174" startPosition="49" endLine="179" endPosition="5">
+    <scopeInfo nodeId="7316415153790566845" fileName="RunMigrationScriptsDialog.java" startLine="150" startPosition="24" endLine="155" endPosition="7" />
+    <scopeInfo nodeId="7316415153790566962" fileName="RunMigrationScriptsDialog.java" startLine="175" startPosition="49" endLine="180" endPosition="5">
       <varInfo nodeId="7316415153790566966" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567071" fileName="RunMigrationScriptsDialog.java" startLine="215" startPosition="24" endLine="220" endPosition="10">
+    <scopeInfo nodeId="7316415153790567071" fileName="RunMigrationScriptsDialog.java" startLine="216" startPosition="24" endLine="221" endPosition="10">
       <varInfo nodeId="7316415153790567073" varName="cat" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566368" fileName="RunMigrationScriptsDialog.java" startLine="263" startPosition="0" endLine="268" endPosition="0">
+    <scopeInfo nodeId="7316415153790566368" fileName="RunMigrationScriptsDialog.java" startLine="264" startPosition="0" endLine="269" endPosition="0">
       <varInfo nodeId="7316415153790566371" varName="aValue" />
       <varInfo nodeId="7316415153790566375" varName="column" />
       <varInfo nodeId="7316415153790566373" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567201" fileName="RunMigrationScriptsDialog.java" startLine="283" startPosition="7" endLine="288" endPosition="7">
+    <scopeInfo nodeId="7316415153790567201" fileName="RunMigrationScriptsDialog.java" startLine="284" startPosition="7" endLine="289" endPosition="7">
       <varInfo nodeId="7316415153790567207" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566421" fileName="RunMigrationScriptsDialog.java" startLine="387" startPosition="0" endLine="392" endPosition="0">
+    <scopeInfo nodeId="7316415153790566421" fileName="RunMigrationScriptsDialog.java" startLine="388" startPosition="0" endLine="393" endPosition="0">
       <varInfo nodeId="7316415153790566426" varName="g" />
       <varInfo nodeId="7316415153790566424" varName="c" />
       <varInfo nodeId="7316415153790566430" varName="y" />
       <varInfo nodeId="7316415153790566428" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566455" fileName="RunMigrationScriptsDialog.java" startLine="410" startPosition="0" endLine="415" endPosition="0">
+    <scopeInfo nodeId="7316415153790566455" fileName="RunMigrationScriptsDialog.java" startLine="411" startPosition="0" endLine="416" endPosition="0">
       <varInfo nodeId="7316415153790566460" varName="g" />
       <varInfo nodeId="7316415153790566458" varName="c" />
       <varInfo nodeId="7316415153790566464" varName="y" />
       <varInfo nodeId="7316415153790566462" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566512" fileName="RunMigrationScriptsDialog.java" startLine="56" startPosition="126" endLine="62" endPosition="22" />
-    <scopeInfo nodeId="7316415153790566711" fileName="RunMigrationScriptsDialog.java" startLine="95" startPosition="58" endLine="102" endPosition="0">
+    <scopeInfo nodeId="7316415153790566512" fileName="RunMigrationScriptsDialog.java" startLine="57" startPosition="126" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="7316415153790566711" fileName="RunMigrationScriptsDialog.java" startLine="96" startPosition="58" endLine="103" endPosition="0">
       <varInfo nodeId="7316415153790566714" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566723" fileName="RunMigrationScriptsDialog.java" startLine="103" startPosition="60" endLine="110" endPosition="0">
+    <scopeInfo nodeId="7316415153790566723" fileName="RunMigrationScriptsDialog.java" startLine="104" startPosition="60" endLine="111" endPosition="0">
       <varInfo nodeId="7316415153790566726" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566841" fileName="RunMigrationScriptsDialog.java" startLine="148" startPosition="34" endLine="155" endPosition="5">
+    <scopeInfo nodeId="7316415153790566841" fileName="RunMigrationScriptsDialog.java" startLine="149" startPosition="34" endLine="156" endPosition="5">
       <varInfo nodeId="7316415153790566843" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566900" fileName="RunMigrationScriptsDialog.java" startLine="162" startPosition="43" endLine="169" endPosition="16">
+    <scopeInfo nodeId="7316415153790566900" fileName="RunMigrationScriptsDialog.java" startLine="163" startPosition="43" endLine="170" endPosition="16">
       <varInfo nodeId="7316415153790566902" varName="list" />
       <varInfo nodeId="7316415153790566909" varName="ints" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566301" fileName="RunMigrationScriptsDialog.java" startLine="199" startPosition="0" endLine="206" endPosition="0">
+    <scopeInfo nodeId="7316415153790566301" fileName="RunMigrationScriptsDialog.java" startLine="200" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="7316415153790566305" varName="column" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567108" fileName="RunMigrationScriptsDialog.java" startLine="229" startPosition="64" endLine="236" endPosition="44">
+    <scopeInfo nodeId="7316415153790567108" fileName="RunMigrationScriptsDialog.java" startLine="230" startPosition="64" endLine="237" endPosition="44">
       <varInfo nodeId="7316415153790567110" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566382" fileName="RunMigrationScriptsDialog.java" startLine="272" startPosition="0" endLine="279" endPosition="0">
+    <scopeInfo nodeId="7316415153790566382" fileName="RunMigrationScriptsDialog.java" startLine="273" startPosition="0" endLine="280" endPosition="0">
       <varInfo nodeId="7316415153790566385" varName="viewIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567451" fileName="RunMigrationScriptsDialog.java" startLine="299" startPosition="43" endLine="306" endPosition="41" />
-    <scopeInfo nodeId="7316415153790566501" fileName="RunMigrationScriptsDialog.java" startLine="55" startPosition="0" endLine="63" endPosition="3">
+    <scopeInfo nodeId="7316415153790567451" fileName="RunMigrationScriptsDialog.java" startLine="300" startPosition="43" endLine="307" endPosition="41" />
+    <scopeInfo nodeId="7316415153790566501" fileName="RunMigrationScriptsDialog.java" startLine="56" startPosition="0" endLine="64" endPosition="3">
       <varInfo nodeId="7316415153790566506" varName="scripts" />
       <varInfo nodeId="7316415153790566509" varName="selectedScriptIds" />
       <varInfo nodeId="7316415153790566504" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566946" fileName="RunMigrationScriptsDialog.java" startLine="172" startPosition="42" endLine="180" endPosition="16">
+    <scopeInfo nodeId="7316415153790566946" fileName="RunMigrationScriptsDialog.java" startLine="173" startPosition="42" endLine="181" endPosition="16">
       <varInfo nodeId="7316415153790566955" varName="count" />
       <varInfo nodeId="7316415153790566948" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567193" fileName="RunMigrationScriptsDialog.java" startLine="280" startPosition="54" endLine="289" endPosition="16" />
-    <scopeInfo nodeId="7316415153790567540" fileName="RunMigrationScriptsDialog.java" startLine="323" startPosition="38" endLine="332" endPosition="13" />
-    <scopeInfo nodeId="7316415153790566896" fileName="RunMigrationScriptsDialog.java" startLine="161" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="7316415153790566314" fileName="RunMigrationScriptsDialog.java" startLine="228" startPosition="0" endLine="238" endPosition="0">
+    <scopeInfo nodeId="7316415153790567193" fileName="RunMigrationScriptsDialog.java" startLine="281" startPosition="54" endLine="290" endPosition="16" />
+    <scopeInfo nodeId="7316415153790567540" fileName="RunMigrationScriptsDialog.java" startLine="324" startPosition="38" endLine="333" endPosition="13" />
+    <scopeInfo nodeId="7316415153790566896" fileName="RunMigrationScriptsDialog.java" startLine="162" startPosition="0" endLine="172" endPosition="0" />
+    <scopeInfo nodeId="7316415153790566314" fileName="RunMigrationScriptsDialog.java" startLine="229" startPosition="0" endLine="239" endPosition="0">
       <varInfo nodeId="7316415153790566317" varName="aValue" />
       <varInfo nodeId="7316415153790566321" varName="column" />
       <varInfo nodeId="7316415153790566319" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566942" fileName="RunMigrationScriptsDialog.java" startLine="171" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="7316415153790566387" fileName="RunMigrationScriptsDialog.java" startLine="279" startPosition="0" endLine="291" endPosition="0">
+    <scopeInfo nodeId="7316415153790566942" fileName="RunMigrationScriptsDialog.java" startLine="172" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="7316415153790566387" fileName="RunMigrationScriptsDialog.java" startLine="280" startPosition="0" endLine="292" endPosition="0">
       <varInfo nodeId="7316415153790566390" varName="modelIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566825" fileName="RunMigrationScriptsDialog.java" startLine="145" startPosition="32" endLine="159" endPosition="67">
+    <scopeInfo nodeId="7316415153790566825" fileName="RunMigrationScriptsDialog.java" startLine="146" startPosition="32" endLine="160" endPosition="67">
       <varInfo nodeId="7316415153790566838" varName="enableUnCheck" />
       <varInfo nodeId="7316415153790566834" varName="enableCheck" />
       <varInfo nodeId="7316415153790566827" varName="ints" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567413" fileName="RunMigrationScriptsDialog.java" startLine="296" startPosition="145" endLine="310" endPosition="21">
+    <scopeInfo nodeId="7316415153790567413" fileName="RunMigrationScriptsDialog.java" startLine="297" startPosition="145" endLine="311" endPosition="21">
       <varInfo nodeId="7316415153790567415" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566822" fileName="RunMigrationScriptsDialog.java" startLine="144" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="7316415153790567254" fileName="RunMigrationScriptsDialog.java" startLine="295" startPosition="76" endLine="312" endPosition="0">
+    <scopeInfo nodeId="7316415153790566822" fileName="RunMigrationScriptsDialog.java" startLine="145" startPosition="0" endLine="162" endPosition="0" />
+    <scopeInfo nodeId="7316415153790567254" fileName="RunMigrationScriptsDialog.java" startLine="296" startPosition="76" endLine="313" endPosition="0">
       <varInfo nodeId="7316415153790567261" varName="isSelected" />
       <varInfo nodeId="7316415153790567267" varName="column" />
       <varInfo nodeId="7316415153790567259" varName="value" />
@@ -882,42 +882,42 @@
       <varInfo nodeId="7316415153790567263" varName="hasFocus" />
       <varInfo nodeId="7316415153790567265" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567301" fileName="RunMigrationScriptsDialog.java" startLine="356" startPosition="14" endLine="373" endPosition="9">
+    <scopeInfo nodeId="7316415153790567301" fileName="RunMigrationScriptsDialog.java" startLine="357" startPosition="14" endLine="374" endPosition="9">
       <varInfo nodeId="7316415153790567303" varName="values" />
       <varInfo nodeId="7316415153790567337" varName="valuesSorted" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567243" fileName="RunMigrationScriptsDialog.java" startLine="294" startPosition="62" endLine="312" endPosition="11" />
-    <scopeInfo nodeId="7316415153790567033" fileName="RunMigrationScriptsDialog.java" startLine="207" startPosition="51" endLine="226" endPosition="8">
+    <scopeInfo nodeId="7316415153790567243" fileName="RunMigrationScriptsDialog.java" startLine="295" startPosition="62" endLine="313" endPosition="11" />
+    <scopeInfo nodeId="7316415153790567033" fileName="RunMigrationScriptsDialog.java" startLine="208" startPosition="51" endLine="227" endPosition="8">
       <varInfo nodeId="7316415153790567091" varName="build" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567232" fileName="RunMigrationScriptsDialog.java" startLine="293" startPosition="60" endLine="313" endPosition="7">
+    <scopeInfo nodeId="7316415153790567232" fileName="RunMigrationScriptsDialog.java" startLine="294" startPosition="60" endLine="314" endPosition="7">
       <varInfo nodeId="7316415153790567238" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566307" fileName="RunMigrationScriptsDialog.java" startLine="206" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="7316415153790566307" fileName="RunMigrationScriptsDialog.java" startLine="207" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="7316415153790566312" varName="column" />
       <varInfo nodeId="7316415153790566310" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567287" fileName="RunMigrationScriptsDialog.java" startLine="352" startPosition="52" endLine="375" endPosition="29" />
-    <scopeInfo nodeId="7316415153790566397" fileName="RunMigrationScriptsDialog.java" startLine="351" startPosition="0" endLine="377" endPosition="0">
+    <scopeInfo nodeId="7316415153790567287" fileName="RunMigrationScriptsDialog.java" startLine="353" startPosition="52" endLine="376" endPosition="29" />
+    <scopeInfo nodeId="7316415153790566397" fileName="RunMigrationScriptsDialog.java" startLine="352" startPosition="0" endLine="378" endPosition="0">
       <varInfo nodeId="7316415153790566402" varName="order" />
       <varInfo nodeId="7316415153790566400" varName="column" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567492" fileName="RunMigrationScriptsDialog.java" startLine="316" startPosition="48" endLine="347" endPosition="11">
+    <scopeInfo nodeId="7316415153790567492" fileName="RunMigrationScriptsDialog.java" startLine="317" startPosition="48" endLine="348" endPosition="11">
       <varInfo nodeId="7316415153790567518" varName="sortingOrder" />
       <varInfo nodeId="7316415153790567494" varName="col" />
       <varInfo nodeId="7316415153790567569" varName="selectedRows" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567282" fileName="RunMigrationScriptsDialog.java" startLine="315" startPosition="50" endLine="349" endPosition="0">
+    <scopeInfo nodeId="7316415153790567282" fileName="RunMigrationScriptsDialog.java" startLine="316" startPosition="50" endLine="350" endPosition="0">
       <varInfo nodeId="7316415153790567285" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790567225" fileName="RunMigrationScriptsDialog.java" startLine="292" startPosition="45" endLine="349" endPosition="9">
+    <scopeInfo nodeId="7316415153790567225" fileName="RunMigrationScriptsDialog.java" startLine="293" startPosition="45" endLine="350" endPosition="9">
       <varInfo nodeId="7316415153790567227" varName="columnModel" />
       <varInfo nodeId="7316415153790567270" varName="header" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566392" fileName="RunMigrationScriptsDialog.java" startLine="291" startPosition="0" endLine="351" endPosition="0">
+    <scopeInfo nodeId="7316415153790566392" fileName="RunMigrationScriptsDialog.java" startLine="292" startPosition="0" endLine="352" endPosition="0">
       <varInfo nodeId="7316415153790566395" varName="table" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566538" fileName="RunMigrationScriptsDialog.java" startLine="65" startPosition="23" endLine="142" endPosition="20">
+    <scopeInfo nodeId="7316415153790566538" fileName="RunMigrationScriptsDialog.java" startLine="66" startPosition="23" endLine="143" endPosition="20">
       <varInfo nodeId="7316415153790566645" varName="buttonsFlow" />
       <varInfo nodeId="7316415153790566578" varName="panel" />
       <varInfo nodeId="7316415153790566591" varName="tm" />
@@ -926,23 +926,23 @@
       <varInfo nodeId="7316415153790566674" varName="closeButton" />
       <varInfo nodeId="7316415153790566607" varName="columnModel" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790566535" fileName="RunMigrationScriptsDialog.java" startLine="64" startPosition="0" endLine="144" endPosition="0" />
-    <unitInfo nodeId="7316415153790566567" fileName="RunMigrationScriptsDialog.java" startLine="69" startPosition="43" endLine="73" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$1" />
-    <unitInfo nodeId="7316415153790566758" fileName="RunMigrationScriptsDialog.java" startLine="123" startPosition="38" endLine="127" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$6" />
-    <unitInfo nodeId="7316415153790566800" fileName="RunMigrationScriptsDialog.java" startLine="132" startPosition="49" endLine="136" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$7" />
-    <unitInfo nodeId="7316415153790566814" fileName="RunMigrationScriptsDialog.java" startLine="137" startPosition="61" endLine="141" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$8" />
-    <unitInfo nodeId="7316415153790567353" fileName="RunMigrationScriptsDialog.java" startLine="362" startPosition="43" endLine="366" endPosition="9" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
-    <unitInfo nodeId="7316415153790566734" fileName="RunMigrationScriptsDialog.java" startLine="111" startPosition="45" endLine="116" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$4" />
-    <unitInfo nodeId="7316415153790566746" fileName="RunMigrationScriptsDialog.java" startLine="117" startPosition="47" endLine="122" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$5" />
-    <unitInfo nodeId="7316415153790566710" fileName="RunMigrationScriptsDialog.java" startLine="95" startPosition="40" endLine="102" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
-    <unitInfo nodeId="7316415153790566722" fileName="RunMigrationScriptsDialog.java" startLine="103" startPosition="42" endLine="110" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
-    <unitInfo nodeId="7316415153790567253" fileName="RunMigrationScriptsDialog.java" startLine="295" startPosition="55" endLine="312" endPosition="9" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$1" />
-    <unitInfo nodeId="7316415153790566404" fileName="RunMigrationScriptsDialog.java" startLine="379" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyDownIcon" />
-    <unitInfo nodeId="7316415153790566438" fileName="RunMigrationScriptsDialog.java" startLine="402" startPosition="0" endLine="424" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyUpIcon" />
-    <unitInfo nodeId="7316415153790567281" fileName="RunMigrationScriptsDialog.java" startLine="315" startPosition="34" endLine="349" endPosition="7" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
-    <unitInfo nodeId="7316415153790566288" fileName="RunMigrationScriptsDialog.java" startLine="191" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyTableModel" />
-    <unitInfo nodeId="7316415153790566323" fileName="RunMigrationScriptsDialog.java" startLine="240" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MySortingTableModel" />
-    <unitInfo nodeId="7316415153790566285" fileName="RunMigrationScriptsDialog.java" startLine="45" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog" />
+    <scopeInfo nodeId="7316415153790566535" fileName="RunMigrationScriptsDialog.java" startLine="65" startPosition="0" endLine="145" endPosition="0" />
+    <unitInfo nodeId="7316415153790566567" fileName="RunMigrationScriptsDialog.java" startLine="70" startPosition="43" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$1" />
+    <unitInfo nodeId="7316415153790566758" fileName="RunMigrationScriptsDialog.java" startLine="124" startPosition="38" endLine="128" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$6" />
+    <unitInfo nodeId="7316415153790566800" fileName="RunMigrationScriptsDialog.java" startLine="133" startPosition="49" endLine="137" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$7" />
+    <unitInfo nodeId="7316415153790566814" fileName="RunMigrationScriptsDialog.java" startLine="138" startPosition="61" endLine="142" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$8" />
+    <unitInfo nodeId="7316415153790567353" fileName="RunMigrationScriptsDialog.java" startLine="363" startPosition="43" endLine="367" endPosition="9" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
+    <unitInfo nodeId="7316415153790566734" fileName="RunMigrationScriptsDialog.java" startLine="112" startPosition="45" endLine="117" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$4" />
+    <unitInfo nodeId="7316415153790566746" fileName="RunMigrationScriptsDialog.java" startLine="118" startPosition="47" endLine="123" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$5" />
+    <unitInfo nodeId="7316415153790566710" fileName="RunMigrationScriptsDialog.java" startLine="96" startPosition="40" endLine="103" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
+    <unitInfo nodeId="7316415153790566722" fileName="RunMigrationScriptsDialog.java" startLine="104" startPosition="42" endLine="111" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
+    <unitInfo nodeId="7316415153790567253" fileName="RunMigrationScriptsDialog.java" startLine="296" startPosition="55" endLine="313" endPosition="9" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$1" />
+    <unitInfo nodeId="7316415153790566404" fileName="RunMigrationScriptsDialog.java" startLine="380" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyDownIcon" />
+    <unitInfo nodeId="7316415153790566438" fileName="RunMigrationScriptsDialog.java" startLine="403" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyUpIcon" />
+    <unitInfo nodeId="7316415153790567281" fileName="RunMigrationScriptsDialog.java" startLine="316" startPosition="34" endLine="350" endPosition="7" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
+    <unitInfo nodeId="7316415153790566288" fileName="RunMigrationScriptsDialog.java" startLine="192" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyTableModel" />
+    <unitInfo nodeId="7316415153790566323" fileName="RunMigrationScriptsDialog.java" startLine="241" startPosition="0" endLine="379" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MySortingTableModel" />
+    <unitInfo nodeId="7316415153790566285" fileName="RunMigrationScriptsDialog.java" startLine="46" startPosition="0" endLine="426" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog" />
   </root>
 </debugInfo>
 

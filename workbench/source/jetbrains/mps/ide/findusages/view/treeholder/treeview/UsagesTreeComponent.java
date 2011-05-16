@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
@@ -68,7 +69,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     myTree = new UsagesTree(UsagesTreeComponent.this.getProject());
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
 
-    JScrollPane treePane = new JScrollPane(myTree);
+    JScrollPane treePane = ScrollPaneFactory.createScrollPane(myTree);
 
     myPathProvider.add(PathItemRole.ROLE_MAIN_RESULTS);
     myPathProvider.add(PathItemRole.ROLE_TARGET_NODE);

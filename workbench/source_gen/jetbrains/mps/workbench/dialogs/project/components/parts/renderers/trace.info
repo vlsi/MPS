@@ -256,11 +256,11 @@
   <root nodeId="1560298786499494305">
     <nodeInfo nodeId="1560298786499494308" fileName="ListRendererAdapter.java" startLine="11" startPosition="63" endLine="12" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCellRenderer" />
     <nodeInfo nodeId="1560298786499494316" fileName="ListRendererAdapter.java" startLine="14" startPosition="61" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494338" fileName="ListRendererAdapter.java" startLine="18" startPosition="137" endLine="19" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499494338" fileName="ListRendererAdapter.java" startLine="18" startPosition="137" endLine="19" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499494311" fileName="ListRendererAdapter.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListRendererAdapter#(Ljavax/swing/ListCellRenderer;)V" />
     <nodeInfo nodeId="1560298786499494322" fileName="ListRendererAdapter.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
     <scopeInfo nodeId="1560298786499494315" fileName="ListRendererAdapter.java" startLine="14" startPosition="61" endLine="15" endPosition="34" />
-    <scopeInfo nodeId="1560298786499494337" fileName="ListRendererAdapter.java" startLine="18" startPosition="137" endLine="19" endPosition="102" />
+    <scopeInfo nodeId="1560298786499494337" fileName="ListRendererAdapter.java" startLine="18" startPosition="137" endLine="19" endPosition="103" />
     <scopeInfo nodeId="1560298786499494311" fileName="ListRendererAdapter.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
       <varInfo nodeId="1560298786499494313" varName="cellRenderer" />
     </scopeInfo>

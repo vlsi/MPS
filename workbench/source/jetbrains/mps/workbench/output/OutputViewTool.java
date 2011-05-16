@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.action.AbstractActionWithEmptyIcon;
@@ -105,7 +106,7 @@ public class OutputViewTool extends BaseProjectTool {
     });
 
     panel.setLayout(new BorderLayout());
-    panel.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
+    panel.add(ScrollPaneFactory.createScrollPane(myTextArea), BorderLayout.CENTER);
 
     myComponent.registerKeyboardAction(myFindAction, KeyStroke.getKeyStroke("control F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myComponent.registerKeyboardAction(myFindNextAction, KeyStroke.getKeyStroke("F3"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);

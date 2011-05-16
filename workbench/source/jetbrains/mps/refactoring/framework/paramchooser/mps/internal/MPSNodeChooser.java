@@ -17,6 +17,7 @@ package jetbrains.mps.refactoring.framework.paramchooser.mps.internal;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
@@ -71,7 +72,7 @@ public class MPSNodeChooser implements IChooser {
 
   private void initUI(Project project) {
     myTree = new ProjectTree(project);
-    myScrollPane = new JScrollPane(myTree);
+    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         myTree.rebuildNow();

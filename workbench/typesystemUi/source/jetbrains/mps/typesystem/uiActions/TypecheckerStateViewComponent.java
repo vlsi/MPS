@@ -19,6 +19,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -144,7 +145,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     innerPanel.add(gauge, innerConstraints);
 
     innerPanel.setBackground(Color.WHITE);
-    JScrollPane scrollPane = new JScrollPane(innerPanel);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(innerPanel);
     scrollPane.setBackground(Color.WHITE);
 
     gridBagConstraints.weighty = 1;

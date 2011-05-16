@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.dialogs;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -67,7 +68,7 @@ public final class ChooseNodeDialog extends BaseDialog {
     mySourceNodes = sourceNodes;
 
     myPanel.add(new JLabel("Choose Node"), BorderLayout.NORTH);
-    myPanel.add(new JScrollPane(myTree));
+    myPanel.add(ScrollPaneFactory.createScrollPane(myTree));
 
     myTree.setRootVisible(false);
     myTree.rebuildNow();

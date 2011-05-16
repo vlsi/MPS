@@ -18,6 +18,7 @@ package jetbrains.mps.ide.moduleRepositoryViewer;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.command.CommandProcessorEx;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.icons.IconManager;
@@ -37,7 +38,7 @@ import java.util.Map;
 
 public class ModuleRepositoryComponent {
   private MPSTree myTree = new MyTree();
-  private JScrollPane myComponent = new JScrollPane(myTree);
+  private JScrollPane myComponent = ScrollPaneFactory.createScrollPane(myTree);
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
   public ModuleRepositoryComponent() {

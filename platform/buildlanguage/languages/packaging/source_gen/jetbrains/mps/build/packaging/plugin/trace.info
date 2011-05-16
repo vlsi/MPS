@@ -684,108 +684,108 @@
     <unitInfo nodeId="1223050118711" fileName="CheckBoxNode.java" startLine="8" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.CheckBoxNode" />
   </root>
   <root nodeId="1223050118770">
-    <nodeInfo nodeId="1223050118781" fileName="CheckBoxTree.java" startLine="17" startPosition="62" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="1223050118784" fileName="CheckBoxTree.java" startLine="18" startPosition="29" endLine="19" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedItems" />
-    <nodeInfo nodeId="1223050118796" fileName="CheckBoxTree.java" startLine="21" startPosition="42" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1223050118799" fileName="CheckBoxTree.java" startLine="22" startPosition="30" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223050118810" fileName="CheckBoxTree.java" startLine="23" startPosition="34" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223050118818" fileName="CheckBoxTree.java" startLine="24" startPosition="61" endLine="25" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432126442" fileName="CheckBoxTree.java" startLine="27" startPosition="46" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223050118882" fileName="CheckBoxTree.java" startLine="30" startPosition="7" endLine="31" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432036925" fileName="CheckBoxTree.java" startLine="34" startPosition="43" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432036938" fileName="CheckBoxTree.java" startLine="36" startPosition="19" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432036944" fileName="CheckBoxTree.java" startLine="37" startPosition="31" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432036953" fileName="CheckBoxTree.java" startLine="39" startPosition="5" endLine="40" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432036964" fileName="CheckBoxTree.java" startLine="41" startPosition="23" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229432036968" fileName="CheckBoxTree.java" startLine="43" startPosition="5" endLine="44" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432036974" fileName="CheckBoxTree.java" startLine="44" startPosition="59" endLine="45" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432036981" fileName="CheckBoxTree.java" startLine="45" startPosition="62" endLine="46" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432036989" fileName="CheckBoxTree.java" startLine="46" startPosition="47" endLine="47" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432036998" fileName="CheckBoxTree.java" startLine="48" startPosition="20" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432037004" fileName="CheckBoxTree.java" startLine="50" startPosition="5" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432099438" fileName="CheckBoxTree.java" startLine="54" startPosition="81" endLine="55" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432099444" fileName="CheckBoxTree.java" startLine="55" startPosition="40" endLine="56" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432099452" fileName="CheckBoxTree.java" startLine="57" startPosition="42" endLine="58" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432099479" fileName="CheckBoxTree.java" startLine="62" startPosition="52" endLine="63" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229432099493" fileName="CheckBoxTree.java" startLine="66" startPosition="54" endLine="67" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432099505" fileName="CheckBoxTree.java" startLine="68" startPosition="25" endLine="69" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229432099509" fileName="CheckBoxTree.java" startLine="70" startPosition="5" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432099515" fileName="CheckBoxTree.java" startLine="71" startPosition="34" endLine="72" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432099534" fileName="CheckBoxTree.java" startLine="76" startPosition="16" endLine="77" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432099546" fileName="CheckBoxTree.java" startLine="78" startPosition="12" endLine="79" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432099555" fileName="CheckBoxTree.java" startLine="80" startPosition="5" endLine="81" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241362056610" fileName="CheckBoxTree.java" startLine="84" startPosition="36" endLine="85" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229432099544" fileName="CheckBoxTree.java" startLine="78" startPosition="10" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1229432036962" fileName="CheckBoxTree.java" startLine="40" startPosition="51" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1229432036996" fileName="CheckBoxTree.java" startLine="47" startPosition="52" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1229432099450" fileName="CheckBoxTree.java" startLine="56" startPosition="50" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1229432099503" fileName="CheckBoxTree.java" startLine="67" startPosition="66" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223050118837" fileName="CheckBoxTree.java" startLine="26" startPosition="53" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="1229432036936" fileName="CheckBoxTree.java" startLine="35" startPosition="50" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1229432099473" fileName="CheckBoxTree.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChecked#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)Z" />
-    <nodeInfo nodeId="1223050118771" fileName="CheckBoxTree.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedItems#()Ljava/util/Set;" />
-    <nodeInfo nodeId="1223050118827" fileName="CheckBoxTree.java" startLine="25" startPosition="95" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432099532" fileName="CheckBoxTree.java" startLine="75" startPosition="71" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1229432099429" fileName="CheckBoxTree.java" startLine="53" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkNodeRecursively#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;Z)V" />
-    <nodeInfo nodeId="1229432099489" fileName="CheckBoxTree.java" startLine="65" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="uncheckParents#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)V" />
-    <nodeInfo nodeId="1229432099523" fileName="CheckBoxTree.java" startLine="74" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkNode#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;Z)V" />
-    <nodeInfo nodeId="1223050118792" fileName="CheckBoxTree.java" startLine="20" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckBoxTree#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)V" />
-    <nodeInfo nodeId="1229432000907" fileName="CheckBoxTree.java" startLine="33" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseParessed#(II)V" />
-    <scopeInfo nodeId="1223050118842" fileName="CheckBoxTree.java" startLine="27" startPosition="46" endLine="28" endPosition="60" />
-    <scopeInfo nodeId="1229432036963" fileName="CheckBoxTree.java" startLine="41" startPosition="23" endLine="42" endPosition="13" />
-    <scopeInfo nodeId="1229432036997" fileName="CheckBoxTree.java" startLine="48" startPosition="20" endLine="49" endPosition="34" />
-    <scopeInfo nodeId="1229432099451" fileName="CheckBoxTree.java" startLine="57" startPosition="42" endLine="58" endPosition="85" />
-    <scopeInfo nodeId="1229432099478" fileName="CheckBoxTree.java" startLine="62" startPosition="52" endLine="63" endPosition="93" />
-    <scopeInfo nodeId="1229432099504" fileName="CheckBoxTree.java" startLine="68" startPosition="25" endLine="69" endPosition="13" />
-    <scopeInfo nodeId="1229432099533" fileName="CheckBoxTree.java" startLine="76" startPosition="16" endLine="77" endPosition="96" />
-    <scopeInfo nodeId="1229432099545" fileName="CheckBoxTree.java" startLine="78" startPosition="12" endLine="79" endPosition="99" />
-    <scopeInfo nodeId="1223050118773" fileName="CheckBoxTree.java" startLine="84" startPosition="36" endLine="85" endPosition="81" />
-    <scopeInfo nodeId="1229432036937" fileName="CheckBoxTree.java" startLine="36" startPosition="19" endLine="38" endPosition="28" />
-    <scopeInfo nodeId="1229432099450" fileName="CheckBoxTree.java" startLine="56" startPosition="50" endLine="59" endPosition="5">
+    <nodeInfo nodeId="1223050118781" fileName="CheckBoxTree.java" startLine="18" startPosition="62" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="1223050118784" fileName="CheckBoxTree.java" startLine="19" startPosition="29" endLine="20" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedItems" />
+    <nodeInfo nodeId="1223050118796" fileName="CheckBoxTree.java" startLine="22" startPosition="42" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1223050118799" fileName="CheckBoxTree.java" startLine="23" startPosition="30" endLine="24" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223050118810" fileName="CheckBoxTree.java" startLine="24" startPosition="33" endLine="25" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223050118818" fileName="CheckBoxTree.java" startLine="25" startPosition="61" endLine="26" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432126442" fileName="CheckBoxTree.java" startLine="28" startPosition="46" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223050118882" fileName="CheckBoxTree.java" startLine="31" startPosition="7" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432036925" fileName="CheckBoxTree.java" startLine="35" startPosition="43" endLine="36" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432036938" fileName="CheckBoxTree.java" startLine="37" startPosition="19" endLine="38" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432036944" fileName="CheckBoxTree.java" startLine="38" startPosition="31" endLine="39" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432036953" fileName="CheckBoxTree.java" startLine="40" startPosition="5" endLine="41" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432036964" fileName="CheckBoxTree.java" startLine="42" startPosition="23" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229432036968" fileName="CheckBoxTree.java" startLine="44" startPosition="5" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432036974" fileName="CheckBoxTree.java" startLine="45" startPosition="59" endLine="46" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432036981" fileName="CheckBoxTree.java" startLine="46" startPosition="62" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432036989" fileName="CheckBoxTree.java" startLine="47" startPosition="47" endLine="48" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432036998" fileName="CheckBoxTree.java" startLine="49" startPosition="20" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432037004" fileName="CheckBoxTree.java" startLine="51" startPosition="5" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432099438" fileName="CheckBoxTree.java" startLine="55" startPosition="81" endLine="56" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432099444" fileName="CheckBoxTree.java" startLine="56" startPosition="40" endLine="57" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432099452" fileName="CheckBoxTree.java" startLine="58" startPosition="42" endLine="59" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432099479" fileName="CheckBoxTree.java" startLine="63" startPosition="52" endLine="64" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229432099493" fileName="CheckBoxTree.java" startLine="67" startPosition="54" endLine="68" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432099505" fileName="CheckBoxTree.java" startLine="69" startPosition="25" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229432099509" fileName="CheckBoxTree.java" startLine="71" startPosition="5" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432099515" fileName="CheckBoxTree.java" startLine="72" startPosition="34" endLine="73" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432099534" fileName="CheckBoxTree.java" startLine="77" startPosition="16" endLine="78" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432099546" fileName="CheckBoxTree.java" startLine="79" startPosition="12" endLine="80" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432099555" fileName="CheckBoxTree.java" startLine="81" startPosition="5" endLine="82" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241362056610" fileName="CheckBoxTree.java" startLine="85" startPosition="36" endLine="86" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229432099544" fileName="CheckBoxTree.java" startLine="79" startPosition="10" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1229432036962" fileName="CheckBoxTree.java" startLine="41" startPosition="51" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1229432036996" fileName="CheckBoxTree.java" startLine="48" startPosition="52" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1229432099450" fileName="CheckBoxTree.java" startLine="57" startPosition="50" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1229432099503" fileName="CheckBoxTree.java" startLine="68" startPosition="66" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1223050118837" fileName="CheckBoxTree.java" startLine="27" startPosition="53" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="1229432036936" fileName="CheckBoxTree.java" startLine="36" startPosition="50" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1229432099473" fileName="CheckBoxTree.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChecked#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)Z" />
+    <nodeInfo nodeId="1223050118771" fileName="CheckBoxTree.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedItems#()Ljava/util/Set;" />
+    <nodeInfo nodeId="1223050118827" fileName="CheckBoxTree.java" startLine="26" startPosition="95" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432099532" fileName="CheckBoxTree.java" startLine="76" startPosition="71" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1229432099429" fileName="CheckBoxTree.java" startLine="54" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkNodeRecursively#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;Z)V" />
+    <nodeInfo nodeId="1229432099489" fileName="CheckBoxTree.java" startLine="66" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="uncheckParents#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)V" />
+    <nodeInfo nodeId="1229432099523" fileName="CheckBoxTree.java" startLine="75" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkNode#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;Z)V" />
+    <nodeInfo nodeId="1223050118792" fileName="CheckBoxTree.java" startLine="21" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckBoxTree#(Ljetbrains/mps/build/packaging/plugin/CheckBoxNode;)V" />
+    <nodeInfo nodeId="1229432000907" fileName="CheckBoxTree.java" startLine="34" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseParessed#(II)V" />
+    <scopeInfo nodeId="1223050118842" fileName="CheckBoxTree.java" startLine="28" startPosition="46" endLine="29" endPosition="60" />
+    <scopeInfo nodeId="1229432036963" fileName="CheckBoxTree.java" startLine="42" startPosition="23" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="1229432036997" fileName="CheckBoxTree.java" startLine="49" startPosition="20" endLine="50" endPosition="34" />
+    <scopeInfo nodeId="1229432099451" fileName="CheckBoxTree.java" startLine="58" startPosition="42" endLine="59" endPosition="85" />
+    <scopeInfo nodeId="1229432099478" fileName="CheckBoxTree.java" startLine="63" startPosition="52" endLine="64" endPosition="93" />
+    <scopeInfo nodeId="1229432099504" fileName="CheckBoxTree.java" startLine="69" startPosition="25" endLine="70" endPosition="13" />
+    <scopeInfo nodeId="1229432099533" fileName="CheckBoxTree.java" startLine="77" startPosition="16" endLine="78" endPosition="96" />
+    <scopeInfo nodeId="1229432099545" fileName="CheckBoxTree.java" startLine="79" startPosition="12" endLine="80" endPosition="99" />
+    <scopeInfo nodeId="1223050118773" fileName="CheckBoxTree.java" startLine="85" startPosition="36" endLine="86" endPosition="81" />
+    <scopeInfo nodeId="1229432036937" fileName="CheckBoxTree.java" startLine="37" startPosition="19" endLine="39" endPosition="28" />
+    <scopeInfo nodeId="1229432099450" fileName="CheckBoxTree.java" startLine="57" startPosition="50" endLine="60" endPosition="5">
       <varInfo nodeId="1229432099464" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050118837" fileName="CheckBoxTree.java" startLine="26" startPosition="53" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1223050118837" fileName="CheckBoxTree.java" startLine="27" startPosition="53" endLine="31" endPosition="0">
       <varInfo nodeId="1223050118838" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1229432099473" fileName="CheckBoxTree.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="1229432099473" fileName="CheckBoxTree.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1229432099474" varName="cbNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050118771" fileName="CheckBoxTree.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1229432099437" fileName="CheckBoxTree.java" startLine="54" startPosition="81" endLine="59" endPosition="5">
+    <scopeInfo nodeId="1223050118771" fileName="CheckBoxTree.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1229432099437" fileName="CheckBoxTree.java" startLine="55" startPosition="81" endLine="60" endPosition="5">
       <varInfo nodeId="1229432099445" varName="childCount" />
     </scopeInfo>
-    <scopeInfo nodeId="1229432099492" fileName="CheckBoxTree.java" startLine="66" startPosition="54" endLine="72" endPosition="32">
+    <scopeInfo nodeId="1229432099492" fileName="CheckBoxTree.java" startLine="67" startPosition="54" endLine="73" endPosition="32">
       <varInfo nodeId="1229432099494" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1229432099531" fileName="CheckBoxTree.java" startLine="75" startPosition="71" endLine="81" endPosition="35" />
-    <scopeInfo nodeId="1229432099429" fileName="CheckBoxTree.java" startLine="53" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1229432099531" fileName="CheckBoxTree.java" startLine="76" startPosition="71" endLine="82" endPosition="35" />
+    <scopeInfo nodeId="1229432099429" fileName="CheckBoxTree.java" startLine="54" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1229432099433" varName="check" />
       <varInfo nodeId="1229432099430" varName="checkBoxNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1229432099489" fileName="CheckBoxTree.java" startLine="65" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1229432099489" fileName="CheckBoxTree.java" startLine="66" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="1229432099520" varName="cbNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1229432099523" fileName="CheckBoxTree.java" startLine="74" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="1229432099523" fileName="CheckBoxTree.java" startLine="75" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1229432099529" varName="check" />
       <varInfo nodeId="1229432099526" varName="checkBoxNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050118795" fileName="CheckBoxTree.java" startLine="21" startPosition="42" endLine="31" endPosition="64" />
-    <scopeInfo nodeId="1223050118792" fileName="CheckBoxTree.java" startLine="20" startPosition="0" endLine="32" endPosition="3">
+    <scopeInfo nodeId="1223050118795" fileName="CheckBoxTree.java" startLine="22" startPosition="42" endLine="32" endPosition="78" />
+    <scopeInfo nodeId="1223050118792" fileName="CheckBoxTree.java" startLine="21" startPosition="0" endLine="33" endPosition="3">
       <varInfo nodeId="1223655530052" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1229432000910" fileName="CheckBoxTree.java" startLine="34" startPosition="43" endLine="51" endPosition="19">
+    <scopeInfo nodeId="1229432000910" fileName="CheckBoxTree.java" startLine="35" startPosition="43" endLine="52" endPosition="19">
       <varInfo nodeId="1229432036982" varName="isChecked" />
       <varInfo nodeId="1229432036954" varName="path" />
       <varInfo nodeId="1229432036975" varName="cbNode" />
       <varInfo nodeId="1229432036926" varName="row" />
       <varInfo nodeId="1229432036969" varName="lastPathComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1229432000907" fileName="CheckBoxTree.java" startLine="33" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1229432000907" fileName="CheckBoxTree.java" startLine="34" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1229432020279" varName="y" />
       <varInfo nodeId="1229432017523" varName="x" />
     </scopeInfo>
-    <unitInfo nodeId="1223050118835" fileName="CheckBoxTree.java" startLine="26" startPosition="37" endLine="30" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.CheckBoxTree$1" />
-    <unitInfo nodeId="1223050118770" fileName="CheckBoxTree.java" startLine="17" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.CheckBoxTree" />
+    <unitInfo nodeId="1223050118835" fileName="CheckBoxTree.java" startLine="27" startPosition="37" endLine="31" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.CheckBoxTree$1" />
+    <unitInfo nodeId="1223050118770" fileName="CheckBoxTree.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.CheckBoxTree" />
   </root>
   <root nodeId="1223050118897">
     <nodeInfo nodeId="1223050118898" fileName="NodeData.java" startLine="8" startPosition="27" endLine="9" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />

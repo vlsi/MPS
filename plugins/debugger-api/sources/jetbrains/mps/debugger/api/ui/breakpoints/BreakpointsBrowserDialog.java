@@ -3,6 +3,7 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.BreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.*;
@@ -52,7 +53,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
     myMainPanel = new JPanel(new BorderLayout());
 
-    myBreakpointsScrollPane = new JScrollPane(myViews[myCurrentViewIndex].getMainComponent());
+    myBreakpointsScrollPane = ScrollPaneFactory.createScrollPane(myViews[myCurrentViewIndex].getMainComponent());
     myBreakpointsScrollPane.getViewport().setBackground(UIManager.getColor("Table.background"));
     myMainPanel.add(myBreakpointsScrollPane, BorderLayout.CENTER);
 

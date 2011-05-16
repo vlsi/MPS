@@ -21,9 +21,11 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
-import com.intellij.ui.components.JBScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.JTable;
+import com.intellij.ui.table.JBTable;
 import java.awt.GridLayout;
+import com.intellij.ui.components.JBScrollPane;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.icons.IconManager;
@@ -95,14 +97,14 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
   private JComponent createTreeComponent(JComponent toolbar, JComponent tree) {
     UnitTestViewComponent.MyTreePanel treePanel = new UnitTestViewComponent.MyTreePanel(new BorderLayout());
-    JScrollPane scrollPane = new JBScrollPane(tree);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(tree);
     treePanel.add(scrollPane, BorderLayout.CENTER);
     treePanel.add(toolbar, BorderLayout.NORTH);
     return treePanel;
   }
 
   private JComponent createStatisticsComponent(StatisticsTableModel testStatisticsModel) {
-    JTable statisticsTable = new JTable(testStatisticsModel);
+    JTable statisticsTable = new JBTable(testStatisticsModel);
     statisticsTable.setDefaultRenderer(TestStatisticsRow.class, new StatisticsRowRenderer());
     JPanel tablePanel = new JPanel(new GridLayout(1, 1));
     tablePanel.add(new JBScrollPane(statisticsTable));

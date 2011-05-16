@@ -6,7 +6,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.ListCellRenderer;
 import java.awt.Component;
 import javax.swing.JTable;
-import javax.swing.JList;
+import com.intellij.ui.components.JBList;
 
 public class ListRendererAdapter implements TableCellRenderer {
   private ListCellRenderer myCellRenderer;
@@ -16,6 +16,6 @@ public class ListRendererAdapter implements TableCellRenderer {
   }
 
   public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-    return myCellRenderer.getListCellRendererComponent(new JList(), value, row, isSelected, hasFocus);
+    return myCellRenderer.getListCellRendererComponent(new JBList(), value, row, isSelected, hasFocus);
   }
 }

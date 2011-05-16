@@ -18,6 +18,7 @@ import java.awt.BorderLayout;
 import javax.swing.JComponent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import java.util.Arrays;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -125,7 +126,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     if (actionsComponent != null) {
       add(actionsComponent, BorderLayout.WEST);
     }
-    JScrollPane comp = new JScrollPane(component);
+    JScrollPane comp = ScrollPaneFactory.createScrollPane(component);
     comp.doLayout();
     add(comp, BorderLayout.CENTER);
     myValidator.run();

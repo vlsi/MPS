@@ -150,12 +150,13 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.actions.SmartActions_Generated" file="SmartActions_Generated.java">
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNodeEx" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

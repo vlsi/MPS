@@ -153,10 +153,10 @@
   <unitInfo fileName="QueriesGenerated.java" startLine="4152" startPosition="0" endLine="4202" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.QueriesGenerated$QuotationClass_x583g4_a0a0e0a0a0a0a0c0a0b0xd" />
   <unitInfo fileName="QueriesGenerated.java" startLine="4079" startPosition="0" endLine="4133" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.QueriesGenerated$QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0md" />
   <unitInfo fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1" />
-  <unitInfo fileName="SmartActions_Generated.java" startLine="33" startPosition="15" endLine="119" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated$1" />
+  <unitInfo fileName="SmartActions_Generated.java" startLine="34" startPosition="15" endLine="120" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="2553" startPosition="34" endLine="2644" endPosition="7" unitName="jetbrains.mps.baseLanguage.actions.QueriesGenerated$80" />
   <unitInfo fileName="PasteWrappers.java" startLine="14" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.PasteWrappers" />
-  <unitInfo fileName="SmartActions_Generated.java" startLine="28" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated" />
+  <unitInfo fileName="SmartActions_Generated.java" startLine="29" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="75" startPosition="0" endLine="4345" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.QueriesGenerated" />
   <root nodeId="1138168268784">
     <nodeInfo nodeId="710337334809133688" fileName="QueriesGenerated.java" startLine="148" startPosition="205" endLine="149" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1638,114 +1638,114 @@
     <scopeInfo nodeId="1233161141554" fileName="QueriesGenerated.java" startLine="3347" startPosition="51" endLine="3349" endPosition="69" />
   </root>
   <root nodeId="1235058518070">
-    <nodeInfo nodeId="1235065038704" fileName="SmartActions_Generated.java" startLine="34" startPosition="58" endLine="35" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235665733262" fileName="SmartActions_Generated.java" startLine="36" startPosition="81" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235065149007" fileName="SmartActions_Generated.java" startLine="39" startPosition="88" endLine="40" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235065168204" fileName="SmartActions_Generated.java" startLine="40" startPosition="146" endLine="41" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235758207865" fileName="SmartActions_Generated.java" startLine="41" startPosition="125" endLine="42" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235065323999" fileName="SmartActions_Generated.java" startLine="42" startPosition="138" endLine="43" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235065444315" fileName="SmartActions_Generated.java" startLine="43" startPosition="115" endLine="44" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235065539640" fileName="SmartActions_Generated.java" startLine="44" startPosition="187" endLine="45" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235065681090" fileName="SmartActions_Generated.java" startLine="45" startPosition="152" endLine="46" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235065721404" fileName="SmartActions_Generated.java" startLine="46" startPosition="126" endLine="47" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235065729305" fileName="SmartActions_Generated.java" startLine="47" startPosition="154" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235665041836" fileName="SmartActions_Generated.java" startLine="53" startPosition="9" endLine="54" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235760608794" fileName="SmartActions_Generated.java" startLine="58" startPosition="49" endLine="59" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235760608803" fileName="SmartActions_Generated.java" startLine="60" startPosition="141" endLine="61" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235760608810" fileName="SmartActions_Generated.java" startLine="61" startPosition="158" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235760608820" fileName="SmartActions_Generated.java" startLine="63" startPosition="19" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235760608822" fileName="SmartActions_Generated.java" startLine="66" startPosition="16" endLine="67" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235760608844" fileName="SmartActions_Generated.java" startLine="70" startPosition="64" endLine="71" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235760608853" fileName="SmartActions_Generated.java" startLine="74" startPosition="17" endLine="75" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235760608857" fileName="SmartActions_Generated.java" startLine="75" startPosition="32" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235760608863" fileName="SmartActions_Generated.java" startLine="76" startPosition="61" endLine="77" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235760608869" fileName="SmartActions_Generated.java" startLine="77" startPosition="49" endLine="78" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235760608875" fileName="SmartActions_Generated.java" startLine="80" startPosition="0" endLine="81" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="1235760608722" fileName="SmartActions_Generated.java" startLine="83" startPosition="45" endLine="84" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235760608733" fileName="SmartActions_Generated.java" startLine="85" startPosition="34" endLine="86" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235760608741" fileName="SmartActions_Generated.java" startLine="87" startPosition="45" endLine="88" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235760608751" fileName="SmartActions_Generated.java" startLine="89" startPosition="54" endLine="90" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235760608762" fileName="SmartActions_Generated.java" startLine="91" startPosition="119" endLine="92" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235665071508" fileName="SmartActions_Generated.java" startLine="98" startPosition="12" endLine="99" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235061684357" fileName="SmartActions_Generated.java" startLine="104" startPosition="9" endLine="105" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235061698364" fileName="SmartActions_Generated.java" startLine="106" startPosition="30" endLine="107" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235061768466" fileName="SmartActions_Generated.java" startLine="108" startPosition="11" endLine="109" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235663540668" fileName="SmartActions_Generated.java" startLine="109" startPosition="129" endLine="110" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235664145693" fileName="SmartActions_Generated.java" startLine="110" startPosition="70" endLine="111" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235061772303" fileName="SmartActions_Generated.java" startLine="111" startPosition="87" endLine="112" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235665726418" fileName="SmartActions_Generated.java" startLine="35" startPosition="155" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235760608842" fileName="SmartActions_Generated.java" startLine="69" startPosition="56" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235760608760" fileName="SmartActions_Generated.java" startLine="90" startPosition="68" endLine="93" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235061687411" fileName="SmartActions_Generated.java" startLine="105" startPosition="48" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235760608801" fileName="SmartActions_Generated.java" startLine="59" startPosition="199" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1235760608836" fileName="SmartActions_Generated.java" startLine="68" startPosition="52" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
-    <nodeInfo nodeId="1235760608749" fileName="SmartActions_Generated.java" startLine="88" startPosition="79" endLine="94" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235760608828" fileName="SmartActions_Generated.java" startLine="67" startPosition="33" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235760608790" fileName="SmartActions_Generated.java" startLine="57" startPosition="44" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
-    <nodeInfo nodeId="1235760608739" fileName="SmartActions_Generated.java" startLine="86" startPosition="84" endLine="95" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1235760608783" fileName="SmartActions_Generated.java" startLine="56" startPosition="13" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235064864289" fileName="SmartActions_Generated.java" startLine="38" startPosition="9" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1235760608731" fileName="SmartActions_Generated.java" startLine="84" startPosition="65" endLine="96" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235760608718" fileName="SmartActions_Generated.java" startLine="82" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillActionContext#()V" />
-    <nodeInfo nodeId="1235760604301" fileName="SmartActions_Generated.java" startLine="54" startPosition="72" endLine="98" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1235665726419" fileName="SmartActions_Generated.java" startLine="36" startPosition="81" endLine="37" endPosition="17" />
-    <scopeInfo nodeId="1235760608843" fileName="SmartActions_Generated.java" startLine="70" startPosition="64" endLine="71" endPosition="35" />
-    <scopeInfo nodeId="1235760608761" fileName="SmartActions_Generated.java" startLine="91" startPosition="119" endLine="92" endPosition="201" />
-    <scopeInfo nodeId="1235061687412" fileName="SmartActions_Generated.java" startLine="106" startPosition="30" endLine="107" endPosition="25" />
-    <scopeInfo nodeId="1235760608802" fileName="SmartActions_Generated.java" startLine="60" startPosition="141" endLine="62" endPosition="39">
+    <nodeInfo nodeId="1235065038704" fileName="SmartActions_Generated.java" startLine="35" startPosition="58" endLine="36" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235665733262" fileName="SmartActions_Generated.java" startLine="37" startPosition="81" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235065149007" fileName="SmartActions_Generated.java" startLine="40" startPosition="88" endLine="41" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235065168204" fileName="SmartActions_Generated.java" startLine="41" startPosition="146" endLine="42" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235758207865" fileName="SmartActions_Generated.java" startLine="42" startPosition="125" endLine="43" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235065323999" fileName="SmartActions_Generated.java" startLine="43" startPosition="138" endLine="44" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235065444315" fileName="SmartActions_Generated.java" startLine="44" startPosition="115" endLine="45" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235065539640" fileName="SmartActions_Generated.java" startLine="45" startPosition="187" endLine="46" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235065681090" fileName="SmartActions_Generated.java" startLine="46" startPosition="152" endLine="47" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235065721404" fileName="SmartActions_Generated.java" startLine="47" startPosition="126" endLine="48" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235065729305" fileName="SmartActions_Generated.java" startLine="48" startPosition="154" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235665041836" fileName="SmartActions_Generated.java" startLine="54" startPosition="9" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235760608794" fileName="SmartActions_Generated.java" startLine="59" startPosition="49" endLine="60" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235760608803" fileName="SmartActions_Generated.java" startLine="61" startPosition="141" endLine="62" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235760608810" fileName="SmartActions_Generated.java" startLine="62" startPosition="158" endLine="63" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235760608820" fileName="SmartActions_Generated.java" startLine="64" startPosition="19" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235760608822" fileName="SmartActions_Generated.java" startLine="67" startPosition="16" endLine="68" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235760608844" fileName="SmartActions_Generated.java" startLine="71" startPosition="64" endLine="72" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235760608853" fileName="SmartActions_Generated.java" startLine="75" startPosition="17" endLine="76" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235760608857" fileName="SmartActions_Generated.java" startLine="76" startPosition="32" endLine="77" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235760608863" fileName="SmartActions_Generated.java" startLine="77" startPosition="80" endLine="78" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235760608869" fileName="SmartActions_Generated.java" startLine="78" startPosition="49" endLine="79" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235760608875" fileName="SmartActions_Generated.java" startLine="81" startPosition="0" endLine="82" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="1235760608722" fileName="SmartActions_Generated.java" startLine="84" startPosition="45" endLine="85" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235760608733" fileName="SmartActions_Generated.java" startLine="86" startPosition="34" endLine="87" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235760608741" fileName="SmartActions_Generated.java" startLine="88" startPosition="45" endLine="89" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235760608751" fileName="SmartActions_Generated.java" startLine="90" startPosition="54" endLine="91" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235760608762" fileName="SmartActions_Generated.java" startLine="92" startPosition="119" endLine="93" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235665071508" fileName="SmartActions_Generated.java" startLine="99" startPosition="12" endLine="100" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235061684357" fileName="SmartActions_Generated.java" startLine="105" startPosition="9" endLine="106" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235061698364" fileName="SmartActions_Generated.java" startLine="107" startPosition="30" endLine="108" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235061768466" fileName="SmartActions_Generated.java" startLine="109" startPosition="11" endLine="110" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235663540668" fileName="SmartActions_Generated.java" startLine="110" startPosition="129" endLine="111" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235664145693" fileName="SmartActions_Generated.java" startLine="111" startPosition="70" endLine="112" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235061772303" fileName="SmartActions_Generated.java" startLine="112" startPosition="87" endLine="113" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235665726418" fileName="SmartActions_Generated.java" startLine="36" startPosition="155" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235760608842" fileName="SmartActions_Generated.java" startLine="70" startPosition="56" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235760608760" fileName="SmartActions_Generated.java" startLine="91" startPosition="68" endLine="94" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235061687411" fileName="SmartActions_Generated.java" startLine="106" startPosition="48" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235760608801" fileName="SmartActions_Generated.java" startLine="60" startPosition="199" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1235760608836" fileName="SmartActions_Generated.java" startLine="69" startPosition="52" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
+    <nodeInfo nodeId="1235760608749" fileName="SmartActions_Generated.java" startLine="89" startPosition="79" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235760608828" fileName="SmartActions_Generated.java" startLine="68" startPosition="33" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235760608790" fileName="SmartActions_Generated.java" startLine="58" startPosition="44" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="1235760608739" fileName="SmartActions_Generated.java" startLine="87" startPosition="84" endLine="96" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1235760608783" fileName="SmartActions_Generated.java" startLine="57" startPosition="13" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235064864289" fileName="SmartActions_Generated.java" startLine="39" startPosition="9" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1235760608731" fileName="SmartActions_Generated.java" startLine="85" startPosition="65" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235760608718" fileName="SmartActions_Generated.java" startLine="83" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillActionContext#()V" />
+    <nodeInfo nodeId="1235760604301" fileName="SmartActions_Generated.java" startLine="55" startPosition="72" endLine="99" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1235665726419" fileName="SmartActions_Generated.java" startLine="37" startPosition="81" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="1235760608843" fileName="SmartActions_Generated.java" startLine="71" startPosition="64" endLine="72" endPosition="35" />
+    <scopeInfo nodeId="1235760608761" fileName="SmartActions_Generated.java" startLine="92" startPosition="119" endLine="93" endPosition="201" />
+    <scopeInfo nodeId="1235061687412" fileName="SmartActions_Generated.java" startLine="107" startPosition="30" endLine="108" endPosition="25" />
+    <scopeInfo nodeId="1235760608802" fileName="SmartActions_Generated.java" startLine="61" startPosition="141" endLine="63" endPosition="39">
       <varInfo nodeId="1235760608804" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608841" fileName="SmartActions_Generated.java" startLine="69" startPosition="56" endLine="72" endPosition="19" />
-    <scopeInfo nodeId="1235760608801" fileName="SmartActions_Generated.java" startLine="59" startPosition="199" endLine="63" endPosition="19">
+    <scopeInfo nodeId="1235760608841" fileName="SmartActions_Generated.java" startLine="70" startPosition="56" endLine="73" endPosition="19" />
+    <scopeInfo nodeId="1235760608801" fileName="SmartActions_Generated.java" startLine="60" startPosition="199" endLine="64" endPosition="19">
       <varInfo nodeId="1235760608818" varName="field" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608750" fileName="SmartActions_Generated.java" startLine="89" startPosition="54" endLine="93" endPosition="21">
+    <scopeInfo nodeId="1235760608750" fileName="SmartActions_Generated.java" startLine="90" startPosition="54" endLine="94" endPosition="21">
       <varInfo nodeId="1235760608752" varName="snode" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608793" fileName="SmartActions_Generated.java" startLine="58" startPosition="49" endLine="64" endPosition="30">
+    <scopeInfo nodeId="1235760608793" fileName="SmartActions_Generated.java" startLine="59" startPosition="49" endLine="65" endPosition="30">
       <varInfo nodeId="1235760608795" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608836" fileName="SmartActions_Generated.java" startLine="68" startPosition="52" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1235760608836" fileName="SmartActions_Generated.java" startLine="69" startPosition="52" endLine="75" endPosition="0">
       <varInfo nodeId="1235760608839" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608740" fileName="SmartActions_Generated.java" startLine="87" startPosition="45" endLine="94" endPosition="19">
+    <scopeInfo nodeId="1235760608740" fileName="SmartActions_Generated.java" startLine="88" startPosition="45" endLine="95" endPosition="19">
       <varInfo nodeId="1235760608742" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235061651813" fileName="SmartActions_Generated.java" startLine="104" startPosition="9" endLine="112" endPosition="36">
+    <scopeInfo nodeId="1235061651813" fileName="SmartActions_Generated.java" startLine="105" startPosition="9" endLine="113" endPosition="36">
       <varInfo nodeId="1235061684358" varName="sNode" />
       <varInfo nodeId="1235061768467" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1235064864293" fileName="SmartActions_Generated.java" startLine="39" startPosition="88" endLine="48" endPosition="80">
+    <scopeInfo nodeId="1235064864293" fileName="SmartActions_Generated.java" startLine="40" startPosition="88" endLine="49" endPosition="80">
       <varInfo nodeId="1235065149008" varName="getter" />
       <varInfo nodeId="1235065539641" varName="dotExpression" />
       <varInfo nodeId="1235065444316" varName="returnStatement" />
       <varInfo nodeId="1235065721405" varName="fieldRef" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608790" fileName="SmartActions_Generated.java" startLine="57" startPosition="44" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1235760608739" fileName="SmartActions_Generated.java" startLine="86" startPosition="84" endLine="95" endPosition="17">
+    <scopeInfo nodeId="1235760608790" fileName="SmartActions_Generated.java" startLine="58" startPosition="44" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1235760608739" fileName="SmartActions_Generated.java" startLine="87" startPosition="84" endLine="96" endPosition="17">
       <varInfo nodeId="1235760608776" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608732" fileName="SmartActions_Generated.java" startLine="85" startPosition="34" endLine="95" endPosition="17" />
-    <scopeInfo nodeId="1235064864289" fileName="SmartActions_Generated.java" startLine="38" startPosition="9" endLine="49" endPosition="9">
+    <scopeInfo nodeId="1235760608732" fileName="SmartActions_Generated.java" startLine="86" startPosition="34" endLine="96" endPosition="17" />
+    <scopeInfo nodeId="1235064864289" fileName="SmartActions_Generated.java" startLine="39" startPosition="9" endLine="50" endPosition="9">
       <varInfo nodeId="1235064864291" varName="field" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608721" fileName="SmartActions_Generated.java" startLine="83" startPosition="45" endLine="96" endPosition="15">
+    <scopeInfo nodeId="1235760608721" fileName="SmartActions_Generated.java" startLine="84" startPosition="45" endLine="97" endPosition="15">
       <varInfo nodeId="1235760608723" varName="paths" />
     </scopeInfo>
-    <scopeInfo nodeId="1235061542494" fileName="SmartActions_Generated.java" startLine="34" startPosition="58" endLine="49" endPosition="9">
+    <scopeInfo nodeId="1235061542494" fileName="SmartActions_Generated.java" startLine="35" startPosition="58" endLine="50" endPosition="9">
       <varInfo nodeId="1235065038705" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1235760608718" fileName="SmartActions_Generated.java" startLine="82" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="1235760608782" fileName="SmartActions_Generated.java" startLine="56" startPosition="13" endLine="78" endPosition="56">
+    <scopeInfo nodeId="1235760608718" fileName="SmartActions_Generated.java" startLine="83" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1235760608782" fileName="SmartActions_Generated.java" startLine="57" startPosition="13" endLine="79" endPosition="56">
       <varInfo nodeId="1235760608784" varName="tree" />
       <varInfo nodeId="1235760608858" varName="scrollPane" />
     </scopeInfo>
-    <scopeInfo nodeId="1235665034664" fileName="SmartActions_Generated.java" startLine="53" startPosition="9" endLine="99" endPosition="27">
+    <scopeInfo nodeId="1235665034664" fileName="SmartActions_Generated.java" startLine="54" startPosition="9" endLine="100" endPosition="27">
       <varInfo nodeId="1235665041837" varName="result" />
     </scopeInfo>
-    <unitInfo nodeId="1235760608834" fileName="SmartActions_Generated.java" startLine="68" startPosition="38" endLine="74" endPosition="15" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated$3" />
-    <unitInfo nodeId="1235760608788" fileName="SmartActions_Generated.java" startLine="57" startPosition="33" endLine="66" endPosition="15" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated$3" />
-    <unitInfo nodeId="1235760608716" fileName="SmartActions_Generated.java" startLine="55" startPosition="26" endLine="98" endPosition="11" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated$2" />
+    <unitInfo nodeId="1235760608834" fileName="SmartActions_Generated.java" startLine="69" startPosition="38" endLine="75" endPosition="15" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated$3" />
+    <unitInfo nodeId="1235760608788" fileName="SmartActions_Generated.java" startLine="58" startPosition="33" endLine="67" endPosition="15" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated$3" />
+    <unitInfo nodeId="1235760608716" fileName="SmartActions_Generated.java" startLine="56" startPosition="26" endLine="99" endPosition="11" unitName="jetbrains.mps.baseLanguage.actions.SmartActions_Generated$2" />
   </root>
   <root nodeId="1235477674657">
     <nodeInfo nodeId="8641802129807575549" fileName="QueriesGenerated.java" startLine="318" startPosition="196" endLine="319" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

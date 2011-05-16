@@ -55,12 +55,14 @@
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog" file="TestConfigurationDialog.java">
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration" />
+    <classNode dependClassName="org.jdesktop.swingbinding.SwingBindings" />
     <classNode dependClassName="javax.swing.border.CompoundBorder" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="javax.swing.BoxLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -72,7 +74,7 @@
     <classNode dependClassName="javax.swing.DefaultListCellRenderer" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="javax.swing.border.Border" />
-    <classNode dependClassName="org.jdesktop.swingbinding.SwingBindings" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode dependClassName="javax.swing.BorderFactory" />
     <classNode dependClassName="java.lang.Object" />
@@ -89,7 +91,7 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="org.jdesktop.observablecollections.ObservableCollections" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="javax.swing.JButton" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -111,13 +113,13 @@
     <classNode dependClassName="org.jdesktop.beansbinding.Property" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="javax.swing.ButtonGroup" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="javax.swing.JButton" />
+    <classNode dependClassName="com.intellij.ui.components.JBList" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.properties.project.BasePanel" />
     <classNode extendsClassName="javax.swing.JPanel" />

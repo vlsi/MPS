@@ -22,6 +22,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
@@ -41,7 +42,7 @@ public class BookmarksDialog extends BaseDialog {
     setTitle("Editor Bookmarks");
 
     myMainComponent.setLayout(new GridBagLayout());
-    JScrollPane scrollPane = new JScrollPane(myTree);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTree);
     JPanel rightPanel = new JPanel(new GridBagLayout());
     GridBagConstraints constraints = new GridBagConstraints();
     constraints.weightx = 1;

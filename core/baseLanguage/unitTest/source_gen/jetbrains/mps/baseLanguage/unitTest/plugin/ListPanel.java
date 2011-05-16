@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import com.intellij.openapi.project.Project;
 import java.awt.BorderLayout;
+import com.intellij.ui.components.JBList;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -25,6 +26,7 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.JLabel;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -71,7 +73,7 @@ public class ListPanel extends JPanel {
     this.setLayout(new BorderLayout());
     this.myValues = nodes;
     this.myListModel = new ListPanel.MyAbstractListModel();
-    this.myListComponent = new JList(this.myListModel);
+    this.myListComponent = new JBList(this.myListModel);
     AnAction add = new ListAddAction(this.myListComponent) {
       protected int doAdd(AnActionEvent p0) {
         List<SNode> nodesList = getCandidates();
@@ -127,7 +129,7 @@ public class ListPanel extends JPanel {
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     this.add(toolbar.getComponent(), BorderLayout.WEST);
 
-    JScrollPane comp = new JScrollPane(this.myListComponent);
+    JScrollPane comp = ScrollPaneFactory.createScrollPane(myListComponent);
     comp.doLayout();
     this.add(comp, BorderLayout.CENTER);
 

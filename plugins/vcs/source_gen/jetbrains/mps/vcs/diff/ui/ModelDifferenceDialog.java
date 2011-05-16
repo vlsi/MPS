@@ -25,7 +25,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.JComponent;
@@ -68,7 +68,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
-    myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
+    myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
   }
 
   private void fillRootToChange() {

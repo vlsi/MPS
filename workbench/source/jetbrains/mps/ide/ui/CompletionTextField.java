@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.ide.ui;
 
+import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.components.JBList;
+
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
@@ -236,8 +239,8 @@ public abstract class CompletionTextField extends JTextField {
       myWindow.setFocusableWindowState(false);
 
       myWindow.setLayout(new BorderLayout());
-      myList = new JList();
-      myScroller = new JScrollPane(myList);
+      myList = new JBList();
+      myScroller = ScrollPaneFactory.createScrollPane(myList);
 
       myList.addMouseListener(new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {

@@ -17,6 +17,7 @@ package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -39,7 +40,7 @@ public abstract class GenerationTracerView {
     myRootTracerNode = tracerNode;
     myPanel = new JPanel(new BorderLayout());
     myTree = new GenerationTracerTree(tracerNode, project);
-    myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
+    myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
     myPanel.add(createActionsToolbar(), BorderLayout.WEST);
 
     myTree.rebuildLater();

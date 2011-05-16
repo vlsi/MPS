@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JTable;
+import com.intellij.ui.table.JBTable;
 import javax.swing.JButton;
 import javax.swing.ListSelectionModel;
 import java.awt.Dimension;
@@ -40,7 +41,7 @@ import java.awt.event.ActionEvent;
   private void initPanel() {
     this.setLayout(new GridBagLayout());
 
-    final JTable parametersTable = new JTable(this.myTableModel);
+    final JTable parametersTable = new JBTable(this.myTableModel);
 
     JPanel buttonsPanel = new JPanel(new GridBagLayout());
     final JButton upButton = this.createParametersRowMoveButton(parametersTable, "Move up", -1, 0, buttonsPanel);

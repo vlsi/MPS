@@ -10,6 +10,7 @@ import java.util.HashSet;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import java.awt.HeadlessException;
@@ -39,7 +40,7 @@ public abstract class BaseChooseNodeDialog extends BaseDialog {
       return BaseChooseNodeDialog.this.buildRootNode();
     }
   };
-  private JScrollPane myExternalComponent = new JScrollPane(this.myTree);
+  private JScrollPane myExternalComponent = ScrollPaneFactory.createScrollPane(myTree);
   private SNode myResult;
 
   public BaseChooseNodeDialog(Frame mainFrame, IOperationContext context, SModelDescriptor contextModel, String text) throws HeadlessException {

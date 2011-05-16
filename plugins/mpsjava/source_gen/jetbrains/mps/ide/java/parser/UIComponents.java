@@ -15,6 +15,7 @@ import java.util.Set;
 import com.intellij.util.containers.HashMap;
 import java.awt.HeadlessException;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
@@ -47,7 +48,7 @@ public class UIComponents {
       super("Classpaths", operationContext);
       mySourceDir = sourceDir;
       myUnresolvedFQNames = ObservableCollections.observableList(new ArrayList<String>(classFqNames));
-      JScrollPane panel = new JScrollPane(ClasspathSelectionTree.createClasspathSelectionTree(this, mySourceDir));
+      JScrollPane panel = ScrollPaneFactory.createScrollPane(ClasspathSelectionTree.createClasspathSelectionTree(this, mySourceDir));
       DefaultListCellRenderer renderer = new DefaultListCellRenderer();
       JPanel classPathPanel = createBoundListPanel("Added Classpaths", myAdditionalClasspaths, renderer);
       JPanel classesList = createBoundListPanel("Unresolved Names", myUnresolvedFQNames, renderer);

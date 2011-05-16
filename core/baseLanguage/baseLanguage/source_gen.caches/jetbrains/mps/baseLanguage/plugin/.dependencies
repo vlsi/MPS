@@ -382,6 +382,7 @@
     <classNode dependClassName="com.intellij.openapi.ui.popup.PopupChooserBuilder" />
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
+    <classNode dependClassName="com.intellij.ui.components.JBList" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
