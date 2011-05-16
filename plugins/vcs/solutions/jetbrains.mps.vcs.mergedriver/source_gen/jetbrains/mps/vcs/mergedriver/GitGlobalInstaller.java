@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.io.IOException;
 
-public class GitGlobalInstaller {
+/*package*/ class GitGlobalInstaller {
   protected static Log log = LogFactory.getLog(GitGlobalInstaller.class);
 
   private GitGlobalInstaller() {

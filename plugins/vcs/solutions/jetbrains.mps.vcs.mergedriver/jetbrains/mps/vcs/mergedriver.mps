@@ -44,21 +44,27 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="572687202609933800">
       <property name="name" nameId="tpck.1169194664001" value="GitRepositoriesInstaller" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="installers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="572687202609936946">
       <property name="name" nameId="tpck.1169194664001" value="GitGlobalInstaller" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="installers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4789521689475675661">
       <property name="name" nameId="tpck.1169194664001" value="TextMerger" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="mergers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4398460844209836155">
       <property name="name" nameId="tpck.1169194664001" value="SimpleMerger" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="mergers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5006749173646651481">
       <property name="name" nameId="tpck.1169194664001" value="SvnInstaller" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="installers" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="4398460844209836180">
       <property name="name" nameId="tpck.1169194664001" value="FileMerger" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="mergers" />
     </node>
   </roots>
   <root id="7551811584090935086">
@@ -1884,7 +1890,6 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="572687202609933801" />
   </root>
   <root id="572687202609936946">
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="572687202609936948">
@@ -2176,7 +2181,6 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="572687202609936963" />
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="572687202609936947" />
   </root>
   <root id="4789521689475675661">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3562544874609368649">
@@ -2556,7 +2560,6 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4789521689475675662" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4789521689475675663">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4789521689475675664" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3562544874609368648" />
@@ -2586,7 +2589,6 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4398460844209836156" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4398460844209836157">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4398460844209836158" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4398460844209836159" />
@@ -3009,7 +3011,6 @@
     </node>
   </root>
   <root id="5006749173646651481">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5006749173646651482" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5006749173646651483">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5006749173646651484" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5006749173646651485" />
@@ -4236,7 +4237,6 @@
         <property name="value" nameId="tpee.1068580320021" value="2" />
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4398460844209836181" />
   </root>
 </model>
 

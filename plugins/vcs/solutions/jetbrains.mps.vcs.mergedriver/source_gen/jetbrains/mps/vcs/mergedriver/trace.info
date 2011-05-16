@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4398460844209836155">
-    <nodeInfo nodeId="3562544874609615768" fileName="SimpleMerger.java" startLine="13" startPosition="49" endLine="14" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINE_SEPARATOR" />
+    <nodeInfo nodeId="3562544874609615768" fileName="SimpleMerger.java" startLine="13" startPosition="54" endLine="14" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINE_SEPARATOR" />
     <nodeInfo nodeId="4398460844209836453" fileName="SimpleMerger.java" startLine="19" startPosition="152" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4398460844209836460" fileName="SimpleMerger.java" startLine="20" startPosition="34" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4398460844209836470" fileName="SimpleMerger.java" startLine="21" startPosition="35" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -70,7 +70,7 @@
     <unitInfo nodeId="4398460844209836155" fileName="SimpleMerger.java" startLine="13" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
   </root>
   <root nodeId="4398460844209836180">
-    <nodeInfo nodeId="4398460844209836194" fileName="FileMerger.java" startLine="7" startPosition="29" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MERGED" />
+    <nodeInfo nodeId="4398460844209836194" fileName="FileMerger.java" startLine="7" startPosition="34" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MERGED" />
     <nodeInfo nodeId="4398460844209836201" fileName="FileMerger.java" startLine="8" startPosition="37" endLine="9" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFLICTS" />
     <nodeInfo nodeId="4398460844209836205" fileName="FileMerger.java" startLine="9" startPosition="40" endLine="10" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FATAL_ERROR" />
     <nodeInfo nodeId="4398460844209836213" fileName="FileMerger.java" startLine="11" startPosition="0" endLine="12" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeFiles#(Ljava/io/File;Ljava/io/File;Ljava/io/File;Z[B[B[B)I" />
@@ -142,7 +142,7 @@
     <nodeInfo nodeId="3562544874609368792" fileName="TextMerger.java" startLine="55" startPosition="37" endLine="56" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3562544874609368798" fileName="TextMerger.java" startLine="58" startPosition="55" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3562544874609368804" fileName="TextMerger.java" startLine="60" startPosition="5" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4789521689475675663" fileName="TextMerger.java" startLine="20" startPosition="47" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextMerger#()V" />
+    <nodeInfo nodeId="4789521689475675663" fileName="TextMerger.java" startLine="20" startPosition="52" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextMerger#()V" />
     <nodeInfo nodeId="3562544874609368796" fileName="TextMerger.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3562544874609588658" fileName="TextMerger.java" startLine="43" startPosition="35" endLine="47" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3562544874609368716" fileName="TextMerger.java" startLine="33" startPosition="31" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -153,7 +153,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3562544874609368779" fileName="TextMerger.java" startLine="50" startPosition="29" endLine="51" endPosition="25" />
     <scopeInfo nodeId="3562544874609368797" fileName="TextMerger.java" startLine="58" startPosition="55" endLine="59" endPosition="23" />
-    <scopeInfo nodeId="4789521689475675663" fileName="TextMerger.java" startLine="20" startPosition="47" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="4789521689475675663" fileName="TextMerger.java" startLine="20" startPosition="52" endLine="22" endPosition="3" />
     <scopeInfo nodeId="3562544874609368782" fileName="TextMerger.java" startLine="52" startPosition="15" endLine="56" endPosition="36" />
     <scopeInfo nodeId="3562544874609368717" fileName="TextMerger.java" startLine="34" startPosition="9" endLine="49" endPosition="138">
       <varInfo nodeId="3562544874609368759" varName="latestData" />
@@ -236,7 +236,7 @@
     <nodeInfo nodeId="428846146748927437" fileName="SvnInstaller.java" startLine="137" startPosition="7" endLine="138" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="428846146748972300" fileName="SvnInstaller.java" startLine="139" startPosition="29" endLine="140" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="428846146748927427" fileName="SvnInstaller.java" startLine="140" startPosition="119" endLine="141" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5006749173646651483" fileName="SvnInstaller.java" startLine="19" startPosition="27" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SvnInstaller#()V" />
+    <nodeInfo nodeId="5006749173646651483" fileName="SvnInstaller.java" startLine="19" startPosition="32" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SvnInstaller#()V" />
     <nodeInfo nodeId="428846146748976126" fileName="SvnInstaller.java" startLine="95" startPosition="18" endLine="97" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="428846146748927236" fileName="SvnInstaller.java" startLine="130" startPosition="10" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="428846146748927446" fileName="SvnInstaller.java" startLine="134" startPosition="66" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -281,7 +281,7 @@
     <scopeInfo nodeId="428846146748927227" fileName="SvnInstaller.java" startLine="128" startPosition="31" endLine="129" endPosition="137" />
     <scopeInfo nodeId="428846146748927237" fileName="SvnInstaller.java" startLine="130" startPosition="12" endLine="131" endPosition="124" />
     <scopeInfo nodeId="428846146748927447" fileName="SvnInstaller.java" startLine="135" startPosition="67" endLine="136" endPosition="62" />
-    <scopeInfo nodeId="5006749173646651483" fileName="SvnInstaller.java" startLine="19" startPosition="27" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="5006749173646651483" fileName="SvnInstaller.java" startLine="19" startPosition="32" endLine="21" endPosition="3" />
     <scopeInfo nodeId="5006749173646651503" fileName="SvnInstaller.java" startLine="25" startPosition="33" endLine="27" endPosition="13" />
     <scopeInfo nodeId="428846146748925122" fileName="SvnInstaller.java" startLine="29" startPosition="76" endLine="31" endPosition="13" />
     <scopeInfo nodeId="428846146748976204" fileName="SvnInstaller.java" startLine="107" startPosition="32" endLine="109" endPosition="54" />
@@ -354,7 +354,7 @@
     <unitInfo nodeId="5006749173646651481" fileName="SvnInstaller.java" startLine="19" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.SvnInstaller" />
   </root>
   <root nodeId="572687202609933800">
-    <nodeInfo nodeId="428846146748920274" fileName="GitRepositoriesInstaller.java" startLine="22" startPosition="39" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ATTRIBUTES_FILE" />
+    <nodeInfo nodeId="428846146748920274" fileName="GitRepositoriesInstaller.java" startLine="22" startPosition="44" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ATTRIBUTES_FILE" />
     <nodeInfo nodeId="428846146748920516" fileName="GitRepositoriesInstaller.java" startLine="23" startPosition="65" endLine="24" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXTENSIONS" />
     <nodeInfo nodeId="572687202609933846" fileName="GitRepositoriesInstaller.java" startLine="29" startPosition="75" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="572687202609933855" fileName="GitRepositoriesInstaller.java" startLine="31" startPosition="65" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -490,7 +490,7 @@
     <unitInfo nodeId="572687202609933800" fileName="GitRepositoriesInstaller.java" startLine="22" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller" />
   </root>
   <root nodeId="572687202609936946">
-    <nodeInfo nodeId="572687202609936946" fileName="GitGlobalInstaller.java" startLine="17" startPosition="33" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="572687202609936946" fileName="GitGlobalInstaller.java" startLine="17" startPosition="38" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="572687202609936965" fileName="GitGlobalInstaller.java" startLine="23" startPosition="49" endLine="24" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8183298005890422064" fileName="GitGlobalInstaller.java" startLine="24" startPosition="97" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="572687202609936975" fileName="GitGlobalInstaller.java" startLine="26" startPosition="33" endLine="27" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
 import com.intellij.openapi.util.SystemInfo;
 
-public class SvnInstaller {
+/*package*/ class SvnInstaller {
   public SvnInstaller() {
   }
 

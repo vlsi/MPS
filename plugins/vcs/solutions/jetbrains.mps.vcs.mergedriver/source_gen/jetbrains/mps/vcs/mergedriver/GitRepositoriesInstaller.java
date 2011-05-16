@@ -19,7 +19,7 @@ import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
-public class GitRepositoriesInstaller {
+/*package*/ class GitRepositoriesInstaller {
   private static final String ATTRIBUTES_FILE = ".gitattributes";
   private static final List<String> EXTENSIONS = ListSequence.fromListAndArray(new ArrayList<String>(), "mps");
 

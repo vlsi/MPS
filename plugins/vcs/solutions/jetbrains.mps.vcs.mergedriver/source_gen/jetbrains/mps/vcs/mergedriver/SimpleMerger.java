@@ -10,7 +10,7 @@ import jetbrains.mps.util.FileUtil;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class SimpleMerger implements FileMerger {
+/*package*/ class SimpleMerger implements FileMerger {
   private static byte[] LINE_SEPARATOR = System.getProperty("line.separator").getBytes();
 
   public SimpleMerger() {
