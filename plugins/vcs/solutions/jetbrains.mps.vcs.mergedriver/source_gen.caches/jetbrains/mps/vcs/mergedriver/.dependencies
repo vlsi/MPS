@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.mergedriver.AbstractInstaller" file="AbstractInstaller.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.FileMerger" file="FileMerger.java">
     <classNode dependClassName="java.io.File" />
   </dependency>
@@ -17,6 +21,8 @@
     <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller" file="GitRepositoriesInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -30,21 +36,22 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverInstaller" file="MergeDriverInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
-    <classNode dependClassName="com.intellij.openapi.vcs.VcsRoot" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SvnInstaller" />
@@ -84,6 +91,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.regex.Matcher" />
@@ -94,6 +102,8 @@
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverMain" />
     <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.TextMerger" file="TextMerger.java">
     <classNode dependClassName="de.regnis.q.sequence.line.QSequenceLineRAByteData" />

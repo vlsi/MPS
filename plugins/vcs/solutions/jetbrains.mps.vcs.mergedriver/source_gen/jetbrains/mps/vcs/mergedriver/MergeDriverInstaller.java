@@ -4,27 +4,31 @@ package jetbrains.mps.vcs.mergedriver;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import com.intellij.openapi.vcs.VcsRoot;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.Arrays;
 
 public class MergeDriverInstaller {
   private MergeDriverInstaller() {
   }
 
   public static boolean isApplicable(Project project) {
-    return Sequence.fromIterable(Sequence.fromArray(project.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots())).any(new IWhereFilter<VcsRoot>() {
-      public boolean accept(VcsRoot root) {
-        return "Git".equals(root.vcs.getName()) || "svn".equals(root.vcs.getName());
+    return Sequence.fromIterable(getInstallers(project)).any(new IWhereFilter<AbstractInstaller>() {
+      public boolean accept(AbstractInstaller i) {
+        return i.getCurrentState() != AbstractInstaller.State.INSTALLED;
       }
     });
   }
 
   public static void installWhereNeeded(Project project) {
-    String globalMessage = GitGlobalInstaller.install(project);
-    if (globalMessage != null) {
-      GitRepositoriesInstaller.installForRepositoriesIfNeeded(project, globalMessage);
-    }
-    SvnInstaller.install(project);
+    Sequence.fromIterable(getInstallers(project)).visitAll(new IVisitor<AbstractInstaller>() {
+      public void visit(AbstractInstaller i) {
+        i.install();
+      }
+    });
+  }
+
+  private static Iterable<AbstractInstaller> getInstallers(Project project) {
+    return Arrays.asList(new GitGlobalInstaller(project), new GitRepositoriesInstaller(project), new SvnInstaller(project));
   }
 }
