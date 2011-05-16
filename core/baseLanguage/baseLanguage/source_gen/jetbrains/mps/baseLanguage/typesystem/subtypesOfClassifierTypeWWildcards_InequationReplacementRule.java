@@ -233,23 +233,23 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_2751254962088984281;
-        nodeToMatch_2751254962088984281 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2751254962088984281.getConceptFqName()))) {
+        SNode nodeToMatch_7731054303349223391;
+        nodeToMatch_7731054303349223391 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_7731054303349223391.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_n8ubly_a0a0a0a0a_0;
-          if (nodeToMatch_2751254962088984281.getReferent("classifier") != referent) {
+          if (nodeToMatch_7731054303349223391.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_2751254962088984281 = "parameter";
+          String childRole_7731054303349223391 = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_2751254962088984281.getChildren(childRole_2751254962088984281)) {
+          for (SNode childVar : nodeToMatch_7731054303349223391.getChildren(childRole_7731054303349223391)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
