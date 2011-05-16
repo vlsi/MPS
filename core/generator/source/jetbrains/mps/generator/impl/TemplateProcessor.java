@@ -100,7 +100,7 @@ public class TemplateProcessor {
       if (macroCount <= nodeMacrosToSkip) continue;
       generationTracer.pushMacro(new SNodePointer(templateChildNode));
       try {
-        return createOutputNodesForTemplateNodeWithMacro(templateChildNode, templateNode, context, nodeMacrosToSkip);
+        return createOutputNodesForTemplateNodeWithMacro(templateChildNode, templateNode, context, nodeMacrosToSkip, mappingName);
       } finally {
         generationTracer.closeMacro(new SNodePointer(templateChildNode));
       }
@@ -193,11 +193,11 @@ public class TemplateProcessor {
   }
 
   @Nullable
-  private List<SNode> createOutputNodesForTemplateNodeWithMacro(SNode macro, SNode templateNode, @NotNull TemplateContext templateContext, int nodeMacrosToSkip) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  private List<SNode> createOutputNodesForTemplateNodeWithMacro(SNode macro, SNode templateNode, @NotNull TemplateContext templateContext, int nodeMacrosToSkip, String outerMappingName) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     String macroConceptFQName = macro.getConceptFqName();
     IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
-    String mappingName = GeneratorUtilEx.getMappingName(macro, null);
+    String mappingName = GeneratorUtilEx.getMappingName(macro, outerMappingName);
 
     if (macroConceptFQName.equals(RuleUtil.concept_LoopMacro)) {
       // $LOOP$
