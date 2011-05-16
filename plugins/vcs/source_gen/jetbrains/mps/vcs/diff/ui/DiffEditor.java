@@ -33,10 +33,10 @@ public class DiffEditor implements EditorMessageOwner {
   private InspectorEditorComponent myInspector;
   private Map<ModelChange, List<ChangeEditorMessage>> myChangeToMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
 
-  public DiffEditor(IOperationContext context, SNode node, String contentTitle) {
-    myMainEditorComponent = new DiffEditor.MainEditorComponent(context);
+  public DiffEditor(IOperationContext context, SNode node, String contentTitle, boolean isLeftEditor) {
+    myMainEditorComponent = new DiffEditor.MainEditorComponent(context, isLeftEditor);
     myMainEditorComponent.editNode(node, myMainEditorComponent.getOperationContext());
-    myInspector = new InspectorEditorComponent();
+    myInspector = new InspectorEditorComponent(isLeftEditor);
     myInspector.getExternalComponent().setPreferredSize(new Dimension());
 
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
@@ -133,8 +133,8 @@ public class DiffEditor implements EditorMessageOwner {
   }
 
   public class MainEditorComponent extends EditorComponent {
-    public MainEditorComponent(IOperationContext operationContext) {
-      super(operationContext);
+    public MainEditorComponent(IOperationContext operationContext, boolean rightToLeft) {
+      super(operationContext, false, rightToLeft);
     }
 
     public EditorCell createRootCell(List<SModelEvent> events) {
