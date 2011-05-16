@@ -19,6 +19,13 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="module" module-name="MPS-platform" />
+    <orderEntry type="module" module-name="workbench" />
+    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="library" name="commons-lang" level="project" />
   </component>
 </module>
 
