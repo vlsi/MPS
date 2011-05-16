@@ -63,6 +63,11 @@ public class PathManager {
   }
 
   public static String getBootstrapPath() {
+    // TODO temp fix
+    String mpsJar = getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
+    if(new File(mpsJar).exists()) {
+      return mpsJar + "!/modules";
+    }
     return getHomePath() + File.separator + "core";
   }
 

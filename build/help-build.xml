@@ -3,7 +3,7 @@
     <fail unless="input.dir" message="Property input.dir unspecified." />
     <fail unless="output.dir" message="Property output.dir unspecified." />
     <copy todir="${output.dir}">
-      <mapper type="regexp" from="(.*)(/|\\)(src|sources|source|source_gen|tests)(/|\\)(.*)" to="\5" />
+      <mapper type="regexp" from="(.*)(/|\\)(src|sources|source|source_gen|source-api)(/|\\)(.*)" to="\5" />
       <fileset dir="${input.dir}" />
     </copy>
   </target>
