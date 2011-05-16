@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
@@ -21,16 +21,28 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class AnonymousClass_Behavior {
+  private static Class[] PARAMETERS_2496361171403550994 = {SNode.class};
   private static Class[] PARAMETERS_2193927380279967693 = {SNode.class};
   private static Class[] PARAMETERS_7523932196475787022 = {SNode.class};
-  private static Class[] PARAMETERS_2496361171403550994 = {SNode.class};
 
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "nonStatic", "" + true);
   }
 
+  public static String virtual_getUnitName_3822000666564591112(SNode thisNode) {
+    return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(thisNode);
+  }
+
+  public static String call_getJavaName_2977939203456914071(SNode thisNode) {
+    SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, true);
+    if ((ancestor == null)) {
+      return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+    }
+    return INamedConcept_Behavior.call_getFqName_1213877404258(ancestor) + "$" + AnonymousClass_Behavior.call_getIndexInContainingClass_4164197659856373643(thisNode);
+  }
+
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
-    return new AnonymousClass_Behavior.QuotationClass_mhnjwj_a0a0b().createNode(SLinkOperations.getTargets(thisNode, "typeParameter", true), SLinkOperations.getTarget(thisNode, "classifier", false));
+    return new AnonymousClass_Behavior.QuotationClass_mhnjwj_a0a0d().createNode(SLinkOperations.getTargets(thisNode, "typeParameter", true), SLinkOperations.getTarget(thisNode, "classifier", false));
   }
 
   public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
@@ -40,14 +52,6 @@ public class AnonymousClass_Behavior {
     } else {
       return SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "constructor", true);
     }
-  }
-
-  public static String call_getJavaName_2977939203456914071(SNode thisNode) {
-    SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, true);
-    if ((ancestor == null)) {
-      return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
-    }
-    return INamedConcept_Behavior.call_getFqName_1213877404258(ancestor) + "$" + AnonymousClass_Behavior.call_getIndexInContainingClass_4164197659856373643(thisNode);
   }
 
   public static int call_getIndexInContainingClass_4164197659856373643(SNode thisNode) {
@@ -90,8 +94,9 @@ public class AnonymousClass_Behavior {
     return result;
   }
 
-  public static String virtual_getUnitName_3822000666564591112(SNode thisNode) {
-    return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(thisNode);
+  public static String call_getUnitName_2496361171403550994(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403550994);
   }
 
   public static String call_getNestedName_2193927380279967693(SNode thisNode) {
@@ -104,9 +109,8 @@ public class AnonymousClass_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getFqName_1213877404258", PARAMETERS_7523932196475787022);
   }
 
-  public static String call_getUnitName_2496361171403550994(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403550994);
+  public static String callSuper_getUnitName_2496361171403550994(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403550994);
   }
 
   public static String callSuper_getNestedName_2193927380279967693(SNode thisNode, String callerConceptFqName) {
@@ -117,12 +121,8 @@ public class AnonymousClass_Behavior {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_7523932196475787022);
   }
 
-  public static String callSuper_getUnitName_2496361171403550994(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403550994);
-  }
-
-  public static class QuotationClass_mhnjwj_a0a0b {
-    public QuotationClass_mhnjwj_a0a0b() {
+  public static class QuotationClass_mhnjwj_a0a0d {
+    public QuotationClass_mhnjwj_a0a0d() {
     }
 
     public SNode createNode(Object parameter_4, Object parameter_5) {
