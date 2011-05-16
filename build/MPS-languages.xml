@@ -2,21 +2,21 @@
   <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
   <target name="pack.jetbrains.mps.ide">
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.ide" />
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.ide/module">
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.ide">
       <fileset file="workbench/ideSolution/jetbrains.mps.ide.msd" />
       <fileset dir="workbench/ideSolution" includes="icons/**, resources/**" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.ide/module">
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.ide">
       <fileset dir="workbench/ideSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.workbench.make">
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.workbench.make" />
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.workbench.make/module">
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.workbench.make">
       <fileset file="workbench/make/jetbrains.mps.workbench.make.msd" />
       <fileset dir="workbench/make" includes="icons/**, resources/**" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.workbench.make/module">
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.workbench.make">
       <fileset dir="workbench/make" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>

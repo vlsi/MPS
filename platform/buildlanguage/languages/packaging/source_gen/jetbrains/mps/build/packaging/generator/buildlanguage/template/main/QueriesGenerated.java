@@ -217,7 +217,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2850282874221204284(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + Module_Behavior.call_getModuleFolderPath_2850282874221203279(_context.getNode()) + Util.SEPARATOR + AbstractModule.MODULE_DIR;
+    return Util.SEPARATOR + Module_Behavior.call_getModuleFolderPath_2850282874221203279(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_2850282874221206209(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -228,7 +228,7 @@ public class QueriesGenerated {
     } else if (StringUtils.isNotEmpty(s)) {
       s = "/" + s;
     }
-    return Util.SEPARATOR + Module_Behavior.call_getModuleFolderPath_2850282874221203279(SLinkOperations.getTarget(_context.getNode(), "module", false)) + Util.SEPARATOR + AbstractModule.MODULE_DIR + s;
+    return Util.SEPARATOR + Module_Behavior.call_getModuleFolderPath_2850282874221203279(SLinkOperations.getTarget(_context.getNode(), "module", false)) + s;
   }
 
   public static Object propertyMacro_GetPropertyValue_1204019666208(final IOperationContext operationContext, final PropertyMacroContext _context) {
