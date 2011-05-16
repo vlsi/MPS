@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jebtrains.mps.ide.util.gotoByName.matchers;
+package jetbrains.mps.ide.util.gotoByName.matchers;
 
 import com.intellij.openapi.util.Computable;
 

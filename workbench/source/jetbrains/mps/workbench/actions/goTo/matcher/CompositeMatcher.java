@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
-import jebtrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
+import jetbrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.util.Computable;
 
 import java.util.HashSet;
