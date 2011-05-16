@@ -476,6 +476,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     addFocusListener(new FocusListener() {
       public void focusGained(FocusEvent e) {
+        if(isDisposed()) {
+          return;
+        }
         if (getSelectionManager().getSelection() == null) {
           EditorCell rootCell = getRootCell();
           if (rootCell instanceof EditorCell_Collection) {
