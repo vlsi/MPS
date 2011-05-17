@@ -19,32 +19,32 @@
   <import index="n2ga" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui.treeStructure(MPS.Classpath/com.intellij.ui.treeStructure@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" implicit="yes" />
-  <import index="fmu4" modelUID="f:java_stub#5d6bee4c-f891-4a93-a0c9-e2268726ae47#jetbrains.mps.ide.ui(jetbrains.mps.uiLanguage/jetbrains.mps.ide.ui@java_stub)" version="-1" implicit="yes" />
+  <import index="zpm1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.ui(MPS.Classpath/jetbrains.mps.ide.ui@java_stub)" version="-1" implicit="yes" />
   <import index="lcqf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.event(JDK/javax.swing.event@java_stub)" version="-1" implicit="yes" />
   <import index="pxks" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.internal.compiler.batch(MPS.Classpath/org.eclipse.jdt.internal.compiler.batch@java_stub)" version="-1" implicit="yes" />
   <import index="8a0f" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(MPS.Classpath/com.intellij.openapi.util@java_stub)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="60vs" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.reloading(MPS.Classpath/jetbrains.mps.reloading@java_stub)" version="-1" implicit="yes" />
-  <import index="3hk3" modelUID="f:java_stub#5d6bee4c-f891-4a93-a0c9-e2268726ae47#jetbrains.mps.workbench.dialogs.project(jetbrains.mps.uiLanguage/jetbrains.mps.workbench.dialogs.project@java_stub)" version="-1" implicit="yes" />
+  <import index="8lme" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.dialogs.project(MPS.Classpath/jetbrains.mps.workbench.dialogs.project@java_stub)" version="-1" implicit="yes" />
   <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" implicit="yes" />
   <import index="osf5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(JDK/javax.swing.tree@java_stub)" version="-1" implicit="yes" />
-  <import index="5vn6" modelUID="f:java_stub#5d6bee4c-f891-4a93-a0c9-e2268726ae47#jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels(jetbrains.mps.uiLanguage/jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels@java_stub)" version="-1" implicit="yes" />
+  <import index="z0xr" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels(MPS.Classpath/jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels@java_stub)" version="-1" implicit="yes" />
   <import index="8bce" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.logging(MPS.Classpath/jetbrains.mps.logging@java_stub)" version="-1" implicit="yes" />
   <import index="c1qm" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.core.compiler(MPS.Classpath/org.eclipse.jdt.core.compiler@java_stub)" version="-1" implicit="yes" />
   <import index="7tyn" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.internal.compiler.env(MPS.Classpath/org.eclipse.jdt.internal.compiler.env@java_stub)" version="-1" implicit="yes" />
   <import index="sj6p" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.internal.compiler.problem(MPS.Classpath/org.eclipse.jdt.internal.compiler.problem@java_stub)" version="-1" implicit="yes" />
-  <import index="6ee1" modelUID="f:java_stub#5d6bee4c-f891-4a93-a0c9-e2268726ae47#jetbrains.mps.ide.projectPane(jetbrains.mps.uiLanguage/jetbrains.mps.ide.projectPane@java_stub)" version="-1" implicit="yes" />
+  <import index="c4x8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.projectPane(MPS.Classpath/jetbrains.mps.ide.projectPane@java_stub)" version="-1" implicit="yes" />
   <import index="8q6x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" version="-1" implicit="yes" />
   <import index="iqnk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.compiler(MPS.Classpath/jetbrains.mps.compiler@java_stub)" version="-1" implicit="yes" />
   <import index="9p09" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.stubs.javastub.classpath(MPS.Classpath/jetbrains.mps.stubs.javastub.classpath@java_stub)" version="-1" implicit="yes" />
   <import index="gq1f" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.internal.compiler.classfmt(MPS.Classpath/org.eclipse.jdt.internal.compiler.classfmt@java_stub)" version="-1" implicit="yes" />
-  <import index="wyl0" modelUID="f:java_stub#5d6bee4c-f891-4a93-a0c9-e2268726ae47#jetbrains.mps.ide.messages(jetbrains.mps.uiLanguage/jetbrains.mps.ide.messages@java_stub)" version="-1" implicit="yes" />
+  <import index="nvc1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.messages(MPS.Classpath/jetbrains.mps.ide.messages@java_stub)" version="-1" implicit="yes" />
   <import index="ho7a" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(MPS.Classpath/jetbrains.mps.project.structure.modules@java_stub)" version="-1" implicit="yes" />
   <import index="bswf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util.containers(MPS.Classpath/com.intellij.util.containers@java_stub)" version="-1" implicit="yes" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" implicit="yes" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" implicit="yes" />
   <import index="apgw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.eclipse.jdt.internal.compiler(MPS.Classpath/org.eclipse.jdt.internal.compiler@java_stub)" version="-1" implicit="yes" />
-  <import index="p6jn" modelUID="f:java_stub#5d6bee4c-f891-4a93-a0c9-e2268726ae47#jetbrains.mps.ide.dialogs(jetbrains.mps.uiLanguage/jetbrains.mps.ide.dialogs@java_stub)" version="-1" implicit="yes" />
+  <import index="xpbq" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.dialogs(MPS.Classpath/jetbrains.mps.ide.dialogs@java_stub)" version="-1" implicit="yes" />
   <import index="qani" modelUID="f:java_stub#5d6bee4c-f891-4a93-a0c9-e2268726ae47#org.jdesktop.observablecollections(jetbrains.mps.uiLanguage/org.jdesktop.observablecollections@java_stub)" version="-1" implicit="yes" />
   <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" version="-1" implicit="yes" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" implicit="yes" />
@@ -98,7 +98,7 @@
       <property name="name" nameId="tpck.1169194664001" value="FileData" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5646944109420291031" />
       <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420291032">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fmu4.~CheckBoxNodeRenderer$NodeData" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zpm1.~CheckBoxNodeRenderer$NodeData" />
       </node>
       <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5646944109420291033">
         <property name="name" nameId="tpck.1169194664001" value="myFile" />
@@ -395,8 +395,8 @@
                   <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5646944109420292737">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5646944109420292738">
                       <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5646944109420292739">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="6ee1.~Icons" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6ee1.~Icons%dCLOSED_FOLDER" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4x8.~Icons" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4x8.~Icons%dCLOSED_FOLDER" />
                       </node>
                     </node>
                   </node>
@@ -404,8 +404,8 @@
                 <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5646944109420292740">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5646944109420292741">
                     <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5646944109420292742">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="6ee1.~Icons" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6ee1.~Icons%dOPENED_FOLDER" />
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4x8.~Icons" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4x8.~Icons%dOPENED_FOLDER" />
                     </node>
                   </node>
                 </node>
@@ -867,7 +867,7 @@
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JTree%dsetCellRenderer(javax%dswing%dtree%dTreeCellRenderer)%cvoid" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5646944109420291132">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646944109420291133">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmu4.~CheckBoxNodeRenderer%d&lt;init&gt;()" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zpm1.~CheckBoxNodeRenderer%d&lt;init&gt;()" />
               </node>
             </node>
           </node>
@@ -879,8 +879,8 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="5646944109420291137">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="5646944109420291138">
                   <property name="name" nameId="tpck.1169194664001" value="" />
-                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="fmu4.~CheckBoxNodeRenderer$CheckBoxNodeEditor" resolveInfo="CheckBoxNodeRenderer.CheckBoxNodeEditor" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmu4.~CheckBoxNodeRenderer$CheckBoxNodeEditor%d&lt;init&gt;()" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="zpm1.~CheckBoxNodeRenderer$CheckBoxNodeEditor" resolveInfo="CheckBoxNodeRenderer.CheckBoxNodeEditor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zpm1.~CheckBoxNodeRenderer$CheckBoxNodeEditor%d&lt;init&gt;()" />
                   <node role="typeParameter" roleId="tpee.1201186121363" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420291139">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5646944109420273442" resolveInfo="ClasspathSelectionTree.FileData" />
                   </node>
@@ -906,7 +906,7 @@
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5646944109420291042" resolveInfo="ClasspathSelectionTree.FileData" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5646944109420298952">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5646944109420298953">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmu4.~CheckBoxNodeRenderer$CheckBoxNodeEditor%dgetObject()%cjetbrains%dmps%dide%dui%dCheckBoxNodeRenderer$NodeData" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zpm1.~CheckBoxNodeRenderer$CheckBoxNodeEditor%dgetObject()%cjetbrains%dmps%dide%dui%dCheckBoxNodeRenderer$NodeData" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420298954">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5646944109420291049" resolveInfo="getFile" />
@@ -21687,7 +21687,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MyDialog" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5646944109420324731" />
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420324732">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3hk3.~BaseBindedDialog" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8lme.~BaseBindedDialog" />
       </node>
       <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420324733">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5646944109420325914" resolveInfo="ClasspathObserver" />
@@ -21788,7 +21788,7 @@
         </node>
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5646944109420324827">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="5646944109420324828">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3hk3.~BaseBindedDialog%d&lt;init&gt;(java%dlang%dString,jetbrains%dmps%dsmodel%dIOperationContext)" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8lme.~BaseBindedDialog%d&lt;init&gt;(java%dlang%dString,jetbrains%dmps%dsmodel%dIOperationContext)" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5646944109420324829">
               <property name="value" nameId="tpee.1070475926801" value="Classpaths" />
             </node>
@@ -22207,11 +22207,11 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5646944109420324965">
               <property name="name" nameId="tpck.1169194664001" value="result" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420324966">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5vn6.~BoundListPanel" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z0xr.~BoundListPanel" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5646944109420324967">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646944109420324968">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5vn6.~BoundListPanel%d&lt;init&gt;(jetbrains%dmps%dworkbench%ddialogs%dproject%dIBindedDialog,java%dlang%dString,java%dutil%dList)" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z0xr.~BoundListPanel%d&lt;init&gt;(jetbrains%dmps%dworkbench%ddialogs%dproject%dIBindedDialog,java%dlang%dString,java%dutil%dList)" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5646944109420324969" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5646944109420324970">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420324764" resolveInfo="caption" />
@@ -22229,7 +22229,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420324965" resolveInfo="result" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420324975">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5vn6.~ValidateableBoundPanel%dsetCellRenderer(javax%dswing%dDefaultListCellRenderer)%cvoid" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z0xr.~ValidateableBoundPanel%dsetCellRenderer(javax%dswing%dDefaultListCellRenderer)%cvoid" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5646944109420324976">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420324768" resolveInfo="renderer" />
                 </node>
@@ -22242,7 +22242,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420324965" resolveInfo="result" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420324980">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5vn6.~ValidateableBoundPanel%dinit()%cvoid" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z0xr.~ValidateableBoundPanel%dinit()%cvoid" />
               </node>
             </node>
           </node>
@@ -22257,7 +22257,7 @@
         <property name="name" nameId="tpck.1169194664001" value="getDefaultDimensionSettings" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5646944109420324771" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420324772">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p6jn.~DialogDimensionsSettings$DialogDimensions" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xpbq.~DialogDimensionsSettings$DialogDimensions" />
         </node>
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5646944109420324983">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5646944109420324984">
@@ -22268,7 +22268,7 @@
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5646944109420324987">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5646944109420324988">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3hk3.~BaseBindedDialog%dgetOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8lme.~BaseBindedDialog%dgetOperationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420324989">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~IOperationContext%dgetMainFrame()%cjava%dawt%dFrame" />
@@ -22279,7 +22279,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5646944109420324990">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5646944109420324991">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646944109420324992">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p6jn.~DialogDimensionsSettings$DialogDimensions%d&lt;init&gt;(int,int,int,int)" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xpbq.~DialogDimensionsSettings$DialogDimensions%d&lt;init&gt;(int,int,int,int)" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5646944109420324993">
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5646944109420324994">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5646944109420324995">
@@ -27205,7 +27205,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5646944109420332483">
             <property name="name" nameId="tpck.1169194664001" value="messagesView" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420332484">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wyl0.~MessagesViewTool" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="nvc1.~MessagesViewTool" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5646944109420332485">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5646944109420332486">
@@ -27214,7 +27214,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420332487">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~IOperationContext%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5646944109420332488">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="wyl0.~MessagesViewTool" />
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="nvc1.~MessagesViewTool" />
                 </node>
               </node>
             </node>
@@ -27237,7 +27237,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420332483" resolveInfo="messagesView" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420332498">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wyl0.~MessagesViewTool%dopenToolLater(boolean)%cvoid" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nvc1.~MessagesViewTool%dopenToolLater(boolean)%cvoid" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5646944109420332499" />
             </node>
           </node>
