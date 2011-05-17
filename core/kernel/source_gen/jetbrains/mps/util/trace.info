@@ -332,7 +332,7 @@
     <nodeInfo nodeId="8018595893829093090" fileName="DisjointSets.java" startLine="33" startPosition="19" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8018595893829093097" fileName="DisjointSets.java" startLine="35" startPosition="82" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8018595893829093112" fileName="DisjointSets.java" startLine="37" startPosition="12" endLine="38" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8018595893829093120" fileName="DisjointSets.java" startLine="39" startPosition="85" endLine="40" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8018595893829093120" fileName="DisjointSets.java" startLine="39" startPosition="89" endLine="40" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8018595893829093143" fileName="DisjointSets.java" startLine="45" startPosition="37" endLine="46" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8018595893829093162" fileName="DisjointSets.java" startLine="48" startPosition="30" endLine="49" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8018595893829093169" fileName="DisjointSets.java" startLine="50" startPosition="60" endLine="51" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -352,7 +352,7 @@
     <nodeInfo nodeId="8018595893829093137" fileName="DisjointSets.java" startLine="44" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSets#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="8018595893829093063" fileName="DisjointSets.java" startLine="26" startPosition="52" endLine="27" endPosition="90" />
     <scopeInfo nodeId="8018595893829093096" fileName="DisjointSets.java" startLine="35" startPosition="82" endLine="36" endPosition="46" />
-    <scopeInfo nodeId="8018595893829093119" fileName="DisjointSets.java" startLine="39" startPosition="85" endLine="40" endPosition="83" />
+    <scopeInfo nodeId="8018595893829093119" fileName="DisjointSets.java" startLine="39" startPosition="89" endLine="40" endPosition="83" />
     <scopeInfo nodeId="8018595893829093168" fileName="DisjointSets.java" startLine="50" startPosition="60" endLine="51" endPosition="87" />
     <scopeInfo nodeId="8018595893829093221" fileName="DisjointSets.java" startLine="19" startPosition="49" endLine="21" endPosition="44" />
     <scopeInfo nodeId="8018595893829093217" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5" />

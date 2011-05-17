@@ -36,7 +36,7 @@ public class DisjointSets<T> {
       MapSequence.fromMap(myParent).put(a, b);
     } else {
       MapSequence.fromMap(myParent).put(b, a);
-      if (MapSequence.fromMap(myRank).get(a) == MapSequence.fromMap(myRank).get(b)) {
+      if (MapSequence.fromMap(myRank).get(a) - MapSequence.fromMap(myRank).get(b) == 0) {
         MapSequence.fromMap(myRank).put(a, MapSequence.fromMap(myRank).get(a) + 1);
       }
     }
