@@ -24,7 +24,7 @@ public class SubstituteNodeChange extends AddNodeChange {
   }
 
   @Override
-  public ChangeType getChangeType() {
-    return ChangeType.CHANGE;
+  public OldChangeType getChangeType() {
+    return OldChangeType.CHANGE;
   }
 }

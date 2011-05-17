@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNodeId;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import java.util.HashMap;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
@@ -26,12 +26,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.diff.oldchanges.AddNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
 import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import java.awt.Color;
-import jetbrains.mps.vcs.diff.oldchanges.ChangeType;
+import jetbrains.mps.vcs.diff.oldchanges.OldChangeType;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import org.jetbrains.annotations.NotNull;
@@ -71,10 +71,10 @@ import jetbrains.mps.ide.projectPane.Icons;
   private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myDeletedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myChangedSubtree = new HashSet<SNodeId>();
-  private Map<SNodeId, List<Change>> myChangesMap = new HashMap<SNodeId, List<Change>>();
+  private Map<SNodeId, List<OldChange>> myChangesMap = new HashMap<SNodeId, List<OldChange>>();
   private Set<SNodeId> myExcludetNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myConflicts = new HashSet<SNodeId>();
-  private List<Change> myChanges;
+  private List<OldChange> myChanges;
 
   /*package*/ OldModelChangesTree(IOperationContext context) {
     myContext = context;
@@ -126,7 +126,7 @@ import jetbrains.mps.ide.projectPane.Icons;
     }
   }
 
-  public OldModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes) {
+  public OldModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<OldChange> changes) {
     myChanges = changes;
     myOldModel = oldModel;
     myNewModel = newModel;
@@ -134,13 +134,13 @@ import jetbrains.mps.ide.projectPane.Icons;
     myChangedNodes.clear();
     myDeletedNodes.clear();
     myChangedSubtree.clear();
-    for (Change change : changes) {
+    for (OldChange change : changes) {
       SNodeId id = change.getAffectedNodeId();
       if (id != null) {
         addToChangeSubtree(change, change.getAffectedNodeId(), newModel, oldModel);
       }
     }
-    for (AddRootChange ar : CollectionUtil.filter(AddRootChange.class, changes)) {
+    for (OldAddRootChange ar : CollectionUtil.filter(OldAddRootChange.class, changes)) {
       myAddedNodes.add(ar.getAffectedNodeId());
     }
     for (AddNodeChange an : CollectionUtil.filter(AddNodeChange.class, changes)) {
@@ -149,10 +149,10 @@ import jetbrains.mps.ide.projectPane.Icons;
     for (SetNodeChange c : CollectionUtil.filter(SetNodeChange.class, changes)) {
       myAddedNodes.add(c.getAffectedNodeId());
     }
-    for (SetPropertyChange p : CollectionUtil.filter(SetPropertyChange.class, changes)) {
+    for (OldSetPropertyChange p : CollectionUtil.filter(OldSetPropertyChange.class, changes)) {
       myChangedNodes.add(p.getAffectedNodeId());
     }
-    for (SetReferenceChange r : CollectionUtil.filter(SetReferenceChange.class, changes)) {
+    for (OldSetReferenceChange r : CollectionUtil.filter(OldSetReferenceChange.class, changes)) {
       myChangedNodes.add(r.getAffectedNodeId());
     }
     for (ChangeConceptChange ch : CollectionUtil.filter(ChangeConceptChange.class, changes)) {
@@ -166,17 +166,17 @@ import jetbrains.mps.ide.projectPane.Icons;
     return this;
   }
 
-  private void expandChanges(final List<Change> changes) {
+  private void expandChanges(final List<OldChange> changes) {
     runWithoutExpansion(new Runnable() {
       public void run() {
-        for (Change c : changes) {
+        for (OldChange c : changes) {
           if (c instanceof NewNodeChange) {
             NewNodeChange nnc = (NewNodeChange) c;
             if (nnc.getNodeParent() == null || !(myAddedNodes.contains(nnc.getNodeParent()))) {
               expandNode(c.getAffectedNodeId());
             }
           } else
-          if (c instanceof SetPropertyChange || c instanceof SetReferenceChange) {
+          if (c instanceof OldSetPropertyChange || c instanceof OldSetReferenceChange) {
             SNodeId id = c.getAffectedNodeId();
             if (!(myAddedNodes.contains(id))) {
               expandNode(id);
@@ -199,9 +199,9 @@ import jetbrains.mps.ide.projectPane.Icons;
     }
   }
 
-  private void addToChangeSubtree(Change change, SNodeId nodeId, SModel newModel, SModel oldModel) {
+  private void addToChangeSubtree(OldChange change, SNodeId nodeId, SModel newModel, SModel oldModel) {
     if (!(myChangesMap.containsKey(nodeId))) {
-      myChangesMap.put(nodeId, new ArrayList<Change>());
+      myChangesMap.put(nodeId, new ArrayList<OldChange>());
     }
     myChangesMap.get(nodeId).add(change);
     SNode node = myNewModel.getNodeById(nodeId);
@@ -221,7 +221,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 
   public void setShowOnlyConflicts(boolean b) {
     myChangedSubtree.clear();
-    for (Change change : myChanges) {
+    for (OldChange change : myChanges) {
       SNodeId id = change.getAffectedNodeId();
       if (id != null && (!(b) || myConflicts.contains(id))) {
         addToChangeSubtree(change, change.getAffectedNodeId(), myNewModel, myOldModel);
@@ -230,11 +230,11 @@ import jetbrains.mps.ide.projectPane.Icons;
   }
 
   @Nullable
-  protected ActionGroup getActionGroupForChanges(List<Change> changes) {
+  protected ActionGroup getActionGroupForChanges(List<OldChange> changes) {
     return null;
   }
 
-  private static Color getColorForChangeType(ChangeType changeType) {
+  private static Color getColorForChangeType(OldChangeType changeType) {
     switch (changeType) {
       case ADD:
         return FileStatus.COLOR_ADDED;
@@ -323,7 +323,7 @@ import jetbrains.mps.ide.projectPane.Icons;
           }
         }
       }
-      List<Change> modelPropertyChanges = new ArrayList<Change>();
+      List<OldChange> modelPropertyChanges = new ArrayList<OldChange>();
       modelPropertyChanges.addAll(CollectionUtil.filter(ModelImportChange.class, myChanges));
       modelPropertyChanges.addAll(CollectionUtil.filter(UsedLanguagesChange.class, myChanges));
       modelPropertyChanges.addAll(CollectionUtil.filter(UsedDevkitsChange.class, myChanges));
@@ -331,7 +331,7 @@ import jetbrains.mps.ide.projectPane.Icons;
       if (!(modelPropertyChanges.isEmpty())) {
         OldModelChangesTree.SModelPropertiesTreeNode propertiesNode = new OldModelChangesTree.SModelPropertiesTreeNode(getOperationContext());
         getRootNode().add(propertiesNode);
-        for (Change change : modelPropertyChanges) {
+        for (OldChange change : modelPropertyChanges) {
           propertiesNode.add(new OldModelChangesTree.ModelPropertyChangeTreeNode(getOperationContext(), change));
         }
       }
@@ -509,7 +509,7 @@ import jetbrains.mps.ide.projectPane.Icons;
   }
 
   private class ModelPropertyChangeTreeNode extends MPSTreeNode {
-    public ModelPropertyChangeTreeNode(IOperationContext operationContext, Change change) {
+    public ModelPropertyChangeTreeNode(IOperationContext operationContext, OldChange change) {
       super(operationContext);
       setIcon(null);
       setText(change.toString());

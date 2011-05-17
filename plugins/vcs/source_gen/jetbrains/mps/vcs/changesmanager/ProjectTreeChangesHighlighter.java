@@ -25,15 +25,15 @@ import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
 import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
 import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
@@ -104,7 +104,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
             if (!(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).containsKey(modelDescriptor))) {
               MapSequence.fromMap(mySModelDescriptorsToTreeNodes).put(modelDescriptor, ListSequence.fromList(new ArrayList<SModelTreeNode>()));
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor);
-              for (Change change : ListSequence.fromList(modelChangesManager.getChangeList())) {
+              for (OldChange change : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 highlightChange(change, sModelTreeNode.getSModel());
               }
               modelChangesManager.addChangeListener(myChangeListener);
@@ -189,7 +189,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     }
   }
 
-  private void highlightChange(@NotNull final Change change, @NotNull final SModel model) {
+  private void highlightChange(@NotNull final OldChange change, @NotNull final SModel model) {
     myCommandQueue.runTask(new Runnable() {
       public void run() {
         updateModelHighlighting(model.getModelDescriptor());
@@ -217,25 +217,25 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         if (node == null) {
           return;
         }
-        if (change instanceof SetPropertyChange) {
+        if (change instanceof OldSetPropertyChange) {
           myPropertyChangeCountForNode.increment(node);
-        } else if (change instanceof SetReferenceChange) {
+        } else if (change instanceof OldSetReferenceChange) {
           myReferenceChangeCountForNode.increment(node);
         }
         if (change instanceof NewNodeChange) {
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
             highlightTreeNodeWithMessage(treeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change, myChangesManager.getModelChangesManager(model).getFileStatus())));
           }
-        } else if (change instanceof SetPropertyChange) {
-          String propertyName = ((SetPropertyChange) change).getProperty();
+        } else if (change instanceof OldSetPropertyChange) {
+          String propertyName = ((OldSetPropertyChange) change).getProperty();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
             PropertyTreeNode propertyTreeNode = MPSTreeUtils.findPropertyTreeNode(treeNode, propertyName);
             if (propertyTreeNode != null) {
               highlightTreeNodeWithMessage(propertyTreeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change)));
             }
           }
-        } else if (change instanceof SetReferenceChange) {
-          String role = ((SetReferenceChange) change).getRole();
+        } else if (change instanceof OldSetReferenceChange) {
+          String role = ((OldSetReferenceChange) change).getRole();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
             ReferenceTreeNode referenceTreeNode = MPSTreeUtils.findReferenceTreeNode(treeNode, role);
             if (referenceTreeNode != null) {
@@ -260,7 +260,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     return model.getNodeById(currentNodeId);
   }
 
-  private void unhighlightChange(@NotNull final Change change, @NotNull final SModel model) {
+  private void unhighlightChange(@NotNull final OldChange change, @NotNull final SModel model) {
     myCommandQueue.runTask(new Runnable() {
       public void run() {
         updateModelHighlighting(model.getModelDescriptor());
@@ -306,25 +306,25 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         if (node == null) {
           return;
         }
-        if (change instanceof SetPropertyChange) {
+        if (change instanceof OldSetPropertyChange) {
           myPropertyChangeCountForNode.decrement(node);
-        } else if (change instanceof SetReferenceChange) {
+        } else if (change instanceof OldSetReferenceChange) {
           myReferenceChangeCountForNode.decrement(node);
         }
         if (change instanceof NewNodeChange) {
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
             unhighlightTreeNode(treeNode);
           }
-        } else if (change instanceof SetPropertyChange) {
-          String propertyName = ((SetPropertyChange) change).getProperty();
+        } else if (change instanceof OldSetPropertyChange) {
+          String propertyName = ((OldSetPropertyChange) change).getProperty();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
             PropertyTreeNode propertyTreeNode = MPSTreeUtils.findPropertyTreeNode(treeNode, propertyName);
             if (propertyTreeNode != null) {
               unhighlightTreeNode(propertyTreeNode);
             }
           }
-        } else if (change instanceof SetReferenceChange) {
-          String role = ((SetReferenceChange) change).getRole();
+        } else if (change instanceof OldSetReferenceChange) {
+          String role = ((OldSetReferenceChange) change).getRole();
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
             ReferenceTreeNode referenceTreeNode = MPSTreeUtils.findReferenceTreeNode(treeNode, role);
             if (referenceTreeNode != null) {
@@ -383,7 +383,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
                 return;
               }
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
-              for (Change c : ListSequence.fromList(modelChangesManager.getChangeList())) {
+              for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if ((c instanceof NewNodeChange) && node.getSNodeId().equals(c.getAffectedNodeId())) {
                   assert primaryMessage.value == null;
                   primaryMessage.value = new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(c, modelChangesManager.getFileStatus()));
@@ -407,8 +407,8 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
-              for (Change c : ListSequence.fromList(modelChangesManager.getChangeList())) {
-                if (c instanceof SetPropertyChange && node.getSNodeId().equals(c.getAffectedNodeId()) && ObjectUtils.equals(((SetPropertyChange) c).getProperty(), ((PropertyTreeNode) treeNode).getProperty())) {
+              for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
+                if (c instanceof OldSetPropertyChange && node.getSNodeId().equals(c.getAffectedNodeId()) && ObjectUtils.equals(((OldSetPropertyChange) c).getProperty(), ((PropertyTreeNode) treeNode).getProperty())) {
                   assert primaryMessage.value == null;
                   primaryMessage.value = new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(c));
                 }
@@ -423,8 +423,8 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
-              for (Change c : ListSequence.fromList(modelChangesManager.getChangeList())) {
-                if (c instanceof SetReferenceChange && node.getSNodeId().equals(c.getAffectedNodeId()) && ObjectUtils.equals(((SetReferenceChange) c).getRole(), ((ReferenceTreeNode) treeNode).getRef().getRole())) {
+              for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
+                if (c instanceof OldSetReferenceChange && node.getSNodeId().equals(c.getAffectedNodeId()) && ObjectUtils.equals(((OldSetReferenceChange) c).getRole(), ((ReferenceTreeNode) treeNode).getRef().getRole())) {
                   assert primaryMessage.value == null;
                   primaryMessage.value = new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(c));
                 }
@@ -510,12 +510,12 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
   }
 
   @Nullable
-  private static Color getColor(@NotNull Change change) {
+  private static Color getColor(@NotNull OldChange change) {
     return getColor(change, null);
   }
 
   @Nullable
-  private static Color getColor(@NotNull Change change, FileStatus modelFileStatus) {
+  private static Color getColor(@NotNull OldChange change, FileStatus modelFileStatus) {
     switch (change.getChangeType()) {
       case ADD:
         if (modelFileStatus == FileStatus.ADDED || modelFileStatus == FileStatus.UNKNOWN) {
@@ -643,11 +643,11 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     public MyChangeListener() {
     }
 
-    public void changeAdded(@NotNull Change change, @NotNull SModel model) {
+    public void changeAdded(@NotNull OldChange change, @NotNull SModel model) {
       highlightChange(change, model);
     }
 
-    public void changeRemoved(@NotNull Change change, @NotNull SModel model) {
+    public void changeRemoved(@NotNull OldChange change, @NotNull SModel model) {
       unhighlightChange(change, model);
     }
 

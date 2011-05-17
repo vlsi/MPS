@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.HackSNodeUtil;
 
 @Deprecated
-public class ChangeConceptChange extends Change {
+public class ChangeConceptChange extends OldChange {
   private final SNodeId mySNodeId;
   private final String myConceptFqName;
 
@@ -37,7 +37,7 @@ public class ChangeConceptChange extends Change {
   }
 
   @Override
-  public boolean isSameChange(Change c) {
+  public boolean isSameChange(OldChange c) {
     if (this == c) {
       return true;
     }

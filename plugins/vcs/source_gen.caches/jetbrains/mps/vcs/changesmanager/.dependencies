@@ -3,7 +3,7 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.ChangeListener" file="ChangeListener.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.util.EventListener" />
@@ -45,13 +45,13 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SubstituteNodeChange" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -62,6 +62,7 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.ChangesManager" file="ChangesManager.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeList" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListListener" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManager" />
@@ -95,7 +96,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -182,10 +183,10 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -287,16 +288,16 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager._Adapters" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.DiffBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ModelImportChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SubstituteNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedDevkitsChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
@@ -354,10 +355,10 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.MPSTreeUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

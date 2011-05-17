@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import java.util.List;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,11 +18,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
 import jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
 import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.HashSet;
@@ -39,7 +39,7 @@ public abstract class OldDiffEditorComponent extends EditorComponent {
   private static final Color ERROR_COLOR = new Color(255, 220, 220);
 
   private EditorMessageOwner myOwner = new EditorMessageOwner() {};
-  private List<Change> myChanges = new ArrayList<Change>();
+  private List<OldChange> myChanges = new ArrayList<OldChange>();
   private ArrayList<OldChangeEditorMessage> myChangeEditorMessages = new ArrayList<OldChangeEditorMessage>();
   private InspectorEditorComponent myInspector;
 
@@ -74,20 +74,20 @@ public abstract class OldDiffEditorComponent extends EditorComponent {
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
 
-  public void hightlight(final List<Change> changes, final boolean isNewVersion, final boolean revertedChanges) {
+  public void hightlight(final List<OldChange> changes, final boolean isNewVersion, final boolean revertedChanges) {
     final List<OldChangeEditorMessage> resultChanges = new ArrayList<OldChangeEditorMessage>();
-    myChanges = new ArrayList<Change>(changes);
+    myChanges = new ArrayList<OldChange>(changes);
     SNode sNode = getRootCell().getSNode();
     if (sNode == null) {
       return;
     }
     final SModel model = sNode.getModel();
-    final Set<Change> newChanges = getNewChanges(changes);
+    final Set<OldChange> newChanges = getNewChanges(changes);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Change change : changes) {
-          if (change instanceof SetReferenceChange) {
-            SetReferenceChange referenceChange = (SetReferenceChange) change;
+        for (OldChange change : changes) {
+          if (change instanceof OldSetReferenceChange) {
+            OldSetReferenceChange referenceChange = (OldSetReferenceChange) change;
             OldChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !(newChanges.contains(change)));
             message.setRole(referenceChange.getRole());
             resultChanges.add(message);
@@ -105,8 +105,8 @@ public abstract class OldDiffEditorComponent extends EditorComponent {
               getHighlightManager().mark(message);
             }
           }
-          if (change instanceof SetPropertyChange) {
-            SetPropertyChange propertyChange = (SetPropertyChange) change;
+          if (change instanceof OldSetPropertyChange) {
+            OldSetPropertyChange propertyChange = (OldSetPropertyChange) change;
             OldChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !(newChanges.contains(change)));
             message.setProperty(propertyChange.getProperty());
             resultChanges.add(message);
@@ -130,15 +130,15 @@ public abstract class OldDiffEditorComponent extends EditorComponent {
     myChangeEditorMessages = new ArrayList<OldChangeEditorMessage>(resultChanges);
   }
 
-  private Set<Change> getNewChanges(List<Change> changes) {
+  private Set<OldChange> getNewChanges(List<OldChange> changes) {
     Set<SNodeId> newNodes = new HashSet<SNodeId>();
-    for (Change change : changes) {
+    for (OldChange change : changes) {
       if (change instanceof NewNodeChange) {
         newNodes.add(change.getAffectedNodeId());
       }
     }
-    Set<Change> newChanges = new HashSet<Change>();
-    for (Change change : changes) {
+    Set<OldChange> newChanges = new HashSet<OldChange>();
+    for (OldChange change : changes) {
       if (change instanceof NewNodeChange) {
         SNodeId id = ((NewNodeChange) change).getNodeParent();
         if (id != null && newNodes.contains(id)) {
@@ -154,7 +154,7 @@ public abstract class OldDiffEditorComponent extends EditorComponent {
     return newChanges;
   }
 
-  private OldChangeEditorMessage createEditorMessage(Change change, SModel model, boolean revertChanges, boolean show) {
+  private OldChangeEditorMessage createEditorMessage(OldChange change, SModel model, boolean revertChanges, boolean show) {
     Color color = null;
     if (show) {
       if (revertChanges) {
@@ -300,7 +300,7 @@ public abstract class OldDiffEditorComponent extends EditorComponent {
     });
   }
 
-  public List<Change> getChanges() {
+  public List<OldChange> getChanges() {
     return myChanges;
   }
 }

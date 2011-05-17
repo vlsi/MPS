@@ -20,7 +20,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import java.util.Set;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.smodel.SNode;
@@ -37,9 +37,9 @@ import com.intellij.openapi.vcs.actions.AnnotationColors;
 import jetbrains.mps.vcs.changesmanager.ChangesManager;
 import jetbrains.mps.vcs.changesmanager.ModelChangesManager;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
-import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
 import java.awt.Graphics;
@@ -86,6 +86,7 @@ import com.intellij.openapi.vcs.CommittedChangesProvider;
 import com.intellij.openapi.vcs.FilePathImpl;
 import com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier;
 import com.intellij.openapi.ui.MessageType;
+import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
 import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
@@ -114,7 +115,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private VirtualFile myModelVirtualFile;
   private SModelDescriptor myModelDescriptor;
   private List<LineContent> myFileLineToContent;
-  private Map<Change, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<Change, LineContent>());
+  private Map<OldChange, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<OldChange, LineContent>());
   private Set<Integer> myCurrentPseudoLines = null;
   private final Object myCurrentPseudoLinesLock = new Object();
   private VcsRevisionRange myRevisionRange;
@@ -183,8 +184,8 @@ public class AnnotationColumn extends AbstractLeftColumn {
     changesManager.getCommandQueue().runTask(new Runnable() {
       public void run() {
         ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(model);
-        ListSequence.fromList(modelChangesManager.getChangeList()).visitAll(new IVisitor<Change>() {
-          public void visit(Change ch) {
+        ListSequence.fromList(modelChangesManager.getChangeList()).visitAll(new IVisitor<OldChange>() {
+          public void visit(OldChange ch) {
             saveChange(ch);
           }
         });
@@ -193,11 +194,11 @@ public class AnnotationColumn extends AbstractLeftColumn {
     });
   }
 
-  private void saveChange(Change ch) {
-    if (ch instanceof SetPropertyChange) {
-      MapSequence.fromMap(myChangesToLineContents).put(ch, new PropertyLineContent(ch.getAffectedNodeId(), ((SetPropertyChange) ch).getProperty()));
-    } else if (ch instanceof SetReferenceChange) {
-      MapSequence.fromMap(myChangesToLineContents).put(ch, new ReferenceLineContent(ch.getAffectedNodeId(), ((SetReferenceChange) ch).getRole()));
+  private void saveChange(OldChange ch) {
+    if (ch instanceof OldSetPropertyChange) {
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new PropertyLineContent(ch.getAffectedNodeId(), ((OldSetPropertyChange) ch).getProperty()));
+    } else if (ch instanceof OldSetReferenceChange) {
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new ReferenceLineContent(ch.getAffectedNodeId(), ((OldSetReferenceChange) ch).getRole()));
     } else if (ch.getAffectedNodeId() != null) {
       MapSequence.fromMap(myChangesToLineContents).put(ch, new NodeLineContent(ch.getAffectedNodeId()));
     }
@@ -635,11 +636,11 @@ __switch__:
       }
     }
 
-    public void changeRemoved(@NotNull Change change, @NotNull SModel model) {
+    public void changeRemoved(@NotNull OldChange change, @NotNull SModel model) {
       MapSequence.fromMap(myChangesToLineContents).removeKey(change);
     }
 
-    public void changeAdded(@NotNull Change change, @NotNull SModel model) {
+    public void changeAdded(@NotNull OldChange change, @NotNull SModel model) {
       saveChange(change);
     }
   }
@@ -674,21 +675,21 @@ __switch__:
                 VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
                 return;
               }
-              List<com.intellij.openapi.vcs.changes.Change> changes = Sequence.fromIterable(((Iterable<com.intellij.openapi.vcs.changes.Change>) cl.getChanges())).sort(new ISelector<com.intellij.openapi.vcs.changes.Change, Comparable<?>>() {
-                public Comparable<?> select(com.intellij.openapi.vcs.changes.Change c) {
+              List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, Comparable<?>>() {
+                public Comparable<?> select(Change c) {
                   return ChangesUtil.getFilePath(c).getName().toLowerCase();
                 }
               }, true).toListSequence();
               final File ioFile = targetPath.getIOFile();
-              com.intellij.openapi.vcs.changes.Change change = ListSequence.fromList(changes).findFirst(new IWhereFilter<com.intellij.openapi.vcs.changes.Change>() {
-                public boolean accept(com.intellij.openapi.vcs.changes.Change c) {
+              Change change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
+                public boolean accept(Change c) {
                   return c.getAfterRevision() != null && c.getAfterRevision().getFile().getIOFile().equals(ioFile);
                 }
               });
               if (change != null) {
                 final String name = ioFile.getName();
-                change = ListSequence.fromList(changes).findFirst(new IWhereFilter<com.intellij.openapi.vcs.changes.Change>() {
-                  public boolean accept(com.intellij.openapi.vcs.changes.Change c) {
+                change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
+                  public boolean accept(Change c) {
                     return c.getAfterRevision() != null && c.getAfterRevision().getFile().getName().equals(name);
                   }
                 });

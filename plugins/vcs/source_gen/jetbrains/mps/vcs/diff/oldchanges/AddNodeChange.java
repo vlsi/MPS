@@ -60,7 +60,7 @@ public class AddNodeChange extends NewNodeChange {
   }
 
   @Override
-  public ChangeType getChangeType() {
-    return ChangeType.ADD;
+  public OldChangeType getChangeType() {
+    return OldChangeType.ADD;
   }
 }

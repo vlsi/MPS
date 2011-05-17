@@ -11,7 +11,7 @@ import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 
 @Deprecated
-public class DeleteNodeChange extends Change {
+public class DeleteNodeChange extends OldChange {
   private SNodeId myNodeId;
   private List<SNodeId> myChildren;
   private SNodeId myParentId = null;
@@ -34,7 +34,7 @@ public class DeleteNodeChange extends Change {
   }
 
   @Override
-  public boolean isSameChange(Change c) {
+  public boolean isSameChange(OldChange c) {
     if (this == c) {
       return true;
     }
@@ -78,8 +78,8 @@ public class DeleteNodeChange extends Change {
   }
 
   @Override
-  public ChangeType getChangeType() {
-    return ChangeType.DELETE;
+  public OldChangeType getChangeType() {
+    return OldChangeType.DELETE;
   }
 
   @Override

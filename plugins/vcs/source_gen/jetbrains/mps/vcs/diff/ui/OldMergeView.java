@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import java.util.List;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -126,10 +126,10 @@ public class OldMergeView extends JPanel {
     }
 
     @Override
-    protected ActionGroup getActionGroupForChanges(final List<Change> changes) {
+    protected ActionGroup getActionGroupForChanges(final List<OldChange> changes) {
       BaseAction excludeAction = new BaseAction("Exclude") {
         protected void doExecute(AnActionEvent e, Map<String, Object> map) {
-          for (Change change : changes) {
+          for (OldChange change : changes) {
             myMerger.excludeChange(change);
             getExcludetNodes().add(change.getAffectedNodeId());
           }
@@ -143,7 +143,7 @@ public class OldMergeView extends JPanel {
       excludeAction.setDisableOnNoProject(false);
       BaseAction includeAction = new BaseAction("Include") {
         protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-          for (Change change : changes) {
+          for (OldChange change : changes) {
             myMerger.includeChange(change);
             getExcludetNodes().remove(change.getAffectedNodeId());
           }

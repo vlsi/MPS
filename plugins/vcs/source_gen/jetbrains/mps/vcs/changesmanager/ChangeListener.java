@@ -4,14 +4,14 @@ package jetbrains.mps.vcs.changesmanager;
 
 import java.util.EventListener;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.FileStatus;
 
 public interface ChangeListener extends EventListener {
-  public void changeAdded(@NotNull Change change, @NotNull SModel model);
-  public void changeRemoved(@NotNull Change change, @NotNull SModel model);
+  public void changeAdded(@NotNull OldChange change, @NotNull SModel model);
+  public void changeRemoved(@NotNull OldChange change, @NotNull SModel model);
   public void fileStatusChanged(@Nullable FileStatus newFileStatus, @NotNull SModel model);
   public void changeUpdateStarted();
   public void changeUpdateFinished();
@@ -28,10 +28,10 @@ public interface ChangeListener extends EventListener {
     public void fileStatusChanged(@Nullable FileStatus newFileStatus, @NotNull SModel model) {
     }
 
-    public void changeRemoved(@NotNull Change change, @NotNull SModel model) {
+    public void changeRemoved(@NotNull OldChange change, @NotNull SModel model) {
     }
 
-    public void changeAdded(@NotNull Change change, @NotNull SModel model) {
+    public void changeAdded(@NotNull OldChange change, @NotNull SModel model) {
     }
   }
 

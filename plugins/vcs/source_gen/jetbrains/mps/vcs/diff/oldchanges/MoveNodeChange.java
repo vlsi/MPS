@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 @Deprecated
-public class MoveNodeChange extends Change {
+public class MoveNodeChange extends OldChange {
   private SNodeId myNodeId;
   private SNodeId myNewParent;
   private SNodeId myPrevSibling;
@@ -44,7 +44,7 @@ public class MoveNodeChange extends Change {
   }
 
   @Override
-  public boolean isSameChange(Change c) {
+  public boolean isSameChange(OldChange c) {
     if (this == c) {
       return true;
     }

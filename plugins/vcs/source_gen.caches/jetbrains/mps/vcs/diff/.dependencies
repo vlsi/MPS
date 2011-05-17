@@ -2,7 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.vcs.diff.Conflict" file="Conflict.java">
     <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.DiffBuilder" file="DiffBuilder.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -31,8 +31,6 @@
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddLanguageAspectChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange" />
@@ -40,9 +38,11 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ModelImportChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedDevkitsChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
@@ -79,16 +79,16 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.Warning" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddLanguageAspectChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ModelImportChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.Warning" file="Warning.java">

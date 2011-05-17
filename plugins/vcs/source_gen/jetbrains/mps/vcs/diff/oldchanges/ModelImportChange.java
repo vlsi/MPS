@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModel;
 
 @Deprecated
-public class ModelImportChange extends Change {
+public class ModelImportChange extends OldChange {
   private final SModelReference mySModelReference;
   private final boolean myIsDeleted;
 
@@ -42,10 +42,10 @@ public class ModelImportChange extends Change {
   }
 
   @Override
-  public ChangeType getChangeType() {
+  public OldChangeType getChangeType() {
     return (myIsDeleted ?
-      ChangeType.DELETE :
-      ChangeType.ADD
+      OldChangeType.DELETE :
+      OldChangeType.ADD
     );
   }
 

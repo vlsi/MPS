@@ -16,7 +16,7 @@ import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import com.intellij.openapi.util.Pair;
 
 @Deprecated
-public class SetReferenceChange extends Change {
+public class OldSetReferenceChange extends OldChange {
   protected final SNodeId myNodeId;
   private final SModel myModel;
   protected final String myRole;
@@ -27,7 +27,7 @@ public class SetReferenceChange extends Change {
   private SNodeId myTargetId;
 
   @Deprecated
-  public SetReferenceChange(SNodeId id, SModel model, SReference reference, SNode target) {
+  public OldSetReferenceChange(SNodeId id, SModel model, SReference reference, SNode target) {
     myNodeId = id;
     myModel = model;
     myRole = reference.getRole();
@@ -115,14 +115,14 @@ public class SetReferenceChange extends Change {
   }
 
   @Override
-  public boolean isSameChange(Change c) {
+  public boolean isSameChange(OldChange c) {
     if (this == c) {
       return true;
     }
     if (c == null || getClass() != c.getClass()) {
       return false;
     }
-    SetReferenceChange that = (SetReferenceChange) c;
+    OldSetReferenceChange that = (OldSetReferenceChange) c;
     if (myInternal != that.myInternal) {
       return false;
     }

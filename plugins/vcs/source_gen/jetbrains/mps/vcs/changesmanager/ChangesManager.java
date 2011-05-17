@@ -32,9 +32,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.io.PrintStream;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import java.util.Collection;
+import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangeList;
 import jetbrains.mps.vcs.MPSVcsManager;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -157,7 +158,7 @@ public class ChangesManager extends AbstractProjectComponent {
             })) {
               out.println("==" + smrMcmPair.key() + "==");
 
-              for (Change change : ListSequence.fromList(smrMcmPair.value().getChangeList())) {
+              for (OldChange change : ListSequence.fromList(smrMcmPair.value().getChangeList())) {
                 out.println(change);
               }
 
@@ -197,26 +198,26 @@ public class ChangesManager extends AbstractProjectComponent {
     public MyChangeListListener() {
     }
 
-    private void processChanges(Collection<com.intellij.openapi.vcs.changes.Change> changes) {
-      for (com.intellij.openapi.vcs.changes.Change change : Sequence.fromIterable(changes)) {
+    private void processChanges(Collection<Change> changes) {
+      for (Change change : Sequence.fromIterable(changes)) {
         updateModelStatus(change.getVirtualFile(), change.getFileStatus());
       }
     }
 
     @Override
-    public void changesAdded(Collection<com.intellij.openapi.vcs.changes.Change> changes, ChangeList toList) {
+    public void changesAdded(Collection<Change> changes, ChangeList toList) {
       processChanges(changes);
     }
 
     @Override
-    public void changesRemoved(Collection<com.intellij.openapi.vcs.changes.Change> changes, ChangeList fromList) {
-      for (com.intellij.openapi.vcs.changes.Change change : Sequence.fromIterable(changes)) {
+    public void changesRemoved(Collection<Change> changes, ChangeList fromList) {
+      for (Change change : Sequence.fromIterable(changes)) {
         updateModelStatus(change.getVirtualFile(), null);
       }
     }
 
     @Override
-    public void changesMoved(Collection<com.intellij.openapi.vcs.changes.Change> changes, ChangeList fromList, ChangeList toList) {
+    public void changesMoved(Collection<Change> changes, ChangeList fromList, ChangeList toList) {
       processChanges(changes);
     }
 

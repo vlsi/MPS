@@ -37,6 +37,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspect" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspectAdapter" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.BackgroundFromStartOption" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangesUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.TextTransferrable" />
@@ -113,9 +114,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />

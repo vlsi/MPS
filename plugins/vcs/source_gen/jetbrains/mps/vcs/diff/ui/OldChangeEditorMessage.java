@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
@@ -20,9 +20,9 @@ public class OldChangeEditorMessage extends DefaultEditorMessage {
   private String myProperty;
   private String myRole;
   @NotNull
-  private Change myChange;
+  private OldChange myChange;
 
-  public OldChangeEditorMessage(Change change, SNode node, Color color, String message, EditorMessageOwner owner) {
+  public OldChangeEditorMessage(OldChange change, SNode node, Color color, String message, EditorMessageOwner owner) {
     super(node, color, message, owner);
     myChange = change;
   }
@@ -89,7 +89,7 @@ public class OldChangeEditorMessage extends DefaultEditorMessage {
   }
 
   @NotNull
-  public Change getChange() {
+  public OldChange getChange() {
     return myChange;
   }
 }

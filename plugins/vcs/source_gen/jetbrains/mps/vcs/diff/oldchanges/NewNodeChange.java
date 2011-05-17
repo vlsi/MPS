@@ -7,7 +7,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 
 @Deprecated
-public abstract class NewNodeChange extends Change {
+public abstract class NewNodeChange extends OldChange {
   private String myConceptFqName;
   private SNodeId myNodeId;
   private String myNodeRole;
@@ -38,8 +38,8 @@ public abstract class NewNodeChange extends Change {
   }
 
   @Override
-  public ChangeType getChangeType() {
-    return ChangeType.ADD;
+  public OldChangeType getChangeType() {
+    return OldChangeType.ADD;
   }
 
   @Override
@@ -48,7 +48,7 @@ public abstract class NewNodeChange extends Change {
   }
 
   @Override
-  public boolean isSameChange(Change c) {
+  public boolean isSameChange(OldChange c) {
     if (this == c) {
       return true;
     }

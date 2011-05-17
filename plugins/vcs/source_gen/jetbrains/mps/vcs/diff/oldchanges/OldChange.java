@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 
 @Deprecated
-public abstract class Change {
+public abstract class OldChange {
   private boolean myIsError;
 
   @Deprecated
-  public Change() {
+  public OldChange() {
   }
 
   public abstract SNodeId getAffectedNodeId();
@@ -24,8 +24,8 @@ public abstract class Change {
     return new ArrayList();
   }
 
-  public ChangeType getChangeType() {
-    return ChangeType.CHANGE;
+  public OldChangeType getChangeType() {
+    return OldChangeType.CHANGE;
   }
 
   public boolean isError() {
@@ -44,7 +44,7 @@ public abstract class Change {
     return null;
   }
 
-  public boolean isSameChange(Change c) {
+  public boolean isSameChange(OldChange c) {
     return c == this;
   }
 }

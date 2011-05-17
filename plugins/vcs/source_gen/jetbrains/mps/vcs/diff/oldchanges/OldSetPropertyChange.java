@@ -12,13 +12,13 @@ import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import com.intellij.openapi.util.Pair;
 
 @Deprecated
-public class SetPropertyChange extends Change {
+public class OldSetPropertyChange extends OldChange {
   private SNodeId myNodeId;
   private String myProperty;
   private String myNewValue;
 
   @Deprecated
-  public SetPropertyChange(SNodeId nodeId, String property, String newValue) {
+  public OldSetPropertyChange(SNodeId nodeId, String property, String newValue) {
     myNodeId = nodeId;
     myProperty = property;
     myNewValue = newValue;
@@ -65,14 +65,14 @@ public class SetPropertyChange extends Change {
   }
 
   @Override
-  public boolean isSameChange(Change c) {
+  public boolean isSameChange(OldChange c) {
     if (this == c) {
       return true;
     }
     if (c == null || getClass() != c.getClass()) {
       return false;
     }
-    SetPropertyChange that = (SetPropertyChange) c;
+    OldSetPropertyChange that = (OldSetPropertyChange) c;
     if ((myNewValue != null ?
       !(myNewValue.equals(that.myNewValue)) :
       that.myNewValue != null
