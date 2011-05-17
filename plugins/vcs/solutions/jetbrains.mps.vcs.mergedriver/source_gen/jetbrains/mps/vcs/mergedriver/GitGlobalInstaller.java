@@ -52,6 +52,7 @@ import java.io.IOException;
     ListSequence.fromList(configLines).addElement("\tname = MPS merge driver");
     String cmd = MergeDriverMain.getCommandLine().replace("\\", "\\\\");
     ListSequence.fromList(configLines).addElement(String.format("\tdriver = %s --git %%O %%A %%B %%L", cmd));
+    ListSequence.fromList(configLines).addElement("");
 
     try {
       StringsIO.writeLines(configFile, configLines);

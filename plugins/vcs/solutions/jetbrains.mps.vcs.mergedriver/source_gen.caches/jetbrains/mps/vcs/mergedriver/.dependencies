@@ -47,13 +47,15 @@
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverInstaller" file="MergeDriverInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SvnInstaller" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverMain" file="MergeDriverMain.java">
@@ -72,6 +74,26 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.TextMerger" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog" file="MergeDriverOptionsDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="java.awt.FlowLayout" />
+    <classNode dependClassName="java.awt.GridLayout" />
+    <classNode dependClassName="java.awt.event.ItemEvent" />
+    <classNode dependClassName="java.awt.event.ItemListener" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalInstaller" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SvnInstaller" />
+    <classNode extendsClassName="javax.swing.JCheckBox" />
+    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.SimpleMerger" file="SimpleMerger.java">
     <classNode dependClassName="java.io.File" />

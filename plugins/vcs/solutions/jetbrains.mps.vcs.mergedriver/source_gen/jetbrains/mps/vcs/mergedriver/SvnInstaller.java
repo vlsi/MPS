@@ -58,12 +58,8 @@ import com.intellij.openapi.util.SystemInfo;
           if (cmd.contains("mps-merger.")) {
             // already installed 
 
-            if (dryRun) {
-              if (eq_k2wvr2_a0a0c0c0d0b0h0a(line, configLine)) {
-                return AbstractInstaller.State.INSTALLED;
-              } else {
-                return AbstractInstaller.State.OUTDATED;
-              }
+            if (dryRun && neq_k2wvr2_a0a2a2a3a1a7a0(line, configLine)) {
+              return AbstractInstaller.State.OUTDATED;
             }
             lineToReplace = i;
             break;
@@ -128,7 +124,11 @@ import com.intellij.openapi.util.SystemInfo;
     }
 
     if (dryRun) {
-      return AbstractInstaller.State.NOT_INSTALLED;
+      if (lineToReplace != -1 && eq_k2wvr2_a0a0a41a0(ListSequence.fromList(lines).getElement(lineToReplace), configLine)) {
+        return AbstractInstaller.State.INSTALLED;
+      } else {
+        return AbstractInstaller.State.NOT_INSTALLED;
+      }
     }
 
     if (lineToReplace == -1) {
@@ -193,7 +193,14 @@ import com.intellij.openapi.util.SystemInfo;
     )));
   }
 
-  private static boolean eq_k2wvr2_a0a0c0c0d0b0h0a(Object a, Object b) {
+  private static boolean neq_k2wvr2_a0a2a2a3a1a7a0(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean eq_k2wvr2_a0a0a41a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

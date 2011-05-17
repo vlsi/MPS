@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.VcsRoot;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -27,19 +27,14 @@ import java.io.IOException;
   }
 
   @NotNull
-  protected AbstractInstaller.State install(boolean dryRun) {
-    VcsRoot[] allRoots = myProject.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots();
-    Iterable<VcsRoot> gitRoots = Sequence.fromIterable(Sequence.fromArray(allRoots)).where(new IWhereFilter<VcsRoot>() {
-      public boolean accept(VcsRoot root) {
-        return "Git".equals(root.vcs.getName());
-      }
-    });
+  protected AbstractInstaller.State install(final boolean dryRun) {
+    Iterable<VcsRoot> gitRoots = getGitRoots();
     if (Sequence.fromIterable(gitRoots).isEmpty()) {
       return AbstractInstaller.State.INSTALLED;
     } else {
       List<AbstractInstaller.State> states = Sequence.fromIterable(gitRoots).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
         public AbstractInstaller.State select(VcsRoot r) {
-          return installForRoot(r.path, true);
+          return installForRoot(r.path, dryRun);
         }
       }).toListSequence();
       if (ListSequence.fromList(states).all(new IWhereFilter<AbstractInstaller.State>() {
@@ -63,6 +58,27 @@ import java.io.IOException;
       }
       return installForRoots(gitRoots);
     }
+  }
+
+  /*package*/ int getRootsToInstall() {
+    return Sequence.fromIterable(getGitRoots()).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
+      public AbstractInstaller.State select(VcsRoot r) {
+        return installForRoot(r.path, true);
+      }
+    }).where(new IWhereFilter<AbstractInstaller.State>() {
+      public boolean accept(AbstractInstaller.State st) {
+        return st != AbstractInstaller.State.INSTALLED;
+      }
+    }).count();
+  }
+
+  private Iterable<VcsRoot> getGitRoots() {
+    VcsRoot[] allRoots = myProject.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots();
+    return Sequence.fromIterable(Sequence.fromArray(allRoots)).where(new IWhereFilter<VcsRoot>() {
+      public boolean accept(VcsRoot root) {
+        return "Git".equals(root.vcs.getName());
+      }
+    });
   }
 
   private AbstractInstaller.State installForRoots(Iterable<VcsRoot> roots) {
@@ -129,6 +145,10 @@ import java.io.IOException;
         if (addNew) {
           ListSequence.fromList(lines).addElement("*." + ext + " merge=mps");
         }
+      }
+
+      if (dryRun) {
+        return AbstractInstaller.State.NOT_INSTALLED;
       }
 
       StringsIO.writeLines(attributesFile.getOutputStream(null), lines);
