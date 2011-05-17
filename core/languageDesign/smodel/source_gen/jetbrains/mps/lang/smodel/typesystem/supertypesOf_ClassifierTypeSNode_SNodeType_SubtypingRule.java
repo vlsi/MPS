@@ -80,14 +80,14 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1179273756519;
-        nodeToMatch_1179273756519 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1179273756519.getConceptFqName()))) {
+        SNode nodeToMatch_semtjk_a0a;
+        nodeToMatch_semtjk_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_semtjk_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1179273756519.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_semtjk_a0a.getReferent("classifier")))) {
             return false;
           }
         }

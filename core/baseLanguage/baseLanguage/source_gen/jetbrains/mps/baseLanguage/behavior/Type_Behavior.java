@@ -343,9 +343,9 @@ public class Type_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1220440010778;
-        nodeToMatch_1220440010778 = nodeToMatch;
-        if (!(MatchingUtil.matchNodes((SNode) this.AntiquotationField_smb55n_a0a0a0a41, nodeToMatch_1220440010778))) {
+        SNode nodeToMatch_smb55n_a0a0a41;
+        nodeToMatch_smb55n_a0a0a41 = nodeToMatch;
+        if (!(MatchingUtil.matchNodes((SNode) this.AntiquotationField_smb55n_a0a0a0a41, nodeToMatch_smb55n_a0a0a41))) {
           return false;
         }
       }

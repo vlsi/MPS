@@ -2441,14 +2441,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1208699564839;
-        nodeToMatch_1208699564839 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1208699564839.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a0u;
+        nodeToMatch_x583g4_a0a0a0a0u = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a0u.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0a02;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1208699564839.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0u.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2477,14 +2477,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1208699585986;
-        nodeToMatch_1208699585986 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1208699585986.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a16;
+        nodeToMatch_x583g4_a0a0a0a16 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a16.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jc;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1208699585986.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a16.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2513,14 +2513,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1208699595281;
-        nodeToMatch_1208699595281 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1208699595281.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a46;
+        nodeToMatch_x583g4_a0a0a0a46 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a46.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0mc;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1208699595281.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a46.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2549,14 +2549,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1226933180373;
-        nodeToMatch_1226933180373 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1226933180373.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a07;
+        nodeToMatch_x583g4_a0a0a0a07 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a07.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0sc;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1226933180373.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a07.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2585,14 +2585,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_2521829804648621870;
-        nodeToMatch_2521829804648621870 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2521829804648621870.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a28;
+        nodeToMatch_x583g4_a0a0a0a28 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a28.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0ed;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_2521829804648621870.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a28.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2621,14 +2621,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1240243185506;
-        nodeToMatch_1240243185506 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1240243185506.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a48;
+        nodeToMatch_x583g4_a0a0a0a48 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a48.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0gd;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1240243185506.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a48.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2657,14 +2657,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1240253461466;
-        nodeToMatch_1240253461466 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1240253461466.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a88;
+        nodeToMatch_x583g4_a0a0a0a88 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a88.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0kd;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1240253461466.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a88.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2693,14 +2693,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_5478544378670483656;
-        nodeToMatch_5478544378670483656 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_5478544378670483656.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a29;
+        nodeToMatch_x583g4_a0a0a0a29 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a29.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0od;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_5478544378670483656.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a29.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2729,14 +2729,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1848858642723005397;
-        nodeToMatch_1848858642723005397 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1848858642723005397.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a69;
+        nodeToMatch_x583g4_a0a0a0a69 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a69.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0sd;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1848858642723005397.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a69.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2765,14 +2765,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_3358009230509159596;
-        nodeToMatch_3358009230509159596 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_3358009230509159596.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a701;
+        nodeToMatch_x583g4_a0a0a0a701 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a701.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0de;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_3358009230509159596.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a701.getReferent("classifier")))) {
             return false;
           }
         }
@@ -2801,14 +2801,14 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_169948565229769059;
-        nodeToMatch_169948565229769059 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_169948565229769059.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0a361;
+        nodeToMatch_x583g4_a0a0a0a361 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_x583g4_a0a0a0a361.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0hg;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_169948565229769059.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a361.getReferent("classifier")))) {
             return false;
           }
         }

@@ -61,29 +61,29 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1241438253001;
-        nodeToMatch_1241438253001 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1241438253001.getConceptFqName()))) {
+        SNode nodeToMatch_a1tqv3_a0a;
+        nodeToMatch_a1tqv3_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_a1tqv3_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_yoc8ci_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1241438253001.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_a1tqv3_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_1241438253001 = "parameter";
-          if (nodeToMatch_1241438253001.getChildCount(childRole_1241438253001) != 2) {
+          String childRole_a1tqv3_ = "parameter";
+          if (nodeToMatch_a1tqv3_a0a.getChildCount(childRole_a1tqv3_) != 2) {
             return false;
           }
           {
-            SNode childVar_1241438321869 = nodeToMatch_1241438253001.getChildren(childRole_1241438253001).get(0);
-            this.patternVar_KEY = childVar_1241438321869;
+            SNode childVar_a0a0_12 = nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_).get(0);
+            this.patternVar_KEY = childVar_a0a0_12;
           }
           {
-            SNode childVar_1241438324012 = nodeToMatch_1241438253001.getChildren(childRole_1241438253001).get(1);
-            this.patternVar_VALUE = childVar_1241438324012;
+            SNode childVar_b0a0_2 = nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_).get(1);
+            this.patternVar_VALUE = childVar_b0a0_2;
           }
         }
       }

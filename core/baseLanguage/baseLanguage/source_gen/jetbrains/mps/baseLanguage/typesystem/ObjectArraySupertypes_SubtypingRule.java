@@ -150,27 +150,27 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1208355992341;
-        nodeToMatch_1208355992341 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_1208355992341.getConceptFqName()))) {
+        SNode nodeToMatch_mvbroc_a0a;
+        nodeToMatch_mvbroc_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_mvbroc_a0a.getConceptFqName()))) {
           return false;
         }
         {
-          String childRole_1208355992341 = "componentType";
-          if (nodeToMatch_1208355992341.getChildCount(childRole_1208355992341) != 1) {
+          String childRole_mvbroc_ = "componentType";
+          if (nodeToMatch_mvbroc_a0a.getChildCount(childRole_mvbroc_) != 1) {
             return false;
           }
           {
-            SNode childVar_1208355974433 = nodeToMatch_1208355992341.getChildren(childRole_1208355992341).get(0);
+            SNode childVar_a0a0 = nodeToMatch_mvbroc_a0a.getChildren(childRole_mvbroc_).get(0);
             {
-              SNode nodeToMatch_1208355974433;
-              nodeToMatch_1208355974433 = childVar_1208355974433;
-              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1208355974433.getConceptFqName()))) {
+              SNode nodeToMatch_mvbroc_a0a0;
+              nodeToMatch_mvbroc_a0a0 = childVar_a0a0;
+              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_mvbroc_a0a0.getConceptFqName()))) {
                 return false;
               }
               {
                 SNodePointer pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0c;
-                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1208355974433.getReferent("classifier")))) {
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mvbroc_a0a0.getReferent("classifier")))) {
                   return false;
                 }
               }
