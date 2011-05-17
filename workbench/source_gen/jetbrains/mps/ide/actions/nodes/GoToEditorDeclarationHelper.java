@@ -11,13 +11,11 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Iterator;
-import jetbrains.mps.util.ConditionalIterator;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class GoToEditorDeclarationHelper {
   public GoToEditorDeclarationHelper() {
@@ -68,17 +66,11 @@ public class GoToEditorDeclarationHelper {
   }
 
   public static SNode findEditorDeclaration(SModel editorModel, final SNode conceptDeclaration) {
-    Condition<SNode> cond = new Condition<SNode>() {
-      public boolean met(SNode node) {
-        SNode n = SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
-        return (n != null) && SLinkOperations.getTarget(n, "conceptDeclaration", false) == conceptDeclaration;
+    return ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "conceptDeclaration", false) == conceptDeclaration;
       }
-    };
-    Iterator<SNode> editors = new ConditionalIterator<SNode>(editorModel.rootsIterator(), cond);
-    if (!(editors.hasNext())) {
-      return null;
-    }
-    return SNodeOperations.cast(editors.next(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
+    });
   }
 
   public static SNode createEditorDeclaration(SNode conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
