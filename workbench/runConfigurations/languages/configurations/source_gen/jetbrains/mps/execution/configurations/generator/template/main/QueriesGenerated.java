@@ -199,14 +199,10 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7806358006983617866(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "", false) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "debuggerConfiguration", true) != null);
   }
 
-  public static boolean ifMacro_Condition_4371737370140155825(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ComplexRunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
-  }
-
-  public static boolean ifMacro_Condition_442015021861739559(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2363787617167802334(final IOperationContext operationContext, final IfMacroContext _context) {
     return ComplexRunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
   }
 
@@ -230,8 +226,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "icon", true);
   }
 
-  public static SNode sourceNodeQuery_4371737370140155848(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "debuggerConfiguration", true), "debugger", true);
+  public static SNode sourceNodeQuery_2363787617167837005(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "debuggerConfiguration", true);
   }
 
   public static SNode sourceNodeQuery_7244675116808166467(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -252,10 +248,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_5812151570929671916(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "execute", true), "body", true), "statement", true);
-  }
-
-  public static Iterable sourceNodesQuery_442015021861881552(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "debuggerConfiguration", true), "getSettings", true), "body", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_6139196002333142804(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

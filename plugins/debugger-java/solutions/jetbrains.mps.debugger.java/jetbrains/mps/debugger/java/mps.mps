@@ -999,7 +999,7 @@
       </node>
     </node>
     <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="7364083846322303186">
-      <property name="name" nameId="tpck.1169194664001" value="debuggerSettings" />
+      <property name="name" nameId="tpck.1169194664001" value="debuggerSettings2" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7364083846322303188" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3112651700635739251">
         <property name="value" nameId="tpee.1070475926801" value="" />

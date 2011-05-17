@@ -20,11 +20,13 @@ import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.debug.api.IDebugger;
-import jetbrains.mps.debug.api.Debuggers;
+import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.Debuggers;
 import com.intellij.execution.executors.DefaultRunExecutor;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 
 public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
   @NotNull
@@ -49,7 +51,7 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     {
-      ProcessHandler _processHandler = new Mps_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).setVirtualMachineParameters(myRunConfiguration.getVmOptions()).setJrePath(myRunConfiguration.getJrePath()).setConfigurationPath(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).createProcess();
+      ProcessHandler _processHandler = new Mps_Command().setDebuggerSettings2(myDebuggerSettings.getCommandLine(true)).setVirtualMachineParameters(myRunConfiguration.getVmOptions()).setJrePath(myRunConfiguration.getJrePath()).setConfigurationPath(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).createProcess();
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
@@ -60,17 +62,25 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
     }
   }
 
-  public IDebugger getDebugger() {
-    return Debuggers.getInstance().getDebuggerByName("Java");
-  }
+  @NotNull
+  public IDebuggerConfiguration getDebuggerConfiguration() {
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return new LocalConnectionSettings(true);
+      }
 
-  @Nullable
-  public IDebuggerSettings createDebuggerSettings() {
-    return new LocalConnectionSettings(true);
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
   }
 
   public static boolean canExecute(String executorId) {
     if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
+      return true;
+    }
+    if (DefaultDebugExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;
     }
     return false;
