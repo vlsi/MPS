@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.state;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
 import jetbrains.mps.smodel.CopyUtil;
@@ -110,7 +111,11 @@ public class Equations {
   public void addEquation(SNode left, SNode right, EquationInfo info) {
     SNode lRepresentative = getRepresentative(left);
     SNode rRepresentative = getRepresentative(right);
-    if (lRepresentative == null || rRepresentative == null || lRepresentative.equals(rRepresentative)) {
+    if (lRepresentative == null || rRepresentative == null) {
+      myState.executeOperation(new TraceWarningOperation("Equation was not added: " + lRepresentative + " = " + rRepresentative, info));
+      return;
+    }
+    if (lRepresentative.equals(rRepresentative)) {
       return;
     }
     if (TypesUtil.isVariable(lRepresentative)) {
