@@ -30,11 +30,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode extendsClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.tests.IRefactoringTester" file="IRefactoringTester.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester" file="MoveConceptRefactoringTester.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />

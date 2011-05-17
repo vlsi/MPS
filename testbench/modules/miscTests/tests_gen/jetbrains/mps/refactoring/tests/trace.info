@@ -81,17 +81,6 @@
     <unitInfo nodeId="8306023725008093197" fileName="MoveConceptRefactoringTester.java" startLine="53" startPosition="41" endLine="73" endPosition="5" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester$3" />
     <unitInfo nodeId="8306023725008093118" fileName="MoveConceptRefactoringTester.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester" />
   </root>
-  <root nodeId="8306023725008093962">
-    <nodeInfo nodeId="8306023725008093964" fileName="IRefactoringTester.java" startLine="9" startPosition="37" endLine="10" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testRefactoring#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Language;)Z" />
-    <scopeInfo nodeId="8306023725008093964" fileName="IRefactoringTester.java" startLine="9" startPosition="37" endLine="10" endPosition="178">
-      <varInfo nodeId="8306023725008093967" varName="project" />
-      <varInfo nodeId="8306023725008093973" varName="testRefactoringlanguage" />
-      <varInfo nodeId="8306023725008093975" varName="testRefactoringTargetLanguage" />
-      <varInfo nodeId="8306023725008093969" varName="sandbox1" />
-      <varInfo nodeId="8306023725008093971" varName="sandbox2" />
-    </scopeInfo>
-    <unitInfo nodeId="8306023725008093962" fileName="IRefactoringTester.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
-  </root>
   <root nodeId="8306023725008093978">
     <nodeInfo nodeId="1122791325004695844" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="28" startPosition="209" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7711885061309965803" fileName="RenamePropertyRefactoringTester_Simple.java" startLine="31" startPosition="25" endLine="32" endPosition="416" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

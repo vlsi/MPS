@@ -36,6 +36,8 @@
     <orderEntry type="module" module-name="baseLanguage" />
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="library" name="commons-lang" level="project" />
+    <orderEntry type="library" name="JUnit4" level="project" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
   </component>
 </module>
 
