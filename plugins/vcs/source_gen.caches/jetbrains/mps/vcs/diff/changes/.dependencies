@@ -66,10 +66,7 @@
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.changes.ChangeType" file="ChangeType.java">
-    <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
-    <classNode dependClassName="java.awt.Color" />
-  </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.changes.ChangeType" file="ChangeType.java" />
   <dependency className="jetbrains.mps.vcs.diff.changes.DeleteRootChange" file="DeleteRootChange.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -56,10 +56,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   @Override
   public Color getColor() {
-    return ((isConflicted() ?
+    return ChangeColors.get((isConflicted() ?
       ChangeType.CONFLICTED :
       myChange.getType()
-    )).getColor();
+    ));
   }
 
   public ModelChange getChange() {
@@ -86,10 +86,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         drawDeletedChild(graphics, cell);
       } else {
         Rectangle bounds = cell.getBounds();
-        graphics.setColor(((isConflicted() ?
+        graphics.setColor(ChangeColors.get((isConflicted() ?
           ChangeType.CONFLICTED :
           ChangeType.CHANGE
-        )).getColor());
+        )));
         graphics.drawRect(bounds.x + 1, bounds.y + 1, bounds.width - 2, bounds.height - 2);
       }
     }

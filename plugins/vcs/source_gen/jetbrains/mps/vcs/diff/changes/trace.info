@@ -506,25 +506,10 @@
     <unitInfo nodeId="6359197607515894913" fileName="DeleteRootChange.java" startLine="10" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
   </root>
   <root nodeId="8401260027345476466">
-    <nodeInfo nodeId="8401260027345476486" fileName="ChangeType.java" startLine="13" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myColor" />
-    <nodeInfo nodeId="6883371103928849938" fileName="ChangeType.java" startLine="14" startPosition="24" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeColor" />
-    <nodeInfo nodeId="8401260027345476495" fileName="ChangeType.java" startLine="17" startPosition="44" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6883371103928852073" fileName="ChangeType.java" startLine="18" startPosition="20" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8401260027345476503" fileName="ChangeType.java" startLine="22" startPosition="27" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6883371103928852083" fileName="ChangeType.java" startLine="26" startPosition="31" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401260027345476489" fileName="ChangeType.java" startLine="16" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeType#(Ljava/awt/Color;Ljava/awt/Color;)V" />
-    <nodeInfo nodeId="8401260027345476499" fileName="ChangeType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="6883371103928852079" fileName="ChangeType.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTreeColor#()Ljava/awt/Color;" />
-    <scopeInfo nodeId="8401260027345476502" fileName="ChangeType.java" startLine="22" startPosition="27" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="6883371103928852082" fileName="ChangeType.java" startLine="26" startPosition="31" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="8401260027345476494" fileName="ChangeType.java" startLine="17" startPosition="44" endLine="19" endPosition="28" />
-    <scopeInfo nodeId="8401260027345476489" fileName="ChangeType.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="8401260027345476492" varName="color" />
-      <varInfo nodeId="6883371103928852069" varName="treeColor" />
-    </scopeInfo>
-    <scopeInfo nodeId="8401260027345476499" fileName="ChangeType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="6883371103928852079" fileName="ChangeType.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <unitInfo nodeId="8401260027345476466" fileName="ChangeType.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeType" />
+    <nodeInfo nodeId="8401260027345476489" fileName="ChangeType.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeType#()V" />
+    <scopeInfo nodeId="8401260027345476494" fileName="ChangeType.java" startLine="12" startPosition="16" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="8401260027345476489" fileName="ChangeType.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <unitInfo nodeId="8401260027345476466" fileName="ChangeType.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeType" />
   </root>
   <root nodeId="8813828754313712692">
     <nodeInfo nodeId="6359197607515881709" fileName="ModelChange.java" startLine="10" startPosition="35" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" />

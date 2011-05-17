@@ -45,6 +45,7 @@ import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
+import jetbrains.mps.vcs.diff.ui.ChangeColors;
 
 public class MergeModelsDialog extends BaseDialog {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class);
@@ -251,7 +252,7 @@ public class MergeModelsDialog extends BaseDialog {
       }
 
       if (compositeChangeType != null) {
-        rootTreeNode.setColor(compositeChangeType.getTreeColor());
+        rootTreeNode.setColor(ChangeColors.getForTree(compositeChangeType));
       }
     }
 
