@@ -17,7 +17,6 @@ import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
 
 public class Mps_Command {
-  private String myDebuggerSettings2 = "";
   private String myVirtualMachineParameters = Mps_Command.getDefaultVirtualMachineParameters();
   private String myJrePath;
   private String myConfigurationPath = Mps_Command.getDefaultConfigurationPath();
@@ -25,13 +24,6 @@ public class Mps_Command {
   private String myDebuggerSettings;
 
   public Mps_Command() {
-  }
-
-  public Mps_Command setDebuggerSettings2(String debuggerSettings2) {
-    if (debuggerSettings2 != null) {
-      myDebuggerSettings2 = debuggerSettings2;
-    }
-    return this;
   }
 
   public Mps_Command setVirtualMachineParameters(String virtualMachineParameters) {
@@ -71,7 +63,7 @@ public class Mps_Command {
 
   public ProcessHandler createProcess() throws ExecutionException {
     String mpsProperties = "-Didea.config.path=" + myConfigurationPath + " " + "-Didea.system.path=" + mySystemPath;
-    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties + " " + myDebuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).setJrePath(myJrePath).createProcess();
+    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties).setDebuggerSettings(myDebuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).setJrePath(myJrePath).createProcess();
   }
 
   public static IDebugger getDebugger() {
