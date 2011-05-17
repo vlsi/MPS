@@ -14,8 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -63,7 +61,8 @@ public class NodeCopier {
       node.setId(id);
       SModelOperations.addRootNode(model, node);
     } else {
-      SNode stubNode = new SNode(model, ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
+      // hardcoded to get rid of dependency on core language 
+      SNode stubNode = new SNode(model, "jetbrains.mps.lang.core.structure.BaseConcept");
       SNodeOperations.replaceWithAnother(node, stubNode);
       node.setId(id);
       SNodeOperations.replaceWithAnother(stubNode, node);
