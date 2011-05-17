@@ -166,6 +166,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.GlobalOperationContext" />
@@ -178,8 +179,11 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.VcsHelperUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.SimpleDiffRequest" />
+    <classNode dependClassName="jetbrains.mps.vcs.integration.ModelDiffTool" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
     <classNode extendsClassName="jetbrains.mps.vcs.Version" />

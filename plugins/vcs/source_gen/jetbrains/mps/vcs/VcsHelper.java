@@ -15,7 +15,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -24,6 +24,10 @@ import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.vcs.integration.ModelDiffTool;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.SimpleDiffRequest;
+import jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog;
 
@@ -103,8 +107,8 @@ public class VcsHelper {
   private static boolean showDiffDialog(final SModel diskModel, final SModel memoryModel, IFile modelFile, final Project project) {
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     LOG.assertLog(file != null);
-    final OldModelDifferenceDialog dialog = ModelAccess.instance().runReadAction(new Computable<OldModelDifferenceDialog>() {
-      public OldModelDifferenceDialog compute() {
+    final BaseDialog dialog = ModelAccess.instance().runReadAction(new Computable<BaseDialog>() {
+      public BaseDialog compute() {
         SModelDescriptor modelDescriptor = diskModel.getModelDescriptor();
         if (modelDescriptor == null) {
           modelDescriptor = memoryModel.getModelDescriptor();
@@ -119,7 +123,11 @@ public class VcsHelper {
           context = new ModuleContext(modelDescriptor.getModule(), project);
         }
         JFrame frame = WindowManager.getInstance().getFrame(project);
-        return new OldModelDifferenceDialog(context, frame, diskModel, memoryModel, "Disk Memory Diff", true, new String[]{"Filesystem version (read-only)", "Memory version"});
+        if (ModelDiffTool.isNewDiffEnabled()) {
+          return new ModelDifferenceDialog(project, context, diskModel, memoryModel, new SimpleDiffRequest(project, "Filesystem version (Read-Only)", "Memory Version"));
+        } else {
+          return new OldModelDifferenceDialog(context, frame, diskModel, memoryModel, "Disk Memory Diff", true, new String[]{"Filesystem version (Read-Only)", "Memory Version"});
+        }
       }
     });
     dialog.showDialog();
