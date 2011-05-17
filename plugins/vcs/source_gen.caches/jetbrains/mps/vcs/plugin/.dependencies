@@ -123,13 +123,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup" file="InstallCustomMergeDriverGroup_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action" file="InstallCustomMergeDriver_Action.java">
+  <dependency className="jetbrains.mps.vcs.plugin.InstalVcsAddons_Action" file="InstalVcsAddons_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
@@ -144,6 +138,12 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.plugin.InstallVcsAddons_ActionGroup" file="InstallVcsAddons_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" file="ReRunMergeFromBackup_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -326,8 +326,8 @@
     <classNode dependClassName="jetbrains.mps.vcs.plugin.GoToPreviousChange_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.IgnoreInVcs_Action" />
-    <classNode dependClassName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action" />
+    <classNode dependClassName="jetbrains.mps.vcs.plugin.InstalVcsAddons_Action" />
+    <classNode dependClassName="jetbrains.mps.vcs.plugin.InstallVcsAddons_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.RollbackChanges_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup" />

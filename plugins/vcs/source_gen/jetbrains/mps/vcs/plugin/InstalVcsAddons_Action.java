@@ -19,7 +19,7 @@ public class InstalVcsAddons_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(InstalVcsAddons_Action.class);
 
   public InstalVcsAddons_Action() {
-    super("Install MPS VCS Addons...", "Install custom merge driver for Git and custom diff3 for Subversion", ICON);
+    super("Install MPS VCS Add-ons...", "Install custom merge driver for Git and custom diff3 for Subversion", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
