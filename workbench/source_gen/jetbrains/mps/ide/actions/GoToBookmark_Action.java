@@ -9,10 +9,10 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToBookmark_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -30,6 +30,7 @@ public class GoToBookmark_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setText("Go to Bookmark " + GoToBookmark_Action.this.num);
+      event.getPresentation().setEnabled(((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).getBookmark(GoToBookmark_Action.this.num) != null);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToBookmark", t);
