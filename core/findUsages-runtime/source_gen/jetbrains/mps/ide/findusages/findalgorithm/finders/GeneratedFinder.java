@@ -21,7 +21,10 @@ import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = Logger.getLogger(GeneratedFinder.class);
@@ -115,15 +118,18 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       }
 
       private int searchInEditors(SNode ancestor, SNode searchedNode) {
-        SNode conceptDeclaration = ancestor.getConceptDeclarationNode();
+        final SNode conceptDeclaration = ancestor.getConceptDeclarationNode();
         SModel structureModel = conceptDeclaration.getModel();
         Language language = (Language) structureModel.getModelDescriptor().getModule();
         SModel editorModel = language.getEditorModelDescriptor().getSModel();
-        SNode conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
-        if (conceptEditorDeclaration == null) {
+        SNode editorNode = ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SLinkOperations.getTarget(it, "conceptDeclaration", false) == conceptDeclaration;
+          }
+        });
+        if ((editorNode == null)) {
           return -1;
         }
-        SNode editorNode = conceptEditorDeclaration;
         int index = indexInEditor(editorNode, searchedNode.getRole_(), new Pair(-1, false)).o1;
         if (index != -1 || ancestor.getParent() == null) {
           return index;
