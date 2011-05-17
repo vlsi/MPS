@@ -111,25 +111,25 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1237469353421;
-        nodeToMatch_1237469353421 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1237469353421.getConceptFqName()))) {
+        SNode nodeToMatch_2lqiec_a0a;
+        nodeToMatch_2lqiec_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2lqiec_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_36aa7y_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1237469353421.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_2lqiec_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_1237469353421 = "parameter";
-          if (nodeToMatch_1237469353421.getChildCount(childRole_1237469353421) != 1) {
+          String childRole_2lqiec_ = "parameter";
+          if (nodeToMatch_2lqiec_a0a.getChildCount(childRole_2lqiec_) != 1) {
             return false;
           }
           {
-            SNode childVar_1237469375593 = nodeToMatch_1237469353421.getChildren(childRole_1237469353421).get(0);
-            this.patternVar_p = childVar_1237469375593;
+            SNode childVar_a0a0_5 = nodeToMatch_2lqiec_a0a.getChildren(childRole_2lqiec_).get(0);
+            this.patternVar_p = childVar_a0a0_5;
           }
         }
       }

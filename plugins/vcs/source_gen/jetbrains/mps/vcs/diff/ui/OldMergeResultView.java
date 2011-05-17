@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.BorderLayout;
 import javax.swing.JSplitPane;
-import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -82,7 +82,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
       }
     });
     setLayout(new BorderLayout());
-    JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(myResultTree), new JScrollPane(myConflictsAndWarningsTree));
+    JSplitPane splitter = new JSplitPane(JSplitPane.VERTICAL_SPLIT, ScrollPaneFactory.createScrollPane(myResultTree), ScrollPaneFactory.createScrollPane(myConflictsAndWarningsTree));
     splitter.setDividerLocation(500);
     add(splitter, BorderLayout.CENTER);
   }

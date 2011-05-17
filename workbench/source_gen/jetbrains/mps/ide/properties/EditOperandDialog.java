@@ -15,7 +15,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -61,7 +61,7 @@ public class EditOperandDialog extends BaseDialog {
     myTree.setModel(new DefaultTreeModel(root, false));
     setCheckedUnder(root);
     expandCheckedUnder(myTree, root);
-    myMainComponent = new JScrollPane(myTree);
+    myMainComponent = ScrollPaneFactory.createScrollPane(myTree);
   }
 
   public void expandCheckedUnder(JTree tree, DefaultMutableTreeNode node) {

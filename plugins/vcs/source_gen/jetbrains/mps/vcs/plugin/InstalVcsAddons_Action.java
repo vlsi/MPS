@@ -14,14 +14,14 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 
-public class InstallCustomMergeDriver_Action extends GeneratedAction {
+public class InstalVcsAddons_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(InstallCustomMergeDriver_Action.class);
+  protected static Log log = LogFactory.getLog(InstalVcsAddons_Action.class);
 
-  public InstallCustomMergeDriver_Action() {
-    super("Install Custom Merge Driver (for Git)...", "", ICON);
-    this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+  public InstalVcsAddons_Action() {
+    super("Install MPS VCS Add-ons...", "Install custom merge driver for Git and custom diff3 for Subversion", ICON);
+    this.setIsAlwaysVisible(true);
+    this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
@@ -36,7 +36,7 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "InstallCustomMergeDriver", t);
+        log.error("User's action doUpdate method failed. Action:" + "InstalVcsAddons", t);
       }
       this.disable(event.getPresentation());
     }
@@ -58,7 +58,7 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
       MergeDriverInstaller.installWhereNeeded(((Project) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "InstallCustomMergeDriver", t);
+        log.error("User's action execute method failed. Action:" + "InstalVcsAddons", t);
       }
     }
   }

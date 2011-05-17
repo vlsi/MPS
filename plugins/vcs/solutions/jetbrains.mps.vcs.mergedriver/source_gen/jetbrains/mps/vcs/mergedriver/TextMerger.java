@@ -17,7 +17,7 @@ import java.io.FileOutputStream;
 import org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle;
 import java.io.IOException;
 
-public class TextMerger implements FileMerger {
+/*package*/ class TextMerger implements FileMerger {
   public TextMerger() {
   }
 

@@ -13,11 +13,11 @@
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ListRendererAdapter" file="ListRendererAdapter.java">
-    <classNode dependClassName="javax.swing.JList" />
+    <classNode dependClassName="javax.swing.JTable" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="javax.swing.ListCellRenderer" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="javax.swing.JTable" />
+    <classNode dependClassName="com.intellij.ui.components.JBList" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ManagerRenderer" file="ManagerRenderer.java">

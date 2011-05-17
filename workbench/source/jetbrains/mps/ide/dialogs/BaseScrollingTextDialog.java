@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.dialogs;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 
 import javax.swing.JComponent;
@@ -38,7 +39,7 @@ public class BaseScrollingTextDialog extends BaseDialog {
     JPanel innerPanel = new JPanel(new BorderLayout());
     innerPanel.add(label, BorderLayout.NORTH);
 
-    myScrollPane = new JScrollPane(
+    myScrollPane = ScrollPaneFactory.createScrollPane(
       innerPanel
     );
 

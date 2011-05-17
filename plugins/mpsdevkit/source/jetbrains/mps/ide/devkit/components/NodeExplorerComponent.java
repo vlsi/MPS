@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.devkit.components;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -38,7 +39,7 @@ public class NodeExplorerComponent {
   private JScrollPane myScrollPane;
 
   public NodeExplorerComponent() {
-    myScrollPane = new JScrollPane(myTree);
+    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     myTree.setRootVisible(true);
   }
 

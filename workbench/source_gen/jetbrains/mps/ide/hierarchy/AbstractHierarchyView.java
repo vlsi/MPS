@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.Icon;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.SwingUtilities;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -56,7 +57,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     myHierarchyTree.setRootVisible(true);
     final JPanel panel = new JPanel(new BorderLayout());
     myComponent.add(panel, BorderLayout.NORTH);
-    myScrollPane = new JScrollPane(myHierarchyTree);
+    myScrollPane = ScrollPaneFactory.createScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
     showItemInHierarchy(null, null);
     SwingUtilities.invokeLater(new Runnable() {

@@ -7,8 +7,8 @@ import java.util.Map;
 import java.awt.BorderLayout;
 import javax.swing.event.TableModelListener;
 import javax.swing.event.TableModelEvent;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
+import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.table.JBTable;
 
 public class AntRunnerPreferencesPage extends JPanel {
   private BuildTableModel myModel;
@@ -22,7 +22,7 @@ public class AntRunnerPreferencesPage extends JPanel {
         AntRunnerPreferencesPage.this.myIsModified = true;
       }
     });
-    this.add(new JScrollPane(new JTable(this.myModel)), BorderLayout.CENTER);
+    this.add(ScrollPaneFactory.createScrollPane(new JBTable(this.myModel)), BorderLayout.CENTER);
   }
 
   public void updateState(Map<String, String> data) {

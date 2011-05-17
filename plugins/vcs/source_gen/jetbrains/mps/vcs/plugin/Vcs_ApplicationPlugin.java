@@ -29,7 +29,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToNextChange_Action());
     addAction(new GoToPreviousChange_Action());
     addAction(new IgnoreInVcs_Action());
-    addAction(new InstallCustomMergeDriver_Action());
+    addAction(new InstalVcsAddons_Action());
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new RollbackChanges_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
@@ -38,7 +38,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AnnotateGroup_ActionGroup());
     addGroup(new ChangesStrip_ActionGroup());
     addGroup(new GoToVCS_ActionGroup());
-    addGroup(new InstallCustomMergeDriverGroup_ActionGroup());
+    addGroup(new InstallVcsAddons_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
     addGroup(new VCSModelActions_ActionGroup());
     addGroup(new VCS_ActionGroup());
@@ -55,6 +55,6 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(VCS_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_vcs);
     insertGroupIntoAnother(VCS_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_vcs);
     insertGroupIntoAnother(AnnotateGroup_ActionGroup.ID, EditorLeftPanelMenu_ActionGroup.ID, null);
-    insertGroupIntoAnother(InstallCustomMergeDriverGroup_ActionGroup.ID, "VcsGlobalGroup", null);
+    insertGroupIntoAnother(InstallVcsAddons_ActionGroup.ID, "VcsGlobalGroup", null);
   }
 }

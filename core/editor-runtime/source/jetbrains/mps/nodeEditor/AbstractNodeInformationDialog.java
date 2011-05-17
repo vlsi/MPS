@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.WindowsUtil;
 
@@ -81,7 +82,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     myTextArea.setOpaque(true);
     myTextArea.setBackground(BACKGROUND_COLOR);
 
-    JScrollPane scrollPane = new JScrollPane(myTextArea);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTextArea);
     scrollPane.setBorder(new LineBorder(Color.BLACK));
     add(scrollPane);
 

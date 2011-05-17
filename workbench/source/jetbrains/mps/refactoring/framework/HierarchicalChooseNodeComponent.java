@@ -16,6 +16,7 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -65,7 +66,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     constraints.fill = GridBagConstraints.BOTH;
     constraints.weightx = 1;
     constraints.weighty = 1;
-    add(new JScrollPane(myHierarchyTree), constraints);
+    add(ScrollPaneFactory.createScrollPane(myHierarchyTree), constraints);
     setMinimumSize(new Dimension(350, 350));
     setPreferredSize(new Dimension(350, 350));
     showHierarchy(myInitialNode, myOperationContext);

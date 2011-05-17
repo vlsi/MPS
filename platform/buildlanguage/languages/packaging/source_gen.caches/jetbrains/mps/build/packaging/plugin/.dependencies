@@ -123,14 +123,15 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.CheckBoxNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="javax.swing.JScrollPane" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.plugin.NodeData" />
     <classNode dependClassName="javax.swing.tree.TreeSelectionModel" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.plugin.NodeData" />
+    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="javax.swing.JTree" />
+    <classNode dependClassName="com.intellij.ui.treeStructure.Tree" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.CheckBoxCellRenderrer" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="java.util.HashSet" />

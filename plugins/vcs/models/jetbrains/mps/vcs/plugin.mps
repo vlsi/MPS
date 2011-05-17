@@ -145,12 +145,15 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8076150362379026983">
-      <property name="name" nameId="tpck.1169194664001" value="InstallCustomMergeDriver" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Install Custom Merge Driver (for Git)..." />
+      <property name="name" nameId="tpck.1169194664001" value="InstalVcsAddons" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Install MPS VCS Add-ons..." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="Install custom merge driver for Git and custom diff3 for Subversion" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="994404492881088225">
-      <property name="name" nameId="tpck.1169194664001" value="InstallCustomMergeDriverGroup" />
+      <property name="name" nameId="tpck.1169194664001" value="InstallVcsAddons" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Groups" />
     </node>
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="994404492881108397">

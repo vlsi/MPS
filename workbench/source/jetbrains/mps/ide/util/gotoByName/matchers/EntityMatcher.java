@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.findalgorithm.finders;
+package jetbrains.mps.ide.util.gotoByName.matchers;
 
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
+import com.intellij.openapi.util.Computable;
 
-public interface IFinder {
-  public abstract SearchResults find(SearchQuery query, ProgressIndicator indicator);
+import java.util.Set;
+
+public interface EntityMatcher {
+  boolean nameMatches(String shortPattern, String shortName);
+
+  Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState, Computable<Boolean> isCancelled);
 }

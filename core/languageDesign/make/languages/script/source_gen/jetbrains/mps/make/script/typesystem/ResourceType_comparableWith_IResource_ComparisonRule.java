@@ -58,14 +58,14 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_2385767983320939532;
-        nodeToMatch_2385767983320939532 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2385767983320939532.getConceptFqName()))) {
+        SNode nodeToMatch_rtu2iv_a0a;
+        nodeToMatch_rtu2iv_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_rtu2iv_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_2385767983320939532.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_rtu2iv_a0a.getReferent("classifier")))) {
             return false;
           }
         }

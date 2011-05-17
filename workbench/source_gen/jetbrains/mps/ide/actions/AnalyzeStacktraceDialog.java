@@ -13,6 +13,7 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
@@ -40,7 +41,7 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
       this.myText.setText(str);
     }
     panel.add(this.myText, BorderLayout.CENTER);
-    JScrollPane scrollPane = new JScrollPane(panel);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(panel);
     scrollPane.getVerticalScrollBar().setBlockIncrement(40);
     scrollPane.getVerticalScrollBar().setUnitIncrement(20);
     scrollPane.getHorizontalScrollBar().setBlockIncrement(40);

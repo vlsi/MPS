@@ -240,7 +240,7 @@ public abstract class MpsWorker {
     });
   }
 
-  private void loadPlugins() {
+  protected void loadPlugins() {
     Set<IModule> modules = new HashSet<IModule>();
     modules.add(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.make.facet"));
 
@@ -255,7 +255,7 @@ public abstract class MpsWorker {
     }
   }
 
-  private void disposePlugins() {
+  protected void disposePlugins() {
     Collections.reverse(myPlugins);
     for (BaseApplicationPlugin plugin : myPlugins) {
       try {

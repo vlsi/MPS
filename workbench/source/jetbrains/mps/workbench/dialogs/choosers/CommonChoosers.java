@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
-import jebtrains.mps.ide.util.gotoByName.ChooseByNamePopupMPS;
+import jetbrains.mps.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;

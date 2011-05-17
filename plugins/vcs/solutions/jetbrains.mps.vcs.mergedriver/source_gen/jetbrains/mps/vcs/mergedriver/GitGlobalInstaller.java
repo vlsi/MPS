@@ -5,53 +5,101 @@ package jetbrains.mps.vcs.mergedriver;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import java.io.File;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
 
-public class GitGlobalInstaller {
+/*package*/ class GitGlobalInstaller extends AbstractInstaller {
   protected static Log log = LogFactory.getLog(GitGlobalInstaller.class);
 
-  private GitGlobalInstaller() {
+  public GitGlobalInstaller(Project project) {
+    super(project);
   }
 
-  public static String install(Project project) {
+  @NotNull
+  protected AbstractInstaller.State install(boolean dryRun) {
     String globalConfigPath = WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig";
     File configFile = new File(globalConfigPath);
     if (!(configFile.exists())) {
-      Messages.showErrorDialog(project, "Git config (~/.gitconfig) file is not present", "No Git Config");
-      return null;
+      if (!(dryRun)) {
+        Messages.showErrorDialog(myProject, "Git config (~/.gitconfig) file is not present", "No Git Config");
+      }
+      return AbstractInstaller.State.NOT_INSTALLED;
     }
 
+    List<String> newConfigLines = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(newConfigLines).addElement("[merge \"mps\"]");
+    ListSequence.fromList(newConfigLines).addElement("\tname = MPS merge driver");
+    String cmd = MergeDriverMain.getCommandLine().replace("\\", "\\\\");
+    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = %s --git %%O %%A %%B %%L", cmd));
+    ListSequence.fromList(newConfigLines).addElement("");
+
     List<String> configLines = StringsIO.readLines(configFile);
-    if (ListSequence.fromList(configLines).any(new IWhereFilter<String>() {
+    int sectionStart = ListSequence.fromList(configLines).indexOf(ListSequence.fromList(configLines).findFirst(new IWhereFilter<String>() {
       public boolean accept(String line) {
         return line.matches("\\s*\\[merge\\s+\"mps\"\\]\\s*");
       }
-    })) {
-      // TODO condition seems to be wrong 
-      return "Global merge driver is already installed.";
-    }
+    }));
+    if (sectionStart != -1) {
+      Iterable<String> skipped = ListSequence.fromList(configLines).skip(sectionStart);
+      int sectionEnd = Sequence.fromIterable(skipped).indexOf(Sequence.fromIterable(skipped).findFirst(new IWhereFilter<String>() {
+        public boolean accept(String line) {
+          return line.trim().isEmpty();
+        }
+      })) + sectionStart + 1;
+      List<String> section = ListSequence.fromList(configLines).page(sectionStart, sectionEnd).toListSequence();
+      boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
+      if (equal) {
+        for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
+          if (neq_btx4zt_a0a0a0e0n0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+            equal = false;
+            break;
+          }
+        }
+      }
+      if (equal) {
+        return AbstractInstaller.State.INSTALLED;
+      } else {
+        if (dryRun) {
+          return AbstractInstaller.State.OUTDATED;
+        } else {
+          configLines = ListSequence.fromList(configLines).take(sectionStart).concat(ListSequence.fromList(newConfigLines)).concat(ListSequence.fromList(configLines).skip(sectionEnd)).toListSequence();
+        }
+      }
+    } else {
+      if (dryRun) {
+        return AbstractInstaller.State.NOT_INSTALLED;
+      }
 
-    ListSequence.fromList(configLines).addElement("[merge \"mps\"]");
-    ListSequence.fromList(configLines).addElement("\tname = MPS merge driver");
-    String cmd = MergeDriverMain.getCommandLine().replace("\\", "\\\\");
-    ListSequence.fromList(configLines).addElement(String.format("\tdriver = %s --git %%O %%A %%B %%L", cmd));
+      ListSequence.fromList(configLines).addElement("");
+      ListSequence.fromList(configLines).addSequence(ListSequence.fromList(newConfigLines));
+    }
 
     try {
       StringsIO.writeLines(configFile, configLines);
-      return "Global merge driver have been successfully installed.";
-
+      Messages.showInfoMessage(myProject, "Successfully updated ~/.gitconfig", "Global Git Merge Driver Installed");
+      return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
       if (log.isErrorEnabled()) {
         log.error("Writing gitconfig file failed", e);
       }
-      Messages.showErrorDialog(project, "Writing gitconfig file failed (" + e.getMessage() + ")", "Writing .gitconfig Failed");
-      return null;
+      Messages.showErrorDialog(myProject, "Writing gitconfig file failed (" + e.getMessage() + ")", "Writing .gitconfig Failed");
+      return AbstractInstaller.State.NOT_INSTALLED;
     }
+  }
+
+  private static boolean neq_btx4zt_a0a0a0e0n0a(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }

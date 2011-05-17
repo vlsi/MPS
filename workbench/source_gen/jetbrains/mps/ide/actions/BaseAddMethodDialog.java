@@ -28,6 +28,7 @@ import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -124,7 +125,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
     myTree.rebuildNow();
     myTree.expandAll();
     myTree.selectFirstLeaf();
-    JScrollPane scrollPane = new JScrollPane(myTree);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTree);
     JComponent optionsComponent = createAdditionalOptionsComponent();
     if (optionsComponent == null) {
       return scrollPane;

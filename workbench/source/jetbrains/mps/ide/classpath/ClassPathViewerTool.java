@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -49,7 +50,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
   public ClassPathViewerTool(Project project) {
     super(project, "Classpath Explorer", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
 
-    myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
+    myComponent.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {

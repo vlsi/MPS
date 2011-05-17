@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;
@@ -32,7 +33,7 @@ public abstract class BaseScrollingBindedDialog extends BaseBindedDialog {
   protected BaseScrollingBindedDialog(String text, IOperationContext operationContext) throws HeadlessException {
     super(text, operationContext);
     myContentPanel = new JPanel(new GridBagLayout());
-    myMainComponent = new JScrollPane(myContentPanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+    myMainComponent = ScrollPaneFactory.createScrollPane(myContentPanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     myMainComponent.setBorder(new EmptyBorder(0, 0, 0, 0));
   }
 

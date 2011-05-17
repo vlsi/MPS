@@ -17,6 +17,7 @@ import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
+import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.block.AbstractBlockOperation;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
@@ -119,7 +120,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
         TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext, myCurrentContext.getState(), myEditorComponent);
         create(child, node);
         result.add(node);
-        if (child instanceof AddErrorOperation) {
+        if (child instanceof AddErrorOperation || child instanceof TraceWarningOperation) {
           myErrorNodes.add(node);
         }
       } else {

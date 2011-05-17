@@ -35,6 +35,7 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="baseLanguage" />
     <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="library" name="commons-lang" level="project" />
   </component>
 </module>
 

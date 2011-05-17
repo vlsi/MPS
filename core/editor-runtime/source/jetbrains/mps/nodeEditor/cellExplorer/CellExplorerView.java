@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -84,7 +85,7 @@ public class CellExplorerView extends BaseProjectTool {
     super(project, "Cell Explorer", -1, null, ToolWindowAnchor.BOTTOM, true);
 
     myTree.setRootVisible(true);
-    myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
+    myComponent.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
     update();
   }
 

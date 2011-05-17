@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide;
 
+import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.components.JBList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -37,7 +39,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   private Map<String, Set<Item>> myItemsMap = new HashMap<String, Set<Item>>();
   private List<String> myNames = new ArrayList<String>();
   private boolean myShowAllOnEmptyText = false;
-  private JList myList = new JList(new DefaultListModel());
+  private JList myList = new JBList(new DefaultListModel());
   private String myHeader;
   private JComponent myHeaderLabel;
   private JPanel myMainPanel;
@@ -72,7 +74,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
         }
       }
     });
-    add(new JScrollPane(myList), BorderLayout.CENTER);
+    add(ScrollPaneFactory.createScrollPane(myList), BorderLayout.CENTER);
 
 
     myMainPanel.registerKeyboardAction(new AbstractAction() {

@@ -141,16 +141,15 @@
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" file="ShowCFGDialog.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IInstruction" />
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.awt.event.MouseAdapter" />
+    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
@@ -158,9 +157,11 @@
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.InstructionWrapper" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.ProgramWrapper" />
+    <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IInstruction" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.GraphCreator" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.ProgramWrapper" />
+    <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.ControlFlowGraph" />
     <classNode extendsClassName="javax.swing.Scrollable" />
     <classNode extendsClassName="javax.swing.JDialog" />

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -82,7 +83,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     constraints.gridy++;
     constraints.fill = BOTH;
     constraints.weighty = 1;
-    add(new JScrollPane(myTree), constraints);
+    add(ScrollPaneFactory.createScrollPane(myTree), constraints);
 
     myTree.setRootVisible(true);
     updateModels(myCondition);

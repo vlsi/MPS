@@ -41,6 +41,7 @@ import com.intellij.openapi.vfs.*;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
@@ -207,7 +208,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     } else {
       rebuildTreeLater();
     }
-    myScrollPane = new JScrollPane(myTree);
+    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     return myScrollPane;
   }
 

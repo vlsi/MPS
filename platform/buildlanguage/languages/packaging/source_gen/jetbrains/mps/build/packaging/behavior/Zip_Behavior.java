@@ -36,4 +36,18 @@ public class Zip_Behavior {
   public static List<SNode> virtual_getPostProcessingTasks_1213877333861(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "delete", true));
   }
+
+  public static String virtual_getExcludes_1213877279373(SNode thisNode) {
+    return ((SPropertyOperations.getString(thisNode, "excludes") != null) ?
+      (SPropertyOperations.getString(thisNode, "excludes")) :
+      ""
+    );
+  }
+
+  public static String virtual_getIncludes_1213877279430(SNode thisNode) {
+    return ((SPropertyOperations.getString(thisNode, "includes") != null) ?
+      (SPropertyOperations.getString(thisNode, "includes")) :
+      ""
+    );
+  }
 }

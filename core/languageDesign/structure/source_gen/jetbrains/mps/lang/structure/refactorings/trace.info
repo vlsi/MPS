@@ -529,7 +529,7 @@
     <unitInfo nodeId="3068114543317980529" fileName="MovePropertyUp.java" startLine="53" startPosition="45" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MovePropertyUp$1" />
   </root>
   <root nodeId="6188135140808769438">
-    <nodeInfo nodeId="6188135140808769526" fileName="NodeHierarchyChooser.java" startLine="18" startPosition="55" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="6188135140808769526" fileName="NodeHierarchyChooser.java" startLine="18" startPosition="56" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
     <nodeInfo nodeId="6188135140808769444" fileName="NodeHierarchyChooser.java" startLine="21" startPosition="65" endLine="22" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6188135140808769445" fileName="NodeHierarchyChooser.java" startLine="22" startPosition="12" endLine="23" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5187166430600698216" fileName="NodeHierarchyChooser.java" startLine="25" startPosition="25" endLine="26" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

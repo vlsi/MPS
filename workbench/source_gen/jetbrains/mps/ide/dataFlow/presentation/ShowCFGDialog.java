@@ -8,6 +8,7 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import java.awt.BorderLayout;
+import com.intellij.ui.ScrollPaneFactory;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.smodel.SNode;
@@ -30,7 +31,7 @@ public class ShowCFGDialog extends JDialog {
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
     this.myComponent = new ShowCFGDialog.MyComponent();
-    this.myScrollPane = new JScrollPane(this.myComponent);
+    this.myScrollPane = ScrollPaneFactory.createScrollPane(myComponent);
     this.myScrollPane.setBackground(this.getBackground());
     this.add(this.myScrollPane, BorderLayout.CENTER);
     this.myComponent.setFont(this.myComponent.getFont().deriveFont(10.0f));

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.library;
 
+import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.components.JBList;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.library.BaseLibraryManager;
 import jetbrains.mps.library.Library;
@@ -38,7 +40,7 @@ public class LibraryManagerPreferences {
   private BaseLibraryManager myManager;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
   private DefaultListModel myListModel = new DefaultListModel();
-  private JList myLibrariesList = new JList(myListModel);
+  private JList myLibrariesList = new JBList(myListModel);
 
   private boolean myChanged;
   private JButton myRemoveButton;
@@ -47,7 +49,7 @@ public class LibraryManagerPreferences {
   public LibraryManagerPreferences(BaseLibraryManager manager) {
     myManager = manager;
 
-    myMainPanel.add(new JScrollPane(myLibrariesList), BorderLayout.CENTER);
+    myMainPanel.add(ScrollPaneFactory.createScrollPane(myLibrariesList), BorderLayout.CENTER);
 
     myLibrariesList.setCellRenderer(new DefaultListCellRenderer() {
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {

@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Module extends AbstractProjectComponent {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Module";
   public static final String ID = "id";
+  public static final String DO_NOT_JAR = "doNotJar";
   public static final String CYCLE = "cycle";
 
   public Module(SNode node) {
@@ -22,6 +23,14 @@ public class Module extends AbstractProjectComponent {
 
   public void setId(String value) {
     this.setProperty(Module.ID, value);
+  }
+
+  public boolean getDoNotJar() {
+    return this.getBooleanProperty(Module.DO_NOT_JAR);
+  }
+
+  public void setDoNotJar(boolean value) {
+    this.setBooleanProperty(Module.DO_NOT_JAR, value);
   }
 
   public ModuleCycle getCycle() {

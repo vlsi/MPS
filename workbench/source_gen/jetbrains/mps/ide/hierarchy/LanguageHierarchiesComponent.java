@@ -23,6 +23,7 @@ import jetbrains.mps.ide.hierarchy.icons.Icons;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.border.LineBorder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -179,7 +180,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     });
     toolsPane.add(jCheckBox);
     myPanel.add(toolsPane, BorderLayout.NORTH);
-    JScrollPane scrollPane = new JScrollPane();
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane();
     scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     scrollPane.setViewportView(this);

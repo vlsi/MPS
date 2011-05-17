@@ -8,6 +8,8 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.components.JBList;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
@@ -76,7 +78,7 @@ abstract class MessageList implements IMessageList {
 
   private FastListModel myModel = new FastListModel(MAX_SIZE);
   private JPanel myComponent = new JPanel();
-  private JList myList = new JList(myModel);
+  private JList myList = new JBList(myModel);
   private ActionToolbar myToolbar;
   private AtomicInteger myMessagesInProgress = new AtomicInteger();
   private MessageToolSearchPanel mySearchPanel = null;
@@ -234,7 +236,7 @@ abstract class MessageList implements IMessageList {
     panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
 
     myComponent.add(panel, BorderLayout.WEST);
-    final JScrollPane scrollPane = new JScrollPane(myList);
+    final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myList);
     myComponent.add(scrollPane, BorderLayout.CENTER);
 
     myComponent.registerKeyboardAction(new AbstractAction() {

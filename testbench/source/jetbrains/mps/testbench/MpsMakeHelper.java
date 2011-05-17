@@ -107,7 +107,14 @@ public class MpsMakeHelper {
     toDo.updateLogLevel(2); // INFO
     toDo.putProperty("mps.home", System.getProperty("user.dir"));
 
-    MakeWorker worker = new MakeWorker(toDo, new LogLogger());
+    MakeWorker worker = new MakeWorker(toDo, new LogLogger()) {
+      @Override
+      protected void loadPlugins() {
+      }
+      @Override
+      protected void disposePlugins() {
+      }
+    };
     worker.work();
 //    spawnWorkerAndWait(toDo);
   }

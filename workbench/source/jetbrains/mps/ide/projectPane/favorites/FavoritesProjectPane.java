@@ -9,6 +9,7 @@ import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
@@ -122,7 +123,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       getTree().rebuildLater();
     }
 
-    myScrollPane = new JScrollPane(myTree);
+    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     return myScrollPane;
   }
 

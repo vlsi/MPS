@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.BoxLayout;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JList;
+import com.intellij.ui.components.JBList;
 
 public class LanguagePaths_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -58,7 +60,7 @@ public class LanguagePaths_Action extends GeneratedAction {
       List<Language> languages = MPSModuleRepository.getInstance().getAllLanguages();
       JDialog dialog = new JDialog();
       JPanel mainp = new JPanel();
-      JScrollPane sp = new JScrollPane(mainp, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+      JScrollPane sp = ScrollPaneFactory.createScrollPane(mainp, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
       dialog.add(sp);
       mainp.setLayout(new BoxLayout(mainp, BoxLayout.Y_AXIS));
       for (Language lang : ListSequence.fromList(languages)) {
@@ -88,8 +90,8 @@ public class LanguagePaths_Action extends GeneratedAction {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder(lang.getModuleFqName()));
         mainp.add(panel);
-        JList list1 = new JList(cpu.toArray());
-        JList list2 = new JList(rcpu.toArray());
+        JList list1 = new JBList(cpu.toArray());
+        JList list2 = new JBList(rcpu.toArray());
         panel.add(list1, BorderLayout.WEST);
         panel.add(list2, BorderLayout.EAST);
       }

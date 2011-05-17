@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.bookmark;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
@@ -52,7 +53,7 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
   public void initComponent() {
     myBookmarkManager = getProject().getComponent(BookmarkManager.class);
     myTree = new BookmarksTree(getProject(), myBookmarkManager);
-    myComponent = new JScrollPane(myTree);
+    myComponent = ScrollPaneFactory.createScrollPane(myTree);
     if (myTreeState != null) {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {

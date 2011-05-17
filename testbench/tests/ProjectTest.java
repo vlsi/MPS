@@ -126,6 +126,12 @@ public class ProjectTest {
   @BeforeClass
   public static void make () throws Exception {
     new MpsMakeHelper().make();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        IdeEventQueue.getInstance().flushQueue();
+        System.gc();
+      }
+    });
   }
 
   @AfterClass

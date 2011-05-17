@@ -17,6 +17,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.border.LineBorder;
 import java.awt.Rectangle;
 import jetbrains.mps.util.WindowsUtil;
@@ -86,7 +87,7 @@ public class ToolTip {
 
       setFocusableWindowState(false);
 
-      JScrollPane scrollPane = new JScrollPane(toolTipData.getComponent());
+      JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(toolTipData.getComponent());
       scrollPane.setBorder(new LineBorder(Color.BLACK));
       add(scrollPane);
 

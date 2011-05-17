@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.SimpleSNodeTreeNode;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import java.awt.BorderLayout;
 import javax.swing.tree.TreePath;
 import java.util.ArrayList;
@@ -73,7 +74,7 @@ public class SmartActions_Generated {
                 }
               });
               tree.rebuildNow();
-              JScrollPane scrollPane = new JScrollPane(tree);
+              JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(tree);
               this.setLayout(new BorderLayout());
               this.add(scrollPane, BorderLayout.CENTER);
             }

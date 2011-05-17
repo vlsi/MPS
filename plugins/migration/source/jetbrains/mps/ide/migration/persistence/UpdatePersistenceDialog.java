@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.migration.persistence;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.icons.IconManager;
@@ -76,7 +77,7 @@ public class UpdatePersistenceDialog extends BaseDialog {
     constraints.gridy = 0;
 
     constraints.fill = GridBagConstraints.BOTH;
-    JScrollPane scrollPane = new JScrollPane(this.myTree);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(this.myTree);
     mainPanel.add(scrollPane, constraints);
 
     if (myNeedsAskToSetVersion) {

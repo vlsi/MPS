@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.mergedriver;
 
 import java.io.File;
 
-public interface FileMerger {
+/*package*/ interface FileMerger {
   public static final int MERGED = 0;
   public static final int CONFLICTS = 1;
   public static final int FATAL_ERROR = 2;

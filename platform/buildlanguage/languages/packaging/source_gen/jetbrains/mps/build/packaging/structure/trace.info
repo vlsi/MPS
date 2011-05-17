@@ -29,13 +29,13 @@
   <unitInfo fileName="ConfigurationReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.ConfigurationReference" />
   <unitInfo fileName="BuildLanguageTargetReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference" />
   <unitInfo fileName="Echo.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Echo" />
-  <unitInfo fileName="Module.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Module" />
   <unitInfo fileName="MacroReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.MacroReference" />
   <unitInfo fileName="Pair.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Pair" />
   <unitInfo fileName="Replace.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Replace" />
   <unitInfo fileName="Manifest.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Manifest" />
   <unitInfo fileName="CompositePathComponent.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.CompositePathComponent" />
   <unitInfo fileName="Copy.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Copy" />
+  <unitInfo fileName="Module.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Module" />
   <unitInfo fileName="PathHolder.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.PathHolder" />
   <unitInfo fileName="Space.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Space" />
   <unitInfo fileName="NotCondition.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.NotCondition" />

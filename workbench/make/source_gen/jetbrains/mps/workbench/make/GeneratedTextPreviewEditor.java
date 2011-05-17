@@ -35,6 +35,7 @@ import java.awt.Font;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.colors.EditorFontType;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.JViewport;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -166,7 +167,7 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
       ta.setFont(font);
     }
 
-    final JScrollPane sp = new JScrollPane(ta, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    final JScrollPane sp = ScrollPaneFactory.createScrollPane(ta, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     sp.setBorder(new LineBorder(Color.LIGHT_GRAY));
     sp.setBackground(Color.WHITE);
     panel.add(sp, BorderLayout.CENTER);

@@ -13,27 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.findalgorithm.finders;
+package jetbrains.mps.newTypesystem.operation;
 
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
 
-public interface IInterfacedFinder extends IFinder {
-  String getConcept();
+public class TraceWarningOperation extends AddRemarkOperation {
+  public TraceWarningOperation(String string) {
+    super(string);
+  }
 
-  boolean isApplicable(SNode node);
+  public TraceWarningOperation(String string, EquationInfo info) {
+    super(string);
+    myRule = new Pair<String, String>(info.getRuleModel(), info.getRuleId());
+  }
 
-  boolean isVisible(SNode node);
+  public String getPresentationKind() {
+    return PresentationKind.TRACE_WARNING;
+  }
 
-  String getDescription();
 
-  String getLongDescription();
-
-  boolean canNavigate();
-
-  public SNode getNodeToNavigate();
-
-  SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator);
 }

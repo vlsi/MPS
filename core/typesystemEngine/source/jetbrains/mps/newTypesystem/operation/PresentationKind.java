@@ -22,6 +22,7 @@ public class PresentationKind {
   public static final String WHEN_CONCRETE_ADDED = "when_concrete_added";
   public static final String WHEN_CONCRETE_REMOVED = "when_concrete_removed";
   public static final String ERROR_ADDED = "error_added";
+  public static final String TRACE_WARNING = "trace_warning";
   public static final String TYPE_ASSIGNED = "type_assigned";
   public static final String TYPE_EXPANDED = "type_expanded";
   public static final String TYPE_REMOVED = "type_removed";    //incremental

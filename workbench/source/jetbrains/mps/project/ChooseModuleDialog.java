@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.icons.IconManager;
@@ -40,7 +41,7 @@ public class ChooseModuleDialog extends BaseDialog {
   };
   private Set<IModule> myModules = new HashSet<IModule>();
   private IModule myResult;
-  private JComponent myComponent = new JScrollPane(myTree);
+  private JComponent myComponent = ScrollPaneFactory.createScrollPane(myTree);
 
   public ChooseModuleDialog(String text, Frame mainFrame, Collection<IModule> modules) throws HeadlessException {
     super(mainFrame, text);

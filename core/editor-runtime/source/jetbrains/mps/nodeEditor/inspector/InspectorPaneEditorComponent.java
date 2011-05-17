@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.inspector;
 
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
@@ -30,7 +31,7 @@ import java.util.List;
 final class InspectorPaneEditorComponent extends JComponent {
 
   private final List<InspectorEditorComponent> myInspectorEditorComponents = new ArrayList<InspectorEditorComponent>();
-  private final JScrollPane myScrollPane = new JScrollPane();
+  private final JScrollPane myScrollPane = ScrollPaneFactory.createScrollPane();
   private final JComponent myPanel = new JPanel(new GridLayout(0, 1));
 
   InspectorPaneEditorComponent() {
