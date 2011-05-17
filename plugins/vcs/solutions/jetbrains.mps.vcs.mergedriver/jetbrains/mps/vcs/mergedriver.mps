@@ -5356,7 +5356,7 @@
             </node>
           </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4009537296145559635">
-            <property name="value" nameId="tpee.1070475926801" value="Install MPS VCS Add-Ons" />
+            <property name="value" nameId="tpee.1070475926801" value="MPS VCS Add-ons" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1400826623542830458">

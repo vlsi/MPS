@@ -23,7 +23,7 @@ public class MergeDriverOptionsDialog extends BaseDialog {
   private MergeDriverOptionsDialog.InstallerCheckBox mySvn;
 
   public MergeDriverOptionsDialog(Project project) {
-    super(WindowManager.getInstance().getFrame(project), "Install MPS VCS Add-Ons");
+    super(WindowManager.getInstance().getFrame(project), "MPS VCS Add-ons");
     myGitGlobal = new MergeDriverOptionsDialog.InstallerCheckBox(new GitGlobalInstaller(project), "Git global merge driver setting (~/.gitconfig)");
     GitRepositoriesInstaller gitRep = new GitRepositoriesInstaller(project);
     myGitRepos = new MergeDriverOptionsDialog.InstallerCheckBox(gitRep, "Git file attributes for " + NameUtil.formatNumericalString(gitRep.getRootsToInstall(), "repository") + "  (.gitattributes)");
