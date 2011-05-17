@@ -23,7 +23,7 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class DebuggerRunProfileState implements RunProfileState {
+public abstract class DebuggerRunProfileState implements RunProfileState, IDebuggerConfiguration {
   private static final Logger LOG = Logger.getLogger(DebuggerRunProfileState.class);
   @NotNull
   protected IDebuggerSettings myDebuggerSettings = EmptyDebuggerSettings.getInstance();
@@ -46,9 +46,4 @@ public abstract class DebuggerRunProfileState implements RunProfileState {
     updateDebuggerSettings();
     return myDebuggerSettings;
   }
-
-  @Nullable
-  protected abstract IDebuggerSettings createDebuggerSettings();
-
-  public abstract IDebugger getDebugger();
 }

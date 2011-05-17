@@ -31,7 +31,7 @@ public class CommandDeclaration_Behavior {
   }
 
   public static boolean call_isDebuggable_856705193941282102(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, "debugger", true) != null);
+    return (SLinkOperations.getTarget(thisNode, "debuggerConfiguration", true) != null);
   }
 
   @NonNls

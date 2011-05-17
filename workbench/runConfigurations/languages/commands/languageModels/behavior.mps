@@ -55,6 +55,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="rzqf.856705193941281799" resolveInfo="ProcessBuilderExpression" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5794900932933875918">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="rzqf.6586232406240908943" resolveInfo="DebuggerSettingsParameter" />
+    </node>
   </roots>
   <root id="856705193941281983">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="856705193941281984">
@@ -322,8 +326,8 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="856705193941282107">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="856705193941282108">
               <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="856705193941282109" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="856705193941282110">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="rzqf.856705193941281773" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6586232406240986489">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="rzqf.6586232406240908850" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="856705193941282111" />
@@ -619,6 +623,27 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="856705193941282233" />
+    </node>
+  </root>
+  <root id="5794900932933875918">
+    <node role="staticMethod" roleId="1i04.1225194240806" type="1i04.StaticConceptMethodDeclaration" typeId="1i04.1225194588610" id="5794900932933877919">
+      <property name="name" nameId="tpck.1169194664001" value="getFieldName" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5794900932933877920" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5794900932933877923" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5794900932933877922">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5794900932933877924">
+          <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="5794900932933877925">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="856705193941282019" resolveInfo="getFieldName" />
+            <link role="concept" roleId="tp25.1206019820684" targetNodeId="rzqf.856705193941281762" resolveInfo="CommandParameterDeclaration" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4675583320452307792">
+              <property name="value" nameId="tpee.1070475926801" value="debuggerSettings" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5794900932933875919">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5794900932933875920" />
     </node>
   </root>
 </model>

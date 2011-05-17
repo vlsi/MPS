@@ -7,6 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import java.util.HashMap;
+import jetbrains.mps.smodel.constraints.BaseNodePropertyGetter;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
@@ -34,6 +38,14 @@ public class RunConfigurationExecutor_Constraints extends ConstraintsDataHolder 
 
   public Map<String, INodePropertyGetter> getNodePropertyGetters() {
     HashMap<String, INodePropertyGetter> result = new HashMap<String, INodePropertyGetter>();
+    result.put("name", new BaseNodePropertyGetter() {
+      public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
+        if (SLinkOperations.getTarget(node, "configuration", false) != null) {
+          return SPropertyOperations.getString(SLinkOperations.getTarget(node, "configuration", false), "name") + " Executor";
+        }
+        return null;
+      }
+    });
     return result;
   }
 

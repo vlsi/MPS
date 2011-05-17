@@ -8,7 +8,7 @@ import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.execution.common.structure.IGeneratedToClass;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration;
 import jetbrains.mps.baseLanguage.structure.BlockStatement;
 import java.util.Iterator;
 import java.util.List;
@@ -23,7 +23,7 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String DEBUGGER = "debugger";
+  public static final String DEBUGGER_CONFIGURATION = "debuggerConfiguration";
   public static final String EXECUTE = "execute";
   public static final String METHOD = "method";
   public static final String PARAMETER_DECLARATION = "parameterDeclaration";
@@ -65,12 +65,12 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
     this.setProperty(CommandDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public Expression getDebugger() {
-    return (Expression) this.getChild(Expression.class, CommandDeclaration.DEBUGGER);
+  public DebuggerConfiguration getDebuggerConfiguration() {
+    return (DebuggerConfiguration) this.getChild(DebuggerConfiguration.class, CommandDeclaration.DEBUGGER_CONFIGURATION);
   }
 
-  public void setDebugger(Expression node) {
-    super.setChild(CommandDeclaration.DEBUGGER, node);
+  public void setDebuggerConfiguration(DebuggerConfiguration node) {
+    super.setChild(CommandDeclaration.DEBUGGER_CONFIGURATION, node);
   }
 
   public BlockStatement getExecute() {

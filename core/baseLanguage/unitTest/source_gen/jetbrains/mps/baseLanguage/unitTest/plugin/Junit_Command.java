@@ -24,12 +24,18 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.LinkedHashSet;
+import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.debug.api.IDebuggerSettings;
+import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debug.api.Debuggers;
 
 public class Junit_Command {
   private List<ITestNodeWrapper> myTests;
   private String myVirtualMachineParameter;
   private String myJrePath;
   private File myWorkingDirectory = new File(System.getProperty("user.home"));
+  private String myDebuggerSettings;
 
   public Junit_Command() {
   }
@@ -62,13 +68,20 @@ public class Junit_Command {
     return this;
   }
 
+  public Junit_Command setDebuggerSettings(String debuggerSettings) {
+    if (debuggerSettings != null) {
+      myDebuggerSettings = debuggerSettings;
+    }
+    return this;
+  }
+
   public ProcessHandler createProcess() throws ExecutionException {
     Tuples._2<List<ITestNodeWrapper>, TestRunParameters> testsToRun = Junit_Command.getTestsToRunWithParameters(myTests);
-    return new Java_Command().setVirtualMachineParameter(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ")).setClassPath(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setClassName(testsToRun._1().getTestRunner()).setProgramParameter(Junit_Command.getProgramParameters(testsToRun._0())).createProcess();
+    return new Java_Command().setVirtualMachineParameter(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ") + " " + myDebuggerSettings).setClassPath(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setClassName(testsToRun._1().getTestRunner()).setProgramParameter(Junit_Command.getProgramParameters(testsToRun._0())).createProcess();
   }
 
   public static IDebugger getDebugger() {
-    return Java_Command.getDebugger();
+    return getDebuggerConfiguration().getDebugger();
   }
 
   private static String getProgramParameters(final List<ITestNodeWrapper> tests) {
@@ -130,6 +143,19 @@ public class Junit_Command {
       SetSequence.fromSet(classpath).addSequence(ListSequence.fromList(Java_Command.getClasspath(module, true)));
     }
     return SetSequence.fromSet(classpath).toListSequence();
+  }
+
+  public static IDebuggerConfiguration getDebuggerConfiguration() {
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return new LocalConnectionSettings(true);
+      }
+
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
   }
 
   private static TestRunParameters check_u7m9j_a0a0a0a0a1a0d0b(ITestNodeWrapper checkedDotOperand) {

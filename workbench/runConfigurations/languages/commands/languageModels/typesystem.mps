@@ -3,6 +3,7 @@
   <persistence version="7" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
@@ -47,6 +48,10 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156863836">
       <property name="name" nameId="tpck.1169194664001" value="typeof_RedirectOutputExpression" />
+    </node>
+    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6586232406240941849">
+      <property name="name" nameId="tpck.1169194664001" value="typeof_DebuggerSettingsParameter" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     </node>
   </roots>
   <root id="946964771156863700">
@@ -374,6 +379,28 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="946964771156863858">
       <property name="name" nameId="tpck.1169194664001" value="redirectOutputExpression" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.856705193941281812" resolveInfo="RedirectOutputExpression" />
+    </node>
+  </root>
+  <root id="6586232406240941849">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6586232406240941850">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="6586232406240941856">
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6586232406240941860">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6586232406240941861">
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StringType" typeId="tpee.1225271177708" id="6586232406240941863" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6586232406240941859">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="6586232406240941853">
+            <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6586232406240941855">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6586232406240941851" resolveInfo="debuggerSettingsParameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6586232406240941851">
+      <property name="name" nameId="tpck.1169194664001" value="debuggerSettingsParameter" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.6586232406240908943" resolveInfo="DebuggerSettingsParameter" />
     </node>
   </root>
 </model>

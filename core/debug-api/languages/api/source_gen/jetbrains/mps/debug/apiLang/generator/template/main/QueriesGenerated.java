@@ -66,6 +66,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_4675583320452247498(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "debugger", true);
+  }
+
   public static Iterable sourceNodesQuery_933053558709993764(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "conceptsToCreateBreakpoint", true);
   }
@@ -80,5 +84,9 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_933053558709995176(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "conceptsToCreateBreakpoint", true);
+  }
+
+  public static Iterable sourceNodesQuery_4675583320452253263(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getSettings", true), "body", true), "statement", true);
   }
 }

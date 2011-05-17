@@ -10,6 +10,6 @@ public class ConfigurationFromExecutorReference_Behavior {
   }
 
   public static SNode call_getExecutor_7806358006983757897(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor");
+    return SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
   }
 }

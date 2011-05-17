@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class RunConfigurationExecutor_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "canRun", "" + true);
+    SPropertyOperations.set(thisNode, "configurationName", "myRunConfiguration");
   }
 
   public static String call_getCanExecuteMethodName_7806358006983616236(SNode thisNode) {

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="42" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule$QuotationClass_ueeq0q_a0a0a" />
+  <unitInfo fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerConfiguration_InferenceRule$QuotationClass_p6alym_a0a0a0" />
   <unitInfo fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="48" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_CreateBreakpointOperation_InferenceRule$QuotationClass_btj441_a0a0a1a0" />
   <unitInfo fileName="typeof_DebuggerReference_InferenceRule.java" startLine="44" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerReference_InferenceRule$QuotationClass_uu2qih_a0a0a0" />
   <unitInfo fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule$QuotationClass_fpej4j_a0a0b0a0a" />
   <unitInfo fileName="DebuggerTypeIsDebuggerType_SubtypingRule.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.DebuggerTypeIsDebuggerType_SubtypingRule" />
+  <unitInfo fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerConfiguration_InferenceRule" />
   <unitInfo fileName="typeof_DebuggerReference_InferenceRule.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_DebuggerReference_InferenceRule" />
   <unitInfo fileName="check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule" />
   <unitInfo fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debug.apiLang.typesystem.typeof_CreateBreakpointOperation_InferenceRule" />
@@ -43,6 +45,14 @@
     <scopeInfo nodeId="5365453833390544927" fileName="typeof_CreateBreakpointOperation_InferenceRule.java" startLine="22" startPosition="138" endLine="30" endPosition="5">
       <varInfo nodeId="5365453833390548229" varName="parent" />
     </scopeInfo>
+  </root>
+  <root nodeId="6586232406240905081">
+    <nodeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="23" startPosition="108" endLine="24" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="24" startPosition="204" endLine="25" endPosition="378" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="21" startPosition="134" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="6586232406240905084" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="378" />
+    <scopeInfo nodeId="6586232406240905082" fileName="typeof_DebuggerConfiguration_InferenceRule.java" startLine="21" startPosition="134" endLine="26" endPosition="5" />
   </root>
 </debugInfo>
 

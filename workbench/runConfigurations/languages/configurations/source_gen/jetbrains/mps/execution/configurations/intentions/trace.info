@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.execution.configurations.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="ConvertToSimpleExecutor_Intention.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.execution.configurations.intentions.ConvertToSimpleExecutor_Intention" />
+  <root nodeId="6720907903633232925">
+    <nodeInfo nodeId="6720907903633235335" fileName="ConvertToSimpleExecutor_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6720907903633235337" fileName="ConvertToSimpleExecutor_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6720907903633235345" fileName="ConvertToSimpleExecutor_Intention.java" startLine="39" startPosition="149" endLine="40" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6720907903633235365" fileName="ConvertToSimpleExecutor_Intention.java" startLine="40" startPosition="109" endLine="41" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6720907903633236088" fileName="ConvertToSimpleExecutor_Intention.java" startLine="41" startPosition="123" endLine="42" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6720907903633236113" fileName="ConvertToSimpleExecutor_Intention.java" startLine="42" startPosition="137" endLine="43" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6720907903633236152" fileName="ConvertToSimpleExecutor_Intention.java" startLine="43" startPosition="139" endLine="44" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6720907903633236187" fileName="ConvertToSimpleExecutor_Intention.java" startLine="44" startPosition="127" endLine="45" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="6720907903633232927" fileName="ConvertToSimpleExecutor_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="41" />
+    <scopeInfo nodeId="6720907903633232929" fileName="ConvertToSimpleExecutor_Intention.java" startLine="38" startPosition="76" endLine="45" endPosition="61">
+      <varInfo nodeId="6720907903633235338" varName="simpleExecutor" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

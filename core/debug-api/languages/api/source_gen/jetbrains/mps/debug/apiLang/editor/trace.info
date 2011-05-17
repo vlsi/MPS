@@ -5,6 +5,7 @@
   <unitInfo fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointableNodeItem_Editor$conceptsToCreateBreakpointListHandler_4n0rw6_b1a" />
   <unitInfo fileName="CreateBreakpointOperation_Editor.java" startLine="158" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.CreateBreakpointOperation_Editor$CreateBreakpointOperation_generic_cellMenu_a0c0" />
   <unitInfo fileName="ConceptDeclarationReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.ConceptDeclarationReference_Editor" />
+  <unitInfo fileName="DebuggerConfiguration_Editor.java" startLine="19" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.DebuggerConfiguration_Editor" />
   <unitInfo fileName="DebuggerReference_Editor.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.DebuggerReference_Editor" />
   <unitInfo fileName="DebuggerType_Editor.java" startLine="20" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.DebuggerType_Editor" />
   <unitInfo fileName="BreakpointCreator_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.debug.apiLang.editor.BreakpointCreator_Editor" />

@@ -8,7 +8,6 @@ import jetbrains.mps.execution.common.structure.IGeneratedToClass;
 import jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.execution.settings.structure.PersistentConfiguration;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
@@ -18,18 +17,26 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RunConfigurationExecutor extends BaseConcept implements INamedConcept, IGeneratedToClass, PersistentConfigurationAssistent {
   public static final String concept = "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor";
+  public static final String CONFIGURATION_NAME = "configurationName";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CAN_RUN = "canRun";
   public static final String CONFIGURATION = "configuration";
-  public static final String DEBUGGER = "debugger";
   public static final String EXECUTE = "execute";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public RunConfigurationExecutor(SNode node) {
     super(node);
+  }
+
+  public String getConfigurationName() {
+    return this.getProperty(RunConfigurationExecutor.CONFIGURATION_NAME);
+  }
+
+  public void setConfigurationName(String value) {
+    this.setProperty(RunConfigurationExecutor.CONFIGURATION_NAME, value);
   }
 
   public String getName() {
@@ -86,14 +93,6 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
 
   public void setRunConfiguration(RunConfiguration node) {
     this.setConfiguration(node);
-  }
-
-  public Expression getDebugger() {
-    return (Expression) this.getChild(Expression.class, RunConfigurationExecutor.DEBUGGER);
-  }
-
-  public void setDebugger(Expression node) {
-    super.setChild(RunConfigurationExecutor.DEBUGGER, node);
   }
 
   public ExecuteConfiguration_Function getExecute() {

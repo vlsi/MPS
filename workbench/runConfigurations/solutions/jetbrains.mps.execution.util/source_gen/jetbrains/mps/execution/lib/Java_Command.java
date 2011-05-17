@@ -14,7 +14,6 @@ import java.io.PrintWriter;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
 import jetbrains.mps.debug.api.IDebugger;
-import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
@@ -26,6 +25,11 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.CommonPaths;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.debug.api.IDebuggerSettings;
+import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debug.api.Debuggers;
 
 public class Java_Command {
   private File myWorkingDirectory = new File(System.getProperty("user.home"));
@@ -34,6 +38,7 @@ public class Java_Command {
   private String myVirtualMachineParameter;
   private String myClassName;
   private List<String> myClassPath = ListSequence.fromList(new ArrayList<String>());
+  private String myDebuggerSettings;
 
   public Java_Command() {
   }
@@ -80,6 +85,13 @@ public class Java_Command {
     return this;
   }
 
+  public Java_Command setDebuggerSettings(String debuggerSettings) {
+    if (debuggerSettings != null) {
+      myDebuggerSettings = debuggerSettings;
+    }
+    return this;
+  }
+
   public ProcessHandler createProcess() throws ExecutionException {
     String java = Java_Command.getJavaCommand(myJrePath);
     String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath), Java_Command.ps());
@@ -92,17 +104,17 @@ public class Java_Command {
         writer.append(myProgramParameter);
         writer.flush();
         writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build(myWorkingDirectory);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build(myWorkingDirectory);
     }
   }
 
   public static IDebugger getDebugger() {
-    return Debuggers.getInstance().getDebuggerByName("Java");
+    return getDebuggerConfiguration().getDebugger();
   }
 
   private static int getMaxCommandLine() {
@@ -188,6 +200,19 @@ public class Java_Command {
       }
     }
     return ListSequence.fromList(homes).first();
+  }
+
+  public static IDebuggerConfiguration getDebuggerConfiguration() {
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return new LocalConnectionSettings(true);
+      }
+
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
   }
 
   private static int check_yvpt_a0c0a(String checkedDotOperand) {

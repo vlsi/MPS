@@ -90,6 +90,6 @@ public class ConfigurationFromExecutorReference_Constraints extends ConstraintsD
   }
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getParentNode()), "jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getParentNode()), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
   }
 }

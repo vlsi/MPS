@@ -48,9 +48,6 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_7no64v_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7no64v_d0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7no64v_e0(editorContext, node));
-    if (renderingCondition_7no64v_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_7no64v_f0(editorContext, node));
-    }
     return editorCell;
   }
 
@@ -155,26 +152,6 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_7no64v_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_7no64v_f0");
-    editorCell.addEditorCell(this.createConstant_7no64v_a5a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_7no64v_b5a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_7no64v_b5a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7no64v_b5a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createIndentCell_7no64v_a1f0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7no64v_b1f0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_7no64v_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7no64v_a_0");
@@ -265,17 +242,6 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7no64v_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7no64v_a5a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_7no64v_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "debugger:");
     editorCell.setCellId("Constant_7no64v_b0");
@@ -309,11 +275,6 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createIndentCell_7no64v_a1f0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
   private EditorCell createIndentCell_7no64v_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
@@ -339,8 +300,8 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_7no64v_b1c1c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("debugger");
-    provider.setNoTargetText("<no debugger>");
+    provider.setRole("debuggerConfiguration");
+    provider.setNoTargetText("<no debuggerConfiguration>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -371,27 +332,10 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7no64v_b1f0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("getDebuggerSettings");
-    provider.setNoTargetText("<no getDebuggerSettings>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
   private EditorCell createRefNode_7no64v_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("debugger");
-    provider.setNoTargetText("<no debugger>");
+    provider.setRole("debuggerConfiguration");
+    provider.setNoTargetText("<no debuggerConfiguration>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -452,15 +396,11 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_7no64v_a1c1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "debugger", true) != null);
+    return (SLinkOperations.getTarget(node, "debuggerConfiguration", true) != null);
   }
 
   private static boolean renderingCondition_7no64v_a2c1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "debugger", true) == null);
-  }
-
-  private static boolean renderingCondition_7no64v_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "debugger", true) != null);
+    return (SLinkOperations.getTarget(node, "debuggerConfiguration", true) == null);
   }
 
   public static class _Inline_7no64v_a2b0 extends InlineCellProvider {
@@ -527,7 +467,7 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "debugger", true));
+      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "debuggerConfiguration", true));
     }
 
     public String getMatchingText() {
@@ -540,7 +480,7 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "debugger", "jetbrains.mps.baseLanguage.structure.Expression");
+      SLinkOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration");
     }
 
     public String getMatchingText() {

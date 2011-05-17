@@ -23,6 +23,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="workbench" />
+    <orderEntry type="module" module-name="debug" />
   </component>
 </module>
 

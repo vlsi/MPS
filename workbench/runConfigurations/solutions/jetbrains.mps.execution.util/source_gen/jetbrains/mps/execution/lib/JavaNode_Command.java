@@ -10,12 +10,18 @@ import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.debug.api.IDebuggerSettings;
+import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debug.api.Debuggers;
 
 public class JavaNode_Command {
   private File myWorkingDirectory = new File(System.getProperty("user.home"));
   private String myJrePath = Java_Command.getJdkHome();
   private String myProgramParameter;
   private String myVirtualMachineParameter;
+  private String myDebuggerSettings;
 
   public JavaNode_Command() {
   }
@@ -48,12 +54,19 @@ public class JavaNode_Command {
     return this;
   }
 
+  public JavaNode_Command setDebuggerSettings(String debuggerSettings) {
+    if (debuggerSettings != null) {
+      myDebuggerSettings = debuggerSettings;
+    }
+    return this;
+  }
+
   public ProcessHandler createProcess(SNode node) throws ExecutionException {
     return new Java_Command().setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setClassPath(Java_Command.getClasspath(node)).setClassName(JavaNode_Command.getClassName(node)).createProcess();
   }
 
   public static IDebugger getDebugger() {
-    return Java_Command.getDebugger();
+    return getDebuggerConfiguration().getDebugger();
   }
 
   private static String getClassName(final SNode node) {
@@ -64,5 +77,18 @@ public class JavaNode_Command {
       }
     });
     return className.value;
+  }
+
+  public static IDebuggerConfiguration getDebuggerConfiguration() {
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return new LocalConnectionSettings(true);
+      }
+
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
   }
 }

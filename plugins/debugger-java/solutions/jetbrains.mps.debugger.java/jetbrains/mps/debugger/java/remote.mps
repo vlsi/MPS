@@ -41,7 +41,7 @@
     </node>
     <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="801101525254379837">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="false" />
-      <property name="configurationName" nameId="uhxm.7806358006983709801" value="myRunConfiguration" />
+      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="7806358006983511602" resolveInfo="RemoteNew" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="7806358006983511602" resolveInfo="Remote" />
     </node>
@@ -911,16 +911,18 @@
         </node>
       </node>
     </node>
-    <node role="debugger" roleId="uhxm.4371737370139995047" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="3091009652595960627">
-      <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
-    </node>
-    <node role="getDebuggerSettings" roleId="uhxm.7806358006983776828" type="uhxm.GetDebuggerSettings_Function" typeId="uhxm.7806358006983776826" id="3091009652595960628">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3091009652595960629">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8091568209161263961">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8091568209161263963">
-            <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="8091568209161263962" />
-            <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="8091568209161263967">
-              <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7806358006983577340" resolveInfo="mySettings" />
+    <node role="debuggerConfiguration" roleId="uhxm.6720907903633293832" type="86gq.DebuggerConfiguration" typeId="86gq.6720907903633266421" id="6720907903633304906">
+      <node role="debugger" roleId="86gq.6720907903633266912" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="6720907903633331862">
+        <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
+      </node>
+      <node role="getSettings" roleId="86gq.6720907903633266913" type="86gq.GetDebuggerSettings_Function" typeId="86gq.6720907903633266914" id="6720907903633304908">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6720907903633304909">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6720907903633331863">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6720907903633331864">
+              <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="6720907903633331865" />
+              <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="6720907903633331866">
+                <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7806358006983577340" resolveInfo="mySettings" />
+              </node>
             </node>
           </node>
         </node>

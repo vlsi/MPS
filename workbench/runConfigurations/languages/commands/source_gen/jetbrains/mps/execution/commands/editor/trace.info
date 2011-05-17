@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="DebuggerSettingsParameter_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.DebuggerSettingsParameter_Editor" />
   <unitInfo fileName="CommandDebuggerOperation_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDebuggerOperation_Editor" />
   <unitInfo fileName="ProcessBuilderPart_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ProcessBuilderPart_Editor" />
   <unitInfo fileName="CommandReferenceExpression_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandReferenceExpression_Editor$_Inline_nbi4wa_a0a" />
@@ -8,8 +9,8 @@
   <unitInfo fileName="CommandType_Editor.java" startLine="89" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandType_Editor$_Inline_2uesqr_a2a" />
   <unitInfo fileName="CommandParameterReference_Editor.java" startLine="48" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandParameterReference_Editor$_Inline_ri978v_a0a" />
   <unitInfo fileName="ProcessBuilderExpression_Editor.java" startLine="138" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ProcessBuilderExpression_Editor$partListHandler_9ousyc_a0" />
-  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="259" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor$parameterDeclarationListHandler_y485ry_b1b3a" />
-  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="295" startPosition="0" endLine="330" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor$methodListHandler_y485ry_b5a" />
+  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="266" startPosition="0" endLine="301" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor$parameterDeclarationListHandler_y485ry_b1b3a" />
+  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="302" startPosition="0" endLine="337" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor$methodListHandler_y485ry_b5a" />
   <unitInfo fileName="CommandBuilderExpression_Editor.java" startLine="119" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandBuilderExpression_Editor$argumentListHandler_lo57cy_c0" />
   <unitInfo fileName="RedirectOutputExpression_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression_Editor" />
   <unitInfo fileName="ProcessBuilderKeyPart_Editor.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ProcessBuilderKeyPart_Editor" />
@@ -21,7 +22,7 @@
   <unitInfo fileName="CommandBuilderExpression_Editor.java" startLine="29" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandBuilderExpression_Editor" />
   <unitInfo fileName="CommandParameterDeclaration_Editor.java" startLine="26" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandParameterDeclaration_Editor" />
   <unitInfo fileName="ProcessBuilderExpression_Editor.java" startLine="29" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ProcessBuilderExpression_Editor" />
-  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="29" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor" />
+  <unitInfo fileName="CommandDeclaration_Editor.java" startLine="29" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor" />
   <root nodeId="856705193941281841">
     <nodeInfo nodeId="856705193941281849" fileName="CommandParameterDeclaration_Editor.java" startLine="155" startPosition="111" endLine="156" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281863" fileName="CommandParameterDeclaration_Editor.java" startLine="159" startPosition="111" endLine="160" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

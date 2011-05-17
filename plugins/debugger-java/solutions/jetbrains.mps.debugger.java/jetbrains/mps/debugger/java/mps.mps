@@ -41,7 +41,7 @@
     </node>
     <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="3271576760503799855">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="configurationName" nameId="uhxm.7806358006983709801" value="myRunConfiguration" />
+      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="3271576760503781388" resolveInfo="MPS Instance" />
     </node>
     <node type="rzqf.CommandDeclaration" typeId="rzqf.856705193941281768" id="7364083846322268554">
@@ -775,24 +775,23 @@
         </node>
       </node>
     </node>
-    <node role="debugger" roleId="uhxm.4371737370139995047" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3271576760503823947">
-      <node role="operation" roleId="tpee.1197027833540" type="rzqf.CommandDebuggerOperation" typeId="rzqf.856705193941281777" id="3271576760503823951" />
-      <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandReferenceExpression" typeId="rzqf.856705193941281753" id="7364083846322304067">
-        <link role="command" roleId="rzqf.856705193941281755" targetNodeId="7364083846322268554" resolveInfo="mps" />
-      </node>
-    </node>
-    <node role="getDebuggerSettings" roleId="uhxm.7806358006983776828" type="uhxm.GetDebuggerSettings_Function" typeId="uhxm.7806358006983776826" id="3271576760503823952">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3271576760503823953">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3271576760503825285">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3271576760503825286">
-            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3271576760503830817">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z1l1.~LocalConnectionSettings%d&lt;init&gt;(boolean)" resolveInfo="LocalConnectionSettings" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3271576760503830818">
-                <property name="value" nameId="tpee.1068580123138" value="true" />
+    <node role="debuggerConfiguration" roleId="uhxm.6720907903633293832" type="86gq.DebuggerConfiguration" typeId="86gq.6720907903633266421" id="6586232406240158777">
+      <node role="getSettings" roleId="86gq.6720907903633266913" type="86gq.GetDebuggerSettings_Function" typeId="86gq.6720907903633266914" id="6586232406240158779">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6586232406240158780">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6586232406240172516">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6586232406240172517">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6586232406240172518">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z1l1.~LocalConnectionSettings%d&lt;init&gt;(boolean)" resolveInfo="LocalConnectionSettings" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6586232406240172519">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
               </node>
             </node>
           </node>
         </node>
+      </node>
+      <node role="debugger" roleId="86gq.6720907903633266912" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="6586232406240172515">
+        <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
       </node>
     </node>
   </root>
@@ -974,9 +973,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="rightExpression" roleId="tpee.1081773367579" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="7364083846322303189">
-                  <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="7364083846322303186" resolveInfo="debuggerSettings" />
-                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="rzqf.DebuggerSettingsParameter" typeId="rzqf.6586232406240908943" id="6586232406240941848" />
               </node>
             </node>
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7364083846322303180">
@@ -1000,9 +997,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="debugger" roleId="rzqf.856705193941281773" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="7364083846322303153">
-      <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
     </node>
     <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="7364083846322303186">
       <property name="name" nameId="tpck.1169194664001" value="debuggerSettings" />
@@ -1042,6 +1036,25 @@
         <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2397785969255970543" />
         <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2397785969255970544">
           <link role="member" roleId="tp4f.1205756909548" targetNodeId="2397785969255970533" resolveInfo="getDefaultSystemPath" />
+        </node>
+      </node>
+    </node>
+    <node role="debuggerConfiguration" roleId="rzqf.6586232406240908850" type="86gq.DebuggerConfiguration" typeId="86gq.6720907903633266421" id="6586232406240918737">
+      <node role="debugger" roleId="86gq.6720907903633266912" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="6586232406240941839">
+        <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
+      </node>
+      <node role="getSettings" roleId="86gq.6720907903633266913" type="86gq.GetDebuggerSettings_Function" typeId="86gq.6720907903633266914" id="6586232406240918739">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6586232406240918740">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6586232406240941840">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6586232406240941841">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6586232406240941842">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z1l1.~LocalConnectionSettings%d&lt;init&gt;(boolean)" resolveInfo="LocalConnectionSettings" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6586232406240941843">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

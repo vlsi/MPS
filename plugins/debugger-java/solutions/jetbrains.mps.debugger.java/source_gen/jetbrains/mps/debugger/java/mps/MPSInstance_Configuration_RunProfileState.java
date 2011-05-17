@@ -21,10 +21,10 @@ import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import com.intellij.execution.executors.DefaultRunExecutor;
-import com.intellij.execution.executors.DefaultDebugExecutor;
 
 public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
   @NotNull
@@ -61,19 +61,16 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
   }
 
   public IDebugger getDebugger() {
-    return Mps_Command.getDebugger();
+    return Debuggers.getInstance().getDebuggerByName("Java");
   }
 
   @Nullable
-  protected IDebuggerSettings createDebuggerSettings() {
+  public IDebuggerSettings createDebuggerSettings() {
     return new LocalConnectionSettings(true);
   }
 
   public static boolean canExecute(String executorId) {
     if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
-      return true;
-    }
-    if (DefaultDebugExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;
     }
     return false;

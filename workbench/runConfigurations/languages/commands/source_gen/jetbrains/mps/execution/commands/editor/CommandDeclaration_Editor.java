@@ -60,7 +60,14 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createIndentCell_y485ry_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y485ry_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_y485ry_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_y485ry_c1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_y485ry_c1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_y485ry_c1a");
+    editorCell.addEditorCell(this.createRefNode_y485ry_a2b0(editorContext, node));
     return editorCell;
   }
 
@@ -204,10 +211,10 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createRefNode_y485ry_c1a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_y485ry_a2b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("debugger");
-    provider.setNoTargetText("<no debugger>");
+    provider.setRole("debuggerConfiguration");
+    provider.setNoTargetText("<no debuggerConfiguration>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
