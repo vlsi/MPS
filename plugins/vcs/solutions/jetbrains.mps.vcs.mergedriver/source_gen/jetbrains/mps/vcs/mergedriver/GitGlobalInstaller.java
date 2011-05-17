@@ -10,9 +10,11 @@ import jetbrains.mps.workbench.WorkbenchPathManager;
 import java.io.File;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
-import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
@@ -33,26 +35,53 @@ import java.io.IOException;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
 
+    List<String> newConfigLines = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(newConfigLines).addElement("[merge \"mps\"]");
+    ListSequence.fromList(newConfigLines).addElement("\tname = MPS merge driver");
+    String cmd = MergeDriverMain.getCommandLine().replace("\\", "\\\\");
+    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = %s --git %%O %%A %%B %%L", cmd));
+    ListSequence.fromList(newConfigLines).addElement("");
+
     List<String> configLines = StringsIO.readLines(configFile);
-    if (ListSequence.fromList(configLines).any(new IWhereFilter<String>() {
+    int sectionStart = ListSequence.fromList(configLines).indexOf(ListSequence.fromList(configLines).findFirst(new IWhereFilter<String>() {
       public boolean accept(String line) {
         return line.matches("\\s*\\[merge\\s+\"mps\"\\]\\s*");
       }
-    })) {
-      // TODO check if outdated 
-      return AbstractInstaller.State.INSTALLED;
-    }
+    }));
+    if (sectionStart != -1) {
+      Iterable<String> skipped = ListSequence.fromList(configLines).skip(sectionStart);
+      int sectionEnd = Sequence.fromIterable(skipped).indexOf(Sequence.fromIterable(skipped).findFirst(new IWhereFilter<String>() {
+        public boolean accept(String line) {
+          return line.trim().isEmpty();
+        }
+      })) + sectionStart + 1;
+      List<String> section = ListSequence.fromList(configLines).page(sectionStart, sectionEnd).toListSequence();
+      boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
+      if (equal) {
+        for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
+          if (neq_btx4zt_a0a0a0e0n0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+            equal = false;
+            break;
+          }
+        }
+      }
+      if (equal) {
+        return AbstractInstaller.State.INSTALLED;
+      } else {
+        if (dryRun) {
+          return AbstractInstaller.State.OUTDATED;
+        } else {
+          configLines = ListSequence.fromList(configLines).take(sectionStart).concat(ListSequence.fromList(newConfigLines)).concat(ListSequence.fromList(configLines).skip(sectionEnd)).toListSequence();
+        }
+      }
+    } else {
+      if (dryRun) {
+        return AbstractInstaller.State.NOT_INSTALLED;
+      }
 
-    if (dryRun) {
-      return AbstractInstaller.State.NOT_INSTALLED;
+      ListSequence.fromList(configLines).addElement("");
+      ListSequence.fromList(configLines).addSequence(ListSequence.fromList(newConfigLines));
     }
-
-    ListSequence.fromList(configLines).addElement("");
-    ListSequence.fromList(configLines).addElement("[merge \"mps\"]");
-    ListSequence.fromList(configLines).addElement("\tname = MPS merge driver");
-    String cmd = MergeDriverMain.getCommandLine().replace("\\", "\\\\");
-    ListSequence.fromList(configLines).addElement(String.format("\tdriver = %s --git %%O %%A %%B %%L", cmd));
-    ListSequence.fromList(configLines).addElement("");
 
     try {
       StringsIO.writeLines(configFile, configLines);
@@ -65,5 +94,12 @@ import java.io.IOException;
       Messages.showErrorDialog(myProject, "Writing gitconfig file failed (" + e.getMessage() + ")", "Writing .gitconfig Failed");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
+  }
+
+  private static boolean neq_btx4zt_a0a0a0e0n0a(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }
