@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Comparator;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
@@ -25,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = Logger.getLogger(GeneratedFinder.class);
@@ -93,16 +93,6 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
 
   private Comparator<SNode> getComparator() {
     return new Comparator<SNode>() {
-      private boolean fromSameCollection(SNode node1, SNode node2) {
-        return ObjectUtils.equals(node1.getRole_(), node2.getRole_());
-      }
-
-      private int compareWithoutEditor(SNode ancestor, SNode node1, SNode node2) {
-        Integer index1 = ancestor.getIndexOfChild(node1);
-        Integer index2 = ancestor.getIndexOfChild(node2);
-        return index1.compareTo(index2);
-      }
-
       private Pair<Integer, Boolean> indexInEditor(SNode editorNode, String role, Pair<Integer, Boolean> index) {
         index.o1++;
         if (editorNode.toString().startsWith("%" + role + "%")) {
@@ -143,35 +133,26 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         return index1.compareTo(index2);
       }
 
-      public int compare(SNode o1, SNode o2) {
-        SNode root1 = o1.getContainingRoot();
-        SNode root2 = o2.getContainingRoot();
-        if (!(ObjectUtils.equals(root1, root2))) {
-          return root1.toString().compareTo(root2.toString());
+      private int compareBrothers(SNode n1, SNode n2) {
+        if (SNodeOperations.getContainingLinkRole(n1) == null) {
+          return n1.toString().compareTo(n2.toString());
         }
-        List<SNode> anc1 = o1.getAncestors(true);
-        List<SNode> anc2 = o2.getAncestors(true);
-        for (int i1 = 0; i1 < anc1.size(); i1++) {
-          if (i1 == 0) {
-            continue;
-          }
-          for (int i2 = 0; i2 < anc2.size(); i2++) {
-            if (i2 == 0) {
-              continue;
-            }
-            if (ObjectUtils.equals(anc1.get(i1), anc2.get(i2))) {
-              SNode ancestor = anc1.get(i1);
-              SNode node1 = anc1.get(i1 - 1);
-              SNode node2 = anc2.get(i2 - 1);
-              if (fromSameCollection(node1, node2)) {
-                return compareWithoutEditor(ancestor, node1, node2);
-              } else {
-                return compareWithEditor(ancestor, node1, node2);
-              }
-            }
+        if (SNodeOperations.getContainingLinkRole(n1).equals(SNodeOperations.getContainingLinkRole(n2))) {
+          return SNodeOperations.getIndexInParent(n1) - SNodeOperations.getIndexInParent(n2);
+        }
+        return compareWithEditor(SNodeOperations.getParent(n1), n1, n2);
+        // <node> 
+      }
+
+      public int compare(SNode n1, SNode n2) {
+        List<SNode> path1 = ListSequence.fromList(SNodeOperations.getAncestors(n1, null, true)).reversedList();
+        List<SNode> path2 = ListSequence.fromList(SNodeOperations.getAncestors(n2, null, true)).reversedList();
+        for (int i = 0; i < ListSequence.fromList(path1).count() && i < ListSequence.fromList(path2).count(); ++i) {
+          if (ListSequence.fromList(path1).getElement(i) != ListSequence.fromList(path2).getElement(i)) {
+            return compareBrothers(ListSequence.fromList(path1).getElement(i), ListSequence.fromList(path2).getElement(i));
           }
         }
-        return 0;
+        return ListSequence.fromList(path1).count() - ListSequence.fromList(path2).count();
       }
     };
   }
