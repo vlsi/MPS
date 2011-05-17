@@ -21,10 +21,11 @@ import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.debug.api.IDebugger;
-import jetbrains.mps.execution.lib.Java_Command;
+import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.Debuggers;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 
@@ -62,13 +63,18 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
     }
   }
 
-  public IDebugger getDebugger() {
-    return Java_Command.getDebugger();
-  }
+  @NotNull
+  public IDebuggerConfiguration getDebuggerConfiguration() {
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return new LocalConnectionSettings(true);
+      }
 
-  @Nullable
-  protected IDebuggerSettings createDebuggerSettings() {
-    return new LocalConnectionSettings(true);
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
   }
 
   public static boolean canExecute(String executorId) {

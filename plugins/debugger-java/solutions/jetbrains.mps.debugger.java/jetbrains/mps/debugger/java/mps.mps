@@ -711,13 +711,13 @@
         <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.946964771156870353" id="3271576760503830825">
           <node role="process" roleId="uhxm.946964771156870354" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="628837520991516442">
             <link role="command" roleId="rzqf.856705193941281782" targetNodeId="7364083846322268554" resolveInfo="mps" />
-            <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="628837520991516443">
-              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="7364083846322303186" resolveInfo="debuggerSettings" />
-              <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8623347627687242908">
-                <node role="operand" roleId="tpee.1197027771414" type="uhxm.DebuggerSettings_Parameter" typeId="uhxm.4816403309550879744" id="8623347627687242909" />
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8623347627687242910">
+            <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="8478830098674519466">
+              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="8478830098674514443" resolveInfo="debuggerParameter" />
+              <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8478830098674519468">
+                <node role="operand" roleId="tpee.1197027771414" type="uhxm.DebuggerSettings_Parameter" typeId="uhxm.4816403309550879744" id="8478830098674519469" />
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8478830098674519470">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z1l1.~DebugConnectionSettings%dgetCommandLine(boolean)%cjava%dlang%dString" resolveInfo="getCommandLine" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8623347627687242911">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8478830098674519471">
                     <property name="value" nameId="tpee.1068580123138" value="true" />
                   </node>
                 </node>
@@ -973,7 +973,9 @@
                     </node>
                   </node>
                 </node>
-                <node role="rightExpression" roleId="tpee.1081773367579" type="rzqf.DebuggerSettingsParameter" typeId="rzqf.6586232406240908943" id="6586232406240941848" />
+                <node role="rightExpression" roleId="tpee.1081773367579" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="8478830098674582216">
+                  <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="8478830098674514443" resolveInfo="debuggerSettings" />
+                </node>
               </node>
             </node>
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7364083846322303180">
@@ -998,14 +1000,14 @@
         </node>
       </node>
     </node>
-    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="7364083846322303186">
+    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="7364083846322303186">
       <property name="name" nameId="tpck.1169194664001" value="debuggerSettings2" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7364083846322303188" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3112651700635739251">
         <property name="value" nameId="tpee.1070475926801" value="" />
       </node>
     </node>
-    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6269383727488505970">
+    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6269383727488505970">
       <property name="name" nameId="tpck.1169194664001" value="virtualMachineParameters" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6269383727488505972" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3112651700635782374">
@@ -1015,11 +1017,11 @@
         </node>
       </node>
     </node>
-    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6269383727488509265">
+    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6269383727488509265">
       <property name="name" nameId="tpck.1169194664001" value="jrePath" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6269383727488509267" />
     </node>
-    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="2397785969255961051">
+    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="2397785969255961051">
       <property name="name" nameId="tpck.1169194664001" value="configurationPath" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2397785969255970509" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2397785969255970528">
@@ -1029,7 +1031,7 @@
         </node>
       </node>
     </node>
-    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.CommandParameterDeclaration" typeId="rzqf.856705193941281762" id="2397785969255970512">
+    <node role="parameterDeclaration" roleId="rzqf.856705193941281775" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="2397785969255970512">
       <property name="name" nameId="tpck.1169194664001" value="systemPath" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2397785969255970514" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2397785969255970542">
@@ -1057,6 +1059,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="debuggerParameter" roleId="rzqf.8478830098674492346" type="rzqf.DebuggerSettingsCommandParameterDeclaration" typeId="rzqf.8478830098674460022" id="8478830098674514443">
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8478830098674514444" />
     </node>
   </root>
 </model>

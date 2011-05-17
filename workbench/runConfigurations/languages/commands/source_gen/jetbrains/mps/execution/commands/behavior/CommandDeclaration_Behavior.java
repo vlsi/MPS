@@ -4,10 +4,12 @@ package jetbrains.mps.execution.commands.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.NonNls;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,6 +30,7 @@ public class CommandDeclaration_Behavior {
   private static Class[] PARAMETERS_856705193941282152 = {SNode.class};
 
   public static void init(SNode thisNode) {
+    SLinkOperations.setTarget(thisNode, "debuggerParameter", SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", null), true);
   }
 
   public static boolean call_isDebuggable_856705193941282102(SNode thisNode) {
@@ -53,6 +56,13 @@ public class CommandDeclaration_Behavior {
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return new CommandDeclaration_Behavior.QuotationClass_5aznw1_a0a0g().createNode();
+  }
+
+  public static List<SNode> call_getParameters_8478830098674430159(SNode thisNode) {
+    if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(thisNode)) {
+      return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterDeclaration", true)).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(thisNode, "debuggerParameter", true)))).toListSequence();
+    }
+    return SLinkOperations.getTargets(thisNode, "parameterDeclaration", true);
   }
 
   public static String call_getSuffix_856705193941282112(SNode thisNode) {

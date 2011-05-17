@@ -61,8 +61,8 @@
     <nodeInfo nodeId="3271576760503788623" fileName="MPS_Kind.java" startLine="17" startPosition="52" endLine="18" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
   </root>
   <root nodeId="3271576760503799855">
-    <nodeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="53" startPosition="5" endLine="54" endPosition="418" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="54" startPosition="418" endLine="55" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="53" startPosition="5" endLine="54" endPosition="417" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="54" startPosition="417" endLine="55" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="55" startPosition="79" endLine="56" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3271576760503830825" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="58" startPosition="30" endLine="59" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6586232406240172516" fileName="MPSInstance_Configuration_RunProfileState.java" startLine="69" startPosition="57" endLine="70" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

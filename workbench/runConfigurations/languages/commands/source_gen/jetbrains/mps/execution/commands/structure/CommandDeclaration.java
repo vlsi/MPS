@@ -24,6 +24,7 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DEBUGGER_CONFIGURATION = "debuggerConfiguration";
+  public static final String DEBUGGER_PARAMETER = "debuggerParameter";
   public static final String EXECUTE = "execute";
   public static final String METHOD = "method";
   public static final String PARAMETER_DECLARATION = "parameterDeclaration";
@@ -73,6 +74,14 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
     super.setChild(CommandDeclaration.DEBUGGER_CONFIGURATION, node);
   }
 
+  public DebuggerSettingsCommandParameterDeclaration getDebuggerParameter() {
+    return (DebuggerSettingsCommandParameterDeclaration) this.getChild(DebuggerSettingsCommandParameterDeclaration.class, CommandDeclaration.DEBUGGER_PARAMETER);
+  }
+
+  public void setDebuggerParameter(DebuggerSettingsCommandParameterDeclaration node) {
+    super.setChild(CommandDeclaration.DEBUGGER_PARAMETER, node);
+  }
+
   public BlockStatement getExecute() {
     return (BlockStatement) this.getChild(BlockStatement.class, CommandDeclaration.EXECUTE);
   }
@@ -105,19 +114,19 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
     return this.getChildCount(CommandDeclaration.PARAMETER_DECLARATION);
   }
 
-  public Iterator<CommandParameterDeclaration> parameterDeclarations() {
-    return this.children(CommandParameterDeclaration.class, CommandDeclaration.PARAMETER_DECLARATION);
+  public Iterator<ExplicitCommandParameterDeclaration> parameterDeclarations() {
+    return this.children(ExplicitCommandParameterDeclaration.class, CommandDeclaration.PARAMETER_DECLARATION);
   }
 
-  public List<CommandParameterDeclaration> getParameterDeclarations() {
-    return this.getChildren(CommandParameterDeclaration.class, CommandDeclaration.PARAMETER_DECLARATION);
+  public List<ExplicitCommandParameterDeclaration> getParameterDeclarations() {
+    return this.getChildren(ExplicitCommandParameterDeclaration.class, CommandDeclaration.PARAMETER_DECLARATION);
   }
 
-  public void addParameterDeclaration(CommandParameterDeclaration node) {
+  public void addParameterDeclaration(ExplicitCommandParameterDeclaration node) {
     this.addChild(CommandDeclaration.PARAMETER_DECLARATION, node);
   }
 
-  public void insertParameterDeclaration(CommandParameterDeclaration prev, CommandParameterDeclaration node) {
+  public void insertParameterDeclaration(ExplicitCommandParameterDeclaration prev, ExplicitCommandParameterDeclaration node) {
     this.insertChild(prev, CommandDeclaration.PARAMETER_DECLARATION, node);
   }
 

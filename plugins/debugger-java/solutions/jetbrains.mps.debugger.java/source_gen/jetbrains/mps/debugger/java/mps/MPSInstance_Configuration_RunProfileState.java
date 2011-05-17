@@ -51,7 +51,7 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     {
-      ProcessHandler _processHandler = new Mps_Command().setDebuggerSettings2(myDebuggerSettings.getCommandLine(true)).setVirtualMachineParameters(myRunConfiguration.getVmOptions()).setJrePath(myRunConfiguration.getJrePath()).setConfigurationPath(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).createProcess();
+      ProcessHandler _processHandler = new Mps_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).setVirtualMachineParameters(myRunConfiguration.getVmOptions()).setJrePath(myRunConfiguration.getJrePath()).setConfigurationPath(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).createProcess();
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

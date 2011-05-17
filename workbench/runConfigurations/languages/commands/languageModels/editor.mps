@@ -63,9 +63,9 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="856705193941281977">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.856705193941281812" resolveInfo="RedirectOutputExpression" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6586232406240908945">
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8478830098674460023">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.6586232406240908943" resolveInfo="DebuggerSettingsParameter" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.8478830098674460022" resolveInfo="DebuggerSettingsCommandParameterDeclaration" />
     </node>
   </roots>
   <root id="856705193941281818">
@@ -291,6 +291,9 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="856705193941281919" />
       </node>
     </node>
+    <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="8478830098674500982">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="rzqf.8478830098674492346" />
+    </node>
   </root>
   <root id="856705193941281920">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="856705193941281921">
@@ -442,10 +445,10 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="856705193941281982" />
     </node>
   </root>
-  <root id="6586232406240908945">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="6586232406240908947">
+  <root id="8478830098674460023">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="8478830098674460025">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-      <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="jfm4.946964771156905383" resolveInfo="conceptFunctionHeader" />
+      <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1198595398954" resolveInfo="Field" />
     </node>
   </root>
 </model>

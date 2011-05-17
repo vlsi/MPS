@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommandParameterReference_Constraints extends ConstraintsDataHolder {
@@ -89,7 +89,7 @@ public class CommandParameterReference_Constraints extends ConstraintsDataHolder
       }
 
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-        return SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "parameterDeclaration", true);
+        return CommandDeclaration_Behavior.call_getParameters_8478830098674430159(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.execution.commands.structure.CommandDeclaration"));
       }
 
       public SNodePointer getSearchScopeValidatorNodePointer() {

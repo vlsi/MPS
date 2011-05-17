@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="DebuggerSettingsCommandParameterDeclaration_Constraints.java" startLine="40" startPosition="27" endLine="44" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.DebuggerSettingsCommandParameterDeclaration_Constraints$1" />
   <unitInfo fileName="AbstractProcessBuilderPart_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.AbstractProcessBuilderPart_Constraints$1" />
-  <unitInfo fileName="DebuggerSettingsParameter_Constraints.java" startLine="46" startPosition="15" endLine="56" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.DebuggerSettingsParameter_Constraints$1" />
   <unitInfo fileName="CommandDebuggerOperation_Constraints.java" startLine="46" startPosition="15" endLine="56" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.CommandDebuggerOperation_Constraints$1" />
-  <unitInfo fileName="CommandParameterAssignment_Constraints.java" startLine="49" startPosition="15" endLine="59" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterAssignment_Constraints$1" />
   <unitInfo fileName="CommandParameterReference_Constraints.java" startLine="49" startPosition="15" endLine="59" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterReference_Constraints$1" />
+  <unitInfo fileName="CommandParameterAssignment_Constraints.java" startLine="50" startPosition="15" endLine="60" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterAssignment_Constraints$1" />
   <unitInfo fileName="CommandParameterReference_Constraints.java" startLine="84" startPosition="32" endLine="98" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterReference_Constraints$2" />
-  <unitInfo fileName="CommandParameterAssignment_Constraints.java" startLine="84" startPosition="43" endLine="98" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterAssignment_Constraints$2" />
+  <unitInfo fileName="CommandParameterAssignment_Constraints.java" startLine="85" startPosition="43" endLine="99" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterAssignment_Constraints$2" />
+  <unitInfo fileName="DebuggerSettingsCommandParameterDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.DebuggerSettingsCommandParameterDeclaration_Constraints" />
   <unitInfo fileName="AbstractProcessBuilderPart_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.AbstractProcessBuilderPart_Constraints" />
   <unitInfo fileName="CommandDebuggerOperation_Constraints.java" startLine="23" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.CommandDebuggerOperation_Constraints" />
-  <unitInfo fileName="DebuggerSettingsParameter_Constraints.java" startLine="23" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.DebuggerSettingsParameter_Constraints" />
-  <unitInfo fileName="CommandParameterAssignment_Constraints.java" startLine="26" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterAssignment_Constraints" />
   <unitInfo fileName="CommandParameterReference_Constraints.java" startLine="26" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterReference_Constraints" />
-  <root nodeId="6586232406240908948">
-    <nodeInfo nodeId="6586232406240908965" fileName="DebuggerSettingsParameter_Constraints.java" startLine="84" startPosition="114" endLine="85" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6586232406240908951" fileName="DebuggerSettingsParameter_Constraints.java" startLine="85" startPosition="77" endLine="86" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6586232406240908950" fileName="DebuggerSettingsParameter_Constraints.java" startLine="84" startPosition="114" endLine="86" endPosition="274">
-      <varInfo nodeId="6586232406240908966" varName="root" />
-    </scopeInfo>
+  <unitInfo fileName="CommandParameterAssignment_Constraints.java" startLine="27" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.CommandParameterAssignment_Constraints" />
+  <root nodeId="8478830098674460026">
+    <nodeInfo nodeId="8478830098674515761" fileName="DebuggerSettingsCommandParameterDeclaration_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8478830098674460029" fileName="DebuggerSettingsCommandParameterDeclaration_Constraints.java" startLine="41" startPosition="84" endLine="42" endPosition="67" />
   </root>
   <root nodeId="856705193941282419">
-    <nodeInfo nodeId="856705193941282423" fileName="CommandParameterReference_Constraints.java" startLine="91" startPosition="136" endLine="92" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="856705193941282423" fileName="CommandParameterReference_Constraints.java" startLine="91" startPosition="136" endLine="92" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941282432" fileName="CommandParameterReference_Constraints.java" startLine="102" startPosition="114" endLine="103" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="856705193941282422" fileName="CommandParameterReference_Constraints.java" startLine="91" startPosition="136" endLine="92" endPosition="223" />
+    <scopeInfo nodeId="856705193941282422" fileName="CommandParameterReference_Constraints.java" startLine="91" startPosition="136" endLine="92" endPosition="233" />
     <scopeInfo nodeId="856705193941282431" fileName="CommandParameterReference_Constraints.java" startLine="102" startPosition="114" endLine="103" endPosition="166" />
   </root>
   <root nodeId="856705193941282439">
-    <nodeInfo nodeId="856705193941282443" fileName="CommandParameterAssignment_Constraints.java" startLine="91" startPosition="136" endLine="92" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="856705193941282452" fileName="CommandParameterAssignment_Constraints.java" startLine="102" startPosition="114" endLine="103" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="856705193941282442" fileName="CommandParameterAssignment_Constraints.java" startLine="91" startPosition="136" endLine="92" endPosition="239" />
-    <scopeInfo nodeId="856705193941282451" fileName="CommandParameterAssignment_Constraints.java" startLine="102" startPosition="114" endLine="103" endPosition="137" />
+    <nodeInfo nodeId="856705193941282443" fileName="CommandParameterAssignment_Constraints.java" startLine="92" startPosition="136" endLine="93" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="856705193941282452" fileName="CommandParameterAssignment_Constraints.java" startLine="103" startPosition="114" endLine="104" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="856705193941282442" fileName="CommandParameterAssignment_Constraints.java" startLine="92" startPosition="136" endLine="93" endPosition="249" />
+    <scopeInfo nodeId="856705193941282451" fileName="CommandParameterAssignment_Constraints.java" startLine="103" startPosition="114" endLine="104" endPosition="137" />
   </root>
   <root nodeId="856705193941282457">
     <nodeInfo nodeId="856705193941282460" fileName="CommandDebuggerOperation_Constraints.java" startLine="84" startPosition="114" endLine="85" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

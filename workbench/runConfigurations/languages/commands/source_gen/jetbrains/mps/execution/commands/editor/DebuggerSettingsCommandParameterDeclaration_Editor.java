@@ -8,23 +8,23 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class DebuggerSettingsParameter_Editor extends DefaultNodeEditor {
+public class DebuggerSettingsCommandParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConceptProperty_imfmf7_a(editorContext, node);
+    return this.createConceptProperty_ty1wq2_a(editorContext, node);
   }
 
-  private EditorCell createConceptProperty_imfmf7_a(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_ty1wq2_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
-    RunConfigurations_StyleSheet.getConceptFunctionHeader(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

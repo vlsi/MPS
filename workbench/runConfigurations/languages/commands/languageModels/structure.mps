@@ -28,9 +28,9 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="856705193941281762">
-      <property name="name" nameId="tpck.1169194664001" value="CommandParameterDeclaration" />
+      <property name="name" nameId="tpck.1169194664001" value="ExplicitCommandParameterDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7327337331549086040" resolveInfo="CommandParameterDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="856705193941281764">
       <property name="name" nameId="tpck.1169194664001" value="CommandParameterAssignment" />
@@ -106,10 +106,15 @@
       <property name="name" nameId="tpck.1169194664001" value="RedirectOutputExpression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6586232406240908943">
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7327337331549086040">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
-      <property name="name" nameId="tpck.1169194664001" value="DebuggerSettingsParameter" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <property name="name" nameId="tpck.1169194664001" value="CommandParameterDeclaration" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8478830098674460022">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+      <property name="name" nameId="tpck.1169194664001" value="DebuggerSettingsCommandParameterDeclaration" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7327337331549086040" resolveInfo="CommandParameterDeclaration" />
     </node>
   </roots>
   <root id="856705193941281750">
@@ -146,7 +151,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="parameter" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="856705193941281762" resolveInfo="CommandParameterDeclaration" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7327337331549086040" resolveInfo="CommandParameterDeclaration" />
     </node>
   </root>
   <root id="856705193941281762">
@@ -160,7 +165,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="parameterDeclaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="856705193941281762" resolveInfo="CommandParameterDeclaration" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7327337331549086040" resolveInfo="CommandParameterDeclaration" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="856705193941281766">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -188,6 +193,12 @@
       <property name="role" nameId="tpce.1071599776563" value="debuggerConfiguration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="86gq.6720907903633266421" resolveInfo="DebuggerConfiguration" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8478830098674492346">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="debuggerParameter" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8478830098674460022" resolveInfo="DebuggerSettingsCommandParameterDeclaration" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="856705193941281774">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -357,8 +368,13 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
-  <root id="6586232406240908943">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6586232406240908944">
+  <root id="7327337331549086040">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="8478830098674460021">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
+  </root>
+  <root id="8478830098674460022">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8478830098674514445">
       <property name="value" nameId="tpce.1105725733873" value="debuggerSettings" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
