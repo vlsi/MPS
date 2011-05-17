@@ -13,22 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.structure;
+package jetbrains.mps.smodel.structure.aspect;
+
+import jetbrains.mps.smodel.structure.StructureDescriptor;
 
 import java.util.List;
 import java.util.Set;
 
-public abstract class ConceptDeclaration {
-  // todo: rename to ConceptDescriptor, delete old ConceptDescriptor (regen behavior for this purpose)
-  // todo: not "getStructureDescriptor", use other name for method! e.g. registerStructureDescriptor()?
+public abstract class StructureAspectDescriptor {
+  public abstract List<DescriptorInitializer> getDescriptors();
 
-  public abstract String fqName();
+  public abstract class DescriptorInitializer {
+    public abstract String fqName();
 
-  public abstract Set<String> getDependencies();
+    public abstract Set<String> dependencies();
 
-  public abstract StructureDescriptor getStructureDescriptor();
-
-  public abstract BehaviorDescriptor getBehaviorDescriptor();
-
-  public abstract ConstraintsDescriptor getConstraintsDescriptor();
+    public abstract StructureDescriptor initDescriptor();
+  }
 }

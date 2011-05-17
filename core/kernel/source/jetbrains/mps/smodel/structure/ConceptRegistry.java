@@ -3,20 +3,19 @@ package jetbrains.mps.smodel.structure;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.containers.MultiMap;
-import gnu.trove.THashMap;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.structure.aspect.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.structure.aspect.ConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.structure.aspect.StructureAspectDescriptor;
+import jetbrains.mps.smodel.structure.aspect.StructureAspectDescriptor.DescriptorInitializer;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 import static com.google.common.collect.Maps.newHashMap;
 
@@ -120,40 +119,42 @@ public class ConceptRegistry implements ApplicationComponent {
     }
   }
 
-  private void dfs(ConceptDeclaration conceptDeclaration, Set<ConceptDeclaration> used, List<ConceptDeclaration> result, Map<String, ConceptDeclaration> nameToConceptDeclaration) {
+  private void dfs(StructureAspectDescriptor.DescriptorInitializer conceptDeclaration,
+                   Set<StructureAspectDescriptor.DescriptorInitializer> used,
+                   List<StructureAspectDescriptor.DescriptorInitializer> result,
+                   Map<String, StructureAspectDescriptor.DescriptorInitializer> nameToConceptDeclaration) {
     if (used.contains(conceptDeclaration)) {
       return;
     }
 
     used.add(conceptDeclaration);
 
-    for (String dependency : conceptDeclaration.getDependencies()) {
+    for (String dependency : conceptDeclaration.dependencies()) {
       dfs(nameToConceptDeclaration.get(dependency), used, result, nameToConceptDeclaration);
     }
 
     result.add(conceptDeclaration);
   }
 
-
   public void languagesLoaded(Iterable<LanguageRuntime> languages) {
     ModelAccess.assertLegalWrite();
 
-    List<ConceptDeclaration> conceptsToRegister = new ArrayList<ConceptDeclaration>();
+    List<StructureAspectDescriptor.DescriptorInitializer> conceptsToRegister = new ArrayList<StructureAspectDescriptor.DescriptorInitializer>();
     for (LanguageRuntime languageRuntime : languages) {
-      conceptsToRegister.addAll(languageRuntime.getConcepts());
+      conceptsToRegister.addAll(languageRuntime.getStructureAspect().getDescriptors());
     }
 
     // create name to concept declaration map
-    Map<String, ConceptDeclaration> nameToConceptDeclaration = new HashMap<String, ConceptDeclaration>();
-    for (ConceptDeclaration conceptDeclaration : conceptsToRegister) {
+    Map<String, StructureAspectDescriptor.DescriptorInitializer> nameToConceptDeclaration = new HashMap<String, StructureAspectDescriptor.DescriptorInitializer>();
+    for (StructureAspectDescriptor.DescriptorInitializer conceptDeclaration : conceptsToRegister) {
       nameToConceptDeclaration.put(conceptDeclaration.fqName(), conceptDeclaration);
     }
 
     // checking dependencies
-    for (ConceptDeclaration conceptDeclaration : conceptsToRegister) {
+    for (StructureAspectDescriptor.DescriptorInitializer conceptDeclaration : conceptsToRegister) {
       boolean isOk = true;
 
-      for (String dependency : conceptDeclaration.getDependencies()) {
+      for (String dependency : conceptDeclaration.dependencies()) {
         if (!nameToConceptDeclaration.containsKey(dependency) && !structureDescriptors.containsKey(dependency)) {
           isOk = false;
           break;
@@ -166,18 +167,37 @@ public class ConceptRegistry implements ApplicationComponent {
     }
 
     // topologic concept sorting
-    List<ConceptDeclaration> result = new ArrayList<ConceptDeclaration>();
-    Set<ConceptDeclaration> used = new HashSet<ConceptDeclaration>();
+    List<StructureAspectDescriptor.DescriptorInitializer> result = new ArrayList<StructureAspectDescriptor.DescriptorInitializer>();
+    Set<StructureAspectDescriptor.DescriptorInitializer> used = new HashSet<StructureAspectDescriptor.DescriptorInitializer>();
 
-    for (ConceptDeclaration conceptDeclaration : conceptsToRegister) {
+    for (StructureAspectDescriptor.DescriptorInitializer conceptDeclaration : conceptsToRegister) {
       dfs(conceptDeclaration, used, result, nameToConceptDeclaration);
     }
 
+    // behavior and constraints name to concept aspect mapping
+    Map<String, BehaviorAspectDescriptor.DescriptorInitializer> nameToBehaviorDescriptorInitializer = new HashMap<String, BehaviorAspectDescriptor.DescriptorInitializer>();
+    Map<String, ConstraintsAspectDescriptor.DescriptorInitializer> nameToConstraintsDescriptorInitializer = new HashMap<String, ConstraintsAspectDescriptor.DescriptorInitializer>();
+
+    for (LanguageRuntime languageRuntime : languages) {
+      for (BehaviorAspectDescriptor.DescriptorInitializer descriptorInitializer : languageRuntime.getBehaviorAspect().getDescriptors()) {
+        nameToBehaviorDescriptorInitializer.put(descriptorInitializer.fqName(), descriptorInitializer);
+      }
+      for (ConstraintsAspectDescriptor.DescriptorInitializer descriptorInitializer : languageRuntime.getConstraintsAspect().getDescriptors()) {
+        nameToConstraintsDescriptorInitializer.put(descriptorInitializer.fqName(), descriptorInitializer);
+      }
+    }
+
     // register descriptors
-    for (ConceptDeclaration conceptDeclaration : result) {
-      registerStructure(conceptDeclaration.fqName(), conceptDeclaration.getStructureDescriptor());
-      registerBehavior(conceptDeclaration.fqName(), conceptDeclaration.getBehaviorDescriptor());
-      registerConstraints(conceptDeclaration.fqName(), conceptDeclaration.getConstraintsDescriptor());
+    for (StructureAspectDescriptor.DescriptorInitializer concept : result) {
+      registerStructure(concept.fqName(), concept.initDescriptor());
+
+      if (nameToBehaviorDescriptorInitializer.containsKey(concept.fqName())) {
+        registerBehavior(concept.fqName(), nameToBehaviorDescriptorInitializer.get(concept.fqName()).initDescriptor());
+      }
+
+      if (nameToConstraintsDescriptorInitializer.containsKey(concept.fqName())) {
+        registerConstraints(concept.fqName(), nameToConstraintsDescriptorInitializer.get(concept.fqName()).initDescriptor());
+      }
     }
   }
 

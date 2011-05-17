@@ -19,10 +19,9 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.structure.aspect.*;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * evgeny, 3/11/11
@@ -42,7 +41,15 @@ public abstract class LanguageRuntime {
 
   public abstract Collection<TemplateModule> getGenerators();
 
-  public List<ConceptDeclaration> getConcepts() {
-    return LanguageRuntimeUtils.getLanguageConceptDeclarations(MPSModuleRepository.getInstance().getLanguage(getNamespace()));
+  public StructureAspectDescriptor getStructureAspect() {
+    return new InterpretedStructureAspectDescriptor(MPSModuleRepository.getInstance().getLanguage(getNamespace()));
+  }
+
+  public BehaviorAspectDescriptor getBehaviorAspect() {
+    return new InterpretedBehaviorAspectDescriptor(MPSModuleRepository.getInstance().getLanguage(getNamespace()));
+  }
+
+  public ConstraintsAspectDescriptor getConstraintsAspect() {
+    return new InterpretedConstraintsAspectDescriptor(MPSModuleRepository.getInstance().getLanguage(getNamespace()));
   }
 }
