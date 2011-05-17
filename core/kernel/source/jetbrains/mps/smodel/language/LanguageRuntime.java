@@ -19,8 +19,10 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.structure.ConceptDeclaration;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * evgeny, 3/11/11
@@ -40,4 +42,7 @@ public abstract class LanguageRuntime {
 
   public abstract Collection<TemplateModule> getGenerators();
 
+  public List<ConceptDeclaration> getConcepts() {
+    return LanguageRuntimeUtils.getLanguageConceptDeclarations(MPSModuleRepository.getInstance().getLanguage(getNamespace()));
+  }
 }
