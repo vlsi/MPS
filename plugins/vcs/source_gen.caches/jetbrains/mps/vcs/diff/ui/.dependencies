@@ -733,8 +733,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.NodeCopierWithCache" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />

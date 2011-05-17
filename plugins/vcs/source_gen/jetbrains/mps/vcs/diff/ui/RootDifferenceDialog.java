@@ -24,7 +24,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.vcs.diff.merge.NodeCopierWithCache;
+import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import javax.swing.JComponent;
@@ -145,7 +145,7 @@ public class RootDifferenceDialog extends BaseDialog {
       public void run() {
         assert Sequence.fromIterable(changes).isNotEmpty();
         final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
-        final NodeCopierWithCache nc = new NodeCopierWithCache(model);
+        final NodeCopier nc = new NodeCopier(model);
         Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
           public ModelChange select(ModelChange ch) {
             return ch.getOppositeChange();
