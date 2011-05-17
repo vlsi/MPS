@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
@@ -215,7 +216,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     }
     IFile oldFile = dsm.getModelFile();
     SModelRoot root = ModelRootUtil.getSModelRoot(sm);
-    IFile newFile = createFileForModelUID(root, modelFqName);
+    IFile newFile = createFileForModelUID(root.getModelRoot(), modelFqName);
     newFile.getParent().mkdirs();
     newFile.createNewFile();
     dsm.changeModelFile(newFile);
@@ -223,7 +224,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     oldFile.delete();
   }
 
-  public static IFile createFileForModelUID(SModelRoot root, SModelFqName fqName) {
+  public static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName) {
     String pathPrefix = root.getPrefix();
     String path = root.getPath();
 

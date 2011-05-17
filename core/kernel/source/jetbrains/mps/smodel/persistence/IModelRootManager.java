@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
@@ -28,9 +29,9 @@ import java.util.Collection;
 import java.util.Set;
 
 public interface IModelRootManager {
-  void updateModels(@NotNull SModelRoot root, @NotNull IModule owner);
+  Collection<SModelDescriptor> load(@NotNull ModelRoot root, @NotNull IModule owner);
 
-  boolean isNewModelsSupported();
+  boolean canCreateModel();
 
   /*
    * If you will implement this method do not forget
@@ -38,7 +39,7 @@ public interface IModelRootManager {
    * 2. Fire new model created event : SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
    */
   @NotNull
-  SModelDescriptor createNewModel(@NotNull SModelRoot root,
-                                  @NotNull SModelFqName fqName,
-                                  @NotNull ModelOwner owner);
+  SModelDescriptor createModel(@NotNull ModelRoot root,
+                               @NotNull SModelFqName fqName,
+                               @NotNull IModule owner);
 }

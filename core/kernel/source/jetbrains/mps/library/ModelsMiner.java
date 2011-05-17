@@ -18,6 +18,7 @@ package jetbrains.mps.library;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
@@ -36,7 +37,7 @@ import java.util.List;
  */
 public class ModelsMiner {
 
-  public static void collectModelDescriptors(IFile dir, SModelRoot modelRoot, Collection<ModelHandle> models) {
+  public static void collectModelDescriptors(IFile dir, ModelRoot modelRoot, Collection<ModelHandle> models) {
     if (FileTypeManager.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 

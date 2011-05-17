@@ -81,6 +81,10 @@ public class SModelRoot {
     return fqName.getLongName().startsWith(getPrefix());
   }
 
+  public ModelRoot getModelRoot() {
+    return myModelRoot;
+  }
+
   public static class ManagerNotFoundException extends Exception {
     public ManagerNotFoundException(String message) {
       super(message);

@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.smodel.persistence;
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
@@ -27,19 +29,14 @@ import java.util.Collection;
 import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
-  public boolean isNewModelsSupported() {
+  public boolean canCreateModel() {
     return false;
   }
 
   @NotNull
-  public SModelDescriptor createNewModel(@NotNull SModelRoot root,
-                                         @NotNull SModelFqName fqName,
-                                         @NotNull ModelOwner owner) {
+  public SModelDescriptor createModel(@NotNull ModelRoot root,
+                                      @NotNull SModelFqName fqName,
+                                      @NotNull IModule owner) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
-  }
-
-
-  public void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile) {
-    throw new UnsupportedOperationException();
   }
 }
