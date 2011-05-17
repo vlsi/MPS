@@ -29,14 +29,12 @@ import java.util.Collection;
 import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
-  public boolean canCreateModel() {
+  public boolean canCreateModel(@NotNull ModelRoot root,@NotNull SModelFqName fqName) {
     return false;
   }
 
   @NotNull
-  public SModelDescriptor createModel(@NotNull ModelRoot root,
-                                      @NotNull SModelFqName fqName,
-                                      @NotNull IModule owner) {
+  public SModelDescriptor createModel(@NotNull ModelRoot root,@NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
 }
