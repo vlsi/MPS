@@ -67,7 +67,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   public void projectClosed() {
-
+    myFileEditorManager.removeFileEditorManagerListener(myFileEditorManagerListener);
   }
 
   @NonNls
