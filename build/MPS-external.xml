@@ -112,12 +112,6 @@
       <fileset dir="${mps_home}/classes" excludes="production/, test/, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/workbench/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/workbench/runConfigurations/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/debug/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
@@ -181,6 +175,12 @@
       <fileset dir="${mps_home}/core/kernel/classes" excludes="idea/IdeaApplicationInfo.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
+      <fileset dir="${mps_home}/workbench/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
+      <fileset dir="${mps_home}/workbench/runConfigurations/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/workbench/typesystemUi/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
@@ -191,8 +191,25 @@
     </copy>
     <antcall target="replace_a72d1a" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.api" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.impl" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.findUsages.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.generator" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.make.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.plugin.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.refactoring.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.typesystemEngine" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.traceInfo" />
     <antcall target="MPS-languages.pack.jetbrains.mps.workbench.make" />
+    <antcall target="MPS-languages.pack.stubUtils" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
@@ -271,18 +288,18 @@
     </zip>
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage.runtime" />
+    <antcall target="MPS-languages.pack.closures.runtime" />
+    <antcall target="MPS-languages.pack.collections.runtime" />
+    <antcall target="MPS-languages.pack.collections.runtime.gwt" />
+    <antcall target="MPS-languages.pack.collections_trove.runtime" />
+    <antcall target="MPS-languages.pack.collections_samples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.blTypes" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.checkedDots" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.closures" />
-    <antcall target="MPS-languages.pack.closures.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections" />
-    <antcall target="MPS-languages.pack.collections.runtime" />
-    <antcall target="MPS-languages.pack.collections.runtime.gwt" />
-    <antcall target="MPS-languages.pack.collections_trove.runtime" />
-    <antcall target="MPS-languages.pack.collections_samples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.index" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.javadoc" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
@@ -331,17 +348,11 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.language-design" />
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.bootstrap-languages" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.traceInfo" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.evaluation" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.evaluation.solution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.customViewers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.privateMembers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.apiLang" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.make.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
-    <antcall target="MPS-languages.pack.stubUtils" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.typesystemEngine" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage" />
@@ -391,7 +402,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.analyzers" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.datesInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates.runtime" />

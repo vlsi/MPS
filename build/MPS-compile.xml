@@ -2217,7 +2217,6 @@
   </path>
   <path id="cycle.jetbrains.mps.gwt.client_tjc.classpaths">
     <path path="platform/gwtsupport/languages/client/classes_gen" />
-    <path path="platform/gwtsupport/languages/client/redist/gwt-dev.jar" />
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="core/analyzers/languages/analyzers/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />

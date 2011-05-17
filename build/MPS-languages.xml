@@ -1,5 +1,88 @@
 <project name="MPS-languages" default="pack.jetbrains.mps.ide.uiLanguage.runtime">
   <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
+  <target name="pack.jetbrains.mps.analyzers.runtime">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.analyzers.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.analyzers.runtime">
+      <fileset file="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" />
+      <fileset dir="core/analyzers/solutions/jetbrains.mps.analyzers.runtime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.analyzers.runtime">
+      <fileset dir="core/analyzers/solutions/jetbrains.mps.analyzers.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.dataFlow.runtime">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.dataFlow.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.dataFlow.runtime">
+      <fileset file="core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" />
+      <fileset dir="core/kernel/dataFlowRuntime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.dataFlow.runtime">
+      <fileset dir="core/kernel/dataFlowRuntime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.editor.runtime">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.editor.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.editor.runtime">
+      <fileset file="core/editor-runtime/jetbrains.mps.editor.runtime.msd" />
+      <fileset dir="core/editor-runtime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.editor.runtime/models">
+      <fileset dir="core/editor-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.execution.api">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.api" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.api">
+      <fileset file="workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
+      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.api" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.api">
+      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.api" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.execution.impl">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.impl" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.impl">
+      <fileset file="workbench/runConfigurations/solutions/jetbrains.mps.execution.impl/impl.msd" />
+      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.impl" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.impl">
+      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.impl" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.execution.lib">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.lib" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.lib">
+      <fileset file="workbench/runConfigurations/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" />
+      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.util" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.lib">
+      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.util" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.findUsages.runtime">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.findUsages.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.findUsages.runtime">
+      <fileset file="core/findUsages-runtime/runtime.msd" />
+      <fileset dir="core/findUsages-runtime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.findUsages.runtime">
+      <fileset dir="core/findUsages-runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.findUsages.runtime/models">
+      <fileset dir="core/findUsages-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.generator">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.generator" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.generator">
+      <fileset file="core/generator/solutions/jetbrains.mps.generator.msd" />
+      <fileset dir="core/generator/solutions" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.generator/generator">
+      <fileset dir="core/generator/solutions/generator" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.ide">
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.ide" />
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.ide">
@@ -8,6 +91,86 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.ide">
       <fileset dir="workbench/ideSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.kernel">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.kernel" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.kernel">
+      <fileset file="core/kernel/kernelSolution/jetbrains.mps.kernel.msd" />
+      <fileset dir="core/kernel/kernelSolution" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.kernel">
+      <fileset dir="core/kernel/kernelSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.lang.pattern.runtime">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.lang.pattern.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.lang.pattern.runtime">
+      <fileset file="core/kernel/patternRuntime/runtime.msd" />
+      <fileset dir="core/kernel/patternRuntime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.lang.pattern.runtime/models">
+      <fileset dir="core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.make.runtime">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.make.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.make.runtime">
+      <fileset file="core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
+      <fileset dir="core/make-runtime/solutions/jetbrains.mps.make.runtime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.make.runtime">
+      <fileset dir="core/make-runtime/solutions/jetbrains.mps.make.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.plugin.runtime">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.plugin.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.plugin.runtime">
+      <fileset file="core/plugin-runtime/jetbrains.mps.plugin.runtime.msd" />
+      <fileset dir="core/plugin-runtime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.plugin.runtime">
+      <fileset dir="core/plugin-runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.refactoring.runtime">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.refactoring.runtime" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.refactoring.runtime">
+      <fileset file="core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" />
+      <fileset dir="core/refactoring-runtime" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.refactoring.runtime/models">
+      <fileset dir="core/refactoring-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.smodel.resources">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.smodel.resources" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.smodel.resources">
+      <fileset file="core/kernel/resources/jetbrains.mps.smodel.resources.msd" />
+      <fileset dir="core/kernel/resources" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.smodel.resources">
+      <fileset dir="core/kernel/resources" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.typesystemEngine">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.typesystemEngine" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.typesystemEngine">
+      <fileset file="core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" />
+      <fileset dir="core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.typesystemEngine">
+      <fileset dir="core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
+  <target name="pack.jetbrains.mps.traceInfo">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.traceInfo" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.traceInfo">
+      <fileset file="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" />
+      <fileset dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.traceInfo">
+      <fileset dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.workbench.make">
@@ -20,6 +183,16 @@
       <fileset dir="workbench/make" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
+  <target name="pack.stubUtils">
+    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/stubUtils" />
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/stubUtils">
+      <fileset file="core/kernel/stubUtils/stubUtils.msd" />
+      <fileset dir="core/kernel/stubUtils" includes="icons/**, resources/**" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/stubUtils">
+      <fileset dir="core/kernel/stubUtils" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copy>
+  </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage.runtime">
     <mkdir dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/languages/jetbrains.mps.ide.uiLanguage.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -27,6 +200,44 @@
       <zipfileset dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
       <zipfileset dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.closures.runtime">
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/closures.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/closures/runtime/closures.runtime.msd" prefix="module" />
+      <zipfileset dir="core/baseLanguage/closures/runtime" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/baseLanguage/closures/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+    </jar>
+  </target>
+  <target name="pack.collections.runtime">
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/collections/runtime/collections.runtime.msd" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/runtime" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/jetbrains" />
+    </jar>
+  </target>
+  <target name="pack.collections.runtime.gwt">
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections.runtime.gwt.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/runtime/gwt" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/runtime/gwt" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+    </jar>
+  </target>
+  <target name="pack.collections_trove.runtime">
+    <mkdir dir="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/languages/trove/runtime" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/languages/trove/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+      <zipfileset file="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+      <zipfileset dir="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    </jar>
+  </target>
+  <target name="pack.collections_samples">
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_samples.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/collections/solutions/collections/samples/collections_samples.msd" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/solutions/collections/samples" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/solutions/collections/samples" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage">
@@ -97,13 +308,6 @@
       <fileset dir="core/baseLanguage/closures/runtime/classes" />
     </jar>
   </target>
-  <target name="pack.closures.runtime">
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/closures.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/closures/runtime/closures.runtime.msd" prefix="module" />
-      <zipfileset dir="core/baseLanguage/closures/runtime" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/baseLanguage/closures/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.baseLanguage.collections">
     <mkdir dir="core/baseLanguage/collections/classes" />
     <mkdir dir="core/baseLanguage/collections/classes_gen" />
@@ -118,37 +322,6 @@
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/baseLanguage/collections/runtime/classes" />
-    </jar>
-  </target>
-  <target name="pack.collections.runtime">
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/collections/runtime/collections.runtime.msd" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/runtime" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/jetbrains" />
-    </jar>
-  </target>
-  <target name="pack.collections.runtime.gwt">
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections.runtime.gwt.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/runtime/gwt" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/runtime/gwt" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-    </jar>
-  </target>
-  <target name="pack.collections_trove.runtime">
-    <mkdir dir="core/baseLanguage/collections/languages/trove/runtime/classes" />
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/languages/trove/runtime" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/languages/trove/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset file="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
-      <zipfileset dir="core/baseLanguage/collections/languages/trove/runtime/classes" />
-    </jar>
-  </target>
-  <target name="pack.collections_samples">
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_samples.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/collections/solutions/collections/samples/collections_samples.msd" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/solutions/collections/samples" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/solutions/collections/samples" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.index">
@@ -594,13 +767,6 @@
       <zipfileset dir="core/devkits" includes="icons/**, resources/**" prefix="module" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.traceInfo">
-    <jar destfile="${deploy.dir}/MPS/languages/jetbrains.mps.traceInfo.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="module" />
-      <zipfileset dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.debug.evaluation">
     <mkdir dir="core/debug/languages/evaluation/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/languages/jetbrains.mps.debug.evaluation.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -646,43 +812,6 @@
       <zipfileset dir="core/debug-api/languages/api/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/debug-api/languages/api/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/debug-api/languages/api/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.make.runtime">
-    <jar destfile="${deploy.dir}/MPS/languages/jetbrains.mps.make.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" prefix="module" />
-      <zipfileset dir="core/make-runtime/solutions/jetbrains.mps.make.runtime" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/make-runtime/solutions/jetbrains.mps.make.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.smodel.resources">
-    <jar destfile="${deploy.dir}/MPS/languages/jetbrains.mps.smodel.resources.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/resources/jetbrains.mps.smodel.resources.msd" prefix="module" />
-      <zipfileset dir="core/kernel/resources" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/kernel/resources" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-    </jar>
-  </target>
-  <target name="pack.stubUtils">
-    <jar destfile="${deploy.dir}/MPS/languages/stubUtils.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/stubUtils/stubUtils.msd" prefix="module" />
-      <zipfileset dir="core/kernel/stubUtils" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/kernel/stubUtils" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.kernel">
-    <mkdir dir="core/kernel/source" />
-    <jar destfile="${deploy.dir}/MPS/languages/jetbrains.mps.kernel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="module" />
-      <zipfileset dir="core/kernel/kernelSolution" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/kernel/kernelSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="core/kernel/source" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.typesystemEngine">
-    <jar destfile="${deploy.dir}/MPS/languages/jetbrains.mps.typesystemEngine.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" prefix="module" />
-      <zipfileset dir="core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xml.deprecated">
@@ -1149,7 +1278,6 @@
       <zipfileset dir="platform/gwtsupport/languages/client" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/gwtsupport/languages/client/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/gwtsupport/languages/client/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
-      <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-dev.jar" />
       <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
       <zipfileset dir="platform/gwtsupport/languages/client/classes_gen" />
     </jar>
@@ -1181,13 +1309,6 @@
       <zipfileset dir="core/analyzers/languages/analyzers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/analyzers/languages/analyzers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/analyzers/languages/analyzers/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.analyzers.runtime">
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.analyzers.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" prefix="module" />
-      <zipfileset dir="core/analyzers/solutions/jetbrains.mps.analyzers.runtime" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="core/analyzers/solutions/jetbrains.mps.analyzers.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.dates">
