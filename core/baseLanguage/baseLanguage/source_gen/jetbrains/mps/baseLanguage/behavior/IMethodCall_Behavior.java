@@ -158,23 +158,23 @@ public class IMethodCall_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_8008512149545161709;
-        nodeToMatch_8008512149545161709 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_8008512149545161709.getConceptFqName()))) {
+        SNode nodeToMatch_fq0410_a0a5a2a1a1;
+        nodeToMatch_fq0410_a0a5a2a1a1 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_fq0410_a0a5a2a1a1.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_fq0410_a0a0a5a2a1a1;
-          if (nodeToMatch_8008512149545161709.getReferent("classifier") != referent) {
+          if (nodeToMatch_fq0410_a0a5a2a1a1.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_8008512149545161709 = "parameter";
+          String childRole_fq0410_ = "parameter";
           this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignore = null;
-          for (SNode childVar : nodeToMatch_8008512149545161709.getChildren(childRole_8008512149545161709)) {
+          for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_fq0410_)) {
             patternVar_ignore = childVar;
             ListSequence.fromList(this.patternVar_param).addElement(childVar);
           }

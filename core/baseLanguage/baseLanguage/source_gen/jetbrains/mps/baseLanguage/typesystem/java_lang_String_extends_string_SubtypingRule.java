@@ -80,14 +80,14 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1225276837978;
-        nodeToMatch_1225276837978 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1225276837978.getConceptFqName()))) {
+        SNode nodeToMatch_imi2rc_a0a;
+        nodeToMatch_imi2rc_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_imi2rc_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_cxnqcy_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1225276837978.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_imi2rc_a0a.getReferent("classifier")))) {
             return false;
           }
         }

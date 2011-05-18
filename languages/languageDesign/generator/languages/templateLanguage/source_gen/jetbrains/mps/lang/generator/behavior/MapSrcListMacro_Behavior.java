@@ -32,25 +32,25 @@ public class MapSrcListMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1213877284687;
-        nodeToMatch_1213877284687 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_1213877284687.getConceptFqName()))) {
+        SNode nodeToMatch_wn5chh_a0a0a0;
+        nodeToMatch_wn5chh_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_wn5chh_a0a0a0.getConceptFqName()))) {
           return false;
         }
         {
-          String childRole_1213877284687 = "elementType";
-          if (nodeToMatch_1213877284687.getChildCount(childRole_1213877284687) != 1) {
+          String childRole_wn5chh_ = "elementType";
+          if (nodeToMatch_wn5chh_a0a0a0.getChildCount(childRole_wn5chh_) != 1) {
             return false;
           }
           {
-            SNode childVar_1213877284688 = nodeToMatch_1213877284687.getChildren(childRole_1213877284687).get(0);
+            SNode childVar_wn5chh_a0a0a0a = nodeToMatch_wn5chh_a0a0a0.getChildren(childRole_wn5chh_).get(0);
             {
-              SNode nodeToMatch_1213877284688;
-              nodeToMatch_1213877284688 = childVar_1213877284688;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_1213877284688.getConceptFqName()))) {
+              SNode nodeToMatch_wn5chh_a0a0a0a;
+              nodeToMatch_wn5chh_a0a0a0a = childVar_wn5chh_a0a0a0a;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_wn5chh_a0a0a0a.getConceptFqName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_1213877284688.getReferent("concept");
+              patternVar_concept = nodeToMatch_wn5chh_a0a0a0a.getReferent("concept");
             }
           }
         }
