@@ -111,24 +111,24 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_h8kiwa_a0a;
-        nodeToMatch_h8kiwa_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_h8kiwa_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a;
+        nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_u9nlj8_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_h8kiwa_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
           String childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_ = "parameter";
-          if (nodeToMatch_h8kiwa_a0a.getChildCount(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_) != 1) {
+          if (nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getChildCount(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_) != 1) {
             return false;
           }
           {
-            SNode childVar_h8kiwa_a0a0 = nodeToMatch_h8kiwa_a0a.getChildren(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_).get(0);
+            SNode childVar_h8kiwa_a0a0 = nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getChildren(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_).get(0);
             this.patternVar_elemType = childVar_h8kiwa_a0a0;
           }
         }

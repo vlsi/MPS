@@ -111,24 +111,24 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_h9rz5k_a0a;
-        nodeToMatch_h9rz5k_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_h9rz5k_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a;
+        nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_h9rz5k_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
           String childRole_SortedSet_comparableTo_sorted_set_h9rz5k_ = "parameter";
-          if (nodeToMatch_h9rz5k_a0a.getChildCount(childRole_SortedSet_comparableTo_sorted_set_h9rz5k_) != 1) {
+          if (nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getChildCount(childRole_SortedSet_comparableTo_sorted_set_h9rz5k_) != 1) {
             return false;
           }
           {
-            SNode childVar_h9rz5k_a0a0 = nodeToMatch_h9rz5k_a0a.getChildren(childRole_SortedSet_comparableTo_sorted_set_h9rz5k_).get(0);
+            SNode childVar_h9rz5k_a0a0 = nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getChildren(childRole_SortedSet_comparableTo_sorted_set_h9rz5k_).get(0);
             this.patternVar_ELEMENT = childVar_h9rz5k_a0a0;
           }
         }

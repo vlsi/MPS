@@ -32,12 +32,12 @@ public class IncludeMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_wfrqja_a0a0a0;
-        nodeToMatch_wfrqja_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_wfrqja_a0a0a0.getConceptFqName()))) {
+        SNode nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0;
+        nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0.getConceptFqName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_wfrqja_a0a0a0.getReferent("concept");
+        patternVar_concept = nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0.getReferent("concept");
       }
       return true;
     }

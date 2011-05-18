@@ -80,14 +80,14 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_yblmix_a0a;
-        nodeToMatch_yblmix_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_yblmix_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_float_unboxing_yblmix_a0a;
+        nodeToMatch_float_unboxing_yblmix_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_float_unboxing_yblmix_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_4czxhf_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_yblmix_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_float_unboxing_yblmix_a0a.getReferent("classifier")))) {
             return false;
           }
         }

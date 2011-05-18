@@ -150,27 +150,27 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_mvbroc_a0a;
-        nodeToMatch_mvbroc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_mvbroc_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a;
+        nodeToMatch_ObjectArraySupertypes_mvbroc_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getConceptFqName()))) {
           return false;
         }
         {
           String childRole_ObjectArraySupertypes_mvbroc_ = "componentType";
-          if (nodeToMatch_mvbroc_a0a.getChildCount(childRole_ObjectArraySupertypes_mvbroc_) != 1) {
+          if (nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getChildCount(childRole_ObjectArraySupertypes_mvbroc_) != 1) {
             return false;
           }
           {
-            SNode childVar_mvbroc_a0a0 = nodeToMatch_mvbroc_a0a.getChildren(childRole_ObjectArraySupertypes_mvbroc_).get(0);
+            SNode childVar_mvbroc_a0a0 = nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getChildren(childRole_ObjectArraySupertypes_mvbroc_).get(0);
             {
-              SNode nodeToMatch_mvbroc_a0a0;
-              nodeToMatch_mvbroc_a0a0 = childVar_mvbroc_a0a0;
-              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_mvbroc_a0a0.getConceptFqName()))) {
+              SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0;
+              nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0 = childVar_mvbroc_a0a0;
+              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getConceptFqName()))) {
                 return false;
               }
               {
                 SNodePointer pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0c;
-                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mvbroc_a0a0.getReferent("classifier")))) {
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getReferent("classifier")))) {
                   return false;
                 }
               }

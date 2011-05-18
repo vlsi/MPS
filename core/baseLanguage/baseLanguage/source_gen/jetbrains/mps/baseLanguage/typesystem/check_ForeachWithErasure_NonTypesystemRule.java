@@ -76,24 +76,24 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_gn1qzs_a0a2a;
-        nodeToMatch_gn1qzs_a0a2a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_gn1qzs_a0a2a.getConceptFqName()))) {
+        SNode nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a;
+        nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0a;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_gn1qzs_a0a2a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getReferent("classifier")))) {
             return false;
           }
         }
         {
           String childRole_check_ForeachWithErasure_gn1qzs_ = "parameter";
-          if (nodeToMatch_gn1qzs_a0a2a.getChildCount(childRole_check_ForeachWithErasure_gn1qzs_) != 1) {
+          if (nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getChildCount(childRole_check_ForeachWithErasure_gn1qzs_) != 1) {
             return false;
           }
           {
-            SNode childVar_gn1qzs_a0a0c0 = nodeToMatch_gn1qzs_a0a2a.getChildren(childRole_check_ForeachWithErasure_gn1qzs_).get(0);
+            SNode childVar_gn1qzs_a0a0c0 = nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getChildren(childRole_check_ForeachWithErasure_gn1qzs_).get(0);
             this.patternVar_p = childVar_gn1qzs_a0a0c0;
           }
         }

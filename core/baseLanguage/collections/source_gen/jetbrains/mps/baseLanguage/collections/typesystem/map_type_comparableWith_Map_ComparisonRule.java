@@ -61,28 +61,28 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_a1tqv3_a0a;
-        nodeToMatch_a1tqv3_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_a1tqv3_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a;
+        nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_yoc8ci_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_a1tqv3_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
           String childRole_map_type_comparableWith_Map_a1tqv3_ = "parameter";
-          if (nodeToMatch_a1tqv3_a0a.getChildCount(childRole_map_type_comparableWith_Map_a1tqv3_) != 2) {
+          if (nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildCount(childRole_map_type_comparableWith_Map_a1tqv3_) != 2) {
             return false;
           }
           {
-            SNode childVar_a1tqv3_a0a0 = nodeToMatch_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(0);
+            SNode childVar_a1tqv3_a0a0 = nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(0);
             this.patternVar_KEY = childVar_a1tqv3_a0a0;
           }
           {
-            SNode childVar_a1tqv3_b0a0 = nodeToMatch_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(1);
+            SNode childVar_a1tqv3_b0a0 = nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(1);
             this.patternVar_VALUE = childVar_a1tqv3_b0a0;
           }
         }

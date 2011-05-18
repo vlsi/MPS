@@ -870,12 +870,12 @@ public class QueriesGenerated {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a81;
-        nodeToMatch_x583g4_a0a0a81 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_x583g4_a0a0a81.getConceptFqName()))) {
+        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a81;
+        nodeToMatch_QueriesGenerated_x583g4_a0a0a81 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a81.getConceptFqName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_x583g4_a0a0a81.getReferent("concept");
+        patternVar_concept = nodeToMatch_QueriesGenerated_x583g4_a0a0a81.getReferent("concept");
       }
       return true;
     }

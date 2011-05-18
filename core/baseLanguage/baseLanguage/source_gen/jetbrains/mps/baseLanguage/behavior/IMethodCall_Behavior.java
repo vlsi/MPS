@@ -158,15 +158,15 @@ public class IMethodCall_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_fq0410_a0a5a2a1a1;
-        nodeToMatch_fq0410_a0a5a2a1a1 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_fq0410_a0a5a2a1a1.getConceptFqName()))) {
+        SNode nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1;
+        nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_fq0410_a0a0a5a2a1a1;
-          if (nodeToMatch_fq0410_a0a5a2a1a1.getReferent("classifier") != referent) {
+          if (nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -174,7 +174,7 @@ public class IMethodCall_Behavior {
           String childRole_IMethodCall_Behavior_fq0410_ = "parameter";
           this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignore = null;
-          for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_IMethodCall_Behavior_fq0410_)) {
+          for (SNode childVar : nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getChildren(childRole_IMethodCall_Behavior_fq0410_)) {
             patternVar_ignore = childVar;
             ListSequence.fromList(this.patternVar_param).addElement(childVar);
           }

@@ -111,24 +111,24 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_4sudxd_a0a;
-        nodeToMatch_4sudxd_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_4sudxd_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a;
+        nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_24ecqj_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_4sudxd_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
           String childRole_supertypesOf_IEnumerator_4sudxd_ = "parameter";
-          if (nodeToMatch_4sudxd_a0a.getChildCount(childRole_supertypesOf_IEnumerator_4sudxd_) != 1) {
+          if (nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getChildCount(childRole_supertypesOf_IEnumerator_4sudxd_) != 1) {
             return false;
           }
           {
-            SNode childVar_4sudxd_a0a0 = nodeToMatch_4sudxd_a0a.getChildren(childRole_supertypesOf_IEnumerator_4sudxd_).get(0);
+            SNode childVar_4sudxd_a0a0 = nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getChildren(childRole_supertypesOf_IEnumerator_4sudxd_).get(0);
             this.patternVar_p = childVar_4sudxd_a0a0;
           }
         }

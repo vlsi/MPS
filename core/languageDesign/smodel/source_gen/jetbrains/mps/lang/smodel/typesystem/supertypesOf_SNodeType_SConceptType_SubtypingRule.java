@@ -80,14 +80,14 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_auyr2c_a0a;
-        nodeToMatch_auyr2c_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_auyr2c_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a;
+        nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_auyr2c_a0a.getReferent("concept")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a.getReferent("concept")))) {
             return false;
           }
         }

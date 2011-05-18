@@ -30,7 +30,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1190931376940(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("nodeToMatch_", SNodeOperations.getContainingRoot(_context.getNode()));
+    return _context.createUniqueName("nodeToMatch_" + SNodeOperations.getContainingRoot(_context.getNode()), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1202825939894(final IOperationContext operationContext, final PropertyMacroContext _context) {

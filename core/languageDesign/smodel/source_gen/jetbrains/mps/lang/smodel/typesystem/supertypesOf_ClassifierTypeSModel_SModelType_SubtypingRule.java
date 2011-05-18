@@ -80,14 +80,14 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_khpv0q_a0a;
-        nodeToMatch_khpv0q_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_khpv0q_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a;
+        nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_fggx2c_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_khpv0q_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a.getReferent("classifier")))) {
             return false;
           }
         }
