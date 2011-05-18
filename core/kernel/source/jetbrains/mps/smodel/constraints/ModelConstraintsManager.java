@@ -276,7 +276,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
       return null;
     }
     String className = packageName + "." + "ConstraintsDescriptor";
-    return l.getClass(className);
+    try {
+      return l.getClass(className);
+    } catch (Throwable e) {
+      return null;
+    }
   }
 
   private void loadConstraints(String languageNamespace, List<IModelConstraints> loadedConstraints) {

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.structure.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,6 +33,14 @@ import java.util.List;
  * evgeny, 4/28/11
  */
 public class LanguageRuntimeInterpreted extends LanguageRuntime {
+  private static final DescriptorProvider<BehaviorDescriptor> INTERPRETED_BEHAVIOR = new InterpretedBehaviorProvider();
+  private static final DescriptorProvider<BehaviorDescriptor> COMPILED_BEHAVIOR = new CompiledBehaviorDescriptorProvider();
+  private static final DescriptorProvider<ConstraintsDescriptor> INTERPRETED_CONSTRAINTS = new InterpretedConstraintsProvider();
+  private static final DescriptorProvider<ConstraintsDescriptor> COMPILED_CONSTRAINTS = new CompiledConstraintsProvider();
+
+  public static final DescriptorProvider<StructureDescriptor> STRUCTURE_PROVIDER = new InterpretedStructureProvider();
+  public static final DescriptorProvider<BehaviorDescriptor> BEHAVIOR_PROVIDER = MixedDescriptorProvider.of(COMPILED_BEHAVIOR, INTERPRETED_BEHAVIOR);
+  public static final DescriptorProvider<ConstraintsDescriptor> CONSTRAINTS_PROVIDER = MixedDescriptorProvider.of(COMPILED_CONSTRAINTS, INTERPRETED_CONSTRAINTS);
 
   private final Language myLanguage;
   private final Collection<TemplateModule> myTemplateModules;
