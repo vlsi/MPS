@@ -166,211 +166,166 @@
     <unitInfo nodeId="8267733531687412090" fileName="ReloadableFinder.java" startLine="13" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder" />
   </root>
   <root nodeId="8267733531687412365">
-    <nodeInfo nodeId="8267733531687412369" fileName="GeneratedFinder.java" startLine="29" startPosition="68" endLine="30" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8267733531687412384" fileName="GeneratedFinder.java" startLine="35" startPosition="43" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412392" fileName="GeneratedFinder.java" startLine="39" startPosition="40" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412398" fileName="GeneratedFinder.java" startLine="43" startPosition="38" endLine="44" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412404" fileName="GeneratedFinder.java" startLine="47" startPosition="36" endLine="48" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412664" fileName="GeneratedFinder.java" startLine="50" startPosition="25" endLine="51" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412422" fileName="GeneratedFinder.java" startLine="53" startPosition="7" endLine="54" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412430" fileName="GeneratedFinder.java" startLine="57" startPosition="32" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412456" fileName="GeneratedFinder.java" startLine="63" startPosition="80" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412467" fileName="GeneratedFinder.java" startLine="67" startPosition="45" endLine="68" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412478" fileName="GeneratedFinder.java" startLine="71" startPosition="84" endLine="72" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412485" fileName="GeneratedFinder.java" startLine="72" startPosition="62" endLine="73" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412491" fileName="GeneratedFinder.java" startLine="73" startPosition="45" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="8267733531687412495" fileName="GeneratedFinder.java" startLine="74" startPosition="40" endLine="75" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412530" fileName="GeneratedFinder.java" startLine="76" startPosition="71" endLine="77" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412537" fileName="GeneratedFinder.java" startLine="77" startPosition="49" endLine="78" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412549" fileName="GeneratedFinder.java" startLine="79" startPosition="35" endLine="80" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412556" fileName="GeneratedFinder.java" startLine="81" startPosition="7" endLine="82" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412563" fileName="GeneratedFinder.java" startLine="82" startPosition="47" endLine="83" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412571" fileName="GeneratedFinder.java" startLine="83" startPosition="53" endLine="84" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412580" fileName="GeneratedFinder.java" startLine="85" startPosition="33" endLine="86" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412514" fileName="GeneratedFinder.java" startLine="88" startPosition="12" endLine="89" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412592" fileName="GeneratedFinder.java" startLine="90" startPosition="5" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412703" fileName="GeneratedFinder.java" startLine="96" startPosition="113" endLine="97" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412720" fileName="GeneratedFinder.java" startLine="98" startPosition="65" endLine="99" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412736" fileName="GeneratedFinder.java" startLine="101" startPosition="64" endLine="102" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412750" fileName="GeneratedFinder.java" startLine="103" startPosition="26" endLine="104" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412752" fileName="GeneratedFinder.java" startLine="106" startPosition="9" endLine="107" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412761" fileName="GeneratedFinder.java" startLine="110" startPosition="71" endLine="111" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412767" fileName="GeneratedFinder.java" startLine="111" startPosition="78" endLine="112" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412773" fileName="GeneratedFinder.java" startLine="112" startPosition="62" endLine="113" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412783" fileName="GeneratedFinder.java" startLine="113" startPosition="87" endLine="114" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6253966593482479819" fileName="GeneratedFinder.java" startLine="116" startPosition="43" endLine="117" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412802" fileName="GeneratedFinder.java" startLine="120" startPosition="35" endLine="121" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412809" fileName="GeneratedFinder.java" startLine="122" startPosition="9" endLine="123" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412838" fileName="GeneratedFinder.java" startLine="124" startPosition="58" endLine="125" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412840" fileName="GeneratedFinder.java" startLine="126" startPosition="9" endLine="127" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412847" fileName="GeneratedFinder.java" startLine="130" startPosition="79" endLine="131" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412853" fileName="GeneratedFinder.java" startLine="131" startPosition="58" endLine="132" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412859" fileName="GeneratedFinder.java" startLine="132" startPosition="58" endLine="133" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="19118734505275257" fileName="GeneratedFinder.java" startLine="137" startPosition="64" endLine="138" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="19118734505276435" fileName="GeneratedFinder.java" startLine="140" startPosition="106" endLine="141" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="19118734505279253" fileName="GeneratedFinder.java" startLine="142" startPosition="9" endLine="143" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7849156460336694383" fileName="GeneratedFinder.java" startLine="143" startPosition="72" endLine="144" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="19118734505264114" fileName="GeneratedFinder.java" startLine="147" startPosition="46" endLine="148" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="19118734505264138" fileName="GeneratedFinder.java" startLine="148" startPosition="111" endLine="149" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="19118734505279368" fileName="GeneratedFinder.java" startLine="151" startPosition="105" endLine="152" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="19118734505279295" fileName="GeneratedFinder.java" startLine="154" startPosition="9" endLine="155" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412374" fileName="GeneratedFinder.java" startLine="31" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFinder#()V" />
-    <nodeInfo nodeId="8267733531687412432" fileName="GeneratedFinder.java" startLine="60" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="8267733531687412512" fileName="GeneratedFinder.java" startLine="88" startPosition="10" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8267733531687412544" fileName="GeneratedFinder.java" startLine="78" startPosition="54" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8267733531687412575" fileName="GeneratedFinder.java" startLine="84" startPosition="45" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8267733531687412708" fileName="GeneratedFinder.java" startLine="97" startPosition="19" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412745" fileName="GeneratedFinder.java" startLine="102" startPosition="86" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412797" fileName="GeneratedFinder.java" startLine="119" startPosition="11" endLine="122" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412826" fileName="GeneratedFinder.java" startLine="123" startPosition="95" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="19118734505275234" fileName="GeneratedFinder.java" startLine="136" startPosition="55" endLine="139" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="19118734505275274" fileName="GeneratedFinder.java" startLine="139" startPosition="9" endLine="142" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="19118734505279350" fileName="GeneratedFinder.java" startLine="150" startPosition="116" endLine="153" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412378" fileName="GeneratedFinder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8267733531687412386" fileName="GeneratedFinder.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8267733531687412394" fileName="GeneratedFinder.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8267733531687412419" fileName="GeneratedFinder.java" startLine="49" startPosition="57" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8267733531687412426" fileName="GeneratedFinder.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canNavigate#()Z" />
-    <nodeInfo nodeId="8267733531687412445" fileName="GeneratedFinder.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchedNodes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;)V" />
-    <nodeInfo nodeId="8267733531687412461" fileName="GeneratedFinder.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6253966593482479817" fileName="GeneratedFinder.java" startLine="115" startPosition="190" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8267733531687412412" fileName="GeneratedFinder.java" startLine="48" startPosition="49" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412791" fileName="GeneratedFinder.java" startLine="114" startPosition="77" endLine="119" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="19118734505279317" fileName="GeneratedFinder.java" startLine="149" startPosition="111" endLine="154" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8267733531687412729" fileName="GeneratedFinder.java" startLine="100" startPosition="9" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8267733531687412640" fileName="GeneratedFinder.java" startLine="129" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareWithEditor#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="8267733531687412400" fileName="GeneratedFinder.java" startLine="46" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeToNavigate#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="19118734505275223" fileName="GeneratedFinder.java" startLine="135" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareBrothers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="19118734505264105" fileName="GeneratedFinder.java" startLine="146" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="8267733531687412620" fileName="GeneratedFinder.java" startLine="95" startPosition="36" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="indexInEditor#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/util/Pair;)Ljetbrains/mps/util/Pair;" />
-    <nodeInfo nodeId="8267733531687412504" fileName="GeneratedFinder.java" startLine="75" startPosition="51" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412633" fileName="GeneratedFinder.java" startLine="109" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="searchInEditors#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="8267733531687412469" fileName="GeneratedFinder.java" startLine="70" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lcom/intellij/openapi/progress/ProgressIndicator;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="8267733531687412599" fileName="GeneratedFinder.java" startLine="94" startPosition="45" endLine="157" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412594" fileName="GeneratedFinder.java" startLine="93" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComparator#()Ljava/util/Comparator;" />
-    <scopeInfo nodeId="8267733531687412377" fileName="GeneratedFinder.java" startLine="32" startPosition="28" endLine="32" endPosition="28" />
-    <scopeInfo nodeId="8267733531687412383" fileName="GeneratedFinder.java" startLine="35" startPosition="43" endLine="36" endPosition="16" />
-    <scopeInfo nodeId="8267733531687412391" fileName="GeneratedFinder.java" startLine="39" startPosition="40" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="8267733531687412397" fileName="GeneratedFinder.java" startLine="43" startPosition="38" endLine="44" endPosition="14" />
-    <scopeInfo nodeId="8267733531687412663" fileName="GeneratedFinder.java" startLine="50" startPosition="25" endLine="51" endPosition="91" />
-    <scopeInfo nodeId="8267733531687412429" fileName="GeneratedFinder.java" startLine="57" startPosition="32" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="8267733531687412455" fileName="GeneratedFinder.java" startLine="63" startPosition="80" endLine="64" endPosition="23" />
-    <scopeInfo nodeId="8267733531687412466" fileName="GeneratedFinder.java" startLine="67" startPosition="45" endLine="68" endPosition="27" />
-    <scopeInfo nodeId="8267733531687412548" fileName="GeneratedFinder.java" startLine="79" startPosition="35" endLine="80" endPosition="48" />
-    <scopeInfo nodeId="8267733531687412579" fileName="GeneratedFinder.java" startLine="85" startPosition="33" endLine="86" endPosition="99" />
-    <scopeInfo nodeId="8267733531687412513" fileName="GeneratedFinder.java" startLine="88" startPosition="12" endLine="89" endPosition="183" />
-    <scopeInfo nodeId="8267733531687412719" fileName="GeneratedFinder.java" startLine="98" startPosition="65" endLine="99" endPosition="42" />
-    <scopeInfo nodeId="8267733531687412749" fileName="GeneratedFinder.java" startLine="103" startPosition="26" endLine="104" endPosition="26" />
-    <scopeInfo nodeId="6253966593482479818" fileName="GeneratedFinder.java" startLine="116" startPosition="43" endLine="117" endPosition="100" />
-    <scopeInfo nodeId="8267733531687412801" fileName="GeneratedFinder.java" startLine="120" startPosition="35" endLine="121" endPosition="20" />
-    <scopeInfo nodeId="8267733531687412837" fileName="GeneratedFinder.java" startLine="124" startPosition="58" endLine="125" endPosition="23" />
-    <scopeInfo nodeId="19118734505275236" fileName="GeneratedFinder.java" startLine="137" startPosition="64" endLine="138" endPosition="56" />
-    <scopeInfo nodeId="19118734505275275" fileName="GeneratedFinder.java" startLine="140" startPosition="106" endLine="141" endPosition="93" />
-    <scopeInfo nodeId="19118734505279351" fileName="GeneratedFinder.java" startLine="151" startPosition="105" endLine="152" endPosition="123" />
-    <scopeInfo nodeId="8267733531687412374" fileName="GeneratedFinder.java" startLine="31" startPosition="0" endLine="33" endPosition="3" />
-    <scopeInfo nodeId="8267733531687412432" fileName="GeneratedFinder.java" startLine="60" startPosition="0" endLine="62" endPosition="0">
+    <nodeInfo nodeId="8267733531687412369" fileName="GeneratedFinder.java" startLine="25" startPosition="68" endLine="26" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8267733531687412384" fileName="GeneratedFinder.java" startLine="31" startPosition="43" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412392" fileName="GeneratedFinder.java" startLine="35" startPosition="40" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412398" fileName="GeneratedFinder.java" startLine="39" startPosition="38" endLine="40" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412404" fileName="GeneratedFinder.java" startLine="43" startPosition="36" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412664" fileName="GeneratedFinder.java" startLine="46" startPosition="25" endLine="47" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412422" fileName="GeneratedFinder.java" startLine="49" startPosition="7" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412430" fileName="GeneratedFinder.java" startLine="53" startPosition="32" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412456" fileName="GeneratedFinder.java" startLine="59" startPosition="80" endLine="60" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412467" fileName="GeneratedFinder.java" startLine="63" startPosition="45" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412478" fileName="GeneratedFinder.java" startLine="67" startPosition="84" endLine="68" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412485" fileName="GeneratedFinder.java" startLine="68" startPosition="62" endLine="69" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412491" fileName="GeneratedFinder.java" startLine="69" startPosition="45" endLine="70" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="8267733531687412495" fileName="GeneratedFinder.java" startLine="70" startPosition="40" endLine="71" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412530" fileName="GeneratedFinder.java" startLine="72" startPosition="71" endLine="73" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412537" fileName="GeneratedFinder.java" startLine="73" startPosition="49" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412549" fileName="GeneratedFinder.java" startLine="75" startPosition="35" endLine="76" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412556" fileName="GeneratedFinder.java" startLine="77" startPosition="7" endLine="78" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412563" fileName="GeneratedFinder.java" startLine="78" startPosition="47" endLine="79" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8644192182231329556" fileName="GeneratedFinder.java" startLine="81" startPosition="46" endLine="82" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412580" fileName="GeneratedFinder.java" startLine="84" startPosition="17" endLine="85" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412514" fileName="GeneratedFinder.java" startLine="87" startPosition="12" endLine="88" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412592" fileName="GeneratedFinder.java" startLine="89" startPosition="5" endLine="90" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="19118734505264114" fileName="GeneratedFinder.java" startLine="93" startPosition="48" endLine="94" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="19118734505264138" fileName="GeneratedFinder.java" startLine="94" startPosition="107" endLine="95" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="19118734505279368" fileName="GeneratedFinder.java" startLine="97" startPosition="101" endLine="98" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="19118734505279295" fileName="GeneratedFinder.java" startLine="100" startPosition="5" endLine="101" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="19118734505275257" fileName="GeneratedFinder.java" startLine="105" startPosition="60" endLine="106" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="19118734505276435" fileName="GeneratedFinder.java" startLine="108" startPosition="102" endLine="109" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3213515816073559257" fileName="GeneratedFinder.java" startLine="110" startPosition="5" endLine="111" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3213515816073559097" fileName="GeneratedFinder.java" startLine="111" startPosition="54" endLine="112" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3213515816073559108" fileName="GeneratedFinder.java" startLine="112" startPosition="64" endLine="113" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3213515816073559147" fileName="GeneratedFinder.java" startLine="114" startPosition="98" endLine="115" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3213515816073559213" fileName="GeneratedFinder.java" startLine="117" startPosition="82" endLine="118" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3213515816073559231" fileName="GeneratedFinder.java" startLine="120" startPosition="82" endLine="121" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3213515816073559260" fileName="GeneratedFinder.java" startLine="124" startPosition="5" endLine="125" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3213515816073559234" fileName="GeneratedFinder.java" startLine="125" startPosition="56" endLine="126" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412374" fileName="GeneratedFinder.java" startLine="27" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFinder#()V" />
+    <nodeInfo nodeId="8267733531687412432" fileName="GeneratedFinder.java" startLine="56" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="8267733531687412512" fileName="GeneratedFinder.java" startLine="87" startPosition="10" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8267733531687412544" fileName="GeneratedFinder.java" startLine="74" startPosition="54" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="19118734505279350" fileName="GeneratedFinder.java" startLine="96" startPosition="112" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="19118734505275234" fileName="GeneratedFinder.java" startLine="104" startPosition="51" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="19118734505275274" fileName="GeneratedFinder.java" startLine="107" startPosition="5" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3213515816073559200" fileName="GeneratedFinder.java" startLine="116" startPosition="169" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3213515816073559217" fileName="GeneratedFinder.java" startLine="119" startPosition="9" endLine="122" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412378" fileName="GeneratedFinder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8267733531687412386" fileName="GeneratedFinder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8267733531687412394" fileName="GeneratedFinder.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8267733531687412419" fileName="GeneratedFinder.java" startLine="45" startPosition="57" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8267733531687412426" fileName="GeneratedFinder.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canNavigate#()Z" />
+    <nodeInfo nodeId="8267733531687412445" fileName="GeneratedFinder.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchedNodes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;)V" />
+    <nodeInfo nodeId="8267733531687412461" fileName="GeneratedFinder.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8644192182231329549" fileName="GeneratedFinder.java" startLine="80" startPosition="84" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="8267733531687412412" fileName="GeneratedFinder.java" startLine="44" startPosition="49" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="19118734505279317" fileName="GeneratedFinder.java" startLine="95" startPosition="107" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8267733531687412575" fileName="GeneratedFinder.java" startLine="79" startPosition="53" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3213515816073559185" fileName="GeneratedFinder.java" startLine="115" startPosition="332" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8267733531687412400" fileName="GeneratedFinder.java" startLine="42" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeToNavigate#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="19118734505264105" fileName="GeneratedFinder.java" startLine="92" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareNodes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="3213515816073559119" fileName="GeneratedFinder.java" startLine="113" startPosition="64" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8267733531687412504" fileName="GeneratedFinder.java" startLine="71" startPosition="51" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="19118734505275223" fileName="GeneratedFinder.java" startLine="103" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareBrothers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="8267733531687412469" fileName="GeneratedFinder.java" startLine="66" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lcom/intellij/openapi/progress/ProgressIndicator;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <scopeInfo nodeId="8267733531687412377" fileName="GeneratedFinder.java" startLine="28" startPosition="28" endLine="28" endPosition="28" />
+    <scopeInfo nodeId="8267733531687412383" fileName="GeneratedFinder.java" startLine="31" startPosition="43" endLine="32" endPosition="16" />
+    <scopeInfo nodeId="8267733531687412391" fileName="GeneratedFinder.java" startLine="35" startPosition="40" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="8267733531687412397" fileName="GeneratedFinder.java" startLine="39" startPosition="38" endLine="40" endPosition="14" />
+    <scopeInfo nodeId="8267733531687412663" fileName="GeneratedFinder.java" startLine="46" startPosition="25" endLine="47" endPosition="91" />
+    <scopeInfo nodeId="8267733531687412429" fileName="GeneratedFinder.java" startLine="53" startPosition="32" endLine="54" endPosition="16" />
+    <scopeInfo nodeId="8267733531687412455" fileName="GeneratedFinder.java" startLine="59" startPosition="80" endLine="60" endPosition="23" />
+    <scopeInfo nodeId="8267733531687412466" fileName="GeneratedFinder.java" startLine="63" startPosition="45" endLine="64" endPosition="27" />
+    <scopeInfo nodeId="8267733531687412548" fileName="GeneratedFinder.java" startLine="75" startPosition="35" endLine="76" endPosition="48" />
+    <scopeInfo nodeId="8644192182231329550" fileName="GeneratedFinder.java" startLine="81" startPosition="46" endLine="82" endPosition="36" />
+    <scopeInfo nodeId="8267733531687412579" fileName="GeneratedFinder.java" startLine="84" startPosition="17" endLine="85" endPosition="99" />
+    <scopeInfo nodeId="8267733531687412513" fileName="GeneratedFinder.java" startLine="87" startPosition="12" endLine="88" endPosition="183" />
+    <scopeInfo nodeId="19118734505279351" fileName="GeneratedFinder.java" startLine="97" startPosition="101" endLine="98" endPosition="119" />
+    <scopeInfo nodeId="19118734505275236" fileName="GeneratedFinder.java" startLine="105" startPosition="60" endLine="106" endPosition="52" />
+    <scopeInfo nodeId="19118734505275275" fileName="GeneratedFinder.java" startLine="108" startPosition="102" endLine="109" endPosition="89" />
+    <scopeInfo nodeId="3213515816073559202" fileName="GeneratedFinder.java" startLine="117" startPosition="82" endLine="118" endPosition="20" />
+    <scopeInfo nodeId="3213515816073559218" fileName="GeneratedFinder.java" startLine="120" startPosition="82" endLine="121" endPosition="19" />
+    <scopeInfo nodeId="8267733531687412374" fileName="GeneratedFinder.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="8267733531687412432" fileName="GeneratedFinder.java" startLine="56" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="8267733531687412442" varName="indicator" />
       <varInfo nodeId="8267733531687412435" varName="node" />
       <varInfo nodeId="8267733531687412437" varName="scope" />
       <varInfo nodeId="8267733531687412439" varName="_results" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412544" fileName="GeneratedFinder.java" startLine="78" startPosition="54" endLine="81" endPosition="7">
+    <scopeInfo nodeId="8267733531687412544" fileName="GeneratedFinder.java" startLine="74" startPosition="54" endLine="77" endPosition="7">
       <varInfo nodeId="8267733531687412546" varName="resnode" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412575" fileName="GeneratedFinder.java" startLine="84" startPosition="45" endLine="87" endPosition="7">
-      <varInfo nodeId="8267733531687412577" varName="resnode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8267733531687412846" fileName="GeneratedFinder.java" startLine="130" startPosition="79" endLine="133" endPosition="40">
-      <varInfo nodeId="8267733531687412848" varName="index1" />
-      <varInfo nodeId="8267733531687412854" varName="index2" />
-    </scopeInfo>
-    <scopeInfo nodeId="19118734505279318" fileName="GeneratedFinder.java" startLine="150" startPosition="116" endLine="153" endPosition="11" />
-    <scopeInfo nodeId="8267733531687412378" fileName="GeneratedFinder.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="19118734505279318" fileName="GeneratedFinder.java" startLine="96" startPosition="112" endLine="99" endPosition="7" />
+    <scopeInfo nodeId="8267733531687412378" fileName="GeneratedFinder.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="8267733531687412381" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412386" fileName="GeneratedFinder.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="8267733531687412386" fileName="GeneratedFinder.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="8267733531687412389" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412394" fileName="GeneratedFinder.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412419" fileName="GeneratedFinder.java" startLine="49" startPosition="57" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412426" fileName="GeneratedFinder.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412445" fileName="GeneratedFinder.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8267733531687412394" fileName="GeneratedFinder.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="8267733531687412419" fileName="GeneratedFinder.java" startLine="45" startPosition="57" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8267733531687412426" fileName="GeneratedFinder.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8267733531687412445" fileName="GeneratedFinder.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="8267733531687412448" varName="node" />
       <varInfo nodeId="8267733531687412450" varName="scope" />
       <varInfo nodeId="8267733531687412452" varName="_results" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412461" fileName="GeneratedFinder.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="8267733531687412461" fileName="GeneratedFinder.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8267733531687412464" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412735" fileName="GeneratedFinder.java" startLine="101" startPosition="64" endLine="105" endPosition="11">
-      <varInfo nodeId="8267733531687412737" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="6253966593482479817" fileName="GeneratedFinder.java" startLine="115" startPosition="190" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="19118734505279317" fileName="GeneratedFinder.java" startLine="149" startPosition="111" endLine="154" endPosition="9">
+    <scopeInfo nodeId="8644192182231329549" fileName="GeneratedFinder.java" startLine="80" startPosition="84" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="19118734505279317" fileName="GeneratedFinder.java" startLine="95" startPosition="107" endLine="100" endPosition="5">
       <varInfo nodeId="19118734505279320" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412729" fileName="GeneratedFinder.java" startLine="100" startPosition="9" endLine="106" endPosition="9">
-      <varInfo nodeId="8267733531687412733" varName="childEditorNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8267733531687412640" fileName="GeneratedFinder.java" startLine="129" startPosition="0" endLine="135" endPosition="0">
-      <varInfo nodeId="8267733531687412645" varName="node1" />
-      <varInfo nodeId="8267733531687412647" varName="node2" />
-      <varInfo nodeId="8267733531687412643" varName="ancestor" />
-    </scopeInfo>
-    <scopeInfo nodeId="8267733531687412403" fileName="GeneratedFinder.java" startLine="47" startPosition="36" endLine="54" endPosition="25">
+    <scopeInfo nodeId="3213515816073559188" fileName="GeneratedFinder.java" startLine="116" startPosition="169" endLine="122" endPosition="9" />
+    <scopeInfo nodeId="8267733531687412403" fileName="GeneratedFinder.java" startLine="43" startPosition="36" endLine="50" endPosition="25">
       <varInfo nodeId="8267733531687412405" varName="finderNode" />
     </scopeInfo>
-    <scopeInfo nodeId="19118734505275225" fileName="GeneratedFinder.java" startLine="136" startPosition="55" endLine="144" endPosition="18" />
-    <scopeInfo nodeId="19118734505264107" fileName="GeneratedFinder.java" startLine="147" startPosition="46" endLine="155" endPosition="91">
+    <scopeInfo nodeId="8267733531687412575" fileName="GeneratedFinder.java" startLine="79" startPosition="53" endLine="86" endPosition="7">
+      <varInfo nodeId="8267733531687412577" varName="resnode" />
+    </scopeInfo>
+    <scopeInfo nodeId="19118734505264107" fileName="GeneratedFinder.java" startLine="93" startPosition="48" endLine="101" endPosition="87">
       <varInfo nodeId="19118734505264139" varName="path2" />
       <varInfo nodeId="19118734505264115" varName="path1" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412400" fileName="GeneratedFinder.java" startLine="46" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412529" fileName="GeneratedFinder.java" startLine="76" startPosition="71" endLine="87" endPosition="7">
-      <varInfo nodeId="8267733531687412557" varName="res" />
-      <varInfo nodeId="8267733531687412531" varName="resSN" />
+    <scopeInfo nodeId="3213515816073559185" fileName="GeneratedFinder.java" startLine="115" startPosition="332" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="3213515816073559120" fileName="GeneratedFinder.java" startLine="114" startPosition="98" endLine="123" endPosition="7">
+      <varInfo nodeId="3213515816073559148" varName="editor" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412702" fileName="GeneratedFinder.java" startLine="96" startPosition="113" endLine="107" endPosition="35" />
-    <scopeInfo nodeId="19118734505275223" fileName="GeneratedFinder.java" startLine="135" startPosition="0" endLine="146" endPosition="0">
-      <varInfo nodeId="19118734505275226" varName="n1" />
-      <varInfo nodeId="19118734505275228" varName="n2" />
-    </scopeInfo>
-    <scopeInfo nodeId="19118734505264105" fileName="GeneratedFinder.java" startLine="146" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="8267733531687412400" fileName="GeneratedFinder.java" startLine="42" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="19118734505264105" fileName="GeneratedFinder.java" startLine="92" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="19118734505264108" varName="n1" />
       <varInfo nodeId="19118734505264110" varName="n2" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412620" fileName="GeneratedFinder.java" startLine="95" startPosition="36" endLine="109" endPosition="0">
-      <varInfo nodeId="8267733531687412629" varName="index" />
-      <varInfo nodeId="8267733531687412625" varName="editorNode" />
-      <varInfo nodeId="8267733531687412627" varName="role" />
+    <scopeInfo nodeId="3213515816073559119" fileName="GeneratedFinder.java" startLine="113" startPosition="64" endLine="124" endPosition="5">
+      <varInfo nodeId="3213515816073559122" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412760" fileName="GeneratedFinder.java" startLine="110" startPosition="71" endLine="127" endPosition="67">
-      <varInfo nodeId="8267733531687412810" varName="index" />
-      <varInfo nodeId="8267733531687412792" varName="editorNode" />
-      <varInfo nodeId="8267733531687412762" varName="conceptDeclaration" />
-      <varInfo nodeId="8267733531687412774" varName="language" />
-      <varInfo nodeId="8267733531687412784" varName="editorModel" />
-      <varInfo nodeId="8267733531687412768" varName="structureModel" />
+    <scopeInfo nodeId="8267733531687412529" fileName="GeneratedFinder.java" startLine="72" startPosition="71" endLine="86" endPosition="7">
+      <varInfo nodeId="8267733531687412557" varName="res" />
+      <varInfo nodeId="8267733531687412531" varName="resSN" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412477" fileName="GeneratedFinder.java" startLine="71" startPosition="84" endLine="91" endPosition="19">
+    <scopeInfo nodeId="19118734505275225" fileName="GeneratedFinder.java" startLine="104" startPosition="51" endLine="126" endPosition="106">
+      <varInfo nodeId="3213515816073559109" varName="l2" />
+      <varInfo nodeId="3213515816073559098" varName="l1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8267733531687412477" fileName="GeneratedFinder.java" startLine="67" startPosition="84" endLine="90" endPosition="19">
       <varInfo nodeId="8267733531687412496" varName="node" />
       <varInfo nodeId="8267733531687412486" varName="holder" />
       <varInfo nodeId="8267733531687412479" varName="results" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412633" fileName="GeneratedFinder.java" startLine="109" startPosition="0" endLine="129" endPosition="0">
-      <varInfo nodeId="8267733531687412636" varName="ancestor" />
-      <varInfo nodeId="8267733531687412638" varName="searchedNode" />
+    <scopeInfo nodeId="19118734505275223" fileName="GeneratedFinder.java" startLine="103" startPosition="0" endLine="128" endPosition="0">
+      <varInfo nodeId="19118734505275226" varName="n1" />
+      <varInfo nodeId="19118734505275228" varName="n2" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412469" fileName="GeneratedFinder.java" startLine="70" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="8267733531687412469" fileName="GeneratedFinder.java" startLine="66" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="8267733531687412475" varName="indicator" />
       <varInfo nodeId="8267733531687412473" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412598" fileName="GeneratedFinder.java" startLine="94" startPosition="45" endLine="157" endPosition="6" />
-    <scopeInfo nodeId="8267733531687412594" fileName="GeneratedFinder.java" startLine="93" startPosition="0" endLine="159" endPosition="0" />
-    <unitInfo nodeId="8267733531687412418" fileName="GeneratedFinder.java" startLine="49" startPosition="45" endLine="53" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder$1" />
-    <unitInfo nodeId="6253966593482479817" fileName="GeneratedFinder.java" startLine="115" startPosition="167" endLine="119" endPosition="9" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder$3" />
-    <unitInfo nodeId="8267733531687412602" fileName="GeneratedFinder.java" startLine="95" startPosition="15" endLine="157" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder$2" />
-    <unitInfo nodeId="8267733531687412365" fileName="GeneratedFinder.java" startLine="29" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
+    <unitInfo nodeId="8267733531687412418" fileName="GeneratedFinder.java" startLine="45" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder$1" />
+    <unitInfo nodeId="8644192182231329549" fileName="GeneratedFinder.java" startLine="80" startPosition="63" endLine="84" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder$2" />
+    <unitInfo nodeId="8267733531687412365" fileName="GeneratedFinder.java" startLine="25" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </root>
   <root nodeId="8267733531687413132">
     <nodeInfo nodeId="8267733531687413135" fileName="IInterfacedFinder.java" startLine="10" startPosition="52" endLine="11" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />

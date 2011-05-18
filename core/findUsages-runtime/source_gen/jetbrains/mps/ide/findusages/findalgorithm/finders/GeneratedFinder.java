@@ -14,17 +14,13 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import java.util.ArrayList;
-import java.util.Collections;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import java.util.Comparator;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Comparator;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = Logger.getLogger(GeneratedFinder.class);
@@ -81,8 +77,11 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       }
       List<SNode> res = new ArrayList<SNode>();
       doFind(node, query.getScope(), res, indicator);
-      Collections.sort(res, getComparator());
-      for (SNode resnode : res) {
+      for (SNode resnode : ListSequence.fromList(res).sort(new Comparator<SNode>() {
+        public int compare(SNode a, SNode b) {
+          return compareNodes(a, b);
+        }
+      }, true)) {
         results.getSearchResults().add(new SearchResult<SNode>(resnode, getNodeCategory(resnode)));
       }
     } else {
@@ -91,69 +90,39 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     return results;
   }
 
-  private Comparator<SNode> getComparator() {
-    return new Comparator<SNode>() {
-      private Pair<Integer, Boolean> indexInEditor(SNode editorNode, String role, Pair<Integer, Boolean> index) {
-        index.o1++;
-        if (editorNode.toString().startsWith("%" + role + "%")) {
-          return new Pair(index.o1, true);
-        }
-        for (SNode childEditorNode : editorNode.getChildren()) {
-          Pair<Integer, Boolean> result = indexInEditor(childEditorNode, role, index);
-          if (result.o2) {
-            return result;
-          }
-        }
-        return new Pair(-1, false);
+  private int compareNodes(SNode n1, SNode n2) {
+    List<SNode> path1 = ListSequence.fromList(SNodeOperations.getAncestors(n1, null, true)).reversedList();
+    List<SNode> path2 = ListSequence.fromList(SNodeOperations.getAncestors(n2, null, true)).reversedList();
+    for (int i = 0; i < ListSequence.fromList(path1).count() && i < ListSequence.fromList(path2).count(); ++i) {
+      if (ListSequence.fromList(path1).getElement(i) != ListSequence.fromList(path2).getElement(i)) {
+        return compareBrothers(ListSequence.fromList(path1).getElement(i), ListSequence.fromList(path2).getElement(i));
       }
+    }
+    return ListSequence.fromList(path1).count() - ListSequence.fromList(path2).count();
+  }
 
-      private int searchInEditors(SNode ancestor, SNode searchedNode) {
-        final SNode conceptDeclaration = ancestor.getConceptDeclarationNode();
-        SModel structureModel = conceptDeclaration.getModel();
-        Language language = (Language) structureModel.getModelDescriptor().getModule();
-        SModel editorModel = language.getEditorModelDescriptor().getSModel();
-        SNode editorNode = ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).findFirst(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "conceptDeclaration", false) == conceptDeclaration;
-          }
-        });
-        if ((editorNode == null)) {
+  private int compareBrothers(SNode n1, SNode n2) {
+    if (SNodeOperations.getContainingLinkRole(n1) == null) {
+      return n1.toString().compareTo(n2.toString());
+    }
+    if (SNodeOperations.getContainingLinkRole(n1).equals(SNodeOperations.getContainingLinkRole(n2))) {
+      return SNodeOperations.getIndexInParent(n1) - SNodeOperations.getIndexInParent(n2);
+    }
+    // try to compare positions in editor of ancestor 
+    SNode l1 = SNodeOperations.getContainingLinkDeclaration(n1);
+    SNode l2 = SNodeOperations.getContainingLinkDeclaration(n2);
+    for (SNode p = SNodeOperations.getParent(n1); (p != null); p = SNodeOperations.getParent(p)) {
+      SNode editor = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(p), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findConceptAspect_8360039740498068384", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.EDITOR));
+      for (SNode cell : ListSequence.fromList(SNodeOperations.getDescendants(editor, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, new String[]{}))) {
+        if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l1) {
           return -1;
         }
-        int index = indexInEditor(editorNode, searchedNode.getRole_(), new Pair(-1, false)).o1;
-        if (index != -1 || ancestor.getParent() == null) {
-          return index;
+        if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l2) {
+          return 1;
         }
-        return searchInEditors(ancestor.getParent(), searchedNode);
       }
-
-      private int compareWithEditor(SNode ancestor, SNode node1, SNode node2) {
-        Integer index1 = searchInEditors(ancestor, node1);
-        Integer index2 = searchInEditors(ancestor, node2);
-        return index1.compareTo(index2);
-      }
-
-      private int compareBrothers(SNode n1, SNode n2) {
-        if (SNodeOperations.getContainingLinkRole(n1) == null) {
-          return n1.toString().compareTo(n2.toString());
-        }
-        if (SNodeOperations.getContainingLinkRole(n1).equals(SNodeOperations.getContainingLinkRole(n2))) {
-          return SNodeOperations.getIndexInParent(n1) - SNodeOperations.getIndexInParent(n2);
-        }
-        return compareWithEditor(SNodeOperations.getParent(n1), n1, n2);
-        // <node> 
-      }
-
-      public int compare(SNode n1, SNode n2) {
-        List<SNode> path1 = ListSequence.fromList(SNodeOperations.getAncestors(n1, null, true)).reversedList();
-        List<SNode> path2 = ListSequence.fromList(SNodeOperations.getAncestors(n2, null, true)).reversedList();
-        for (int i = 0; i < ListSequence.fromList(path1).count() && i < ListSequence.fromList(path2).count(); ++i) {
-          if (ListSequence.fromList(path1).getElement(i) != ListSequence.fromList(path2).getElement(i)) {
-            return compareBrothers(ListSequence.fromList(path1).getElement(i), ListSequence.fromList(path2).getElement(i));
-          }
-        }
-        return ListSequence.fromList(path1).count() - ListSequence.fromList(path2).count();
-      }
-    };
+    }
+    // just compare roles if was not compared in editor 
+    return SNodeOperations.getContainingLinkRole(n1).compareTo(SNodeOperations.getContainingLinkRole(n2));
   }
 }
