@@ -80,14 +80,14 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_7vgvj3_a0a;
-        nodeToMatch_7vgvj3_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_7vgvj3_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_1175598917954;
+        nodeToMatch_1175598917954 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1175598917954.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_7vgvj3_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1175598917954.getReferent("classifier")))) {
             return false;
           }
         }

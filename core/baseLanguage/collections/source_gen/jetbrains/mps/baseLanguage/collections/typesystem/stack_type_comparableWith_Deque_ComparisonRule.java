@@ -60,25 +60,25 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_h34l93_a0a;
-        nodeToMatch_h34l93_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_h34l93_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_6801639034384806468;
+        nodeToMatch_6801639034384806468 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6801639034384806468.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_h34l93_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6801639034384806468.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_h34l93_ = "parameter";
-          if (nodeToMatch_h34l93_a0a.getChildCount(childRole_h34l93_) != 1) {
+          String childRole_6801639034384806468 = "parameter";
+          if (nodeToMatch_6801639034384806468.getChildCount(childRole_6801639034384806468) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0_16 = nodeToMatch_h34l93_a0a.getChildren(childRole_h34l93_).get(0);
-            this.patternVar_ELEMENT_TYPE = childVar_a0a0_16;
+            SNode childVar_6801639034384806469 = nodeToMatch_6801639034384806468.getChildren(childRole_6801639034384806468).get(0);
+            this.patternVar_ELEMENT_TYPE = childVar_6801639034384806469;
           }
         }
       }

@@ -32,12 +32,12 @@ public class SwitchMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_i6m7ss_a0a0a0;
-        nodeToMatch_i6m7ss_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_i6m7ss_a0a0a0.getConceptFqName()))) {
+        SNode nodeToMatch_1213877522468;
+        nodeToMatch_1213877522468 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_1213877522468.getConceptFqName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_i6m7ss_a0a0a0.getReferent("concept");
+        patternVar_concept = nodeToMatch_1213877522468.getReferent("concept");
       }
       return true;
     }

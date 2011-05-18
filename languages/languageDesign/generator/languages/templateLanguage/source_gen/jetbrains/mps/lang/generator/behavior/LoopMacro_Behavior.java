@@ -32,25 +32,25 @@ public class LoopMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_cdqxf8_a0a0a0;
-        nodeToMatch_cdqxf8_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_cdqxf8_a0a0a0.getConceptFqName()))) {
+        SNode nodeToMatch_1213877361825;
+        nodeToMatch_1213877361825 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_1213877361825.getConceptFqName()))) {
           return false;
         }
         {
-          String childRole_cdqxf8_ = "elementType";
-          if (nodeToMatch_cdqxf8_a0a0a0.getChildCount(childRole_cdqxf8_) != 1) {
+          String childRole_1213877361825 = "elementType";
+          if (nodeToMatch_1213877361825.getChildCount(childRole_1213877361825) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0a0a_0 = nodeToMatch_cdqxf8_a0a0a0.getChildren(childRole_cdqxf8_).get(0);
+            SNode childVar_1213877361826 = nodeToMatch_1213877361825.getChildren(childRole_1213877361825).get(0);
             {
-              SNode nodeToMatch_cdqxf8_a0a0a0a;
-              nodeToMatch_cdqxf8_a0a0a0a = childVar_a0a0a0a_0;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_cdqxf8_a0a0a0a.getConceptFqName()))) {
+              SNode nodeToMatch_1213877361826;
+              nodeToMatch_1213877361826 = childVar_1213877361826;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_1213877361826.getConceptFqName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_cdqxf8_a0a0a0a.getReferent("concept");
+              patternVar_concept = nodeToMatch_1213877361826.getReferent("concept");
             }
           }
         }

@@ -29,7 +29,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1190931376940(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("nodeToMatch_", _context.getNode());
+    return "nodeToMatch_" + _context.getNode().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1202825939894(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -74,7 +74,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549317(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
-    return _context.createUniqueName("childRole_", mainNode);
+    return "childRole_" + mainNode.getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549347(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -88,8 +88,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549541(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode mainNode = _context.getNode().getReferent("mainNode");
-    return _context.createUniqueName("childVar_", mainNode);
+    return "childVar_" + _context.getNode().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1224175601049(final IOperationContext operationContext, final PropertyMacroContext _context) {

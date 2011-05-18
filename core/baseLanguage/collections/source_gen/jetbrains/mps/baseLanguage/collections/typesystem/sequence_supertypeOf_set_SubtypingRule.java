@@ -107,19 +107,19 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_twopzc_a0a;
-        nodeToMatch_twopzc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_twopzc_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_1226598890779;
+        nodeToMatch_1226598890779 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_1226598890779.getConceptFqName()))) {
           return false;
         }
         {
-          String childRole_twopzc_ = "elementType";
-          if (nodeToMatch_twopzc_a0a.getChildCount(childRole_twopzc_) != 1) {
+          String childRole_1226598890779 = "elementType";
+          if (nodeToMatch_1226598890779.getChildCount(childRole_1226598890779) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0_3 = nodeToMatch_twopzc_a0a.getChildren(childRole_twopzc_).get(0);
-            this.patternVar_elementType = childVar_a0a0_3;
+            SNode childVar_1226598890780 = nodeToMatch_1226598890779.getChildren(childRole_1226598890779).get(0);
+            this.patternVar_elementType = childVar_1226598890780;
           }
         }
       }

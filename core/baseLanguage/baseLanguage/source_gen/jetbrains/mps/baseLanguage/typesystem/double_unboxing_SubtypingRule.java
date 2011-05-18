@@ -80,14 +80,14 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_31y3xb_a0a;
-        nodeToMatch_31y3xb_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_31y3xb_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_1177076659264;
+        nodeToMatch_1177076659264 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1177076659264.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_jy4zax_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_31y3xb_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1177076659264.getReferent("classifier")))) {
             return false;
           }
         }

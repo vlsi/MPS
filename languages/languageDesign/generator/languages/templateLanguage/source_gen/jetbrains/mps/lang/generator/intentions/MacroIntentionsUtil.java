@@ -99,12 +99,12 @@ public class MacroIntentionsUtil {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_iiuth6_a0a0a3a1;
-        nodeToMatch_iiuth6_a0a0a3a1 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a3a1.getConceptFqName()))) {
+        SNode nodeToMatch_2925366645633385714;
+        nodeToMatch_2925366645633385714 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_2925366645633385714.getConceptFqName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_iiuth6_a0a0a3a1.getReferent("concept");
+        patternVar_concept = nodeToMatch_2925366645633385714.getReferent("concept");
       }
       return true;
     }
@@ -138,25 +138,25 @@ public class MacroIntentionsUtil {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_iiuth6_a0a0a0d0b;
-        nodeToMatch_iiuth6_a0a0a0d0b = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_iiuth6_a0a0a0d0b.getConceptFqName()))) {
+        SNode nodeToMatch_2925366645633385700;
+        nodeToMatch_2925366645633385700 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_2925366645633385700.getConceptFqName()))) {
           return false;
         }
         {
-          String childRole_iiuth6_ = "elementType";
-          if (nodeToMatch_iiuth6_a0a0a0d0b.getChildCount(childRole_iiuth6_) != 1) {
+          String childRole_2925366645633385700 = "elementType";
+          if (nodeToMatch_2925366645633385700.getChildCount(childRole_2925366645633385700) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0a0a3a1 = nodeToMatch_iiuth6_a0a0a0d0b.getChildren(childRole_iiuth6_).get(0);
+            SNode childVar_2925366645633385701 = nodeToMatch_2925366645633385700.getChildren(childRole_2925366645633385700).get(0);
             {
-              SNode nodeToMatch_iiuth6_a0a0a0a3a1;
-              nodeToMatch_iiuth6_a0a0a0a3a1 = childVar_a0a0a0a3a1;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a0a3a1.getConceptFqName()))) {
+              SNode nodeToMatch_2925366645633385701;
+              nodeToMatch_2925366645633385701 = childVar_2925366645633385701;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_2925366645633385701.getConceptFqName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_iiuth6_a0a0a0a3a1.getReferent("concept");
+              patternVar_concept = nodeToMatch_2925366645633385701.getReferent("concept");
             }
           }
         }

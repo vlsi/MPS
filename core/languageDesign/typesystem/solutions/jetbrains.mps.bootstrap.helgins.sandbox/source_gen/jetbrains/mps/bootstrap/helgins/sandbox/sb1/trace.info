@@ -28,11 +28,11 @@
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="74" startPosition="229" endLine="75" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="76" startPosition="7" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="81" startPosition="112" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_class" />
-    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="88" startPosition="7" endLine="89" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="89" startPosition="41" endLine="90" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="91" startPosition="125" endLine="92" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="93" startPosition="9" endLine="94" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="93" startPosition="9" endLine="94" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="88" startPosition="7" endLine="89" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="89" startPosition="40" endLine="90" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="91" startPosition="124" endLine="92" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="93" startPosition="9" endLine="94" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="93" startPosition="9" endLine="94" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="95" startPosition="7" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="99" startPosition="40" endLine="100" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="104" startPosition="69" endLine="105" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -43,13 +43,13 @@
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="83" startPosition="0" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_axt657_a0a0a1a1a1a0#()V" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="27" startPosition="34" endLine="30" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1198073337805" fileName="AClssssssssssssssssass.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="bar#()V" />
-    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="90" startPosition="49" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="90" startPosition="48" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="103" startPosition="71" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="109" startPosition="51" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="109" startPosition="51" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="22" startPosition="44" endLine="26" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="90" startPosition="49" endLine="94" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="90" startPosition="48" endLine="94" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="26" startPosition="9" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="51" startPosition="64" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -75,8 +75,8 @@
     <scopeInfo nodeId="1196960455595" fileName="AClssssssssssssssssass.java" startLine="28" startPosition="11" endLine="29" endPosition="82">
       <varInfo nodeId="1196960592999" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="91" startPosition="125" endLine="92" endPosition="23" />
-    <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="93" startPosition="9" endLine="94" endPosition="80" />
+    <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="91" startPosition="124" endLine="92" endPosition="23" />
+    <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="93" startPosition="9" endLine="94" endPosition="79" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="99" startPosition="40" endLine="100" endPosition="19" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="104" startPosition="69" endLine="105" endPosition="77" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="110" startPosition="49" endLine="111" endPosition="32" />
@@ -91,12 +91,12 @@
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="109" startPosition="51" endLine="112" endPosition="7" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="115" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="71" startPosition="7" endLine="75" endPosition="31" />
-    <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="90" startPosition="49" endLine="94" endPosition="80" />
+    <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="90" startPosition="48" endLine="94" endPosition="79" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="109" startPosition="51" endLine="113" endPosition="18" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="51" startPosition="64" endLine="56" endPosition="9" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="70" startPosition="32" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="88" startPosition="7" endLine="94" endPosition="80" />
+    <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="88" startPosition="7" endLine="94" endPosition="79" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="102" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="108" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="1186475525107" fileName="AClssssssssssssssssass.java" startLine="48" startPosition="7" endLine="57" endPosition="31" />

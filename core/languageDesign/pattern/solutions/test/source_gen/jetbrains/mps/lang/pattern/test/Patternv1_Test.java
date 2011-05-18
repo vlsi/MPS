@@ -123,30 +123,30 @@ public class Patternv1_Test extends BaseTransformationTest {
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_1fh_a0;
-          nodeToMatch_1fh_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_1fh_a0.getConceptFqName()))) {
+          SNode nodeToMatch_1563914226484981160;
+          nodeToMatch_1563914226484981160 = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_1563914226484981160.getConceptFqName()))) {
             return false;
           }
           {
-            String childRole_1fh_ = "operation";
-            if (nodeToMatch_1fh_a0.getChildCount(childRole_1fh_) != 1) {
+            String childRole_1563914226484981160 = "operation";
+            if (nodeToMatch_1563914226484981160.getChildCount(childRole_1563914226484981160) != 1) {
               return false;
             }
             {
-              SNode childVar_a0a_6 = nodeToMatch_1fh_a0.getChildren(childRole_1fh_).get(0);
+              SNode childVar_1563914226484981164 = nodeToMatch_1563914226484981160.getChildren(childRole_1563914226484981160).get(0);
               {
-                SNode nodeToMatch_1fh_a0a;
-                nodeToMatch_1fh_a0a = childVar_a0a_6;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_1fh_a0a.getConceptFqName()))) {
+                SNode nodeToMatch_1563914226484981164;
+                nodeToMatch_1563914226484981164 = childVar_1563914226484981164;
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_1563914226484981164.getConceptFqName()))) {
                   return false;
                 }
-                patternVar_method = nodeToMatch_1fh_a0a.getReferent("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_1563914226484981164.getReferent("baseMethodDeclaration");
                 {
-                  String childRole_1fh__0 = "actualArgument";
+                  String childRole_1563914226484981164 = "actualArgument";
                   this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
                   patternVar_ignore = null;
-                  for (SNode childVar : nodeToMatch_1fh_a0a.getChildren(childRole_1fh__0)) {
+                  for (SNode childVar : nodeToMatch_1563914226484981164.getChildren(childRole_1563914226484981164)) {
                     patternVar_ignore = childVar;
                     ListSequence.fromList(this.patternVar_list).addElement(childVar);
                   }
@@ -155,20 +155,20 @@ public class Patternv1_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_1fh__1 = "operand";
-            if (nodeToMatch_1fh_a0.getChildCount(childRole_1fh__1) != 1) {
+            String childRole_1563914226484981160 = "operand";
+            if (nodeToMatch_1563914226484981160.getChildCount(childRole_1563914226484981160) != 1) {
               return false;
             }
             {
-              SNode childVar_a0a_7 = nodeToMatch_1fh_a0.getChildren(childRole_1fh__1).get(0);
+              SNode childVar_1563914226484981161 = nodeToMatch_1563914226484981160.getChildren(childRole_1563914226484981160).get(0);
               {
-                SNode nodeToMatch_1fh_a0a_0;
-                nodeToMatch_1fh_a0a_0 = childVar_a0a_7;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_1fh_a0a_0.getConceptFqName()))) {
+                SNode nodeToMatch_1563914226484981161;
+                nodeToMatch_1563914226484981161 = childVar_1563914226484981161;
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_1563914226484981161.getConceptFqName()))) {
                   return false;
                 }
-                patternVar_field = nodeToMatch_1fh_a0a_0.getReferent("variableDeclaration");
-                patternVar_className = nodeToMatch_1fh_a0a_0.getReferent("classifier");
+                patternVar_field = nodeToMatch_1563914226484981161.getReferent("variableDeclaration");
+                patternVar_className = nodeToMatch_1563914226484981161.getReferent("classifier");
               }
             }
           }

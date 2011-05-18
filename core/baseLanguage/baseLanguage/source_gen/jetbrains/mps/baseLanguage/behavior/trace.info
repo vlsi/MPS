@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="LocalInstanceFieldReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalInstanceFieldReference_Behavior" />
+  <unitInfo fileName="BaseStringOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseStringOperation_Behavior" />
+  <unitInfo fileName="ClassifierClassExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierClassExpression_Behavior" />
+  <unitInfo fileName="AnnotationInstanceValue_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstanceValue_Behavior" />
+  <unitInfo fileName="AnnotationInstance_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstance_Behavior" />
+  <unitInfo fileName="ClosureParameterReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClosureParameterReference_Behavior" />
+  <unitInfo fileName="IValidIdentifier_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IValidIdentifier_Behavior" />
+  <unitInfo fileName="DefaultSetAccessor_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DefaultSetAccessor_Behavior" />
   <unitInfo fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_Behavior" />
   <unitInfo fileName="GenericNewExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GenericNewExpression_Behavior" />
   <unitInfo fileName="VarVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VarVariableReference_Behavior" />
@@ -7,6 +15,7 @@
   <unitInfo fileName="DefaultPropertyImplementation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DefaultPropertyImplementation_Behavior" />
   <unitInfo fileName="SingleLineComment_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SingleLineComment_Behavior" />
   <unitInfo fileName="CommentedStatement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentedStatement_Behavior" />
+  <unitInfo fileName="LocalVariableDeclarationStatement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalVariableDeclarationStatement_Behavior" />
   <unitInfo fileName="PropertyReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PropertyReference_Behavior" />
   <unitInfo fileName="VariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior" />
   <unitInfo fileName="CustomPropertyImplementation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CustomPropertyImplementation_Behavior" />
@@ -26,17 +35,23 @@
   <unitInfo fileName="Annotation_Behavior.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Annotation_Behavior" />
   <unitInfo fileName="NullLiteral_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.NullLiteral_Behavior" />
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IconContainer" />
+  <unitInfo fileName="RemarkStatement_Behavior.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior" />
+  <unitInfo fileName="ParameterReference_Behavior.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParameterReference_Behavior" />
   <unitInfo fileName="UsingStatement_Behavior.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UsingStatement_Behavior" />
   <unitInfo fileName="TryStatement_Behavior.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TryStatement_Behavior" />
   <unitInfo fileName="SuperConstructorInvocation_Behavior.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SuperConstructorInvocation_Behavior" />
+  <unitInfo fileName="TextCommentPart_Behavior.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TextCommentPart_Behavior" />
   <unitInfo fileName="ILocalReference_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalReference_Behavior" />
   <unitInfo fileName="IStaticContainerForMethods_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior" />
+  <unitInfo fileName="IInternalType_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IInternalType_Behavior" />
   <unitInfo fileName="PropertyImplementation_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PropertyImplementation_Behavior" />
   <unitInfo fileName="ITryCatchStatement_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_Behavior" />
   <unitInfo fileName="ILocalVariableElementList_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_Behavior" />
+  <unitInfo fileName="Closure_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Closure_Behavior" />
   <unitInfo fileName="PlusExpression_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PlusExpression_Behavior" />
   <unitInfo fileName="SwitchStatement_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SwitchStatement_Behavior" />
   <unitInfo fileName="CommentedStatementsBlock_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentedStatementsBlock_Behavior" />
+  <unitInfo fileName="ElsifClause_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior" />
   <unitInfo fileName="PrimitiveType_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrimitiveType_Behavior" />
   <unitInfo fileName="BooleanType_Behavior.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BooleanType_Behavior$QuotationClass_1wwrx3_a0a0d" />
   <unitInfo fileName="FieldDeclaration_Behavior.java" startLine="161" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.FieldDeclaration_Behavior$QuotationClass_dh5t54_a1a0b0b" />
@@ -57,6 +72,7 @@
   <unitInfo fileName="TryCatchStatement_Behavior.java" startLine="52" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TryCatchStatement_Behavior$QuotationClass_1bi1ep_a0a0b0c0e0d" />
   <unitInfo fileName="TypeVariableReference_Behavior.java" startLine="54" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TypeVariableReference_Behavior$QuotationClass_6i211a_a0b0d" />
   <unitInfo fileName="AssignmentExpression_Behavior.java" startLine="69" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior$QuotationClass_4cbll2_a0a0a2a4" />
+  <unitInfo fileName="IWillBeClassifier_Behavior.java" startLine="72" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior$QuotationClass_937vih_a0a0a1" />
   <unitInfo fileName="TypeVariableDeclaration_Behavior.java" startLine="81" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior$QuotationClass_ct7zh2_a0a0a0c" />
   <unitInfo fileName="TypeVariableDeclaration_Behavior.java" startLine="99" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior$QuotationClass_ct7zh2_a0a0a2a2" />
   <unitInfo fileName="IMethodCall_Behavior.java" startLine="211" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior$QuotationClass_fq0410_a0a0b0d" />
@@ -73,16 +89,21 @@
   <unitInfo fileName="LongType_Behavior.java" startLine="48" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LongType_Behavior$QuotationClass_1ld2dp_a0a0c" />
   <unitInfo fileName="BooleanType_Behavior.java" startLine="67" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BooleanType_Behavior$QuotationClass_1wwrx3_a0a0c" />
   <unitInfo fileName="IVisible_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IVisible_Behavior" />
+  <unitInfo fileName="ILocalVariableElement_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior" />
   <unitInfo fileName="TypeAnnotable_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TypeAnnotable_Behavior" />
   <unitInfo fileName="ClassifierMember_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior" />
   <unitInfo fileName="InstanceInitializer_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceInitializer_Behavior" />
   <unitInfo fileName="IExtractMethodAvailable_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IExtractMethodAvailable_Behavior" />
   <unitInfo fileName="ClassCreator_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassCreator_Behavior" />
+  <unitInfo fileName="CatchClause_Behavior.java" startLine="15" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CatchClause_Behavior" />
+  <unitInfo fileName="ForStatement_Behavior.java" startLine="15" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ForStatement_Behavior" />
+  <unitInfo fileName="ForeachStatement_Behavior.java" startLine="15" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ForeachStatement_Behavior" />
   <unitInfo fileName="WildCardType_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.WildCardType_Behavior" />
   <unitInfo fileName="LowerBoundType_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LowerBoundType_Behavior" />
   <unitInfo fileName="StaticInitializer_Behavior.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticInitializer_Behavior" />
   <unitInfo fileName="StaticMethodDeclaration_Behavior.java" startLine="96" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior$QuotationClass_qyxuoz_a1a0a0a3" />
   <unitInfo fileName="ThisExpression_Behavior.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior" />
+  <unitInfo fileName="CommentPart_Behavior.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentPart_Behavior" />
   <unitInfo fileName="BaseAssignmentExpression_Behavior.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_Behavior" />
   <unitInfo fileName="EnumClass_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumClass_Behavior" />
   <unitInfo fileName="SuperMethodCall_Behavior.java" startLine="47" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SuperMethodCall_Behavior$QuotationClass_ypylvf_a0d0b" />
@@ -94,6 +115,7 @@
   <unitInfo fileName="StaticFieldReference_Behavior.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticFieldReference_Behavior" />
   <unitInfo fileName="LocalStaticFieldReference_Behavior.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalStaticFieldReference_Behavior" />
   <unitInfo fileName="UpperBoundType_Behavior.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UpperBoundType_Behavior" />
+  <unitInfo fileName="IBLDeprecatable_Behavior.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" />
   <unitInfo fileName="ContinueStatement_Behavior.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ContinueStatement_Behavior" />
   <unitInfo fileName="IVariableAssignment_Behavior.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior" />
   <unitInfo fileName="StaticMethodCall_Behavior.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior" />
@@ -132,6 +154,7 @@
   <unitInfo fileName="ClassifierType_Behavior.java" startLine="273" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior$Pattern_hz3823_a0a0a1a01" />
   <unitInfo fileName="Classifier_Behavior.java" startLine="317" startPosition="0" endLine="377" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior$Pattern_qw8l7c_a1a0a0a71" />
   <unitInfo fileName="InstanceMethodCallOperation_Behavior.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior" />
+  <unitInfo fileName="IWillBeClassifier_Behavior.java" startLine="24" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior" />
   <unitInfo fileName="AssignmentExpression_Behavior.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior" />
   <unitInfo fileName="BreakStatement_Behavior.java" startLine="10" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BreakStatement_Behavior" />
   <unitInfo fileName="ConceptFunctionParameter_Behavior.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior" />
