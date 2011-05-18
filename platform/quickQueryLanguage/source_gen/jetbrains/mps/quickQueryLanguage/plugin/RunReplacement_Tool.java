@@ -50,7 +50,7 @@ public class RunReplacement_Tool extends GeneratedTool {
         if (ListSequence.fromList(RunReplacement_Tool.this.myViews).count() > 1) {
           name += String.valueOf(ListSequence.fromList(RunReplacement_Tool.this.myViews).count());
         }
-        Content content = RunReplacement_Tool.this.addContent(view.getComponent(), name, searchQuery.getIcon(), false);
+        Content content = RunReplacement_Tool.this.addContent(view.getComponent(), name, jetbrains.mps.ide.findusages.view.icons.IconManager.getIconForIHolder(searchQuery.getObjectHolder()), false);
         RunReplacement_Tool.this.setAvailable(true);
         RunReplacement_Tool.this.openTool(true);
         RunReplacement_Tool.this.getContentManager().setSelectedContent(content);
