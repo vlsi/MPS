@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.view.icons;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.holders.*;
 import jetbrains.mps.smodel.SNode;
 
@@ -41,5 +42,12 @@ public class IconManager {
     }
     // StringHolder, AspectMethodsFinder.AspectMethodsHolder
     return null;
+  }
+
+  public static Icon getIconForCategoryKind(CategoryKind categoryKind) {
+    if (categoryKind == CategoryKind.DEFAULT_CATEGORY_KIND) {
+      return Icons.CATEGORY_ICON;
+    }
+    return categoryKind.getIcon();
   }
 }

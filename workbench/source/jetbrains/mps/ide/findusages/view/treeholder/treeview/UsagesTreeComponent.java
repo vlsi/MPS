@@ -22,6 +22,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.IChangeListener;
@@ -352,7 +353,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         myCategoryPathButtons.clear();
         for (CategoryKind kind : categoryKinds) {
           myCategoryPathButtons.add(new MyBasePathToggleAction(
-            PathItemRole.getCategoryRole(kind), kind.getTooltip(), kind.getIcon()));
+            PathItemRole.getCategoryRole(kind), kind.getTooltip(), IconManager.getIconForCategoryKind(kind)));
         }
 
         myModulePathButton = new MyBasePathToggleAction(PathItemRole.ROLE_MODULE, "Group by module", Icons.MODULE_ICON);
