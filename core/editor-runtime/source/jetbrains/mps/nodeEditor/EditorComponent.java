@@ -245,7 +245,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
   private BracesHighlighter myBracesHighlighter = new BracesHighlighter(this);
   private boolean myPopupMenuEnabled = true;
-
+  private boolean myIsInFiguresHierarchy = false;
 
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false, false);
@@ -258,29 +258,32 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     setBackground(Color.white);
 
-    setFocusTraversalPolicyProvider(true);
     setFocusCycleRoot(true);
     setFocusTraversalPolicy(new FocusTraversalPolicy() {
       public Component getComponentAfter(Container aContainer, Component aComponent) {
-        executeComponentAction(CellActionType.NEXT);
-        return aContainer;
+        if (myIsInFiguresHierarchy) {
+          executeComponentAction(CellActionType.NEXT);
+        }
+        return myIsInFiguresHierarchy ? aContainer : null;
       }
 
       public Component getComponentBefore(Container aContainer, Component aComponent) {
-        executeComponentAction(CellActionType.PREV);
-        return aContainer;
+        if (myIsInFiguresHierarchy) {
+          executeComponentAction(CellActionType.PREV);
+        }
+        return myIsInFiguresHierarchy ? aContainer : null;
       }
 
       public Component getFirstComponent(Container aContainer) {
-        return aContainer;
+        return myIsInFiguresHierarchy ? aContainer : null;
       }
 
       public Component getLastComponent(Container aContainer) {
-        return aContainer;
+        return myIsInFiguresHierarchy ? aContainer : null;
       }
 
       public Component getDefaultComponent(Container aContainer) {
-        return aContainer;
+        return myIsInFiguresHierarchy ? aContainer : null;
       }
     });
     setFocusTraversalKeysEnabled(false);
@@ -301,7 +304,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
 
-    myContainer = new JPanel();
+    myContainer = new JPanel() {
+      @Override
+      public void addNotify() {
+        super.addNotify();
+        myIsInFiguresHierarchy = true;
+      }
+
+      @Override
+      public void removeNotify() {
+        myIsInFiguresHierarchy = false;
+        super.removeNotify();
+      }
+    };
     myContainer.setMinimumSize(new Dimension(0, 0));
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
