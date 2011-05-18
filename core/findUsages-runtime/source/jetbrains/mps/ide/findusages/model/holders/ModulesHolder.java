@@ -18,14 +18,12 @@ package jetbrains.mps.ide.findusages.model.holders;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,10 +47,6 @@ public class ModulesHolder implements IHolder<List<IModule>> {
   @NotNull
   public String getCaption() {
     return NameUtil.formatNumericalString(myModules.size(), "model");
-  }
-
-  public Icon getIcon() {
-    return Icons.SOLUTION_ICON;
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

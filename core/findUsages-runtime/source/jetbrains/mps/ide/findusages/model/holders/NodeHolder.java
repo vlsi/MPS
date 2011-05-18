@@ -19,13 +19,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.Icon;
 
 public class NodeHolder implements IHolder<SNode> {
   private static final String NODE = "node";
@@ -49,14 +46,6 @@ public class NodeHolder implements IHolder<SNode> {
     SNode node = getObject();
     if (node == null) return "<null>";
     return node.toString();
-  }
-
-  public Icon getIcon() {
-    SNode node = getObject();
-    if (node == null) {
-      return null;
-    }
-    return IconManager.getIconFor(node);
   }
 
   public void read(Element element, Project project) throws CantLoadSomethingException {

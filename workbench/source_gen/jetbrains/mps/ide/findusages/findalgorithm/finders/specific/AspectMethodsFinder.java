@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import org.jetbrains.annotations.NotNull;
-import javax.swing.Icon;
 import org.jdom.Element;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -85,10 +84,6 @@ public class AspectMethodsFinder implements IFinder {
     @NotNull
     public String getCaption() {
       return myData.myMethodName + " in " + myData.myModelName;
-    }
-
-    public Icon getIcon() {
-      return null;
     }
 
     public void read(Element element, Project project) throws CantLoadSomethingException {

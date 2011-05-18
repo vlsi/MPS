@@ -72,6 +72,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder" />
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

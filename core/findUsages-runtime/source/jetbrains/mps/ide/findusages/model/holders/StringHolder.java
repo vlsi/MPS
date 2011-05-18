@@ -21,8 +21,6 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
-
 public class StringHolder implements IHolder<String> {
   private static final String VALUE = "value";
 
@@ -43,10 +41,6 @@ public class StringHolder implements IHolder<String> {
   @NotNull
   public String getCaption() {
     return myString;
-  }
-
-  public Icon getIcon() {
-    return null;
   }
 
   public void read(Element element, Project project) throws CantLoadSomethingException {

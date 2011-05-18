@@ -31,6 +31,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
+import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
@@ -162,7 +163,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   }
 
   public Icon getIcon() {
-    return mySearchQuery.getIcon();
+    return IconManager.getIconForIHolder(mySearchQuery.getObjectHolder());
   }
 
   public abstract void close();
