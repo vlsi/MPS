@@ -4,6 +4,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.ExecuteFinderExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.ExecuteFindersGetSearchResults_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.NodeStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.ResultStatement_DataFlow" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
   </dependency>
