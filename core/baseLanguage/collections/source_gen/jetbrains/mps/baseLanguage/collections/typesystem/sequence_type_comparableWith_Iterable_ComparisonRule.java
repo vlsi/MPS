@@ -72,12 +72,12 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
           }
         }
         {
-          String childRole_wnlwmt_ = "parameter";
-          if (nodeToMatch_wnlwmt_a0a.getChildCount(childRole_wnlwmt_) != 1) {
+          String childRole_sequence_type_comparableWith_Iterable_wnlwmt_ = "parameter";
+          if (nodeToMatch_wnlwmt_a0a.getChildCount(childRole_sequence_type_comparableWith_Iterable_wnlwmt_) != 1) {
             return false;
           }
           {
-            SNode childVar_wnlwmt_a0a0 = nodeToMatch_wnlwmt_a0a.getChildren(childRole_wnlwmt_).get(0);
+            SNode childVar_wnlwmt_a0a0 = nodeToMatch_wnlwmt_a0a.getChildren(childRole_sequence_type_comparableWith_Iterable_wnlwmt_).get(0);
             this.patternVar_ELEMENT = childVar_wnlwmt_a0a0;
           }
         }

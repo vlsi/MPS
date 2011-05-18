@@ -110,12 +110,12 @@ public class PatternProperty_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_ru5khm_ = "operand";
-            if (nodeToMatch_ru5khm_a0.getChildCount(childRole_ru5khm_) != 1) {
+            String childRole_Property_ru5khm_ = "operand";
+            if (nodeToMatch_ru5khm_a0.getChildCount(childRole_Property_ru5khm_) != 1) {
               return false;
             }
             {
-              SNode childVar_ru5khm_a0a = nodeToMatch_ru5khm_a0.getChildren(childRole_ru5khm_).get(0);
+              SNode childVar_ru5khm_a0a = nodeToMatch_ru5khm_a0.getChildren(childRole_Property_ru5khm_).get(0);
               {
                 SNode nodeToMatch_ru5khm_a0a;
                 nodeToMatch_ru5khm_a0a = childVar_ru5khm_a0a;
@@ -128,12 +128,12 @@ public class PatternProperty_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_ru5khm__0 = "operation";
-            if (nodeToMatch_ru5khm_a0.getChildCount(childRole_ru5khm__0) != 1) {
+            String childRole_Property_ru5khm__0 = "operation";
+            if (nodeToMatch_ru5khm_a0.getChildCount(childRole_Property_ru5khm__0) != 1) {
               return false;
             }
             {
-              SNode childVar_ru5khm_a0a_0 = nodeToMatch_ru5khm_a0.getChildren(childRole_ru5khm__0).get(0);
+              SNode childVar_ru5khm_a0a_0 = nodeToMatch_ru5khm_a0.getChildren(childRole_Property_ru5khm__0).get(0);
               {
                 SNode nodeToMatch_ru5khm_a0a_0;
                 nodeToMatch_ru5khm_a0a_0 = childVar_ru5khm_a0a_0;
@@ -142,12 +142,12 @@ public class PatternProperty_Test extends BaseTransformationTest {
                 }
                 patternVar_method = nodeToMatch_ru5khm_a0a_0.getReferent("baseMethodDeclaration");
                 {
-                  String childRole_ru5khm__1 = "actualArgument";
-                  if (nodeToMatch_ru5khm_a0a_0.getChildCount(childRole_ru5khm__1) != 1) {
+                  String childRole_Property_ru5khm__1 = "actualArgument";
+                  if (nodeToMatch_ru5khm_a0a_0.getChildCount(childRole_Property_ru5khm__1) != 1) {
                     return false;
                   }
                   {
-                    SNode childVar_ru5khm_a0a0 = nodeToMatch_ru5khm_a0a_0.getChildren(childRole_ru5khm__1).get(0);
+                    SNode childVar_ru5khm_a0a0 = nodeToMatch_ru5khm_a0a_0.getChildren(childRole_Property_ru5khm__1).get(0);
                     {
                       SNode nodeToMatch_ru5khm_a0a0;
                       nodeToMatch_ru5khm_a0a0 = childVar_ru5khm_a0a0;

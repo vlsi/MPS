@@ -171,10 +171,10 @@ public class IMethodCall_Behavior {
           }
         }
         {
-          String childRole_fq0410_ = "parameter";
+          String childRole_IMethodCall_Behavior_fq0410_ = "parameter";
           this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignore = null;
-          for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_fq0410_)) {
+          for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_IMethodCall_Behavior_fq0410_)) {
             patternVar_ignore = childVar;
             ListSequence.fromList(this.patternVar_param).addElement(childVar);
           }

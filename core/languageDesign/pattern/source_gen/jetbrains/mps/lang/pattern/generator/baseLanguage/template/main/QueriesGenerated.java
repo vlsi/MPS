@@ -75,7 +75,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549317(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
-    return _context.createUniqueName("childRole_", SNodeOperations.getContainingRoot(mainNode));
+    return _context.createUniqueName("childRole_" + SNodeOperations.getContainingRoot(mainNode), SNodeOperations.getContainingRoot(mainNode));
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549347(final IOperationContext operationContext, final PropertyMacroContext _context) {

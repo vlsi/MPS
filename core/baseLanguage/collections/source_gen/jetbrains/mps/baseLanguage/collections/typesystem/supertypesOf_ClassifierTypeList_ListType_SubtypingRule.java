@@ -123,12 +123,12 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
           }
         }
         {
-          String childRole_h8kiwa_ = "parameter";
-          if (nodeToMatch_h8kiwa_a0a.getChildCount(childRole_h8kiwa_) != 1) {
+          String childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_ = "parameter";
+          if (nodeToMatch_h8kiwa_a0a.getChildCount(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_) != 1) {
             return false;
           }
           {
-            SNode childVar_h8kiwa_a0a0 = nodeToMatch_h8kiwa_a0a.getChildren(childRole_h8kiwa_).get(0);
+            SNode childVar_h8kiwa_a0a0 = nodeToMatch_h8kiwa_a0a.getChildren(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_).get(0);
             this.patternVar_elemType = childVar_h8kiwa_a0a0;
           }
         }

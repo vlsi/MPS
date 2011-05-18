@@ -97,12 +97,12 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
           }
         }
         {
-          String childRole_6isygg__0 = "parameter";
-          if (nodeToMatch_6isygg_a0a0a0a0.getChildCount(childRole_6isygg__0) != 1) {
+          String childRole_IterateOverIterable_6isygg__0 = "parameter";
+          if (nodeToMatch_6isygg_a0a0a0a0.getChildCount(childRole_IterateOverIterable_6isygg__0) != 1) {
             return false;
           }
           {
-            SNode childVar_6isygg_a0a0a0a0a = nodeToMatch_6isygg_a0a0a0a0.getChildren(childRole_6isygg__0).get(0);
+            SNode childVar_6isygg_a0a0a0a0a = nodeToMatch_6isygg_a0a0a0a0.getChildren(childRole_IterateOverIterable_6isygg__0).get(0);
             this.patternVar_elem = childVar_6isygg_a0a0a0a0a;
           }
         }
@@ -151,12 +151,12 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
           }
         }
         {
-          String childRole_6isygg_ = "parameter";
-          if (nodeToMatch_6isygg_a0a0a0.getChildCount(childRole_6isygg_) != 1) {
+          String childRole_IterateOverIterable_6isygg_ = "parameter";
+          if (nodeToMatch_6isygg_a0a0a0.getChildCount(childRole_IterateOverIterable_6isygg_) != 1) {
             return false;
           }
           {
-            SNode childVar_6isygg_a0a0a0a = nodeToMatch_6isygg_a0a0a0.getChildren(childRole_6isygg_).get(0);
+            SNode childVar_6isygg_a0a0a0a = nodeToMatch_6isygg_a0a0a0.getChildren(childRole_IterateOverIterable_6isygg_).get(0);
             this.patternVar_elem = childVar_6isygg_a0a0a0a;
           }
         }

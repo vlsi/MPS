@@ -144,12 +144,12 @@ public class MacroIntentionsUtil {
           return false;
         }
         {
-          String childRole_iiuth6_ = "elementType";
-          if (nodeToMatch_iiuth6_a0a0a0d0b.getChildCount(childRole_iiuth6_) != 1) {
+          String childRole_MacroIntentionsUtil_iiuth6_ = "elementType";
+          if (nodeToMatch_iiuth6_a0a0a0d0b.getChildCount(childRole_MacroIntentionsUtil_iiuth6_) != 1) {
             return false;
           }
           {
-            SNode childVar_iiuth6_a0a0a0a3a1 = nodeToMatch_iiuth6_a0a0a0d0b.getChildren(childRole_iiuth6_).get(0);
+            SNode childVar_iiuth6_a0a0a0a3a1 = nodeToMatch_iiuth6_a0a0a0d0b.getChildren(childRole_MacroIntentionsUtil_iiuth6_).get(0);
             {
               SNode nodeToMatch_iiuth6_a0a0a0a3a1;
               nodeToMatch_iiuth6_a0a0a0a3a1 = childVar_iiuth6_a0a0a0a3a1;

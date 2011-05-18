@@ -39,12 +39,12 @@ public class CopySrcListMacro_Behavior {
           return false;
         }
         {
-          String childRole_26ny8p_ = "elementType";
-          if (nodeToMatch_26ny8p_a0a1a0.getChildCount(childRole_26ny8p_) != 1) {
+          String childRole_CopySrcListMacro_Behavior_26ny8p_ = "elementType";
+          if (nodeToMatch_26ny8p_a0a1a0.getChildCount(childRole_CopySrcListMacro_Behavior_26ny8p_) != 1) {
             return false;
           }
           {
-            SNode childVar_26ny8p_a0a0b0a = nodeToMatch_26ny8p_a0a1a0.getChildren(childRole_26ny8p_).get(0);
+            SNode childVar_26ny8p_a0a0b0a = nodeToMatch_26ny8p_a0a1a0.getChildren(childRole_CopySrcListMacro_Behavior_26ny8p_).get(0);
             {
               SNode nodeToMatch_26ny8p_a0a0b0a;
               nodeToMatch_26ny8p_a0a0b0a = childVar_26ny8p_a0a0b0a;

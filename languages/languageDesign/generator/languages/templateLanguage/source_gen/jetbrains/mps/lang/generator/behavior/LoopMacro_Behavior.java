@@ -38,12 +38,12 @@ public class LoopMacro_Behavior {
           return false;
         }
         {
-          String childRole_cdqxf8_ = "elementType";
-          if (nodeToMatch_cdqxf8_a0a0a0.getChildCount(childRole_cdqxf8_) != 1) {
+          String childRole_LoopMacro_Behavior_cdqxf8_ = "elementType";
+          if (nodeToMatch_cdqxf8_a0a0a0.getChildCount(childRole_LoopMacro_Behavior_cdqxf8_) != 1) {
             return false;
           }
           {
-            SNode childVar_cdqxf8_a0a0a0a = nodeToMatch_cdqxf8_a0a0a0.getChildren(childRole_cdqxf8_).get(0);
+            SNode childVar_cdqxf8_a0a0a0a = nodeToMatch_cdqxf8_a0a0a0.getChildren(childRole_LoopMacro_Behavior_cdqxf8_).get(0);
             {
               SNode nodeToMatch_cdqxf8_a0a0a0a;
               nodeToMatch_cdqxf8_a0a0a0a = childVar_cdqxf8_a0a0a0a;

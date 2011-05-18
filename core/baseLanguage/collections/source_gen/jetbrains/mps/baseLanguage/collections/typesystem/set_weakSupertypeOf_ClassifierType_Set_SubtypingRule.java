@@ -123,12 +123,12 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
           }
         }
         {
-          String childRole_n7314j_ = "parameter";
-          if (nodeToMatch_n7314j_a0a.getChildCount(childRole_n7314j_) != 1) {
+          String childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_ = "parameter";
+          if (nodeToMatch_n7314j_a0a.getChildCount(childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_) != 1) {
             return false;
           }
           {
-            SNode childVar_n7314j_a0a0 = nodeToMatch_n7314j_a0a.getChildren(childRole_n7314j_).get(0);
+            SNode childVar_n7314j_a0a0 = nodeToMatch_n7314j_a0a.getChildren(childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_).get(0);
             this.patternVar_elementType = childVar_n7314j_a0a0;
           }
         }

@@ -123,12 +123,12 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
           }
         }
         {
-          String childRole_4sudxd_ = "parameter";
-          if (nodeToMatch_4sudxd_a0a.getChildCount(childRole_4sudxd_) != 1) {
+          String childRole_supertypesOf_IEnumerator_4sudxd_ = "parameter";
+          if (nodeToMatch_4sudxd_a0a.getChildCount(childRole_supertypesOf_IEnumerator_4sudxd_) != 1) {
             return false;
           }
           {
-            SNode childVar_4sudxd_a0a0 = nodeToMatch_4sudxd_a0a.getChildren(childRole_4sudxd_).get(0);
+            SNode childVar_4sudxd_a0a0 = nodeToMatch_4sudxd_a0a.getChildren(childRole_supertypesOf_IEnumerator_4sudxd_).get(0);
             this.patternVar_p = childVar_4sudxd_a0a0;
           }
         }

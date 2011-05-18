@@ -86,12 +86,12 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
           return false;
         }
         {
-          String childRole_iav8o_ = "elementType";
-          if (nodeToMatch_iav8o_a0a.getChildCount(childRole_iav8o_) != 1) {
+          String childRole_supertypesOf_ListType_SNodeListType_iav8o_ = "elementType";
+          if (nodeToMatch_iav8o_a0a.getChildCount(childRole_supertypesOf_ListType_SNodeListType_iav8o_) != 1) {
             return false;
           }
           {
-            SNode childVar_iav8o_a0a0 = nodeToMatch_iav8o_a0a.getChildren(childRole_iav8o_).get(0);
+            SNode childVar_iav8o_a0a0 = nodeToMatch_iav8o_a0a.getChildren(childRole_supertypesOf_ListType_SNodeListType_iav8o_).get(0);
             {
               SNode nodeToMatch_iav8o_a0a0;
               nodeToMatch_iav8o_a0a0 = childVar_iav8o_a0a0;

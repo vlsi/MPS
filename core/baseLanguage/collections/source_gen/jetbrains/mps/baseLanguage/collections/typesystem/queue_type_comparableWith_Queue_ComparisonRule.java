@@ -72,12 +72,12 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
           }
         }
         {
-          String childRole_jt8ol0_ = "parameter";
-          if (nodeToMatch_jt8ol0_a0a.getChildCount(childRole_jt8ol0_) != 1) {
+          String childRole_queue_type_comparableWith_Queue_jt8ol0_ = "parameter";
+          if (nodeToMatch_jt8ol0_a0a.getChildCount(childRole_queue_type_comparableWith_Queue_jt8ol0_) != 1) {
             return false;
           }
           {
-            SNode childVar_jt8ol0_a0a0 = nodeToMatch_jt8ol0_a0a.getChildren(childRole_jt8ol0_).get(0);
+            SNode childVar_jt8ol0_a0a0 = nodeToMatch_jt8ol0_a0a.getChildren(childRole_queue_type_comparableWith_Queue_jt8ol0_).get(0);
             this.patternVar_ELEMENT_TYPE = childVar_jt8ol0_a0a0;
           }
         }

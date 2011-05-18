@@ -241,12 +241,12 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4_ = "expression";
-          if (nodeToMatch_x583g4_a0a0a23.getChildCount(childRole_x583g4_) != 1) {
+          String childRole_QueriesGenerated_x583g4_ = "expression";
+          if (nodeToMatch_x583g4_a0a0a23.getChildCount(childRole_QueriesGenerated_x583g4_) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0gb = nodeToMatch_x583g4_a0a0a23.getChildren(childRole_x583g4_).get(0);
+            SNode childVar_x583g4_a0a0a0gb = nodeToMatch_x583g4_a0a0a23.getChildren(childRole_QueriesGenerated_x583g4_).get(0);
             {
               SNode nodeToMatch_x583g4_a0a0a0gb;
               nodeToMatch_x583g4_a0a0a0gb = childVar_x583g4_a0a0a0gb;
@@ -254,22 +254,22 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__0 = "lValue";
-                if (nodeToMatch_x583g4_a0a0a0gb.getChildCount(childRole_x583g4__0) != 1) {
+                String childRole_QueriesGenerated_x583g4__0 = "lValue";
+                if (nodeToMatch_x583g4_a0a0a0gb.getChildCount(childRole_QueriesGenerated_x583g4__0) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a23 = nodeToMatch_x583g4_a0a0a0gb.getChildren(childRole_x583g4__0).get(0);
+                  SNode childVar_x583g4_a0a0a0a23 = nodeToMatch_x583g4_a0a0a0gb.getChildren(childRole_QueriesGenerated_x583g4__0).get(0);
                   this.patternVar_yy = childVar_x583g4_a0a0a0a23;
                 }
               }
               {
-                String childRole_x583g4__1 = "rValue";
-                if (nodeToMatch_x583g4_a0a0a0gb.getChildCount(childRole_x583g4__1) != 1) {
+                String childRole_QueriesGenerated_x583g4__1 = "rValue";
+                if (nodeToMatch_x583g4_a0a0a0gb.getChildCount(childRole_QueriesGenerated_x583g4__1) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a23_0 = nodeToMatch_x583g4_a0a0a0gb.getChildren(childRole_x583g4__1).get(0);
+                  SNode childVar_x583g4_a0a0a0a23_0 = nodeToMatch_x583g4_a0a0a0gb.getChildren(childRole_QueriesGenerated_x583g4__1).get(0);
                   {
                     SNode nodeToMatch_x583g4_a0a0a0a23;
                     nodeToMatch_x583g4_a0a0a0a23 = childVar_x583g4_a0a0a0a23_0;
@@ -277,22 +277,22 @@ public class QueriesGenerated {
                       return false;
                     }
                     {
-                      String childRole_x583g4__2 = "leftExpression";
-                      if (nodeToMatch_x583g4_a0a0a0a23.getChildCount(childRole_x583g4__2) != 1) {
+                      String childRole_QueriesGenerated_x583g4__2 = "leftExpression";
+                      if (nodeToMatch_x583g4_a0a0a0a23.getChildCount(childRole_QueriesGenerated_x583g4__2) != 1) {
                         return false;
                       }
                       {
-                        SNode childVar_x583g4_a0a0a0a0gb = nodeToMatch_x583g4_a0a0a0a23.getChildren(childRole_x583g4__2).get(0);
+                        SNode childVar_x583g4_a0a0a0a0gb = nodeToMatch_x583g4_a0a0a0a23.getChildren(childRole_QueriesGenerated_x583g4__2).get(0);
                         this.patternVar_xx = childVar_x583g4_a0a0a0a0gb;
                       }
                     }
                     {
-                      String childRole_x583g4__3 = "rightExpression";
-                      if (nodeToMatch_x583g4_a0a0a0a23.getChildCount(childRole_x583g4__3) != 1) {
+                      String childRole_QueriesGenerated_x583g4__3 = "rightExpression";
+                      if (nodeToMatch_x583g4_a0a0a0a23.getChildCount(childRole_QueriesGenerated_x583g4__3) != 1) {
                         return false;
                       }
                       {
-                        SNode childVar_x583g4_a0a0a0a0gb_0 = nodeToMatch_x583g4_a0a0a0a23.getChildren(childRole_x583g4__3).get(0);
+                        SNode childVar_x583g4_a0a0a0a0gb_0 = nodeToMatch_x583g4_a0a0a0a23.getChildren(childRole_QueriesGenerated_x583g4__3).get(0);
                         this.patternVar_right = childVar_x583g4_a0a0a0a0gb_0;
                       }
                     }
@@ -350,22 +350,22 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4__4 = "leftExpression";
-          if (nodeToMatch_x583g4_a0a0a33.getChildCount(childRole_x583g4__4) != 1) {
+          String childRole_QueriesGenerated_x583g4__4 = "leftExpression";
+          if (nodeToMatch_x583g4_a0a0a33.getChildCount(childRole_QueriesGenerated_x583g4__4) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0hb = nodeToMatch_x583g4_a0a0a33.getChildren(childRole_x583g4__4).get(0);
+            SNode childVar_x583g4_a0a0a0hb = nodeToMatch_x583g4_a0a0a33.getChildren(childRole_QueriesGenerated_x583g4__4).get(0);
             this.patternVar_left = childVar_x583g4_a0a0a0hb;
           }
         }
         {
-          String childRole_x583g4__5 = "rightExpression";
-          if (nodeToMatch_x583g4_a0a0a33.getChildCount(childRole_x583g4__5) != 1) {
+          String childRole_QueriesGenerated_x583g4__5 = "rightExpression";
+          if (nodeToMatch_x583g4_a0a0a33.getChildCount(childRole_QueriesGenerated_x583g4__5) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0hb_0 = nodeToMatch_x583g4_a0a0a33.getChildren(childRole_x583g4__5).get(0);
+            SNode childVar_x583g4_a0a0a0hb_0 = nodeToMatch_x583g4_a0a0a33.getChildren(childRole_QueriesGenerated_x583g4__5).get(0);
             this.patternVar_right = childVar_x583g4_a0a0a0hb_0;
           }
         }
@@ -413,12 +413,12 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4__6 = "expression";
-          if (nodeToMatch_x583g4_a0a0a43.getChildCount(childRole_x583g4__6) != 1) {
+          String childRole_QueriesGenerated_x583g4__6 = "expression";
+          if (nodeToMatch_x583g4_a0a0a43.getChildCount(childRole_QueriesGenerated_x583g4__6) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0ib = nodeToMatch_x583g4_a0a0a43.getChildren(childRole_x583g4__6).get(0);
+            SNode childVar_x583g4_a0a0a0ib = nodeToMatch_x583g4_a0a0a43.getChildren(childRole_QueriesGenerated_x583g4__6).get(0);
             {
               SNode nodeToMatch_x583g4_a0a0a0ib;
               nodeToMatch_x583g4_a0a0a0ib = childVar_x583g4_a0a0a0ib;
@@ -426,22 +426,22 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__7 = "leftExpression";
-                if (nodeToMatch_x583g4_a0a0a0ib.getChildCount(childRole_x583g4__7) != 1) {
+                String childRole_QueriesGenerated_x583g4__7 = "leftExpression";
+                if (nodeToMatch_x583g4_a0a0a0ib.getChildCount(childRole_QueriesGenerated_x583g4__7) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a43 = nodeToMatch_x583g4_a0a0a0ib.getChildren(childRole_x583g4__7).get(0);
+                  SNode childVar_x583g4_a0a0a0a43 = nodeToMatch_x583g4_a0a0a0ib.getChildren(childRole_QueriesGenerated_x583g4__7).get(0);
                   this.patternVar_left = childVar_x583g4_a0a0a0a43;
                 }
               }
               {
-                String childRole_x583g4__8 = "rightExpression";
-                if (nodeToMatch_x583g4_a0a0a0ib.getChildCount(childRole_x583g4__8) != 1) {
+                String childRole_QueriesGenerated_x583g4__8 = "rightExpression";
+                if (nodeToMatch_x583g4_a0a0a0ib.getChildCount(childRole_QueriesGenerated_x583g4__8) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a43_0 = nodeToMatch_x583g4_a0a0a0ib.getChildren(childRole_x583g4__8).get(0);
+                  SNode childVar_x583g4_a0a0a0a43_0 = nodeToMatch_x583g4_a0a0a0ib.getChildren(childRole_QueriesGenerated_x583g4__8).get(0);
                   this.patternVar_right = childVar_x583g4_a0a0a0a43_0;
                 }
               }
@@ -493,12 +493,12 @@ public class QueriesGenerated {
         }
         patternVar_jobName = nodeToMatch_x583g4_a0a0a53.getProperty("name");
         {
-          String childRole_x583g4__9 = "inner";
-          if (nodeToMatch_x583g4_a0a0a53.getChildCount(childRole_x583g4__9) != 1) {
+          String childRole_QueriesGenerated_x583g4__9 = "inner";
+          if (nodeToMatch_x583g4_a0a0a53.getChildCount(childRole_QueriesGenerated_x583g4__9) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0jb = nodeToMatch_x583g4_a0a0a53.getChildren(childRole_x583g4__9).get(0);
+            SNode childVar_x583g4_a0a0a0jb = nodeToMatch_x583g4_a0a0a53.getChildren(childRole_QueriesGenerated_x583g4__9).get(0);
             this.patternVar_myExpr = childVar_x583g4_a0a0a0jb;
           }
         }

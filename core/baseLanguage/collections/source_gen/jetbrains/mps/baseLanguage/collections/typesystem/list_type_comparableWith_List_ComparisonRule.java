@@ -72,12 +72,12 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
           }
         }
         {
-          String childRole_ho857w_ = "parameter";
-          if (nodeToMatch_ho857w_a0a.getChildCount(childRole_ho857w_) != 1) {
+          String childRole_list_type_comparableWith_List_ho857w_ = "parameter";
+          if (nodeToMatch_ho857w_a0a.getChildCount(childRole_list_type_comparableWith_List_ho857w_) != 1) {
             return false;
           }
           {
-            SNode childVar_ho857w_a0a0 = nodeToMatch_ho857w_a0a.getChildren(childRole_ho857w_).get(0);
+            SNode childVar_ho857w_a0a0 = nodeToMatch_ho857w_a0a.getChildren(childRole_list_type_comparableWith_List_ho857w_).get(0);
             this.patternVar_ELEMENT = childVar_ho857w_a0a0;
           }
         }

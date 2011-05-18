@@ -38,12 +38,12 @@ public class MapSrcListMacro_Behavior {
           return false;
         }
         {
-          String childRole_wn5chh_ = "elementType";
-          if (nodeToMatch_wn5chh_a0a0a0.getChildCount(childRole_wn5chh_) != 1) {
+          String childRole_MapSrcListMacro_Behavior_wn5chh_ = "elementType";
+          if (nodeToMatch_wn5chh_a0a0a0.getChildCount(childRole_MapSrcListMacro_Behavior_wn5chh_) != 1) {
             return false;
           }
           {
-            SNode childVar_wn5chh_a0a0a0a = nodeToMatch_wn5chh_a0a0a0.getChildren(childRole_wn5chh_).get(0);
+            SNode childVar_wn5chh_a0a0a0a = nodeToMatch_wn5chh_a0a0a0.getChildren(childRole_MapSrcListMacro_Behavior_wn5chh_).get(0);
             {
               SNode nodeToMatch_wn5chh_a0a0a0a;
               nodeToMatch_wn5chh_a0a0a0a = childVar_wn5chh_a0a0a0a;

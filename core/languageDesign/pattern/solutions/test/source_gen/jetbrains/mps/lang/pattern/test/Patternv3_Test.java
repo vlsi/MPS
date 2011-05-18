@@ -113,12 +113,12 @@ public class Patternv3_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_1fi__0 = "operand";
-            if (nodeToMatch_1fi_a0_0.getChildCount(childRole_1fi__0) != 1) {
+            String childRole_v3_1fi_ = "operand";
+            if (nodeToMatch_1fi_a0_0.getChildCount(childRole_v3_1fi_) != 1) {
               return false;
             }
             {
-              SNode childVar_1fi_a0a_0 = nodeToMatch_1fi_a0_0.getChildren(childRole_1fi__0).get(0);
+              SNode childVar_1fi_a0a_0 = nodeToMatch_1fi_a0_0.getChildren(childRole_v3_1fi_).get(0);
               {
                 SNode nodeToMatch_1fi_a0a;
                 nodeToMatch_1fi_a0a = childVar_1fi_a0a_0;
@@ -131,12 +131,12 @@ public class Patternv3_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_1fi__2 = "operation";
-            if (nodeToMatch_1fi_a0_0.getChildCount(childRole_1fi__2) != 1) {
+            String childRole_v3_1fi__0 = "operation";
+            if (nodeToMatch_1fi_a0_0.getChildCount(childRole_v3_1fi__0) != 1) {
               return false;
             }
             {
-              SNode childVar_1fi_a0a_1 = nodeToMatch_1fi_a0_0.getChildren(childRole_1fi__2).get(0);
+              SNode childVar_1fi_a0a_1 = nodeToMatch_1fi_a0_0.getChildren(childRole_v3_1fi__0).get(0);
               {
                 SNode nodeToMatch_1fi_a0a_0;
                 nodeToMatch_1fi_a0a_0 = childVar_1fi_a0a_1;
@@ -145,12 +145,12 @@ public class Patternv3_Test extends BaseTransformationTest {
                 }
                 patternVar_method = nodeToMatch_1fi_a0a_0.getReferent("baseMethodDeclaration");
                 {
-                  String childRole_1fi__5 = "actualArgument";
-                  if (nodeToMatch_1fi_a0a_0.getChildCount(childRole_1fi__5) != 1) {
+                  String childRole_v3_1fi__1 = "actualArgument";
+                  if (nodeToMatch_1fi_a0a_0.getChildCount(childRole_v3_1fi__1) != 1) {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a0a0 = nodeToMatch_1fi_a0a_0.getChildren(childRole_1fi__5).get(0);
+                    SNode childVar_1fi_a0a0 = nodeToMatch_1fi_a0a_0.getChildren(childRole_v3_1fi__1).get(0);
                     this.patternVar_printed = childVar_1fi_a0a0;
                   }
                 }

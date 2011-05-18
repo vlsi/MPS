@@ -88,12 +88,12 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
           }
         }
         {
-          String childRole_gn1qzs_ = "parameter";
-          if (nodeToMatch_gn1qzs_a0a2a.getChildCount(childRole_gn1qzs_) != 1) {
+          String childRole_check_ForeachWithErasure_gn1qzs_ = "parameter";
+          if (nodeToMatch_gn1qzs_a0a2a.getChildCount(childRole_check_ForeachWithErasure_gn1qzs_) != 1) {
             return false;
           }
           {
-            SNode childVar_gn1qzs_a0a0c0 = nodeToMatch_gn1qzs_a0a2a.getChildren(childRole_gn1qzs_).get(0);
+            SNode childVar_gn1qzs_a0a0c0 = nodeToMatch_gn1qzs_a0a2a.getChildren(childRole_check_ForeachWithErasure_gn1qzs_).get(0);
             this.patternVar_p = childVar_gn1qzs_a0a0c0;
           }
         }

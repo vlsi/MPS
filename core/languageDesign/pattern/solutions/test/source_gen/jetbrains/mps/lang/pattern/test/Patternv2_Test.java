@@ -185,15 +185,15 @@ public class Patternv2_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_1fi_ = "statement";
-            if (nodeToMatch_1fi_a0.getChildCount(childRole_1fi_) != 3) {
+            String childRole_v2_1fi_ = "statement";
+            if (nodeToMatch_1fi_a0.getChildCount(childRole_v2_1fi_) != 3) {
               return false;
             }
             {
-              SNode childVar_1fi_a0a = nodeToMatch_1fi_a0.getChildren(childRole_1fi_).get(0);
+              SNode childVar_1fi_a0a = nodeToMatch_1fi_a0.getChildren(childRole_v2_1fi_).get(0);
             }
             {
-              SNode childVar_1fi_b0a = nodeToMatch_1fi_a0.getChildren(childRole_1fi_).get(1);
+              SNode childVar_1fi_b0a = nodeToMatch_1fi_a0.getChildren(childRole_v2_1fi_).get(1);
               {
                 SNode nodeToMatch_1fi_b0a;
                 nodeToMatch_1fi_b0a = childVar_1fi_b0a;
@@ -201,12 +201,12 @@ public class Patternv2_Test extends BaseTransformationTest {
                   return false;
                 }
                 {
-                  String childRole_1fi__1 = "condition";
-                  if (nodeToMatch_1fi_b0a.getChildCount(childRole_1fi__1) != 1) {
+                  String childRole_v2_1fi__0 = "condition";
+                  if (nodeToMatch_1fi_b0a.getChildCount(childRole_v2_1fi__0) != 1) {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a1a0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__1).get(0);
+                    SNode childVar_1fi_a1a0 = nodeToMatch_1fi_b0a.getChildren(childRole_v2_1fi__0).get(0);
                     {
                       SNode nodeToMatch_1fi_a1a0;
                       nodeToMatch_1fi_a1a0 = childVar_1fi_a1a0;
@@ -214,22 +214,22 @@ public class Patternv2_Test extends BaseTransformationTest {
                         return false;
                       }
                       {
-                        String childRole_1fi__3 = "leftExpression";
-                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__3) != 1) {
+                        String childRole_v2_1fi__1 = "leftExpression";
+                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_v2_1fi__1) != 1) {
                           return false;
                         }
                         {
-                          SNode childVar_1fi_a0b0a = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__3).get(0);
+                          SNode childVar_1fi_a0b0a = nodeToMatch_1fi_a1a0.getChildren(childRole_v2_1fi__1).get(0);
                           this.patternVar_p = childVar_1fi_a0b0a;
                         }
                       }
                       {
-                        String childRole_1fi__4 = "rightExpression";
-                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_1fi__4) != 1) {
+                        String childRole_v2_1fi__2 = "rightExpression";
+                        if (nodeToMatch_1fi_a1a0.getChildCount(childRole_v2_1fi__2) != 1) {
                           return false;
                         }
                         {
-                          SNode childVar_1fi_a0b0a_0 = nodeToMatch_1fi_a1a0.getChildren(childRole_1fi__4).get(0);
+                          SNode childVar_1fi_a0b0a_0 = nodeToMatch_1fi_a1a0.getChildren(childRole_v2_1fi__2).get(0);
                           {
                             SNode nodeToMatch_1fi_a0b0a;
                             nodeToMatch_1fi_a0b0a = childVar_1fi_a0b0a_0;
@@ -243,19 +243,19 @@ public class Patternv2_Test extends BaseTransformationTest {
                   }
                 }
                 {
-                  String childRole_1fi__6 = "ifTrue";
-                  if (nodeToMatch_1fi_b0a.getChildCount(childRole_1fi__6) != 1) {
+                  String childRole_v2_1fi__3 = "ifTrue";
+                  if (nodeToMatch_1fi_b0a.getChildCount(childRole_v2_1fi__3) != 1) {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a1a0_0 = nodeToMatch_1fi_b0a.getChildren(childRole_1fi__6).get(0);
+                    SNode childVar_1fi_a1a0_0 = nodeToMatch_1fi_b0a.getChildren(childRole_v2_1fi__3).get(0);
                     this.patternVar_ifbody = childVar_1fi_a1a0_0;
                   }
                 }
               }
             }
             {
-              SNode childVar_1fi_c0a = nodeToMatch_1fi_a0.getChildren(childRole_1fi_).get(2);
+              SNode childVar_1fi_c0a = nodeToMatch_1fi_a0.getChildren(childRole_v2_1fi_).get(2);
             }
           }
         }

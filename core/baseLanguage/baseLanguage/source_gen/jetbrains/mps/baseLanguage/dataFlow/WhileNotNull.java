@@ -39,12 +39,12 @@ public class WhileNotNull extends DataFlowConstructor {
           return false;
         }
         {
-          String childRole_pezsk4_ = "body";
-          if (nodeToMatch_pezsk4_a0a.getChildCount(childRole_pezsk4_) != 1) {
+          String childRole_WhileNotNull_pezsk4_ = "body";
+          if (nodeToMatch_pezsk4_a0a.getChildCount(childRole_WhileNotNull_pezsk4_) != 1) {
             return false;
           }
           {
-            SNode childVar_pezsk4_a0a0 = nodeToMatch_pezsk4_a0a.getChildren(childRole_pezsk4_).get(0);
+            SNode childVar_pezsk4_a0a0 = nodeToMatch_pezsk4_a0a.getChildren(childRole_WhileNotNull_pezsk4_).get(0);
             {
               SNode nodeToMatch_pezsk4_a0a0;
               nodeToMatch_pezsk4_a0a0 = childVar_pezsk4_a0a0;
@@ -56,12 +56,12 @@ public class WhileNotNull extends DataFlowConstructor {
           }
         }
         {
-          String childRole_pezsk4__0 = "condition";
-          if (nodeToMatch_pezsk4_a0a.getChildCount(childRole_pezsk4__0) != 1) {
+          String childRole_WhileNotNull_pezsk4__0 = "condition";
+          if (nodeToMatch_pezsk4_a0a.getChildCount(childRole_WhileNotNull_pezsk4__0) != 1) {
             return false;
           }
           {
-            SNode childVar_pezsk4_a0a0_0 = nodeToMatch_pezsk4_a0a.getChildren(childRole_pezsk4__0).get(0);
+            SNode childVar_pezsk4_a0a0_0 = nodeToMatch_pezsk4_a0a.getChildren(childRole_WhileNotNull_pezsk4__0).get(0);
             {
               SNode nodeToMatch_pezsk4_a0a0_0;
               nodeToMatch_pezsk4_a0a0_0 = childVar_pezsk4_a0a0_0;
@@ -140,12 +140,12 @@ public class WhileNotNull extends DataFlowConstructor {
             return false;
           }
           {
-            String childRole_pezsk4__1 = "leftExpression";
-            if (nodeToMatch_pezsk4_a0a0a0.getChildCount(childRole_pezsk4__1) != 1) {
+            String childRole_WhileNotNull_pezsk4__1 = "leftExpression";
+            if (nodeToMatch_pezsk4_a0a0a0.getChildCount(childRole_WhileNotNull_pezsk4__1) != 1) {
               return false;
             }
             {
-              SNode childVar_pezsk4_a0a0a0a = nodeToMatch_pezsk4_a0a0a0.getChildren(childRole_pezsk4__1).get(0);
+              SNode childVar_pezsk4_a0a0a0a = nodeToMatch_pezsk4_a0a0a0.getChildren(childRole_WhileNotNull_pezsk4__1).get(0);
               {
                 SNode nodeToMatch_pezsk4_a0a0a0a;
                 nodeToMatch_pezsk4_a0a0a0a = childVar_pezsk4_a0a0a0a;
@@ -154,12 +154,12 @@ public class WhileNotNull extends DataFlowConstructor {
             }
           }
           {
-            String childRole_pezsk4__2 = "rightExpression";
-            if (nodeToMatch_pezsk4_a0a0a0.getChildCount(childRole_pezsk4__2) != 1) {
+            String childRole_WhileNotNull_pezsk4__2 = "rightExpression";
+            if (nodeToMatch_pezsk4_a0a0a0.getChildCount(childRole_WhileNotNull_pezsk4__2) != 1) {
               return false;
             }
             {
-              SNode childVar_pezsk4_a0a0a0a_0 = nodeToMatch_pezsk4_a0a0a0.getChildren(childRole_pezsk4__2).get(0);
+              SNode childVar_pezsk4_a0a0a0a_0 = nodeToMatch_pezsk4_a0a0a0.getChildren(childRole_WhileNotNull_pezsk4__2).get(0);
               {
                 SNode nodeToMatch_pezsk4_a0a0a0a_0;
                 nodeToMatch_pezsk4_a0a0a0a_0 = childVar_pezsk4_a0a0a0a_0;
@@ -200,12 +200,12 @@ public class WhileNotNull extends DataFlowConstructor {
             return false;
           }
           {
-            String childRole_pezsk4__3 = "leftExpression";
-            if (nodeToMatch_pezsk4_a1a0a0.getChildCount(childRole_pezsk4__3) != 1) {
+            String childRole_WhileNotNull_pezsk4__3 = "leftExpression";
+            if (nodeToMatch_pezsk4_a1a0a0.getChildCount(childRole_WhileNotNull_pezsk4__3) != 1) {
               return false;
             }
             {
-              SNode childVar_pezsk4_a0b0a0a = nodeToMatch_pezsk4_a1a0a0.getChildren(childRole_pezsk4__3).get(0);
+              SNode childVar_pezsk4_a0b0a0a = nodeToMatch_pezsk4_a1a0a0.getChildren(childRole_WhileNotNull_pezsk4__3).get(0);
               {
                 SNode nodeToMatch_pezsk4_a0b0a0a;
                 nodeToMatch_pezsk4_a0b0a0a = childVar_pezsk4_a0b0a0a;
@@ -216,12 +216,12 @@ public class WhileNotNull extends DataFlowConstructor {
             }
           }
           {
-            String childRole_pezsk4__4 = "rightExpression";
-            if (nodeToMatch_pezsk4_a1a0a0.getChildCount(childRole_pezsk4__4) != 1) {
+            String childRole_WhileNotNull_pezsk4__4 = "rightExpression";
+            if (nodeToMatch_pezsk4_a1a0a0.getChildCount(childRole_WhileNotNull_pezsk4__4) != 1) {
               return false;
             }
             {
-              SNode childVar_pezsk4_a0b0a0a_0 = nodeToMatch_pezsk4_a1a0a0.getChildren(childRole_pezsk4__4).get(0);
+              SNode childVar_pezsk4_a0b0a0a_0 = nodeToMatch_pezsk4_a1a0a0.getChildren(childRole_WhileNotNull_pezsk4__4).get(0);
               {
                 SNode nodeToMatch_pezsk4_a0b0a0a_0;
                 nodeToMatch_pezsk4_a0b0a0a_0 = childVar_pezsk4_a0b0a0a_0;

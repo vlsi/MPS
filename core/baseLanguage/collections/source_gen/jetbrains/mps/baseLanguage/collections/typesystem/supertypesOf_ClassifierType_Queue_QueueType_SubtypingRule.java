@@ -123,12 +123,12 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
           }
         }
         {
-          String childRole_jsixhd_ = "parameter";
-          if (nodeToMatch_jsixhd_a0a.getChildCount(childRole_jsixhd_) != 1) {
+          String childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_ = "parameter";
+          if (nodeToMatch_jsixhd_a0a.getChildCount(childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_) != 1) {
             return false;
           }
           {
-            SNode childVar_jsixhd_a0a0 = nodeToMatch_jsixhd_a0a.getChildren(childRole_jsixhd_).get(0);
+            SNode childVar_jsixhd_a0a0 = nodeToMatch_jsixhd_a0a.getChildren(childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_).get(0);
             this.patternVar_ELEMENT_TYPE = childVar_jsixhd_a0a0;
           }
         }

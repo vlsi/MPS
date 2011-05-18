@@ -294,10 +294,10 @@ public class ClassifierType_Behavior {
           }
         }
         {
-          String childRole_hz3823_ = "parameter";
+          String childRole_ClassifierType_Behavior_hz3823_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_)) {
+          for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_ClassifierType_Behavior_hz3823_)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

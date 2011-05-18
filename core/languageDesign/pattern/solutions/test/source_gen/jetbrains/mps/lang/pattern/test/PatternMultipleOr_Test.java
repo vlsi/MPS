@@ -142,12 +142,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_qy0uft_ = "condition";
-            if (nodeToMatch_qy0uft_a0.getChildCount(childRole_qy0uft_) != 1) {
+            String childRole_MultipleOr_qy0uft_ = "condition";
+            if (nodeToMatch_qy0uft_a0.getChildCount(childRole_MultipleOr_qy0uft_) != 1) {
               return false;
             }
             {
-              SNode childVar_qy0uft_a0a = nodeToMatch_qy0uft_a0.getChildren(childRole_qy0uft_).get(0);
+              SNode childVar_qy0uft_a0a = nodeToMatch_qy0uft_a0.getChildren(childRole_MultipleOr_qy0uft_).get(0);
               {
                 SNode nodeToMatch_qy0uft_a0a;
                 nodeToMatch_qy0uft_a0a = childVar_qy0uft_a0a;
@@ -182,12 +182,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_qy0uft__12 = "ifTrue";
-            if (nodeToMatch_qy0uft_a0.getChildCount(childRole_qy0uft__12) != 1) {
+            String childRole_MultipleOr_qy0uft__12 = "ifTrue";
+            if (nodeToMatch_qy0uft_a0.getChildCount(childRole_MultipleOr_qy0uft__12) != 1) {
               return false;
             }
             {
-              SNode childVar_qy0uft_a0a_0 = nodeToMatch_qy0uft_a0.getChildren(childRole_qy0uft__12).get(0);
+              SNode childVar_qy0uft_a0a_0 = nodeToMatch_qy0uft_a0.getChildren(childRole_MultipleOr_qy0uft__12).get(0);
               {
                 SNode nodeToMatch_qy0uft_a0a_0;
                 nodeToMatch_qy0uft_a0a_0 = childVar_qy0uft_a0a_0;
@@ -233,12 +233,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_qy0uft__0 = "leftExpression";
-              if (nodeToMatch_qy0uft_a0a0a.getChildCount(childRole_qy0uft__0) != 1) {
+              String childRole_MultipleOr_qy0uft__0 = "leftExpression";
+              if (nodeToMatch_qy0uft_a0a0a.getChildCount(childRole_MultipleOr_qy0uft__0) != 1) {
                 return false;
               }
               {
-                SNode childVar_qy0uft_a0a0a0 = nodeToMatch_qy0uft_a0a0a.getChildren(childRole_qy0uft__0).get(0);
+                SNode childVar_qy0uft_a0a0a0 = nodeToMatch_qy0uft_a0a0a.getChildren(childRole_MultipleOr_qy0uft__0).get(0);
                 {
                   SNode nodeToMatch_qy0uft_a0a0a0;
                   nodeToMatch_qy0uft_a0a0a0 = childVar_qy0uft_a0a0a0;
@@ -249,12 +249,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_qy0uft__1 = "rightExpression";
-              if (nodeToMatch_qy0uft_a0a0a.getChildCount(childRole_qy0uft__1) != 1) {
+              String childRole_MultipleOr_qy0uft__1 = "rightExpression";
+              if (nodeToMatch_qy0uft_a0a0a.getChildCount(childRole_MultipleOr_qy0uft__1) != 1) {
                 return false;
               }
               {
-                SNode childVar_qy0uft_a0a0a0_0 = nodeToMatch_qy0uft_a0a0a.getChildren(childRole_qy0uft__1).get(0);
+                SNode childVar_qy0uft_a0a0a0_0 = nodeToMatch_qy0uft_a0a0a.getChildren(childRole_MultipleOr_qy0uft__1).get(0);
                 {
                   SNode nodeToMatch_qy0uft_a0a0a0_0;
                   nodeToMatch_qy0uft_a0a0a0_0 = childVar_qy0uft_a0a0a0_0;
@@ -293,12 +293,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_qy0uft__2 = "leftExpression";
-              if (nodeToMatch_qy0uft_a1a0a.getChildCount(childRole_qy0uft__2) != 1) {
+              String childRole_MultipleOr_qy0uft__2 = "leftExpression";
+              if (nodeToMatch_qy0uft_a1a0a.getChildCount(childRole_MultipleOr_qy0uft__2) != 1) {
                 return false;
               }
               {
-                SNode childVar_qy0uft_a0b0a0 = nodeToMatch_qy0uft_a1a0a.getChildren(childRole_qy0uft__2).get(0);
+                SNode childVar_qy0uft_a0b0a0 = nodeToMatch_qy0uft_a1a0a.getChildren(childRole_MultipleOr_qy0uft__2).get(0);
                 {
                   SNode nodeToMatch_qy0uft_a0b0a0;
                   nodeToMatch_qy0uft_a0b0a0 = childVar_qy0uft_a0b0a0;
@@ -307,12 +307,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_qy0uft__3 = "rightExpression";
-              if (nodeToMatch_qy0uft_a1a0a.getChildCount(childRole_qy0uft__3) != 1) {
+              String childRole_MultipleOr_qy0uft__3 = "rightExpression";
+              if (nodeToMatch_qy0uft_a1a0a.getChildCount(childRole_MultipleOr_qy0uft__3) != 1) {
                 return false;
               }
               {
-                SNode childVar_qy0uft_a0b0a0_0 = nodeToMatch_qy0uft_a1a0a.getChildren(childRole_qy0uft__3).get(0);
+                SNode childVar_qy0uft_a0b0a0_0 = nodeToMatch_qy0uft_a1a0a.getChildren(childRole_MultipleOr_qy0uft__3).get(0);
                 {
                   SNode nodeToMatch_qy0uft_a0b0a0_0;
                   nodeToMatch_qy0uft_a0b0a0_0 = childVar_qy0uft_a0b0a0_0;
@@ -353,12 +353,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_qy0uft__4 = "leftExpression";
-              if (nodeToMatch_qy0uft_a2a0a.getChildCount(childRole_qy0uft__4) != 1) {
+              String childRole_MultipleOr_qy0uft__4 = "leftExpression";
+              if (nodeToMatch_qy0uft_a2a0a.getChildCount(childRole_MultipleOr_qy0uft__4) != 1) {
                 return false;
               }
               {
-                SNode childVar_qy0uft_a0c0a0 = nodeToMatch_qy0uft_a2a0a.getChildren(childRole_qy0uft__4).get(0);
+                SNode childVar_qy0uft_a0c0a0 = nodeToMatch_qy0uft_a2a0a.getChildren(childRole_MultipleOr_qy0uft__4).get(0);
                 {
                   SNode nodeToMatch_qy0uft_a0c0a0;
                   nodeToMatch_qy0uft_a0c0a0 = childVar_qy0uft_a0c0a0;
@@ -366,12 +366,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                     return false;
                   }
                   {
-                    String childRole_qy0uft__5 = "leftExpression";
-                    if (nodeToMatch_qy0uft_a0c0a0.getChildCount(childRole_qy0uft__5) != 1) {
+                    String childRole_MultipleOr_qy0uft__5 = "leftExpression";
+                    if (nodeToMatch_qy0uft_a0c0a0.getChildCount(childRole_MultipleOr_qy0uft__5) != 1) {
                       return false;
                     }
                     {
-                      SNode childVar_qy0uft_a0a2a0a = nodeToMatch_qy0uft_a0c0a0.getChildren(childRole_qy0uft__5).get(0);
+                      SNode childVar_qy0uft_a0a2a0a = nodeToMatch_qy0uft_a0c0a0.getChildren(childRole_MultipleOr_qy0uft__5).get(0);
                       {
                         SNode nodeToMatch_qy0uft_a0a2a0a;
                         nodeToMatch_qy0uft_a0a2a0a = childVar_qy0uft_a0a2a0a;
@@ -380,12 +380,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                     }
                   }
                   {
-                    String childRole_qy0uft__6 = "rightExpression";
-                    if (nodeToMatch_qy0uft_a0c0a0.getChildCount(childRole_qy0uft__6) != 1) {
+                    String childRole_MultipleOr_qy0uft__6 = "rightExpression";
+                    if (nodeToMatch_qy0uft_a0c0a0.getChildCount(childRole_MultipleOr_qy0uft__6) != 1) {
                       return false;
                     }
                     {
-                      SNode childVar_qy0uft_a0a2a0a_0 = nodeToMatch_qy0uft_a0c0a0.getChildren(childRole_qy0uft__6).get(0);
+                      SNode childVar_qy0uft_a0a2a0a_0 = nodeToMatch_qy0uft_a0c0a0.getChildren(childRole_MultipleOr_qy0uft__6).get(0);
                       {
                         SNode nodeToMatch_qy0uft_a0a2a0a_0;
                         nodeToMatch_qy0uft_a0a2a0a_0 = childVar_qy0uft_a0a2a0a_0;
@@ -399,12 +399,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_qy0uft__7 = "rightExpression";
-              if (nodeToMatch_qy0uft_a2a0a.getChildCount(childRole_qy0uft__7) != 1) {
+              String childRole_MultipleOr_qy0uft__7 = "rightExpression";
+              if (nodeToMatch_qy0uft_a2a0a.getChildCount(childRole_MultipleOr_qy0uft__7) != 1) {
                 return false;
               }
               {
-                SNode childVar_qy0uft_a0c0a0_0 = nodeToMatch_qy0uft_a2a0a.getChildren(childRole_qy0uft__7).get(0);
+                SNode childVar_qy0uft_a0c0a0_0 = nodeToMatch_qy0uft_a2a0a.getChildren(childRole_MultipleOr_qy0uft__7).get(0);
               }
             }
           }
@@ -438,12 +438,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_qy0uft__8 = "leftExpression";
-              if (nodeToMatch_qy0uft_a3a0a.getChildCount(childRole_qy0uft__8) != 1) {
+              String childRole_MultipleOr_qy0uft__8 = "leftExpression";
+              if (nodeToMatch_qy0uft_a3a0a.getChildCount(childRole_MultipleOr_qy0uft__8) != 1) {
                 return false;
               }
               {
-                SNode childVar_qy0uft_a0d0a0 = nodeToMatch_qy0uft_a3a0a.getChildren(childRole_qy0uft__8).get(0);
+                SNode childVar_qy0uft_a0d0a0 = nodeToMatch_qy0uft_a3a0a.getChildren(childRole_MultipleOr_qy0uft__8).get(0);
                 {
                   SNode nodeToMatch_qy0uft_a0d0a0;
                   nodeToMatch_qy0uft_a0d0a0 = childVar_qy0uft_a0d0a0;
@@ -451,12 +451,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                     return false;
                   }
                   {
-                    String childRole_qy0uft__9 = "leftExpression";
-                    if (nodeToMatch_qy0uft_a0d0a0.getChildCount(childRole_qy0uft__9) != 1) {
+                    String childRole_MultipleOr_qy0uft__9 = "leftExpression";
+                    if (nodeToMatch_qy0uft_a0d0a0.getChildCount(childRole_MultipleOr_qy0uft__9) != 1) {
                       return false;
                     }
                     {
-                      SNode childVar_qy0uft_a0a3a0a = nodeToMatch_qy0uft_a0d0a0.getChildren(childRole_qy0uft__9).get(0);
+                      SNode childVar_qy0uft_a0a3a0a = nodeToMatch_qy0uft_a0d0a0.getChildren(childRole_MultipleOr_qy0uft__9).get(0);
                       {
                         SNode nodeToMatch_qy0uft_a0a3a0a;
                         nodeToMatch_qy0uft_a0a3a0a = childVar_qy0uft_a0a3a0a;
@@ -467,12 +467,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                     }
                   }
                   {
-                    String childRole_qy0uft__10 = "rightExpression";
-                    if (nodeToMatch_qy0uft_a0d0a0.getChildCount(childRole_qy0uft__10) != 1) {
+                    String childRole_MultipleOr_qy0uft__10 = "rightExpression";
+                    if (nodeToMatch_qy0uft_a0d0a0.getChildCount(childRole_MultipleOr_qy0uft__10) != 1) {
                       return false;
                     }
                     {
-                      SNode childVar_qy0uft_a0a3a0a_0 = nodeToMatch_qy0uft_a0d0a0.getChildren(childRole_qy0uft__10).get(0);
+                      SNode childVar_qy0uft_a0a3a0a_0 = nodeToMatch_qy0uft_a0d0a0.getChildren(childRole_MultipleOr_qy0uft__10).get(0);
                       {
                         SNode nodeToMatch_qy0uft_a0a3a0a_0;
                         nodeToMatch_qy0uft_a0a3a0a_0 = childVar_qy0uft_a0a3a0a_0;
@@ -484,12 +484,12 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_qy0uft__11 = "rightExpression";
-              if (nodeToMatch_qy0uft_a3a0a.getChildCount(childRole_qy0uft__11) != 1) {
+              String childRole_MultipleOr_qy0uft__11 = "rightExpression";
+              if (nodeToMatch_qy0uft_a3a0a.getChildCount(childRole_MultipleOr_qy0uft__11) != 1) {
                 return false;
               }
               {
-                SNode childVar_qy0uft_a0d0a0_0 = nodeToMatch_qy0uft_a3a0a.getChildren(childRole_qy0uft__11).get(0);
+                SNode childVar_qy0uft_a0d0a0_0 = nodeToMatch_qy0uft_a3a0a.getChildren(childRole_MultipleOr_qy0uft__11).get(0);
               }
             }
           }

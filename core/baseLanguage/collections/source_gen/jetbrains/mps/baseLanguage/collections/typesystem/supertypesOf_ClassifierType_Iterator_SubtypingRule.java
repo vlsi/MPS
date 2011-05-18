@@ -123,12 +123,12 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
           }
         }
         {
-          String childRole_2lqiec_ = "parameter";
-          if (nodeToMatch_2lqiec_a0a.getChildCount(childRole_2lqiec_) != 1) {
+          String childRole_supertypesOf_ClassifierType_Iterator_2lqiec_ = "parameter";
+          if (nodeToMatch_2lqiec_a0a.getChildCount(childRole_supertypesOf_ClassifierType_Iterator_2lqiec_) != 1) {
             return false;
           }
           {
-            SNode childVar_2lqiec_a0a0 = nodeToMatch_2lqiec_a0a.getChildren(childRole_2lqiec_).get(0);
+            SNode childVar_2lqiec_a0a0 = nodeToMatch_2lqiec_a0a.getChildren(childRole_supertypesOf_ClassifierType_Iterator_2lqiec_).get(0);
             this.patternVar_p = childVar_2lqiec_a0a0;
           }
         }

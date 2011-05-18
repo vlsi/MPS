@@ -72,12 +72,12 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
           }
         }
         {
-          String childRole_h34l93_ = "parameter";
-          if (nodeToMatch_h34l93_a0a.getChildCount(childRole_h34l93_) != 1) {
+          String childRole_stack_type_comparableWith_Deque_h34l93_ = "parameter";
+          if (nodeToMatch_h34l93_a0a.getChildCount(childRole_stack_type_comparableWith_Deque_h34l93_) != 1) {
             return false;
           }
           {
-            SNode childVar_h34l93_a0a0 = nodeToMatch_h34l93_a0a.getChildren(childRole_h34l93_).get(0);
+            SNode childVar_h34l93_a0a0 = nodeToMatch_h34l93_a0a.getChildren(childRole_stack_type_comparableWith_Deque_h34l93_).get(0);
             this.patternVar_ELEMENT_TYPE = childVar_h34l93_a0a0;
           }
         }

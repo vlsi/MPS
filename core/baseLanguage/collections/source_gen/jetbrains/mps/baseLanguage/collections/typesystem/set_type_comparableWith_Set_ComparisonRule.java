@@ -72,12 +72,12 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
           }
         }
         {
-          String childRole_plg4lh_ = "parameter";
-          if (nodeToMatch_plg4lh_a0a.getChildCount(childRole_plg4lh_) != 1) {
+          String childRole_set_type_comparableWith_Set_plg4lh_ = "parameter";
+          if (nodeToMatch_plg4lh_a0a.getChildCount(childRole_set_type_comparableWith_Set_plg4lh_) != 1) {
             return false;
           }
           {
-            SNode childVar_plg4lh_a0a0 = nodeToMatch_plg4lh_a0a.getChildren(childRole_plg4lh_).get(0);
+            SNode childVar_plg4lh_a0a0 = nodeToMatch_plg4lh_a0a.getChildren(childRole_set_type_comparableWith_Set_plg4lh_).get(0);
             this.patternVar_ELEMENT = childVar_plg4lh_a0a0;
           }
         }

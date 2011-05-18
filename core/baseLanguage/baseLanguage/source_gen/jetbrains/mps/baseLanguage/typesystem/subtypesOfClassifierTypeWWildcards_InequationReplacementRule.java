@@ -185,10 +185,10 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           }
         }
         {
-          String childRole_n8ubly_ = "parameter";
+          String childRole_subtypesOfClassifierTypeWWildcards_n8ubly_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_n8ubly_a0a0a0a.getChildren(childRole_n8ubly_)) {
+          for (SNode childVar : nodeToMatch_n8ubly_a0a0a0a.getChildren(childRole_subtypesOfClassifierTypeWWildcards_n8ubly_)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
@@ -246,10 +246,10 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           }
         }
         {
-          String childRole_ = "parameter";
+          String childRole_null_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_a0a0a0a.getChildren(childRole_)) {
+          for (SNode childVar : nodeToMatch_a0a0a0a.getChildren(childRole_null_)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

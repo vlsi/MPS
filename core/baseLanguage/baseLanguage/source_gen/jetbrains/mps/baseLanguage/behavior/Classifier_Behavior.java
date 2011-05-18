@@ -338,10 +338,10 @@ public class Classifier_Behavior {
           }
         }
         {
-          String childRole_qw8l7c_ = "parameter";
+          String childRole_Classifier_Behavior_qw8l7c_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_foo = null;
-          for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a61.getChildren(childRole_qw8l7c_)) {
+          for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a61.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
             patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

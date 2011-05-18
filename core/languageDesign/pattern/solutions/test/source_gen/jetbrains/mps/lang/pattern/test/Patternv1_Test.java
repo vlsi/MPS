@@ -129,12 +129,12 @@ public class Patternv1_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_1fh_ = "operand";
-            if (nodeToMatch_1fh_a0.getChildCount(childRole_1fh_) != 1) {
+            String childRole_v1_1fh_ = "operand";
+            if (nodeToMatch_1fh_a0.getChildCount(childRole_v1_1fh_) != 1) {
               return false;
             }
             {
-              SNode childVar_1fh_a0a = nodeToMatch_1fh_a0.getChildren(childRole_1fh_).get(0);
+              SNode childVar_1fh_a0a = nodeToMatch_1fh_a0.getChildren(childRole_v1_1fh_).get(0);
               {
                 SNode nodeToMatch_1fh_a0a;
                 nodeToMatch_1fh_a0a = childVar_1fh_a0a;
@@ -147,12 +147,12 @@ public class Patternv1_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_1fh__0 = "operation";
-            if (nodeToMatch_1fh_a0.getChildCount(childRole_1fh__0) != 1) {
+            String childRole_v1_1fh__0 = "operation";
+            if (nodeToMatch_1fh_a0.getChildCount(childRole_v1_1fh__0) != 1) {
               return false;
             }
             {
-              SNode childVar_1fh_a0a_0 = nodeToMatch_1fh_a0.getChildren(childRole_1fh__0).get(0);
+              SNode childVar_1fh_a0a_0 = nodeToMatch_1fh_a0.getChildren(childRole_v1_1fh__0).get(0);
               {
                 SNode nodeToMatch_1fh_a0a_0;
                 nodeToMatch_1fh_a0a_0 = childVar_1fh_a0a_0;
@@ -161,10 +161,10 @@ public class Patternv1_Test extends BaseTransformationTest {
                 }
                 patternVar_method = nodeToMatch_1fh_a0a_0.getReferent("baseMethodDeclaration");
                 {
-                  String childRole_1fh__1 = "actualArgument";
+                  String childRole_v1_1fh__1 = "actualArgument";
                   this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
                   patternVar_ignore = null;
-                  for (SNode childVar : nodeToMatch_1fh_a0a_0.getChildren(childRole_1fh__1)) {
+                  for (SNode childVar : nodeToMatch_1fh_a0a_0.getChildren(childRole_v1_1fh__1)) {
                     patternVar_ignore = childVar;
                     ListSequence.fromList(this.patternVar_list).addElement(childVar);
                   }

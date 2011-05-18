@@ -40,12 +40,12 @@ public class RuleAssertNull extends DataFlowConstructor {
           return false;
         }
         {
-          String childRole_ah97h0_ = "condition";
-          if (nodeToMatch_ah97h0_a0a.getChildCount(childRole_ah97h0_) != 1) {
+          String childRole_RuleAssertNull_ah97h0_ = "condition";
+          if (nodeToMatch_ah97h0_a0a.getChildCount(childRole_RuleAssertNull_ah97h0_) != 1) {
             return false;
           }
           {
-            SNode childVar_ah97h0_a0a0 = nodeToMatch_ah97h0_a0a.getChildren(childRole_ah97h0_).get(0);
+            SNode childVar_ah97h0_a0a0 = nodeToMatch_ah97h0_a0a.getChildren(childRole_RuleAssertNull_ah97h0_).get(0);
             {
               SNode nodeToMatch_ah97h0_a0a0;
               nodeToMatch_ah97h0_a0a0 = childVar_ah97h0_a0a0;
@@ -124,12 +124,12 @@ public class RuleAssertNull extends DataFlowConstructor {
             return false;
           }
           {
-            String childRole_ah97h0__0 = "leftExpression";
-            if (nodeToMatch_ah97h0_a0a0a0.getChildCount(childRole_ah97h0__0) != 1) {
+            String childRole_RuleAssertNull_ah97h0__0 = "leftExpression";
+            if (nodeToMatch_ah97h0_a0a0a0.getChildCount(childRole_RuleAssertNull_ah97h0__0) != 1) {
               return false;
             }
             {
-              SNode childVar_ah97h0_a0a0a0a = nodeToMatch_ah97h0_a0a0a0.getChildren(childRole_ah97h0__0).get(0);
+              SNode childVar_ah97h0_a0a0a0a = nodeToMatch_ah97h0_a0a0a0.getChildren(childRole_RuleAssertNull_ah97h0__0).get(0);
               {
                 SNode nodeToMatch_ah97h0_a0a0a0a;
                 nodeToMatch_ah97h0_a0a0a0a = childVar_ah97h0_a0a0a0a;
@@ -138,12 +138,12 @@ public class RuleAssertNull extends DataFlowConstructor {
             }
           }
           {
-            String childRole_ah97h0__1 = "rightExpression";
-            if (nodeToMatch_ah97h0_a0a0a0.getChildCount(childRole_ah97h0__1) != 1) {
+            String childRole_RuleAssertNull_ah97h0__1 = "rightExpression";
+            if (nodeToMatch_ah97h0_a0a0a0.getChildCount(childRole_RuleAssertNull_ah97h0__1) != 1) {
               return false;
             }
             {
-              SNode childVar_ah97h0_a0a0a0a_0 = nodeToMatch_ah97h0_a0a0a0.getChildren(childRole_ah97h0__1).get(0);
+              SNode childVar_ah97h0_a0a0a0a_0 = nodeToMatch_ah97h0_a0a0a0.getChildren(childRole_RuleAssertNull_ah97h0__1).get(0);
               {
                 SNode nodeToMatch_ah97h0_a0a0a0a_0;
                 nodeToMatch_ah97h0_a0a0a0a_0 = childVar_ah97h0_a0a0a0a_0;
@@ -184,12 +184,12 @@ public class RuleAssertNull extends DataFlowConstructor {
             return false;
           }
           {
-            String childRole_ah97h0__2 = "leftExpression";
-            if (nodeToMatch_ah97h0_a1a0a0.getChildCount(childRole_ah97h0__2) != 1) {
+            String childRole_RuleAssertNull_ah97h0__2 = "leftExpression";
+            if (nodeToMatch_ah97h0_a1a0a0.getChildCount(childRole_RuleAssertNull_ah97h0__2) != 1) {
               return false;
             }
             {
-              SNode childVar_ah97h0_a0b0a0a = nodeToMatch_ah97h0_a1a0a0.getChildren(childRole_ah97h0__2).get(0);
+              SNode childVar_ah97h0_a0b0a0a = nodeToMatch_ah97h0_a1a0a0.getChildren(childRole_RuleAssertNull_ah97h0__2).get(0);
               {
                 SNode nodeToMatch_ah97h0_a0b0a0a;
                 nodeToMatch_ah97h0_a0b0a0a = childVar_ah97h0_a0b0a0a;
@@ -200,12 +200,12 @@ public class RuleAssertNull extends DataFlowConstructor {
             }
           }
           {
-            String childRole_ah97h0__3 = "rightExpression";
-            if (nodeToMatch_ah97h0_a1a0a0.getChildCount(childRole_ah97h0__3) != 1) {
+            String childRole_RuleAssertNull_ah97h0__3 = "rightExpression";
+            if (nodeToMatch_ah97h0_a1a0a0.getChildCount(childRole_RuleAssertNull_ah97h0__3) != 1) {
               return false;
             }
             {
-              SNode childVar_ah97h0_a0b0a0a_0 = nodeToMatch_ah97h0_a1a0a0.getChildren(childRole_ah97h0__3).get(0);
+              SNode childVar_ah97h0_a0b0a0a_0 = nodeToMatch_ah97h0_a1a0a0.getChildren(childRole_RuleAssertNull_ah97h0__3).get(0);
               {
                 SNode nodeToMatch_ah97h0_a0b0a0a_0;
                 nodeToMatch_ah97h0_a0b0a0a_0 = childVar_ah97h0_a0b0a0a_0;

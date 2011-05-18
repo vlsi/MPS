@@ -156,12 +156,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
           return false;
         }
         {
-          String childRole_mvbroc_ = "componentType";
-          if (nodeToMatch_mvbroc_a0a.getChildCount(childRole_mvbroc_) != 1) {
+          String childRole_ObjectArraySupertypes_mvbroc_ = "componentType";
+          if (nodeToMatch_mvbroc_a0a.getChildCount(childRole_ObjectArraySupertypes_mvbroc_) != 1) {
             return false;
           }
           {
-            SNode childVar_mvbroc_a0a0 = nodeToMatch_mvbroc_a0a.getChildren(childRole_mvbroc_).get(0);
+            SNode childVar_mvbroc_a0a0 = nodeToMatch_mvbroc_a0a.getChildren(childRole_ObjectArraySupertypes_mvbroc_).get(0);
             {
               SNode nodeToMatch_mvbroc_a0a0;
               nodeToMatch_mvbroc_a0a0 = childVar_mvbroc_a0a0;

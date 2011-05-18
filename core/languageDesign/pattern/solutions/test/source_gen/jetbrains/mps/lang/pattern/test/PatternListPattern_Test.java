@@ -129,12 +129,12 @@ public class PatternListPattern_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_9twfax_ = "operand";
-            if (nodeToMatch_9twfax_a0.getChildCount(childRole_9twfax_) != 1) {
+            String childRole_ListPattern_9twfax_ = "operand";
+            if (nodeToMatch_9twfax_a0.getChildCount(childRole_ListPattern_9twfax_) != 1) {
               return false;
             }
             {
-              SNode childVar_9twfax_a0a = nodeToMatch_9twfax_a0.getChildren(childRole_9twfax_).get(0);
+              SNode childVar_9twfax_a0a = nodeToMatch_9twfax_a0.getChildren(childRole_ListPattern_9twfax_).get(0);
               {
                 SNode nodeToMatch_9twfax_a0a;
                 nodeToMatch_9twfax_a0a = childVar_9twfax_a0a;
@@ -147,12 +147,12 @@ public class PatternListPattern_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_9twfax__0 = "operation";
-            if (nodeToMatch_9twfax_a0.getChildCount(childRole_9twfax__0) != 1) {
+            String childRole_ListPattern_9twfax__0 = "operation";
+            if (nodeToMatch_9twfax_a0.getChildCount(childRole_ListPattern_9twfax__0) != 1) {
               return false;
             }
             {
-              SNode childVar_9twfax_a0a_0 = nodeToMatch_9twfax_a0.getChildren(childRole_9twfax__0).get(0);
+              SNode childVar_9twfax_a0a_0 = nodeToMatch_9twfax_a0.getChildren(childRole_ListPattern_9twfax__0).get(0);
               {
                 SNode nodeToMatch_9twfax_a0a_0;
                 nodeToMatch_9twfax_a0a_0 = childVar_9twfax_a0a_0;
@@ -161,10 +161,10 @@ public class PatternListPattern_Test extends BaseTransformationTest {
                 }
                 patternVar_method = nodeToMatch_9twfax_a0a_0.getReferent("baseMethodDeclaration");
                 {
-                  String childRole_9twfax__1 = "actualArgument";
+                  String childRole_ListPattern_9twfax__1 = "actualArgument";
                   this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
                   patternVar_ignore = null;
-                  for (SNode childVar : nodeToMatch_9twfax_a0a_0.getChildren(childRole_9twfax__1)) {
+                  for (SNode childVar : nodeToMatch_9twfax_a0a_0.getChildren(childRole_ListPattern_9twfax__1)) {
                     patternVar_ignore = childVar;
                     ListSequence.fromList(this.patternVar_list).addElement(childVar);
                   }

@@ -80,12 +80,12 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
           return false;
         }
         {
-          String childRole_l7cfoj_ = "elementType";
-          if (nodeToMatch_l7cfoj_a0a.getChildCount(childRole_l7cfoj_) != 1) {
+          String childRole_list_covariant_with_extends_l7cfoj_ = "elementType";
+          if (nodeToMatch_l7cfoj_a0a.getChildCount(childRole_list_covariant_with_extends_l7cfoj_) != 1) {
             return false;
           }
           {
-            SNode childVar_l7cfoj_a0a0 = nodeToMatch_l7cfoj_a0a.getChildren(childRole_l7cfoj_).get(0);
+            SNode childVar_l7cfoj_a0a0 = nodeToMatch_l7cfoj_a0a.getChildren(childRole_list_covariant_with_extends_l7cfoj_).get(0);
             this.patternVar_sub = childVar_l7cfoj_a0a0;
           }
         }
@@ -128,12 +128,12 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
           return false;
         }
         {
-          String childRole_l7cfoj__0 = "elementType";
-          if (nodeToMatch_l7cfoj_a0a_0.getChildCount(childRole_l7cfoj__0) != 1) {
+          String childRole_list_covariant_with_extends_l7cfoj__0 = "elementType";
+          if (nodeToMatch_l7cfoj_a0a_0.getChildCount(childRole_list_covariant_with_extends_l7cfoj__0) != 1) {
             return false;
           }
           {
-            SNode childVar_l7cfoj_a0a0_0 = nodeToMatch_l7cfoj_a0a_0.getChildren(childRole_l7cfoj__0).get(0);
+            SNode childVar_l7cfoj_a0a0_0 = nodeToMatch_l7cfoj_a0a_0.getChildren(childRole_list_covariant_with_extends_l7cfoj__0).get(0);
             {
               SNode nodeToMatch_l7cfoj_a0a0;
               nodeToMatch_l7cfoj_a0a0 = childVar_l7cfoj_a0a0_0;
@@ -141,12 +141,12 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
                 return false;
               }
               {
-                String childRole_l7cfoj__1 = "bound";
-                if (nodeToMatch_l7cfoj_a0a0.getChildCount(childRole_l7cfoj__1) != 1) {
+                String childRole_list_covariant_with_extends_l7cfoj__1 = "bound";
+                if (nodeToMatch_l7cfoj_a0a0.getChildCount(childRole_list_covariant_with_extends_l7cfoj__1) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_l7cfoj_a0a0a = nodeToMatch_l7cfoj_a0a0.getChildren(childRole_l7cfoj__1).get(0);
+                  SNode childVar_l7cfoj_a0a0a = nodeToMatch_l7cfoj_a0a0.getChildren(childRole_list_covariant_with_extends_l7cfoj__1).get(0);
                   this.patternVar_super = childVar_l7cfoj_a0a0a;
                 }
               }
