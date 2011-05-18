@@ -25,7 +25,6 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
-import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
@@ -99,7 +98,7 @@ public class ModelPersistence {
     null,
     null,
     null,
-    new ModelPersistence3(),
+    null,
     new ModelPersistence4(),
     new ModelPersistence5(),
     new ModelPersistence6(),
@@ -119,7 +118,7 @@ public class ModelPersistence {
   @NotNull
   private static IModelPersistence getCurrentModelPersistence() {
     IModelPersistence modelPersistence = getModelPersistence(SModelHeader.create(getCurrentPersistenceVersion()));
-    if(modelPersistence == null) {
+    if (modelPersistence == null) {
       modelPersistence = myModelPersistenceFactory[myModelPersistenceFactory.length - 1];
     }
     return modelPersistence;
@@ -128,7 +127,7 @@ public class ModelPersistence {
   @Nullable
   private static IModelPersistence getModelPersistence(SModelHeader header) {
     int persistenceID = header.getPersistenceVersion();
-    if(persistenceID < 0 || persistenceID >= myModelPersistenceFactory.length) {
+    if (persistenceID < 0 || persistenceID >= myModelPersistenceFactory.length) {
       return null;
     }
     return myModelPersistenceFactory[persistenceID];
@@ -194,13 +193,13 @@ public class ModelPersistence {
     Map<String, String> metadata = loadMetadata(file);
     if (metadata != null) {
       result.setMetadata(metadata);
-      if(metadata.containsKey(SModelHeader.VERSION)) {
+      if (metadata.containsKey(SModelHeader.VERSION)) {
         try {
           result.setVersion(Integer.parseInt(metadata.remove(SModelHeader.VERSION)));
         } catch (NumberFormatException ex) {
         }
       }
-      if(metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
+      if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
         result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
       }
     }
@@ -221,7 +220,7 @@ public class ModelPersistence {
       source = JDOMUtil.loadSource(file);
     } catch (Throwable t) {
       SModelReference ref = header.getModelReference();
-      if(ref == null) {
+      if (ref == null) {
         ref = SModelReference.fromPath(file.getPath());
       }
       LOG.error("Error while loading model from file: " + file.getPath(), t);
@@ -318,16 +317,16 @@ public class ModelPersistence {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof DefaultSModelDescriptor) {
       DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
-      Map<String,String> metadata = md.getMetaData();
+      Map<String, String> metadata = md.getMetaData();
 
       // for old persistence, push version/doNotGenerator options => metadata back
       SModelHeader header = model.getSModelHeader();
-      if(persistenceVersion < 7 && (header.getVersion() != -1 || header.isDoNotGenerate())) {
-        metadata = new HashMap<String,String>(metadata);
-        if(header.getVersion() != -1) {
+      if (persistenceVersion < 7 && (header.getVersion() != -1 || header.isDoNotGenerate())) {
+        metadata = new HashMap<String, String>(metadata);
+        if (header.getVersion() != -1) {
           metadata.put(SModelHeader.VERSION, Integer.toString(header.getVersion()));
         }
-        if(header.isDoNotGenerate()) {
+        if (header.isDoNotGenerate()) {
           metadata.put(SModelHeader.DO_NOT_GENERATE, "true");
         }
       }
@@ -361,7 +360,7 @@ public class ModelPersistence {
     }
 
     IModelPersistence modelPersistence = getModelPersistence(sourceModel.getSModelHeader());
-    if(modelPersistence == null) {
+    if (modelPersistence == null) {
       modelPersistence = getCurrentModelPersistence();
     }
 
@@ -432,7 +431,7 @@ public class ModelPersistence {
     SModelHeader header = getModelHeader(new InputSource(new ByteArrayInputStream(modelBytes)));
     IModelPersistence mp = getModelPersistence(header);
     Map<String, String> result;
-    if(mp != null) {
+    if (mp != null) {
       IHashProvider hashProvider = mp.getHashProvider();
       result = hashProvider.getRootHashes(modelBytes);
       result.put(ModelDigestHelper.FILE, hashProvider.getHash(modelBytes));
