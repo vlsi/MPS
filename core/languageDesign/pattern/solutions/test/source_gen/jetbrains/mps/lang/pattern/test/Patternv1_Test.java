@@ -134,10 +134,10 @@ public class Patternv1_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_1fh_a0a = nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh_).get(0);
+              SNode childVar_v1_1fh_a0a = nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh_).get(0);
               {
                 SNode nodeToMatch_v1_1fh_a0a;
-                nodeToMatch_v1_1fh_a0a = childVar_1fh_a0a;
+                nodeToMatch_v1_1fh_a0a = childVar_v1_1fh_a0a;
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_v1_1fh_a0a.getConceptFqName()))) {
                   return false;
                 }
@@ -152,10 +152,10 @@ public class Patternv1_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_1fh_a0a_0 = nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh__0).get(0);
+              SNode childVar_v1_1fh_a0a_0 = nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh__0).get(0);
               {
                 SNode nodeToMatch_v1_1fh_a0a_0;
-                nodeToMatch_v1_1fh_a0a_0 = childVar_1fh_a0a_0;
+                nodeToMatch_v1_1fh_a0a_0 = childVar_v1_1fh_a0a_0;
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_v1_1fh_a0a_0.getConceptFqName()))) {
                   return false;
                 }

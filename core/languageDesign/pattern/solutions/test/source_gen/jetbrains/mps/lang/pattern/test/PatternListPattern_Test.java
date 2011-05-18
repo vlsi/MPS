@@ -134,10 +134,10 @@ public class PatternListPattern_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_9twfax_a0a = nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax_).get(0);
+              SNode childVar_ListPattern_9twfax_a0a = nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax_).get(0);
               {
                 SNode nodeToMatch_ListPattern_9twfax_a0a;
-                nodeToMatch_ListPattern_9twfax_a0a = childVar_9twfax_a0a;
+                nodeToMatch_ListPattern_9twfax_a0a = childVar_ListPattern_9twfax_a0a;
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_ListPattern_9twfax_a0a.getConceptFqName()))) {
                   return false;
                 }
@@ -152,10 +152,10 @@ public class PatternListPattern_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_9twfax_a0a_0 = nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax__0).get(0);
+              SNode childVar_ListPattern_9twfax_a0a_0 = nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax__0).get(0);
               {
                 SNode nodeToMatch_ListPattern_9twfax_a0a_0;
-                nodeToMatch_ListPattern_9twfax_a0a_0 = childVar_9twfax_a0a_0;
+                nodeToMatch_ListPattern_9twfax_a0a_0 = childVar_ListPattern_9twfax_a0a_0;
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_ListPattern_9twfax_a0a_0.getConceptFqName()))) {
                   return false;
                 }

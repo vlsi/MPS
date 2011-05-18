@@ -118,10 +118,10 @@ public class Patternv3_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_1fi_a0a_0 = nodeToMatch_v3_1fi_a0.getChildren(childRole_v3_1fi_).get(0);
+              SNode childVar_v3_1fi_a0a = nodeToMatch_v3_1fi_a0.getChildren(childRole_v3_1fi_).get(0);
               {
                 SNode nodeToMatch_v3_1fi_a0a;
-                nodeToMatch_v3_1fi_a0a = childVar_1fi_a0a_0;
+                nodeToMatch_v3_1fi_a0a = childVar_v3_1fi_a0a;
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_v3_1fi_a0a.getConceptFqName()))) {
                   return false;
                 }
@@ -136,10 +136,10 @@ public class Patternv3_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_1fi_a0a_1 = nodeToMatch_v3_1fi_a0.getChildren(childRole_v3_1fi__0).get(0);
+              SNode childVar_v3_1fi_a0a_0 = nodeToMatch_v3_1fi_a0.getChildren(childRole_v3_1fi__0).get(0);
               {
                 SNode nodeToMatch_v3_1fi_a0a_0;
-                nodeToMatch_v3_1fi_a0a_0 = childVar_1fi_a0a_1;
+                nodeToMatch_v3_1fi_a0a_0 = childVar_v3_1fi_a0a_0;
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_v3_1fi_a0a_0.getConceptFqName()))) {
                   return false;
                 }
@@ -150,8 +150,8 @@ public class Patternv3_Test extends BaseTransformationTest {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a0a0 = nodeToMatch_v3_1fi_a0a_0.getChildren(childRole_v3_1fi__1).get(0);
-                    this.patternVar_printed = childVar_1fi_a0a0;
+                    SNode childVar_v3_1fi_a0a0 = nodeToMatch_v3_1fi_a0a_0.getChildren(childRole_v3_1fi__1).get(0);
+                    this.patternVar_printed = childVar_v3_1fi_a0a0;
                   }
                 }
               }

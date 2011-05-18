@@ -128,8 +128,8 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
             return false;
           }
           {
-            SNode childVar_z7dq1d_a0a0 = nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getChildren(childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_).get(0);
-            this.patternVar_p = childVar_z7dq1d_a0a0;
+            SNode childVar_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a0 = nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getChildren(childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_).get(0);
+            this.patternVar_p = childVar_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a0;
           }
         }
       }

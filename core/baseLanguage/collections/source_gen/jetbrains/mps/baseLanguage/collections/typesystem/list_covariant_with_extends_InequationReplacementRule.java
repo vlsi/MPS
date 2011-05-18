@@ -85,8 +85,8 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
             return false;
           }
           {
-            SNode childVar_l7cfoj_a0a0 = nodeToMatch_list_covariant_with_extends_l7cfoj_a0a.getChildren(childRole_list_covariant_with_extends_l7cfoj_).get(0);
-            this.patternVar_sub = childVar_l7cfoj_a0a0;
+            SNode childVar_list_covariant_with_extends_l7cfoj_a0a0 = nodeToMatch_list_covariant_with_extends_l7cfoj_a0a.getChildren(childRole_list_covariant_with_extends_l7cfoj_).get(0);
+            this.patternVar_sub = childVar_list_covariant_with_extends_l7cfoj_a0a0;
           }
         }
       }
@@ -133,10 +133,10 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
             return false;
           }
           {
-            SNode childVar_l7cfoj_a0a0_0 = nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0.getChildren(childRole_list_covariant_with_extends_l7cfoj__0).get(0);
+            SNode childVar_list_covariant_with_extends_l7cfoj_a0a0_0 = nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0.getChildren(childRole_list_covariant_with_extends_l7cfoj__0).get(0);
             {
               SNode nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0;
-              nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0 = childVar_l7cfoj_a0a0_0;
+              nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0 = childVar_list_covariant_with_extends_l7cfoj_a0a0_0;
               if (!("jetbrains.mps.baseLanguage.structure.UpperBoundType".equals(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0.getConceptFqName()))) {
                 return false;
               }
@@ -146,8 +146,8 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
                   return false;
                 }
                 {
-                  SNode childVar_l7cfoj_a0a0a = nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0.getChildren(childRole_list_covariant_with_extends_l7cfoj__1).get(0);
-                  this.patternVar_super = childVar_l7cfoj_a0a0a;
+                  SNode childVar_list_covariant_with_extends_l7cfoj_a0a0a = nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0.getChildren(childRole_list_covariant_with_extends_l7cfoj__1).get(0);
+                  this.patternVar_super = childVar_list_covariant_with_extends_l7cfoj_a0a0a;
                 }
               }
             }

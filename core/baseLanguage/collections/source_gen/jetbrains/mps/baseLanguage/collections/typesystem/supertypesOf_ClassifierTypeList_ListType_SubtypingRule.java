@@ -128,8 +128,8 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
             return false;
           }
           {
-            SNode childVar_h8kiwa_a0a0 = nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getChildren(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_).get(0);
-            this.patternVar_elemType = childVar_h8kiwa_a0a0;
+            SNode childVar_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a0 = nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getChildren(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_).get(0);
+            this.patternVar_elemType = childVar_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a0;
           }
         }
       }

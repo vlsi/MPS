@@ -118,8 +118,8 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
             return false;
           }
           {
-            SNode childVar_twopzc_a0a0 = nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getChildren(childRole_sequence_supertypeOf_set_twopzc_).get(0);
-            this.patternVar_elementType = childVar_twopzc_a0a0;
+            SNode childVar_sequence_supertypeOf_set_twopzc_a0a0 = nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getChildren(childRole_sequence_supertypeOf_set_twopzc_).get(0);
+            this.patternVar_elementType = childVar_sequence_supertypeOf_set_twopzc_a0a0;
           }
         }
       }

@@ -77,8 +77,8 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
             return false;
           }
           {
-            SNode childVar_plg4lh_a0a0 = nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a.getChildren(childRole_set_type_comparableWith_Set_plg4lh_).get(0);
-            this.patternVar_ELEMENT = childVar_plg4lh_a0a0;
+            SNode childVar_set_type_comparableWith_Set_plg4lh_a0a0 = nodeToMatch_set_type_comparableWith_Set_plg4lh_a0a.getChildren(childRole_set_type_comparableWith_Set_plg4lh_).get(0);
+            this.patternVar_ELEMENT = childVar_set_type_comparableWith_Set_plg4lh_a0a0;
           }
         }
       }

@@ -47,10 +47,10 @@ public class RuleEqualsNull extends DataFlowConstructor {
             return false;
           }
           {
-            SNode childVar_vwsftd_a0a0 = nodeToMatch_RuleEqualsNull_vwsftd_a0a.getChildren(childRole_RuleEqualsNull_vwsftd_).get(0);
+            SNode childVar_RuleEqualsNull_vwsftd_a0a0 = nodeToMatch_RuleEqualsNull_vwsftd_a0a.getChildren(childRole_RuleEqualsNull_vwsftd_).get(0);
             {
               SNode nodeToMatch_RuleEqualsNull_vwsftd_a0a0;
-              nodeToMatch_RuleEqualsNull_vwsftd_a0a0 = childVar_vwsftd_a0a0;
+              nodeToMatch_RuleEqualsNull_vwsftd_a0a0 = childVar_RuleEqualsNull_vwsftd_a0a0;
               {
                 boolean orMatches = false;
                 GeneratedMatchingPattern orPattern;
@@ -77,10 +77,10 @@ public class RuleEqualsNull extends DataFlowConstructor {
             return false;
           }
           {
-            SNode childVar_vwsftd_a0a0_0 = nodeToMatch_RuleEqualsNull_vwsftd_a0a.getChildren(childRole_RuleEqualsNull_vwsftd__4).get(0);
+            SNode childVar_RuleEqualsNull_vwsftd_a0a0_0 = nodeToMatch_RuleEqualsNull_vwsftd_a0a.getChildren(childRole_RuleEqualsNull_vwsftd__4).get(0);
             {
               SNode nodeToMatch_RuleEqualsNull_vwsftd_a0a0_0;
-              nodeToMatch_RuleEqualsNull_vwsftd_a0a0_0 = childVar_vwsftd_a0a0_0;
+              nodeToMatch_RuleEqualsNull_vwsftd_a0a0_0 = childVar_RuleEqualsNull_vwsftd_a0a0_0;
               if (!("jetbrains.mps.baseLanguage.structure.BlockStatement".equals(nodeToMatch_RuleEqualsNull_vwsftd_a0a0_0.getConceptFqName()))) {
                 return false;
               }
@@ -90,15 +90,15 @@ public class RuleEqualsNull extends DataFlowConstructor {
                   return false;
                 }
                 {
-                  SNode childVar_vwsftd_a0a0a = nodeToMatch_RuleEqualsNull_vwsftd_a0a0_0.getChildren(childRole_RuleEqualsNull_vwsftd__5).get(0);
+                  SNode childVar_RuleEqualsNull_vwsftd_a0a0a = nodeToMatch_RuleEqualsNull_vwsftd_a0a0_0.getChildren(childRole_RuleEqualsNull_vwsftd__5).get(0);
                   {
                     SNode nodeToMatch_RuleEqualsNull_vwsftd_a0a0a;
-                    nodeToMatch_RuleEqualsNull_vwsftd_a0a0a = childVar_vwsftd_a0a0a;
+                    nodeToMatch_RuleEqualsNull_vwsftd_a0a0a = childVar_RuleEqualsNull_vwsftd_a0a0a;
                     if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_RuleEqualsNull_vwsftd_a0a0a.getConceptFqName()))) {
                       return false;
                     }
                   }
-                  this.patternVar_f = childVar_vwsftd_a0a0a;
+                  this.patternVar_f = childVar_RuleEqualsNull_vwsftd_a0a0a;
                 }
               }
             }
@@ -110,15 +110,15 @@ public class RuleEqualsNull extends DataFlowConstructor {
             return false;
           }
           {
-            SNode childVar_vwsftd_a0a0_1 = nodeToMatch_RuleEqualsNull_vwsftd_a0a.getChildren(childRole_RuleEqualsNull_vwsftd__6).get(0);
+            SNode childVar_RuleEqualsNull_vwsftd_a0a0_1 = nodeToMatch_RuleEqualsNull_vwsftd_a0a.getChildren(childRole_RuleEqualsNull_vwsftd__6).get(0);
             {
               SNode nodeToMatch_RuleEqualsNull_vwsftd_a0a0_1;
-              nodeToMatch_RuleEqualsNull_vwsftd_a0a0_1 = childVar_vwsftd_a0a0_1;
+              nodeToMatch_RuleEqualsNull_vwsftd_a0a0_1 = childVar_RuleEqualsNull_vwsftd_a0a0_1;
               if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_RuleEqualsNull_vwsftd_a0a0_1.getConceptFqName()))) {
                 return false;
               }
             }
-            this.patternVar_d = childVar_vwsftd_a0a0_1;
+            this.patternVar_d = childVar_RuleEqualsNull_vwsftd_a0a0_1;
           }
         }
       }
@@ -219,10 +219,10 @@ public class RuleEqualsNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_vwsftd_a0a0a0a = nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0.getChildren(childRole_RuleEqualsNull_vwsftd__0).get(0);
+              SNode childVar_RuleEqualsNull_vwsftd_a0a0a0a = nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0.getChildren(childRole_RuleEqualsNull_vwsftd__0).get(0);
               {
                 SNode nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a;
-                nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a = childVar_vwsftd_a0a0a0a;
+                nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a = childVar_RuleEqualsNull_vwsftd_a0a0a0a;
                 patternVar_p = nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a;
               }
             }
@@ -233,10 +233,10 @@ public class RuleEqualsNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_vwsftd_a0a0a0a_0 = nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0.getChildren(childRole_RuleEqualsNull_vwsftd__1).get(0);
+              SNode childVar_RuleEqualsNull_vwsftd_a0a0a0a_0 = nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0.getChildren(childRole_RuleEqualsNull_vwsftd__1).get(0);
               {
                 SNode nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a_0;
-                nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a_0 = childVar_vwsftd_a0a0a0a_0;
+                nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a_0 = childVar_RuleEqualsNull_vwsftd_a0a0a0a_0;
                 if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_RuleEqualsNull_vwsftd_a0a0a0a_0.getConceptFqName()))) {
                   return false;
                 }
@@ -279,10 +279,10 @@ public class RuleEqualsNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_vwsftd_a0b0a0a = nodeToMatch_RuleEqualsNull_vwsftd_a1a0a0.getChildren(childRole_RuleEqualsNull_vwsftd__2).get(0);
+              SNode childVar_RuleEqualsNull_vwsftd_a0b0a0a = nodeToMatch_RuleEqualsNull_vwsftd_a1a0a0.getChildren(childRole_RuleEqualsNull_vwsftd__2).get(0);
               {
                 SNode nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a;
-                nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a = childVar_vwsftd_a0b0a0a;
+                nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a = childVar_RuleEqualsNull_vwsftd_a0b0a0a;
                 if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a.getConceptFqName()))) {
                   return false;
                 }
@@ -295,10 +295,10 @@ public class RuleEqualsNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_vwsftd_a0b0a0a_0 = nodeToMatch_RuleEqualsNull_vwsftd_a1a0a0.getChildren(childRole_RuleEqualsNull_vwsftd__3).get(0);
+              SNode childVar_RuleEqualsNull_vwsftd_a0b0a0a_0 = nodeToMatch_RuleEqualsNull_vwsftd_a1a0a0.getChildren(childRole_RuleEqualsNull_vwsftd__3).get(0);
               {
                 SNode nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a_0;
-                nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a_0 = childVar_vwsftd_a0b0a0a_0;
+                nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a_0 = childVar_RuleEqualsNull_vwsftd_a0b0a0a_0;
                 patternVar_p = nodeToMatch_RuleEqualsNull_vwsftd_a0b0a0a_0;
               }
             }

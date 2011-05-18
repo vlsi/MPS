@@ -91,10 +91,10 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
             return false;
           }
           {
-            SNode childVar_iav8o_a0a0 = nodeToMatch_supertypesOf_ListType_SNodeListType_iav8o_a0a.getChildren(childRole_supertypesOf_ListType_SNodeListType_iav8o_).get(0);
+            SNode childVar_supertypesOf_ListType_SNodeListType_iav8o_a0a0 = nodeToMatch_supertypesOf_ListType_SNodeListType_iav8o_a0a.getChildren(childRole_supertypesOf_ListType_SNodeListType_iav8o_).get(0);
             {
               SNode nodeToMatch_supertypesOf_ListType_SNodeListType_iav8o_a0a0;
-              nodeToMatch_supertypesOf_ListType_SNodeListType_iav8o_a0a0 = childVar_iav8o_a0a0;
+              nodeToMatch_supertypesOf_ListType_SNodeListType_iav8o_a0a0 = childVar_supertypesOf_ListType_SNodeListType_iav8o_a0a0;
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_ListType_SNodeListType_iav8o_a0a0.getConceptFqName()))) {
                 return false;
               }

@@ -161,10 +161,10 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
             return false;
           }
           {
-            SNode childVar_mvbroc_a0a0 = nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getChildren(childRole_ObjectArraySupertypes_mvbroc_).get(0);
+            SNode childVar_ObjectArraySupertypes_mvbroc_a0a0 = nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getChildren(childRole_ObjectArraySupertypes_mvbroc_).get(0);
             {
               SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0;
-              nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0 = childVar_mvbroc_a0a0;
+              nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0 = childVar_ObjectArraySupertypes_mvbroc_a0a0;
               if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getConceptFqName()))) {
                 return false;
               }

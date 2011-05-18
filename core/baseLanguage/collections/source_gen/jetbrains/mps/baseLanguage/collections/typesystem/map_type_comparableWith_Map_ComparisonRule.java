@@ -78,12 +78,12 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
             return false;
           }
           {
-            SNode childVar_a1tqv3_a0a0 = nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(0);
-            this.patternVar_KEY = childVar_a1tqv3_a0a0;
+            SNode childVar_map_type_comparableWith_Map_a1tqv3_a0a0 = nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(0);
+            this.patternVar_KEY = childVar_map_type_comparableWith_Map_a1tqv3_a0a0;
           }
           {
-            SNode childVar_a1tqv3_b0a0 = nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(1);
-            this.patternVar_VALUE = childVar_a1tqv3_b0a0;
+            SNode childVar_map_type_comparableWith_Map_a1tqv3_b0a0 = nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(1);
+            this.patternVar_VALUE = childVar_map_type_comparableWith_Map_a1tqv3_b0a0;
           }
         }
       }

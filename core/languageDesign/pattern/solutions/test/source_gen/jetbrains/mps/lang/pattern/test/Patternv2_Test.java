@@ -190,13 +190,13 @@ public class Patternv2_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_1fi_a0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(0);
+              SNode childVar_v2_1fi_a0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(0);
             }
             {
-              SNode childVar_1fi_b0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(1);
+              SNode childVar_v2_1fi_b0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(1);
               {
                 SNode nodeToMatch_v2_1fi_b0a;
-                nodeToMatch_v2_1fi_b0a = childVar_1fi_b0a;
+                nodeToMatch_v2_1fi_b0a = childVar_v2_1fi_b0a;
                 if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_v2_1fi_b0a.getConceptFqName()))) {
                   return false;
                 }
@@ -206,10 +206,10 @@ public class Patternv2_Test extends BaseTransformationTest {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a1a0 = nodeToMatch_v2_1fi_b0a.getChildren(childRole_v2_1fi__0).get(0);
+                    SNode childVar_v2_1fi_a1a0 = nodeToMatch_v2_1fi_b0a.getChildren(childRole_v2_1fi__0).get(0);
                     {
                       SNode nodeToMatch_v2_1fi_a1a0;
-                      nodeToMatch_v2_1fi_a1a0 = childVar_1fi_a1a0;
+                      nodeToMatch_v2_1fi_a1a0 = childVar_v2_1fi_a1a0;
                       if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_v2_1fi_a1a0.getConceptFqName()))) {
                         return false;
                       }
@@ -219,8 +219,8 @@ public class Patternv2_Test extends BaseTransformationTest {
                           return false;
                         }
                         {
-                          SNode childVar_1fi_a0b0a = nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__1).get(0);
-                          this.patternVar_p = childVar_1fi_a0b0a;
+                          SNode childVar_v2_1fi_a0b0a = nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__1).get(0);
+                          this.patternVar_p = childVar_v2_1fi_a0b0a;
                         }
                       }
                       {
@@ -229,10 +229,10 @@ public class Patternv2_Test extends BaseTransformationTest {
                           return false;
                         }
                         {
-                          SNode childVar_1fi_a0b0a_0 = nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__2).get(0);
+                          SNode childVar_v2_1fi_a0b0a_0 = nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__2).get(0);
                           {
                             SNode nodeToMatch_v2_1fi_a0b0a;
-                            nodeToMatch_v2_1fi_a0b0a = childVar_1fi_a0b0a_0;
+                            nodeToMatch_v2_1fi_a0b0a = childVar_v2_1fi_a0b0a_0;
                             if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_v2_1fi_a0b0a.getConceptFqName()))) {
                               return false;
                             }
@@ -248,14 +248,14 @@ public class Patternv2_Test extends BaseTransformationTest {
                     return false;
                   }
                   {
-                    SNode childVar_1fi_a1a0_0 = nodeToMatch_v2_1fi_b0a.getChildren(childRole_v2_1fi__3).get(0);
-                    this.patternVar_ifbody = childVar_1fi_a1a0_0;
+                    SNode childVar_v2_1fi_a1a0_0 = nodeToMatch_v2_1fi_b0a.getChildren(childRole_v2_1fi__3).get(0);
+                    this.patternVar_ifbody = childVar_v2_1fi_a1a0_0;
                   }
                 }
               }
             }
             {
-              SNode childVar_1fi_c0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(2);
+              SNode childVar_v2_1fi_c0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(2);
             }
           }
         }

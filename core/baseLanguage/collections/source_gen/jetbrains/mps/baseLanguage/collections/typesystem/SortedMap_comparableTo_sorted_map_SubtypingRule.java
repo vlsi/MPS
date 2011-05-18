@@ -157,12 +157,12 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
             return false;
           }
           {
-            SNode childVar_1q5lf6_a0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).get(0);
-            this.patternVar_KEY = childVar_1q5lf6_a0a0;
+            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).get(0);
+            this.patternVar_KEY = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0;
           }
           {
-            SNode childVar_1q5lf6_b0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).get(1);
-            this.patternVar_VALUE = childVar_1q5lf6_b0a0;
+            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).get(1);
+            this.patternVar_VALUE = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0;
           }
         }
       }

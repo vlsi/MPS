@@ -45,10 +45,10 @@ public class RuleAssertNull extends DataFlowConstructor {
             return false;
           }
           {
-            SNode childVar_ah97h0_a0a0 = nodeToMatch_RuleAssertNull_ah97h0_a0a.getChildren(childRole_RuleAssertNull_ah97h0_).get(0);
+            SNode childVar_RuleAssertNull_ah97h0_a0a0 = nodeToMatch_RuleAssertNull_ah97h0_a0a.getChildren(childRole_RuleAssertNull_ah97h0_).get(0);
             {
               SNode nodeToMatch_RuleAssertNull_ah97h0_a0a0;
-              nodeToMatch_RuleAssertNull_ah97h0_a0a0 = childVar_ah97h0_a0a0;
+              nodeToMatch_RuleAssertNull_ah97h0_a0a0 = childVar_RuleAssertNull_ah97h0_a0a0;
               {
                 boolean orMatches = false;
                 GeneratedMatchingPattern orPattern;
@@ -129,10 +129,10 @@ public class RuleAssertNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_ah97h0_a0a0a0a = nodeToMatch_RuleAssertNull_ah97h0_a0a0a0.getChildren(childRole_RuleAssertNull_ah97h0__0).get(0);
+              SNode childVar_RuleAssertNull_ah97h0_a0a0a0a = nodeToMatch_RuleAssertNull_ah97h0_a0a0a0.getChildren(childRole_RuleAssertNull_ah97h0__0).get(0);
               {
                 SNode nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a;
-                nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a = childVar_ah97h0_a0a0a0a;
+                nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a = childVar_RuleAssertNull_ah97h0_a0a0a0a;
                 patternVar_p = nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a;
               }
             }
@@ -143,10 +143,10 @@ public class RuleAssertNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_ah97h0_a0a0a0a_0 = nodeToMatch_RuleAssertNull_ah97h0_a0a0a0.getChildren(childRole_RuleAssertNull_ah97h0__1).get(0);
+              SNode childVar_RuleAssertNull_ah97h0_a0a0a0a_0 = nodeToMatch_RuleAssertNull_ah97h0_a0a0a0.getChildren(childRole_RuleAssertNull_ah97h0__1).get(0);
               {
                 SNode nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a_0;
-                nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a_0 = childVar_ah97h0_a0a0a0a_0;
+                nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a_0 = childVar_RuleAssertNull_ah97h0_a0a0a0a_0;
                 if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_RuleAssertNull_ah97h0_a0a0a0a_0.getConceptFqName()))) {
                   return false;
                 }
@@ -189,10 +189,10 @@ public class RuleAssertNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_ah97h0_a0b0a0a = nodeToMatch_RuleAssertNull_ah97h0_a1a0a0.getChildren(childRole_RuleAssertNull_ah97h0__2).get(0);
+              SNode childVar_RuleAssertNull_ah97h0_a0b0a0a = nodeToMatch_RuleAssertNull_ah97h0_a1a0a0.getChildren(childRole_RuleAssertNull_ah97h0__2).get(0);
               {
                 SNode nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a;
-                nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a = childVar_ah97h0_a0b0a0a;
+                nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a = childVar_RuleAssertNull_ah97h0_a0b0a0a;
                 if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a.getConceptFqName()))) {
                   return false;
                 }
@@ -205,10 +205,10 @@ public class RuleAssertNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_ah97h0_a0b0a0a_0 = nodeToMatch_RuleAssertNull_ah97h0_a1a0a0.getChildren(childRole_RuleAssertNull_ah97h0__3).get(0);
+              SNode childVar_RuleAssertNull_ah97h0_a0b0a0a_0 = nodeToMatch_RuleAssertNull_ah97h0_a1a0a0.getChildren(childRole_RuleAssertNull_ah97h0__3).get(0);
               {
                 SNode nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a_0;
-                nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a_0 = childVar_ah97h0_a0b0a0a_0;
+                nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a_0 = childVar_RuleAssertNull_ah97h0_a0b0a0a_0;
                 patternVar_p = nodeToMatch_RuleAssertNull_ah97h0_a0b0a0a_0;
               }
             }

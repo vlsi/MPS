@@ -149,10 +149,10 @@ public class MacroIntentionsUtil {
             return false;
           }
           {
-            SNode childVar_iiuth6_a0a0a0a3a1 = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0b.getChildren(childRole_MacroIntentionsUtil_iiuth6_).get(0);
+            SNode childVar_MacroIntentionsUtil_iiuth6_a0a0a0a3a1 = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0b.getChildren(childRole_MacroIntentionsUtil_iiuth6_).get(0);
             {
               SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1;
-              nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1 = childVar_iiuth6_a0a0a0a3a1;
+              nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1 = childVar_MacroIntentionsUtil_iiuth6_a0a0a0a3a1;
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a1.getConceptFqName()))) {
                 return false;
               }

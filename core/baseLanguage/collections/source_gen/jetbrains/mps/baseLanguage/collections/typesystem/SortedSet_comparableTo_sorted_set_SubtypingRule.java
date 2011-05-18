@@ -128,8 +128,8 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
             return false;
           }
           {
-            SNode childVar_h9rz5k_a0a0 = nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getChildren(childRole_SortedSet_comparableTo_sorted_set_h9rz5k_).get(0);
-            this.patternVar_ELEMENT = childVar_h9rz5k_a0a0;
+            SNode childVar_SortedSet_comparableTo_sorted_set_h9rz5k_a0a0 = nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getChildren(childRole_SortedSet_comparableTo_sorted_set_h9rz5k_).get(0);
+            this.patternVar_ELEMENT = childVar_SortedSet_comparableTo_sorted_set_h9rz5k_a0a0;
           }
         }
       }

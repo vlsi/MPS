@@ -43,10 +43,10 @@ public class LoopMacro_Behavior {
             return false;
           }
           {
-            SNode childVar_cdqxf8_a0a0a0a = nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0.getChildren(childRole_LoopMacro_Behavior_cdqxf8_).get(0);
+            SNode childVar_LoopMacro_Behavior_cdqxf8_a0a0a0a = nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0.getChildren(childRole_LoopMacro_Behavior_cdqxf8_).get(0);
             {
               SNode nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a;
-              nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a = childVar_cdqxf8_a0a0a0a;
+              nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a = childVar_LoopMacro_Behavior_cdqxf8_a0a0a0a;
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getConceptFqName()))) {
                 return false;
               }

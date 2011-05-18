@@ -128,8 +128,8 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
             return false;
           }
           {
-            SNode childVar_4sudxd_a0a0 = nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getChildren(childRole_supertypesOf_IEnumerator_4sudxd_).get(0);
-            this.patternVar_p = childVar_4sudxd_a0a0;
+            SNode childVar_supertypesOf_IEnumerator_4sudxd_a0a0 = nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getChildren(childRole_supertypesOf_IEnumerator_4sudxd_).get(0);
+            this.patternVar_p = childVar_supertypesOf_IEnumerator_4sudxd_a0a0;
           }
         }
       }

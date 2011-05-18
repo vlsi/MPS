@@ -115,10 +115,10 @@ public class PatternProperty_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_ru5khm_a0a = nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm_).get(0);
+              SNode childVar_Property_ru5khm_a0a = nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm_).get(0);
               {
                 SNode nodeToMatch_Property_ru5khm_a0a;
-                nodeToMatch_Property_ru5khm_a0a = childVar_ru5khm_a0a;
+                nodeToMatch_Property_ru5khm_a0a = childVar_Property_ru5khm_a0a;
                 if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_Property_ru5khm_a0a.getConceptFqName()))) {
                   return false;
                 }
@@ -133,10 +133,10 @@ public class PatternProperty_Test extends BaseTransformationTest {
               return false;
             }
             {
-              SNode childVar_ru5khm_a0a_0 = nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm__0).get(0);
+              SNode childVar_Property_ru5khm_a0a_0 = nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm__0).get(0);
               {
                 SNode nodeToMatch_Property_ru5khm_a0a_0;
-                nodeToMatch_Property_ru5khm_a0a_0 = childVar_ru5khm_a0a_0;
+                nodeToMatch_Property_ru5khm_a0a_0 = childVar_Property_ru5khm_a0a_0;
                 if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_Property_ru5khm_a0a_0.getConceptFqName()))) {
                   return false;
                 }
@@ -147,10 +147,10 @@ public class PatternProperty_Test extends BaseTransformationTest {
                     return false;
                   }
                   {
-                    SNode childVar_ru5khm_a0a0 = nodeToMatch_Property_ru5khm_a0a_0.getChildren(childRole_Property_ru5khm__1).get(0);
+                    SNode childVar_Property_ru5khm_a0a0 = nodeToMatch_Property_ru5khm_a0a_0.getChildren(childRole_Property_ru5khm__1).get(0);
                     {
                       SNode nodeToMatch_Property_ru5khm_a0a0;
-                      nodeToMatch_Property_ru5khm_a0a0 = childVar_ru5khm_a0a0;
+                      nodeToMatch_Property_ru5khm_a0a0 = childVar_Property_ru5khm_a0a0;
                       if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_Property_ru5khm_a0a0.getConceptFqName()))) {
                         return false;
                       }

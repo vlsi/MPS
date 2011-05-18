@@ -77,8 +77,8 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
             return false;
           }
           {
-            SNode childVar_drfijn_a0a0 = nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a.getChildren(childRole_deque_type_comparableWith_Deque_drfijn_).get(0);
-            this.patternVar_ELEMENT_TYPE = childVar_drfijn_a0a0;
+            SNode childVar_deque_type_comparableWith_Deque_drfijn_a0a0 = nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a.getChildren(childRole_deque_type_comparableWith_Deque_drfijn_).get(0);
+            this.patternVar_ELEMENT_TYPE = childVar_deque_type_comparableWith_Deque_drfijn_a0a0;
           }
         }
       }

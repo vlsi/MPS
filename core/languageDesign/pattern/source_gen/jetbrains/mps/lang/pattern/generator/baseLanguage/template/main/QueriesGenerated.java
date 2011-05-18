@@ -89,7 +89,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549541(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("childVar_", SNodeOperations.getContainingRoot(_context.getNode()));
+    return _context.createUniqueName("childVar_" + SNodeOperations.getContainingRoot(_context.getNode()), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1224175601049(final IOperationContext operationContext, final PropertyMacroContext _context) {

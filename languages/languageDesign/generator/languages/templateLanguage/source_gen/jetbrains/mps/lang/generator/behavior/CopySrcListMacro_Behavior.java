@@ -44,10 +44,10 @@ public class CopySrcListMacro_Behavior {
             return false;
           }
           {
-            SNode childVar_26ny8p_a0a0b0a = nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0.getChildren(childRole_CopySrcListMacro_Behavior_26ny8p_).get(0);
+            SNode childVar_CopySrcListMacro_Behavior_26ny8p_a0a0b0a = nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0.getChildren(childRole_CopySrcListMacro_Behavior_26ny8p_).get(0);
             {
               SNode nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a;
-              nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a = childVar_26ny8p_a0a0b0a;
+              nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a = childVar_CopySrcListMacro_Behavior_26ny8p_a0a0b0a;
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a.getConceptFqName()))) {
                 return false;
               }

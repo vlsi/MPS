@@ -123,8 +123,8 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
             return false;
           }
           {
-            SNode childVar_nbr2nf_a0a0 = nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getChildren(childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_).get(0);
-            this.patternVar_elementType = childVar_nbr2nf_a0a0;
+            SNode childVar_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a0 = nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getChildren(childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_).get(0);
+            this.patternVar_elementType = childVar_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a0;
           }
         }
       }

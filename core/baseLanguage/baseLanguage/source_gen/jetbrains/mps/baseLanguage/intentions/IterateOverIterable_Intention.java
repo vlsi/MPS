@@ -102,8 +102,8 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
             return false;
           }
           {
-            SNode childVar_6isygg_a0a0a0a0a = nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getChildren(childRole_IterateOverIterable_6isygg__0).get(0);
-            this.patternVar_elem = childVar_6isygg_a0a0a0a0a;
+            SNode childVar_IterateOverIterable_6isygg_a0a0a0a0a = nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getChildren(childRole_IterateOverIterable_6isygg__0).get(0);
+            this.patternVar_elem = childVar_IterateOverIterable_6isygg_a0a0a0a0a;
           }
         }
       }
@@ -156,8 +156,8 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
             return false;
           }
           {
-            SNode childVar_6isygg_a0a0a0a = nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getChildren(childRole_IterateOverIterable_6isygg_).get(0);
-            this.patternVar_elem = childVar_6isygg_a0a0a0a;
+            SNode childVar_IterateOverIterable_6isygg_a0a0a0a = nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getChildren(childRole_IterateOverIterable_6isygg_).get(0);
+            this.patternVar_elem = childVar_IterateOverIterable_6isygg_a0a0a0a;
           }
         }
       }

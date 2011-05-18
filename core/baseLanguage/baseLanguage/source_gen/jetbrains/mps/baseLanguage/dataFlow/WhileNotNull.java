@@ -44,15 +44,15 @@ public class WhileNotNull extends DataFlowConstructor {
             return false;
           }
           {
-            SNode childVar_pezsk4_a0a0 = nodeToMatch_WhileNotNull_pezsk4_a0a.getChildren(childRole_WhileNotNull_pezsk4_).get(0);
+            SNode childVar_WhileNotNull_pezsk4_a0a0 = nodeToMatch_WhileNotNull_pezsk4_a0a.getChildren(childRole_WhileNotNull_pezsk4_).get(0);
             {
               SNode nodeToMatch_WhileNotNull_pezsk4_a0a0;
-              nodeToMatch_WhileNotNull_pezsk4_a0a0 = childVar_pezsk4_a0a0;
+              nodeToMatch_WhileNotNull_pezsk4_a0a0 = childVar_WhileNotNull_pezsk4_a0a0;
               if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_WhileNotNull_pezsk4_a0a0.getConceptFqName()))) {
                 return false;
               }
             }
-            this.patternVar_body = childVar_pezsk4_a0a0;
+            this.patternVar_body = childVar_WhileNotNull_pezsk4_a0a0;
           }
         }
         {
@@ -61,10 +61,10 @@ public class WhileNotNull extends DataFlowConstructor {
             return false;
           }
           {
-            SNode childVar_pezsk4_a0a0_0 = nodeToMatch_WhileNotNull_pezsk4_a0a.getChildren(childRole_WhileNotNull_pezsk4__0).get(0);
+            SNode childVar_WhileNotNull_pezsk4_a0a0_0 = nodeToMatch_WhileNotNull_pezsk4_a0a.getChildren(childRole_WhileNotNull_pezsk4__0).get(0);
             {
               SNode nodeToMatch_WhileNotNull_pezsk4_a0a0_0;
-              nodeToMatch_WhileNotNull_pezsk4_a0a0_0 = childVar_pezsk4_a0a0_0;
+              nodeToMatch_WhileNotNull_pezsk4_a0a0_0 = childVar_WhileNotNull_pezsk4_a0a0_0;
               {
                 boolean orMatches = false;
                 GeneratedMatchingPattern orPattern;
@@ -145,10 +145,10 @@ public class WhileNotNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_pezsk4_a0a0a0a = nodeToMatch_WhileNotNull_pezsk4_a0a0a0.getChildren(childRole_WhileNotNull_pezsk4__1).get(0);
+              SNode childVar_WhileNotNull_pezsk4_a0a0a0a = nodeToMatch_WhileNotNull_pezsk4_a0a0a0.getChildren(childRole_WhileNotNull_pezsk4__1).get(0);
               {
                 SNode nodeToMatch_WhileNotNull_pezsk4_a0a0a0a;
-                nodeToMatch_WhileNotNull_pezsk4_a0a0a0a = childVar_pezsk4_a0a0a0a;
+                nodeToMatch_WhileNotNull_pezsk4_a0a0a0a = childVar_WhileNotNull_pezsk4_a0a0a0a;
                 patternVar_p = nodeToMatch_WhileNotNull_pezsk4_a0a0a0a;
               }
             }
@@ -159,10 +159,10 @@ public class WhileNotNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_pezsk4_a0a0a0a_0 = nodeToMatch_WhileNotNull_pezsk4_a0a0a0.getChildren(childRole_WhileNotNull_pezsk4__2).get(0);
+              SNode childVar_WhileNotNull_pezsk4_a0a0a0a_0 = nodeToMatch_WhileNotNull_pezsk4_a0a0a0.getChildren(childRole_WhileNotNull_pezsk4__2).get(0);
               {
                 SNode nodeToMatch_WhileNotNull_pezsk4_a0a0a0a_0;
-                nodeToMatch_WhileNotNull_pezsk4_a0a0a0a_0 = childVar_pezsk4_a0a0a0a_0;
+                nodeToMatch_WhileNotNull_pezsk4_a0a0a0a_0 = childVar_WhileNotNull_pezsk4_a0a0a0a_0;
                 if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_WhileNotNull_pezsk4_a0a0a0a_0.getConceptFqName()))) {
                   return false;
                 }
@@ -205,10 +205,10 @@ public class WhileNotNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_pezsk4_a0b0a0a = nodeToMatch_WhileNotNull_pezsk4_a1a0a0.getChildren(childRole_WhileNotNull_pezsk4__3).get(0);
+              SNode childVar_WhileNotNull_pezsk4_a0b0a0a = nodeToMatch_WhileNotNull_pezsk4_a1a0a0.getChildren(childRole_WhileNotNull_pezsk4__3).get(0);
               {
                 SNode nodeToMatch_WhileNotNull_pezsk4_a0b0a0a;
-                nodeToMatch_WhileNotNull_pezsk4_a0b0a0a = childVar_pezsk4_a0b0a0a;
+                nodeToMatch_WhileNotNull_pezsk4_a0b0a0a = childVar_WhileNotNull_pezsk4_a0b0a0a;
                 if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_WhileNotNull_pezsk4_a0b0a0a.getConceptFqName()))) {
                   return false;
                 }
@@ -221,10 +221,10 @@ public class WhileNotNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_pezsk4_a0b0a0a_0 = nodeToMatch_WhileNotNull_pezsk4_a1a0a0.getChildren(childRole_WhileNotNull_pezsk4__4).get(0);
+              SNode childVar_WhileNotNull_pezsk4_a0b0a0a_0 = nodeToMatch_WhileNotNull_pezsk4_a1a0a0.getChildren(childRole_WhileNotNull_pezsk4__4).get(0);
               {
                 SNode nodeToMatch_WhileNotNull_pezsk4_a0b0a0a_0;
-                nodeToMatch_WhileNotNull_pezsk4_a0b0a0a_0 = childVar_pezsk4_a0b0a0a_0;
+                nodeToMatch_WhileNotNull_pezsk4_a0b0a0a_0 = childVar_WhileNotNull_pezsk4_a0b0a0a_0;
                 patternVar_p = nodeToMatch_WhileNotNull_pezsk4_a0b0a0a_0;
               }
             }

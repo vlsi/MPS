@@ -157,12 +157,12 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
             return false;
           }
           {
-            SNode childVar_4xhv5l_a0a0 = nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_).get(0);
-            this.patternVar_keyType = childVar_4xhv5l_a0a0;
+            SNode childVar_java_util_Map_extends_map_4xhv5l_a0a0 = nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_).get(0);
+            this.patternVar_keyType = childVar_java_util_Map_extends_map_4xhv5l_a0a0;
           }
           {
-            SNode childVar_4xhv5l_b0a0 = nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_).get(1);
-            this.patternVar_valueType = childVar_4xhv5l_b0a0;
+            SNode childVar_java_util_Map_extends_map_4xhv5l_b0a0 = nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_).get(1);
+            this.patternVar_valueType = childVar_java_util_Map_extends_map_4xhv5l_b0a0;
           }
         }
       }
