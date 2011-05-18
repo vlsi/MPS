@@ -455,7 +455,17 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   @NotNull
   public final String getNodeIdentifier() {
-    return myNodeIdentifier;
+    if (myNodeIdentifier == null) {
+      // extra info for assertion failed due to MPS-12305
+      String parentId = null;
+      if (getParent() instanceof MPSTreeNode) {
+        parentId = ((MPSTreeNode) getParent()).getNodeIdentifier();
+      }
+      throw new IllegalStateException("MPSTreeNode identifier cannot be null, class="
+        + getClass().getName()+ ", parent id=" + parentId);
+    } else {
+      return myNodeIdentifier;
+    }
   }
 
   public final void setNodeIdentifier(@NotNull String newNodeIdentifier) {
