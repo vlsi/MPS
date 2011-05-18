@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
-  protected IModelRootManager myModelRootManager;
   @NotNull
   private final ModelDataSource mySource;
   private ChangeListener mySourceListener = new ChangeListener() {
@@ -37,9 +36,8 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   };
 
 
-  protected BaseSModelDescriptorWithSource(IModelRootManager manager, @NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
+  protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
     super(modelReference, checkDup);
-    myModelRootManager = manager;
     mySource = source;
     mySource.getChangeWatcher().startListening(mySourceListener);
   }
@@ -74,10 +72,4 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   public abstract void replaceModel(@NotNull SModel newModel, ModelLoadingState loadingState);
-
-  //--------------------
-
-  public IModelRootManager getModelRootManager(){
-    return myModelRootManager;
-  }
 }

@@ -4,36 +4,30 @@ import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Set;
 
 public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
 
-  private boolean myNeedsReloading = true;
-  private String myManagerClass;
-
   private final Object myUpdatersLock = new Object();
   private Set<ModelUpdater> myUpdaters = null;
 
-  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, @Nullable ModelDataSource source) {
-    this(manager, modelReference, true, source);
+  public BaseStubModelDescriptor(SModelReference modelReference, @Nullable ModelDataSource source) {
+    this(modelReference, true, source);
   }
 
-  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, boolean checkDup, ModelDataSource source) {
-    super(manager, modelReference,source, checkDup);
-    updateManagerId();
+  public BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source) {
+    super(modelReference, source, checkDup);
   }
 
-  public BaseStubModelDescriptor copy(BaseStubModelRootManager manager) {
-    return new BaseStubModelDescriptor(manager, myModelReference, false, getSource());
+  public BaseStubModelDescriptor copy() {
+    return new BaseStubModelDescriptor(myModelReference, false, getSource());
   }
 
   private void updateAfterLoad(SModel model) {
@@ -44,7 +38,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
           updater.updateModel(this, model);
         }
       }
-      myNeedsReloading = false;
     }
   }
 
@@ -70,32 +63,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   public void addStubPath(StubPath sp) {
     //todo this is a hack. we need to do it another way
     ((StubModelDataSource) getSource()).addPath(sp);
-  }
-
-  public boolean isNeedsReloading() {
-    return myNeedsReloading;
-  }
-
-  public void markReload() {
-    myNeedsReloading = true;
-  }
-
-  public void unmarkReload() {
-    myNeedsReloading = false;
-  }
-
-  public void setModelRootManager(IModelRootManager modelRootManager) {
-    myModelRootManager = modelRootManager;
-    updateManagerId();
-  }
-
-  public String getManagerClass() {
-    return myManagerClass;
-  }
-
-  private void updateManagerId() {
-    if (myModelRootManager == null) return;
-    myManagerClass = myModelRootManager.getClass().getName();
   }
 
   //------------common descriptor stuff-------------------
@@ -134,7 +101,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   }
 
   private void reload() {
-    ModelLoadResult result = getSource().loadSModel(this,ModelLoadingState.FULLY_LOADED);
+    ModelLoadResult result = getSource().loadSModel(this, ModelLoadingState.FULLY_LOADED);
     replaceModel(result.getModel(), getLoadingState());
   }
 
@@ -147,9 +114,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
       oldSModel.setModelDescriptor(null);
     }
     mySModel = newModel;
-    if (mySModel != null) {
-      mySModel.setModelDescriptor(this);
-    }
+    mySModel.setModelDescriptor(this);
     MPSModuleRepository.getInstance().invalidateCaches();
     Runnable modelReplacedNotifier = new Runnable() {
       public void run() {

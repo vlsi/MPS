@@ -224,7 +224,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     oldFile.delete();
   }
 
-  public static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName) {
+  private static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName) {
     String pathPrefix = root.getPrefix();
     String path = root.getPath();
 
@@ -241,4 +241,8 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT_MODEL);
   }
 
+  public static RegularModelDataSource createSourceForModelUID(ModelRoot root, SModelFqName fqName) {
+    IFile file = createFileForModelUID(root, fqName);
+    return new RegularModelDataSource(file);
+  }
 }

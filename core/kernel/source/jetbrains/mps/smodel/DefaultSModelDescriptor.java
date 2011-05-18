@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -57,16 +58,17 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     });
   }
 
-  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    this(manager, modelFile, modelReference, new DescriptorLoadResult(), true);
+  @Deprecated //todo remove
+  public DefaultSModelDescriptor(IFile modelFile, SModelReference modelReference) {
+    this(new RegularModelDataSource(modelFile), modelReference, new DescriptorLoadResult(), true);
   }
 
-  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, DescriptorLoadResult d) {
-    this(manager, modelFile, modelReference, d, true);
+  public DefaultSModelDescriptor(ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+    this(source, modelReference, d, true);
   }
 
-  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
-    super(manager, modelReference, new RegularModelDataSource(modelFile), checkDup);
+  protected DefaultSModelDescriptor(ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
+    super(modelReference, source, checkDup);
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
   }

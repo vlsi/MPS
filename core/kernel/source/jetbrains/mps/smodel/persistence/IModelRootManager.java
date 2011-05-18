@@ -33,6 +33,5 @@ public interface IModelRootManager {
 
   boolean canCreateModel(@NotNull ModelRoot root, @NotNull SModelFqName fqName);
 
-  @NotNull
   SModelDescriptor createModel(@NotNull ModelRoot root, @NotNull SModelFqName fqName);
 }

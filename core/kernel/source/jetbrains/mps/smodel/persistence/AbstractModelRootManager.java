@@ -33,7 +33,6 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
     return false;
   }
 
-  @NotNull
   public SModelDescriptor createModel(@NotNull ModelRoot root,@NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }

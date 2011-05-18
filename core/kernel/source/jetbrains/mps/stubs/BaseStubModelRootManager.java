@@ -87,7 +87,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         LOG.assertLog(oldDescr.getModule() == module, descriptor.getSModelReference().toString() + " :: " + oldDescr.getModule().getModuleFqName() + " --->> " + module.getModuleFqName());
       }
 
-      descriptor.setModelRootManager(this);
       if (descriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) {
         if (!myDescriptorsWithListener.contains(descriptor)) {
           descriptor.addModelUpdater(myInitializationListener);

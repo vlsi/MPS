@@ -371,10 +371,6 @@ public class ModelPersistence {
   //-------- --------
 
 
-  public static boolean needsRecreating(IFile file) {
-    return getCurrentModelPersistence().needsRecreating(file);
-  }
-
   public static SModelReference upgradeModelUID(SModelReference modelReference) {
     return getCurrentModelPersistence().upgradeModelUID(modelReference);
   }
