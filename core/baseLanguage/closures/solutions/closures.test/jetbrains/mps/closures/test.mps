@@ -10,7 +10,7 @@
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
-  <import index="5h68" modelUID="f:java_stub#fd392034-7849-419d-9071-12563d152375#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
+  <import index="22nd" modelUID="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
   <import index="pqw3" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#junit.framework(junit.framework@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -4093,7 +4093,7 @@
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="1229443196942">
                             <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1229443198076">
                               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1229443444665">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5h68.~DelayedException%d&lt;init&gt;()" resolveInfo="DelayedException" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22nd.~DelayedException%d&lt;init&gt;()" resolveInfo="DelayedException" />
                               </node>
                             </node>
                           </node>
@@ -4201,7 +4201,7 @@
               <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1229445328507">
                 <property name="name" nameId="tpck.1169194664001" value="e" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1229445344130">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5h68.~DelayedException" resolveInfo="DelayedException" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="22nd.~DelayedException" resolveInfo="DelayedException" />
                 </node>
               </node>
               <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="1229445328509">
@@ -4261,7 +4261,7 @@
               <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1229445364498">
                 <property name="name" nameId="tpck.1169194664001" value="e" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1229445364499">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5h68.~DelayedException" resolveInfo="DelayedException" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="22nd.~DelayedException" resolveInfo="DelayedException" />
                 </node>
               </node>
               <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="1229445364500">

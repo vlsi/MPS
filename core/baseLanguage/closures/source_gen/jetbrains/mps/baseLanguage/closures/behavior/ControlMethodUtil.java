@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ControlMethodUtil {
+  public ControlMethodUtil() {
+  }
+
   public static boolean isControlMethod(SNode smd) {
     return ControlMethodUtil.analyze(smd) != null;
   }

@@ -5,7 +5,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <import index="epq1" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="vzll" modelUID="f:java_stub#b98999bc-8369-4b20-9510-598d4eb5ace6#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.math.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
+  <import index="uamu" modelUID="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -6315,7 +6315,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="877422884702862948" resolveInfo="f" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="877422884702863013">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vzll.~_FunctionTypes$_return_P2_E0%dinvoke(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="invoke" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uamu.~_FunctionTypes$_return_P2_E0%dinvoke(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="invoke" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="877422884702863014">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="877422884702862985" resolveInfo="i" />
                             </node>
