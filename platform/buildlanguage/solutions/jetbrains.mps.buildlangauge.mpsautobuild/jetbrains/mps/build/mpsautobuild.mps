@@ -1968,6 +1968,26 @@
         <property name="id" nameId="tps4.1222447189012" value="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debug.apiLang" />
       </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7208102873308016288">
+        <property name="id" nameId="tps4.1222447189012" value="f3347d8a-0e79-4f35-8ac9-1574f25c986f" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.commands" />
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7208102873308016289">
+        <property name="id" nameId="tps4.1222447189012" value="73c1a490-99fa-4d0d-8292-b8985697c74b" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.common" />
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7208102873308016291">
+        <property name="id" nameId="tps4.1222447189012" value="22e72e4c-0f69-46ce-8403-6750153aa615" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.configurations" />
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7208102873308016292">
+        <property name="id" nameId="tps4.1222447189012" value="1669eaef-1809-41c5-987c-c63097e17f64" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.configurations.lib" />
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="7208102873308016290">
+        <property name="id" nameId="tps4.1222447189012" value="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.settings" />
+      </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2520429355395831040">
         <property name="name" nameId="tps4.1223641503366" value="debug" />
       </node>
