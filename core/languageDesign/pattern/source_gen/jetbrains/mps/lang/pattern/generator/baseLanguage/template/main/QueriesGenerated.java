@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collections;
+import java.util.LinkedList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class QueriesGenerated {
@@ -647,7 +648,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (String childRole : _context.getNode().getChildRoles()) {
+    List<String> roles = new LinkedList<String>();
+    ListSequence.fromList(roles).addSequence(SetSequence.fromSet(_context.getNode().getChildRoles()));
+    Collections.sort(roles);
+    for (String childRole : roles) {
       SNode childRoleNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       childRoleNode.setProperty("childRole", childRole);
       childRoleNode.setReferent("childLinkDeclaration", AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(_context.getNode()), childRole));

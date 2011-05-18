@@ -142,22 +142,6 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_8263735385373599999 = "ifTrue";
-            if (nodeToMatch_8263735385373599999.getChildCount(childRole_8263735385373599999) != 1) {
-              return false;
-            }
-            {
-              SNode childVar_8263735385373600001 = nodeToMatch_8263735385373599999.getChildren(childRole_8263735385373599999).get(0);
-              {
-                SNode nodeToMatch_8263735385373600001;
-                nodeToMatch_8263735385373600001 = childVar_8263735385373600001;
-                if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_8263735385373600001.getConceptFqName()))) {
-                  return false;
-                }
-              }
-            }
-          }
-          {
             String childRole_8263735385373599999 = "condition";
             if (nodeToMatch_8263735385373599999.getChildCount(childRole_8263735385373599999) != 1) {
               return false;
@@ -170,22 +154,22 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                 {
                   boolean orMatches = false;
                   GeneratedMatchingPattern orPattern;
-                  orPattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a.Pattern_ay21uv_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a();
+                  orPattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a.Pattern_ay21uv_a0a0a2a2a1a1a1a0a1a2a0a0a0a1a1a();
                   if (orPattern.match(nodeToMatch_8297918475033171167)) {
                     orMatches = true;
                     myOrPattern_qy0uft_a0a = orPattern;
                   }
-                  orPattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a.Pattern_ay21uv_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a();
+                  orPattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a.Pattern_ay21uv_a0a0a3a2a1a1a1a0a1a2a0a0a0a1a1a();
                   if (orPattern.match(nodeToMatch_8297918475033171167)) {
                     orMatches = true;
                     myOrPattern_qy0uft_a0a = orPattern;
                   }
-                  orPattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a.Pattern_ay21uv_a0a0a4a2a1a1a1a1a1a2a0a0a0a1a1a();
+                  orPattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a.Pattern_ay21uv_a0a0a4a2a1a1a1a0a1a2a0a0a0a1a1a();
                   if (orPattern.match(nodeToMatch_8297918475033171167)) {
                     orMatches = true;
                     myOrPattern_qy0uft_a0a = orPattern;
                   }
-                  orPattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a.Pattern_ay21uv_a0a0a5a2a1a1a1a1a1a2a0a0a0a1a1a();
+                  orPattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a.Pattern_ay21uv_a0a0a5a2a1a1a1a0a1a2a0a0a0a1a1a();
                   if (orPattern.match(nodeToMatch_8297918475033171167)) {
                     orMatches = true;
                     myOrPattern_qy0uft_a0a = orPattern;
@@ -193,6 +177,22 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                   if (!(orMatches)) {
                     return false;
                   }
+                }
+              }
+            }
+          }
+          {
+            String childRole_8263735385373599999 = "ifTrue";
+            if (nodeToMatch_8263735385373599999.getChildCount(childRole_8263735385373599999) != 1) {
+              return false;
+            }
+            {
+              SNode childVar_8263735385373600001 = nodeToMatch_8263735385373599999.getChildren(childRole_8263735385373599999).get(0);
+              {
+                SNode nodeToMatch_8263735385373600001;
+                nodeToMatch_8263735385373600001 = childVar_8263735385373600001;
+                if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_8263735385373600001.getConceptFqName()))) {
+                  return false;
                 }
               }
             }
@@ -221,8 +221,8 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
       public void performActions(Object o) {
       }
 
-      public class Pattern_ay21uv_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        public Pattern_ay21uv_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a() {
+      public class Pattern_ay21uv_a0a0a2a2a1a1a1a0a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+        public Pattern_ay21uv_a0a0a2a2a1a1a1a0a1a2a0a0a0a1a1a() {
         }
 
         public boolean match(SNode nodeToMatch) {
@@ -281,8 +281,8 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
       }
 
-      public class Pattern_ay21uv_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        public Pattern_ay21uv_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a() {
+      public class Pattern_ay21uv_a0a0a3a2a1a1a1a0a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+        public Pattern_ay21uv_a0a0a3a2a1a1a1a0a1a2a0a0a0a1a1a() {
         }
 
         public boolean match(SNode nodeToMatch) {
@@ -341,8 +341,8 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
       }
 
-      public class Pattern_ay21uv_a0a0a4a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        public Pattern_ay21uv_a0a0a4a2a1a1a1a1a1a2a0a0a0a1a1a() {
+      public class Pattern_ay21uv_a0a0a4a2a1a1a1a0a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+        public Pattern_ay21uv_a0a0a4a2a1a1a1a0a1a2a0a0a0a1a1a() {
         }
 
         public boolean match(SNode nodeToMatch) {
@@ -426,8 +426,8 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
       }
 
-      public class Pattern_ay21uv_a0a0a5a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        public Pattern_ay21uv_a0a0a5a2a1a1a1a1a1a2a0a0a0a1a1a() {
+      public class Pattern_ay21uv_a0a0a5a2a1a1a1a0a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+        public Pattern_ay21uv_a0a0a5a2a1a1a1a0a1a2a0a0a0a1a1a() {
         }
 
         public boolean match(SNode nodeToMatch) {

@@ -73,8 +73,8 @@
   <unitInfo fileName="WhileNotNull.java" startLine="131" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a" />
   <unitInfo fileName="RuleAssertNull.java" startLine="175" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNull.Pattern_ah97h0_a0a$Pattern_ah97h0_a0a0a3a2a1a1a1a0a1a3a0a0a0a" />
   <unitInfo fileName="WhileNotNull.java" startLine="191" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="205" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a" />
-  <unitInfo fileName="RuleEqualsNull.java" startLine="265" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="205" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a2a2a1a1a1a0a1a3a0a0a0a" />
+  <unitInfo fileName="RuleEqualsNull.java" startLine="265" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull.Pattern_vwsftd_a0a$Pattern_vwsftd_a0a0a3a2a1a1a1a0a1a3a0a0a0a" />
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" />
   <unitInfo fileName="RuleTernaryOperation.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
   <unitInfo fileName="IfEqualsNullAll.java" startLine="17" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" />

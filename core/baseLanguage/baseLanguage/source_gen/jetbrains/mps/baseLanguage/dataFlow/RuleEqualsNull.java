@@ -42,23 +42,6 @@ public class RuleEqualsNull extends DataFlowConstructor {
           return false;
         }
         {
-          String childRole_6868777471677432405 = "ifTrue";
-          if (nodeToMatch_6868777471677432405.getChildCount(childRole_6868777471677432405) != 1) {
-            return false;
-          }
-          {
-            SNode childVar_1508313647019559668 = nodeToMatch_6868777471677432405.getChildren(childRole_6868777471677432405).get(0);
-            {
-              SNode nodeToMatch_1508313647019559668;
-              nodeToMatch_1508313647019559668 = childVar_1508313647019559668;
-              if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_1508313647019559668.getConceptFqName()))) {
-                return false;
-              }
-            }
-            this.patternVar_d = childVar_1508313647019559668;
-          }
-        }
-        {
           String childRole_6868777471677432405 = "condition";
           if (nodeToMatch_6868777471677432405.getChildCount(childRole_6868777471677432405) != 1) {
             return false;
@@ -71,12 +54,12 @@ public class RuleEqualsNull extends DataFlowConstructor {
               {
                 boolean orMatches = false;
                 GeneratedMatchingPattern orPattern;
-                orPattern = new RuleEqualsNull.Pattern_vwsftd_a0a.Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a();
+                orPattern = new RuleEqualsNull.Pattern_vwsftd_a0a.Pattern_vwsftd_a0a0a2a2a1a1a1a0a1a3a0a0a0a();
                 if (orPattern.match(nodeToMatch_6868777471677432406)) {
                   orMatches = true;
                   myOrPattern_vwsftd_a0a0 = orPattern;
                 }
-                orPattern = new RuleEqualsNull.Pattern_vwsftd_a0a.Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a();
+                orPattern = new RuleEqualsNull.Pattern_vwsftd_a0a.Pattern_vwsftd_a0a0a3a2a1a1a1a0a1a3a0a0a0a();
                 if (orPattern.match(nodeToMatch_6868777471677432406)) {
                   orMatches = true;
                   myOrPattern_vwsftd_a0a0 = orPattern;
@@ -119,6 +102,23 @@ public class RuleEqualsNull extends DataFlowConstructor {
                 }
               }
             }
+          }
+        }
+        {
+          String childRole_6868777471677432405 = "ifTrue";
+          if (nodeToMatch_6868777471677432405.getChildCount(childRole_6868777471677432405) != 1) {
+            return false;
+          }
+          {
+            SNode childVar_1508313647019559668 = nodeToMatch_6868777471677432405.getChildren(childRole_6868777471677432405).get(0);
+            {
+              SNode nodeToMatch_1508313647019559668;
+              nodeToMatch_1508313647019559668 = childVar_1508313647019559668;
+              if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_1508313647019559668.getConceptFqName()))) {
+                return false;
+              }
+            }
+            this.patternVar_d = childVar_1508313647019559668;
           }
         }
       }
@@ -202,8 +202,8 @@ public class RuleEqualsNull extends DataFlowConstructor {
       }
     }
 
-    public class Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a() {
+    public class Pattern_vwsftd_a0a0a2a2a1a1a1a0a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public Pattern_vwsftd_a0a0a2a2a1a1a1a0a1a3a0a0a0a() {
       }
 
       public boolean match(SNode nodeToMatch) {
@@ -262,8 +262,8 @@ public class RuleEqualsNull extends DataFlowConstructor {
       }
     }
 
-    public class Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a() {
+    public class Pattern_vwsftd_a0a0a3a2a1a1a1a0a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public Pattern_vwsftd_a0a0a3a2a1a1a1a0a1a3a0a0a0a() {
       }
 
       public boolean match(SNode nodeToMatch) {

@@ -110,6 +110,24 @@ public class PatternProperty_Test extends BaseTransformationTest {
             return false;
           }
           {
+            String childRole_1563914226484895493 = "operand";
+            if (nodeToMatch_1563914226484895493.getChildCount(childRole_1563914226484895493) != 1) {
+              return false;
+            }
+            {
+              SNode childVar_1563914226484895494 = nodeToMatch_1563914226484895493.getChildren(childRole_1563914226484895493).get(0);
+              {
+                SNode nodeToMatch_1563914226484895494;
+                nodeToMatch_1563914226484895494 = childVar_1563914226484895494;
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_1563914226484895494.getConceptFqName()))) {
+                  return false;
+                }
+                patternVar_field = nodeToMatch_1563914226484895494.getReferent("variableDeclaration");
+                patternVar_className = nodeToMatch_1563914226484895494.getReferent("classifier");
+              }
+            }
+          }
+          {
             String childRole_1563914226484895493 = "operation";
             if (nodeToMatch_1563914226484895493.getChildCount(childRole_1563914226484895493) != 1) {
               return false;
@@ -140,24 +158,6 @@ public class PatternProperty_Test extends BaseTransformationTest {
                     }
                   }
                 }
-              }
-            }
-          }
-          {
-            String childRole_1563914226484895493 = "operand";
-            if (nodeToMatch_1563914226484895493.getChildCount(childRole_1563914226484895493) != 1) {
-              return false;
-            }
-            {
-              SNode childVar_1563914226484895494 = nodeToMatch_1563914226484895493.getChildren(childRole_1563914226484895493).get(0);
-              {
-                SNode nodeToMatch_1563914226484895494;
-                nodeToMatch_1563914226484895494 = childVar_1563914226484895494;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_1563914226484895494.getConceptFqName()))) {
-                  return false;
-                }
-                patternVar_field = nodeToMatch_1563914226484895494.getReferent("variableDeclaration");
-                patternVar_className = nodeToMatch_1563914226484895494.getReferent("classifier");
               }
             }
           }
