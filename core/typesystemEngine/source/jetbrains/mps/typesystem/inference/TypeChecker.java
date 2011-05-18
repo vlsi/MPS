@@ -68,8 +68,6 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
 
   private final LanguageRegistry myLanguageRegistry;
 
-  private static final boolean useOldTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_OLD_TYPESYSTEM));
-
   public TypeChecker(LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
     myRuntimeSupport = new RuntimeSupportNew(this);
@@ -224,16 +222,6 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     } else {
       return c.compute();
     }
-  }
-
-  public static SNode asType(Object o) {
-    if (o instanceof SNode) {
-      return (SNode) o;
-    }
-    if (o instanceof BaseAdapter) {
-      return ((BaseAdapter) o).getNode();
-    }
-    return null;
   }
 
   public SNode getInferredTypeOf(final SNode node) {
