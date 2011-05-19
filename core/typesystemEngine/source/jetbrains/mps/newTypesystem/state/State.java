@@ -228,8 +228,8 @@ public class State {
     return myEquations;
   }
 
-  public void addEquation(SNode left, SNode right, EquationInfo info) {
-    myEquations.addEquation(left, right, info);
+  public boolean addEquation(SNode left, SNode right, EquationInfo info) {
+    return myEquations.addEquation(left, right, info);
   }
 
   public void addEquation(SNode left, SNode right, EquationInfo info, boolean checkOnly) {

@@ -43,7 +43,6 @@ public class Equations {
   @StateObject
   private final Map<SNode, SNode> myRepresentatives = new THashMap<SNode, SNode>();
 
-  //todo: seems to be useless to use as a part of state but in such case it is a possible source of side effects
   private final Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
   private final State myState;
 
@@ -77,6 +76,10 @@ public class Equations {
   }
 
   public SNode getRepresentative(final SNode node) {
+    return getRepresentative(node,true);
+  }
+
+  private SNode getRepresentative(final SNode node, final boolean shortenPaths) {
     if (node == null || !TypesUtil.isVariable(node)) {
       return node;
     }
@@ -92,7 +95,7 @@ public class Equations {
         current = parent;
         parent = myRepresentatives.get(parent);
       }
-      if (path.size() > 1) {
+      if (path.size() > 1 && shortenPaths) {
         for (SNode elem : path) {
           substituteRepresentative(elem, current);
         }
@@ -110,27 +113,26 @@ public class Equations {
     myState.executeOperation(new SubstituteEquationOperation(elem, myRepresentatives.get(elem), current, source));
   }
 
-  public void addEquation(SNode left, SNode right, EquationInfo info) {
+  public boolean addEquation(SNode left, SNode right, EquationInfo info) {
     SNode lRepresentative = getRepresentative(left);
     SNode rRepresentative = getRepresentative(right);
     if (lRepresentative == null || rRepresentative == null) {
       myState.executeOperation(new TraceWarningOperation("Equation was not added: " + lRepresentative + " = " + rRepresentative, info));
-      return;
+      return false;
     }
     if (lRepresentative.equals(rRepresentative)) {
-      return;
+      return true;
     }
     if (TypesUtil.isVariable(lRepresentative)) {
-      processEquation(lRepresentative, rRepresentative, info);
-      return;
+      return processEquation(lRepresentative, rRepresentative, info);
     }
     if (TypesUtil.isVariable(rRepresentative)) {
-      processEquation(rRepresentative, lRepresentative, info);
-      return;
+      return processEquation(rRepresentative, lRepresentative, info);
     }
     if (!compareTypes(lRepresentative, rRepresentative, info)) {
       myState.getNodeMaps().reportEquationBroken(info, lRepresentative, rRepresentative);
     }
+    return true;
   }
 
   private boolean compareTypes(SNode left, SNode right, EquationInfo info) {
@@ -143,13 +145,16 @@ public class Equations {
     return TypesUtil.match(left, right, this, info);
   }
 
-  private void processEquation(SNode var, SNode type, EquationInfo info) {
+  private boolean processEquation(SNode var, SNode type, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(var);
-    if (TypesUtil.getVariables(type).contains(var)) {
-      reportRecursiveType(source, info);
-      return;
+    for (SNode innerVar : TypesUtil.getVariables(expandNode(type, false))) {
+      if (getRepresentative(innerVar, false).equals(var)){
+        reportRecursiveType(source, info);
+        return false;
+      }
     }
     myState.executeOperation(new AddEquationOperation(var, type, source, info));
+    return true;
   }
 
   public SNode expandNode(final SNode node, boolean finalExpansion) {
@@ -161,6 +166,10 @@ public class Equations {
       return null;
     }
     SNode type = getRepresentative(node);
+    if (TypesUtil.getVariables(type).contains(node)) {
+      reportRecursiveType(type, null);
+      return type;
+    }
     if (TypesUtil.isVariable(type)) {
       if (variablesMet.contains(type)) {
         reportRecursiveType(type, null);
@@ -220,7 +229,7 @@ public class Equations {
     return converter.convert(sourceNode, role, variable, false);
   }
 
-  void reportRecursiveType(SNode node, EquationInfo info) {
+  void reportRecursiveType(SNode node, EquationInfo info) {  //todo
     SimpleErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed",
                 info == null? null:info.getRuleModel(), info == null? null:info.getRuleId());
     myState.getTypeCheckingContext().reportMessage(node, errorReporter);
