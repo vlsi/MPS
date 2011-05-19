@@ -89,7 +89,7 @@ public class GeneratorManager {
                                 final IMessageHandler messages,
                                 final GenerationOptions options) {
     final boolean[] result = new boolean[1];
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().tryWrite(new Runnable() {
       public void run() {
         TransientModelsComponent transientModelsComponent = myProject.getComponent(TransientModelsComponent.class);
         transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());

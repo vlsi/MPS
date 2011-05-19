@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -111,6 +112,11 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
+  public void runWriteInEDTAndWait(Runnable r) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
   public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
     throw new UnsupportedOperationException();
   }
@@ -145,6 +151,44 @@ public class DefaultModelAccess extends ModelAccess {
     } else {
       return false;
     }
+  }
+
+
+  @Override
+  public boolean tryWrite(Runnable r) {
+    if (getWriteLock().tryLock()) {
+      try {
+        r.run();
+      } finally {
+        getWriteLock().unlock();
+      }
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  @Override
+  public <T> T tryWrite(final Computable<T> c) {
+    if (getWriteLock().tryLock()) {
+      try {
+        return c.compute();
+      } finally {
+        getWriteLock().unlock();
+      }
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public boolean tryWriteInCommand(Runnable r, Project p) {
+    return tryWrite(r);
+  }
+
+  @Override
+  public <T> T tryWriteInCommand(Computable<T> r, Project p) {
+    return tryWrite(r);
   }
 
   @Override

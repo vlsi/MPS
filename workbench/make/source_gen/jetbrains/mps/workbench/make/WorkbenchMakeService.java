@@ -4,6 +4,7 @@ package jetbrains.mps.workbench.make;
 
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
@@ -14,6 +15,11 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
@@ -27,10 +33,7 @@ import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressSt
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IFeedback;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.progress.Progressive;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -46,6 +49,7 @@ import jetbrains.mps.messages.IMessage;
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
   private boolean cleanMake;
+  private ProgressIndicator progInd;
 
   public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
     this.context = context;
@@ -69,7 +73,7 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
-    String scrName = ((cleanMake ?
+    final String scrName = ((cleanMake ?
       "Rebuild" :
       "Make"
     ));
@@ -116,12 +120,22 @@ public class WorkbenchMakeService implements IMakeService {
     final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
     doExecute(new Runnable() {
       public void run() {
-        for (Iterable<IResource> cl : clInput.value) {
-          res.value = script.execute(ctl, cl);
-          if (!(res.value.isSucessful())) {
-            break;
+        ThreadUtils.runInUIThreadAndWait(new Runnable() {
+          public void run() {
+            IdeEventQueue.getInstance().flushQueue();
+            ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true) {
+              public void run(@NotNull ProgressIndicator ignore) {
+                progInd = ProgressManager.getInstance().getProgressIndicator();
+                for (Iterable<IResource> cl : clInput.value) {
+                  res.value = script.execute(ctl, cl);
+                  if (!(res.value.isSucessful()) || progInd.isCanceled()) {
+                    break;
+                  }
+                }
+              }
+            });
           }
-        }
+        });
       }
     });
 
@@ -201,15 +215,15 @@ public class WorkbenchMakeService implements IMakeService {
         }
       }
 
-      public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        IdeEventQueue.getInstance().flushQueue();
-        ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-          public void run(ProgressIndicator realInd) {
-            progStrat.setProgressIndicator(realInd);
-            pind.value = new JobMonitorProgressIndicator(jmon);
-            code.invoke(jmon);
-          }
-        }, scrName, true, WorkbenchMakeService.this.context.getProject());
+      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+        try {
+          progStrat.setProgressIndicator(progInd);
+          pind.value = new JobMonitorProgressIndicator(jmon);
+          code.invoke(jmon);
+        } catch (Throwable e) {
+          e.printStackTrace();
+          jmon.reportFeedback(new IFeedback.ERROR(e.getMessage()));
+        }
       }
 
       public void setup(IParametersPool pool) {
