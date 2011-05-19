@@ -18,12 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.vfs.IFile;
 
 public abstract class SModelRepositoryAdapter implements SModelRepositoryListener {
-
-  public void modelCreated(SModelDescriptor modelDescriptor) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
   public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
   }
 

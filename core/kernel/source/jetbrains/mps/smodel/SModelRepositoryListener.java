@@ -18,9 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.vfs.IFile;
 
 public interface SModelRepositoryListener {
-
-  void modelCreated(SModelDescriptor modelDescriptor);
-
   void beforeModelDeleted(SModelDescriptor modelDescriptor);
 
   void modelDeleted(SModelDescriptor modelDescriptor);

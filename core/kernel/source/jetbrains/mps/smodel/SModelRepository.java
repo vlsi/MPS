@@ -130,17 +130,6 @@ public class SModelRepository implements ApplicationComponent {
     return result;
   }
 
-  /**
-   * do not call this method unless you do it from some ModelRootManager
-   */
-  public void createNewModel(EditableSModelDescriptor modelDescriptor, ModelOwner owner) {
-    ModelAccess.assertLegalWrite();
-
-    registerModelDescriptor(modelDescriptor, owner);
-    modelDescriptor.setChanged(true);
-    fireModelCreatedEvent(modelDescriptor);
-  }
-
   public void deleteModel(SModelDescriptor modelDescriptor) {
     ModelAccess.assertLegalWrite();
 
@@ -393,18 +382,6 @@ public class SModelRepository implements ApplicationComponent {
     for (SModelRepositoryListener l : listeners()) {
       try {
         l.modelOwnerRemoved(modelDescriptor, owner);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelCreatedEvent(SModelDescriptor modelDescriptor) {
-    MPSModuleRepository.getInstance().invalidateCaches();
-
-    for (SModelRepositoryListener listener : listeners()) {
-      try {
-        listener.modelCreated(modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
