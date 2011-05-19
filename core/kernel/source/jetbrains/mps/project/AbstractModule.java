@@ -53,8 +53,6 @@ public abstract class AbstractModule implements IModule {
 
   public static final String MODULE_DIR = "module";
 
-  private boolean myModelsRead = false;
-
   protected IFile myDescriptorFile;
   private ModuleReference myModuleReference;
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
@@ -391,32 +389,6 @@ public abstract class AbstractModule implements IModule {
     return myScope;
   }
 
-  private void readModels() {
-    if (myModelsRead) return;
-
-    myModelsRead = true;
-    mySModelRoots.clear();
-
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      List<jetbrains.mps.project.structure.model.ModelRoot> roots = descriptor.getModelRoots();
-      for (jetbrains.mps.project.structure.model.ModelRoot modelRoot : roots) {
-        try {
-          SModelRoot root = new SModelRoot(modelRoot);
-          mySModelRoots.add(root);
-          IModelRootManager manager = root.getManager();
-          Collection<SModelDescriptor> models = manager.load(root.getModelRoot());
-
-          manager.updateModels(root, this);
-        } catch (Exception e) {
-          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
-        }
-      }
-    }
-
-    fireModuleInitialized();
-  }
-
   public void dispose() {
     mySModelRoots.clear();
   }
@@ -433,12 +405,26 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void rereadModels() {
-    myModelsRead = false;
-    readModels();
-  }
+    mySModelRoots.clear();
 
-  protected boolean isInitialized() {
-    return myModelsRead;
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      List<ModelRoot> roots = descriptor.getModelRoots();
+      for (ModelRoot modelRoot : roots) {
+        try {
+          SModelRoot root = new SModelRoot(modelRoot);
+          mySModelRoots.add(root);
+          IModelRootManager manager = root.getManager();
+          Collection<SModelDescriptor> models = manager.load(root.getModelRoot());
+
+          manager.updateModels(root, this);
+        } catch (Exception e) {
+          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+        }
+      }
+    }
+
+    fireModuleInitialized();
   }
 
   protected void fireModuleInitialized() {
