@@ -1,173 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TestView.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestView" />
-  <unitInfo fileName="UnitTestExecutionController.java" startLine="22" startPosition="45" endLine="26" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestExecutionController$1" />
-  <unitInfo fileName="BaseTestTreeNode.java" startLine="27" startPosition="44" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.BaseTestTreeNode$1" />
-  <unitInfo fileName="TestCaseTreeNode.java" startLine="27" startPosition="45" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestCaseTreeNode$1" />
-  <unitInfo fileName="JUnit4TestWrapper.java" startLine="32" startPosition="95" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$1" />
-  <unitInfo fileName="JUnit3TestWrapper.java" startLine="32" startPosition="95" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$1" />
-  <unitInfo fileName="StatisticsTableModel.java" startLine="33" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsTableModel$1" />
-  <unitInfo fileName="JUnit4TestWrapper.java" startLine="36" startPosition="36" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$2" />
-  <unitInfo fileName="JUnit3TestWrapper.java" startLine="36" startPosition="36" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$2" />
-  <unitInfo fileName="TestMethodTreeNode.java" startLine="37" startPosition="45" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodTreeNode$2" />
-  <unitInfo fileName="JUnit4TestWrapper.java" startLine="40" startPosition="17" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$3" />
-  <unitInfo fileName="JUnit3TestWrapper.java" startLine="40" startPosition="17" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$3" />
-  <unitInfo fileName="JUnit4MethodWrapper.java" startLine="42" startPosition="117" endLine="46" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4MethodWrapper$1" />
-  <unitInfo fileName="LanguageTestWrapper.java" startLine="44" startPosition="211" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.LanguageTestWrapper$1" />
-  <unitInfo fileName="TestRunState.java" startLine="45" startPosition="62" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState$7" />
-  <unitInfo fileName="TestOutputComponent.java" startLine="48" startPosition="35" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent$1" />
-  <unitInfo fileName="TestRunState.java" startLine="49" startPosition="47" endLine="53" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState$8" />
-  <unitInfo fileName="TestUtils.java" startLine="56" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$1" />
-  <unitInfo fileName="UnitTestRunner.java" startLine="59" startPosition="66" endLine="63" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner$2" />
-  <unitInfo fileName="TestTreeIconAnimator.java" startLine="73" startPosition="45" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTreeIconAnimator$1" />
-  <unitInfo fileName="TestTree.java" startLine="83" startPosition="41" endLine="87" endPosition="11" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTree$1" />
-  <unitInfo fileName="ListPanel.java" startLine="85" startPosition="49" endLine="89" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$2" />
-  <unitInfo fileName="AbstractTestWrapper.java" startLine="87" startPosition="47" endLine="91" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.AbstractTestWrapper$1" />
-  <unitInfo fileName="TestTree.java" startLine="89" startPosition="43" endLine="93" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTree$2" />
-  <unitInfo fileName="ListPanel.java" startLine="107" startPosition="53" endLine="111" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$3" />
-  <unitInfo fileName="TestTree.java" startLine="108" startPosition="37" endLine="112" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTree$3" />
-  <unitInfo fileName="TestRunState.java" startLine="112" startPosition="57" endLine="116" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState$2" />
-  <unitInfo fileName="UnitTestRunner.java" startLine="112" startPosition="120" endLine="116" endPosition="11" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner$3" />
-  <unitInfo fileName="TestTree.java" startLine="115" startPosition="37" endLine="119" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTree$4" />
-  <unitInfo fileName="TestRunState.java" startLine="121" startPosition="57" endLine="125" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState$3" />
-  <unitInfo fileName="TestRunState.java" startLine="130" startPosition="57" endLine="134" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState$4" />
-  <unitInfo fileName="TestRunState.java" startLine="139" startPosition="57" endLine="143" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState$5" />
-  <unitInfo fileName="StatisticsTableModel.java" startLine="140" startPosition="71" endLine="144" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsTableModel$4" />
-  <unitInfo fileName="TestRunState.java" startLine="148" startPosition="57" endLine="152" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState$6" />
-  <unitInfo fileName="TestUtils.java" startLine="154" startPosition="56" endLine="158" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$3" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="168" startPosition="36" endLine="172" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$2" />
-  <unitInfo fileName="TestNodeWrapperFactory.java" startLine="170" startPosition="104" endLine="174" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$1" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="175" startPosition="42" endLine="179" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$3" />
-  <unitInfo fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="96" endLine="182" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$2" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="181" startPosition="36" endLine="185" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$3" />
-  <unitInfo fileName="ListPanel.java" startLine="181" startPosition="110" endLine="185" endPosition="19" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$5" />
-  <unitInfo fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="25" endLine="186" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$3" />
-  <unitInfo fileName="ListPanel.java" startLine="185" startPosition="31" endLine="189" endPosition="19" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$5" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="194" startPosition="36" endLine="198" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$4" />
-  <unitInfo fileName="ListPanel.java" startLine="201" startPosition="72" endLine="205" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$4" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="207" startPosition="36" endLine="211" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$5" />
-  <unitInfo fileName="TestUtils.java" startLine="208" startPosition="102" endLine="212" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$4" />
-  <unitInfo fileName="TestUtils.java" startLine="212" startPosition="17" endLine="216" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$5" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="220" startPosition="36" endLine="224" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$6" />
-  <unitInfo fileName="TestUtils.java" startLine="220" startPosition="58" endLine="224" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$6" />
-  <unitInfo fileName="TestUtils.java" startLine="224" startPosition="18" endLine="228" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$7" />
-  <unitInfo fileName="TestUtils.java" startLine="228" startPosition="39" endLine="232" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$8" />
-  <unitInfo fileName="TestUtils.java" startLine="236" startPosition="58" endLine="240" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$9" />
-  <unitInfo fileName="TestUtils.java" startLine="240" startPosition="40" endLine="244" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$10" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="282" startPosition="36" endLine="286" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$7" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="309" startPosition="36" endLine="313" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$8" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="321" startPosition="36" endLine="325" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$9" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="333" startPosition="36" endLine="337" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$10" />
-  <unitInfo fileName="ProgressLine.java" startLine="45" startPosition="35" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ProgressLine$1" />
-  <unitInfo fileName="ListPanel.java" startLine="154" startPosition="53" endLine="159" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$4" />
-  <unitInfo fileName="TestTree.java" startLine="188" startPosition="49" endLine="193" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTree$5" />
-  <unitInfo fileName="TestTree.java" startLine="240" startPosition="49" endLine="245" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTree$6" />
   <unitInfo fileName="ListPanel.java" startLine="15" startPosition="32" endLine="21" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$1" />
   <unitInfo fileName="ModuleChooserComponent.java" startLine="16" startPosition="32" endLine="22" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent$1" />
   <unitInfo fileName="ModelChooserComponent.java" startLine="16" startPosition="32" endLine="22" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent$1" />
-  <unitInfo fileName="UnitTestExecutionController.java" startLine="57" startPosition="15" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestExecutionController$2" />
-  <unitInfo fileName="UnitTestRunner.java" startLine="64" startPosition="50" endLine="70" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner$2" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="67" startPosition="32" endLine="73" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$1" />
-  <unitInfo fileName="StatisticsTableModel.java" startLine="116" startPosition="56" endLine="122" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsTableModel$3" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="143" startPosition="62" endLine="149" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$3" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="165" startPosition="15" endLine="171" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel$8" />
-  <unitInfo fileName="TestStateListener.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestStateListener" />
-  <unitInfo fileName="TestMethodTreeNode.java" startLine="24" startPosition="45" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodTreeNode$1" />
   <unitInfo fileName="JUnitTestActionOptions_PreferencesComponent.java" startLine="50" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestActionOptions_PreferencesComponent$MyState" />
-  <unitInfo fileName="ProgressLine.java" startLine="88" startPosition="60" endLine="96" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ProgressLine$3" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="109" startPosition="15" endLine="117" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel$4" />
-  <unitInfo fileName="TotalRow.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TotalRow" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="151" startPosition="90" endLine="160" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$3" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="183" startPosition="52" endLine="192" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$3" />
   <unitInfo fileName="UnitTest_ProjectPlugin.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_ProjectPlugin" />
-  <unitInfo fileName="ModelChooserComponent.java" startLine="28" startPosition="18" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent$1" />
-  <unitInfo fileName="ModuleChooserComponent.java" startLine="29" startPosition="18" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent$1" />
-  <unitInfo fileName="TestRunState.java" startLine="57" startPosition="45" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState$1" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="121" startPosition="15" endLine="131" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel$5" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="135" startPosition="15" endLine="145" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel$6" />
-  <unitInfo fileName="ListPanel.java" startLine="163" startPosition="53" endLine="173" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$4" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="163" startPosition="137" endLine="173" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$3" />
-  <unitInfo fileName="TestStatisticsRow.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestStatisticsRow" />
-  <unitInfo fileName="ModelChooserComponent.java" startLine="43" startPosition="45" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent$2" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="76" startPosition="15" endLine="88" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel$2" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="149" startPosition="15" endLine="161" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel$7" />
   <unitInfo fileName="DefaultJUnit_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Factory" />
-  <unitInfo fileName="ModuleChooserComponent.java" startLine="44" startPosition="45" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent$2" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="59" startPosition="15" endLine="72" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel$1" />
-  <unitInfo fileName="ProgressLine.java" startLine="85" startPosition="15" endLine="98" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ProgressLine$2" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="92" startPosition="15" endLine="105" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel$3" />
-  <unitInfo fileName="ITestNodeWrapper.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
-  <unitInfo fileName="ListPanel.java" startLine="178" startPosition="53" endLine="192" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$4" />
-  <unitInfo fileName="UnitTestRunner.java" startLine="56" startPosition="45" endLine="72" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner$1" />
-  <unitInfo fileName="BaseTestOccurenceNavigator.java" startLine="86" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.BaseTestOccurenceNavigator$TestNavigator" />
-  <unitInfo fileName="ListPanel.java" startLine="213" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$MyAbstractListModel" />
-  <unitInfo fileName="JUnit4MethodWrapper.java" startLine="68" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4MethodWrapper$QuotationClass_lclll2_a0a0a0a0a0a0a0a" />
-  <unitInfo fileName="TestTreeRootMouseListener.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTreeRootMouseListener" />
   <unitInfo fileName="UnitTest_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_ApplicationPlugin" />
-  <unitInfo fileName="TestCaseRow.java" startLine="7" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestCaseRow" />
-  <unitInfo fileName="ListPanel.java" startLine="102" startPosition="26" endLine="124" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$2" />
-  <unitInfo fileName="JUnit3MethodWrapper.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3MethodWrapper" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="394" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$MyExecutionResult" />
-  <unitInfo fileName="ListPanel.java" startLine="77" startPosition="23" endLine="101" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$1" />
-  <unitInfo fileName="TestState.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestState" />
-  <unitInfo fileName="TestOutputComponent.java" startLine="135" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent$Message" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="418" startPosition="0" endLine="443" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$MyExecutionConsole" />
   <unitInfo fileName="DefaultJUnit_Editor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Editor" />
-  <unitInfo fileName="BaseTestTreeNode.java" startLine="10" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.BaseTestTreeNode" />
-  <unitInfo fileName="FailedTestOccurenceNavigator.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.FailedTestOccurenceNavigator" />
-  <unitInfo fileName="JUnit3TestWrapper.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="360" startPosition="0" endLine="393" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$MyState" />
-  <unitInfo fileName="TestTreeSelectionListener.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTreeSelectionListener" />
-  <unitInfo fileName="ModelChooserComponent.java" startLine="23" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent" />
-  <unitInfo fileName="UnitTestRunner.java" startLine="85" startPosition="45" endLine="120" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner$2" />
-  <unitInfo fileName="ModuleChooserComponent.java" startLine="24" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent" />
-  <unitInfo fileName="TestCaseTreeNode.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestCaseTreeNode" />
-  <unitInfo fileName="TestNameMap.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNameMap" />
-  <unitInfo fileName="ClonableList.java" startLine="11" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ClonableList" />
   <unitInfo fileName="JUnit_ConfigurationType.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_ConfigurationType" />
   <unitInfo fileName="ListPanel.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel" />
-  <unitInfo fileName="JUnit4TestWrapper.java" startLine="14" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper" />
   <unitInfo fileName="JUnitTestActionOptions_PreferencesComponent.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestActionOptions_PreferencesComponent" />
-  <unitInfo fileName="TestEventsDispatcher.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestEventsDispatcher" />
-  <unitInfo fileName="ListPanel.java" startLine="150" startPosition="76" endLine="195" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$3" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="313" startPosition="0" endLine="359" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$MySettingsEditor" />
-  <unitInfo fileName="StatisticsTableModel.java" startLine="38" startPosition="33" endLine="88" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsTableModel$2" />
-  <unitInfo fileName="TestMethodTreeNode.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodTreeNode" />
-  <unitInfo fileName="UnitTestProcessHandler.java" startLine="23" startPosition="32" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessHandler$1" />
-  <unitInfo fileName="UnitTestExecutionController.java" startLine="14" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestExecutionController" />
   <unitInfo fileName="ModuleChooserComponent.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent" />
   <unitInfo fileName="ModelChooserComponent.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent" />
   <unitInfo fileName="JUnitConfigFromMethod.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromMethod" />
-  <unitInfo fileName="LanguageTestWrapper.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.LanguageTestWrapper" />
   <unitInfo fileName="JUnitConfigFromModule.java" startLine="17" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromModule" />
   <unitInfo fileName="JUnitConfigFromProject.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromProject" />
   <unitInfo fileName="JUnitConfigFromModel.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromModel" />
-  <unitInfo fileName="UnitTestProcessHandler.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessHandler" />
-  <unitInfo fileName="TestUtils.java" startLine="73" startPosition="23" endLine="136" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$4" />
-  <unitInfo fileName="JUnit4MethodWrapper.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4MethodWrapper" />
   <unitInfo fileName="JUnitConfigFromClass.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromClass" />
-  <unitInfo fileName="TestUtils.java" startLine="71" startPosition="19" endLine="138" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$3" />
   <unitInfo fileName="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" />
   <unitInfo fileName="JUnitConfigFromLanguageTestMethods.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromLanguageTestMethods" />
-  <unitInfo fileName="TestUtils.java" startLine="69" startPosition="36" endLine="140" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils$2" />
-  <unitInfo fileName="AbstractTestWrapper.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.AbstractTestWrapper" />
   <unitInfo fileName="JUnitConfigFromLanguageTestCases.java" startLine="24" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromLanguageTestCases" />
-  <unitInfo fileName="ProgressLine.java" startLine="19" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ProgressLine" />
-  <unitInfo fileName="TestTreeIconAnimator.java" startLine="13" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTreeIconAnimator" />
-  <unitInfo fileName="TestContainerRow.java" startLine="9" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestContainerRow" />
-  <unitInfo fileName="BaseTestOccurenceNavigator.java" startLine="12" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.BaseTestOccurenceNavigator" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="117" startPosition="15" endLine="219" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$2" />
-  <unitInfo fileName="TestMethodRow.java" startLine="6" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodRow" />
-  <unitInfo fileName="TestOutputComponent.java" startLine="19" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestOutputComponent" />
-  <unitInfo fileName="TestToolbarPanel.java" startLine="24" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestToolbarPanel" />
-  <unitInfo fileName="StatisticsTableModel.java" startLine="20" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsTableModel" />
-  <unitInfo fileName="StatisticsRowRenderer.java" startLine="19" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsRowRenderer" />
-  <unitInfo fileName="UnitTestRunner.java" startLine="32" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner" />
-  <unitInfo fileName="ListPanel.java" startLine="40" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel" />
-  <unitInfo fileName="TestNodeWrapperFactory.java" startLine="18" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory" />
-  <unitInfo fileName="TestUtils.java" startLine="35" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils" />
-  <unitInfo fileName="TestTree.java" startLine="24" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTree" />
-  <unitInfo fileName="TestRunState.java" startLine="21" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="64" startPosition="0" endLine="444" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="37" startPosition="0" endLine="667" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor" />
   <root nodeId="1104580685292496833">
@@ -984,13 +857,13 @@
     <scopeInfo nodeId="1208286242568" fileName="TestTree.java" startLine="31" startPosition="0" endLine="41" endPosition="3">
       <varInfo nodeId="1766229992445325263" varName="disposable" />
       <varInfo nodeId="4736282893802026311" varName="project" />
-      <varInfo nodeId="4403789015609946639" varName="state" />
       <varInfo nodeId="1200269551723333766" varName="context" />
+      <varInfo nodeId="4403789015609946639" varName="state" />
     </scopeInfo>
     <scopeInfo nodeId="8392350987251231471" fileName="TestTree.java" startLine="216" startPosition="0" endLine="226" endPosition="0" />
     <scopeInfo nodeId="892466083793292635" fileName="TestTree.java" startLine="43" startPosition="111" endLine="56" endPosition="5">
-      <varInfo nodeId="4399792959753841683" varName="priorityList" />
       <varInfo nodeId="892466083793312739" varName="oldState" />
+      <varInfo nodeId="4399792959753841683" varName="priorityList" />
     </scopeInfo>
     <scopeInfo nodeId="892466083792934547" fileName="TestTree.java" startLine="81" startPosition="81" endLine="94" endPosition="11" />
     <scopeInfo nodeId="4951149158173759733" fileName="TestTree.java" startLine="237" startPosition="130" endLine="250" endPosition="9">
@@ -1408,8 +1281,8 @@
       <varInfo nodeId="6780659990277251672" varName="testsCommandLine" />
       <varInfo nodeId="6780659990277251654" varName="programParams" />
       <varInfo nodeId="6780659990277251677" varName="testCommandLineLength" />
-      <varInfo nodeId="6780659990277251643" varName="params" />
       <varInfo nodeId="6780659990277251650" varName="workingDir" />
+      <varInfo nodeId="6780659990277251643" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1216648032003" fileName="UnitTestRunner.java" startLine="75" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="1216648032009" varName="tests" />
@@ -2374,8 +2247,8 @@
       <varInfo nodeId="1208879518735" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1208878781297" fileName="StatisticsRowRenderer.java" startLine="34" startPosition="34" endLine="77" endPosition="40">
-      <varInfo nodeId="1208887007616" varName="font" />
       <varInfo nodeId="1208887015359" varName="boldFont" />
+      <varInfo nodeId="1208887007616" varName="font" />
     </scopeInfo>
     <scopeInfo nodeId="1208878781294" fileName="StatisticsRowRenderer.java" startLine="33" startPosition="0" endLine="78" endPosition="3" />
     <scopeInfo nodeId="1208878326589" fileName="StatisticsRowRenderer.java" startLine="80" startPosition="137" endLine="186" endPosition="18">
@@ -2387,8 +2260,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1208878326574" fileName="StatisticsRowRenderer.java" startLine="79" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="1208878326581" varName="isSelected" />
-      <varInfo nodeId="1208878326579" varName="value" />
       <varInfo nodeId="1208878326587" varName="column" />
+      <varInfo nodeId="1208878326579" varName="value" />
       <varInfo nodeId="1208878326577" varName="table" />
       <varInfo nodeId="1208878326583" varName="hasFocus" />
       <varInfo nodeId="1208878326585" varName="row" />
@@ -2478,12 +2351,12 @@
     <scopeInfo nodeId="403933718789067713" fileName="ModuleChooserComponent.java" startLine="51" startPosition="101" endLine="52" endPosition="21" />
     <scopeInfo nodeId="4062140231441700365" fileName="ModuleChooserComponent.java" startLine="34" startPosition="26" endLine="36" endPosition="65" />
     <scopeInfo nodeId="145554711892090310" fileName="ModuleChooserComponent.java" startLine="30" startPosition="51" endLine="37" endPosition="9">
-      <varInfo nodeId="5972510671724577915" varName="result" />
       <varInfo nodeId="145554711892090422" varName="ref" />
+      <varInfo nodeId="5972510671724577915" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="403933718789067698" fileName="ModuleChooserComponent.java" startLine="47" startPosition="34" endLine="54" endPosition="97">
-      <varInfo nodeId="403933718789067700" varName="model" />
       <varInfo nodeId="403933718789067743" varName="module" />
+      <varInfo nodeId="403933718789067700" varName="model" />
       <varInfo nodeId="403933718789067706" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="403933718789067697" fileName="ModuleChooserComponent.java" startLine="46" startPosition="336" endLine="55" endPosition="9">
@@ -2843,8 +2716,8 @@
     <scopeInfo nodeId="1717728468090419697" fileName="TestRunState.java" startLine="156" startPosition="63" endLine="164" endPosition="5" />
     <scopeInfo nodeId="9008364566102377728" fileName="TestRunState.java" startLine="214" startPosition="142" endLine="222" endPosition="7">
       <varInfo nodeId="9008364566102377496" varName="testClassName" />
-      <varInfo nodeId="9008364566102377509" varName="testMethodName" />
       <varInfo nodeId="9008364566102377483" varName="key" />
+      <varInfo nodeId="9008364566102377509" varName="testMethodName" />
     </scopeInfo>
     <scopeInfo nodeId="5521528256364956082" fileName="TestRunState.java" startLine="44" startPosition="53" endLine="53" endPosition="8" />
     <scopeInfo nodeId="1200269551723292922" fileName="TestRunState.java" startLine="82" startPosition="76" endLine="91" endPosition="7">
@@ -2995,8 +2868,8 @@
       <varInfo nodeId="2281887280934081019" varName="process" />
     </scopeInfo>
     <scopeInfo nodeId="2281887280934031666" fileName="UnitTestExecutionController.java" startLine="20" startPosition="0" endLine="30" endPosition="3">
-      <varInfo nodeId="2281887280934035641" varName="whatToTest" />
       <varInfo nodeId="2281887280934079559" varName="configurationRunParameters" />
+      <varInfo nodeId="2281887280934035641" varName="whatToTest" />
     </scopeInfo>
     <scopeInfo nodeId="2281887280934080946" fileName="UnitTestExecutionController.java" startLine="54" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="2281887280934079582" fileName="UnitTestExecutionController.java" startLine="36" startPosition="61" endLine="52" endPosition="111">
@@ -3410,8 +3283,8 @@
       <varInfo nodeId="308525442908715193" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="40577050485366645" fileName="UnitTestProcessHandler.java" startLine="49" startPosition="62" endLine="72" endPosition="9">
-      <varInfo nodeId="1813715713114782861" varName="system" />
       <varInfo nodeId="4060094294590056935" varName="text" />
+      <varInfo nodeId="1813715713114782861" varName="system" />
       <varInfo nodeId="4060094294590056952" varName="error" />
       <varInfo nodeId="4060094294590056941" varName="textTrimmed" />
       <varInfo nodeId="4060094294590056972" varName="testEvent" />
@@ -4032,8 +3905,8 @@
       <varInfo nodeId="1772682388919199623" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="2595782876361292076" fileName="TestUtils.java" startLine="145" startPosition="100" endLine="158" endPosition="7">
-      <varInfo nodeId="2595782876361293154" varName="caseNodeWrapper" />
       <varInfo nodeId="1772682388919177325" varName="methods" />
+      <varInfo nodeId="2595782876361293154" varName="caseNodeWrapper" />
     </scopeInfo>
     <scopeInfo nodeId="2595782876361303803" fileName="TestUtils.java" startLine="160" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="2595782876361303805" varName="fullMethodName" />
@@ -4841,8 +4714,8 @@
       <varInfo nodeId="1853639028181769905" varName="comp" />
       <varInfo nodeId="1853639028181773266" varName="toolbar" />
       <varInfo nodeId="813722280256835315" varName="remove" />
-      <varInfo nodeId="813722280256791080" varName="add" />
       <varInfo nodeId="1853639028181772165" varName="group" />
+      <varInfo nodeId="813722280256791080" varName="add" />
     </scopeInfo>
     <scopeInfo nodeId="5842388990471961360" fileName="ListPanel.java" startLine="70" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="5842388990471961442" varName="nodes" />
@@ -5006,8 +4879,8 @@
     <scopeInfo nodeId="2531203453721130634" fileName="TestToolbarPanel.java" startLine="164" startPosition="50" endLine="171" endPosition="6" />
     <scopeInfo nodeId="7450159848769253893" fileName="TestToolbarPanel.java" startLine="29" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="5163834070164081867" varName="project" />
-      <varInfo nodeId="7450159848769323106" varName="tree" />
       <varInfo nodeId="7450159848769323108" varName="navigator" />
+      <varInfo nodeId="7450159848769323106" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="7450159848769282241" fileName="TestToolbarPanel.java" startLine="96" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="7450159848769282244" varName="p0" />

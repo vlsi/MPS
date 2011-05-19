@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Replace_Test.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="tests.Replace_Test" />
-  <unitInfo fileName="_Replacer_a0a0a0a.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="tests._Replacer_a0a0a0a" />
+  <unitInfo fileName="_Replacer_55w9mm_a0a0a0a.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="tests._Replacer_55w9mm_a0a0a0a" />
   <unitInfo fileName="Statements_Test.java" startLine="10" startPosition="0" endLine="53" endPosition="0" unitName="tests.Statements_Test" />
   <unitInfo fileName="PerlReplace_Test.java" startLine="9" startPosition="0" endLine="76" endPosition="0" unitName="tests.PerlReplace_Test" />
   <unitInfo fileName="Match_Test.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="tests.Match_Test" />
@@ -147,11 +147,11 @@
     <scopeInfo nodeId="8942139995508580996" fileName="PerlReplace_Test.java" startLine="59" startPosition="0" endLine="75" endPosition="0" />
   </root>
   <root nodeId="6129327962763155569">
-    <nodeInfo nodeId="6129327962763155612" fileName="Replace_Test.java" startLine="13" startPosition="48" endLine="14" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6129327962763155619" fileName="Replace_Test.java" startLine="14" startPosition="129" endLine="15" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962763155602" fileName="_Replacer_a0a0a0a.java" startLine="17" startPosition="42" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6129327962763155612" fileName="Replace_Test.java" startLine="13" startPosition="48" endLine="14" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6129327962763155619" fileName="Replace_Test.java" startLine="14" startPosition="136" endLine="15" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962763155602" fileName="_Replacer_55w9mm_a0a0a0a.java" startLine="17" startPosition="42" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6129327962763155576" fileName="Replace_Test.java" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_replace1#()V" />
-    <scopeInfo nodeId="6129327962763155584" fileName="_Replacer_a0a0a0a.java" startLine="17" startPosition="42" endLine="18" endPosition="40" />
+    <scopeInfo nodeId="6129327962763155584" fileName="_Replacer_55w9mm_a0a0a0a.java" startLine="17" startPosition="42" endLine="18" endPosition="40" />
     <scopeInfo nodeId="6129327962763155579" fileName="Replace_Test.java" startLine="13" startPosition="48" endLine="15" endPosition="52">
       <varInfo nodeId="6129327962763155615" varName="s" />
     </scopeInfo>
