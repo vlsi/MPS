@@ -30,17 +30,14 @@ import java.util.Collection;
 import java.util.Set;
 
 public abstract class StubModelDataSource extends FileBasedModelDataSource {
-  private static Logger LOG = Logger.getLogger(StubModelDataSource.class);
+  private final Set<StubPath> myStubPaths = new THashSet<StubPath>();
 
-  private final Set<StubPath> myStubPaths;
+  public StubModelDataSource() {
 
-  public StubModelDataSource(Collection<StubPath> stubPaths) {
-    myStubPaths = new THashSet<StubPath>(stubPaths);
   }
 
   public String toString() {
-    //todo
-    return "stub model data source";
+    return "stub model data source"; //todo include filenames
   }
 
   public boolean containFile(IFile file) {
@@ -89,12 +86,13 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
     return true;
   }
 
-  public Collection<StubPath> getStubPaths() {
-    return myStubPaths;
-  }
-
   public void addPath(StubPath sp) {
     myStubPaths.add(sp);
+    sourcesSetChanged();
+  }
+
+  protected Set<StubPath> getStubPaths() {
+    return myStubPaths;
   }
 
   //todo more precise
