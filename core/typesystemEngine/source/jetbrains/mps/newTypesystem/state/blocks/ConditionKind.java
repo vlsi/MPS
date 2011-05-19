@@ -70,14 +70,9 @@ public enum ConditionKind {
           }
         }
       }
-      level++;
-      if (level > 10) {
-        System.out.println(node);
-      }
       for (SNode child : representative.getChildren(false)) {
         result.addAll(getUnresolvedInputs(child, state));
       }
-      level--;
       return result;
     }
 
@@ -88,6 +83,5 @@ public enum ConditionKind {
   };
 
   public abstract List<SNode> getUnresolvedInputs(SNode node, State state);
-  public static int level = 0;
   public abstract String getPresentation();
 }
