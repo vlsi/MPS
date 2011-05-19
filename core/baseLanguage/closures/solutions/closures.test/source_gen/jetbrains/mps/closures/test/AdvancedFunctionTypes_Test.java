@@ -8,8 +8,8 @@ import junit.framework.Assert;
 
 public class AdvancedFunctionTypes_Test extends TestCase {
   public void test_returnsFunction() throws Exception {
-    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>> fun1 = new _FunctionTypes._return_P0_E0<_FunctionTypes._return_P0_E0<? extends Integer>>() {
-      public _FunctionTypes._return_P0_E0<? extends Integer> invoke() {
+    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>> fun1 = new _FunctionTypes._return_P0_E0<_FunctionTypes._return_P0_E0<? extends Object>>() {
+      public _FunctionTypes._return_P0_E0<? extends Object> invoke() {
         return new _FunctionTypes._return_P0_E0<Integer>() {
           public Integer invoke() {
             return 1;
