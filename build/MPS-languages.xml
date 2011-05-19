@@ -1335,6 +1335,7 @@
       <zipfileset dir="platform/gwtsupport/languages/client" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="platform/gwtsupport/languages/client/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="platform/gwtsupport/languages/client/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-dev.jar" />
       <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
       <zipfileset dir="platform/gwtsupport/languages/client/classes_gen" />
     </jar>

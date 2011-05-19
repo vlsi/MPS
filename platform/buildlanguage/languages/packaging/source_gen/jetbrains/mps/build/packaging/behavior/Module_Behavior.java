@@ -70,7 +70,7 @@ public class Module_Behavior {
     List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
     return Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ListSequence.fromList(paths).where(new IWhereFilter<StubPath>() {
       public boolean accept(StubPath it) {
-        return LanguageID.JAVA_MANAGER.equals(it.getManager());
+        return LanguageID.JAVA_MANAGER.equals(it.getManager()) || it.getPath().endsWith(".jar");
       }
     }).toListSequence())).distinct().toListSequence(), true);
   }
