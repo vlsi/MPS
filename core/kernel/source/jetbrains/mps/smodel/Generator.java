@@ -108,15 +108,6 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().isPackaged();
   }
 
-  protected void readModels() {
-    if (!isInitialized()) {
-      super.readModels();
-      if (isInitialized()) {
-        fireModuleInitialized();
-      }
-    }
-  }
-
   public List<StubPath> getStubPaths() {
     return getSourceLanguage().getRuntimeStubPaths();
   }

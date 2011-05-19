@@ -68,7 +68,7 @@ public class StubModelDescriptors {
 
   public Collection<SModelReference> collectModels(@NotNull SModelRoot root) {
     List<ModelHandle> models = new ArrayList<ModelHandle>();
-    ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, models);
+//    ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, models);
     List<SModelReference> result = new ArrayList<SModelReference>(models.size());
     for (ModelHandle model : models) {
       result.add(model.getReference());

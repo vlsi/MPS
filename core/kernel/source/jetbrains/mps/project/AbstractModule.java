@@ -54,7 +54,6 @@ public abstract class AbstractModule implements IModule {
   public static final String MODULE_DIR = "module";
 
   private boolean myModelsRead = false;
-  private boolean myInitialized = false;
 
   protected IFile myDescriptorFile;
   private ModuleReference myModuleReference;
@@ -392,7 +391,7 @@ public abstract class AbstractModule implements IModule {
     return myScope;
   }
 
-  protected void readModels() {
+  private void readModels() {
     if (myModelsRead) return;
 
     myModelsRead = true;
@@ -406,6 +405,8 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
+          Collection<SModelDescriptor> models = manager.load(root.getModelRoot());
+
           manager.updateModels(root, this);
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
@@ -413,7 +414,7 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    myInitialized = true;
+    fireModuleInitialized();
   }
 
   public void dispose() {
@@ -433,12 +434,11 @@ public abstract class AbstractModule implements IModule {
 
   protected void rereadModels() {
     myModelsRead = false;
-    myInitialized = false;
     readModels();
   }
 
   protected boolean isInitialized() {
-    return myInitialized;
+    return myModelsRead;
   }
 
   protected void fireModuleInitialized() {

@@ -128,16 +128,6 @@ public class Solution extends AbstractModule {
     return solution;
   }
 
-  protected void readModels() {
-    if (!isInitialized()) {
-      super.readModels();
-
-      if (isInitialized()) {
-        fireModuleInitialized();
-      }
-    }
-  }
-
   public SolutionDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
   }

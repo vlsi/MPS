@@ -214,16 +214,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  protected void readModels() {
-    if (!isInitialized()) {
-      super.readModels();
-
-      if (isInitialized()) {
-        fireModuleInitialized();
-      }
-    }
-  }
-
   private void revalidateGenerators() {
     myGenerators.clear();
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
