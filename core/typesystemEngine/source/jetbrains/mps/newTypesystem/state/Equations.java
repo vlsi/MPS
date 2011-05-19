@@ -17,7 +17,9 @@ package jetbrains.mps.newTypesystem.state;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
@@ -143,6 +145,10 @@ public class Equations {
 
   private void processEquation(SNode var, SNode type, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(var);
+    if (TypesUtil.getVariables(type).contains(var)) {
+      reportRecursiveType(source, info);
+      return;
+    }
     myState.executeOperation(new AddEquationOperation(var, type, source, info));
   }
 
@@ -157,7 +163,7 @@ public class Equations {
     SNode type = getRepresentative(node);
     if (TypesUtil.isVariable(type)) {
       if (variablesMet.contains(type)) {
-        reportRecursiveType(type);
+        reportRecursiveType(type, null);
       }
       variablesMet.add(type);
       return type;
@@ -214,8 +220,10 @@ public class Equations {
     return converter.convert(sourceNode, role, variable, false);
   }
 
-  void reportRecursiveType(SNode node) {
-    //todo IErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed", null, null);
+  void reportRecursiveType(SNode node, EquationInfo info) {
+    SimpleErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed",
+                info == null? null:info.getRuleModel(), info == null? null:info.getRuleId());
+    myState.getTypeCheckingContext().reportMessage(node, errorReporter);
   }
 
   public void addEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
