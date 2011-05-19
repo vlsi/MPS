@@ -84,7 +84,7 @@ public abstract class AbstractEvaluationModel {
     }
     myAuxModule = auxModule;
 
-    final EditableSModelDescriptor modelDescriptor = ProjectModels.createDescriptorFor(myAuxModule);
+    final EditableSModelDescriptor modelDescriptor = null;//ProjectModels.createDescriptorFor(myAuxModule);
     modelDescriptor.getSModel().runLoadingAction(new Runnable() {
       public void run() {
         modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
