@@ -74,7 +74,7 @@ public abstract class AbstractModule implements IModule {
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
     IModelRootManager manager = root.getManager();
 
-    if (!manager.canCreateModel(root.getModelRoot(),name)) {
+    if (!manager.canCreateModel(root.getModelRoot(), name)) {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
       return null;
     }
@@ -415,9 +415,11 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          Collection<SModelDescriptor> models = manager.load(root.getModelRoot());
-
-          manager.updateModels(root, this);
+          for (SModelDescriptor model : manager.load(root.getModelRoot())) {
+            if (model.getModule() == null) {
+              SModelRepository.getInstance().registerModelDescriptor(model,this);
+            }
+          }
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
