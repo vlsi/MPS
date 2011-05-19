@@ -41,7 +41,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -439,7 +439,7 @@ public abstract class MpsWorker {
       }
 
       info("Read model " + modelReference);
-      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, modelReference);
+      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new RegularModelDataSource(ifile), modelReference, new DescriptorLoadResult());
       modelDescriptors.add(smodelDescriptor);
     } catch (ModelFileReadException e) {
       log(e);
