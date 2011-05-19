@@ -322,7 +322,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    rereadModels();
+    loadNewModels();
 
     updatePackagedDescriptorClasspath();
     updateClassPath();
@@ -404,7 +404,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  protected void rereadModels() {
+  protected void loadNewModels() {
     mySModelRoots.clear();
 
     ModuleDescriptor descriptor = getModuleDescriptor();

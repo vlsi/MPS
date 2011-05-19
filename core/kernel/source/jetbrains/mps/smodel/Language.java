@@ -108,7 +108,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       generator.dispose();
     }
 
-    rereadModels();
+    loadNewModels();
     updatePackagedDescriptorClasspath();
     updateClassPath();
     revalidateGenerators();
