@@ -164,7 +164,7 @@ public class State {
         return;
       }
       for (Block block : new THashSet<Block>(blocks)) {
-        for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
+        for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {   //todo optimize
           addInputAndTrack(block, variable, conditionKind);
         }
         removeInputAndTrack(block, oldVar, conditionKind);

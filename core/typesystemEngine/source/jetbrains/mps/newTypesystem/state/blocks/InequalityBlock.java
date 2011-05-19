@@ -27,6 +27,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.LinkedList;
@@ -96,7 +97,7 @@ public class InequalityBlock extends RelationBlock {
     return false;
   }
 
-  public void processInequality(final SNode subType, final SNode superType) {
+  private void processInequality(final SNode subType, final SNode superType) {
     if (subType == null || superType == null || subType == superType) {
       return;
     }
@@ -123,9 +124,17 @@ public class InequalityBlock extends RelationBlock {
       return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
         new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
     } else {
-      //todo create a counterpart for "solve only concrete"
-      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.SHALLOW));
+      //hack
+      ConditionKind left = ConditionKind.SHALLOW;
+      if (LatticeUtil.isMeet(myLeftNode)) {
+        left = ConditionKind.CONCRETE;
+      }
+      ConditionKind right = ConditionKind.SHALLOW;
+      if (LatticeUtil.isMeet(myLeftNode)) {
+        right = ConditionKind.CONCRETE;
+      }
+      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, left),
+        new Pair<SNode, ConditionKind>(myRightNode, right));
     }
   }
 
