@@ -22,12 +22,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 
-/* todo: create model
-* If you will implement this method do not forget
-* 1. Register new model in SModelRepository
-* 2. Fire new model created event : SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
-*/
-
 public interface IModelRootManager {
   Collection<SModelDescriptor> load(@NotNull ModelRoot root);
 
