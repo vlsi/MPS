@@ -5,12 +5,15 @@ package jetbrains.mps.debugger.java.mps;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.execution.lib.Java_Command;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.io.IOException;
 
 public class Mps_Command {
   private String myDebuggerSettings = "";
@@ -59,7 +62,7 @@ public class Mps_Command {
 
   public ProcessHandler createProcess() throws ExecutionException {
     String mpsProperties = "-Didea.config.path=" + myConfigurationPath + " " + "-Didea.system.path=" + mySystemPath;
-    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties + " " + myDebuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).setJrePath(myJrePath).createProcess();
+    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(Mps_Command.getClassPath()).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties + " " + myDebuggerSettings).setWorkingDirectory(new File(PathManager.getHomePath())).setJrePath(myJrePath).createProcess();
   }
 
   public static IDebugger getDebugger() {
@@ -76,5 +79,17 @@ public class Mps_Command {
 
   public static String getDefaultSystemPath() {
     return System.getProperty("user.home").replace(File.separator, "/") + "/" + ".MPSDebug1x/system";
+  }
+
+  private static List<String> getClassPath() {
+    return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).<String>select(new ISelector<String, String>() {
+      public String select(String it) {
+        try {
+          return new File(it).getCanonicalPath();
+        } catch (IOException e) {
+          return it;
+        }
+      }
+    }).toListSequence();
   }
 }
