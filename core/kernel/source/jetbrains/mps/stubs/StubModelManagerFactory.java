@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.stubs;
 
+import jetbrains.mps.baseLanguage.stubs.JavaStubs;
+import jetbrains.mps.baseLanguage.stubs.util.JavaStubs_JDK;
+import jetbrains.mps.baseLanguage.stubs.util.JavaStubs_MPS;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
@@ -47,6 +50,9 @@ public abstract class StubModelManagerFactory {
     try {
       return (IModelRootManager) managerClass.newInstance();
     } catch (Throwable t) {
+      if (className.equals("jetbrains.mps.baseLanguage.stubs.JavaStubs")) return new JavaStubs();
+      if (className.equals("jetbrains.mps.baseLanguage.stubs.JavaStubs_MPS")) return new JavaStubs_MPS();
+      if (className.equals("jetbrains.mps.baseLanguage.stubs.JavaStubs_JDK")) return new JavaStubs_JDK();
       throw new ManagerNotFoundException("Problems during instantiating manager " + className, t);
     }
   }
