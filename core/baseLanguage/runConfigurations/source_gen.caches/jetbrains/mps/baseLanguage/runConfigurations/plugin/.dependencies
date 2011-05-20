@@ -130,6 +130,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.plugin.JavaNodeApplicationFromNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.plugin.JavaNodeApplication_Factory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.plugin.RunConfigurations_ApplicationPlugin" file="RunConfigurations_ApplicationPlugin.java">
