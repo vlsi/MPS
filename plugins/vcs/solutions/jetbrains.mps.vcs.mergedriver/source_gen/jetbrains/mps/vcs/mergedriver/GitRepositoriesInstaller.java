@@ -112,7 +112,7 @@ import java.io.IOException;
         if (dryRun) {
           return AbstractInstaller.State.NOT_INSTALLED;
         }
-        attributesFile = vcsRootPath.createChildData(null, ATTRIBUTES_FILE);
+        attributesFile = vcsRootPath.createChildData(GitRepositoriesInstaller.class, ATTRIBUTES_FILE);
       }
       final List<String> lines = StringsIO.readLines(attributesFile.getInputStream());
 
@@ -151,7 +151,7 @@ import java.io.IOException;
         return AbstractInstaller.State.NOT_INSTALLED;
       }
 
-      StringsIO.writeLines(attributesFile.getOutputStream(null), lines);
+      StringsIO.writeLines(attributesFile.getOutputStream(GitRepositoriesInstaller.class), lines);
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
       return AbstractInstaller.State.NOT_INSTALLED;
