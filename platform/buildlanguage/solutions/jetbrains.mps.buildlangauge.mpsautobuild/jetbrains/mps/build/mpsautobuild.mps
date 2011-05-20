@@ -2369,21 +2369,6 @@
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.editor.runtime" />
       <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="7451905405776981209">
-      <property name="id" nameId="tps4.1222447189012" value="36c11d2d-1875-4a95-8bdb-70ea1ac63222" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.api" />
-      <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
-    </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="7451905405776981210">
-      <property name="id" nameId="tps4.1222447189012" value="365fb593-3c1a-40a0-a7d7-c98144281283" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.impl" />
-      <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
-    </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="7451905405776981211">
-      <property name="id" nameId="tps4.1222447189012" value="04b376d5-fc16-403b-a344-c68b30193c6a" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.lib" />
-      <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
-    </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="7451905405776981198">
       <property name="id" nameId="tps4.1222447189012" value="bfbdd672-7ff5-403f-af4f-16da5226f34c" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.findUsages.runtime" />

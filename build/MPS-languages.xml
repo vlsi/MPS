@@ -30,36 +30,6 @@
       <fileset dir="core/editor-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
-  <target name="pack.jetbrains.mps.execution.api">
-    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.api" />
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.api">
-      <fileset file="workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
-      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.api" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.api">
-      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.api" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
-  <target name="pack.jetbrains.mps.execution.impl">
-    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.impl" />
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.impl">
-      <fileset file="workbench/runConfigurations/solutions/jetbrains.mps.execution.impl/impl.msd" />
-      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.impl" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.impl">
-      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.impl" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
-  <target name="pack.jetbrains.mps.execution.lib">
-    <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.lib" />
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.lib">
-      <fileset file="workbench/runConfigurations/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" />
-      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.util" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.execution.lib">
-      <fileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.util" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
   <target name="pack.jetbrains.mps.findUsages.runtime">
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.findUsages.runtime" />
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules/jetbrains.mps.findUsages.runtime">

@@ -195,9 +195,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.api" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.impl" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
     <antcall target="MPS-languages.pack.jetbrains.mps.findUsages.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.generator" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
