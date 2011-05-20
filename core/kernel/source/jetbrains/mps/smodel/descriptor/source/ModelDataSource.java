@@ -37,8 +37,4 @@ public interface ModelDataSource {
   ModelLoadResult loadSModel(IModule contextModule, SModelDescriptor descriptor, ModelLoadingState targetState);
 
   boolean saveModel(SModelDescriptor descriptor);
-
-  //------other
-
-  boolean hasModel(SModelDescriptor md);
 }
