@@ -82,7 +82,7 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
     return max;
   }
 
-  public boolean isPackaged() {
+  public boolean isReadOnly() {
     return true;
   }
 

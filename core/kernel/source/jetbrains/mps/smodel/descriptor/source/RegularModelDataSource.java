@@ -63,7 +63,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile.getPath().equals(file.getPath());
   }
 
-  public boolean isPackaged() {
+  public boolean isReadOnly() {
     return FileSystem.getInstance().isPackaged(myFile);
   }
 

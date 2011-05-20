@@ -103,6 +103,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     }
   }
 
+  public boolean isReadOnly() {
+    return getSource().isReadOnly();
+  }
+
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
     return getSource().loadSModel(myModule, this, loadingState);
@@ -169,7 +173,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !getSource().isPackaged() && SModelStereotype.isUserModel(this);
+    return !isDoNotGenerate() && !isReadOnly() && SModelStereotype.isUserModel(this);
   }
 
   public void replaceModel(SModel newModel, ModelLoadingState state) {

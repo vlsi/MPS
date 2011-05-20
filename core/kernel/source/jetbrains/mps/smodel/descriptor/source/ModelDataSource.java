@@ -41,6 +41,4 @@ public interface ModelDataSource {
   //------other
 
   boolean hasModel(SModelDescriptor md);
-
-  boolean isPackaged();
 }

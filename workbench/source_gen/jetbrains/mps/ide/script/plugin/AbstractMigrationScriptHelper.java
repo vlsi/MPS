@@ -11,7 +11,6 @@ import jetbrains.mps.project.GlobalScope;
 
 import java.util.Set;
 import java.util.LinkedHashSet;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.ArrayList;
 
@@ -60,7 +59,7 @@ public abstract class AbstractMigrationScriptHelper {
       if (!((model instanceof BaseSModelDescriptorWithSource))) {
         return;
       }
-      if (((BaseSModelDescriptorWithSource) model).getSource().isPackaged()) {
+      if (((BaseSModelDescriptorWithSource) model).isReadOnly()) {
         return;
       }
       if (model.getStereotype() != null) {

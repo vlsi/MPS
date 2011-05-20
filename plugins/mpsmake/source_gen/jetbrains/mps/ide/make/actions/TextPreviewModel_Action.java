@@ -115,6 +115,6 @@ public class TextPreviewModel_Action extends GeneratedAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof EditableSModelDescriptor && !(((BaseSModelDescriptorWithSource) md).getSource().isPackaged());
+    return md instanceof EditableSModelDescriptor && !(((BaseSModelDescriptorWithSource) md).isReadOnly());
   }
 }

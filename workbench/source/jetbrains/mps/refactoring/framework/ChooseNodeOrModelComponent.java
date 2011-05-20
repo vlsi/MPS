@@ -23,7 +23,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
@@ -128,7 +127,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
         models.remove(model);
       } else if (!SModelStereotype.isUserModel(model)) {
         models.remove(model);
-      } else if (((BaseSModelDescriptorWithSource) model).getSource().isPackaged()) {
+      } else if (((BaseSModelDescriptorWithSource) model).isReadOnly()) {
         models.remove(model);
       } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
         models.remove(model);

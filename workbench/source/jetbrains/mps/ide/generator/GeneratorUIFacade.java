@@ -36,7 +36,6 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -214,7 +213,7 @@ public class GeneratorUIFacade {
             public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
               if (!(sm instanceof BaseSModelDescriptorWithSource)) return null;
               BaseSModelDescriptorWithSource esm = (BaseSModelDescriptorWithSource) sm;
-              if (esm.getSource().isPackaged()) return null;
+              if (esm.isReadOnly()) return null;
               if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
 
               if (!(esm instanceof DefaultSModelDescriptor)) return null;

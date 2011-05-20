@@ -30,6 +30,10 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
     return ((StubModelDataSource) super.getSource());
   }
 
+  public boolean isReadOnly() {
+    return getSource().isReadOnly();
+  }
+
   //------------common descriptor stuff-------------------
 
   protected void setLoadingState(ModelLoadingState state) {

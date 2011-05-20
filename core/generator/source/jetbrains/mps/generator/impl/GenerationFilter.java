@@ -12,7 +12,6 @@ import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.DifflibFacade;
 import org.jetbrains.annotations.NotNull;
 
@@ -214,7 +213,7 @@ public class GenerationFilter {
       String oldHash = entry.getValue();
       if (oldHash == null) {
         // TODO hash for packaged models
-        if ((sm instanceof BaseSModelDescriptorWithSource) && !((BaseSModelDescriptorWithSource) sm).getSource().isPackaged()) {
+        if ((sm instanceof BaseSModelDescriptorWithSource) && !((BaseSModelDescriptorWithSource) sm).isReadOnly()) {
           changedModels.add(modelReference);
         }
         continue;

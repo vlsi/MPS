@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.ui.LayeredIcon;
 import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -111,7 +110,7 @@ public class IconManager {
         if (model.isDisposed()) {
           return mainIcon;
         }
-        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof BaseSModelDescriptorWithSource && ((BaseSModelDescriptorWithSource) model.getModelDescriptor()).getSource().isPackaged()) {
+        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof BaseSModelDescriptorWithSource && ((BaseSModelDescriptorWithSource) model.getModelDescriptor()).isReadOnly()) {
           mainIcon = new LayeredIcon(mainIcon, com.intellij.util.Icons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
