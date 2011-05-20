@@ -13,6 +13,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.IOException;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Mps_Command {
   private String myDebuggerSettings = "";
@@ -81,13 +83,18 @@ public class Mps_Command {
   }
 
   private static List<String> getClassPath() {
-    return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).<String>select(new ISelector<String, String>() {
+    Iterable<String> currentClassPath = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(Java_Command.ps()))).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         try {
           return new File(it).getCanonicalPath();
         } catch (IOException e) {
           return it;
         }
+      }
+    });
+    return Sequence.fromIterable(currentClassPath).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return !(it.startsWith(System.getProperty("java.home")));
       }
     }).toListSequence();
   }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
@@ -82,7 +83,11 @@ public class Java_Command {
 
   public ProcessHandler createProcess() throws ExecutionException {
     String java = Java_Command.getJavaCommand(myJrePath);
-    String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath), Java_Command.ps());
+    String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath).<String>select(new ISelector<String, String>() {
+      public String select(String it) {
+        return Java_Command.protect(it);
+      }
+    }), Java_Command.ps());
     if (check_yvpt_a0c0a(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
       File tmpFile = FileUtil.createTmpFile();
       // we want to be sure that file is deleted, even when process is not started 
@@ -148,14 +153,14 @@ public class Java_Command {
     String result = javaHome + Java_Command.fs() + "bin" + Java_Command.fs();
     String osName = System.getProperty("os.name");
     if (osName.startsWith("Mac OS")) {
-      return result + "java";
+      result += "java";
     } else
     if (osName.startsWith("Windows")) {
-      return result + "java.exe";
+      result += "java.exe";
     } else {
-      return result + "java";
+      result += "java";
     }
-
+    return Java_Command.protect(result);
   }
 
   public static String fs() {
@@ -188,6 +193,13 @@ public class Java_Command {
       }
     }
     return ListSequence.fromList(homes).first();
+  }
+
+  private static String protect(String result) {
+    if (result.contains(" ")) {
+      return "\"" + result + "\"";
+    }
+    return result;
   }
 
   private static int check_yvpt_a0c0a(String checkedDotOperand) {

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
@@ -17,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
 import com.intellij.execution.process.ProcessNotCreatedException;
 import com.intellij.execution.configurations.GeneralCommandLine;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
@@ -26,12 +27,7 @@ public class ProcessHandlerBuilder {
 
   public ProcessHandlerBuilder append(@Nullable String command) {
     if (!(StringUtils.isEmpty(command))) {
-      String[] commandParts = splitCommandInParts(command);
-      ListSequence.fromList(myCommandLine).addSequence(Sequence.fromIterable(Sequence.fromArray(commandParts)).where(new IWhereFilter<String>() {
-        public boolean accept(String it) {
-          return StringUtils.isNotEmpty(it);
-        }
-      }));
+      ListSequence.fromList(myCommandLine).addSequence(Sequence.fromIterable(splitCommandInParts(command)));
     }
     return this;
   }
@@ -101,15 +97,35 @@ public class ProcessHandlerBuilder {
     }
   }
 
-  private String[] splitCommandInParts(@NotNull String command) {
-    return command.split("(\\s)+");
-  }
-
   private GeneralCommandLine getCommandLine(String workingDirectory) {
     GeneralCommandLine commandLine = new GeneralCommandLine();
     commandLine.setExePath(ListSequence.fromList(myCommandLine).getElement(0));
     commandLine.setWorkDirectory(workingDirectory);
     commandLine.addParameters(ListSequence.fromList(myCommandLine).tailListSequence(1));
     return commandLine;
+  }
+
+  public static Iterable<String> splitCommandInParts(@NotNull String command) {
+    // this mega-regexp finds a space outside of " 
+    // those spaces a to be replaces with ^ 
+    // I figured, you do not expect this character in command lines, better solutions are welcomed 
+    // we need all this for MPS-12488 
+    String charToReplace = "^";
+    String regex = "^((\"[^\"]*\")*[^\"]*)(\\s)";
+    while (command.matches(".*" + regex + ".*")) {
+      command = command.replaceAll(regex, "$1\\" + charToReplace);
+    }
+    return Sequence.fromIterable(Sequence.fromArray(command.split("\\" + charToReplace))).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return StringUtils.isNotEmpty(it);
+      }
+    }).<String>select(new ISelector<String, String>() {
+      public String select(String it) {
+        if (it.startsWith("\"") && it.endsWith("\"") && it.length() > 2) {
+          return it.substring(1, it.length() - 1);
+        }
+        return it;
+      }
+    });
   }
 }
