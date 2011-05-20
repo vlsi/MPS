@@ -59,7 +59,6 @@ public class RuleOperandRenderer implements TableCellRenderer {
           return super.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, hasFocus);
         }
       });
-      tree.addSelectionInterval(0, tree.getRowCount() - 1);
     } else {
       tree.setBackground((incomplete[0] ?
         Color.PINK :
