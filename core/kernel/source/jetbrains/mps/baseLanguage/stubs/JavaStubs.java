@@ -30,6 +30,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,6 +53,7 @@ public class JavaStubs extends AbstractModelRootManager {
 
   private static void getModelDescriptors(Set<SModelDescriptor> result, String startPath, IClassPathItem cp, String prefix, String languageId, IModule module) {
     for (String subpackage : cp.getSubpackages(prefix)) {
+      String newPack = (prefix.equals("") ? "" : (prefix + '.')) + subpackage;
       if (cp.getRootClasses(subpackage).iterator().hasNext()) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, module.getModuleReference());
         BaseStubModelDescriptor smd = null;
@@ -63,10 +66,18 @@ public class JavaStubs extends AbstractModelRootManager {
           smd = new BaseStubModelDescriptor(modelReference, new JavaStubModelDataSource(), module);
           result.add(smd);
         }
-        smd.getSource().addPath(startPath);
+        smd.getSource().addPath(child(startPath,newPack));
       }
-      getModelDescriptors(result, startPath, cp, prefix + '.' + subpackage, languageId, module);
+      getModelDescriptors(result, startPath, cp, newPack, languageId, module);
     }
+  }
+
+  private static String child(String startPath, String prefix) {
+    IFile file = FileSystem.getInstance().getFileByPath(startPath);
+    for (String child:prefix.split("\\.")){
+      file = file.getDescendant(child);
+    }
+    return file.getPath();
   }
 
   @Nullable
