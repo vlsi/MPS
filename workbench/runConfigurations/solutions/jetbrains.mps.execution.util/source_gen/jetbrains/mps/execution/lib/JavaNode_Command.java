@@ -62,7 +62,7 @@ public class JavaNode_Command {
   }
 
   public ProcessHandler createProcess(SNode node) throws ExecutionException {
-    return new Java_Command().setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setClassPath(Java_Command.getClasspath(node)).setClassName(JavaNode_Command.getClassName(node)).createProcess();
+    return new Java_Command().setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setClassPath(Java_Command.getClasspath(node)).setClassName(JavaNode_Command.getClassName(node)).setDebuggerSettings(myDebuggerSettings).createProcess();
   }
 
   public static IDebugger getDebugger() {

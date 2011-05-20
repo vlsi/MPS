@@ -255,7 +255,7 @@
     <unitInfo nodeId="7197035105459954540" fileName="ClassRunner.java" startLine="18" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.execution.lib.ClassRunner" />
   </root>
   <root nodeId="7991611468341333073">
-    <nodeInfo nodeId="4318884729311256919" fileName="JavaNode_Command.java" startLine="64" startPosition="77" endLine="65" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4318884729311256919" fileName="JavaNode_Command.java" startLine="64" startPosition="77" endLine="65" endPosition="338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2631534244821445041" fileName="JavaNode_Command.java" startLine="72" startPosition="56" endLine="73" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2631534244821445045" fileName="JavaNode_Command.java" startLine="75" startPosition="25" endLine="76" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2631534244821445053" fileName="JavaNode_Command.java" startLine="78" startPosition="7" endLine="79" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -265,7 +265,7 @@
     <nodeInfo nodeId="6586232406240986512" fileName="JavaNode_Command.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
     <nodeInfo nodeId="2631534244821445031" fileName="JavaNode_Command.java" startLine="73" startPosition="68" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6586232406240986512" fileName="JavaNode_Command.java" startLine="83" startPosition="41" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
-    <scopeInfo nodeId="7991611468341333075" fileName="JavaNode_Command.java" startLine="64" startPosition="77" endLine="65" endPosition="298" />
+    <scopeInfo nodeId="7991611468341333075" fileName="JavaNode_Command.java" startLine="64" startPosition="77" endLine="65" endPosition="338" />
     <scopeInfo nodeId="2631534244821445033" fileName="JavaNode_Command.java" startLine="75" startPosition="25" endLine="76" endPosition="58" />
     <scopeInfo nodeId="6586232406240986512" fileName="JavaNode_Command.java" startLine="85" startPosition="57" endLine="86" endPosition="49" />
     <scopeInfo nodeId="6586232406240986512" fileName="JavaNode_Command.java" startLine="89" startPosition="38" endLine="90" endPosition="65" />
