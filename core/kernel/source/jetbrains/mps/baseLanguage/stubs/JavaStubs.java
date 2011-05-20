@@ -20,7 +20,9 @@ package jetbrains.mps.baseLanguage.stubs;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
@@ -33,6 +35,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -79,6 +82,10 @@ public class JavaStubs extends AbstractModelRootManager {
 
   @Nullable
   static IClassPathItem createClassPathItem(String path) {
-    return ClassPathFactory.getInstance().createFromPath(path);
+    if (FileSystem.getInstance().getFileByPath(path).isDirectory()) {
+      return new FileClassPathItemFS(path);
+    } else {
+      return new JarFileClassPathItemFS(path);
+    }
   }
 }
