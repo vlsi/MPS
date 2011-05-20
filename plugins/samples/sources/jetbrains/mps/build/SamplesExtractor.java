@@ -160,7 +160,11 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     try {
       File tmpDir = FileUtil.createTempDirectory("MPSSamples", "");
       ZipUtil.extract(samplesZipFile, tmpDir, null);
-      FileUtil.moveDirWithContent(new File(tmpDir + File.separator + SAMPLES_IN_USER_HOME_DIR), new File(getSamplesPathInUserHome()));
+      File from = new File(tmpDir + File.separator + SAMPLES_IN_USER_HOME_DIR);
+      File to = new File(getSamplesPathInUserHome());
+      if (!FileUtil.moveDirWithContent(from, to) && !to.exists()) {
+        FileUtil.copyDir(from, to);
+      }
       FileUtil.delete(tmpDir);
     } catch (IOException e) {
       LOG.error(e);
