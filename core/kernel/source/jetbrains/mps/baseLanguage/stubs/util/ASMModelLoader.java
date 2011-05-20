@@ -57,6 +57,7 @@ public class ASMModelLoader {
       for (IFile file : myClassDir.getChildren()) {
         String filename = file.getName();
         if (!filename.endsWith(MPSExtentions.DOT_CLASSFILE)) continue;
+        if (filename.contains("$")) continue;
 
         String shortName = filename.substring(0, filename.length() - MPSExtentions.DOT_CLASSFILE.length());
         String name = myModel.getLongName()+'.'+ shortName;
