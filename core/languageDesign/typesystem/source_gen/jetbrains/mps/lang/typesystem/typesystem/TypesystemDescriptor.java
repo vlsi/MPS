@@ -273,5 +273,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       SubtypingRule_Runtime subtypingRule = new erasure_SNodeType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
+    {
+      SubtypingRule_Runtime subtypingRule = new superTypesOfMeet_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
   }
 }

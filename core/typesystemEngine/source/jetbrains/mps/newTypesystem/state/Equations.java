@@ -166,7 +166,7 @@ public class Equations {
       return null;
     }
     SNode type = getRepresentative(node);
-    if (TypesUtil.getVariables(type).contains(node)) {
+    if (type != node && TypesUtil.getVariables(type).contains(node)) {
       reportRecursiveType(type, null);
       return type;
     }

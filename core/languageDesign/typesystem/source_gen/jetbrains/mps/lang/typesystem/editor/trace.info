@@ -25,7 +25,6 @@
   <unitInfo fileName="NonTypesystemRule_Editor.java" startLine="331" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor$NonTypesystemRule_name_cellMenu_a0c0a" />
   <unitInfo fileName="InferenceRule_Editor.java" startLine="399" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InferenceRule_Editor$InferenceRule_name_cellMenu_a0b0a" />
   <unitInfo fileName="TypesystemStyles_StyleSheet.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemStyles_StyleSheet" />
-  <unitInfo fileName="OrStatement_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OrStatement_Editor" />
   <unitInfo fileName="Node_InferTypeOperation_Editor.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.Node_InferTypeOperation_Editor" />
   <unitInfo fileName="Node_TypeOperation_Editor.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.Node_TypeOperation_Editor" />
   <unitInfo fileName="WasSelectedNodeOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.WasSelectedNodeOperation_Editor" />
@@ -83,6 +82,7 @@
   <unitInfo fileName="TypesystemIntention_Editor.java" startLine="159" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemIntention_Editor$actualArgumentListHandler_il97sk_c0a" />
   <unitInfo fileName="OverloadedOpTypeRule_OneTypeSpecified_Editor.java" startLine="257" startPosition="0" endLine="302" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OverloadedOpTypeRule_OneTypeSpecified_Editor$operationConceptListHandler_38fsuu_b0a" />
   <unitInfo fileName="OverloadedOperatorTypeRule_Editor.java" startLine="366" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OverloadedOperatorTypeRule_Editor$operationConceptListHandler_xc5f9o_b0a" />
+  <unitInfo fileName="OrStatement_Editor.java" startLine="40" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OrStatement_Editor$orClauseListHandler_s3jzuo_a0" />
   <unitInfo fileName="JoinContainer_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.JoinContainer_Editor" />
   <unitInfo fileName="MeetContainer_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.MeetContainer_Editor" />
   <unitInfo fileName="QuickFixField_Editor.java" startLine="21" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.QuickFixField_Editor" />
@@ -99,6 +99,7 @@
   <unitInfo fileName="ChildTypeRestrictionReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ChildTypeRestrictionReference_Editor" />
   <unitInfo fileName="NodeInfo_Editor.java" startLine="16" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NodeInfo_Editor" />
   <unitInfo fileName="AddDependencyStatement_Editor.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AddDependencyStatement_Editor" />
+  <unitInfo fileName="OrStatement_Editor.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OrStatement_Editor" />
   <unitInfo fileName="TypeVarReference_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypeVarReference_Editor" />
   <unitInfo fileName="PatternVariableReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.PatternVariableReference_Editor" />
   <unitInfo fileName="LinkPatternVariableReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.LinkPatternVariableReference_Editor" />

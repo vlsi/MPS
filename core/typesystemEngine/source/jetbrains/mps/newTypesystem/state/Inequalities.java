@@ -74,7 +74,7 @@ public class Inequalities {  //
         return node;
       }
     }
-
+     /*
     System.out.println(myState.getTypeCheckingContext().getNode().getContainingRoot());
     System.out.println(myState.getTypeCheckingContext().getNode());
     System.out.println(myState.getTypeCheckingContext().getNode().getContainingRoot().getModel());
@@ -84,7 +84,7 @@ public class Inequalities {  //
     }
     printMMMap(inputsToOutputs);
     printAll();
-
+       */
     return unsorted.iterator().next();
   }
 
