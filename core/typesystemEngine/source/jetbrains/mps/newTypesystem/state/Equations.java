@@ -166,17 +166,6 @@ public class Equations {
       return null;
     }
     SNode type = getRepresentative(node);
-    if (type != node && TypesUtil.getVariables(type).contains(node)) {
-      reportRecursiveType(type, null);
-      return type;
-    }
-    if (TypesUtil.isVariable(type)) {
-      if (variablesMet.contains(type)) {
-        reportRecursiveType(type, null);
-      }
-      variablesMet.add(type);
-      return type;
-    }
     if (type != node) {
       SNode result = expandNode(type, variablesMet, finalExpansion, copy);
       variablesMet.remove(type);

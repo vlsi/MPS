@@ -62,7 +62,7 @@ public class JUnitConfigFromLanguageTestCases extends BaseConfigCreator<List> im
           return "Several Test Classes";
         }
       };
-      _config.setName(SPropertyOperations.getString(SNodeOperations.cast(Sequence.fromIterable(parameter).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
+      _config.setName(SPropertyOperations.getString(SNodeOperations.castConcept(Sequence.fromIterable(parameter).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
       _config.getStateObject().type = JUnitRunTypes.NODE;
       _config.getStateObject().nodes = new ClonableList<String>(nodeNames);
       JUnitConfigFromLanguageTestCases.this.myConfig = _config;
