@@ -30,7 +30,7 @@ import java.util.Collection;
 import java.util.Set;
 
 public abstract class StubModelDataSource extends FileBasedModelDataSource {
-  private final Set<StubPath> myStubPaths = new THashSet<StubPath>();
+  private final Set<String> myStubPaths = new THashSet<String>();
 
   public StubModelDataSource() {
 
@@ -41,16 +41,16 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
   }
 
   public boolean containFile(IFile file) {
-    for (StubPath p:myStubPaths){
-      if (FileSystem.getInstance().getFileByPath(p.getPath())==file) return true;
+    for (String p:myStubPaths){
+      if (FileSystem.getInstance().getFileByPath(p)==file) return true;
     }
     return false;
   }
 
   public long getTimestamp() {
     long max = -1;
-    for (StubPath path : myStubPaths) {
-      long ts = getTimestampRecursive(FileSystem.getInstance().getFileByPath(path.getPath()));
+    for (String path : myStubPaths) {
+      long ts = getTimestampRecursive(FileSystem.getInstance().getFileByPath(path));
       max = Math.max(max, ts);
     }
     return max;
@@ -86,12 +86,12 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
     return true;
   }
 
-  public void addPath(StubPath sp) {
-    myStubPaths.add(sp);
+  public void addPath(String path) {
+    myStubPaths.add(path);
     sourcesSetChanged();
   }
 
-  protected Set<StubPath> getStubPaths() {
+  protected Set<String> getStubPaths() {
     return myStubPaths;
   }
 

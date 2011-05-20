@@ -3,7 +3,9 @@ package jetbrains.mps.stubs;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,6 +24,11 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
 
   public BaseStubModelDescriptor copy() {
     return new BaseStubModelDescriptor(myModelReference, false, getSource(),myModule);
+  }
+
+  @NotNull
+  public StubModelDataSource getSource() {
+    return ((StubModelDataSource) super.getSource());
   }
 
   //------------common descriptor stuff-------------------

@@ -64,8 +64,8 @@ public class JavaStubModelDataSource extends StubModelDataSource {
         module.addUsedLanguage(l.getModuleReference());
       }
 
-      for (StubPath dir : getStubPaths()) {
-        new ASMModelLoader(module, FileSystem.getInstance().getFileByPath(dir.getPath()), model).updateModel();
+      for (String dir : getStubPaths()) {
+        new ASMModelLoader(module, FileSystem.getInstance().getFileByPath(dir), model).updateModel();
       }
     } finally {
       model.setLoading(false);
