@@ -2354,7 +2354,14 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
   </root>
-  <root id="838715195501404652" />
+  <root id="838715195501404652">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6448384028752696700">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
+      <property name="role" nameId="tpce.1071599776563" value="orClause" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    </node>
+  </root>
   <root id="7739208407757103780">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7739208407757103781">
       <property name="internalValue" nameId="tpce.1083923523171" value="0" />
