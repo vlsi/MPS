@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.SNodeId;
 import java.util.LinkedHashSet;
 import com.intellij.util.containers.MultiMap;
 import java.util.List;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange;
 import org.apache.commons.lang.ObjectUtils;
@@ -40,7 +40,7 @@ import java.util.HashSet;
 import jetbrains.mps.vcs.diff.DiffBuilder;
 import javax.swing.JComponent;
 import java.util.Set;
-import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange;
 import java.util.Collection;
 import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.border.EmptyBorder;
@@ -175,9 +175,9 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
     }
   }
 
-  private void applySafeMoves(final List<Change> changes) {
+  private void applySafeMoves(final List<OldChange> changes) {
     ArrayList<MoveNodeChange> movesToApply = new ArrayList<MoveNodeChange>();
-    for (Change change : changes) {
+    for (OldChange change : changes) {
       if (change instanceof MoveNodeChange) {
         MoveNodeChange moveNodeChange = (MoveNodeChange) change;
         SNode newNode = myNewModel.getNodeById(change.getAffectedNodeId());
@@ -201,7 +201,7 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
   private void rebuildChangeBlocks() {
     myNewEditorComponent.removeAllChanges();
     myOldEditorComponent.removeAllChanges();
-    final List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
+    final List<OldChange> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
         applySafeMoves(revertChanges);
@@ -222,7 +222,7 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
     dispose();
   }
 
-  private void applyChange(MultiMap<SNodeId, Change> dependenciesMap, Set<Change> appliedChanges, Set<SNodeId> notAppliedNodes, Change changeToApply) {
+  private void applyChange(MultiMap<SNodeId, OldChange> dependenciesMap, Set<OldChange> appliedChanges, Set<SNodeId> notAppliedNodes, OldChange changeToApply) {
     if (appliedChanges.contains(changeToApply)) {
       return;
     }
@@ -230,7 +230,7 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
     notAppliedNodes.remove(changeToApply.getAffectedNodeId());
     changeToApply.apply(myNewModel);
     if (dependenciesMap.containsKey(changeToApply.getAffectedNodeId())) {
-      for (Change dependant : dependenciesMap.get(changeToApply.getAffectedNodeId())) {
+      for (OldChange dependant : dependenciesMap.get(changeToApply.getAffectedNodeId())) {
         boolean dependenciesResolved = true;
         for (SNodeId dependency : dependant.getDependencies()) {
           if (notAppliedNodes.contains(dependency)) {
@@ -243,7 +243,7 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
         }
       }
     }
-    if (changeToApply instanceof AddRootChange) {
+    if (changeToApply instanceof OldAddRootChange) {
       myNewEditorComponent.editNode(myNewModel.getNodeById(changeToApply.getAffectedNodeId()), myNewEditorComponent.getOperationContext());
     }
   }
@@ -257,9 +257,9 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
     super.dispose();
   }
 
-  private static MultiMap<SNodeId, Change> getChangeDependencies(Collection<Change> changes) {
-    MultiMap<SNodeId, Change> result = new MultiMap<SNodeId, Change>();
-    for (Change change : changes) {
+  private static MultiMap<SNodeId, OldChange> getChangeDependencies(Collection<OldChange> changes) {
+    MultiMap<SNodeId, OldChange> result = new MultiMap<SNodeId, OldChange>();
+    for (OldChange change : changes) {
       for (SNodeId dependant : change.getDependencies()) {
         result.putValue(dependant, change);
       }
@@ -272,9 +272,9 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
 
   /*package*/ class RollbackButton extends JLabel {
     private List<OldChangeEditorMessage> myChangeMessages;
-    private List<Change> myChanges;
+    private List<OldChange> myChanges;
 
-    public RollbackButton(List<OldChangeEditorMessage> changeMessages, List<Change> changes) {
+    public RollbackButton(List<OldChangeEditorMessage> changeMessages, List<OldChange> changes) {
       super(Icons.ROLLBACK);
       myChangeMessages = changeMessages;
       myChanges = changes;
@@ -303,11 +303,11 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           HashSet<SNodeId> notAppliedNodes = new HashSet<SNodeId>();
-          for (Change change : myChanges) {
+          for (OldChange change : myChanges) {
             notAppliedNodes.add(change.getAffectedNodeId());
           }
-          HashSet<Change> appliedChanges = new HashSet<Change>();
-          MultiMap<SNodeId, Change> dependenciesMap = OldRootDifferenceDialog.getChangeDependencies(myChanges);
+          HashSet<OldChange> appliedChanges = new HashSet<OldChange>();
+          MultiMap<SNodeId, OldChange> dependenciesMap = OldRootDifferenceDialog.getChangeDependencies(myChanges);
           for (OldChangeEditorMessage m : myChangeMessages) {
             applyChange(dependenciesMap, appliedChanges, notAppliedNodes, m.getChange());
           }

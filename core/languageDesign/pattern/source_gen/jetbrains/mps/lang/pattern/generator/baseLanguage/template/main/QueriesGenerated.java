@@ -4,8 +4,8 @@ package jetbrains.mps.lang.pattern.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -25,11 +25,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collections;
+import java.util.LinkedList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1190931376940(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("nodeToMatch_", _context.getNode());
+    return _context.createUniqueName("nodeToMatch_" + SNodeOperations.getContainingRoot(_context.getNode()), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1202825939894(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -74,7 +75,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549317(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
-    return _context.createUniqueName("childRole_", mainNode);
+    return _context.createUniqueName("childRole_" + SNodeOperations.getContainingRoot(mainNode), SNodeOperations.getContainingRoot(mainNode));
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549347(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -88,8 +89,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549541(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode mainNode = _context.getNode().getReferent("mainNode");
-    return _context.createUniqueName("childVar_", mainNode);
+    return _context.createUniqueName("childVar_" + SNodeOperations.getContainingRoot(_context.getNode()), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1224175601049(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -648,7 +648,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (String childRole : _context.getNode().getChildRoles()) {
+    List<String> roles = new LinkedList<String>();
+    ListSequence.fromList(roles).addSequence(SetSequence.fromSet(_context.getNode().getChildRoles()));
+    Collections.sort(roles);
+    for (String childRole : roles) {
       SNode childRoleNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
       childRoleNode.setProperty("childRole", childRole);
       childRoleNode.setReferent("childLinkDeclaration", AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(_context.getNode()), childRole));

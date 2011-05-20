@@ -87,7 +87,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1174658262046(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("_Replacer", null);
+    return _context.createUniqueName("_Replacer", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1174659618559(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -45,7 +45,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private ConcurrentMap<String, InternAwareStringSet> myAncestorsNamesMap = new ConcurrentHashMap<String, InternAwareStringSet>();
 
   private final Object myParentsNamesLock = new Object();
-  private Map<String, InternAwareStringSet> myParentsNamesMap = new HashMap<String, InternAwareStringSet>();
+  private Map<String, List<String>> myParentsNamesMap = new HashMap<String, List<String>>();
 
   private final Object myDescendantsLock = new Object();
   private Map<String, InternAwareStringSet> myDirectDescendantsCache = new HashMap<String, InternAwareStringSet>();
@@ -126,7 +126,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
       myDescendantsCachesAreValid = false;
     }
     synchronized (myParentsNamesLock) {
-      myParentsNamesMap = new HashMap<String, InternAwareStringSet>();
+      myParentsNamesMap = new HashMap<String, List<String>>();
     }
     myAncestorsNamesMap.clear();
     synchronized (myLanguageLock) {
@@ -136,43 +136,55 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     fireCacheChanged();
   }
 
-  public static Set<String> getParentsNames(String conceptFqName) {
+  public static List<String> getParentsNames(String conceptFqName) {
     return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure().getParentsNames();
   }
 
-  public Set<String> _getParentsNames(final String conceptFqName) {
+  public List<String> _getParentsNames(final String conceptFqName) {
     fireReadAccessPerformed();
     synchronized (myParentsNamesLock) {
-      InternAwareStringSet result = myParentsNamesMap.get(conceptFqName);
+      List<String> result = myParentsNamesMap.get(conceptFqName);
       if (result == null) {
-        result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<InternAwareStringSet>() {
-          public InternAwareStringSet compute() {
+        result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<String>>() {
+          public List<String> compute() {
             SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
             if (declaration == null) {
-              return EMPTY_INTERN_AWARE_STRING_SET;
+              return Collections.emptyList();
             }
-            InternAwareStringSet result = new InternAwareStringSet();
+            List<String> result = new ArrayList<String>();
+            Set<String> parentsSet = new HashSet<String>();
             if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
               SNode superConcept = SNodeUtil.getConceptDeclaration_Extends(declaration);
               if (superConcept != null) {
-                result.add(NameUtil.nodeFQName(superConcept));
+                String name = NameUtil.nodeFQName(superConcept);
+                if (parentsSet.add(name)) {
+                  result.add(name);
+                }
               } else if (!SNodeUtil.concept_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
-                result.add(SNodeUtil.concept_BaseConcept);
+                if (parentsSet.add(SNodeUtil.concept_BaseConcept)) {
+                  result.add(SNodeUtil.concept_BaseConcept);
+                }
               }
               for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
-                result.add(NameUtil.nodeFQName(interfaceConcept));
+                String name = NameUtil.nodeFQName(interfaceConcept);
+                if (parentsSet.add(name)) {
+                  result.add(name);
+                }
               }
             } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
               for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
-                result.add(NameUtil.nodeFQName(interfaceConcept));
+                String name = NameUtil.nodeFQName(interfaceConcept);
+                if (parentsSet.add(name)) {
+                  result.add(name);
+                }
               }
             }
             return result;
           }
         });
-        myParentsNamesMap.put(InternUtil.intern(conceptFqName), result);
+        myParentsNamesMap.put(InternUtil.intern(conceptFqName), Collections.unmodifiableList(result));
       }
-      return Collections.unmodifiableSet(result);
+      return result;
     }
   }
 

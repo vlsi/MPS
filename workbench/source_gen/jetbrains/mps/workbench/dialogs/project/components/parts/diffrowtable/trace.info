@@ -46,7 +46,7 @@
     <nodeInfo nodeId="1560298786499491120" fileName="DiffRowTable.java" startLine="103" startPosition="5" endLine="104" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499491134" fileName="DiffRowTable.java" startLine="105" startPosition="42" endLine="106" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499491144" fileName="DiffRowTable.java" startLine="107" startPosition="5" endLine="108" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490571" fileName="DiffRowTable.java" startLine="16" startPosition="43" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#()V" />
+    <nodeInfo nodeId="1560298786499490571" fileName="DiffRowTable.java" startLine="16" startPosition="42" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#()V" />
     <nodeInfo nodeId="1560298786499490737" fileName="DiffRowTable.java" startLine="27" startPosition="50" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1560298786499490907" fileName="DiffRowTable.java" startLine="65" startPosition="20" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1560298786499490973" fileName="DiffRowTable.java" startLine="74" startPosition="58" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -86,7 +86,7 @@
     <scopeInfo nodeId="1560298786499490993" fileName="DiffRowTable.java" startLine="81" startPosition="28" endLine="83" endPosition="161">
       <varInfo nodeId="1560298786499490995" varName="spacing" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490571" fileName="DiffRowTable.java" startLine="16" startPosition="43" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="1560298786499490571" fileName="DiffRowTable.java" startLine="16" startPosition="42" endLine="19" endPosition="3" />
     <scopeInfo nodeId="1560298786499490907" fileName="DiffRowTable.java" startLine="65" startPosition="20" endLine="68" endPosition="5">
       <varInfo nodeId="1560298786499490911" varName="i" />
     </scopeInfo>

@@ -4,18 +4,6 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSMessagesViewTool">
-    <option name="dialogState">
-      <MyState>
-        <option name="anonymous" value="true" />
-        <option name="password" value="" />
-        <option name="username" value="" />
-      </MyState>
-    </option>
-    <option name="errors" value="true" />
-    <option name="info" value="true" />
-    <option name="warnings" value="true" />
-  </component>
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/myReaderConfiguration/myReaderConfiguration.msd" />
@@ -37,13 +25,5 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="SvnBranchConfigurationManager">
-    <option name="myVersion" value="124" />
-    <option name="mySupportsUserInfoFilter" value="true" />
-  </component>
-  <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
-  </component>
 </project>
 

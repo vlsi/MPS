@@ -41,6 +41,7 @@
   <import index="dl2z" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.tools(MPS.Classpath/jetbrains.mps.workbench.tools@java_stub)" version="-1" />
   <import index="r172" modelUID="r:95d22feb-0fb2-45bb-8dc4-fee131cf897f(jetbrains.mps.quickQueryLanguage.runtime)" version="-1" />
   <import index="tpci" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
+  <import index="x3en" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.view.icons(MPS.Classpath/jetbrains.mps.ide.findusages.view.icons@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -3860,12 +3861,16 @@
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1220017083986">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1220017058458" resolveInfo="name" />
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220011802577">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1220011802578">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1220015059277" resolveInfo="searchQuery" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1220011802579">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1hff.~SearchQuery%dgetIcon()%cjavax%dswing%dIcon" resolveInfo="getIcon" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5594798555937823383">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3en.~IconManager%dgetIconForIHolder(jetbrains%dmps%dide%dfindusages%dmodel%dholders%dIHolder)%cjavax%dswing%dIcon" resolveInfo="getIconForIHolder" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="x3en.~IconManager" resolveInfo="IconManager" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5594798555937823385">
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5594798555937823384">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1220015059277" resolveInfo="searchQuery" />
+                          </node>
+                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5594798555937823389">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1hff.~SearchQuery%dgetObjectHolder()%cjetbrains%dmps%dide%dfindusages%dmodel%dholders%dIHolder" resolveInfo="getObjectHolder" />
+                          </node>
                         </node>
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1220011802580">

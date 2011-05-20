@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -30,7 +31,7 @@ public class MergeContext {
   private SModel myResultModel;
   private Set<ModelChange> myAppliedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private Set<ModelChange> myExcludedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
-  private NodeCopierWithCache myNodeCopier;
+  private NodeCopier myNodeCopier;
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -43,7 +44,7 @@ public class MergeContext {
         fillRootToChangesMap();
 
         myResultModel = CopyUtil.copyModel(base);
-        myNodeCopier = new NodeCopierWithCache(myResultModel);
+        myNodeCopier = new NodeCopier(myResultModel);
       }
     });
   }

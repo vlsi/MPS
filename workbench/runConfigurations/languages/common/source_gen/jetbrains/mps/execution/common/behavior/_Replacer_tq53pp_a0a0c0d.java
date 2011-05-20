@@ -5,16 +5,16 @@ package jetbrains.mps.execution.common.behavior;
 import jetbrains.mps.baseLanguage.regexp.runtime.Replacer;
 import java.util.regex.Matcher;
 
-public class _Replacer_a0a0b0d implements Replacer {
+public class _Replacer_tq53pp_a0a0c0d implements Replacer {
   /*package*/ IGeneratedToClass_Behavior _enclosingClass;
   /*package*/ Object _closureContext;
 
-  public _Replacer_a0a0b0d(IGeneratedToClass_Behavior enclosingClass, Object closureContext) {
+  public _Replacer_tq53pp_a0a0c0d(IGeneratedToClass_Behavior enclosingClass, Object closureContext) {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;
   }
 
   public String replace(Matcher matcher) {
-    return matcher.group(1) + matcher.group(2).toUpperCase();
+    return matcher.group(1);
   }
 }

@@ -30,6 +30,9 @@ public class OpenTheSimplestLanguageProjectAction extends AnAction {
 
   public void actionPerformed(AnActionEvent e) {
     String projectFile = SamplesExtractor.getInstance().getSamplesPath() + File.separator + "theSimplestLanguage" + File.separator + "theSimplestLanguage.mpr";
+    if (!new File(projectFile).exists()) {
+      SamplesExtractor.getInstance().extractSamples();
+    }
     ProjectUtil.openProject(projectFile, e.getData(PlatformDataKeys.PROJECT), false);
   }
 }

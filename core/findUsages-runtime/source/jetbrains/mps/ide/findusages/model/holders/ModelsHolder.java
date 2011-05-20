@@ -24,7 +24,6 @@ import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -49,10 +48,6 @@ public class ModelsHolder implements IHolder<List<SModelDescriptor>> {
   @NotNull
   public String getCaption() {
     return NameUtil.formatNumericalString(myModelDescriptors.size(), "model");
-  }
-
-  public Icon getIcon() {
-    return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
   }
 
   public void read(Element element, Project project) throws CantLoadSomethingException {

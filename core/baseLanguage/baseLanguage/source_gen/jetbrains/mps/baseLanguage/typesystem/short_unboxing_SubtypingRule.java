@@ -80,14 +80,14 @@ public class short_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_l759a1_a0a;
-        nodeToMatch_l759a1_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_l759a1_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_short_unboxing_l759a1_a0a;
+        nodeToMatch_short_unboxing_l759a1_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_short_unboxing_l759a1_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_8bm4vn_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_l759a1_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_short_unboxing_l759a1_a0a.getReferent("classifier")))) {
             return false;
           }
         }

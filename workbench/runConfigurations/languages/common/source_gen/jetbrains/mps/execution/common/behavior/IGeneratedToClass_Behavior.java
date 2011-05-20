@@ -38,8 +38,8 @@ public class IGeneratedToClass_Behavior {
     if (StringUtils.isEmpty(name)) {
       return null;
     }
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a1a3, new _Replacer_a0a0b0d(null, null));
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a2a3, new _Replacer_a0a0c0d(null, null));
+    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a1a3, new _Replacer_tq53pp_a0a0b0d(null, null));
+    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a2a3, new _Replacer_tq53pp_a0a0c0d(null, null));
     return IGeneratedToClass_Behavior.makeUpperCase_946964771156905431(name, 0) + "_" + IGeneratedToClass_Behavior.call_getSuffix_946964771156905483(thisNode);
   }
 

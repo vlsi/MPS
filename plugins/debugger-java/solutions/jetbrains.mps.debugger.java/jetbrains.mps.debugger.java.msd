@@ -4,13 +4,13 @@
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/debugger-api/classes" include="false">
+    <stubModelEntry path="${mps_home}/plugins/debugger-api/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${mps_home}/plugins/debugger-java" include="false">
+    <stubModelEntry path="${mps_home}/plugins/debugger-java">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${mps_home}/plugins/debugger-java/classes" include="false">
+    <stubModelEntry path="${mps_home}/plugins/debugger-java/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>
@@ -26,6 +26,7 @@
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="false">b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)</dependency>
     <dependency reexport="false">82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.baseLanguage.runConfigurations)</dependency>
+    <dependency reexport="false">4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

@@ -26,8 +26,6 @@ import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
-
 public class ModelHolder implements IHolder<SModel> {
   private static final String MODEL = "model";
   private static final String UID = "uid";
@@ -55,10 +53,6 @@ public class ModelHolder implements IHolder<SModel> {
   @NotNull
   public String getCaption() {
     return NameUtil.shortNameFromLongName(getModelDescriptor().getLongName());
-  }
-
-  public Icon getIcon() {
-    return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

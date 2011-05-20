@@ -41,18 +41,9 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/runtime/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
-  <runtimeStubModels>
-    <stubModelEntry path="${language_descriptor}/runtime/classes" include="false">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </runtimeStubModels>
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
+    <dependency reexport="false">4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)</dependency>
     <dependency reexport="false">857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)</dependency>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
     <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>

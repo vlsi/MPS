@@ -124,6 +124,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeNonConflictingRoots" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeRootsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.ResetState" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeColors" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />

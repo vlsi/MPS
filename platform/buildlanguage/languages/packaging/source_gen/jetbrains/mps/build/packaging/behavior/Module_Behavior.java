@@ -14,6 +14,8 @@ import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -66,7 +68,11 @@ public class Module_Behavior {
 
   public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode) {
     List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, paths)).distinct().toListSequence(), true);
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ListSequence.fromList(paths).where(new IWhereFilter<StubPath>() {
+      public boolean accept(StubPath it) {
+        return LanguageID.JAVA_MANAGER.equals(it.getManager()) || it.getPath().endsWith(".jar");
+      }
+    }).toListSequence())).distinct().toListSequence(), true);
   }
 
   public static List<SNode> call_getModelRootPaths_2739262311775052381(SNode thisNode) {

@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.resolve.Resolver;
 
@@ -30,7 +33,10 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
       }
       // Check for unresolved references 
       for (final SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-        if ((SLinkOperations.getTargetNode(ref) == null)) {
+        if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), SLinkOperations.getRole(ref))) != null)) {
+          continue;
+        }
+        if (ref.getTargetNodeSilently() == null) {
           addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
             public boolean doFix() {
               return Resolver.resolve1(ref, operationContext);

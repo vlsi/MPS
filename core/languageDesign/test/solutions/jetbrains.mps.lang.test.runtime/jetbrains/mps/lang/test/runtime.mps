@@ -24,7 +24,7 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="lnp5" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
-  <import index="hxfr" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
+  <import index="up6l" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps(MPS.Classpath/jetbrains.mps@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="lxea" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -59,6 +59,7 @@
   <import index="p388" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.intentions(MPS.Classpath/jetbrains.mps.intentions@java_stub)" version="-1" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="jwig" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.project(MPS.Classpath/jetbrains.mps.project.structure.project@java_stub)" version="-1" />
+  <import index="up6l" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps(MPS.Classpath/jetbrains.mps@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -1298,8 +1299,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6901046659778297388">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6901046659778297389">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hxfr.~TestMain%dconfigureMPS()%cvoid" resolveInfo="configureMPS" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hxfr.~TestMain" resolveInfo="TestMain" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="up6l.~TestMain" resolveInfo="TestMain" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~TestMain%dconfigureMPS()%cvoid" resolveInfo="configureMPS" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="577165239384684572">
@@ -1327,7 +1328,7 @@
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225466978905">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225466978906">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hxfr.~TestMain$ProjectContainer%dgetProject(java%dlang%dString)%cjetbrains%dmps%dproject%dMPSProject" resolveInfo="getProject" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~TestMain$ProjectContainer%dgetProject(java%dlang%dString)%cjetbrains%dmps%dproject%dMPSProject" resolveInfo="getProject" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225466978907">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225466978908">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~Macros%dexpandPath(java%dlang%dString,jetbrains%dmps%dvfs%dIFile)%cjava%dlang%dString" resolveInfo="expandPath" />
@@ -1350,8 +1351,8 @@
                 </node>
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2491669590677401008">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="hxfr.~TestMain" resolveInfo="TestMain" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="hxfr.~TestMain%dPROJECT_CONTAINER" resolveInfo="PROJECT_CONTAINER" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="up6l.~TestMain" resolveInfo="TestMain" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="up6l.~TestMain%dPROJECT_CONTAINER" resolveInfo="PROJECT_CONTAINER" />
               </node>
             </node>
           </node>
@@ -2464,11 +2465,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2491669590677401000">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2491669590677401002">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2491669590677401001">
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="hxfr.~TestMain" resolveInfo="TestMain" />
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="hxfr.~TestMain%dPROJECT_CONTAINER" resolveInfo="PROJECT_CONTAINER" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="up6l.~TestMain" resolveInfo="TestMain" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="up6l.~TestMain%dPROJECT_CONTAINER" resolveInfo="PROJECT_CONTAINER" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2491669590677401007">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hxfr.~TestMain$ProjectContainer%dclear()%cvoid" resolveInfo="clear" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~TestMain$ProjectContainer%dclear()%cvoid" resolveInfo="clear" />
             </node>
           </node>
         </node>

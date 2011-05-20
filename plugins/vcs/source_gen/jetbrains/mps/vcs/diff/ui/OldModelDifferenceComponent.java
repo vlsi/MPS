@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.smodel.IOperationContext;
@@ -31,19 +31,19 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange;
 import jetbrains.mps.vcs.diff.oldchanges.AddNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
 import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
 
 /*package*/ class OldModelDifferenceComponent extends JPanel {
   private OldModelChangesTree myModelTree;
   private MPSTree myChangesTree = new OldModelDifferenceComponent.MyChangesTree();
   private SModel myNewModel;
-  private List<Change> myChanges;
+  private List<OldChange> myChanges;
   private ActionToolbar myModelTreeToolBar;
   private DefaultActionGroup myModelTreeActionGroup;
   private ActionToolbar myChangesTreeToolBar;
@@ -90,11 +90,11 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
 
   public OldModelDifferenceComponent showDifference(SModel oldModel, SModel newModel) {
     DiffBuilder builder = new DiffBuilder(oldModel, newModel);
-    final List<Change> changes = builder.getChanges();
+    final List<OldChange> changes = builder.getChanges();
     return showDifference(oldModel, newModel, changes);
   }
 
-  public OldModelDifferenceComponent showDifference(SModel oldModel, SModel newModel, List<Change> changes) {
+  public OldModelDifferenceComponent showDifference(SModel oldModel, SModel newModel, List<OldChange> changes) {
     myNewModel = newModel;
     myModelTree.showDifference(oldModel, newModel, changes);
     myChanges = changes;
@@ -118,9 +118,9 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
   }
 
   private class ChangeNode extends MPSTreeNode {
-    private Change myChange;
+    private OldChange myChange;
 
-    public ChangeNode(Change change) {
+    public ChangeNode(OldChange change) {
       super(change, null);
       myChange = change;
       setNodeIdentifier(myChange.toString());
@@ -169,7 +169,7 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
     private MyChangesTree() {
     }
 
-    private <C extends Change> TextTreeNode getChangeTypeSubtree(Class<C> changeClass, String title) {
+    private <C extends OldChange> TextTreeNode getChangeTypeSubtree(Class<C> changeClass, String title) {
       List<C> filteredChanges = CollectionUtil.filter(changeClass, myChanges);
       if (!(filteredChanges.isEmpty())) {
         TextTreeNode changesNode = new TextTreeNode(title + " (" + filteredChanges.size() + ")");
@@ -181,7 +181,7 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
       return null;
     }
 
-    private <C extends Change> void addSubtree(TextTreeNode root, Class<C> changeClass, String title) {
+    private <C extends OldChange> void addSubtree(TextTreeNode root, Class<C> changeClass, String title) {
       TextTreeNode subtree = getChangeTypeSubtree(changeClass, title);
       if (subtree != null) {
         root.add(subtree);
@@ -195,12 +195,12 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
         TextTreeNode changes = new TextTreeNode("Changes");
         addSubtree(changes, UsedLanguagesChange.class, "Used Languages");
         addSubtree(changes, AddNodeChange.class, "Add Node");
-        addSubtree(changes, AddRootChange.class, "Add Root");
+        addSubtree(changes, OldAddRootChange.class, "Add Root");
         addSubtree(changes, DeleteNodeChange.class, "Delete Node");
         addSubtree(changes, MoveNodeChange.class, "Move Node");
         addSubtree(changes, SetNodeChange.class, "Set Node");
-        addSubtree(changes, SetPropertyChange.class, "Set Property");
-        addSubtree(changes, SetReferenceChange.class, "Set Reference");
+        addSubtree(changes, OldSetPropertyChange.class, "Set Property");
+        addSubtree(changes, OldSetReferenceChange.class, "Set Reference");
         addSubtree(changes, ChangeConceptChange.class, "Change Concept");
         return changes;
       }

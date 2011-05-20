@@ -22,14 +22,14 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.vcs.diff.oldchanges.ChangeType;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChangeType;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.SubstituteNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -336,21 +336,21 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
       return myHeight;
     }
 
-    private ChangeType getUnitedChangeType() {
+    private OldChangeType getUnitedChangeType() {
       if (ListSequence.fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
         public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
-          return m.getChange().getChangeType() == ChangeType.ADD;
+          return m.getChange().getChangeType() == OldChangeType.ADD;
         }
       })) {
-        return ChangeType.ADD;
+        return OldChangeType.ADD;
       } else if (ListSequence.fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
         public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
-          return m.getChange().getChangeType() == ChangeType.DELETE;
+          return m.getChange().getChangeType() == OldChangeType.DELETE;
         }
       })) {
-        return ChangeType.DELETE;
+        return OldChangeType.DELETE;
       } else {
-        return ChangeType.CHANGE;
+        return OldChangeType.CHANGE;
       }
     }
 
@@ -361,21 +361,21 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
 
     public String getToolTipText() {
       if (ListSequence.fromList(myMessages).count() == 1) {
-        Change change = ListSequence.fromList(myMessages).first().getChange();
-        if (change instanceof SetNodeChange && change.getChangeType() == ChangeType.CHANGE || change instanceof SubstituteNodeChange) {
+        OldChange change = ListSequence.fromList(myMessages).first().getChange();
+        if (change instanceof SetNodeChange && change.getChangeType() == OldChangeType.CHANGE || change instanceof SubstituteNodeChange) {
           return "Replaced node in '" + ((NewNodeChange) change).getNodeRole() + "' role";
         } else if (change instanceof NewNodeChange) {
           return "Added node in '" + ((NewNodeChange) change).getNodeRole() + "' role";
         } else if (change instanceof DeleteNodeChange) {
           return "Deleted node from '" + ((DeleteNodeChange) change).getRole() + "' role";
-        } else if (change instanceof SetReferenceChange) {
-          return "Changed '" + ((SetReferenceChange) change).getRole() + "' reference target";
-        } else if (change instanceof SetPropertyChange) {
-          return "Changed '" + ((SetPropertyChange) change).getProperty() + "' property value";
+        } else if (change instanceof OldSetReferenceChange) {
+          return "Changed '" + ((OldSetReferenceChange) change).getRole() + "' reference target";
+        } else if (change instanceof OldSetPropertyChange) {
+          return "Changed '" + ((OldSetPropertyChange) change).getProperty() + "' property value";
         }
         return "1 change";
       } else {
-        ChangeType unitedChangeType = getUnitedChangeType();
+        OldChangeType unitedChangeType = getUnitedChangeType();
         switch (unitedChangeType) {
           case ADD:
             return "Added " + ListSequence.fromList(myMessages).count() + " nodes";
@@ -411,7 +411,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     @NotNull
     @Override
     public Color getColor() {
-      return ChangeType.DELETE.getColor();
+      return OldChangeType.DELETE.getColor();
     }
 
     @Override

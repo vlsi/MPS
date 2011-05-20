@@ -24,8 +24,8 @@ public class typeof_ExecuteFindersGetSearchResults_InferenceRule extends Abstrac
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expr, "queryNode", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "6366407517031970681", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "6366407517031970683", true), (SNode) new typeof_ExecuteFindersGetSearchResults_InferenceRule.QuotationClass_4qk8lm_a0a0a0().createNode(typeCheckingContext), true, false, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "6413574678187373071", 0, null);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "6413574678187373073", true), (SNode) new typeof_ExecuteFindersGetSearchResults_InferenceRule.QuotationClass_4qk8lm_a0a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expr, "scope", true);
@@ -68,9 +68,8 @@ public class typeof_ExecuteFindersGetSearchResults_InferenceRule extends Abstrac
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
         result = quotedNode1_2;
       }
       return result;
@@ -81,9 +80,8 @@ public class typeof_ExecuteFindersGetSearchResults_InferenceRule extends Abstrac
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
         result = quotedNode1_2;
       }
       return result;

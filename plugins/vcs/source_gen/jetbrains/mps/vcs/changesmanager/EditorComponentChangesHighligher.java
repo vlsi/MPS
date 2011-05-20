@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.Map;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.project.Project;
@@ -21,9 +21,9 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.vcs.diff.oldchanges.ChangeType;
+import jetbrains.mps.vcs.diff.oldchanges.OldChangeType;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
@@ -55,7 +55,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   private static final Color TRANSPARENT_COLOR = new Color(0, 0, 0, 0);
 
   private EditorComponent myEditorComponent;
-  private final Map<Change, EditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.fromMap(new HashMap<Change, EditorComponentChangesHighligher.ChangeEditorMessage>());
+  private final Map<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.fromMap(new HashMap<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage>());
   private ChangeListener myChangeListener;
   private ChangesFoldingAreaPainter myFoldingAreaPainter;
   private ModelChangesManager myModelChangesManager;
@@ -92,7 +92,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
           }
         });
         if (myChangeListener != null) {
-          for (Change change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
+          for (OldChange change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
             highlightChange(change);
           }
           synchronized (myChangesMessages) {
@@ -116,7 +116,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     });
   }
 
-  private EditorMessage highlightChange(@NotNull final Change change) {
+  private EditorMessage highlightChange(@NotNull final OldChange change) {
     final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
     final Wrappers._T<MessageTarget> messageTarget = new Wrappers._T<MessageTarget>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -135,7 +135,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
         if (affectedNodeId == null || messageTarget.value == null) {
           return;
         }
-        if (change.getChangeType() == ChangeType.DELETE) {
+        if (change.getChangeType() == OldChangeType.DELETE) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               SNodeId parentId = ((DeleteNodeChange) change).getParentId();
@@ -164,18 +164,18 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       return null;
     }
 
-    ChangeType type = change.getChangeType();
+    OldChangeType type = change.getChangeType();
     Color c;
-    if (type == ChangeType.ADD) {
+    if (type == OldChangeType.ADD) {
       c = HIGHLIGHT_COLOR_ADDED;
-    } else if (type == ChangeType.CHANGE) {
+    } else if (type == OldChangeType.CHANGE) {
       c = HIGHLIGHT_COLOR_CHANGED;
-    } else if (type == ChangeType.DELETE) {
+    } else if (type == OldChangeType.DELETE) {
       c = HIGHLIGHT_COLOR_DELETED;
     } else {
       return null;
     }
-    if (change instanceof AddRootChange) {
+    if (change instanceof OldAddRootChange) {
       // don't highlight added roots 
       return null;
     }
@@ -193,7 +193,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     return message;
   }
 
-  private EditorMessage unhighlightChange(@NotNull Change change) {
+  private EditorMessage unhighlightChange(@NotNull OldChange change) {
     EditorMessage message;
     synchronized (myChangesMessages) {
       message = MapSequence.fromMap(myChangesMessages).get(change);
@@ -209,7 +209,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     synchronized (myDisposedLock) {
       myDisposed = true;
     }
-    for (Change change : SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
+    for (OldChange change : SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
       unhighlightChange(change);
     }
     getHighlightManager().clearForOwner(this);
@@ -293,8 +293,8 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void rollbackChanges(@NotNull EditorContext editorContext) {
-    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).<Change>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Change>() {
-      public Change select(EditorComponentChangesHighligher.ChangeEditorMessage msg) {
+    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).<OldChange>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
+      public OldChange select(EditorComponentChangesHighligher.ChangeEditorMessage msg) {
         return msg.getChange();
       }
     }));
@@ -326,10 +326,10 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public class ChangeEditorMessage extends EditorMessageWithTarget {
-    private Change myChange;
+    private OldChange myChange;
     private boolean myHighlighted = false;
 
-    public ChangeEditorMessage(@NotNull Change change, @NotNull SNode node, Color color, MessageTarget messageTarget) {
+    public ChangeEditorMessage(@NotNull OldChange change, @NotNull SNode node, Color color, MessageTarget messageTarget) {
       super(node, MessageStatus.OK, messageTarget, color, "", EditorComponentChangesHighligher.this);
       myChange = change;
     }
@@ -448,7 +448,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     }
 
     @NotNull
-    public Change getChange() {
+    public OldChange getChange() {
       return myChange;
     }
 
@@ -494,7 +494,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     public MyChangeListener() {
     }
 
-    public void changeAdded(@NotNull Change change, @NotNull SModel model) {
+    public void changeAdded(@NotNull OldChange change, @NotNull SModel model) {
       EditorMessage addedMessage = highlightChange(change);
       if (addedMessage != null) {
         ListSequence.fromList(myRemovedMessages).removeElement(addedMessage);
@@ -502,7 +502,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       }
     }
 
-    public void changeRemoved(@NotNull Change change, @NotNull SModel model) {
+    public void changeRemoved(@NotNull OldChange change, @NotNull SModel model) {
       EditorMessage removedMessage = unhighlightChange(change);
       if (removedMessage != null) {
         ListSequence.fromList(myRemovedMessages).addElement(removedMessage);

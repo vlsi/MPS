@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
-import jetbrains.mps.ide.findusages.view.icons.Icons;
-
 import javax.swing.Icon;
 
 public class CategoryKind {
   public final static CategoryKind DEFAULT_CATEGORY_KIND =
-    new CategoryKind("Category", Icons.CATEGORY_ICON, "Group by category");
+    new CategoryKind("Category", null, "Group by category");
 
   private String myName;
   private Icon myIcon;

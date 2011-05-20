@@ -592,7 +592,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1237396009300(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SPropertyOperations.getString(_context.getNode(), "fullPath").endsWith("jar"));
+    return !(SPropertyOperations.getString(_context.getNode(), "fullPath").endsWith(".jar"));
   }
 
   public static boolean ifMacro_Condition_1210099219016(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -600,7 +600,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1210175748472(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SPropertyOperations.getString(_context.getNode(), "fullPath").endsWith("jar"));
+    return !(SPropertyOperations.getString(_context.getNode(), "fullPath").endsWith(".jar"));
   }
 
   public static boolean ifMacro_Condition_2850282874221194302(final IOperationContext operationContext, final IfMacroContext _context) {

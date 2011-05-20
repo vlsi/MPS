@@ -18,13 +18,10 @@ package jetbrains.mps.ide.findusages.model.holders;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.Icon;
 
 public class ModuleHolder implements IHolder<IModule> {
   private static final String UID = "uid";
@@ -46,10 +43,6 @@ public class ModuleHolder implements IHolder<IModule> {
   @NotNull
   public String getCaption() {
     return myModuleUID;
-  }
-
-  public Icon getIcon() {
-    return IconManager.getIconFor(getObject());
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

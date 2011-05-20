@@ -18,7 +18,8 @@ package jetbrains.mps;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.idea.LoggerFactory;
-import com.intellij.openapi.application.*;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
@@ -30,6 +31,7 @@ import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -42,17 +44,14 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.model.*;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
-import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
-import jetbrains.mps.util.PathManager;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.apache.commons.lang.StringUtils;
@@ -69,7 +68,10 @@ import java.io.StringWriter;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
 
 public class TestMain {
   private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs"};
@@ -168,8 +170,9 @@ public class TestMain {
   private static void waitUntilAllEventsFlushed() {
     // Wait until last invokeLater() is executed
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {}
-    }, ModalityState.NON_MODAL);
+        public void run() {
+        }
+      }, ModalityState.NON_MODAL);
     ModelAccess.instance().flushEventQueue();
   }
 
@@ -228,15 +231,15 @@ public class TestMain {
 
     final MPSProject project = loadProject(projectFile);
     return testActionForLeaks(new Runnable() {
-      public void run() {
-        new ProjectTester(project.getProject()).testProject();
-      }
-    }, leakThreshold);
+        public void run() {
+          new ProjectTester(project.getProject()).testProject();
+        }
+      }, leakThreshold);
   }
 
 
   private static ProjectScope getProjectScope(MPSProject project) {
-    return  project.getProject().getComponent(ProjectScope.class);
+    return project.getProject().getComponent(ProjectScope.class);
   }
 
   public static SModelDescriptor getModel(MPSProject project, String modelName) {
@@ -256,8 +259,8 @@ public class TestMain {
   }
 
   private final static String REFACTORING_PROJECT = "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT;
-  private final static String REFACTORING_SANDBOX[] = new String[] { "testRefactoring.sandbox", "testRefactoring.sandbox2" };
-  private final static String REFACTORING_LANGUAGE[] = new String[] { "testRefactoring", "testRefactoringTargetLang" };
+  private final static String REFACTORING_SANDBOX[] = new String[]{"testRefactoring.sandbox", "testRefactoring.sandbox2"};
+  private final static String REFACTORING_LANGUAGE[] = new String[]{"testRefactoring", "testRefactoringTargetLang"};
 
   public static boolean testRefactoringTestEnvironment(File projectDirectory) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
@@ -268,9 +271,9 @@ public class TestMain {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         b[0] = getModel(project, REFACTORING_SANDBOX[0]) != null
-            && getModel(project, REFACTORING_SANDBOX[1]) != null
-            && getLanguage(project, REFACTORING_LANGUAGE[0]) != null
-            && getLanguage(project, REFACTORING_LANGUAGE[1]) != null;
+          && getModel(project, REFACTORING_SANDBOX[1]) != null
+          && getLanguage(project, REFACTORING_LANGUAGE[0]) != null
+          && getLanguage(project, REFACTORING_LANGUAGE[1]) != null;
       }
     });
 
@@ -316,12 +319,12 @@ public class TestMain {
     TestMain.configureMPS();
 
     return testActionForLeaks(new Runnable() {
-      public void run() {
-        MPSProject project = loadProject(projectFile);
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-        project.dispose();
-      }
-    }, leakThreshold);
+        public void run() {
+          MPSProject project = loadProject(projectFile);
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+          project.dispose();
+        }
+      }, leakThreshold);
   }
 
   public static boolean testActionForLeaks(Runnable action, int leakThreshold) {
@@ -528,9 +531,11 @@ public class TestMain {
               }
             });
             final Class testClass = Class.forName(className, true, classLoader);
-            if (Modifier.isAbstract(testClass.getModifiers()) || Modifier.isInterface(testClass.getModifiers())) continue;
+            if (Modifier.isAbstract(testClass.getModifiers()) || Modifier.isInterface(testClass.getModifiers()))
+              continue;
             if (Modifier.isPrivate(testClass.getModifiers())) continue;
-            if (testClass.getAnnotation(classLoader.loadClass("jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch")) != null) continue;
+            if (testClass.getAnnotation(classLoader.loadClass("jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch")) != null)
+              continue;
 
             List<Method> testMethods = new ArrayList<Method>();
             Class<TestCase> testCaseClass = (Class<TestCase>) classLoader.loadClass(TestCase.class.getName());
@@ -757,53 +762,50 @@ public class TestMain {
   }
 
   public static class ProjectContainer {
-  private String projectName;
-  private MPSProject lastProject;
+    private String projectName;
+    private MPSProject lastProject;
 
-  public ProjectContainer() {
-  }
-
-  public void clear() {
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          ProjectContainer.this.lastProject.dispose();
-          ProjectContainer.this.lastProject = null;
-          ProjectContainer.this.projectName = null;
-        }
-      });
-    } catch (Exception e) {
-      e.printStackTrace();
+    public ProjectContainer() {
     }
-  }
 
-  public MPSProject getProject(String name) {
-    if (eq_v52ock_a0a0b(name, this.projectName)) {
-      return this.lastProject;
-    } else {
-      MPSProject p = TestMain.loadProject(new File(name));
-      if (this.lastProject != null) {
-        try {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-              ProjectContainer.this.lastProject.dispose();
-            }
-          });
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
+    public void clear() {
+      try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+          public void run() {
+            ProjectContainer.this.lastProject.dispose();
+            ProjectContainer.this.lastProject = null;
+            ProjectContainer.this.projectName = null;
+          }
+        });
+      } catch (Exception e) {
+        e.printStackTrace();
       }
-      this.lastProject = p;
-      this.projectName = name;
-      return p;
     }
-  }
 
-  private static boolean eq_v52ock_a0a0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    public MPSProject getProject(String name) {
+      if ((name != null ?
+        name.equals(this.projectName) :
+        name == this.projectName
+      )) {
+        return this.lastProject;
+      } else {
+        MPSProject p = TestMain.loadProject(new File(name));
+        if (this.lastProject != null) {
+          try {
+            SwingUtilities.invokeAndWait(new Runnable() {
+              public void run() {
+                ProjectContainer.this.lastProject.dispose();
+              }
+            });
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }
+        this.lastProject = p;
+        this.projectName = name;
+        return p;
+      }
+    }
+
   }
-}
 }

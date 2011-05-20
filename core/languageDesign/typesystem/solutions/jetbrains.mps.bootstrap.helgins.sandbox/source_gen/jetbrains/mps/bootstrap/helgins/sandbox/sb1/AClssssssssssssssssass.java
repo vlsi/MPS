@@ -86,12 +86,12 @@ public class AClssssssssssssssssass {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_axt657_a0a0b0a;
-        nodeToMatch_axt657_a0a0b0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_axt657_a0a0b0a.getConceptFqName()))) {
+        SNode nodeToMatch_AClssssssssssssssssass_axt657_a0a0b0a;
+        nodeToMatch_AClssssssssssssssssass_axt657_a0a0b0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_AClssssssssssssssssass_axt657_a0a0b0a.getConceptFqName()))) {
           return false;
         }
-        patternVar_class = nodeToMatch_axt657_a0a0b0a.getReferent("classifier");
+        patternVar_class = nodeToMatch_AClssssssssssssssssass_axt657_a0a0b0a.getReferent("classifier");
       }
       return true;
     }

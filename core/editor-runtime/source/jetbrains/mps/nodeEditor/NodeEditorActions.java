@@ -486,7 +486,16 @@ public class NodeEditorActions {
 
     @Override
     public boolean canExecute(EditorContext context) {
-      return context.getNodeEditorComponent().getSelectionManager().getSelection() != null;
+      // TODO: this check should be reallocated into Selection.canExecuteAction() method once it created
+      Selection selection = context.getNodeEditorComponent().getSelectionManager().getSelection();
+      if (selection instanceof NodeRangeSelection) {
+        return true;
+      }
+      if (selection instanceof SingularSelection) {
+        EditorCell editorCell = ((SingularSelection) selection).getEditorCell();
+        return editorCell.getSNode().getParent() != null;
+      }
+      return false;
     }
 
     @Override
@@ -505,14 +514,14 @@ public class NodeEditorActions {
         } else {
           Selection newSelection = selectionManager.createRangeSelection(selectedNode, selectedNode);
           if (newSelection instanceof NodeRangeSelection && selectedCell.isBigCell()) {
-            newSelection = ((jetbrains.mps.nodeEditor.selection.NodeRangeSelection) newSelection).enlargeSelection(myUp);
+            newSelection = ((NodeRangeSelection) newSelection).enlargeSelection(myUp);
           }
           if (newSelection != null) {
             selectionManager.pushSelection(newSelection);
           }
         }
-      } else if (selection instanceof jetbrains.mps.nodeEditor.selection.NodeRangeSelection) {
-        Selection newSelection = ((jetbrains.mps.nodeEditor.selection.NodeRangeSelection) selection).enlargeSelection(myUp);
+      } else if (selection instanceof NodeRangeSelection) {
+        Selection newSelection = ((NodeRangeSelection) selection).enlargeSelection(myUp);
         if (newSelection != null) {
           selectionManager.pushSelection(newSelection);
         }

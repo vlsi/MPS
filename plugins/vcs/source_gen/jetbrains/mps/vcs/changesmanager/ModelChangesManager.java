@@ -7,7 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
@@ -35,9 +35,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ICollectionSequence;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
-import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.AddNodeChange;
@@ -87,14 +87,14 @@ public class ModelChangesManager {
   private final Project myProject;
   private SimpleCommandQueue myCommandQueue;
   private SModelDescriptor myModelDescriptor;
-  private List<Change> myChangeList = ListSequence.fromList(new ArrayList<Change>());
+  private List<OldChange> myChangeList = ListSequence.fromList(new ArrayList<OldChange>());
   private ModelChangesManager.MyModelListener myModelListener = new ModelChangesManager.MyModelListener();
   private final List<ChangeListener> myChangeListeners = ListSequence.fromList(new ArrayList<ChangeListener>());
   private SModel myBaseVersionModel = null;
   private Set<SNodeId> myAddedNodeIds = SetSequence.fromSet(new HashSet<SNodeId>());
   private Map<SNodeId, Integer> myChangesCountsForRoots = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
-  private Map<Change, SNodeId> myRootForChange = MapSequence.fromMap(new HashMap<Change, SNodeId>());
-  private Map<Tuples._2<SNodeId, String>, List<Change>> myMultipleChildChanges = MapSequence.fromMap(new HashMap<Tuples._2<SNodeId, String>, List<Change>>());
+  private Map<OldChange, SNodeId> myRootForChange = MapSequence.fromMap(new HashMap<OldChange, SNodeId>());
+  private Map<Tuples._2<SNodeId, String>, List<OldChange>> myMultipleChildChanges = MapSequence.fromMap(new HashMap<Tuples._2<SNodeId, String>, List<OldChange>>());
   private boolean myEnabled = false;
   private FileStatus myFileStatus;
   private Map<SNodeId, SNodeId> myRollbackReplaceCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>());
@@ -126,9 +126,9 @@ public class ModelChangesManager {
   }
 
   @NotNull
-  public List<Change> getChangeList() {
+  public List<OldChange> getChangeList() {
     myCommandQueue.assertSoftlyIsCommandThread();
-    return ListSequence.fromListWithValues(new ArrayList<Change>(), myChangeList);
+    return ListSequence.fromListWithValues(new ArrayList<OldChange>(), myChangeList);
   }
 
   public void addChangeListener(@NotNull ChangeListener listener) {
@@ -150,7 +150,7 @@ public class ModelChangesManager {
     }
   }
 
-  private void fireChangeAdded(@NotNull Change change) {
+  private void fireChangeAdded(@NotNull OldChange change) {
     myCommandQueue.assertSoftlyIsCommandThread();
     for (ChangeListener listener : ListSequence.fromList(copyListeners())) {
       try {
@@ -163,7 +163,7 @@ public class ModelChangesManager {
     }
   }
 
-  private void fireChangeRemoved(@NotNull Change change) {
+  private void fireChangeRemoved(@NotNull OldChange change) {
     myCommandQueue.assertSoftlyIsCommandThread();
     for (ChangeListener listener : ListSequence.fromList(copyListeners())) {
       try {
@@ -240,7 +240,7 @@ public class ModelChangesManager {
     }
   }
 
-  private void addRootInfoForChange(@NotNull Change change, @Nullable SNodeId affectedRootId, @NotNull SModel model) {
+  private void addRootInfoForChange(@NotNull OldChange change, @Nullable SNodeId affectedRootId, @NotNull SModel model) {
     myCommandQueue.assertSoftlyIsCommandThread();
     if (affectedRootId == null) {
       return;
@@ -254,7 +254,7 @@ public class ModelChangesManager {
     fileStatusChangedForRootNode(model.getNodeById(affectedRootId));
   }
 
-  private void removeRootInfoForChange(@NotNull Change change) {
+  private void removeRootInfoForChange(@NotNull OldChange change) {
     myCommandQueue.assertSoftlyIsCommandThread();
     SNodeId rootId = MapSequence.fromMap(myRootForChange).get(change);
     if (rootId != null && MapSequence.fromMap(myChangesCountsForRoots).containsKey(rootId)) {
@@ -267,7 +267,7 @@ public class ModelChangesManager {
     ));
   }
 
-  private void addChange(@NotNull Change change, @Nullable SNode affectedRoot, boolean silent) {
+  private void addChange(@NotNull OldChange change, @Nullable SNode affectedRoot, boolean silent) {
     myCommandQueue.assertSoftlyIsCommandThread();
     if (myBaseVersionModel == null && !(isNewModel())) {
       if (log.isErrorEnabled()) {
@@ -290,11 +290,11 @@ public class ModelChangesManager {
     }
   }
 
-  private void addChange(@NotNull Change change, @Nullable SNode affectedRoot) {
+  private void addChange(@NotNull OldChange change, @Nullable SNode affectedRoot) {
     addChange(change, affectedRoot, false);
   }
 
-  private void removeChange(@NotNull Change change, boolean silent) {
+  private void removeChange(@NotNull OldChange change, boolean silent) {
     myCommandQueue.assertSoftlyIsCommandThread();
     if (myBaseVersionModel == null && !(isNewModel())) {
       if (log.isErrorEnabled()) {
@@ -315,27 +315,27 @@ public class ModelChangesManager {
     }
   }
 
-  private <C extends Change> int removeChanges(@NotNull final Class<C> changeClass, @NotNull final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition, boolean silent) {
-    List<Change> toRemove = ListSequence.fromList(getChangeList()).where(new IWhereFilter<Change>() {
-      public boolean accept(Change ch) {
+  private <C extends OldChange> int removeChanges(@NotNull final Class<C> changeClass, @NotNull final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition, boolean silent) {
+    List<OldChange> toRemove = ListSequence.fromList(getChangeList()).where(new IWhereFilter<OldChange>() {
+      public boolean accept(OldChange ch) {
         return changeClass.isInstance(ch) && condition.invoke((C) ch);
       }
     }).toListSequence();
 
-    for (Change change : ListSequence.fromList(toRemove)) {
+    for (OldChange change : ListSequence.fromList(toRemove)) {
       removeChange(change, silent);
     }
 
     return ListSequence.fromList(toRemove).count();
   }
 
-  private <C extends Change> int removeChanges(@NotNull Class<C> changeClass, @NotNull _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
+  private <C extends OldChange> int removeChanges(@NotNull Class<C> changeClass, @NotNull _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
     return removeChanges(changeClass, condition, false);
   }
 
   private int removeAllChanges() {
-    return removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
-      public Boolean invoke(Change change) {
+    return removeChanges(OldChange.class, new _FunctionTypes._return_P1_E0<Boolean, OldChange>() {
+      public Boolean invoke(OldChange change) {
         return true;
       }
     }, false);
@@ -355,7 +355,7 @@ public class ModelChangesManager {
     if (notifyListeners) {
       myCommandQueue.runTask(new Runnable() {
         public void run() {
-          for (Change change : ListSequence.fromList(getChangeList())) {
+          for (OldChange change : ListSequence.fromList(getChangeList())) {
             fireChangeRemoved(change);
           }
         }
@@ -371,14 +371,14 @@ public class ModelChangesManager {
     myCommandQueue.assertSoftlyIsCommandThread();
     // Note: this method does not notify ChangeListeners, so it should be invoked only during initialization 
 
-    final Wrappers._T<List<Change>> changeList = new Wrappers._T<List<Change>>(ListSequence.fromList(new ArrayList<Change>()));
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<ICollectionSequence<Change>>() {
-      public ICollectionSequence<Change> invoke() {
+    final Wrappers._T<List<OldChange>> changeList = new Wrappers._T<List<OldChange>>(ListSequence.fromList(new ArrayList<OldChange>()));
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<ICollectionSequence<OldChange>>() {
+      public ICollectionSequence<OldChange> invoke() {
         SModel model = getModel();
         final Set<SNodeId> addedNodes = SetSequence.fromSet(new HashSet<SNodeId>());
         final Set<SNodeId> removedNodes = SetSequence.fromSet(new HashSet<SNodeId>());
         Set<SNodeId> hasRemovedParent = SetSequence.fromSet(new HashSet<SNodeId>());
-        for (Change change : ListSequence.fromList(myChangeList)) {
+        for (OldChange change : ListSequence.fromList(myChangeList)) {
           if (change instanceof NewNodeChange) {
             SetSequence.fromSet(addedNodes).addElement(change.getAffectedNodeId());
           } else if (change instanceof DeleteNodeChange) {
@@ -396,7 +396,7 @@ public class ModelChangesManager {
           }
         }
 
-        for (Change change : ListSequence.fromList(myChangeList)) {
+        for (OldChange change : ListSequence.fromList(myChangeList)) {
           if (change instanceof NewNodeChange) {
             SNode node = model.getNodeById(change.getAffectedNodeId());
             assert node != null;
@@ -411,7 +411,7 @@ public class ModelChangesManager {
             if (!(SetSequence.fromSet(hasRemovedParent).contains(change.getAffectedNodeId()))) {
               ListSequence.fromList(changeList.value).addElement(change);
             }
-          } else if (change instanceof SetPropertyChange || change instanceof SetReferenceChange) {
+          } else if (change instanceof OldSetPropertyChange || change instanceof OldSetReferenceChange) {
             SNodeId nodeId = change.getAffectedNodeId();
             SNode node = model.getNodeById(nodeId);
             if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).any(new IWhereFilter<SNode>() {
@@ -431,7 +431,7 @@ public class ModelChangesManager {
             // adding NewNodeChange if needed 
             if (parent == null || !(SetSequence.fromSet(addedNodes).contains(parent.getSNodeId()))) {
               if (parent == null) {
-                ListSequence.fromList(changeList.value).addElement(new AddRootChange(conceptFqName, nodeId));
+                ListSequence.fromList(changeList.value).addElement(new OldAddRootChange(conceptFqName, nodeId));
               } else if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
                 SNode thisNodeInBase = myBaseVersionModel.getNodeById(nodeId);
                 if (thisNodeInBase != null && parent.getSNodeId().equals(check_fh1co9_a0a0a1a0a0h0c0a6a0e0y(SNodeOperations.getParent(thisNodeInBase))) && SNodeOperations.getContainingLinkRole(node).equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
@@ -453,8 +453,8 @@ public class ModelChangesManager {
             ListSequence.fromList(changeList.value).addElement(change);
           }
         }
-        final List<SetNodeChange> setNodeChanges = ListSequence.fromList(changeList.value).<SetNodeChange>translate(new ITranslator2<Change, SetNodeChange>() {
-          public Iterable<SetNodeChange> translate(final Change ch) {
+        final List<SetNodeChange> setNodeChanges = ListSequence.fromList(changeList.value).<SetNodeChange>translate(new ITranslator2<OldChange, SetNodeChange>() {
+          public Iterable<SetNodeChange> translate(final OldChange ch) {
             return new Iterable<SetNodeChange>() {
               public Iterator<SetNodeChange> iterator() {
                 return new YieldingIterator<SetNodeChange>() {
@@ -496,8 +496,8 @@ __switch__:
             };
           }
         }).toListSequence();
-        ListSequence.fromList(changeList.value).removeWhere(new IWhereFilter<Change>() {
-          public boolean accept(final Change ch) {
+        ListSequence.fromList(changeList.value).removeWhere(new IWhereFilter<OldChange>() {
+          public boolean accept(final OldChange ch) {
             return ch instanceof DeleteNodeChange && ListSequence.fromList(setNodeChanges).any(new IWhereFilter<SetNodeChange>() {
               public boolean accept(SetNodeChange snCh) {
                 return snCh.getOldChildId().equals(ch.getAffectedNodeId());
@@ -505,9 +505,9 @@ __switch__:
             });
           }
         });
-        changeList.value = ListSequence.fromList(changeList.value).<Change>select(new ISelector<Change, Change>() {
-          public Change select(Change ch) {
-            Change newCh = ch;
+        changeList.value = ListSequence.fromList(changeList.value).<OldChange>select(new ISelector<OldChange, OldChange>() {
+          public OldChange select(OldChange ch) {
+            OldChange newCh = ch;
             if (ch instanceof DeleteNodeChange) {
               SNode deletedNode = myBaseVersionModel.getNodeById(ch.getAffectedNodeId());
               if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(deletedNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
@@ -529,7 +529,7 @@ __switch__:
     MapSequence.fromMap(myRootForChange).clear();
     MapSequence.fromMap(myMultipleChildChanges).clear();
     SModel model = getModel();
-    for (Change change : ListSequence.fromList(getChangeList())) {
+    for (OldChange change : ListSequence.fromList(getChangeList())) {
       SNodeId nodeId = change.getAffectedNodeId();
       if (nodeId == null) {
         continue;
@@ -548,7 +548,7 @@ __switch__:
           if (MapSequence.fromMap(myMultipleChildChanges).containsKey(pair)) {
             ListSequence.fromList(MapSequence.fromMap(myMultipleChildChanges).get(pair)).addElement(change);
           } else {
-            MapSequence.fromMap(myMultipleChildChanges).put(pair, ListSequence.fromListWithValues(new ArrayList<Change>(), Arrays.asList(change)));
+            MapSequence.fromMap(myMultipleChildChanges).put(pair, ListSequence.fromListWithValues(new ArrayList<OldChange>(), Arrays.asList(change)));
           }
         }
       }
@@ -557,7 +557,7 @@ __switch__:
 
   private void updateAddedNodesSet() {
     SetSequence.fromSet(myAddedNodeIds).clear();
-    for (Change change : ListSequence.fromList(myChangeList)) {
+    for (OldChange change : ListSequence.fromList(myChangeList)) {
       if (change instanceof NewNodeChange) {
         SetSequence.fromSet(myAddedNodeIds).addElement(change.getAffectedNodeId());
       }
@@ -576,7 +576,7 @@ __switch__:
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SNode root : ListSequence.fromList(SModelOperations.getRoots(getModel(), null))) {
-          addChange(new AddRootChange(root.getConceptFqName(), root.getSNodeId()), root);
+          addChange(new OldAddRootChange(root.getConceptFqName(), root.getSNodeId()), root);
         }
       }
     });
@@ -631,7 +631,7 @@ __switch__:
         return;
       }
       myBaseVersionModel = ModelUtils.readModel(content, modelVFile.toString());
-      final Wrappers._T<List<Change>> changeList = new Wrappers._T<List<Change>>();
+      final Wrappers._T<List<OldChange>> changeList = new Wrappers._T<List<OldChange>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           myChangeList = new DiffBuilder(myBaseVersionModel, getModel()).getChanges();
@@ -644,15 +644,15 @@ __switch__:
       });
       fileStatusChangedForRootNodes(getModel());
 
-      for (Change change : ListSequence.fromList(changeList.value)) {
+      for (OldChange change : ListSequence.fromList(changeList.value)) {
         fireChangeAdded(change);
       }
 
       FileStatusManager statusManager = FileStatusManager.getInstance(myProject);
       assert statusManager != null;
       SModel model = getModel();
-      for (Change change : ListSequence.fromList(changeList.value)) {
-        if (change instanceof AddRootChange) {
+      for (OldChange change : ListSequence.fromList(changeList.value)) {
+        if (change instanceof OldAddRootChange) {
           SNode node = model.getNodeById(change.getAffectedNodeId());
           MPSNodeVirtualFile virtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
           statusManager.fileStatusChanged(virtualFile);
@@ -743,11 +743,11 @@ __switch__:
     Tuples._2<SNodeId, String> pair = MultiTuple.<SNodeId,String>from(parentNode.getSNodeId(), role);
 
     if (!(MapSequence.fromMap(myMultipleChildChanges).containsKey(pair))) {
-      MapSequence.fromMap(myMultipleChildChanges).put(pair, ListSequence.fromList(new ArrayList<Change>()));
+      MapSequence.fromMap(myMultipleChildChanges).put(pair, ListSequence.fromList(new ArrayList<OldChange>()));
     }
 
     // Step 1: delete old changes for this link 
-    for (Change change : ListSequence.fromList(MapSequence.fromMap(myMultipleChildChanges).get(pair)).toListSequence()) {
+    for (OldChange change : ListSequence.fromList(MapSequence.fromMap(myMultipleChildChanges).get(pair)).toListSequence()) {
       removeChange(change, silent);
     }
     ListSequence.fromList(MapSequence.fromMap(myMultipleChildChanges).get(pair)).clear();
@@ -758,7 +758,7 @@ __switch__:
     List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = new LongestCommonSubsequenceFinder<SNodeId>(baseChildrenIds, currentChildrenIds).getDifferentSubsequences();
 
     // Step 3: add new changes 
-    List<Change> changesToAdd = ListSequence.fromList(new ArrayList<Change>());
+    List<OldChange> changesToAdd = ListSequence.fromList(new ArrayList<OldChange>());
     for (Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>> nodeGroups : ListSequence.fromList(differentSubsequences)) {
       List<SNodeId> baseNodeGroup = Sequence.fromIterable(nodeGroups._0()).toListSequence();
       List<SNodeId> currentNodeGroup = Sequence.fromIterable(nodeGroups._1()).toListSequence();
@@ -805,7 +805,7 @@ __switch__:
         }
       }
     }
-    for (Change change : ListSequence.fromList(changesToAdd)) {
+    for (OldChange change : ListSequence.fromList(changesToAdd)) {
       addChange(change, SNodeOperations.getContainingRoot(parentNode), silent);
       ListSequence.fromList(MapSequence.fromMap(myMultipleChildChanges).get(pair)).addElement(change);
     }
@@ -853,21 +853,21 @@ __switch__:
     return copyOfBaseNode;
   }
 
-  public void rollbackChanges(@NotNull Iterable<Change> changes) {
-    Iterable<Change> sortedChanges = Sequence.fromIterable(changes).sort(new ISelector<Change, Comparable<?>>() {
-      public Comparable<?> select(Change ch) {
+  public void rollbackChanges(@NotNull Iterable<OldChange> changes) {
+    Iterable<OldChange> sortedChanges = Sequence.fromIterable(changes).sort(new ISelector<OldChange, Comparable<?>>() {
+      public Comparable<?> select(OldChange ch) {
         return ListSequence.fromList(myChangeList).indexOf(ch);
       }
     }, false);
-    Sequence.fromIterable(sortedChanges).visitAll(new IVisitor<Change>() {
-      public void visit(Change ch) {
+    Sequence.fromIterable(sortedChanges).visitAll(new IVisitor<OldChange>() {
+      public void visit(OldChange ch) {
         rollbackChangeCore(ch);
       }
     });
     MapSequence.fromMap(myRollbackReplaceCache).clear();
   }
 
-  public void rollbackChange(@NotNull Change change) {
+  public void rollbackChange(@NotNull OldChange change) {
     rollbackChangeCore(change);
     MapSequence.fromMap(myRollbackReplaceCache).clear();
   }
@@ -884,11 +884,11 @@ __switch__:
     }
   }
 
-  private void rollbackChangeCore(@NotNull Change change) {
+  private void rollbackChangeCore(@NotNull OldChange change) {
     // This method should be invoked inside command 
     assert ModelAccess.instance().canWrite();
     if (change instanceof NewNodeChange) {
-      if (change instanceof AddRootChange) {
+      if (change instanceof OldAddRootChange) {
         return;
       } else {
         SNodeId nodeId = change.getAffectedNodeId();
@@ -936,13 +936,13 @@ __switch__:
           parent.insertChild(anchorChild, deleteChange.getRole(), oldNode);
         }
       }
-    } else if (change instanceof SetPropertyChange) {
-      String role = ((SetPropertyChange) change).getProperty();
+    } else if (change instanceof OldSetPropertyChange) {
+      String role = ((OldSetPropertyChange) change).getProperty();
       SNode node = getModel().getNodeById(change.getAffectedNodeId());
       assert node != null;
       node.setProperty(role, check_fh1co9_b0a3a1c0vb(myBaseVersionModel.getNodeById(node.getSNodeId()), role));
-    } else if (change instanceof SetReferenceChange) {
-      String role = ((SetReferenceChange) change).getRole();
+    } else if (change instanceof OldSetReferenceChange) {
+      String role = ((OldSetReferenceChange) change).getRole();
       SNode node = getModel().getNodeById(change.getAffectedNodeId());
       assert node != null;
       SReference br = check_fh1co9_a0d0c2a74(myBaseVersionModel.getNodeById(node.getSNodeId()), role);
@@ -1275,8 +1275,8 @@ __switch__:
               final SNodeId nodeId = e.getNode().getSNodeId();
 
               // Remove old change for the same property if needed 
-              removeChanges(SetPropertyChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetPropertyChange>() {
-                public Boolean invoke(SetPropertyChange ch) {
+              removeChanges(OldSetPropertyChange.class, new _FunctionTypes._return_P1_E0<Boolean, OldSetPropertyChange>() {
+                public Boolean invoke(OldSetPropertyChange ch) {
                   return nodeId.equals(ch.getAffectedNodeId()) && e.getPropertyName().equals(ch.getProperty());
                 }
               });
@@ -1296,7 +1296,7 @@ __switch__:
                 }
               }
 
-              addChange(new SetPropertyChange(nodeId, e.getPropertyName(), e.getNewPropertyValue()), e.getAffectedRoot());
+              addChange(new OldSetPropertyChange(nodeId, e.getPropertyName(), e.getNewPropertyValue()), e.getAffectedRoot());
             }
           });
           fireChangeUpdateFinished();
@@ -1323,8 +1323,8 @@ __switch__:
               final SNodeId sourceNodeId = e.getReference().getSourceNode().getSNodeId();
 
               // Remove SetReferenceChange for this reference if needed 
-              removeChanges(SetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetReferenceChange>() {
-                public Boolean invoke(SetReferenceChange ch) {
+              removeChanges(OldSetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, OldSetReferenceChange>() {
+                public Boolean invoke(OldSetReferenceChange ch) {
                   return ch.getAffectedNodeId().equals(sourceNodeId) && ch.getRole().equals(e.getReference().getRole());
                 }
               });
@@ -1357,8 +1357,8 @@ __switch__:
               final SNodeId sourceNodeId = reference.getSourceNode().getSNodeId();
 
               // Remove SetReferenceChange for this reference if needed 
-              removeChanges(SetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetReferenceChange>() {
-                public Boolean invoke(SetReferenceChange ch) {
+              removeChanges(OldSetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, OldSetReferenceChange>() {
+                public Boolean invoke(OldSetReferenceChange ch) {
                   return ch.getAffectedNodeId().equals(sourceNodeId) && ch.getRole().equals(reference.getRole());
                 }
               });
@@ -1369,7 +1369,7 @@ __switch__:
                 return;
               }
 
-              addChange(new SetReferenceChange(sourceNodeId, e.getModel(), e.getReference(), e.getReference().getTargetNode()), e.getAffectedRoot());
+              addChange(new OldSetReferenceChange(sourceNodeId, e.getModel(), e.getReference(), e.getReference().getTargetNode()), e.getAffectedRoot());
             }
           });
           fireChangeUpdateFinished();
@@ -1388,8 +1388,8 @@ __switch__:
           fireChangeUpdateStarted();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              removeChanges(AddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, AddRootChange>() {
-                public Boolean invoke(AddRootChange ch) {
+              removeChanges(OldAddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, OldAddRootChange>() {
+                public Boolean invoke(OldAddRootChange ch) {
                   return ch.getAffectedNodeId().equals(e.getRoot().getSNodeId());
                 }
               });
@@ -1398,7 +1398,7 @@ __switch__:
                   return ch.getAffectedNodeId().equals(e.getRoot().getSNodeId());
                 }
               }) == 0) {
-                addChange(new AddRootChange(e.getRoot().getConceptFqName(), e.getRoot().getSNodeId()), e.getRoot());
+                addChange(new OldAddRootChange(e.getRoot().getConceptFqName(), e.getRoot().getSNodeId()), e.getRoot());
               }
               if (!(isNewModel())) {
                 recursivelyChildAdded(e.getRoot());
@@ -1422,14 +1422,14 @@ __switch__:
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               recursivelyChildRemoved(e.getRoot());
-              removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
-                public Boolean invoke(Change ch) {
+              removeChanges(OldChange.class, new _FunctionTypes._return_P1_E0<Boolean, OldChange>() {
+                public Boolean invoke(OldChange ch) {
                   return !(ch instanceof NewNodeChange || ch instanceof DeleteNodeChange) && ObjectUtils.equals(ch.getAffectedNodeId(), e.getRoot().getSNodeId());
                 }
               });
               removeChildChanges(e.getRoot().getSNodeId());
-              if (removeChanges(AddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, AddRootChange>() {
-                public Boolean invoke(AddRootChange ch) {
+              if (removeChanges(OldAddRootChange.class, new _FunctionTypes._return_P1_E0<Boolean, OldAddRootChange>() {
+                public Boolean invoke(OldAddRootChange ch) {
                   return ObjectUtils.equals(ch.getAffectedNodeId(), e.getRoot().getSNodeId());
                 }
               }) == 0) {
@@ -1460,8 +1460,8 @@ __switch__:
               if (isAncestorAlreadyAdded(pathToRoot)) {
                 return;
               }
-              removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
-                public Boolean invoke(Change ch) {
+              removeChanges(OldChange.class, new _FunctionTypes._return_P1_E0<Boolean, OldChange>() {
+                public Boolean invoke(OldChange ch) {
                   return !(ch instanceof NewNodeChange || ch instanceof DeleteNodeChange) && ObjectUtils.equals(ch.getAffectedNodeId(), e.getChild().getSNodeId());
                 }
               });

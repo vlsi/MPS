@@ -17,6 +17,7 @@ import jetbrains.mps.refactoring.StructureModificationData;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
+import java.util.List;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 
 public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessModifier {
@@ -88,7 +89,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     if (language == null) {
       return null;
     }
-    Set<String> parentsNames = LanguageHierarchyCache.getParentsNames(conceptFQName);
+    List<String> parentsNames = LanguageHierarchyCache.getParentsNames(conceptFQName);
     for (String parentFQName : parentsNames) {
       String newChildRole = getNewFeatureRole_internal(parentFQName, oldRole, conceptFeatureKind);
       if (newChildRole != null) {

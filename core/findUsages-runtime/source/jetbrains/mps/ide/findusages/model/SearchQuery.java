@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,10 +90,6 @@ public class SearchQuery implements IExternalizeable {
   @NotNull
   public String getCaption() {
     return myObjectHolder.getCaption();
-  }
-
-  public Icon getIcon() {
-    return myObjectHolder.getIcon();
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

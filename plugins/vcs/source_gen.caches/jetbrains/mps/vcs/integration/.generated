@@ -19,9 +19,9 @@
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-407walh0ub0b2b43962ce3kwlirlt3r" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-8e0dnvfbl120lsjxmz7gtj8952chsqt" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="eakoh5hz6b3tyh4z14ytuycmd79x8te" />
-  <dep model="r:351fe3d9-2ce5-4ea0-8afc-9b076259a949(jetbrains.mps.vcs.diff.merge.ui)" hash="3at454uojzs73k2wyxssfhlxwjtoz9i" />
+  <dep model="r:351fe3d9-2ce5-4ea0-8afc-9b076259a949(jetbrains.mps.vcs.diff.merge.ui)" hash="4wlug9oglqtv77u8wwnxh9l2brv3eek" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
-  <dep model="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" hash="34v6s0axd0cbfrjuywsuudj4kg9pkwf" />
+  <dep model="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" hash="-39htnenou8bxcfef1jqevvh55jwemvn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
   <common hash="62zgpceos6zxdgjg3zewpn8jejsnw0v">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />

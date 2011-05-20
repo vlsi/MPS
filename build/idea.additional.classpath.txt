@@ -1,7 +1,5 @@
 core/idea-patch/classes
 classes
-workbench/classes
-workbench/runConfigurations/classes
 core/debug/classes
 core/debug-api/classes
 core/runtime/classes
@@ -23,9 +21,12 @@ core/baseLanguage/collections/languages/trove/runtime/classes
 core/baseLanguage/runConfigurations/runtime/classes
 core/baseLanguage/tuples/runtime/classes
 core/kernel/classes
+workbench/classes
+workbench/runConfigurations/classes
 workbench/typesystemUi/classes
 platform/uiLanguage/runtime/classes
 MPSPlugin/apiclasses
+core/baseLanguage/closures/runtime/classes
 core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar
 core/baseLanguage/collections/languages/trove/runtime/classes
 core/baseLanguage/unitTest/solutions/runtime/classes

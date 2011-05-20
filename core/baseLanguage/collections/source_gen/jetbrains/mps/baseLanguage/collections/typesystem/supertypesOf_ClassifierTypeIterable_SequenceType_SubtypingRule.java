@@ -111,25 +111,25 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_z7dq1d_a0a;
-        nodeToMatch_z7dq1d_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_z7dq1d_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a;
+        nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_x5x8gb_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_z7dq1d_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_z7dq1d_ = "parameter";
-          if (nodeToMatch_z7dq1d_a0a.getChildCount(childRole_z7dq1d_) != 1) {
+          String childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_ = "parameter";
+          if (nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getChildCount(childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0_0 = nodeToMatch_z7dq1d_a0a.getChildren(childRole_z7dq1d_).get(0);
-            this.patternVar_p = childVar_a0a0_0;
+            SNode childVar_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a0 = nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getChildren(childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_).get(0);
+            this.patternVar_p = childVar_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a0;
           }
         }
       }

@@ -66,7 +66,11 @@ import com.intellij.openapi.util.SystemInfo;
           } else {
             // another is installed 
 
-            // TODO integrate with user's merger 
+            if (!(dryRun)) {
+              if (Messages.showYesNoDialog(myProject, String.format("You already have custom diff3-cmd in your Subversion config (%s).\nIt will be overriden by MPS custom diff3. Continue?", cmd), "diff3-cmd is already present", Messages.getQuestionIcon()) != 0) {
+                return AbstractInstaller.State.NOT_INSTALLED;
+              }
+            }
             lineToReplace = i;
             break;
           }

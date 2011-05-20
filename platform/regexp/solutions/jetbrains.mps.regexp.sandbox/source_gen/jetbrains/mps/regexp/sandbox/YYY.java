@@ -9,6 +9,6 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   private static Pattern REGEXP_y3g_b0a0a = Pattern.compile("abc", 0);
 
   /*package*/ void m() {
-    RegexpOperations.replace("", REGEXP_y3g_b0a0a, new _Replacer_a0a0a0(YYY.this, null));
+    RegexpOperations.replace("", REGEXP_y3g_b0a0a, new _Replacer_y3g_a0a0a0(YYY.this, null));
   }
 }

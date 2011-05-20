@@ -48,7 +48,7 @@ public class ChangeTrapeciumStrip extends JComponent {
       int[] xx = new int[]{0, getWidth(), getWidth(), 0};
       int[] yy = new int[]{leftStart, rightStart, rightEnd, leftEnd};
 
-      g.setColor(group.getChangeType().getColor());
+      g.setColor(ChangeColors.get(group.getChangeType()));
       g.fillPolygon(xx, yy, 4);
       g.setColor(Color.GRAY);
       g.drawLine(0, leftStart, getWidth() - 1, rightStart);

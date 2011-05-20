@@ -8,6 +8,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.DataFlow;
+import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class VariableReferenceUtil {
   public VariableReferenceUtil() {
@@ -38,6 +45,51 @@ public class VariableReferenceUtil {
       return !(DataFlow.isInitializedRewritten(program, assignmentExpression));
     } else {
       return true;
+    }
+  }
+
+  public static boolean isAssigned(Iterable<SNode> references) {
+    for (SNode ref : references) {
+      if (CheckingUtil.isAssigned(ref)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public static boolean isRead(Iterable<SNode> references) {
+    for (SNode ref : references) {
+      if (!(CheckingUtil.isAssigned(ref))) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  @CheckingMethod
+  public static void checkField(final TypeCheckingContext typeCheckingContext, SNode field, Iterable<SNode> references) {
+    if (Sequence.fromIterable(references).isEmpty()) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7581428506283755675", null, errorTarget);
+      }
+    } else {
+      boolean isAssigned = VariableReferenceUtil.isAssigned(references);
+      boolean isRead = VariableReferenceUtil.isRead(references);
+      if (SLinkOperations.getTarget(field, "initializer", true) != null) {
+        isAssigned = true;
+      }
+      if (!(isAssigned)) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Private field " + SPropertyOperations.getString(field, "name") + " is never assigned", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7581428506283755703", null, errorTarget);
+        }
+      } else if (!(isRead)) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Private field " + SPropertyOperations.getString(field, "name") + " is assigned but never accessed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7581428506283755712", null, errorTarget);
+        }
+      }
     }
   }
 }

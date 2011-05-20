@@ -80,14 +80,14 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_pyyrzk_a0a;
-        nodeToMatch_pyyrzk_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_pyyrzk_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_int_unboxing_pyyrzk_a0a;
+        nodeToMatch_int_unboxing_pyyrzk_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_int_unboxing_pyyrzk_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_nhleq2_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_pyyrzk_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_int_unboxing_pyyrzk_a0a.getReferent("classifier")))) {
             return false;
           }
         }

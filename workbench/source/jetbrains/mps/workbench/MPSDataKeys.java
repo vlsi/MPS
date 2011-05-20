@@ -19,7 +19,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

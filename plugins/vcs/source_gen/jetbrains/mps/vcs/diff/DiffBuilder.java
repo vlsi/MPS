@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.smodel.SNode;
 import java.util.HashMap;
 import java.util.List;
@@ -28,12 +28,12 @@ import jetbrains.mps.vcs.diff.oldchanges.EngagedOnGenerationLanguagesChange;
 import java.util.LinkedHashSet;
 import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.AddNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange;
-import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -46,8 +46,8 @@ public class DiffBuilder {
 
   private SModel myOldModel;
   private SModel myNewModel;
-  private Map<Change, SNode> myChangeGroups = new HashMap<Change, SNode>();
-  private List<Change> myChanges = new ArrayList<Change>();
+  private Map<OldChange, SNode> myChangeGroups = new HashMap<OldChange, SNode>();
+  private List<OldChange> myChanges = new ArrayList<OldChange>();
 
   @Deprecated
   public DiffBuilder(SModel oldModel, SModel newModel) {
@@ -106,7 +106,7 @@ public class DiffBuilder {
     for (NewNodeChange change : CollectionUtil.filter(NewNodeChange.class, myChanges)) {
       addedNodes.add(change.getAffectedNodeId());
     }
-    for (Change change : myChanges) {
+    for (OldChange change : myChanges) {
       SNodeId id = change.getAffectedNodeId();
       if (id == null) {
         continue;
@@ -123,7 +123,7 @@ public class DiffBuilder {
     }
   }
 
-  public Map<Change, SNode> getChangeGroups() {
+  public Map<OldChange, SNode> getChangeGroups() {
     return myChangeGroups;
   }
 
@@ -281,7 +281,7 @@ public class DiffBuilder {
           myChanges.add(new AddNodeChange(node.getConceptFqName(), id, role, node.getParent().getSNodeId(), prevId, prevRole));
         }
       } else {
-        myChanges.add(new AddRootChange(node.getConceptFqName(), id));
+        myChanges.add(new OldAddRootChange(node.getConceptFqName(), id));
       }
     }
   }
@@ -317,9 +317,9 @@ public class DiffBuilder {
     }
   }
 
-  private List<Change> getChangesFor(SNodeId sNodeId) {
-    List<Change> result = new ArrayList<Change>();
-    for (Change change : myChanges) {
+  private List<OldChange> getChangesFor(SNodeId sNodeId) {
+    List<OldChange> result = new ArrayList<OldChange>();
+    for (OldChange change : myChanges) {
       if (sNodeId.equals(change.getAffectedNodeId())) {
         result.add(change);
       }
@@ -340,7 +340,7 @@ public class DiffBuilder {
       SNode oldNode = myOldModel.getNodeById(id);
       if (oldNode == null) {
         for (String prop : newNode.getProperties().keySet()) {
-          myChanges.add(new SetPropertyChange(id, prop, newNode.getProperties().get(prop)));
+          myChanges.add(new OldSetPropertyChange(id, prop, newNode.getProperties().get(prop)));
         }
       } else {
         Set<String> newNodeProps = newNode.getPropertyNames();
@@ -348,11 +348,11 @@ public class DiffBuilder {
         Set<String> deletedProps = new HashSet<String>(oldNodeProps);
         deletedProps.removeAll(newNodeProps);
         for (String deletedProp : deletedProps) {
-          myChanges.add(new SetPropertyChange(id, deletedProp, null));
+          myChanges.add(new OldSetPropertyChange(id, deletedProp, null));
         }
         for (String nnp : newNodeProps) {
           if (!(eq(newNode.getProperties().get(nnp), oldNode.getProperties().get(nnp)))) {
-            myChanges.add(new SetPropertyChange(id, nnp, newNode.getProperties().get(nnp)));
+            myChanges.add(new OldSetPropertyChange(id, nnp, newNode.getProperties().get(nnp)));
           }
         }
       }
@@ -372,7 +372,7 @@ public class DiffBuilder {
       SNode oldNode = myOldModel.getNodeById(id);
       if (oldNode == null) {
         for (SReference ref : newNode.getReferences()) {
-          myChanges.add(new SetReferenceChange(id, myNewModel, ref, ref.getTargetNode()));
+          myChanges.add(new OldSetReferenceChange(id, myNewModel, ref, ref.getTargetNode()));
         }
       } else {
         Set<String> roles = new HashSet<String>(newNode.getReferenceRoles());
@@ -383,7 +383,7 @@ public class DiffBuilder {
               myChanges.add(new DeleteReferenceChange(id, myNewModel, oldNode.getReference(role)));
             } else {
               if (!(("" + getTargetId(newNode.getReference(role))).equals("" + getTargetId(oldNode.getReference(role))))) {
-                myChanges.add(new SetReferenceChange(id, myNewModel, newNode.getReference(role), newNode.getReferent(role)));
+                myChanges.add(new OldSetReferenceChange(id, myNewModel, newNode.getReference(role), newNode.getReferent(role)));
               }
             }
           } else {
@@ -416,7 +416,7 @@ public class DiffBuilder {
     return SPropertyOperations.hasValue(ld, "sourceCardinality", "1..n", "0..1") || SPropertyOperations.hasValue(ld, "sourceCardinality", "0..n", "0..1");
   }
 
-  public List<Change> getChanges() {
-    return new ArrayList<Change>(myChanges);
+  public List<OldChange> getChanges() {
+    return new ArrayList<OldChange>(myChanges);
   }
 }

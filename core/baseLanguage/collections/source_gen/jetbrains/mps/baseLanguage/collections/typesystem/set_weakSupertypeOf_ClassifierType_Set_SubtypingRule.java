@@ -111,25 +111,25 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_n7314j_a0a;
-        nodeToMatch_n7314j_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_n7314j_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a;
+        nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_lt6k7h_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_n7314j_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_n7314j_ = "parameter";
-          if (nodeToMatch_n7314j_a0a.getChildCount(childRole_n7314j_) != 1) {
+          String childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_ = "parameter";
+          if (nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getChildCount(childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0_2 = nodeToMatch_n7314j_a0a.getChildren(childRole_n7314j_).get(0);
-            this.patternVar_elementType = childVar_a0a0_2;
+            SNode childVar_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a0 = nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getChildren(childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_).get(0);
+            this.patternVar_elementType = childVar_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a0;
           }
         }
       }

@@ -25,6 +25,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.ui.content.Content;
+import jetbrains.mps.ide.findusages.view.icons.IconManager;
 
 public class MigrationScriptsTool extends TabbedUsagesTool {
   private List<SNodePointer> myScripts;
@@ -100,7 +101,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
         if (myViews.size() > 1) {
           tabName = "" + (myViews.size() - 1);
         }
-        Content content = addContent(view.getComponent(), tabName, query.getIcon(), false);
+        Content content = addContent(view.getComponent(), tabName, IconManager.getIconForIHolder(query.getObjectHolder()), false);
         getContentManager().setSelectedContent(content);
       }
     });

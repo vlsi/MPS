@@ -45,7 +45,7 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   }
 
   public static String replaceAll(String s) {
-    s = RegexpOperations.replace(s, REGEXP_efh9at_b0a0a3, new _Replacer_a0a0a0d(null, null));
+    s = RegexpOperations.replace(s, REGEXP_efh9at_b0a0a3, new _Replacer_efh9at_a0a0a0d(null, null));
     return s;
   }
 

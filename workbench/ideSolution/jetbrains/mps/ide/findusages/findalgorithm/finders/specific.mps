@@ -725,18 +725,6 @@
           <link role="annotation" roleId="tpee.1188208074048" targetNodeId="r27b.~NotNull" />
         </node>
       </node>
-      <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7228605397000826856">
-        <property name="name" nameId="tpck.1169194664001" value="getIcon" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7228605397000826857" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7228605397000826858">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" />
-        </node>
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7228605397000827041">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7228605397000827042">
-            <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7228605397000827043" />
-          </node>
-        </node>
-      </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7228605397000826859">
         <property name="name" nameId="tpck.1169194664001" value="read" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7228605397000826860" />

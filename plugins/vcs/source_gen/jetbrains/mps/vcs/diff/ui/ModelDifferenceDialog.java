@@ -163,7 +163,7 @@ public class ModelDifferenceDialog extends BaseDialog {
       if (firstChange instanceof AddRootChange || firstChange instanceof DeleteRootChange) {
         compositeChangeType = firstChange.getType();
       }
-      rootTreeNode.setColor(compositeChangeType.getTreeColor());
+      rootTreeNode.setColor(ChangeColors.getForTree(compositeChangeType));
     }
 
     protected Iterable<SModel> getModels() {

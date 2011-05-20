@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelReference;
 
 @Deprecated
-public class AddLanguageAspectChange extends Change {
+public class AddLanguageAspectChange extends OldChange {
   private SModel.ImportElement myImportElement;
 
   @Deprecated

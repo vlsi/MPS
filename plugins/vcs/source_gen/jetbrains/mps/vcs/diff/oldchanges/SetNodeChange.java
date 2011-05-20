@@ -74,10 +74,10 @@ public class SetNodeChange extends NewNodeChange {
   }
 
   @Override
-  public ChangeType getChangeType() {
+  public OldChangeType getChangeType() {
     if (getOldChildId() != null) {
-      return ChangeType.CHANGE;
+      return OldChangeType.CHANGE;
     }
-    return ChangeType.ADD;
+    return OldChangeType.ADD;
   }
 }

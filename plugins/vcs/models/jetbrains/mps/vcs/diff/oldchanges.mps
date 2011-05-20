@@ -22,7 +22,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MoveNodeChange" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4707157387247556486">
-      <property name="name" nameId="tpck.1169194664001" value="AddRootChange" />
+      <property name="name" nameId="tpck.1169194664001" value="OldAddRootChange" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4707157387247556540">
       <property name="name" nameId="tpck.1169194664001" value="UsedDevkitsChange" />
@@ -36,13 +36,13 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4707157387247556966">
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="Change" />
+      <property name="name" nameId="tpck.1169194664001" value="OldChange" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4707157387247557037">
-      <property name="name" nameId="tpck.1169194664001" value="SetPropertyChange" />
+      <property name="name" nameId="tpck.1169194664001" value="OldSetPropertyChange" />
     </node>
     <node type="tpee.EnumClass" typeId="tpee.1083245097125" id="4707157387247557258">
-      <property name="name" nameId="tpck.1169194664001" value="ChangeType" />
+      <property name="name" nameId="tpck.1169194664001" value="OldChangeType" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4707157387247557317">
       <property name="name" nameId="tpck.1169194664001" value="DeleteNodeChange" />
@@ -69,7 +69,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ChangeConceptChange" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4707157387247558473">
-      <property name="name" nameId="tpck.1169194664001" value="SetReferenceChange" />
+      <property name="name" nameId="tpck.1169194664001" value="OldSetReferenceChange" />
     </node>
   </roots>
   <root id="4707157387247556079">

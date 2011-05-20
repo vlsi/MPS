@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff.oldchanges;
 import java.awt.Color;
 
 @Deprecated
-public enum ChangeType {
+public enum OldChangeType {
   ADD(new Color(186, 238, 186)),
   DELETE(new Color(203, 203, 203)),
   CHANGE(new Color(188, 207, 249));
@@ -13,7 +13,7 @@ public enum ChangeType {
   private Color myColor;
 
   @Deprecated
-  ChangeType(Color c) {
+  OldChangeType(Color c) {
     myColor = c;
   }
 
@@ -21,13 +21,13 @@ public enum ChangeType {
     return myColor;
   }
 
-  public ChangeType getOpositeChange() {
-    if (this == ChangeType.ADD) {
-      return ChangeType.DELETE;
+  public OldChangeType getOpositeChange() {
+    if (this == OldChangeType.ADD) {
+      return OldChangeType.DELETE;
     }
-    if (this == ChangeType.DELETE) {
-      return ChangeType.ADD;
+    if (this == OldChangeType.DELETE) {
+      return OldChangeType.ADD;
     }
-    return ChangeType.CHANGE;
+    return OldChangeType.CHANGE;
   }
 }

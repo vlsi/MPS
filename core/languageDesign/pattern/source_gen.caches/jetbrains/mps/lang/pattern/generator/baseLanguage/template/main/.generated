@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8870ylc80av3xlh5zq9w32qlr6mjx94">
+<dependencies version="2" modelHash="7s8dj2j7dndhhc665y2lskw6f9w0n5w">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -85,7 +85,7 @@
   <source id="1174819529513" name="PatternVariableType_String" hash="-97oqucd6jys658a0yuvuksbs74z175j">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1190931376923" name="PatternNode_to_statementList" hash="awlqohxpcx69z9u9ui8uyajl6634sgy">
+  <source id="1190931376923" name="PatternNode_to_statementList" hash="-atyc7ep4rqy2rrrp8m0e3mnkq4fcxjh">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1224175565790" name="_Patterns" hash="-94snlsu8lk5spozaehrqs0icg6rbjcn">

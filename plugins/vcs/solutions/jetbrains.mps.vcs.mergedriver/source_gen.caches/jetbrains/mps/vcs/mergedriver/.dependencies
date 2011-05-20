@@ -87,10 +87,12 @@
     <classNode dependClassName="java.awt.event.ItemEvent" />
     <classNode dependClassName="java.awt.event.ItemListener" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalInstaller" />

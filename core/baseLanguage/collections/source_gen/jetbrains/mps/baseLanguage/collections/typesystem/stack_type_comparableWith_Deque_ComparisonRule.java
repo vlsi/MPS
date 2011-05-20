@@ -60,25 +60,25 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_h34l93_a0a;
-        nodeToMatch_h34l93_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_h34l93_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a;
+        nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0d;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_h34l93_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_h34l93_ = "parameter";
-          if (nodeToMatch_h34l93_a0a.getChildCount(childRole_h34l93_) != 1) {
+          String childRole_stack_type_comparableWith_Deque_h34l93_ = "parameter";
+          if (nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getChildCount(childRole_stack_type_comparableWith_Deque_h34l93_) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0_16 = nodeToMatch_h34l93_a0a.getChildren(childRole_h34l93_).get(0);
-            this.patternVar_ELEMENT_TYPE = childVar_a0a0_16;
+            SNode childVar_stack_type_comparableWith_Deque_h34l93_a0a0 = nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getChildren(childRole_stack_type_comparableWith_Deque_h34l93_).get(0);
+            this.patternVar_ELEMENT_TYPE = childVar_stack_type_comparableWith_Deque_h34l93_a0a0;
           }
         }
       }

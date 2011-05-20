@@ -51,9 +51,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeConflictsBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContextState" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.merge.NodeCopierWithCache" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.merge.MergeContextState" file="MergeContextState.java">
@@ -69,29 +69,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.merge.NodeCopierWithCache" file="NodeCopierWithCache.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
   </dependency>
 </dependenciesRoot>
 

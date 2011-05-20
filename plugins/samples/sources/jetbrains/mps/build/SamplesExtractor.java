@@ -143,7 +143,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
       File samplesDir = new File(getSamplesPathInUserHome());
 
       if (samplesDir.exists()) {
-        int answer = Messages.showOkCancelDialog("Do you want to replace directory\n" + samplesDir + "\n with version " + currentBuildNumberString() + " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
+        int answer = Messages.showYesNoDialog("Do you want to replace directory\n" + samplesDir + "\n with version " + currentBuildNumberString() + " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
         if (answer == 0) {
           FileUtil.delete(samplesDir);
           actuallyExtractSamples(samplesZipFile);
@@ -160,7 +160,11 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     try {
       File tmpDir = FileUtil.createTempDirectory("MPSSamples", "");
       ZipUtil.extract(samplesZipFile, tmpDir, null);
-      FileUtil.moveDirWithContent(new File(tmpDir + File.separator + SAMPLES_IN_USER_HOME_DIR), new File(getSamplesPathInUserHome()));
+      File from = new File(tmpDir + File.separator + SAMPLES_IN_USER_HOME_DIR);
+      File to = new File(getSamplesPathInUserHome());
+      if (!FileUtil.moveDirWithContent(from, to) && !to.exists()) {
+        FileUtil.copyDir(from, to);
+      }
       FileUtil.delete(tmpDir);
     } catch (IOException e) {
       LOG.error(e);

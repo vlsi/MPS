@@ -140,29 +140,29 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_1q5lf6_a0a;
-        nodeToMatch_1q5lf6_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1q5lf6_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a;
+        nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_nagdzg_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_1q5lf6_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_1q5lf6_ = "parameter";
-          if (nodeToMatch_1q5lf6_a0a.getChildCount(childRole_1q5lf6_) != 2) {
+          String childRole_SortedMap_comparableTo_sorted_map_1q5lf6_ = "parameter";
+          if (nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildCount(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_) != 2) {
             return false;
           }
           {
-            SNode childVar_a0a0_7 = nodeToMatch_1q5lf6_a0a.getChildren(childRole_1q5lf6_).get(0);
-            this.patternVar_KEY = childVar_a0a0_7;
+            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).get(0);
+            this.patternVar_KEY = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0;
           }
           {
-            SNode childVar_b0a0_0 = nodeToMatch_1q5lf6_a0a.getChildren(childRole_1q5lf6_).get(1);
-            this.patternVar_VALUE = childVar_b0a0_0;
+            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).get(1);
+            this.patternVar_VALUE = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0;
           }
         }
       }

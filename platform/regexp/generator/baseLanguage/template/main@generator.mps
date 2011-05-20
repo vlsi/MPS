@@ -929,6 +929,7 @@
                 <node role="baseName" roleId="tpf3.1218047638032" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1174658286322">
                   <property name="value" nameId="tpee.1070475926801" value="_Replacer" />
                 </node>
+                <node role="contextNode" roleId="tpf3.1218049772449" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5548409609264694609" />
               </node>
             </node>
           </node>

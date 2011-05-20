@@ -112,19 +112,19 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_nbr2nf_a0a;
-        nodeToMatch_nbr2nf_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_nbr2nf_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a;
+        nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getConceptFqName()))) {
           return false;
         }
         {
-          String childRole_nbr2nf_ = "elementType";
-          if (nodeToMatch_nbr2nf_a0a.getChildCount(childRole_nbr2nf_) != 1) {
+          String childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_ = "elementType";
+          if (nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getChildCount(childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0_4 = nodeToMatch_nbr2nf_a0a.getChildren(childRole_nbr2nf_).get(0);
-            this.patternVar_elementType = childVar_a0a0_4;
+            SNode childVar_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a0 = nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getChildren(childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_).get(0);
+            this.patternVar_elementType = childVar_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a0;
           }
         }
       }

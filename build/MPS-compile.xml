@@ -55,6 +55,7 @@
   <property name="jetbrains.mps.lang.constraints.classes" value="core/languageDesign/constraints/classes_gen" />
   <property name="jetbrains.mps.lang.core.classes" value="languages/core/core/classes_gen" />
   <property name="jetbrains.mps.lang.dataFlow.classes" value="core/languageDesign/dataFlow/classes_gen" />
+  <property name="jetbrains.mps.lang.descriptor.classes" value="languages/languageDesign/generator/languages/descriptor/classes_gen" />
   <property name="jetbrains.mps.lang.editor.classes" value="core/languageDesign/editor/classes_gen" />
   <property name="jetbrains.mps.lang.editor.editorTest.classes" value="core/languageDesign/editor/languages/editorTest/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.classes" value="core/languageDesign/editor/languages/table/classes_gen" />
@@ -155,9 +156,6 @@
     <path path="platform/regexp/source_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" />
-    <path path="core/baseLanguage/runConfigurations/source_gen" />
-    <path path="core/baseLanguage/runConfigurations/runtime/source_gen" />
-    <path path="core/baseLanguage/runConfigurations/runtime/test_gen" />
     <path path="core/baseLanguage/tuples/languages/tuples/source_gen" />
     <path path="core/baseLanguage/unitTest/source_gen" />
     <path path="core/baseLanguage/baseLanguageInternal/source_gen" />
@@ -241,6 +239,13 @@
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
   </path>
+  <path id="cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc.src">
+    <path path="core/baseLanguage/runConfigurations/source_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.baseLanguage.runConfigurations.runtime_tjc.src">
+    <path path="core/baseLanguage/runConfigurations/runtime/source_gen" />
+    <path path="core/baseLanguage/runConfigurations/runtime/test_gen" />
+  </path>
   <path id="cycle.jetbrains.mps.bash_tjc.src">
     <path path="platform/bash/languages/bash/source_gen" />
   </path>
@@ -270,6 +275,9 @@
   </path>
   <path id="cycle.jetbrains.mps.ide.uiLanguage_tjc.src">
     <path path="workbench/ideUiLanguage/source_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.lang.descriptor_tjc.src">
+    <path path="languages/languageDesign/generator/languages/descriptor/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.editorTest_tjc.src">
     <path path="core/languageDesign/editor/languages/editorTest/source_gen" />
@@ -356,7 +364,6 @@
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes_gen" />
     <path path="core/baseLanguage/closures/classes_gen" />
-    <path path="core/baseLanguage/closures/runtime/classes" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/classes_gen" />
     <path path="core/baseLanguage/collections/languages/trove/classes_gen" />
@@ -365,9 +372,6 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
-    <path path="core/baseLanguage/runConfigurations/classes_gen" />
-    <path path="core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="core/baseLanguage/runConfigurations/runtime/classes_gen" />
     <path path="core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
@@ -375,6 +379,7 @@
     <path path="core/debug-api/languages/api/classes_gen" />
     <path path="core/debug/languages/customViewers/classes_gen" />
     <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="lib/tools.jar" />
     <path path="core/debug/languages/privateMembers/classes_gen" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
@@ -524,9 +529,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -647,9 +650,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -771,9 +772,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -901,9 +900,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -1024,9 +1021,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -1044,7 +1039,6 @@
     <path path="core/baseLanguage/classifiers/classes_gen" />
     <path path="core/baseLanguage/closures/classes_gen" />
     <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/classes_gen" />
     <path path="core/baseLanguage/collections/languages/trove/classes_gen" />
@@ -1150,9 +1144,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -1170,7 +1162,6 @@
     <path path="core/baseLanguage/classifiers/classes_gen" />
     <path path="core/baseLanguage/closures/classes_gen" />
     <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/classes_gen" />
     <path path="core/baseLanguage/collections/languages/trove/classes_gen" />
@@ -1275,9 +1266,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -1400,9 +1389,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -1524,9 +1511,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -1647,9 +1632,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -1771,9 +1754,250 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
+    <path path="workbench/runConfigurations/languages/common/classes_gen" />
+    <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
+    <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc.classpaths">
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
+    <path path="core/analyzers/languages/analyzers/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes_gen" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes_gen" />
+    <path path="core/baseLanguage/blTypes/classes_gen" />
+    <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
+    <path path="core/baseLanguage/classifiers/classes_gen" />
+    <path path="core/baseLanguage/closures/classes_gen" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes_gen" />
+    <path path="core/baseLanguage/logging/classes_gen" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/runtime/classes" />
+    <path path="core/baseLanguage/runConfigurations/runtime/classes_gen" />
+    <path path="core/baseLanguage/tuples/languages/tuples/classes_gen" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/languageDesign/actions/classes_gen" />
+    <path path="core/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="core/languageDesign/constraints/classes_gen" />
+    <path path="core/languageDesign/dataFlow/classes_gen" />
+    <path path="core/languageDesign/editor/classes_gen" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes_gen" />
+    <path path="core/languageDesign/intentions/classes_gen" />
+    <path path="core/languageDesign/make/languages/facet/classes_gen" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/make/languages/script/classes_gen" />
+    <path path="core/languageDesign/pattern/classes_gen" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes_gen" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes_gen" />
+    <path path="core/languageDesign/refactoring/classes_gen" />
+    <path path="core/languageDesign/script/classes_gen" />
+    <path path="core/languageDesign/sharedConcepts/classes_gen" />
+    <path path="core/languageDesign/smodel/classes_gen" />
+    <path path="core/languageDesign/smodel/languages/smodelTests/classes_gen" />
+    <path path="core/languageDesign/structure/classes_gen" />
+    <path path="core/languageDesign/stubs/classes_gen" />
+    <path path="core/languageDesign/test/classes_gen" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes_gen" />
+    <path path="core/languageDesign/typesystem/classes_gen" />
+    <path path="core/languageDesign/typesystem/languages/test/classes_gen" />
+    <path path="languages/core/core/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/descriptor/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/generationContext/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="languages/languageDesign/generator/test/inputLang/classes_gen" />
+    <path path="languages/languageDesign/generator/test/outputLang/classes_gen" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="platform/ui/languages/gwt/classes_gen" />
+    <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
+    <path path="platform/ui/languages/internal/classes_gen" />
+    <path path="platform/ui/languages/meta/classes_gen" />
+    <path path="platform/ui/languages/swing/classes_gen" />
+    <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
+    <path path="platform/ui/languages/swing/runtime/classes_gen" />
+    <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <path path="platform/ui/languages/swt/runtime/classes_gen" />
+    <path path="platform/ui/languages/ui/classes_gen" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
+    <path path="workbench/runConfigurations/languages/common/classes_gen" />
+    <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
+    <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.baseLanguage.runConfigurations.runtime_tjc.classpaths">
+    <path path="core/baseLanguage/runConfigurations/runtime/classes" />
+    <path path="core/baseLanguage/runConfigurations/runtime/classes_gen" />
+    <path path="core/analyzers/languages/analyzers/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes_gen" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes_gen" />
+    <path path="core/baseLanguage/blTypes/classes_gen" />
+    <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
+    <path path="core/baseLanguage/classifiers/classes_gen" />
+    <path path="core/baseLanguage/closures/classes_gen" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes_gen" />
+    <path path="core/baseLanguage/logging/classes_gen" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/runtime/classes" />
+    <path path="core/baseLanguage/runConfigurations/runtime/classes_gen" />
+    <path path="core/baseLanguage/tuples/languages/tuples/classes_gen" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/languageDesign/actions/classes_gen" />
+    <path path="core/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="core/languageDesign/constraints/classes_gen" />
+    <path path="core/languageDesign/dataFlow/classes_gen" />
+    <path path="core/languageDesign/editor/classes_gen" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes_gen" />
+    <path path="core/languageDesign/intentions/classes_gen" />
+    <path path="core/languageDesign/make/languages/facet/classes_gen" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/make/languages/script/classes_gen" />
+    <path path="core/languageDesign/pattern/classes_gen" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes_gen" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes_gen" />
+    <path path="core/languageDesign/refactoring/classes_gen" />
+    <path path="core/languageDesign/script/classes_gen" />
+    <path path="core/languageDesign/sharedConcepts/classes_gen" />
+    <path path="core/languageDesign/smodel/classes_gen" />
+    <path path="core/languageDesign/smodel/languages/smodelTests/classes_gen" />
+    <path path="core/languageDesign/structure/classes_gen" />
+    <path path="core/languageDesign/stubs/classes_gen" />
+    <path path="core/languageDesign/test/classes_gen" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes_gen" />
+    <path path="core/languageDesign/typesystem/classes_gen" />
+    <path path="core/languageDesign/typesystem/languages/test/classes_gen" />
+    <path path="languages/core/core/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/descriptor/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/generationContext/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="languages/languageDesign/generator/test/inputLang/classes_gen" />
+    <path path="languages/languageDesign/generator/test/outputLang/classes_gen" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="platform/ui/languages/gwt/classes_gen" />
+    <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
+    <path path="platform/ui/languages/internal/classes_gen" />
+    <path path="platform/ui/languages/meta/classes_gen" />
+    <path path="platform/ui/languages/swing/classes_gen" />
+    <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
+    <path path="platform/ui/languages/swing/runtime/classes_gen" />
+    <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <path path="platform/ui/languages/swt/runtime/classes_gen" />
+    <path path="platform/ui/languages/ui/classes_gen" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -1895,9 +2119,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -2030,9 +2252,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -2164,9 +2384,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -2297,9 +2515,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -2428,9 +2644,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -2551,9 +2765,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -2674,9 +2886,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -2799,9 +3009,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -2922,9 +3130,128 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
+    <path path="workbench/runConfigurations/languages/commands/classes_gen" />
+    <path path="workbench/runConfigurations/languages/common/classes_gen" />
+    <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
+    <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths">
+    <path path="languages/languageDesign/generator/languages/descriptor/classes_gen" />
+    <path path="core/analyzers/languages/analyzers/classes_gen" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes_gen" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes_gen" />
+    <path path="core/baseLanguage/blTypes/classes_gen" />
+    <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
+    <path path="core/baseLanguage/classifiers/classes_gen" />
+    <path path="core/baseLanguage/closures/classes_gen" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes_gen" />
+    <path path="core/baseLanguage/logging/classes_gen" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/runtime/classes" />
+    <path path="core/baseLanguage/runConfigurations/runtime/classes_gen" />
+    <path path="core/baseLanguage/tuples/languages/tuples/classes_gen" />
+    <path path="core/baseLanguage/tuples/runtime/classes" />
+    <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="core/debug-api/languages/api/classes_gen" />
+    <path path="core/debug/languages/customViewers/classes_gen" />
+    <path path="core/debug/languages/evaluation/classes_gen" />
+    <path path="core/debug/languages/privateMembers/classes_gen" />
+    <path path="core/languageDesign/actions/classes_gen" />
+    <path path="core/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="core/languageDesign/constraints/classes_gen" />
+    <path path="core/languageDesign/dataFlow/classes_gen" />
+    <path path="core/languageDesign/editor/classes_gen" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/classes_gen" />
+    <path path="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="core/languageDesign/editor/languages/tableTests/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes_gen" />
+    <path path="core/languageDesign/intentions/classes_gen" />
+    <path path="core/languageDesign/make/languages/facet/classes_gen" />
+    <path path="core/languageDesign/make/languages/outlook/classes_gen" />
+    <path path="core/languageDesign/make/languages/script/classes_gen" />
+    <path path="core/languageDesign/pattern/classes_gen" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes_gen" />
+    <path path="core/languageDesign/project/classes_gen" />
+    <path path="core/languageDesign/quotation/classes_gen" />
+    <path path="core/languageDesign/refactoring/classes_gen" />
+    <path path="core/languageDesign/script/classes_gen" />
+    <path path="core/languageDesign/sharedConcepts/classes_gen" />
+    <path path="core/languageDesign/smodel/classes_gen" />
+    <path path="core/languageDesign/smodel/languages/smodelTests/classes_gen" />
+    <path path="core/languageDesign/structure/classes_gen" />
+    <path path="core/languageDesign/stubs/classes_gen" />
+    <path path="core/languageDesign/test/classes_gen" />
+    <path path="core/languageDesign/test/testclasses" />
+    <path path="core/languageDesign/textGen/classes_gen" />
+    <path path="core/languageDesign/typesystem/classes_gen" />
+    <path path="core/languageDesign/typesystem/languages/test/classes_gen" />
+    <path path="languages/core/core/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/descriptor/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/generationContext/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="languages/languageDesign/generator/test/inputLang/classes_gen" />
+    <path path="languages/languageDesign/generator/test/outputLang/classes_gen" />
+    <path path="lib/asm.jar" />
+    <path path="lib/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-logging-1.1.jar" />
+    <path path="lib/guava-r06.jar" />
+    <path path="lib/junit-4.8.2.jar" />
+    <path path="lib/tools.jar" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="platform/ui/languages/gwt/classes_gen" />
+    <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
+    <path path="platform/ui/languages/internal/classes_gen" />
+    <path path="platform/ui/languages/meta/classes_gen" />
+    <path path="platform/ui/languages/swing/classes_gen" />
+    <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
+    <path path="platform/ui/languages/swing/runtime/classes_gen" />
+    <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <path path="platform/ui/languages/swt/runtime/classes_gen" />
+    <path path="platform/ui/languages/ui/classes_gen" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/classes" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -3045,9 +3372,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -3168,9 +3493,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -3291,9 +3614,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -3414,9 +3735,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -3537,9 +3856,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -3660,9 +3977,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -3783,9 +4098,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -3908,9 +4221,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -4031,9 +4342,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -4155,9 +4464,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -4280,9 +4587,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -4404,9 +4709,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -4527,9 +4830,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -4650,9 +4951,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -4774,9 +5073,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -4898,9 +5195,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -5022,9 +5317,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -5146,9 +5439,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -5270,9 +5561,7 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -5394,9 +5683,7 @@
     <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -5518,9 +5805,7 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -5642,9 +5927,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="platform/ypath/solutions/main/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
@@ -5767,16 +6050,14 @@
     <path path="platform/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="platform/ypath/solutions/test/classes_gen" />
-    <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
-    <path path="workbench/runConfigurations/classes" />
     <path path="workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.execution.configurations_tjc,compile.cycle.jetbrains.mps.execution.settings_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.make.facet_tjc,compile.cycle.jetbrains.mps.make.script_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations.runtime_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.execution.configurations_tjc,compile.cycle.jetbrains.mps.execution.settings_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.make.facet_tjc,compile.cycle.jetbrains.mps.make.script_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <mkdir dir="core/analyzers/languages/analyzers/source_gen" />
@@ -5793,9 +6074,6 @@
     <mkdir dir="platform/regexp/source_gen" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" />
-    <mkdir dir="core/baseLanguage/runConfigurations/source_gen" />
-    <mkdir dir="core/baseLanguage/runConfigurations/runtime/source_gen" />
-    <mkdir dir="core/baseLanguage/runConfigurations/runtime/test_gen" />
     <mkdir dir="core/baseLanguage/tuples/languages/tuples/source_gen" />
     <mkdir dir="core/baseLanguage/unitTest/source_gen" />
     <mkdir dir="core/baseLanguage/baseLanguageInternal/source_gen" />
@@ -5856,8 +6134,6 @@
     <mkdir dir="${jetbrains.mps.baseLanguage.logging.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.regexp.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.regexp.runtime.classes}" />
-    <mkdir dir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" />
-    <mkdir dir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguageInternal.classes}" />
@@ -5943,13 +6219,6 @@
     <copy todir="${jetbrains.mps.baseLanguage.regexp.runtime.classes}">
       <fileset includes="**/*.png" dir="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
       <fileset includes="**/*.png" dir="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" />
-    </copy>
-    <copy todir="${jetbrains.mps.baseLanguage.runConfigurations.classes}">
-      <fileset includes="**/*.png" dir="core/baseLanguage/runConfigurations/source_gen" />
-    </copy>
-    <copy todir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}">
-      <fileset includes="**/*.png" dir="core/baseLanguage/runConfigurations/runtime/source_gen" />
-      <fileset includes="**/*.png" dir="core/baseLanguage/runConfigurations/runtime/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.baseLanguage.tuples.classes}">
       <fileset includes="**/*.png" dir="core/baseLanguage/tuples/languages/tuples/source_gen" />
@@ -6147,17 +6416,6 @@
       <src>
         <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
         <path path="platform/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src>
-        <path path="core/baseLanguage/runConfigurations/source_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src>
-        <path path="core/baseLanguage/runConfigurations/runtime/source_gen" />
-        <path path="core/baseLanguage/runConfigurations/runtime/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.tuples.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
@@ -6592,7 +6850,46 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.bash_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.runConfigurations.runtime_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.baseLanguage.runConfigurations.classes}.tmp" />
+    <mkdir dir="core/baseLanguage/runConfigurations/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src refid="cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc.src" />
+    </javac>
+    <copy todir="${jetbrains.mps.baseLanguage.runConfigurations.classes}">
+      <fileset includes="**/*.png" dir="core/baseLanguage/runConfigurations/source_gen" />
+    </copy>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src>
+        <path path="core/baseLanguage/runConfigurations/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.runConfigurations.runtime_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}.tmp" />
+    <mkdir dir="core/baseLanguage/runConfigurations/runtime/source_gen" />
+    <mkdir dir="core/baseLanguage/runConfigurations/runtime/test_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.runConfigurations.runtime_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src refid="cycle.jetbrains.mps.baseLanguage.runConfigurations.runtime_tjc.src" />
+    </javac>
+    <copy todir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}">
+      <fileset includes="**/*.png" dir="core/baseLanguage/runConfigurations/runtime/source_gen" />
+      <fileset includes="**/*.png" dir="core/baseLanguage/runConfigurations/runtime/test_gen" />
+    </copy>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.runConfigurations.runtime_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src>
+        <path path="core/baseLanguage/runConfigurations/runtime/source_gen" />
+        <path path="core/baseLanguage/runConfigurations/runtime/test_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.bash_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc">
     <property name="classes.dump" value="${jetbrains.mps.bash.classes}.tmp" />
     <mkdir dir="platform/bash/languages/bash/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -6784,7 +7081,25 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage_tjc">
+  <target name="compile.cycle.jetbrains.mps.lang.descriptor_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.lang.descriptor.classes}.tmp" />
+    <mkdir dir="languages/languageDesign/generator/languages/descriptor/source_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.lang.descriptor.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src refid="cycle.jetbrains.mps.lang.descriptor_tjc.src" />
+    </javac>
+    <copy todir="${jetbrains.mps.lang.descriptor.classes}">
+      <fileset includes="**/*.png" dir="languages/languageDesign/generator/languages/descriptor/source_gen" />
+    </copy>
+    <javac classpathref="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.descriptor.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src>
+        <path path="languages/languageDesign/generator/languages/descriptor/source_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc" depends="compile.cycle.jetbrains.mps.lang.descriptor_tjc">
     <property name="classes.dump" value="${jetbrains.mps.lang.editor.editorTest.classes}.tmp" />
     <mkdir dir="core/languageDesign/editor/languages/editorTest/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -7240,8 +7555,6 @@
     <delete dir="${jetbrains.mps.baseLanguage.logging.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.regexp.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.regexp.runtime.classes}" />
-    <delete dir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" />
-    <delete dir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <delete dir="${jetbrains.mps.baseLanguageInternal.classes}" />
@@ -7297,6 +7610,8 @@
     <delete dir="${jetbrains.mps.baseLanguage.money.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.regexp.examples.classes}" />
+    <delete dir="${jetbrains.mps.baseLanguage.runConfigurations.classes}" />
+    <delete dir="${jetbrains.mps.baseLanguage.runConfigurations.runtime.classes}" />
     <delete dir="${jetbrains.mps.bash.classes}" />
     <delete dir="${jetbrains.mps.build.custommps.classes}" />
     <delete dir="${jetbrains.mps.build.dependency.classes}" />
@@ -7309,6 +7624,7 @@
     <delete dir="${jetbrains.mps.execution.settings.classes}" />
     <delete dir="${jetbrains.mps.gwt.client.classes}" />
     <delete dir="${jetbrains.mps.ide.uiLanguage.classes}" />
+    <delete dir="${jetbrains.mps.lang.descriptor.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.editorTest.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.classes}" />
     <delete dir="${jetbrains.mps.lang.editor.table.runtime.classes}" />

@@ -13,6 +13,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JCheckBox;
 
 public class MergeDriverOptionsDialog extends BaseDialog {
@@ -51,12 +52,16 @@ public class MergeDriverOptionsDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void ok() {
-    myGitGlobal.installIfNeeded();
-    if (myGitGlobal.myInstaller.getCurrentState() == AbstractInstaller.State.INSTALLED) {
-      myGitRepos.installIfNeeded();
-    }
-    mySvn.installIfNeeded();
-    dispose();
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        myGitGlobal.installIfNeeded();
+        if (myGitGlobal.myInstaller.getCurrentState() == AbstractInstaller.State.INSTALLED) {
+          myGitRepos.installIfNeeded();
+        }
+        mySvn.installIfNeeded();
+        dispose();
+      }
+    });
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')

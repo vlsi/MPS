@@ -140,29 +140,29 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_4xhv5l_a0a;
-        nodeToMatch_4xhv5l_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_4xhv5l_a0a.getConceptFqName()))) {
+        SNode nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a;
+        nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_cwf9bn_a0a0a0a0b0c0a0a0a0a0a0c;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_4xhv5l_a0a.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_4xhv5l_ = "parameter";
-          if (nodeToMatch_4xhv5l_a0a.getChildCount(childRole_4xhv5l_) != 2) {
+          String childRole_java_util_Map_extends_map_4xhv5l_ = "parameter";
+          if (nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildCount(childRole_java_util_Map_extends_map_4xhv5l_) != 2) {
             return false;
           }
           {
-            SNode childVar_a0a0_1 = nodeToMatch_4xhv5l_a0a.getChildren(childRole_4xhv5l_).get(0);
-            this.patternVar_keyType = childVar_a0a0_1;
+            SNode childVar_java_util_Map_extends_map_4xhv5l_a0a0 = nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_).get(0);
+            this.patternVar_keyType = childVar_java_util_Map_extends_map_4xhv5l_a0a0;
           }
           {
-            SNode childVar_b0a0 = nodeToMatch_4xhv5l_a0a.getChildren(childRole_4xhv5l_).get(1);
-            this.patternVar_valueType = childVar_b0a0;
+            SNode childVar_java_util_Map_extends_map_4xhv5l_b0a0 = nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_).get(1);
+            this.patternVar_valueType = childVar_java_util_Map_extends_map_4xhv5l_b0a0;
           }
         }
       }

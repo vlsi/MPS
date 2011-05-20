@@ -23,7 +23,7 @@ import javax.swing.tree.TreeCellRenderer;
 import java.awt.*;
 
 
-class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
+public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
   private JLabel myMainTextLabel = new JLabel();
   private JLabel myAdditionalTextLabel = new JLabel();
   private boolean mySelected;

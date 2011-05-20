@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModel;
 
 @Deprecated
-public class UsedLanguagesChange extends Change {
+public class UsedLanguagesChange extends OldChange {
   private final boolean myIsDeleted;
   private final ModuleReference myReference;
 
@@ -43,10 +43,10 @@ public class UsedLanguagesChange extends Change {
   }
 
   @Override
-  public ChangeType getChangeType() {
+  public OldChangeType getChangeType() {
     return (myIsDeleted ?
-      ChangeType.DELETE :
-      ChangeType.ADD
+      OldChangeType.DELETE :
+      OldChangeType.ADD
     );
   }
 

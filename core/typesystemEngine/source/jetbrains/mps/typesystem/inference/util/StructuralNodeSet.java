@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.*;
 
 public class StructuralNodeSet<T> implements Set<SNode> {
-  private Set<SNodeWrapper> myWrappers = new THashSet<SNodeWrapper>();
+  private Set<SNodeWrapper> myWrappers = new HashSet<SNodeWrapper>();
 
   public StructuralNodeSet() {
   }

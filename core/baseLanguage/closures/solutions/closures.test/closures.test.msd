@@ -4,7 +4,7 @@
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <dependencies>
-    <dependency reexport="true">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
+    <dependency reexport="true">4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)</dependency>
     <dependency reexport="true">f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</dependency>
   </dependencies>
   <usedLanguages>

@@ -85,25 +85,25 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_6isygg_a0a0a0a0;
-        nodeToMatch_6isygg_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6isygg_a0a0a0a0.getConceptFqName()))) {
+        SNode nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0;
+        nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a6;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0a0.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_6isygg__0 = "parameter";
-          if (nodeToMatch_6isygg_a0a0a0a0.getChildCount(childRole_6isygg__0) != 1) {
+          String childRole_IterateOverIterable_6isygg__0 = "parameter";
+          if (nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getChildCount(childRole_IterateOverIterable_6isygg__0) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0a0a0a = nodeToMatch_6isygg_a0a0a0a0.getChildren(childRole_6isygg__0).get(0);
-            this.patternVar_elem = childVar_a0a0a0a0a;
+            SNode childVar_IterateOverIterable_6isygg_a0a0a0a0a = nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getChildren(childRole_IterateOverIterable_6isygg__0).get(0);
+            this.patternVar_elem = childVar_IterateOverIterable_6isygg_a0a0a0a0a;
           }
         }
       }
@@ -139,25 +139,25 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_6isygg_a0a0a0;
-        nodeToMatch_6isygg_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6isygg_a0a0a0.getConceptFqName()))) {
+        SNode nodeToMatch_IterateOverIterable_6isygg_a0a0a0;
+        nodeToMatch_IterateOverIterable_6isygg_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getConceptFqName()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0h;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getReferent("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_6isygg_ = "parameter";
-          if (nodeToMatch_6isygg_a0a0a0.getChildCount(childRole_6isygg_) != 1) {
+          String childRole_IterateOverIterable_6isygg_ = "parameter";
+          if (nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getChildCount(childRole_IterateOverIterable_6isygg_) != 1) {
             return false;
           }
           {
-            SNode childVar_a0a0a0a = nodeToMatch_6isygg_a0a0a0.getChildren(childRole_6isygg_).get(0);
-            this.patternVar_elem = childVar_a0a0a0a;
+            SNode childVar_IterateOverIterable_6isygg_a0a0a0a = nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getChildren(childRole_IterateOverIterable_6isygg_).get(0);
+            this.patternVar_elem = childVar_IterateOverIterable_6isygg_a0a0a0a;
           }
         }
       }

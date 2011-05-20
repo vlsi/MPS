@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNode;
 
 @Deprecated
-public class DeleteReferenceChange extends SetReferenceChange {
+public class DeleteReferenceChange extends OldSetReferenceChange {
   @Deprecated
   public DeleteReferenceChange(SNodeId nodeId, SModel model, SReference reference) {
     super(nodeId, model, reference, null);

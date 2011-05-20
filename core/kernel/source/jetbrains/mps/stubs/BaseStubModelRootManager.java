@@ -32,6 +32,7 @@ import java.util.Set;
 //one myThisManager per stub path MUST be created
 public abstract class BaseStubModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(BaseStubModelRootManager.class);
+  private static final Object LOCK = new Object();
 
   private Set<BaseStubModelDescriptor> myDescriptorsWithListener = new HashSet<BaseStubModelDescriptor>();
   private ModelUpdater myInitializationListener = new ModelUpdater() {
@@ -137,6 +138,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   private void updateModelInLoadingState(BaseStubModelDescriptor descriptor, SModel model) {
     if (!StubReloadManager.getInstance().needsUpdate(descriptor, myLocation)) return;
 
+    synchronized (LOCK){
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
@@ -145,6 +147,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       LOG.error(t);
     } finally {
       model.setLoading(wasLoading);
+    }
     }
   }
 
@@ -155,10 +158,10 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   protected abstract Set<BaseStubModelDescriptor> getModelDescriptors(StubLocation location);
 
   @Deprecated
-  protected void updateModel(StubLocation location, SModel model) {
+  protected synchronized void updateModel(StubLocation location, SModel model) {
   }
 
-  protected void updateModel(StubLocation location, SModel model, StubSource source) {
+  protected synchronized void updateModel(StubLocation location, SModel model, StubSource source) {
     updateModel(location, model);
   }
 

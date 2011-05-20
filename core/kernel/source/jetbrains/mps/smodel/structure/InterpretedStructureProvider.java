@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 
+import java.util.List;
 import java.util.Set;
 
 public class InterpretedStructureProvider extends DescriptorProvider<StructureDescriptor> {
@@ -18,7 +19,7 @@ public class InterpretedStructureProvider extends DescriptorProvider<StructureDe
     }
 
     @Override
-    public Set<String> getParentsNames() {
+    public List<String> getParentsNames() {
       return LanguageHierarchyCache.getInstance()._getParentsNames(fqName);
     }
 

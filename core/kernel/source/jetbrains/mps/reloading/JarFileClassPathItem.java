@@ -54,7 +54,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
       myPrefix = "jar:" + myFile.toURI().toURL() + "!/";
       myZipFile = new ZipFile(myFile);
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error("invalid class path: " + path, e);
     }
   }
 

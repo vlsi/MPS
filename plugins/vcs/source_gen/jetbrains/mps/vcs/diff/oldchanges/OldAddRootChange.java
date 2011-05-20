@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 @Deprecated
-public class AddRootChange extends NewNodeChange {
+public class OldAddRootChange extends NewNodeChange {
   @Deprecated
-  public AddRootChange(String conceptFqName, SNodeId nodeId) {
+  public OldAddRootChange(String conceptFqName, SNodeId nodeId) {
     super(conceptFqName, nodeId, null, null);
   }
 

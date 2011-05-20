@@ -27,7 +27,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -208,7 +208,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
       showConflict(myConflict);
     }
 
-    private void addNode(Change change) {
+    private void addNode(OldChange change) {
       add(new OldMergeResultView.ChangeNode(change, (myMerger.isMine(change) ?
         "mine" :
         "theirs"
@@ -241,14 +241,14 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
   }
 
   private class ChangeNode extends MPSTreeNode {
-    private Change myChange;
+    private OldChange myChange;
     private String myAdditionalText;
 
-    public ChangeNode(Change change) {
+    public ChangeNode(OldChange change) {
       this(change, null);
     }
 
-    public ChangeNode(Change change, String additionalText) {
+    public ChangeNode(OldChange change, String additionalText) {
       super(null);
       myChange = change;
       myAdditionalText = additionalText;

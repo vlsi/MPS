@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TwoFieldsEditor_Configuration_Editor.java" startLine="20" startPosition="14" endLine="24" endPosition="5" unitName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration_Editor$1" />
-  <unitInfo fileName="SomeValid.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.SomeValid" />
   <unitInfo fileName="SomeInvalid.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.SomeInvalid" />
+  <unitInfo fileName="SomeValid.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.SomeValid" />
   <unitInfo fileName="TwoFieldsEditor_Configuration.java" startLine="103" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration$MyState" />
   <unitInfo fileName="TwoFieldsEditor_Configuration_Editor.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration_Editor" />
   <unitInfo fileName="TwoFieldsEditor_Configuration.java" startLine="16" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.TwoFieldsEditor_Configuration" />
@@ -212,6 +212,26 @@
     </scopeInfo>
     <unitInfo nodeId="8669494666333691563" fileName="SettingsEditorDialogTest.java" startLine="10" startPosition="35" endLine="18" endPosition="5" unitName="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorDialogTest$1" />
     <unitInfo nodeId="8669494666333691544" fileName="SettingsEditorDialogTest.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorDialogTest" />
+  </root>
+  <root nodeId="8851756219471015171">
+    <nodeInfo nodeId="6429083092555381087" fileName="Main.java" startLine="11" startPosition="42" endLine="12" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6429083092555421367" fileName="Main.java" startLine="13" startPosition="28" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8851756219471015173" fileName="Main.java" startLine="7" startPosition="19" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Main#()V" />
+    <nodeInfo nodeId="6429083092555421360" fileName="Main.java" startLine="12" startPosition="132" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8851756219471015177" fileName="Main.java" startLine="10" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="8851756219471015176" fileName="Main.java" startLine="8" startPosition="17" endLine="8" endPosition="17" />
+    <scopeInfo nodeId="6429083092555421361" fileName="Main.java" startLine="13" startPosition="28" endLine="14" endPosition="40" />
+    <scopeInfo nodeId="8851756219471015173" fileName="Main.java" startLine="7" startPosition="19" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="6429083092555421360" fileName="Main.java" startLine="12" startPosition="132" endLine="15" endPosition="5">
+      <varInfo nodeId="6429083092555421363" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="8851756219471015183" fileName="Main.java" startLine="11" startPosition="42" endLine="15" endPosition="5">
+      <varInfo nodeId="6429083092555381088" varName="parts" />
+    </scopeInfo>
+    <scopeInfo nodeId="8851756219471015177" fileName="Main.java" startLine="10" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="8851756219471015178" varName="args" />
+    </scopeInfo>
+    <unitInfo nodeId="8851756219471015171" fileName="Main.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.Main" />
   </root>
 </debugInfo>
 
