@@ -23,6 +23,7 @@ import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import org.apache.commons.lang.ObjectUtils;
@@ -115,12 +116,6 @@ public class LibrariesLoader implements ApplicationComponent {
       d.init(sd);
 
       library.setSolutionDescriptor(sd, false);
-
-      StubPath fakePath = new StubPath("", d.getManager());
-      StubModelManagerFactory manager = createStubManager(library, fakePath);
-      if (manager != null) {
-        library.setSolutionDescriptor(sd, false);
-      }
     }
   }
 
@@ -156,7 +151,7 @@ public class LibrariesLoader implements ApplicationComponent {
   }
 
   @Nullable
-  private StubModelManagerFactory createStubManager(AbstractModule m, StubPath sp) {
+  private AbstractModelRootManager createStubManager(AbstractModule m, StubPath sp) {
     try {
       if (sp.getManager() == null) return null;
 
@@ -168,10 +163,10 @@ public class LibrariesLoader implements ApplicationComponent {
       // fortunately, we don't have to
       if (m.getModuleReference().getModuleId().equals(ModuleId.fromString(moduleId))) {
         // well, that's weird... this causes an NPE in ClassLoaderManager
-        return (StubModelManagerFactory) StubModelManagerFactory.create((AbstractModule) m, className);
+        return (AbstractModelRootManager) StubModelManagerFactory.create((AbstractModule) m, className);
       }
 
-      return (StubModelManagerFactory) StubModelManagerFactory.create(moduleId, className);
+      return (AbstractModelRootManager) StubModelManagerFactory.create(moduleId, className);
     } catch (ManagerNotFoundException e) {
       LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
       return null;
