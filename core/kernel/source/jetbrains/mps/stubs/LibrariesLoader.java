@@ -117,11 +117,8 @@ public class LibrariesLoader implements ApplicationComponent {
       library.setSolutionDescriptor(sd, false);
 
       StubPath fakePath = new StubPath("", d.getManager());
-      BaseStubModelRootManager manager = createStubManager(library, fakePath);
+      StubModelManagerFactory manager = createStubManager(library, fakePath);
       if (manager != null) {
-        for (Language l : manager.getLanguagesToImport()) {
-          sd.getUsedLanguages().add(l.getModuleReference());
-        }
         library.setSolutionDescriptor(sd, false);
       }
     }
@@ -159,7 +156,7 @@ public class LibrariesLoader implements ApplicationComponent {
   }
 
   @Nullable
-  private BaseStubModelRootManager createStubManager(AbstractModule m, StubPath sp) {
+  private StubModelManagerFactory createStubManager(AbstractModule m, StubPath sp) {
     try {
       if (sp.getManager() == null) return null;
 
@@ -171,10 +168,10 @@ public class LibrariesLoader implements ApplicationComponent {
       // fortunately, we don't have to
       if (m.getModuleReference().getModuleId().equals(ModuleId.fromString(moduleId))) {
         // well, that's weird... this causes an NPE in ClassLoaderManager
-        return (BaseStubModelRootManager) BaseStubModelRootManager.create((AbstractModule) m, className);
+        return (StubModelManagerFactory) StubModelManagerFactory.create((AbstractModule) m, className);
       }
 
-      return (BaseStubModelRootManager) BaseStubModelRootManager.create(moduleId, className);
+      return (StubModelManagerFactory) StubModelManagerFactory.create(moduleId, className);
     } catch (ManagerNotFoundException e) {
       LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
       return null;

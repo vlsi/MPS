@@ -34,7 +34,7 @@ public interface ModelDataSource {
 
   DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName);
 
-  ModelLoadResult loadSModel(SModelDescriptor descriptor, ModelLoadingState targetState);
+  ModelLoadResult loadSModel(IModule contextModule, SModelDescriptor descriptor, ModelLoadingState targetState);
 
   boolean saveModel(SModelDescriptor descriptor);
 

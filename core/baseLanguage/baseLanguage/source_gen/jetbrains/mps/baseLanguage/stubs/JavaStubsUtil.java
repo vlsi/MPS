@@ -6,10 +6,9 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import jetbrains.mps.project.StubPath;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.stubs.StubModelManagerFactory;
 import jetbrains.mps.stubs.StubLocation;
 import java.util.HashSet;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -25,13 +24,13 @@ import jetbrains.mps.stubs.StubDescriptor;
   public JavaStubsUtil() {
   }
 
-  /*package*/ static Set<BaseStubModelDescriptor> getModelDescriptors(BaseStubModelRootManager stubCreator, StubLocation location, String languageId) {
+  /*package*/ static Set<BaseStubModelDescriptor> getModelDescriptors(StubModelManagerFactory stubCreator, StubLocation location, String languageId) {
     Set<BaseStubModelDescriptor> result = new HashSet<BaseStubModelDescriptor>();
     JavaStubsUtil.getModelDescriptors(stubCreator, location, languageId, result);
     return result;
   }
 
-  private static void getModelDescriptors(BaseStubModelRootManager stubCreator, StubLocation location, String languageId, Set<BaseStubModelDescriptor> result) {
+  private static void getModelDescriptors(StubModelManagerFactory stubCreator, StubLocation location, String languageId, Set<BaseStubModelDescriptor> result) {
     String pack = location.getPrefix();
     IClassPathItem cpItem = createClassPathItem(location);
     if (cpItem == null) {

@@ -439,7 +439,7 @@ public abstract class MpsWorker {
       }
 
       info("Read model " + modelReference);
-      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new RegularModelDataSource(ifile), modelReference, new DescriptorLoadResult());
+      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(null,new RegularModelDataSource(ifile), modelReference, new DescriptorLoadResult());
       modelDescriptors.add(smodelDescriptor);
     } catch (ModelFileReadException e) {
       log(e);

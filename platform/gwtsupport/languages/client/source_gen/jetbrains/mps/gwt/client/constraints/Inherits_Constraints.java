@@ -20,7 +20,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.stubs.StubModelManagerFactory;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
@@ -82,7 +82,7 @@ public class Inherits_Constraints extends ConstraintsDataHolder {
           }
         }).where(new IWhereFilter<SModelDescriptor>() {
           public boolean accept(SModelDescriptor smd) {
-            return ((smd.getModelRootManager() instanceof BaseStubModelRootManager) ?
+            return ((smd.getModelRootManager() instanceof StubModelManagerFactory) ?
               "gwt_stub".equals(smd.getStereotype()) :
               Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
             );

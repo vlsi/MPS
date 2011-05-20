@@ -10,7 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.stubs.StubModelManagerFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ConfUtil {
@@ -26,7 +26,7 @@ public class ConfUtil {
       }
     }).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
-        return ((smd.getModelRootManager() instanceof BaseStubModelRootManager) ?
+        return ((smd.getModelRootManager() instanceof StubModelManagerFactory) ?
           "conf_stub".equals(smd.getStereotype()) :
           Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ConfUtil.CONF_LANG)
         );

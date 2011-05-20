@@ -1,68 +1,27 @@
 package jetbrains.mps.stubs;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.StubPath;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
-import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Set;
-
 public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
+  private IModule myModule;
 
-  private final Object myUpdatersLock = new Object();
-  private Set<ModelUpdater> myUpdaters = null;
-
-  public BaseStubModelDescriptor(SModelReference modelReference, @Nullable ModelDataSource source) {
-    this(modelReference, true, source);
+  public BaseStubModelDescriptor(SModelReference modelReference, @Nullable ModelDataSource source, IModule module) {
+    this(modelReference, true, source,module);
   }
 
-  public BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source) {
+  protected BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source,IModule module) {
     super(modelReference, source, checkDup);
+    myModule = module;
   }
 
   public BaseStubModelDescriptor copy() {
-    return new BaseStubModelDescriptor(myModelReference, false, getSource());
-  }
-
-  private void updateAfterLoad(SModel model) {
-    synchronized (myUpdatersLock) {
-      if (myUpdaters != null) {
-        Set<ModelUpdater> updCopy = new THashSet<ModelUpdater>(myUpdaters);
-        for (ModelUpdater updater : updCopy) {
-          updater.updateModel(this, model);
-        }
-      }
-    }
-  }
-
-  public void addModelUpdater(ModelUpdater updater) {
-    synchronized (myUpdatersLock) {
-      if (myUpdaters == null) {
-        myUpdaters = new THashSet<ModelUpdater>(1);
-      }
-      myUpdaters.add(updater);
-    }
-  }
-
-  public void removeModelUpdater(ModelUpdater updater) {
-    synchronized (myUpdatersLock) {
-      myUpdaters.remove(updater);
-      if (myUpdaters.isEmpty()) {
-        myUpdaters = null;
-      }
-    }
-  }
-
-  @Hack
-  public void addStubPath(StubPath sp) {
-    //todo this is a hack. we need to do it another way
-    ((StubModelDataSource) getSource()).addPath(sp);
+    return new BaseStubModelDescriptor(myModelReference, false, getSource(),myModule);
   }
 
   //------------common descriptor stuff-------------------
@@ -73,12 +32,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   }
 
   protected ModelLoadResult initialLoad() {
-    SModel model = getSource().loadSModel(this, ModelLoadingState.FULLY_LOADED).getModel();
-    try {
-      updateAfterLoad(model);
-    } catch (Throwable t) {
-      LOG.error("Error on model load. Model: " + model.getLongName(), t);
-    }
+    SModel model = getSource().loadSModel(myModule,this, ModelLoadingState.FULLY_LOADED).getModel();
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
@@ -101,7 +55,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   }
 
   private void reload() {
-    ModelLoadResult result = getSource().loadSModel(this, ModelLoadingState.FULLY_LOADED);
+    ModelLoadResult result = getSource().loadSModel(myModule,this, ModelLoadingState.FULLY_LOADED);
     replaceModel(result.getModel(), getLoadingState());
   }
 

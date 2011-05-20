@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.stubs.StubModelManagerFactory;
 
 public class SModelRoot {
   private ModelRoot myModelRoot;
@@ -37,7 +37,7 @@ public class SModelRoot {
     if (myModelRoot.getManager() != null) {
       String moduleId = myModelRoot.getManager().getModuleId();
       String className = myModelRoot.getManager().getClassName();
-      return BaseStubModelRootManager.create(moduleId, className);
+      return StubModelManagerFactory.create(moduleId, className);
     }
 
     return new DefaultModelRootManager();

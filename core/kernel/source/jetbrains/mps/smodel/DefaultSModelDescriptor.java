@@ -18,12 +18,12 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.IFile;
@@ -47,6 +47,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   private boolean myChanged = false;
 
   private final Object myFullLoadSync = new Object();
+  private IModule myModule;
 
   {
     this.addModelCommandListener(new SModelCommandListener() {
@@ -59,16 +60,17 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Deprecated //todo remove
-  public DefaultSModelDescriptor(IFile modelFile, SModelReference modelReference) {
-    this(new RegularModelDataSource(modelFile), modelReference, new DescriptorLoadResult(), true);
+  public DefaultSModelDescriptor(IModule module, IFile modelFile, SModelReference modelReference) {
+    this(module,new RegularModelDataSource(modelFile), modelReference, new DescriptorLoadResult(), true);
   }
 
-  public DefaultSModelDescriptor(ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
-    this(source, modelReference, d, true);
+  public DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+    this(module,source, modelReference, d, true);
   }
 
-  protected DefaultSModelDescriptor(ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
+  protected DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
     super(modelReference, source, checkDup);
+    myModule = module;
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
   }
@@ -102,7 +104,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
-    return getSource().loadSModel(this, loadingState);
+    return getSource().loadSModel(myModule, this, loadingState);
   }
 
   public boolean isChanged() {
@@ -155,7 +157,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     setChanged(false);
     boolean reload = getSource().saveModel(this);
     if (reload) {
-      ModelLoadResult res = getSource().loadSModel(this, getLoadingState());
+      ModelLoadResult res = getSource().loadSModel(myModule, this, getLoadingState());
       replaceModel(res.getModel(), res.getState());
     }
 

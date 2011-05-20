@@ -74,12 +74,12 @@ public abstract class AbstractModule implements IModule {
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
     IModelRootManager manager = root.getManager();
 
-    if (!manager.canCreateModel(root.getModelRoot(), name)) {
+    if (!manager.canCreateModel(this, root.getModelRoot(), name)) {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
       return null;
     }
 
-    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createModel(root.getModelRoot(), name);
+    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createModel(this, root.getModelRoot(), name);
     SModelRepository.getInstance().registerModelDescriptor(model, this);
     model.setChanged(true);
 
@@ -415,9 +415,9 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          for (SModelDescriptor model : manager.load(root.getModelRoot())) {
+          for (SModelDescriptor model : manager.load(root.getModelRoot(), this)) {
             if (model.getModule() == null) {
-              SModelRepository.getInstance().registerModelDescriptor(model,this);
+              SModelRepository.getInstance().registerModelDescriptor(model, this);
             }
           }
         } catch (Exception e) {

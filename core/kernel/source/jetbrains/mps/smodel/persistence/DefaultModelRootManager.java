@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence;
 import jetbrains.mps.library.ModelsMiner;
 import jetbrains.mps.library.ModelsMiner.ModelHandle;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
@@ -34,24 +35,24 @@ import java.util.List;
 public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  public Collection<SModelDescriptor> load(@NotNull ModelRoot root) {
+  public Collection<SModelDescriptor> load(@NotNull ModelRoot root,IModule module) {
     List<ModelHandle> models = new ArrayList<ModelHandle>();
     ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, models);
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (ModelHandle handle : models) {
-      SModelDescriptor modelDescriptor = getInstance(new RegularModelDataSource(handle.getFile()), handle.getReference(), handle.getLoadResult());
+      SModelDescriptor modelDescriptor = getInstance(module,new RegularModelDataSource(handle.getFile()), handle.getReference(), handle.getLoadResult());
       LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath() + " " + root.getPrefix());
       result.add(modelDescriptor);
     }
     return result;
   }
 
-  public boolean canCreateModel(@NotNull ModelRoot root, @NotNull SModelFqName fqName) {
+  public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     return true;
   }
 
-  public SModelDescriptor createModel(@NotNull ModelRoot root, @NotNull SModelFqName fqName) {
+  public SModelDescriptor createModel(IModule module,@NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     assert root.getPrefix().length() <= 0 || fqName.getLongName().startsWith(root.getPrefix()) : "Model name should start with model root prefix";
 
     if (SModelRepository.getInstance().getModelDescriptor(fqName) != null) {
@@ -61,15 +62,15 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     ModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName);
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
-    return new DefaultSModelDescriptor(modelSource, ref, new DescriptorLoadResult());
+    return new DefaultSModelDescriptor(module,modelSource, ref, new DescriptorLoadResult());
   }
 
-  private static SModelDescriptor getInstance(RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+  private static SModelDescriptor getInstance(IModule module,RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
     LOG.debug("Getting model " + modelReference + " from " + source);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelReference);
-    if (modelDescriptor == null) return new DefaultSModelDescriptor(source, modelReference, d);
+    if (modelDescriptor == null) return new DefaultSModelDescriptor(module,source, modelReference, d);
 
     //todo rewrite
     IFile newFile = source.getFile();

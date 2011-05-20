@@ -82,7 +82,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   }
 
   @Override
-  public ModelLoadResult loadSModel(SModelDescriptor descriptor, ModelLoadingState targetState) {
+  public ModelLoadResult loadSModel(IModule module,SModelDescriptor descriptor, ModelLoadingState targetState) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) descriptor;
     SModelReference dsmRef = dsm.getSModelReference();
 

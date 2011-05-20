@@ -16,24 +16,17 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Collection;
-import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
-  public boolean canCreateModel(@NotNull ModelRoot root,@NotNull SModelFqName fqName) {
+  public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     return false;
   }
 
-  public SModelDescriptor createModel(@NotNull ModelRoot root,@NotNull SModelFqName fqName) {
+  public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
 }
