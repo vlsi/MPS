@@ -716,8 +716,8 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_5088050568745382357(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4208823031337941626(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(_context.getNode()).hashCode();
   }
 
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
