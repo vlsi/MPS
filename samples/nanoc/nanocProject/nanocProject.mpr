@@ -18,12 +18,5 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="SvnBranchConfigurationManager">
-    <option name="mySupportsUserInfoFilter" value="true" />
-  </component>
-  <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
-  </component>
 </project>
 
