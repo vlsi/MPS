@@ -87,14 +87,15 @@ public class SubTypingManagerNew extends SubtypingManager {
           }
         }
 
-        if (meetsAndJoins(subType, superType, info, isWeak, state)) {
-          return true;
-        }
         Equations equations = null;
         if (state != null) {
           equations = state.getEquations();
         }
         if (TypesUtil.match(subType, superType, equations, info)) {
+          return true;
+        }
+
+        if (meetsAndJoins(subType, superType, info, isWeak, state)) {
           return true;
         }
         return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), info, isWeak, state);
