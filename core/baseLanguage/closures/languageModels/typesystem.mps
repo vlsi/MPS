@@ -555,7 +555,7 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="1858552893540404502">
-        <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
+        <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
         <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
         <property name="strong" nameId="tpd4.7739208407757103785" value="0" />
         <property name="orientation" nameId="tpd4.7739208407757103786" value="0" />
