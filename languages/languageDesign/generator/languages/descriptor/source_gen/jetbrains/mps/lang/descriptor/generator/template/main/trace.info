@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TemplateLanguage.java" startLine="411" startPosition="72" endLine="423" endPosition="49" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage$1" />
+  <unitInfo fileName="TemplateLanguage.java" startLine="413" startPosition="72" endLine="425" endPosition="49" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage$1" />
   <unitInfo fileName="Mappingmain.java" startLine="699" startPosition="0" endLine="719" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$CreateRootRule0" />
   <unitInfo fileName="Mappingmain.java" startLine="635" startPosition="0" endLine="664" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$RootMappingRule0" />
   <unitInfo fileName="Mappingmain.java" startLine="665" startPosition="0" endLine="698" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$RootMappingRule1" />
@@ -14,7 +14,7 @@
   <unitInfo fileName="Mappingmain.java" startLine="140" startPosition="0" endLine="302" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain$ReductionRule0" />
   <unitInfo fileName="QueriesGenerated.java" startLine="45" startPosition="0" endLine="352" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="Mappingmain.java" startLine="35" startPosition="0" endLine="720" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Mappingmain" />
-  <unitInfo fileName="TemplateLanguage.java" startLine="25" startPosition="0" endLine="1316" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage" />
+  <unitInfo fileName="TemplateLanguage.java" startLine="25" startPosition="0" endLine="1350" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage" />
   <unitInfo fileName="TemplateGenerator.java" startLine="24" startPosition="0" endLine="2138" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGenerator" />
   <root nodeId="1698302279987270980">
     <nodeInfo nodeId="7633657384060768612" fileName="QueriesGenerated.java" startLine="99" startPosition="154" endLine="100" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
