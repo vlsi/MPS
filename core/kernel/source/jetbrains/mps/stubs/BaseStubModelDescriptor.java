@@ -3,7 +3,6 @@ package jetbrains.mps.stubs;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import org.jetbrains.annotations.NotNull;
@@ -14,16 +13,16 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   private IModule myModule;
 
   public BaseStubModelDescriptor(SModelReference modelReference, @Nullable ModelDataSource source, IModule module) {
-    this(modelReference, true, source,module);
+    this(modelReference, true, source, module);
   }
 
-  protected BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source,IModule module) {
+  protected BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source, IModule module) {
     super(modelReference, source, checkDup);
     myModule = module;
   }
 
   public BaseStubModelDescriptor copy() {
-    return new BaseStubModelDescriptor(myModelReference, false, getSource(),myModule);
+    return new BaseStubModelDescriptor(myModelReference, false, getSource(), myModule);
   }
 
   @NotNull
@@ -39,7 +38,8 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   }
 
   protected ModelLoadResult initialLoad() {
-    SModel model = getSource().loadSModel(myModule,this, ModelLoadingState.FULLY_LOADED).getModel();
+    SModel model = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
+    updateDiskTimestamp();
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
@@ -62,7 +62,11 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   }
 
   private void reload() {
-    ModelLoadResult result = getSource().loadSModel(myModule,this, ModelLoadingState.FULLY_LOADED);
+    if (mySModel == null) {
+      updateDiskTimestamp();
+      return;
+    }
+    ModelLoadResult result = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED);
     updateDiskTimestamp();
     replaceModel(result.getModel(), getLoadingState());
   }

@@ -89,6 +89,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
 
       SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
+      updateDiskTimestamp();
       fullModel.setLoading(true);
 
       try {
@@ -158,6 +159,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     boolean reload = getSource().saveModel(this);
     if (reload) {
       ModelLoadResult res = getSource().loadSModel(myModule, this, getLoadingState());
+      updateDiskTimestamp();
       replaceModel(res.getModel(), res.getState());
     }
 
@@ -316,6 +318,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = load(getLoadingState());
+    updateDiskTimestamp();
     replaceModel(result.getModel(), getLoadingState());
   }
 
