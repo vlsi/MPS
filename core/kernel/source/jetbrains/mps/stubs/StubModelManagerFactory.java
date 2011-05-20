@@ -29,6 +29,11 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 public abstract class StubModelManagerFactory {
   public static IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
     AbstractModule mod = ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId)));
+    if (className.equals("jetbrains.mps.baseLanguage.stubs.JavaStubs")) return new JavaStubs();
+    if (className.equals("jetbrains.mps.baseLanguage.stubs.JavaStubs_MPS")) return new JavaStubs_MPS();
+    if (className.equals("jetbrains.mps.baseLanguage.stubs.JavaStubs_JDK")) return new JavaStubs_JDK();
+    if (className.equals("jetbrains.mps.baseLanguage.stubs.JavaStubs_Testbench")) return new JavaStubs_Testbench();
+
     if (mod == null) {
       String msg = "Module with id " + moduleId + " not found for stubs loader " + className + ". Some stub models won't be loaded.";
       throw new ManagerNotFoundException(msg);
