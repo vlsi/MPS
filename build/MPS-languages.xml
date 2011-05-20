@@ -781,6 +781,7 @@
       <zipfileset dir="core/debug/languages/evaluation" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="core/debug/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/debug/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <zipfileset file="lib/tools.jar" />
       <zipfileset dir="core/debug/languages/evaluation/classes_gen" />
     </jar>
   </target>
@@ -819,56 +820,6 @@
       <zipfileset dir="core/debug-api/languages/api/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="core/debug-api/languages/api/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="core/debug-api/languages/api/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.execution.commands">
-    <mkdir dir="workbench/runConfigurations/languages/commands/classes_gen" />
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.execution.commands.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="workbench/runConfigurations/languages/commands/commands.mpl" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/languages/commands" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/languages/commands/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="workbench/runConfigurations/languages/commands/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
-      <zipfileset dir="workbench/runConfigurations/languages/commands/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.execution.common">
-    <mkdir dir="workbench/runConfigurations/languages/common/classes_gen" />
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.execution.common.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="workbench/runConfigurations/languages/common/common.mpl" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/languages/common" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/languages/common/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="workbench/runConfigurations/languages/common/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.execution.configurations">
-    <mkdir dir="workbench/runConfigurations/languages/configurations/classes_gen" />
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.execution.configurations.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="workbench/runConfigurations/languages/configurations/configurations.mpl" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/languages/configurations" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/languages/configurations/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="workbench/runConfigurations/languages/configurations/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
-      <zipfileset dir="workbench/runConfigurations/languages/configurations/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.execution.configurations.lib">
-    <mkdir dir="workbench/runConfigurations/classes" />
-    <mkdir dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.configurations.lib2/classes_gen" />
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.execution.configurations.lib.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="workbench/runConfigurations/solutions/jetbrains.mps.execution.configurations.lib2/jetbrains.mps.execution.configurations.lib.msd" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.configurations.lib2" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.configurations.lib2" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/classes" />
-      <zipfileset dir="workbench/runConfigurations/solutions/jetbrains.mps.execution.configurations.lib2/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.execution.settings">
-    <mkdir dir="workbench/runConfigurations/languages/settings/classes_gen" />
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.execution.settings.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="workbench/runConfigurations/languages/settings/settings.mpl" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/languages/settings" includes="icons/**, resources/**" prefix="module" />
-      <zipfileset dir="workbench/runConfigurations/languages/settings/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="workbench/runConfigurations/languages/settings/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
-      <zipfileset dir="workbench/runConfigurations/languages/settings/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xml.deprecated">
