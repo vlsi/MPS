@@ -9,9 +9,10 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.ide.ui.NewMPSTreeCellRenderer;
+import javax.swing.JTree;
 import java.awt.Color;
 import javax.swing.tree.DefaultTreeCellRenderer;
-import javax.swing.JTree;
 import com.intellij.ui.DottedBorder;
 import java.awt.Insets;
 import javax.swing.border.EmptyBorder;
@@ -51,6 +52,13 @@ public class RuleOperandRenderer implements TableCellRenderer {
     if (isSelected && !(hasFocus)) {
       tree.setForeground(table.getSelectionForeground());
       tree.setBackground(table.getSelectionBackground());
+      tree.clearSelection();
+      tree.setCellRenderer(new NewMPSTreeCellRenderer() {
+        @Override
+        public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+          return super.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, hasFocus);
+        }
+      });
       tree.addSelectionInterval(0, tree.getRowCount() - 1);
     } else {
       tree.setBackground((incomplete[0] ?
