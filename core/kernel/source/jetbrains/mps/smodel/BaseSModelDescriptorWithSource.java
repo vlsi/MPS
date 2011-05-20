@@ -31,7 +31,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
       progressIndicator.setText2("Reloading " + getLongName());
 
       reloadFromDisk();
-      updateDiskTimestamp();
+      //updateDiskTimestamp();
     }
   };
 
@@ -54,7 +54,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   //----------reloading stuff--------
 
-  private long mySourceTimestamp = -1;
+  private long mySourceTimestamp = 0;
 
   protected abstract void reloadFromDisk();
 

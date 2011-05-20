@@ -409,6 +409,7 @@ public abstract class AbstractModule implements IModule {
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
+      SModelRepository smRepo = SModelRepository.getInstance();
       List<ModelRoot> roots = descriptor.getModelRoots();
       for (ModelRoot modelRoot : roots) {
         try {
@@ -416,8 +417,8 @@ public abstract class AbstractModule implements IModule {
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
           for (SModelDescriptor model : manager.load(root.getModelRoot(), this)) {
-            if (model.getModule() == null) {
-              SModelRepository.getInstance().registerModelDescriptor(model, this);
+            if (smRepo.getModelDescriptor(model.getSModelReference())==null) {
+              smRepo.registerModelDescriptor(model, this);
             }
           }
         } catch (Exception e) {

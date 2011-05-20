@@ -58,10 +58,11 @@ public class ASMModelLoader {
         String filename = file.getName();
         if (!filename.endsWith(MPSExtentions.DOT_CLASSFILE)) continue;
 
-        String name = myModel.getLongName()+'.'+ filename.substring(0, filename.length()-MPSExtentions.DOT_CLASSFILE.length());
+        String shortName = filename.substring(0, filename.length() - MPSExtentions.DOT_CLASSFILE.length());
+        String name = myModel.getLongName()+'.'+ shortName;
         if (myModel.getNodeById(ASMNodeId.createId(name)) != null) continue;
 
-        loader.loadRootClassifier(name);
+        loader.loadRootClassifier(shortName);
       }
     } catch (Exception e) {
       LOG.error("Exception", e);

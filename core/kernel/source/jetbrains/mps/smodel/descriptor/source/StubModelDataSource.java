@@ -97,6 +97,6 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
 
   //todo more precise
   public boolean hasModel(SModelDescriptor md) {
-    return myStubPaths.isEmpty();
+    return !myStubPaths.isEmpty();
   }
 }

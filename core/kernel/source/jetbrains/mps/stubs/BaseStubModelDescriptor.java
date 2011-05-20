@@ -52,7 +52,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    if (getSource().hasModel(this)) {
+    if (!getSource().hasModel(this)) {
       SModelRepository.getInstance().deleteModel(this);
       return;
     }
@@ -63,6 +63,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
 
   private void reload() {
     ModelLoadResult result = getSource().loadSModel(myModule,this, ModelLoadingState.FULLY_LOADED);
+    updateDiskTimestamp();
     replaceModel(result.getModel(), getLoadingState());
   }
 

@@ -23,24 +23,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class FileSourceChangeWatcher implements SourceChangeWatcher {
+  private final Object LOCK = new Object();
   private List<ChangeListener> myListeners = new ArrayList<ChangeListener>();
 
   public void startListening(ChangeListener l) {
-    if (myListeners.isEmpty()) {
-      ReloadableSources.getInstance().addSource(this);
+    synchronized (LOCK){
+      if (myListeners.isEmpty()) {
+        ReloadableSources.getInstance().addSource(this);
+      }
+      myListeners.add(l);
     }
-    myListeners.add(l);
   }
 
   public void stopListening(ChangeListener l) {
-    myListeners.remove(l);
-    if (myListeners.isEmpty()) {
-      ReloadableSources.getInstance().removeSource(this);
+    synchronized (LOCK) {
+      myListeners.remove(l);
+      if (myListeners.isEmpty()) {
+        ReloadableSources.getInstance().removeSource(this);
+      }
     }
   }
 
   public void changed(ProgressIndicator progressIndicator) {
-    for (ChangeListener l : myListeners) {
+    List<ChangeListener> listeners;
+    synchronized (LOCK) {
+      listeners = new ArrayList<ChangeListener>(myListeners);
+    }
+    for (ChangeListener l : listeners) {
       l.changed(progressIndicator);
     }
   }
