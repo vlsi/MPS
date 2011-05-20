@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.structure;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -24,7 +25,7 @@ public class NullNodeConceptDescriptor extends ConceptDescriptor {
 
   private final StructureDescriptor structure = new StructureDescriptor() {
     @Override
-    public Set<String> getParentsNames() {
+    public List<String> getParentsNames() {
       throw new IllegalArgumentException("getParentsNames on null node");
     }
 

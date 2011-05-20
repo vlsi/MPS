@@ -1,10 +1,11 @@
 package jetbrains.mps.smodel.structure;
 
+import java.util.List;
 import java.util.Set;
 
 public abstract class StructureDescriptor {
   // LanguageHierarchyCache replace
-  public abstract Set<String> getParentsNames();
+  public abstract List<String> getParentsNames();
   public abstract boolean isAssignableTo(String toConceptFqName);
   public abstract Set<String> getAncestorsNames();
 

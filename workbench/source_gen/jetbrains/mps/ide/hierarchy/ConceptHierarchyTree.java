@@ -5,6 +5,7 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.util.NameUtil;
 import java.util.HashSet;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -25,7 +26,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     if (visited.contains(node)) {
       throw new CircularHierarchyException(node, "circular concept hierarchy");
     }
-    Set<String> parents = myCache.getParentsNames(NameUtil.nodeFQName(node));
+    List<String> parents = LanguageHierarchyCache.getParentsNames(NameUtil.nodeFQName(node));
     Set<SNode> result = new HashSet<SNode>();
     for (String s : parents) {
       SNode conceptDeclaration = SModelUtil.findConceptDeclaration(s, GlobalScope.getInstance());
