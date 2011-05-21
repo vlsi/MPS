@@ -65,7 +65,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6490356536635205689">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Constraints" />
-      <property name="name" nameId="tpck.1169194664001" value="ConstraintsDescriptor" />
+      <property name="name" nameId="tpck.1169194664001" value="ConstraintsAspectDescriptor" />
     </node>
   </roots>
   <root id="1147476728864">
