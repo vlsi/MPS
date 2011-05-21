@@ -10,6 +10,9 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.script.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
+import jetbrains.mps.smodel.structure.DescriptorProvider;
+import jetbrains.mps.smodel.structure.StructureDescriptor;
+import jetbrains.mps.lang.script.structure.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)");
@@ -36,5 +39,10 @@ public class Language extends LanguageRuntime {
 
   public Collection<TemplateModule> getGenerators() {
     return generators;
+  }
+
+  @Override
+  public DescriptorProvider<StructureDescriptor> getStructureAspect() {
+    return new StructureAspectDescriptor();
   }
 }

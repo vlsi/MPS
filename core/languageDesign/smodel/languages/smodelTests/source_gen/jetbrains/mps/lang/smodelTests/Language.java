@@ -8,6 +8,11 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.smodel.structure.DescriptorProvider;
+import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import jetbrains.mps.lang.smodelTests.constraints.ConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.structure.StructureDescriptor;
+import jetbrains.mps.lang.smodelTests.structure.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("b02ae39f-4c16-4545-8dfa-88df16804e7e(jetbrains.mps.lang.smodelTests)");
@@ -31,5 +36,15 @@ public class Language extends LanguageRuntime {
 
   public Collection<TemplateModule> getGenerators() {
     return null;
+  }
+
+  @Override
+  public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
+    return new ConstraintsAspectDescriptor();
+  }
+
+  @Override
+  public DescriptorProvider<StructureDescriptor> getStructureAspect() {
+    return new StructureAspectDescriptor();
   }
 }
