@@ -318,14 +318,14 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(node.getConceptFqName()).constraints().getNodeReferentSetEventHandler(referentRole);
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getNodeReferentSetEventHandler(referentRole);
   }
 
   public static INodePropertyGetter getNodePropertyGetter(String conceptFqName, String propertyName) {
     if (isBootstrapProperty(conceptFqName, propertyName)) {
       return null;
     } else {
-      return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).constraints().getNodePropertyGetter(propertyName);
+      return ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName).getNodePropertyGetter(propertyName);
     }
   }
 
@@ -333,7 +333,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (isBootstrapProperty(conceptFqName, propertyName)) {
       return null;
     } else {
-      return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).constraints().getNodePropertySetter(propertyName);
+      return ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName).getNodePropertySetter(propertyName);
     }
   }
 
@@ -343,12 +343,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public static INodePropertyValidator getNodePropertyValidator(final SNode node, @NotNull final String propertyName) {
     if (node == null) return null;
-    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).constraints().getNodePropertyValidator(propertyName);
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getNodePropertyValidator(propertyName);
   }
 
   @Nullable
   public static INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
-    INodeReferentSearchScopeProvider result = ConceptRegistry.getInstance().getConceptDescriptor(nodeConcept).constraints().getNodeNonDefaultSearchScopeProvider(referentRole);
+    INodeReferentSearchScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getNodeNonDefaultSearchScopeProvider(referentRole);
     if (result != null) return result;
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
     if (linkDeclaration == null) {
@@ -356,19 +356,19 @@ public class ModelConstraintsManager implements ApplicationComponent {
       return EMPTY_REFERENT_SEARCH_SCOPE_PROVIDER;
     }
     SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptForDefaultSearchScope).constraints().getNodeDefaultSearchScopeProvider();
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getNodeDefaultSearchScopeProvider();
   }
 
   public static String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(fqName).constraints().getDefaultConcreteConceptFqName();
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptFqName();
   }
 
   public static boolean isAlternativeIcon(SNode conceptDeclaration) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptDeclaration).constraints().isAlternativeIcon();
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptDeclaration)).isAlternativeIcon();
   }
 
   public static String getAlternativeIcon(SNode conceptDeclaration, SNode node) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptDeclaration).constraints().getAlternativeIcon(node);
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptDeclaration)).getAlternativeIcon(node);
   }
 
   // canBeASomething section
@@ -404,7 +404,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parentNode.getConceptFqName()).constraints();
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConceptFqName());
     return canBeParent(descriptor, parentNode, childConcept, link, context, null);
   }
 
@@ -413,7 +413,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(fqName).constraints();
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
     return canBeChild(descriptor, fqName, context, parentNode, link, null);
   }
 
@@ -439,7 +439,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).constraints();
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName);
     return canBeRoot(descriptor, context, conceptFqName, model, null);
   }
 

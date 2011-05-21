@@ -14,8 +14,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-import static com.google.common.collect.Maps.newHashMap;
-
 public class ConceptRegistry implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ConceptRegistry.class);
 
@@ -51,18 +49,13 @@ public class ConceptRegistry implements ApplicationComponent {
   }
 
   @Deprecated
-  public ConceptDescriptor getConceptDescriptor(String fqName) {
+  public synchronized ConceptDescriptor getConceptDescriptor(String fqName) {
     return new SimpleConceptDescriptor(fqName);
   }
 
   @Deprecated
-  public ConceptDescriptor getConceptDescriptorForInstanceNode(SNode instanceNode) {
+  public synchronized ConceptDescriptor getConceptDescriptorForInstanceNode(SNode instanceNode) {
     return instanceNode != null ? getConceptDescriptor(instanceNode.getConceptFqName()) : NullNodeConceptDescriptor.INSTANCE;
-  }
-
-  @Deprecated
-  public ConceptDescriptor getConceptDescriptor(SNode node) {
-    return getConceptDescriptor(NameUtil.nodeFQName(node));
   }
 
   private synchronized void checkConceptIsLoaded(final String fqName) {
@@ -87,17 +80,17 @@ public class ConceptRegistry implements ApplicationComponent {
     conceptsInLoading.remove(fqName);
   }
 
-  public StructureDescriptor getStructureDescriptor(String fqName) {
+  public synchronized StructureDescriptor getStructureDescriptor(String fqName) {
     checkConceptIsLoaded(fqName);
     return structureDescriptors.get(fqName);
   }
 
-  public BehaviorDescriptor getBehaviorDescriptor(String fqName) {
+  public synchronized BehaviorDescriptor getBehaviorDescriptor(String fqName) {
     checkConceptIsLoaded(fqName);
     return behaviorDescriptors.get(fqName);
   }
 
-  public ConstraintsDescriptor getConstraintsDescriptor(String fqName) {
+  public synchronized ConstraintsDescriptor getConstraintsDescriptor(String fqName) {
     checkConceptIsLoaded(fqName);
     return constraintsDescriptors.get(fqName);
   }
@@ -130,13 +123,13 @@ public class ConceptRegistry implements ApplicationComponent {
     }
   }
 
-  public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+  public synchronized void languagesLoaded(Iterable<LanguageRuntime> languages) {
     ModelAccess.assertLegalWrite();
 
     // lazy...
   }
 
-  public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+  public synchronized void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
     // todo
     structureDescriptors.clear();
     behaviorDescriptors.clear();
