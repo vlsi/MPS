@@ -12,6 +12,7 @@
   <unitInfo fileName="ConceptTextGenDeclaration_Constraints.java" startLine="26" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.ConceptTextGenDeclaration_Constraints" />
   <unitInfo fileName="UtilityMethodDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.UtilityMethodDeclaration_Constraints" />
   <unitInfo fileName="OperationDeclaration_Constraints.java" startLine="29" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.OperationDeclaration_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1233750346381">
     <nodeInfo nodeId="1233750421355" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="65" startPosition="84" endLine="66" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233758203985" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="92" startPosition="112" endLine="93" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

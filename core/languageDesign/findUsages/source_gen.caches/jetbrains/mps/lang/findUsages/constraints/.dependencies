@@ -20,6 +20,18 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.ConstraintsDataHolder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.CheckCancelledStatusStatement_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.ExecuteFinderExpression_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.FinderDeclaration_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.NodeStatement_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.ResultStatement_Constraints" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.constraints.ExecuteFinderExpression_Constraints" file="ExecuteFinderExpression_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -154,6 +154,40 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.ConstraintsDataHolder" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractContainerCreator_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractEnumeratorOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractIteratorOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractMappingOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractSetOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AllConstant_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AsSequenceOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerDeclaration_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.HashMapCreator_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.HashSetCreator_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.IContainerOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.IListOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.IQueueOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.JoinOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.LinkedListCreator_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.ListCreatorWithInit_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.MapOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.RemoveOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.SmartClosureParameterDeclaration_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.SortedMapOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.SortedSetOperation_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.TreeMapCreator_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.TreeSetCreator_Constraints" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints" file="CustomContainerCreator_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

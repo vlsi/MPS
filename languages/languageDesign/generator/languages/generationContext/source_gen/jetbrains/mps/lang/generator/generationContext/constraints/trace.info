@@ -10,6 +10,7 @@
   <unitInfo fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_NodePatternRef_Constraints" />
   <unitInfo fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_PropertyPatternRef_Constraints" />
   <unitInfo fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_LinkPatternRef_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1758784108619297716">
     <nodeInfo nodeId="1758784108619297720" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="74" startPosition="136" endLine="75" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1758784108619297726" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="75" startPosition="52" endLine="76" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

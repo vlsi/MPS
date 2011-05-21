@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BLArrayType_Constraints.java" startLine="41" startPosition="27" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.BLArrayType_Constraints$1" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.PrimitiveTypeDescriptor_Constraints" />
   <unitInfo fileName="BLArrayType_Constraints.java" startLine="19" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.BLArrayType_Constraints" />
   <root nodeId="1213104846913">

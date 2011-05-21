@@ -8,6 +8,7 @@
   <unitInfo fileName="NodeReferentConstraint_Constraints.java" startLine="24" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.constraints.constraints.NodeReferentConstraint_Constraints" />
   <unitInfo fileName="NodePropertyConstraint_Constraints.java" startLine="24" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.constraints.constraints.NodePropertyConstraint_Constraints" />
   <unitInfo fileName="ConceptConstraints_Constraints.java" startLine="32" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.constraints.constraints.ConceptConstraints_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.constraints.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213100797365">
     <nodeInfo nodeId="1213100929839" fileName="ConceptConstraints_Constraints.java" startLine="71" startPosition="84" endLine="72" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213100946736" fileName="ConceptConstraints_Constraints.java" startLine="73" startPosition="74" endLine="74" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

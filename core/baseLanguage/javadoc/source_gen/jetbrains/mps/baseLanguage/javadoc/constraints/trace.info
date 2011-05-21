@@ -20,6 +20,7 @@
   <unitInfo fileName="ClassifierDocReference_Constraints.java" startLine="28" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.constraints.ClassifierDocReference_Constraints" />
   <unitInfo fileName="FieldDocReference_Constraints.java" startLine="28" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.constraints.FieldDocReference_Constraints" />
   <unitInfo fileName="MethodDocReference_Constraints.java" startLine="29" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.constraints.MethodDocReference_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="2217234381367188403">
     <nodeInfo nodeId="2546654756694330201" fileName="FieldDocReference_Constraints.java" startLine="79" startPosition="43" endLine="80" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2546654756694330190" fileName="FieldDocReference_Constraints.java" startLine="78" startPosition="227" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />

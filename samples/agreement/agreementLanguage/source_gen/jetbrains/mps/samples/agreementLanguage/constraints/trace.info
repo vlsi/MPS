@@ -2,6 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ValueReference_Constraints.java" startLine="64" startPosition="28" endLine="79" endPosition="5" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints$1" />
   <unitInfo fileName="EventVariableReference_Constraints.java" startLine="65" startPosition="36" endLine="80" endPosition="5" unitName="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints$1" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="ValueReference_Constraints.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints" />
   <unitInfo fileName="EventVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints" />
   <root nodeId="1214253504159">

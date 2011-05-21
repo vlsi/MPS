@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.debug.evaluation.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsThisExpression_Constraints" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.constraints.LowLevelVariableReference_Constraints" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
+  </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" file="EvaluatorsSuperMethodCall_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

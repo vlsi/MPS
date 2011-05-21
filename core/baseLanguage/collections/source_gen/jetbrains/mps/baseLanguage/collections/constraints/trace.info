@@ -49,6 +49,7 @@
   <unitInfo fileName="CustomMapCreator_Constraints.java" startLine="29" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_Constraints" />
   <unitInfo fileName="CustomContainerCreator_Constraints.java" startLine="31" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints" />
   <unitInfo fileName="SequenceOperation_Constraints.java" startLine="30" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="472" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1204071206995">
     <nodeInfo nodeId="1204071322847" fileName="SmartClosureParameterTypeUtil.java" startLine="17" startPosition="114" endLine="18" endPosition="324" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206111352089" fileName="SmartClosureParameterTypeUtil.java" startLine="20" startPosition="7" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

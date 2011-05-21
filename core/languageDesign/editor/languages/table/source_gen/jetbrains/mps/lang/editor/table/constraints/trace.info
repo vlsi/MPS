@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.table.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="CellModel_HierarchycalTable_Constraints.java" startLine="68" startPosition="47" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1" />
   <unitInfo fileName="CellModel_HierarchycalTable_Constraints.java" startLine="87" startPosition="42" endLine="105" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
   <unitInfo fileName="CellModel_HierarchycalTable_Constraints.java" startLine="106" startPosition="48" endLine="127" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />

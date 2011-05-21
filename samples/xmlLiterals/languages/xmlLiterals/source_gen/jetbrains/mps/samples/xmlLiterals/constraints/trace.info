@@ -2,6 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ElementMacro_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.samples.xmlLiterals.constraints.ElementMacro_Constraints$1" />
   <unitInfo fileName="TextMacro_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.samples.xmlLiterals.constraints.TextMacro_Constraints$1" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="ElementMacro_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.constraints.ElementMacro_Constraints" />
   <unitInfo fileName="TextMacro_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.constraints.TextMacro_Constraints" />
   <root nodeId="9152904044274469613">

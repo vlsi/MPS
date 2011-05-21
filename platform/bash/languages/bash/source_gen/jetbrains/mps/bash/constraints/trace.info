@@ -33,6 +33,7 @@
   <unitInfo fileName="ExternalCommandCall_Constraints.java" startLine="24" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.bash.constraints.ExternalCommandCall_Constraints" />
   <unitInfo fileName="ArgumentReference_Constraints.java" startLine="29" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.bash.constraints.ArgumentReference_Constraints" />
   <unitInfo fileName="OptionReference_Constraints.java" startLine="30" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.bash.constraints.OptionReference_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="619" endPosition="0" unitName="jetbrains.mps.bash.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="3147078024747719682">
     <nodeInfo nodeId="3147078024749913022" fileName="ArgumentList_Constraints.java" startLine="84" startPosition="114" endLine="85" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3147078024749538168" fileName="ArgumentList_Constraints.java" startLine="84" startPosition="114" endLine="85" endPosition="197" />

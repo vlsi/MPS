@@ -10,6 +10,7 @@
   <unitInfo fileName="ResourceTypeDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ResourceTypeDeclaration_Constraints" />
   <unitInfo fileName="FacetReference_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.FacetReference_Constraints" />
   <unitInfo fileName="FacetDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.FacetDeclaration_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="RelatedFacetReference_Constraints.java" startLine="23" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints" />
   <unitInfo fileName="TargetDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints" />
   <unitInfo fileName="ExtendsFacetReference_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints" />

@@ -5,6 +5,7 @@
   <unitInfo fileName="NamedTupleComponentReference_Constraints.java" startLine="67" startPosition="43" endLine="85" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$1" />
   <unitInfo fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="97" startPosition="32" endLine="115" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$3" />
   <unitInfo fileName="NamedTupleType_Constraints.java" startLine="68" startPosition="33" endLine="95" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_Constraints$1" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentDeclaration_Constraints" />
   <unitInfo fileName="NamedTupleComponentReference_Constraints.java" startLine="25" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints" />
   <unitInfo fileName="NamedTupleType_Constraints.java" startLine="26" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_Constraints" />
