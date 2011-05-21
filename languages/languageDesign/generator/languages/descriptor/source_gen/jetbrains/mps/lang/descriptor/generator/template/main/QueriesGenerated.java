@@ -80,7 +80,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6096298158919311066(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace") + ".constraints.ConstraintsDescriptor";
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace") + ".constraints.ConstraintsAspectDescriptor";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6915491356910780908(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace") + ".structure.StructureAspectDescriptor";
   }
 
   public static Object propertyMacro_GetPropertyValue_1820665478710840122(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -191,12 +195,12 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "generator", true)).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_6096298158919435309(final IOperationContext operationContext, final IfMacroContext _context) {
-    return LanguageDescriptor_Behavior.call_isLanguageAspectEmpty_3064888218669923940(_context.getNode(), LanguageAspect.CONSTRAINTS, _context);
+  public static boolean ifMacro_Condition_6915491356910780920(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(LanguageDescriptor_Behavior.call_isLanguageAspectEmpty_3064888218669923940(_context.getNode(), LanguageAspect.CONSTRAINTS, _context));
   }
 
-  public static boolean ifMacro_Condition_6096298158919362342(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(LanguageDescriptor_Behavior.call_isLanguageAspectEmpty_3064888218669923940(_context.getNode(), LanguageAspect.CONSTRAINTS, _context));
+  public static boolean ifMacro_Condition_6915491356910780933(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(LanguageDescriptor_Behavior.call_isLanguageAspectEmpty_3064888218669923940(_context.getNode(), LanguageAspect.STRUCTURE, _context));
   }
 
   public static boolean ifMacro_Condition_1820665478710807083(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -286,7 +290,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0xb(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0yb(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -342,7 +346,7 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0xb(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0yb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
