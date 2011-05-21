@@ -42,6 +42,7 @@
   <unitInfo fileName="MathSymbolIndex.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex" />
   <unitInfo fileName="IntervalType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.IntervalType" />
   <unitInfo fileName="ExponentialOperation.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.ExponentialOperation" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="200" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="PowExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.PowExpression" />
   <unitInfo fileName="ComplexLiteral.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.ComplexLiteral" />
   <unitInfo fileName="DivExpressionFraction.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction" />
@@ -68,5 +69,6 @@
   <unitInfo fileName="MatrixType.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.MatrixType" />
   <unitInfo fileName="MatrixInitializer.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.MatrixInitializer" />
   <unitInfo fileName="CastTargetDescriptor.java" startLine="9" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.CastTargetDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.StructureAspectDescriptor" />
 </debugInfo>
 

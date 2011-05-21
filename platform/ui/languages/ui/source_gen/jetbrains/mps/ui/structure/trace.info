@@ -21,6 +21,7 @@
   <unitInfo fileName="RemoveUIObjectStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.RemoveUIObjectStatement" />
   <unitInfo fileName="UIObjectType.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.UIObjectType" />
   <unitInfo fileName="AccessUIPropertyOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.AccessUIPropertyOperation" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="134" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.ui.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ValidatingView.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.structure.ValidatingView" />
   <unitInfo fileName="ViewBinding.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.structure.ViewBinding" />
   <unitInfo fileName="CompartmentReferenceExpression.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.structure.CompartmentReferenceExpression" />
@@ -38,5 +39,6 @@
   <unitInfo fileName="ContainerCompartment.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.structure.ContainerCompartment" />
   <unitInfo fileName="UIObjectProviderStatement.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.structure.UIObjectProviderStatement" />
   <unitInfo fileName="UIObjectStatement.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ui.structure.UIObjectStatement" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.ui.structure.StructureAspectDescriptor" />
 </debugInfo>
 

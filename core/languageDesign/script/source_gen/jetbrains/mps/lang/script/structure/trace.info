@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Script_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.structure.Script_Language" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="38" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.script.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.script.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -28,6 +28,7 @@
   <unitInfo fileName="NewModuleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.NewModuleReference" />
   <unitInfo fileName="ConfigurationReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.ConfigurationReference" />
   <unitInfo fileName="BuildLanguageTargetReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="188" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Echo.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Echo" />
   <unitInfo fileName="MacroReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.MacroReference" />
   <unitInfo fileName="Pair.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Pair" />
@@ -56,6 +57,7 @@
   <unitInfo fileName="Block.java" startLine="15" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Block" />
   <unitInfo fileName="Zip.java" startLine="13" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Zip" />
   <unitInfo fileName="Antcall.java" startLine="15" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Antcall" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Layout.java" startLine="16" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Layout" />
 </debugInfo>
 

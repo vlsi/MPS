@@ -6,6 +6,8 @@
   <unitInfo fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink" />
   <unitInfo fileName="ListAntiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ListAntiquotation_AnnotationLink" />
   <unitInfo fileName="Antiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Antiquotation_AnnotationLink" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="41" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.StructureAspectDescriptor" />
   <unitInfo fileName="PropertyAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" />
   <unitInfo fileName="ListAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ListAntiquotation" />
   <unitInfo fileName="ReferenceAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" />

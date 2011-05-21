@@ -11,6 +11,7 @@
   <unitInfo fileName="ProcessBuilderPart.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderPart" />
   <unitInfo fileName="CommandParameterDeclaration.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandParameterDeclaration" />
   <unitInfo fileName="CommandReferenceExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandReferenceExpression" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="80" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="RedirectOutputExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.RedirectOutputExpression" />
   <unitInfo fileName="ProcessBuilderKeyPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart" />
   <unitInfo fileName="CommandParameterReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandParameterReference" />
@@ -19,6 +20,7 @@
   <unitInfo fileName="ProcessBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderExpression" />
   <unitInfo fileName="CommandBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandBuilderExpression" />
   <unitInfo fileName="CommandDebuggerOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandDebuggerOperation" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor" />
   <unitInfo fileName="CommandDeclaration.java" startLine="20" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandDeclaration" />
 </debugInfo>
 

@@ -13,6 +13,7 @@
   <unitInfo fileName="FinishWorkStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.script.structure.FinishWorkStatement" />
   <unitInfo fileName="OutputResources.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.make.script.structure.OutputResources" />
   <unitInfo fileName="ResultStatement.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.make.script.structure.ResultStatement" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="92" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.make.script.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ReportFeedbackStatement.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.script.structure.ReportFeedbackStatement" />
   <unitInfo fileName="Feedback_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.script.structure.Feedback_PropertySupport" />
   <unitInfo fileName="Result_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.script.structure.Result_PropertySupport" />
@@ -28,5 +29,6 @@
   <unitInfo fileName="QueryParameterDeclaration.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.make.script.structure.QueryParameterDeclaration" />
   <unitInfo fileName="QueryDefinition.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.make.script.structure.QueryDefinition" />
   <unitInfo fileName="ExpectedOption.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.make.script.structure.ExpectedOption" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.make.script.structure.StructureAspectDescriptor" />
 </debugInfo>
 

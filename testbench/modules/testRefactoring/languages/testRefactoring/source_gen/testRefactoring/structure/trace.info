@@ -2,6 +2,8 @@
 <debugInfo>
   <unitInfo fileName="TestRefactoring_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="testRefactoring.structure.TestRefactoring_Language" />
   <unitInfo fileName="YetAnotherGoodConcept.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="testRefactoring.structure.YetAnotherGoodConcept" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="29" startPosition="0" endLine="61" endPosition="0" unitName="testRefactoring.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="testRefactoring.structure.StructureAspectDescriptor" />
   <unitInfo fileName="MyVeryGoodConcept1.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="testRefactoring.structure.MyVeryGoodConcept1" />
 </debugInfo>
 

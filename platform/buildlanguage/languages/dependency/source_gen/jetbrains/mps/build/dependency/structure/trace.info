@@ -3,7 +3,9 @@
   <unitInfo fileName="Dependency_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Dependency_Language" />
   <unitInfo fileName="ProjectDescriptionReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ProjectDescriptionReference" />
   <unitInfo fileName="CycleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.CycleReference" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="44" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="PathHolder.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.PathHolder" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Macros.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Macros" />
   <unitInfo fileName="ModuleDescription.java" startLine="15" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ModuleDescription" />
   <unitInfo fileName="Cycle.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Cycle" />

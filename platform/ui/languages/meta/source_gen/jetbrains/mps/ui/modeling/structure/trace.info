@@ -39,6 +39,7 @@
   <unitInfo fileName="VerticalAlignment.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VerticalAlignment" />
   <unitInfo fileName="UnitType.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UnitType" />
   <unitInfo fileName="EditableUIPropertyAccessCode.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="212" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="CellLayoutConstraint.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.CellLayoutConstraint" />
   <unitInfo fileName="AlignmentLayoutConstraint.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint" />
   <unitInfo fileName="BoxLayoutConstraint.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint" />
@@ -71,5 +72,6 @@
   <unitInfo fileName="EventHandlerTemplate.java" startLine="16" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EventHandlerTemplate" />
   <unitInfo fileName="UIObject.java" startLine="15" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIObject" />
   <unitInfo fileName="UIObjectTemplate.java" startLine="16" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.StructureAspectDescriptor" />
 </debugInfo>
 

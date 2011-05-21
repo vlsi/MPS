@@ -2,6 +2,8 @@
 <debugInfo>
   <unitInfo fileName="SampleLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.SampleLanguage_Language" />
   <unitInfo fileName="WannabeMethodCall.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.WannabeMethodCall" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="32" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.StructureAspectDescriptor" />
   <unitInfo fileName="WannabeMethod.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.WannabeMethod" />
   <unitInfo fileName="WannabeClass.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.WannabeClass" />
 </debugInfo>

@@ -19,6 +19,7 @@
   <unitInfo fileName="NumericConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant" />
   <unitInfo fileName="StringConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.StringConstant" />
   <unitInfo fileName="ParenthesisExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="107" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="BinaryOperation.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation" />
   <unitInfo fileName="FunctionType.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.FunctionType" />
   <unitInfo fileName="MultipleExpression.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression" />
@@ -29,5 +30,6 @@
   <unitInfo fileName="Program.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.Program" />
   <unitInfo fileName="LetExpression.java" startLine="13" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression" />
   <unitInfo fileName="LambdaAbstraction.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.StructureAspectDescriptor" />
 </debugInfo>
 

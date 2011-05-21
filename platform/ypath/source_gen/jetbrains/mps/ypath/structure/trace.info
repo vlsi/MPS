@@ -32,6 +32,7 @@
   <unitInfo fileName="FromOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ypath.structure.FromOperation" />
   <unitInfo fileName="LambdaMethod.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ypath.structure.LambdaMethod" />
   <unitInfo fileName="NodeKindCase.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.structure.NodeKindCase" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="227" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="MatchKindOperation.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ypath.structure.MatchKindOperation" />
   <unitInfo fileName="VisitBlock.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ypath.structure.VisitBlock" />
   <unitInfo fileName="TreeNodeKindReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreeNodeKindReference" />
@@ -73,5 +74,6 @@
   <unitInfo fileName="TreePathAspect.java" startLine="17" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathAspect" />
   <unitInfo fileName="GenericParamFeature.java" startLine="16" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ypath.structure.GenericParamFeature" />
   <unitInfo fileName="ParamSequenceFeature.java" startLine="14" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamSequenceFeature" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor" />
 </debugInfo>
 

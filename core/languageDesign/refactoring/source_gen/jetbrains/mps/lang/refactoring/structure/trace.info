@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Refactoring_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.Refactoring_Language" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="308" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum_PropertySupport" />
   <unitInfo fileName="RefactoringTargetKind_Enum.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.StructureAspectDescriptor" />
 </debugInfo>
 

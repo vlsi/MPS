@@ -144,6 +144,7 @@
   <unitInfo fileName="UnaryArithmeticExpression.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.bash.structure.UnaryArithmeticExpression" />
   <unitInfo fileName="WordExpression.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.bash.structure.WordExpression" />
   <unitInfo fileName="FollowingPipeline.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.bash.structure.FollowingPipeline" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="623" startPosition="0" endLine="655" endPosition="0" unitName="jetbrains.mps.bash.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="OptionWithParamReference.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.bash.structure.OptionWithParamReference" />
   <unitInfo fileName="ArgumentReference.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.bash.structure.ArgumentReference" />
   <unitInfo fileName="FunctionCallCommand.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.bash.structure.FunctionCallCommand" />
@@ -201,5 +202,6 @@
   <unitInfo fileName="FunctionDeclaration.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.bash.structure.FunctionDeclaration" />
   <unitInfo fileName="ShellScript.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.bash.structure.ShellScript" />
   <unitInfo fileName="IfCommand.java" startLine="13" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.bash.structure.IfCommand" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="656" endPosition="0" unitName="jetbrains.mps.bash.structure.StructureAspectDescriptor" />
 </debugInfo>
 

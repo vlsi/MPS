@@ -23,6 +23,7 @@
   <unitInfo fileName="GenerationContextOp_GetOriginalCopiedInputByOutput.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput" />
   <unitInfo fileName="GenerationContextOp_UserObjectAccessBase.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase" />
   <unitInfo fileName="GenerationContextOp_GetCopiedOutputByInput.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="119" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="GenerationContextOp_GenParameterRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef" />
   <unitInfo fileName="GenerationContextOp_ParameterRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef" />
   <unitInfo fileName="GenerationContextOp_CreateUniqueName.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" />
@@ -33,5 +34,6 @@
   <unitInfo fileName="GenerationContextOp_GetOutputListByLabelAndInput.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput" />
   <unitInfo fileName="GenerationContextOp_GetOutputByLabelAndInput.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" />
   <unitInfo fileName="GenerationContextOp_Base.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.StructureAspectDescriptor" />
 </debugInfo>
 

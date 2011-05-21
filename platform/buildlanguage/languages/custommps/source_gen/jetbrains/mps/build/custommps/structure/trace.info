@@ -2,6 +2,8 @@
 <debugInfo>
   <unitInfo fileName="Custommps_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.structure.Custommps_Language" />
   <unitInfo fileName="LibraryFolder.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.custommps.structure.LibraryFolder" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="35" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.build.custommps.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.build.custommps.structure.StructureAspectDescriptor" />
   <unitInfo fileName="UndeclaredVariableReference.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.build.custommps.structure.UndeclaredVariableReference" />
   <unitInfo fileName="MPSDistribution.java" startLine="17" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.build.custommps.structure.MPSDistribution" />
   <unitInfo fileName="MPSBuild.java" startLine="17" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.build.custommps.structure.MPSBuild" />

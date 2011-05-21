@@ -9,6 +9,7 @@
   <unitInfo fileName="InternalClassifierType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType" />
   <unitInfo fileName="WeakClassReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.WeakClassReference" />
   <unitInfo fileName="InternalClassExpression.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="83" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="InternalStaticFieldReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" />
   <unitInfo fileName="TypeHintExpression.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression" />
   <unitInfo fileName="InternalVariableReference.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" />
@@ -20,6 +21,7 @@
   <unitInfo fileName="ExtractStatementListInnerExpression.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression" />
   <unitInfo fileName="ExtractStatementListExpression.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression" />
   <unitInfo fileName="InternalPartialFieldReference.java" startLine="17" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.StructureAspectDescriptor" />
   <unitInfo fileName="InternalPartialInstanceMethodCall.java" startLine="16" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" />
 </debugInfo>
 
