@@ -77,7 +77,7 @@ public class WorkbenchMakeService implements IMakeService {
       "Rebuild" :
       "Make"
     ));
-    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
+    final WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
     mh.clear();
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
@@ -133,24 +133,37 @@ public class WorkbenchMakeService implements IMakeService {
                   }
                 }
               }
+
+              @Override
+              public void onSuccess() {
+                reconcile();
+              }
+
+              @Override
+              public void onCancel() {
+                reconcile();
+              }
+
+              private void reconcile() {
+                if (res.value == null) {
+                  String msg = scrName + " aborted";
+                  WorkbenchMakeService.this.displayInfo(msg);
+                } else if (!(res.value.isSucessful())) {
+                  String msg = scrName + " failed";
+                  showError(mh, msg + ". See previous messages for details.");
+                  WorkbenchMakeService.this.displayInfo(msg);
+                } else {
+                  String msg = scrName + " successful";
+                  WorkbenchMakeService.this.displayInfo(msg);
+                }
+              }
             });
           }
         });
       }
     });
 
-    if (res.value == null) {
-      String msg = scrName + " aborted";
-      this.displayInfo(msg);
-    } else if (!(res.value.isSucessful())) {
-      String msg = scrName + " failed";
-      showError(mh, msg + ". See previous messages for details.");
-      this.displayInfo(msg);
-    } else {
-      String msg = scrName + " successful";
-      this.displayInfo(msg);
-    }
-    return res.value;
+    return null;
   }
 
   private void showError(WorkbenchMakeService.MessageHandler mh, String msg) {
