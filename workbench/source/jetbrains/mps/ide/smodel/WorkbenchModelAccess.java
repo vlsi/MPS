@@ -246,6 +246,11 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runWriteInEDTAndWait(final Runnable r) {
+    if (isInEDT()) {
+      runWriteAction(r);
+      return;
+    }
+
     final CyclicBarrier barr = new CyclicBarrier(2);
     final boolean canRead = canRead();
     try {
