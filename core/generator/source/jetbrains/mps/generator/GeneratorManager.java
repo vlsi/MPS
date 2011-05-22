@@ -89,7 +89,8 @@ public class GeneratorManager {
                                 final IMessageHandler messages,
                                 final GenerationOptions options) {
     final boolean[] result = new boolean[1];
-    ModelAccess.instance().tryWrite(new Runnable() {
+    int i;
+    for (i = 0; i < 3 && !ModelAccess.instance().tryWrite(new Runnable() {
       public void run() {
         TransientModelsComponent transientModelsComponent = myProject.getComponent(TransientModelsComponent.class);
         transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());
@@ -116,7 +117,15 @@ public class GeneratorManager {
         transientModelsComponent.publishAll();
         CleanupManager.getInstance().cleanup();
       }
-    });
+    }); ++i) {
+      try {
+        Thread.sleep((1<<i)*100);
+      } catch (InterruptedException ignore) {}
+    }
+    if (i >= 3) {
+      throw new RuntimeException("Failed to acquire write lock");
+    }
+
     generationHandler.generationCompleted();
     return result[0];
   }
