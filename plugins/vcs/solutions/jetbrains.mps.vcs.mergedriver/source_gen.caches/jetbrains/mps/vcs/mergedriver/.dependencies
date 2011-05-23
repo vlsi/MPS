@@ -21,6 +21,15 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverMain" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.mergedriver.EmptyMerger" file="EmptyMerger.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.FileMerger" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.FileMerger" file="FileMerger.java">
     <classNode dependClassName="java.io.File" />
   </dependency>
