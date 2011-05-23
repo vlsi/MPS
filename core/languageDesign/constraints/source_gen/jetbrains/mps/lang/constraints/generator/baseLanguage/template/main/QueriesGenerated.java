@@ -138,11 +138,11 @@ public class QueriesGenerated {
     )).getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_5815373402396533932(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7093837644838476833(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_5815373402396566672(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7093837644838477034(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode constraints = ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) == _context.getNode();
@@ -151,7 +151,7 @@ public class QueriesGenerated {
     return SModelOperations.getModelName(_context.getOriginalInputModel()) + "." + SPropertyOperations.getString(SNodeOperations.cast(constraints, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_5815373402396533912(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7093837644838476872(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
@@ -252,20 +252,20 @@ public class QueriesGenerated {
     return (((SNode) _context.getVariable("factory")) != null);
   }
 
-  public static boolean ifMacro_Condition_5815373402396533957(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) == _context.getNode();
-      }
-    }).isEmpty();
-  }
-
-  public static boolean ifMacro_Condition_5815373402396566637(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7093837644838477078(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) == _context.getNode();
       }
     }).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_7093837644838476878(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) == _context.getNode();
+      }
+    }).isEmpty();
   }
 
   public static SNode sourceNodeQuery_1213106765261(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -360,7 +360,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "referent", true);
   }
 
-  public static Iterable sourceNodesQuery_5815373402396531892(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7093837644838476730(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SModel constraintsModel = _context.getOriginalInputModel();
 
     Language language = Language.getLanguageForLanguageAspect(constraintsModel.getModelDescriptor());
