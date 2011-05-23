@@ -12,12 +12,13 @@ import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class JUnitConfigFromLanguageTestMethods extends BaseConfigCreator<List> implements Cloneable {
   private static final Logger LOG = Logger.getLogger(JUnitConfigFromLanguageTestMethods.class);
@@ -44,9 +45,9 @@ public class JUnitConfigFromLanguageTestMethods extends BaseConfigCreator<List> 
           return "Several Test Methods";
         }
       };
-      _config.setName(ITestMethod_Behavior.call_getTestName_1216136419751(Sequence.fromIterable(parameter).first()) + ",...");
+      _config.setName(ITestMethod_Behavior.call_getTestName_1216136419751(ListSequence.fromList(parameter).first()) + ",...");
       _config.getStateObject().type = JUnitRunTypes.METHOD;
-      _config.getStateObject().testMethods = new ClonableList(Sequence.fromIterable(parameter).<String>select(new ISelector<SNode, String>() {
+      _config.getStateObject().testMethods = new ClonableList(ListSequence.fromList(parameter).<String>select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return TestUtils.pointerToString(new SNodePointer(it));
         }

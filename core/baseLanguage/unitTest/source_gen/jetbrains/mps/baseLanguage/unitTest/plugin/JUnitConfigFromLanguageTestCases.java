@@ -17,9 +17,9 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class JUnitConfigFromLanguageTestCases extends BaseConfigCreator<List> implements Cloneable {
   private static final Logger LOG = Logger.getLogger(JUnitConfigFromLanguageTestCases.class);
@@ -62,7 +62,7 @@ public class JUnitConfigFromLanguageTestCases extends BaseConfigCreator<List> im
           return "Several Test Classes";
         }
       };
-      _config.setName(SPropertyOperations.getString(SNodeOperations.cast(Sequence.fromIterable(parameter).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
+      _config.setName(SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(parameter).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
       _config.getStateObject().type = JUnitRunTypes.NODE;
       _config.getStateObject().nodes = new ClonableList<String>(nodeNames);
       JUnitConfigFromLanguageTestCases.this.myConfig = _config;
