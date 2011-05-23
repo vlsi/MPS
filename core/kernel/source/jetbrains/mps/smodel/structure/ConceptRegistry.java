@@ -67,15 +67,18 @@ public class ConceptRegistry implements ApplicationComponent {
 
     languageToConcepts.putValue(NameUtil.namespaceFromConceptFQName(fqName), fqName);
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-        structureDescriptors.put(fqName, languageRuntime.getStructureAspect().getDescriptor(fqName));
-        behaviorDescriptors.put(fqName, languageRuntime.getBehaviorAspect().getDescriptor(fqName));
-        constraintsDescriptors.put(fqName, languageRuntime.getConstraintsAspect().getDescriptor(fqName));
-      }
-    });
+//    ModelAccess.instance().runReadAction(new Runnable() {
+//      @Override
+//      public void run() {
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+
+    if (languageRuntime != null) {
+      structureDescriptors.put(fqName, languageRuntime.getStructureAspect().getDescriptor(fqName));
+      behaviorDescriptors.put(fqName, languageRuntime.getBehaviorAspect().getDescriptor(fqName));
+      constraintsDescriptors.put(fqName, languageRuntime.getConstraintsAspect().getDescriptor(fqName));
+    }
+//      }
+//    });
 
     conceptsInLoading.remove(fqName);
   }
