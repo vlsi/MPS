@@ -20,7 +20,7 @@ import java.io.IOException;
 
 /*package*/ class GitRepositoriesInstaller extends AbstractInstaller {
   private static final String ATTRIBUTES_FILE = ".gitattributes";
-  private static final List<String> EXTENSIONS = ListSequence.fromListAndArray(new ArrayList<String>(), "mps");
+  private static final List<String> PATTERNS = ListSequence.fromListAndArray(new ArrayList<String>(), "*.mps", "trace.info", ".dependencies");
 
   public GitRepositoriesInstaller(Project project) {
     super(project);
@@ -116,11 +116,11 @@ import java.io.IOException;
       }
       final List<String> lines = StringsIO.readLines(attributesFile.getInputStream());
 
-      if (ListSequence.fromList(EXTENSIONS).all(new IWhereFilter<String>() {
-        public boolean accept(final String ext) {
+      if (ListSequence.fromList(PATTERNS).all(new IWhereFilter<String>() {
+        public boolean accept(final String pat) {
           return ListSequence.fromList(lines).any(new IWhereFilter<String>() {
             public boolean accept(String line) {
-              return line.matches("\\s*\\*\\." + ext + ".+merge=mps\\s*");
+              return line.matches("\\s*" + pat.replace("*", "\\*") + ".+merge=mps\\s*");
             }
           });
         }
@@ -128,10 +128,10 @@ import java.io.IOException;
         return AbstractInstaller.State.INSTALLED;
       }
 
-      for (String ext : ListSequence.fromList(EXTENSIONS)) {
+      for (String pat : ListSequence.fromList(PATTERNS)) {
         boolean addNew = true;
         for (int i = 0; i < ListSequence.fromList(lines).count(); i++) {
-          if (ListSequence.fromList(lines).getElement(i).matches("\\s*\\*\\." + ext + ".*")) {
+          if (ListSequence.fromList(lines).getElement(i).matches("\\s*" + pat.replace("*", "\\*") + ".*")) {
             if (ListSequence.fromList(lines).getElement(i).contains("merge=mps")) {
               if (dryRun) {
                 return AbstractInstaller.State.OUTDATED;
@@ -143,7 +143,7 @@ import java.io.IOException;
           }
         }
         if (addNew) {
-          ListSequence.fromList(lines).addElement("*." + ext + " merge=mps");
+          ListSequence.fromList(lines).addElement(pat + " merge=mps");
         }
       }
 

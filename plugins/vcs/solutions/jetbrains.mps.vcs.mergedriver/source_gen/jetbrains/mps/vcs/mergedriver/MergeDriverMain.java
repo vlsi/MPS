@@ -43,6 +43,8 @@ public class MergeDriverMain {
     FileType fileType = FileType.get(file);
     if (FileType.MODEL == fileType) {
       return new SimpleMerger();
+    } else if (FileType.TRACE_CACHE == fileType || FileType.GENERATOR_DEPENDENCIES == fileType) {
+      return new EmptyMerger();
     } else {
       return new TextMerger();
     }
