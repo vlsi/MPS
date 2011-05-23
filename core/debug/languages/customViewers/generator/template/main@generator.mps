@@ -20,7 +20,6 @@
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <import index="kisg" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="te5p" modelUID="r:b4456070-b665-4c03-b3d3-15a7362ba239(jetbrains.mps.debug.evaluation.transform)" version="-1" />
   <import index="8sls" modelUID="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debug.evaluation.structure)" version="-1" />
   <import index="x660" modelUID="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debug.customViewers.behavior)" version="-1" />
   <import index="wlit" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime.java.programState.proxies(jetbrains.mps.debug.runtime.java.programState.proxies@java_stub)" version="-1" />
@@ -32,8 +31,9 @@
   <import index="l352" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)" version="-1" />
   <import index="qyyw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation(jetbrains.mps.debug.evaluation@java_stub)" version="-1" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="8413" modelUID="f:java_stub#cf8c9de5-1b4a-4dc8-8e6d-847159af31dd#com.sun.jdi(jetbrains.mps.debug.evaluation.ui/com.sun.jdi@java_stub)" version="-1" />
   <import index="kmqs" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.customViewers(MPS.Classpath/jetbrains.mps.debug.customViewers@java_stub)" version="-1" />
+  <import index="oux2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.transform(MPS.Classpath/jetbrains.mps.debug.evaluation.transform@java_stub)" version="-1" />
+  <import index="caz5" modelUID="f:java_stub#7da4580f-9d75-4603-8162-51a896d78375#com.sun.jdi(jetbrains.mps.debug.evaluation/com.sun.jdi@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
@@ -1422,8 +1422,8 @@
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3798344557789646277">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3798344557789646278">
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3798344557789646279">
-                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="te5p.8804575757433489765" resolveInfo="TransformationUtil" />
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.2960002797019071567" resolveInfo="getValueProxyTypeFromType" />
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oux2.~TransformationUtil" resolveInfo="TransformationUtil" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~TransformationUtil%dgetValueProxyTypeFromType(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getValueProxyTypeFromType" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3798344557789646280">
                                   <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3798344557789646281" />
                                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3798344557789646282">
@@ -1505,8 +1505,8 @@
                 <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6588495380858423211">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6588495380858423218">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6588495380858423220">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.2960002797019071567" resolveInfo="getValueProxyTypeFromType" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="te5p.8804575757433489765" resolveInfo="TransformationUtil" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oux2.~TransformationUtil" resolveInfo="TransformationUtil" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~TransformationUtil%dgetValueProxyTypeFromType(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getValueProxyTypeFromType" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6588495380858423222">
                         <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="6588495380858423221" />
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6588495380858423226">
@@ -1578,8 +1578,8 @@
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7785669630792626877">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7785669630792626878">
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7785669630792626879">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.2960002797019071567" resolveInfo="getValueProxyTypeFromType" />
-                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="te5p.8804575757433489765" resolveInfo="TransformationUtil" />
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oux2.~TransformationUtil" resolveInfo="TransformationUtil" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~TransformationUtil%dgetValueProxyTypeFromType(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getValueProxyTypeFromType" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7785669630792626880">
                                   <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7785669630792626881" />
                                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7785669630792626882">
@@ -1633,8 +1633,8 @@
                 <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7785669630792594433">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7785669630792594434">
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7785669630792594435">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.2960002797019071567" resolveInfo="getValueProxyTypeFromType" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="te5p.8804575757433489765" resolveInfo="TransformationUtil" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oux2.~TransformationUtil" resolveInfo="TransformationUtil" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~TransformationUtil%dgetValueProxyTypeFromType(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getValueProxyTypeFromType" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7785669630792594436">
                         <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7785669630792594437" />
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7785669630792594438">
@@ -1759,8 +1759,8 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="263483611547408185">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="263483611547408186">
                 <property name="name" nameId="tpck.1169194664001" value="value" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="263483611547408187">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~Value" resolveInfo="Value" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1355240837348169563">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="caz5.~Value" resolveInfo="Value" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="263483611547408188">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="263483611547408189">
@@ -1804,7 +1804,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="263483611547408186" resolveInfo="value" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2685024263846514313">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8413.~Value%dtype()%ccom%dsun%djdi%dType" resolveInfo="type" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="caz5.~Value%dtype()%ccom%dsun%djdi%dType" resolveInfo="type" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6283731996530117459">
@@ -1815,8 +1815,8 @@
                         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6283731996530117462">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6283731996530117463">
                             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6283731996530117465">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.7688572620285927605" resolveInfo="getJniSignatureFromType" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="te5p.8804575757433489765" resolveInfo="TransformationUtil" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oux2.~TransformationUtil" resolveInfo="TransformationUtil" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~TransformationUtil%dgetJniSignatureFromType(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getJniSignatureFromType" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6283731996530117467">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="6283731996530117466" />
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6283731996530117471">
@@ -1834,7 +1834,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="263483611547408186" resolveInfo="value" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2685024263846514327">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8413.~Mirror%dvirtualMachine()%ccom%dsun%djdi%dVirtualMachine" resolveInfo="virtualMachine" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="caz5.~Mirror%dvirtualMachine()%ccom%dsun%djdi%dVirtualMachine" resolveInfo="virtualMachine" />
                     </node>
                   </node>
                 </node>
@@ -1851,8 +1851,8 @@
                         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4061114533381592594">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4061114533381592595">
                             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4061114533381592596">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.2960002797019071567" resolveInfo="getValueProxyTypeFromType" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="te5p.8804575757433489765" resolveInfo="TransformationUtil" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oux2.~TransformationUtil" resolveInfo="TransformationUtil" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~TransformationUtil%dgetValueProxyTypeFromType(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getValueProxyTypeFromType" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4061114533381592597">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4061114533381592598" />
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4061114533381592599">
@@ -1942,8 +1942,8 @@
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2685024263846491798">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2685024263846491799">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2685024263846491800">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="te5p.8804575757433489765" resolveInfo="TransformationUtil" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.2960002797019071567" resolveInfo="getValueProxyTypeFromType" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oux2.~TransformationUtil" resolveInfo="TransformationUtil" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~TransformationUtil%dgetValueProxyTypeFromType(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getValueProxyTypeFromType" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2685024263846491801">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2685024263846491802" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2685024263846491803">
@@ -2084,7 +2084,7 @@
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8275758777999525558">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8275758777999525551">
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8275758777999525553">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.4422953018422059816" resolveInfo="Transformator" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~Transformator%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,boolean)" resolveInfo="Transformator" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="8275758777999525555">
                               <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8275758777999525546" resolveInfo="method" />
                             </node>
@@ -2094,7 +2094,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8275758777999525562">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.5524459861380962364" resolveInfo="transform" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~Transformator%dtransform()%cvoid" resolveInfo="transform" />
                         </node>
                       </node>
                     </node>
@@ -2274,8 +2274,8 @@
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wlit.~JavaValue%dfromJDIValue(com%dsun%djdi%dValue,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%druntime%djava%dprogramState%dproxies%dJavaValue" resolveInfo="fromJDIValue" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="8275758777999550699">
           <property name="methodName" nameId="tp68.1174294288199" value="getJDIValue" />
-          <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8275758777999550701">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~Value" resolveInfo="Value" />
+          <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1355240837348169569">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="caz5.~Value" resolveInfo="Value" />
           </node>
           <node role="instance" roleId="tp68.1174317636233" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8275758777999550702">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="8275758777999550704">
@@ -2315,8 +2315,8 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5325372602757293894">
           <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
-          <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757293897">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8413.~ThreadReference" resolveInfo="ThreadReference" />
+          <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1355240837348169570">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="caz5.~ThreadReference" resolveInfo="ThreadReference" />
           </node>
           <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5325372602757293899">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="6772833964096462903">
@@ -2561,8 +2561,8 @@
                   <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4599835250971319532">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="te5p.2960002797019071567" resolveInfo="getValueProxyTypeFromType" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="te5p.8804575757433489765" resolveInfo="TransformationUtil" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oux2.~TransformationUtil" resolveInfo="TransformationUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oux2.~TransformationUtil%dgetValueProxyTypeFromType(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getValueProxyTypeFromType" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4599835250971319533">
                     <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="4599835250971319534">
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="4599835250971319484" resolveInfo="viewer" />

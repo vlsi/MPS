@@ -717,7 +717,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       if(!bundleHomeFile.exists()) return;
 
       boolean hasClasspath = false, skipClasspath = false;
-      List<String> innerJars = new ArrayList<String>();
       List<ModelRoot> remove = new ArrayList<ModelRoot>();
 
       for (ModelRoot entry : myLanguageDescriptor.getRuntimeStubModels()) {
@@ -725,8 +724,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         if(path.endsWith(".jar")) {
           IFile cp = FileSystem.getInstance().getFileByPath(path);
           if(!cp.exists()) {
-            remove.add(entry);
-            innerJars.add(cp.getName());
+            entry.setPath(bundleHomeFile.getPath() + "!/" + cp.getName());
           } else if(bundleHomeFile.equals(cp)) {
             skipClasspath = true;
           }
@@ -741,12 +739,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         ClassPathEntry bundleHome = new ClassPathEntry();
         bundleHome.setPath(bundleHomeFile.getPath());
         myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(bundleHome));
-      }
-
-      for(String jar : innerJars) {
-        ClassPathEntry innerJar = new ClassPathEntry();
-        innerJar.setPath(bundleHomeFile.getPath() + "!/" + jar);
-        myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(innerJar));
       }
     }
   }

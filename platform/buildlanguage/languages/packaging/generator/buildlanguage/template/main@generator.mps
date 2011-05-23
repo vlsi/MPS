@@ -3235,7 +3235,7 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1237396009308">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dendsWith(java%dlang%dString)%cboolean" resolveInfo="endsWith" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237396009309">
-                            <property name="value" nameId="tpee.1070475926801" value="jar" />
+                            <property name="value" nameId="tpee.1070475926801" value=".jar" />
                           </node>
                         </node>
                       </node>
@@ -3399,7 +3399,7 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1210175765572">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dendsWith(java%dlang%dString)%cboolean" resolveInfo="endsWith" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1210175765573">
-                            <property name="value" nameId="tpee.1070475926801" value="jar" />
+                            <property name="value" nameId="tpee.1070475926801" value=".jar" />
                           </node>
                         </node>
                       </node>

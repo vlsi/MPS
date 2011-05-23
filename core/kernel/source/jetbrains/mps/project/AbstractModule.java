@@ -254,7 +254,6 @@ public abstract class AbstractModule implements IModule {
     if (bundleHomeFile == null) return;
 
     boolean hasClasspath = false, skipClasspath = false;
-    List<String> innerJars = new ArrayList<String>();
     List<ModelRoot> remove = new ArrayList<ModelRoot>();
 
     for (ModelRoot entry : descriptor.getStubModelEntries()) {
@@ -262,8 +261,7 @@ public abstract class AbstractModule implements IModule {
       if (path.endsWith(".jar")) {
         IFile cp = FileSystem.getInstance().getFileByPath(path);
         if (!cp.exists()) {
-          remove.add(entry);
-          innerJars.add(cp.getName());
+          entry.setPath(bundleHomeFile.getPath() + "!/" + cp.getName());
         } else if (bundleHomeFile.equals(cp)) {
           skipClasspath = true;
         }
@@ -278,12 +276,6 @@ public abstract class AbstractModule implements IModule {
       ClassPathEntry bundleHome = new ClassPathEntry();
       bundleHome.setPath(bundleHomeFile.getPath());
       descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(bundleHome));
-    }
-
-    for (String jar : innerJars) {
-      ClassPathEntry innerJar = new ClassPathEntry();
-      innerJar.setPath(bundleHomeFile.getPath() + "!/" + jar);
-      descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(innerJar));
     }
   }
 
