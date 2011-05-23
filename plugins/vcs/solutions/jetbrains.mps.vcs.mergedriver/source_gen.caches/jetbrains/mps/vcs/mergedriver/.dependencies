@@ -24,6 +24,18 @@
   <dependency className="jetbrains.mps.vcs.mergedriver.FileMerger" file="FileMerger.java">
     <classNode dependClassName="java.io.File" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.mergedriver.FileType" file="FileType.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStreamReader" />
+    <classNode dependClassName="java.io.Reader" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.GitGlobalInstaller" file="GitGlobalInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -84,6 +96,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.FileMerger" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.FileType" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.TextMerger" />
   </dependency>

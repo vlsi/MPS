@@ -25,24 +25,26 @@ public class MergeDriverMain {
     File currentFile = new File(args[2]);
     File otherFile = new File(args[3]);
     boolean overwrite = false;
-    FileMerger merger;
     if ("--svn".equals(args[0])) {
       if (args.length >= 7) {
         conflictStart = (CONFLICT_START + " " + args[5]).getBytes();
         conflictEnd = (CONFLICT_END + " " + args[6]).getBytes();
       }
-      if (baseFile.getName().endsWith(".mps.svn-base")) {
-        merger = new SimpleMerger();
-      } else {
-        merger = new TextMerger();
-      }
     } else if ("--git".equals(args[0])) {
       overwrite = true;
-      merger = new SimpleMerger();
     } else {
       System.exit(2);
       return;
     }
-    System.exit(merger.mergeFiles(baseFile, currentFile, otherFile, overwrite, conflictStart, conflictEnd, conflictSeparator));
+    System.exit(selectMerger(baseFile).mergeFiles(baseFile, currentFile, otherFile, overwrite, conflictStart, conflictEnd, conflictSeparator));
+  }
+
+  private static FileMerger selectMerger(File file) {
+    FileType fileType = FileType.get(file);
+    if (FileType.MODEL == fileType) {
+      return new SimpleMerger();
+    } else {
+      return new TextMerger();
+    }
   }
 }
