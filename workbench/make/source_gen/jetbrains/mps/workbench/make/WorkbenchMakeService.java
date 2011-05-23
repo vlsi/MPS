@@ -124,8 +124,8 @@ public class WorkbenchMakeService implements IMakeService {
           public void run() {
             IdeEventQueue.getInstance().flushQueue();
             ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true) {
-              public void run(@NotNull ProgressIndicator ignore) {
-                progInd = ProgressManager.getInstance().getProgressIndicator();
+              public void run(@NotNull ProgressIndicator pi) {
+                progInd = pi;
                 for (Iterable<IResource> cl : clInput.value) {
                   res.value = script.execute(ctl, cl);
                   if (!(res.value.isSucessful()) || progInd.isCanceled()) {
