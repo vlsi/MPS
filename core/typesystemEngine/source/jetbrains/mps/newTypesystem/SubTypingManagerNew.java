@@ -328,10 +328,7 @@ public class SubTypingManagerNew extends SubtypingManager {
   public SNode createLCS(List<SNode> types, TypeCheckingContextNew context) {
     if (types.size() == 1) {
       return types.iterator().next();
-    }    /*
-    Set<SNode> sNodes = leastCommonSupertypes(new HashSet<SNode>(types), true);
-    return sNodes.iterator().next();
-        */
+    }
     if (types.size() > 1) {
       Collections.sort(types, new Comparator<SNode>() {
         public int compare(SNode node1, SNode node2) {
