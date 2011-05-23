@@ -708,23 +708,23 @@ public class QueriesGenerated {
     return "set" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
-  public static Object propertyMacro_GetPropertyValue_8234263071656825225(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(_context.getNode()).hashCode();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_8234263071656825118(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1281791650135608761(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_5846203010383859878(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1281791650135608789(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_5846203010383998241(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1281791650135608811(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_5846203010383998268(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1281791650135608833(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1281791650135608729(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
@@ -1099,7 +1099,7 @@ __switch__:
     });
   }
 
-  public static Iterable sourceNodesQuery_5846203010383859836(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1281791650135608771(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (it != null);
@@ -1107,15 +1107,15 @@ __switch__:
     });
   }
 
-  public static Iterable sourceNodesQuery_5846203010383998089(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1281791650135608799(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).o1).toListSequence();
   }
 
-  public static Iterable sourceNodesQuery_5846203010383998211(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1281791650135608821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).o2).toListSequence();
   }
 
-  public static Iterable sourceNodesQuery_8234263071656825160(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1281791650135608648(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
