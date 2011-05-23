@@ -18,13 +18,13 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   public StructureDescriptor getDescriptor(String conceptFqName) {
     switch ((conceptFqName).hashCode()) {
       case -54139221:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.NodeSubstituteActions", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.NodeSubstituteActions", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
       case 777050736:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", new String[]{}, new String[]{}, new String[]{});
       case 1108864958:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", new String[]{}, new String[]{}, new String[]{});
       case -621933283:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
       case 571084514:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case 1982463660:
@@ -32,7 +32,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 93548976:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case 1441413840:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.NodeFactories", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.NodeFactories", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
       case -1451012430:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.NodeFactory", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -475822819:
@@ -48,7 +48,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 185654114:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1553951677:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.AddMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.ConceptPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuBuilderPart", "jetbrains.mps.lang.actions.structure.ConceptPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.AddMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.ConceptPart"}, new String[]{"jetbrains.mps.lang.actions.structure.ConceptPart", "jetbrains.mps.lang.actions.structure.MenuBuilderPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -516678347:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case 529292976:
@@ -56,13 +56,13 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -550366534:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case 603829544:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -1057851259:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ConceptPart", new String[]{"jetbrains.mps.lang.actions.structure.MenuBuilderPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuBuilderPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1042264256:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.actions.structure.ISubstitute_String"}, new String[]{"jetbrains.mps.lang.actions.structure.ISubstitute_String"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case -1944138161:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1139635048:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
       case 1408809543:
@@ -72,9 +72,9 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 988976393:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case 613992397:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -83978455:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1427720644:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case -832280857:
@@ -94,13 +94,13 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 1115700637:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
       case -1458410401:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SideTransformMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.SideTransformMenuPart", "jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SideTransformMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.SideTransformMenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -775006000:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.actions.structure.ISideTransform_String"}, new String[]{"jetbrains.mps.lang.actions.structure.ISideTransform_String"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case 24213099:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case -633519004:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SideTransformMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.SideTransformMenuPart", "jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SideTransformMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.SideTransformMenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 309613498:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case 1223531964:
@@ -144,7 +144,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 834036476:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", new String[]{"jetbrains.mps.lang.actions.structure.MenuBuilderPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuBuilderPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -1821846675:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.MenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", new String[]{"jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -341931250:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case -969699365:
@@ -170,7 +170,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -1379076187:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
       case -1349939843:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.PasteWrappers", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.PasteWrappers", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
       case 233548214:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.PasteWrapper", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -108796672:
@@ -216,7 +216,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -336356881:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
       case 592790321:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.CopyPasteHandlers", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.CopyPasteHandlers", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
       case -2128542088:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", new String[]{"jetbrains.mps.lang.smodel.structure.SNodeCreator"}, new String[]{}, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeCreator"});
       case 194996557:

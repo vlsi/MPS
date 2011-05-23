@@ -18,7 +18,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   public StructureDescriptor getDescriptor(String conceptFqName) {
     switch ((conceptFqName).hashCode()) {
       case 1656771275:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.distrib.structure.DistribConfiguration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.build.packaging.structure.IVariableHolder", "jetbrains.mps.build.packaging.structure.IMacroHolder"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.build.packaging.structure.IVariableHolder", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.build.packaging.structure.IMacroHolder"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.distrib.structure.DistribConfiguration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.build.packaging.structure.IVariableHolder", "jetbrains.mps.build.packaging.structure.IMacroHolder"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.IMacroHolder", "jetbrains.mps.build.packaging.structure.IVariableHolder", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case -575647101:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.distrib.structure.ClassPath", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 699866337:
@@ -42,7 +42,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 1231612471:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.distrib.structure.MacConfig", new String[]{"jetbrains.mps.build.distrib.structure.SystemSpecificConfig"}, new String[]{"jetbrains.mps.build.distrib.structure.SystemSpecificConfig"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1472406634:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.distrib.structure.ExternalVariableReference", new String[]{"jetbrains.mps.buildlanguage.structure.PropertyValueExpression", "jetbrains.mps.build.packaging.structure.IStringExpression"}, new String[]{}, new String[]{"jetbrains.mps.buildlanguage.structure.PropertyValueExpression", "jetbrains.mps.build.packaging.structure.IStringExpression"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.distrib.structure.ExternalVariableReference", new String[]{"jetbrains.mps.buildlanguage.structure.PropertyValueExpression", "jetbrains.mps.build.packaging.structure.IStringExpression"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.IStringExpression", "jetbrains.mps.buildlanguage.structure.PropertyValueExpression"});
       case 1298311595:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.distrib.structure.FileAssociation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 1372736716:

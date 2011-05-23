@@ -20,7 +20,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -1205517430:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.make.facet.structure.IFacet", new String[]{}, new String[]{}, new String[]{});
       case 141486335:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.make.facet.structure.FacetDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.make.facet.structure.FacetDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IWillBeClassifier", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 2113881325:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.make.facet.structure.TargetDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 107334008:

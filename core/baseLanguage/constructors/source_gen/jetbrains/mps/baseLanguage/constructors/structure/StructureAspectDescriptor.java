@@ -20,7 +20,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 1724814137:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 2066564648:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 894689369:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
       case 707139725:

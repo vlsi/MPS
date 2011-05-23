@@ -34,7 +34,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -1326942376:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.apiLang.structure.DebuggerReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
       case 1041442568:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

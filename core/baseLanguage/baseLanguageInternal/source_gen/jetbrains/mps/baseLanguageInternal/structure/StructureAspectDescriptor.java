@@ -42,7 +42,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -1043226863:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"});
       case 2027888821:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ILocalVariableElement", "jetbrains.mps.baseLanguage.structure.Expression"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"});
       case -338199173:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
       case -1222117134:

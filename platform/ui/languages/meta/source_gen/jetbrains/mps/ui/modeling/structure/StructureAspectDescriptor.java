@@ -82,7 +82,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -749897161:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.modeling.structure.Auxillary", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -21453060:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
       case 890725959:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.modeling.structure.OverrideAnnotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
       case -1139407013:

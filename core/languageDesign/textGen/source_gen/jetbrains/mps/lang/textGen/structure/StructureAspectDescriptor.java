@@ -18,7 +18,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   public StructureDescriptor getDescriptor(String conceptFqName) {
     switch ((conceptFqName).hashCode()) {
       case 482208399:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
       case 203494199:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.NodeParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
       case -1097206968:
@@ -32,7 +32,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 635625003:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
       case 1248579231:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1488234531:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.OperationDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"});
       case -922680363:
@@ -40,7 +40,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 1532449098:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ContextParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
       case 1169509609:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1101018809:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.BufferParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
       case 1366820957:

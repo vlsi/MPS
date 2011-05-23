@@ -24,7 +24,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 15032219:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.Controller", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -298577037:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.Validator", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.TypeDerivable"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.TypeDerivable"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.Validator", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.TypeDerivable"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.lang.core.structure.BaseConcept"});
       case -1193887063:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.BeanPropertyView", new String[]{"jetbrains.mps.ui.structure.View"}, new String[]{"jetbrains.mps.ui.structure.View"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -1295710024:
@@ -38,7 +38,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -180538774:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.ControllerBinding", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -341968940:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.InlineController", new String[]{"jetbrains.mps.ui.structure.Controller", "jetbrains.mps.baseLanguage.structure.TypeDerivable"}, new String[]{"jetbrains.mps.ui.structure.Controller"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.TypeDerivable"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.InlineController", new String[]{"jetbrains.mps.ui.structure.Controller", "jetbrains.mps.baseLanguage.structure.TypeDerivable"}, new String[]{"jetbrains.mps.ui.structure.Controller"}, new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1475002901:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.EventHandingBlock", new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"});
       case 906796104:
@@ -46,7 +46,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 842637589:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.EventType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
       case -1618758475:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.EventPropertyAccessOp", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.EventPropertyAccessOp", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1973891664:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.ContainerCompartment", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{"jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1827164396:
@@ -66,7 +66,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 394155994:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.IterateContentsStatement", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"});
       case 2016979633:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.IterateContentsVariable", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.IterateContentsVariable", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case -1752831463:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.RemoveUIObjectStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
       case 855321498:
@@ -82,7 +82,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -486247924:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.UIObjectProviderStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{"jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
       case 1752318113:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.CreateUIObjectStatement", new String[]{"jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.ui.structure.IUIObjectDeclaration"}, new String[]{"jetbrains.mps.ui.structure.IUIObjectDeclaration", "jetbrains.mps.ui.structure.UIObjectStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.CreateUIObjectStatement", new String[]{"jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.ui.structure.IUIObjectDeclaration"}, new String[]{"jetbrains.mps.ui.structure.IUIObjectDeclaration", "jetbrains.mps.ui.structure.UIObjectStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.ILocalDeclaration", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case -2041417056:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.CallUIActionOperation", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractOperation"});
       case 210015515:
@@ -90,7 +90,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 172798653:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.IUIObjectDeclaration", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ILocalDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 702069977:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.UIObjectReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ILocalReference", "jetbrains.mps.baseLanguage.structure.Expression"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.structure.UIObjectReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalReference"});
       default:
         return null;
     }

@@ -32,7 +32,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 1436461334:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.OptionalPart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1185303143:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConcreteChildPart", new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConcreteChildPart", new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case -1764886373:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ReferencePart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 253920717:
@@ -60,7 +60,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 447667553:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.NamePropertyNamePart", new String[]{"jetbrains.mpslite.structure.PropertyPart"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.PropertyPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 2140911984:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.TypePart", new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.TypePart", new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 1547490076:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConceptContainer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -1971525092:
@@ -70,7 +70,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case -187385154:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BlockConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 771570463:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BlockBodyPart", new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BlockBodyPart", new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 280085025:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BlockReference", new String[]{"jetbrains.mpslite.structure.MPSLiteConceptReference"}, new String[]{"jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mpslite.structure.MPSLiteConceptReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:

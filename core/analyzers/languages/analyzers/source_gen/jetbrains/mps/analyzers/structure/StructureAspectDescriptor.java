@@ -60,7 +60,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 2019025762:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.AnalyzerRunnerType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
       case -1382799965:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.AnalyzerRunnerAnalyzeOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.AnalyzerRunnerAnalyzeOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
       case -338765052:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.AnalyzerRunnerCreator", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
       case -1192849397:

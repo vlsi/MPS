@@ -18,7 +18,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   public StructureDescriptor getDescriptor(String conceptFqName) {
     switch ((conceptFqName).hashCode()) {
       case -835008139:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.lang.core.structure.BaseConcept"});
       case -1499134616:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"});
       case 833311062:

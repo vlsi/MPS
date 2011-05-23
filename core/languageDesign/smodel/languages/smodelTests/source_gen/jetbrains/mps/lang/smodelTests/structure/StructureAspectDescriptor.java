@@ -24,7 +24,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 1791188778:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.smodelTests.structure.Root", new String[]{"jetbrains.mps.lang.smodelTests.structure.NamedConcept"}, new String[]{"jetbrains.mps.lang.smodelTests.structure.NamedConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -1210265860:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", new String[]{"jetbrains.mps.lang.smodelTests.structure.Child"}, new String[]{"jetbrains.mps.lang.smodelTests.structure.NamedConcept", "jetbrains.mps.lang.smodelTests.structure.Child"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", new String[]{"jetbrains.mps.lang.smodelTests.structure.Child"}, new String[]{"jetbrains.mps.lang.smodelTests.structure.Child", "jetbrains.mps.lang.smodelTests.structure.NamedConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -59084354:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 70151991:

@@ -4,7 +4,7 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2bgrm0aouxeanw6i3jhquy2lnp9aasq" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-etl4vy3x9i5j3gj1thel9p2s9urugzu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1gkeb1p3nre6vv4mk7tadrshq8xe5j7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hnn0nxmeykq8t7qoo8n8phnuo0ila4" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
@@ -273,7 +273,6 @@
   </source>
   <source id="3321051580269925631" name="ShellScript" hash="-7uf5sc8ogvx5sgpw2r8ewx3nzt6zjmr">
     <dep root="3321051580269917239" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109506263695" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -293,7 +292,6 @@
   </source>
   <source id="3321051580270055527" name="SimpleCommand" hash="2bykfebfuirkgv0lbp9jbsqwoxglryt">
     <dep root="3321051580272063536" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="7633559109506263695" />
     <dep root="9034131902187955344" />
@@ -378,7 +376,6 @@
   <source id="7633559109504426807" name="AbstractLoopCommand" hash="-6sa6oqc7zw5ehr3xgchum27s823lglg">
     <dep root="3321051580269917239" />
     <dep root="4857814468237560638" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -459,7 +456,6 @@
     <file name="ForeachCommand.java" />
   </source>
   <source id="7633559109506263695" name="VariableNameDeclaration" hash="abch8q6d5scwm1d59xst6frxa0tcp2c">
-    <dep root="4857814468243308834" />
     <dep root="9034131902187955342" />
     <dep root="9034131902187955344" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -506,7 +502,6 @@
   <source id="7633559109508737477" name="IfCommand" hash="-7x32jzbskhind9vldad15d9pawub5zm">
     <dep root="3321051580269917239" />
     <dep root="4857814468237560638" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="7633559109508737482" />
     <dep root="9034131902187955344" />
@@ -563,7 +558,6 @@
   </source>
   <source id="7633559109511075340" name="CaseCommand" hash="54g8g4ybppe0449cx6zzic3le1zkeyy">
     <dep root="4857814468237560638" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="7633559109510962907" />
     <dep root="8353259571483884165" />
@@ -635,7 +629,6 @@
     <dep root="3321051580269917239" />
     <dep root="3321051580272063536" />
     <dep root="4857814468237560638" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="7633559109506263695" />
     <dep root="9034131902187955344" />
@@ -657,7 +650,6 @@
   <source id="7633559109512908785" name="GroupingCommand" hash="t5mtifg0yatufsgs7fzc90ob4w1s3i">
     <dep root="3321051580269917239" />
     <dep root="4857814468237560638" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -701,7 +693,6 @@
   </source>
   <source id="3999172467437060443" name="BinaryArithmeticExpression" hash="-567uy903qxwzxk2a2ek8v8f7aqyot4h">
     <dep root="3263637656461715717" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109507193260" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -782,7 +773,6 @@
   <source id="3999172467437635795" name="ArithmeticCommand" hash="-ed4e08kf1x8omw99x3xa7vsaneiwhgw">
     <dep root="4515773109209587383" />
     <dep root="4857814468237560638" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="7633559109507193260" />
     <dep root="9034131902187955344" />
@@ -1376,7 +1366,6 @@
   </source>
   <source id="3999172467442053841" name="BasicParameterExpansion" hash="-qzeyopfheaqow7naglcik6gqjd2j2f">
     <dep root="3147078024759753552" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109506263695" />
     <dep root="7633559109507193260" />
     <dep root="8353259571485353278" />
@@ -1399,7 +1388,6 @@
   <source id="3999172467442724020" name="ArithmeticExpansion" hash="-6ruhipjj6plcxpcpcil0z6xvxy2dhb2">
     <dep root="3147078024759753552" />
     <dep root="4515773109209587383" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109507193260" />
     <dep root="8353259571485353278" />
     <dep root="9034131902187955344" />
@@ -1420,7 +1408,6 @@
   </source>
   <source id="8353259571483751823" name="TildeExpansion" hash="-66675m9qn5rv3g27b3v118u4dwekphd">
     <dep root="3147078024759753552" />
-    <dep root="4857814468243308834" />
     <dep root="8353259571485353278" />
     <dep root="9034131902187955344" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1458,7 +1445,6 @@
     <file name="IGeneralizedWordUnit.java" />
   </source>
   <source id="8353259571485353280" name="SimpleWord" hash="yb8lmtfp0wx71mkrpysuq59vmls31l">
-    <dep root="4857814468243308834" />
     <dep root="8353259571485353278" />
     <dep root="9034131902187955344" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1476,7 +1462,6 @@
   </source>
   <source id="4857814468235197585" name="BaseCommandSubstitution" hash="-1zoisjxonav72xedi44mg4ap6i5e05c">
     <dep root="3321051580269894529" />
-    <dep root="4857814468243308834" />
     <dep root="8353259571485353278" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1497,7 +1482,6 @@
   <source id="4857814468235197608" name="QuotesCommandSubstitution" hash="d1sxai7un90lchq42ccr28o24kovuwc">
     <dep root="3147078024759753552" />
     <dep root="4857814468235197585" />
-    <dep root="4857814468243308834" />
     <dep root="9034131902187955344" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -1582,7 +1566,6 @@
     <dep root="4857814468235439120" />
     <dep root="4857814468237147395" />
     <dep root="4857814468237475269" />
-    <dep root="4857814468243308834" />
     <dep root="8353259571483884165" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1616,7 +1599,6 @@
     <dep root="4857814468235439120" />
     <dep root="4857814468237147395" />
     <dep root="4857814468237475269" />
-    <dep root="4857814468243308834" />
     <dep root="8353259571483884165" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1638,7 +1620,6 @@
     <dep root="4857814468235439120" />
     <dep root="4857814468237147395" />
     <dep root="4857814468237475269" />
-    <dep root="4857814468243308834" />
     <dep root="8353259571483884165" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1686,7 +1667,6 @@
   <source id="4857814468237475269" name="HereStringRedirection" hash="5yky168o2rq4nd28880h9vecwranygy">
     <dep root="4857814468235439120" />
     <dep root="4857814468237147395" />
-    <dep root="4857814468243308834" />
     <dep root="8353259571483884165" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1743,7 +1723,6 @@
   <source id="4857814468237520690" name="FunctionDeclaration" hash="-eu6zcl1osvyh06gaxqgb7rrpgbhk4sn">
     <dep root="4857814468235439120" />
     <dep root="4857814468237560638" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="7633559109506263695" />
     <dep root="9034131902187955344" />
@@ -1787,7 +1766,6 @@
   </source>
   <source id="4857814468241254994" name="ExternalCommandDeclaration" hash="7hfo0frxog9rv2s30f4qjbcp8rr2xiw">
     <dep root="4857814468241255113" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109506263695" />
     <dep root="9034131902187955344" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1990,7 +1968,6 @@
   </source>
   <source id="4857814468243911286" name="Argument" hash="-avh1u6u965gsj3prozqjbp8552syn6m">
     <dep root="4857814468241255113" />
-    <dep root="4857814468243308834" />
     <dep root="4857814468243514698" />
     <dep root="7633559109506263695" />
     <dep root="9034131902187955344" />
@@ -2036,7 +2013,6 @@
   </source>
   <source id="3147078024747082354" name="ConditionalCommand" hash="8p8rl3uba0n1te3053cahymoe8ptg5s">
     <dep root="4857814468237560638" />
-    <dep root="4857814468243308834" />
     <dep root="7633559109504426816" />
     <dep root="9034131902187955344" />
     <dep root="9034131902191439561" />
@@ -2057,7 +2033,6 @@
   </source>
   <source id="3147078024751877531" name="QuotedWord" hash="-3ycsk6nei5qru2a3v4u84wzd2zjyvwy">
     <dep root="3147078024759753552" />
-    <dep root="4857814468243308834" />
     <dep root="8353259571483884165" />
     <dep root="8353259571485353278" />
     <dep root="9034131902187955344" />
@@ -2143,7 +2118,6 @@
   <source id="8457058248751696156" name="CommentedCommandList" hash="8hycno4thdxmrjmdwf2vfzk39aqfde3">
     <dep root="3321051580269894529" />
     <dep root="4515773109208483475" />
-    <dep root="4857814468243308834" />
     <dep root="8457058248751600625" />
     <dep root="9034131902187955344" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -2220,7 +2194,6 @@
   </source>
   <source id="8474643070110067628" name="CommentedFollowingCommandList" hash="-81zub86o7pcy6y7gb4i3zlpkcw6ghsn">
     <dep root="4515773109208483475" />
-    <dep root="4857814468243308834" />
     <dep root="8474643070102636489" />
     <dep root="8474643070110067629" />
     <dep root="9034131902187955344" />
@@ -2310,7 +2283,6 @@
   </source>
   <source id="8457058248751600624" name="CommentedText" hash="-fe9fuo1mtzsjzl7719uijnu5bo7e5q">
     <dep root="4515773109208483475" />
-    <dep root="4857814468243308834" />
     <dep root="9034131902187955344" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -2362,7 +2334,6 @@
     <file name="LValue.java" />
   </source>
   <source id="9034131902187955344" name="VariableReference" hash="-58e5csnnmig2x54oqhioq5ew13qa2a5">
-    <dep root="4857814468243308834" />
     <dep root="7633559109506263695" />
     <dep root="8353259571485353278" />
     <dep root="9034131902187955342" />

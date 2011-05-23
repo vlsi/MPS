@@ -18,7 +18,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   public StructureDescriptor getDescriptor(String conceptFqName) {
     switch ((conceptFqName).hashCode()) {
       case 2066284946:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.GWTModule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.GWTModule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"});
       case 82464764:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.EntryPoint", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 36823574:
