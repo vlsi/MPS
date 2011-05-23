@@ -30,7 +30,7 @@ public class CommandLineGenerator {
       SetSequence.fromSet(classpathItems).addElement(getSvnkitJar());
     }
 
-    return "\"" + System.getProperty("java.home") + File.separator + "bin" + File.separator + "java\" -cp " + StringUtils.join(classpathItems, File.pathSeparator) + MergeDriverMain.class.getName();
+    return "\"" + System.getProperty("java.home") + File.separator + "bin" + File.separator + "java\" -cp " + StringUtils.join(classpathItems, File.pathSeparator) + " " + MergeDriverMain.class.getName();
   }
 
   /*package*/ static String getSvnkitJar() {
