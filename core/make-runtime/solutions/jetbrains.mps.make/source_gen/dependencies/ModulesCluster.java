@@ -106,7 +106,11 @@ __switch__:
                         public Iterable<ModuleReference> translate(ModuleReference mr) {
                           return MapSequence.fromMap(allDeps).get(mr).required;
                         }
-                      }).intersect(Sequence.fromIterable(prev.value)).isEmpty()) {
+                      }).intersect(Sequence.fromIterable(prev.value).<ModuleReference>translate(new ITranslator2<ModuleReference, ModuleReference>() {
+                        public Iterable<ModuleReference> translate(ModuleReference mr) {
+                          return MapSequence.fromMap(allDeps).get(mr).dependent;
+                        }
+                      })).isEmpty()) {
                         this.__CP__ = 9;
                         break;
                       }
@@ -141,7 +145,7 @@ __switch__:
                       this.__CP__ = 12;
                       break;
                     case 13:
-                      prev.value = null;
+                      prev.value = cycle;
                       this.__CP__ = 1;
                       break;
                     default:
