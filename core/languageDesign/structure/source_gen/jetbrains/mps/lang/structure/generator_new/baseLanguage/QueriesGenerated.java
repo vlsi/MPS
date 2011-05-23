@@ -37,6 +37,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -1108,11 +1109,19 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1281791650135608799(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SetSequence.fromSet(AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).o1).toListSequence();
+    return SetSequence.fromSet(AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).o1).toListSequence().sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return NameUtil.nodeFQName(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1281791650135608821(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SetSequence.fromSet(AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).o2).toListSequence();
+    return SetSequence.fromSet(AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).o2).toListSequence().sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return NameUtil.nodeFQName(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1281791650135608648(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
