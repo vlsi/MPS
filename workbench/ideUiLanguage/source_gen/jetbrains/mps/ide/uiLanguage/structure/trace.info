@@ -6,10 +6,10 @@
   <unitInfo fileName="DisposeDialogExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression" />
   <unitInfo fileName="ReportErrorExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression" />
   <unitInfo fileName="ReportErrorStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="41" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="IDEDialogButton.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" />
   <unitInfo fileName="DialogDimensions.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.DialogDimensions" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.StructureAspectDescriptor" />
   <unitInfo fileName="IDEDialog.java" startLine="16" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" />
 </debugInfo>
 

@@ -12,118 +12,83 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.ui.structure.UIObjectStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new UIObjectStatement_Constraints());
+    switch ((fqName).hashCode()) {
+      case -457922819:
+        return new DataHolderConstraintsDescriptor(new UIObjectStatement_Constraints());
+      case 1661919716:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.View"));
+      case 15032219:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.Controller"));
+      case -298577037:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.Validator"));
+      case -1193887063:
+        return new DataHolderConstraintsDescriptor(new BeanPropertyView_Constraints());
+      case -1295710024:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ValidateBlock"));
+      case -1002931689:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ValidatingView"));
+      case 2062760961:
+        return new DataHolderConstraintsDescriptor(new ViewBinding_Constraints());
+      case -2006705700:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ExpressionView"));
+      case -180538774:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ControllerBinding"));
+      case -341968940:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.InlineController"));
+      case 1475002901:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.EventHandingBlock"));
+      case 906796104:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.FunctionParameterDeclaration"));
+      case 842637589:
+        return new DataHolderConstraintsDescriptor(new EventType_Constraints());
+      case -1618758475:
+        return new DataHolderConstraintsDescriptor(new EventPropertyAccessOp_Constraints());
+      case 1973891664:
+        return new DataHolderConstraintsDescriptor(new ContainerCompartment_Constraints());
+      case 1827164396:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.UIObjectType"));
+      case 380843125:
+        return new DataHolderConstraintsDescriptor(new ChildAspect_Constraints());
+      case 1529100028:
+        return new DataHolderConstraintsDescriptor(new ContainerType_Constraints());
+      case -1355391800:
+        return new DataHolderConstraintsDescriptor(new EnclosingContextCompartmentExpression_Constraints());
+      case 1962085648:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CompartmentReferenceExpression"));
+      case 1875833483:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CompartmentProviderStatement"));
+      case 544695427:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IUIObjectContextProvider"));
+      case 394155994:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsStatement"));
+      case 2016979633:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsVariable"));
+      case -1752831463:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.RemoveUIObjectStatement"));
+      case 855321498:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsVariableReference"));
+      case 362362187:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ClearCompartmentStatement"));
+      case 1502433859:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.AppendUIObjectStatement"));
+      case 1134637188:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.InsertUIObjectStatement"));
+      case -1138810823:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ForceLayoutStatement"));
+      case -486247924:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.UIObjectProviderStatement"));
+      case 1752318113:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CreateUIObjectStatement"));
+      case -2041417056:
+        return new DataHolderConstraintsDescriptor(new CallUIActionOperation_Constraints());
+      case 210015515:
+        return new DataHolderConstraintsDescriptor(new AccessUIPropertyOperation_Constraints());
+      case 172798653:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IUIObjectDeclaration"));
+      case 702069977:
+        return new DataHolderConstraintsDescriptor(new UIObjectReference_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.ui.structure.View".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.View"));
-    }
-    if ("jetbrains.mps.ui.structure.Controller".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.Controller"));
-    }
-    if ("jetbrains.mps.ui.structure.Validator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.Validator"));
-    }
-    if ("jetbrains.mps.ui.structure.BeanPropertyView".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BeanPropertyView_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.ValidateBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ValidateBlock"));
-    }
-    if ("jetbrains.mps.ui.structure.ValidatingView".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ValidatingView"));
-    }
-    if ("jetbrains.mps.ui.structure.ViewBinding".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ViewBinding_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.ExpressionView".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ExpressionView"));
-    }
-    if ("jetbrains.mps.ui.structure.ControllerBinding".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ControllerBinding"));
-    }
-    if ("jetbrains.mps.ui.structure.InlineController".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.InlineController"));
-    }
-    if ("jetbrains.mps.ui.structure.EventHandingBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.EventHandingBlock"));
-    }
-    if ("jetbrains.mps.ui.structure.FunctionParameterDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.FunctionParameterDeclaration"));
-    }
-    if ("jetbrains.mps.ui.structure.EventType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EventType_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.EventPropertyAccessOp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EventPropertyAccessOp_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.ContainerCompartment".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ContainerCompartment_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.UIObjectType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.UIObjectType"));
-    }
-    if ("jetbrains.mps.ui.structure.ChildAspect".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ChildAspect_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.ContainerType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ContainerType_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EnclosingContextCompartmentExpression_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.CompartmentReferenceExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CompartmentReferenceExpression"));
-    }
-    if ("jetbrains.mps.ui.structure.CompartmentProviderStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CompartmentProviderStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.IUIObjectContextProvider".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IUIObjectContextProvider"));
-    }
-    if ("jetbrains.mps.ui.structure.IterateContentsStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.IterateContentsVariable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsVariable"));
-    }
-    if ("jetbrains.mps.ui.structure.RemoveUIObjectStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.RemoveUIObjectStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.IterateContentsVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsVariableReference"));
-    }
-    if ("jetbrains.mps.ui.structure.ClearCompartmentStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ClearCompartmentStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.AppendUIObjectStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.AppendUIObjectStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.InsertUIObjectStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.InsertUIObjectStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.ForceLayoutStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ForceLayoutStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.UIObjectProviderStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.UIObjectProviderStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.CreateUIObjectStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CreateUIObjectStatement"));
-    }
-    if ("jetbrains.mps.ui.structure.CallUIActionOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CallUIActionOperation_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.AccessUIPropertyOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AccessUIPropertyOperation_Constraints());
-    }
-    if ("jetbrains.mps.ui.structure.IUIObjectDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IUIObjectDeclaration"));
-    }
-    if ("jetbrains.mps.ui.structure.UIObjectReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new UIObjectReference_Constraints());
-    }
-
-    return null;
   }
 }

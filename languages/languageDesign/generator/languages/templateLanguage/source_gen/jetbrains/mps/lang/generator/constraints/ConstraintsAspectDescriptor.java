@@ -12,241 +12,165 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.generator.structure.PropertyMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PropertyMacro"));
+    switch ((fqName).hashCode()) {
+      case 240434391:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PropertyMacro"));
+      case -517017398:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.NodeMacro"));
+      case -984683167:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReferenceMacro"));
+      case -19379584:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
+      case 880434408:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingConfiguration"));
+      case 1323014922:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFragment"));
+      case -694200722:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateSwitch"));
+      case 1845354200:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SwitchMacro"));
+      case 270361725:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateSwitchReference"));
+      case 983256987:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"));
+      case -706638209:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CopySrcListMacro"));
+      case 865059471:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IfMacro"));
+      case 290450792:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.LoopMacro"));
+      case -1026581822:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"));
+      case 1578490278:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcListMacro"));
+      case 1688157754:
+        return new DataHolderConstraintsDescriptor(new CreateRootRule_Constraints());
+      case 1951843638:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CreateRootRule_Condition"));
+      case 1708728181:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition"));
+      case 788616901:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode"));
+      case 16943929:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.BaseMappingRule"));
+      case 1001561066:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Weaving_MappingRule"));
+      case 809657054:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Reduction_MappingRule"));
+      case 145224461:
+        return new DataHolderConstraintsDescriptor(new Root_MappingRule_Constraints());
+      case 1503866734:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue"));
+      case 1260041018:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue"));
+      case 2081911779:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent"));
+      case 2051280653:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent"));
+      case -1285446837:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IfMacro_Condition"));
+      case 1225539479:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"));
+      case 1828840154:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery"));
+      case -802631357:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery"));
+      case -1963258745:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.RuleConsequence"));
+      case -740236117:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"));
+      case 717173599:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DismissTopMappingRule"));
+      case 136762859:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
+      case 1460916875:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"));
+      case -1301128236:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.GeneratorMessage"));
+      case -2142679212:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction"));
+      case 450186907:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
+      case 187173804:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery"));
+      case 846503888:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode"));
+      case -2032736564:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery"));
+      case 626205867:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode"));
+      case -193915147:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode"));
+      case 251441700:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IncludeMacro"));
+      case 117647253:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"));
+      case -205156606:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineSwitch_Case"));
+      case 388371737:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScript"));
+      case 110048986:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock"));
+      case -1252329934:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScriptReference"));
+      case -903726924:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingLabelDeclaration"));
+      case 897581757:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence"));
+      case 170085951:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateQueryBase"));
+      case 635777325:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DropRootRule"));
+      case -1452546967:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DropRootRule_Condition"));
+      case -1817930092:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"));
+      case -738651478:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.AbstractMacro"));
+      case -1153292341:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration"));
+      case -1484299922:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"));
+      case -277709087:
+        return new DataHolderConstraintsDescriptor(new ITemplateCall_Constraints());
+      case -4058871:
+        return new DataHolderConstraintsDescriptor(new TemplateArgumentQueryExpression_Constraints());
+      case -2017778799:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"));
+      case 234268125:
+        return new DataHolderConstraintsDescriptor(new TemplateArgumentPatternVarRefExpression_Constraints());
+      case 956292591:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReductionRule"));
+      case -1595525702:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"));
+      case 1715606119:
+        return new DataHolderConstraintsDescriptor(new TemplateArgumentPropertyPatternRefExpression_Constraints());
+      case 1355318156:
+        return new DataHolderConstraintsDescriptor(new TemplateArgumentLinkPatternRefExpression_Constraints());
+      case 914250388:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateCallMacro"));
+      case 1296111614:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
+      case 2058499135:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IGeneratorParameter"));
+      case 1111017602:
+        return new DataHolderConstraintsDescriptor(new GeneratorDescriptor_Constraints());
+      case 54979509:
+        return new DataHolderConstraintsDescriptor(new GeneratorParameterReference_Constraints());
+      case 444291626:
+        return new DataHolderConstraintsDescriptor(new TemplateArgumentParameterExpression_Constraints());
+      case 1859510884:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition"));
+      case -1536745640:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.LabelMacro"));
+      case -387170701:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InsertMacro"));
+      case 777899102:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery"));
+      case -2078831158:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.WeaveMacro"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.generator.structure.NodeMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.NodeMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.ReferenceMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReferenceMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MappingConfiguration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingConfiguration"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateFragment".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFragment"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateSwitch".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateSwitch"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.SwitchMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SwitchMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateSwitchReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateSwitchReference"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.CopySrcListMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CopySrcListMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.IfMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IfMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.LoopMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.LoopMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MapSrcListMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcListMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.CreateRootRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CreateRootRule_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.CreateRootRule_Condition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CreateRootRule_Condition"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.BaseMappingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.BaseMappingRule"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.Weaving_MappingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Weaving_MappingRule"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.Reduction_MappingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Reduction_MappingRule"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.Root_MappingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Root_MappingRule_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.IfMacro_Condition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IfMacro_Condition"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.RuleConsequence".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.RuleConsequence"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.DismissTopMappingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DismissTopMappingRule"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.GeneratorMessage".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.GeneratorMessage"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.IncludeMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IncludeMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.InlineSwitch_Case".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineSwitch_Case"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MappingScript".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScript"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MappingScriptReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScriptReference"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MappingLabelDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingLabelDeclaration"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateQueryBase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateQueryBase"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.DropRootRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DropRootRule"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.DropRootRule_Condition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DropRootRule_Condition"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.AbstractMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.AbstractMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.ITemplateCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ITemplateCall_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TemplateArgumentQueryExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateArgumentQuery".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TemplateArgumentPatternVarRefExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.ReductionRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReductionRule"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TemplateArgumentPropertyPatternRefExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TemplateArgumentLinkPatternRefExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateCallMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateCallMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.IGeneratorParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IGeneratorParameter"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.GeneratorDescriptor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GeneratorDescriptor_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.GeneratorParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GeneratorParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TemplateArgumentParameterExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.LabelMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.LabelMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.InsertMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InsertMacro"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery"));
-    }
-    if ("jetbrains.mps.lang.generator.structure.WeaveMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.WeaveMacro"));
-    }
-
-    return null;
   }
 }

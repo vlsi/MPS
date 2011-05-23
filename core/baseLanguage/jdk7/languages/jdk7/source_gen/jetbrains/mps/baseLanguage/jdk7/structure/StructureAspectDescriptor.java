@@ -16,8 +16,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    switch (hash) {
+    switch ((conceptFqName).hashCode()) {
       case -1627200938:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.SwitchStatement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.SwitchStatement"});
       default:

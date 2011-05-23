@@ -12,34 +12,27 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TypeExtension_Constraints());
+    switch ((fqName).hashCode()) {
+      case 1246147902:
+        return new DataHolderConstraintsDescriptor(new TypeExtension_Constraints());
+      case 129526999:
+        return new DataHolderConstraintsDescriptor(new ExtensionMethodCall_Constraints());
+      case -1723369247:
+        return new DataHolderConstraintsDescriptor(new ExtensionMethodDeclaration_Constraints());
+      case -601699182:
+        return new DataHolderConstraintsDescriptor(new ThisExtensionExpression_Constraints());
+      case -726165355:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"));
+      case 1296239129:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"));
+      case -492181129:
+        return new DataHolderConstraintsDescriptor(new ExtensionStaticFieldReference_Constraints());
+      case 1743013030:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration"));
+      case 818556828:
+        return new DataHolderConstraintsDescriptor(new LocalExtendedMethodCall_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtensionMethodCall_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtensionMethodDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ThisExtensionExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"));
-    }
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"));
-    }
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtensionStaticFieldReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration"));
-    }
-    if ("jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LocalExtendedMethodCall_Constraints());
-    }
-
-    return null;
   }
 }

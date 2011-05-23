@@ -19,8 +19,8 @@
   <unitInfo fileName="IntegerConceptProperty.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" />
   <unitInfo fileName="AggregationConceptLink.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AggregationConceptLink" />
   <unitInfo fileName="ReferenceConceptLink.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="110" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="InterfaceConceptDeclaration.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="83" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="AnnotationLinkCardinality_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkCardinality_PropertySupport" />
   <unitInfo fileName="EnumerationMemberIdentifierPolicy_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.EnumerationMemberIdentifierPolicy_PropertySupport" />
   <unitInfo fileName="AnnotationLinkStereotype_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkStereotype_PropertySupport" />
@@ -39,9 +39,9 @@
   <unitInfo fileName="EnumerationDataTypeDeclaration.java" startLine="12" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" />
   <unitInfo fileName="DeprecatedNodeAnnotation.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" />
   <unitInfo fileName="PropertyDeclaration.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor" />
   <unitInfo fileName="LinkDeclaration.java" startLine="14" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
   <unitInfo fileName="AnnotationLinkDeclaration.java" startLine="15" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor" />
   <unitInfo fileName="AbstractConceptDeclaration.java" startLine="15" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
 </debugInfo>
 

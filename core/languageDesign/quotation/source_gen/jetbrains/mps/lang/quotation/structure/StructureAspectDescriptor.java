@@ -16,35 +16,31 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == 1297092609) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.core.structure.IMetaLevelChanger");
+    switch ((conceptFqName).hashCode()) {
+      case 1297092609:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger"});
+      case 1908060675:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.Antiquotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -142443611:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.Quotation", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger"});
+      case 1042705766:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.LinkAttribute"});
+      case -1479332475:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.ListAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 2120826158:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.IMetaLevelChanger"});
+      default:
+        return null;
     }
-    if (hash == 1908060675) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation");
-    }
-    if (hash == -142443611) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger");
-    }
-    if (hash == 1042705766) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation");
-    }
-    if (hash == -1479332475) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation");
-    }
-    if (hash == 2120826158) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -59,12 +55,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

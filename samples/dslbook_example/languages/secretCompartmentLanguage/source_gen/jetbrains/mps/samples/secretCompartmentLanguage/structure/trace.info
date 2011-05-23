@@ -2,10 +2,10 @@
 <debugInfo>
   <unitInfo fileName="SecretCompartmentLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.SecretCompartmentLanguage_Language" />
   <unitInfo fileName="HandleEvent.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="44" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Transition.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="StateMachineTestMethod.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Event.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.Event" />
   <unitInfo fileName="StateMachineTest.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest" />
   <unitInfo fileName="State.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.State" />

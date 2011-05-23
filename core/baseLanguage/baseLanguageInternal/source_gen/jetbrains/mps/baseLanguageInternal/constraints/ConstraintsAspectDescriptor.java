@@ -12,67 +12,49 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"));
+    switch ((fqName).hashCode()) {
+      case -1776008649:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"));
+      case -748575031:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference"));
+      case -1202134450:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"));
+      case -181962325:
+        return new DataHolderConstraintsDescriptor(new InternalPartialInstanceMethodCall_Constraints());
+      case -332116314:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression"));
+      case 1164317125:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"));
+      case 1895497509:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"));
+      case -1419340984:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference"));
+      case -569834106:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression"));
+      case 2121366688:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression"));
+      case 1991186635:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression"));
+      case -1043226863:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"));
+      case 2027888821:
+        return new DataHolderConstraintsDescriptor(new ExtractStatementListInnerExpression_Constraints());
+      case -338199173:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression"));
+      case -1222117134:
+        return new DataHolderConstraintsDescriptor(new ExtractStaticMethod_CallExpression_Constraints());
+      case -971598052:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"));
+      case 525429288:
+        return new DataHolderConstraintsDescriptor(new ExtractStaticInnerClassCreator_Constraints());
+      case 447898724:
+        return new DataHolderConstraintsDescriptor(new ExtractStaticInnerClassConcept_Constraints());
+      case -1194740616:
+        return new DataHolderConstraintsDescriptor(new ExtractToConstantRefExpression_Constraints());
+      case 484023672:
+        return new DataHolderConstraintsDescriptor(new WeakClassReference_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new InternalPartialInstanceMethodCall_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtractStatementListInnerExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtractStaticMethod_CallExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"));
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtractStaticInnerClassCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtractStaticInnerClassConcept_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtractToConstantRefExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguageInternal.structure.WeakClassReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new WeakClassReference_Constraints());
-    }
-
-    return null;
   }
 }

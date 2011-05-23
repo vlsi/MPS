@@ -12,586 +12,395 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptEditorDeclaration_Constraints());
+    switch ((fqName).hashCode()) {
+      case 745057271:
+        return new DataHolderConstraintsDescriptor(new ConceptEditorDeclaration_Constraints());
+      case -1129446392:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.EditorCellModel"));
+      case 1394538440:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Collection"));
+      case 709193550:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Constant"));
+      case 283863423:
+        return new DataHolderConstraintsDescriptor(new CellModel_Property_Constraints());
+      case -1506824117:
+        return new DataHolderConstraintsDescriptor(new CellModel_RefNode_Constraints());
+      case -1424181367:
+        return new DataHolderConstraintsDescriptor(new CellModel_RefNodeList_Constraints());
+      case -1615350269:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"));
+      case -607586658:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Error"));
+      case -1709770341:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Custom"));
+      case 1184967804:
+        return new DataHolderConstraintsDescriptor(new EditorComponentDeclaration_Constraints());
+      case -467466605:
+        return new DataHolderConstraintsDescriptor(new CellModel_Component_Constraints());
+      case -1719233912:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel"));
+      case -2037420019:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BaseEditorComponent"));
+      case 766537481:
+        return new DataHolderConstraintsDescriptor(new CellKeyMapDeclaration_Constraints());
+      case -1507161173:
+        return new DataHolderConstraintsDescriptor(new CellModel_RefCell_Constraints());
+      case -2045591611:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.InlineEditorComponent"));
+      case -1769667853:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Alternation"));
+      case 89349341:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_JComponent"));
+      case -238034338:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout"));
+      case -663792443:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal"));
+      case -1025383337:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Vertical"));
+      case 613488271:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Flow"));
+      case -892267415:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"));
+      case 1602151694:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"));
+      case 473535588:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMapItem"));
+      case 477143718:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"));
+      case -528924920:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction"));
+      case -1405387126:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode"));
+      case -617327831:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes"));
+      case 1253041480:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_keyEvent"));
+      case 287932751:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction"));
+      case 955382719:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction"));
+      case 1127396723:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
+      case -310495608:
+        return new DataHolderConstraintsDescriptor(new CellActionMapDeclaration_Constraints());
+      case -10506811:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMapItem"));
+      case -1101001824:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction"));
+      case 61073707:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode"));
+      case -604058127:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Image"));
+      case 336223750:
+        return new DataHolderConstraintsDescriptor(new CellModel_WithRole_Constraints());
+      case -1371402300:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"));
+      case -193469720:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"));
+      case -532046106:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"));
+      case 1531027222:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"));
+      case -757544151:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues"));
+      case -653428962:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext"));
+      case -1415586751:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild"));
+      case -1666741440:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild"));
+      case -2103841875:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query"));
+      case 1943421918:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create"));
+      case -400776947:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject"));
+      case -1314834353:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode"));
+      case 1682714693:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText"));
+      case -710731794:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText"));
+      case -935965342:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuDescriptor"));
+      case 2018066491:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"));
+      case -959640400:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"));
+      case 1102372371:
+        return new DataHolderConstraintsDescriptor(new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints());
+      case 492547294:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"));
+      case -657684547:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group"));
+      case -330648828:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup"));
+      case 411294465:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"));
+      case 983720426:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query"));
+      case 26967066:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create"));
+      case -653876613:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept"));
+      case 1064052196:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query"));
+      case -817955247:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item"));
+      case -1845428534:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create"));
+      case 2095074686:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group"));
+      case 1157989737:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler"));
+      case -763639756:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item"));
+      case -718411233:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler"));
+      case -713221974:
+        return new DataHolderConstraintsDescriptor(new CellMenuComponent_Constraints());
+      case -1267022100:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature"));
+      case -2080000536:
+        return new DataHolderConstraintsDescriptor(new CellMenuComponentFeature_Property_Constraints());
+      case 2137491853:
+        return new DataHolderConstraintsDescriptor(new CellMenuComponentFeature_Link_Constraints());
+      case 325989257:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractComponent"));
+      case 1495004195:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent"));
+      case 660236385:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"));
+      case -41375644:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_JComponent"));
+      case -531876335:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text"));
+      case 841070446:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter"));
+      case 1184620258:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter"));
+      case 940801551:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator"));
+      case 585332766:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ModelAccessor"));
+      case -955010928:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText"));
+      case -2104320540:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider"));
+      case -937906158:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Color"));
+      case -1618561513:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory"));
+      case 49933647:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath"));
+      case 436388197:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"));
+      case 240667879:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes"));
+      case -789234295:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter"));
+      case -276683046:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode"));
+      case -1355045345:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"));
+      case 1454684512:
+        return new DataHolderConstraintsDescriptor(new StyleSheet_Constraints());
+      case 302701560:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyleSheetClass"));
+      case -1332309972:
+        return new DataHolderConstraintsDescriptor(new StyleClassItem_Constraints());
+      case 228703563:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ColorStyleClassItem"));
+      case 489404234:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"));
+      case 2141789576:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"));
+      case 1582504893:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"));
+      case 887157159:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem"));
+      case -948823497:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"));
+      case -1966093303:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"));
+      case -1990267443:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem"));
+      case 2041877596:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem"));
+      case 380866276:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"));
+      case -781760708:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"));
+      case 1870723504:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.EditableStyleClassItem"));
+      case 218590977:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem"));
+      case 1416526387:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyleSheetClassReference"));
+      case -1544921386:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Indent"));
+      case 116336895:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_BlockStart"));
+      case 612397240:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"));
+      case -610539229:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Block"));
+      case -780777511:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectOperation"));
+      case -489019877:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectParameter"));
+      case 725637362:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectPositionParameter"));
+      case -2042187921:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CaretPositionParameter"));
+      case 1999931571:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem"));
+      case -1048646884:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"));
+      case 51911312:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"));
+      case 1101248523:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem"));
+      case -824304361:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem"));
+      case 2024114308:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FloatStyleClassItem"));
+      case -76402080:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"));
+      case -841299305:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
+      case 150560891:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem"));
+      case 1795533233:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem"));
+      case -1866995787:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PositionStyleClassItem"));
+      case -1967881964:
+        return new DataHolderConstraintsDescriptor(new CellModel_TransactionalProperty_Constraints());
+      case -1206085730:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler"));
+      case 1217646304:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue"));
+      case -1898768633:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue"));
+      case 1192049812:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem"));
+      case -1571821419:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old"));
+      case 467573051:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem"));
+      case -345492825:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IStyleContainer"));
+      case -622720047:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"));
+      case 1623822893:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Integer"));
+      case 1842372905:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"));
+      case 1234020297:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"));
+      case 2086850200:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"));
+      case -269517545:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"));
+      case 835198093:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IQueryFunction_Color"));
+      case -1002886584:
+        return new DataHolderConstraintsDescriptor(new RGBColor_Constraints());
+      case 1764849372:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor"));
+      case 1414317540:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"));
+      case 466196048:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem"));
+      case -455968316:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem"));
+      case -326389513:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"));
+      case -709141847:
+        return new DataHolderConstraintsDescriptor(new NavigatableReferenceStyleClassItem_Constraints());
+      case -850586636:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration"));
+      case -544692119:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
+      case 1821578670:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"));
+      case -1974490694:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem"));
+      case -1777853415:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BaseLineCell"));
+      case -858145457:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.HorizontalAlign"));
+      case -586668577:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem"));
+      case -968641520:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode"));
+      case 1452537154:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_String"));
+      case 1239101901:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
+      case -1925510258:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"));
+      case -567379962:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"));
+      case 647687141:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
+      case -1566343833:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"));
+      case -63184835:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid"));
+      case 1440346232:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem"));
+      case 527577755:
+        return new DataHolderConstraintsDescriptor(new CellModel_ReferencePresentation_Constraints());
+      case 1334480010:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem"));
+      case 1488707640:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ParametersInformationQuery"));
+      case 1745335769:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"));
+      case 1386753612:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation"));
+      case 668629220:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject"));
+      case -1669071299:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent"));
+      case 810697380:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText"));
+      case -2036833586:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AppendTextOperation"));
+      case 1437645010:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SetBoldOperation"));
+      case -1051373517:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"));
+      case -327090644:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyledTextType"));
+      case -1623494700:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DefaultBaseLine"));
+      case -335559803:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Superscript"));
+      case 1028324730:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ScriptKindClassItem"));
+      case -947708895:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode"));
+      case 1850856077:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Table"));
+      case 1037299547:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem"));
+      case -607737373:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Empty"));
+      case 270076312:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem"));
+      case -924110396:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_SNode"));
+      case -925756539:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_URL"));
+      case -1702936784:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper"));
+      case 1417937761:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.editor.structure.EditorCellModel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.EditorCellModel"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Collection".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Collection"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Constant".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Constant"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Property".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_Property_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_RefNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_RefNode_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_RefNodeList_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_ModelAccess".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Error".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Error"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Custom".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Custom"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EditorComponentDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Component".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_Component_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.BaseEditorComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BaseEditorComponent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellKeyMapDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_RefCell".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_RefCell_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.InlineEditorComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.InlineEditorComponent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Alternation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Alternation"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_JComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_JComponent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout_Vertical".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Vertical"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout_Flow".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Flow"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMapItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMapItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_keyEvent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_keyEvent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellActionMapDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellActionMapItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMapItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Image".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Image"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_WithRole".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_WithRole_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuDescriptor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuDescriptor"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellMenuComponent_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellMenuComponentFeature_Property_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellMenuComponentFeature_Link_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.AbstractComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractComponent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_JComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_JComponent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ModelAccessor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ModelAccessor"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_Color".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Color"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.StyleSheet".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new StyleSheet_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.StyleSheetClass".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyleSheetClass"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.StyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new StyleClassItem_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.ColorStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ColorStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.EditableStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.EditableStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.StyleSheetClassReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyleSheetClassReference"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Indent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Indent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_BlockStart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_BlockStart"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_BlockEnd".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Block".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Block"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.SelectOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectOperation"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.SelectParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectParameter"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.SelectPositionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectPositionParameter"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CaretPositionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CaretPositionParameter"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.FloatStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FloatStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.PositionStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PositionStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_TransactionalProperty_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.IStyleContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IStyleContainer"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_Integer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Integer"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_Underlined".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_Boolean".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.IQueryFunction_Color".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IQueryFunction_Color"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.RGBColor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RGBColor_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NavigatableReferenceStyleClassItem_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.BaseLineCell".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BaseLineCell"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.HorizontalAlign".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.HorizontalAlign"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_String".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_String"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout_Indent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_ReferencePresentation_Constraints());
-    }
-    if ("jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ParametersInformationQuery".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ParametersInformationQuery"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.AppendTextOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AppendTextOperation"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.SetBoldOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SetBoldOperation"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.StyledTextType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyledTextType"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.DefaultBaseLine".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DefaultBaseLine"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout_Superscript".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Superscript"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ScriptKindClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ScriptKindClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellLayout_Table".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Table"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_Empty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Empty"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_SNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_SNode"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.CellModel_URL".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_URL"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper"));
-    }
-    if ("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"));
-    }
-
-    return null;
   }
 }

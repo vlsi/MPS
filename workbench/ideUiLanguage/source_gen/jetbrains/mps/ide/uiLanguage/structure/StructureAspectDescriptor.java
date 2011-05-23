@@ -16,41 +16,35 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == 151769839) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.uiLanguage.structure.IComponentInstance");
+    switch ((conceptFqName).hashCode()) {
+      case 151769839:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.uiLanguage.structure.IComponentInstance"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.uiLanguage.structure.IComponentInstance"});
+      case -1952532735:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1972415012:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1305871817:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1756921597:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 452865592:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 924388382:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 1927015851:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      default:
+        return null;
     }
-    if (hash == -1952532735) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1972415012) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1305871817) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1756921597) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 452865592) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 924388382) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == 1927015851) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -65,12 +59,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

@@ -26,10 +26,10 @@
   <unitInfo fileName="EventType_Constraints.java" startLine="23" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ui.constraints.EventType_Constraints" />
   <unitInfo fileName="AccessUIPropertyOperation_Constraints.java" startLine="28" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ui.constraints.AccessUIPropertyOperation_Constraints" />
   <unitInfo fileName="CallUIActionOperation_Constraints.java" startLine="28" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ui.constraints.CallUIActionOperation_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ui.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="ContainerType_Constraints.java" startLine="29" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.ui.constraints.ContainerType_Constraints" />
   <unitInfo fileName="EventPropertyAccessOp_Constraints.java" startLine="32" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.ui.constraints.EventPropertyAccessOp_Constraints" />
   <unitInfo fileName="ContainerCompartment_Constraints.java" startLine="34" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ui.constraints.ContainerCompartment_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.ui.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="BeanPropertyView_Constraints.java" startLine="32" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.ui.constraints.BeanPropertyView_Constraints" />
   <root nodeId="1870423755832759851">
     <nodeInfo nodeId="1870423755832759855" fileName="AccessUIPropertyOperation_Constraints.java" startLine="77" startPosition="136" endLine="78" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

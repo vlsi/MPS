@@ -12,334 +12,227 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.actions.structure.NodeSubstituteActions".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NodeSubstituteActions_Constraints());
+    switch ((fqName).hashCode()) {
+      case -54139221:
+        return new DataHolderConstraintsDescriptor(new NodeSubstituteActions_Constraints());
+      case 777050736:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"));
+      case 1108864958:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"));
+      case -621933283:
+        return new DataHolderConstraintsDescriptor(new SideTransformHintSubstituteActions_Constraints());
+      case 571084514:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction"));
+      case 1982463660:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"));
+      case 93548976:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction"));
+      case 1441413840:
+        return new DataHolderConstraintsDescriptor(new NodeFactories_Constraints());
+      case -1451012430:
+        return new DataHolderConstraintsDescriptor(new NodeFactory_Constraints());
+      case -475822819:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction"));
+      case 1204834944:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode"));
+      case 1924987726:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode"));
+      case -359035828:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode"));
+      case -988358567:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.MenuBuilderPart"));
+      case 185654114:
+        return new DataHolderConstraintsDescriptor(new SubstituteMenuPart_Constraints());
+      case 1553951677:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.AddMenuPart"));
+      case -516678347:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute"));
+      case 529292976:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern"));
+      case -550366534:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler"));
+      case 603829544:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart"));
+      case -1057851259:
+        return new DataHolderConstraintsDescriptor(new ConceptPart_Constraints());
+      case 1042264256:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString"));
+      case -1944138161:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"));
+      case 1139635048:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"));
+      case 1408809543:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query"));
+      case 780136050:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String"));
+      case 988976393:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler"));
+      case 613992397:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart"));
+      case -83978455:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"));
+      case 1427720644:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper"));
+      case -832280857:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap"));
+      case -324539571:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemovePart"));
+      case -376068867:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveByConditionPart"));
+      case -664073236:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition"));
+      case -2023559800:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept"));
+      case -2129405912:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.MenuPart"));
+      case -1543718287:
+        return new DataHolderConstraintsDescriptor(new SideTransformMenuPart_Constraints());
+      case 1115700637:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode"));
+      case -1458410401:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart"));
+      case -775006000:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String"));
+      case 24213099:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler"));
+      case -633519004:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"));
+      case 309613498:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query"));
+      case 1223531964:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler"));
+      case -1446022915:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result"));
+      case -43959935:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler"));
+      case 2032288940:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"));
+      case -632103233:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveDefaultsPart"));
+      case -1030822260:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept"));
+      case -2112239929:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery"));
+      case -1534306603:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"));
+      case 1899936614:
+        return new DataHolderConstraintsDescriptor(new SubstituteNodeBuilderVariableReference_Constraints());
+      case 351175527:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer"));
+      case -79963529:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer"));
+      case 1605879452:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart"));
+      case 220571071:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptSubstitutePart"));
+      case 48960981:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart"));
+      case 32504686:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ISideTransform_String"));
+      case 1837293923:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransform_SimpleString"));
+      case -1992118510:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.Substitute_SimpleString"));
+      case -683800381:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ISubstitute_String"));
+      case -342203840:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition"));
+      case 834036476:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"));
+      case -1821846675:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart"));
+      case -341931250:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart"));
+      case -969699365:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter"));
+      case 876474138:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon"));
+      case 233172200:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon"));
+      case 1379883256:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon"));
+      case 1343363967:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"));
+      case 747603056:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer"));
+      case -1176395120:
+        return new DataHolderConstraintsDescriptor(new SideTransformVariableReference_Constraints());
+      case -1007602098:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer"));
+      case 1816357941:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart"));
+      case -223097098:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly"));
+      case -1379076187:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped"));
+      case -1349939843:
+        return new DataHolderConstraintsDescriptor(new PasteWrappers_Constraints());
+      case 233548214:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PasteWrapper"));
+      case -108796672:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap"));
+      case 738140277:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper"));
+      case -305590054:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link"));
+      case -482308667:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ActionType"));
+      case -1792759235:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SmartEditorActions"));
+      case 1188176176:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SurroundWithAction"));
+      case -59409266:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GenerateCodeAction"));
+      case 400407104:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SmartActionParameter"));
+      case 530394347:
+        return new DataHolderConstraintsDescriptor(new SmartActionParameterReference_Constraints());
+      case 1499054166:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction"));
+      case -1631079057:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"));
+      case 1827978056:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext"));
+      case 380836034:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GetActionUIFunction"));
+      case -1212544680:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction"));
+      case -991230283:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PastePostProcessor"));
+      case -1311282358:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PastePostProcessFunction"));
+      case -1203930055:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess"));
+      case 1505270138:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.CopyPreProcessor"));
+      case -1143269809:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.CopyPreProcessFunction"));
+      case -2087089666:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess"));
+      case -336356881:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal"));
+      case 592790321:
+        return new DataHolderConstraintsDescriptor(new CopyPasteHandlers_Constraints());
+      case -2128542088:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"));
+      case 194996557:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"));
+      case 533962056:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"));
+      case 866365958:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"));
+      case 507987123:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation"));
+      case 1773263859:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation"));
+      case 969238901:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation"));
+      case -1936628835:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation"));
+      case -1932924736:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SideTransformHintSubstituteActions_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NodeFactories".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NodeFactories_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.NodeFactory".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NodeFactory_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.NodeSetupFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.MenuBuilderPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.MenuBuilderPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SubstituteMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SubstituteMenuPart_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.AddMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.AddMenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptPart_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.RemovePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemovePart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.RemoveByConditionPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveByConditionPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.MenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.MenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SideTransformMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SideTransformMenuPart_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.RemoveDefaultsPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveDefaultsPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SubstituteNodeBuilderVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptSubstitutePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptSubstitutePart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ISideTransform_String".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ISideTransform_String"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SideTransform_SimpleString".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransform_SimpleString"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.Substitute_SimpleString".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.Substitute_SimpleString"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ISubstitute_String".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ISubstitute_String"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SideTransformVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SideTransformVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.PasteWrappers".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PasteWrappers_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.PasteWrapper".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PasteWrapper"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.QueryFunction_ActionType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ActionType"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SmartEditorActions".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SmartEditorActions"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SurroundWithAction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SurroundWithAction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.GenerateCodeAction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GenerateCodeAction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SmartActionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SmartActionParameter"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.SmartActionParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SmartActionParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.GetActionUIFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GetActionUIFunction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.PastePostProcessor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PastePostProcessor"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.PastePostProcessFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PastePostProcessFunction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.CopyPreProcessor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.CopyPreProcessor"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.CopyPreProcessFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.CopyPreProcessFunction"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.CopyPasteHandlers".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CopyPasteHandlers_Constraints());
-    }
-    if ("jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation"));
-    }
-    if ("jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation"));
-    }
-
-    return null;
   }
 }

@@ -12,391 +12,265 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"));
+    switch ((fqName).hashCode()) {
+      case -177807772:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"));
+      case 1978817145:
+        return new DataHolderConstraintsDescriptor(new ConceptReference_Constraints());
+      case -1776294879:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.PatternCondition"));
+      case 975351231:
+        return new DataHolderConstraintsDescriptor(new InferenceRule_Constraints());
+      case -1870256652:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractRule"));
+      case -241651564:
+        return new DataHolderConstraintsDescriptor(new ApplicableNodeReference_Constraints());
+      case 872118495:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeOfExpression"));
+      case 1790674033:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement"));
+      case 238496651:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"));
+      case -1368679630:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"));
+      case 1515896341:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"));
+      case -100697801:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement"));
+      case -1326300957:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration"));
+      case 2123616500:
+        return new DataHolderConstraintsDescriptor(new TypeVarReference_Constraints());
+      case 1313974581:
+        return new DataHolderConstraintsDescriptor(new PatternVariableReference_Constraints());
+      case 1610638415:
+        return new DataHolderConstraintsDescriptor(new LinkPatternVariableReference_Constraints());
+      case -1317820886:
+        return new DataHolderConstraintsDescriptor(new PropertyPatternVariableReference_Constraints());
+      case -2109279397:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"));
+      case 1288017501:
+        return new DataHolderConstraintsDescriptor(new SubtypingRule_Constraints());
+      case -337382061:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AssertStatement"));
+      case -830329775:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"));
+      case 358210017:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression"));
+      case 854192946:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"));
+      case -618539290:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation"));
+      case 44989288:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"));
+      case 1261423108:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable"));
+      case 1732940798:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceStatement"));
+      case 1729875825:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression"));
+      case 1504984411:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression"));
+      case -547515552:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MatchStatement"));
+      case 96981651:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MatchStatementItem"));
+      case 601192937:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceExpression"));
+      case 303446816:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression"));
+      case 641176122:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.JoinType"));
+      case 868146075:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"));
+      case 41014958:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong"));
+      case -102075104:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType"));
+      case 339314520:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
+      case -1451837825:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeClause"));
+      case -1575134650:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.NormalTypeClause"));
+      case 484027738:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"));
+      case 1180562135:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MeetType"));
+      case -246103845:
+        return new DataHolderConstraintsDescriptor(new ComparisonRule_Constraints());
+      case 410539137:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Dependency"));
+      case -1933825469:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.FindSourceBlock"));
+      case -293829466:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter"));
+      case -447882514:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"));
+      case -915472708:
+        return new DataHolderConstraintsDescriptor(new NonTypesystemRule_Constraints());
+      case -1473919865:
+        return new DataHolderConstraintsDescriptor(new InequationReplacementRule_Constraints());
+      case -1532478056:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression"));
+      case 356517052:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeListVariable"));
+      case 1784030023:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration"));
+      case -1707343991:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration"));
+      case -2006384358:
+        return new DataHolderConstraintsDescriptor(new WhenConcreteVariableReference_Constraints());
+      case 982428137:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WarningStatement"));
+      case 605065101:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypesystemIntention"));
+      case -1663273622:
+        return new DataHolderConstraintsDescriptor(new TypesystemIntentionArgument_Constraints());
+      case -847803642:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"));
+      case 352035116:
+        return new DataHolderConstraintsDescriptor(new ChildTypeRestriction_Constraints());
+      case -1032433793:
+        return new DataHolderConstraintsDescriptor(new ChildTypeRestrictionReference_Constraints());
+      case 2123566887:
+        return new DataHolderConstraintsDescriptor(new TypesystemQuickFix_Constraints());
+      case -1690765610:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock"));
+      case -1876673950:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node"));
+      case -1541855621:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixArgument"));
+      case 1852330768:
+        return new DataHolderConstraintsDescriptor(new QuickFixArgumentReference_Constraints());
+      case 1938528175:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock"));
+      case -955876295:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement"));
+      case 2105920344:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Processed"));
+      case 1413919595:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InfoStatement"));
+      case -1678940286:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MessageTarget"));
+      case 42463661:
+        return new DataHolderConstraintsDescriptor(new PropertyMessageTarget_Constraints());
+      case -242630877:
+        return new DataHolderConstraintsDescriptor(new ReferenceMessageTarget_Constraints());
+      case 609591774:
+        return new DataHolderConstraintsDescriptor(new MessageStatement_Constraints());
+      case 1198891751:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget"));
+      case 328753884:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget"));
+      case 348041409:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem"));
+      case -566769520:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock"));
+      case -476172601:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var"));
+      case -1957077640:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock"));
+      case -89318308:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer"));
+      case -1877507850:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role"));
+      case 26518264:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation"));
+      case 407918545:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode"));
+      case -251640676:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType"));
+      case -2028184759:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule"));
+      case -999208539:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction"));
+      case -870697904:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter"));
+      case -1062360485:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Operation_parameter"));
+      case -1693857145:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter"));
+      case -1634678207:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.GetOperationType"));
+      case 2021722810:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer"));
+      case 1567138564:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MeetContainer"));
+      case 2024417665:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.JoinContainer"));
+      case -2059829285:
+        return new DataHolderConstraintsDescriptor(new ConceptTypeClause_Constraints());
+      case -1065173015:
+        return new DataHolderConstraintsDescriptor(new ConceptClauseLinkInfo_Constraints());
+      case 507817801:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"));
+      case -615766377:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"));
+      case 144240694:
+        return new DataHolderConstraintsDescriptor(new OperationContextExpression_Constraints());
+      case -1845791762:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction"));
+      case -2011137436:
+        return new DataHolderConstraintsDescriptor(new InequationReference_Constraints());
+      case -576393731:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry"));
+      case 1598270771:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroup"));
+      case -1468146856:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference"));
+      case 1918313783:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"));
+      case 1588346278:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation"));
+      case -1129313146:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.NodeInfo"));
+      case -2117707983:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem"));
+      case -1106698262:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode"));
+      case 1947979428:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock"));
+      case -846950656:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock"));
+      case 1265905834:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock"));
+      case 649812724:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode"));
+      case 1612532260:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"));
+      case 498064593:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction"));
+      case -1125663387:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock"));
+      case 1495480066:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext"));
+      case 834281980:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixField"));
+      case 1337178287:
+        return new DataHolderConstraintsDescriptor(new QuickFixFieldReference_Constraints());
+      case 906508784:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.SelectionType"));
+      case -2122137332:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection"));
+      case 1944185137:
+        return new DataHolderConstraintsDescriptor(new CaretPositionOperation_Constraints());
+      case -782219785:
+        return new DataHolderConstraintsDescriptor(new WasSelectedNodeOperation_Constraints());
+      case 1314250323:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"));
+      case 1895061594:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"));
+      case 113171827:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference"));
+      case -1922090740:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"));
+      case 528889789:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"));
+      case 2049822806:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OrStatement"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.PatternCondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.PatternCondition"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.InferenceRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new InferenceRule_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AbstractRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractRule"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ApplicableNodeReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.TypeOfExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeOfExpression"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.TypeVarReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TypeVarReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.PatternVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PatternVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LinkPatternVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PropertyPatternVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.SubtypingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SubtypingRule_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AssertStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AssertStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CoerceStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.MatchStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MatchStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.MatchStatementItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MatchStatementItem"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CoerceExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceExpression"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.JoinType"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.TypeClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeClause"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.NormalTypeClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.NormalTypeClause"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MeetType"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ComparisonRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ComparisonRule_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.Dependency".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Dependency"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.FindSourceBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.FindSourceBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.NonTypesystemRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NonTypesystemRule_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.InequationReplacementRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new InequationReplacementRule_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.RuntimeListVariable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeListVariable"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new WhenConcreteVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.WarningStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WarningStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.TypesystemIntention".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypesystemIntention"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TypesystemIntentionArgument_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ChildTypeRestriction_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ChildTypeRestrictionReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TypesystemQuickFix_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.QuickFixArgument".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixArgument"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new QuickFixArgumentReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.Processed".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Processed"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.InfoStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InfoStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.MessageTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MessageTarget"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PropertyMessageTarget_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReferenceMessageTarget_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.MessageStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MessageStatement_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.VariableConverterItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.Operation_parameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Operation_parameter"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.GetOperationType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.GetOperationType"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.MeetContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MeetContainer"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.JoinContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.JoinContainer"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptTypeClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptTypeClause_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptClauseLinkInfo_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.OperationContextExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new OperationContextExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.InequationReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new InequationReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.InequationsGroup".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroup"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.NodeInfo".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.NodeInfo"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.DependentComputationItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.OriginalNodeId".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.QuickFixField".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixField"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new QuickFixFieldReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.SelectionType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.SelectionType"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CaretPositionOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CaretPositionOperation_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new WasSelectedNodeOperation_Constraints());
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"));
-    }
-    if ("jetbrains.mps.lang.typesystem.structure.OrStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OrStatement"));
-    }
-
-    return null;
   }
 }

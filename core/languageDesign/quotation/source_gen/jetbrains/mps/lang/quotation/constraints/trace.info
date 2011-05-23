@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="AbstractAntiquotation_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.quotation.constraints.AbstractAntiquotation_Constraints$1" />
   <unitInfo fileName="Quotation_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="AbstractAntiquotation_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.AbstractAntiquotation_Constraints" />
   <unitInfo fileName="Quotation_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints" />
   <root nodeId="1320713984677482740">

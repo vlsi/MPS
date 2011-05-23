@@ -39,7 +39,6 @@
   <unitInfo fileName="VerticalAlignment.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VerticalAlignment" />
   <unitInfo fileName="UnitType.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UnitType" />
   <unitInfo fileName="EditableUIPropertyAccessCode.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="212" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="CellLayoutConstraint.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.CellLayoutConstraint" />
   <unitInfo fileName="AlignmentLayoutConstraint.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint" />
   <unitInfo fileName="BoxLayoutConstraint.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint" />
@@ -47,6 +46,7 @@
   <unitInfo fileName="ColumnLayoutConstraint.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint" />
   <unitInfo fileName="ExpressionWithUnit.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.ExpressionWithUnit" />
   <unitInfo fileName="Auxillary.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Auxillary" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="151" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Unit_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Unit_PropertySupport" />
   <unitInfo fileName="HAlignment_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HAlignment_PropertySupport" />
   <unitInfo fileName="VAlignment_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VAlignment_PropertySupport" />
@@ -70,8 +70,8 @@
   <unitInfo fileName="Event.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Event" />
   <unitInfo fileName="Container.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Container" />
   <unitInfo fileName="EventHandlerTemplate.java" startLine="16" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EventHandlerTemplate" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.StructureAspectDescriptor" />
   <unitInfo fileName="UIObject.java" startLine="15" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIObject" />
   <unitInfo fileName="UIObjectTemplate.java" startLine="16" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.StructureAspectDescriptor" />
 </debugInfo>
 

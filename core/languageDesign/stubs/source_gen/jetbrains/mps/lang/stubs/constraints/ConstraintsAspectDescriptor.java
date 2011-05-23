@@ -12,64 +12,47 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"));
+    switch ((fqName).hashCode()) {
+      case 1797502757:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"));
+      case 609152443:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.UpdateModelBlock"));
+      case -1845154588:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock"));
+      case -1706380243:
+        return new DataHolderConstraintsDescriptor(new LanguageRef_Constraints());
+      case -1559100163:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelCreationSettings"));
+      case -1427075749:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock"));
+      case -465229033:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter"));
+      case -266998195:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter"));
+      case 1447561199:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubsCreatorType"));
+      case 948100147:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.AbstractModelCreator"));
+      case -979605080:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"));
+      case -612237561:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.BaseCreatorType"));
+      case -281292084:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelManagerType"));
+      case 124304362:
+        return new DataHolderConstraintsDescriptor(new LibraryStubDescriptor_Constraints());
+      case 392713412:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.GetRootsBlock"));
+      case 1087011552:
+        return new DataHolderConstraintsDescriptor(new Stereotype_Constraints());
+      case -1382459549:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.InitModuleBlock"));
+      case 200906209:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter"));
+      case -1458886093:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.stubs.structure.UpdateModelBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.UpdateModelBlock"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.LanguageRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LanguageRef_Constraints());
-    }
-    if ("jetbrains.mps.lang.stubs.structure.ModelCreationSettings".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelCreationSettings"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.StubsCreatorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubsCreatorType"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.AbstractModelCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.AbstractModelCreator"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.BaseCreatorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.BaseCreatorType"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.ModelManagerType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelManagerType"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LibraryStubDescriptor_Constraints());
-    }
-    if ("jetbrains.mps.lang.stubs.structure.GetRootsBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.GetRootsBlock"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.Stereotype".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Stereotype_Constraints());
-    }
-    if ("jetbrains.mps.lang.stubs.structure.InitModuleBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.InitModuleBlock"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter"));
-    }
-    if ("jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter"));
-    }
-
-    return null;
   }
 }

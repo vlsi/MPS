@@ -12,91 +12,65 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"));
+    switch ((fqName).hashCode()) {
+      case 1687922204:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"));
+      case -106727006:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"));
+      case 598926277:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable"));
+      case -1527043470:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant"));
+      case 1778472404:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant"));
+      case -2130288052:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"));
+      case -1182719609:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.Program"));
+      case -1496603787:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef"));
+      case 1404709481:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation"));
+      case 1507395747:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AddOperation"));
+      case 1987793638:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation"));
+      case -979538954:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation"));
+      case 2128068849:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation"));
+      case -1069771330:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaType"));
+      case 1087147072:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.NumberType"));
+      case -93754104:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.StringType"));
+      case -228576753:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"));
+      case -1091927727:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression"));
+      case 1271713253:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"));
+      case -1759814248:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation"));
+      case -881056808:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation"));
+      case -1156557809:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation"));
+      case 195157974:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"));
+      case -1272924907:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetRef"));
+      case -952543430:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetVariable"));
+      case 783209050:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"));
+      case -2082475150:
+        return new DataHolderConstraintsDescriptor(new VariableReference_Constraints());
+      case 1741893593:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.Variable"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.Program".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.Program"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.AddOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AddOperation"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.LambdaType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaType"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.NumberType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.NumberType"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.StringType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.StringType"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.FunctionType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.LetRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetRef"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.LetVariable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetVariable"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"));
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.VariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new VariableReference_Constraints());
-    }
-    if ("jetbrains.mps.samples.lambdaCalculus.structure.Variable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.Variable"));
-    }
-
-    return null;
   }
 }

@@ -27,11 +27,11 @@
   <unitInfo fileName="ConstrainedDataTypeDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConstrainedDataTypeDeclaration_Constraints" />
   <unitInfo fileName="InterfaceConceptDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.InterfaceConceptDeclaration_Constraints" />
   <unitInfo fileName="ConceptProperty_Constraints.java" startLine="25" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptProperty_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="AnnotationLinkDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.AnnotationLinkDeclaration_Constraints" />
   <unitInfo fileName="ConceptDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_Constraints" />
   <unitInfo fileName="EnumerationDataTypeDeclaration_Constraints.java" startLine="30" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_Constraints" />
   <unitInfo fileName="LinkDeclaration_Constraints.java" startLine="31" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104840673">
     <nodeInfo nodeId="7376433222636453665" fileName="ConceptDeclaration_Constraints.java" startLine="90" startPosition="136" endLine="91" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1213104841233" fileName="ConceptDeclaration_Constraints.java" startLine="91" startPosition="31" endLine="92" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -16,302 +16,209 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -2049587604) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
+    switch ((conceptFqName).hashCode()) {
+      case -2049587604:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.OldRefactoring", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 522700086:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 501316971:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1115490897:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.DoRefactorClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1217468085:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 547406044:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.UpdateModelClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -433093863:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 749758092:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1363641577:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", new String[]{"jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -508452457:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.FilterArgumentClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1410635275:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 1159516810:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1369919799:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 1110498978:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1360528314:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1121618289:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.InitialValueClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1464764094:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -44469408:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 780028867:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1628389344:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1898256101:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 291871833:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1383766402:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1471088793:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1372366961:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1127588607:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 258585126:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 1564863712:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1606075523:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -541691790:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.FinderReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"});
+      case -1161479694:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -677030186:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodesExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1986738669:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodeExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 267980445:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1240470807:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModuleExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 859911678:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ProjectExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1917489849:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ScopeExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1606540851:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.OperationContextExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -253211357:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringAction", new String[]{}, new String[]{}, new String[]{});
+      case 254351856:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression"}, new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 288833662:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringTarget", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -191909049:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelTarget", new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1306397584:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModuleTarget", new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1708586138:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodeTarget", new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -503884526:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -573780209:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 16346600:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 263153682:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1250312083:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringField", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringArgument"}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"});
+      case 299295132:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringParameter", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringArgument"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1187343326:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AskExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1214549263:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1156527778:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"});
+      case 1156176850:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.InitClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 36149455:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 313319629:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.FilterParameterClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 63851404:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1337519210:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1161157127:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.CommitClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 913653901:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.Refactoring", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -394306871:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1543513706:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringArgument", new String[]{}, new String[]{}, new String[]{});
+      case 1904267265:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", new String[]{}, new String[]{}, new String[]{});
+      case 387660799:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 973994618:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1567234801:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -903134014:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation", new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 375162632:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModuleOperation", new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1646161778:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodeOperation", new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 36213097:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodesOperation", new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1356802668:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.OperationContextOperation", new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1853870783:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ProjectOperation", new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1681208026:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ScopeOperation", new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -483468666:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -794827082:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ContextType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 1004190172:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -2000572061:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 846221137:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 1027130221:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.SetValueStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 1172207610:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ErrorStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 294245282:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ComponentExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1225973606:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1317477002:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1393339024:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringAction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1077879682:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1992952870:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MPSParameterType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 660736873:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType", new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -908501902:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType", new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 115280072:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType", new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1632447511:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.StringMPSParameterType", new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -177268952:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType", new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -163531921:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IntMPSParameterType", new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1447029542:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AskBooleanExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1485556838:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MainProjectOperation", new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -361495971:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      default:
+        return null;
     }
-    if (hash == 522700086) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 501316971) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -1115490897) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.DoRefactorClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 1217468085) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 547406044) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.UpdateModelClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -433093863) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 749758092) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -1363641577) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument");
-    }
-    if (hash == -508452457) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.FilterArgumentClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 1410635275) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 1159516810) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == -1369919799) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.refactoring.structure.RefactoringAction");
-    }
-    if (hash == 1110498978) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -1360528314) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == -1121618289) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.InitialValueClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 1464764094) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction");
-    }
-    if (hash == -44469408) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression");
-    }
-    if (hash == 780028867) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression");
-    }
-    if (hash == 1628389344) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression");
-    }
-    if (hash == -1898256101) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression");
-    }
-    if (hash == 291871833) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression");
-    }
-    if (hash == 1383766402) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression");
-    }
-    if (hash == 1471088793) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -1372366961) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.refactoring.structure.RefactoringAction");
-    }
-    if (hash == -1127588607) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 258585126) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 1564863712) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 1606075523) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -541691790) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.FinderReference", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IResolveInfo");
-    }
-    if (hash == -1161479694) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -677030186) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodesExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression");
-    }
-    if (hash == 1986738669) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression");
-    }
-    if (hash == 267980445) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression");
-    }
-    if (hash == 1240470807) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModuleExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression");
-    }
-    if (hash == 859911678) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ProjectExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression");
-    }
-    if (hash == 1917489849) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ScopeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression");
-    }
-    if (hash == 1606540851) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.OperationContextExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression");
-    }
-    if (hash == -253211357) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringAction");
-    }
-    if (hash == 254351856) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression");
-    }
-    if (hash == 288833662) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringTarget", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -191909049) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget");
-    }
-    if (hash == 1306397584) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget");
-    }
-    if (hash == -1708586138) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget");
-    }
-    if (hash == -503884526) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -573780209) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 16346600) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 263153682) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -1250312083) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringField", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument");
-    }
-    if (hash == 299295132) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument");
-    }
-    if (hash == 1187343326) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AskExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1214549263) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference");
-    }
-    if (hash == -1156527778) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference");
-    }
-    if (hash == 1156176850) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.InitClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 36149455) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser");
-    }
-    if (hash == 313319629) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.FilterParameterClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 63851404) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -1337519210) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser");
-    }
-    if (hash == -1161157127) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.CommitClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 913653901) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect");
-    }
-    if (hash == -394306871) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 1543513706) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringArgument");
-    }
-    if (hash == 1904267265) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference");
-    }
-    if (hash == 387660799) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 973994618) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 1567234801) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation");
-    }
-    if (hash == -903134014) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation");
-    }
-    if (hash == 375162632) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModuleOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation");
-    }
-    if (hash == 1646161778) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodeOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation");
-    }
-    if (hash == 36213097) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodesOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation");
-    }
-    if (hash == 1356802668) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.OperationContextOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation");
-    }
-    if (hash == -1853870783) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ProjectOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation");
-    }
-    if (hash == -1681208026) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ScopeOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation");
-    }
-    if (hash == -483468666) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -794827082) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.baseLanguage.structure.Type");
-    }
-    if (hash == 1004190172) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -2000572061) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 846221137) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 1027130221) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.SetValueStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == 1172207610) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ErrorStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == 294245282) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ComponentExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1225973606) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1317477002) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction");
-    }
-    if (hash == -1393339024) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.refactoring.structure.RefactoringAction");
-    }
-    if (hash == -1077879682) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1992952870) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MPSParameterType", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 660736873) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType", "jetbrains.mps.lang.refactoring.structure.MPSParameterType");
-    }
-    if (hash == -908501902) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType", "jetbrains.mps.lang.refactoring.structure.MPSParameterType");
-    }
-    if (hash == 115280072) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType", "jetbrains.mps.lang.refactoring.structure.MPSParameterType");
-    }
-    if (hash == 1632447511) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.StringMPSParameterType", "jetbrains.mps.lang.refactoring.structure.MPSParameterType");
-    }
-    if (hash == -177268952) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType", "jetbrains.mps.lang.refactoring.structure.MPSParameterType");
-    }
-    if (hash == -163531921) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.IntMPSParameterType", "jetbrains.mps.lang.refactoring.structure.MPSParameterType");
-    }
-    if (hash == -1447029542) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.AskBooleanExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1485556838) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.MainProjectOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation");
-    }
-    if (hash == -361495971) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -326,12 +233,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

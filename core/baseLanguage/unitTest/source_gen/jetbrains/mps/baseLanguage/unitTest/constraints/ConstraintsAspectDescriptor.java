@@ -12,58 +12,43 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TestMethod_Constraints());
+    switch ((fqName).hashCode()) {
+      case -941576521:
+        return new DataHolderConstraintsDescriptor(new TestMethod_Constraints());
+      case -537086400:
+        return new DataHolderConstraintsDescriptor(new BTestCase_Constraints());
+      case 1980801013:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"));
+      case 35036233:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals"));
+      case -392811368:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue"));
+      case 694305625:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse"));
+      case -392857744:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame"));
+      case 865895618:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.Fail"));
+      case 150257243:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull"));
+      case 456086231:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows"));
+      case -1930575901:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.Message"));
+      case -1766538385:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"));
+      case -303471279:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.ITestable"));
+      case -304365753:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
+      case -147690696:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
+      case 668322123:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull"));
+      case 606040139:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BTestCase_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.Fail".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.Fail"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.Message".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.Message"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.ITestable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.ITestable"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull"));
-    }
-    if ("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"));
-    }
-
-    return null;
   }
 }

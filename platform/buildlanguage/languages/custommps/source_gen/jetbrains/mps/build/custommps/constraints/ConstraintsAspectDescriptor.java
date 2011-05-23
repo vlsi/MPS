@@ -12,19 +12,17 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.build.custommps.structure.MPSBuild".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MPSBuild_Constraints());
+    switch ((fqName).hashCode()) {
+      case -1744091298:
+        return new DataHolderConstraintsDescriptor(new MPSBuild_Constraints());
+      case 1823655625:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.custommps.structure.LibraryFolder"));
+      case 1040375700:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.custommps.structure.MPSDistribution"));
+      case 828263516:
+        return new DataHolderConstraintsDescriptor(new UndeclaredVariableReference_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.build.custommps.structure.LibraryFolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.custommps.structure.LibraryFolder"));
-    }
-    if ("jetbrains.mps.build.custommps.structure.MPSDistribution".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.custommps.structure.MPSDistribution"));
-    }
-    if ("jetbrains.mps.build.custommps.structure.UndeclaredVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new UndeclaredVariableReference_Constraints());
-    }
-
-    return null;
   }
 }

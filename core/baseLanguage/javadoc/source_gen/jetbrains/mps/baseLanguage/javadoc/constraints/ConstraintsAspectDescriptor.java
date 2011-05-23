@@ -12,106 +12,75 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"));
+    switch ((fqName).hashCode()) {
+      case -674486598:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"));
+      case -252113956:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"));
+      case 1224573282:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag"));
+      case 517858378:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"));
+      case 1901023289:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"));
+      case -288448233:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag"));
+      case -268401350:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
+      case -946350287:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+      case 1812431944:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag"));
+      case -967557280:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag"));
+      case -1339220835:
+        return new DataHolderConstraintsDescriptor(new ReturnBlockDocTag_Constraints());
+      case -1689892011:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"));
+      case 1438679545:
+        return new DataHolderConstraintsDescriptor(new DocMethodParameterReference_Constraints());
+      case 447555986:
+        return new DataHolderConstraintsDescriptor(new DocTypeParameterReference_Constraints());
+      case 842791903:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"));
+      case -1898345334:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"));
+      case -55791932:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));
+      case -906120489:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
+      case -612690553:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"));
+      case -349428946:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"));
+      case -1151780598:
+        return new DataHolderConstraintsDescriptor(new ValueInlineDocTag_Constraints());
+      case 2059337802:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag"));
+      case 928304358:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"));
+      case -1255936821:
+        return new DataHolderConstraintsDescriptor(new FieldDocReference_Constraints());
+      case -255781154:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag"));
+      case 15558262:
+        return new DataHolderConstraintsDescriptor(new MethodDocReference_Constraints());
+      case 1621098166:
+        return new DataHolderConstraintsDescriptor(new ClassifierDocReference_Constraints());
+      case -1216915753:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag"));
+      case -1720986962:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet"));
+      case -661289190:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag"));
+      case -1440516478:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"));
+      case -580943491:
+        return new DataHolderConstraintsDescriptor(new StaticFieldDocReference_Constraints());
+      case 1590048047:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReturnBlockDocTag_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new DocMethodParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new DocTypeParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ValueInlineDocTag_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FieldDocReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MethodDocReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ClassifierDocReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"));
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new StaticFieldDocReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"));
-    }
-
-    return null;
   }
 }

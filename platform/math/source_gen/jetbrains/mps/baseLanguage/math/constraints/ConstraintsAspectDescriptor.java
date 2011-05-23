@@ -12,184 +12,127 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression"));
+    switch ((fqName).hashCode()) {
+      case -131104684:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression"));
+      case 1794917198:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression"));
+      case 681346008:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral"));
+      case 1917592753:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalType"));
+      case 492621374:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.PowExpression"));
+      case -1490966105:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"));
+      case 236605103:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.VectorType"));
+      case -1733314897:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixNorm"));
+      case -1733126611:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixType"));
+      case -808117933:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"));
+      case -2034762699:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathContext"));
+      case -1732967013:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixZero"));
+      case -1539017332:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LiteralI"));
+      case -625116119:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression"));
+      case 648975776:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"));
+      case 352340839:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"));
+      case 1768284982:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"));
+      case -1280513129:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.SineExpression"));
+      case 600829629:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression"));
+      case 320806848:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.TransposeOperation"));
+      case 1331460239:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"));
+      case -2046259329:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"));
+      case 1237343187:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathTypeCast"));
+      case -2083523861:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.TangentExpression"));
+      case -907482023:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"));
+      case 1813461976:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.AbsExpression"));
+      case -29129125:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"));
+      case 352684074:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LogExpression"));
+      case 902819658:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression"));
+      case 589006587:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"));
+      case 706551179:
+        return new DataHolderConstraintsDescriptor(new MathSymbolIndexReference_Constraints());
+      case -1733107593:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixUnit"));
+      case -1765678845:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.Determinant"));
+      case -91353443:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigProdExpression"));
+      case 911944757:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigSumExpression"));
+      case 426304138:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"));
+      case 1807249027:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.CosineExpression"));
+      case -985547875:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigDecimalType"));
+      case 799425916:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigComplexType"));
+      case -673581188:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigMinExpression"));
+      case -1222184149:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"));
+      case 1648543314:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbol"));
+      case 752375921:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral"));
+      case -1421525320:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ComplexType"));
+      case -1211700423:
+        return new DataHolderConstraintsDescriptor(new MatrixIndexWildcard_Constraints());
+      case -525432371:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.VectorInitializer"));
+      case 1192717066:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
+      case -1200018375:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExponentExpression"));
+      case 1799079950:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression"));
+      case -1282422530:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.AbstractIndex"));
+      case 1595158193:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression"));
+      case -748863831:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"));
+      case -1477721725:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex"));
+      case -1988667291:
+        return new DataHolderConstraintsDescriptor(new MatrixElementAccessExpression_Constraints());
+      case -1331715832:
+        return new DataHolderConstraintsDescriptor(new MatrixInitializerIndexReference_Constraints());
+      case -814510393:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
+      case -1396728140:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
+      case 1846962837:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"));
+      case -1430643391:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.IntervalType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.PowExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.PowExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.VectorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.VectorType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixNorm".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixNorm"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MathContext".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathContext"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixZero".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixZero"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.LiteralI".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LiteralI"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.SineExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.SineExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.TransposeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.TransposeOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MathTypeCast".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathTypeCast"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.TangentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.TangentExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.AbsExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.AbsExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.LogExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LogExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MathSymbolIndexReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixUnit".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixUnit"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.Determinant".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.Determinant"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.BigProdExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigProdExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.BigSumExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigSumExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.CosineExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.CosineExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.BigDecimalType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigDecimalType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.BigComplexType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigComplexType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.BigMinExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigMinExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MathSymbol".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbol"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.ComplexType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ComplexType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatrixIndexWildcard_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.VectorInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.VectorInitializer"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.BigIntegerType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.ExponentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExponentExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.AbstractIndex".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.AbstractIndex"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatrixElementAccessExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatrixInitializerIndexReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation"));
-    }
-
-    return null;
   }
 }

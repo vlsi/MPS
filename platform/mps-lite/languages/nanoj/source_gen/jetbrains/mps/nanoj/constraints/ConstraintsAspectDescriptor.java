@@ -12,28 +12,23 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.nanoj.structure.MinusExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.MinusExpression"));
+    switch ((fqName).hashCode()) {
+      case -1417927617:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.MinusExpression"));
+      case -1464384133:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.NanoClass"));
+      case 1058499720:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.VarDecl"));
+      case -1967265872:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.NanoStatementList"));
+      case 1839857781:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.NanoExpression"));
+      case -859501582:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.NanoStatement"));
+      case -841774173:
+        return new DataHolderConstraintsDescriptor(new VarDeclReference_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.nanoj.structure.NanoClass".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.NanoClass"));
-    }
-    if ("jetbrains.mps.nanoj.structure.VarDecl".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.VarDecl"));
-    }
-    if ("jetbrains.mps.nanoj.structure.NanoStatementList".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.NanoStatementList"));
-    }
-    if ("jetbrains.mps.nanoj.structure.NanoExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.NanoExpression"));
-    }
-    if ("jetbrains.mps.nanoj.structure.NanoStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoj.structure.NanoStatement"));
-    }
-    if ("jetbrains.mps.nanoj.structure.VarDeclReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new VarDeclReference_Constraints());
-    }
-
-    return null;
   }
 }

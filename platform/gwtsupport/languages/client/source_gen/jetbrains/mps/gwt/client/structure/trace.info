@@ -17,10 +17,10 @@
   <unitInfo fileName="Path.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.Path" />
   <unitInfo fileName="Pattern.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.Pattern" />
   <unitInfo fileName="EntryPoint.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.EntryPoint" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="80" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="63" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="PatternFilter.java" startLine="12" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.PatternFilter" />
   <unitInfo fileName="Attr.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.Attr" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.StructureAspectDescriptor" />
   <unitInfo fileName="GWTModule.java" startLine="16" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.GWTModule" />
 </debugInfo>
 

@@ -12,91 +12,65 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mpslite.structure.Line".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.Line"));
+    switch ((fqName).hashCode()) {
+      case 514537623:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.Line"));
+      case -289084118:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.LinePart"));
+      case 1601666542:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConstantLinePart"));
+      case 103985078:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.IndentLinePart"));
+      case 1218873622:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcreteReferencePart"));
+      case 1343505516:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ChildPart"));
+      case 1436461334:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.OptionalPart"));
+      case 1185303143:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcreteChildPart"));
+      case -1764886373:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ReferencePart"));
+      case 253920717:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.MPSLiteConceptDeclaration"));
+      case -289195563:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.LineList"));
+      case -1250297589:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.PropertyPart"));
+      case 1616899376:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcretePropertyPart"));
+      case -1908169944:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.AbstractConceptReference"));
+      case 923027550:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.MPSLiteConceptReference"));
+      case -1298220036:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.RegularConceptReference"));
+      case -343724848:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.IMPSLiteConcept"));
+      case 191602437:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BinaryOperationConcept"));
+      case -694953039:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.FeatureAccessConcept"));
+      case 1581481929:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.VariableConcept"));
+      case 447667553:
+        return new DataHolderConstraintsDescriptor(new NamePropertyNamePart_Constraints());
+      case 2140911984:
+        return new DataHolderConstraintsDescriptor(new TypePart_Constraints());
+      case 1547490076:
+        return new DataHolderConstraintsDescriptor(new ConceptContainer_Constraints());
+      case -1971525092:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.StatementConcept"));
+      case 1739767021:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ExpressionConcept"));
+      case -187385154:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BlockConcept"));
+      case 771570463:
+        return new DataHolderConstraintsDescriptor(new BlockBodyPart_Constraints());
+      case 280085025:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BlockReference"));
+      default:
+        return null;
     }
-    if ("jetbrains.mpslite.structure.LinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.LinePart"));
-    }
-    if ("jetbrains.mpslite.structure.ConstantLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConstantLinePart"));
-    }
-    if ("jetbrains.mpslite.structure.IndentLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.IndentLinePart"));
-    }
-    if ("jetbrains.mpslite.structure.ConcreteReferencePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcreteReferencePart"));
-    }
-    if ("jetbrains.mpslite.structure.ChildPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ChildPart"));
-    }
-    if ("jetbrains.mpslite.structure.OptionalPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.OptionalPart"));
-    }
-    if ("jetbrains.mpslite.structure.ConcreteChildPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcreteChildPart"));
-    }
-    if ("jetbrains.mpslite.structure.ReferencePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ReferencePart"));
-    }
-    if ("jetbrains.mpslite.structure.MPSLiteConceptDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.MPSLiteConceptDeclaration"));
-    }
-    if ("jetbrains.mpslite.structure.LineList".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.LineList"));
-    }
-    if ("jetbrains.mpslite.structure.PropertyPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.PropertyPart"));
-    }
-    if ("jetbrains.mpslite.structure.ConcretePropertyPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcretePropertyPart"));
-    }
-    if ("jetbrains.mpslite.structure.AbstractConceptReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.AbstractConceptReference"));
-    }
-    if ("jetbrains.mpslite.structure.MPSLiteConceptReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.MPSLiteConceptReference"));
-    }
-    if ("jetbrains.mpslite.structure.RegularConceptReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.RegularConceptReference"));
-    }
-    if ("jetbrains.mpslite.structure.IMPSLiteConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.IMPSLiteConcept"));
-    }
-    if ("jetbrains.mpslite.structure.BinaryOperationConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BinaryOperationConcept"));
-    }
-    if ("jetbrains.mpslite.structure.FeatureAccessConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.FeatureAccessConcept"));
-    }
-    if ("jetbrains.mpslite.structure.VariableConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.VariableConcept"));
-    }
-    if ("jetbrains.mpslite.structure.NamePropertyNamePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NamePropertyNamePart_Constraints());
-    }
-    if ("jetbrains.mpslite.structure.TypePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TypePart_Constraints());
-    }
-    if ("jetbrains.mpslite.structure.ConceptContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptContainer_Constraints());
-    }
-    if ("jetbrains.mpslite.structure.StatementConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.StatementConcept"));
-    }
-    if ("jetbrains.mpslite.structure.ExpressionConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ExpressionConcept"));
-    }
-    if ("jetbrains.mpslite.structure.BlockConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BlockConcept"));
-    }
-    if ("jetbrains.mpslite.structure.BlockBodyPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BlockBodyPart_Constraints());
-    }
-    if ("jetbrains.mpslite.structure.BlockReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BlockReference"));
-    }
-
-    return null;
   }
 }

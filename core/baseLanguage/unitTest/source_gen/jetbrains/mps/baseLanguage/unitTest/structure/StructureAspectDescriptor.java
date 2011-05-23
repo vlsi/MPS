@@ -16,68 +16,53 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -941576521) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+    switch ((conceptFqName).hashCode()) {
+      case -941576521:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"}, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"});
+      case -537086400:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.ClassConcept"});
+      case 1980801013:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 35036233:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -392811368:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 694305625:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -392857744:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 865895618:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.Fail", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 150257243:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 456086231:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1930575901:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.Message", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1766538385:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder", new String[]{}, new String[]{}, new String[]{});
+      case -303471279:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestable", new String[]{}, new String[]{}, new String[]{});
+      case -304365753:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.ITestable"}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -147690696:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.ITestable"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.ITestable"}, new String[]{});
+      case 668322123:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 606040139:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      default:
+        return null;
     }
-    if (hash == -537086400) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
-    }
-    if (hash == 1980801013) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 35036233) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert");
-    }
-    if (hash == -392811368) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder");
-    }
-    if (hash == 694305625) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder");
-    }
-    if (hash == -392857744) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert");
-    }
-    if (hash == 865895618) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.Fail", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder");
-    }
-    if (hash == 150257243) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder");
-    }
-    if (hash == 456086231) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder");
-    }
-    if (hash == -1930575901) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.Message", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1766538385) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder");
-    }
-    if (hash == -303471279) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestable");
-    }
-    if (hash == -304365753) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -147690696) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestable");
-    }
-    if (hash == 668322123) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder");
-    }
-    if (hash == 606040139) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -92,12 +77,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

@@ -16,29 +16,27 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -1744091298) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.MPSBuild", "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent");
+    switch ((conceptFqName).hashCode()) {
+      case -1744091298:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.MPSBuild", new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"});
+      case 1823655625:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.LibraryFolder", new String[]{"jetbrains.mps.build.packaging.structure.Folder"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.Folder"});
+      case 1040375700:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.MPSDistribution", new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"});
+      case 828263516:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", new String[]{"jetbrains.mps.build.packaging.structure.IStringExpression"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.IStringExpression"});
+      default:
+        return null;
     }
-    if (hash == 1823655625) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.packaging.structure.Folder");
-    }
-    if (hash == 1040375700) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.MPSDistribution", "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent");
-    }
-    if (hash == 828263516) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", "jetbrains.mps.build.packaging.structure.IStringExpression");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -53,12 +51,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

@@ -12,91 +12,65 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod"));
+    switch ((fqName).hashCode()) {
+      case -1296394842:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod"));
+      case 749715775:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationType"));
+      case -1510705051:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfiguration"));
+      case -183649691:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"));
+      case 1833084214:
+        return new DataHolderConstraintsDescriptor(new TemplateParameterReference_Constraints());
+      case 1273201231:
+        return new DataHolderConstraintsDescriptor(new ReportConfigurationErrorStatement_Constraints());
+      case -1075584972:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CreateEditor_Function"));
+      case -291253230:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.Dispose_Function"));
+      case -1035292158:
+        return new DataHolderConstraintsDescriptor(new PersistentPropertyReferenceOperation_Constraints());
+      case -1173261313:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"));
+      case 629388643:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer"));
+      case -693359468:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"));
+      case -385830507:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.TemplateParameter"));
+      case -1330714145:
+        return new DataHolderConstraintsDescriptor(new EditorExpression_Constraints());
+      case -574308656:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CheckProperitesOperation"));
+      case 793050919:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder"));
+      case 1237712726:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CheckProperties_Function"));
+      case 795207400:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.ApplyTo_Function"));
+      case -1235690470:
+        return new DataHolderConstraintsDescriptor(new EditorOperationDeclaration_Constraints());
+      case -1869789250:
+        return new DataHolderConstraintsDescriptor(new EditorOperationCall_Constraints());
+      case -375217922:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration"));
+      case 1954773967:
+        return new DataHolderConstraintsDescriptor(new EditorPropertyReference_Constraints());
+      case -1874705576:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.ResetFrom_Function"));
+      case -1000565180:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.SettingsEditorType"));
+      case -1837721622:
+        return new DataHolderConstraintsDescriptor(new SettingsEditor_Constraints());
+      case 1066187846:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.Configuration_Parameter"));
+      case 1731709693:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"));
+      case -1778395202:
+        return new DataHolderConstraintsDescriptor(new GetEditorOperation_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.execution.settings.structure.PersistentConfigurationType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationType"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.PersistentConfiguration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfiguration"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.TemplateParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TemplateParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReportConfigurationErrorStatement_Constraints());
-    }
-    if ("jetbrains.mps.execution.settings.structure.CreateEditor_Function".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CreateEditor_Function"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.Dispose_Function".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.Dispose_Function"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PersistentPropertyReferenceOperation_Constraints());
-    }
-    if ("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.TemplateParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.TemplateParameter"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.EditorExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EditorExpression_Constraints());
-    }
-    if ("jetbrains.mps.execution.settings.structure.CheckProperitesOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CheckProperitesOperation"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.CheckProperties_Function".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CheckProperties_Function"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.ApplyTo_Function".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.ApplyTo_Function"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.EditorOperationDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EditorOperationDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.execution.settings.structure.EditorOperationCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EditorOperationCall_Constraints());
-    }
-    if ("jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.EditorPropertyReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EditorPropertyReference_Constraints());
-    }
-    if ("jetbrains.mps.execution.settings.structure.ResetFrom_Function".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.ResetFrom_Function"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.SettingsEditorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.SettingsEditorType"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.SettingsEditor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SettingsEditor_Constraints());
-    }
-    if ("jetbrains.mps.execution.settings.structure.Configuration_Parameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.Configuration_Parameter"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"));
-    }
-    if ("jetbrains.mps.execution.settings.structure.GetEditorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GetEditorOperation_Constraints());
-    }
-
-    return null;
   }
 }

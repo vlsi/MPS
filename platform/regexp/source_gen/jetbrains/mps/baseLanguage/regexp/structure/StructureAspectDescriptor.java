@@ -16,200 +16,141 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -1611797126) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.lang.core.structure.BaseConcept");
+    switch ((conceptFqName).hashCode()) {
+      case -1611797126:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Regexp", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1374717238:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1336387331:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1792518964:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1755727380:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 624287648:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1397831625:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -928561125:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1300649657:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -762960189:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1589577813:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1884717202:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -101249024:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1391633112:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1074264799:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1323907037:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1468867215:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -435386697:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1231770290:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1440040543:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1279595906:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1160092315:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 308348669:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1763315530:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1185512346:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVariableAssignment"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1756957861:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -497872613:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", new String[]{}, new String[]{}, new String[]{});
+      case -706622870:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -461984278:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", new String[]{"jetbrains.mps.baseLanguage.structure.Closure"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
+      case 336988160:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -409732792:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 83244052:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1573896761:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Regexps", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 746456180:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1742097838:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 947810022:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 303155600:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 763217537:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -2086202171:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1074154617:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -256725652:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1605576616:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1955121220:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 368331698:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1839375965:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1683994074:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 2138692255:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 289311745:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1490491956:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 1011294165:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1591715994:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -982871751:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 755114098:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart", new String[]{}, new String[]{}, new String[]{});
+      case 760122078:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1337601162:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1350214827:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1675213427:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1158319995:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1364028204:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 439479223:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -983459775:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Replacement", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      default:
+        return null;
     }
-    if (hash == 1374717238) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == -1336387331) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp");
-    }
-    if (hash == 1792518964) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == -1755727380) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == 624287648) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -1397831625) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp");
-    }
-    if (hash == -928561125) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == -1300649657) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == -762960189) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == -1589577813) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression");
-    }
-    if (hash == 1884717202) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == -101249024) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == 1391633112) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart");
-    }
-    if (hash == 1074264799) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp");
-    }
-    if (hash == -1323907037) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp");
-    }
-    if (hash == -1468867215) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -435386697) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 1231770290) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == -1440040543) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == 1279595906) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart");
-    }
-    if (hash == 1160092315) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
-    }
-    if (hash == 308348669) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
-    }
-    if (hash == 1763315530) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
-    }
-    if (hash == -1185512346) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
-    }
-    if (hash == -1756957861) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -497872613) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == -706622870) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == -461984278) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", "jetbrains.mps.baseLanguage.structure.Closure");
-    }
-    if (hash == 336988160) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == -409732792) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == 83244052) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == 1573896761) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Regexps", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 746456180) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == -1742097838) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == 947810022) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == 303155600) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-    }
-    if (hash == 763217537) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp");
-    }
-    if (hash == -2086202171) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp");
-    }
-    if (hash == 1074154617) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == -256725652) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp");
-    }
-    if (hash == 1605576616) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp");
-    }
-    if (hash == 1955121220) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == 368331698) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1839375965) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == -1683994074) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == 2138692255) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == 289311745) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == 1490491956) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == 1011294165) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == -1591715994) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-    }
-    if (hash == -982871751) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
-    }
-    if (hash == 755114098) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart");
-    }
-    if (hash == 760122078) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == 1337601162) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == -1350214827) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == 1675213427) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction");
-    }
-    if (hash == 1158319995) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.structure.IOperation");
-    }
-    if (hash == -1364028204) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.Replacement");
-    }
-    if (hash == 439479223) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.Replacement");
-    }
-    if (hash == -983459775) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Replacement", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -224,12 +165,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

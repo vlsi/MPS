@@ -12,49 +12,37 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.make.facet.structure.IFacet".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.IFacet"));
+    switch ((fqName).hashCode()) {
+      case -1205517430:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.IFacet"));
+      case 141486335:
+        return new DataHolderConstraintsDescriptor(new FacetDeclaration_Constraints());
+      case 2113881325:
+        return new DataHolderConstraintsDescriptor(new TargetDeclaration_Constraints());
+      case 107334008:
+        return new DataHolderConstraintsDescriptor(new TargetDependency_Constraints());
+      case -1240215536:
+        return new DataHolderConstraintsDescriptor(new FacetReference_Constraints());
+      case -584621039:
+        return new DataHolderConstraintsDescriptor(new ExtendsFacetReference_Constraints());
+      case 1375745059:
+        return new DataHolderConstraintsDescriptor(new RelatedFacetReference_Constraints());
+      case -1145966348:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.ParametersDeclaration"));
+      case 84807153:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.LocalParametersExpression"));
+      case 1983802428:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression"));
+      case -1750433830:
+        return new DataHolderConstraintsDescriptor(new ForeignParametersExpression_Constraints());
+      case -722923405:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression"));
+      case -871274826:
+        return new DataHolderConstraintsDescriptor(new ResourceTypeDeclaration_Constraints());
+      case 596111717:
+        return new DataHolderConstraintsDescriptor(new ResourceClassifierType_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.make.facet.structure.FacetDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FacetDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.make.facet.structure.TargetDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TargetDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.make.facet.structure.TargetDependency".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TargetDependency_Constraints());
-    }
-    if ("jetbrains.mps.make.facet.structure.FacetReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FacetReference_Constraints());
-    }
-    if ("jetbrains.mps.make.facet.structure.ExtendsFacetReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExtendsFacetReference_Constraints());
-    }
-    if ("jetbrains.mps.make.facet.structure.RelatedFacetReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RelatedFacetReference_Constraints());
-    }
-    if ("jetbrains.mps.make.facet.structure.ParametersDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.ParametersDeclaration"));
-    }
-    if ("jetbrains.mps.make.facet.structure.LocalParametersExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.LocalParametersExpression"));
-    }
-    if ("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression"));
-    }
-    if ("jetbrains.mps.make.facet.structure.ForeignParametersExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ForeignParametersExpression_Constraints());
-    }
-    if ("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression"));
-    }
-    if ("jetbrains.mps.make.facet.structure.ResourceTypeDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ResourceTypeDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.make.facet.structure.ResourceClassifierType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ResourceClassifierType_Constraints());
-    }
-
-    return null;
   }
 }

@@ -12,61 +12,45 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.build.distrib.structure.DistribConfiguration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new DistribConfiguration_Constraints());
+    switch ((fqName).hashCode()) {
+      case 1656771275:
+        return new DataHolderConstraintsDescriptor(new DistribConfiguration_Constraints());
+      case -575647101:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.ClassPath"));
+      case 699866337:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.AbstractPath"));
+      case -1792201487:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.SimplePath"));
+      case -1453554019:
+        return new DataHolderConstraintsDescriptor(new SystemSpecificConfig_Constraints());
+      case -1035379349:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.WindowsConfig"));
+      case -1687721549:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.UniversalConfig"));
+      case 997126221:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration"));
+      case -1583026122:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.AbstractCommandLinePart"));
+      case 581017063:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.StringCommandLinePart"));
+      case -1525950445:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart"));
+      case 1231612471:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.MacConfig"));
+      case 1472406634:
+        return new DataHolderConstraintsDescriptor(new ExternalVariableReference_Constraints());
+      case 1298311595:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.FileAssociation"));
+      case 1372736716:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.MacOsFileAssociation"));
+      case -1304965136:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.Role"));
+      case 380934371:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.PathCommantLinePart"));
+      case 627527396:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.UnixConfig"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.build.distrib.structure.ClassPath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.ClassPath"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.AbstractPath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.AbstractPath"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.SimplePath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.SimplePath"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.SystemSpecificConfig".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SystemSpecificConfig_Constraints());
-    }
-    if ("jetbrains.mps.build.distrib.structure.WindowsConfig".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.WindowsConfig"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.UniversalConfig".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.UniversalConfig"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.AbstractCommandLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.AbstractCommandLinePart"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.StringCommandLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.StringCommandLinePart"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.MacConfig".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.MacConfig"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.ExternalVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExternalVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.build.distrib.structure.FileAssociation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.FileAssociation"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.MacOsFileAssociation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.MacOsFileAssociation"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.Role".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.Role"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.PathCommantLinePart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.PathCommantLinePart"));
-    }
-    if ("jetbrains.mps.build.distrib.structure.UnixConfig".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.UnixConfig"));
-    }
-
-    return null;
   }
 }

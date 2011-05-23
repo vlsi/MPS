@@ -16,44 +16,37 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -1593474570) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ComplexType", "jetbrains.mps.baseLanguage.structure.PrimitiveType");
+    switch ((conceptFqName).hashCode()) {
+      case -1593474570:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ComplexType", new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"});
+      case -917904193:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ReExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 607058924:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.SingleComplexExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1932893306:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ArgExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -221010026:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.AbsExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 724609648:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ImExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1458135484:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1387468312:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.DegreeComplexExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -928932567:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ImaginaryUnit", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      default:
+        return null;
     }
-    if (hash == -917904193) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ReExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression");
-    }
-    if (hash == 607058924) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.SingleComplexExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1932893306) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ArgExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression");
-    }
-    if (hash == -221010026) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.AbsExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression");
-    }
-    if (hash == 724609648) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ImExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression");
-    }
-    if (hash == -1458135484) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression");
-    }
-    if (hash == -1387468312) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.DegreeComplexExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression");
-    }
-    if (hash == -928932567) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ImaginaryUnit", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -68,12 +61,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

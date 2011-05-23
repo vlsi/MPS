@@ -12,94 +12,67 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptDeclaration_Constraints());
+    switch ((fqName).hashCode()) {
+      case -1477894798:
+        return new DataHolderConstraintsDescriptor(new ConceptDeclaration_Constraints());
+      case -1395543648:
+        return new DataHolderConstraintsDescriptor(new LinkDeclaration_Constraints());
+      case -986014491:
+        return new DataHolderConstraintsDescriptor(new PropertyDeclaration_Constraints());
+      case 1357171030:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.DataTypeDeclaration"));
+      case -1299045745:
+        return new DataHolderConstraintsDescriptor(new EnumerationDataTypeDeclaration_Constraints());
+      case -1633495008:
+        return new DataHolderConstraintsDescriptor(new ConstrainedDataTypeDeclaration_Constraints());
+      case 1325016697:
+        return new DataHolderConstraintsDescriptor(new EnumerationMemberDeclaration_Constraints());
+      case 1190771695:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
+      case -592713635:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"));
+      case -830747333:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration"));
+      case -2033547355:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration"));
+      case -1985322674:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"));
+      case 1027995869:
+        return new DataHolderConstraintsDescriptor(new ConceptProperty_Constraints());
+      case -1129024833:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IntegerConceptProperty"));
+      case -485353835:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.BooleanConceptProperty"));
+      case 997829772:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.StringConceptProperty"));
+      case -1176274664:
+        return new DataHolderConstraintsDescriptor(new ConceptLinkDeclaration_Constraints());
+      case 683773698:
+        return new DataHolderConstraintsDescriptor(new ConceptLink_Constraints());
+      case 104092087:
+        return new DataHolderConstraintsDescriptor(new ReferenceConceptLink_Constraints());
+      case -86231616:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.AggregationConceptLink"));
+      case 1520291738:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration"));
+      case 1897751363:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"));
+      case -2073740687:
+        return new DataHolderConstraintsDescriptor(new AnnotationLinkDeclaration_Constraints());
+      case -1216854732:
+        return new DataHolderConstraintsDescriptor(new AbstractConceptDeclaration_Constraints());
+      case 1721541515:
+        return new DataHolderConstraintsDescriptor(new InterfaceConceptDeclaration_Constraints());
+      case 356957596:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.InterfaceConceptReference"));
+      case -1745550620:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"));
+      case -920744680:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
+      case -1479722377:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IConceptAspect"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.structure.structure.LinkDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LinkDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.PropertyDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PropertyDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.DataTypeDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.DataTypeDeclaration"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EnumerationDataTypeDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConstrainedDataTypeDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EnumerationMemberDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.ConceptProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptProperty_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.IntegerConceptProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IntegerConceptProperty"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.BooleanConceptProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.BooleanConceptProperty"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.StringConceptProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.StringConceptProperty"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptLinkDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.ConceptLink".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptLink_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.ReferenceConceptLink".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReferenceConceptLink_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.AggregationConceptLink".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.AggregationConceptLink"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AnnotationLinkDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractConceptDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new InterfaceConceptDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.structure.structure.InterfaceConceptReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.InterfaceConceptReference"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.IStructureDeprecatable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
-    }
-    if ("jetbrains.mps.lang.structure.structure.IConceptAspect".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IConceptAspect"));
-    }
-
-    return null;
   }
 }

@@ -12,460 +12,311 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ListType"));
+    switch ((fqName).hashCode()) {
+      case -1384755749:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ListType"));
+      case 1670947326:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SequenceType"));
+      case -760619741:
+        return new DataHolderConstraintsDescriptor(new SequenceOperation_Constraints());
+      case -1402435221:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ToListOperation"));
+      case -613576696:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
+      case 880694728:
+        return new DataHolderConstraintsDescriptor(new ForEachVariableReference_Constraints());
+      case 590033409:
+        return new DataHolderConstraintsDescriptor(new ListCreatorWithInit_Constraints());
+      case 560388041:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation"));
+      case 496250253:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation"));
+      case -1030429570:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation"));
+      case -1443641197:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"));
+      case 402205706:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation"));
+      case -420862905:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation"));
+      case 618540446:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetLastOperation"));
+      case -531433966:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation"));
+      case -719936559:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation"));
+      case -1985861499:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation"));
+      case 1671547813:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SkipOperation"));
+      case -1344936547:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TakeOperation"));
+      case -1573453675:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PageOperation"));
+      case 826670934:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation"));
+      case 388515464:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ReverseOperation"));
+      case 1361778560:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation"));
+      case 1711372795:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.UnionOperation"));
+      case -1339257821:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.BinaryOperation"));
+      case -855278549:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IntersectOperation"));
+      case 1842778768:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation"));
+      case -216162178:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SortDirection"));
+      case 2066749512:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.DistinctOperation"));
+      case -1140922768:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ConcatOperation"));
+      case 1413678156:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation"));
+      case -2022286989:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapType"));
+      case -189089407:
+        return new DataHolderConstraintsDescriptor(new HashMapCreator_Constraints());
+      case -1255080413:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapElement"));
+      case -1936503802:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression"));
+      case -1620212018:
+        return new DataHolderConstraintsDescriptor(new MapOperation_Constraints());
+      case -459308566:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation"));
+      case -566985728:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation"));
+      case -1141269879:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapInitializer"));
+      case 1719436633:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapEntry"));
+      case -1889330838:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation"));
+      case -1274565989:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation"));
+      case 1870797971:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation"));
+      case -1120324388:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TranslateOperation"));
+      case -1677889821:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.WhereOperation"));
+      case -483242616:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SelectOperation"));
+      case 1255892294:
+        return new DataHolderConstraintsDescriptor(new SmartClosureParameterDeclaration_Constraints());
+      case 431700710:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"));
+      case -239075282:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation"));
+      case -693467618:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation"));
+      case -1885835674:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SortOperation"));
+      case -672538595:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ChunkOperation"));
+      case -981414744:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.CutOperation"));
+      case 873371636:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TailOperation"));
+      case 250348784:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation"));
+      case -1892399384:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"));
+      case -2076303443:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SkipStatement"));
+      case 1188634762:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.StopStatement"));
+      case -1546668473:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation"));
+      case 1720809866:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation"));
+      case 1611789815:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression"));
+      case -674526253:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation"));
+      case 583807157:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.FindLastOperation"));
+      case -874021511:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SetType"));
+      case -1626746949:
+        return new DataHolderConstraintsDescriptor(new HashSetCreator_Constraints());
+      case 1484522698:
+        return new DataHolderConstraintsDescriptor(new AbstractSetOperation_Constraints());
+      case -305569905:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation"));
+      case -987647834:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation"));
+      case 1106018673:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation"));
+      case 603483912:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation"));
+      case -563200881:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation"));
+      case -629557166:
+        return new DataHolderConstraintsDescriptor(new LinkedListCreator_Constraints());
+      case 81056093:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation"));
+      case 419599231:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation"));
+      case -1218016603:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation"));
+      case 1881580025:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation"));
+      case 1734162612:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation"));
+      case 750019912:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation"));
+      case -504553092:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression"));
+      case 1766577214:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AnyOperation"));
+      case -674779095:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AllOperation"));
+      case 955469955:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator"));
+      case 6876230:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation"));
+      case 1390548011:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IteratorType"));
+      case -938587628:
+        return new DataHolderConstraintsDescriptor(new AbstractIteratorOperation_Constraints());
+      case -1586972387:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.HasNextOperation"));
+      case 153243105:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetNextOperation"));
+      case 1224360609:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation"));
+      case 903459296:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation"));
+      case 679738305:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType"));
+      case 1032120510:
+        return new DataHolderConstraintsDescriptor(new AbstractEnumeratorOperation_Constraints());
+      case -910178704:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation"));
+      case 1344179088:
+        return new DataHolderConstraintsDescriptor(new AbstractContainerCreator_Constraints());
+      case 49522850:
+        return new DataHolderConstraintsDescriptor(new AllConstant_Constraints());
+      case -1373347176:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation"));
+      case 1431857490:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation"));
+      case -199312410:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType"));
+      case -2122972416:
+        return new DataHolderConstraintsDescriptor(new RemoveOperation_Constraints());
+      case 913393082:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator"));
+      case -524264460:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator"));
+      case 1561919030:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SortedMapType"));
+      case 929986577:
+        return new DataHolderConstraintsDescriptor(new TreeMapCreator_Constraints());
+      case 647128043:
+        return new DataHolderConstraintsDescriptor(new SortedMapOperation_Constraints());
+      case -1138266290:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation"));
+      case 1788259774:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TailMapOperation"));
+      case -61211768:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SubMapOperation"));
+      case -1584782788:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SortedSetType"));
+      case -507670965:
+        return new DataHolderConstraintsDescriptor(new TreeSetCreator_Constraints());
+      case 2037699493:
+        return new DataHolderConstraintsDescriptor(new SortedSetOperation_Constraints());
+      case 252305160:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation"));
+      case -1116136072:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TailSetOperation"));
+      case 1329359682:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SubSetOperation"));
+      case 1997672401:
+        return new DataHolderConstraintsDescriptor(new AsSequenceOperation_Constraints());
+      case -737272475:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MappingType"));
+      case 926565466:
+        return new DataHolderConstraintsDescriptor(new JoinOperation_Constraints());
+      case 809731934:
+        return new DataHolderConstraintsDescriptor(new AbstractMappingOperation_Constraints());
+      case -1343102187:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation"));
+      case 2063685927:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation"));
+      case 285362573:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation"));
+      case -329753806:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation"));
+      case -483119256:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.QueueType"));
+      case 261938774:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType"));
+      case 1483900279:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.DequeType"));
+      case 2106493292:
+        return new DataHolderConstraintsDescriptor(new IContainerOperation_Constraints());
+      case 796957475:
+        return new DataHolderConstraintsDescriptor(new IListOperation_Constraints());
+      case 1169068508:
+        return new DataHolderConstraintsDescriptor(new IQueueOperation_Constraints());
+      case -1310702241:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.StackType"));
+      case 1099869485:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IDequeOperation"));
+      case 1036295749:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IStackOperation"));
+      case -620479111:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PopOperation"));
+      case 330080362:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PushOperation"));
+      case 1869622786:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator"));
+      case 1832171732:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.LinkedListType"));
+      case -1370452546:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"));
+      case 868177908:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation"));
+      case -411683257:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation"));
+      case 107525983:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation"));
+      case 1110782184:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainsAllOperation"));
+      case -1319094804:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SubListOperation"));
+      case 1357698889:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PeekOperation"));
+      case -348046618:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.HeadListOperation"));
+      case 179948150:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TailListOperation"));
+      case -1922496147:
+        return new DataHolderConstraintsDescriptor(new CustomContainerDeclaration_Constraints());
+      case -2132191162:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.CustomContainers"));
+      case -426375777:
+        return new DataHolderConstraintsDescriptor(new CustomContainerCreator_Constraints());
+      case -1132525724:
+        return new DataHolderConstraintsDescriptor(new CustomMapCreator_Constraints());
+      case 2123019459:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
+      case 1256368279:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ReduceLeftOperation"));
+      case 946669076:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ReduceRightOperation"));
+      case 1202327836:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation"));
+      case -728584657:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SequenceType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SequenceOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ToListOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ToListOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ForEachVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ListCreatorWithInit_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetLastOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetLastOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SkipOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SkipOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.TakeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TakeOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.PageOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PageOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ReverseOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ReverseOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.UnionOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.UnionOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.BinaryOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.BinaryOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IntersectOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IntersectOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SortDirection".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SortDirection"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.DistinctOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.DistinctOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ConcatOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ConcatOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MapType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new HashMapCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MapElement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapElement"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MapOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MapOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MapInitializer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapInitializer"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MapEntry".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapEntry"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.TranslateOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TranslateOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.WhereOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.WhereOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SelectOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SelectOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SmartClosureParameterDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SortOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SortOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ChunkOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ChunkOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.CutOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.CutOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.TailOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TailOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SkipStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SkipStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.StopStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.StopStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.FindLastOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.FindLastOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SetType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new HashSetCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractSetOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LinkedListCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AnyOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AnyOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AllOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AllOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IteratorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IteratorType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractIteratorOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.HasNextOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.HasNextOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetNextOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetNextOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractEnumeratorOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractContainerCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AllConstant".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AllConstant_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RemoveOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SortedMapType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SortedMapType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TreeMapCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SortedMapOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.TailMapOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TailMapOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SubMapOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SubMapOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SortedSetType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SortedSetType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TreeSetCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SortedSetOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.TailSetOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TailSetOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SubSetOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SubSetOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AsSequenceOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MappingType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MappingType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.JoinOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new JoinOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractMappingOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.QueueType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.QueueType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.DequeType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.DequeType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IContainerOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IContainerOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IListOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IListOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IQueueOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IQueueOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.StackType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.StackType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IDequeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IDequeOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.IStackOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.IStackOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.PopOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PopOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.PushOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PushOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.LinkedListType"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ContainsAllOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ContainsAllOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.SubListOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.SubListOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.PeekOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.PeekOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.HeadListOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.HeadListOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.TailListOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.TailListOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CustomContainerDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.CustomContainers".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.CustomContainers"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CustomContainerCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CustomMapCreator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ReduceLeftOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ReduceLeftOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.ReduceRightOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.ReduceRightOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation"));
-    }
-
-    return null;
   }
 }

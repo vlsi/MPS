@@ -12,28 +12,23 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.pattern.testLang.structure.PatternTest".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.PatternTest"));
+    switch ((fqName).hashCode()) {
+      case -2089854751:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.PatternTest"));
+      case 911428916:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.VariableValue"));
+      case -1180169316:
+        return new DataHolderConstraintsDescriptor(new TestVariableReference_Constraints());
+      case -808094393:
+        return new DataHolderConstraintsDescriptor(new TestPropertyVariableReference_Constraints());
+      case -1445432965:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.PropertyValue"));
+      case 737557458:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.ListValue"));
+      case 107590202:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.TestListReference"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.pattern.testLang.structure.VariableValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.VariableValue"));
-    }
-    if ("jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TestVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TestPropertyVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.testLang.structure.PropertyValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.PropertyValue"));
-    }
-    if ("jetbrains.mps.lang.pattern.testLang.structure.ListValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.ListValue"));
-    }
-    if ("jetbrains.mps.lang.pattern.testLang.structure.TestListReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.TestListReference"));
-    }
-
-    return null;
   }
 }

@@ -3,7 +3,7 @@
   <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="53" startPosition="15" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$1" />
   <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="69" startPosition="15" endLine="79" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$2" />
   <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="104" startPosition="32" endLine="127" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$3" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="30" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints" />
   <root nodeId="5379647004618378867">
     <nodeInfo nodeId="3778783095369073642" fileName="CustomConstructorParameterReference_Constraints.java" startLine="111" startPosition="136" endLine="112" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

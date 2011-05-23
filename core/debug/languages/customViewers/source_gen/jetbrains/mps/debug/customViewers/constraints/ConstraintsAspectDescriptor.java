@@ -12,112 +12,79 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.debug.customViewers.structure.ValueType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ValueType"));
+    switch ((fqName).hashCode()) {
+      case 385455873:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ValueType"));
+      case -1266363140:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ArrayValueType"));
+      case -1840125438:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ObjectValueType"));
+      case -413293266:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.PrimitiveValueType"));
+      case 1596457070:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomWatchable"));
+      case -1554117572:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer"));
+      case -979047827:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomViewer"));
+      case -423315143:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchableType"));
+      case 924295629:
+        return new DataHolderConstraintsDescriptor(new WatchableCreator_Constraints());
+      case -902504040:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction"));
+      case -214302830:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter"));
+      case -1566379162:
+        return new DataHolderConstraintsDescriptor(new FieldsListOperation_Constraints());
+      case 1136979095:
+        return new DataHolderConstraintsDescriptor(new FieldOperation_Constraints());
+      case -1553631659:
+        return new DataHolderConstraintsDescriptor(new ElementOperation_Constraints());
+      case -173829120:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction"));
+      case -811022110:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction"));
+      case -1729275250:
+        return new DataHolderConstraintsDescriptor(new ClassNameOperation_Constraints());
+      case -1759524093:
+        return new DataHolderConstraintsDescriptor(new ClassFqNameOperation_Constraints());
+      case 343760412:
+        return new DataHolderConstraintsDescriptor(new SizeOperation_Constraints());
+      case 717792793:
+        return new DataHolderConstraintsDescriptor(new AllElementsOperation_Constraints());
+      case 929781387:
+        return new DataHolderConstraintsDescriptor(new ElementsRangeOperation_Constraints());
+      case -2122334594:
+        return new DataHolderConstraintsDescriptor(new CallMethodOperation_Constraints());
+      case -896987198:
+        return new DataHolderConstraintsDescriptor(new JavaValueOperation_Constraints());
+      case 1817147760:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.StringValueType"));
+      case 1881791729:
+        return new DataHolderConstraintsDescriptor(new StringValueOperation_Constraints());
+      case -2116950617:
+        return new DataHolderConstraintsDescriptor(new IsInstanceOfOperation_Constraints());
+      case 817968827:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer"));
+      case 2113227254:
+        return new DataHolderConstraintsDescriptor(new GetHighLevelValuePresentation_ConceptFunction_Constraints());
+      case -1941463794:
+        return new DataHolderConstraintsDescriptor(new GetHighLevelWatchablesBlock_ConceptFunction_Constraints());
+      case 711558688:
+        return new DataHolderConstraintsDescriptor(new CanWrapHighLevelValue_ConceptFunction_Constraints());
+      case 1061219375:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter"));
+      case -411494629:
+        return new DataHolderConstraintsDescriptor(new HighLevelWatchableCreator_Constraints());
+      case 1020490266:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchablesListCreator"));
+      case -1886369929:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchableListType"));
+      case -463695957:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ToProcessMethod"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.debug.customViewers.structure.ArrayValueType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ArrayValueType"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.ObjectValueType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ObjectValueType"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.PrimitiveValueType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.PrimitiveValueType"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.CustomWatchable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomWatchable"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.CustomViewer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomViewer"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.WatchableType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchableType"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.WatchableCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new WatchableCreator_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.FieldsListOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FieldsListOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.FieldOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FieldOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.ElementOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ElementOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.ClassNameOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ClassNameOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.ClassFqNameOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ClassFqNameOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.SizeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SizeOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.AllElementsOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AllElementsOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.ElementsRangeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ElementsRangeOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.CallMethodOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CallMethodOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.JavaValueOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new JavaValueOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.StringValueType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.StringValueType"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.StringValueOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new StringValueOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.IsInstanceOfOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IsInstanceOfOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GetHighLevelValuePresentation_ConceptFunction_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GetHighLevelWatchablesBlock_ConceptFunction_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.CanWrapHighLevelValue_ConceptFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CanWrapHighLevelValue_ConceptFunction_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new HighLevelWatchableCreator_Constraints());
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.WatchablesListCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchablesListCreator"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.WatchableListType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchableListType"));
-    }
-    if ("jetbrains.mps.debug.customViewers.structure.ToProcessMethod".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ToProcessMethod"));
-    }
-
-    return null;
   }
 }

@@ -79,7 +79,6 @@
   <unitInfo fileName="LinkPatternVariableReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference" />
   <unitInfo fileName="PatternVariableReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" />
   <unitInfo fileName="CreateEquationStatement.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="407" startPosition="0" endLine="439" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ReplacementRuleReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference" />
   <unitInfo fileName="OriginalNodeId.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OriginalNodeId" />
   <unitInfo fileName="NodeInfo.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.NodeInfo" />
@@ -96,6 +95,7 @@
   <unitInfo fileName="MeetType.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MeetType" />
   <unitInfo fileName="JoinType.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.JoinType" />
   <unitInfo fileName="MultipleForeachLoop.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="281" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="InequalityProperty_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" />
   <unitInfo fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind_PropertySupport" />
   <unitInfo fileName="InequationPriority_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority_PropertySupport" />
@@ -142,6 +142,6 @@
   <unitInfo fileName="ReportErrorStatement.java" startLine="15" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" />
   <unitInfo fileName="TypesystemQuickFix.java" startLine="15" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" />
   <unitInfo fileName="AbstractInequationStatement.java" startLine="12" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="440" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.StructureAspectDescriptor" />
 </debugInfo>
 

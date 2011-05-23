@@ -12,28 +12,23 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new StateMachine_Constraints());
+    switch ((fqName).hashCode()) {
+      case 1517356480:
+        return new DataHolderConstraintsDescriptor(new StateMachine_Constraints());
+      case -914149744:
+        return new DataHolderConstraintsDescriptor(new Event_Constraints());
+      case -901283705:
+        return new DataHolderConstraintsDescriptor(new State_Constraints());
+      case -1996244193:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"));
+      case 186637938:
+        return new DataHolderConstraintsDescriptor(new StateMachineTest_Constraints());
+      case -1225622029:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod"));
+      case 1624840392:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.samples.secretCompartmentLanguage.structure.Event".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Event_Constraints());
-    }
-    if ("jetbrains.mps.samples.secretCompartmentLanguage.structure.State".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new State_Constraints());
-    }
-    if ("jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"));
-    }
-    if ("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new StateMachineTest_Constraints());
-    }
-    if ("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod"));
-    }
-    if ("jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent"));
-    }
-
-    return null;
   }
 }

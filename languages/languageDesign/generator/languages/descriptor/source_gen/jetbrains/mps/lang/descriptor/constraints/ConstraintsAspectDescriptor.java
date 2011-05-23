@@ -11,10 +11,11 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.descriptor.structure.LanguageDescriptor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LanguageDescriptor_Constraints());
+    switch ((fqName).hashCode()) {
+      case 1514352727:
+        return new DataHolderConstraintsDescriptor(new LanguageDescriptor_Constraints());
+      default:
+        return null;
     }
-
-    return null;
   }
 }

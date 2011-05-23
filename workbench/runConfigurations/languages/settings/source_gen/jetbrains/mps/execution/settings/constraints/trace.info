@@ -17,9 +17,9 @@
   <unitInfo fileName="ReportConfigurationErrorStatement_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.ReportConfigurationErrorStatement_Constraints" />
   <unitInfo fileName="GetEditorOperation_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.GetEditorOperation_Constraints" />
   <unitInfo fileName="PersistentPropertyReferenceOperation_Constraints.java" startLine="26" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.PersistentPropertyReferenceOperation_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="EditorOperationCall_Constraints.java" startLine="31" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.EditorOperationCall_Constraints" />
   <unitInfo fileName="TemplateParameterReference_Constraints.java" startLine="28" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.TemplateParameterReference_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="EditorExpression_Constraints.java" startLine="34" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.EditorExpression_Constraints" />
   <root nodeId="5365453833390705323">
     <nodeInfo nodeId="5365453833390705328" fileName="GetEditorOperation_Constraints.java" startLine="86" startPosition="114" endLine="87" endPosition="535" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

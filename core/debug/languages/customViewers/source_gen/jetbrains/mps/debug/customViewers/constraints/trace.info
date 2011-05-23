@@ -34,6 +34,7 @@
   <unitInfo fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.GetHighLevelWatchablesBlock_ConceptFunction_Constraints" />
   <unitInfo fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.CanWrapHighLevelValue_ConceptFunction_Constraints" />
   <unitInfo fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.GetHighLevelValuePresentation_ConceptFunction_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="IsInstanceOfOperation_Constraints.java" startLine="28" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.IsInstanceOfOperation_Constraints" />
   <unitInfo fileName="StringValueOperation_Constraints.java" startLine="28" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.StringValueOperation_Constraints" />
   <unitInfo fileName="JavaValueOperation_Constraints.java" startLine="28" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.JavaValueOperation_Constraints" />
@@ -46,7 +47,6 @@
   <unitInfo fileName="ElementOperation_Constraints.java" startLine="28" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementOperation_Constraints" />
   <unitInfo fileName="FieldOperation_Constraints.java" startLine="28" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldOperation_Constraints" />
   <unitInfo fileName="FieldsListOperation_Constraints.java" startLine="28" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldsListOperation_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1843851250586694523">
     <nodeInfo nodeId="1843851250586694526" fileName="ClassNameOperation_Constraints.java" startLine="89" startPosition="114" endLine="90" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1843851250586694525" fileName="ClassNameOperation_Constraints.java" startLine="89" startPosition="114" endLine="90" endPosition="331" />

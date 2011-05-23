@@ -12,37 +12,29 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer"));
+    switch ((fqName).hashCode()) {
+      case 1724814137:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer"));
+      case 2066564648:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"));
+      case 894689369:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage"));
+      case 707139725:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"));
+      case 704260230:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"));
+      case 1479201182:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"));
+      case -204735903:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter"));
+      case -1456569878:
+        return new DataHolderConstraintsDescriptor(new CustomConstructorParameterReference_Constraints());
+      case 168815585:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"));
+      case 1584506201:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"));
-    }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage"));
-    }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"));
-    }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"));
-    }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"));
-    }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter"));
-    }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CustomConstructorParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"));
-    }
-    if ("jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter"));
-    }
-
-    return null;
   }
 }

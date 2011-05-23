@@ -16,116 +16,85 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -674486598) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "jetbrains.mps.lang.core.structure.NodeAttribute");
+    switch ((conceptFqName).hashCode()) {
+      case -674486598:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -252113956:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1224573282:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 517858378:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 1901023289:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -288448233:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -268401350:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -946350287:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1812431944:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -967557280:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1339220835:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1689892011:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1438679545:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 447555986:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 842791903:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -1898345334:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -55791932:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -906120489:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -612690553:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -349428946:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1151780598:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 2059337802:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 928304358:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1255936821:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -255781154:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 15558262:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1621098166:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1216915753:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1720986962:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -661289190:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1440516478:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -580943491:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1590048047:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      default:
+        return null;
     }
-    if (hash == -252113956) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 1224573282) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag");
-    }
-    if (hash == 517858378) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment");
-    }
-    if (hash == 1901023289) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag");
-    }
-    if (hash == -288448233) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag");
-    }
-    if (hash == -268401350) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag");
-    }
-    if (hash == -946350287) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 1812431944) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag");
-    }
-    if (hash == -967557280) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag");
-    }
-    if (hash == -1339220835) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag");
-    }
-    if (hash == -1689892011) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 1438679545) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference");
-    }
-    if (hash == 447555986) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference");
-    }
-    if (hash == 842791903) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment");
-    }
-    if (hash == -1898345334) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment");
-    }
-    if (hash == -55791932) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -906120489) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart");
-    }
-    if (hash == -612690553) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart");
-    }
-    if (hash == -349428946) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1151780598) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag");
-    }
-    if (hash == 2059337802) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag");
-    }
-    if (hash == 928304358) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1255936821) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference");
-    }
-    if (hash == -255781154) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag");
-    }
-    if (hash == 15558262) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference");
-    }
-    if (hash == 1621098166) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference");
-    }
-    if (hash == -1216915753) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag");
-    }
-    if (hash == -1720986962) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-    }
-    if (hash == -661289190) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag");
-    }
-    if (hash == -1440516478) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference");
-    }
-    if (hash == -580943491) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference");
-    }
-    if (hash == 1590048047) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -140,12 +109,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

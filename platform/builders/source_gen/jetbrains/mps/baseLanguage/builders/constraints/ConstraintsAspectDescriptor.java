@@ -12,82 +12,59 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.builders.structure.Builder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.Builder"));
+    switch ((fqName).hashCode()) {
+      case 1031423737:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.Builder"));
+      case -1038698765:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"));
+      case -145962378:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement"));
+      case -421754633:
+        return new DataHolderConstraintsDescriptor(new ResultExpression_Constraints());
+      case 1947798252:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"));
+      case 1460546293:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild"));
+      case 290784105:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression"));
+      case 1838033773:
+        return new DataHolderConstraintsDescriptor(new SimpleBuilderChildExpression_Constraints());
+      case 2029395039:
+        return new DataHolderConstraintsDescriptor(new SimpleBuilderExpression_Constraints());
+      case 577643667:
+        return new DataHolderConstraintsDescriptor(new SimpleBuilderDeclaration_Constraints());
+      case 1171210855:
+        return new DataHolderConstraintsDescriptor(new SimpleBuilder_Constraints());
+      case -138914558:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter"));
+      case -1028158359:
+        return new DataHolderConstraintsDescriptor(new SimpleBuilderParameterReference_Constraints());
+      case -332700088:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement"));
+      case 1528229256:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"));
+      case -502044524:
+        return new DataHolderConstraintsDescriptor(new BeanPropertyBuilder_Constraints());
+      case -703502807:
+        return new DataHolderConstraintsDescriptor(new BeanBuilder_Constraints());
+      case 718963789:
+        return new DataHolderConstraintsDescriptor(new AsTypeBuilder_Constraints());
+      case 463351132:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"));
+      case 1871157524:
+        return new DataHolderConstraintsDescriptor(new SimpleBuilderPropertyExpression_Constraints());
+      case 1985326374:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent"));
+      case -484610699:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue"));
+      case -1855071585:
+        return new DataHolderConstraintsDescriptor(new SimpleBuilderPropertyBuilder_Constraints());
+      case 113519492:
+        return new DataHolderConstraintsDescriptor(new BaseSimpleBuilderDeclaration_Constraints());
+      case 379351234:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.ResultExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ResultExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SimpleBuilderChildExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SimpleBuilderExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SimpleBuilderDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SimpleBuilder_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SimpleBuilderParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.BuilderContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BeanPropertyBuilder_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BeanBuilder_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AsTypeBuilder_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SimpleBuilderPropertyExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue"));
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SimpleBuilderPropertyBuilder_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BaseSimpleBuilderDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"));
-    }
-
-    return null;
   }
 }

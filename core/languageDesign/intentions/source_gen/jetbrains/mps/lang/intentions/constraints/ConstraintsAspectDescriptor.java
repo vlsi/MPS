@@ -12,58 +12,43 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.intentions.structure.IntentionDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IntentionDeclaration_Constraints());
+    switch ((fqName).hashCode()) {
+      case -713206842:
+        return new DataHolderConstraintsDescriptor(new IntentionDeclaration_Constraints());
+      case -488683575:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.DescriptionBlock"));
+      case 599031500:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.IsApplicableBlock"));
+      case 1103938544:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ExecuteBlock"));
+      case -328333184:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"));
+      case 1264391293:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.QueryBlock"));
+      case -417352459:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.IntentionParameter"));
+      case 1572281711:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"));
+      case -198052079:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ChildFilterBlock"));
+      case -1133772076:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ChildFilterFunction"));
+      case 226602368:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"));
+      case -619229129:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"));
+      case -1468598053:
+        return new DataHolderConstraintsDescriptor(new GenerateIntentionDeclaration_Constraints());
+      case 789005578:
+        return new DataHolderConstraintsDescriptor(new SurroundWithIntentionDeclaration_Constraints());
+      case -1332584164:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ExecuteUIBlock"));
+      case -706594644:
+        return new DataHolderConstraintsDescriptor(new IntentionContextParameterDeclaration_Constraints());
+      case -238295015:
+        return new DataHolderConstraintsDescriptor(new IntentionContextParamReference_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.intentions.structure.DescriptionBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.DescriptionBlock"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.IsApplicableBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.IsApplicableBlock"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.ExecuteBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ExecuteBlock"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.QueryBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.QueryBlock"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.IntentionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.IntentionParameter"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.ChildFilterBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ChildFilterBlock"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.ChildFilterFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ChildFilterFunction"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GenerateIntentionDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SurroundWithIntentionDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.intentions.structure.ExecuteUIBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ExecuteUIBlock"));
-    }
-    if ("jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IntentionContextParameterDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.intentions.structure.IntentionContextParamReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IntentionContextParamReference_Constraints());
-    }
-
-    return null;
   }
 }

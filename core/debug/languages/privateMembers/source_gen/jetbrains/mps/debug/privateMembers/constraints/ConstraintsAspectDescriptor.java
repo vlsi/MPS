@@ -11,19 +11,17 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PrivateFieldReferenceOperation_Constraints());
+    switch ((fqName).hashCode()) {
+      case 1470068757:
+        return new DataHolderConstraintsDescriptor(new PrivateFieldReferenceOperation_Constraints());
+      case 279156242:
+        return new DataHolderConstraintsDescriptor(new PrivateInstanceMethodCallOperation_Constraints());
+      case -795608384:
+        return new DataHolderConstraintsDescriptor(new PrivateStaticFieldReference_Constraints());
+      case 227879342:
+        return new DataHolderConstraintsDescriptor(new PrivateStaticMethodCall_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PrivateInstanceMethodCallOperation_Constraints());
-    }
-    if ("jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PrivateStaticFieldReference_Constraints());
-    }
-    if ("jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PrivateStaticMethodCall_Constraints());
-    }
-
-    return null;
   }
 }

@@ -12,16 +12,15 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral"));
+    switch ((fqName).hashCode()) {
+      case 348497505:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral"));
+      case 218204086:
+        return new DataHolderConstraintsDescriptor(new TextMacro_Constraints());
+      case 2086072761:
+        return new DataHolderConstraintsDescriptor(new ElementMacro_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.samples.xmlLiterals.structure.TextMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TextMacro_Constraints());
-    }
-    if ("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ElementMacro_Constraints());
-    }
-
-    return null;
   }
 }

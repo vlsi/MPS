@@ -16,101 +16,75 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -1296394842) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration");
+    switch ((conceptFqName).hashCode()) {
+      case -1296394842:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod", new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"});
+      case 749715775:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"});
+      case -1510705051:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfiguration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{"jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"});
+      case -183649691:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfigurationType"}, new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfigurationType"}, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"});
+      case 1833084214:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.TemplateParameterReference", new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"});
+      case 1273201231:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1075584972:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.CreateEditor_Function", new String[]{"jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"}, new String[]{"jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -291253230:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.Dispose_Function", new String[]{"jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"}, new String[]{"jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1035292158:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1173261313:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfiguration"}, new String[]{"jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.execution.settings.structure.PersistentConfiguration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"});
+      case 629388643:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"});
+      case -693359468:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"});
+      case -385830507:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.TemplateParameter", new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"});
+      case -1330714145:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -574308656:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.CheckProperitesOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation"});
+      case 793050919:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1237712726:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.CheckProperties_Function", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.classifiers.structure.IMember"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IMember", "jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 795207400:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.ApplyTo_Function", new String[]{"jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"}, new String[]{"jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1235690470:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1869789250:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorOperationCall", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -375217922:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"});
+      case 1954773967:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorPropertyReference", new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"});
+      case -1874705576:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.ResetFrom_Function", new String[]{"jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"}, new String[]{"jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1000565180:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.SettingsEditorType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case -1837721622:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.SettingsEditor", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1066187846:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.Configuration_Parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 1731709693:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", new String[]{}, new String[]{}, new String[]{});
+      case -1778395202:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.GetEditorOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      default:
+        return null;
     }
-    if (hash == 749715775) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
-    }
-    if (hash == -1510705051) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.execution.common.structure.IGeneratedToClass");
-    }
-    if (hash == -183649691) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType");
-    }
-    if (hash == 1833084214) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.baseLanguage.structure.VariableReference");
-    }
-    if (hash == 1273201231) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == -1075584972) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.CreateEditor_Function", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration");
-    }
-    if (hash == -291253230) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.Dispose_Function", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration");
-    }
-    if (hash == -1035292158) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation");
-    }
-    if (hash == -1173261313) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfiguration");
-    }
-    if (hash == 629388643) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.baseLanguage.structure.AbstractCreator");
-    }
-    if (hash == -693359468) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-    }
-    if (hash == -385830507) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-    }
-    if (hash == -1330714145) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -574308656) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation");
-    }
-    if (hash == 793050919) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 1237712726) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.CheckProperties_Function", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
-    }
-    if (hash == 795207400) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.ApplyTo_Function", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration");
-    }
-    if (hash == -1235690470) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -1869789250) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation");
-    }
-    if (hash == -375217922) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-    }
-    if (hash == 1954773967) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.baseLanguage.structure.VariableReference");
-    }
-    if (hash == -1874705576) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.ResetFrom_Function", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration");
-    }
-    if (hash == -1000565180) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.baseLanguage.structure.Type");
-    }
-    if (hash == -1837721622) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 1066187846) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.Configuration_Parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 1731709693) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent");
-    }
-    if (hash == -1778395202) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -125,12 +99,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

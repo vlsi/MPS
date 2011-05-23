@@ -12,64 +12,47 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.closures.structure.FunctionType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FunctionType_Constraints());
+    switch ((fqName).hashCode()) {
+      case 131995956:
+        return new DataHolderConstraintsDescriptor(new FunctionType_Constraints());
+      case 1285562922:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression"));
+      case 258022262:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
+      case -1356334542:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.InvokeExpression"));
+      case -1617564188:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.YieldStatement"));
+      case 1427710889:
+        return new DataHolderConstraintsDescriptor(new UnboundClosureParameterDeclaration_Constraints());
+      case -28029225:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.PairOfInts"));
+      case -1786475948:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder"));
+      case 1069353877:
+        return new DataHolderConstraintsDescriptor(new InvokeFunctionOperation_Constraints());
+      case 228589625:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement"));
+      case 1139512650:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral"));
+      case 28365227:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"));
+      case 1681761519:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral"));
+      case 738468150:
+        return new DataHolderConstraintsDescriptor(new ControlAbstractionContainer_Constraints());
+      case -1237847825:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration"));
+      case -760940536:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"));
+      case 1385843753:
+        return new DataHolderConstraintsDescriptor(new CompactInvokeFunctionExpression_Constraints());
+      case 1246863903:
+        return new DataHolderConstraintsDescriptor(new FunctionMethodDeclaration_Constraints());
+      case -1521674122:
+        return new DataHolderConstraintsDescriptor(new AbstractFunctionType_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.InvokeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.InvokeExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.YieldStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.YieldStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new UnboundClosureParameterDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.PairOfInts".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.PairOfInts"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new InvokeFunctionOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ControlAbstractionContainer_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"));
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CompactInvokeFunctionExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FunctionMethodDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractFunctionType_Constraints());
-    }
-
-    return null;
   }
 }

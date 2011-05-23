@@ -16,26 +16,25 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -689183868) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.structure.EditorCellModel");
+    switch ((conceptFqName).hashCode()) {
+      case -689183868:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_Table", new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"}, new String[]{}, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"});
+      case 772576652:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 607441035:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"}, new String[]{}, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"});
+      default:
+        return null;
     }
-    if (hash == 772576652) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 607441035) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.structure.EditorCellModel");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -50,12 +49,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

@@ -12,28 +12,23 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.testbench.suite.structure.ModuleSuite".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ModuleSuite_Constraints());
+    switch ((fqName).hashCode()) {
+      case 342889525:
+        return new DataHolderConstraintsDescriptor(new ModuleSuite_Constraints());
+      case 1711035034:
+        return new DataHolderConstraintsDescriptor(new TestCaseRef_Constraints());
+      case -1113498860:
+        return new DataHolderConstraintsDescriptor(new JUnit4TestCaseRef_Constraints());
+      case -1242581579:
+        return new DataHolderConstraintsDescriptor(new JUnit3TestCaseRef_Constraints());
+      case -83577265:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.ITestRef"));
+      case -478411613:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.SolutionRef"));
+      case 927111861:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.IModuleRef"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.testbench.suite.structure.TestCaseRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TestCaseRef_Constraints());
-    }
-    if ("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new JUnit4TestCaseRef_Constraints());
-    }
-    if ("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new JUnit3TestCaseRef_Constraints());
-    }
-    if ("jetbrains.mps.testbench.suite.structure.ITestRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.ITestRef"));
-    }
-    if ("jetbrains.mps.testbench.suite.structure.SolutionRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.SolutionRef"));
-    }
-    if ("jetbrains.mps.testbench.suite.structure.IModuleRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.IModuleRef"));
-    }
-
-    return null;
   }
 }

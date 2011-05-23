@@ -16,194 +16,137 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -131104684) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+    switch ((conceptFqName).hashCode()) {
+      case -131104684:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 1794917198:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 681346008:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1917592753:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 492621374:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.PowExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1490966105:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 236605103:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.VectorType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case -1733314897:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixNorm", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1733126611:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case -808117933:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", new String[]{}, new String[]{}, new String[]{});
+      case -2034762699:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathContext", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1732967013:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixZero", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1539017332:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LiteralI", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -625116119:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 648975776:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"});
+      case 352340839:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 1768284982:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1280513129:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.SineExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 600829629:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 320806848:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.TransposeOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1331460239:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -2046259329:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"});
+      case 1237343187:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathTypeCast", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -2083523861:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.TangentExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -907482023:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1813461976:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.AbsExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -29129125:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"});
+      case 352684074:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LogExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 902819658:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 589006587:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 706551179:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1733107593:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixUnit", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1765678845:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.Determinant", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -91353443:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigProdExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 911944757:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigSumExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 426304138:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1807249027:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.CosineExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -985547875:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 799425916:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigComplexType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case -673581188:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigMinExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1222184149:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1648543314:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbol", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 752375921:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1421525320:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case -1211700423:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -525432371:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.VectorInitializer", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1192717066:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case -1200018375:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1799079950:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1282422530:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.AbstractIndex", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"});
+      case 1595158193:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case -748863831:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", new String[]{}, new String[]{}, new String[]{});
+      case -1477721725:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1988667291:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1331715832:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -814510393:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case -1396728140:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1846962837:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1430643391:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      default:
+        return null;
     }
-    if (hash == 1794917198) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-    }
-    if (hash == 681346008) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1917592753) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.structure.Type");
-    }
-    if (hash == 492621374) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1490966105) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 236605103) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.VectorType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType");
-    }
-    if (hash == -1733314897) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1733126611) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType");
-    }
-    if (hash == -808117933) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType");
-    }
-    if (hash == -2034762699) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathContext", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1732967013) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1539017332) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -625116119) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation");
-    }
-    if (hash == 648975776) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.AbstractIndex");
-    }
-    if (hash == 352340839) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-    }
-    if (hash == 1768284982) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1280513129) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.SineExpression", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression");
-    }
-    if (hash == 600829629) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation");
-    }
-    if (hash == 320806848) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.TransposeOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation");
-    }
-    if (hash == 1331460239) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer");
-    }
-    if (hash == -2046259329) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-    }
-    if (hash == 1237343187) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -2083523861) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.TangentExpression", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression");
-    }
-    if (hash == -907482023) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1813461976) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -29129125) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.AbstractIndex");
-    }
-    if (hash == 352684074) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LogExpression", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression");
-    }
-    if (hash == 902819658) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation");
-    }
-    if (hash == 589006587) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol");
-    }
-    if (hash == 706551179) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1733107593) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1765678845) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.Determinant", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression");
-    }
-    if (hash == -91353443) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigProdExpression", "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol");
-    }
-    if (hash == 911944757) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigSumExpression", "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol");
-    }
-    if (hash == 426304138) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation");
-    }
-    if (hash == 1807249027) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.CosineExpression", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression");
-    }
-    if (hash == -985547875) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
-    }
-    if (hash == 799425916) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigComplexType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
-    }
-    if (hash == -673581188) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigMinExpression", "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol");
-    }
-    if (hash == -1222184149) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol");
-    }
-    if (hash == 1648543314) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 752375921) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1421525320) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
-    }
-    if (hash == -1211700423) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -525432371) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer");
-    }
-    if (hash == 1192717066) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
-    }
-    if (hash == -1200018375) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentExpression", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression");
-    }
-    if (hash == 1799079950) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol");
-    }
-    if (hash == -1282422530) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.AbstractIndex", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier");
-    }
-    if (hash == 1595158193) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation");
-    }
-    if (hash == -748863831) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer");
-    }
-    if (hash == -1477721725) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer");
-    }
-    if (hash == -1988667291) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1331715832) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -814510393) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.structure.Type");
-    }
-    if (hash == -1396728140) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1846962837) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation");
-    }
-    if (hash == -1430643391) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -218,12 +161,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

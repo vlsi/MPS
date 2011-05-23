@@ -12,292 +12,199 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.refactoring.structure.OldRefactoring".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OldRefactoring"));
+    switch ((fqName).hashCode()) {
+      case -2049587604:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OldRefactoring"));
+      case 522700086:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument"));
+      case 501316971:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableClause"));
+      case -1115490897:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DoRefactorClause"));
+      case 1217468085:
+        return new DataHolderConstraintsDescriptor(new RequiredAdditionalArgumentReference_Constraints());
+      case 547406044:
+        return new DataHolderConstraintsDescriptor(new UpdateModelClause_Constraints());
+      case -433093863:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel"));
+      case 749758092:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause"));
+      case -1363641577:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument"));
+      case -508452457:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FilterArgumentClause"));
+      case 1410635275:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument"));
+      case 1159516810:
+        return new DataHolderConstraintsDescriptor(new UpdateModelByDefaultOperation_Constraints());
+      case -1369919799:
+        return new DataHolderConstraintsDescriptor(new ChangeFeatureNameOperation_Constraints());
+      case 1110498978:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause"));
+      case -1360528314:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"));
+      case -1121618289:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitialValueClause"));
+      case 1464764094:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"));
+      case -44469408:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression"));
+      case 780028867:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression"));
+      case 1628389344:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression"));
+      case -1898256101:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression"));
+      case 291871833:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression"));
+      case 1383766402:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression"));
+      case 1471088793:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause"));
+      case -1372366961:
+        return new DataHolderConstraintsDescriptor(new DeleteFeatureOperation_Constraints());
+      case -1127588607:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause"));
+      case 258585126:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model"));
+      case 1564863712:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause"));
+      case 1606075523:
+        return new DataHolderConstraintsDescriptor(new ExecuteFindersExpression_Constraints());
+      case -541691790:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FinderReference"));
+      case -1161479694:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause"));
+      case -677030186:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesExpression"));
+      case 1986738669:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeExpression"));
+      case 267980445:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression"));
+      case 1240470807:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleExpression"));
+      case 859911678:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ProjectExpression"));
+      case 1917489849:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ScopeExpression"));
+      case 1606540851:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OperationContextExpression"));
+      case -253211357:
+        return new DataHolderConstraintsDescriptor(new RefactoringAction_Constraints());
+      case 254351856:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression"));
+      case 288833662:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringTarget"));
+      case -191909049:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelTarget"));
+      case 1306397584:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleTarget"));
+      case -1708586138:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeTarget"));
+      case -503884526:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause"));
+      case -573780209:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module"));
+      case 16346600:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause"));
+      case 263153682:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode"));
+      case -1250312083:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringField"));
+      case 299295132:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringParameter"));
+      case 1187343326:
+        return new DataHolderConstraintsDescriptor(new AskExpression_Constraints());
+      case 1214549263:
+        return new DataHolderConstraintsDescriptor(new RefactoringParameterReference_Constraints());
+      case -1156527778:
+        return new DataHolderConstraintsDescriptor(new RefactoringFieldReference_Constraints());
+      case 1156176850:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitClause"));
+      case 36149455:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MPSParameterChooser"));
+      case 313319629:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FilterParameterClause"));
+      case 63851404:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter"));
+      case -1337519210:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser"));
+      case -1161157127:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.CommitClause"));
+      case 913653901:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.Refactoring"));
+      case -394306871:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause"));
+      case 1543513706:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringArgument"));
+      case 1904267265:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"));
+      case 387660799:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser"));
+      case 973994618:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause"));
+      case 1567234801:
+        return new DataHolderConstraintsDescriptor(new ContextMemberOperation_Constraints());
+      case -903134014:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"));
+      case 375162632:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleOperation"));
+      case 1646161778:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeOperation"));
+      case 36213097:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesOperation"));
+      case 1356802668:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OperationContextOperation"));
+      case -1853870783:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ProjectOperation"));
+      case -1681208026:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ScopeOperation"));
+      case -483468666:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter"));
+      case -794827082:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ContextType"));
+      case 1004190172:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause"));
+      case -2000572061:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter"));
+      case 846221137:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter"));
+      case 1027130221:
+        return new DataHolderConstraintsDescriptor(new SetValueStatement_Constraints());
+      case 1172207610:
+        return new DataHolderConstraintsDescriptor(new ErrorStatement_Constraints());
+      case 294245282:
+        return new DataHolderConstraintsDescriptor(new ComponentExpression_Constraints());
+      case -1225973606:
+        return new DataHolderConstraintsDescriptor(new RefactoringContextExpression_Constraints());
+      case -1317477002:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression"));
+      case -1393339024:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression"));
+      case -1077879682:
+        return new DataHolderConstraintsDescriptor(new AbstractUIArgumentExpression_Constraints());
+      case 1992952870:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MPSParameterType"));
+      case 660736873:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType"));
+      case -908501902:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType"));
+      case 115280072:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType"));
+      case 1632447511:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.StringMPSParameterType"));
+      case -177268952:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType"));
+      case -163531921:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IntMPSParameterType"));
+      case -1447029542:
+        return new DataHolderConstraintsDescriptor(new AskBooleanExpression_Constraints());
+      case -1485556838:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MainProjectOperation"));
+      case -361495971:
+        return new DataHolderConstraintsDescriptor(new ModelsToGenerateByDefault_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.IsApplicableClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.DoRefactorClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DoRefactorClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RequiredAdditionalArgumentReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.UpdateModelClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new UpdateModelClause_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.FilterArgumentClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FilterArgumentClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new UpdateModelByDefaultOperation_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ChangeFeatureNameOperation_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.InitialValueClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitialValueClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new DeleteFeatureOperation_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExecuteFindersExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.FinderReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FinderReference"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.NodesExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.NodeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModuleExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ProjectExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ProjectExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ScopeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ScopeExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.OperationContextExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OperationContextExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringAction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RefactoringAction_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringTarget"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModelTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelTarget"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModuleTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleTarget"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.NodeTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeTarget"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringField".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringField"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringParameter"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.AskExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AskExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RefactoringParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RefactoringFieldReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.InitClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.MPSParameterChooser".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MPSParameterChooser"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.FilterParameterClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FilterParameterClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.CommitClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.CommitClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.Refactoring".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.Refactoring"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringArgument".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringArgument"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ContextMemberOperation_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModuleOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleOperation"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.NodeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeOperation"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.NodesOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesOperation"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.OperationContextOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OperationContextOperation"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ProjectOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ProjectOperation"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ScopeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ScopeOperation"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ContextType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ContextType"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.SetValueStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SetValueStatement_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ErrorStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ErrorStatement_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ComponentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ComponentExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RefactoringContextExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractUIArgumentExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.MPSParameterType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MPSParameterType"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.StringMPSParameterType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.StringMPSParameterType"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.IntMPSParameterType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IntMPSParameterType"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.AskBooleanExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AskBooleanExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.MainProjectOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MainProjectOperation"));
-    }
-    if ("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ModelsToGenerateByDefault_Constraints());
-    }
-
-    return null;
   }
 }

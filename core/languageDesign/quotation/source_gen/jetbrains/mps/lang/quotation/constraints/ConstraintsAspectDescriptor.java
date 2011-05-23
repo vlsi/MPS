@@ -12,25 +12,21 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractAntiquotation_Constraints());
+    switch ((fqName).hashCode()) {
+      case 1297092609:
+        return new DataHolderConstraintsDescriptor(new AbstractAntiquotation_Constraints());
+      case 1908060675:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.Antiquotation"));
+      case -142443611:
+        return new DataHolderConstraintsDescriptor(new Quotation_Constraints());
+      case 1042705766:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"));
+      case -1479332475:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
+      case 2120826158:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.quotation.structure.Antiquotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.Antiquotation"));
-    }
-    if ("jetbrains.mps.lang.quotation.structure.Quotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Quotation_Constraints());
-    }
-    if ("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"));
-    }
-    if ("jetbrains.mps.lang.quotation.structure.ListAntiquotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
-    }
-    if ("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"));
-    }
-
-    return null;
   }
 }

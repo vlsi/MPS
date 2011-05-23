@@ -12,40 +12,31 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.execution.configurations.structure.RunConfiguration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfiguration"));
+    switch ((fqName).hashCode()) {
+      case 980669643:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfiguration"));
+      case 2142906111:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfigurationKind"));
+      case -750504258:
+        return new DataHolderConstraintsDescriptor(new RunConfigurationExecutor_Constraints());
+      case -888272298:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"));
+      case 342077763:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
+      case -201221554:
+        return new DataHolderConstraintsDescriptor(new ComplexRunConfigurationExecutor_Constraints());
+      case 2023018104:
+        return new DataHolderConstraintsDescriptor(new ConfigurationFromExecutorReference_Constraints());
+      case 1364595805:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.GetDebuggerSettings_Function"));
+      case -833213170:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
+      case 809774029:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartStatement"));
+      case 1931063218:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.execution.configurations.structure.RunConfigurationKind".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfigurationKind"));
-    }
-    if ("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RunConfigurationExecutor_Constraints());
-    }
-    if ("jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"));
-    }
-    if ("jetbrains.mps.execution.configurations.structure.Project_Parameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
-    }
-    if ("jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ComplexRunConfigurationExecutor_Constraints());
-    }
-    if ("jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConfigurationFromExecutorReference_Constraints());
-    }
-    if ("jetbrains.mps.execution.configurations.structure.GetDebuggerSettings_Function".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.GetDebuggerSettings_Function"));
-    }
-    if ("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
-    }
-    if ("jetbrains.mps.execution.configurations.structure.StartStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartStatement"));
-    }
-    if ("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"));
-    }
-
-    return null;
   }
 }

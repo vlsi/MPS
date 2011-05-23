@@ -12,94 +12,67 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.analyzers.structure.Analyzer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Analyzer"));
+    switch ((fqName).hashCode()) {
+      case 2015249080:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Analyzer"));
+      case 562521404:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Instruction"));
+      case -518857640:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerMergeFunction"));
+      case -2017044109:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerParameterProgram"));
+      case 1845992993:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerMergeParameterInput"));
+      case -974038684:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerInitialFunction"));
+      case -1524729697:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunFunction"));
+      case 246362447:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunParameterProgramState"));
+      case -1245140696:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunParameterInput"));
+      case -1649923535:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalysisDirection"));
+      case -1803639220:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.ForwardDirection"));
+      case -805582582:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.BackwardDirection"));
+      case -946169913:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunctionResultType"));
+      case 1055221262:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Rule"));
+      case -853438003:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InstructionParameter"));
+      case -665745686:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.ApplicableCondition"));
+      case 571631485:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.PatternCondition"));
+      case -1580899223:
+        return new DataHolderConstraintsDescriptor(new EmitInstruction_Constraints());
+      case 561913199:
+        return new DataHolderConstraintsDescriptor(new InstructionReference_Constraints());
+      case -1843468067:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.RuleReference"));
+      case 2019025762:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerRunnerType"));
+      case -1382799965:
+        return new DataHolderConstraintsDescriptor(new AnalyzerRunnerAnalyzeOperation_Constraints());
+      case -338765052:
+        return new DataHolderConstraintsDescriptor(new AnalyzerRunnerCreator_Constraints());
+      case -1192849397:
+        return new DataHolderConstraintsDescriptor(new IsOperation_Constraints());
+      case 95620005:
+        return new DataHolderConstraintsDescriptor(new ConceptCondition_Constraints());
+      case 4779448:
+        return new DataHolderConstraintsDescriptor(new ApplicableNodeReference_Constraints());
+      case 530223091:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertBeforePosition"));
+      case -805464172:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertPosition"));
+      case -1807174758:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertAfterPosition"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.analyzers.structure.Instruction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Instruction"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerMergeFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerMergeFunction"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerParameterProgram".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerParameterProgram"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerMergeParameterInput".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerMergeParameterInput"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerInitialFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerInitialFunction"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerFunFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunFunction"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerFunParameterProgramState".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunParameterProgramState"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerFunParameterInput".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunParameterInput"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalysisDirection".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalysisDirection"));
-    }
-    if ("jetbrains.mps.analyzers.structure.ForwardDirection".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.ForwardDirection"));
-    }
-    if ("jetbrains.mps.analyzers.structure.BackwardDirection".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.BackwardDirection"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerFunctionResultType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunctionResultType"));
-    }
-    if ("jetbrains.mps.analyzers.structure.Rule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Rule"));
-    }
-    if ("jetbrains.mps.analyzers.structure.InstructionParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InstructionParameter"));
-    }
-    if ("jetbrains.mps.analyzers.structure.ApplicableCondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.ApplicableCondition"));
-    }
-    if ("jetbrains.mps.analyzers.structure.PatternCondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.PatternCondition"));
-    }
-    if ("jetbrains.mps.analyzers.structure.EmitInstruction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmitInstruction_Constraints());
-    }
-    if ("jetbrains.mps.analyzers.structure.InstructionReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new InstructionReference_Constraints());
-    }
-    if ("jetbrains.mps.analyzers.structure.RuleReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.RuleReference"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerRunnerType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerRunnerType"));
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerRunnerAnalyzeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AnalyzerRunnerAnalyzeOperation_Constraints());
-    }
-    if ("jetbrains.mps.analyzers.structure.AnalyzerRunnerCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AnalyzerRunnerCreator_Constraints());
-    }
-    if ("jetbrains.mps.analyzers.structure.IsOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IsOperation_Constraints());
-    }
-    if ("jetbrains.mps.analyzers.structure.ConceptCondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptCondition_Constraints());
-    }
-    if ("jetbrains.mps.analyzers.structure.ApplicableNodeReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ApplicableNodeReference_Constraints());
-    }
-    if ("jetbrains.mps.analyzers.structure.InsertBeforePosition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertBeforePosition"));
-    }
-    if ("jetbrains.mps.analyzers.structure.InsertPosition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertPosition"));
-    }
-    if ("jetbrains.mps.analyzers.structure.InsertAfterPosition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertAfterPosition"));
-    }
-
-    return null;
   }
 }

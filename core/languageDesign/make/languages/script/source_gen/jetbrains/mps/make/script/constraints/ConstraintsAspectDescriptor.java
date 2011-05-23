@@ -12,76 +12,55 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.make.script.structure.ResultStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ResultStatement_Constraints());
+    switch ((fqName).hashCode()) {
+      case 983572414:
+        return new DataHolderConstraintsDescriptor(new ResultStatement_Constraints());
+      case -741479940:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ResourceType"));
+      case 1427448848:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OutputResources"));
+      case -1101840932:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.JobDefinition"));
+      case 575325786:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.InputResourcesParameter"));
+      case -102130137:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.QueryDefinition"));
+      case -1702025755:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.QueryParameterDeclaration"));
+      case 1354309897:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Option"));
+      case -950406463:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Text"));
+      case 1079744641:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OptionExpression"));
+      case 501708771:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OptionType"));
+      case -123496991:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ExpectedOption"));
+      case -1739978164:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Expected"));
+      case -1672155938:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ExpectedInput"));
+      case -443646447:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.JobDeclaration"));
+      case -902242003:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.IExpected"));
+      case -1879092157:
+        return new DataHolderConstraintsDescriptor(new RelayQueryExpression_Constraints());
+      case 722524617:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ConfigDefinition"));
+      case -1001578878:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ReportFeedbackStatement"));
+      case -861662775:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.BeginWorkStatement"));
+      case 1713558928:
+        return new DataHolderConstraintsDescriptor(new AdvanceWorkStatement_Constraints());
+      case 1362544503:
+        return new DataHolderConstraintsDescriptor(new FinishWorkStatement_Constraints());
+      case 69496797:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.AllWorkLeftExpression"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.make.script.structure.ResourceType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ResourceType"));
-    }
-    if ("jetbrains.mps.make.script.structure.OutputResources".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OutputResources"));
-    }
-    if ("jetbrains.mps.make.script.structure.JobDefinition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.JobDefinition"));
-    }
-    if ("jetbrains.mps.make.script.structure.InputResourcesParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.InputResourcesParameter"));
-    }
-    if ("jetbrains.mps.make.script.structure.QueryDefinition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.QueryDefinition"));
-    }
-    if ("jetbrains.mps.make.script.structure.QueryParameterDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.QueryParameterDeclaration"));
-    }
-    if ("jetbrains.mps.make.script.structure.Option".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Option"));
-    }
-    if ("jetbrains.mps.make.script.structure.Text".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Text"));
-    }
-    if ("jetbrains.mps.make.script.structure.OptionExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OptionExpression"));
-    }
-    if ("jetbrains.mps.make.script.structure.OptionType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OptionType"));
-    }
-    if ("jetbrains.mps.make.script.structure.ExpectedOption".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ExpectedOption"));
-    }
-    if ("jetbrains.mps.make.script.structure.Expected".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Expected"));
-    }
-    if ("jetbrains.mps.make.script.structure.ExpectedInput".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ExpectedInput"));
-    }
-    if ("jetbrains.mps.make.script.structure.JobDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.JobDeclaration"));
-    }
-    if ("jetbrains.mps.make.script.structure.IExpected".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.IExpected"));
-    }
-    if ("jetbrains.mps.make.script.structure.RelayQueryExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RelayQueryExpression_Constraints());
-    }
-    if ("jetbrains.mps.make.script.structure.ConfigDefinition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ConfigDefinition"));
-    }
-    if ("jetbrains.mps.make.script.structure.ReportFeedbackStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ReportFeedbackStatement"));
-    }
-    if ("jetbrains.mps.make.script.structure.BeginWorkStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.BeginWorkStatement"));
-    }
-    if ("jetbrains.mps.make.script.structure.AdvanceWorkStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AdvanceWorkStatement_Constraints());
-    }
-    if ("jetbrains.mps.make.script.structure.FinishWorkStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FinishWorkStatement_Constraints());
-    }
-    if ("jetbrains.mps.make.script.structure.AllWorkLeftExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.AllWorkLeftExpression"));
-    }
-
-    return null;
   }
 }

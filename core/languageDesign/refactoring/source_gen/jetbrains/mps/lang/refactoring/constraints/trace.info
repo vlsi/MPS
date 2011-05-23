@@ -37,7 +37,7 @@
   <unitInfo fileName="ContextMemberOperation_Constraints.java" startLine="24" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.ContextMemberOperation_Constraints" />
   <unitInfo fileName="ExecuteFindersExpression_Constraints.java" startLine="22" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.ExecuteFindersExpression_Constraints" />
   <unitInfo fileName="AskBooleanExpression_Constraints.java" startLine="28" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.AskBooleanExpression_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104844506">
     <nodeInfo nodeId="1214839153282" fileName="RequiredAdditionalArgumentReference_Constraints.java" startLine="74" startPosition="136" endLine="75" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1214839153289" fileName="RequiredAdditionalArgumentReference_Constraints.java" startLine="75" startPosition="74" endLine="76" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

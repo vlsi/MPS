@@ -12,49 +12,37 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixType"));
+    switch ((fqName).hashCode()) {
+      case 1718566832:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixType"));
+      case -1444998023:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral"));
+      case 609624740:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow"));
+      case 1609531032:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression"));
+      case 1216802108:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression"));
+      case -868738850:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression"));
+      case -963328413:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression"));
+      case -456273598:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression"));
+      case 816490067:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression"));
+      case 192446598:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement"));
+      case -2134083422:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration"));
+      case -972986184:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration"));
+      case 193260041:
+        return new DataHolderConstraintsDescriptor(new MatrixElementVariableReference_Constraints());
+      case -1899565965:
+        return new DataHolderConstraintsDescriptor(new MatrixIndexVariableReference_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration"));
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatrixElementVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatrixIndexVariableReference_Constraints());
-    }
-
-    return null;
   }
 }

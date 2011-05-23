@@ -16,44 +16,37 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -835008139) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike");
+    switch ((conceptFqName).hashCode()) {
+      case -835008139:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"});
+      case -1499134616:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"});
+      case 833311062:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1739473722:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
+      case -1958274575:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 1670737599:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -262934845:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"});
+      case -1756447448:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation", new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -1013793137:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      default:
+        return null;
     }
-    if (hash == -1499134616) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration");
-    }
-    if (hash == 833311062) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1739473722) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodCall");
-    }
-    if (hash == -1958274575) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute");
-    }
-    if (hash == 1670737599) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation");
-    }
-    if (hash == -262934845) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.baseLanguage.structure.BaseVariableReference");
-    }
-    if (hash == -1756447448) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation");
-    }
-    if (hash == -1013793137) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -68,12 +61,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

@@ -16,38 +16,33 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == 556578768) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
+    switch ((conceptFqName).hashCode()) {
+      case 556578768:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 556459248:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1546011801:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test", new String[]{"jetbrains.mps.transformation.test.outputLang.structure.OutputNode"}, new String[]{"jetbrains.mps.transformation.test.outputLang.structure.OutputNode"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 248738368:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -275815727:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -553803774:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1427310521:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      default:
+        return null;
     }
-    if (hash == 556459248) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 1546011801) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
-    }
-    if (hash == 248738368) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -275815727) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -553803774) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1427310521) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -62,12 +57,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

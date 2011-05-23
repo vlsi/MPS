@@ -29,7 +29,7 @@
   <unitInfo fileName="Delete_Constraints.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Delete_Constraints" />
   <unitInfo fileName="Variable_Constraints.java" startLine="29" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Variable_Constraints" />
   <unitInfo fileName="Antcall_Constraints.java" startLine="25" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104846985">
     <nodeInfo nodeId="1213104846991" fileName="Folder_Constraints.java" startLine="44" startPosition="138" endLine="45" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104847015" fileName="Folder_Constraints.java" startLine="47" startPosition="71" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

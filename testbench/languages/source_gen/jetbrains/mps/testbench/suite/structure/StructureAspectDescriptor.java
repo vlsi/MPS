@@ -16,38 +16,33 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == 342889525) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
+    switch ((conceptFqName).hashCode()) {
+      case 342889525:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.ModuleSuite", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1711035034:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1113498860:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1242581579:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -83577265:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.ITestRef", new String[]{}, new String[]{}, new String[]{});
+      case -478411613:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.SolutionRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.IModuleRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.IModuleRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 927111861:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.IModuleRef", new String[]{}, new String[]{}, new String[]{});
+      default:
+        return null;
     }
-    if (hash == 1711035034) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef");
-    }
-    if (hash == -1113498860) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef");
-    }
-    if (hash == -1242581579) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef");
-    }
-    if (hash == -83577265) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.ITestRef");
-    }
-    if (hash == -478411613) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.IModuleRef");
-    }
-    if (hash == 927111861) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.IModuleRef");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -62,12 +57,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

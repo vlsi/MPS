@@ -12,34 +12,27 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"));
+    switch ((fqName).hashCode()) {
+      case -835008139:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"));
+      case -1499134616:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.LowLevelVariable"));
+      case 833311062:
+        return new DataHolderConstraintsDescriptor(new EvaluatorsThisExpression_Constraints());
+      case 1739473722:
+        return new DataHolderConstraintsDescriptor(new EvaluatorsSuperMethodCall_Constraints());
+      case -1958274575:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"));
+      case 1670737599:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation"));
+      case -262934845:
+        return new DataHolderConstraintsDescriptor(new LowLevelVariableReference_Constraints());
+      case -1756447448:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"));
+      case -1013793137:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.debug.evaluation.structure.LowLevelVariable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.LowLevelVariable"));
-    }
-    if ("jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EvaluatorsThisExpression_Constraints());
-    }
-    if ("jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EvaluatorsSuperMethodCall_Constraints());
-    }
-    if ("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"));
-    }
-    if ("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation"));
-    }
-    if ("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LowLevelVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"));
-    }
-    if ("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation"));
-    }
-
-    return null;
   }
 }

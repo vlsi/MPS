@@ -16,59 +16,47 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == 638382655) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration", "jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration");
+    switch ((conceptFqName).hashCode()) {
+      case 638382655:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration", new String[]{"jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration"}, new String[]{"jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration"}, new String[]{"jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration", "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration"});
+      case 1255693015:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaCheckBlock", new String[]{"jetbrains.mps.lang.plugin.structure.AbstractCheckConfigBlock"}, new String[]{}, new String[]{"jetbrains.mps.lang.plugin.structure.AbstractCheckConfigBlock"});
+      case 176098589:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration", new String[]{"jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", "jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration"}, new String[]{}, new String[]{"jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration", "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration"});
+      case -1616976445:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter"}, new String[]{"jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1580346184:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.UserComponentReferenceAnnotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -535338940:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter"}, new String[]{"jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1776949629:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter", new String[]{}, new String[]{}, new String[]{});
+      case 616231109:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.IRunConfigPropertyInstance"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.IRunConfigPropertyInstance"});
+      case 1341486731:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeConfigurationEditorDeclaration", new String[]{"jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration"});
+      case 237705548:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.OnChangeNodeBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.runConfigurations.structure.IOnChangeEditorBlock"}, new String[]{"jetbrains.mps.baseLanguage.runConfigurations.structure.IOnChangeEditorBlock"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1711177389:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.ComponentInsideOfChangeListenerAnnotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -177572680:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.IOnChangeEditorBlock", new String[]{}, new String[]{}, new String[]{});
+      case 2056789236:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.IsApplicableBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -583237754:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.IMainClass", new String[]{}, new String[]{}, new String[]{});
+      default:
+        return null;
     }
-    if (hash == 1255693015) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaCheckBlock", "jetbrains.mps.lang.plugin.structure.AbstractCheckConfigBlock");
-    }
-    if (hash == 176098589) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration", "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", "jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration");
-    }
-    if (hash == -1616976445) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter");
-    }
-    if (hash == -1580346184) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.UserComponentReferenceAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute");
-    }
-    if (hash == -535338940) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter");
-    }
-    if (hash == -1776949629) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter");
-    }
-    if (hash == 616231109) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.IRunConfigPropertyInstance");
-    }
-    if (hash == 1341486731) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeConfigurationEditorDeclaration", "jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration");
-    }
-    if (hash == 237705548) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.OnChangeNodeBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.runConfigurations.structure.IOnChangeEditorBlock");
-    }
-    if (hash == -1711177389) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.ComponentInsideOfChangeListenerAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute");
-    }
-    if (hash == -177572680) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.IOnChangeEditorBlock");
-    }
-    if (hash == 2056789236) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.IsApplicableBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -583237754) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.runConfigurations.structure.IMainClass");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -83,12 +71,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

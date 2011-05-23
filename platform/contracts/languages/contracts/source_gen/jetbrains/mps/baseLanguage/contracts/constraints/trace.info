@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ContractThisExpression_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ContractThisExpression_Constraints$1" />
   <unitInfo fileName="ResultExpression_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ResultExpression_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="ContractThisExpression_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ContractThisExpression_Constraints" />
   <unitInfo fileName="ResultExpression_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ResultExpression_Constraints" />
   <root nodeId="2203155934614761062">

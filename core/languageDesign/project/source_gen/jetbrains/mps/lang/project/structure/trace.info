@@ -5,7 +5,6 @@
   <unitInfo fileName="MappingConfigRefAllGlobal.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal" />
   <unitInfo fileName="MappingConfigRefBase.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigRefBase" />
   <unitInfo fileName="SourcePath.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.project.structure.SourcePath" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="83" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="MappingConfigExternalRef.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigExternalRef" />
   <unitInfo fileName="MappingConfigNormalRef.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigNormalRef" />
   <unitInfo fileName="ModuleDependency.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModuleDependency" />
@@ -13,6 +12,7 @@
   <unitInfo fileName="ModuleReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModuleReference" />
   <unitInfo fileName="StubSolution.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StubSolution" />
   <unitInfo fileName="MappingConfigRefSet.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingConfigRefSet" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="65" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="RuleType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType_PropertySupport" />
   <unitInfo fileName="Solution.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Solution" />
   <unitInfo fileName="ModelReference.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.project.structure.ModelReference" />
@@ -21,8 +21,8 @@
   <unitInfo fileName="MappingPriorityRule.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.project.structure.MappingPriorityRule" />
   <unitInfo fileName="RuleType.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.project.structure.RuleType" />
   <unitInfo fileName="Generator.java" startLine="12" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Generator" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StructureAspectDescriptor" />
   <unitInfo fileName="DevKit.java" startLine="12" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.project.structure.DevKit" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.project.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Language.java" startLine="12" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Language" />
   <unitInfo fileName="Module.java" startLine="15" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.lang.project.structure.Module" />
 </debugInfo>

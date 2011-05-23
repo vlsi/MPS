@@ -12,25 +12,21 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PrimitiveTypeDescriptor_Constraints());
+    switch ((fqName).hashCode()) {
+      case -1756110201:
+        return new DataHolderConstraintsDescriptor(new PrimitiveTypeDescriptor_Constraints());
+      case -10816389:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"));
+      case -1044962277:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType"));
+      case -1921177056:
+        return new DataHolderConstraintsDescriptor(new BLArrayType_Constraints());
+      case -1196824066:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept"));
+      case 1844066795:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.FooConcept"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"));
-    }
-    if ("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType"));
-    }
-    if ("jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BLArrayType_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept"));
-    }
-    if ("jetbrains.mps.baseLanguage.blTypes.structure.FooConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.FooConcept"));
-    }
-
-    return null;
   }
 }

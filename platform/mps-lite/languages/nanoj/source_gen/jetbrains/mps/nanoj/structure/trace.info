@@ -6,9 +6,9 @@
   <unitInfo fileName="VarDeclReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoj.structure.VarDeclReference" />
   <unitInfo fileName="NanoClass.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.nanoj.structure.NanoClass" />
   <unitInfo fileName="MinusExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.nanoj.structure.MinusExpression" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="44" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.nanoj.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="VarDecl.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.nanoj.structure.VarDecl" />
   <unitInfo fileName="NanoStatementList.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.nanoj.structure.NanoStatementList" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoj.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.nanoj.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.nanoj.structure.StructureAspectDescriptor" />
 </debugInfo>
 

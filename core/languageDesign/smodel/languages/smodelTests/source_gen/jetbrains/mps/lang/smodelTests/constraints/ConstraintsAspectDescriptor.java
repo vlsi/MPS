@@ -12,28 +12,23 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.smodelTests.structure.Child".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.Child"));
+    switch ((fqName).hashCode()) {
+      case -321789996:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.Child"));
+      case 716903352:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.GrandChild"));
+      case 1791188778:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.Root"));
+      case -1210265860:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept"));
+      case -59084354:
+        return new DataHolderConstraintsDescriptor(new ReferenceContainer_Constraints());
+      case 70151991:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.NamedConcept"));
+      case -137395098:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.smodelTests.structure.GrandChild".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.GrandChild"));
-    }
-    if ("jetbrains.mps.lang.smodelTests.structure.Root".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.Root"));
-    }
-    if ("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept"));
-    }
-    if ("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReferenceContainer_Constraints());
-    }
-    if ("jetbrains.mps.lang.smodelTests.structure.NamedConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.NamedConcept"));
-    }
-    if ("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"));
-    }
-
-    return null;
   }
 }

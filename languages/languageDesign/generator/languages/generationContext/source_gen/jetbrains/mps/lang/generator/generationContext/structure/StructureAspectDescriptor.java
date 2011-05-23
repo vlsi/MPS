@@ -16,113 +16,83 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == 1675511759) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation");
+    switch ((conceptFqName).hashCode()) {
+      case 1675511759:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 318020836:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1770150199:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -720635398:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 1972011128:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 346846876:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1084377545:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 2105316072:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 385633520:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1599240108:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -866781634:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -627443882:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1923097211:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -2096932387:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -489564563:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 642722799:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1198506886:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -951127939:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1335544410:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1094187906:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1299140630:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1945406151:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1368212233:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1934713017:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 19092085:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -384502269:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1882922200:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1486086651:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1389769962:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -1238567583:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 860109494:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -398934052:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      default:
+        return null;
     }
-    if (hash == 318020836) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == 1770150199) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -720635398) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType", "jetbrains.mps.baseLanguage.structure.Type");
-    }
-    if (hash == 1972011128) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 346846876) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -1084377545) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == 2105316072) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == 385633520) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -1599240108) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -866781634) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -627443882) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == 1923097211) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase");
-    }
-    if (hash == -2096932387) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -489564563) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase");
-    }
-    if (hash == 642722799) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase");
-    }
-    if (hash == -1198506886) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase");
-    }
-    if (hash == -951127939) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -1335544410) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase");
-    }
-    if (hash == -1094187906) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase");
-    }
-    if (hash == 1299140630) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -1945406151) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == 1368212233) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -1934713017) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == 19092085) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -384502269) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
-    }
-    if (hash == -1882922200) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == 1486086651) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
-    }
-    if (hash == -1389769962) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
-    }
-    if (hash == -1238567583) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == 860109494) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    if (hash == -398934052) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -137,12 +107,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

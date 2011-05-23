@@ -12,16 +12,15 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.editor.table.structure.CellModel_Table".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.table.structure.CellModel_Table"));
+    switch ((fqName).hashCode()) {
+      case -689183868:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.table.structure.CellModel_Table"));
+      case 772576652:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"));
+      case 607441035:
+        return new DataHolderConstraintsDescriptor(new CellModel_HierarchycalTable_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"));
-    }
-    if ("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CellModel_HierarchycalTable_Constraints());
-    }
-
-    return null;
   }
 }

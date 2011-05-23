@@ -12,34 +12,27 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"));
+    switch ((fqName).hashCode()) {
+      case -1438987648:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"));
+      case 223205289:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"));
+      case 561072028:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression"));
+      case -1025909252:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
+      case -386467333:
+        return new DataHolderConstraintsDescriptor(new NamedTupleComponentDeclaration_Constraints());
+      case 1695274232:
+        return new DataHolderConstraintsDescriptor(new NamedTupleType_Constraints());
+      case 429857329:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"));
+      case 1512304652:
+        return new DataHolderConstraintsDescriptor(new NamedTupleComponentReference_Constraints());
+      case -897029020:
+        return new DataHolderConstraintsDescriptor(new NamedTupleComponentAccessOperation_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"));
-    }
-    if ("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
-    }
-    if ("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NamedTupleComponentDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NamedTupleType_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"));
-    }
-    if ("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NamedTupleComponentReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NamedTupleComponentAccessOperation_Constraints());
-    }
-
-    return null;
   }
 }

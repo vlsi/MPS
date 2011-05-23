@@ -12,34 +12,27 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.behavior.structure.ConceptBehavior".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptBehavior_Constraints());
+    switch ((fqName).hashCode()) {
+      case 2145488653:
+        return new DataHolderConstraintsDescriptor(new ConceptBehavior_Constraints());
+      case 406183579:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"));
+      case -60429442:
+        return new DataHolderConstraintsDescriptor(new ConceptMethodDeclaration_Constraints());
+      case 2107317836:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"));
+      case -1751474360:
+        return new DataHolderConstraintsDescriptor(new SuperNodeExpression_Constraints());
+      case 1447082341:
+        return new DataHolderConstraintsDescriptor(new ThisNodeExpression_Constraints());
+      case -406556465:
+        return new DataHolderConstraintsDescriptor(new LocalBehaviorMethodCall_Constraints());
+      case -1930948820:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.behavior.structure.ConceptDeclarationReference"));
+      case 611390528:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"));
-    }
-    if ("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptMethodDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"));
-    }
-    if ("jetbrains.mps.lang.behavior.structure.SuperNodeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SuperNodeExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.behavior.structure.ThisNodeExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ThisNodeExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LocalBehaviorMethodCall_Constraints());
-    }
-    if ("jetbrains.mps.lang.behavior.structure.ConceptDeclarationReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.behavior.structure.ConceptDeclarationReference"));
-    }
-    if ("jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder"));
-    }
-
-    return null;
   }
 }

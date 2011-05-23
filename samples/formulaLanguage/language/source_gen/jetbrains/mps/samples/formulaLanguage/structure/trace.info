@@ -22,9 +22,9 @@
   <unitInfo fileName="FloatingPointConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" />
   <unitInfo fileName="IntegerConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant" />
   <unitInfo fileName="Formula.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.Formula" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="89" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Operation.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.Operation" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="69" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="IfFunction.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.structure.StructureAspectDescriptor" />
 </debugInfo>
 

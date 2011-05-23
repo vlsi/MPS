@@ -12,34 +12,27 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator"));
+    switch ((fqName).hashCode()) {
+      case -897870496:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator"));
+      case -1940290366:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"));
+      case 1590784032:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand"));
+      case 1109458287:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"));
+      case 1644109830:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator"));
+      case -2132423961:
+        return new DataHolderConstraintsDescriptor(new BinaryOperationReference_Constraints());
+      case -298353385:
+        return new DataHolderConstraintsDescriptor(new CustomOperator_Constraints());
+      case -703486262:
+        return new DataHolderConstraintsDescriptor(new CustomOperatorUsage_Constraints());
+      case 849304547:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"));
-    }
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand"));
-    }
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"));
-    }
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator"));
-    }
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BinaryOperationReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CustomOperator_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CustomOperatorUsage_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration"));
-    }
-
-    return null;
   }
 }

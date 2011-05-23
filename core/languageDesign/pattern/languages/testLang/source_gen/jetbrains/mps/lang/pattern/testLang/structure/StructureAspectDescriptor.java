@@ -16,38 +16,33 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -2089854751) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.PatternTest", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+    switch ((conceptFqName).hashCode()) {
+      case -2089854751:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.PatternTest", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"});
+      case 911428916:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.VariableValue", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1180169316:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -808094393:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1445432965:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.PropertyValue", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 737557458:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.ListValue", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 107590202:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.TestListReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      default:
+        return null;
     }
-    if (hash == 911428916) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.VariableValue", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1180169316) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -808094393) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1445432965) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.PropertyValue", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 737557458) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.ListValue", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 107590202) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.pattern.testLang.structure.TestListReference", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -62,12 +57,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

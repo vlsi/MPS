@@ -12,67 +12,49 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.project.structure.Module".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Module_Constraints());
+    switch ((fqName).hashCode()) {
+      case 312108934:
+        return new DataHolderConstraintsDescriptor(new Module_Constraints());
+      case -1720355342:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Language"));
+      case 1385181203:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Solution"));
+      case 1272187769:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Generator"));
+      case 1880615228:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelReference"));
+      case -2097420431:
+        return new DataHolderConstraintsDescriptor(new ModuleDependency_Constraints());
+      case 45707163:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.DevKit"));
+      case 1519260628:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingPriorityRule"));
+      case -437776795:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModuleReference"));
+      case -1074545398:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.StubEntry"));
+      case -1025465263:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelRoot"));
+      case -182471140:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelRootManager"));
+      case -411166258:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefBase"));
+      case 1661022151:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal"));
+      case 889560775:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal"));
+      case 2064963013:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefSet"));
+      case -2109693066:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigNormalRef"));
+      case -1069959278:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigExternalRef"));
+      case -2099957279:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.StubSolution"));
+      case -634167558:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.SourcePath"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.project.structure.Language".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Language"));
-    }
-    if ("jetbrains.mps.lang.project.structure.Solution".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Solution"));
-    }
-    if ("jetbrains.mps.lang.project.structure.Generator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Generator"));
-    }
-    if ("jetbrains.mps.lang.project.structure.ModelReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelReference"));
-    }
-    if ("jetbrains.mps.lang.project.structure.ModuleDependency".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ModuleDependency_Constraints());
-    }
-    if ("jetbrains.mps.lang.project.structure.DevKit".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.DevKit"));
-    }
-    if ("jetbrains.mps.lang.project.structure.MappingPriorityRule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingPriorityRule"));
-    }
-    if ("jetbrains.mps.lang.project.structure.ModuleReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModuleReference"));
-    }
-    if ("jetbrains.mps.lang.project.structure.StubEntry".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.StubEntry"));
-    }
-    if ("jetbrains.mps.lang.project.structure.ModelRoot".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelRoot"));
-    }
-    if ("jetbrains.mps.lang.project.structure.ModelRootManager".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelRootManager"));
-    }
-    if ("jetbrains.mps.lang.project.structure.MappingConfigRefBase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefBase"));
-    }
-    if ("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal"));
-    }
-    if ("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal"));
-    }
-    if ("jetbrains.mps.lang.project.structure.MappingConfigRefSet".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefSet"));
-    }
-    if ("jetbrains.mps.lang.project.structure.MappingConfigNormalRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigNormalRef"));
-    }
-    if ("jetbrains.mps.lang.project.structure.MappingConfigExternalRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigExternalRef"));
-    }
-    if ("jetbrains.mps.lang.project.structure.StubSolution".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.StubSolution"));
-    }
-    if ("jetbrains.mps.lang.project.structure.SourcePath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.SourcePath"));
-    }
-
-    return null;
   }
 }

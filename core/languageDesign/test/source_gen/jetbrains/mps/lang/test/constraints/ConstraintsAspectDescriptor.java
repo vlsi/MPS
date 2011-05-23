@@ -12,136 +12,95 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.test.structure.TestNodeAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TestNodeAnnotation"));
+    switch ((fqName).hashCode()) {
+      case 1916190128:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TestNodeAnnotation"));
+      case -1367369558:
+        return new DataHolderConstraintsDescriptor(new TestNodeReference_Constraints());
+      case -650333934:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.AssertMatch"));
+      case -649377961:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.AbstractNodeAssert"));
+      case -2031946953:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.CheckNodeForErrors"));
+      case 1712347551:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodePropertiesContainer"));
+      case 328961380:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeProperty"));
+      case -962771890:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeErrorPropety"));
+      case 759830306:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeWarningProperty"));
+      case 1196146590:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeReachable"));
+      case -828487874:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeTypeProperty"));
+      case -301787208:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeOperation"));
+      case 849612550:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
+      case 1253708299:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TypesCheckOperation"));
+      case -57863340:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.CheckDataFlowOperation"));
+      case 844676325:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeUnreachable"));
+      case -1173232970:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.VariableInialized"));
+      case 1804081397:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.VariableLive"));
+      case 1839988454:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodesTestCase"));
+      case -1007599849:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodesTestMethod"));
+      case -966636639:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TestNode"));
+      case 870761941:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.CheckNodeDataflow"));
+      case 1886145348:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.ProjectExpression"));
+      case -1864058860:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.ModelExpression"));
+      case -1385565773:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.SimpleNodeTest"));
+      case 143764690:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.EditorExpression"));
+      case 551107944:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.InvokeIntentionStatement"));
+      case 2140900333:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.EditorOperation"));
+      case -1132010833:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.INodeAnnotattion"));
+      case -1812298985:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TypeKeyStatement"));
+      case -573247898:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.PressKeyStatement"));
+      case -1131873380:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.EditorTestCase"));
+      case -340572559:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"));
+      case 154973318:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.MockAnnotation"));
+      case 1333472846:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeTypeSetProperty"));
+      case 395165884:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.ExpressionContainer"));
+      case -2126681189:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.SwitchToInspector"));
+      case -1099367813:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.EditorComponentExpression"));
+      case -966786483:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TestInfo"));
+      case 1604102004:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.InvokeActionStatement"));
+      case -1242961112:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.ActionReference"));
+      case 748028244:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.BootstrapActionReference"));
+      case -1606777326:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.MPSActionReference"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.test.structure.TestNodeReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TestNodeReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.test.structure.AssertMatch".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.AssertMatch"));
-    }
-    if ("jetbrains.mps.lang.test.structure.AbstractNodeAssert".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.AbstractNodeAssert"));
-    }
-    if ("jetbrains.mps.lang.test.structure.CheckNodeForErrors".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.CheckNodeForErrors"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodePropertiesContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodePropertiesContainer"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeProperty"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeErrorPropety".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeErrorPropety"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeWarningProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeWarningProperty"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeReachable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeReachable"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeTypeProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeTypeProperty"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeOperation"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeOperationsContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
-    }
-    if ("jetbrains.mps.lang.test.structure.TypesCheckOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TypesCheckOperation"));
-    }
-    if ("jetbrains.mps.lang.test.structure.CheckDataFlowOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.CheckDataFlowOperation"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeUnreachable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeUnreachable"));
-    }
-    if ("jetbrains.mps.lang.test.structure.VariableInialized".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.VariableInialized"));
-    }
-    if ("jetbrains.mps.lang.test.structure.VariableLive".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.VariableLive"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodesTestCase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodesTestCase"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodesTestMethod".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodesTestMethod"));
-    }
-    if ("jetbrains.mps.lang.test.structure.TestNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TestNode"));
-    }
-    if ("jetbrains.mps.lang.test.structure.CheckNodeDataflow".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.CheckNodeDataflow"));
-    }
-    if ("jetbrains.mps.lang.test.structure.ProjectExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.ProjectExpression"));
-    }
-    if ("jetbrains.mps.lang.test.structure.ModelExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.ModelExpression"));
-    }
-    if ("jetbrains.mps.lang.test.structure.SimpleNodeTest".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.SimpleNodeTest"));
-    }
-    if ("jetbrains.mps.lang.test.structure.EditorExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.EditorExpression"));
-    }
-    if ("jetbrains.mps.lang.test.structure.InvokeIntentionStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.InvokeIntentionStatement"));
-    }
-    if ("jetbrains.mps.lang.test.structure.EditorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.EditorOperation"));
-    }
-    if ("jetbrains.mps.lang.test.structure.INodeAnnotattion".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.INodeAnnotattion"));
-    }
-    if ("jetbrains.mps.lang.test.structure.TypeKeyStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TypeKeyStatement"));
-    }
-    if ("jetbrains.mps.lang.test.structure.PressKeyStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.PressKeyStatement"));
-    }
-    if ("jetbrains.mps.lang.test.structure.EditorTestCase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.EditorTestCase"));
-    }
-    if ("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"));
-    }
-    if ("jetbrains.mps.lang.test.structure.MockAnnotation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.MockAnnotation"));
-    }
-    if ("jetbrains.mps.lang.test.structure.NodeTypeSetProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.NodeTypeSetProperty"));
-    }
-    if ("jetbrains.mps.lang.test.structure.ExpressionContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.ExpressionContainer"));
-    }
-    if ("jetbrains.mps.lang.test.structure.SwitchToInspector".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.SwitchToInspector"));
-    }
-    if ("jetbrains.mps.lang.test.structure.EditorComponentExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.EditorComponentExpression"));
-    }
-    if ("jetbrains.mps.lang.test.structure.TestInfo".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.TestInfo"));
-    }
-    if ("jetbrains.mps.lang.test.structure.InvokeActionStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.InvokeActionStatement"));
-    }
-    if ("jetbrains.mps.lang.test.structure.ActionReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.ActionReference"));
-    }
-    if ("jetbrains.mps.lang.test.structure.BootstrapActionReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.BootstrapActionReference"));
-    }
-    if ("jetbrains.mps.lang.test.structure.MPSActionReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.test.structure.MPSActionReference"));
-    }
-
-    return null;
   }
 }

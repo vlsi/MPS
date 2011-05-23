@@ -12,31 +12,25 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.ide.uiLanguage.structure.IDEDialog".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IDEDialog_Constraints());
+    switch ((fqName).hashCode()) {
+      case 151769839:
+        return new DataHolderConstraintsDescriptor(new IDEDialog_Constraints());
+      case -1952532735:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton"));
+      case -1972415012:
+        return new DataHolderConstraintsDescriptor(new DisposeDialogExpression_Constraints());
+      case 1305871817:
+        return new DataHolderConstraintsDescriptor(new ReportErrorExpression_Constraints());
+      case -1756921597:
+        return new DataHolderConstraintsDescriptor(new DialogExpression_Constraints());
+      case 452865592:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions"));
+      case 924388382:
+        return new DataHolderConstraintsDescriptor(new ReportErrorStatement_Constraints());
+      case 1927015851:
+        return new DataHolderConstraintsDescriptor(new DisposeDialogStatement_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton"));
-    }
-    if ("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new DisposeDialogExpression_Constraints());
-    }
-    if ("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReportErrorExpression_Constraints());
-    }
-    if ("jetbrains.mps.ide.uiLanguage.structure.DialogExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new DialogExpression_Constraints());
-    }
-    if ("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions"));
-    }
-    if ("jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReportErrorStatement_Constraints());
-    }
-    if ("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new DisposeDialogStatement_Constraints());
-    }
-
-    return null;
   }
 }

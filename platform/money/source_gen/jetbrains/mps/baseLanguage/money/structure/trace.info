@@ -7,9 +7,9 @@
   <unitInfo fileName="MoneyGetAmountMethodCall.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall" />
   <unitInfo fileName="MoneyType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.MoneyType" />
   <unitInfo fileName="MoneyMethodCall.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="44" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="MoneyLiteral.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.MoneyLiteral" />
   <unitInfo fileName="MoneyCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.MoneyCreator" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -3,7 +3,7 @@
   <unitInfo fileName="Module_Constraints.java" startLine="40" startPosition="27" endLine="44" endPosition="5" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints$1" />
   <unitInfo fileName="ModuleDependency_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ModuleDependency_Constraints" />
   <unitInfo fileName="Module_Constraints.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="4198951972171378598">
     <nodeInfo nodeId="4198951972171382456" fileName="ModuleSearchScope.java" startLine="18" startPosition="59" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4198951972171378600" fileName="ModuleSearchScope.java" startLine="13" startPosition="60" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleSearchScope#()V" />

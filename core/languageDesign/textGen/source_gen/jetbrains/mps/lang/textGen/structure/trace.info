@@ -22,11 +22,11 @@
   <unitInfo fileName="OperationDeclaration.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.OperationDeclaration" />
   <unitInfo fileName="WithIndentOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.WithIndentOperation" />
   <unitInfo fileName="FoundErrorOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.FoundErrorOperation" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="122" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ConstantStringAppendPart.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" />
   <unitInfo fileName="ReferenceAppendPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart" />
   <unitInfo fileName="NodeAppendPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.NodeAppendPart" />
   <unitInfo fileName="AppendOperation.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AppendOperation" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="91" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="CollectionAppendPart.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" />
   <unitInfo fileName="UtilityMethodCall.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UtilityMethodCall" />
   <unitInfo fileName="OperationCall.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.OperationCall" />
@@ -35,6 +35,6 @@
   <unitInfo fileName="EncodingLiteral.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.EncodingLiteral" />
   <unitInfo fileName="AbstractTextGenDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration" />
   <unitInfo fileName="ConceptTextGenDeclaration.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -16,38 +16,33 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -1417927617) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.MinusExpression");
+    switch ((conceptFqName).hashCode()) {
+      case -1417927617:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.MinusExpression", new String[]{}, new String[]{}, new String[]{});
+      case -1464384133:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoClass", new String[]{}, new String[]{}, new String[]{});
+      case 1058499720:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.VarDecl", new String[]{}, new String[]{}, new String[]{});
+      case -1967265872:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoStatementList", new String[]{"jetbrains.mps.nanoj.structure.NanoStatement"}, new String[]{"jetbrains.mps.nanoj.structure.NanoStatement"}, new String[]{});
+      case 1839857781:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoExpression", new String[]{}, new String[]{}, new String[]{});
+      case -859501582:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoStatement", new String[]{}, new String[]{}, new String[]{});
+      case -841774173:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.VarDeclReference", new String[]{"jetbrains.mps.nanoj.structure.NanoExpression"}, new String[]{"jetbrains.mps.nanoj.structure.NanoExpression"}, new String[]{});
+      default:
+        return null;
     }
-    if (hash == -1464384133) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoClass");
-    }
-    if (hash == 1058499720) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.VarDecl");
-    }
-    if (hash == -1967265872) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoStatementList", "jetbrains.mps.nanoj.structure.NanoStatement");
-    }
-    if (hash == 1839857781) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoExpression");
-    }
-    if (hash == -859501582) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoStatement");
-    }
-    if (hash == -841774173) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.VarDeclReference", "jetbrains.mps.nanoj.structure.NanoExpression");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -62,12 +57,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

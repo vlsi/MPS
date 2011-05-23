@@ -12,172 +12,119 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.build.packaging.structure.Layout".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Layout"));
+    switch ((fqName).hashCode()) {
+      case 1163679878:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Layout"));
+      case 740639654:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ILayoutComponent"));
+      case 696142978:
+        return new DataHolderConstraintsDescriptor(new AbstractProjectComponent_Constraints());
+      case -1344210472:
+        return new DataHolderConstraintsDescriptor(new File_Constraints());
+      case 372283967:
+        return new DataHolderConstraintsDescriptor(new Jar_Constraints());
+      case 1004435914:
+        return new DataHolderConstraintsDescriptor(new Folder_Constraints());
+      case 1204618184:
+        return new DataHolderConstraintsDescriptor(new Module_Constraints());
+      case -1973240157:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ICompositeComponent"));
+      case -1344293935:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Copy"));
+      case 372299589:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Zip"));
+      case -892626918:
+        return new DataHolderConstraintsDescriptor(new Configuration_Constraints());
+      case -729660335:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ConfigurationReference"));
+      case 937943815:
+        return new DataHolderConstraintsDescriptor(new Delete_Constraints());
+      case 1943410516:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PostProcessingTask"));
+      case 560397709:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PathHolder"));
+      case -1344246143:
+        return new DataHolderConstraintsDescriptor(new Echo_Constraints());
+      case 1646545112:
+        return new DataHolderConstraintsDescriptor(new Variable_Constraints());
+      case 1994643647:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.SimpleString"));
+      case 1423241526:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IStringExpression"));
+      case -864974509:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.VariableReference"));
+      case 234055580:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.CompositeString"));
+      case 908916457:
+        return new DataHolderConstraintsDescriptor(new Antcall_Constraints());
+      case 543264848:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference"));
+      case -1444478760:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Replace"));
+      case -1343920330:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Pair"));
+      case 135184894:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ModuleCycle"));
+      case -633274405:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.NewModuleReference"));
+      case 1285366512:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Macro"));
+      case -1343919999:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Path"));
+      case 1957877116:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PathComponent"));
+      case 1270491245:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.CompositePathComponent"));
+      case -1708094917:
+        return new DataHolderConstraintsDescriptor(new MacroReference_Constraints());
+      case 1032085093:
+        return new DataHolderConstraintsDescriptor(new BaseDirPath_Constraints());
+      case -1826525535:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression"));
+      case 2027307534:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ICondition"));
+      case -1587506393:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.FileExistsCondition"));
+      case -1679407132:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.NotCondition"));
+      case 181038561:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.NonExistingPath"));
+      case 1281164114:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IPath"));
+      case 1291352106:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Space"));
+      case -248444363:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IVariableHolder"));
+      case 1396420811:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IMacroHolder"));
+      case -1446205083:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"));
+      case -1268210549:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Manifest"));
+      case -383118767:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ManifestAttribute"));
+      case -299798992:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ComponentsList"));
+      case -578045559:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"));
+      case -1771363909:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.INotBuildableComponent"));
+      case -2018159340:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PropertiesImport"));
+      case -2059900072:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PropertyNodeImport"));
+      case -1470386350:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PropertyFileImport"));
+      case -149837158:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.BlockReference"));
+      case 1275546545:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Block"));
+      case 656800493:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ModuleCycleReference"));
+      case 1288227983:
+        return new DataHolderConstraintsDescriptor(new Plugin_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.build.packaging.structure.ILayoutComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ILayoutComponent"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.AbstractProjectComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractProjectComponent_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.File".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new File_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.Jar".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Jar_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.Folder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Folder_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.Module".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Module_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.ICompositeComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ICompositeComponent"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Copy".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Copy"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Zip".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Zip"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Configuration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Configuration_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.ConfigurationReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ConfigurationReference"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Delete".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Delete_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.PostProcessingTask".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PostProcessingTask"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.PathHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PathHolder"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Echo".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Echo_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.Variable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Variable_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.SimpleString".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.SimpleString"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.IStringExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IStringExpression"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.VariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.VariableReference"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.CompositeString".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.CompositeString"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Antcall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Antcall_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Replace".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Replace"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Pair".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Pair"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.ModuleCycle".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ModuleCycle"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.NewModuleReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.NewModuleReference"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Macro".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Macro"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Path".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Path"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.PathComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PathComponent"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.CompositePathComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.CompositePathComponent"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.MacroReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MacroReference_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.BaseDirPath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BaseDirPath_Constraints());
-    }
-    if ("jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.ICondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ICondition"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.FileExistsCondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.FileExistsCondition"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.NotCondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.NotCondition"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.NonExistingPath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.NonExistingPath"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.IPath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IPath"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Space".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Space"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.IVariableHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IVariableHolder"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.IMacroHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IMacroHolder"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Manifest".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Manifest"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.ManifestAttribute".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ManifestAttribute"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.ComponentsList".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ComponentsList"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.ITransparentProjectComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.INotBuildableComponent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.INotBuildableComponent"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.PropertiesImport".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PropertiesImport"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.PropertyNodeImport".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PropertyNodeImport"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.PropertyFileImport".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.PropertyFileImport"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.BlockReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.BlockReference"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Block".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.Block"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.ModuleCycleReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.packaging.structure.ModuleCycleReference"));
-    }
-    if ("jetbrains.mps.build.packaging.structure.Plugin".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Plugin_Constraints());
-    }
-
-    return null;
   }
 }

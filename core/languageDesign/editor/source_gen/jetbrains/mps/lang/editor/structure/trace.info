@@ -152,7 +152,6 @@
   <unitInfo fileName="SelectPositionParameter.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.SelectPositionParameter" />
   <unitInfo fileName="RightTransformAnchorTagWrapper.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper" />
   <unitInfo fileName="CellModel_RefCell.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_RefCell" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="602" startPosition="0" endLine="634" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="FontSizeStyleClassItem.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem" />
   <unitInfo fileName="BooleanStyleSheetItem.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" />
   <unitInfo fileName="CellMenuPart_Generic_Item.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" />
@@ -166,6 +165,7 @@
   <unitInfo fileName="FontStyleStyleClassItem.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" />
   <unitInfo fileName="ColorStyleClassItem.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" />
   <unitInfo fileName="CellMenuDescriptor.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="411" startPosition="0" endLine="447" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="TableComponentEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.TableComponentEnum_PropertySupport" />
   <unitInfo fileName="ScriptSwitchEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ScriptSwitchEnum_PropertySupport" />
   <unitInfo fileName="DefaultBaseLineEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.DefaultBaseLineEnum_PropertySupport" />
@@ -234,6 +234,6 @@
   <unitInfo fileName="CellModel_ListWithRole.java" startLine="10" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" />
   <unitInfo fileName="ParametersInformationQuery.java" startLine="19" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ParametersInformationQuery" />
   <unitInfo fileName="EditorCellModel.java" startLine="14" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="635" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="448" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
 </debugInfo>
 

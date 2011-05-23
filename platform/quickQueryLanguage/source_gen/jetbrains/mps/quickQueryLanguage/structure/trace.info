@@ -7,8 +7,8 @@
   <unitInfo fileName="AbstractQueryFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction" />
   <unitInfo fileName="Query_node_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter" />
   <unitInfo fileName="ReplaceModelQuery.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="44" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="BaseQuery.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.BaseQuery" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.StructureAspectDescriptor" />
 </debugInfo>
 

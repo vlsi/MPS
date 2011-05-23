@@ -12,58 +12,43 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.pattern.structure.AsPattern".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.AsPattern"));
+    switch ((fqName).hashCode()) {
+      case 716368539:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.AsPattern"));
+      case -2131337619:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.Pattern"));
+      case -1337562907:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.PatternExpression"));
+      case -1529997903:
+        return new DataHolderConstraintsDescriptor(new PatternVariableDeclaration_Constraints());
+      case -1029075866:
+        return new DataHolderConstraintsDescriptor(new PropertyPatternVariableDeclaration_Constraints());
+      case -1207555533:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.WildcardPattern"));
+      case -1884208785:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.ListPattern"));
+      case 809452491:
+        return new DataHolderConstraintsDescriptor(new LinkPatternVariableDeclaration_Constraints());
+      case 1712602949:
+        return new DataHolderConstraintsDescriptor(new ActionAsPattern_Constraints());
+      case -576410186:
+        return new DataHolderConstraintsDescriptor(new ActionStatement_Constraints());
+      case 156926274:
+        return new DataHolderConstraintsDescriptor(new PatternVariableReference_Constraints());
+      case -561000502:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.OrPattern"));
+      case -682112551:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.OrPatternClause"));
+      case 1051743621:
+        return new DataHolderConstraintsDescriptor(new OrPatternVariableReference_Constraints());
+      case -993142711:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertAfterPosition"));
+      case -4587228:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertBeforePosition"));
+      case -737017467:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertPosition"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.pattern.structure.Pattern".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.Pattern"));
-    }
-    if ("jetbrains.mps.lang.pattern.structure.PatternExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.PatternExpression"));
-    }
-    if ("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PatternVariableDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PropertyPatternVariableDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.structure.WildcardPattern".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.WildcardPattern"));
-    }
-    if ("jetbrains.mps.lang.pattern.structure.ListPattern".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.ListPattern"));
-    }
-    if ("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LinkPatternVariableDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.structure.ActionAsPattern".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ActionAsPattern_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.structure.ActionStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ActionStatement_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.structure.PatternVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PatternVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.structure.OrPattern".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.OrPattern"));
-    }
-    if ("jetbrains.mps.lang.pattern.structure.OrPatternClause".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.OrPatternClause"));
-    }
-    if ("jetbrains.mps.lang.pattern.structure.OrPatternVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new OrPatternVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.lang.pattern.structure.InsertAfterPosition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertAfterPosition"));
-    }
-    if ("jetbrains.mps.lang.pattern.structure.InsertBeforePosition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertBeforePosition"));
-    }
-    if ("jetbrains.mps.lang.pattern.structure.InsertPosition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertPosition"));
-    }
-
-    return null;
   }
 }

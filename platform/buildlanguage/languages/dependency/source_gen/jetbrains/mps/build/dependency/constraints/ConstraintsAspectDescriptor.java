@@ -12,28 +12,23 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.build.dependency.structure.ProjectDescription".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.ProjectDescription"));
+    switch ((fqName).hashCode()) {
+      case 1795909067:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.ProjectDescription"));
+      case 345691720:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.ModuleDescription"));
+      case -1615681218:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.Cycle"));
+      case -1797712679:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.PathHolder"));
+      case -833471571:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.CycleReference"));
+      case 1717622991:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.Macros"));
+      case -1048556096:
+        return new DataHolderConstraintsDescriptor(new ProjectDescriptionReference_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.build.dependency.structure.ModuleDescription".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.ModuleDescription"));
-    }
-    if ("jetbrains.mps.build.dependency.structure.Cycle".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.Cycle"));
-    }
-    if ("jetbrains.mps.build.dependency.structure.PathHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.PathHolder"));
-    }
-    if ("jetbrains.mps.build.dependency.structure.CycleReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.CycleReference"));
-    }
-    if ("jetbrains.mps.build.dependency.structure.Macros".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.Macros"));
-    }
-    if ("jetbrains.mps.build.dependency.structure.ProjectDescriptionReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ProjectDescriptionReference_Constraints());
-    }
-
-    return null;
   }
 }

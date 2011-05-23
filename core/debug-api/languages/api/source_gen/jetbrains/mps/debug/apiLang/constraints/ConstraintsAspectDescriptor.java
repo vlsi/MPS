@@ -12,34 +12,27 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.debug.apiLang.structure.BreakpointCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.BreakpointCreator"));
+    switch ((fqName).hashCode()) {
+      case 1300900393:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.BreakpointCreator"));
+      case -1540193358:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem"));
+      case 246842686:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint"));
+      case -938382871:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project"));
+      case 1851804052:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode"));
+      case 585642791:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference"));
+      case 486523661:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerType"));
+      case -1326942376:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerReference"));
+      case 1041442568:
+        return new DataHolderConstraintsDescriptor(new CreateBreakpointOperation_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem"));
-    }
-    if ("jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint"));
-    }
-    if ("jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project"));
-    }
-    if ("jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode"));
-    }
-    if ("jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference"));
-    }
-    if ("jetbrains.mps.debug.apiLang.structure.DebuggerType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerType"));
-    }
-    if ("jetbrains.mps.debug.apiLang.structure.DebuggerReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerReference"));
-    }
-    if ("jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CreateBreakpointOperation_Constraints());
-    }
-
-    return null;
   }
 }

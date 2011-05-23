@@ -12,106 +12,75 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.constraints.structure.NodePropertyConstraint".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NodePropertyConstraint_Constraints());
+    switch ((fqName).hashCode()) {
+      case -324043823:
+        return new DataHolderConstraintsDescriptor(new NodePropertyConstraint_Constraints());
+      case -1097942195:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter"));
+      case 924567529:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"));
+      case 302525407:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"));
+      case -677435673:
+        return new DataHolderConstraintsDescriptor(new NodeReferentConstraint_Constraints());
+      case 406326366:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase"));
+      case -914874161:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode"));
+      case -754392383:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter"));
+      case 1762292426:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"));
+      case 1458072800:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler"));
+      case 1947310469:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode"));
+      case 242589285:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode"));
+      case -509079444:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode"));
+      case -1638044063:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild"));
+      case 122787636:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode"));
+      case 1126217733:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent"));
+      case -1473086188:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept"));
+      case -124801182:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link"));
+      case 1222015891:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget"));
+      case 1797208725:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue"));
+      case -1169622576:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator"));
+      case 598810059:
+        return new DataHolderConstraintsDescriptor(new ConceptConstraints_Constraints());
+      case 1333086973:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot"));
+      case -33050909:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode"));
+      case 1861386597:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"));
+      case 1779423242:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"));
+      case -1367729942:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference"));
+      case 1262024282:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor"));
+      case 1054521629:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon"));
+      case 1223020358:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"));
+      case -1113348889:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator"));
+      case -219799071:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode"));
+      case 1568730315:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.NodeReferentConstraint".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NodeReferentConstraint_Constraints());
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConceptConstraints".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptConstraints_Constraints());
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode"));
-    }
-    if ("jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference"));
-    }
-
-    return null;
   }
 }

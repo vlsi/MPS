@@ -12,52 +12,39 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.findUsages.structure.FindBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.FindBlock"));
+    switch ((fqName).hashCode()) {
+      case -1681546880:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.FindBlock"));
+      case -415867744:
+        return new DataHolderConstraintsDescriptor(new FinderDeclaration_Constraints());
+      case 408242384:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.IsApplicableBlock"));
+      case 238808196:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node"));
+      case -2054006786:
+        return new DataHolderConstraintsDescriptor(new ResultStatement_Constraints());
+      case 714333881:
+        return new DataHolderConstraintsDescriptor(new NodeStatement_Constraints());
+      case -1710867681:
+        return new DataHolderConstraintsDescriptor(new ExecuteFinderExpression_Constraints());
+      case 206834080:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.CategorizeBlock"));
+      case -658040233:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"));
+      case 1462314592:
+        return new DataHolderConstraintsDescriptor(new CheckCancelledStatusStatement_Constraints());
+      case 1225576921:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.IsVisibleBlock"));
+      case -191444834:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration"));
+      case 360234436:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults"));
+      case -172640271:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.FinderReference"));
+      case -772220656:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.MakeResultProvider"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.findUsages.structure.FinderDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new FinderDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.IsApplicableBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.IsApplicableBlock"));
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node"));
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.ResultStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ResultStatement_Constraints());
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.NodeStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NodeStatement_Constraints());
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ExecuteFinderExpression_Constraints());
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.CategorizeBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.CategorizeBlock"));
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"));
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CheckCancelledStatusStatement_Constraints());
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.IsVisibleBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.IsVisibleBlock"));
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration"));
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults"));
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.FinderReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.FinderReference"));
-    }
-    if ("jetbrains.mps.lang.findUsages.structure.MakeResultProvider".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.MakeResultProvider"));
-    }
-
-    return null;
   }
 }

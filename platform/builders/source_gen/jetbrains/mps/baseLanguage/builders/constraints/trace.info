@@ -13,6 +13,7 @@
   <unitInfo fileName="SimpleBuilderChildExpression_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderChildExpression_Constraints" />
   <unitInfo fileName="AsTypeBuilder_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.AsTypeBuilder_Constraints" />
   <unitInfo fileName="SimpleBuilderParameterReference_Constraints.java" startLine="23" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderParameterReference_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="BeanBuilder_Constraints.java" startLine="21" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_Constraints" />
   <unitInfo fileName="SimpleBuilderPropertyExpression_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyExpression_Constraints" />
   <unitInfo fileName="SimpleBuilderExpression_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderExpression_Constraints" />
@@ -21,7 +22,6 @@
   <unitInfo fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="27" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyBuilder_Constraints" />
   <unitInfo fileName="SimpleBuilder_Constraints.java" startLine="30" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints" />
   <unitInfo fileName="BeanPropertyBuilder_Constraints.java" startLine="33" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.BeanPropertyBuilder_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="2679357232283750109">
     <nodeInfo nodeId="2679357232284066968" fileName="BeanPropertyBuilder_Constraints.java" startLine="80" startPosition="133" endLine="81" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2679357232283837725" fileName="BeanPropertyBuilder_Constraints.java" startLine="90" startPosition="136" endLine="91" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -12,25 +12,21 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"));
+    switch ((fqName).hashCode()) {
+      case 1462653072:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"));
+      case -335874193:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Precondition"));
+      case -42022740:
+        return new DataHolderConstraintsDescriptor(new ResultExpression_Constraints());
+      case 1446856132:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Postcondition"));
+      case 542914276:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Condition"));
+      case -1856550305:
+        return new DataHolderConstraintsDescriptor(new ContractThisExpression_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.contracts.structure.Precondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Precondition"));
-    }
-    if ("jetbrains.mps.baseLanguage.contracts.structure.ResultExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ResultExpression_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.contracts.structure.Postcondition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Postcondition"));
-    }
-    if ("jetbrains.mps.baseLanguage.contracts.structure.Condition".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Condition"));
-    }
-    if ("jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ContractThisExpression_Constraints());
-    }
-
-    return null;
   }
 }

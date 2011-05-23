@@ -12,64 +12,47 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.execution.commands.structure.CommandType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandType"));
+    switch ((fqName).hashCode()) {
+      case 765900688:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandType"));
+      case 2082581805:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandReferenceExpression"));
+      case -102526088:
+        return new DataHolderConstraintsDescriptor(new CommandParameterReference_Constraints());
+      case -1755614617:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"));
+      case 757971008:
+        return new DataHolderConstraintsDescriptor(new CommandParameterAssignment_Constraints());
+      case 1372404663:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandMethod"));
+      case 1884250212:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandDeclaration"));
+      case 1115859376:
+        return new DataHolderConstraintsDescriptor(new CommandDebuggerOperation_Constraints());
+      case 1539140605:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandBuilderExpression"));
+      case 1283902600:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.BuilderBlockStatement"));
+      case -61891901:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.BuilderParameter"));
+      case 176886297:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ReportExecutionError"));
+      case 1989889168:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ReportErrorStatement"));
+      case -79711690:
+        return new DataHolderConstraintsDescriptor(new AbstractProcessBuilderPart_Constraints());
+      case -1126180519:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderExpression"));
+      case -359839791:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart"));
+      case 1602293620:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderPart"));
+      case -1865300812:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessType"));
+      case 214110698:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.RedirectOutputExpression"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.execution.commands.structure.CommandReferenceExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandReferenceExpression"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.CommandParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CommandParameterReference_Constraints());
-    }
-    if ("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.CommandParameterAssignment".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CommandParameterAssignment_Constraints());
-    }
-    if ("jetbrains.mps.execution.commands.structure.CommandMethod".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandMethod"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.CommandDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandDeclaration"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.CommandDebuggerOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new CommandDebuggerOperation_Constraints());
-    }
-    if ("jetbrains.mps.execution.commands.structure.CommandBuilderExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandBuilderExpression"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.BuilderBlockStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.BuilderBlockStatement"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.BuilderParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.BuilderParameter"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.ReportExecutionError".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ReportExecutionError"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.ReportErrorStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ReportErrorStatement"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.AbstractProcessBuilderPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new AbstractProcessBuilderPart_Constraints());
-    }
-    if ("jetbrains.mps.execution.commands.structure.ProcessBuilderExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderExpression"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.ProcessBuilderPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderPart"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.ProcessType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessType"));
-    }
-    if ("jetbrains.mps.execution.commands.structure.RedirectOutputExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.RedirectOutputExpression"));
-    }
-
-    return null;
   }
 }

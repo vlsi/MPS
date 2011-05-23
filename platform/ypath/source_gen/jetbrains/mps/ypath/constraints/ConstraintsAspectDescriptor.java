@@ -12,211 +12,145 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.ypath.structure.TreePathType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreePathType"));
+    switch ((fqName).hashCode()) {
+      case -1316555746:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreePathType"));
+      case 2010857672:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreePathCreator"));
+      case 1362537705:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.LambdaMethod"));
+      case -435279742:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParentBlock"));
+      case -934200179:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ChildrenBlock"));
+      case 1179884736:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.LambdaMethodParameter"));
+      case 1818928635:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreePathOperationExpression"));
+      case 762961667:
+        return new DataHolderConstraintsDescriptor(new TreePathOperation_Constraints());
+      case 1637661596:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.FromOperation"));
+      case 276957934:
+        return new DataHolderConstraintsDescriptor(new IterateOperation_Constraints());
+      case -527252127:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.WhereOperation"));
+      case -1356152441:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.WhereBlock"));
+      case 1255788604:
+        return new DataHolderConstraintsDescriptor(new TreePathAspect_Constraints());
+      case -1114167069:
+        return new DataHolderConstraintsDescriptor(new TreePathAdapterExpression_Constraints());
+      case -1428180011:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreeNodeKind"));
+      case -255844593:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.MatchKindOperation"));
+      case 1295043480:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.KindBlock"));
+      case 1528123594:
+        return new DataHolderConstraintsDescriptor(new TreeNodeKindProperty_Constraints());
+      case -444843935:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.PropertyGetter"));
+      case -2033093754:
+        return new DataHolderConstraintsDescriptor(new TreeNodeKindOccurrence_Constraints());
+      case -757225490:
+        return new DataHolderConstraintsDescriptor(new MatchPropertyOperation_Constraints());
+      case -1656608139:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation"));
+      case 182317764:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreePath"));
+      case -75355402:
+        return new DataHolderConstraintsDescriptor(new TreeNodeKindReference_Constraints());
+      case 989253539:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitBlock"));
+      case 1706294887:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.NodeKindCase"));
+      case -1473688647:
+        return new DataHolderConstraintsDescriptor(new NodeKindSpecificCase_Constraints());
+      case -1138852358:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.NodeKindDefaultCase"));
+      case 1689240225:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitChildrenExpression"));
+      case -839033797:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitParameterDeclaration"));
+      case 1172169292:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitParameterReference"));
+      case 1748286596:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.SwitchNodeKindStatement"));
+      case 2073017192:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitNodesStatement"));
+      case -1689064583:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitParameterDeclarationList"));
+      case -2090625289:
+        return new DataHolderConstraintsDescriptor(new ListFeature_Constraints());
+      case 265941918:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.FeatureGetFun"));
+      case 1835310857:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.FeatureSizeFun"));
+      case -254568462:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.NodeFunctionParam"));
+      case 251152516:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IndexFunctionParam"));
+      case -661644731:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ValueFunctionParam"));
+      case -1367060023:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.FeatureSequenceFun"));
+      case 2088181806:
+        return new DataHolderConstraintsDescriptor(new IFeature_Constraints());
+      case 1704835828:
+        return new DataHolderConstraintsDescriptor(new SequenceFeature_Constraints());
+      case -1873149783:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamFunctionParam"));
+      case 701410719:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParameterQueryFun"));
+      case 251449432:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.NodeTypeFunctionParam"));
+      case -708127789:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TargetTypeFun"));
+      case 379055756:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamListFeature"));
+      case -1487488525:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamFeatureGetFun"));
+      case -719374188:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun"));
+      case -981425324:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamFeatureSizeFun"));
+      case 104760398:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IParamFeatureFun"));
+      case 285360137:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamSequenceFeature"));
+      case 2140639089:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IParamFeature"));
+      case 2060066290:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ToStringFun"));
+      case -838083189:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParameterWrapper"));
+      case -1108965506:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IDesignFunction"));
+      case -1693156515:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GFGetterParamFun"));
+      case -2113133337:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IGenericFeature"));
+      case -508449828:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ExpressionFunctionParam"));
+      case -1209125171:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IFunctionParam"));
+      case 794797170:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GFCardinalParamFun"));
+      case 354722723:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ITreePathExpression"));
+      case -184768605:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GeneratorFunctionParam"));
+      case 644204223:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GFCardinalFun"));
+      case 1041959156:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GFGetterFun"));
+      case 1593676352:
+        return new DataHolderConstraintsDescriptor(new GenericFeature_Constraints());
+      case -402679649:
+        return new DataHolderConstraintsDescriptor(new GenericParamFeature_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.ypath.structure.TreePathCreator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreePathCreator"));
-    }
-    if ("jetbrains.mps.ypath.structure.LambdaMethod".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.LambdaMethod"));
-    }
-    if ("jetbrains.mps.ypath.structure.ParentBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParentBlock"));
-    }
-    if ("jetbrains.mps.ypath.structure.ChildrenBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ChildrenBlock"));
-    }
-    if ("jetbrains.mps.ypath.structure.LambdaMethodParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.LambdaMethodParameter"));
-    }
-    if ("jetbrains.mps.ypath.structure.TreePathOperationExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreePathOperationExpression"));
-    }
-    if ("jetbrains.mps.ypath.structure.TreePathOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TreePathOperation_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.FromOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.FromOperation"));
-    }
-    if ("jetbrains.mps.ypath.structure.IterateOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IterateOperation_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.WhereOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.WhereOperation"));
-    }
-    if ("jetbrains.mps.ypath.structure.WhereBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.WhereBlock"));
-    }
-    if ("jetbrains.mps.ypath.structure.TreePathAspect".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TreePathAspect_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.TreePathAdapterExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TreePathAdapterExpression_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.TreeNodeKind".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreeNodeKind"));
-    }
-    if ("jetbrains.mps.ypath.structure.MatchKindOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.MatchKindOperation"));
-    }
-    if ("jetbrains.mps.ypath.structure.KindBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.KindBlock"));
-    }
-    if ("jetbrains.mps.ypath.structure.TreeNodeKindProperty".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TreeNodeKindProperty_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.PropertyGetter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.PropertyGetter"));
-    }
-    if ("jetbrains.mps.ypath.structure.TreeNodeKindOccurrence".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TreeNodeKindOccurrence_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.MatchPropertyOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatchPropertyOperation_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation"));
-    }
-    if ("jetbrains.mps.ypath.structure.TreePath".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TreePath"));
-    }
-    if ("jetbrains.mps.ypath.structure.TreeNodeKindReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new TreeNodeKindReference_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.VisitBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitBlock"));
-    }
-    if ("jetbrains.mps.ypath.structure.NodeKindCase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.NodeKindCase"));
-    }
-    if ("jetbrains.mps.ypath.structure.NodeKindSpecificCase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new NodeKindSpecificCase_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.NodeKindDefaultCase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.NodeKindDefaultCase"));
-    }
-    if ("jetbrains.mps.ypath.structure.VisitChildrenExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitChildrenExpression"));
-    }
-    if ("jetbrains.mps.ypath.structure.VisitParameterDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitParameterDeclaration"));
-    }
-    if ("jetbrains.mps.ypath.structure.VisitParameterReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitParameterReference"));
-    }
-    if ("jetbrains.mps.ypath.structure.SwitchNodeKindStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.SwitchNodeKindStatement"));
-    }
-    if ("jetbrains.mps.ypath.structure.VisitNodesStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitNodesStatement"));
-    }
-    if ("jetbrains.mps.ypath.structure.VisitParameterDeclarationList".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.VisitParameterDeclarationList"));
-    }
-    if ("jetbrains.mps.ypath.structure.ListFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ListFeature_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.FeatureGetFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.FeatureGetFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.FeatureSizeFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.FeatureSizeFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.NodeFunctionParam".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.NodeFunctionParam"));
-    }
-    if ("jetbrains.mps.ypath.structure.IndexFunctionParam".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IndexFunctionParam"));
-    }
-    if ("jetbrains.mps.ypath.structure.ValueFunctionParam".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ValueFunctionParam"));
-    }
-    if ("jetbrains.mps.ypath.structure.FeatureSequenceFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.FeatureSequenceFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.IFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IFeature_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.SequenceFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SequenceFeature_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.ParamFunctionParam".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamFunctionParam"));
-    }
-    if ("jetbrains.mps.ypath.structure.ParameterQueryFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParameterQueryFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.NodeTypeFunctionParam".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.NodeTypeFunctionParam"));
-    }
-    if ("jetbrains.mps.ypath.structure.TargetTypeFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.TargetTypeFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.ParamListFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamListFeature"));
-    }
-    if ("jetbrains.mps.ypath.structure.ParamFeatureGetFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamFeatureGetFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.ParamFeatureSizeFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamFeatureSizeFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.IParamFeatureFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IParamFeatureFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.ParamSequenceFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParamSequenceFeature"));
-    }
-    if ("jetbrains.mps.ypath.structure.IParamFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IParamFeature"));
-    }
-    if ("jetbrains.mps.ypath.structure.ToStringFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ToStringFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.ParameterWrapper".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ParameterWrapper"));
-    }
-    if ("jetbrains.mps.ypath.structure.IDesignFunction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IDesignFunction"));
-    }
-    if ("jetbrains.mps.ypath.structure.GFGetterParamFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GFGetterParamFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.IGenericFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IGenericFeature"));
-    }
-    if ("jetbrains.mps.ypath.structure.ExpressionFunctionParam".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ExpressionFunctionParam"));
-    }
-    if ("jetbrains.mps.ypath.structure.IFunctionParam".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.IFunctionParam"));
-    }
-    if ("jetbrains.mps.ypath.structure.GFCardinalParamFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GFCardinalParamFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.ITreePathExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.ITreePathExpression"));
-    }
-    if ("jetbrains.mps.ypath.structure.GeneratorFunctionParam".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GeneratorFunctionParam"));
-    }
-    if ("jetbrains.mps.ypath.structure.GFCardinalFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GFCardinalFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.GFGetterFun".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ypath.structure.GFGetterFun"));
-    }
-    if ("jetbrains.mps.ypath.structure.GenericFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GenericFeature_Constraints());
-    }
-    if ("jetbrains.mps.ypath.structure.GenericParamFeature".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GenericParamFeature_Constraints());
-    }
-
-    return null;
   }
 }

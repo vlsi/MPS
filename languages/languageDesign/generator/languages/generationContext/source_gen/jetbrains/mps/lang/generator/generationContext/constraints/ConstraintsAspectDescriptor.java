@@ -12,103 +12,73 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"));
+    switch ((fqName).hashCode()) {
+      case 1675511759:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"));
+      case 318020836:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel"));
+      case 1770150199:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"));
+      case -720635398:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType"));
+      case 1972011128:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"));
+      case 346846876:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope"));
+      case -1084377545:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel"));
+      case 2105316072:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel"));
+      case 385633520:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel"));
+      case -1599240108:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode"));
+      case -866781634:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel"));
+      case -627443882:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput"));
+      case 1923097211:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess"));
+      case -2096932387:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"));
+      case -489564563:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess"));
+      case 642722799:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess"));
+      case -1198506886:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage"));
+      case -951127939:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"));
+      case -1335544410:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage"));
+      case -1094187906:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage"));
+      case 1299140630:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName"));
+      case -1945406151:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"));
+      case 1368212233:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope"));
+      case -1934713017:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext"));
+      case 19092085:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput"));
+      case -384502269:
+        return new DataHolderConstraintsDescriptor(new GenerationContextOp_NodePatternRef_Constraints());
+      case -1882922200:
+        return new DataHolderConstraintsDescriptor(new GenerationContextOp_ParameterRef_Constraints());
+      case 1486086651:
+        return new DataHolderConstraintsDescriptor(new GenerationContextOp_LinkPatternRef_Constraints());
+      case -1389769962:
+        return new DataHolderConstraintsDescriptor(new GenerationContextOp_PropertyPatternRef_Constraints());
+      case -1238567583:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"));
+      case 860109494:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode"));
+      case -398934052:
+        return new DataHolderConstraintsDescriptor(new GenerationContextOp_GenParameterRef_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GenerationContextOp_NodePatternRef_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GenerationContextOp_ParameterRef_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GenerationContextOp_LinkPatternRef_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GenerationContextOp_PropertyPatternRef_Constraints());
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode"));
-    }
-    if ("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GenerationContextOp_GenParameterRef_Constraints());
-    }
-
-    return null;
   }
 }

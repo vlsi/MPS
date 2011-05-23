@@ -11,15 +11,15 @@
   <unitInfo fileName="StringCommandLinePart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.StringCommandLinePart" />
   <unitInfo fileName="SimplePath.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.SimplePath" />
   <unitInfo fileName="PathCommantLinePart.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.PathCommantLinePart" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="77" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ClassPath.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.ClassPath" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="61" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="DigitalSignatureWindowsConfiguration.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration" />
   <unitInfo fileName="MacConfig.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.MacConfig" />
   <unitInfo fileName="Role.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.Role" />
   <unitInfo fileName="ExternalVariableReference.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.ExternalVariableReference" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.StructureAspectDescriptor" />
   <unitInfo fileName="WindowsConfig.java" startLine="11" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.WindowsConfig" />
   <unitInfo fileName="FileAssociation.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.FileAssociation" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.StructureAspectDescriptor" />
   <unitInfo fileName="DistribConfiguration.java" startLine="21" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.DistribConfiguration" />
 </debugInfo>
 

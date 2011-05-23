@@ -12,190 +12,131 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.baseLanguage.regexp.structure.Regexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.Regexp"));
+    switch ((fqName).hashCode()) {
+      case -1611797126:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.Regexp"));
+      case 1374717238:
+        return new DataHolderConstraintsDescriptor(new StringLiteralRegexp_Constraints());
+      case -1336387331:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"));
+      case 1792518964:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp"));
+      case -1755727380:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp"));
+      case 624287648:
+        return new DataHolderConstraintsDescriptor(new RegexpDeclaration_Constraints());
+      case -1397831625:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"));
+      case -928561125:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"));
+      case -1300649657:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"));
+      case -762960189:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
+      case -1589577813:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"));
+      case 1884717202:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement"));
+      case -101249024:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp"));
+      case 1391633112:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"));
+      case 1074264799:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp"));
+      case -1323907037:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp"));
+      case -1468867215:
+        return new DataHolderConstraintsDescriptor(new PredefinedSymbolClassDeclaration_Constraints());
+      case -435386697:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses"));
+      case 1231770290:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"));
+      case -1440040543:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp"));
+      case 1279595906:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"));
+      case 1160092315:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"));
+      case 308348669:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"));
+      case 1763315530:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"));
+      case -1185512346:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
+      case -1756957861:
+        return new DataHolderConstraintsDescriptor(new MatchVariableReference_Constraints());
+      case -497872613:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"));
+      case -706622870:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression"));
+      case -461984278:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock"));
+      case 336988160:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp"));
+      case -409732792:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp"));
+      case 83244052:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp"));
+      case 1573896761:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.Regexps"));
+      case 746456180:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"));
+      case -1742097838:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"));
+      case 947810022:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp"));
+      case 303155600:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"));
+      case 763217537:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp"));
+      case -2086202171:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"));
+      case 1074154617:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"));
+      case -256725652:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp"));
+      case 1605576616:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp"));
+      case 1955121220:
+        return new DataHolderConstraintsDescriptor(new MatchVariableReferenceRegexp_Constraints());
+      case 368331698:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"));
+      case -1839375965:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement"));
+      case -1683994074:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp"));
+      case 2138692255:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp"));
+      case 289311745:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression"));
+      case 1490491956:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement"));
+      case 1011294165:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression"));
+      case -1591715994:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"));
+      case -982871751:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"));
+      case 755114098:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"));
+      case 760122078:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation"));
+      case 1337601162:
+        return new DataHolderConstraintsDescriptor(new MatchRegexpOperation_Constraints());
+      case -1350214827:
+        return new DataHolderConstraintsDescriptor(new ReplaceWithRegexpOperation_Constraints());
+      case 1675213427:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"));
+      case 1158319995:
+        return new DataHolderConstraintsDescriptor(new ReplaceRegexpOperation_Constraints());
+      case -1364028204:
+        return new DataHolderConstraintsDescriptor(new LiteralReplacement_Constraints());
+      case 439479223:
+        return new DataHolderConstraintsDescriptor(new MatchVariableReferenceReplacement_Constraints());
+      case -983459775:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.Replacement"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new StringLiteralRegexp_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new RegexpDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PredefinedSymbolClassDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatchVariableReference_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.Regexps".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.Regexps"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatchVariableReferenceRegexp_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatchRegexpOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReplaceWithRegexpOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"));
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ReplaceRegexpOperation_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LiteralReplacement_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new MatchVariableReferenceReplacement_Constraints());
-    }
-    if ("jetbrains.mps.baseLanguage.regexp.structure.Replacement".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.regexp.structure.Replacement"));
-    }
-
-    return null;
   }
 }

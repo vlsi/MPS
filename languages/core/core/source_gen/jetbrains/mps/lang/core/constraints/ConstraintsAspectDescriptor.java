@@ -12,55 +12,41 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new BaseConcept_Constraints());
+    switch ((fqName).hashCode()) {
+      case 965148823:
+        return new DataHolderConstraintsDescriptor(new BaseConcept_Constraints());
+      case 2115426872:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.INamedConcept"));
+      case 2101294673:
+        return new DataHolderConstraintsDescriptor(new IResolveInfo_Constraints());
+      case 491166122:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IWrapper"));
+      case -702055753:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IDeprecatable"));
+      case -826443816:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IContainer"));
+      case -1037801085:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IType"));
+      case -1774624244:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IMetaLevelChanger"));
+      case -98730688:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScope"));
+      case 1677536201:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopePublic"));
+      case -953098245:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopeNamespace"));
+      case 1586175948:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopeModule"));
+      case 877743324:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.Attribute"));
+      case -1983711742:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.LinkAttribute"));
+      case 172703994:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.NodeAttribute"));
+      case 1806896775:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.PropertyAttribute"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.core.structure.INamedConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.INamedConcept"));
-    }
-    if ("jetbrains.mps.lang.core.structure.IResolveInfo".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new IResolveInfo_Constraints());
-    }
-    if ("jetbrains.mps.lang.core.structure.IWrapper".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IWrapper"));
-    }
-    if ("jetbrains.mps.lang.core.structure.IDeprecatable".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IDeprecatable"));
-    }
-    if ("jetbrains.mps.lang.core.structure.IContainer".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IContainer"));
-    }
-    if ("jetbrains.mps.lang.core.structure.IType".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IType"));
-    }
-    if ("jetbrains.mps.lang.core.structure.IMetaLevelChanger".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IMetaLevelChanger"));
-    }
-    if ("jetbrains.mps.lang.core.structure.ExportScope".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScope"));
-    }
-    if ("jetbrains.mps.lang.core.structure.ExportScopePublic".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopePublic"));
-    }
-    if ("jetbrains.mps.lang.core.structure.ExportScopeNamespace".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopeNamespace"));
-    }
-    if ("jetbrains.mps.lang.core.structure.ExportScopeModule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopeModule"));
-    }
-    if ("jetbrains.mps.lang.core.structure.Attribute".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.Attribute"));
-    }
-    if ("jetbrains.mps.lang.core.structure.LinkAttribute".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.LinkAttribute"));
-    }
-    if ("jetbrains.mps.lang.core.structure.NodeAttribute".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.NodeAttribute"));
-    }
-    if ("jetbrains.mps.lang.core.structure.PropertyAttribute".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.PropertyAttribute"));
-    }
-
-    return null;
   }
 }

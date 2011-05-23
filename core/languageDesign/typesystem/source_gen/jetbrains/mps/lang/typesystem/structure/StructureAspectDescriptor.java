@@ -16,401 +16,275 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    int hash = conceptFqName.hashCode();
-    if (hash == -177807772) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
+    switch ((conceptFqName).hashCode()) {
+      case -177807772:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1978817145:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptReference", new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"}, new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1776294879:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PatternCondition", new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"}, new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 975351231:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InferenceRule", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1870256652:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -241651564:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 872118495:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeOfExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1790674033:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 238496651:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1368679630:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 1515896341:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -100697801:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1326300957:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 2123616500:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeVarReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1313974581:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PatternVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1610638415:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1317820886:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -2109279397:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1288017501:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.SubtypingRule", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -337382061:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AssertStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageStatement", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -830329775:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 358210017:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 854192946:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -618539290:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"});
+      case 44989288:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"});
+      case 1261423108:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1732940798:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 1729875825:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1504984411:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", new String[]{"jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"}, new String[]{"jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -547515552:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MatchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 96981651:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MatchStatementItem", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 601192937:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 303446816:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", new String[]{"jetbrains.mps.lang.typesystem.structure.CoerceExpression"}, new String[]{"jetbrains.mps.lang.typesystem.structure.CoerceExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 641176122:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.JoinType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 868146075:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 41014958:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -102075104:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", new String[]{"jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"}, new String[]{"jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 339314520:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1451837825:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeClause", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1575134650:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.NormalTypeClause", new String[]{"jetbrains.mps.lang.typesystem.structure.TypeClause"}, new String[]{"jetbrains.mps.lang.typesystem.structure.TypeClause"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 484027738:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.Closureoid"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Closureoid", "jetbrains.mps.baseLanguage.structure.Statement"});
+      case 1180562135:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MeetType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -246103845:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ComparisonRule", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 410539137:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Dependency", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1933825469:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.FindSourceBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -293829466:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -447882514:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -915472708:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1473919865:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1532478056:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 356517052:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1784030023:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1707343991:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"});
+      case -2006384358:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 982428137:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WarningStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 605065101:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1663273622:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -847803642:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 352035116:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1032433793:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 2123566887:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1690765610:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1876673950:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1541855621:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixArgument", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1852330768:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 1938528175:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -955876295:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 2105920344:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Processed", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 1413919595:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InfoStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case -1678940286:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MessageTarget", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 42463661:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -242630877:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 609591774:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MessageStatement", new String[]{}, new String[]{}, new String[]{});
+      case 1198891751:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 328753884:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 348041409:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -566769520:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -476172601:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1957077640:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -89318308:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1877507850:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 26518264:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 407918545:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -251640676:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -2028184759:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -999208539:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -870697904:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1062360485:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Operation_parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1693857145:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case -1634678207:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.GetOperationType", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 2021722810:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1567138564:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MeetContainer", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 2024417665:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.JoinContainer", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case -2059829285:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", new String[]{"jetbrains.mps.lang.typesystem.structure.TypeClause"}, new String[]{"jetbrains.mps.lang.typesystem.structure.TypeClause"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1065173015:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 507817801:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -615766377:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 144240694:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OperationContextExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case -1845791762:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -2011137436:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -576393731:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1598270771:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroup", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1468146856:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference", new String[]{"jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"}, new String[]{"jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1918313783:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 1588346278:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"});
+      case -1129313146:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.NodeInfo", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -2117707983:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case -1106698262:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 1947979428:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -846950656:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1265905834:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 649812724:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 1612532260:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 498064593:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case -1125663387:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1495480066:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 834281980:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixField", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 1337178287:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 906508784:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.SelectionType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case -2122137332:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 1944185137:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case -782219785:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 1314250323:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", new String[]{}, new String[]{}, new String[]{});
+      case 1895061594:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes", new String[]{}, new String[]{}, new String[]{});
+      case 113171827:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case -1922090740:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 528889789:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 2049822806:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OrStatement", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      default:
+        return null;
     }
-    if (hash == 1978817145) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition");
-    }
-    if (hash == -1776294879) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition");
-    }
-    if (hash == 975351231) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode");
-    }
-    if (hash == -1870256652) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect");
-    }
-    if (hash == -241651564) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 872118495) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1790674033) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
-    }
-    if (hash == 238496651) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == -1368679630) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement");
-    }
-    if (hash == 1515896341) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement");
-    }
-    if (hash == -100697801) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement");
-    }
-    if (hash == -1326300957) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 2123616500) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1313974581) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1610638415) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1317820886) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -2109279397) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.AbstractRule");
-    }
-    if (hash == 1288017501) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode");
-    }
-    if (hash == -337382061) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
-    }
-    if (hash == -830329775) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement");
-    }
-    if (hash == 358210017) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 854192946) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -618539290) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation");
-    }
-    if (hash == 44989288) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
-    }
-    if (hash == 1261423108) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 1732940798) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == 1729875825) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1504984411) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression");
-    }
-    if (hash == -547515552) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == 96981651) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 601192937) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 303446816) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.CoerceExpression");
-    }
-    if (hash == 641176122) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 868146075) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement");
-    }
-    if (hash == 41014958) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement");
-    }
-    if (hash == -102075104) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable");
-    }
-    if (hash == 339314520) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -1451837825) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypeClause", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1575134650) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.TypeClause");
-    }
-    if (hash == 484027738) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.Closureoid");
-    }
-    if (hash == 1180562135) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -246103845) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes");
-    }
-    if (hash == 410539137) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Dependency", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1933825469) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.FindSourceBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -293829466) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -447882514) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.AbstractRule");
-    }
-    if (hash == -915472708) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode");
-    }
-    if (hash == -1473919865) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes");
-    }
-    if (hash == -1532478056) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 356517052) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 1784030023) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -1707343991) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-    }
-    if (hash == -2006384358) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 982428137) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement");
-    }
-    if (hash == 605065101) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1663273622) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -847803642) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
-    }
-    if (hash == 352035116) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -1032433793) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 2123566887) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -1690765610) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -1876673950) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -1541855621) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 1852330768) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 1938528175) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -955876295) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.baseLanguage.structure.Statement");
-    }
-    if (hash == 2105920344) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Processed", "jetbrains.mps.lang.core.structure.NodeAttribute");
-    }
-    if (hash == 1413919595) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement");
-    }
-    if (hash == -1678940286) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MessageTarget", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 42463661) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.MessageTarget");
-    }
-    if (hash == -242630877) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.MessageTarget");
-    }
-    if (hash == 609591774) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MessageStatement");
-    }
-    if (hash == 1198891751) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.MessageTarget");
-    }
-    if (hash == 328753884) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.MessageTarget");
-    }
-    if (hash == 348041409) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -566769520) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -476172601) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -1957077640) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -89318308) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1877507850) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 26518264) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 407918545) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -251640676) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -2028184759) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule");
-    }
-    if (hash == -999208539) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -870697904) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -1062360485) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -1693857145) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == -1634678207) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 2021722810) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 1567138564) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.core.structure.NodeAttribute");
-    }
-    if (hash == 2024417665) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.core.structure.NodeAttribute");
-    }
-    if (hash == -2059829285) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.TypeClause");
-    }
-    if (hash == -1065173015) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 507817801) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule");
-    }
-    if (hash == -615766377) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 144240694) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == -1845791762) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -2011137436) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -576393731) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 1598270771) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroup", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -1468146856) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference");
-    }
-    if (hash == 1918313783) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == 1588346278) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation");
-    }
-    if (hash == -1129313146) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -2117707983) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == -1106698262) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 1947979428) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -846950656) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 1265905834) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 649812724) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 1612532260) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.core.structure.NodeAttribute");
-    }
-    if (hash == 498064593) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == -1125663387) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-    }
-    if (hash == 1495480066) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 834281980) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-    if (hash == 1337178287) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.baseLanguage.structure.Expression");
-    }
-    if (hash == 906508784) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.baseLanguage.structure.Type");
-    }
-    if (hash == -2122137332) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
-    }
-    if (hash == 1944185137) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation");
-    }
-    if (hash == -782219785) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation");
-    }
-    if (hash == 1314250323) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode");
-    }
-    if (hash == 1895061594) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes");
-    }
-    if (hash == 113171827) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    if (hash == -1922090740) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement");
-    }
-    if (hash == 528889789) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
-    }
-    if (hash == 2049822806) {
-      return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    return null;
   }
 
   public static class DataBasedStructureDescriptor extends StructureDescriptor {
     private ImmutableList<String> parents;
     private ImmutableSet<String> ancestors;
 
-    public DataBasedStructureDescriptor(String fqName, String... parents) {
+    public DataBasedStructureDescriptor(String fqName, String[] parents, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
       this.parents = ImmutableList.copyOf(parents);
-      this.ancestors = getAncestors(fqName, parents);
+      this.ancestors = getAncestors(fqName, ancestorsInLanguage, ancestorsNotInLanguage);
     }
 
     public Set<String> getAncestorsNames() {
@@ -425,12 +299,16 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       return parents;
     }
 
-    private static ImmutableSet<String> getAncestors(String conceptFqName, String... parents) {
-      List<String> result = new ArrayList();
+    private static ImmutableSet<String> getAncestors(String conceptFqName, String[] ancestorsInLanguage, String[] ancestorsNotInLanguage) {
+      ArrayList<String> result = new ArrayList(ancestorsInLanguage.length + 1);
+
+      for (String ancestor : ancestorsInLanguage) {
+        result.add(ancestor);
+      }
 
       result.add(conceptFqName);
       ConceptRegistry registry = ConceptRegistry.getInstance();
-      for (String parent : parents) {
+      for (String parent : ancestorsNotInLanguage) {
         result.addAll(registry.getStructureDescriptor(parent).getAncestorsNames());
       }
       return ImmutableSet.copyOf(result);

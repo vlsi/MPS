@@ -5,7 +5,7 @@
   <unitInfo fileName="NodeStatement_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.findUsages.constraints.NodeStatement_Constraints$1" />
   <unitInfo fileName="ResultStatement_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.findUsages.constraints.ResultStatement_Constraints$1" />
   <unitInfo fileName="ExecuteFinderExpression_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.findUsages.constraints.ExecuteFinderExpression_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="FinderDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.FinderDeclaration_Constraints" />
   <unitInfo fileName="CheckCancelledStatusStatement_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.CheckCancelledStatusStatement_Constraints" />
   <unitInfo fileName="NodeStatement_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.NodeStatement_Constraints" />

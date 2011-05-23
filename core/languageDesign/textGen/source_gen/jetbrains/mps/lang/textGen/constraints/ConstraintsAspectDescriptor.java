@@ -12,106 +12,75 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new ConceptTextGenDeclaration_Constraints());
+    switch ((fqName).hashCode()) {
+      case 482208399:
+        return new DataHolderConstraintsDescriptor(new ConceptTextGenDeclaration_Constraints());
+      case 203494199:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.NodeParameter"));
+      case -1097206968:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration"));
+      case 1619608102:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"));
+      case -71608490:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation"));
+      case -373419854:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation"));
+      case 635625003:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.IndentBufferOperation"));
+      case 1248579231:
+        return new DataHolderConstraintsDescriptor(new LanguageTextGenDeclaration_Constraints());
+      case 1488234531:
+        return new DataHolderConstraintsDescriptor(new OperationDeclaration_Constraints());
+      case -922680363:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.OperationCall"));
+      case 1532449098:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ContextParameter"));
+      case 1169509609:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"));
+      case 1101018809:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.BufferParameter"));
+      case 1366820957:
+        return new DataHolderConstraintsDescriptor(new UtilityMethodDeclaration_Constraints());
+      case -1871965989:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.UtilityMethodCall"));
+      case -2051867695:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.FoundErrorOperation"));
+      case -1237738792:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"));
+      case -1889361947:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.WithIndentOperation"));
+      case -328110465:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.AbstractAppendPart"));
+      case -1374493071:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.NewLineAppendPart"));
+      case 1704815627:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.InfoAppendPart"));
+      case -584901537:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.NodeAppendPart"));
+      case -429793797:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.CollectionAppendPart"));
+      case 1211052914:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"));
+      case -1770081571:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.AppendOperation"));
+      case 1076767307:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration"));
+      case 1330068296:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart"));
+      case 845128628:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.UnitConcept"));
+      case -1012313084:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ScopeConcept"));
+      case -1080466471:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.TraceableConcept"));
+      case 1938204492:
+        return new DataHolderConstraintsDescriptor(new EncodingLiteral_Constraints());
+      case -1783667305:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.EncodingDeclaration"));
+      case -1109115640:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.lang.textGen.structure.NodeParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.NodeParameter"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.IndentBufferOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.IndentBufferOperation"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new LanguageTextGenDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.textGen.structure.OperationDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new OperationDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.textGen.structure.OperationCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.OperationCall"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.ContextParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ContextParameter"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.BufferParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.BufferParameter"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new UtilityMethodDeclaration_Constraints());
-    }
-    if ("jetbrains.mps.lang.textGen.structure.UtilityMethodCall".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.UtilityMethodCall"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.FoundErrorOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.FoundErrorOperation"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.WithIndentOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.WithIndentOperation"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.AbstractAppendPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.AbstractAppendPart"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.NewLineAppendPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.NewLineAppendPart"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.InfoAppendPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.InfoAppendPart"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.NodeAppendPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.NodeAppendPart"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.CollectionAppendPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.CollectionAppendPart"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.AppendOperation".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.AppendOperation"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.UnitConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.UnitConcept"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.ScopeConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.ScopeConcept"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.TraceableConcept".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.TraceableConcept"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.EncodingLiteral".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EncodingLiteral_Constraints());
-    }
-    if ("jetbrains.mps.lang.textGen.structure.EncodingDeclaration".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.EncodingDeclaration"));
-    }
-    if ("jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"));
-    }
-
-    return null;
   }
 }

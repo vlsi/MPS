@@ -12,19 +12,17 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.calculator.structure.Calculator".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.calculator.structure.Calculator"));
+    switch ((fqName).hashCode()) {
+      case 1287893331:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.calculator.structure.Calculator"));
+      case -505287263:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.calculator.structure.InputField"));
+      case 1356829768:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.calculator.structure.OutputField"));
+      case -1955187030:
+        return new DataHolderConstraintsDescriptor(new InputFieldReference_Constraints());
+      default:
+        return null;
     }
-    if ("jetbrains.mps.calculator.structure.InputField".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.calculator.structure.InputField"));
-    }
-    if ("jetbrains.mps.calculator.structure.OutputField".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.calculator.structure.OutputField"));
-    }
-    if ("jetbrains.mps.calculator.structure.InputFieldReference".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new InputFieldReference_Constraints());
-    }
-
-    return null;
   }
 }

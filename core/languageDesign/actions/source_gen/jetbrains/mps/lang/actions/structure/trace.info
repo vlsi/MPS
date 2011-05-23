@@ -83,10 +83,10 @@
   <unitInfo fileName="NF_Model_CreateNewNodeOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation" />
   <unitInfo fileName="NF_Concept_NewInstance.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance" />
   <unitInfo fileName="SNodeCreatorAndInitializer.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="350" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ConceptRightTransformPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.ConceptRightTransformPart" />
   <unitInfo fileName="CopyPreProcessor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.CopyPreProcessor" />
   <unitInfo fileName="PastePostProcessor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.PastePostProcessor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="243" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Side_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side_PropertySupport" />
   <unitInfo fileName="SideTransformTag_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag_PropertySupport" />
   <unitInfo fileName="WrapperSubstituteMenuPart.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart" />
@@ -115,6 +115,6 @@
   <unitInfo fileName="SideTransformHintSubstituteActionsBuilder.java" startLine="14" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" />
   <unitInfo fileName="SmartEditorActions.java" startLine="15" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SmartEditorActions" />
   <unitInfo fileName="CopyPasteHandlers.java" startLine="16" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.CopyPasteHandlers" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor" />
 </debugInfo>
 

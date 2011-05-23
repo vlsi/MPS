@@ -12,64 +12,47 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    if ("jetbrains.mps.gwt.client.structure.GWTModule".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new GWTModule_Constraints());
+    switch ((fqName).hashCode()) {
+      case 2066284946:
+        return new DataHolderConstraintsDescriptor(new GWTModule_Constraints());
+      case 82464764:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.EntryPoint"));
+      case 36823574:
+        return new DataHolderConstraintsDescriptor(new Inherits_Constraints());
+      case -1933198114:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.PatternHolder"));
+      case -557407830:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Include"));
+      case 473836252:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Exclude"));
+      case -1995982166:
+        return new DataHolderConstraintsDescriptor(new PatternFilter_Constraints());
+      case 1003894930:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Pattern"));
+      case -1340602781:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Path"));
+      case -1341031377:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Attr"));
+      case -908299716:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.DefaultExcludes"));
+      case 549227720:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.CaseSensitive"));
+      case -99773431:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Includes"));
+      case 1804022039:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Excludes"));
+      case 269775577:
+        return new DataHolderConstraintsDescriptor(new Source_Constraints());
+      case 1715140472:
+        return new DataHolderConstraintsDescriptor(new SuperSource_Constraints());
+      case 188857639:
+        return new DataHolderConstraintsDescriptor(new Public_Constraints());
+      case 132148222:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Element"));
+      case -687424105:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.RenameTo"));
+      default:
+        return null;
     }
-    if ("jetbrains.mps.gwt.client.structure.EntryPoint".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.EntryPoint"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.Inherits".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Inherits_Constraints());
-    }
-    if ("jetbrains.mps.gwt.client.structure.PatternHolder".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.PatternHolder"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.Include".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Include"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.Exclude".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Exclude"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.PatternFilter".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new PatternFilter_Constraints());
-    }
-    if ("jetbrains.mps.gwt.client.structure.Pattern".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Pattern"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.Path".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Path"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.Attr".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Attr"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.DefaultExcludes".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.DefaultExcludes"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.CaseSensitive".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.CaseSensitive"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.Includes".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Includes"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.Excludes".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Excludes"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.Source".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Source_Constraints());
-    }
-    if ("jetbrains.mps.gwt.client.structure.SuperSource".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new SuperSource_Constraints());
-    }
-    if ("jetbrains.mps.gwt.client.structure.Public".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new Public_Constraints());
-    }
-    if ("jetbrains.mps.gwt.client.structure.Element".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Element"));
-    }
-    if ("jetbrains.mps.gwt.client.structure.RenameTo".equals(fqName)) {
-      return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.RenameTo"));
-    }
-
-    return null;
   }
 }
