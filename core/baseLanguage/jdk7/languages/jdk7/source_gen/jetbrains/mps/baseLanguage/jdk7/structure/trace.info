@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Jdk7_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.structure.Jdk7_Language" />
+  <unitInfo fileName="StringSwitchStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="28" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.structure.StructureAspectDescriptor" />
+</debugInfo>
+
