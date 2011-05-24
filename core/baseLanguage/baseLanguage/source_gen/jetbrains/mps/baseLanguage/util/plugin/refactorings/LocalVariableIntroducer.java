@@ -55,8 +55,11 @@ public class LocalVariableIntroducer {
   }
 
   private void askFinal() {
-    int isFinal = Messages.showYesNoDialog(myEditorComponent, "Declare final?", "Introduce Variable", Messages.getQuestionIcon());
-    myRefactoring.setIsFinal(isFinal == 0);
+    final int answer = Messages.showYesNoCancelDialog(myEditorComponent, "Declare final?", "Introduce Variable", Messages.getQuestionIcon());
+    if (answer == Messages.CANCEL || answer == -1) {
+      return;
+    }
+    myRefactoring.setIsFinal(answer == Messages.YES);
     myRefactoring.setName(ListSequence.fromList(myRefactoring.getExpectedNames()).first());
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
