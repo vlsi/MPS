@@ -5,5 +5,7 @@
   <unitInfo fileName="PrivateFieldReferenceOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation" />
   <unitInfo fileName="PrivateStaticFieldReference.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference" />
   <unitInfo fileName="PrivateStaticMethodCall.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="33" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -26,6 +26,7 @@
   <unitInfo fileName="ReferenceAppendPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart" />
   <unitInfo fileName="NodeAppendPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.NodeAppendPart" />
   <unitInfo fileName="AppendOperation.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AppendOperation" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="91" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="CollectionAppendPart.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" />
   <unitInfo fileName="UtilityMethodCall.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UtilityMethodCall" />
   <unitInfo fileName="OperationCall.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.OperationCall" />
@@ -34,5 +35,6 @@
   <unitInfo fileName="EncodingLiteral.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.EncodingLiteral" />
   <unitInfo fileName="AbstractTextGenDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration" />
   <unitInfo fileName="ConceptTextGenDeclaration.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -27,11 +27,13 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.util.Pair;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -305,6 +307,29 @@ public class AbstractConceptDeclaration_Behavior {
     }
 
     return null;
+  }
+
+  public static Pair<Set<SNode>, Set<SNode>> call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNode thisNode) {
+    // todo: use tuple 
+    Set<SNode> inLanguageAncestors = SetSequence.fromSet(new HashSet());
+    Set<SNode> notInLanguageAncestors = SetSequence.fromSet(new HashSet());
+
+    for (SNode superconcept : AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(thisNode)) {
+      if ((superconcept != null)) {
+        if (SNodeOperations.getModel(superconcept) == SNodeOperations.getModel(thisNode)) {
+          Pair<Set<SNode>, Set<SNode>> superconceptResult = AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(superconcept);
+          SetSequence.fromSet(inLanguageAncestors).addElement(superconcept);
+
+          SetSequence.fromSet(inLanguageAncestors).addSequence(SetSequence.fromSet(superconceptResult.o1));
+          SetSequence.fromSet(notInLanguageAncestors).addSequence(SetSequence.fromSet(superconceptResult.o2));
+        } else {
+          // other language 
+          SetSequence.fromSet(notInLanguageAncestors).addElement(superconcept);
+        }
+      }
+    }
+
+    return new Pair(inLanguageAncestors, notInLanguageAncestors);
   }
 
   public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {

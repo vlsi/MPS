@@ -9,5 +9,7 @@
   <unitInfo fileName="MoneyMethodCall.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall" />
   <unitInfo fileName="MoneyLiteral.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.MoneyLiteral" />
   <unitInfo fileName="MoneyCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.MoneyCreator" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor" />
 </debugInfo>
 

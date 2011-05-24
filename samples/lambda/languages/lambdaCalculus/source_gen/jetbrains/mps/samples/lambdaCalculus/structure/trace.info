@@ -22,6 +22,7 @@
   <unitInfo fileName="BinaryOperation.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation" />
   <unitInfo fileName="FunctionType.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.FunctionType" />
   <unitInfo fileName="MultipleExpression.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="81" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="LambdaApplication.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication" />
   <unitInfo fileName="LetVariable.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable" />
   <unitInfo fileName="Variable.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.Variable" />
@@ -29,5 +30,6 @@
   <unitInfo fileName="Program.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.Program" />
   <unitInfo fileName="LetExpression.java" startLine="13" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression" />
   <unitInfo fileName="LambdaAbstraction.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.structure.StructureAspectDescriptor" />
 </debugInfo>
 

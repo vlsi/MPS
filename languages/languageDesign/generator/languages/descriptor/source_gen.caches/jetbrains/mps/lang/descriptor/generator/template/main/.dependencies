@@ -58,6 +58,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModelReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModuleReference_Behavior" />

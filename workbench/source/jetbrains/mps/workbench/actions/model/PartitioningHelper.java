@@ -47,7 +47,12 @@ public class PartitioningHelper {
 
     Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();
     for (TemplateModule generator : plan.getGenerators()) {
-      for (TemplateMappingPriorityRule rule : generator.getPriorities()) {
+      Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
+      if(priorities == null) {
+        continue;
+      }
+
+      for (TemplateMappingPriorityRule rule : priorities) {
         myRule2Generator.put((MappingPriorityRule) rule, generator);
       }
     }
@@ -58,6 +63,10 @@ public class PartitioningHelper {
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     for (TemplateModule generator : plan.getGenerators()) {
       Collection<TemplateMappingPriorityRule> rules = generator.getPriorities();
+      if(rules == null) {
+        continue;
+      }
+
       List<Pair<MappingPriorityRule, String>> strings = GenerationPartitioningUtil.toStrings(rules, true);
       for (Pair<MappingPriorityRule, String> string : strings) {
         Message msg = new Message(MessageKind.INFORMATION, " " + string.second);

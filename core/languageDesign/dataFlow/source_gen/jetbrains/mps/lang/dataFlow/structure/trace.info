@@ -29,9 +29,11 @@
   <unitInfo fileName="EmitStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.EmitStatement" />
   <unitInfo fileName="InsertPosition.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.InsertPosition" />
   <unitInfo fileName="EmitTryFinallyStatement.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="89" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="BaseInstructionOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation" />
   <unitInfo fileName="EmitLabelStatement.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement" />
   <unitInfo fileName="EmitMayBeUnreachable.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable" />
   <unitInfo fileName="DataFlowBuilderDeclaration.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.structure.StructureAspectDescriptor" />
 </debugInfo>
 

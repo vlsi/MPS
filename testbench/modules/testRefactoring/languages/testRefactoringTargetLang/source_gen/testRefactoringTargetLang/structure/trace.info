@@ -2,6 +2,8 @@
 <debugInfo>
   <unitInfo fileName="TestRefactoringTargetLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="testRefactoringTargetLang.structure.TestRefactoringTargetLang_Language" />
   <unitInfo fileName="AnsotherGoodConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="testRefactoringTargetLang.structure.AnsotherGoodConcept" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="29" startPosition="0" endLine="68" endPosition="0" unitName="testRefactoringTargetLang.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="AbstractGoodConcept.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="testRefactoringTargetLang.structure.AbstractGoodConcept" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="testRefactoringTargetLang.structure.StructureAspectDescriptor" />
 </debugInfo>
 

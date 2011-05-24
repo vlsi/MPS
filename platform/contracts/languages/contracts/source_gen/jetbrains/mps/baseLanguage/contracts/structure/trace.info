@@ -8,5 +8,7 @@
   <unitInfo fileName="ResultExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.ResultExpression" />
   <unitInfo fileName="Condition.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.Condition" />
   <unitInfo fileName="MethodConditions.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.MethodConditions" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="37" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.StructureAspectDescriptor" />
 </debugInfo>
 

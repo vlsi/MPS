@@ -14,8 +14,6 @@ import jetbrains.mps.smodel.constraints.BaseNodePropertyGetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.BaseNodePropertySetter;
-import jetbrains.mps.smodel.constraints.INodePropertyValidator;
-import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -50,10 +48,6 @@ public class ClassConcept_Constraints extends ConstraintsDataHolder {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.baseLanguage.structure.ClassConcept";
-  }
-
   public Map<String, INodePropertyGetter> getNodePropertyGetters() {
     HashMap<String, INodePropertyGetter> result = new HashMap<String, INodePropertyGetter>();
     result.put("isStatic", new BaseNodePropertyGetter() {
@@ -71,16 +65,6 @@ public class ClassConcept_Constraints extends ConstraintsDataHolder {
         SPropertyOperations.set(node, "nonStatic", "" + !((SPropertyOperations.getBoolean(propertyValue))));
       }
     });
-    return result;
-  }
-
-  public Map<String, INodePropertyValidator> getNodePropertyValidators() {
-    HashMap<String, INodePropertyValidator> result = new HashMap<String, INodePropertyValidator>();
-    return result;
-  }
-
-  public Map<String, INodeReferentSetEventHandler> getNodeReferentSetEventHandlers() {
-    HashMap<String, INodeReferentSetEventHandler> result = new HashMap<String, INodeReferentSetEventHandler>();
     return result;
   }
 
@@ -104,10 +88,5 @@ public class ClassConcept_Constraints extends ConstraintsDataHolder {
         return new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213104847627");
       }
     };
-  }
-
-  public Map<String, INodeReferentSearchScopeProvider> getNodeNonDefaultSearchScopeProviders() {
-    HashMap<String, INodeReferentSearchScopeProvider> result = new HashMap<String, INodeReferentSearchScopeProvider>();
-    return result;
   }
 }

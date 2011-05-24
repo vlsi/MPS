@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AbstractAntiquotation_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.quotation.constraints.AbstractAntiquotation_Constraints$1" />
-  <unitInfo fileName="Quotation_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints$1" />
-  <unitInfo fileName="AbstractAntiquotation_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.AbstractAntiquotation_Constraints" />
-  <unitInfo fileName="Quotation_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints" />
+  <unitInfo fileName="AbstractAntiquotation_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.quotation.constraints.AbstractAntiquotation_Constraints$1" />
+  <unitInfo fileName="Quotation_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints$1" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="AbstractAntiquotation_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.AbstractAntiquotation_Constraints" />
+  <unitInfo fileName="Quotation_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints" />
   <root nodeId="1320713984677482740">
-    <nodeInfo nodeId="1320713984677482744" fileName="Quotation_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1320713984677482743" fileName="Quotation_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="140" />
+    <nodeInfo nodeId="1320713984677482744" fileName="Quotation_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1320713984677482743" fileName="Quotation_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="140" />
   </root>
   <root nodeId="1809207813036530204">
-    <nodeInfo nodeId="1809207813036530207" fileName="AbstractAntiquotation_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1809207813036530206" fileName="AbstractAntiquotation_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="152" />
+    <nodeInfo nodeId="1809207813036530207" fileName="AbstractAntiquotation_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1809207813036530206" fileName="AbstractAntiquotation_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="152" />
   </root>
 </debugInfo>
 

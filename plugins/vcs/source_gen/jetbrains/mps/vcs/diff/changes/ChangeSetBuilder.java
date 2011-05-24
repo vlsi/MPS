@@ -85,7 +85,7 @@ public class ChangeSetBuilder {
           // This is internal reference 
           targetModel = null;
         }
-        myChangeSet.add(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, newReference.getTargetNodeId(), newReference.getResolveInfo()));
+        myChangeSet.add(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, check_nbyrtw_e0a0a2a0c0e0b(newReference), check_nbyrtw_f0a0a2a0c0e0b(newReference)));
       }
     }
   }
@@ -233,6 +233,20 @@ public class ChangeSetBuilder {
   private static SModelReference check_nbyrtw_a0a0a2a4a1(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
+    }
+    return null;
+  }
+
+  private static SNodeId check_nbyrtw_e0a0a2a0c0e0b(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTargetNodeId();
+    }
+    return null;
+  }
+
+  private static String check_nbyrtw_f0a0a2a0c0e0b(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getResolveInfo();
     }
     return null;
   }

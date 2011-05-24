@@ -19,6 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.structure.*;
 
 import java.util.Collection;
 
@@ -26,7 +27,6 @@ import java.util.Collection;
  * evgeny, 3/11/11
  */
 public abstract class LanguageRuntime {
-
   public abstract String getNamespace();
 
   public IHelginsDescriptor getTypesystem() {
@@ -40,4 +40,15 @@ public abstract class LanguageRuntime {
 
   public abstract Collection<TemplateModule> getGenerators();
 
+  public DescriptorProvider<StructureDescriptor> getStructureAspect() {
+    return LanguageRuntimeInterpreted.STRUCTURE_PROVIDER;
+  }
+
+  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
+    return LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER;
+  }
+
+  public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
+    return LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER;
+  }
 }

@@ -184,6 +184,7 @@
   <unitInfo fileName="_FontStyle_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._FontStyle_Enum_PropertySupport" />
   <unitInfo fileName="_Colors_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Colors_Enum_PropertySupport" />
   <unitInfo fileName="_YesNoDefault_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._YesNoDefault_Enum_PropertySupport" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="411" startPosition="0" endLine="450" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="MatchingLabelStyleClassItem.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" />
   <unitInfo fileName="CellMenuPart_ReplaceChild_Item.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item" />
   <unitInfo fileName="CellModel_Image.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_Image" />
@@ -233,5 +234,6 @@
   <unitInfo fileName="CellModel_ListWithRole.java" startLine="10" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" />
   <unitInfo fileName="ParametersInformationQuery.java" startLine="19" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ParametersInformationQuery" />
   <unitInfo fileName="EditorCellModel.java" startLine="14" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="451" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
 </debugInfo>
 

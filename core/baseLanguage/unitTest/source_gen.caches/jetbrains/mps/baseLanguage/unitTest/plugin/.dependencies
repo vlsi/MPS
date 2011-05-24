@@ -337,6 +337,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_ConfigurationType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />

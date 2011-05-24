@@ -4,5 +4,7 @@
   <unitInfo fileName="ElementMacro.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.ElementMacro" />
   <unitInfo fileName="TextMacro.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.TextMacro" />
   <unitInfo fileName="XmlLiteral.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="31" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.structure.StructureAspectDescriptor" />
 </debugInfo>
 

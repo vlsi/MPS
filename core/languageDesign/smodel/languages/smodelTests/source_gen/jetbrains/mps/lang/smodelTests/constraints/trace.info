@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="65" startPosition="27" endLine="87" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$1" />
-  <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="88" startPosition="33" endLine="110" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$2" />
-  <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="111" startPosition="32" endLine="133" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$3" />
-  <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="23" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints" />
+  <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="28" startPosition="27" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$1" />
+  <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="51" startPosition="33" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$2" />
+  <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="74" startPosition="32" endLine="96" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$3" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="18" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints" />
   <root nodeId="8758390115029091794">
-    <nodeInfo nodeId="8758390115029158859" fileName="ReferenceContainer_Constraints.java" startLine="70" startPosition="133" endLine="71" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8758390115029091798" fileName="ReferenceContainer_Constraints.java" startLine="80" startPosition="136" endLine="81" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8758390115029225998" fileName="ReferenceContainer_Constraints.java" startLine="93" startPosition="133" endLine="94" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8758390115029225988" fileName="ReferenceContainer_Constraints.java" startLine="103" startPosition="136" endLine="104" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8758390115029226013" fileName="ReferenceContainer_Constraints.java" startLine="116" startPosition="133" endLine="117" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8758390115029226007" fileName="ReferenceContainer_Constraints.java" startLine="126" startPosition="136" endLine="127" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="8758390115029153676" fileName="ReferenceContainer_Constraints.java" startLine="70" startPosition="133" endLine="71" endPosition="82" />
-    <scopeInfo nodeId="8758390115029091797" fileName="ReferenceContainer_Constraints.java" startLine="80" startPosition="136" endLine="81" endPosition="111" />
-    <scopeInfo nodeId="8758390115029225997" fileName="ReferenceContainer_Constraints.java" startLine="93" startPosition="133" endLine="94" endPosition="82" />
-    <scopeInfo nodeId="8758390115029225987" fileName="ReferenceContainer_Constraints.java" startLine="103" startPosition="136" endLine="104" endPosition="112" />
-    <scopeInfo nodeId="8758390115029226012" fileName="ReferenceContainer_Constraints.java" startLine="116" startPosition="133" endLine="117" endPosition="82" />
-    <scopeInfo nodeId="8758390115029226006" fileName="ReferenceContainer_Constraints.java" startLine="126" startPosition="136" endLine="127" endPosition="112" />
+    <nodeInfo nodeId="8758390115029158859" fileName="ReferenceContainer_Constraints.java" startLine="33" startPosition="133" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8758390115029091798" fileName="ReferenceContainer_Constraints.java" startLine="43" startPosition="136" endLine="44" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8758390115029225998" fileName="ReferenceContainer_Constraints.java" startLine="56" startPosition="133" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8758390115029225988" fileName="ReferenceContainer_Constraints.java" startLine="66" startPosition="136" endLine="67" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8758390115029226013" fileName="ReferenceContainer_Constraints.java" startLine="79" startPosition="133" endLine="80" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8758390115029226007" fileName="ReferenceContainer_Constraints.java" startLine="89" startPosition="136" endLine="90" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8758390115029153676" fileName="ReferenceContainer_Constraints.java" startLine="33" startPosition="133" endLine="34" endPosition="82" />
+    <scopeInfo nodeId="8758390115029091797" fileName="ReferenceContainer_Constraints.java" startLine="43" startPosition="136" endLine="44" endPosition="111" />
+    <scopeInfo nodeId="8758390115029225997" fileName="ReferenceContainer_Constraints.java" startLine="56" startPosition="133" endLine="57" endPosition="82" />
+    <scopeInfo nodeId="8758390115029225987" fileName="ReferenceContainer_Constraints.java" startLine="66" startPosition="136" endLine="67" endPosition="112" />
+    <scopeInfo nodeId="8758390115029226012" fileName="ReferenceContainer_Constraints.java" startLine="79" startPosition="133" endLine="80" endPosition="82" />
+    <scopeInfo nodeId="8758390115029226006" fileName="ReferenceContainer_Constraints.java" startLine="89" startPosition="136" endLine="90" endPosition="112" />
   </root>
 </debugInfo>
 

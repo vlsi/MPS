@@ -2,37 +2,30 @@ package jetbrains.mps.smodel.structure;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import com.intellij.util.containers.MultiMap;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.language.LanguageRegistryListener;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.*;
 
-public class ConceptRegistry implements ApplicationComponent, LanguageRegistryListener {
-  private static final DescriptorProvider<StructureDescriptor> INTERPRETED_STRUCTURE = new InterpretedStructureProvider();
+public class ConceptRegistry implements ApplicationComponent {
+  private static final Logger LOG = Logger.getLogger(ConceptRegistry.class);
 
-  private static final DescriptorProvider<BehaviorDescriptor> INTERPRETED_BEHAVIOR = new InterpretedBehaviorProvider();
-  private static final DescriptorProvider<BehaviorDescriptor> COMPILED_BEHAVIOR = new CompiledBehaviorDescriptorProvider();
+  private final Map<String, StructureDescriptor> structureDescriptors = new HashMap<String, StructureDescriptor>();
+  private final Map<String, BehaviorDescriptor> behaviorDescriptors = new HashMap<String, BehaviorDescriptor>();
+  private final Map<String, ConstraintsDescriptor> constraintsDescriptors = new HashMap<String, ConstraintsDescriptor>();
 
-  private static final DescriptorProvider<ConstraintsDescriptor> INTERPRETED_CONSTRAINTS = new InterpretedConstraintsProvider();
-  private static final DescriptorProvider<ConstraintsDescriptor> COMPILED_CONSTRAINTS = new CompiledConstraintsProvider();
+  private final MultiMap<String, String> languageToConcepts = new MultiMap<String, String>();
 
-  private final DescriptorProvider<ConceptDescriptor> conceptDescriptorProvider = new LazyConceptDescriptorProvider(
-    INTERPRETED_STRUCTURE,
-    MixedDescriptorProvider.of(COMPILED_BEHAVIOR, INTERPRETED_BEHAVIOR),
-    MixedDescriptorProvider.of(COMPILED_CONSTRAINTS, INTERPRETED_CONSTRAINTS)
-  );
+  private final Set<String> conceptsInLoading = new HashSet<String>();
 
-  private final Map<String, ConceptDescriptor> descriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
-
-  private final Object lock = new Object();
-
-  public ConceptRegistry(ClassLoaderManager classLoaderManager) {
+  public ConceptRegistry() {
   }
 
   public static ConceptRegistry getInstance() {
@@ -47,43 +40,102 @@ public class ConceptRegistry implements ApplicationComponent, LanguageRegistryLi
 
   @Override
   public void initComponent() {
+    // ?
   }
 
   @Override
   public void disposeComponent() {
+    // ?
   }
 
-  public ConceptDescriptor getConceptDescriptor(String fqName) {
-    if (descriptors.containsKey(fqName)) {
-      return descriptors.get(fqName);
-    } else {
-      synchronized (lock) {
-        if (descriptors.containsKey(fqName)) {
-          return descriptors.get(fqName);
-        } else {
-          ConceptDescriptor descriptor = conceptDescriptorProvider.getDescriptor(fqName);
-          descriptors.put(fqName, descriptor);
-          return descriptor;
-        }
-      }
-    }
+  @Deprecated
+  public synchronized ConceptDescriptor getConceptDescriptor(String fqName) {
+    return new SimpleConceptDescriptor(fqName);
   }
 
-  public ConceptDescriptor getConceptDescriptorForInstanceNode(SNode instanceNode) {
+  @Deprecated
+  public synchronized ConceptDescriptor getConceptDescriptorForInstanceNode(SNode instanceNode) {
     return instanceNode != null ? getConceptDescriptor(instanceNode.getConceptFqName()) : NullNodeConceptDescriptor.INSTANCE;
   }
 
-  public ConceptDescriptor getConceptDescriptor(SNode node) {
-    return getConceptDescriptor(NameUtil.nodeFQName(node));
+  private synchronized void checkConceptIsLoaded(final String fqName) {
+    if (structureDescriptors.containsKey(fqName) || conceptsInLoading.contains(fqName)) {
+      return;
+    }
+
+    conceptsInLoading.add(fqName);
+
+    languageToConcepts.putValue(NameUtil.namespaceFromConceptFQName(fqName), fqName);
+
+//    ModelAccess.instance().runReadAction(new Runnable() {
+//      @Override
+//      public void run() {
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+
+    if (languageRuntime != null) {
+      structureDescriptors.put(fqName, languageRuntime.getStructureAspect().getDescriptor(fqName));
+      behaviorDescriptors.put(fqName, languageRuntime.getBehaviorAspect().getDescriptor(fqName));
+      constraintsDescriptors.put(fqName, languageRuntime.getConstraintsAspect().getDescriptor(fqName));
+    }
+//      }
+//    });
+
+    conceptsInLoading.remove(fqName);
   }
 
-  public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+  public synchronized StructureDescriptor getStructureDescriptor(String fqName) {
+    checkConceptIsLoaded(fqName);
+    return structureDescriptors.get(fqName);
+  }
+
+  public synchronized BehaviorDescriptor getBehaviorDescriptor(String fqName) {
+    checkConceptIsLoaded(fqName);
+    return behaviorDescriptors.get(fqName);
+  }
+
+  public synchronized ConstraintsDescriptor getConstraintsDescriptor(String fqName) {
+    checkConceptIsLoaded(fqName);
+    return constraintsDescriptors.get(fqName);
+  }
+
+  private class SimpleConceptDescriptor extends ConceptDescriptor {
+    private final String fqName;
+
+    SimpleConceptDescriptor(String fqName) {
+      this.fqName = fqName;
+    }
+
+    @Override
+    public String fqName() {
+      return fqName;
+    }
+
+    @Override
+    public StructureDescriptor structure() {
+      return getStructureDescriptor(fqName);
+    }
+
+    @Override
+    public BehaviorDescriptor behavior() {
+      return getBehaviorDescriptor(fqName);
+    }
+
+    @Override
+    public ConstraintsDescriptor constraints() {
+      return getConstraintsDescriptor(fqName);
+    }
+  }
+
+  public synchronized void languagesLoaded(Iterable<LanguageRuntime> languages) {
     ModelAccess.assertLegalWrite();
 
-    // TODO load descriptors
+    // lazy...
   }
 
-  public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
-    descriptors.clear();
+  public synchronized void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+    // todo
+    structureDescriptors.clear();
+    behaviorDescriptors.clear();
+    constraintsDescriptors.clear();
   }
 }

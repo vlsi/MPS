@@ -230,7 +230,7 @@ public class LanguageRegistry implements ApplicationComponent {
 
   @Nullable
   public LanguageRuntime getLanguage(String namespace) {
-    ModelAccess.assertLegalRead();
+//    ModelAccess.assertLegalRead();
 
     return myLanguages.get(namespace);
   }

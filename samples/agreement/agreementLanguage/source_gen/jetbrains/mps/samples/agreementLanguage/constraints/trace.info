@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ValueReference_Constraints.java" startLine="64" startPosition="28" endLine="79" endPosition="5" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints$1" />
-  <unitInfo fileName="EventVariableReference_Constraints.java" startLine="65" startPosition="36" endLine="80" endPosition="5" unitName="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints$1" />
-  <unitInfo fileName="ValueReference_Constraints.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints" />
-  <unitInfo fileName="EventVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints" />
+  <unitInfo fileName="ValueReference_Constraints.java" startLine="28" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints$1" />
+  <unitInfo fileName="EventVariableReference_Constraints.java" startLine="29" startPosition="36" endLine="44" endPosition="5" unitName="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints$1" />
+  <unitInfo fileName="ValueReference_Constraints.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints" />
+  <unitInfo fileName="EventVariableReference_Constraints.java" startLine="19" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1214253504159">
-    <nodeInfo nodeId="1214253544836" fileName="ValueReference_Constraints.java" startLine="71" startPosition="136" endLine="72" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214253544845" fileName="ValueReference_Constraints.java" startLine="72" startPosition="149" endLine="73" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1214253543335" fileName="ValueReference_Constraints.java" startLine="71" startPosition="136" endLine="73" endPosition="45">
+    <nodeInfo nodeId="1214253544836" fileName="ValueReference_Constraints.java" startLine="35" startPosition="136" endLine="36" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1214253544845" fileName="ValueReference_Constraints.java" startLine="36" startPosition="149" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1214253543335" fileName="ValueReference_Constraints.java" startLine="35" startPosition="136" endLine="37" endPosition="45">
       <varInfo nodeId="1214253544837" varName="plan" />
     </scopeInfo>
   </root>
   <root nodeId="1214253593082">
-    <nodeInfo nodeId="1214253611993" fileName="EventVariableReference_Constraints.java" startLine="72" startPosition="136" endLine="73" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214253612004" fileName="EventVariableReference_Constraints.java" startLine="73" startPosition="197" endLine="74" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1214253610430" fileName="EventVariableReference_Constraints.java" startLine="72" startPosition="136" endLine="74" endPosition="50">
+    <nodeInfo nodeId="1214253611993" fileName="EventVariableReference_Constraints.java" startLine="36" startPosition="136" endLine="37" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1214253612004" fileName="EventVariableReference_Constraints.java" startLine="37" startPosition="197" endLine="38" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1214253610430" fileName="EventVariableReference_Constraints.java" startLine="36" startPosition="136" endLine="38" endPosition="50">
       <varInfo nodeId="1214253611994" varName="eventType" />
     </scopeInfo>
   </root>

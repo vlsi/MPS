@@ -10,5 +10,7 @@
   <unitInfo fileName="ComplexType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ComplexType" />
   <unitInfo fileName="DegreeComplexExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.DegreeComplexExpression" />
   <unitInfo fileName="SingleComplexExpression.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.SingleComplexExpression" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="43" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.smodel.structure.StructureDescriptor;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternAwareStringSet;
 import jetbrains.mps.util.InternUtil;
@@ -137,7 +138,12 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static List<String> getParentsNames(String conceptFqName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure().getParentsNames();
+    StructureDescriptor structure = ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure();
+    // TODO tmp fix for MPS-12507
+    if (structure == null){
+      return Collections.emptyList();
+    }
+    return structure.getParentsNames();
   }
 
   public List<String> _getParentsNames(final String conceptFqName) {

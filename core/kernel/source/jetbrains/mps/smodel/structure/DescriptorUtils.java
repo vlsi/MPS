@@ -16,9 +16,14 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DescriptorUtils {
   public static Language getLanguageForConceptFqName(String conceptFqName) {
@@ -40,5 +45,18 @@ public class DescriptorUtils {
     }
 
     return null;
+  }
+
+  public static List<String> getLanguageConcepts(Language language) {
+    List<String> result = new ArrayList<String>();
+
+    for (SNode node : LanguageAspect.STRUCTURE.get(language).getSModel().nodes()) {
+      if ("jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(node.getConceptFqName()) ||
+        "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(node.getConceptFqName())) {
+        result.add(NameUtil.nodeFQName(node));
+      }
+    }
+
+    return result;
   }
 }

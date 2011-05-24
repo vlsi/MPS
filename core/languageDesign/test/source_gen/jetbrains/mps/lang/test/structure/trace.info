@@ -39,6 +39,7 @@
   <unitInfo fileName="NodeTypeSetProperty.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodeTypeSetProperty" />
   <unitInfo fileName="NodePropertiesContainer.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodePropertiesContainer" />
   <unitInfo fileName="PressKeyStatement.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.test.structure.PressKeyStatement" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="111" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.test.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="TypesCheckOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TypesCheckOperation" />
   <unitInfo fileName="AssertMatch.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.test.structure.AssertMatch" />
   <unitInfo fileName="EditorOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.test.structure.EditorOperation" />
@@ -47,6 +48,7 @@
   <unitInfo fileName="NodesTestMethod.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodesTestMethod" />
   <unitInfo fileName="EditorTestCase.java" startLine="18" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.test.structure.EditorTestCase" />
   <unitInfo fileName="NodesTestCase.java" startLine="18" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodesTestCase" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.test.structure.StructureAspectDescriptor" />
   <unitInfo fileName="AnonymousCellAnnotation.java" startLine="15" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" />
 </debugInfo>
 

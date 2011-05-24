@@ -17,6 +17,8 @@
   <unitInfo fileName="PropertyAttribute.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.PropertyAttribute" />
   <unitInfo fileName="LinkAttribute.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.LinkAttribute" />
   <unitInfo fileName="ExportScopeNamespace.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScopeNamespace" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="57" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.core.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="BaseConcept.java" startLine="13" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.core.structure.StructureAspectDescriptor" />
 </debugInfo>
 
