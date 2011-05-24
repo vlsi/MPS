@@ -4,11 +4,13 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +25,7 @@ public class ConceptRegistry implements ApplicationComponent {
 
   private final MultiMap<String, String> languageToConcepts = new MultiMap<String, String>();
 
-  private final Set<String> conceptsInLoading = new HashSet<String>();
+  private final Set<Pair<String, LanguageAspect>> conceptsInLoading = new HashSet<Pair<String, LanguageAspect>>();
 
   public ConceptRegistry() {
   }
@@ -58,12 +60,32 @@ public class ConceptRegistry implements ApplicationComponent {
     return instanceNode != null ? getConceptDescriptor(instanceNode.getConceptFqName()) : NullNodeConceptDescriptor.INSTANCE;
   }
 
-  private synchronized void checkConceptIsLoaded(final String fqName) {
-    if (structureDescriptors.containsKey(fqName) || conceptsInLoading.contains(fqName)) {
+  private synchronized void checkConceptIsLoaded(final String fqName, LanguageAspect languageAspect) {
+    Pair<String, LanguageAspect> currentConceptAndLanguageAspect = new Pair<String, LanguageAspect>(fqName, languageAspect);
+
+    if (conceptsInLoading.contains(currentConceptAndLanguageAspect)) {
       return;
     }
 
-    conceptsInLoading.add(fqName);
+    switch (languageAspect) {
+      case STRUCTURE:
+        if (structureDescriptors.containsKey(fqName)) {
+          return;
+        }
+        break;
+      case BEHAVIOR:
+        if (behaviorDescriptors.containsKey(fqName)) {
+          return;
+        }
+        break;
+      case CONSTRAINTS:
+        if (constraintsDescriptors.containsKey(fqName)) {
+          return;
+        }
+        break;
+    }
+
+    conceptsInLoading.add(currentConceptAndLanguageAspect);
 
     languageToConcepts.putValue(NameUtil.namespaceFromConceptFQName(fqName), fqName);
 
@@ -73,28 +95,36 @@ public class ConceptRegistry implements ApplicationComponent {
     LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
 
     if (languageRuntime != null) {
-      structureDescriptors.put(fqName, languageRuntime.getStructureAspect().getDescriptor(fqName));
-      behaviorDescriptors.put(fqName, languageRuntime.getBehaviorAspect().getDescriptor(fqName));
-      constraintsDescriptors.put(fqName, languageRuntime.getConstraintsAspect().getDescriptor(fqName));
+      switch (languageAspect) {
+        case STRUCTURE:
+          structureDescriptors.put(fqName, languageRuntime.getStructureAspect().getDescriptor(fqName));
+          break;
+        case BEHAVIOR:
+          behaviorDescriptors.put(fqName, languageRuntime.getBehaviorAspect().getDescriptor(fqName));
+          break;
+        case CONSTRAINTS:
+          constraintsDescriptors.put(fqName, languageRuntime.getConstraintsAspect().getDescriptor(fqName));
+          break;
+      }
     }
 //      }
 //    });
 
-    conceptsInLoading.remove(fqName);
+    conceptsInLoading.remove(currentConceptAndLanguageAspect);
   }
 
   public synchronized StructureDescriptor getStructureDescriptor(String fqName) {
-    checkConceptIsLoaded(fqName);
+    checkConceptIsLoaded(fqName, LanguageAspect.STRUCTURE);
     return structureDescriptors.get(fqName);
   }
 
   public synchronized BehaviorDescriptor getBehaviorDescriptor(String fqName) {
-    checkConceptIsLoaded(fqName);
+    checkConceptIsLoaded(fqName, LanguageAspect.BEHAVIOR);
     return behaviorDescriptors.get(fqName);
   }
 
   public synchronized ConstraintsDescriptor getConstraintsDescriptor(String fqName) {
-    checkConceptIsLoaded(fqName);
+    checkConceptIsLoaded(fqName, LanguageAspect.CONSTRAINTS);
     return constraintsDescriptors.get(fqName);
   }
 
