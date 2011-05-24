@@ -20,4 +20,18 @@ public class RunConfiguration_Behavior {
       }
     });
   }
+
+  public static boolean call_isForeign_4042467058397504911(SNode thisNode) {
+    if ((SLinkOperations.getTarget(thisNode, "configurationType", false) == null)) {
+      return false;
+    }
+    return neq_g3syr7_a0b0c(SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, "configurationType", false)), SNodeOperations.getModel(thisNode));
+  }
+
+  private static boolean neq_g3syr7_a0b0c(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
 }
