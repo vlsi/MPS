@@ -25,11 +25,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAParentContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.INodePropertyGetter" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.INodePropertySetter" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.INodePropertyValidator" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.CanBeASomethingMethod" />

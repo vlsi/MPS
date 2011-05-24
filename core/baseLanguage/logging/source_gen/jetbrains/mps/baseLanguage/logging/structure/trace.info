@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Logging_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Logging_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="29" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Severity_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Severity_PropertySupport" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="29" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Severity.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Severity" />
 </debugInfo>
 

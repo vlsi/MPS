@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="53" startPosition="15" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$1" />
-  <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="69" startPosition="15" endLine="79" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$2" />
-  <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="104" startPosition="32" endLine="127" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$3" />
+  <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="37" startPosition="15" endLine="47" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$1" />
+  <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="53" startPosition="15" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$2" />
+  <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="68" startPosition="32" endLine="91" endPosition="5" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints$3" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="30" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints" />
+  <unitInfo fileName="CustomConstructorParameterReference_Constraints.java" startLine="26" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.constraints.CustomConstructorParameterReference_Constraints" />
   <root nodeId="5379647004618378867">
-    <nodeInfo nodeId="3778783095369073642" fileName="CustomConstructorParameterReference_Constraints.java" startLine="111" startPosition="136" endLine="112" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4739047193854568224" fileName="CustomConstructorParameterReference_Constraints.java" startLine="113" startPosition="122" endLine="114" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4739047193854568233" fileName="CustomConstructorParameterReference_Constraints.java" startLine="114" startPosition="54" endLine="115" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4739047193854568252" fileName="CustomConstructorParameterReference_Constraints.java" startLine="115" startPosition="193" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4739047193854546269" fileName="CustomConstructorParameterReference_Constraints.java" startLine="117" startPosition="130" endLine="118" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4739047193854568255" fileName="CustomConstructorParameterReference_Constraints.java" startLine="119" startPosition="16" endLine="120" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3778783095369352263" fileName="CustomConstructorParameterReference_Constraints.java" startLine="131" startPosition="114" endLine="132" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3778783095369352261" fileName="CustomConstructorParameterReference_Constraints.java" startLine="135" startPosition="116" endLine="136" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4739047193854568253" fileName="CustomConstructorParameterReference_Constraints.java" startLine="119" startPosition="14" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3778783095369073621" fileName="CustomConstructorParameterReference_Constraints.java" startLine="112" startPosition="209" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="4739047193854546268" fileName="CustomConstructorParameterReference_Constraints.java" startLine="117" startPosition="130" endLine="118" endPosition="165" />
-    <scopeInfo nodeId="4739047193854568254" fileName="CustomConstructorParameterReference_Constraints.java" startLine="119" startPosition="16" endLine="120" endPosition="22" />
-    <scopeInfo nodeId="3778783095369207576" fileName="CustomConstructorParameterReference_Constraints.java" startLine="131" startPosition="114" endLine="132" endPosition="16" />
-    <scopeInfo nodeId="3778783095369352260" fileName="CustomConstructorParameterReference_Constraints.java" startLine="135" startPosition="116" endLine="136" endPosition="16" />
-    <scopeInfo nodeId="3778783095369073622" fileName="CustomConstructorParameterReference_Constraints.java" startLine="113" startPosition="122" endLine="116" endPosition="24">
+    <nodeInfo nodeId="3778783095369073642" fileName="CustomConstructorParameterReference_Constraints.java" startLine="75" startPosition="136" endLine="76" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4739047193854568224" fileName="CustomConstructorParameterReference_Constraints.java" startLine="77" startPosition="122" endLine="78" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4739047193854568233" fileName="CustomConstructorParameterReference_Constraints.java" startLine="78" startPosition="54" endLine="79" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4739047193854568252" fileName="CustomConstructorParameterReference_Constraints.java" startLine="79" startPosition="193" endLine="80" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4739047193854546269" fileName="CustomConstructorParameterReference_Constraints.java" startLine="81" startPosition="130" endLine="82" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4739047193854568255" fileName="CustomConstructorParameterReference_Constraints.java" startLine="83" startPosition="16" endLine="84" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3778783095369352263" fileName="CustomConstructorParameterReference_Constraints.java" startLine="95" startPosition="114" endLine="96" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3778783095369352261" fileName="CustomConstructorParameterReference_Constraints.java" startLine="99" startPosition="116" endLine="100" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4739047193854568253" fileName="CustomConstructorParameterReference_Constraints.java" startLine="83" startPosition="14" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3778783095369073621" fileName="CustomConstructorParameterReference_Constraints.java" startLine="76" startPosition="209" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="4739047193854546268" fileName="CustomConstructorParameterReference_Constraints.java" startLine="81" startPosition="130" endLine="82" endPosition="165" />
+    <scopeInfo nodeId="4739047193854568254" fileName="CustomConstructorParameterReference_Constraints.java" startLine="83" startPosition="16" endLine="84" endPosition="22" />
+    <scopeInfo nodeId="3778783095369207576" fileName="CustomConstructorParameterReference_Constraints.java" startLine="95" startPosition="114" endLine="96" endPosition="16" />
+    <scopeInfo nodeId="3778783095369352260" fileName="CustomConstructorParameterReference_Constraints.java" startLine="99" startPosition="116" endLine="100" endPosition="16" />
+    <scopeInfo nodeId="3778783095369073622" fileName="CustomConstructorParameterReference_Constraints.java" startLine="77" startPosition="122" endLine="80" endPosition="24">
       <varInfo nodeId="4739047193854568225" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3778783095368652010" fileName="CustomConstructorParameterReference_Constraints.java" startLine="111" startPosition="136" endLine="121" endPosition="9">
+    <scopeInfo nodeId="3778783095368652010" fileName="CustomConstructorParameterReference_Constraints.java" startLine="75" startPosition="136" endLine="85" endPosition="9">
       <varInfo nodeId="3778783095369073643" varName="args" />
     </scopeInfo>
   </root>

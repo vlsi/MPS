@@ -5,9 +5,9 @@
   <unitInfo fileName="CustomRoot.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomRoot" />
   <unitInfo fileName="TwoVarStatement.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement" />
   <unitInfo fileName="CustomStatementRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="OutputNode.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.StructureAspectDescriptor" />
   <unitInfo fileName="CustomStatement.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomStatement" />
   <unitInfo fileName="OutputRoot.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" />
 </debugInfo>

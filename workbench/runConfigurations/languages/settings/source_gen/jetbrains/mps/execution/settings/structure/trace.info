@@ -21,7 +21,7 @@
   <unitInfo fileName="PersistentConfigurationType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.PersistentConfigurationType" />
   <unitInfo fileName="ReportConfigurationErrorStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement" />
   <unitInfo fileName="PersistentConfigurationTemplate.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="81" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="81" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="PersistentConfigurationTemplateInitializer.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer" />
   <unitInfo fileName="GetEditorOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.GetEditorOperation" />
   <unitInfo fileName="SettingsEditor.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.SettingsEditor" />
@@ -29,7 +29,7 @@
   <unitInfo fileName="PersistentPropertyReferenceOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation" />
   <unitInfo fileName="CheckProperitesOperation.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.CheckProperitesOperation" />
   <unitInfo fileName="EditorOperationCall.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.EditorOperationCall" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor" />
   <unitInfo fileName="PersistentConfiguration.java" startLine="17" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.PersistentConfiguration" />
 </debugInfo>
 

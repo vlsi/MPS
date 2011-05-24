@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FunctionMethodDeclaration_Constraints.java" startLine="39" startPosition="27" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$1" />
-  <unitInfo fileName="FunctionMethodDeclaration_Constraints.java" startLine="44" startPosition="33" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$2" />
-  <unitInfo fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.UnboundClosureParameterDeclaration_Constraints$1" />
-  <unitInfo fileName="AbstractFunctionType_Constraints.java" startLine="46" startPosition="15" endLine="56" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.AbstractFunctionType_Constraints$1" />
-  <unitInfo fileName="InvokeFunctionOperation_Constraints.java" startLine="48" startPosition="15" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.InvokeFunctionOperation_Constraints$1" />
-  <unitInfo fileName="ControlAbstractionContainer_Constraints.java" startLine="64" startPosition="15" endLine="81" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_Constraints$1" />
-  <unitInfo fileName="FunctionType_Constraints.java" startLine="66" startPosition="35" endLine="84" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$1" />
-  <unitInfo fileName="CompactInvokeFunctionExpression_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.CompactInvokeFunctionExpression_Constraints" />
+  <unitInfo fileName="FunctionMethodDeclaration_Constraints.java" startLine="23" startPosition="27" endLine="27" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$1" />
+  <unitInfo fileName="FunctionMethodDeclaration_Constraints.java" startLine="28" startPosition="33" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints$2" />
+  <unitInfo fileName="CompactInvokeFunctionExpression_Constraints.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.CompactInvokeFunctionExpression_Constraints" />
+  <unitInfo fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.UnboundClosureParameterDeclaration_Constraints$1" />
+  <unitInfo fileName="AbstractFunctionType_Constraints.java" startLine="26" startPosition="15" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.AbstractFunctionType_Constraints$1" />
+  <unitInfo fileName="InvokeFunctionOperation_Constraints.java" startLine="28" startPosition="15" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.InvokeFunctionOperation_Constraints$1" />
+  <unitInfo fileName="ControlAbstractionContainer_Constraints.java" startLine="25" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_Constraints$1" />
+  <unitInfo fileName="FunctionType_Constraints.java" startLine="30" startPosition="35" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$1" />
+  <unitInfo fileName="FunctionMethodDeclaration_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints" />
+  <unitInfo fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.UnboundClosureParameterDeclaration_Constraints" />
+  <unitInfo fileName="AbstractFunctionType_Constraints.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.AbstractFunctionType_Constraints" />
+  <unitInfo fileName="InvokeFunctionOperation_Constraints.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.InvokeFunctionOperation_Constraints" />
+  <unitInfo fileName="ControlAbstractionContainer_Constraints.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_Constraints" />
+  <unitInfo fileName="FunctionType_Constraints.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="FunctionMethodDeclaration_Constraints.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_Constraints" />
-  <unitInfo fileName="FunctionType_Constraints.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints" />
-  <unitInfo fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.UnboundClosureParameterDeclaration_Constraints" />
-  <unitInfo fileName="AbstractFunctionType_Constraints.java" startLine="23" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.AbstractFunctionType_Constraints" />
-  <unitInfo fileName="InvokeFunctionOperation_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.InvokeFunctionOperation_Constraints" />
-  <unitInfo fileName="ControlAbstractionContainer_Constraints.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_Constraints" />
   <root nodeId="100821637069090025">
-    <nodeInfo nodeId="100821637069106778" fileName="FunctionType_Constraints.java" startLine="75" startPosition="44" endLine="76" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="100821637069106774" fileName="FunctionType_Constraints.java" startLine="74" startPosition="214" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="100821637069106760" fileName="FunctionType_Constraints.java" startLine="73" startPosition="136" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="100821637069106775" fileName="FunctionType_Constraints.java" startLine="75" startPosition="44" endLine="76" endPosition="103" />
-    <scopeInfo nodeId="100821637069106774" fileName="FunctionType_Constraints.java" startLine="74" startPosition="214" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="100821637069106759" fileName="FunctionType_Constraints.java" startLine="73" startPosition="136" endLine="78" endPosition="11" />
-    <unitInfo nodeId="100821637069106774" fileName="FunctionType_Constraints.java" startLine="74" startPosition="191" endLine="78" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$2" />
+    <nodeInfo nodeId="100821637069106778" fileName="FunctionType_Constraints.java" startLine="39" startPosition="44" endLine="40" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="100821637069106774" fileName="FunctionType_Constraints.java" startLine="38" startPosition="214" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="100821637069106760" fileName="FunctionType_Constraints.java" startLine="37" startPosition="136" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="100821637069106775" fileName="FunctionType_Constraints.java" startLine="39" startPosition="44" endLine="40" endPosition="103" />
+    <scopeInfo nodeId="100821637069106774" fileName="FunctionType_Constraints.java" startLine="38" startPosition="214" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="100821637069106759" fileName="FunctionType_Constraints.java" startLine="37" startPosition="136" endLine="42" endPosition="11" />
+    <unitInfo nodeId="100821637069106774" fileName="FunctionType_Constraints.java" startLine="38" startPosition="191" endLine="42" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_Constraints$2" />
   </root>
   <root nodeId="1201536121399">
     <nodeInfo nodeId="7376433222636454079" fileName="ClassifierTypeUtil.java" startLine="27" startPosition="66" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -519,26 +519,26 @@
     <unitInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="26" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
   </root>
   <root nodeId="1213107436309">
-    <nodeInfo nodeId="1213107436312" fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107436311" fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="130" />
+    <nodeInfo nodeId="1213107436312" fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107436311" fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="130" />
   </root>
   <root nodeId="1228409395542">
-    <nodeInfo nodeId="1228409414448" fileName="InvokeFunctionOperation_Constraints.java" startLine="86" startPosition="114" endLine="87" endPosition="483" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1228409397980" fileName="InvokeFunctionOperation_Constraints.java" startLine="86" startPosition="114" endLine="87" endPosition="483" />
+    <nodeInfo nodeId="1228409414448" fileName="InvokeFunctionOperation_Constraints.java" startLine="41" startPosition="114" endLine="42" endPosition="483" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1228409397980" fileName="InvokeFunctionOperation_Constraints.java" startLine="41" startPosition="114" endLine="42" endPosition="483" />
   </root>
   <root nodeId="1229600981370">
-    <nodeInfo nodeId="1230321893354" fileName="ControlAbstractionContainer_Constraints.java" startLine="71" startPosition="136" endLine="75" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1229600983431" fileName="ControlAbstractionContainer_Constraints.java" startLine="71" startPosition="136" endLine="75" endPosition="71" />
+    <nodeInfo nodeId="1230321893354" fileName="ControlAbstractionContainer_Constraints.java" startLine="32" startPosition="136" endLine="36" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1229600983431" fileName="ControlAbstractionContainer_Constraints.java" startLine="32" startPosition="136" endLine="36" endPosition="71" />
   </root>
   <root nodeId="2684105348703956460">
-    <nodeInfo nodeId="2411622665278491963" fileName="FunctionMethodDeclaration_Constraints.java" startLine="40" startPosition="84" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="27727482733946040" fileName="FunctionMethodDeclaration_Constraints.java" startLine="45" startPosition="84" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2411622665278491648" fileName="FunctionMethodDeclaration_Constraints.java" startLine="40" startPosition="84" endLine="41" endPosition="24" />
-    <scopeInfo nodeId="2684105348703956782" fileName="FunctionMethodDeclaration_Constraints.java" startLine="45" startPosition="84" endLine="46" endPosition="21" />
+    <nodeInfo nodeId="2411622665278491963" fileName="FunctionMethodDeclaration_Constraints.java" startLine="24" startPosition="84" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="27727482733946040" fileName="FunctionMethodDeclaration_Constraints.java" startLine="29" startPosition="84" endLine="30" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2411622665278491648" fileName="FunctionMethodDeclaration_Constraints.java" startLine="24" startPosition="84" endLine="25" endPosition="24" />
+    <scopeInfo nodeId="2684105348703956782" fileName="FunctionMethodDeclaration_Constraints.java" startLine="29" startPosition="84" endLine="30" endPosition="21" />
   </root>
   <root nodeId="5612111951671408000">
-    <nodeInfo nodeId="5612111951671415373" fileName="AbstractFunctionType_Constraints.java" startLine="84" startPosition="114" endLine="85" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5612111951671408002" fileName="AbstractFunctionType_Constraints.java" startLine="84" startPosition="114" endLine="85" endPosition="92" />
+    <nodeInfo nodeId="5612111951671415373" fileName="AbstractFunctionType_Constraints.java" startLine="39" startPosition="114" endLine="40" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5612111951671408002" fileName="AbstractFunctionType_Constraints.java" startLine="39" startPosition="114" endLine="40" endPosition="92" />
   </root>
 </debugInfo>
 

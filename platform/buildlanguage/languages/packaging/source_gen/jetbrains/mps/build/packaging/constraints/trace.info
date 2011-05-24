@@ -1,123 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MacroReference_Constraints.java" startLine="42" startPosition="27" endLine="46" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.MacroReference_Constraints$1" />
-  <unitInfo fileName="Configuration_Constraints.java" startLine="64" startPosition="31" endLine="68" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Configuration_Constraints$2" />
-  <unitInfo fileName="Antcall_Constraints.java" startLine="102" startPosition="30" endLine="108" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$3" />
-  <unitInfo fileName="AbstractProjectComponent_Constraints.java" startLine="41" startPosition="27" endLine="48" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints$1" />
-  <unitInfo fileName="Echo_Constraints.java" startLine="41" startPosition="27" endLine="48" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Echo_Constraints$1" />
-  <unitInfo fileName="Plugin_Constraints.java" startLine="42" startPosition="27" endLine="49" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Plugin_Constraints$1" />
-  <unitInfo fileName="Folder_Constraints.java" startLine="42" startPosition="27" endLine="52" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Folder_Constraints$1" />
-  <unitInfo fileName="File_Constraints.java" startLine="43" startPosition="27" endLine="53" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.File_Constraints$1" />
-  <unitInfo fileName="BaseDirPath_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.BaseDirPath_Constraints$1" />
-  <unitInfo fileName="Delete_Constraints.java" startLine="45" startPosition="15" endLine="55" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Delete_Constraints$1" />
-  <unitInfo fileName="Configuration_Constraints.java" startLine="49" startPosition="15" endLine="59" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Configuration_Constraints$1" />
-  <unitInfo fileName="Variable_Constraints.java" startLine="52" startPosition="15" endLine="62" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Variable_Constraints$1" />
-  <unitInfo fileName="Module_Constraints.java" startLine="44" startPosition="27" endLine="55" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Module_Constraints$1" />
-  <unitInfo fileName="Variable_Constraints.java" startLine="87" startPosition="15" endLine="101" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Variable_Constraints$2" />
-  <unitInfo fileName="Antcall_Constraints.java" startLine="62" startPosition="30" endLine="78" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$1" />
-  <unitInfo fileName="Antcall_Constraints.java" startLine="84" startPosition="40" endLine="101" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
-  <unitInfo fileName="Jar_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Jar_Constraints" />
-  <unitInfo fileName="MacroReference_Constraints.java" startLine="20" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.MacroReference_Constraints" />
-  <unitInfo fileName="AbstractProjectComponent_Constraints.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints" />
-  <unitInfo fileName="Echo_Constraints.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Echo_Constraints" />
-  <unitInfo fileName="Plugin_Constraints.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Plugin_Constraints" />
-  <unitInfo fileName="Folder_Constraints.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Folder_Constraints" />
-  <unitInfo fileName="File_Constraints.java" startLine="21" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.File_Constraints" />
-  <unitInfo fileName="Module_Constraints.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Module_Constraints" />
-  <unitInfo fileName="BaseDirPath_Constraints.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.BaseDirPath_Constraints" />
-  <unitInfo fileName="Configuration_Constraints.java" startLine="26" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Configuration_Constraints" />
-  <unitInfo fileName="Delete_Constraints.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Delete_Constraints" />
-  <unitInfo fileName="Variable_Constraints.java" startLine="29" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Variable_Constraints" />
-  <unitInfo fileName="Antcall_Constraints.java" startLine="25" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints" />
+  <unitInfo fileName="MacroReference_Constraints.java" startLine="26" startPosition="27" endLine="30" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.MacroReference_Constraints$1" />
+  <unitInfo fileName="Configuration_Constraints.java" startLine="48" startPosition="31" endLine="52" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Configuration_Constraints$2" />
+  <unitInfo fileName="Antcall_Constraints.java" startLine="72" startPosition="30" endLine="78" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$3" />
+  <unitInfo fileName="AbstractProjectComponent_Constraints.java" startLine="25" startPosition="27" endLine="32" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints$1" />
+  <unitInfo fileName="Echo_Constraints.java" startLine="25" startPosition="27" endLine="32" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Echo_Constraints$1" />
+  <unitInfo fileName="Plugin_Constraints.java" startLine="26" startPosition="27" endLine="33" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Plugin_Constraints$1" />
+  <unitInfo fileName="Jar_Constraints.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Jar_Constraints" />
+  <unitInfo fileName="BaseDirPath_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.BaseDirPath_Constraints$1" />
+  <unitInfo fileName="Delete_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Delete_Constraints$1" />
+  <unitInfo fileName="Folder_Constraints.java" startLine="26" startPosition="27" endLine="36" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Folder_Constraints$1" />
+  <unitInfo fileName="File_Constraints.java" startLine="27" startPosition="27" endLine="37" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.File_Constraints$1" />
+  <unitInfo fileName="Configuration_Constraints.java" startLine="33" startPosition="15" endLine="43" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Configuration_Constraints$1" />
+  <unitInfo fileName="Variable_Constraints.java" startLine="33" startPosition="15" endLine="43" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Variable_Constraints$1" />
+  <unitInfo fileName="Module_Constraints.java" startLine="28" startPosition="27" endLine="39" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Module_Constraints$1" />
+  <unitInfo fileName="Variable_Constraints.java" startLine="48" startPosition="15" endLine="62" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Variable_Constraints$2" />
+  <unitInfo fileName="Antcall_Constraints.java" startLine="32" startPosition="30" endLine="48" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$1" />
+  <unitInfo fileName="Antcall_Constraints.java" startLine="54" startPosition="40" endLine="71" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
+  <unitInfo fileName="MacroReference_Constraints.java" startLine="16" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.MacroReference_Constraints" />
+  <unitInfo fileName="AbstractProjectComponent_Constraints.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints" />
+  <unitInfo fileName="Echo_Constraints.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Echo_Constraints" />
+  <unitInfo fileName="Plugin_Constraints.java" startLine="16" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Plugin_Constraints" />
+  <unitInfo fileName="Folder_Constraints.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Folder_Constraints" />
+  <unitInfo fileName="File_Constraints.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.File_Constraints" />
+  <unitInfo fileName="Module_Constraints.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Module_Constraints" />
+  <unitInfo fileName="BaseDirPath_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.BaseDirPath_Constraints" />
+  <unitInfo fileName="Delete_Constraints.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Delete_Constraints" />
+  <unitInfo fileName="Configuration_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Configuration_Constraints" />
+  <unitInfo fileName="Variable_Constraints.java" startLine="22" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Variable_Constraints" />
+  <unitInfo fileName="Antcall_Constraints.java" startLine="22" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104846985">
-    <nodeInfo nodeId="1213104846991" fileName="Folder_Constraints.java" startLine="44" startPosition="138" endLine="45" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104847015" fileName="Folder_Constraints.java" startLine="47" startPosition="71" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104847022" fileName="Folder_Constraints.java" startLine="49" startPosition="9" endLine="50" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104846989" fileName="Folder_Constraints.java" startLine="43" startPosition="84" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213104847013" fileName="Folder_Constraints.java" startLine="46" startPosition="9" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1213104846990" fileName="Folder_Constraints.java" startLine="44" startPosition="138" endLine="45" endPosition="111" />
-    <scopeInfo nodeId="1213104847014" fileName="Folder_Constraints.java" startLine="47" startPosition="71" endLine="48" endPosition="20" />
-    <scopeInfo nodeId="1213104846988" fileName="Folder_Constraints.java" startLine="43" startPosition="84" endLine="50" endPosition="118" />
+    <nodeInfo nodeId="1213104846991" fileName="Folder_Constraints.java" startLine="28" startPosition="138" endLine="29" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104847015" fileName="Folder_Constraints.java" startLine="31" startPosition="71" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104847022" fileName="Folder_Constraints.java" startLine="33" startPosition="9" endLine="34" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104846989" fileName="Folder_Constraints.java" startLine="27" startPosition="84" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213104847013" fileName="Folder_Constraints.java" startLine="30" startPosition="9" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213104846990" fileName="Folder_Constraints.java" startLine="28" startPosition="138" endLine="29" endPosition="111" />
+    <scopeInfo nodeId="1213104847014" fileName="Folder_Constraints.java" startLine="31" startPosition="71" endLine="32" endPosition="20" />
+    <scopeInfo nodeId="1213104846988" fileName="Folder_Constraints.java" startLine="27" startPosition="84" endLine="34" endPosition="118" />
   </root>
   <root nodeId="1213104847635">
-    <nodeInfo nodeId="1238602935758" fileName="Module_Constraints.java" startLine="46" startPosition="64" endLine="47" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1222448597594" fileName="Module_Constraints.java" startLine="48" startPosition="9" endLine="49" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225996196667" fileName="Module_Constraints.java" startLine="50" startPosition="29" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235487987054" fileName="Module_Constraints.java" startLine="52" startPosition="9" endLine="53" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238602915154" fileName="Module_Constraints.java" startLine="45" startPosition="84" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225996190344" fileName="Module_Constraints.java" startLine="49" startPosition="137" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1238602915155" fileName="Module_Constraints.java" startLine="46" startPosition="64" endLine="47" endPosition="20" />
-    <scopeInfo nodeId="1225996190345" fileName="Module_Constraints.java" startLine="50" startPosition="29" endLine="51" endPosition="22" />
-    <scopeInfo nodeId="1213104847638" fileName="Module_Constraints.java" startLine="45" startPosition="84" endLine="53" endPosition="77">
+    <nodeInfo nodeId="1238602935758" fileName="Module_Constraints.java" startLine="30" startPosition="64" endLine="31" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222448597594" fileName="Module_Constraints.java" startLine="32" startPosition="9" endLine="33" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225996196667" fileName="Module_Constraints.java" startLine="34" startPosition="29" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235487987054" fileName="Module_Constraints.java" startLine="36" startPosition="9" endLine="37" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238602915154" fileName="Module_Constraints.java" startLine="29" startPosition="84" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225996190344" fileName="Module_Constraints.java" startLine="33" startPosition="137" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1238602915155" fileName="Module_Constraints.java" startLine="30" startPosition="64" endLine="31" endPosition="20" />
+    <scopeInfo nodeId="1225996190345" fileName="Module_Constraints.java" startLine="34" startPosition="29" endLine="35" endPosition="22" />
+    <scopeInfo nodeId="1213104847638" fileName="Module_Constraints.java" startLine="29" startPosition="84" endLine="37" endPosition="77">
       <varInfo nodeId="1222448597595" varName="module" />
     </scopeInfo>
   </root>
   <root nodeId="1213104856157">
-    <nodeInfo nodeId="1213104856168" fileName="Echo_Constraints.java" startLine="43" startPosition="71" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104856170" fileName="Echo_Constraints.java" startLine="45" startPosition="9" endLine="46" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104856161" fileName="Echo_Constraints.java" startLine="42" startPosition="84" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1213104856167" fileName="Echo_Constraints.java" startLine="43" startPosition="71" endLine="44" endPosition="20" />
-    <scopeInfo nodeId="1213104856160" fileName="Echo_Constraints.java" startLine="42" startPosition="84" endLine="46" endPosition="118" />
+    <nodeInfo nodeId="1213104856168" fileName="Echo_Constraints.java" startLine="27" startPosition="71" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104856170" fileName="Echo_Constraints.java" startLine="29" startPosition="9" endLine="30" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104856161" fileName="Echo_Constraints.java" startLine="26" startPosition="84" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213104856167" fileName="Echo_Constraints.java" startLine="27" startPosition="71" endLine="28" endPosition="20" />
+    <scopeInfo nodeId="1213104856160" fileName="Echo_Constraints.java" startLine="26" startPosition="84" endLine="30" endPosition="118" />
   </root>
   <root nodeId="1213104856176">
-    <nodeInfo nodeId="1213104856182" fileName="File_Constraints.java" startLine="45" startPosition="138" endLine="46" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104856206" fileName="File_Constraints.java" startLine="48" startPosition="71" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104856213" fileName="File_Constraints.java" startLine="50" startPosition="9" endLine="51" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104856180" fileName="File_Constraints.java" startLine="44" startPosition="84" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213104856204" fileName="File_Constraints.java" startLine="47" startPosition="9" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1213104856181" fileName="File_Constraints.java" startLine="45" startPosition="138" endLine="46" endPosition="131" />
-    <scopeInfo nodeId="1213104856205" fileName="File_Constraints.java" startLine="48" startPosition="71" endLine="49" endPosition="20" />
-    <scopeInfo nodeId="1213104856179" fileName="File_Constraints.java" startLine="44" startPosition="84" endLine="51" endPosition="118" />
+    <nodeInfo nodeId="1213104856182" fileName="File_Constraints.java" startLine="29" startPosition="138" endLine="30" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104856206" fileName="File_Constraints.java" startLine="32" startPosition="71" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104856213" fileName="File_Constraints.java" startLine="34" startPosition="9" endLine="35" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104856180" fileName="File_Constraints.java" startLine="28" startPosition="84" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213104856204" fileName="File_Constraints.java" startLine="31" startPosition="9" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213104856181" fileName="File_Constraints.java" startLine="29" startPosition="138" endLine="30" endPosition="131" />
+    <scopeInfo nodeId="1213104856205" fileName="File_Constraints.java" startLine="32" startPosition="71" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="1213104856179" fileName="File_Constraints.java" startLine="28" startPosition="84" endLine="35" endPosition="118" />
   </root>
   <root nodeId="1213104859513">
-    <nodeInfo nodeId="5558646027963121374" fileName="Variable_Constraints.java" startLine="94" startPosition="136" endLine="95" endPosition="317" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5558646027962350390" fileName="Variable_Constraints.java" startLine="109" startPosition="112" endLine="110" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1233927017127" fileName="Variable_Constraints.java" startLine="94" startPosition="136" endLine="95" endPosition="317" />
-    <scopeInfo nodeId="5558646027962350389" fileName="Variable_Constraints.java" startLine="109" startPosition="112" endLine="110" endPosition="153" />
+    <nodeInfo nodeId="5558646027963121374" fileName="Variable_Constraints.java" startLine="55" startPosition="136" endLine="56" endPosition="317" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5558646027962350390" fileName="Variable_Constraints.java" startLine="65" startPosition="112" endLine="66" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1233927017127" fileName="Variable_Constraints.java" startLine="55" startPosition="136" endLine="56" endPosition="317" />
+    <scopeInfo nodeId="5558646027962350389" fileName="Variable_Constraints.java" startLine="65" startPosition="112" endLine="66" endPosition="153" />
   </root>
   <root nodeId="1213107435807">
-    <nodeInfo nodeId="1213107435810" fileName="Delete_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107435809" fileName="Delete_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="96" />
+    <nodeInfo nodeId="1213107435810" fileName="Delete_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107435809" fileName="Delete_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="96" />
   </root>
   <root nodeId="1213107436317">
-    <nodeInfo nodeId="1230221290628" fileName="Configuration_Constraints.java" startLine="65" startPosition="84" endLine="66" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213107436320" fileName="Configuration_Constraints.java" startLine="92" startPosition="114" endLine="93" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1230221270620" fileName="Configuration_Constraints.java" startLine="65" startPosition="84" endLine="66" endPosition="164" />
-    <scopeInfo nodeId="1213107436319" fileName="Configuration_Constraints.java" startLine="92" startPosition="114" endLine="93" endPosition="116" />
+    <nodeInfo nodeId="1230221290628" fileName="Configuration_Constraints.java" startLine="49" startPosition="84" endLine="50" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213107436320" fileName="Configuration_Constraints.java" startLine="56" startPosition="114" endLine="57" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1230221270620" fileName="Configuration_Constraints.java" startLine="49" startPosition="84" endLine="50" endPosition="164" />
+    <scopeInfo nodeId="1213107436319" fileName="Configuration_Constraints.java" startLine="56" startPosition="114" endLine="57" endPosition="116" />
   </root>
   <root nodeId="1220976305534">
-    <nodeInfo nodeId="1220980314510" fileName="MacroReference_Constraints.java" startLine="43" startPosition="84" endLine="44" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1220980308782" fileName="MacroReference_Constraints.java" startLine="43" startPosition="84" endLine="44" endPosition="213" />
+    <nodeInfo nodeId="1220980314510" fileName="MacroReference_Constraints.java" startLine="27" startPosition="84" endLine="28" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1220980308782" fileName="MacroReference_Constraints.java" startLine="27" startPosition="84" endLine="28" endPosition="213" />
   </root>
   <root nodeId="1224178310365">
-    <nodeInfo nodeId="1230212831783" fileName="Antcall_Constraints.java" startLine="64" startPosition="49" endLine="65" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224178454279" fileName="Antcall_Constraints.java" startLine="92" startPosition="97" endLine="93" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224178569933" fileName="Antcall_Constraints.java" startLine="94" startPosition="9" endLine="95" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230212779009" fileName="Antcall_Constraints.java" startLine="63" startPosition="142" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224178398811" fileName="Antcall_Constraints.java" startLine="91" startPosition="136" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1230212779010" fileName="Antcall_Constraints.java" startLine="64" startPosition="49" endLine="65" endPosition="85" />
-    <scopeInfo nodeId="1224178398813" fileName="Antcall_Constraints.java" startLine="92" startPosition="97" endLine="93" endPosition="63" />
-    <scopeInfo nodeId="1224178817167" fileName="Antcall_Constraints.java" startLine="63" startPosition="142" endLine="66" endPosition="9" />
-    <scopeInfo nodeId="1224178316889" fileName="Antcall_Constraints.java" startLine="91" startPosition="136" endLine="95" endPosition="132" />
+    <nodeInfo nodeId="1230212831783" fileName="Antcall_Constraints.java" startLine="34" startPosition="49" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224178454279" fileName="Antcall_Constraints.java" startLine="62" startPosition="97" endLine="63" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224178569933" fileName="Antcall_Constraints.java" startLine="64" startPosition="9" endLine="65" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230212779009" fileName="Antcall_Constraints.java" startLine="33" startPosition="142" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224178398811" fileName="Antcall_Constraints.java" startLine="61" startPosition="136" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1230212779010" fileName="Antcall_Constraints.java" startLine="34" startPosition="49" endLine="35" endPosition="85" />
+    <scopeInfo nodeId="1224178398813" fileName="Antcall_Constraints.java" startLine="62" startPosition="97" endLine="63" endPosition="63" />
+    <scopeInfo nodeId="1224178817167" fileName="Antcall_Constraints.java" startLine="33" startPosition="142" endLine="36" endPosition="9" />
+    <scopeInfo nodeId="1224178316889" fileName="Antcall_Constraints.java" startLine="61" startPosition="136" endLine="65" endPosition="132" />
   </root>
   <root nodeId="1226494817331">
-    <nodeInfo nodeId="1226494824130" fileName="BaseDirPath_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1226494820841" fileName="BaseDirPath_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="116" />
+    <nodeInfo nodeId="1226494824130" fileName="BaseDirPath_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1226494820841" fileName="BaseDirPath_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="116" />
   </root>
   <root nodeId="1239623935212">
-    <nodeInfo nodeId="1239623941098" fileName="AbstractProjectComponent_Constraints.java" startLine="43" startPosition="71" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239623941100" fileName="AbstractProjectComponent_Constraints.java" startLine="45" startPosition="9" endLine="46" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239623941091" fileName="AbstractProjectComponent_Constraints.java" startLine="42" startPosition="84" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1239623941097" fileName="AbstractProjectComponent_Constraints.java" startLine="43" startPosition="71" endLine="44" endPosition="20" />
-    <scopeInfo nodeId="1239623940215" fileName="AbstractProjectComponent_Constraints.java" startLine="42" startPosition="84" endLine="46" endPosition="118" />
+    <nodeInfo nodeId="1239623941098" fileName="AbstractProjectComponent_Constraints.java" startLine="27" startPosition="71" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239623941100" fileName="AbstractProjectComponent_Constraints.java" startLine="29" startPosition="9" endLine="30" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239623941091" fileName="AbstractProjectComponent_Constraints.java" startLine="26" startPosition="84" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1239623941097" fileName="AbstractProjectComponent_Constraints.java" startLine="27" startPosition="71" endLine="28" endPosition="20" />
+    <scopeInfo nodeId="1239623940215" fileName="AbstractProjectComponent_Constraints.java" startLine="26" startPosition="84" endLine="30" endPosition="118" />
   </root>
   <root nodeId="4159241239519649233">
-    <nodeInfo nodeId="4159241239519681806" fileName="Plugin_Constraints.java" startLine="44" startPosition="71" endLine="45" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4159241239519681821" fileName="Plugin_Constraints.java" startLine="46" startPosition="9" endLine="47" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4159241239519649237" fileName="Plugin_Constraints.java" startLine="43" startPosition="84" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="4159241239519649239" fileName="Plugin_Constraints.java" startLine="44" startPosition="71" endLine="45" endPosition="129" />
-    <scopeInfo nodeId="4159241239519649236" fileName="Plugin_Constraints.java" startLine="43" startPosition="84" endLine="47" endPosition="118" />
+    <nodeInfo nodeId="4159241239519681806" fileName="Plugin_Constraints.java" startLine="28" startPosition="71" endLine="29" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4159241239519681821" fileName="Plugin_Constraints.java" startLine="30" startPosition="9" endLine="31" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4159241239519649237" fileName="Plugin_Constraints.java" startLine="27" startPosition="84" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="4159241239519649239" fileName="Plugin_Constraints.java" startLine="28" startPosition="71" endLine="29" endPosition="129" />
+    <scopeInfo nodeId="4159241239519649236" fileName="Plugin_Constraints.java" startLine="27" startPosition="84" endLine="31" endPosition="118" />
   </root>
 </debugInfo>
 

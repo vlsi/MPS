@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BLArrayType_Constraints.java" startLine="41" startPosition="27" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.BLArrayType_Constraints$1" />
+  <unitInfo fileName="BLArrayType_Constraints.java" startLine="25" startPosition="27" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.BLArrayType_Constraints$1" />
+  <unitInfo fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.PrimitiveTypeDescriptor_Constraints" />
+  <unitInfo fileName="BLArrayType_Constraints.java" startLine="15" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.BLArrayType_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.PrimitiveTypeDescriptor_Constraints" />
-  <unitInfo fileName="BLArrayType_Constraints.java" startLine="19" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.BLArrayType_Constraints" />
   <root nodeId="1213104846913">
-    <nodeInfo nodeId="1213104846917" fileName="BLArrayType_Constraints.java" startLine="42" startPosition="84" endLine="43" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213104846916" fileName="BLArrayType_Constraints.java" startLine="42" startPosition="84" endLine="43" endPosition="117" />
+    <nodeInfo nodeId="1213104846917" fileName="BLArrayType_Constraints.java" startLine="26" startPosition="84" endLine="27" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213104846916" fileName="BLArrayType_Constraints.java" startLine="26" startPosition="84" endLine="27" endPosition="117" />
   </root>
 </debugInfo>
 

@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="SuperClassifierExpresson_Constraints.java" startLine="46" startPosition="15" endLine="56" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.SuperClassifierExpresson_Constraints$1" />
-  <unitInfo fileName="ThisClassifierExpression_Constraints.java" startLine="49" startPosition="15" endLine="59" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$1" />
-  <unitInfo fileName="ThisClassifierExpression_Constraints.java" startLine="84" startPosition="33" endLine="98" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$2" />
-  <unitInfo fileName="DefaultClassifierType_Constraints.java" startLine="69" startPosition="33" endLine="89" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$1" />
-  <unitInfo fileName="IMemberOperation_Constraints.java" startLine="73" startPosition="29" endLine="101" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints$1" />
+  <unitInfo fileName="SuperClassifierExpresson_Constraints.java" startLine="27" startPosition="15" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.SuperClassifierExpresson_Constraints$1" />
+  <unitInfo fileName="ThisClassifierExpression_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$1" />
+  <unitInfo fileName="ThisClassifierExpression_Constraints.java" startLine="47" startPosition="33" endLine="61" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$2" />
+  <unitInfo fileName="DefaultClassifierType_Constraints.java" startLine="33" startPosition="33" endLine="53" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$1" />
+  <unitInfo fileName="IMemberOperation_Constraints.java" startLine="37" startPosition="29" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints$1" />
+  <unitInfo fileName="DefaultClassifierType_Constraints.java" startLine="23" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="DefaultClassifierType_Constraints.java" startLine="27" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints" />
-  <unitInfo fileName="IMemberOperation_Constraints.java" startLine="31" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints" />
-  <unitInfo fileName="SuperClassifierExpresson_Constraints.java" startLine="23" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.SuperClassifierExpresson_Constraints" />
-  <unitInfo fileName="ThisClassifierExpression_Constraints.java" startLine="26" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints" />
+  <unitInfo fileName="SuperClassifierExpresson_Constraints.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.SuperClassifierExpresson_Constraints" />
+  <unitInfo fileName="IMemberOperation_Constraints.java" startLine="27" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints" />
+  <unitInfo fileName="ThisClassifierExpression_Constraints.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints" />
   <root nodeId="1213104844334">
-    <nodeInfo nodeId="1213104844338" fileName="IMemberOperation_Constraints.java" startLine="80" startPosition="136" endLine="81" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104844345" fileName="IMemberOperation_Constraints.java" startLine="81" startPosition="172" endLine="82" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="83" startPosition="9" endLine="84" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="84" startPosition="163" endLine="85" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104844367" fileName="IMemberOperation_Constraints.java" startLine="88" startPosition="197" endLine="89" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="92" startPosition="16" endLine="93" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213104844377" fileName="IMemberOperation_Constraints.java" startLine="94" startPosition="9" endLine="95" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104844365" fileName="IMemberOperation_Constraints.java" startLine="87" startPosition="146" endLine="90" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213104844357" fileName="IMemberOperation_Constraints.java" startLine="86" startPosition="48" endLine="91" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="85" startPosition="163" endLine="93" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="82" startPosition="63" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1213104844366" fileName="IMemberOperation_Constraints.java" startLine="88" startPosition="197" endLine="89" endPosition="76" />
-    <scopeInfo nodeId="1213104844364" fileName="IMemberOperation_Constraints.java" startLine="87" startPosition="146" endLine="90" endPosition="15" />
-    <scopeInfo nodeId="1213104844356" fileName="IMemberOperation_Constraints.java" startLine="86" startPosition="48" endLine="91" endPosition="13" />
-    <scopeInfo nodeId="1213104844357" fileName="IMemberOperation_Constraints.java" startLine="86" startPosition="48" endLine="91" endPosition="13">
+    <nodeInfo nodeId="1213104844338" fileName="IMemberOperation_Constraints.java" startLine="44" startPosition="136" endLine="45" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104844345" fileName="IMemberOperation_Constraints.java" startLine="45" startPosition="172" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="47" startPosition="9" endLine="48" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="48" startPosition="163" endLine="49" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104844367" fileName="IMemberOperation_Constraints.java" startLine="52" startPosition="197" endLine="53" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="56" startPosition="16" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213104844377" fileName="IMemberOperation_Constraints.java" startLine="58" startPosition="9" endLine="59" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104844365" fileName="IMemberOperation_Constraints.java" startLine="51" startPosition="146" endLine="54" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213104844357" fileName="IMemberOperation_Constraints.java" startLine="50" startPosition="48" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="49" startPosition="163" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="46" startPosition="63" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1213104844366" fileName="IMemberOperation_Constraints.java" startLine="52" startPosition="197" endLine="53" endPosition="76" />
+    <scopeInfo nodeId="1213104844364" fileName="IMemberOperation_Constraints.java" startLine="51" startPosition="146" endLine="54" endPosition="15" />
+    <scopeInfo nodeId="1213104844356" fileName="IMemberOperation_Constraints.java" startLine="50" startPosition="48" endLine="55" endPosition="13" />
+    <scopeInfo nodeId="1213104844357" fileName="IMemberOperation_Constraints.java" startLine="50" startPosition="48" endLine="55" endPosition="13">
       <varInfo nodeId="1213104844362" varName="member" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="83" startPosition="9" endLine="93" endPosition="11" />
-    <scopeInfo nodeId="1213104844337" fileName="IMemberOperation_Constraints.java" startLine="80" startPosition="136" endLine="95" endPosition="33">
+    <scopeInfo nodeId="1213104844351" fileName="IMemberOperation_Constraints.java" startLine="47" startPosition="9" endLine="57" endPosition="11" />
+    <scopeInfo nodeId="1213104844337" fileName="IMemberOperation_Constraints.java" startLine="44" startPosition="136" endLine="59" endPosition="33">
       <varInfo nodeId="1213104844346" varName="applicableMembers" />
       <varInfo nodeId="1213104844339" varName="operand" />
     </scopeInfo>
   </root>
   <root nodeId="1213107438049">
-    <nodeInfo nodeId="1218737395370" fileName="ThisClassifierExpression_Constraints.java" startLine="91" startPosition="136" endLine="92" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213107438052" fileName="ThisClassifierExpression_Constraints.java" startLine="102" startPosition="114" endLine="103" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1218737393728" fileName="ThisClassifierExpression_Constraints.java" startLine="91" startPosition="136" endLine="92" endPosition="219" />
-    <scopeInfo nodeId="1213107438051" fileName="ThisClassifierExpression_Constraints.java" startLine="102" startPosition="114" endLine="103" endPosition="250" />
+    <nodeInfo nodeId="1218737395370" fileName="ThisClassifierExpression_Constraints.java" startLine="54" startPosition="136" endLine="55" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213107438052" fileName="ThisClassifierExpression_Constraints.java" startLine="65" startPosition="114" endLine="66" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1218737393728" fileName="ThisClassifierExpression_Constraints.java" startLine="54" startPosition="136" endLine="55" endPosition="219" />
+    <scopeInfo nodeId="1213107438051" fileName="ThisClassifierExpression_Constraints.java" startLine="65" startPosition="114" endLine="66" endPosition="250" />
   </root>
   <root nodeId="1216915253694">
-    <nodeInfo nodeId="1216915305632" fileName="DefaultClassifierType_Constraints.java" startLine="76" startPosition="136" endLine="77" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227876796076" fileName="DefaultClassifierType_Constraints.java" startLine="79" startPosition="43" endLine="80" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216915363805" fileName="DefaultClassifierType_Constraints.java" startLine="82" startPosition="28" endLine="83" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876796072" fileName="DefaultClassifierType_Constraints.java" startLine="78" startPosition="90" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1216915319724" fileName="DefaultClassifierType_Constraints.java" startLine="77" startPosition="191" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1227876796075" fileName="DefaultClassifierType_Constraints.java" startLine="79" startPosition="43" endLine="80" endPosition="232" />
-    <scopeInfo nodeId="1227876796072" fileName="DefaultClassifierType_Constraints.java" startLine="78" startPosition="90" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1216915259775" fileName="DefaultClassifierType_Constraints.java" startLine="76" startPosition="136" endLine="83" endPosition="27">
+    <nodeInfo nodeId="1216915305632" fileName="DefaultClassifierType_Constraints.java" startLine="40" startPosition="136" endLine="41" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1227876796076" fileName="DefaultClassifierType_Constraints.java" startLine="43" startPosition="43" endLine="44" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216915363805" fileName="DefaultClassifierType_Constraints.java" startLine="46" startPosition="28" endLine="47" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876796072" fileName="DefaultClassifierType_Constraints.java" startLine="42" startPosition="90" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1216915319724" fileName="DefaultClassifierType_Constraints.java" startLine="41" startPosition="191" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1227876796075" fileName="DefaultClassifierType_Constraints.java" startLine="43" startPosition="43" endLine="44" endPosition="232" />
+    <scopeInfo nodeId="1227876796072" fileName="DefaultClassifierType_Constraints.java" startLine="42" startPosition="90" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1216915259775" fileName="DefaultClassifierType_Constraints.java" startLine="40" startPosition="136" endLine="47" endPosition="27">
       <varInfo nodeId="1216915305633" varName="classifiers" />
     </scopeInfo>
-    <unitInfo nodeId="1227876796072" fileName="DefaultClassifierType_Constraints.java" startLine="78" startPosition="67" endLine="82" endPosition="9" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$2" />
+    <unitInfo nodeId="1227876796072" fileName="DefaultClassifierType_Constraints.java" startLine="42" startPosition="67" endLine="46" endPosition="9" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$2" />
   </root>
   <root nodeId="1217433542422">
-    <nodeInfo nodeId="1217434129978" fileName="SuperClassifierExpresson_Constraints.java" startLine="84" startPosition="114" endLine="85" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217434234154" fileName="SuperClassifierExpresson_Constraints.java" startLine="86" startPosition="26" endLine="87" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217434214154" fileName="SuperClassifierExpresson_Constraints.java" startLine="88" startPosition="5" endLine="89" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217434247257" fileName="SuperClassifierExpresson_Constraints.java" startLine="90" startPosition="29" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217434133698" fileName="SuperClassifierExpresson_Constraints.java" startLine="92" startPosition="5" endLine="93" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217434290470" fileName="SuperClassifierExpresson_Constraints.java" startLine="94" startPosition="22" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217433547508" fileName="SuperClassifierExpresson_Constraints.java" startLine="96" startPosition="5" endLine="97" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217434225796" fileName="SuperClassifierExpresson_Constraints.java" startLine="85" startPosition="266" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1217434240304" fileName="SuperClassifierExpresson_Constraints.java" startLine="89" startPosition="105" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1217434280830" fileName="SuperClassifierExpresson_Constraints.java" startLine="93" startPosition="99" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1217434225797" fileName="SuperClassifierExpresson_Constraints.java" startLine="86" startPosition="26" endLine="87" endPosition="19" />
-    <scopeInfo nodeId="1217434240305" fileName="SuperClassifierExpresson_Constraints.java" startLine="90" startPosition="29" endLine="91" endPosition="19" />
-    <scopeInfo nodeId="1217434280831" fileName="SuperClassifierExpresson_Constraints.java" startLine="94" startPosition="22" endLine="95" endPosition="19" />
-    <scopeInfo nodeId="1217433547507" fileName="SuperClassifierExpresson_Constraints.java" startLine="84" startPosition="114" endLine="97" endPosition="16">
+    <nodeInfo nodeId="1217434129978" fileName="SuperClassifierExpresson_Constraints.java" startLine="40" startPosition="114" endLine="41" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217434234154" fileName="SuperClassifierExpresson_Constraints.java" startLine="42" startPosition="26" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217434214154" fileName="SuperClassifierExpresson_Constraints.java" startLine="44" startPosition="5" endLine="45" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217434247257" fileName="SuperClassifierExpresson_Constraints.java" startLine="46" startPosition="29" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217434133698" fileName="SuperClassifierExpresson_Constraints.java" startLine="48" startPosition="5" endLine="49" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217434290470" fileName="SuperClassifierExpresson_Constraints.java" startLine="50" startPosition="22" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217433547508" fileName="SuperClassifierExpresson_Constraints.java" startLine="52" startPosition="5" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217434225796" fileName="SuperClassifierExpresson_Constraints.java" startLine="41" startPosition="266" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1217434240304" fileName="SuperClassifierExpresson_Constraints.java" startLine="45" startPosition="105" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1217434280830" fileName="SuperClassifierExpresson_Constraints.java" startLine="49" startPosition="99" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1217434225797" fileName="SuperClassifierExpresson_Constraints.java" startLine="42" startPosition="26" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="1217434240305" fileName="SuperClassifierExpresson_Constraints.java" startLine="46" startPosition="29" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="1217434280831" fileName="SuperClassifierExpresson_Constraints.java" startLine="50" startPosition="22" endLine="51" endPosition="19" />
+    <scopeInfo nodeId="1217433547507" fileName="SuperClassifierExpresson_Constraints.java" startLine="40" startPosition="114" endLine="53" endPosition="16">
       <varInfo nodeId="1217434214155" varName="classifier" />
       <varInfo nodeId="1217434133699" varName="hasSuper" />
       <varInfo nodeId="1217434129979" varName="inClassifier" />

@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="66" startPosition="35" endLine="84" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_Constraints$1" />
-  <unitInfo fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="67" startPosition="32" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_ParameterRef_Constraints$1" />
-  <unitInfo fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="67" startPosition="37" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_NodePatternRef_Constraints$1" />
-  <unitInfo fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="67" startPosition="37" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_LinkPatternRef_Constraints$1" />
-  <unitInfo fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="67" startPosition="41" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_PropertyPatternRef_Constraints$1" />
-  <unitInfo fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_Constraints" />
-  <unitInfo fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_ParameterRef_Constraints" />
-  <unitInfo fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_NodePatternRef_Constraints" />
-  <unitInfo fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_PropertyPatternRef_Constraints" />
-  <unitInfo fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_LinkPatternRef_Constraints" />
+  <unitInfo fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="30" startPosition="35" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_Constraints$1" />
+  <unitInfo fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="31" startPosition="32" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_ParameterRef_Constraints$1" />
+  <unitInfo fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="31" startPosition="37" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_NodePatternRef_Constraints$1" />
+  <unitInfo fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="31" startPosition="37" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_LinkPatternRef_Constraints$1" />
+  <unitInfo fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="31" startPosition="41" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_PropertyPatternRef_Constraints$1" />
+  <unitInfo fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="20" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_Constraints" />
+  <unitInfo fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_ParameterRef_Constraints" />
+  <unitInfo fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_NodePatternRef_Constraints" />
+  <unitInfo fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_PropertyPatternRef_Constraints" />
+  <unitInfo fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_LinkPatternRef_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1758784108619297716">
-    <nodeInfo nodeId="1758784108619297720" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="74" startPosition="136" endLine="75" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1758784108619297726" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="75" startPosition="52" endLine="76" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1758784108619297745" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="77" startPosition="91" endLine="78" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1758784108619297756" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="79" startPosition="9" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1758784108619297734" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="76" startPosition="163" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1758784108619297744" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="77" startPosition="91" endLine="78" endPosition="251" />
-    <scopeInfo nodeId="1758784108619297719" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="74" startPosition="136" endLine="80" endPosition="22">
+    <nodeInfo nodeId="1758784108619297720" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="38" startPosition="136" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1758784108619297726" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="39" startPosition="52" endLine="40" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1758784108619297745" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="41" startPosition="91" endLine="42" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1758784108619297756" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="43" startPosition="9" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108619297734" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="40" startPosition="163" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1758784108619297744" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="41" startPosition="91" endLine="42" endPosition="251" />
+    <scopeInfo nodeId="1758784108619297719" fileName="GenerationContextOp_LinkPatternRef_Constraints.java" startLine="38" startPosition="136" endLine="44" endPosition="22">
       <varInfo nodeId="1758784108619297721" varName="result" />
       <varInfo nodeId="1758784108619297727" varName="rule" />
     </scopeInfo>
   </root>
   <root nodeId="1758784108619297779">
-    <nodeInfo nodeId="1758784108619297787" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="74" startPosition="136" endLine="75" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1758784108619297793" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="75" startPosition="52" endLine="76" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1758784108619297812" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="77" startPosition="91" endLine="78" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1758784108619297823" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="79" startPosition="9" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1758784108619297801" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="76" startPosition="163" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1758784108619297811" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="77" startPosition="91" endLine="78" endPosition="255" />
-    <scopeInfo nodeId="1758784108619297786" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="74" startPosition="136" endLine="80" endPosition="22">
+    <nodeInfo nodeId="1758784108619297787" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="38" startPosition="136" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1758784108619297793" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="39" startPosition="52" endLine="40" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1758784108619297812" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="41" startPosition="91" endLine="42" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1758784108619297823" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="43" startPosition="9" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1758784108619297801" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="40" startPosition="163" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1758784108619297811" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="41" startPosition="91" endLine="42" endPosition="255" />
+    <scopeInfo nodeId="1758784108619297786" fileName="GenerationContextOp_PropertyPatternRef_Constraints.java" startLine="38" startPosition="136" endLine="44" endPosition="22">
       <varInfo nodeId="1758784108619297788" varName="result" />
       <varInfo nodeId="1758784108619297794" varName="rule" />
     </scopeInfo>
   </root>
   <root nodeId="2507865635201658711">
-    <nodeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="75" startPosition="54" endLine="76" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="74" startPosition="199" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2507865635201658753" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="73" startPosition="136" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="75" startPosition="54" endLine="76" endPosition="80" />
-    <scopeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="74" startPosition="199" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="2507865635201658714" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="73" startPosition="136" endLine="78" endPosition="11" />
-    <unitInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="74" startPosition="169" endLine="78" endPosition="9" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_Constraints$2" />
+    <nodeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="39" startPosition="54" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="38" startPosition="199" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2507865635201658753" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="37" startPosition="136" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="39" startPosition="54" endLine="40" endPosition="80" />
+    <scopeInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="38" startPosition="199" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2507865635201658714" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="37" startPosition="136" endLine="42" endPosition="11" />
+    <unitInfo nodeId="2507865635201658764" fileName="GenerationContextOp_GenParameterRef_Constraints.java" startLine="38" startPosition="169" endLine="42" endPosition="9" unitName="jetbrains.mps.lang.generator.generationContext.constraints.GenerationContextOp_GenParameterRef_Constraints$2" />
   </root>
   <root nodeId="4589968773278063862">
-    <nodeInfo nodeId="4589968773278089269" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="74" startPosition="136" endLine="75" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4589968773278089275" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="75" startPosition="52" endLine="76" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4589968773278089291" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="77" startPosition="91" endLine="78" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4589968773278115030" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="79" startPosition="9" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4589968773278089283" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="76" startPosition="163" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="4589968773278089290" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="77" startPosition="91" endLine="78" endPosition="247" />
-    <scopeInfo nodeId="4589968773278063865" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="74" startPosition="136" endLine="80" endPosition="22">
+    <nodeInfo nodeId="4589968773278089269" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="38" startPosition="136" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4589968773278089275" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="39" startPosition="52" endLine="40" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4589968773278089291" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="41" startPosition="91" endLine="42" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4589968773278115030" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="43" startPosition="9" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4589968773278089283" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="40" startPosition="163" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="4589968773278089290" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="41" startPosition="91" endLine="42" endPosition="247" />
+    <scopeInfo nodeId="4589968773278063865" fileName="GenerationContextOp_NodePatternRef_Constraints.java" startLine="38" startPosition="136" endLine="44" endPosition="22">
       <varInfo nodeId="4589968773278089270" varName="result" />
       <varInfo nodeId="4589968773278089276" varName="rule" />
     </scopeInfo>
   </root>
   <root nodeId="5190093307972812908">
-    <nodeInfo nodeId="5190093307972812912" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="74" startPosition="136" endLine="75" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5190093307972812918" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="75" startPosition="52" endLine="76" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5190093307972812937" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="77" startPosition="144" endLine="78" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5190093307972812948" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="79" startPosition="9" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5190093307972812926" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="76" startPosition="166" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="5190093307972812936" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="77" startPosition="144" endLine="78" endPosition="140" />
-    <scopeInfo nodeId="5190093307972812911" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="74" startPosition="136" endLine="80" endPosition="22">
+    <nodeInfo nodeId="5190093307972812912" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="38" startPosition="136" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5190093307972812918" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="39" startPosition="52" endLine="40" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5190093307972812937" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="41" startPosition="144" endLine="42" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5190093307972812948" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="43" startPosition="9" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5190093307972812926" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="40" startPosition="166" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="5190093307972812936" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="41" startPosition="144" endLine="42" endPosition="140" />
+    <scopeInfo nodeId="5190093307972812911" fileName="GenerationContextOp_ParameterRef_Constraints.java" startLine="38" startPosition="136" endLine="44" endPosition="22">
       <varInfo nodeId="5190093307972812913" varName="result" />
       <varInfo nodeId="5190093307972812919" varName="templDeclaration" />
     </scopeInfo>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="VarDecl_Constraints.java" startLine="53" startPosition="27" endLine="57" endPosition="5" unitName="jetbrains.mps.nanoc.constraints.VarDecl_Constraints$1" />
-  <unitInfo fileName="VarDecl_Constraints.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.nanoc.constraints.VarDecl_Constraints" />
+  <unitInfo fileName="VarDecl_Constraints.java" startLine="27" startPosition="27" endLine="31" endPosition="5" unitName="jetbrains.mps.nanoc.constraints.VarDecl_Constraints$1" />
+  <unitInfo fileName="VarDecl_Constraints.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.nanoc.constraints.VarDecl_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.nanoc.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="6585869519574764229">
-    <nodeInfo nodeId="6585869519574764233" fileName="VarDecl_Constraints.java" startLine="54" startPosition="134" endLine="55" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6585869519574764232" fileName="VarDecl_Constraints.java" startLine="54" startPosition="134" endLine="55" endPosition="110" />
+    <nodeInfo nodeId="6585869519574764233" fileName="VarDecl_Constraints.java" startLine="28" startPosition="134" endLine="29" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6585869519574764232" fileName="VarDecl_Constraints.java" startLine="28" startPosition="134" endLine="29" endPosition="110" />
   </root>
 </debugInfo>
 

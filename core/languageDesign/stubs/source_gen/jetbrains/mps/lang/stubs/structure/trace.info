@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Stubs_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.Stubs_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="63" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="63" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.stubs.structure.StructureAspectDescriptor" />
 </debugInfo>
 

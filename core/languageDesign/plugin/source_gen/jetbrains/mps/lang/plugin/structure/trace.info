@@ -174,9 +174,9 @@
   <unitInfo fileName="ScopeNodeItem.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ScopeNodeItem" />
   <unitInfo fileName="PropertyRefExpression.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PropertyRefExpression" />
   <unitInfo fileName="VariableNodeItem.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.VariableNodeItem" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="499" startPosition="0" endLine="535" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ToolPosition_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolPosition_PropertySupport" />
   <unitInfo fileName="Keymap_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Keymap_PropertySupport" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="499" startPosition="0" endLine="538" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ToolDeclaration.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolDeclaration" />
   <unitInfo fileName="DebuggableNodeItem.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DebuggableNodeItem" />
   <unitInfo fileName="MultitabbedEditorTab.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab" />
@@ -245,6 +245,6 @@
   <unitInfo fileName="BaseToolDeclaration.java" startLine="17" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
   <unitInfo fileName="RunConfigurationDeclaration.java" startLine="17" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
   <unitInfo fileName="ActionDeclaration.java" startLine="16" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="536" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="539" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor" />
 </debugInfo>
 

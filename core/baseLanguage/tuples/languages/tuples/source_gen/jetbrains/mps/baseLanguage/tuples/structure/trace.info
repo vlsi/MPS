@@ -4,12 +4,12 @@
   <unitInfo fileName="NamedTupleType.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" />
   <unitInfo fileName="IndexedTupleMemberAccessExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression" />
   <unitInfo fileName="NamedTupleComponentReference.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="43" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="IndexedTupleLiteral.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" />
   <unitInfo fileName="IndexedTupleType.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="43" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="NamedTupleLiteral.java" startLine="13" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor" />
   <unitInfo fileName="NamedTupleDeclaration.java" startLine="14" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor" />
   <unitInfo fileName="NamedTupleComponentAccessOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" />
   <unitInfo fileName="NamedTupleComponentDeclaration.java" startLine="21" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
 </debugInfo>

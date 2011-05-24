@@ -65,9 +65,9 @@
   <unitInfo fileName="DropRootRule.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.DropRootRule" />
   <unitInfo fileName="GeneratorMessage.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessage" />
   <unitInfo fileName="Root_MappingRule.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.Root_MappingRule" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="181" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="MappingScriptKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingScriptKind_PropertySupport" />
   <unitInfo fileName="GeneratorMessageType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType_PropertySupport" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="181" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="MapSrcListMacro.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MapSrcListMacro" />
   <unitInfo fileName="MapSrcNodeMacro.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" />
   <unitInfo fileName="CreateRootRule.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.CreateRootRule" />
@@ -88,7 +88,7 @@
   <unitInfo fileName="TemplateCallMacro.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateCallMacro" />
   <unitInfo fileName="TemplateDeclaration.java" startLine="17" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateDeclaration" />
   <unitInfo fileName="TemplateSwitch.java" startLine="16" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateSwitch" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
   <unitInfo fileName="MappingConfiguration.java" startLine="17" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingConfiguration" />
 </debugInfo>
 

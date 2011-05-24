@@ -40,9 +40,9 @@
   <unitInfo fileName="WhereOperation.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ypath.structure.WhereOperation" />
   <unitInfo fileName="VisitParameterDeclarationList.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ypath.structure.VisitParameterDeclarationList" />
   <unitInfo fileName="VisitChildrenExpression.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ypath.structure.VisitChildrenExpression" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="161" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="FragmentTypeEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.structure.FragmentTypeEnum_PropertySupport" />
   <unitInfo fileName="TraversalAxis_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis_PropertySupport" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="161" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="SwitchNodeKindStatement.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ypath.structure.SwitchNodeKindStatement" />
   <unitInfo fileName="IterateOperation.java" startLine="10" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ypath.structure.IterateOperation" />
   <unitInfo fileName="GFCardinalParamFun.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFCardinalParamFun" />
@@ -74,6 +74,6 @@
   <unitInfo fileName="TreePathAspect.java" startLine="17" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathAspect" />
   <unitInfo fileName="GenericParamFeature.java" startLine="16" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ypath.structure.GenericParamFeature" />
   <unitInfo fileName="ParamSequenceFeature.java" startLine="14" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamSequenceFeature" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -4,8 +4,8 @@
   <unitInfo fileName="ProjectDescriptionReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ProjectDescriptionReference" />
   <unitInfo fileName="CycleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.CycleReference" />
   <unitInfo fileName="PathHolder.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.PathHolder" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Macros.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Macros" />
   <unitInfo fileName="ModuleDescription.java" startLine="15" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ModuleDescription" />
   <unitInfo fileName="Cycle.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Cycle" />
