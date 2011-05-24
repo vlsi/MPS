@@ -4,21 +4,17 @@ package jetbrains.mps.vcs.mergedriver;
 
 import java.io.File;
 import java.io.OutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 
-/*package*/ class EmptyMerger implements FileMerger {
+/*package*/ class EmptyMerger extends FileMerger {
   public EmptyMerger() {
   }
 
-  public int mergeFiles(File baseFile, File localFile, File latestFile, boolean overwrite, byte[] conflictStart, byte[] conflictEnd, byte[] separator) {
+  protected int mergeFiles(File baseFile, File localFile, File latestFile) {
     OutputStream out = null;
     try {
-      out = (overwrite ?
-        new FileOutputStream(baseFile) :
-        System.out
-      );
+      out = getResultStream(baseFile);
       return MERGED;
     } catch (IOException e) {
       return FATAL_ERROR;

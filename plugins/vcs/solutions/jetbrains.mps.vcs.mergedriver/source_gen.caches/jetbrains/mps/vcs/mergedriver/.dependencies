@@ -29,15 +29,17 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.EmptyMerger" file="EmptyMerger.java">
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.FileMerger" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.FileMerger" file="FileMerger.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileNotFoundException" />
+    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.System" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.FileType" file="FileType.java">
     <classNode dependClassName="java.io.File" />
@@ -151,7 +153,6 @@
   <dependency className="jetbrains.mps.vcs.mergedriver.SimpleMerger" file="SimpleMerger.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
-    <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.System" />
@@ -186,12 +187,10 @@
     <classNode dependClassName="de.regnis.q.sequence.line.QSequenceLineRAFileData" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
-    <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.io.RandomAccessFile" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.tmatesoft.svn.core.internal.wc.FSMergerBySequence" />
     <classNode dependClassName="org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle" />

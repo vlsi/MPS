@@ -13,19 +13,18 @@ import de.regnis.q.sequence.line.QSequenceLineRAData;
 import de.regnis.q.sequence.line.QSequenceLineRAByteData;
 import de.regnis.q.sequence.line.QSequenceLineRAFileData;
 import jetbrains.mps.util.FileUtil;
-import java.io.FileOutputStream;
 import org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle;
 import java.io.IOException;
 
-/*package*/ class TextMerger implements FileMerger {
+/*package*/ class TextMerger extends FileMerger {
   public TextMerger() {
   }
 
-  public int mergeFiles(File baseFile, File localFile, File latestFile, boolean overwrite, byte[] conflictStart, byte[] conflictEnd, byte[] separator) {
+  protected int mergeFiles(File baseFile, File localFile, File latestFile) {
     // TODO 
     SVNDiffOptions diffOptions = null;
 
-    FSMergerBySequence merger = new FSMergerBySequence(conflictStart, separator, conflictEnd);
+    FSMergerBySequence merger = new FSMergerBySequence(myConflictStart, mySeparator, myConflictEnd);
     int mergeResult = 0;
     RandomAccessFile local = null;
     RandomAccessFile latest = null;
@@ -41,10 +40,7 @@ import java.io.IOException;
       QSequenceLineRAData latestData = new QSequenceLineRAFileData(latest);
 
       FileUtil.closeFileSafe(base);
-      result = (overwrite ?
-        new FileOutputStream(baseFile) :
-        System.out
-      );
+      result = getResultStream(baseFile);
 
       mergeResult = merger.merge(baseData, localData, latestData, diffOptions, result, SVNDiffConflictChoiceStyle.CHOOSE_MODIFIED_LATEST);
     } catch (IOException e) {
