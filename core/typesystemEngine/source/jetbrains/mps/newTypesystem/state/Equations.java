@@ -53,7 +53,7 @@ public class Equations {
   @StateMethod
   public void remove(SNode elem) {
     myState.assertIsInStateChangeAction();
-    myRepresentatives.remove(elem);
+    myRepresentatives.remove(getNameRepresentative(elem));
   }
 
   @StateMethod
