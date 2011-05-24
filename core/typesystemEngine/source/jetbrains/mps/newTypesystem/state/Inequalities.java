@@ -182,8 +182,10 @@ public class Inequalities {  //
     }
     //last chance
     for (RelationBlock inequality : inequalities) {
-      myState.executeOperation(new RemoveBlockOperation(inequality));
-      return true;
+      if (!(TypesUtil.isVariable(inequality.getLeftNode()) && TypesUtil.isVariable(inequality.getRightNode()))) {
+        myState.executeOperation(new RemoveBlockOperation(inequality));
+        return true;
+      }
     }
     return false;
   }
