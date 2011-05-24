@@ -34,7 +34,7 @@
     </node>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="7806358006983511602">
       <property name="name" nameId="tpck.1169194664001" value="Remote" />
-      <link role="configurationType" roleId="uhxm.2401501559171353314" targetNodeId="7806358006983489356" resolveInfo="Remote" />
+      <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="7806358006983489356" resolveInfo="Remote" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7806358006983511789">
       <property name="name" nameId="tpck.1169194664001" value="RemoteSettingsEditor" />

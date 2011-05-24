@@ -36,7 +36,7 @@
     </node>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="8750596094204760417">
       <property name="name" nameId="tpck.1169194664001" value="Demo Application" />
-      <link role="configurationType" roleId="uhxm.2401501559171353314" targetNodeId="8750596094204760415" resolveInfo="Demo" />
+      <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="8750596094204760415" resolveInfo="Demo" />
     </node>
     <node type="fb9u.PersistentConfigurationTemplate" typeId="fb9u.946964771156066579" id="7684700299064222828">
       <property name="name" nameId="tpck.1169194664001" value="Make" />

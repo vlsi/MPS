@@ -36,7 +36,7 @@
   <roots>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="3271576760503781388">
       <property name="name" nameId="tpck.1169194664001" value="MPS Instance" />
-      <link role="configurationType" roleId="uhxm.2401501559171353314" targetNodeId="3271576760503788622" resolveInfo="DebugMps" />
+      <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="3271576760503788622" resolveInfo="DebugMps" />
     </node>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="3271576760503788622">
       <property name="name" nameId="tpck.1169194664001" value="MPS" />

@@ -11,19 +11,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RunConfiguration extends PersistentConfiguration {
   public static final String concept = "jetbrains.mps.execution.configurations.structure.RunConfiguration";
-  public static final String CONFIGURATION_TYPE = "configurationType";
+  public static final String CONFIGURATION_KIND = "configurationKind";
   public static final String ICON = "icon";
 
   public RunConfiguration(SNode node) {
     super(node);
   }
 
-  public RunConfigurationKind getConfigurationType() {
-    return (RunConfigurationKind) this.getReferent(RunConfigurationKind.class, RunConfiguration.CONFIGURATION_TYPE);
+  public RunConfigurationKind getConfigurationKind() {
+    return (RunConfigurationKind) this.getReferent(RunConfigurationKind.class, RunConfiguration.CONFIGURATION_KIND);
   }
 
-  public void setConfigurationType(RunConfigurationKind node) {
-    super.setReferent(RunConfiguration.CONFIGURATION_TYPE, node);
+  public void setConfigurationKind(RunConfigurationKind node) {
+    super.setReferent(RunConfiguration.CONFIGURATION_KIND, node);
   }
 
   public IconResource getIcon() {

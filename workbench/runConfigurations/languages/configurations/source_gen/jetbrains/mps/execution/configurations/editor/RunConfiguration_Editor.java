@@ -118,8 +118,8 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefCell_ryg3k0_d0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("configurationType");
-    provider.setNoTargetText("<no configurationType>");
+    provider.setRole("configurationKind");
+    provider.setNoTargetText("<no configurationKind>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new RunConfiguration_Editor._Inline_ryg3k0_a3a0());
     editorCell = provider.createEditorCell(editorContext);
