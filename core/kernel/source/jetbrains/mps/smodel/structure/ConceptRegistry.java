@@ -60,6 +60,15 @@ public class ConceptRegistry implements ApplicationComponent {
     return instanceNode != null ? getConceptDescriptor(instanceNode.getConceptFqName()) : NullNodeConceptDescriptor.INSTANCE;
   }
 
+  private synchronized <T> T getDescriptor(DescriptorProvider<T> languageAspect, String fqName) {
+    try {
+      return languageAspect.getDescriptor(fqName);
+    } catch (Throwable t) {
+      LOG.error("Error while descriptor creating from language aspect for concept " + fqName, t);
+      return null;
+    }
+  }
+
   private synchronized void checkConceptIsLoaded(final String fqName, LanguageAspect languageAspect) {
     Pair<String, LanguageAspect> currentConceptAndLanguageAspect = new Pair<String, LanguageAspect>(fqName, languageAspect);
 
@@ -97,13 +106,13 @@ public class ConceptRegistry implements ApplicationComponent {
     if (languageRuntime != null) {
       switch (languageAspect) {
         case STRUCTURE:
-          structureDescriptors.put(fqName, languageRuntime.getStructureAspect().getDescriptor(fqName));
+          structureDescriptors.put(fqName, getDescriptor(languageRuntime.getStructureAspect(), fqName));
           break;
         case BEHAVIOR:
-          behaviorDescriptors.put(fqName, languageRuntime.getBehaviorAspect().getDescriptor(fqName));
+          behaviorDescriptors.put(fqName, getDescriptor(languageRuntime.getBehaviorAspect(), fqName));
           break;
         case CONSTRAINTS:
-          constraintsDescriptors.put(fqName, languageRuntime.getConstraintsAspect().getDescriptor(fqName));
+          constraintsDescriptors.put(fqName, getDescriptor(languageRuntime.getConstraintsAspect(), fqName));
           break;
       }
     }
