@@ -340,19 +340,23 @@
     <nodeInfo nodeId="5743590290451630100" fileName="NodeCopier.java" startLine="97" startPosition="7" endLine="98" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5743590290451630115" fileName="NodeCopier.java" startLine="101" startPosition="67" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5743590290451630119" fileName="NodeCopier.java" startLine="102" startPosition="33" endLine="103" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5635826768687966578" fileName="NodeCopier.java" startLine="108" startPosition="41" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5743590290451630123" fileName="NodeCopier.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeCopier#(Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="5743590290451629890" fileName="NodeCopier.java" startLine="35" startPosition="31" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5743590290451629923" fileName="NodeCopier.java" startLine="49" startPosition="120" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNodeId;)Z" />
     <nodeInfo nodeId="5743590290451630086" fileName="NodeCopier.java" startLine="93" startPosition="99" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/internal/collections/runtime/IMapping;)V" />
+    <nodeInfo nodeId="5635826768687966573" fileName="NodeCopier.java" startLine="107" startPosition="118" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNodeId;)Z" />
     <nodeInfo nodeId="5743590290451629917" fileName="NodeCopier.java" startLine="48" startPosition="23" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="5743590290451630045" fileName="NodeCopier.java" startLine="83" startPosition="39" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5743590290451630082" fileName="NodeCopier.java" startLine="92" startPosition="142" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5743590290451630105" fileName="NodeCopier.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setState#(Ljava/util/Map;Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="5635826768687966552" fileName="NodeCopier.java" startLine="106" startPosition="36" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5743590290451629970" fileName="NodeCopier.java" startLine="63" startPosition="10" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5743590290451630007" fileName="NodeCopier.java" startLine="73" startPosition="96" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5743590290451629871" fileName="NodeCopier.java" startLine="32" startPosition="41" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5743590290451630001" fileName="NodeCopier.java" startLine="72" startPosition="33" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5743590290451630041" fileName="NodeCopier.java" startLine="82" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="evictOtherDuplicates#()V" />
+    <nodeInfo nodeId="5635826768687966547" fileName="NodeCopier.java" startLine="105" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasIdsToRestore#()Z" />
     <nodeInfo nodeId="5743590290451629911" fileName="NodeCopier.java" startLine="45" startPosition="21" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5743590290451629857" fileName="NodeCopier.java" startLine="30" startPosition="56" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5743590290451630067" fileName="NodeCopier.java" startLine="90" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#()Ljava/util/Map;" />
@@ -365,6 +369,7 @@
     <scopeInfo nodeId="5743590290451629891" fileName="NodeCopier.java" startLine="36" startPosition="79" endLine="37" endPosition="76" />
     <scopeInfo nodeId="5743590290451629924" fileName="NodeCopier.java" startLine="50" startPosition="43" endLine="51" endPosition="28" />
     <scopeInfo nodeId="5743590290451630087" fileName="NodeCopier.java" startLine="94" startPosition="55" endLine="95" endPosition="59" />
+    <scopeInfo nodeId="5635826768687966574" fileName="NodeCopier.java" startLine="108" startPosition="41" endLine="109" endPosition="26" />
     <scopeInfo nodeId="5743590290451630114" fileName="NodeCopier.java" startLine="101" startPosition="67" endLine="103" endPosition="20" />
     <scopeInfo nodeId="5743590290451630123" fileName="NodeCopier.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
       <varInfo nodeId="5743590290451630131" varName="model" />
@@ -376,6 +381,7 @@
     <scopeInfo nodeId="5743590290451629923" fileName="NodeCopier.java" startLine="49" startPosition="120" endLine="53" endPosition="0" />
     <scopeInfo nodeId="5743590290451630021" fileName="NodeCopier.java" startLine="74" startPosition="105" endLine="78" endPosition="64" />
     <scopeInfo nodeId="5743590290451630086" fileName="NodeCopier.java" startLine="93" startPosition="99" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="5635826768687966573" fileName="NodeCopier.java" startLine="107" startPosition="118" endLine="111" endPosition="0" />
     <scopeInfo nodeId="5743590290451629879" fileName="NodeCopier.java" startLine="33" startPosition="48" endLine="38" endPosition="9">
       <varInfo nodeId="5743590290451629881" varName="replacedId" />
     </scopeInfo>
@@ -388,6 +394,7 @@
       <varInfo nodeId="5743590290451630110" varName="model" />
       <varInfo nodeId="5743590290451630106" varName="state" />
     </scopeInfo>
+    <scopeInfo nodeId="5635826768687966550" fileName="NodeCopier.java" startLine="106" startPosition="36" endLine="111" endPosition="7" />
     <scopeInfo nodeId="5743590290451630006" fileName="NodeCopier.java" startLine="73" startPosition="96" endLine="79" endPosition="7" />
     <scopeInfo nodeId="5743590290451629912" fileName="NodeCopier.java" startLine="46" startPosition="23" endLine="53" endPosition="9" />
     <scopeInfo nodeId="5743590290451630069" fileName="NodeCopier.java" startLine="91" startPosition="43" endLine="98" endPosition="17">
@@ -399,6 +406,7 @@
     <scopeInfo nodeId="5743590290451630000" fileName="NodeCopier.java" startLine="72" startPosition="33" endLine="80" endPosition="5" />
     <scopeInfo nodeId="5743590290451630001" fileName="NodeCopier.java" startLine="72" startPosition="33" endLine="80" endPosition="5" />
     <scopeInfo nodeId="5743590290451630041" fileName="NodeCopier.java" startLine="82" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="5635826768687966547" fileName="NodeCopier.java" startLine="105" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="5743590290451629857" fileName="NodeCopier.java" startLine="30" startPosition="56" endLine="40" endPosition="5" />
     <scopeInfo nodeId="5743590290451629908" fileName="NodeCopier.java" startLine="44" startPosition="48" endLine="54" endPosition="5" />
     <scopeInfo nodeId="5743590290451630067" fileName="NodeCopier.java" startLine="90" startPosition="0" endLine="100" endPosition="0" />
@@ -421,7 +429,8 @@
     </scopeInfo>
     <unitInfo nodeId="5743590290451629923" fileName="NodeCopier.java" startLine="49" startPosition="95" endLine="53" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$1" />
     <unitInfo nodeId="5743590290451630086" fileName="NodeCopier.java" startLine="93" startPosition="59" endLine="97" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$2" />
-    <unitInfo nodeId="5743590290451629831" fileName="NodeCopier.java" startLine="21" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
+    <unitInfo nodeId="5635826768687966573" fileName="NodeCopier.java" startLine="107" startPosition="93" endLine="111" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier$3" />
+    <unitInfo nodeId="5743590290451629831" fileName="NodeCopier.java" startLine="21" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
   </root>
   <root nodeId="6359197607515881703">
     <nodeInfo nodeId="6359197607515881781" fileName="AddRootChange.java" startLine="12" startPosition="48" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />

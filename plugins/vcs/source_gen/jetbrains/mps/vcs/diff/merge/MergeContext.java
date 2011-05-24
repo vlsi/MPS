@@ -154,6 +154,10 @@ public class MergeContext {
     }
   }
 
+  public boolean hasIdsToRestore() {
+    return myNodeCopier.hasIdsToRestore();
+  }
+
   public SModel getResultModel() {
     return myResultModel;
   }

@@ -102,4 +102,12 @@ public class NodeCopier {
     myIdReplacementCache = state;
     myModel = model;
   }
+
+  public boolean hasIdsToRestore() {
+    return Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).any(new IWhereFilter<SNodeId>() {
+      public boolean accept(SNodeId id) {
+        return id != null;
+      }
+    });
+  }
 }
