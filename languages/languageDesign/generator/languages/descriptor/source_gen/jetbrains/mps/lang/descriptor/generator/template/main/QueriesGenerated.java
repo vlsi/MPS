@@ -207,6 +207,10 @@ public class QueriesGenerated {
     return !(LanguageDescriptor_Behavior.call_isLanguageAspectEmpty_3064888218669923940(_context.getNode(), LanguageAspect.STRUCTURE, _context));
   }
 
+  public static boolean ifMacro_Condition_1606909843005827941(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(LanguageDescriptor_Behavior.call_isLanguageAspectEmpty_3064888218669923940(_context.getNode(), LanguageAspect.BEHAVIOR, _context));
+  }
+
   public static boolean ifMacro_Condition_1820665478710807083(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "priorityRules", true)).isNotEmpty();
   }
@@ -294,7 +298,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0zb(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0ac(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -350,7 +354,7 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0zb(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0ac(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
