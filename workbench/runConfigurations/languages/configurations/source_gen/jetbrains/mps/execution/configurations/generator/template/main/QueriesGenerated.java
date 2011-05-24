@@ -101,11 +101,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4042467058397505479(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(_context.getNode(), "configurationType", false));
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(_context.getNode(), "configurationKind", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_4042467058397509259(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(_context.getNode(), "configurationType", false));
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(_context.getNode(), "configurationKind", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_7244675116808105226(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -130,7 +130,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7460665385311866859(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configurationType", false), "KindToClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configurationKind", false), "KindToClass");
   }
 
   public static Object referenceMacro_GetReferent_7460665385311866816(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -261,7 +261,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7024026323278238803(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfiguration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "configurationType", false) == _context.getNode();
+        return SLinkOperations.getTarget(it, "configurationKind", false) == _context.getNode();
       }
     });
   }

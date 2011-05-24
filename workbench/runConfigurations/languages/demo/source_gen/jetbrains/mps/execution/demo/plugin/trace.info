@@ -8,8 +8,8 @@
   <unitInfo fileName="Demo_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.Demo_ApplicationPlugin" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="Make_Configuration_Editor.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.Make_Configuration_Editor" />
-  <unitInfo fileName="Demo_Kind.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.Demo_Kind" />
   <unitInfo fileName="DemoApplication_Configuration_Editor.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration_Editor" />
+  <unitInfo fileName="Demo_Kind.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.Demo_Kind" />
   <unitInfo fileName="DemoApplication_Configuration_RunProfileState.java" startLine="32" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration_RunProfileState" />
   <unitInfo fileName="Make_Configuration.java" startLine="16" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.Make_Configuration" />
   <unitInfo fileName="DemoApplication_Configuration.java" startLine="36" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration" />

@@ -5,8 +5,8 @@ package jetbrains.mps.debugger.java.mps;
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import com.intellij.execution.configurations.ConfigurationFactory;
 import java.util.List;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NonNls;
@@ -17,13 +17,15 @@ import com.intellij.openapi.extensions.Extensions;
 public class MPS_Kind implements ConfigurationType {
   private static final Icon ICON = new ImageIcon(MPS_Kind.class.getResource("MPS_16.png"));
 
+  private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
+
   public MPS_Kind() {
   }
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new MPSInstance_Configuration_Factory(this));
-    // todo foreign configurations 
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
 
@@ -43,6 +45,10 @@ public class MPS_Kind implements ConfigurationType {
 
   public String getDisplayName() {
     return "MPS";
+  }
+
+  public void addForeignFactory(ConfigurationFactory factory) {
+    ListSequence.fromList(myForeignFactories).addElement(factory);
   }
 
   public static MPS_Kind getInstance() {
