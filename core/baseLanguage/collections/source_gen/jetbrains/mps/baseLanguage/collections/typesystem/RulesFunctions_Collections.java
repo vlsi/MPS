@@ -76,8 +76,8 @@ public class RulesFunctions_Collections {
       final SNode elementType_typevar_1184844804662 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
         SNode _nodeToCheck_1029348928467 = input;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184844804663", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184844804669", true), (SNode) new RulesFunctions_Collections.QuotationClass_m3rnkt_a0a1a4a3().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184844804662), typeCheckingContext), false, true, _info_12389875345);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1383381939051876064", 0, null);
+        typeCheckingContext.createGreaterThanInequality((SNode) new RulesFunctions_Collections.QuotationClass_m3rnkt_a0a1a4a3().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1184844804662), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184844804669", true), false, true, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = target;
