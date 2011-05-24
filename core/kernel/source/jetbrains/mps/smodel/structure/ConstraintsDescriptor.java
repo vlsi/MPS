@@ -83,7 +83,6 @@ public abstract class ConstraintsDescriptor {
     return getNodePropertySetters().get(propertyName);
   }
 
-
   public abstract Map<String, INodePropertyValidator> getNodePropertyValidators();
 
   public INodePropertyValidator getNodePropertyValidator(String propertyName) {

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.Map;
 
 public abstract class ConstraintsDataHolder {
@@ -45,21 +46,37 @@ public abstract class ConstraintsDataHolder {
 
   public abstract String getConceptFqName();
 
-  abstract public boolean isAlternativeIcon();
+  public boolean isAlternativeIcon() {
+    return false;
+  }
 
-  abstract public String getAlternativeIcon(SNode node);
+  public String getAlternativeIcon(SNode node) {
+    return null;
+  }
 
-  abstract public String getDefaultConcreteConceptFqName();
+  public String getDefaultConcreteConceptFqName() {
+    return getConceptFqName();
+  }
 
-  public abstract Map<String, INodePropertyGetter> getNodePropertyGetters();
+  public Map<String, INodePropertyGetter> getNodePropertyGetters() {
+    return Collections.emptyMap();
+  }
 
-  public abstract Map<String, INodePropertySetter> getNodePropertySetters();
+  public Map<String, INodePropertySetter> getNodePropertySetters() {
+    return Collections.emptyMap();
+  }
 
-  public abstract Map<String, INodePropertyValidator> getNodePropertyValidators();
+  public Map<String, INodePropertyValidator> getNodePropertyValidators() {
+    return Collections.emptyMap();
+  }
 
-  public abstract Map<String, INodeReferentSearchScopeProvider> getNodeNonDefaultSearchScopeProviders();
+  public Map<String, INodeReferentSearchScopeProvider> getNodeNonDefaultSearchScopeProviders() {
+    return Collections.emptyMap();
+  }
 
-  public abstract Map<String, INodeReferentSetEventHandler> getNodeReferentSetEventHandlers();
+  public Map<String, INodeReferentSetEventHandler> getNodeReferentSetEventHandlers() {
+    return Collections.emptyMap();
+  }
 
   public INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider() {
     return null;
