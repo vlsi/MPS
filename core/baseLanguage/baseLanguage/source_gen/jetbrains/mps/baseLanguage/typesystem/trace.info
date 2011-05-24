@@ -5578,7 +5578,7 @@
     <nodeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="23" startPosition="7" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="24" startPosition="75" endLine="25" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="25" startPosition="205" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="26" startPosition="64" endLine="27" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="26" startPosition="64" endLine="27" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6125943271043532195" fileName="Arrays_InequationReplacementRule.java" startLine="30" startPosition="7" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6125943271043532195" fileName="Arrays_InequationReplacementRule.java" startLine="31" startPosition="75" endLine="32" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6125943271043532195" fileName="Arrays_InequationReplacementRule.java" startLine="32" startPosition="205" endLine="33" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5597,7 +5597,7 @@
     <scopeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="41" startPosition="155" endLine="42" endPosition="243" />
     <scopeInfo nodeId="6125943271043465171" fileName="Arrays_InequationReplacementRule.java" startLine="43" startPosition="12" endLine="44" endPosition="203" />
     <scopeInfo nodeId="6125943271043532195" fileName="Arrays_InequationReplacementRule.java" startLine="43" startPosition="12" endLine="44" endPosition="203" />
-    <scopeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="23" startPosition="7" endLine="27" endPosition="221" />
+    <scopeInfo nodeId="6125943271043465197" fileName="Arrays_InequationReplacementRule.java" startLine="23" startPosition="7" endLine="27" endPosition="243" />
     <scopeInfo nodeId="6125943271043532195" fileName="Arrays_InequationReplacementRule.java" startLine="30" startPosition="7" endLine="34" endPosition="198" />
     <scopeInfo nodeId="6125943271043337056" fileName="Arrays_InequationReplacementRule.java" startLine="40" startPosition="35" endLine="45" endPosition="5" />
     <scopeInfo nodeId="6125943271043465147" fileName="Arrays_InequationReplacementRule.java" startLine="22" startPosition="155" endLine="28" endPosition="7" />
