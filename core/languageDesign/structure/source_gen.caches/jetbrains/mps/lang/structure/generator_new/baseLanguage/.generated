@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1gkeb1p3nre6vv4mk7tadrshq8xe5j7">
+<dependencies version="2" modelHash="cd23bng53zctu2axr819efhhyr6ju5o">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -190,7 +190,7 @@
   <source id="3157361072876778597" name="MAPPING_descriptors" hash="-2v624hlbpb8j1aojx93thka3yw08bvj">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5088050568745284902" name="StructureAspectDescriptor" hash="-49qxxhrzl9yuppt1l0mqzey1hxd2wo4">
+  <source id="5088050568745284902" name="StructureAspectDescriptor" hash="-70ofcz8cv3d5qizszpuwnfjokmwejiy">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
