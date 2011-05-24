@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableDialog;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JOptionPane;
@@ -76,17 +76,16 @@ public class IntroduceVariable_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<IntroduceLocalVariableRefactoring> refactoring = new Wrappers._T<IntroduceLocalVariableRefactoring>();
+      final IntroduceLocalVariableRefactoring refactoring = new IntroduceLocalVariableRefactoring();
       final Wrappers._T<String> error = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          refactoring.value = new IntroduceLocalVariableRefactoring();
-          error.value = refactoring.value.init(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("component")));
+          error.value = refactoring.init(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("component")));
         }
       });
       if (error.value == null) {
-        IntroduceLocalVariableDialog dialog = new IntroduceLocalVariableDialog(((Frame) MapSequence.fromMap(_params).get("frame")), refactoring.value, ((EditorContext) MapSequence.fromMap(_params).get("context")));
-        dialog.showDialog();
+        final LocalVariableIntroducer introducer = new LocalVariableIntroducer(((Frame) MapSequence.fromMap(_params).get("frame")), refactoring, ((EditorComponent) MapSequence.fromMap(_params).get("component")), ((EditorContext) MapSequence.fromMap(_params).get("context")));
+        introducer.invoke(event.getDataContext());
       } else {
         JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
