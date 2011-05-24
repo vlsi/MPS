@@ -21,6 +21,7 @@ import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.operation.CheckSubTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ProcessReplacementRuleOperation;
 import jetbrains.mps.newTypesystem.state.State;
@@ -101,9 +102,11 @@ public class InequalityBlock extends RelationBlock {
     if (subType == null || superType == null || subType == superType) {
       return;
     }
-    if (TypesUtil.isVariable(subType) && TypesUtil.isVariable(superType)) {
-      // for final solving
-      return;
+    if (!TypesUtil.hasVariablesInside(subType) && !TypesUtil.hasVariablesInside(superType)){
+      if (TypesUtil.match(subType, superType)) {
+        myState.executeOperation(new AddRemarkOperation("Matched: " + subType + " and "+superType));
+        return;
+      }
     }
     if (processReplacementRules(subType, superType)) {
       return;
