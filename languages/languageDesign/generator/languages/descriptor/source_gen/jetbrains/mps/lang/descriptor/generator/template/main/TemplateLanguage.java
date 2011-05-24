@@ -1452,7 +1452,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a01a1a1a1a41a1a1);
                   environment.nodeCopied(context, tnode95, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/6915491356910713747");
-                  tnode95.addReference(SReference.create("annotation", tnode95, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+                  tnode95.addReference(SReference.create("annotation", tnode95, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(tnode95);
