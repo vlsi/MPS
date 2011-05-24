@@ -33,14 +33,13 @@ import java.util.List;
  * evgeny, 4/28/11
  */
 public class LanguageRuntimeInterpreted extends LanguageRuntime {
-  private static final DescriptorProvider<BehaviorDescriptor> INTERPRETED_BEHAVIOR = new InterpretedBehaviorProvider();
-  private static final DescriptorProvider<BehaviorDescriptor> COMPILED_BEHAVIOR = new CompiledBehaviorDescriptorProvider();
-  private static final DescriptorProvider<ConstraintsDescriptor> INTERPRETED_CONSTRAINTS = new InterpretedConstraintsProvider();
-  private static final DescriptorProvider<ConstraintsDescriptor> COMPILED_CONSTRAINTS = new CompiledConstraintsProvider();
+  private static final DescriptorProvider<ConstraintsDescriptor> OLD_INTERPRETED_CONSTRAINTS = new InterpretedConstraintsProvider();
+  // todo: rename
+  private static final DescriptorProvider<ConstraintsDescriptor> NEW_INTERPRETED_CONSTRAINTS = new CompiledConstraintsProvider();
 
   public static final DescriptorProvider<StructureDescriptor> STRUCTURE_PROVIDER = new InterpretedStructureProvider();
-  public static final DescriptorProvider<BehaviorDescriptor> BEHAVIOR_PROVIDER = MixedDescriptorProvider.of(COMPILED_BEHAVIOR, INTERPRETED_BEHAVIOR);
-  public static final DescriptorProvider<ConstraintsDescriptor> CONSTRAINTS_PROVIDER = MixedDescriptorProvider.of(COMPILED_CONSTRAINTS, INTERPRETED_CONSTRAINTS);
+  public static final DescriptorProvider<BehaviorDescriptor> BEHAVIOR_PROVIDER = new InterpretedBehaviorProvider();
+  public static final DescriptorProvider<ConstraintsDescriptor> CONSTRAINTS_PROVIDER = MixedDescriptorProvider.of(NEW_INTERPRETED_CONSTRAINTS, OLD_INTERPRETED_CONSTRAINTS);
 
   private final Language myLanguage;
   private final Collection<TemplateModule> myTemplateModules;
