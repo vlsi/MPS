@@ -24,7 +24,7 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6125943271043465197", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true), false, true, inequalityIsLessThan, _info_12389875345);
       }
     } else {
       {

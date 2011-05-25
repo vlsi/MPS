@@ -163,8 +163,9 @@ public class State {
       if (blocks == null) {
         return;
       }
+      List<SNode> unresolvedInputs = conditionKind.getUnresolvedInputs(type, this);
       for (Block block : new THashSet<Block>(blocks)) {
-        for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
+        for (SNode variable : unresolvedInputs) {
           addInputAndTrack(block, variable, conditionKind);
         }
         removeInputAndTrack(block, oldVar, conditionKind);
@@ -228,8 +229,8 @@ public class State {
     return myEquations;
   }
 
-  public void addEquation(SNode left, SNode right, EquationInfo info) {
-    myEquations.addEquation(left, right, info);
+  public boolean addEquation(SNode left, SNode right, EquationInfo info) {
+    return myEquations.addEquation(left, right, info);
   }
 
   public void addEquation(SNode left, SNode right, EquationInfo info, boolean checkOnly) {

@@ -4283,8 +4283,12 @@
   <root id="838715195501404653">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="838715195501404655">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="838715195501404657" />
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="838715195501404658">
-        <property name="text" nameId="tpc2.1073389577007" value="or" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="6448384028752696702">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpd4.6448384028752696700" />
+        <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6448384028752696703" />
+        <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6448384028752696704">
+          <property name="text" nameId="tpc2.1073389577007" value="or" />
+        </node>
       </node>
     </node>
   </root>
