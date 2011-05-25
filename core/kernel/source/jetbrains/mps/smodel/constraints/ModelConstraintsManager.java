@@ -387,7 +387,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     ConceptRegistry registry = ConceptRegistry.getInstance();
 
     while (currentNode != null) {
-      ConstraintsDescriptor descriptor = registry.getConceptDescriptorForInstanceNode(currentNode).constraints();
+      ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConceptFqName());
 
       if (!notNull(descriptor.getCanBeAnAncestorMethod()).canBe(context, new CanBeAnAncestorContext(currentNode, childConcept), checkingNodeContext)) {
         return false;

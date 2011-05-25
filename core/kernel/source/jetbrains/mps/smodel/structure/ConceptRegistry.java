@@ -3,16 +3,19 @@ package jetbrains.mps.smodel.structure;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.containers.MultiMap;
+import com.sun.org.apache.xpath.internal.functions.FuncQname;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRuntimeInterpreted;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -48,16 +51,6 @@ public class ConceptRegistry implements ApplicationComponent {
   @Override
   public void disposeComponent() {
     // ?
-  }
-
-  @Deprecated
-  public synchronized ConceptDescriptor getConceptDescriptor(String fqName) {
-    return new SimpleConceptDescriptor(fqName);
-  }
-
-  @Deprecated
-  public synchronized ConceptDescriptor getConceptDescriptorForInstanceNode(SNode instanceNode) {
-    return instanceNode != null ? getConceptDescriptor(instanceNode.getConceptFqName()) : NullNodeConceptDescriptor.INSTANCE;
   }
 
   private synchronized <T> T getDescriptor(DescriptorProvider<T> languageAspect, String fqName) {
@@ -137,31 +130,54 @@ public class ConceptRegistry implements ApplicationComponent {
     return constraintsDescriptors.get(fqName);
   }
 
-  private class SimpleConceptDescriptor extends ConceptDescriptor {
-    private final String fqName;
+  public synchronized BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
+    if (node == null) {
+      // todo: more clearly logic
+      return LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER.getDescriptor(null);
+    } else {
+      BehaviorDescriptor descriptor = getBehaviorDescriptor(node.getConceptFqName());
 
-    SimpleConceptDescriptor(String fqName) {
-      this.fqName = fqName;
+      if (descriptor == null) {
+//        LOG.error("Null behavior descriptor for concept " + node.getConceptFqName());
+//        it's ok for concepts: Type, AbstractOperation, Expression. Using in editor
+//        todo: discuss
+        return LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER.getDescriptor(null);
+      }
+
+      return descriptor;
+    }
+  }
+
+  @Deprecated
+  public synchronized ConceptDescriptor getConceptDescriptorForInstanceNode(@Nullable SNode node) {
+    return new NullableBehaviorConceptDescriptor(getBehaviorDescriptorForInstanceNode(node));
+  }
+
+  private class NullableBehaviorConceptDescriptor extends ConceptDescriptor {
+    private final BehaviorDescriptor behaviorDescriptor;
+
+    NullableBehaviorConceptDescriptor(BehaviorDescriptor behaviorDescriptor) {
+      this.behaviorDescriptor = behaviorDescriptor;
     }
 
     @Override
     public String fqName() {
-      return fqName;
+      throw new UnsupportedOperationException();
     }
 
     @Override
     public StructureDescriptor structure() {
-      return getStructureDescriptor(fqName);
+      throw new UnsupportedOperationException();
     }
 
     @Override
     public BehaviorDescriptor behavior() {
-      return getBehaviorDescriptor(fqName);
+      return behaviorDescriptor;
     }
 
     @Override
     public ConstraintsDescriptor constraints() {
-      return getConstraintsDescriptor(fqName);
+      throw new UnsupportedOperationException();
     }
   }
 
