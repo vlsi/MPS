@@ -82,28 +82,30 @@ public class DataHolderConstraintsDescriptor extends ConstraintsDescriptor {
 
     this.fqName = dataHolder.getConceptFqName();
 
-    canBeAChildMethod = getMethodUsingInheritance(dataHolder.getCanBeAChildMethod(), CanBeRoles.CHILD);
-    canBeAnAncestorMethod = getMethodUsingInheritance(dataHolder.getCanBeAnAncestorMethod(), CanBeRoles.ANCESTOR);
-    canBeAParentMethod = getMethodUsingInheritance(dataHolder.getCanBeAParentMethod(), CanBeRoles.PARENT);
-    canBeARootMethod = getMethodUsingInheritance(dataHolder.getCanBeARootMethod(), CanBeRoles.ROOT);
+    List<ConstraintsDescriptor> parentDescriptors = getParentDescriptors();
+
+    canBeAChildMethod = getMethodUsingInheritance(parentDescriptors, dataHolder.getCanBeAChildMethod(), CanBeRoles.CHILD);
+    canBeAnAncestorMethod = getMethodUsingInheritance(parentDescriptors, dataHolder.getCanBeAnAncestorMethod(), CanBeRoles.ANCESTOR);
+    canBeAParentMethod = getMethodUsingInheritance(parentDescriptors, dataHolder.getCanBeAParentMethod(), CanBeRoles.PARENT);
+    canBeARootMethod = getMethodUsingInheritance(parentDescriptors, dataHolder.getCanBeARootMethod(), CanBeRoles.ROOT);
 
     defaultConcreteConceptFqName = dataHolder.getDefaultConcreteConceptFqName();
 
-    propertyGetter = calculate(dataHolder.getNodePropertyGetters(), PROPERTY_GETTERS_FUNCTION);
-    propertySetter = calculate(dataHolder.getNodePropertySetters(), PROPERTY_SETTERS_FUNCTION);
-    propertyValidator = calculate(dataHolder.getNodePropertyValidators(), PROPERTY_VALIDATORS_FUNCTION);
+    propertyGetter = calculate(parentDescriptors, dataHolder.getNodePropertyGetters(), PROPERTY_GETTERS_FUNCTION);
+    propertySetter = calculate(parentDescriptors, dataHolder.getNodePropertySetters(), PROPERTY_SETTERS_FUNCTION);
+    propertyValidator = calculate(parentDescriptors, dataHolder.getNodePropertyValidators(), PROPERTY_VALIDATORS_FUNCTION);
 
-    nodeNonDefaultSearchScopeProvider = calculate(dataHolder.getNodeNonDefaultSearchScopeProviders(), NON_DEFAULT_SEARCH_SCOPE_FUNCTION);
-    nodeReferentSetEventHandlers = calculate(dataHolder.getNodeReferentSetEventHandlers(), REFERENCE_SET_HANDLER_FUNCTION);
+    nodeNonDefaultSearchScopeProvider = calculate(parentDescriptors, dataHolder.getNodeNonDefaultSearchScopeProviders(), NON_DEFAULT_SEARCH_SCOPE_FUNCTION);
+    nodeReferentSetEventHandlers = calculate(parentDescriptors, dataHolder.getNodeReferentSetEventHandlers(), REFERENCE_SET_HANDLER_FUNCTION);
 
-    nodeDefaultReferentSearchScopeProvider = _getNodeDefaultSearchScopeProvider(dataHolder.getNodeDefaultSearchScopeProvider());
+    nodeDefaultReferentSearchScopeProvider = _getNodeDefaultSearchScopeProvider(parentDescriptors, dataHolder.getNodeDefaultSearchScopeProvider());
   }
 
-  private <T> Map<String, T> calculate(Map<String, T> direct, Function<ConstraintsDescriptor, Map<String, T>> childMapFunction) {
+  private static <T> Map<String, T> calculate(List<ConstraintsDescriptor> parentConstraints, Map<String, T> direct, Function<ConstraintsDescriptor, Map<String, T>> childMapFunction) {
     HashMap<String, T> result = new HashMap<String, T>();
     result.putAll(direct);
 
-    for (ConstraintsDescriptor parent : getParentDescriptors()) {
+    for (ConstraintsDescriptor parent : parentConstraints) {
       Map<String, T> childMap = childMapFunction.fun(parent);
       for (String childProperty : childMap.keySet()) {
         if (!result.containsKey(childProperty)) {
@@ -126,11 +128,11 @@ public class DataHolderConstraintsDescriptor extends ConstraintsDescriptor {
     return descriptors;
   }
 
-  private INodeReferentSearchScopeProvider _getNodeDefaultSearchScopeProvider(INodeReferentSearchScopeProvider direct) {
+  private static INodeReferentSearchScopeProvider _getNodeDefaultSearchScopeProvider(List<ConstraintsDescriptor> parentDescriptors, INodeReferentSearchScopeProvider direct) {
     if (direct != null) {
       return direct;
     } else {
-      for (ConstraintsDescriptor descriptor : getParentDescriptors()) {
+      for (ConstraintsDescriptor descriptor : parentDescriptors) {
         if (descriptor.getNodeDefaultSearchScopeProvider() != null) {
           return descriptor.getNodeDefaultSearchScopeProvider();
         }
@@ -139,11 +141,11 @@ public class DataHolderConstraintsDescriptor extends ConstraintsDescriptor {
     return null;
   }
 
-  private <T> CanBeASomethingMethod<T> getMethodUsingInheritance(CanBeASomethingMethod<T> direct, CanBeRoles role) {
+  private static <T> CanBeASomethingMethod<T> getMethodUsingInheritance(List<ConstraintsDescriptor> parentDescriptors, CanBeASomethingMethod<T> direct, CanBeRoles role) {
     if (direct != null) {
       return direct;
     } else {
-      for (ConstraintsDescriptor parentDescriptor : getParentDescriptors()) {
+      for (ConstraintsDescriptor parentDescriptor : parentDescriptors) {
         CanBeASomethingMethod<?> superMethod = parentDescriptor.getCanBeASomethingMethod(role);
         if (superMethod != null) {
           return (CanBeASomethingMethod<T>) superMethod;
