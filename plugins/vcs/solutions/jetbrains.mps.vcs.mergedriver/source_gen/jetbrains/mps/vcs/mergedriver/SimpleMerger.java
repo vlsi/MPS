@@ -12,7 +12,7 @@ import java.io.IOException;
 /*package*/ class SimpleMerger extends FileMerger {
   private static byte[] LINE_SEPARATOR = System.getProperty("line.separator").getBytes();
 
-  public SimpleMerger() {
+  /*package*/ SimpleMerger() {
   }
 
   protected int mergeFiles(File baseFile, File localFile, File latestFile) {
