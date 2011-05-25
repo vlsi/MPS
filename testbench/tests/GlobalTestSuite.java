@@ -65,7 +65,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_ypath_test",
   "jetbrains.mps.vcs.diff.MergeConceptAndImportsTest",
   "jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest",
-  "jetbrains.mps.vcs.diff.MergeRefactoringTest",
   "jetbrains.mps.vcs.diff.MergeReferencesTest",
   "jetbrains.mps.vcs.diff.MergeSymmetricChangesTest",
   "jetbrains.mps.vfs.VfsTest",
