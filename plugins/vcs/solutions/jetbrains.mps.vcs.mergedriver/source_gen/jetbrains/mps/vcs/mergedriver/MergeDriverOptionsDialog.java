@@ -14,6 +14,7 @@ import java.awt.event.ItemEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.InternalFlag;
 import javax.swing.JCheckBox;
 
 public class MergeDriverOptionsDialog extends BaseDialog {
@@ -55,7 +56,10 @@ public class MergeDriverOptionsDialog extends BaseDialog {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         myGitGlobal.installIfNeeded();
-        if (myGitGlobal.myInstaller.getCurrentState() == AbstractInstaller.State.INSTALLED) {
+        if (myGitGlobal.myInstaller.getCurrentState() == ((InternalFlag.isInternalMode() ?
+          AbstractInstaller.State.OUTDATED :
+          AbstractInstaller.State.INSTALLED
+        ))) {
           myGitRepos.installIfNeeded();
         }
         mySvn.installIfNeeded();
