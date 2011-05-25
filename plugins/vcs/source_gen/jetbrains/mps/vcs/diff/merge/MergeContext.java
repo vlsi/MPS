@@ -169,6 +169,10 @@ public class MergeContext {
     return myNodeCopier.hasIdsToRestore();
   }
 
+  public SNodeId getReplacementId(SNodeId originalId) {
+    return myNodeCopier.getReplacementId(originalId);
+  }
+
   public SModel getResultModel() {
     return myResultModel;
   }

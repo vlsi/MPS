@@ -108,7 +108,7 @@ public class MergeRootsDialog extends BaseDialog {
     myRepositoryEditor.unhighlightAllChanges();
 
     if (myResultEditor.getMainEditor().getEditedNode() == null) {
-      SNode node = myMergeContext.getResultModel().getNodeById(myRootId);
+      SNode node = getRootNode(myMergeContext.getResultModel());
       if (node != null) {
         myResultEditor.getMainEditor().editNode(node, myOperationContext);
       }
@@ -166,8 +166,22 @@ public class MergeRootsDialog extends BaseDialog {
     ), changeGroupBuilder, inspector);
   }
 
+  private SNode getRootNode(SModel model) {
+    SNode node = model.getNodeById(myRootId);
+    if (node != null && node.getParent() == null) {
+      return node;
+    }
+    if (model == myMergeContext.getResultModel()) {
+      SNodeId replacement = myMergeContext.getReplacementId(myRootId);
+      if (replacement != null) {
+        return model.getNodeById(replacement);
+      }
+    }
+    return null;
+  }
+
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(myOperationContext, model.getNodeById(myRootId), myModelsDialog.getContentTitles()[index], index == 0);
+    final DiffEditor result = new DiffEditor(myOperationContext, getRootNode(model), myModelsDialog.getContentTitles()[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
