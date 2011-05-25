@@ -2119,7 +2119,7 @@
     <nodeInfo nodeId="8008512149545102545" fileName="IMethodCall_Behavior.java" startLine="52" startPosition="128" endLine="53" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8008512149545154976" fileName="IMethodCall_Behavior.java" startLine="53" startPosition="112" endLine="54" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8008512149545162028" fileName="IMethodCall_Behavior.java" startLine="55" startPosition="37" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8008512149545155023" fileName="IMethodCall_Behavior.java" startLine="57" startPosition="9" endLine="58" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8008512149545155023" fileName="IMethodCall_Behavior.java" startLine="57" startPosition="9" endLine="58" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8008512149545161696" fileName="IMethodCall_Behavior.java" startLine="59" startPosition="9" endLine="60" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8008512149545161696" fileName="IMethodCall_Behavior.java" startLine="60" startPosition="131" endLine="61" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8008512149545162002" fileName="IMethodCall_Behavior.java" startLine="62" startPosition="51" endLine="63" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2159,7 +2159,7 @@
     <nodeInfo nodeId="8008512149545161992" fileName="IMethodCall_Behavior.java" startLine="66" startPosition="18" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8008512149545161956" fileName="IMethodCall_Behavior.java" startLine="63" startPosition="29" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8008512149545161696" fileName="IMethodCall_Behavior.java" startLine="61" startPosition="137" endLine="76" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8008512149545161696" fileName="IMethodCall_Behavior.java" startLine="58" startPosition="195" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8008512149545161696" fileName="IMethodCall_Behavior.java" startLine="58" startPosition="201" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1213877433067" fileName="IMethodCall_Behavior.java" startLine="50" startPosition="59" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877433053" fileName="IMethodCall_Behavior.java" startLine="47" startPosition="63" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1213877433106" fileName="IMethodCall_Behavior.java" startLine="35" startPosition="43" endLine="35" endPosition="43" />

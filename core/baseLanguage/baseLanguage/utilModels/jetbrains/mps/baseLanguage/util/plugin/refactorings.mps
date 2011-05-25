@@ -7302,7 +7302,7 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2163048091639723477">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2163048091639723478">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8492459591399173406" resolveInfo="getRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8492459591399164211" resolveInfo="getRefactoring" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2163048091639723479">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2163048091639723454" resolveInfo="hasDuplicates" />

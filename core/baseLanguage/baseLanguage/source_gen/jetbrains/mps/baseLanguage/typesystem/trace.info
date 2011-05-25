@@ -4721,7 +4721,7 @@
     <nodeInfo nodeId="5499146221535829680" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="35" startPosition="11" endLine="36" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5499146221535829680" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="36" startPosition="157" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5499146221535829680" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="37" startPosition="60" endLine="38" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5499146221535981821" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="44" startPosition="305" endLine="45" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5499146221535981821" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="44" startPosition="345" endLine="45" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5499146221535981784" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="47" startPosition="11" endLine="48" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5499146221535981784" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="48" startPosition="64" endLine="49" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5499146221535981784" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="50" startPosition="13" endLine="51" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4731,7 +4731,7 @@
     <nodeInfo nodeId="5499146221535829680" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="34" startPosition="260" endLine="39" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5499146221535981784" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="49" startPosition="265" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5499146221535829680" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="31" startPosition="259" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5499146221535981784" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="46" startPosition="237" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5499146221535981784" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="46" startPosition="277" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5499146221535829669" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="30" startPosition="259" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5499146221535981782" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="45" startPosition="113" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5499146221535829658" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="29" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4743,9 +4743,9 @@
     <scopeInfo nodeId="5499146221535829680" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="32" startPosition="9" endLine="39" endPosition="11" />
     <scopeInfo nodeId="5499146221535981784" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="47" startPosition="11" endLine="54" endPosition="13" />
     <scopeInfo nodeId="5499146221535829670" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="31" startPosition="259" endLine="40" endPosition="9" />
-    <scopeInfo nodeId="5499146221535981783" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="46" startPosition="237" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="5499146221535981783" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="46" startPosition="277" endLine="55" endPosition="11" />
     <scopeInfo nodeId="5499146221535829659" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="30" startPosition="259" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="5499146221535981781" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="44" startPosition="305" endLine="56" endPosition="9">
+    <scopeInfo nodeId="5499146221535981781" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="44" startPosition="345" endLine="56" endPosition="9">
       <varInfo nodeId="5499146221535981822" varName="param" />
     </scopeInfo>
     <scopeInfo nodeId="5499146221535981672" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="43" startPosition="121" endLine="57" endPosition="7" />
@@ -5038,11 +5038,11 @@
     <nodeInfo nodeId="4016718966623949327" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="22" startPosition="407" endLine="23" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="25" startPosition="9" endLine="26" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="26" startPosition="62" endLine="27" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="24" startPosition="334" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="24" startPosition="374" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4016718966623949335" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="23" startPosition="92" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="419889540470404091" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="21" startPosition="131" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="4016718966623950802" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="25" startPosition="9" endLine="27" endPosition="280" />
-    <scopeInfo nodeId="4016718966623949336" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="24" startPosition="334" endLine="28" endPosition="9" />
+    <scopeInfo nodeId="4016718966623949336" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="24" startPosition="374" endLine="28" endPosition="9" />
     <scopeInfo nodeId="419889540470404092" fileName="check_AnnotationForVoidMethod_NonTypesystemRule.java" startLine="22" startPosition="407" endLine="29" endPosition="7">
       <varInfo nodeId="4016718966623949328" varName="annotation" />
     </scopeInfo>
