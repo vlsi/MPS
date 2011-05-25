@@ -206,7 +206,6 @@
   <unitInfo fileName="checkThrowsOfMethodIsCaught_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.checkThrowsOfMethodIsCaught_NonTypesystemRule" />
   <unitInfo fileName="check_ClassDoesNotExtendFinalClass_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ClassDoesNotExtendFinalClass_NonTypesystemRule" />
   <unitInfo fileName="check_CorrectScope_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_CorrectScope_NonTypesystemRule" />
-  <unitInfo fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.checkThrowedByThrowIsCaught_NonTypesystemRule" />
   <unitInfo fileName="check_UnusedStaticFields_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedStaticFields_NonTypesystemRule" />
   <unitInfo fileName="typeOf_thisExpr_InferenceRule.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_thisExpr_InferenceRule" />
   <unitInfo fileName="check_VariableAssignedToItself_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_VariableAssignedToItself_NonTypesystemRule" />
@@ -217,6 +216,7 @@
   <unitInfo fileName="typevar_comparable_with_classifier_type_ComparisonRule.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typevar_comparable_with_classifier_type_ComparisonRule" />
   <unitInfo fileName="any_type_comparable_to_wildcard_type_ComparisonRule.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_to_wildcard_type_ComparisonRule" />
   <unitInfo fileName="typeOf_CastExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_CastExpression_InferenceRule" />
+  <unitInfo fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.checkThrowedByThrowIsCaught_NonTypesystemRule" />
   <unitInfo fileName="check_ContinueStatement_InferenceRule.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ContinueStatement_InferenceRule" />
   <unitInfo fileName="check_BreakStatement_InferenceRule.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_BreakStatement_InferenceRule" />
   <unitInfo fileName="check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule" />
@@ -2907,13 +2907,15 @@
     <nodeInfo nodeId="1210182548118" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="24" startPosition="30" endLine="25" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225121160769" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="26" startPosition="5" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210182550479" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="27" startPosition="73" endLine="28" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210183002703" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="28" startPosition="70" endLine="29" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210182672036" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="30" startPosition="99" endLine="31" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5942313089042602357" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="29" startPosition="132" endLine="30" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210182672036" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="32" startPosition="99" endLine="33" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210182538155" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="23" startPosition="83" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1210182654526" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="29" startPosition="129" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5942313089042602340" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="28" startPosition="70" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1210182654526" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1210182538156" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="24" startPosition="30" endLine="25" endPosition="13" />
-    <scopeInfo nodeId="1210182654527" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="30" startPosition="99" endLine="31" endPosition="89" />
-    <scopeInfo nodeId="1210182292393" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="22" startPosition="127" endLine="32" endPosition="5">
+    <scopeInfo nodeId="5942313089042602341" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="29" startPosition="132" endLine="30" endPosition="131" />
+    <scopeInfo nodeId="1210182654527" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="32" startPosition="99" endLine="33" endPosition="89" />
+    <scopeInfo nodeId="1210182292393" fileName="checkThrowedByThrowIsCaught_NonTypesystemRule.java" startLine="22" startPosition="127" endLine="34" endPosition="5">
       <varInfo nodeId="1210182534991" varName="throwable" />
       <varInfo nodeId="1210182550480" varName="throwables" />
       <varInfo nodeId="1225121160770" varName="throwableType" />
