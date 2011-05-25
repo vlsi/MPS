@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
-import com.intellij.openapi.diff.DiffContent;
-import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
+import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -45,14 +44,12 @@ import javax.swing.WindowConstants;
 import java.io.File;
 import java.io.IOException;
 
-import static jetbrains.mps.TestMain.configureMPS;
-
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
 
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
-    configureMPS();
+    TestMain.configureMPS();
     IconLoader.activate();
 
     final SModel models[] = new SModel[3];
