@@ -27,17 +27,17 @@ public class IMemberContainer_Behavior {
   }
 
   public static List<SNode> call_getMembers_1213877531970(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMembers_1213877531970", PARAMETERS_1213877531970);
   }
 
   public static List<SNode> call_getMethodsToOverride_5418393554803767537(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToOverride_5418393554803767537", PARAMETERS_5418393554803767537);
   }
 
   public static List<SNode> call_getMethodsToImplement_5418393554803775106(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToImplement_5418393554803775106", PARAMETERS_5418393554803775106);
   }
 

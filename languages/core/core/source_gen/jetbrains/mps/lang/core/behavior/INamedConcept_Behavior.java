@@ -24,7 +24,7 @@ public class INamedConcept_Behavior {
   }
 
   public static String call_getFqName_1213877404258(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", PARAMETERS_1213877404258);
   }
 

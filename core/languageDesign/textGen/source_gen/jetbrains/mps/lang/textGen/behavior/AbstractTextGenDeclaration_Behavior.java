@@ -25,12 +25,12 @@ public class AbstractTextGenDeclaration_Behavior {
   }
 
   public static String call_getTextGenNode_1234784577703(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703);
   }
 
   public static List<SNode> call_getAvailableOperations_1234781444746(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746);
   }
 

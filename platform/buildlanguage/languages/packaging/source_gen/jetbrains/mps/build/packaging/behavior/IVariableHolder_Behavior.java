@@ -28,7 +28,7 @@ public class IVariableHolder_Behavior {
   }
 
   public static List<SNode> call_getAllVariable_1234864693585(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585);
   }
 

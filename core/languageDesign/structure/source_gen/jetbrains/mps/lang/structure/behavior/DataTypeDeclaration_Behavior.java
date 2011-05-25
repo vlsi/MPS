@@ -88,7 +88,7 @@ public class DataTypeDeclaration_Behavior {
   }
 
   public static SNode call_toBaseLanguageType_1213877229718(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), "virtual_toBaseLanguageType_1213877229718", PARAMETERS_1213877229718);
   }
 

@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
 import jetbrains.mps.ide.uiLanguage.constraints.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
 import jetbrains.mps.ide.uiLanguage.structure.StructureAspectDescriptor;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.ide.uiLanguage.behavior.BehaviorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("a20a42c8-ea20-45de-bc60-acb92cc25c46(jetbrains.mps.ide.uiLanguage)");
@@ -51,5 +53,10 @@ public class Language extends LanguageRuntime {
   @Override
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
     return new StructureAspectDescriptor();
+  }
+
+  @Override
+  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
+    return new BehaviorAspectDescriptor();
   }
 }

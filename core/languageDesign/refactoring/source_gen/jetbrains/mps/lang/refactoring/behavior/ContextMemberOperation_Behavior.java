@@ -15,7 +15,7 @@ public class ContextMemberOperation_Behavior {
   }
 
   public static SNode call_createType_7012097027058652452(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"), "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652452);
   }
 

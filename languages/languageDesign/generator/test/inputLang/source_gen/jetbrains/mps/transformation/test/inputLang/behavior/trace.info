@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="InputNode_C_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_C_BehaviorDescriptor" />
+  <unitInfo fileName="InputNode_B_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_B_BehaviorDescriptor" />
+  <unitInfo fileName="InputNode_A_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_A_BehaviorDescriptor" />
+  <unitInfo fileName="ExpressionToReduceToStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.ExpressionToReduceToStatement_BehaviorDescriptor" />
   <unitInfo fileName="InputNode_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_Behavior" />
+  <unitInfo fileName="InputRootWithStatementList_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputRootWithStatementList_BehaviorDescriptor" />
+  <unitInfo fileName="InputNode_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputNode_BehaviorDescriptor" />
+  <unitInfo fileName="InputRoot_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.InputRoot_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2511103526757027807">
     <scopeInfo nodeId="2511103526757027809" fileName="InputNode_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

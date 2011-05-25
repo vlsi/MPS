@@ -37,17 +37,17 @@ public class BeanPropertyBuilder_Behavior {
   }
 
   public static SNode call_getResultType_2679357232284060725(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_2679357232284060725);
   }
 
   public static SNode call_getCreatorExpression_2679357232284060737(SNode thisNode, SNode parentRef) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_2679357232284060737, parentRef);
   }
 
   public static SNode call_getAttachStatementChild_4797501453850342017(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), "virtual_getAttachStatementChild_4797501453850305563", PARAMETERS_4797501453850342017, parentBuilder, parentRef, childRef);
   }
 

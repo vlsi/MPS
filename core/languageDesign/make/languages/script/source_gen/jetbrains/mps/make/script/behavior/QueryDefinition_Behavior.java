@@ -22,7 +22,7 @@ public class QueryDefinition_Behavior {
   }
 
   public static String call_classifierName_8486446835277382819(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), "virtual_classifierName_4609636120081351397", PARAMETERS_8486446835277382819);
   }
 

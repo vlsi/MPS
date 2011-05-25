@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
 import jetbrains.mps.samples.lambdaCalculus.constraints.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
 import jetbrains.mps.samples.lambdaCalculus.structure.StructureAspectDescriptor;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.samples.lambdaCalculus.behavior.BehaviorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("7c9e2807-94ad-4afc-adf0-aaee45eb2895(jetbrains.mps.samples.lambdaCalculus)");
@@ -51,5 +53,10 @@ public class Language extends LanguageRuntime {
   @Override
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
     return new StructureAspectDescriptor();
+  }
+
+  @Override
+  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
+    return new BehaviorAspectDescriptor();
   }
 }

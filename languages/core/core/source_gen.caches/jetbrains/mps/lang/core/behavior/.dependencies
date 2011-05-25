@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" file="Attribute_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" file="BaseConcept_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -20,6 +24,26 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" file="BaseConcept_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.CompiledBehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ExportScopeModule_Behavior" file="ExportScopeModule_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -30,6 +54,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" file="ExportScopeModule_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScopeModule_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_Behavior" file="ExportScopeNamespace_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -42,6 +73,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" file="ExportScopeNamespace_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ExportScopePublic_Behavior" file="ExportScopePublic_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -51,6 +89,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" file="ExportScopePublic_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScopePublic_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" file="ExportScope_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -73,6 +118,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" file="ExportScope_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" file="IContainer_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior" file="IDeprecatable_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -84,6 +136,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" file="IDeprecatable_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_Behavior" file="IMetaLevelChanger_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
@@ -93,6 +149,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" file="IMetaLevelChanger_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" file="INamedConcept_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
@@ -105,8 +164,27 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" file="INamedConcept_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.IResolveInfo_Behavior" file="IResolveInfo_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" file="IResolveInfo_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" file="IType_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" file="IWrapper_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" file="LinkAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" file="NodeAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" file="PropertyAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>
 

@@ -20,7 +20,7 @@ public class SingletabbedEditorTabType_Behavior {
   }
 
   public static List<SNode> call_getMembers_8405639817129366337(SNode thisNode, SNode contextNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType"), "virtual_getMembers_1213877402148", PARAMETERS_8405639817129366337, contextNode);
   }
 

@@ -25,7 +25,7 @@ public class LetExpression_Behavior {
   }
 
   public static List<SNode> call_getVariables_8981808925914844606(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "virtual_getVariables_8981808925914841576", PARAMETERS_8981808925914844606);
   }
 

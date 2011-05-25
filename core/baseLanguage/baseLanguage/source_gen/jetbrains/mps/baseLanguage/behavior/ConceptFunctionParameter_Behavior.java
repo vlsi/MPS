@@ -55,17 +55,17 @@ public class ConceptFunctionParameter_Behavior {
   }
 
   public static boolean call_getFromParameterObject_1213877522908(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
   }
 
   public static boolean call_isParameterObjectUsed_1213877522926(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
   }
 
   public static boolean call_needConceptFunction_1236687728308(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308);
   }
 

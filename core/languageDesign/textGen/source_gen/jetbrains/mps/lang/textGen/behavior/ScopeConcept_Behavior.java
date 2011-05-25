@@ -16,7 +16,7 @@ public class ScopeConcept_Behavior {
   }
 
   public static List<SNode> call_getScopeVariables_3822000666564591100(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ScopeConcept"), "virtual_getScopeVariables_3822000666564591100", PARAMETERS_3822000666564591100);
   }
 

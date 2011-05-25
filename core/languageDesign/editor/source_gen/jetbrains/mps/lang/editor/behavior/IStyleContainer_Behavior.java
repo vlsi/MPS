@@ -37,7 +37,7 @@ public class IStyleContainer_Behavior {
   }
 
   public static SNode call_getParent_1219419981626(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), "virtual_getParent_1219419981626", PARAMETERS_1219419981626);
   }
 

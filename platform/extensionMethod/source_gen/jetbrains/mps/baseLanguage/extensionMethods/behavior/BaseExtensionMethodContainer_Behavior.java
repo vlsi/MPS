@@ -21,7 +21,7 @@ public class BaseExtensionMethodContainer_Behavior {
   }
 
   public static List<SNode> call_getMembers_8578055449697886101(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), "virtual_getMembers_1213877531970", PARAMETERS_8578055449697886101);
   }
 

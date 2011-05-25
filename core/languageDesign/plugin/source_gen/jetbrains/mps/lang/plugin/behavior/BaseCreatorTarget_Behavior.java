@@ -19,7 +19,7 @@ public class BaseCreatorTarget_Behavior {
   }
 
   public static SNode call_getParameter_7559322914920378168(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.BaseCreatorTarget"), "virtual_getParameter_7559322914920378168", PARAMETERS_7559322914920378168);
   }
 

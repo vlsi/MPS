@@ -26,7 +26,7 @@ public class ContainerItemIterator_Behavior {
   }
 
   public static SNode call_getExpectedReturnType_7798684637310718747(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747);
   }
 

@@ -24,12 +24,12 @@ public class CreateEditor_Function_Behavior {
   }
 
   public static SNode call_getJavaMethod_946964771156066804(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066804);
   }
 
   public static SNode call_getPublicJavaMethod_203908296139519699(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519699);
   }
 

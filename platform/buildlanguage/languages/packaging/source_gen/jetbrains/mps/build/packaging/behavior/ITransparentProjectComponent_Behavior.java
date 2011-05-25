@@ -16,7 +16,7 @@ public class ITransparentProjectComponent_Behavior {
   }
 
   public static List<SNode> call_getChildrenToDo_1240564451382(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
   }
 

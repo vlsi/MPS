@@ -13,6 +13,8 @@ import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
 import jetbrains.mps.transformation.test.outputLang.structure.StructureAspectDescriptor;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.transformation.test.outputLang.behavior.BehaviorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("157a9668-bf58-417b-893e-53d86388dc56(jetbrains.mps.transformation.test.outputLang)");
@@ -44,5 +46,10 @@ public class Language extends LanguageRuntime {
   @Override
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
     return new StructureAspectDescriptor();
+  }
+
+  @Override
+  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
+    return new BehaviorAspectDescriptor();
   }
 }

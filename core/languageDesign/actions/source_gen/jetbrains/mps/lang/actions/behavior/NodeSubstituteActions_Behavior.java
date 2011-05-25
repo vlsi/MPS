@@ -35,12 +35,12 @@ public class NodeSubstituteActions_Behavior {
   }
 
   public static List<SNode> call_getBaseConceptCollection_5270353093116089664(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116089664);
   }
 
   public static void call_setBaseConcept_6261424444345978468(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978468, baseConcept);
   }
 

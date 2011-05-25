@@ -22,7 +22,7 @@ public class NonTypesystemRule_Behavior {
   }
 
   public static void call_setBaseConcept_590757823759247531(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759247531, baseConcept);
   }
 

@@ -15,7 +15,7 @@ public class Resource_Behavior {
   }
 
   public static void call_generate_9219036563477424614(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Resource"), "virtual_generate_9219036563477424614", PARAMETERS_9219036563477424614);
   }
 

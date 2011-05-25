@@ -20,7 +20,7 @@ public class IExtractMethodAvailable_Behavior {
   }
 
   public static IExtractMethodRefactoringProcessor call_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (IExtractMethodRefactoringProcessor) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), "virtual_getExtractMethodRefactoringProcessor_1221393367929", PARAMETERS_1221393367929, nodesToExtract);
   }
 

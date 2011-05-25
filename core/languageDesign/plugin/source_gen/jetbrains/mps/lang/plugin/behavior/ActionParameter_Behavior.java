@@ -16,12 +16,12 @@ public class ActionParameter_Behavior {
   }
 
   public static SNode call_getType_1171743928471337193(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), "virtual_getType_1171743928471337193", PARAMETERS_1171743928471337193);
   }
 
   public static SNode call_getFieldDeclaration_1171743928471867409(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), "virtual_getFieldDeclaration_1171743928471867409", PARAMETERS_1171743928471867409);
   }
 

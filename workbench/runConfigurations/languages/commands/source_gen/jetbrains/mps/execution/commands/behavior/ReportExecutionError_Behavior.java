@@ -26,7 +26,7 @@ public class ReportExecutionError_Behavior {
   }
 
   public static SNode call_getException_856705193941282173(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), "virtual_getException_856705193941282181", PARAMETERS_856705193941282173);
   }
 

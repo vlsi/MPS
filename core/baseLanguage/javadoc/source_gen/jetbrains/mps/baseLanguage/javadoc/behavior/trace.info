@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StaticFieldDocReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.StaticFieldDocReference_BehaviorDescriptor" />
+  <unitInfo fileName="BaseVariableDocReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseVariableDocReference_BehaviorDescriptor" />
+  <unitInfo fileName="InheritDocInlineDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.InheritDocInlineDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="CodeSnippet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CodeSnippet_BehaviorDescriptor" />
+  <unitInfo fileName="LinkInlineDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.LinkInlineDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="ClassifierDocReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocReference_BehaviorDescriptor" />
+  <unitInfo fileName="MethodDocReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocReference_BehaviorDescriptor" />
+  <unitInfo fileName="SeeBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.SeeBlockDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="FieldDocReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.FieldDocReference_BehaviorDescriptor" />
+  <unitInfo fileName="CodeInlineDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CodeInlineDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="ValueInlineDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ValueInlineDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="TextCommentLinePart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.TextCommentLinePart_BehaviorDescriptor" />
+  <unitInfo fileName="FieldDocComment_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.FieldDocComment_BehaviorDescriptor" />
+  <unitInfo fileName="DocTypeParameterReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.DocTypeParameterReference_BehaviorDescriptor" />
+  <unitInfo fileName="DocMethodParameterReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.DocMethodParameterReference_BehaviorDescriptor" />
+  <unitInfo fileName="ReturnBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ReturnBlockDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="ThrowsBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ThrowsBlockDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="ParameterBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ParameterBlockDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="DeprecatedBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.DeprecatedBlockDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="SinceBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.SinceBlockDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="VersionBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.VersionBlockDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="AuthorBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.AuthorBlockDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="BaseDocReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocReference_BehaviorDescriptor" />
+  <unitInfo fileName="BaseInlineDocTag_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseInlineDocTag_BehaviorDescriptor" />
+  <unitInfo fileName="BaseParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseParameterReference_BehaviorDescriptor" />
+  <unitInfo fileName="CommentLine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_BehaviorDescriptor" />
+  <unitInfo fileName="BaseBlockDocTag_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseBlockDocTag_BehaviorDescriptor" />
   <unitInfo fileName="AuthorBlockDocTag_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.AuthorBlockDocTag_Behavior" />
+  <unitInfo fileName="ClassifierDocComment_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocComment_BehaviorDescriptor" />
+  <unitInfo fileName="MethodDocComment_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_BehaviorDescriptor" />
+  <unitInfo fileName="HTMLElement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_BehaviorDescriptor" />
+  <unitInfo fileName="InlineTagCommentLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_BehaviorDescriptor" />
+  <unitInfo fileName="BaseDocComment_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor" />
+  <unitInfo fileName="CommentLinePart_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLinePart_BehaviorDescriptor" />
   <unitInfo fileName="ClassifierDocComment_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocComment_Behavior" />
   <unitInfo fileName="MethodDocComment_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_Behavior" />
   <unitInfo fileName="BaseDocComment_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior" />
@@ -8,6 +41,7 @@
   <unitInfo fileName="CommentLine_Behavior.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" />
   <unitInfo fileName="InlineTagCommentLinePart_Behavior.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_Behavior" />
   <unitInfo fileName="HTMLElement_Behavior.java" startLine="14" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2068944020170643572">
     <nodeInfo nodeId="8970989240998299492" fileName="ClassifierDocComment_Behavior.java" startLine="13" startPosition="87" endLine="14" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2068944020170643574" fileName="ClassifierDocComment_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />

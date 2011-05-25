@@ -26,12 +26,12 @@ public class StyleClassItem_Behavior {
   }
 
   public static boolean call_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, cellModel);
   }
 
   public static SNode call_getStyleConstant_1215703564594(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594);
   }
 

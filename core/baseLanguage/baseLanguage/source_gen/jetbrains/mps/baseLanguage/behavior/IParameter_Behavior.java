@@ -16,12 +16,12 @@ public class IParameter_Behavior {
   }
 
   public static String call_getParameterName_1225280611056(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056);
   }
 
   public static SNode call_getDeclaration_1225282371351(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351);
   }
 

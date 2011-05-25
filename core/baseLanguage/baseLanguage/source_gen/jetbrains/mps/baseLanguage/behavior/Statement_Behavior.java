@@ -37,12 +37,12 @@ public class Statement_Behavior {
   }
 
   public static boolean call_isGuardClauseStatement_1237547327995(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
   }
 
   public static void call_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_5412515780383134223, throwables, ignoreMayBeThrowables);
   }
 

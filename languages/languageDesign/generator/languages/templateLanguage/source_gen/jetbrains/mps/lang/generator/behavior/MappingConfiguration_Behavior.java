@@ -66,12 +66,12 @@ public class MappingConfiguration_Behavior {
   }
 
   public static List<SNode> call_getBaseConceptCollection_8360039740498071265(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_8360039740498071265);
   }
 
   public static boolean call_isApplicable_390427525177434695(SNode thisNode, SNode candidate) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "virtual_isApplicable_7839831476331657915", PARAMETERS_390427525177434695, candidate);
   }
 

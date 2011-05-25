@@ -19,7 +19,7 @@ public class BuilderContainer_Behavior {
   }
 
   public static boolean call_isLeaf_932644095877881871(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), "virtual_isLeaf_932644095877881871", PARAMETERS_932644095877881871);
   }
 

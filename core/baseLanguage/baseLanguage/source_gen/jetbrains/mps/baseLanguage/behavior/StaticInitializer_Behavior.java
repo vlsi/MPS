@@ -25,7 +25,7 @@ public class StaticInitializer_Behavior {
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082351(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<Icon>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082351);
   }
 

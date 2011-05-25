@@ -57,22 +57,22 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633083396(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<Icon>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633083396);
   }
 
   public static boolean call_isStatic_8986964027630472402(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472402);
   }
 
   public static Icon call_getAdditionalIcon_8884554759541376072(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541376072);
   }
 
   public static String call_getFqName_7448855087283424807(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getFqName_1213877404258", PARAMETERS_7448855087283424807);
   }
 

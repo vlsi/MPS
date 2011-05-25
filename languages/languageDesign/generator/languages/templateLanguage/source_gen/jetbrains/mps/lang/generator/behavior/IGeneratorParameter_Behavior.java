@@ -15,7 +15,7 @@ public class IGeneratorParameter_Behavior {
   }
 
   public static String call_getUniqueId_650531548511609559(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.IGeneratorParameter"), "virtual_getUniqueId_650531548511609559", PARAMETERS_650531548511609559);
   }
 

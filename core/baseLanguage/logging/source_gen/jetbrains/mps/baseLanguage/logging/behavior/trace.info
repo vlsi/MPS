@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PrintStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.behavior.PrintStatement_BehaviorDescriptor" />
+  <unitInfo fileName="LogStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.behavior.LogStatement_BehaviorDescriptor" />
   <unitInfo fileName="LogStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.behavior.LogStatement_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2511103526757020849">
     <scopeInfo nodeId="2511103526757020851" fileName="LogStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

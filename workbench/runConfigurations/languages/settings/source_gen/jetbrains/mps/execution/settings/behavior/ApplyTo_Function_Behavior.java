@@ -24,12 +24,12 @@ public class ApplyTo_Function_Behavior {
   }
 
   public static SNode call_getJavaMethod_946964771156066981(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066981);
   }
 
   public static SNode call_getPublicJavaMethod_203908296139519015(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519015);
   }
 

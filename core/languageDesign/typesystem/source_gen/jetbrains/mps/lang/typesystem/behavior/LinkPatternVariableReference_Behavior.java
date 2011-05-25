@@ -18,7 +18,7 @@ public class LinkPatternVariableReference_Behavior {
   }
 
   public static void call_abxcdef_1225210740874(SNode thisNode, @Deprecated Object o) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), "virtual_abxcdef_1225210740874", PARAMETERS_1225210740874, o);
   }
 

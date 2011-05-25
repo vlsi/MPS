@@ -16,7 +16,7 @@ public class BaseClassifierType_Behavior {
   }
 
   public static List<SNode> call_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), "virtual_getMembers_1213877402148", PARAMETERS_1213877402148, contextNode);
   }
 

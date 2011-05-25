@@ -15,7 +15,7 @@ public class TemplateArgumentPatternRef_Behavior {
   }
 
   public static String call_getVariableName_2902001550281937661(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"), "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550281937661);
   }
 

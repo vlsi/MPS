@@ -28,7 +28,7 @@ public class IMainClass_Behavior {
   }
 
   public static String call_getUnitName_4482685194810363969(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.runConfigurations.structure.IMainClass"), "virtual_getUnitName_4482685194810363969", PARAMETERS_4482685194810363969);
   }
 

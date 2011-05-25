@@ -23,7 +23,7 @@ public class ForStatement_Behavior {
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550965(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550965);
   }
 

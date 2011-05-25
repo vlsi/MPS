@@ -215,27 +215,27 @@ public class EditorCellModel_Behavior {
   }
 
   public static String call_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
   }
 
   public static String call_getOpeningText_1220339714057(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
   }
 
   public static String call_getClosingText_1220339738643(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
   }
 
   public static int call_getDefaultFontStyle_1221472292001(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Integer) descriptor.invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
   }
 
   public static boolean call_isCellIdInitialized_1229948571177(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
   }
 

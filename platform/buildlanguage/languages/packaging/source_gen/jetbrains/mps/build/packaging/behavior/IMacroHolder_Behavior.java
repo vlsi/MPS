@@ -55,12 +55,12 @@ public class IMacroHolder_Behavior {
   }
 
   public static String call_getPath_1234976932856(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getPath_1234976932856", PARAMETERS_1234976932856);
   }
 
   public static List<String> call_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<String>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getAllMacroNames_1234975567387", PARAMETERS_1234975567387, addBasedir);
   }
 

@@ -16,12 +16,12 @@ public class GenerationContextOp_PatternRef_Behavior {
   }
 
   public static SNode call_getTarget_1758784108620114792(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"), "virtual_getTarget_1758784108620114792", PARAMETERS_1758784108620114792);
   }
 
   public static void call_setTarget_1758784108620254533(SNode thisNode, SNode target) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"), "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254533, target);
   }
 

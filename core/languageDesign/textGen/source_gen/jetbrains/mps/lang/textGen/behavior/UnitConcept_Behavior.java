@@ -15,7 +15,7 @@ public class UnitConcept_Behavior {
   }
 
   public static String call_getUnitName_3822000666564591112(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.UnitConcept"), "virtual_getUnitName_3822000666564591112", PARAMETERS_3822000666564591112);
   }
 

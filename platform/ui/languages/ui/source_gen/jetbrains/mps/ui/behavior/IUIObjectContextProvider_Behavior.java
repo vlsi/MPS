@@ -30,22 +30,22 @@ public class IUIObjectContextProvider_Behavior {
   }
 
   public static boolean call_shouldReturnValue_8923564134259848103(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259848103);
   }
 
   public static SNode call_getContainer_8923564134258257521(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258257521);
   }
 
   public static SNode call_getContextExpression_8923564134258345446(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345446);
   }
 
   public static SNode call_getContext_8923564134258345451(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258345451);
   }
 

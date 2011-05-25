@@ -11,6 +11,8 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
 import jetbrains.mps.bootstrap.helgins.test.structure.StructureAspectDescriptor;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.bootstrap.helgins.test.behavior.BehaviorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("145670e6-4b63-4079-b9f0-4a07fca69426(jetbrains.mps.bootstrap.helgins.test)");
@@ -39,5 +41,10 @@ public class Language extends LanguageRuntime {
   @Override
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
     return new StructureAspectDescriptor();
+  }
+
+  @Override
+  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
+    return new BehaviorAspectDescriptor();
   }
 }

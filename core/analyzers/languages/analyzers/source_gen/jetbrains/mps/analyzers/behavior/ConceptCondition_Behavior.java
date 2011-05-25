@@ -20,7 +20,7 @@ public class ConceptCondition_Behavior {
   }
 
   public static SNode call_getApplicableConcept_4943044633101739075(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.analyzers.structure.ConceptCondition"), "virtual_getApplicableConcept_4413230749907681652", PARAMETERS_4943044633101739075);
   }
 

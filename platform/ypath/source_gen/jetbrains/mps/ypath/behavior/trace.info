@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ITreePathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ITreePathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="IFunctionParam_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IFunctionParam_BehaviorDescriptor" />
+  <unitInfo fileName="IDesignFunction_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IDesignFunction_BehaviorDescriptor" />
+  <unitInfo fileName="IParamFeature_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IParamFeature_BehaviorDescriptor" />
+  <unitInfo fileName="IParamFeatureFun_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IParamFeatureFun_BehaviorDescriptor" />
+  <unitInfo fileName="TreePath_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePath_BehaviorDescriptor" />
+  <unitInfo fileName="IFeature_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IFeature_BehaviorDescriptor" />
+  <unitInfo fileName="GFCardinalParamFun_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFCardinalParamFun_BehaviorDescriptor" />
+  <unitInfo fileName="GFGetterParamFun_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFGetterParamFun_BehaviorDescriptor" />
+  <unitInfo fileName="ParamSequenceFeature_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParamSequenceFeature_BehaviorDescriptor" />
+  <unitInfo fileName="ParamFeatureSizeFun_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParamFeatureSizeFun_BehaviorDescriptor" />
+  <unitInfo fileName="ParamFeatureSequenceFun_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParamFeatureSequenceFun_BehaviorDescriptor" />
+  <unitInfo fileName="ParamFeatureGetFun_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParamFeatureGetFun_BehaviorDescriptor" />
+  <unitInfo fileName="ParamListFeature_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParamListFeature_BehaviorDescriptor" />
+  <unitInfo fileName="NodeKindDefaultCase_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.NodeKindDefaultCase_BehaviorDescriptor" />
+  <unitInfo fileName="NodeKindSpecificCase_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.NodeKindSpecificCase_BehaviorDescriptor" />
+  <unitInfo fileName="VisitBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.VisitBlock_BehaviorDescriptor" />
+  <unitInfo fileName="MatchDefaultPropertyOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.MatchDefaultPropertyOperation_BehaviorDescriptor" />
+  <unitInfo fileName="MatchPropertyOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.MatchPropertyOperation_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyGetter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.PropertyGetter_BehaviorDescriptor" />
+  <unitInfo fileName="KindBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.KindBlock_BehaviorDescriptor" />
+  <unitInfo fileName="MatchKindOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.MatchKindOperation_BehaviorDescriptor" />
+  <unitInfo fileName="WhereBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.WhereBlock_BehaviorDescriptor" />
+  <unitInfo fileName="WhereOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.WhereOperation_BehaviorDescriptor" />
+  <unitInfo fileName="IterateOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IterateOperation_BehaviorDescriptor" />
+  <unitInfo fileName="FromOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FromOperation_BehaviorDescriptor" />
+  <unitInfo fileName="GeneratorFunctionParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GeneratorFunctionParam_BehaviorDescriptor" />
+  <unitInfo fileName="ExpressionFunctionParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ExpressionFunctionParam_BehaviorDescriptor" />
+  <unitInfo fileName="NodeTypeFunctionParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.NodeTypeFunctionParam_BehaviorDescriptor" />
+  <unitInfo fileName="ParamFunctionParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParamFunctionParam_BehaviorDescriptor" />
+  <unitInfo fileName="ValueFunctionParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ValueFunctionParam_BehaviorDescriptor" />
+  <unitInfo fileName="IndexFunctionParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IndexFunctionParam_BehaviorDescriptor" />
+  <unitInfo fileName="NodeFunctionParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.NodeFunctionParam_BehaviorDescriptor" />
+  <unitInfo fileName="VisitParameterDeclarationList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.VisitParameterDeclarationList_BehaviorDescriptor" />
+  <unitInfo fileName="VisitNodesStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.VisitNodesStatement_BehaviorDescriptor" />
+  <unitInfo fileName="SwitchNodeKindStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.SwitchNodeKindStatement_BehaviorDescriptor" />
+  <unitInfo fileName="VisitParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.VisitParameterReference_BehaviorDescriptor" />
+  <unitInfo fileName="VisitParameterDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.VisitParameterDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="VisitChildrenExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.VisitChildrenExpression_BehaviorDescriptor" />
+  <unitInfo fileName="NodeKindCase_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.NodeKindCase_BehaviorDescriptor" />
+  <unitInfo fileName="TreeNodeKindReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreeNodeKindReference_BehaviorDescriptor" />
+  <unitInfo fileName="TreeNodeKindOccurrence_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreeNodeKindOccurrence_BehaviorDescriptor" />
+  <unitInfo fileName="TreePathAdapterExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathAdapterExpression_BehaviorDescriptor" />
+  <unitInfo fileName="TreePathOperationExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathOperationExpression_BehaviorDescriptor" />
+  <unitInfo fileName="LambdaMethodParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.LambdaMethodParameter_BehaviorDescriptor" />
+  <unitInfo fileName="LambdaMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.LambdaMethod_BehaviorDescriptor" />
+  <unitInfo fileName="TreePathCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathCreator_BehaviorDescriptor" />
   <unitInfo fileName="TreeNodeKindOccurrence_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreeNodeKindOccurrence_Behavior" />
   <unitInfo fileName="ListFeature_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ListFeature_Behavior" />
   <unitInfo fileName="TreeNodeKindReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreeNodeKindReference_Behavior" />
@@ -9,10 +56,27 @@
   <unitInfo fileName="GFGetterParamFun_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFGetterParamFun_Behavior" />
   <unitInfo fileName="MatchPropertyOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.MatchPropertyOperation_Behavior" />
   <unitInfo fileName="NodeKindSpecificCase_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.NodeKindSpecificCase_Behavior" />
+  <unitInfo fileName="IGenericFeature_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IGenericFeature_BehaviorDescriptor" />
   <unitInfo fileName="LambdaMethodParameter_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.ypath.behavior.LambdaMethodParameter_Behavior" />
+  <unitInfo fileName="ChildrenBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ChildrenBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ParentBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParentBlock_BehaviorDescriptor" />
+  <unitInfo fileName="GFGetterFun_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFGetterFun_BehaviorDescriptor" />
+  <unitInfo fileName="GFCardinalFun_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFCardinalFun_BehaviorDescriptor" />
+  <unitInfo fileName="ToStringFun_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ToStringFun_BehaviorDescriptor" />
+  <unitInfo fileName="TargetTypeFun_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TargetTypeFun_BehaviorDescriptor" />
+  <unitInfo fileName="ParameterQueryFun_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParameterQueryFun_BehaviorDescriptor" />
+  <unitInfo fileName="FeatureSequenceFun_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureSequenceFun_BehaviorDescriptor" />
+  <unitInfo fileName="FeatureSizeFun_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureSizeFun_BehaviorDescriptor" />
+  <unitInfo fileName="FeatureGetFun_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureGetFun_BehaviorDescriptor" />
   <unitInfo fileName="ParentBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParentBlock_Behavior" />
   <unitInfo fileName="VisitChildrenExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.behavior.VisitChildrenExpression_Behavior" />
+  <unitInfo fileName="ParameterWrapper_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParameterWrapper_BehaviorDescriptor" />
+  <unitInfo fileName="SequenceFeature_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ypath.behavior.SequenceFeature_BehaviorDescriptor" />
+  <unitInfo fileName="ListFeature_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ListFeature_BehaviorDescriptor" />
+  <unitInfo fileName="TreeNodeKindProperty_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreeNodeKindProperty_BehaviorDescriptor" />
+  <unitInfo fileName="TreeNodeKind_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreeNodeKind_BehaviorDescriptor" />
   <unitInfo fileName="IterateOperation_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IterateOperation_Behavior" />
+  <unitInfo fileName="TreePathAspect_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_BehaviorDescriptor" />
   <unitInfo fileName="FeatureGetFun_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureGetFun_Behavior" />
   <unitInfo fileName="MatchDefaultPropertyOperation_Behavior.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ypath.behavior.MatchDefaultPropertyOperation_Behavior" />
   <unitInfo fileName="GenericFeature_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GenericFeature_Behavior" />
@@ -25,6 +89,9 @@
   <unitInfo fileName="TreePathType_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathType_Behavior" />
   <unitInfo fileName="TreeNodeKindProperty_Behavior.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreeNodeKindProperty_Behavior" />
   <unitInfo fileName="TreeNodeKind_Behavior.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreeNodeKind_Behavior" />
+  <unitInfo fileName="TreePathType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathType_BehaviorDescriptor" />
+  <unitInfo fileName="GenericParamFeature_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GenericParamFeature_BehaviorDescriptor" />
+  <unitInfo fileName="GenericFeature_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GenericFeature_BehaviorDescriptor" />
   <unitInfo fileName="GFCardinalFun_Behavior.java" startLine="19" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFCardinalFun_Behavior$QuotationClass_6qd3p4_a0a0b" />
   <unitInfo fileName="TargetTypeFun_Behavior.java" startLine="19" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TargetTypeFun_Behavior$QuotationClass_tb0bse_a0a0b" />
   <unitInfo fileName="FeatureSizeFun_Behavior.java" startLine="19" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureSizeFun_Behavior$QuotationClass_oaigro_a0a0b" />
@@ -32,6 +99,7 @@
   <unitInfo fileName="GFGetterFun_Behavior.java" startLine="22" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFGetterFun_Behavior$QuotationClass_kkk3v2_a0a0b" />
   <unitInfo fileName="GenericParamFeature_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GenericParamFeature_Behavior" />
   <unitInfo fileName="TreePathAdapterExpression_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathAdapterExpression_Behavior" />
+  <unitInfo fileName="TreePathOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathOperation_BehaviorDescriptor" />
   <unitInfo fileName="GFCardinalFun_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.behavior.GFCardinalFun_Behavior" />
   <unitInfo fileName="TargetTypeFun_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TargetTypeFun_Behavior" />
   <unitInfo fileName="FeatureSizeFun_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureSizeFun_Behavior" />
@@ -47,6 +115,7 @@
   <unitInfo fileName="TreePathAspect_Behavior.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior" />
   <unitInfo fileName="IFeature_Behavior.java" startLine="13" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ypath.behavior.IFeature_Behavior" />
   <unitInfo fileName="ChildrenBlock_Behavior.java" startLine="14" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ChildrenBlock_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.ypath.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877220697">
     <nodeInfo nodeId="1213877220700" fileName="ParameterQueryFun_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877220711" fileName="ParameterQueryFun_Behavior.java" startLine="20" startPosition="34" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -51,17 +51,17 @@ public class CompartmentProviderStatement_Behavior {
   }
 
   public static boolean call_shouldReturnValue_8923564134259851767(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259851767);
   }
 
   public static SNode call_getContextExpression_8923564134258345463(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345463);
   }
 
   public static SNode call_getContainer_8923564134258348474(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CompartmentProviderStatement"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348474);
   }
 

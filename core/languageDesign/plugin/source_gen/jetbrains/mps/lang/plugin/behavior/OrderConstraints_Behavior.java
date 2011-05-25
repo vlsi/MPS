@@ -16,12 +16,12 @@ public class OrderConstraints_Behavior {
   }
 
   public static SNode call_getOrder_3038738109029048953(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048953);
   }
 
   public static boolean call_presents_1499919975383879508(SNode thisNode, SNode tab) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383879508, tab);
   }
 

@@ -26,7 +26,7 @@ public class ExtractStatementListExpression_Behavior {
   }
 
   public static List<SNode> call_getLocalVariableElements_3196918548952834932(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), "virtual_getLocalVariableElements_1238805763253", PARAMETERS_3196918548952834932);
   }
 

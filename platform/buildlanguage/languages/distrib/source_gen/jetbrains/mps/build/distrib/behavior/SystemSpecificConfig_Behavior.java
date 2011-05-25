@@ -52,12 +52,12 @@ public class SystemSpecificConfig_Behavior {
   }
 
   public static String call_getVMOptionsFilePath_1231769123888(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.SystemSpecificConfig"), "virtual_getVMOptionsFilePath_1231769123888", PARAMETERS_1231769123888);
   }
 
   public static List<SNode> call_getAllUsedVariable_1234793567442(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.SystemSpecificConfig"), "virtual_getAllUsedVariable_1234793567442", PARAMETERS_1234793567442);
   }
 

@@ -20,7 +20,7 @@ public class AbstractComponent_Behavior {
   }
 
   public static SNode call_getConceptDeclaration_7055725856388417603(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent"), "virtual_getConceptDeclaration_7055725856388417603", PARAMETERS_7055725856388417603);
   }
 

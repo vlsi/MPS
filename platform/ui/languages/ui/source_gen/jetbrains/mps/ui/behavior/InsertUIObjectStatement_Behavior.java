@@ -28,12 +28,12 @@ public class InsertUIObjectStatement_Behavior {
   }
 
   public static boolean call_shouldReturnValue_3091159734392475596(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.InsertUIObjectStatement"), "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_3091159734392475596);
   }
 
   public static SNode call_expectedContextType_5197527271413889662(SNode thisNode, SNode belongsTo) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.InsertUIObjectStatement"), "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889662, belongsTo);
   }
 

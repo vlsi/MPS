@@ -43,12 +43,12 @@ public class ICompositeComponent_Behavior {
   }
 
   public static String call_getExcludes_1213877279373(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "virtual_getExcludes_1213877279373", PARAMETERS_1213877279373);
   }
 
   public static String call_getIncludes_1213877279430(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "virtual_getIncludes_1213877279430", PARAMETERS_1213877279430);
   }
 

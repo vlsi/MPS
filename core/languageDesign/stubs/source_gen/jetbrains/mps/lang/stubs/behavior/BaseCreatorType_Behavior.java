@@ -22,7 +22,7 @@ public class BaseCreatorType_Behavior {
   }
 
   public static List<SNode> call_getMembers_5553449326502623283(SNode thisNode, SNode contextNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.BaseCreatorType"), "virtual_getMembers_1213877402148", PARAMETERS_5553449326502623283, contextNode);
   }
 

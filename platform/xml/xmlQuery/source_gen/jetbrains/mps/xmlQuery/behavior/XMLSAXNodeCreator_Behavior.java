@@ -20,7 +20,7 @@ public class XMLSAXNodeCreator_Behavior {
   }
 
   public static SNode call_getExpectedReturnType_2268737274628969541(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2268737274628969541);
   }
 

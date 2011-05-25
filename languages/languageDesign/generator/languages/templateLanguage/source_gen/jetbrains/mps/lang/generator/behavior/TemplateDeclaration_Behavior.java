@@ -27,12 +27,12 @@ public class TemplateDeclaration_Behavior {
   }
 
   public static SNode call_getBaseConcept_8952337903384729127(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384729127);
   }
 
   public static void call_setBaseConcept_390427525177435267(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_390427525177435267, baseConcept);
   }
 

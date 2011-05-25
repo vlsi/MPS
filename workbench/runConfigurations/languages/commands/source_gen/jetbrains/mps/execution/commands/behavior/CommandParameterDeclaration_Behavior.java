@@ -36,7 +36,7 @@ public class CommandParameterDeclaration_Behavior {
   }
 
   public static boolean call_isInitializable_856705193941282038(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038);
   }
 

@@ -34,7 +34,7 @@ public class SNodeTypeCastExpression_Behavior {
   }
 
   public static String call_getPresentation_2749027262099690841(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841);
   }
 

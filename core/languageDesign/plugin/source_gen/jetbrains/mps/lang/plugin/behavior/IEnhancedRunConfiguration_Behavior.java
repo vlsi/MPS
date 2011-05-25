@@ -22,7 +22,7 @@ public class IEnhancedRunConfiguration_Behavior {
   }
 
   public static List<SNode> call_getAdditionalParameters_3636700473138841189(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration"), "virtual_getAdditionalParameters_3636700473138841189", PARAMETERS_3636700473138841189);
   }
 

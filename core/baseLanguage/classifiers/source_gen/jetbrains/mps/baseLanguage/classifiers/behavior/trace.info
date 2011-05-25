@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IMemberOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_BehaviorDescriptor" />
+  <unitInfo fileName="IClassifierPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_BehaviorDescriptor" />
+  <unitInfo fileName="SuperClassifierExpresson_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_BehaviorDescriptor" />
   <unitInfo fileName="IMemberOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_Behavior" />
+  <unitInfo fileName="ThisClassifierExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_BehaviorDescriptor" />
+  <unitInfo fileName="BaseClassifierType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor" />
+  <unitInfo fileName="IMember_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor" />
+  <unitInfo fileName="IClassifier_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor" />
   <unitInfo fileName="SuperClassifierExpresson_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_Behavior" />
+  <unitInfo fileName="DefaultClassifierType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_BehaviorDescriptor" />
   <unitInfo fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_Behavior" />
   <unitInfo fileName="DefaultClassifierType_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_Behavior" />
   <unitInfo fileName="BaseClassifierType_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavior" />
   <unitInfo fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_Behavior" />
   <unitInfo fileName="ThisClassifierExpression_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior" />
+  <unitInfo fileName="DefaultClassifierFieldAccessOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_BehaviorDescriptor" />
+  <unitInfo fileName="DefaultClassifierMethodCallOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodCallOperation_BehaviorDescriptor" />
+  <unitInfo fileName="DefaultClassifierFieldDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="IClassifierPart_Behavior.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_Behavior" />
+  <unitInfo fileName="DefaultClassifierMethodDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="DefaultClassifier_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifier_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="IMember_Behavior.java" startLine="15" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior" />
   <unitInfo fileName="IClassifier_Behavior.java" startLine="19" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior" />
   <root nodeId="1213877255427">

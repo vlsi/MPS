@@ -25,12 +25,12 @@ public class DataFlowBuilderDeclaration_Behavior {
   }
 
   public static SNode call_getBaseConcept_8952337903384725404(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725404);
   }
 
   public static void call_setBaseConcept_6261424444345978709(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978709, baseConcept);
   }
 

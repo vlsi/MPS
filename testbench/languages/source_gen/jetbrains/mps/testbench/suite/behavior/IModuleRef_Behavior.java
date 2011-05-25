@@ -17,12 +17,12 @@ public class IModuleRef_Behavior {
   }
 
   public static ModuleReference call_moduleReference_1280144168199513544(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (ModuleReference) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), "virtual_moduleReference_1280144168199513544", PARAMETERS_1280144168199513544);
   }
 
   public static String call_presentation_1280144168199745474(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), "virtual_presentation_1280144168199745474", PARAMETERS_1280144168199745474);
   }
 

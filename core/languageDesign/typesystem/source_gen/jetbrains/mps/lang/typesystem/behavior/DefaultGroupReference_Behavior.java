@@ -19,7 +19,7 @@ public class DefaultGroupReference_Behavior {
   }
 
   public static String call_createGeneratedNodeId_7342618720440051599(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"), "virtual_createGeneratedNodeId_7342618720440051599", PARAMETERS_7342618720440051599);
   }
 

@@ -22,7 +22,7 @@ public class LookRegexp_Behavior {
   }
 
   public static String call_getString_1222861536253(SNode thisNode, List<SNode> vars) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222861536253, vars);
   }
 

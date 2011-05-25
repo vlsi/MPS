@@ -34,12 +34,12 @@ public class OrRegexp_Behavior {
   }
 
   public static String call_getString_1222434354398(SNode thisNode, List<SNode> vars) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222434354398, vars);
   }
 
   public static boolean call_needParentheses_1353467374623956023(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), "virtual_needParentheses_1353467374623880338", PARAMETERS_1353467374623956023);
   }
 

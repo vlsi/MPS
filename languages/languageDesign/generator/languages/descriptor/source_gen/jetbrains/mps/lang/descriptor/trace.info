@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Language.java" startLine="18" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.descriptor.Language" />
   <unitInfo fileName="Generator.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.descriptor.Generator" />
+  <unitInfo fileName="Language.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.descriptor.Language" />
 </debugInfo>
 

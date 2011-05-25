@@ -24,12 +24,12 @@ public class RunConfigCreator_Behavior {
   }
 
   public static SNode call_getCreatorTypeParameter_5528847031674330314(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), "virtual_getCreatorTypeParameter_5528847031674330314", PARAMETERS_5528847031674330314);
   }
 
   public static SNode call_getFunction_5528847031674340387(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), "virtual_getFunction_5528847031674340387", PARAMETERS_5528847031674340387);
   }
 

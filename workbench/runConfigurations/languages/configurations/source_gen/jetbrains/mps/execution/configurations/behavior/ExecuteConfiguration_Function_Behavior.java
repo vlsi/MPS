@@ -33,12 +33,12 @@ public class ExecuteConfiguration_Function_Behavior {
   }
 
   public static List<SNode> call_getLocalVariableElements_6538811202682334478(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), "virtual_getLocalVariableElements_1238805763253", PARAMETERS_6538811202682334478);
   }
 
   public static List<SNode> call_getParameters_3091009652595815824(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), "virtual_getParameters_1213877374450", PARAMETERS_3091009652595815824);
   }
 

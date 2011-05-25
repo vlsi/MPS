@@ -17,12 +17,12 @@ public class IGenericFeature_Behavior {
   }
 
   public static boolean call_isSingleCardinality_1213877249147(SNode thisNode, SNode param) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
   }
 
   public static SNode call_getterExpression_1213877249152(SNode thisNode, SNode srcExpr, SNode param, ITemplateGenerator generator) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, srcExpr, param, generator);
   }
 

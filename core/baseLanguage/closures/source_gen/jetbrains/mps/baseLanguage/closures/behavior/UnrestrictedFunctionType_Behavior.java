@@ -67,7 +67,7 @@ public class UnrestrictedFunctionType_Behavior {
   }
 
   public static String call_getRuntimeSignature_3841277577642912754(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getRuntimeSignature_1213877404927", PARAMETERS_3841277577642912754);
   }
 

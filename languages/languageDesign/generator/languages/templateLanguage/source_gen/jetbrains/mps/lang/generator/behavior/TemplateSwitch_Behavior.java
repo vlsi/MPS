@@ -35,12 +35,12 @@ public class TemplateSwitch_Behavior {
   }
 
   public static List<SNode> call_getBaseConceptCollection_8360039740498070955(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_8360039740498070955);
   }
 
   public static void call_setBaseConcept_7656801780400891052(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_7656801780400891052, baseConcept);
   }
 

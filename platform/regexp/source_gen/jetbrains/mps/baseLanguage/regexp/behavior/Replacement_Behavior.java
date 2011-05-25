@@ -19,7 +19,7 @@ public class Replacement_Behavior {
   }
 
   public static String call_toString_3796137614137538905(SNode thisNode, SNode search) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Replacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538905, search);
   }
 

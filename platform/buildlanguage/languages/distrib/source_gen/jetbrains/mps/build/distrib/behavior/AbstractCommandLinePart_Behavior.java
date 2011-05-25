@@ -15,7 +15,7 @@ public class AbstractCommandLinePart_Behavior {
   }
 
   public static String call_getText_1231864533228(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.AbstractCommandLinePart"), "virtual_getText_1231864533228", PARAMETERS_1231864533228);
   }
 

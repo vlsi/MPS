@@ -23,7 +23,7 @@ public class MultitabbedEditorTab_Behavior {
   }
 
   public static SNode call_createType_144706109457735808(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab"), "virtual_createType_1213877527970", PARAMETERS_144706109457735808);
   }
 

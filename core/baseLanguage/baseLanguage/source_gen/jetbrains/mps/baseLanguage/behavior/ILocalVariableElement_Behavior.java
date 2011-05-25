@@ -19,7 +19,7 @@ public class ILocalVariableElement_Behavior {
   }
 
   public static SNode call_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"), "virtual_getLocalVariableDeclaration_1238803857389", PARAMETERS_1238803857389);
   }
 

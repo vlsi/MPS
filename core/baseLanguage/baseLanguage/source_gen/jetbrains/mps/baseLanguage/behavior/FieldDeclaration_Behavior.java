@@ -114,27 +114,27 @@ public class FieldDeclaration_Behavior {
   }
 
   public static Icon call_getAdditionalIcon_8884554759541377970(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377970);
   }
 
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459890);
   }
 
   public static String call_getSuffix_3012473318495506736(SNode thisNode, Project project) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506736, project);
   }
 
   public static String call_getPrefix_3012473318495506730(SNode thisNode, Project project) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506730, project);
   }
 
   public static String call_getTraceableProperty_2496361171403550861(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550861);
   }
 

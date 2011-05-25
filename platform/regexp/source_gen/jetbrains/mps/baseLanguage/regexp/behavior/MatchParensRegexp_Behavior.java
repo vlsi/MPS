@@ -36,12 +36,12 @@ public class MatchParensRegexp_Behavior {
   }
 
   public static String call_getString_1222435297321(SNode thisNode, List<SNode> vars) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222435297321, vars);
   }
 
   public static SNode call_getValue_4204903511793602684(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), "virtual_getValue_1224857430232", PARAMETERS_4204903511793602684);
   }
 

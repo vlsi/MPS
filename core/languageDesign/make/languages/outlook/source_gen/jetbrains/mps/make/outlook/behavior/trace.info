@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Outlook_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.outlook.behavior.Outlook_Behavior" />
+  <unitInfo fileName="Outlook_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.make.outlook.behavior.Outlook_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.outlook.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2511103526757027801">
     <scopeInfo nodeId="2511103526757027803" fileName="Outlook_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

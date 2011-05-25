@@ -15,7 +15,7 @@ public class IInternalType_Behavior {
   }
 
   public static SNode call_getPublicType_1213877443338(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IInternalType"), "virtual_getPublicType_1213877443338", PARAMETERS_1213877443338);
   }
 

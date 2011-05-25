@@ -26,12 +26,12 @@ public class SeqRegexp_Behavior {
   }
 
   public static String call_getString_1222436755347(SNode thisNode, List<SNode> vars) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222436755347, vars);
   }
 
   public static boolean call_needParentheses_1353467374623955980(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), "virtual_needParentheses_1353467374623880338", PARAMETERS_1353467374623955980);
   }
 

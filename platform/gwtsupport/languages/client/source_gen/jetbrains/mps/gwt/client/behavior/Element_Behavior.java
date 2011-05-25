@@ -15,7 +15,7 @@ public class Element_Behavior {
   }
 
   public static String call_getXmlElement_3852159904898386595(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Element"), "virtual_getXmlElement_3852159904898386595", PARAMETERS_3852159904898386595);
   }
 

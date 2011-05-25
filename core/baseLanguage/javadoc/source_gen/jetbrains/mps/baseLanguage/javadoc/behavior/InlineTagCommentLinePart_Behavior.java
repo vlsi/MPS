@@ -30,7 +30,7 @@ public class InlineTagCommentLinePart_Behavior {
   }
 
   public static NodeCaretPair call_smartDelete_3633133276124360200(SNode thisNode, boolean isBegining) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (NodeCaretPair) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, isBegining);
   }
 
