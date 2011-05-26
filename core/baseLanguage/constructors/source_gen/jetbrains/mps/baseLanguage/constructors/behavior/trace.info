@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ListCustomParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.ListCustomParameter_BehaviorDescriptor" />
+  <unitInfo fileName="ListParameterReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.ListParameterReference_BehaviorDescriptor" />
+  <unitInfo fileName="CustomArgumentClause_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomArgumentClause_BehaviorDescriptor" />
+  <unitInfo fileName="ListArgumentsClause_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.ListArgumentsClause_BehaviorDescriptor" />
+  <unitInfo fileName="CustomConstructorParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorParameterReference_BehaviorDescriptor" />
+  <unitInfo fileName="ArgumentClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.ArgumentClause_BehaviorDescriptor" />
+  <unitInfo fileName="CustomConstructorUsage_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorUsage_BehaviorDescriptor" />
   <unitInfo fileName="CustomConstructor_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_Behavior" />
+  <unitInfo fileName="CustomConstructorParameter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorParameter_BehaviorDescriptor" />
+  <unitInfo fileName="CustomConstructorContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorContainer_BehaviorDescriptor" />
+  <unitInfo fileName="CustomConstructor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.BehaviorAspectDescriptor" />
   <root nodeId="3041831561922029481">
     <nodeInfo nodeId="3041831561922044926" fileName="CustomConstructor_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3041831561922029483" fileName="CustomConstructor_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />

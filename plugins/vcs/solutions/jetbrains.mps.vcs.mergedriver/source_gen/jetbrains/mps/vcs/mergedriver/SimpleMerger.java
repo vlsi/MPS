@@ -7,16 +7,15 @@ import java.io.FileInputStream;
 import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.FileUtil;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
-/*package*/ class SimpleMerger implements FileMerger {
+/*package*/ class SimpleMerger extends FileMerger {
   private static byte[] LINE_SEPARATOR = System.getProperty("line.separator").getBytes();
 
-  public SimpleMerger() {
+  /*package*/ SimpleMerger() {
   }
 
-  public int mergeFiles(File baseFile, File localFile, File latestFile, boolean overwrite, byte[] conflictStart, byte[] conflictEnd, byte[] separator) {
+  protected int mergeFiles(File baseFile, File localFile, File latestFile) {
     FileInputStream baseIS = null;
     FileInputStream localIS = null;
     FileInputStream latestIS = null;
@@ -29,27 +28,24 @@ import java.io.IOException;
       byte[] baseContent = ReadUtil.read(baseIS);
       FileUtil.closeFileSafe(baseIS);
 
-      out = (overwrite ?
-        new FileOutputStream(baseFile) :
-        System.out
-      );
+      out = getResultStream(baseFile);
 
-      out.write(conflictStart);
+      out.write(myConflictStart);
       out.write(LINE_SEPARATOR);
 
       // current 
       out.write(ReadUtil.read(localIS));
-      out.write(separator);
+      out.write(mySeparator);
       out.write(LINE_SEPARATOR);
 
       // base 
       out.write(baseContent);
-      out.write(separator);
+      out.write(mySeparator);
       out.write(LINE_SEPARATOR);
 
       // other 
       out.write(ReadUtil.read(latestIS));
-      out.write(conflictEnd);
+      out.write(myConflictEnd);
       out.write(LINE_SEPARATOR);
 
       return CONFLICTS;

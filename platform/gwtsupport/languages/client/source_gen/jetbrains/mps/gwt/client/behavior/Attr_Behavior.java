@@ -15,7 +15,7 @@ public class Attr_Behavior {
   }
 
   public static String call_getXmlAttr_3852159904898525999(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Attr"), "virtual_getXmlAttr_3852159904898525999", PARAMETERS_3852159904898525999);
   }
 

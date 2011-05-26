@@ -15,7 +15,7 @@ public class PropertyImplementation_Behavior {
   }
 
   public static boolean call_hasSetter_1213877430658(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), "virtual_hasSetter_1213877430658", PARAMETERS_1213877430658);
   }
 

@@ -16,7 +16,7 @@ public class IPath_Behavior {
   }
 
   public static File call_getFile_1233322718999(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (File) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), "virtual_getFile_1233322718999", PARAMETERS_1233322718999);
   }
 

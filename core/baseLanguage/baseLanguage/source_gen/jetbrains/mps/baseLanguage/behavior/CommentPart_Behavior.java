@@ -23,7 +23,7 @@ public class CommentPart_Behavior {
   }
 
   public static boolean call_isToDo_7236590470026152831(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CommentPart"), "virtual_isToDo_7236590470026152831", PARAMETERS_7236590470026152831);
   }
 

@@ -602,6 +602,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public static LanguageAspect getModelAspect(SModelDescriptor sm) {
+    if (sm == null) return null;
     IModule module = sm.getModule();
     if (!(module instanceof Language)) return null;
 

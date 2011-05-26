@@ -4,24 +4,40 @@ package jetbrains.mpslite;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.structure.DescriptorProvider;
+import jetbrains.mps.smodel.structure.StructureDescriptor;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.language.LanguageRuntimeInterpreted;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
-import jetbrains.mps.smodel.structure.DescriptorProvider;
-import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
-import jetbrains.mpslite.constraints.ConstraintsAspectDescriptor;
-import jetbrains.mps.smodel.structure.StructureDescriptor;
-import jetbrains.mpslite.structure.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)");
 
+  private DescriptorProvider<StructureDescriptor> structureAspect;
+  private DescriptorProvider<BehaviorDescriptor> behaviorAspect;
+  private DescriptorProvider<ConstraintsDescriptor> constraintsAspect;
   private final Collection<TemplateModule> generators;
 
   public Language() {
     generators = TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "5873eca3-8d9f-4d11-8ccd-c8b23f469216(jetbrains.mpslite#1237409422567)"));
+    structureAspect = getAspectDescriptorByClassName("jetbrains.mpslite.structure.StructureAspectDescriptor");
+    behaviorAspect = getAspectDescriptorByClassName("jetbrains.mpslite.behavior.BehaviorAspectDescriptor");
+    constraintsAspect = getAspectDescriptorByClassName("jetbrains.mpslite.constraints.ConstraintsAspectDescriptor");
+
+    if (structureAspect == null) {
+      structureAspect = LanguageRuntimeInterpreted.STRUCTURE_PROVIDER;
+    }
+    if (behaviorAspect == null) {
+      behaviorAspect = LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER;
+    }
+    if (constraintsAspect == null) {
+      constraintsAspect = LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER;
+    }
   }
 
   public String getNamespace() {
@@ -44,11 +60,16 @@ public class Language extends LanguageRuntime {
 
   @Override
   public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
-    return new ConstraintsAspectDescriptor();
+    return constraintsAspect;
   }
 
   @Override
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
-    return new StructureAspectDescriptor();
+    return structureAspect;
+  }
+
+  @Override
+  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
+    return behaviorAspect;
   }
 }

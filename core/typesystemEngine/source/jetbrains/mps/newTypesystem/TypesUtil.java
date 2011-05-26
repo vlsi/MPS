@@ -116,13 +116,13 @@ public class TypesUtil {
     }
     if (left == null || right == null) {
       return false;
-    }   /*
+    }
     if (TypesUtil.isVariable(left) || TypesUtil.isVariable(right)) {
       if (equations != null) {
         equations.addEquation(left, right, info);
-        return true;
       }
-    } */
+      return true;
+    }
     TypeMatchModifier typeMatchModifier = new TypeMatchModifier();
     boolean result = MatchingUtil.matchNodes(left, right, typeMatchModifier, false);
     if (result) {

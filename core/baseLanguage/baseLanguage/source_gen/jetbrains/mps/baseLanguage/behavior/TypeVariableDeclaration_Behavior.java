@@ -56,7 +56,7 @@ public class TypeVariableDeclaration_Behavior {
   }
 
   public static String call_getPresentation_1775412259244835270(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270);
   }
 

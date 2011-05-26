@@ -227,9 +227,9 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.test.TestSafeEquals_Test" file="TestSafeEquals_Test.java">
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test" file="TypesTest_BL_Test.java">

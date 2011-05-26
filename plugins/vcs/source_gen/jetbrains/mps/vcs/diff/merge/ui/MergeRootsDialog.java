@@ -17,13 +17,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.ui.DiffEditorsGroup;
 import jetbrains.mps.vcs.diff.merge.MergeContextState;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import javax.swing.JSplitPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
-import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.SNode;
@@ -54,6 +54,7 @@ public class MergeRootsDialog extends BaseDialog {
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeContextState myStateToRestore;
+  private ActionToolbar myToolbar;
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
     super(mergeModelsDialog, "Merging " + rootName);
@@ -81,10 +82,10 @@ public class MergeRootsDialog extends BaseDialog {
     splitPane.setResizeWeight(0.7);
     MergeRootsDialog.MyGoToNeighbourRootActions neighbourActions = new MergeRootsDialog.MyGoToNeighbourRootActions();
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next());
-    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
-    toolbar.updateActionsImmediately();
+    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+    myToolbar.updateActionsImmediately();
 
-    myContainer.add(toolbar.getComponent(), BorderLayout.NORTH);
+    myContainer.add(myToolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
     highlightAllChanges();
   }
@@ -103,12 +104,13 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   public void rehighlight() {
+    myToolbar.updateActionsImmediately();
     myMineEditor.unhighlightAllChanges();
     myResultEditor.unhighlightAllChanges();
     myRepositoryEditor.unhighlightAllChanges();
 
     if (myResultEditor.getMainEditor().getEditedNode() == null) {
-      SNode node = myMergeContext.getResultModel().getNodeById(myRootId);
+      SNode node = getRootNode(myMergeContext.getResultModel());
       if (node != null) {
         myResultEditor.getMainEditor().editNode(node, myOperationContext);
       }
@@ -166,8 +168,22 @@ public class MergeRootsDialog extends BaseDialog {
     ), changeGroupBuilder, inspector);
   }
 
+  private SNode getRootNode(SModel model) {
+    SNode node = model.getNodeById(myRootId);
+    if (node != null && node.getParent() == null) {
+      return node;
+    }
+    if (model == myMergeContext.getResultModel()) {
+      SNodeId replacement = myMergeContext.getReplacementId(myRootId);
+      if (replacement != null) {
+        return model.getNodeById(replacement);
+      }
+    }
+    return null;
+  }
+
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(myOperationContext, model.getNodeById(myRootId), myModelsDialog.getContentTitles()[index], index == 0);
+    final DiffEditor result = new DiffEditor(myOperationContext, getRootNode(model), myModelsDialog.getContentTitles()[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
@@ -204,7 +220,7 @@ public class MergeRootsDialog extends BaseDialog {
   public void ok() {
     MergeConfirmation.showMergeConfirmationAndTakeAction(this, myMergeContext, myMergeContext.getChangesForRoot(myRootId), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        myMergeContext.applyAllChangesForNonConflictingRoots();
+        myMergeContext.applyChanges(myMergeContext.getApplicableChangesForRoot(myRootId));
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {

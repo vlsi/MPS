@@ -38,7 +38,7 @@ public class BooleanType_Behavior {
   }
 
   public static SNode call_createDefaultTypeExpression_9011026350741579292(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BooleanType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741579292);
   }
 

@@ -23,7 +23,7 @@ public class PersistentConfigurationTemplate_Behavior {
   }
 
   public static SNode call_createType_946964771156066826(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), "virtual_createType_1213877527970", PARAMETERS_946964771156066826);
   }
 

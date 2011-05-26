@@ -51,4 +51,12 @@ public abstract class LanguageRuntime {
   public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
     return LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER;
   }
+
+  protected <T> DescriptorProvider<T> getAspectDescriptorByClassName(String className) {
+    try {
+      return (DescriptorProvider<T>) MPSModuleRepository.getInstance().getLanguage(getNamespace()).getClass(className).newInstance();
+    } catch (Throwable t) {
+      return null;
+    }
+  }
 }

@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ChildFilterBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ChildFilterBlock_BehaviorDescriptor" />
+  <unitInfo fileName="SurroundWithIntentionDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.SurroundWithIntentionDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="GenerateIntentionDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.GenerateIntentionDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="IntentionContextParamReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionContextParamReference_BehaviorDescriptor" />
+  <unitInfo fileName="ExecuteUIBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ExecuteUIBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_childNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />
+  <unitInfo fileName="ChildFilterFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ChildFilterFunction_BehaviorDescriptor" />
+  <unitInfo fileName="IntentionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="QueryBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.QueryBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
+  <unitInfo fileName="ExecuteBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
+  <unitInfo fileName="IsApplicableBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_BehaviorDescriptor" />
+  <unitInfo fileName="DescriptionBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ParameterizedIntentionDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="IntentionContextParameterDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionContextParameterDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ParameterizedIntentionDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_Behavior" />
+  <unitInfo fileName="IntentionDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="BaseIntentionDeclaration_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="IntentionDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BaseIntentionDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior" />
   <root nodeId="1213877237627">
     <nodeInfo nodeId="1213877237631" fileName="IntentionDeclaration_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

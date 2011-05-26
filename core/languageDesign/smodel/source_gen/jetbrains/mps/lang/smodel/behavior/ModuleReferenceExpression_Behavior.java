@@ -36,7 +36,7 @@ public class ModuleReferenceExpression_Behavior {
   }
 
   public static List<IModule> call_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<IModule>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), "virtual_getVisibleModules_4040588429969394404", PARAMETERS_4040588429969394404, scope);
   }
 

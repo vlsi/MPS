@@ -20,7 +20,7 @@ public class ITestable_Behavior {
   }
 
   public static TestRunParameters call_getTestRunParameters_1216045139515(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (TestRunParameters) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_getTestRunParameters_1216045139515", PARAMETERS_1216045139515);
   }
 

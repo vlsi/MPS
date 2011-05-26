@@ -29,7 +29,7 @@ public class TreeSetCreator_Behavior {
   }
 
   public static boolean call_canHaveParameter_2261417478150191164(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164);
   }
 

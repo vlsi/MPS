@@ -40,7 +40,7 @@ public class BaseMappingRule_Behavior {
   }
 
   public static SNode call_getTemplateType_1213877498511(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511);
   }
 

@@ -53,7 +53,7 @@ public class Interface_Behavior {
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551004);
   }
 

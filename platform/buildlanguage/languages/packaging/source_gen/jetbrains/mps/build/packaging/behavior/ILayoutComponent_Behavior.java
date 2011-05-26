@@ -15,7 +15,7 @@ public class ILayoutComponent_Behavior {
   }
 
   public static String call_getPath_1213877230696(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ILayoutComponent"), "virtual_getPath_1213877230696", PARAMETERS_1213877230696);
   }
 

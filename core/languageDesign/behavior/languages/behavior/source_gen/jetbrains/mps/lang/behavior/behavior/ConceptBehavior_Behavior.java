@@ -165,7 +165,7 @@ public class ConceptBehavior_Behavior {
   }
 
   public static void call_setBaseConcept_6261424444345978650(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978650, baseConcept);
   }
 

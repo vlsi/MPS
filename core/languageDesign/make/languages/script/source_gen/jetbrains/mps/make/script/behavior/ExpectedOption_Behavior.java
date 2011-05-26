@@ -23,7 +23,7 @@ public class ExpectedOption_Behavior {
   }
 
   public static String call_classifierName_8853708281362145858(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858);
   }
 

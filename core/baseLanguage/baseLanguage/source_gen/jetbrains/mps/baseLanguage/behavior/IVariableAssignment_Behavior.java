@@ -20,12 +20,12 @@ public class IVariableAssignment_Behavior {
   }
 
   public static boolean call_isCanBeUnused_1223985713603(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), "virtual_isCanBeUnused_1223985713603", PARAMETERS_1223985713603);
   }
 
   public static SNode call_getValue_1224857430232(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), "virtual_getValue_1224857430232", PARAMETERS_1224857430232);
   }
 

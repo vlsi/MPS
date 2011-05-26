@@ -28,7 +28,7 @@ public class MPSDistribution_Behavior {
   }
 
   public static String call_getChildrenTargetDir_4204903511793403791(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.custommps.structure.MPSDistribution"), "virtual_getChildrenTargetDir_1237389224202", PARAMETERS_4204903511793403791);
   }
 

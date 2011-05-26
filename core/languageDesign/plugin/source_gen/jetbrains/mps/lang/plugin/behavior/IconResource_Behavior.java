@@ -68,7 +68,7 @@ public class IconResource_Behavior {
   }
 
   public static void call_generate_8976425910813640826(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.IconResource"), "virtual_generate_9219036563477424614", PARAMETERS_8976425910813640826);
   }
 

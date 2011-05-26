@@ -51,9 +51,6 @@ public class SubTypingRelation extends AbstractRelation {
       RelationBlock block = typesToBlocks.get(result);
       info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(rightTypes.iterator().next()).getEquationInfo();
     }
-    if (result != null) {
-      state.addEquation(node, result, info);
-    }
-    return result != null;
+    return result != null && state.addEquation(node, result, info);
   }
 }

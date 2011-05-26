@@ -20,7 +20,7 @@ public class IntersectionSymbolClassPart_Behavior {
   }
 
   public static String call_getRepresentation_8173814113624650585(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650585);
   }
 

@@ -15,10 +15,6 @@ public class DeleteRootChange extends ModelChange {
     myNodeId = nodeId;
   }
 
-  public SNodeId getNodeId() {
-    return myNodeId;
-  }
-
   @Nullable
   @Override
   public SNodeId getRootId() {
@@ -30,10 +26,12 @@ public class DeleteRootChange extends ModelChange {
     model.getNodeById(myNodeId).delete();
   }
 
+  @NotNull
   protected ModelChange createOppositeChange() {
     return new AddRootChange(getChangeSet().getOppositeChangeSet(), myNodeId);
   }
 
+  @NotNull
   public ChangeType getType() {
     return ChangeType.DELETE;
   }

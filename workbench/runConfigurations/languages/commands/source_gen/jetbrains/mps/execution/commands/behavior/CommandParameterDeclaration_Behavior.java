@@ -32,7 +32,7 @@ public class CommandParameterDeclaration_Behavior {
   }
 
   public static boolean call_generateField_8478830098674441876(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876);
   }
 

@@ -15,7 +15,7 @@ public class IMetaLevelChanger_Behavior {
   }
 
   public static int call_getMetaLevelChange_201537367881074474(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Integer) descriptor.invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), "virtual_getMetaLevelChange_201537367881074474", PARAMETERS_201537367881074474);
   }
 

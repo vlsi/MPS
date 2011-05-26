@@ -61,7 +61,7 @@ public class NamedTupleDeclaration_Behavior {
   }
 
   public static SNode call_getThisType_6742265879766289824(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), "virtual_getThisType_3305065273710880775", PARAMETERS_6742265879766289824);
   }
 

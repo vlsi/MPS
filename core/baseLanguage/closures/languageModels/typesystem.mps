@@ -558,7 +558,7 @@
         <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
         <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
         <property name="strong" nameId="tpd4.7739208407757103785" value="0" />
-        <property name="orientation" nameId="tpd4.7739208407757103786" value="0" />
+        <property name="orientation" nameId="tpd4.7739208407757103786" value="1" />
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4160512568111333312">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4160512568111332200">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.MeetType" typeId="tpd4.1188473524530" id="4160512568111332202">

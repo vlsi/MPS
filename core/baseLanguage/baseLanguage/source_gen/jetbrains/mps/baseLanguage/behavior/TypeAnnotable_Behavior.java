@@ -19,7 +19,7 @@ public class TypeAnnotable_Behavior {
   }
 
   public static SNode call_getTypeAnnotation_1233920952262(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeAnnotable"), "virtual_getTypeAnnotation_1233920952262", PARAMETERS_1233920952262);
   }
 

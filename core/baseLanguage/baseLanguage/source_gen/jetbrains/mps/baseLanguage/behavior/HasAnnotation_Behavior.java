@@ -26,12 +26,12 @@ public class HasAnnotation_Behavior {
   }
 
   public static boolean call_canBeAnnotated_1233076312117(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "virtual_canBeAnnotated_1233076312117", PARAMETERS_1233076312117);
   }
 
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182319200);
   }
 

@@ -25,12 +25,12 @@ public class FeatureAccessConcept_Behavior {
   }
 
   public static void call_fillConcept_8405639817129357299(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), "virtual_fillConcept_1239891562930", PARAMETERS_8405639817129357299, concept, conceptsToTargets, partsToLinks);
   }
 
   public static SNode call_createEditor_8405639817129358591(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), "virtual_createEditor_1239890004879", PARAMETERS_8405639817129358591, conceptsToTargets, partsToLinks);
   }
 

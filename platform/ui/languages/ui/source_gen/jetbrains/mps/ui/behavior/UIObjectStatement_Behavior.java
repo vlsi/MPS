@@ -44,12 +44,12 @@ public class UIObjectStatement_Behavior {
   }
 
   public static boolean call_shouldReturnValue_7109250785404509292(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectStatement"), "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_7109250785404509292);
   }
 
   public static SNode call_expectedContextType_5197527271413889619(SNode thisNode, SNode belongsTo) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectStatement"), "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889619, belongsTo);
   }
 

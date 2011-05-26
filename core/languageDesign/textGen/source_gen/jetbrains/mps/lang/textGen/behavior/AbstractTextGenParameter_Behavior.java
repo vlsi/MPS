@@ -38,7 +38,7 @@ public class AbstractTextGenParameter_Behavior {
   }
 
   public static String call_getGetterName_1234885318469(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469);
   }
 

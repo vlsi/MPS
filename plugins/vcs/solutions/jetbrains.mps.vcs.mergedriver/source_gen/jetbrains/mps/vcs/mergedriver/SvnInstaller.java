@@ -6,6 +6,7 @@ import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.InternalFlag;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import jetbrains.mps.util.StringsIO;
@@ -29,6 +30,21 @@ import com.intellij.openapi.util.SystemInfo;
 
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
+    if (CommandLineGenerator.getSvnkitJar() == null) {
+      return AbstractInstaller.State.INSTALLED;
+    }
+    if (InternalFlag.isInternalMode()) {
+      if (dryRun) {
+        if (InternalRuntimePacker.getFile().exists()) {
+          return AbstractInstaller.State.OUTDATED;
+        } else {
+          return AbstractInstaller.State.NOT_INSTALLED;
+        }
+      } else {
+        InternalRuntimePacker.pack();
+      }
+    }
+
     if (!(myConfigFile.exists())) {
       if (!(dryRun)) {
         Messages.showErrorDialog(myProject, "Could not find Subversion configuration file (~/.subversion/config).", "Subversion Config Not Found");
@@ -58,7 +74,7 @@ import com.intellij.openapi.util.SystemInfo;
           if (cmd.contains("mps-merger.")) {
             // already installed 
 
-            if (dryRun && neq_k2wvr2_a0a2a2a3a1a7a0(line, configLine)) {
+            if (dryRun && neq_k2wvr2_a0a2a2a3a1a01a0(line, configLine)) {
               return AbstractInstaller.State.OUTDATED;
             }
             lineToReplace = i;
@@ -128,7 +144,7 @@ import com.intellij.openapi.util.SystemInfo;
     }
 
     if (dryRun) {
-      if (lineToReplace != -1 && eq_k2wvr2_a0a0a41a0(ListSequence.fromList(lines).getElement(lineToReplace), configLine)) {
+      if (lineToReplace != -1 && eq_k2wvr2_a0a0a71a0(ListSequence.fromList(lines).getElement(lineToReplace), configLine)) {
         return AbstractInstaller.State.INSTALLED;
       } else {
         return AbstractInstaller.State.NOT_INSTALLED;
@@ -157,9 +173,9 @@ import com.intellij.openapi.util.SystemInfo;
     File scriptFile = getScriptFile();
     String[] lines;
     if (SystemInfo.isWindows) {
-      lines = new String[]{"@ECHO OFF", "SHIFT", "SHIFT", String.format("%s --svn %8 %7 %9 %4 %2 %6", MergeDriverMain.getCommandLine())};
+      lines = new String[]{"@ECHO OFF", "SHIFT", "SHIFT", String.format("%s --svn %8 %7 %9 %4 %2 %6", CommandLineGenerator.getCommandLine(true))};
     } else {
-      lines = new String[]{"#/bin/sh", String.format("%s --svn ${10} $9 ${11} $6 $4 $8", MergeDriverMain.getCommandLine())};
+      lines = new String[]{"#/bin/sh", String.format("%s --svn ${10} $9 ${11} $6 $4 $8", CommandLineGenerator.getCommandLine(true))};
     }
     try {
       if (dryRun) {
@@ -197,14 +213,14 @@ import com.intellij.openapi.util.SystemInfo;
     )));
   }
 
-  private static boolean neq_k2wvr2_a0a2a2a3a1a7a0(Object a, Object b) {
+  private static boolean neq_k2wvr2_a0a2a2a3a1a01a0(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_k2wvr2_a0a0a41a0(Object a, Object b) {
+  private static boolean eq_k2wvr2_a0a0a71a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

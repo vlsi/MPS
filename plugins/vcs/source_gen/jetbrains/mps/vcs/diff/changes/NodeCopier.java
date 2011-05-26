@@ -26,6 +26,10 @@ public class NodeCopier {
     myModel = model;
   }
 
+  public SNodeId getReplacementId(SNodeId originalId) {
+    return MapSequence.fromMap(myIdReplacementCache).get(originalId);
+  }
+
   public SNode copyNode(SNode sourceNode) {
     SNode copy = CopyUtil.copyAndPreserveId(sourceNode);
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
@@ -57,7 +61,7 @@ public class NodeCopier {
   private void setId(SNode node, SNodeId id) {
     SModel model = SNodeOperations.getModel(node);
     if (SNodeOperations.getParent(node) == null) {
-      SNodeOperations.deleteNode(node);
+      SNodeOperations.detachNode(node);
       node.setId(id);
       SModelOperations.addRootNode(model, node);
     } else {
@@ -101,5 +105,13 @@ public class NodeCopier {
   public void setState(Map<SNodeId, SNodeId> state, SModel model) {
     myIdReplacementCache = state;
     myModel = model;
+  }
+
+  public boolean hasIdsToRestore() {
+    return Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).any(new IWhereFilter<SNodeId>() {
+      public boolean accept(SNodeId id) {
+        return id != null;
+      }
+    });
   }
 }

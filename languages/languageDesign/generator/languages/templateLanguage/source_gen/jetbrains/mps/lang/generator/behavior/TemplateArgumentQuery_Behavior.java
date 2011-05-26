@@ -32,7 +32,7 @@ public class TemplateArgumentQuery_Behavior {
   }
 
   public static SNode call_getExpectedReturnType_4035562641222622443(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_4035562641222622443);
   }
 

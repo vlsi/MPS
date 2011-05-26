@@ -19,7 +19,7 @@ public class RelayQueryExpression_Behavior {
   }
 
   public static boolean call_isLegalAsStatement_1977954644795510058(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.RelayQueryExpression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1977954644795510058);
   }
 

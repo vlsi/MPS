@@ -39,17 +39,17 @@ public class ConceptEditorDeclaration_Behavior {
   }
 
   public static SNode call_getBaseConcept_8952337903384629359(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384629359);
   }
 
   public static void call_setBaseConcept_6261424444345979340(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979340, baseConcept);
   }
 
   public static boolean call_isApplicable_7839831476331825169(SNode thisNode, SNode candidate) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331825169, candidate);
   }
 

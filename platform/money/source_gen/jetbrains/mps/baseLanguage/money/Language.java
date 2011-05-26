@@ -4,23 +4,41 @@ package jetbrains.mps.baseLanguage.money;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.structure.DescriptorProvider;
+import jetbrains.mps.smodel.structure.StructureDescriptor;
+import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.language.LanguageRuntimeInterpreted;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
-import jetbrains.mps.smodel.structure.DescriptorProvider;
-import jetbrains.mps.smodel.structure.StructureDescriptor;
-import jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("f43135f9-b833-4685-8d26-ffb6c8215f72(jetbrains.mps.baseLanguage.money)");
 
+  private DescriptorProvider<StructureDescriptor> structureAspect;
+  private DescriptorProvider<BehaviorDescriptor> behaviorAspect;
+  private DescriptorProvider<ConstraintsDescriptor> constraintsAspect;
   private final Collection<TemplateModule> generators;
 
   public Language() {
     generators = TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "e7cb62aa-0cf6-4a49-bf95-a592cd1ba5e5(jetbrains.accounting.money#1186668571599)"));
+    structureAspect = getAspectDescriptorByClassName("jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor");
+    behaviorAspect = getAspectDescriptorByClassName("jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor");
+    constraintsAspect = getAspectDescriptorByClassName("jetbrains.mps.baseLanguage.money.constraints.ConstraintsAspectDescriptor");
+
+    if (structureAspect == null) {
+      structureAspect = LanguageRuntimeInterpreted.STRUCTURE_PROVIDER;
+    }
+    if (behaviorAspect == null) {
+      behaviorAspect = LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER;
+    }
+    if (constraintsAspect == null) {
+      constraintsAspect = LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER;
+    }
   }
 
   public String getNamespace() {
@@ -42,7 +60,17 @@ public class Language extends LanguageRuntime {
   }
 
   @Override
+  public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
+    return constraintsAspect;
+  }
+
+  @Override
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
-    return new StructureAspectDescriptor();
+    return structureAspect;
+  }
+
+  @Override
+  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
+    return behaviorAspect;
   }
 }

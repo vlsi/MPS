@@ -33,7 +33,7 @@ public class StackType_Behavior {
   }
 
   public static List<SNode> call_getAbstractCreators_7602110602933346049(SNode thisNode, SModel targetModel) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.StackType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933346049, targetModel);
   }
 

@@ -19,7 +19,7 @@ public class ExportScopePublic_Behavior {
   }
 
   public static boolean call_checkExport_402007580867586251(SNode thisNode, String sourceNamespace, SNode targetNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopePublic"), "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867586251, sourceNamespace, targetNode);
   }
 

@@ -70,6 +70,7 @@ public class SetReferenceChange extends NodeChange {
     return String.format("Set reference in role %s for node %s to %s [resolveInfo=%s]", myRole, getAffectedNodeId(), targetString, myResolveInfo);
   }
 
+  @NotNull
   protected ModelChange createOppositeChange() {
     SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
     assert node != null;

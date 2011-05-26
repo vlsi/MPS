@@ -936,8 +936,8 @@
   </root>
   <root nodeId="9077133196728617147">
     <nodeInfo nodeId="9077133196728617147" fileName="ConstraintsChecker.java" startLine="24" startPosition="68" endLine="25" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="7236881301108149692" fileName="ConstraintsChecker.java" startLine="30" startPosition="120" endLine="31" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7236881301108149701" fileName="ConstraintsChecker.java" startLine="31" startPosition="131" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7236881301108149692" fileName="ConstraintsChecker.java" startLine="30" startPosition="120" endLine="31" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7236881301108149701" fileName="ConstraintsChecker.java" startLine="31" startPosition="125" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7236881301108149691" fileName="ConstraintsChecker.java" startLine="32" startPosition="78" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2660635828425285950" fileName="ConstraintsChecker.java" startLine="34" startPosition="50" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9077133196728706254" fileName="ConstraintsChecker.java" startLine="37" startPosition="136" endLine="38" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

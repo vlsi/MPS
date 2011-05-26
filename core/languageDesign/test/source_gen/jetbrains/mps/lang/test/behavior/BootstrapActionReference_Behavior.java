@@ -20,7 +20,7 @@ public class BootstrapActionReference_Behavior {
   }
 
   public static String call_getActionId_1101347953350127914(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914);
   }
 

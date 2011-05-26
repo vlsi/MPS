@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BlockReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockReference_BehaviorDescriptor" />
+  <unitInfo fileName="OptionalPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mpslite.behavior.OptionalPart_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mpslite.behavior.ConceptContainer_BehaviorDescriptor" />
+  <unitInfo fileName="LineList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mpslite.behavior.LineList_BehaviorDescriptor" />
+  <unitInfo fileName="Line_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mpslite.behavior.Line_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractConceptReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mpslite.behavior.AbstractConceptReference_BehaviorDescriptor" />
+  <unitInfo fileName="BlockBodyPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockBodyPart_BehaviorDescriptor" />
+  <unitInfo fileName="TypePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.TypePart_BehaviorDescriptor" />
+  <unitInfo fileName="NamePropertyNamePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.NamePropertyNamePart_BehaviorDescriptor" />
+  <unitInfo fileName="RegularConceptReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.RegularConceptReference_BehaviorDescriptor" />
+  <unitInfo fileName="MPSLiteConceptReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.MPSLiteConceptReference_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.PropertyPart_BehaviorDescriptor" />
+  <unitInfo fileName="ReferencePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.ReferencePart_BehaviorDescriptor" />
+  <unitInfo fileName="ChildPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.ChildPart_BehaviorDescriptor" />
+  <unitInfo fileName="IndentLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.IndentLinePart_BehaviorDescriptor" />
+  <unitInfo fileName="ConstantLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mpslite.behavior.ConstantLinePart_BehaviorDescriptor" />
+  <unitInfo fileName="IMPSLiteConcept_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mpslite.behavior.IMPSLiteConcept_BehaviorDescriptor" />
   <unitInfo fileName="IndentLinePart_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mpslite.behavior.IndentLinePart_Behavior" />
   <unitInfo fileName="RegularConceptReference_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mpslite.behavior.RegularConceptReference_Behavior" />
   <unitInfo fileName="MPSLiteConceptReference_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mpslite.behavior.MPSLiteConceptReference_Behavior" />
@@ -7,7 +24,11 @@
   <unitInfo fileName="PropertyPart_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mpslite.behavior.PropertyPart_Behavior" />
   <unitInfo fileName="NamePropertyNamePart_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mpslite.behavior.NamePropertyNamePart_Behavior" />
   <unitInfo fileName="TypePart_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mpslite.behavior.TypePart_Behavior" />
+  <unitInfo fileName="LinePart_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.LinePart_BehaviorDescriptor" />
   <unitInfo fileName="LineList_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mpslite.behavior.LineList_Behavior" />
+  <unitInfo fileName="ConcretePropertyPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_BehaviorDescriptor" />
+  <unitInfo fileName="ConcreteChildPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteChildPart_BehaviorDescriptor" />
+  <unitInfo fileName="ConcreteReferencePart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteReferencePart_BehaviorDescriptor" />
   <unitInfo fileName="BlockBodyPart_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockBodyPart_Behavior" />
   <unitInfo fileName="AbstractConceptReference_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mpslite.behavior.AbstractConceptReference_Behavior" />
   <unitInfo fileName="ConcreteReferencePart_Behavior.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcreteReferencePart_Behavior" />
@@ -22,11 +43,19 @@
   <unitInfo fileName="ExpressionConcept_Behavior.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mpslite.behavior.ExpressionConcept_Behavior" />
   <unitInfo fileName="StatementConcept_Behavior.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mpslite.behavior.StatementConcept_Behavior" />
   <unitInfo fileName="BlockConcept_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockConcept_Behavior" />
+  <unitInfo fileName="BlockConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mpslite.behavior.BlockConcept_BehaviorDescriptor" />
+  <unitInfo fileName="ExpressionConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mpslite.behavior.ExpressionConcept_BehaviorDescriptor" />
+  <unitInfo fileName="StatementConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mpslite.behavior.StatementConcept_BehaviorDescriptor" />
+  <unitInfo fileName="VariableConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_BehaviorDescriptor" />
+  <unitInfo fileName="FeatureAccessConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mpslite.behavior.FeatureAccessConcept_BehaviorDescriptor" />
+  <unitInfo fileName="BinaryOperationConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mpslite.behavior.BinaryOperationConcept_BehaviorDescriptor" />
+  <unitInfo fileName="MPSLiteConceptDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mpslite.behavior.MPSLiteConceptDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="FeatureAccessConcept_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mpslite.behavior.FeatureAccessConcept_Behavior" />
   <unitInfo fileName="LinePart_Behavior.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mpslite.behavior.LinePart_Behavior" />
   <unitInfo fileName="BinaryOperationConcept_Behavior.java" startLine="15" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mpslite.behavior.BinaryOperationConcept_Behavior" />
   <unitInfo fileName="ConceptContainer_Behavior.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mpslite.behavior.ConceptContainer_Behavior" />
   <unitInfo fileName="ConcretePropertyPart_Behavior.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mpslite.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="IMPSLiteConcept_Behavior.java" startLine="13" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mpslite.behavior.IMPSLiteConcept_Behavior" />
   <unitInfo fileName="VariableConcept_Behavior.java" startLine="136" startPosition="0" endLine="648" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior$QuotationClass_mkovpu_a0a0a8" />
   <unitInfo fileName="VariableConcept_Behavior.java" startLine="24" startPosition="0" endLine="649" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior" />

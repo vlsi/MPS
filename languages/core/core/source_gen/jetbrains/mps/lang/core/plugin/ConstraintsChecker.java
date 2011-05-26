@@ -28,7 +28,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
 
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext) {
-    final ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).constraints();
+    final ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName());
     final CheckingNodeContext checkingNodeContext = new CheckingNodeContext();
 
     if (SNodeOperations.getParent(node) != null) {

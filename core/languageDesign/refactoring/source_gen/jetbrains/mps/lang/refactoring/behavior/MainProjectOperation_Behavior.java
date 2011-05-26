@@ -26,7 +26,7 @@ public class MainProjectOperation_Behavior {
   }
 
   public static SNode call_createType_8113680833395644315(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MainProjectOperation"), "virtual_createType_7012097027058652452", PARAMETERS_8113680833395644315);
   }
 

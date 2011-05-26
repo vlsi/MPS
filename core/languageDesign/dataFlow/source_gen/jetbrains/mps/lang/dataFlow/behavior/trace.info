@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="InstructionIsJump_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionIsJump_BehaviorDescriptor" />
+  <unitInfo fileName="BooleanInstructionOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BooleanInstructionOperation_BehaviorDescriptor" />
+  <unitInfo fileName="InstructionIsRet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionIsRet_BehaviorDescriptor" />
+  <unitInfo fileName="InstructionIsNop_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionIsNop_BehaviorDescriptor" />
+  <unitInfo fileName="InstructionGetSourceOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionGetSourceOperation_BehaviorDescriptor" />
+  <unitInfo fileName="InsertBefore_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InsertBefore_BehaviorDescriptor" />
+  <unitInfo fileName="InsertAfter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InsertAfter_BehaviorDescriptor" />
+  <unitInfo fileName="LabelPosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_BehaviorDescriptor" />
+  <unitInfo fileName="EmitTryFinallyStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitTryFinallyStatement_BehaviorDescriptor" />
+  <unitInfo fileName="EmitRetStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitRetStatement_BehaviorDescriptor" />
+  <unitInfo fileName="EmitCodeForStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitCodeForStatement_BehaviorDescriptor" />
+  <unitInfo fileName="EmitJumpStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitJumpStatement_BehaviorDescriptor" />
+  <unitInfo fileName="EmitIfJumpStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitIfJumpStatement_BehaviorDescriptor" />
+  <unitInfo fileName="BaseEmitJumpStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BaseEmitJumpStatement_BehaviorDescriptor" />
+  <unitInfo fileName="AfterPosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.AfterPosition_BehaviorDescriptor" />
+  <unitInfo fileName="BeforePosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BeforePosition_BehaviorDescriptor" />
+  <unitInfo fileName="RelativePosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.RelativePosition_BehaviorDescriptor" />
+  <unitInfo fileName="BaseEmitVariableStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BaseEmitVariableStatement_BehaviorDescriptor" />
+  <unitInfo fileName="EmitWriteStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitWriteStatement_BehaviorDescriptor" />
+  <unitInfo fileName="EmitReadStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitReadStatement_BehaviorDescriptor" />
+  <unitInfo fileName="EmitNopStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitNopStatement_BehaviorDescriptor" />
+  <unitInfo fileName="GetCodeForExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.GetCodeForExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InsertPosition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InsertPosition_BehaviorDescriptor" />
+  <unitInfo fileName="Position_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.Position_BehaviorDescriptor" />
+  <unitInfo fileName="EmitStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_BehaviorDescriptor" />
+  <unitInfo fileName="NodeParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_BehaviorDescriptor" />
   <unitInfo fileName="LabelPosition_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_Behavior" />
   <unitInfo fileName="NodeParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_Behavior" />
   <unitInfo fileName="EmitStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_Behavior" />
+  <unitInfo fileName="EmitMayBeUnreachable_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitMayBeUnreachable_BehaviorDescriptor" />
   <unitInfo fileName="InstructionType_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionType_Behavior" />
   <unitInfo fileName="BuilderBlock_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_Behavior" />
+  <unitInfo fileName="InstructionType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionType_BehaviorDescriptor" />
+  <unitInfo fileName="BuilderBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_BehaviorDescriptor" />
+  <unitInfo fileName="EmitLabelStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitLabelStatement_BehaviorDescriptor" />
+  <unitInfo fileName="BaseInstructionOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BaseInstructionOperation_BehaviorDescriptor" />
+  <unitInfo fileName="DataFlowBuilderDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877268329">
     <scopeInfo nodeId="1213877268331" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

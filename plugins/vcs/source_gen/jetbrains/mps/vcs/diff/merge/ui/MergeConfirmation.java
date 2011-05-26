@@ -11,8 +11,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.NameUtil;
+import com.intellij.openapi.ui.Messages;
 
 public class MergeConfirmation {
   public static final int RETURN = 0;
@@ -37,7 +37,7 @@ public class MergeConfirmation {
     }
   }
 
-  public static int showMergeConfirmationIfNeeded(BaseDialog dialog, final MergeContext mergeContext, Iterable<ModelChange> allRelevantChanges) {
+  private static int showMergeConfirmationIfNeeded(BaseDialog dialog, final MergeContext mergeContext, Iterable<ModelChange> allRelevantChanges) {
     List<ModelChange> changes = Sequence.fromIterable(allRelevantChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return !(mergeContext.isChangeResolved(ch));
@@ -49,22 +49,39 @@ public class MergeConfirmation {
       }
     });
     if (Sequence.fromIterable(conflictedChanges).count() != 0) {
-      if (Messages.showYesNoDialog(dialog, String.format("You have %s left. You should resolve them manually.\n" + "Are you sure want to close merge roots dialog without resolving them?", NameUtil.formatNumericalString(Sequence.fromIterable(conflictedChanges).count(), "unresolved conflicting change")), "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
-        return SAVE_AS_IS;
-      } else {
-        return RETURN;
-      }
+      return showUnresolvedConflictsConfirmation(dialog, Sequence.fromIterable(conflictedChanges).count());
     } else if (ListSequence.fromList(changes).count() != 0) {
-      int answer = Messages.showYesNoCancelDialog(dialog, String.format("You have %s left. Do you want to resolve them automatically?", NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "unresolved change")), "Unresolved Changes", Messages.getQuestionIcon());
-      if (answer == 0) {
-        return RESOLVE_AUTOMATICALLY;
-      } else if (answer == 1) {
-        // Do nothing, leave unresolved changes as is 
-        return SAVE_AS_IS;
-      } else {
-        return RETURN;
-      }
+      return showUnresolvedChangesConfirmation(dialog, ListSequence.fromList(changes).count());
     }
     return SAVE_AS_IS;
+  }
+
+  private static int showUnresolvedConflictsConfirmation(BaseDialog dialog, int changes) {
+    String msg = String.format("You have %s left. You need to resolve them manually.\n" + "Are you sure want to close merge dialog without resolving them?", NameUtil.formatNumericalString(changes, "unresolved conflicting change"));
+    if (Messages.showYesNoDialog(dialog, msg, "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
+      return SAVE_AS_IS;
+    } else {
+      return RETURN;
+    }
+  }
+
+  private static int showUnresolvedChangesConfirmation(BaseDialog dialog, int changes) {
+    String message = String.format("You have %s left. Do you want to resolve %s automatically?", NameUtil.formatNumericalString(changes, "unresolved change"), (changes > 1 ?
+      "them" :
+      "it"
+    ));
+    String title = "Unresolved Change" + ((changes > 1 ?
+      "s" :
+      ""
+    ));
+    int answer = Messages.showYesNoCancelDialog(dialog, message, title, Messages.getQuestionIcon());
+    if (answer == 0) {
+      return RESOLVE_AUTOMATICALLY;
+    } else if (answer == 1) {
+      // Do nothing, leave unresolved changes as is 
+      return SAVE_AS_IS;
+    } else {
+      return RETURN;
+    }
   }
 }

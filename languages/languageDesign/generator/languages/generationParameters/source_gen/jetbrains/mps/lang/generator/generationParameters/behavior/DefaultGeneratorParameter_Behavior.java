@@ -24,7 +24,7 @@ public class DefaultGeneratorParameter_Behavior {
   }
 
   public static String call_getUniqueId_8484425748929510087(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), "virtual_getUniqueId_650531548511609559", PARAMETERS_8484425748929510087);
   }
 

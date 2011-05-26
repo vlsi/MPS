@@ -21,7 +21,7 @@ public class TraceableConcept_Behavior {
   }
 
   public static String call_getTraceableProperty_3822000666564591088(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.TraceableConcept"), "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_3822000666564591088);
   }
 

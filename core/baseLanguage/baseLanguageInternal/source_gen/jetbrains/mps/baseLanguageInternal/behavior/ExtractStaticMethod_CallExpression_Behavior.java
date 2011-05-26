@@ -39,7 +39,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
   }
 
   public static List<SNode> call_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String methodName) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_3585982959253821899, methodName);
   }
 

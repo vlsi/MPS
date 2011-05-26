@@ -88,7 +88,7 @@ public class LiteralReplacement_Behavior {
   }
 
   public static String call_toString_3796137614137538916(SNode thisNode, SNode search) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
   }
 

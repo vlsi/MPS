@@ -15,7 +15,7 @@ public class BaseSimpleBuilderDeclaration_Behavior {
   }
 
   public static SNode call_getContextDeclaration_6254726786820551255(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), "virtual_getContextDeclaration_6254726786820551255", PARAMETERS_6254726786820551255);
   }
 

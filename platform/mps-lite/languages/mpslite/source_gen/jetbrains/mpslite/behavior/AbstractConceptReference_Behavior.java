@@ -16,7 +16,7 @@ public class AbstractConceptReference_Behavior {
   }
 
   public static SNode call_getConcept_1238594571574(SNode thisNode, Map<SNode, SNode> conceptsToTargets) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), "virtual_getConcept_1238594571574", PARAMETERS_1238594571574, conceptsToTargets);
   }
 

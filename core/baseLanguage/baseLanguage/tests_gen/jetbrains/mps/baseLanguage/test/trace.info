@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ForLoop_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody" />
-  <unitInfo fileName="MethodParametersTest_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody" />
-  <unitInfo fileName="UnusedAssignment_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody" />
-  <unitInfo fileName="DataFlowInClosure_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.DataFlowInClosure_Test$TestBody" />
-  <unitInfo fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody" />
-  <unitInfo fileName="AnonymousClass_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody" />
-  <unitInfo fileName="IfStatementDataFlow_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody" />
-  <unitInfo fileName="TestGenerationMode_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody" />
   <unitInfo fileName="RollBacksNewTypeSystem_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test$TestBody" />
-  <unitInfo fileName="OnlyStatementsCanUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.OnlyStatementsCanUnreachable_Test$TestBody" />
-  <unitInfo fileName="UnreachableStatements_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody" />
-  <unitInfo fileName="UnusedAssignmentWithIF_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignmentWithIF_Test$TestBody" />
-  <unitInfo fileName="CatchingUnthrownException_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody" />
-  <unitInfo fileName="IfStatementWithReturns_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementWithReturns_Test$TestBody" />
-  <unitInfo fileName="UnusedParameters_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedParameters_Test$TestBody" />
-  <unitInfo fileName="ListWithConceptFunction_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test$TestBody" />
-  <unitInfo fileName="CommentCanBeUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test$TestBody" />
-  <unitInfo fileName="CommandDataflowWithReturn_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test$TestBody" />
-  <unitInfo fileName="ForBreakUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test$TestBody" />
-  <unitInfo fileName="PrivateField_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody" />
-  <unitInfo fileName="FinalFieldWasAssigned_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test$TestBody" />
+  <unitInfo fileName="TestGenerationMode_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody" />
+  <unitInfo fileName="IfStatementDataFlow_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody" />
+  <unitInfo fileName="AnonymousClass_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody" />
+  <unitInfo fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody" />
+  <unitInfo fileName="DataFlowInClosure_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.DataFlowInClosure_Test$TestBody" />
+  <unitInfo fileName="UnusedAssignment_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody" />
+  <unitInfo fileName="MethodParametersTest_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody" />
+  <unitInfo fileName="ForLoop_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody" />
   <unitInfo fileName="Validation_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.Validation_Test$TestBody" />
-  <unitInfo fileName="ReadAction_Test.java" startLine="27" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ReadAction_Test$TestBody" />
-  <unitInfo fileName="UnusedVariableDeclaration_Test.java" startLine="27" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody" />
+  <unitInfo fileName="FinalFieldWasAssigned_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test$TestBody" />
+  <unitInfo fileName="PrivateField_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody" />
+  <unitInfo fileName="ForBreakUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test$TestBody" />
+  <unitInfo fileName="CommandDataflowWithReturn_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test$TestBody" />
+  <unitInfo fileName="CommentCanBeUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test$TestBody" />
+  <unitInfo fileName="ListWithConceptFunction_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test$TestBody" />
+  <unitInfo fileName="UnusedParameters_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedParameters_Test$TestBody" />
+  <unitInfo fileName="IfStatementWithReturns_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementWithReturns_Test$TestBody" />
+  <unitInfo fileName="CatchingUnthrownException_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody" />
+  <unitInfo fileName="UnusedAssignmentWithIF_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignmentWithIF_Test$TestBody" />
+  <unitInfo fileName="UnreachableStatements_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody" />
+  <unitInfo fileName="OnlyStatementsCanUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.OnlyStatementsCanUnreachable_Test$TestBody" />
   <unitInfo fileName="VariableUninitialized_Test.java" startLine="27" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody" />
+  <unitInfo fileName="UnusedVariableDeclaration_Test.java" startLine="27" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody" />
+  <unitInfo fileName="ReadAction_Test.java" startLine="27" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ReadAction_Test$TestBody" />
   <unitInfo fileName="IfStatementWrongUnreachable_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test$TestBody" />
-  <unitInfo fileName="ForLoop_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForLoop_Test" />
-  <unitInfo fileName="MethodParametersTest_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test" />
-  <unitInfo fileName="UnusedAssignment_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test" />
-  <unitInfo fileName="DataFlowInClosure_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.DataFlowInClosure_Test" />
-  <unitInfo fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test" />
-  <unitInfo fileName="AnonymousClass_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.AnonymousClass_Test" />
-  <unitInfo fileName="IfStatementDataFlow_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test" />
-  <unitInfo fileName="TestGenerationMode_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test" />
   <unitInfo fileName="RollBacksNewTypeSystem_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test" />
-  <unitInfo fileName="OnlyStatementsCanUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.OnlyStatementsCanUnreachable_Test" />
-  <unitInfo fileName="UnreachableStatements_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnreachableStatements_Test" />
-  <unitInfo fileName="UnusedAssignmentWithIF_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignmentWithIF_Test" />
-  <unitInfo fileName="CatchingUnthrownException_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test" />
-  <unitInfo fileName="IfStatementWithReturns_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementWithReturns_Test" />
-  <unitInfo fileName="UnusedParameters_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedParameters_Test" />
-  <unitInfo fileName="ListWithConceptFunction_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test" />
-  <unitInfo fileName="CommentCanBeUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test" />
-  <unitInfo fileName="CommandDataflowWithReturn_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test" />
-  <unitInfo fileName="ForBreakUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test" />
-  <unitInfo fileName="PrivateField_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test" />
-  <unitInfo fileName="FinalFieldWasAssigned_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test" />
+  <unitInfo fileName="TestGenerationMode_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test" />
+  <unitInfo fileName="IfStatementDataFlow_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test" />
+  <unitInfo fileName="AnonymousClass_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.AnonymousClass_Test" />
+  <unitInfo fileName="UnexpectedReturnInAnonymousClass_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test" />
+  <unitInfo fileName="DataFlowInClosure_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.DataFlowInClosure_Test" />
+  <unitInfo fileName="UnusedAssignment_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test" />
+  <unitInfo fileName="MethodParametersTest_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test" />
+  <unitInfo fileName="ForLoop_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForLoop_Test" />
   <unitInfo fileName="Validation_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.Validation_Test" />
-  <unitInfo fileName="ReadAction_Test.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ReadAction_Test" />
-  <unitInfo fileName="UnusedVariableDeclaration_Test.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test" />
+  <unitInfo fileName="FinalFieldWasAssigned_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test" />
+  <unitInfo fileName="PrivateField_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test" />
+  <unitInfo fileName="ForBreakUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test" />
+  <unitInfo fileName="CommandDataflowWithReturn_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test" />
+  <unitInfo fileName="CommentCanBeUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test" />
+  <unitInfo fileName="ListWithConceptFunction_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test" />
+  <unitInfo fileName="UnusedParameters_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedParameters_Test" />
+  <unitInfo fileName="IfStatementWithReturns_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementWithReturns_Test" />
+  <unitInfo fileName="CatchingUnthrownException_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test" />
+  <unitInfo fileName="UnusedAssignmentWithIF_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignmentWithIF_Test" />
+  <unitInfo fileName="UnreachableStatements_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnreachableStatements_Test" />
+  <unitInfo fileName="OnlyStatementsCanUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.OnlyStatementsCanUnreachable_Test" />
   <unitInfo fileName="VariableUninitialized_Test.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.VariableUninitialized_Test" />
+  <unitInfo fileName="UnusedVariableDeclaration_Test.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test" />
+  <unitInfo fileName="ReadAction_Test.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ReadAction_Test" />
   <unitInfo fileName="IfStatementWrongUnreachable_Test.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test" />
   <unitInfo fileName="TypesTest_BL_Test.java" startLine="51" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody" />
   <unitInfo fileName="NullableAnalyzer_Test.java" startLine="87" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody" />

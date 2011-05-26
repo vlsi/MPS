@@ -15,7 +15,7 @@ public class IRuleWithTwoNodes_Behavior {
   }
 
   public static SNode call_getSecondNodeCondition_4484478261143583672(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143583672);
   }
 

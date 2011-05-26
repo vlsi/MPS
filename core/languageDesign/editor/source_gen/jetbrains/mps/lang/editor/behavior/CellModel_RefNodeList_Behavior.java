@@ -40,7 +40,7 @@ public class CellModel_RefNodeList_Behavior {
   }
 
   public static String call_getRoleForCell_1182113674817411794(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "virtual_getRoleForCell_1216377898846", PARAMETERS_1182113674817411794);
   }
 

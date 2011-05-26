@@ -9,7 +9,14 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    Iterable<String> parts = ProcessHandlerBuilder.splitCommandInParts("\"sentence with space\"  word  word2 \"another sentence\"");
+    String string = "\"sentence with space\"  word  word2 \"another sentence\"";
+    String classpath = "\"/home/julia.beliaeva/Downloads/MPS with spaces/bin\":\"/home/julia.beliaeva/Downloads/MPS with spaces/lib/mpsboot.jar\":\"/home/julia.beliaeva/Downloads/MPS with spaces/lib/boot.jar\":\"/home/julia.beliaeva/Downloads/MPS with spaces/lib/bootstrap.jar\":\"/home/julia.beliaeva/Downloads/MPS with spaces/lib/util.jar\":\"/home/julia.beliaeva/Downloads/MPS with spaces/lib/jdom.jar\":\"/home/julia.beliaeva/Downloads/MPS with spaces/lib/log4j.jar\":\"/home/julia.beliaeva/Downloads/MPS with spaces/lib/extensions.jar\":\"/home/julia.beliaeva/Downloads/MPS with spaces/lib/trove4j.jar\"";
+    Main.test(string);
+    Main.test(classpath);
+  }
+
+  private static void test(String string) {
+    Iterable<String> parts = ProcessHandlerBuilder.splitCommandInParts(string);
     for (String s : parts) {
       System.out.println("$" + s + "$");
     }

@@ -30,7 +30,7 @@ public class IContainerOperation_Behavior {
   }
 
   public static SNode call_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, elementType);
   }
 

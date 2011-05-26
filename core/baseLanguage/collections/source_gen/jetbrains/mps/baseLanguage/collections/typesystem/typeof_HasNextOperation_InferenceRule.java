@@ -23,8 +23,8 @@ public class typeof_HasNextOperation_InferenceRule extends AbstractInferenceRule
     final SNode elementType_typevar_1237470988790 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(hasNext);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470975923", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470932214", true), (SNode) new typeof_HasNextOperation_InferenceRule.QuotationClass_jfdsz3_a0a1a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1237470988790), typeCheckingContext), false, false, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1383381939051876063", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_HasNextOperation_InferenceRule.QuotationClass_jfdsz3_a0a1a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1237470988790), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470932214", true), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = hasNext;

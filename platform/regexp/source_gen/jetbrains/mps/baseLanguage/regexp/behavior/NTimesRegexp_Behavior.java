@@ -26,7 +26,7 @@ public class NTimesRegexp_Behavior {
   }
 
   public static String call_getString_1222437729031(SNode thisNode, List<SNode> vars) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222437729031, vars);
   }
 

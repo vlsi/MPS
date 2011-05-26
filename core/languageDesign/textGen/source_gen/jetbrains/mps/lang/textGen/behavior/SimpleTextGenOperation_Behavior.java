@@ -41,7 +41,7 @@ public class SimpleTextGenOperation_Behavior {
   }
 
   public static String call_getMethodName_1234789420862(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862);
   }
 

@@ -68,11 +68,10 @@
     <nodeInfo nodeId="8662550683009568754" fileName="ProcessHandlerBuilder.java" startLine="110" startPosition="44" endLine="111" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8662550683009568773" fileName="ProcessHandlerBuilder.java" startLine="111" startPosition="99" endLine="112" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8662550683009568759" fileName="ProcessHandlerBuilder.java" startLine="112" startPosition="38" endLine="113" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8662550683009567670" fileName="ProcessHandlerBuilder.java" startLine="113" startPosition="31" endLine="114" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6429083092555449810" fileName="ProcessHandlerBuilder.java" startLine="115" startPosition="50" endLine="116" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8662550683009567670" fileName="ProcessHandlerBuilder.java" startLine="113" startPosition="31" endLine="114" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6429083092555449810" fileName="ProcessHandlerBuilder.java" startLine="115" startPosition="43" endLine="116" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8662550683009568606" fileName="ProcessHandlerBuilder.java" startLine="119" startPosition="40" endLine="120" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1595732601960663594" fileName="ProcessHandlerBuilder.java" startLine="124" startPosition="74" endLine="125" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1595732601960663606" fileName="ProcessHandlerBuilder.java" startLine="126" startPosition="9" endLine="127" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1595732601960663606" fileName="ProcessHandlerBuilder.java" startLine="123" startPosition="39" endLine="124" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3908032508224771423" fileName="ProcessHandlerBuilder.java" startLine="24" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProcessHandlerBuilder#()V" />
     <nodeInfo nodeId="3908032508224771432" fileName="ProcessHandlerBuilder.java" startLine="28" startPosition="65" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3908032508224771471" fileName="ProcessHandlerBuilder.java" startLine="35" startPosition="58" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -81,11 +80,11 @@
     <nodeInfo nodeId="3908032508224771538" fileName="ProcessHandlerBuilder.java" startLine="56" startPosition="85" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3908032508224771570" fileName="ProcessHandlerBuilder.java" startLine="63" startPosition="98" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3908032508224771608" fileName="ProcessHandlerBuilder.java" startLine="74" startPosition="89" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8662550683009567678" fileName="ProcessHandlerBuilder.java" startLine="114" startPosition="49" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1595732601960662833" fileName="ProcessHandlerBuilder.java" startLine="123" startPosition="39" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8662550683009567678" fileName="ProcessHandlerBuilder.java" startLine="114" startPosition="55" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3908032508224771590" fileName="ProcessHandlerBuilder.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#()Lcom/intellij/execution/process/ProcessHandler;" />
     <nodeInfo nodeId="3908032508224771654" fileName="ProcessHandlerBuilder.java" startLine="83" startPosition="52" endLine="87" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8662550683009568602" fileName="ProcessHandlerBuilder.java" startLine="118" startPosition="124" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1595732601960662829" fileName="ProcessHandlerBuilder.java" startLine="122" startPosition="55" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="3908032508224771427" fileName="ProcessHandlerBuilder.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="append#(Ljava/lang/String;)Ljetbrains/mps/execution/api/commands/ProcessHandlerBuilder;" />
     <nodeInfo nodeId="3908032508224771465" fileName="ProcessHandlerBuilder.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="append#(null)Ljetbrains/mps/execution/api/commands/ProcessHandlerBuilder;" />
     <nodeInfo nodeId="3908032508224771483" fileName="ProcessHandlerBuilder.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="append#(Ljava/util/List;)Ljetbrains/mps/execution/api/commands/ProcessHandlerBuilder;" />
@@ -93,12 +92,11 @@
     <nodeInfo nodeId="3908032508224771529" fileName="ProcessHandlerBuilder.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendKey#(Ljava/lang/String;null)Ljetbrains/mps/execution/api/commands/ProcessHandlerBuilder;" />
     <nodeInfo nodeId="3908032508224771560" fileName="ProcessHandlerBuilder.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendKey#(Ljava/lang/String;Ljava/util/List;)Ljetbrains/mps/execution/api/commands/ProcessHandlerBuilder;" />
     <nodeInfo nodeId="3908032508224771652" fileName="ProcessHandlerBuilder.java" startLine="82" startPosition="169" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1595732601960662829" fileName="ProcessHandlerBuilder.java" startLine="122" startPosition="55" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="3908032508224771643" fileName="ProcessHandlerBuilder.java" startLine="81" startPosition="40" endLine="89" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3908032508224771725" fileName="ProcessHandlerBuilder.java" startLine="99" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandLine#(Ljava/lang/String;)Lcom/intellij/execution/configurations/GeneralCommandLine;" />
-    <nodeInfo nodeId="6429083092555442306" fileName="ProcessHandlerBuilder.java" startLine="117" startPosition="5" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6429083092555442306" fileName="ProcessHandlerBuilder.java" startLine="117" startPosition="5" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3908032508224771635" fileName="ProcessHandlerBuilder.java" startLine="79" startPosition="40" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8851756219471015167" fileName="ProcessHandlerBuilder.java" startLine="107" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="splitCommandInParts#(Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8851756219471015167" fileName="ProcessHandlerBuilder.java" startLine="107" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="splitCommandInParts#(Ljava/lang/String;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3908032508224771601" fileName="ProcessHandlerBuilder.java" startLine="73" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljava/io/File;)Lcom/intellij/execution/process/ProcessHandler;" />
     <scopeInfo nodeId="3908032508224771426" fileName="ProcessHandlerBuilder.java" startLine="25" startPosition="34" endLine="25" endPosition="34" />
     <scopeInfo nodeId="3908032508224771433" fileName="ProcessHandlerBuilder.java" startLine="29" startPosition="42" endLine="30" endPosition="108" />
@@ -121,9 +119,9 @@
       <varInfo nodeId="3908032508224771699" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="3908032508224771701" fileName="ProcessHandlerBuilder.java" startLine="95" startPosition="27" endLine="96" endPosition="122" />
-    <scopeInfo nodeId="8662550683009567680" fileName="ProcessHandlerBuilder.java" startLine="115" startPosition="50" endLine="116" endPosition="66" />
+    <scopeInfo nodeId="8662550683009567680" fileName="ProcessHandlerBuilder.java" startLine="115" startPosition="43" endLine="116" endPosition="66" />
     <scopeInfo nodeId="8662550683009568603" fileName="ProcessHandlerBuilder.java" startLine="119" startPosition="40" endLine="120" endPosition="42" />
-    <scopeInfo nodeId="1595732601960662835" fileName="ProcessHandlerBuilder.java" startLine="124" startPosition="74" endLine="125" endPosition="50" />
+    <scopeInfo nodeId="1595732601960662830" fileName="ProcessHandlerBuilder.java" startLine="123" startPosition="39" endLine="124" endPosition="36" />
     <scopeInfo nodeId="3908032508224771423" fileName="ProcessHandlerBuilder.java" startLine="24" startPosition="0" endLine="26" endPosition="3" />
     <scopeInfo nodeId="3908032508224771471" fileName="ProcessHandlerBuilder.java" startLine="35" startPosition="58" endLine="38" endPosition="5" />
     <scopeInfo nodeId="3908032508224771487" fileName="ProcessHandlerBuilder.java" startLine="42" startPosition="70" endLine="45" endPosition="5" />
@@ -136,7 +134,7 @@
     <scopeInfo nodeId="3908032508224771590" fileName="ProcessHandlerBuilder.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="3908032508224771653" fileName="ProcessHandlerBuilder.java" startLine="83" startPosition="52" endLine="87" endPosition="12" />
     <scopeInfo nodeId="8662550683009568602" fileName="ProcessHandlerBuilder.java" startLine="118" startPosition="124" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="1595732601960662830" fileName="ProcessHandlerBuilder.java" startLine="123" startPosition="39" endLine="127" endPosition="18" />
+    <scopeInfo nodeId="1595732601960662829" fileName="ProcessHandlerBuilder.java" startLine="122" startPosition="55" endLine="126" endPosition="0" />
     <scopeInfo nodeId="3908032508224771728" fileName="ProcessHandlerBuilder.java" startLine="100" startPosition="70" endLine="105" endPosition="23">
       <varInfo nodeId="3908032508224771730" varName="commandLine" />
     </scopeInfo>
@@ -162,7 +160,6 @@
       <varInfo nodeId="3908032508224771561" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="3908032508224771652" fileName="ProcessHandlerBuilder.java" startLine="82" startPosition="169" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1595732601960662829" fileName="ProcessHandlerBuilder.java" startLine="122" startPosition="55" endLine="129" endPosition="0" />
     <scopeInfo nodeId="3908032508224771725" fileName="ProcessHandlerBuilder.java" startLine="99" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="3908032508224771757" varName="workingDirectory" />
     </scopeInfo>
@@ -170,23 +167,23 @@
       <varInfo nodeId="3908032508224771638" varName="process" />
       <varInfo nodeId="3908032508224771644" varName="processHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="3908032508224771719" fileName="ProcessHandlerBuilder.java" startLine="108" startPosition="79" endLine="129" endPosition="7">
+    <scopeInfo nodeId="3908032508224771719" fileName="ProcessHandlerBuilder.java" startLine="108" startPosition="79" endLine="126" endPosition="7">
       <varInfo nodeId="8662550683009568760" varName="charToReplace" />
       <varInfo nodeId="8662550683009567671" varName="regex" />
     </scopeInfo>
+    <scopeInfo nodeId="8851756219471015167" fileName="ProcessHandlerBuilder.java" startLine="107" startPosition="0" endLine="128" endPosition="0">
+      <varInfo nodeId="3908032508224771716" varName="command" />
+    </scopeInfo>
     <scopeInfo nodeId="3908032508224771607" fileName="ProcessHandlerBuilder.java" startLine="74" startPosition="89" endLine="97" endPosition="5">
       <varInfo nodeId="3908032508224771623" varName="builder" />
-    </scopeInfo>
-    <scopeInfo nodeId="8851756219471015167" fileName="ProcessHandlerBuilder.java" startLine="107" startPosition="0" endLine="131" endPosition="0">
-      <varInfo nodeId="3908032508224771716" varName="command" />
     </scopeInfo>
     <scopeInfo nodeId="3908032508224771601" fileName="ProcessHandlerBuilder.java" startLine="73" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="3908032508224771602" varName="workingDirectory" />
     </scopeInfo>
     <unitInfo nodeId="8662550683009568602" fileName="ProcessHandlerBuilder.java" startLine="118" startPosition="100" endLine="122" endPosition="5" unitName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder$2" />
+    <unitInfo nodeId="1595732601960662829" fileName="ProcessHandlerBuilder.java" startLine="122" startPosition="26" endLine="126" endPosition="5" unitName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder$3" />
     <unitInfo nodeId="3908032508224771652" fileName="ProcessHandlerBuilder.java" startLine="82" startPosition="134" endLine="89" endPosition="7" unitName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder$1" />
-    <unitInfo nodeId="1595732601960662829" fileName="ProcessHandlerBuilder.java" startLine="122" startPosition="26" endLine="129" endPosition="5" unitName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder$3" />
-    <unitInfo nodeId="3908032508224771422" fileName="ProcessHandlerBuilder.java" startLine="22" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
+    <unitInfo nodeId="3908032508224771422" fileName="ProcessHandlerBuilder.java" startLine="22" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
   </root>
 </debugInfo>
 

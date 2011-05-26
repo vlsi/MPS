@@ -27,6 +27,9 @@ public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        if (node == null) {
+          return false;
+        }
         return FieldReferenceOperation_Behavior.call_canBeConvertedToLocal_5311267937735160942(node);
       }
 
@@ -52,6 +55,9 @@ public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        if (node == null) {
+          return false;
+        }
         return InstanceMethodCallOperation_Behavior.call_canBeConvertedToLocal_5311267937735225328(node);
       }
 
@@ -77,6 +83,9 @@ public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        if (node == null) {
+          return false;
+        }
         return StaticMethodCall_Behavior.call_canBeConvertedToLocal_3299924278393499101(node);
       }
 

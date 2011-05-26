@@ -17,10 +17,12 @@ import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Collections;
 
 public class MergeContext {
   private ChangeSet myMineChangeSet;
@@ -44,6 +46,16 @@ public class MergeContext {
         fillRootToChangesMap();
 
         myResultModel = CopyUtil.copyModel(base);
+        int pv = Sequence.fromIterable(Sequence.fromArray(new SModel[]{base, mine, repository})).<Integer>select(new ISelector<SModel, Integer>() {
+          public Integer select(SModel m) {
+            return m.getPersistenceVersion();
+          }
+        }).sort(new ISelector<Integer, Comparable<?>>() {
+          public Comparable<?> select(Integer v) {
+            return v;
+          }
+        }, false).first();
+        myResultModel.setPersistenceVersion(pv);
         myNodeCopier = new NodeCopier(myResultModel);
       }
     });
@@ -59,24 +71,33 @@ public class MergeContext {
     }
   }
 
-  public void applyAllNonConflictingChanges(@Nullable final SNodeId rootId) {
-    applyChanges(Sequence.fromIterable(getAllChanges()).where(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange c) {
-        return eq_358wfv_a0a0a0a0a0a0a0b(c.getRootId(), rootId) && Sequence.fromIterable(getConflictedWith(c)).isEmpty();
+  public Iterable<ModelChange> getApplicableChangesForRoot(SNodeId rootId) {
+    return ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootId)).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return !(isChangeResolved(ch)) && Sequence.fromIterable(getConflictedWith(ch)).isEmpty();
       }
-    }));
+    });
   }
 
-  public void applyAllChangesForNonConflictingRoots() {
-    for (SNodeId root : SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet())) {
-      if (!(ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(root)).any(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange ch) {
-          return !(isChangeResolved(ch)) && Sequence.fromIterable(getConflictedWith(ch)).isNotEmpty();
+  public Iterable<ModelChange> getApplicableChangesInNonConflictingRoots() {
+    return SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).<ModelChange>translate(new ITranslator2<SNodeId, ModelChange>() {
+      public Iterable<ModelChange> translate(SNodeId root) {
+        Iterable<ModelChange> unresolvedForRoot = ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(root)).where(new IWhereFilter<ModelChange>() {
+          public boolean accept(ModelChange ch) {
+            return !(isChangeResolved(ch));
+          }
+        });
+        if (Sequence.fromIterable(unresolvedForRoot).all(new IWhereFilter<ModelChange>() {
+          public boolean accept(ModelChange ch) {
+            return Sequence.fromIterable(getConflictedWith(ch)).isEmpty();
+          }
+        })) {
+          return unresolvedForRoot;
+        } else {
+          return Sequence.fromIterable(Collections.<ModelChange>emptyList());
         }
-      }))) {
-        applyAllNonConflictingChanges(root);
       }
-    }
+    });
   }
 
   public Iterable<ModelChange> getAllChanges() {
@@ -154,6 +175,14 @@ public class MergeContext {
     }
   }
 
+  public boolean hasIdsToRestore() {
+    return myNodeCopier.hasIdsToRestore();
+  }
+
+  public SNodeId getReplacementId(SNodeId originalId) {
+    return myNodeCopier.getReplacementId(originalId);
+  }
+
   public SModel getResultModel() {
     return myResultModel;
   }
@@ -192,12 +221,5 @@ public class MergeContext {
     myAppliedChanges = stateCopy.myAppliedChanges;
     myExcludedChanges = stateCopy.myExcludedChanges;
     myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
-  }
-
-  private static boolean eq_358wfv_a0a0a0a0a0a0a0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 }

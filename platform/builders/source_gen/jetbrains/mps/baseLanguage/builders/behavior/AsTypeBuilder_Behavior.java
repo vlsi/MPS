@@ -25,12 +25,12 @@ public class AsTypeBuilder_Behavior {
   }
 
   public static SNode call_getCreatorExpression_5389689214216563780(SNode thisNode, SNode parentRef) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_5389689214216563780, parentRef);
   }
 
   public static SNode call_getResultType_5389689214216563784(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_5389689214216563784);
   }
 

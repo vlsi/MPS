@@ -45,7 +45,7 @@ public class LinkAttributeAccessQualifier_Behavior {
   }
 
   public static Iterable<SNode> call_getLinkAccessScope_2906110183022538655(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538655);
   }
 

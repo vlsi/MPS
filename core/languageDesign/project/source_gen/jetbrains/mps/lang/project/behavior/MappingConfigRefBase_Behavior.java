@@ -19,7 +19,7 @@ public class MappingConfigRefBase_Behavior {
   }
 
   public static boolean call_isComplete_2721285250110257005(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigRefBase"), "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110257005);
   }
 

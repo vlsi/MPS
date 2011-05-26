@@ -40,7 +40,7 @@ public class SortedSetType_Behavior {
   }
 
   public static List<SNode> call_getAbstractCreators_7602110602933345983(SNode thisNode, SModel targetModel) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345983, targetModel);
   }
 

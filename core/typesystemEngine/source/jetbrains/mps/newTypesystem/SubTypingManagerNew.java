@@ -38,6 +38,8 @@ import java.util.*;
 public class SubTypingManagerNew extends SubtypingManager {
   protected TypeChecker myTypeChecker;
   private CoercionManager myCoercionManager;
+  public static int hits = 0;
+  public static int misses = 0;
 
   public SubTypingManagerNew(TypeChecker typeChecker) {
     super(typeChecker);
@@ -59,42 +61,31 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   public boolean isSubtype(SNode subType, SNode superType, boolean isWeak) {
-    if (null == subType || null == superType) {
-      return false;
-    }
-    if (TypesUtil.match(subType, superType, null, null)) {
-      return true;
-    }
-    if (isSubTypeByReplacementRules(subType, superType, isWeak)) {
-      return true;
-    }
     return isSubType(subType, superType, null, null, isWeak);
   }
 
   public boolean isSubType(final SNode subType, final SNode superType, @Nullable final EquationInfo info, final State state, final boolean isWeak) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
       public Boolean compute() {
-        if (subType == superType) {
-          return true;
-        }
-        if (null == subType || null == superType) {
-          return false;
-        }
+        if (null == subType || null == superType) return false;
+        if (subType == superType) return true;
         if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
           Boolean answer = getCacheAnswer(subType, superType, isWeak);
           if (answer != null) {
             return answer;
           }
         }
-
-        if (meetsAndJoins(subType, superType, info, isWeak, state)) {
-          return true;
-        }
         Equations equations = null;
         if (state != null) {
           equations = state.getEquations();
         }
         if (TypesUtil.match(subType, superType, equations, info)) {
+          return true;
+        }
+        if (isSubTypeByReplacementRules(subType, superType, isWeak)) {
+          return true;
+        }
+        if (meetsAndJoins(subType, superType, info, isWeak, state)) {
           return true;
         }
         return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), info, isWeak, state);
@@ -327,10 +318,7 @@ public class SubTypingManagerNew extends SubtypingManager {
   public SNode createLCS(List<SNode> types, TypeCheckingContextNew context) {
     if (types.size() == 1) {
       return types.iterator().next();
-    }    /*
-    Set<SNode> sNodes = leastCommonSupertypes(new HashSet<SNode>(types), true);
-    return sNodes.iterator().next();
-        */
+    }
     if (types.size() > 1) {
       Collections.sort(types, new Comparator<SNode>() {
         public int compare(SNode node1, SNode node2) {
@@ -399,6 +387,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (cache != null) {
       Boolean answer = cache.getAnswer(subType, superType, isWeak);
       if (answer != null) {
+        hits++;
         return answer;
       }
     }
@@ -406,9 +395,11 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (cache != null) {
       Boolean answer = cache.getAnswer(subType, superType, isWeak);
       if (answer != null) {
+        hits++;
         return answer;
       }
     }
+    misses++;
     return null;
   }
 

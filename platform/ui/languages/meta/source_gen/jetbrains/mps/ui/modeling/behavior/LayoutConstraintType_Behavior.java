@@ -24,7 +24,7 @@ public class LayoutConstraintType_Behavior {
   }
 
   public static String call_getPresentation_5572604531249685429(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429);
   }
 

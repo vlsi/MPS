@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.smodel.structure.StructureDescriptor;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternAwareStringSet;
 import jetbrains.mps.util.InternUtil;
@@ -138,12 +137,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static List<String> getParentsNames(String conceptFqName) {
-    StructureDescriptor structure = ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure();
-    // TODO tmp fix for MPS-12507
-    if (structure == null){
-      return Collections.emptyList();
-    }
-    return structure.getParentsNames();
+    return ConceptRegistry.getInstance().getStructureDescriptor(conceptFqName).getParentsNames();
   }
 
   public List<String> _getParentsNames(final String conceptFqName) {
@@ -199,7 +193,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(fromConceptFqName).structure().isAssignableTo(toConceptFqName);
+    return ConceptRegistry.getInstance().getStructureDescriptor(fromConceptFqName).isAssignableTo(toConceptFqName);
   }
 
   public Set<String> _getAncestorsNames(final String conceptFqName) {
@@ -207,7 +201,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static Set<String> getAncestorsNames(final String conceptFqName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).structure().getAncestorsNames();
+    return ConceptRegistry.getInstance().getStructureDescriptor(conceptFqName).getAncestorsNames();
   }
 
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {

@@ -15,7 +15,7 @@ public class IStaticContainerForMethods_Behavior {
   }
 
   public static IStaticContainerProcessor call_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (IStaticContainerProcessor) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), "virtual_getStaticContainerProcessor_1222174378300", PARAMETERS_1222174378300, node);
   }
 

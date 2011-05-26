@@ -24,12 +24,12 @@ public class TypeDerivable_Behavior {
   }
 
   public static SNode call_deriveType_1213877435747(SNode thisNode, SNode expression) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
   }
 
   public static SNode call_deriveType_4555537781928374706(SNode thisNode, SNode expression, SNode link) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_4555537781928374706", PARAMETERS_4555537781928374706, expression, link);
   }
 

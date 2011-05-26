@@ -19,6 +19,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -154,7 +155,7 @@ public abstract class DiffModelTree extends MPSTree {
       Icon icon = null;
       for (SModel model : Sequence.fromIterable(getModels())) {
         SNode root = model.getNodeById(myRootId);
-        if (root != null) {
+        if (root != null && SNodeOperations.getParent(root) == null) {
           String presentation = root.getPresentation();
           if (myPresentation == null) {
             myPresentation = presentation;

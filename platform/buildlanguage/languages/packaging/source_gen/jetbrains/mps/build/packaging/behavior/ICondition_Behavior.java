@@ -16,12 +16,12 @@ public class ICondition_Behavior {
   }
 
   public static boolean call_canCalculateWhileGenerating_1233161185181(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICondition"), "virtual_canCalculateWhileGenerating_1233161185181", PARAMETERS_1233161185181);
   }
 
   public static boolean call_isTrueWhileGeneration_1233161599461(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ICondition"), "virtual_isTrueWhileGeneration_1233161599461", PARAMETERS_1233161599461);
   }
 

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 public abstract class NodeChange extends ModelChange {
   private SNodeId myAffectedNodeId;
 
-  public NodeChange(ChangeSet changeSet, @NotNull SNodeId affectedNodeId) {
+  public NodeChange(@NotNull ChangeSet changeSet, @NotNull SNodeId affectedNodeId) {
     super(changeSet);
     myAffectedNodeId = affectedNodeId;
   }
@@ -25,6 +25,7 @@ public abstract class NodeChange extends ModelChange {
     return getChangeSet().getOldModel().getNodeById(getAffectedNodeId()).getContainingRoot().getSNodeId();
   }
 
+  @NotNull
   public ChangeType getType() {
     return ChangeType.CHANGE;
   }

@@ -79,17 +79,17 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static File call_getPath_1213877333777(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (File) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_getPath_1213877333777", PARAMETERS_1213877333777);
   }
 
   public static List<SNode> call_getPostProcessingTasks_1213877333861(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_getPostProcessingTasks_1213877333861", PARAMETERS_1213877333861);
   }
 
   public static boolean call_equals_1213877333900(SNode thisNode, SNode snode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "virtual_equals_1213877333900", PARAMETERS_1213877333900, snode);
   }
 

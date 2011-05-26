@@ -24,7 +24,7 @@ public class CreateUIObjectStatement_Behavior {
   }
 
   public static SNode call_getType_6410919744913642010(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010);
   }
 

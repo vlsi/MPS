@@ -21,7 +21,7 @@ public class BaseDocComment_Behavior {
   }
 
   public static boolean call_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795);
   }
 

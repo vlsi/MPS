@@ -63,7 +63,7 @@ public class Property_Behavior {
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381539(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381539);
   }
 

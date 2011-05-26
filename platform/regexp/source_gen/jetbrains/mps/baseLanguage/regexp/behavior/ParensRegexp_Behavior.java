@@ -21,7 +21,7 @@ public class ParensRegexp_Behavior {
   }
 
   public static String call_getString_1222434892303(SNode thisNode, List<SNode> vars) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222434892303, vars);
   }
 

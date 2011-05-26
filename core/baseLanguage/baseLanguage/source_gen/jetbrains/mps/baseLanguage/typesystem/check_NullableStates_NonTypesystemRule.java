@@ -56,7 +56,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           if (NullableState.canBeNull(varState)) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(dot, "This operation can produce 'java.lang.NullPointerException'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577277", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(dot, "This operation can produce 'java.lang.NullPointerException'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343684", null, errorTarget);
             }
           }
         }
@@ -78,13 +78,13 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
             if (equals && isNotNull || !(equals) && isNull) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parent, "This condition is always false", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577391", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(parent, "This condition is always false", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343690", null, errorTarget);
               }
             }
             if (equals && isNull || !(equals) && isNotNull) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parent, "This condition is always true", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577404", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(parent, "This condition is always true", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343696", null, errorTarget);
               }
             }
           }
@@ -110,7 +110,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           if (NullableState.canBeNull(result.get(instruction).get(value))) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((SNode) write.getValue(), "This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577483", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning((SNode) write.getValue(), "This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343702", null, errorTarget);
             }
           }
         }

@@ -63,7 +63,7 @@ public class MergeConflictsBuilder {
     final Map<SNodeId, DeleteRootChange> deleteRootChanges = MapSequence.fromMap(new HashMap<SNodeId, DeleteRootChange>());
     Sequence.fromIterable(changeSet.getModelChanges(DeleteRootChange.class)).visitAll(new IVisitor<DeleteRootChange>() {
       public void visit(DeleteRootChange d) {
-        MapSequence.fromMap(deleteRootChanges).put(d.getNodeId(), d);
+        MapSequence.fromMap(deleteRootChanges).put(d.getRootId(), d);
       }
     });
     return deleteRootChanges;
@@ -73,7 +73,7 @@ public class MergeConflictsBuilder {
     final Map<SNodeId, AddRootChange> addRootChanges = MapSequence.fromMap(new HashMap<SNodeId, AddRootChange>());
     Sequence.fromIterable(changeSet.getModelChanges(AddRootChange.class)).visitAll(new IVisitor<AddRootChange>() {
       public void visit(AddRootChange a) {
-        MapSequence.fromMap(addRootChanges).put(a.getNodeId(), a);
+        MapSequence.fromMap(addRootChanges).put(a.getRootId(), a);
       }
     });
     return addRootChanges;
@@ -178,7 +178,7 @@ public class MergeConflictsBuilder {
     for (SNodeId addedRoot : SetSequence.fromSet(MapSequence.fromMap(mineAddRootChanges).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(repositoryAddRootChanges).keySet()))) {
       AddRootChange mine = MapSequence.fromMap(mineAddRootChanges).get(addedRoot);
       AddRootChange repository = MapSequence.fromMap(repositoryAddRootChanges).get(addedRoot);
-      if (SNodeCompare.nodeEquals(myMyModel.getNodeById(mine.getNodeId()), myRepositoryModel.getNodeById(repository.getNodeId()))) {
+      if (SNodeCompare.nodeEquals(myMyModel.getNodeById(mine.getRootId()), myRepositoryModel.getNodeById(repository.getRootId()))) {
         addSymmetric(mine, repository);
       } else {
         addConflict(mine, repository);

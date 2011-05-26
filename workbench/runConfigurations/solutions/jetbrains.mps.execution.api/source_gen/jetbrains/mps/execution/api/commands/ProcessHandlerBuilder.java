@@ -111,8 +111,8 @@ public class ProcessHandlerBuilder {
     // I figured, you do not expect this character in command lines, better solutions are welcomed 
     // we need all this for MPS-12488 
     String charToReplace = "^";
-    String regex = "^((\"[^\"]*\")*[^\"]*)(\\s)";
-    while (command.matches(".*" + regex + ".*")) {
+    String regex = "^([^\"]*(\"[^\"]*\")*[^\"]*)(\\s)";
+    while (command.matches(regex + ".*")) {
       command = command.replaceAll(regex, "$1\\" + charToReplace);
     }
     return Sequence.fromIterable(Sequence.fromArray(command.split("\\" + charToReplace))).where(new IWhereFilter<String>() {
@@ -121,10 +121,7 @@ public class ProcessHandlerBuilder {
       }
     }).<String>select(new ISelector<String, String>() {
       public String select(String it) {
-        if (it.startsWith("\"") && it.endsWith("\"") && it.length() > 2) {
-          return it.substring(1, it.length() - 1);
-        }
-        return it;
+        return it.replace("\"", "");
       }
     });
   }

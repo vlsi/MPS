@@ -82,7 +82,7 @@ public class NodeMacro_Behavior {
   }
 
   public static SNode call_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.NodeMacro"), "virtual_getInputNodeTypeInsideOfMacro_1213877290799", PARAMETERS_1213877290799);
   }
 

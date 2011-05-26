@@ -70,14 +70,14 @@
     </generator>
   </generators>
   <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/redist/gwt-dev.jar" include="false">
+    <stubModelEntry path="${language_descriptor}/redist/gwt-dev.jar">
       <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${language_descriptor}/redist/gwt-user.jar" include="false">
-      <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${language_descriptor}/redist/gwt-user.jar" include="false">
+    <stubModelEntry path="${language_descriptor}/redist/gwt-user.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/redist/gwt-user.jar">
+      <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </stubModelEntry>
   </stubModelEntries>
   <dependencies>
@@ -93,6 +93,8 @@
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
-  <extendedLanguages />
+  <extendedLanguages>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
+  </extendedLanguages>
 </language>
 

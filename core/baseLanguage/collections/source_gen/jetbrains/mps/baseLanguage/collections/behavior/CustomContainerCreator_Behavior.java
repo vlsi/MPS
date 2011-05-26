@@ -35,7 +35,7 @@ public class CustomContainerCreator_Behavior {
   }
 
   public static SNode call_createType_1331913329176106428(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
   }
 

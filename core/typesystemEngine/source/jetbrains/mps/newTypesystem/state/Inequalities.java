@@ -58,19 +58,33 @@ public class Inequalities {  //
     }
   }
 
+  private void printMMMap(ManyToManyMap<SNode, SNode> map) {
+    for (SNode node :map.getFirst()) {
+      System.out.print(node + " <- " );
+      for (SNode second : map.getByFirst(node)) {
+        System.out.print(" "+ second);
+      }
+      System.out.println();
+    }
+  }
+
   private SNode getNodeWithNoInput(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted) {
     for (SNode node : unsorted) {
       if (inputsToOutputs.getBySecond(node).isEmpty()) {
         return node;
       }
     }
-    /*
- System.out.println("cycle");
- for (SNode node: unsorted) {
-   System.out.println(myState.expand(node));
- }
- printAll();
-    */
+     /*
+    System.out.println(myState.getTypeCheckingContext().getNode().getContainingRoot());
+    System.out.println(myState.getTypeCheckingContext().getNode());
+    System.out.println(myState.getTypeCheckingContext().getNode().getContainingRoot().getModel());
+    System.out.println("cycle");
+    for (SNode node: unsorted) {
+      System.out.println(myState.expand(node));
+    }
+    printMMMap(inputsToOutputs);
+    printAll();
+       */
     return unsorted.iterator().next();
   }
 
@@ -101,9 +115,6 @@ public class Inequalities {  //
     if (!TypesUtil.isVariable(input)) return;
     if (!TypesUtil.isVariable(output)) return;
     if (input == output) return;
-    /*  if (input.getName().equals(output.getName())) {
-     System.out.println("Variable " + input.getName());
-   } */
     myInputsToOutputs.addLink(input, output);
   }
 
@@ -171,8 +182,10 @@ public class Inequalities {  //
     }
     //last chance
     for (RelationBlock inequality : inequalities) {
-      myState.executeOperation(new RemoveBlockOperation(inequality));
-      return true;
+      if (!(TypesUtil.isVariable(inequality.getLeftNode()) && TypesUtil.isVariable(inequality.getRightNode()))) {
+        myState.executeOperation(new RemoveBlockOperation(inequality));
+        return true;
+      }
     }
     return false;
   }

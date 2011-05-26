@@ -16,12 +16,14 @@
 package jetbrains.mps.newTypesystem.state.blocks;
 
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
 public enum ConditionKind {
+
   ANY {
     @Override
     public List<SNode> getUnresolvedInputs(SNode node, State state) {
@@ -69,6 +71,9 @@ public enum ConditionKind {
           }
         }
       }
+      if (TypesUtil.getVariables(node).contains(node)) {
+        return result;
+      }
       for (SNode child : representative.getChildren(false)) {
         result.addAll(getUnresolvedInputs(child, state));
       }
@@ -82,6 +87,5 @@ public enum ConditionKind {
   };
 
   public abstract List<SNode> getUnresolvedInputs(SNode node, State state);
-
   public abstract String getPresentation();
 }

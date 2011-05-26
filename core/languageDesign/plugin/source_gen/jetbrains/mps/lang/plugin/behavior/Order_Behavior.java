@@ -44,12 +44,12 @@ public class Order_Behavior {
   }
 
   public static boolean call_presents_1499919975383913755(SNode thisNode, SNode tab) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383913755, tab);
   }
 
   public static SNode call_getOrder_3038738109029048958(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(thisNode).behavior();
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958);
   }
 
