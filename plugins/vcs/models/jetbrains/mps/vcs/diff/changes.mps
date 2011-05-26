@@ -24,49 +24,63 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8813828754313712692">
       <property name="name" nameId="tpck.1169194664001" value="ModelChange" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8813828754313712698">
       <property name="name" nameId="tpck.1169194664001" value="ChangeSet" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8813828754313730792">
       <property name="name" nameId="tpck.1169194664001" value="ChangeSetBuilder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6359197607515881703">
       <property name="name" nameId="tpck.1169194664001" value="AddRootChange" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="structure" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6359197607515894913">
       <property name="name" nameId="tpck.1169194664001" value="DeleteRootChange" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="structure" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4972886494893223485">
       <property name="name" nameId="tpck.1169194664001" value="NodeGroupChange" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="structure" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2729259761016168456">
       <property name="name" nameId="tpck.1169194664001" value="SetPropertyChange" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="structure" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2732852465125672459">
       <property name="name" nameId="tpck.1169194664001" value="SetReferenceChange" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="structure" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5694687812507036176">
       <property name="name" nameId="tpck.1169194664001" value="NodeChange" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="structure" />
     </node>
     <node type="tpee.EnumClass" typeId="tpee.1083245097125" id="8401260027345476466">
       <property name="name" nameId="tpck.1169194664001" value="ChangeType" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5743590290451629831">
       <property name="name" nameId="tpck.1169194664001" value="NodeCopier" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6562343564267115985">
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="MetadataChange" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="metadata" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6562343564267116024">
       <property name="name" nameId="tpck.1169194664001" value="DependencyChange" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="metadata" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6562343564267124230">
       <property name="name" nameId="tpck.1169194664001" value="ImportedModelChange" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="metadata" />
     </node>
   </roots>
   <root id="8813828754313712692">
