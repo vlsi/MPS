@@ -119,7 +119,7 @@ public class ConceptRegistry implements ApplicationComponent {
     checkConceptIsLoaded(fqName, LanguageAspect.STRUCTURE);
     StructureDescriptor descriptor = structureDescriptors.get(fqName);
     // todo: ugly quick fix
-    return descriptor != null ? descriptor : LanguageRuntimeInterpreted.STRUCTURE_PROVIDER.getDescriptor(null);
+    return descriptor != null ? descriptor : LanguageRuntimeInterpreted.STRUCTURE_PROVIDER.getDescriptor(fqName);
   }
 
   public synchronized BehaviorDescriptor getBehaviorDescriptor(String fqName) {
