@@ -11,7 +11,7 @@ public class ModuleDependencyChange extends DependencyChange {
   private ModuleReference myModuleReference;
   private ModuleDependencyChange.DependencyType myType;
 
-  private ModuleDependencyChange(@NotNull ChangeSet changeSet, @NotNull ModuleReference moduleReference, @NotNull ModuleDependencyChange.DependencyType type, boolean delete) {
+  public ModuleDependencyChange(@NotNull ChangeSet changeSet, @NotNull ModuleReference moduleReference, @NotNull ModuleDependencyChange.DependencyType type, boolean delete) {
     super(changeSet, delete);
     myModuleReference = moduleReference;
     myType = type;
@@ -38,7 +38,7 @@ public class ModuleDependencyChange extends DependencyChange {
     }
   }
 
-  private static   enum DependencyType {
+  public static   enum DependencyType {
     USED_LANG("Used Language", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
         model.addLanguage(module);

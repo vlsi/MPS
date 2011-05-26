@@ -25,8 +25,11 @@ import java.util.List;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class ChangeSetBuilder {
   private SModel myOldModel;
@@ -139,7 +142,80 @@ public class ChangeSetBuilder {
     }
   }
 
-  private void buildChanges(boolean withOpposite) {
+  private <D> void buildAddedAndDeletedChanges(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModel> referencesExtractor, final _FunctionTypes._return_P2_E0<? extends DependencyChange, ? super D, ? super Boolean> changeCreator) {
+    Iterable<D> added;
+    Iterable<D> deleted;
+    {
+      Tuples._2<Iterable<D>, Iterable<D>> _tmp_nbyrtw_c0d = getAddedAndDeleted(referencesExtractor);
+      added = _tmp_nbyrtw_c0d._0();
+      deleted = _tmp_nbyrtw_c0d._1();
+    }
+    myChangeSet.addAll(Sequence.fromIterable(added).<DependencyChange>select(new ISelector<D, DependencyChange>() {
+      public DependencyChange select(D r) {
+        return changeCreator.invoke(r, false);
+      }
+    }));
+    myChangeSet.addAll(Sequence.fromIterable(deleted).<DependencyChange>select(new ISelector<D, DependencyChange>() {
+      public DependencyChange select(D r) {
+        return changeCreator.invoke(r, true);
+      }
+    }));
+  }
+
+  private void buildModelImports() {
+    _FunctionTypes._return_P1_E0<? extends Iterable<SModelReference>, ? super SModel> importedModelsExtractor = new _FunctionTypes._return_P1_E0<ISequence<SModelReference>, SModel>() {
+      public ISequence<SModelReference> invoke(SModel model) {
+        return ListSequence.fromList(((List<SModel.ImportElement>) model.importedModels())).<SModelReference>select(new ISelector<SModel.ImportElement, SModelReference>() {
+          public SModelReference select(SModel.ImportElement ie) {
+            return ie.getModelReference();
+          }
+        });
+      }
+    };
+    _FunctionTypes._return_P2_E0<? extends ImportedModelChange, ? super SModelReference, ? super Boolean> changeCreator = new _FunctionTypes._return_P2_E0<ImportedModelChange, SModelReference, Boolean>() {
+      public ImportedModelChange invoke(SModelReference mr, Boolean deleted) {
+        return new ImportedModelChange(myChangeSet, mr, deleted);
+      }
+    };
+    buildAddedAndDeletedChanges(importedModelsExtractor, changeCreator);
+  }
+
+  private void buildModuleDependencies(final ModuleDependencyChange.DependencyType dependencyType, _FunctionTypes._return_P1_E0<? extends Iterable<ModuleReference>, ? super SModel> referencesExtractor) {
+    _FunctionTypes._return_P2_E0<? extends ModuleDependencyChange, ? super ModuleReference, ? super Boolean> changeCreator = new _FunctionTypes._return_P2_E0<ModuleDependencyChange, ModuleReference, Boolean>() {
+      public ModuleDependencyChange invoke(ModuleReference mr, Boolean deleted) {
+        return new ModuleDependencyChange(myChangeSet, mr, dependencyType, deleted);
+      }
+    };
+    buildAddedAndDeletedChanges(referencesExtractor, changeCreator);
+  }
+
+  private void buildMetadataChanges() {
+    buildModelImports();
+
+    buildModuleDependencies(ModuleDependencyChange.DependencyType.USED_LANG, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
+      public List<ModuleReference> invoke(SModel model) {
+        return model.importedLanguages();
+      }
+    });
+    buildModuleDependencies(ModuleDependencyChange.DependencyType.USED_DEVKIT, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
+      public List<ModuleReference> invoke(SModel model) {
+        return model.importedDevkits();
+      }
+    });
+    buildModuleDependencies(ModuleDependencyChange.DependencyType.LANG_ENGAGED_ON_GENERATION, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
+      public List<ModuleReference> invoke(SModel model) {
+        return model.engagedOnGenerationLanguages();
+      }
+    });
+
+    if (myNewModel.getSModelHeader().isDoNotGenerate() != myOldModel.getSModelHeader().isDoNotGenerate()) {
+      myChangeSet.add(new DoNotGenerateOptionChange(myChangeSet));
+    }
+  }
+
+  private Iterable<SNodeId> generateRootChanges() {
+    // Returns common root ids 
+
     _FunctionTypes._return_P1_E0<? extends Set<SNodeId>, ? super SModel> rootIds = new _FunctionTypes._return_P1_E0<ISetSequence<SNodeId>, SModel>() {
       public ISetSequence<SNodeId> invoke(SModel m) {
         return SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SModelOperations.getRoots(m, null)).<SNodeId>select(new ISelector<SNode, SNodeId>() {
@@ -163,13 +239,30 @@ public class ChangeSetBuilder {
       }
     }));
 
-    for (SNodeId rootId : SetSequence.fromSet(oldRootIds).intersect(SetSequence.fromSet(newRootIds))) {
+    return SetSequence.fromSet(oldRootIds).intersect(SetSequence.fromSet(newRootIds));
+  }
+
+  private void buildChanges(boolean withOpposite) {
+    Iterable<SNodeId> commonRootIds = generateRootChanges();
+    for (SNodeId rootId : Sequence.fromIterable(commonRootIds)) {
       buildNodeChanges(myOldModel.getNodeById(rootId));
     }
+
+    buildMetadataChanges();
 
     if (withOpposite) {
       myChangeSet.buildOppositeChangeSet();
     }
+  }
+
+  private <D> Tuples._2<Iterable<D>, Iterable<D>> getAddedAndDeleted(Iterable<D> oldItems, Iterable<D> newItems) {
+    Set<D> oldSet = SetSequence.fromSetWithValues(new HashSet<D>(), oldItems);
+    Set<D> newSet = SetSequence.fromSetWithValues(new HashSet<D>(), newItems);
+    return MultiTuple.<Iterable<D>,Iterable<D>>from(SetSequence.fromSet(newSet).subtract(SetSequence.fromSet(oldSet)), SetSequence.fromSet(oldSet).subtract(SetSequence.fromSet(newSet)));
+  }
+
+  private <D> Tuples._2<Iterable<D>, Iterable<D>> getAddedAndDeleted(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModel> itemsExtractor) {
+    return getAddedAndDeleted(itemsExtractor.invoke(myOldModel), itemsExtractor.invoke(myNewModel));
   }
 
   public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
