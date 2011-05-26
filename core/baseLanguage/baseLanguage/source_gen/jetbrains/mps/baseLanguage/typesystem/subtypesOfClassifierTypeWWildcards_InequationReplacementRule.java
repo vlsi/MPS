@@ -60,8 +60,9 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                       typeCheckingContext.createGreaterThanInequality((SNode) myParam, (SNode) finalTypeParam, false, true, _info_12389875345);
                     }
+                    final SNode finalMyParam = myParam;
                     {
-                      final SNode concreteParam = myParam;
+                      final SNode concreteParam = finalMyParam;
                       typeCheckingContext.whenConcrete(concreteParam, new Runnable() {
                         public void run() {
                           if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
@@ -117,8 +118,9 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               {
                 final SNode finalTypeParam = typeParam;
                 result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) finalTypeParam, (SNode) myParam, true);
+                final SNode finalMyParam = myParam;
                 {
-                  final SNode concreteParam = myParam;
+                  final SNode concreteParam = finalMyParam;
                   if (!(SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(concreteParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
                     result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) finalTypeParam, (SNode) concreteParam);
                   }

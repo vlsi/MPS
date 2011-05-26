@@ -191,8 +191,8 @@ __switch__:
       }
       {
         SNode _nodeToCheck_1029348928467 = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "549437922610106082", 0, null);
-        typeCheckingContext.createGreaterThanInequality((SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a0a3().createNode(genericClassifier, params, typeCheckingContext), (SNode) instanceType, false, true, _info_12389875345);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8217292422591585225", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) instanceType, (SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a0a3().createNode(genericClassifier, params, typeCheckingContext), false, true, _info_12389875345);
       }
     }
   }

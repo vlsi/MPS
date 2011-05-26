@@ -3233,15 +3233,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="549437922610106082">
+            <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="8217292422591585225">
               <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
               <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
-              <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7790104442347402834">
-                <node role="normalType" roleId="tpd4.1185788644032" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7790104442347402835">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1203432988072" resolveInfo="instanceType" />
-                </node>
-              </node>
-              <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7790104442347402836">
+              <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7790104442347402836">
                 <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7790104442347402837">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7790104442347410317">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
@@ -3260,6 +3255,11 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7790104442347402834">
+                <node role="normalType" roleId="tpd4.1185788644032" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7790104442347402835">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1203432988072" resolveInfo="instanceType" />
                 </node>
               </node>
             </node>
@@ -13449,6 +13449,18 @@
                     </node>
                     <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882521" />
                   </node>
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5942313089043114545">
+                    <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5942313089043114546">
+                      <property name="name" nameId="tpck.1169194664001" value="finalMyParam" />
+                      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5942313089043114547">
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+                      </node>
+                      <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5942313089043114548">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1220523357870" resolveInfo="myParam" />
+                      </node>
+                    </node>
+                  </node>
                   <node role="statement" roleId="tpee.1068581517665" type="tpd4.WhenConcreteStatement" typeId="tpd4.1185805035213" id="1220523357880">
                     <property name="skipsError" nameId="tpd4.1233571207619" value="false" />
                     <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="1220523357881">
@@ -13511,8 +13523,8 @@
                         </node>
                       </node>
                     </node>
-                    <node role="argument" roleId="tpd4.1185805056450" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1220523357911">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1220523357870" resolveInfo="myParam" />
+                    <node role="argument" roleId="tpd4.1185805056450" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5942313089043114549">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5942313089043114546" resolveInfo="node" />
                     </node>
                     <node role="argumentRepresentator" roleId="tpd4.1205761991995" type="tpd4.WhenConcreteVariableDeclaration" typeId="tpd4.1205762105978" id="1220523357912">
                       <property name="name" nameId="tpck.1169194664001" value="concreteParam" />
@@ -24039,11 +24051,11 @@
                 <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3791846458263577274">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3791846458263577275">
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3791846458263577276">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="3791846458263577277">
-                        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3791846458263577278">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpd4.WarningStatement" typeId="tpd4.1207055528241" id="3451033204592343684">
+                        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3451033204592343688">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3791846458263577269" resolveInfo="dot" />
                         </node>
-                        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3791846458263577279">
+                        <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3451033204592343687">
                           <property name="value" nameId="tpee.1070475926801" value="This operation can produce 'java.lang.NullPointerException'" />
                         </node>
                       </node>
@@ -24335,12 +24347,12 @@
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3791846458263577388">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3791846458263577389">
                         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3791846458263577390">
-                          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="3791846458263577391">
-                            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3791846458263577392">
-                              <property name="value" nameId="tpee.1070475926801" value="This condition is always false" />
-                            </node>
-                            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3791846458263577393">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpd4.WarningStatement" typeId="tpd4.1207055528241" id="3451033204592343690">
+                            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3451033204592343694">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3791846458263577261" resolveInfo="parent" />
+                            </node>
+                            <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3451033204592343693">
+                              <property name="value" nameId="tpee.1070475926801" value="This condition is always false" />
                             </node>
                           </node>
                         </node>
@@ -24367,12 +24379,12 @@
                       </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3791846458263577402">
                         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3791846458263577403">
-                          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="3791846458263577404">
-                            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3791846458263577405">
-                              <property name="value" nameId="tpee.1070475926801" value="This condition is always true" />
-                            </node>
-                            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3791846458263577406">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpd4.WarningStatement" typeId="tpd4.1207055528241" id="3451033204592343696">
+                            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3451033204592343700">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3791846458263577261" resolveInfo="parent" />
+                            </node>
+                            <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3451033204592343699">
+                              <property name="value" nameId="tpee.1070475926801" value="This condition is always true" />
                             </node>
                           </node>
                         </node>
@@ -24562,20 +24574,20 @@
                   </node>
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3791846458263577481">
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3791846458263577482">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="3791846458263577483">
-                        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3791846458263577484">
-                          <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3791846458263577485" />
-                          <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3791846458263577486">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3791846458263577487">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpd4.WarningStatement" typeId="tpd4.1207055528241" id="3451033204592343702">
+                        <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3451033204592343705">
+                          <property name="value" nameId="tpee.1070475926801" value="This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull" />
+                        </node>
+                        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3451033204592343706">
+                          <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3451033204592343707" />
+                          <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3451033204592343708">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3451033204592343709">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3791846458263577442" resolveInfo="write" />
                             </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3791846458263577488">
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3451033204592343710">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nst8.~WriteInstruction%dgetValue()%cjava%dlang%dObject" resolveInfo="getValue" />
                             </node>
                           </node>
-                        </node>
-                        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3791846458263577489">
-                          <property name="value" nameId="tpee.1070475926801" value="This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull" />
                         </node>
                       </node>
                     </node>
