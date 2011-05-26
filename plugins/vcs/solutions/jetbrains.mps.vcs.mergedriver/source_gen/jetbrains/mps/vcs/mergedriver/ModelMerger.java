@@ -38,7 +38,7 @@ import jetbrains.mps.util.FileUtil;
         mergeContext.getResultModel().setLoading(true);
         Runnable applyAction = new Runnable() {
           public void run() {
-            mergeContext.applyAllChangesForNonConflictingRoots();
+            mergeContext.applyChanges(mergeContext.getAllChanges());
           }
         };
         ModelAccess.instance().runReadAction(applyAction);
