@@ -32,6 +32,7 @@ public class SetPropertyChange extends NodeChange {
     node.setProperty(myPropertyName, myNewValue);
   }
 
+  @NotNull
   protected ModelChange createOppositeChange() {
     SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
     assert node != null;

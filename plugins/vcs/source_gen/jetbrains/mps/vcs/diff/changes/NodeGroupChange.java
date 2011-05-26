@@ -109,6 +109,7 @@ public class NodeGroupChange extends ModelChange {
     return getChangeSet().getOldModel().getNodeById(myParentNodeId).getContainingRoot().getSNodeId();
   }
 
+  @NotNull
   public ChangeType getType() {
     if (myBegin == myEnd) {
       return ChangeType.ADD;
@@ -130,6 +131,7 @@ public class NodeGroupChange extends ModelChange {
     return String.format("Replace %s with nodes %s in role %s of node %s", nodeRange(myBegin, myEnd), nodeRange(myResultBegin, myResultEnd), myRole, myParentNodeId);
   }
 
+  @NotNull
   protected ModelChange createOppositeChange() {
     return new NodeGroupChange(getChangeSet().getOppositeChangeSet(), myParentNodeId, myRole, myResultBegin, myResultEnd, myBegin, myEnd);
   }

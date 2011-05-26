@@ -35,7 +35,12 @@ public abstract class ModelChange {
     return myOpposite;
   }
 
+  @NotNull
   protected abstract ModelChange createOppositeChange();
 
+  @NotNull
   public abstract ChangeType getType();
+
+  @Override
+  public abstract String toString();
 }

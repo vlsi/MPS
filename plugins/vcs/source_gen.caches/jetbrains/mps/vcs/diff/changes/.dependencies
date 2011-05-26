@@ -80,7 +80,34 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.changes.DependencyChange" file="DependencyChange.java">
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.MetadataChange" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.changes.ImportedModelChange" file="ImportedModelChange.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.DependencyChange" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.changes.MetadataChange" file="MetadataChange.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.ModelChange" file="ModelChange.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
