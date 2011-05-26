@@ -5,18 +5,29 @@ package jetbrains.mps.vcs.diff.merge.ui;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 
 public class ApplyNonConflictsForRoot extends BaseAction {
-  private MergeRootsDialog myMergeRootsDialog;
+  private MergeRootsDialog myDialog;
 
-  public ApplyNonConflictsForRoot(MergeRootsDialog mergeRootsDialog) {
+  public ApplyNonConflictsForRoot(MergeRootsDialog dialog) {
     super("Apply Non-Conflicting Changes", null, MergeModelsDialog.APPLY_NON_CONFLICTS);
-    myMergeRootsDialog = mergeRootsDialog;
+    myDialog = dialog;
     setDisableOnNoProject(false);
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    myMergeRootsDialog.getMergeContext().applyAllNonConflictingChanges(myMergeRootsDialog.getRootId());
-    myMergeRootsDialog.rehighlight();
+    myDialog.getMergeContext().applyChanges(getChanges());
+    myDialog.rehighlight();
+  }
+
+  @Override
+  protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
+    event.getPresentation().setEnabled(Sequence.fromIterable(getChanges()).isNotEmpty());
+  }
+
+  private Iterable<ModelChange> getChanges() {
+    return myDialog.getMergeContext().getApplicableChangesForRoot(myDialog.getRootId());
   }
 }

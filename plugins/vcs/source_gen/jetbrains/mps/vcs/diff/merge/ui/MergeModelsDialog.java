@@ -6,12 +6,13 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.ide.projectPane.Icons;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.vcs.diff.merge.MergeContextState;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
@@ -21,7 +22,6 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
 import jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction;
-import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.ScrollPaneFactory;
@@ -51,7 +51,6 @@ public class MergeModelsDialog extends BaseDialog {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class);
   public static final Icon RESET = IconLoader.getIcon("/actions/reset.png", Icons.class);
 
-  private Project myProject;
   private IOperationContext myOperationContext;
   private MergeContext myMergeContext;
   private MergeContextState myInitialState;
@@ -60,12 +59,12 @@ public class MergeModelsDialog extends BaseDialog {
   private boolean myApplyChanges = false;
   private boolean myRootsDialogInvoked = false;
   private String[] myContentTitles;
+  private ActionToolbar myToolbar;
 
   public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
     super(WindowManager.getInstance().getFrame(project), "Merging " + SModelOperations.getModelName(baseModel));
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
-    myProject = project;
     myOperationContext = operationContext;
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -77,9 +76,9 @@ public class MergeModelsDialog extends BaseDialog {
     myMergeTree.setMultipleRootNames(true);
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ResetState(this), new MergeNonConflictingRoots(this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this), Separator.getInstance(), new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request));
-    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
-    toolbar.updateActionsImmediately();
-    myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
+    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+    myToolbar.updateActionsImmediately();
+    myPanel.add(myToolbar.getComponent(), BorderLayout.NORTH);
     myPanel.add(ScrollPaneFactory.createScrollPane(myMergeTree), BorderLayout.CENTER);
   }
 
@@ -96,7 +95,7 @@ public class MergeModelsDialog extends BaseDialog {
   public void ok() {
     MergeConfirmation.showMergeConfirmationAndTakeAction(this, myMergeContext, myMergeContext.getAllChanges(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        myMergeContext.applyAllChangesForNonConflictingRoots();
+        myMergeContext.applyChanges(myMergeContext.getApplicableChangesInNonConflictingRoots());
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -119,6 +118,7 @@ public class MergeModelsDialog extends BaseDialog {
   }
 
   /*package*/ void rebuildLater() {
+    myToolbar.updateActionsImmediately();
     myMergeTree.rebuildLater();
   }
 
