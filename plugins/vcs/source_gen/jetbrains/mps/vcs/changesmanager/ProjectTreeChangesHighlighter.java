@@ -45,6 +45,7 @@ import java.awt.Color;
 import java.util.Set;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import javax.swing.tree.TreeNode;
 
 public class ProjectTreeChangesHighlighter extends AbstractProjectComponent implements TreeMessageOwner {
   private static final boolean EXTRA_CHECKS_ENABLED = true;
@@ -400,7 +401,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
             treeNode.addTreeMessage(myDefaultTreeMessage);
           }
         } else if (treeNode instanceof PropertyTreeNode) {
-          final SNode node = ((PropertiesTreeNode) treeNode.getParent()).getSNode();
+          final SNode node = check_ybywwq_a0a0c5a0a0a0j(((PropertiesTreeNode) check_ybywwq_a0a0a0a2f0a0a0a9(treeNode)));
           if (node == null) {
             return;
           }
@@ -534,6 +535,20 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
   private static SModelDescriptor check_ybywwq_a0a0a2a5a0a0a0j(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
+  }
+
+  private static SNode check_ybywwq_a0a0c5a0a0a0j(PropertiesTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNode();
+    }
+    return null;
+  }
+
+  private static TreeNode check_ybywwq_a0a0a0a2f0a0a0a9(MPSTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getParent();
     }
     return null;
   }
