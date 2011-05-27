@@ -260,8 +260,8 @@
      <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
        <zipfileset file="core/baseLanguage/jdk7/languages/jdk7/jdk7.mpl" prefix="module" />
        <zipfileset dir="core/baseLanguage/jdk7/languages/jdk7" includes="icons/**, resources/**" prefix="module" />
-       <zipfileset dir="core/baseLanguage/jdk7/languages/checkedDots/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-       <zipfileset dir="core/baseLanguage/jdk7/languages/checkedDots/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+       <zipfileset dir="core/baseLanguage/jdk7/languages/jdk7/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+       <zipfileset dir="core/baseLanguage/jdk7/languages/jdk7/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
        <zipfileset dir="core/baseLanguage/jdk7/languages/jdk7/classes_gen" />
      </jar>
    </target>
