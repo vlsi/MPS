@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.plugin.JavaNodeApplicationFromNode" file="JavaNodeApplicationFromNode.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
@@ -14,13 +13,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.behavior.IMainClass_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.plugin.JavaNodeApplication_Configuration" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>

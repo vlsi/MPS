@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 
 public class RunConfiguration_Behavior {
   public static void init(SNode thisNode) {
@@ -26,6 +27,10 @@ public class RunConfiguration_Behavior {
       return false;
     }
     return neq_g3syr7_a0b0c(SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, "configurationKind", false)), SNodeOperations.getModel(thisNode));
+  }
+
+  public static String call_getGeneratedFactoryName_2256484787298832736(SNode thisNode) {
+    return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(thisNode) + "_Factory";
   }
 
   private static boolean neq_g3syr7_a0b0c(Object a, Object b) {

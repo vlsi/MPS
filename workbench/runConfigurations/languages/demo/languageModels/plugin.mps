@@ -47,6 +47,7 @@
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
     </node>
+    <node type="uhxm.RunConfigurationProducer" typeId="uhxm.4366236229294105349" id="3642991921658090717" />
   </roots>
   <root id="8750596094204760415">
     <node role="icon" roleId="uhxm.7966814097310618131" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4763274727405913090" />
@@ -484,6 +485,85 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="3642991921658090717">
+    <node role="produce" roleId="uhxm.4366236229294149036" type="uhxm.RunConfigurationProducerPart" typeId="uhxm.4366236229294149030" id="3642991921658090895">
+      <node role="create" roleId="uhxm.3642991921657904774" type="uhxm.Create_ConceptFunction" typeId="uhxm.4366236229294149059" id="3642991921658090897">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3642991921658090898">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="529406319400371200">
+            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="529406319400371201">
+              <property name="name" nameId="tpck.1169194664001" value="configuration" />
+              <node role="type" roleId="tpee.5680397130376446158" type="fb9u.PersistentConfigurationType" typeId="fb9u.946964771156066332" id="529406319400371202">
+                <link role="persistentConfiguration" roleId="fb9u.946964771156066333" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
+              </node>
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="529406319400371203">
+                <node role="creator" roleId="tpee.1145553007750" type="uhxm.RunConfigurationCreator" typeId="uhxm.3642991921658122718" id="529406319400371204">
+                  <link role="configuration" roleId="uhxm.3642991921658122719" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
+                  <node role="configurationName" roleId="uhxm.529406319400385974" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="529406319400419530">
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="529406319400446671">
+                      <node role="operand" roleId="tpee.1197027771414" type="uhxm.Source_ConceptFunctionParameter" typeId="uhxm.3642991921657904775" id="529406319400446670" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2572811016744665489">
+                        <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="529406319400419529">
+                      <property name="value" nameId="tpee.1070475926801" value="SomeNode " />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="529406319400371207">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="529406319400385947">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="529406319400371209">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="529406319400371208">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="529406319400371201" resolveInfo="configuration" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="529406319400385946">
+                  <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="529406319400385951">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="qsa3.3822284879781071727" resolveInfo="setNode" />
+                <node role="actualArgument" roleId="tp4f.1205770614681" type="uhxm.Source_ConceptFunctionParameter" typeId="uhxm.3642991921657904775" id="529406319400385952" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="529406319400385954">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="529406319400385966">
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="529406319400385969">
+                <property name="value" nameId="tpee.1068580123138" value="true" />
+              </node>
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="529406319400385961">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="529406319400385956">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="529406319400385955">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="529406319400371201" resolveInfo="configuration" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="529406319400385960">
+                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="529406319400385965">
+                  <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7684700299064222832" resolveInfo="myMake" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="529406319400385971">
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="529406319400385973">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="529406319400371201" resolveInfo="configuration" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="source" roleId="uhxm.7301162575811113551" type="uhxm.NodeSource" typeId="uhxm.7301162575811126385" id="4013739085301328103">
+        <link role="concept" roleId="uhxm.7301162575811126914" targetNodeId="f1er.4928971978190304900" resolveInfo="SomeConcept" />
+      </node>
+    </node>
+    <node role="configuration" roleId="uhxm.4366236229294139631" type="fb9u.PersistentConfigurationType" typeId="fb9u.946964771156066332" id="3642991921658090718">
+      <link role="persistentConfiguration" roleId="fb9u.946964771156066333" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
     </node>
   </root>
 </model>

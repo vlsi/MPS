@@ -35,6 +35,29 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new StartProcessHandlerStatement_BehaviorDescriptor();
       case -115990896:
         return new SimpleRunConfigurationExecutor_BehaviorDescriptor();
+      case 497683837:
+        return new RunConfigurationProducer_BehaviorDescriptor();
+      case -2016729914:
+        // interface or abstract concept behavior jetbrains.mps.execution.configurations.structure.RunConfigurationSource 
+        return null;
+      case -152903920:
+        return new RunConfigurationProducerPart_BehaviorDescriptor();
+      case -390735459:
+        return new Create_ConceptFunction_BehaviorDescriptor();
+      case 567125069:
+        return new Source_ConceptFunctionParameter_BehaviorDescriptor();
+      case 661346529:
+        return new RunConfigurationCreator_BehaviorDescriptor();
+      case 223639556:
+        return new ModelSource_BehaviorDescriptor();
+      case 1451473908:
+        return new ProjectSource_BehaviorDescriptor();
+      case -2051678565:
+        return new NodeListSource_BehaviorDescriptor();
+      case 1771502151:
+        return new ModuleSource_BehaviorDescriptor();
+      case 229384541:
+        return new NodeSource_BehaviorDescriptor();
       default:
         return null;
     }

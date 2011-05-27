@@ -35,6 +35,28 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"));
       case -115990896:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor"));
+      case 497683837:
+        return new DataHolderConstraintsDescriptor(new RunConfigurationProducer_Constraints());
+      case -2016729914:
+        return new DataHolderConstraintsDescriptor(new RunConfigurationSource_Constraints());
+      case -152903920:
+        return new DataHolderConstraintsDescriptor(new RunConfigurationProducerPart_Constraints());
+      case -390735459:
+        return new DataHolderConstraintsDescriptor(new Create_ConceptFunction_Constraints());
+      case 567125069:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter"));
+      case 661346529:
+        return new DataHolderConstraintsDescriptor(new RunConfigurationCreator_Constraints());
+      case 223639556:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ModelSource"));
+      case 1451473908:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ProjectSource"));
+      case -2051678565:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.NodeListSource"));
+      case 1771502151:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ModuleSource"));
+      case 229384541:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.NodeSource"));
       default:
         return null;
     }

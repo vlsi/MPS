@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.logging.Logger;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
@@ -13,17 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.execution.configurations.ConfigurationFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements Cloneable {
-  private static final Logger LOG = Logger.getLogger(DefaultJavaAppFromClass.class);
-
   private RunConfiguration myConfig;
 
   public DefaultJavaAppFromClass() {
-    super(findFactoryImpl(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class), "DefaultJavaApplication"));
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class), "DefaultJavaApplication_Factory");
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {
@@ -61,21 +55,5 @@ public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements
 
   protected boolean isApplicable(final Object element) {
     return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.lang.core.structure.BaseConcept");
-  }
-
-  @NotNull
-  private ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
-    return findFactoryImpl(configurationType, configurationName);
-  }
-
-  @NotNull
-  private static ConfigurationFactory findFactoryImpl(ConfigurationType configurationType, String configurationName) {
-    for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
-      if (factory.getClass().getName().contains(configurationName)) {
-        return factory;
-      }
-    }
-    LOG.warning("Cound not find configuration factory for " + configurationName + " in type " + configurationType.getDisplayName() + ".");
-    return configurationType.getConfigurationFactories()[0];
   }
 }

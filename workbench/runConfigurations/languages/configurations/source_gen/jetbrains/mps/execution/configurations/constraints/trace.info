@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="RunConfigurationProducerPart_Constraints.java" startLine="23" startPosition="27" endLine="27" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationProducerPart_Constraints$1" />
+  <unitInfo fileName="RunConfigurationProducer_Constraints.java" startLine="24" startPosition="27" endLine="28" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationProducer_Constraints$1" />
   <unitInfo fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="48" startPosition="27" endLine="52" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.ConfigurationFromExecutorReference_Constraints$2" />
   <unitInfo fileName="RunConfigurationExecutor_Constraints.java" startLine="25" startPosition="27" endLine="32" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationExecutor_Constraints$1" />
   <unitInfo fileName="ComplexRunConfigurationExecutor_Constraints.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ComplexRunConfigurationExecutor_Constraints" />
+  <unitInfo fileName="RunConfigurationSource_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationSource_Constraints$1" />
+  <unitInfo fileName="RunConfigurationCreator_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationCreator_Constraints$1" />
+  <unitInfo fileName="Create_ConceptFunction_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.Create_ConceptFunction_Constraints$1" />
   <unitInfo fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="33" startPosition="15" endLine="43" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.ConfigurationFromExecutorReference_Constraints$1" />
+  <unitInfo fileName="RunConfigurationProducerPart_Constraints.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationProducerPart_Constraints" />
+  <unitInfo fileName="RunConfigurationProducer_Constraints.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationProducer_Constraints" />
   <unitInfo fileName="RunConfigurationExecutor_Constraints.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationExecutor_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="RunConfigurationSource_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationSource_Constraints" />
+  <unitInfo fileName="RunConfigurationCreator_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationCreator_Constraints" />
+  <unitInfo fileName="Create_ConceptFunction_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.Create_ConceptFunction_Constraints" />
   <unitInfo fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ConfigurationFromExecutorReference_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1048802521465134864">
     <nodeInfo nodeId="6586232406240908342" fileName="RunConfigurationExecutor_Constraints.java" startLine="27" startPosition="78" endLine="28" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6586232406240908355" fileName="RunConfigurationExecutor_Constraints.java" startLine="29" startPosition="9" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -14,11 +24,31 @@
     <scopeInfo nodeId="6586232406240908341" fileName="RunConfigurationExecutor_Constraints.java" startLine="27" startPosition="78" endLine="28" endPosition="126" />
     <scopeInfo nodeId="6586232406240908339" fileName="RunConfigurationExecutor_Constraints.java" startLine="26" startPosition="84" endLine="30" endPosition="20" />
   </root>
+  <root nodeId="3642991921658067859">
+    <nodeInfo nodeId="3642991921658067862" fileName="Create_ConceptFunction_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3642991921658067861" fileName="Create_ConceptFunction_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="178" />
+  </root>
+  <root nodeId="4366236229294141339">
+    <nodeInfo nodeId="4366236229294143336" fileName="RunConfigurationProducer_Constraints.java" startLine="25" startPosition="84" endLine="26" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="4366236229294141342" fileName="RunConfigurationProducer_Constraints.java" startLine="25" startPosition="84" endLine="26" endPosition="97" />
+  </root>
+  <root nodeId="529406319400459305">
+    <nodeInfo nodeId="529406319400459309" fileName="RunConfigurationProducerPart_Constraints.java" startLine="24" startPosition="84" endLine="25" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="529406319400459308" fileName="RunConfigurationProducerPart_Constraints.java" startLine="24" startPosition="84" endLine="25" endPosition="31" />
+  </root>
   <root nodeId="7806358006983738928">
     <nodeInfo nodeId="7806358006983738953" fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="49" startPosition="84" endLine="50" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983738931" fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="56" startPosition="114" endLine="57" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7806358006983738951" fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="49" startPosition="84" endLine="50" endPosition="154" />
     <scopeInfo nodeId="7806358006983738930" fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="56" startPosition="114" endLine="57" endPosition="178" />
+  </root>
+  <root nodeId="7952658987872188456">
+    <nodeInfo nodeId="7952658987872188459" fileName="RunConfigurationCreator_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7952658987872188458" fileName="RunConfigurationCreator_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="170" />
+  </root>
+  <root nodeId="7952658987872188475">
+    <nodeInfo nodeId="7952658987872188478" fileName="RunConfigurationSource_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7952658987872188477" fileName="RunConfigurationSource_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="147" />
   </root>
 </debugInfo>
 

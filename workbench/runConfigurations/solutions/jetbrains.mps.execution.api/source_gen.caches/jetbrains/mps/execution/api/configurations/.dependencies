@@ -5,6 +5,7 @@
     <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="com.intellij.execution.configurations.LocatableConfiguration" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunConfigurationBase" />
   </dependency>
   <dependency className="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" file="ConsoleProcessListener.java">

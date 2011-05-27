@@ -157,7 +157,6 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromConfiguration" file="DefaultCustomMpsLanguageConfigurationFromConfiguration.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
@@ -172,19 +171,15 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSBuild" file="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
@@ -201,20 +196,16 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSLayout" file="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
@@ -229,15 +220,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>

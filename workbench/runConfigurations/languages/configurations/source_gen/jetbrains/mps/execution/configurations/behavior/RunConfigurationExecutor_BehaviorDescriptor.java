@@ -19,6 +19,10 @@ public abstract class RunConfigurationExecutor_BehaviorDescriptor extends BaseCo
     return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
   }
 
+  public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
+    return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
+  }
+
   @NonNls
   public String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return RunConfigurationExecutor_Behavior.virtual_getSuffix_946964771156905483(thisNode);

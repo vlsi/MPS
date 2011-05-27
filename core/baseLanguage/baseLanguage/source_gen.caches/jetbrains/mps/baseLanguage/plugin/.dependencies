@@ -206,46 +206,36 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromClass" file="DefaultJavaAppFromClass.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromMainMethod" file="DefaultJavaAppFromMainMethod.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>

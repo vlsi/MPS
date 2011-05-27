@@ -24,6 +24,7 @@
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="debug" />
+    <orderEntry type="library" name="commons-logging" level="project" />
   </component>
 </module>
 

@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3908032508224771122">
-    <nodeInfo nodeId="3908032508224771140" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="94" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3908032508224771129" fileName="BaseMpsRunConfiguration.java" startLine="15" startPosition="48" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3908032508224771136" fileName="BaseMpsRunConfiguration.java" startLine="10" startPosition="76" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMpsRunConfiguration#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/configurations/ConfigurationFactory;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3908032508224771123" fileName="BaseMpsRunConfiguration.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="3908032508224771139" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="94" endLine="12" endPosition="34" />
-    <scopeInfo nodeId="3908032508224771128" fileName="BaseMpsRunConfiguration.java" startLine="15" startPosition="48" endLine="16" endPosition="61" />
-    <scopeInfo nodeId="3908032508224771136" fileName="BaseMpsRunConfiguration.java" startLine="10" startPosition="76" endLine="13" endPosition="3">
+    <nodeInfo nodeId="3908032508224771140" fileName="BaseMpsRunConfiguration.java" startLine="12" startPosition="94" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3908032508224771129" fileName="BaseMpsRunConfiguration.java" startLine="16" startPosition="48" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7521473491034214420" fileName="BaseMpsRunConfiguration.java" startLine="20" startPosition="36" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7521473491034214424" fileName="BaseMpsRunConfiguration.java" startLine="24" startPosition="33" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3908032508224771136" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="110" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMpsRunConfiguration#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/configurations/ConfigurationFactory;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3908032508224771123" fileName="BaseMpsRunConfiguration.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7521473491034214414" fileName="BaseMpsRunConfiguration.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isGeneratedName#()Z" />
+    <nodeInfo nodeId="7521473491034214410" fileName="BaseMpsRunConfiguration.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="suggestedName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="3908032508224771139" fileName="BaseMpsRunConfiguration.java" startLine="12" startPosition="94" endLine="13" endPosition="34" />
+    <scopeInfo nodeId="3908032508224771128" fileName="BaseMpsRunConfiguration.java" startLine="16" startPosition="48" endLine="17" endPosition="61" />
+    <scopeInfo nodeId="7521473491034214417" fileName="BaseMpsRunConfiguration.java" startLine="20" startPosition="36" endLine="21" endPosition="16" />
+    <scopeInfo nodeId="7521473491034214413" fileName="BaseMpsRunConfiguration.java" startLine="24" startPosition="33" endLine="25" endPosition="21" />
+    <scopeInfo nodeId="3908032508224771136" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="110" endLine="14" endPosition="3">
       <varInfo nodeId="3908032508224771144" varName="project" />
       <varInfo nodeId="3908032508224771148" varName="name" />
       <varInfo nodeId="3908032508224771146" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="3908032508224771123" fileName="BaseMpsRunConfiguration.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="3908032508224771123" fileName="BaseMpsRunConfiguration.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="3908032508224771124" varName="executorId" />
     </scopeInfo>
-    <unitInfo nodeId="3908032508224771122" fileName="BaseMpsRunConfiguration.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
+    <scopeInfo nodeId="7521473491034214414" fileName="BaseMpsRunConfiguration.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="7521473491034214410" fileName="BaseMpsRunConfiguration.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="3908032508224771122" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
   </root>
   <root nodeId="3908032508224771150">
     <nodeInfo nodeId="3908032508224771151" fileName="ConsoleProcessListener.java" startLine="12" startPosition="60" endLine="13" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsoleView" />

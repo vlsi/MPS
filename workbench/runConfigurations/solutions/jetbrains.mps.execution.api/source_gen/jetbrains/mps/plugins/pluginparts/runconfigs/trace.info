@@ -181,100 +181,120 @@
     <unitInfo nodeId="5628633142282726004" fileName="MPSPsiElement.java" startLine="24" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
   </root>
   <root nodeId="5628633142282726006">
-    <nodeInfo nodeId="5628633142282726804" fileName="BaseConfigCreator.java" startLine="21" startPosition="81" endLine="22" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceElement" />
-    <nodeInfo nodeId="5628633142282726830" fileName="BaseConfigCreator.java" startLine="33" startPosition="71" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5628633142282726838" fileName="BaseConfigCreator.java" startLine="37" startPosition="58" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5628633142282726846" fileName="BaseConfigCreator.java" startLine="41" startPosition="40" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726852" fileName="BaseConfigCreator.java" startLine="46" startPosition="47" endLine="47" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726863" fileName="BaseConfigCreator.java" startLine="50" startPosition="122" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5628633142282726874" fileName="BaseConfigCreator.java" startLine="52" startPosition="47" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726876" fileName="BaseConfigCreator.java" startLine="54" startPosition="5" endLine="55" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5628633142282726882" fileName="BaseConfigCreator.java" startLine="55" startPosition="53" endLine="56" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5628633142282727019" fileName="BaseConfigCreator.java" startLine="58" startPosition="41" endLine="59" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5628633142282727030" fileName="BaseConfigCreator.java" startLine="60" startPosition="30" endLine="61" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282727037" fileName="BaseConfigCreator.java" startLine="63" startPosition="39" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282727039" fileName="BaseConfigCreator.java" startLine="65" startPosition="9" endLine="66" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726906" fileName="BaseConfigCreator.java" startLine="69" startPosition="25" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726908" fileName="BaseConfigCreator.java" startLine="71" startPosition="5" endLine="72" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726935" fileName="BaseConfigCreator.java" startLine="79" startPosition="34" endLine="80" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726988" fileName="BaseConfigCreator.java" startLine="94" startPosition="63" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726990" fileName="BaseConfigCreator.java" startLine="96" startPosition="5" endLine="97" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5628633142282726996" fileName="BaseConfigCreator.java" startLine="97" startPosition="62" endLine="98" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726807" fileName="BaseConfigCreator.java" startLine="22" startPosition="37" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="5628633142282726917" fileName="BaseConfigCreator.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doCreateConfiguration#(null)Lcom/intellij/execution/configurations/RunConfiguration;" />
-    <nodeInfo nodeId="5628633142282726923" fileName="BaseConfigCreator.java" startLine="76" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5628633142282726824" fileName="BaseConfigCreator.java" startLine="32" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseConfigCreator#(Lcom/intellij/execution/configurations/ConfigurationFactory;)V" />
-    <nodeInfo nodeId="5628633142282726867" fileName="BaseConfigCreator.java" startLine="51" startPosition="24" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5628633142282727025" fileName="BaseConfigCreator.java" startLine="59" startPosition="49" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5628633142282727032" fileName="BaseConfigCreator.java" startLine="62" startPosition="9" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5628633142282726901" fileName="BaseConfigCreator.java" startLine="68" startPosition="7" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5628633142282726977" fileName="BaseConfigCreator.java" startLine="93" startPosition="37" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5628633142282726817" fileName="BaseConfigCreator.java" startLine="26" startPosition="65" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5628633142282726832" fileName="BaseConfigCreator.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSourceElement#(Lcom/intellij/psi/PsiElement;)V" />
-    <nodeInfo nodeId="5628633142282726842" fileName="BaseConfigCreator.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSourceElement#()Lcom/intellij/psi/PsiElement;" />
-    <nodeInfo nodeId="5628633142282726929" fileName="BaseConfigCreator.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljava/lang/Object;)I" />
-    <nodeInfo nodeId="5628633142282726848" fileName="BaseConfigCreator.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Lcom/intellij/execution/actions/ConfigurationContext;" />
-    <nodeInfo nodeId="5628633142282726811" fileName="BaseConfigCreator.java" startLine="25" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseConfigCreator#(Lcom/intellij/execution/configurations/ConfigurationType;)V" />
-    <nodeInfo nodeId="5628633142282726941" fileName="BaseConfigCreator.java" startLine="83" startPosition="25" endLine="90" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5628633142282726971" fileName="BaseConfigCreator.java" startLine="92" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5628633142282726937" fileName="BaseConfigCreator.java" startLine="82" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="5628633142282726898" fileName="BaseConfigCreator.java" startLine="57" startPosition="103" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lcom/intellij/execution/configurations/RunConfiguration;" />
-    <nodeInfo nodeId="5628633142282726888" fileName="BaseConfigCreator.java" startLine="56" startPosition="65" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5628633142282726855" fileName="BaseConfigCreator.java" startLine="49" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfigurationByElement#(Lcom/intellij/execution/Location;Lcom/intellij/execution/actions/ConfigurationContext;)Lcom/intellij/execution/RunnerAndConfigurationSettings;" />
-    <scopeInfo nodeId="5628633142282726829" fileName="BaseConfigCreator.java" startLine="33" startPosition="71" endLine="34" endPosition="32" />
-    <scopeInfo nodeId="5628633142282726837" fileName="BaseConfigCreator.java" startLine="37" startPosition="58" endLine="38" endPosition="36" />
-    <scopeInfo nodeId="5628633142282726845" fileName="BaseConfigCreator.java" startLine="41" startPosition="40" endLine="42" endPosition="27" />
-    <scopeInfo nodeId="5628633142282726851" fileName="BaseConfigCreator.java" startLine="46" startPosition="47" endLine="47" endPosition="21" />
-    <scopeInfo nodeId="5628633142282726873" fileName="BaseConfigCreator.java" startLine="52" startPosition="47" endLine="53" endPosition="18" />
-    <scopeInfo nodeId="5628633142282727029" fileName="BaseConfigCreator.java" startLine="60" startPosition="30" endLine="61" endPosition="22" />
-    <scopeInfo nodeId="5628633142282727036" fileName="BaseConfigCreator.java" startLine="63" startPosition="39" endLine="64" endPosition="22" />
-    <scopeInfo nodeId="5628633142282726905" fileName="BaseConfigCreator.java" startLine="69" startPosition="25" endLine="70" endPosition="18" />
-    <scopeInfo nodeId="5628633142282726934" fileName="BaseConfigCreator.java" startLine="79" startPosition="34" endLine="80" endPosition="49" />
-    <scopeInfo nodeId="5628633142282726987" fileName="BaseConfigCreator.java" startLine="94" startPosition="63" endLine="95" endPosition="19" />
-    <scopeInfo nodeId="5628633142282726917" fileName="BaseConfigCreator.java" startLine="74" startPosition="0" endLine="76" endPosition="0">
+    <nodeInfo nodeId="5628633142282726006" fileName="BaseConfigCreator.java" startLine="25" startPosition="81" endLine="26" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="5628633142282726804" fileName="BaseConfigCreator.java" startLine="27" startPosition="0" endLine="28" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceElement" />
+    <nodeInfo nodeId="5628633142282726817" fileName="BaseConfigCreator.java" startLine="32" startPosition="90" endLine="33" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5628633142282726830" fileName="BaseConfigCreator.java" startLine="36" startPosition="71" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5628633142282726838" fileName="BaseConfigCreator.java" startLine="40" startPosition="58" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5628633142282726846" fileName="BaseConfigCreator.java" startLine="44" startPosition="40" endLine="45" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726852" fileName="BaseConfigCreator.java" startLine="49" startPosition="47" endLine="50" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726863" fileName="BaseConfigCreator.java" startLine="53" startPosition="122" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5628633142282726874" fileName="BaseConfigCreator.java" startLine="55" startPosition="47" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726876" fileName="BaseConfigCreator.java" startLine="57" startPosition="5" endLine="58" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5628633142282726882" fileName="BaseConfigCreator.java" startLine="58" startPosition="53" endLine="59" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5628633142282727019" fileName="BaseConfigCreator.java" startLine="61" startPosition="41" endLine="62" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5628633142282727030" fileName="BaseConfigCreator.java" startLine="63" startPosition="30" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282727037" fileName="BaseConfigCreator.java" startLine="66" startPosition="39" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282727039" fileName="BaseConfigCreator.java" startLine="68" startPosition="9" endLine="69" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726906" fileName="BaseConfigCreator.java" startLine="72" startPosition="25" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726908" fileName="BaseConfigCreator.java" startLine="74" startPosition="5" endLine="75" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726935" fileName="BaseConfigCreator.java" startLine="82" startPosition="34" endLine="83" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726988" fileName="BaseConfigCreator.java" startLine="97" startPosition="63" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726990" fileName="BaseConfigCreator.java" startLine="99" startPosition="5" endLine="100" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5628633142282726996" fileName="BaseConfigCreator.java" startLine="100" startPosition="62" endLine="101" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4013739085301555642" fileName="BaseConfigCreator.java" startLine="107" startPosition="79" endLine="108" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4013739085301555725" fileName="BaseConfigCreator.java" startLine="111" startPosition="30" endLine="112" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4013739085301555672" fileName="BaseConfigCreator.java" startLine="113" startPosition="5" endLine="114" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726807" fileName="BaseConfigCreator.java" startLine="28" startPosition="37" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
+    <nodeInfo nodeId="5628633142282726917" fileName="BaseConfigCreator.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doCreateConfiguration#(null)Lcom/intellij/execution/configurations/RunConfiguration;" />
+    <nodeInfo nodeId="5628633142282726923" fileName="BaseConfigCreator.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5628633142282726811" fileName="BaseConfigCreator.java" startLine="31" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseConfigCreator#(Lcom/intellij/execution/configurations/ConfigurationType;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5628633142282726824" fileName="BaseConfigCreator.java" startLine="35" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseConfigCreator#(Lcom/intellij/execution/configurations/ConfigurationFactory;)V" />
+    <nodeInfo nodeId="5628633142282726867" fileName="BaseConfigCreator.java" startLine="54" startPosition="24" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5628633142282727025" fileName="BaseConfigCreator.java" startLine="62" startPosition="49" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5628633142282727032" fileName="BaseConfigCreator.java" startLine="65" startPosition="9" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5628633142282726901" fileName="BaseConfigCreator.java" startLine="71" startPosition="7" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5628633142282726977" fileName="BaseConfigCreator.java" startLine="96" startPosition="37" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4013739085301555640" fileName="BaseConfigCreator.java" startLine="106" startPosition="131" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4013739085301555725" fileName="BaseConfigCreator.java" startLine="110" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4013739085301555725" fileName="BaseConfigCreator.java" startLine="110" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5628633142282726832" fileName="BaseConfigCreator.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSourceElement#(Lcom/intellij/psi/PsiElement;)V" />
+    <nodeInfo nodeId="5628633142282726842" fileName="BaseConfigCreator.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSourceElement#()Lcom/intellij/psi/PsiElement;" />
+    <nodeInfo nodeId="5628633142282726929" fileName="BaseConfigCreator.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljava/lang/Object;)I" />
+    <nodeInfo nodeId="5628633142282726848" fileName="BaseConfigCreator.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Lcom/intellij/execution/actions/ConfigurationContext;" />
+    <nodeInfo nodeId="4013739085301555637" fileName="BaseConfigCreator.java" startLine="105" startPosition="136" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5628633142282726941" fileName="BaseConfigCreator.java" startLine="86" startPosition="25" endLine="93" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628633142282726971" fileName="BaseConfigCreator.java" startLine="95" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5628633142282726937" fileName="BaseConfigCreator.java" startLine="85" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
+    <nodeInfo nodeId="5628633142282726898" fileName="BaseConfigCreator.java" startLine="60" startPosition="103" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lcom/intellij/execution/configurations/RunConfiguration;" />
+    <nodeInfo nodeId="5628633142282726888" fileName="BaseConfigCreator.java" startLine="59" startPosition="65" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4013739085301555630" fileName="BaseConfigCreator.java" startLine="103" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findFactory#(Lcom/intellij/execution/configurations/ConfigurationType;Ljava/lang/String;)Lcom/intellij/execution/configurations/ConfigurationFactory;" />
+    <nodeInfo nodeId="5628633142282726855" fileName="BaseConfigCreator.java" startLine="52" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfigurationByElement#(Lcom/intellij/execution/Location;Lcom/intellij/execution/actions/ConfigurationContext;)Lcom/intellij/execution/RunnerAndConfigurationSettings;" />
+    <scopeInfo nodeId="5628633142282726816" fileName="BaseConfigCreator.java" startLine="32" startPosition="90" endLine="33" endPosition="78" />
+    <scopeInfo nodeId="5628633142282726829" fileName="BaseConfigCreator.java" startLine="36" startPosition="71" endLine="37" endPosition="32" />
+    <scopeInfo nodeId="5628633142282726837" fileName="BaseConfigCreator.java" startLine="40" startPosition="58" endLine="41" endPosition="36" />
+    <scopeInfo nodeId="5628633142282726845" fileName="BaseConfigCreator.java" startLine="44" startPosition="40" endLine="45" endPosition="27" />
+    <scopeInfo nodeId="5628633142282726851" fileName="BaseConfigCreator.java" startLine="49" startPosition="47" endLine="50" endPosition="21" />
+    <scopeInfo nodeId="5628633142282726873" fileName="BaseConfigCreator.java" startLine="55" startPosition="47" endLine="56" endPosition="18" />
+    <scopeInfo nodeId="5628633142282727029" fileName="BaseConfigCreator.java" startLine="63" startPosition="30" endLine="64" endPosition="22" />
+    <scopeInfo nodeId="5628633142282727036" fileName="BaseConfigCreator.java" startLine="66" startPosition="39" endLine="67" endPosition="22" />
+    <scopeInfo nodeId="5628633142282726905" fileName="BaseConfigCreator.java" startLine="72" startPosition="25" endLine="73" endPosition="18" />
+    <scopeInfo nodeId="5628633142282726934" fileName="BaseConfigCreator.java" startLine="82" startPosition="34" endLine="83" endPosition="49" />
+    <scopeInfo nodeId="5628633142282726987" fileName="BaseConfigCreator.java" startLine="97" startPosition="63" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="4013739085301555641" fileName="BaseConfigCreator.java" startLine="107" startPosition="79" endLine="108" endPosition="23" />
+    <scopeInfo nodeId="4013739085301555725" fileName="BaseConfigCreator.java" startLine="111" startPosition="30" endLine="112" endPosition="149" />
+    <scopeInfo nodeId="5628633142282726917" fileName="BaseConfigCreator.java" startLine="77" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="5628633142282726920" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726923" fileName="BaseConfigCreator.java" startLine="76" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="5628633142282726923" fileName="BaseConfigCreator.java" startLine="79" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="5628633142282726926" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726824" fileName="BaseConfigCreator.java" startLine="32" startPosition="0" endLine="35" endPosition="3">
+    <scopeInfo nodeId="5628633142282726811" fileName="BaseConfigCreator.java" startLine="31" startPosition="0" endLine="34" endPosition="3">
+      <varInfo nodeId="5628633142282726814" varName="configurationType" />
+      <varInfo nodeId="2256484787298834711" varName="factoryClassName" />
+    </scopeInfo>
+    <scopeInfo nodeId="5628633142282726824" fileName="BaseConfigCreator.java" startLine="35" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="5628633142282726827" varName="configurationFactory" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726816" fileName="BaseConfigCreator.java" startLine="26" startPosition="65" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="5628633142282726832" fileName="BaseConfigCreator.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="4013739085301555639" fileName="BaseConfigCreator.java" startLine="106" startPosition="131" endLine="109" endPosition="7" />
+    <scopeInfo nodeId="4013739085301555725" fileName="BaseConfigCreator.java" startLine="110" startPosition="5" endLine="113" endPosition="5" />
+    <scopeInfo nodeId="5628633142282726832" fileName="BaseConfigCreator.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="5628633142282726835" varName="sourceElement" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726842" fileName="BaseConfigCreator.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="5628633142282726929" fileName="BaseConfigCreator.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="5628633142282726842" fileName="BaseConfigCreator.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="5628633142282726929" fileName="BaseConfigCreator.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="5628633142282726932" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726848" fileName="BaseConfigCreator.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5628633142282726976" fileName="BaseConfigCreator.java" startLine="93" startPosition="37" endLine="98" endPosition="216">
+    <scopeInfo nodeId="5628633142282726848" fileName="BaseConfigCreator.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5628633142282726976" fileName="BaseConfigCreator.java" startLine="96" startPosition="37" endLine="101" endPosition="216">
       <varInfo nodeId="5628633142282726991" varName="configCreator" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726811" fileName="BaseConfigCreator.java" startLine="25" startPosition="0" endLine="31" endPosition="3">
-      <varInfo nodeId="5628633142282726814" varName="configurationType" />
-    </scopeInfo>
-    <scopeInfo nodeId="5628633142282726940" fileName="BaseConfigCreator.java" startLine="83" startPosition="25" endLine="90" endPosition="46" />
-    <scopeInfo nodeId="5628633142282727018" fileName="BaseConfigCreator.java" startLine="58" startPosition="41" endLine="66" endPosition="66">
+    <scopeInfo nodeId="4013739085301555637" fileName="BaseConfigCreator.java" startLine="105" startPosition="136" endLine="110" endPosition="5" />
+    <scopeInfo nodeId="5628633142282726940" fileName="BaseConfigCreator.java" startLine="86" startPosition="25" endLine="93" endPosition="46" />
+    <scopeInfo nodeId="5628633142282727018" fileName="BaseConfigCreator.java" startLine="61" startPosition="41" endLine="69" endPosition="66">
       <varInfo nodeId="5628633142282727020" varName="mpsItem" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726971" fileName="BaseConfigCreator.java" startLine="92" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="5628633142282726971" fileName="BaseConfigCreator.java" startLine="95" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="5628633142282726974" varName="obj" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726937" fileName="BaseConfigCreator.java" startLine="82" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="5628633142282726898" fileName="BaseConfigCreator.java" startLine="57" startPosition="103" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="5628633142282726862" fileName="BaseConfigCreator.java" startLine="50" startPosition="122" endLine="72" endPosition="120">
+    <scopeInfo nodeId="4013739085301555636" fileName="BaseConfigCreator.java" startLine="105" startPosition="136" endLine="114" endPosition="60" />
+    <scopeInfo nodeId="5628633142282726937" fileName="BaseConfigCreator.java" startLine="85" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="5628633142282726898" fileName="BaseConfigCreator.java" startLine="60" startPosition="103" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="4013739085301555630" fileName="BaseConfigCreator.java" startLine="103" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="4013739085301555631" varName="configurationType" />
+      <varInfo nodeId="4013739085301555633" varName="configurationFactoryClassName" />
+    </scopeInfo>
+    <scopeInfo nodeId="5628633142282726862" fileName="BaseConfigCreator.java" startLine="53" startPosition="122" endLine="75" endPosition="120">
       <varInfo nodeId="5628633142282726889" varName="config" />
       <varInfo nodeId="5628633142282726877" varName="mpsLocation" />
       <varInfo nodeId="5628633142282726883" varName="psiElement" />
     </scopeInfo>
-    <scopeInfo nodeId="5628633142282726855" fileName="BaseConfigCreator.java" startLine="49" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="5628633142282726855" fileName="BaseConfigCreator.java" startLine="52" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="5628633142282726858" varName="location" />
       <varInfo nodeId="5628633142282726860" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="5628633142282726896" fileName="BaseConfigCreator.java" startLine="57" startPosition="71" endLine="68" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator$1" />
-    <unitInfo nodeId="5628633142282726006" fileName="BaseConfigCreator.java" startLine="21" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
+    <unitInfo nodeId="5628633142282726896" fileName="BaseConfigCreator.java" startLine="60" startPosition="71" endLine="71" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator$1" />
+    <unitInfo nodeId="5628633142282726006" fileName="BaseConfigCreator.java" startLine="25" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </root>
   <root nodeId="5628633142282726007">
     <nodeInfo nodeId="5628633142282726010" fileName="MPSLocation.java" startLine="14" startPosition="43" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />

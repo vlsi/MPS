@@ -44,6 +44,10 @@ public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorD
     return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
   }
 
+  public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
+    return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
+  }
+
   public List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
     return IClassifier_Behavior.virtual_getParts_1213877527988(thisNode);
   }

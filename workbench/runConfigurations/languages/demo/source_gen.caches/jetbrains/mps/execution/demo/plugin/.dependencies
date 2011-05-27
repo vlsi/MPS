@@ -95,6 +95,23 @@
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.demo.plugin.DemoApplication_Producer" file="DemoApplication_Producer.java">
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration" />
+    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.demo.plugin.Demo_ApplicationPlugin" file="Demo_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -149,12 +166,20 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.DemoApplication_Producer" />
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Demo_Kind" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>
