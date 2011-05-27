@@ -25,6 +25,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" version="0" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
+  <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7806358006983757918">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConfigurationFromExecutorReference" />
@@ -287,13 +288,16 @@
           </node>
         </node>
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="3642991921658159526">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3642991921658159528">
-            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3642991921658159527">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3642991921658151032" resolveInfo="source" />
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="405952547605481701">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3642991921658159528">
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3642991921658159527">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3642991921658151032" resolveInfo="source" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptLinkAccess" typeId="tp25.1175618182947" id="405952547605481700">
+                <link role="conceptLinkDeclaration" roleId="tp25.1175618223511" targetNodeId="uhxm.7301162575811126386" resolveInfo="type" />
+              </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3642991921658159532">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.3642991921658159525" />
-            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="405952547605481705" />
           </node>
         </node>
       </node>
