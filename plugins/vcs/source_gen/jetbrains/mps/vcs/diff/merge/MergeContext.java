@@ -9,6 +9,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.vcs.diff.changes.MetadataChange;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -18,8 +21,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
@@ -30,6 +31,7 @@ public class MergeContext {
   private Map<ModelChange, List<ModelChange>> myConflictingChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
   private Map<ModelChange, List<ModelChange>> mySymmetricChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
   private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private List<MetadataChange> myMetadataChanges = ListSequence.fromList(new ArrayList<MetadataChange>());
   private SModel myResultModel;
   private Set<ModelChange> myAppliedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private Set<ModelChange> myExcludedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
@@ -64,10 +66,15 @@ public class MergeContext {
   private void fillRootToChangesMap() {
     for (ModelChange change : Sequence.fromIterable(getAllChanges())) {
       SNodeId rootId = change.getRootId();
-      if (MapSequence.fromMap(myRootToChanges).get(rootId) == null) {
-        MapSequence.fromMap(myRootToChanges).put(rootId, ListSequence.fromList(new ArrayList<ModelChange>()));
+      if (rootId == null) {
+        assert change instanceof MetadataChange;
+        ListSequence.fromList(myMetadataChanges).addElement((MetadataChange) change);
+      } else {
+        if (MapSequence.fromMap(myRootToChanges).get(rootId) == null) {
+          MapSequence.fromMap(myRootToChanges).put(rootId, ListSequence.fromList(new ArrayList<ModelChange>()));
+        }
+        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootId)).addElement(change);
       }
-      ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootId)).addElement(change);
     }
   }
 
