@@ -295,6 +295,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.blTypes" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.checkedDots" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.jdk7" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.closures" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections" />
