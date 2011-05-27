@@ -12,7 +12,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.ChangeSet" file="ChangeSet.java">
@@ -86,7 +85,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.DependencyChange" file="DependencyChange.java">

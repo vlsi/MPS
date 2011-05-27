@@ -38,6 +38,14 @@ public class ModuleDependencyChange extends DependencyChange {
     }
   }
 
+  public ModuleReference getModuleReference() {
+    return myModuleReference;
+  }
+
+  public ModuleDependencyChange.DependencyType getDependencyType() {
+    return myType;
+  }
+
   public static   enum DependencyType {
     USED_LANG("Used Language", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
