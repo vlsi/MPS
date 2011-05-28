@@ -17,7 +17,7 @@ public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements
   private RunConfiguration myConfig;
 
   public DefaultJavaAppFromClass() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class), "DefaultJavaApplication_Factory");
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class), "jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Factory");
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {

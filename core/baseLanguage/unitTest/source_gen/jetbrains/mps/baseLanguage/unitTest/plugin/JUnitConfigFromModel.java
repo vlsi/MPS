@@ -16,7 +16,7 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
   private RunConfiguration myConfig;
 
   public JUnitConfigFromModel() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class), "DefaultJUnit_Factory");
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class), "jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Factory");
   }
 
   protected RunConfiguration doCreateConfiguration(SModel node) {

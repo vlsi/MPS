@@ -16,7 +16,7 @@ public class DefaultLambdaCalculusFromProgram extends BaseConfigCreator<SNode> i
   private RunConfiguration myConfig;
 
   public DefaultLambdaCalculusFromProgram() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), LambdaCalculus_ConfigurationType.class), "DefaultLambdaCalculusProgram_Factory");
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), LambdaCalculus_ConfigurationType.class), "jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Factory");
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {

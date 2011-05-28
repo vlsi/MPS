@@ -29,7 +29,7 @@ public class DefaultPackagingLanguageConfigurationFromMPSLayout extends BaseConf
           return (Class<ConfigurationType>) null;
         }
       }
-    }.invoke()), "DefaultPackagingLanguageApplication_Factory");
+    }.invoke()), "jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Factory");
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {

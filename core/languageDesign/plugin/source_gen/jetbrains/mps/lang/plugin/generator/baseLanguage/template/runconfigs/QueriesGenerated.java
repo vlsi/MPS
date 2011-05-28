@@ -23,6 +23,8 @@ import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.VariableNa
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.plugin.behavior.RunConfigCreator_Behavior;
+import jetbrains.mps.util.NodeNameUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -220,7 +222,7 @@ public class QueriesGenerated {
     if ((statement == null)) {
       return _context.getTemplateValue();
     }
-    return RunConfigurationDeclaration_Behavior.call_getGeneratedFactoryName_7840798570674951628(SLinkOperations.getTarget(statement, "runConfig", false));
+    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(statement, "runConfig", false))) + "." + RunConfigurationDeclaration_Behavior.call_getGeneratedFactoryName_7840798570674951628(SLinkOperations.getTarget(statement, "runConfig", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_446387597135526855(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -312,7 +314,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "map_ConfigClass");
   }
 
-  public static Object referenceMacro_GetReferent_122179271028795198(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_405952547605481713(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "rcType", false), "map_ConfigTypeClass");
   }
 

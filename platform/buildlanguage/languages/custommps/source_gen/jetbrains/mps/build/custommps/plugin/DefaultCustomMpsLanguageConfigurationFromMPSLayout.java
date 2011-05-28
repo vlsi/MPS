@@ -29,7 +29,7 @@ public class DefaultCustomMpsLanguageConfigurationFromMPSLayout extends BaseConf
           return (Class<ConfigurationType>) null;
         }
       }
-    }.invoke()), "DefaultCustomMpsApplication_Factory");
+    }.invoke()), "jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Factory");
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {

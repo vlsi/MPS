@@ -16,7 +16,7 @@ public class DefaultBuildLanguageConfigurationFromNode extends BaseConfigCreator
   private RunConfiguration myConfig;
 
   public DefaultBuildLanguageConfigurationFromNode() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), BuildLanguage_ConfigurationType.class), "DefaultBuildLanguageApplication_Factory");
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), BuildLanguage_ConfigurationType.class), "jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Factory");
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {

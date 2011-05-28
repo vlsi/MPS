@@ -14,7 +14,7 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
   private RunConfiguration myConfig;
 
   public JUnitConfigFromModule() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class), "DefaultJUnit_Factory");
+    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class), "jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Factory");
   }
 
   protected RunConfiguration doCreateConfiguration(IModule node) {
