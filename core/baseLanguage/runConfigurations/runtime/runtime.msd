@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.runConfigurations.runtime" uuid="c2b4d111-b1a9-4476-8bfc-454cbf1a6e6c" compileInMPS="true" generatorOutputPath="${solution_descriptor}/source_gen">
+<solution name="jetbrains.mps.baseLanguage.runConfigurations.runtime" uuid="c2b4d111-b1a9-4476-8bfc-454cbf1a6e6c" compileInMPS="false" generatorOutputPath="${solution_descriptor}/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/languageModels" namespacePrefix="" />
   </models>

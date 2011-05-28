@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.execution.configurations.typesystem.typeof_RunConfigurationSource_InferenceRule" />
+  <unitInfo fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.typesystem.typeof_RunConfigurationSource_InferenceRule" />
   <unitInfo fileName="typeof_RunConfigurationCreator_InferenceRule.java" startLine="80" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.execution.configurations.typesystem.typeof_RunConfigurationCreator_InferenceRule$QuotationClass_ijawlg_a0a1a0" />
   <unitInfo fileName="typeof_DebuggerSettings_Parameter_InferenceRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.configurations.typesystem.typeof_DebuggerSettings_Parameter_InferenceRule" />
   <unitInfo fileName="typeof_NodeListSource_InferenceRule.java" startLine="44" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.execution.configurations.typesystem.typeof_NodeListSource_InferenceRule$QuotationClass_eijui7_a0a0a0" />
@@ -47,12 +47,12 @@
     <scopeInfo nodeId="3642991921658150954" fileName="typeof_Source_ConceptFunctionParameter_InferenceRule.java" startLine="19" startPosition="119" endLine="24" endPosition="5" />
   </root>
   <root nodeId="3642991921658151030">
-    <nodeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="20" startPosition="48" endLine="21" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="21" startPosition="215" endLine="22" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="18" startPosition="119" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="300" />
-    <scopeInfo nodeId="3642991921658151031" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="18" startPosition="119" endLine="23" endPosition="5" />
+    <nodeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="21" startPosition="48" endLine="22" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="22" startPosition="215" endLine="23" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="19" startPosition="119" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="3642991921658151037" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="340" />
+    <scopeInfo nodeId="3642991921658151031" fileName="typeof_RunConfigurationSource_InferenceRule.java" startLine="19" startPosition="119" endLine="24" endPosition="5" />
   </root>
   <root nodeId="529406319400446676">
     <nodeInfo nodeId="529406319400446683" fileName="typeof_NodeSource_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

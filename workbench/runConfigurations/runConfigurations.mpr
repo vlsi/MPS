@@ -25,7 +25,6 @@
       <modulePath path="${project}/languages/demo/demo.mpl" folder="usages" />
       <modulePath path="${project}/languages/settings/settings.mpl" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="runtime" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.configurations.lib2/jetbrains.mps.execution.configurations.lib.msd" folder="library" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="usages" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="library" />
