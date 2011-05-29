@@ -66,18 +66,6 @@ public class QueriesGenerated {
     return Module_Behavior.call_getModuleReference_9020561928507315628(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_2269425322630533695(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace") + ".structure.StructureAspectDescriptor";
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2269425322630533709(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace") + ".behavior.BehaviorAspectDescriptor";
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2269425322630533681(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace") + ".constraints.ConstraintsAspectDescriptor";
-  }
-
   public static Object propertyMacro_GetPropertyValue_5102832340571708655(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace");
   }
@@ -285,7 +273,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0xb(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0ub(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -341,7 +329,7 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0xb(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0ub(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
