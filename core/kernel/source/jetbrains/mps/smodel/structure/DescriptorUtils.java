@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.structure;
 
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -26,25 +27,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DescriptorUtils {
-  public static Language getLanguageForConceptFqName(String conceptFqName) {
-    return MPSModuleRepository.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptFqName));
-  }
-
   @Nullable
-  public static Class getClassByNameForConcept(String className, String conceptFqName) {
+  public static Object getObjectByClassNameForLanguage(String className, @Nullable Language language, boolean avoidLogErrors) {
     try {
-      Language language = getLanguageForConceptFqName(conceptFqName);
-
       if (language == null) {
         return null;
       }
 
-      return language.getClass(className);
-    } catch (Exception e) {
+      if (avoidLogErrors) {
+        ClassLoader cl = ClassLoaderManager.getInstance().getClassLoaderFor(language, false);
+        if (cl == null) {
+          return null;
+        }
+      }
+
+      Class clazz = language.getClass(className);
+      if (clazz == null) {
+        return null;
+      }
+
+      return clazz.newInstance();
+    } catch (Throwable e) {
       // nothing
     }
-
     return null;
+  }
+
+  @Nullable
+  public static Object getObjectByClassNameForLanguageNamespace(String className, String languageNamespace, boolean avoidLogErrors) {
+    return getObjectByClassNameForLanguage(className, MPSModuleRepository.getInstance().getLanguage(languageNamespace), avoidLogErrors);
+  }
+
+  @Nullable
+  public static Object getObjectByClassNameForConcept(String className, String conceptFqName, boolean avoidLogErrors) {
+    return getObjectByClassNameForLanguageNamespace(className, NameUtil.namespaceFromConceptFQName(conceptFqName), avoidLogErrors);
   }
 
   public static List<String> getLanguageConcepts(Language language) {
