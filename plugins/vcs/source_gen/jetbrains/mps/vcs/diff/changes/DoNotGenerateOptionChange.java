@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.diff.changes;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelHeader;
 
 public class DoNotGenerateOptionChange extends MetadataChange {
   public DoNotGenerateOptionChange(@NotNull ChangeSet changeSet) {
@@ -11,6 +12,10 @@ public class DoNotGenerateOptionChange extends MetadataChange {
   }
 
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
+    SModelHeader mh = model.getSModelHeader();
+    if (mh != null) {
+      mh.setDoNotGenerate(!(mh.isDoNotGenerate()));
+    }
   }
 
   @NotNull
