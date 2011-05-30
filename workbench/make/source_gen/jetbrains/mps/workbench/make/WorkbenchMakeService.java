@@ -150,10 +150,7 @@ public class WorkbenchMakeService implements IMakeService {
                       return ((IResource) r).describe();
                     }
                   }), ","));
-                  res.value = (progInd.isCanceled() ?
-                    null :
-                    script.execute(ctl, cl)
-                  );
+                  res.value = script.execute(ctl, cl);
                   if (!(res.value.isSucessful()) || progInd.isCanceled()) {
                     break;
                   }
@@ -168,6 +165,7 @@ public class WorkbenchMakeService implements IMakeService {
 
               @Override
               public void onCancel() {
+                res.value = null;
                 reconcile();
               }
 
