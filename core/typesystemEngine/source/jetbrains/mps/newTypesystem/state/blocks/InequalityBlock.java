@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.state.blocks;
 
 import com.intellij.openapi.util.Pair;
-import com.sun.istack.internal.NotNull;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
@@ -36,12 +35,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Dec 9, 2010
- * Time: 12:11:13 PM
- */
 public class InequalityBlock extends RelationBlock {
   private boolean lessThan;
 
