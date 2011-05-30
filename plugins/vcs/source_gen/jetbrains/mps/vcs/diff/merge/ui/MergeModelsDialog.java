@@ -75,7 +75,6 @@ public class MergeModelsDialog extends BaseDialog {
       }
     });
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
-    myMergeTree.setMultipleRootNames(true);
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ResetState(this), new MergeNonConflictingRoots(this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this), Separator.getInstance(), new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request));
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
@@ -352,6 +351,11 @@ public class MergeModelsDialog extends BaseDialog {
 
     protected Iterable<SNodeId> getAffectedRoots() {
       return myMergeContext.getAffectedRoots();
+    }
+
+    @Override
+    protected boolean isMultipleRootNames() {
+      return true;
     }
   }
 }

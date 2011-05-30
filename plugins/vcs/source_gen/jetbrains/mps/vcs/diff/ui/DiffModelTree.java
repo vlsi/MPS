@@ -27,7 +27,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 
 public abstract class DiffModelTree extends MPSTree {
   private IOperationContext myOperationContext;
-  private boolean myMultipleRootNames = false;
   private List<DiffModelTree.RootTreeNode> myRootNodes;
 
   public DiffModelTree(IOperationContext operationContext) {
@@ -94,8 +93,8 @@ public abstract class DiffModelTree extends MPSTree {
 
   protected abstract Iterable<BaseAction> getRootActions(@Nullable SNodeId rootId);
 
-  public void setMultipleRootNames(boolean multipleRootNames) {
-    myMultipleRootNames = multipleRootNames;
+  protected boolean isMultipleRootNames() {
+    return false;
   }
 
   private DiffModelTree.RootTreeNode findRootNode(@NotNull final SNodeId nodeId) {
@@ -170,7 +169,7 @@ public abstract class DiffModelTree extends MPSTree {
           String presentation = root.getPresentation();
           if (myPresentation == null) {
             myPresentation = presentation;
-          } else if (myMultipleRootNames) {
+          } else if (isMultipleRootNames()) {
             if (("/ " + myPresentation + " /").contains("/ " + presentation + " /")) {
             } else {
               myPresentation += " / " + presentation;
