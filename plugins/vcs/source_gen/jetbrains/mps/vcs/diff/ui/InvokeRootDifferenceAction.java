@@ -12,7 +12,10 @@ public class InvokeRootDifferenceAction extends BaseAction {
   private SNodeId myRootId;
 
   public InvokeRootDifferenceAction(ModelDifferenceDialog modelDifferenceDialog, SNodeId rootId) {
-    super("Show Difference");
+    super((rootId == null ?
+      "Show Changes" :
+      "Show Difference"
+    ));
     setExecuteOutsideCommand(true);
     myModelDifferenceDialog = modelDifferenceDialog;
     myRootId = rootId;

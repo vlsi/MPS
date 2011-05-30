@@ -12,6 +12,8 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.SModel;
@@ -26,11 +28,10 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -38,12 +39,14 @@ import java.util.Arrays;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class ModelDifferenceDialog extends BaseDialog {
   private Project myProject;
   private IOperationContext myOperationContext;
   private ChangeSet myChangeSet;
-  private Map<SNodeId, List<ModelChange>> myRootToChange = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
   private ModelDifferenceDialog.ModelDifferenceTree myTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myRootsDialogInvoked = false;
@@ -72,16 +75,16 @@ public class ModelDifferenceDialog extends BaseDialog {
   }
 
   private void fillRootToChange() {
-    MapSequence.fromMap(myRootToChange).clear();
+    MapSequence.fromMap(myRootToChanges).clear();
     for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
       SNodeId id = c.getRootId();
       if (id == null) {
-        // TODO handle model properties 
+        ListSequence.fromList(myMetadataChanges).addElement(c);
       } else {
-        if (!(MapSequence.fromMap(myRootToChange).containsKey(id))) {
-          MapSequence.fromMap(myRootToChange).put(id, ListSequence.fromList(new ArrayList<ModelChange>()));
+        if (!(MapSequence.fromMap(myRootToChanges).containsKey(id))) {
+          MapSequence.fromMap(myRootToChanges).put(id, ListSequence.fromList(new ArrayList<ModelChange>()));
         }
-        ListSequence.fromList(MapSequence.fromMap(myRootToChange).get(id)).addElement(c);
+        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(id)).addElement(c);
       }
     }
   }
@@ -118,6 +121,17 @@ public class ModelDifferenceDialog extends BaseDialog {
   }
 
   public void invokeRootDifference(final SNodeId rootId) {
+    if (rootId == null) {
+      StringBuilder sb = new StringBuilder();
+      for (ModelChange mc : ListSequence.fromList(myMetadataChanges)) {
+        if (mc != ListSequence.fromList(myMetadataChanges).first()) {
+          sb.append("\n");
+        }
+        sb.append(mc);
+      }
+      Messages.showInfoMessage(this, sb.toString(), "Model Properties Difference");
+      return;
+    }
     if (myRootsDialogInvoked) {
       return;
     }
@@ -145,7 +159,7 @@ public class ModelDifferenceDialog extends BaseDialog {
   }
 
   public List<ModelChange> getChangesForRoot(SNodeId rootId) {
-    return MapSequence.fromMap(myRootToChange).get(rootId);
+    return MapSequence.fromMap(myRootToChanges).get(rootId);
   }
 
   @Override
@@ -165,7 +179,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       ChangeType compositeChangeType = ChangeType.CHANGE;
       if (rootTreeNode.getRootId() != null) {
-        ModelChange firstChange = ListSequence.fromList(MapSequence.fromMap(myRootToChange).get(rootTreeNode.getRootId())).first();
+        ModelChange firstChange = ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootTreeNode.getRootId())).first();
         if (firstChange instanceof AddRootChange || firstChange instanceof DeleteRootChange) {
           compositeChangeType = firstChange.getType();
         }
@@ -178,7 +192,10 @@ public class ModelDifferenceDialog extends BaseDialog {
     }
 
     protected Iterable<SNodeId> getAffectedRoots() {
-      return MapSequence.fromMap(myRootToChange).keySet();
+      return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
+        MapSequence.fromMap(myRootToChanges).keySet() :
+        SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null)))
+      );
     }
   }
 }
