@@ -98,6 +98,7 @@
   </dependency>
   <dependency className="jetbrains.mps.workbench.make.WorkbenchMakeService" file="WorkbenchMakeService.java">
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
+    <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />

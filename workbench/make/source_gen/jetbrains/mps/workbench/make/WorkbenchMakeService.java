@@ -19,6 +19,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -123,7 +124,7 @@ public class WorkbenchMakeService implements IMakeService {
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           public void run() {
             IdeEventQueue.getInstance().flushQueue();
-            ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true) {
+            ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true, PerformInBackgroundOption.DEAF) {
               public void run(@NotNull ProgressIndicator pi) {
                 progInd = pi;
                 for (Iterable<IResource> cl : clInput.value) {
