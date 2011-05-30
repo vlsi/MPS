@@ -145,7 +145,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       } else {
         commandLine.addAll(myJvmArgs);
       }
-      StringBuffer sb = new StringBuffer();
+      StringBuilder sb = new StringBuilder();
       String pathSeparator = System.getProperty("path.separator");
       for (File cp : classPaths) {
         sb.append(pathSeparator);
@@ -244,8 +244,9 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses")};
     } else {
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "generate.ant.task.jar"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
+        new File(myMpsHome.getAbsolutePath() + File.separator + "languages" + File.separator + "generate.ant.task.jar"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "plugin"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "plugins")};
     }
 
     Set<File> classPaths = new LinkedHashSet<File>();

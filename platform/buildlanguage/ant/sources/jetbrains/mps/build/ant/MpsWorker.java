@@ -181,7 +181,8 @@ public abstract class MpsWorker {
     }
 
     myWasFileSystemProvider = FileSystem.getInstance().getFileSystemProvider();
-    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
+//    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
+    // TODO we use idea vfs until MPS-12571 is fixed
 
     setMacro();
     loadLibraries();
