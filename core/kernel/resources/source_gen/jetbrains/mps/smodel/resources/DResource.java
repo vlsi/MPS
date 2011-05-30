@@ -28,4 +28,8 @@ public class DResource extends MultiTuple._1<Iterable<IDelta>> implements IResou
   public DResource assignFrom(Tuples._1<Iterable<IDelta>> from) {
     return (DResource) super.assign(from);
   }
+
+  public String describe() {
+    return null;
+  }
 }

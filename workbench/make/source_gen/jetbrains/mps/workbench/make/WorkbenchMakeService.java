@@ -21,6 +21,8 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
@@ -126,12 +128,36 @@ public class WorkbenchMakeService implements IMakeService {
             IdeEventQueue.getInstance().flushQueue();
             ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true, PerformInBackgroundOption.DEAF) {
               public void run(@NotNull ProgressIndicator pi) {
-                progInd = pi;
+                final int clsize = Sequence.fromIterable(clInput.value).count();
+                if (clsize == 0) {
+                  return;
+                }
+                final double clfrac = (1.0 / clsize);
+                final int[] idx = new int[]{0};
+                progInd = new ProgressIndicatorDelegate(pi) {
+                  @Override
+                  public void setFraction(double d) {
+                    getDelegate().setFraction((idx[0] + d) * clfrac);
+                  }
+
+                  @Override
+                  public void setText2(String string) {
+                  }
+                };
                 for (Iterable<IResource> cl : clInput.value) {
-                  res.value = script.execute(ctl, cl);
+                  pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+                    public String select(IResource r) {
+                      return ((IResource) r).describe();
+                    }
+                  }), ","));
+                  res.value = (progInd.isCanceled() ?
+                    null :
+                    script.execute(ctl, cl)
+                  );
                   if (!(res.value.isSucessful()) || progInd.isCanceled()) {
                     break;
                   }
+                  idx[0]++;
                 }
               }
 

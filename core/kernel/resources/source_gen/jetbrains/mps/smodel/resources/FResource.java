@@ -53,4 +53,8 @@ public class FResource extends MultiTuple._4<String, Map<String, Object>, IModul
   public FResource assignFrom(Tuples._4<String, Map<String, Object>, IModule, SModelDescriptor> from) {
     return (FResource) super.assign(from);
   }
+
+  public String describe() {
+    return null;
+  }
 }
