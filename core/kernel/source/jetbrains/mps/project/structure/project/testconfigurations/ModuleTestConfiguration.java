@@ -17,8 +17,7 @@ package jetbrains.mps.project.structure.project.testconfigurations;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
@@ -57,16 +56,12 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
-        if(!sm.isGeneratable()) continue;
-        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project))) {
-          continue;
-        }
-
-        if (GeneratorManager.isDoNotGenerate(sm)) {
-          continue;
-        }
-
+        if (!sm.isGeneratable()) continue;
         models.add(sm);
+      }
+
+      if(!fullRegeneration) {
+        models = new ArrayList<SModelDescriptor>(GenerationFacade.getModifiedModels(models, ProjectOperationContext.get(project)));
       }
 
       return new GenParameters(models, solution);
@@ -78,11 +73,13 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
-        if (!model.isGeneratable() ||
-          (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, ProjectOperationContext.get(project))) ||
-          GeneratorManager.isDoNotGenerate(model)) {
+        if (!model.isGeneratable()) {
           it.remove();
         }
+      }
+
+      if(!fullRegeneration) {
+        inputModels = new ArrayList<SModelDescriptor>(GenerationFacade.getModifiedModels(inputModels, ProjectOperationContext.get(project)));
       }
 
       return new GenParameters(inputModels, lang);

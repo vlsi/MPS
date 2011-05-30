@@ -263,30 +263,27 @@ public class GeneratorUIFacade {
     return false && settings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
   }
 
-  private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, Project project) {
+  private Collection<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, Project project) {
     IModule module = model.getModule();
     if (module == null) return Collections.emptyList();
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
 
-    ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(model.getSModel())) {
       Generator g = MPSModuleRepository.getInstance().getGenerator(templateModule.getReference());
       if(g == null) continue;
 
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
+        if (SModelStereotype.isUserModel(sm)) {
           result.add(sm);
         }
       }
 
       for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
-        if (statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
-          result.add(sm);
-        }
+        result.add(sm);
       }
     }
 
-    return result;
+    return GenerationFacade.getModifiedModels(result, ProjectOperationContext.get(project));
   }
 }
