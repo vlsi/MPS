@@ -4,6 +4,7 @@ package jetbrains.mps.build.ant.generation.workers;
 
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
+import org.apache.commons.lang.StringUtils;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.build.ant.generation.GenerateTask;
@@ -79,12 +80,15 @@ public class GeneratorWorker extends MpsWorker {
   protected void showStatistic() {
     if (!(myErrors.isEmpty()) && myWhatToDo.getFailOnError()) {
       StringBuffer sb = new StringBuffer();
+      sb.append(StringUtils.repeat("*", 100));
+      sb.append("\n");
       sb.append(myErrors.size());
       sb.append(" errors during generation:\n");
       for (String error : myErrors) {
         sb.append(error);
         sb.append("\n");
       }
+      sb.append(StringUtils.repeat("*", 100));
       throw new BuildException(sb.toString());
     }
   }

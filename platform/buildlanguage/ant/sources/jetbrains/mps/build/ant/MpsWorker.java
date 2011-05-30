@@ -473,7 +473,11 @@ public abstract class MpsWorker {
 
       info("Read model " + modelReference);
       SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, modelReference);
-      modelDescriptors.add(smodelDescriptor);
+      if (smodelDescriptor.getModule() == null) {
+        error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
+      } else {
+        modelDescriptors.add(smodelDescriptor);
+      }
     } catch (ModelFileReadException e) {
       log(e);
     } catch (PersistenceVersionNotFoundException e) {
