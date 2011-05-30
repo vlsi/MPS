@@ -128,6 +128,8 @@ public class WorkbenchMakeService implements IMakeService {
             IdeEventQueue.getInstance().flushQueue();
             ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true, PerformInBackgroundOption.DEAF) {
               public void run(@NotNull ProgressIndicator pi) {
+                pi.pushState();
+                pi.setFraction(0.0);
                 final int clsize = Sequence.fromIterable(clInput.value).count();
                 if (clsize == 0) {
                   return;
@@ -156,6 +158,7 @@ public class WorkbenchMakeService implements IMakeService {
                   }
                   idx[0]++;
                 }
+                pi.popState();
               }
 
               @Override
