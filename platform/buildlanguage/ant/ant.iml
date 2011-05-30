@@ -24,6 +24,9 @@
     <orderEntry type="library" name="commons-lang" level="project" />
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="Closures-runtime" />
   </component>
 </module>
 

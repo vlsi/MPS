@@ -222,7 +222,7 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   public static void main(String[] args) {
-    MpsWorker mpsWorker = new GeneratorWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.LogLogger());
+    MpsWorker mpsWorker = new GeneratorWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     mpsWorker.workFromMain();
   }
 

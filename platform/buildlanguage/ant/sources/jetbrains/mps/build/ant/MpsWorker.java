@@ -58,7 +58,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.varia.NullAppender;
+import org.apache.log4j.ConsoleAppender;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 import org.jetbrains.annotations.NotNull;
@@ -169,7 +169,7 @@ public abstract class MpsWorker {
   }
 
   protected void setupEnvironment() {
-    BasicConfigurator.configure(new NullAppender());
+    BasicConfigurator.configure(new ConsoleAppender());
     Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
 
@@ -568,6 +568,17 @@ public abstract class MpsWorker {
 
     public void log(String text, int level) {
       myProjectComponent.log(text, level);
+    }
+  }
+
+  public static class SystemOutLogger implements AntLogger {
+
+    public void log(String text, int level) {
+      if (level == Project.MSG_ERR) {
+        System.err.println(text);
+      } else {
+        System.out.println(text);
+      }
     }
   }
 

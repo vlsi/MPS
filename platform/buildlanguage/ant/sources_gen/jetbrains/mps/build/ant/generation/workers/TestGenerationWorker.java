@@ -575,7 +575,7 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   public static void main(String[] args) {
-    TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.LogLogger());
+    TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     generator.workFromMain();
   }
 
