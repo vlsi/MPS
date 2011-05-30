@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.imports;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
@@ -27,6 +28,7 @@ import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -282,6 +284,7 @@ public class ImportHelper {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               myModule.addDependency(moduleToImport, false);
+              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
             }
           });
         }
