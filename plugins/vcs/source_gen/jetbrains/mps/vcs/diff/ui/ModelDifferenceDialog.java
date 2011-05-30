@@ -74,10 +74,15 @@ public class ModelDifferenceDialog extends BaseDialog {
   private void fillRootToChange() {
     MapSequence.fromMap(myRootToChange).clear();
     for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
-      if (!(MapSequence.fromMap(myRootToChange).containsKey(c.getRootId()))) {
-        MapSequence.fromMap(myRootToChange).put(c.getRootId(), ListSequence.fromList(new ArrayList<ModelChange>()));
+      SNodeId id = c.getRootId();
+      if (id == null) {
+        // TODO handle model properties 
+      } else {
+        if (!(MapSequence.fromMap(myRootToChange).containsKey(id))) {
+          MapSequence.fromMap(myRootToChange).put(id, ListSequence.fromList(new ArrayList<ModelChange>()));
+        }
+        ListSequence.fromList(MapSequence.fromMap(myRootToChange).get(id)).addElement(c);
       }
-      ListSequence.fromList(MapSequence.fromMap(myRootToChange).get(c.getRootId())).addElement(c);
     }
   }
 
@@ -153,15 +158,17 @@ public class ModelDifferenceDialog extends BaseDialog {
       super(myOperationContext);
     }
 
-    protected Iterable<BaseAction> getRootActions(SNodeId rootId) {
+    protected Iterable<BaseAction> getRootActions(@Nullable SNodeId rootId) {
       return Arrays.<BaseAction>asList(new InvokeRootDifferenceAction(ModelDifferenceDialog.this, rootId));
     }
 
-    protected void updateRootCustomPresentation(DiffModelTree.RootTreeNode rootTreeNode) {
-      ModelChange firstChange = ListSequence.fromList(MapSequence.fromMap(myRootToChange).get(rootTreeNode.getRootId())).first();
+    protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       ChangeType compositeChangeType = ChangeType.CHANGE;
-      if (firstChange instanceof AddRootChange || firstChange instanceof DeleteRootChange) {
-        compositeChangeType = firstChange.getType();
+      if (rootTreeNode.getRootId() != null) {
+        ModelChange firstChange = ListSequence.fromList(MapSequence.fromMap(myRootToChange).get(rootTreeNode.getRootId())).first();
+        if (firstChange instanceof AddRootChange || firstChange instanceof DeleteRootChange) {
+          compositeChangeType = firstChange.getType();
+        }
       }
       rootTreeNode.setColor(ChangeColors.getForTree(compositeChangeType));
     }

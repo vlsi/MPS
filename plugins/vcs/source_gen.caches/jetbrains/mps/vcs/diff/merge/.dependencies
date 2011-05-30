@@ -65,6 +65,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeConflictsBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContextState" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.merge.MergeContextState" file="MergeContextState.java">
     <classNode dependClassName="java.util.HashMap" />

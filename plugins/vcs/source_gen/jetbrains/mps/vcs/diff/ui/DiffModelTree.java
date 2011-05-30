@@ -7,14 +7,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.Icon;
@@ -38,7 +38,11 @@ public abstract class DiffModelTree extends MPSTree {
 
   protected MPSTreeNode rebuild() {
     DiffModelTree.ModelTreeNode modelNode = new DiffModelTree.ModelTreeNode();
-    myRootNodes = Sequence.fromIterable(getAffectedRoots()).<DiffModelTree.RootTreeNode>select(new ISelector<SNodeId, DiffModelTree.RootTreeNode>() {
+    myRootNodes = Sequence.fromIterable(getAffectedRoots()).where(new IWhereFilter<SNodeId>() {
+      public boolean accept(SNodeId r) {
+        return r != null;
+      }
+    }).<DiffModelTree.RootTreeNode>select(new ISelector<SNodeId, DiffModelTree.RootTreeNode>() {
       public DiffModelTree.RootTreeNode select(SNodeId r) {
         return new DiffModelTree.RootTreeNode(r);
       }
@@ -66,6 +70,13 @@ public abstract class DiffModelTree extends MPSTree {
       }
       parentNode.add(rtn);
     }
+    if (Sequence.fromIterable(getAffectedRoots()).any(new IWhereFilter<SNodeId>() {
+      public boolean accept(SNodeId r) {
+        return r == null;
+      }
+    })) {
+      modelNode.add(new DiffModelTree.MetadataTreeNode());
+    }
     return modelNode;
   }
 
@@ -79,9 +90,9 @@ public abstract class DiffModelTree extends MPSTree {
 
   protected abstract Iterable<SModel> getModels();
 
-  protected abstract void updateRootCustomPresentation(DiffModelTree.RootTreeNode rootTreeNode);
+  protected abstract void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode);
 
-  protected abstract Iterable<BaseAction> getRootActions(SNodeId rootId);
+  protected abstract Iterable<BaseAction> getRootActions(@Nullable SNodeId rootId);
 
   public void setMultipleRootNames(boolean multipleRootNames) {
     myMultipleRootNames = multipleRootNames;
@@ -192,8 +203,24 @@ public abstract class DiffModelTree extends MPSTree {
       return ActionUtils.groupFromActions(Sequence.fromIterable(getRootActions(myRootId)).toGenericArray(BaseAction.class));
     }
 
+    @Nullable
     public SNodeId getRootId() {
       return myRootId;
+    }
+  }
+
+  public class MetadataTreeNode extends DiffModelTree.RootTreeNode {
+    public MetadataTreeNode() {
+      super(null);
+      setNodeIdentifier("metadata");
+      doUpdatePresentation();
+    }
+
+    @Override
+    protected void doUpdatePresentation() {
+      setText("Model Properties");
+      setIcon(Icons.PROPERTIES_ICON);
+      updateRootCustomPresentation(this);
     }
   }
 }

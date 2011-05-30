@@ -246,6 +246,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.RootTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.FoldingAreaButton" file="FoldingAreaButton.java">
     <classNode dependClassName="java.awt.Graphics" />
