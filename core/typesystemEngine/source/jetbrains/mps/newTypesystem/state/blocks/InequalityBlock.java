@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.state.blocks;
 
 import com.intellij.openapi.util.Pair;
+import com.sun.istack.internal.NotNull;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
@@ -147,13 +148,11 @@ public class InequalityBlock extends RelationBlock {
   }
 
   private String getPresentationInternal(SNode left, SNode right) {
-    String sign = myRelationKind.getRelationSign();
     if (lessThan) {
-      sign = ":" + sign;
+      return left + myRelationKind.getRelationSign() + right;
     } else {
-      sign = sign + ":";
+      return right + myRelationKind.getReversedRelationSign() + left;
     }
-    return left + sign + right;
   }
 
   @Override

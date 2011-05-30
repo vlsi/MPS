@@ -16,17 +16,18 @@
 package jetbrains.mps.newTypesystem.state.blocks;
 
 public enum RelationKind {
-  WEAK("<=", "SubTyping", true, false, false),
-  STRONG("<<=", "SubTyping (strong)", false, false, false),
-  WEAK_CHECK("<='", "Check-only subTyping", true, true, false),
-  STRONG_CHECK("<<='", "Check-only subTyping (strong)", false, true, false),
+  WEAK("<=", ">=", "SubTyping", true, false, false),
+  STRONG("<<=", ">>=", "SubTyping (strong)", false, false, false),
+  WEAK_CHECK("<='", ">='", "Check-only subTyping", true, true, false),
+  STRONG_CHECK("<<='", ">>='","Check-only subTyping (strong)", false, true, false),
   WEAK_COMPARABLE("~", "Comparable", true, false, true),
   STRONG_COMPARABLE("~~", "Comparable (strong)", false, false, true),
   WEAK_COMPARABLE_CHECK("~", "Comparable", true, true, true),
   STRONG_COMPARABLE_CHECK("~~", "Comparable (strong)", false, true, true),
-  CHECK_EQUATION("='", "Check-only equation", true, true, false);
+  CHECK_EQUATION("=='", "Check-only equation", true, true, false);
 
   private String myRelationSign;
+  private String myReversedRelationSign;
   private String myTitle;
 
   private boolean myWeak;
@@ -34,7 +35,12 @@ public enum RelationKind {
   private boolean myComparable;
 
   RelationKind(String relationSign, String title, boolean weak, boolean checkOnly, boolean comparable) {
+    this(relationSign, relationSign, title, weak, checkOnly, comparable);
+  }
+
+  RelationKind(String relationSign, String reversedRelationSign, String title, boolean weak, boolean checkOnly, boolean comparable) {
     myRelationSign = relationSign;
+    myReversedRelationSign = reversedRelationSign;
     myTitle = title;
     myWeak = weak;
     myCheckOnly = checkOnly;
@@ -43,6 +49,10 @@ public enum RelationKind {
 
   public String getRelationSign() {
     return myRelationSign;
+  }
+
+  public String getReversedRelationSign() {
+    return myReversedRelationSign;
   }
 
   public String getTitle() {
