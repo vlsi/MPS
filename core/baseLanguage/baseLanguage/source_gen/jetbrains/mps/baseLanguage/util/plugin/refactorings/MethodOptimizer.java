@@ -10,6 +10,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class MethodOptimizer {
+  public MethodOptimizer() {
+  }
+
   public static void optimize(SNode body) {
     SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).last();
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {

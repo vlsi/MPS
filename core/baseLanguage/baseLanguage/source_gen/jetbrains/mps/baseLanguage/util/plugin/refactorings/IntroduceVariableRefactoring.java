@@ -36,6 +36,9 @@ public abstract class IntroduceVariableRefactoring {
   protected VisibilityLevel myVisibilityLevel;
   protected List<SNode> myDuplicates = new ArrayList<SNode>();
 
+  public IntroduceVariableRefactoring() {
+  }
+
   public String init(SNode node, JComponent editorComponent) {
     this.myExpression = node;
     this.myContainer = findContainer(node);

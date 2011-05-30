@@ -11,6 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class PrecedenceUtil {
+  public PrecedenceUtil() {
+  }
+
   @NotNull
   public static SNode getTargetForRightTransform(@NotNull SNode contextNode) {
     SNode targetNode = contextNode;

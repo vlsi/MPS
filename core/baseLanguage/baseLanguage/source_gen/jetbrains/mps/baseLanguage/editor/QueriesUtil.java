@@ -17,6 +17,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class QueriesUtil {
+  public QueriesUtil() {
+  }
+
   public static List<SNode> replaceNodeMenu_parameterObjects(SNode classifier, SNode contextNode) {
     ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(classifier, contextNode, IClassifiersSearchScope.STATIC_MEMBER);
     return QueriesUtil.replaceNodeMenu_parameterObjects(searchScope, classifier);

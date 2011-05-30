@@ -9,6 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 
 public class ExtractMethodFactory {
+  public ExtractMethodFactory() {
+  }
+
   public static ExtractMethodRefactoringParameters createParameters(List<SNode> nodes) {
     SNode first = ListSequence.fromList(nodes).first();
     if (SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(first), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {

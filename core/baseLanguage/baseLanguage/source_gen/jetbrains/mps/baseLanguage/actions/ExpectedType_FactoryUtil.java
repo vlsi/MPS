@@ -9,6 +9,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ExpectedType_FactoryUtil {
+  public ExpectedType_FactoryUtil() {
+  }
+
   public static boolean canComputeCastType(SNode castExpression) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(castExpression), "jetbrains.mps.baseLanguage.structure.TypeDerivable");
   }

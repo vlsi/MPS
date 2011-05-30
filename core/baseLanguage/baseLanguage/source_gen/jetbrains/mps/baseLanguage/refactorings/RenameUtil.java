@@ -7,6 +7,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RenameUtil {
+  public RenameUtil() {
+  }
+
   public static SNode getMethodDeclaration(SNode methodOrMethodCall) {
     if (SNodeOperations.isInstanceOf(methodOrMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       return SNodeOperations.cast(methodOrMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
