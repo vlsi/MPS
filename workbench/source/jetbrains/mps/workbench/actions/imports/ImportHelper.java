@@ -159,6 +159,7 @@ public class ImportHelper {
           ModuleReference ref = getModuleReference();
           if (myContextModule.getScope().getLanguage(ref)==null) {
             myContextModule.addUsedLanguage(ref);
+            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
           }
           myModel.getSModel().addLanguage(ref);
         }
