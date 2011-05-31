@@ -4,73 +4,72 @@ package jetbrains.mps.analyzers.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.analyzers.structure.AnalysisDirection", "jetbrains.mps.analyzers.structure.Analyzer", "jetbrains.mps.analyzers.structure.AnalyzerFunFunction", "jetbrains.mps.analyzers.structure.AnalyzerFunParameterInput", "jetbrains.mps.analyzers.structure.AnalyzerFunParameterProgramState", "jetbrains.mps.analyzers.structure.AnalyzerFunctionResultType", "jetbrains.mps.analyzers.structure.AnalyzerInitialFunction", "jetbrains.mps.analyzers.structure.AnalyzerMergeFunction", "jetbrains.mps.analyzers.structure.AnalyzerMergeParameterInput", "jetbrains.mps.analyzers.structure.AnalyzerParameterProgram", "jetbrains.mps.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.analyzers.structure.AnalyzerRunnerType", "jetbrains.mps.analyzers.structure.ApplicableCondition", "jetbrains.mps.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.analyzers.structure.BackwardDirection", "jetbrains.mps.analyzers.structure.ConceptCondition", "jetbrains.mps.analyzers.structure.EmitInstruction", "jetbrains.mps.analyzers.structure.ForwardDirection", "jetbrains.mps.analyzers.structure.InsertPosition", "jetbrains.mps.analyzers.structure.Instruction", "jetbrains.mps.analyzers.structure.InstructionParameter", "jetbrains.mps.analyzers.structure.InstructionReference", "jetbrains.mps.analyzers.structure.IsOperation", "jetbrains.mps.analyzers.structure.PatternCondition", "jetbrains.mps.analyzers.structure.Rule", "jetbrains.mps.analyzers.structure.RuleReference"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 2015249080:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Analyzer"));
-      case 562521404:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Instruction"));
-      case -518857640:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerMergeFunction"));
-      case -2017044109:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerParameterProgram"));
-      case 1845992993:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerMergeParameterInput"));
-      case -974038684:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerInitialFunction"));
-      case -1524729697:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunFunction"));
-      case 246362447:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunParameterProgramState"));
-      case -1245140696:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunParameterInput"));
-      case -1649923535:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalysisDirection"));
-      case -1803639220:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.ForwardDirection"));
-      case -805582582:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.BackwardDirection"));
-      case -946169913:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerFunctionResultType"));
-      case 1055221262:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.Rule"));
-      case -853438003:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InstructionParameter"));
-      case -665745686:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.ApplicableCondition"));
-      case 571631485:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.PatternCondition"));
-      case -1580899223:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmitInstruction_Constraints());
-      case 561913199:
+      case 22:
         return new DataHolderConstraintsDescriptor(new InstructionReference_Constraints());
-      case -1843468067:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.RuleReference"));
-      case 2019025762:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.AnalyzerRunnerType"));
-      case -1382799965:
+      case 10:
         return new DataHolderConstraintsDescriptor(new AnalyzerRunnerAnalyzeOperation_Constraints());
-      case -338765052:
+      case 11:
         return new DataHolderConstraintsDescriptor(new AnalyzerRunnerCreator_Constraints());
-      case -1192849397:
+      case 23:
         return new DataHolderConstraintsDescriptor(new IsOperation_Constraints());
-      case 95620005:
+      case 16:
         return new DataHolderConstraintsDescriptor(new ConceptCondition_Constraints());
-      case 4779448:
+      case 14:
         return new DataHolderConstraintsDescriptor(new ApplicableNodeReference_Constraints());
-      case 530223091:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertBeforePosition"));
-      case -805464172:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertPosition"));
-      case -1807174758:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.analyzers.structure.InsertAfterPosition"));
       default:
         return null;
     }

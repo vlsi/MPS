@@ -14,6 +14,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.CheckCancelledStatusStatement_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.ExecuteFinderExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.FinderDeclaration_Constraints" />

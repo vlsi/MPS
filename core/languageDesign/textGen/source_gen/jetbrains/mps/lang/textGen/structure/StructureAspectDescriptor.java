@@ -4,6 +4,7 @@ package jetbrains.mps.lang.textGen.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,77 +13,79 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", "jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.lang.textGen.structure.BufferParameter", "jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.ContextParameter", "jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation", "jetbrains.mps.lang.textGen.structure.EncodingDeclaration", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.ExtensionDeclaration", "jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", "jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", "jetbrains.mps.lang.textGen.structure.IndentBufferOperation", "jetbrains.mps.lang.textGen.structure.InfoAppendPart", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.NodeParameter", "jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.ScopeConcept", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.lang.textGen.structure.TraceableConcept", "jetbrains.mps.lang.textGen.structure.UnitConcept", "jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.lang.textGen.structure.WithIndentOperation"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 482208399:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case 203494199:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.NodeParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -1097206968:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1619608102:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -71608490:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -373419854:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation", new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 635625003:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 1248579231:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1488234531:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.OperationDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"});
-      case -922680363:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.OperationCall", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1532449098:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ContextParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 1169509609:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1101018809:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.BufferParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 1366820957:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"});
-      case -1871965989:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.UtilityMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -2051867695:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.FoundErrorOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -1237738792:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -1889361947:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.WithIndentOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -328110465:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.AbstractAppendPart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1374493071:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.NewLineAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1704815627:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.InfoAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -584901537:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.NodeAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -429793797:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.CollectionAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1211052914:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1770081571:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.AppendOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 1076767307:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1330068296:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 845128628:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.UnitConcept", new String[]{}, new String[]{}, new String[]{});
-      case -1012313084:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ScopeConcept", new String[]{}, new String[]{}, new String[]{});
-      case -1080466471:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.TraceableConcept", new String[]{}, new String[]{}, new String[]{});
-      case 1938204492:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.EncodingLiteral", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"}, new String[]{"jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1783667305:
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.BufferParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.CollectionAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ContextParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation", new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 10:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.EncodingDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"}, new String[]{"jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -1109115640:
+      case 11:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase", new String[]{}, new String[]{}, new String[]{});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.EncodingLiteral", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"}, new String[]{"jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.FoundErrorOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.InfoAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.NewLineAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.NodeAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.NodeParameter", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 23:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.OperationCall", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 24:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.OperationDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"});
+      case 25:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 26:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.ScopeConcept", new String[]{}, new String[]{}, new String[]{});
+      case 27:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 28:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.TraceableConcept", new String[]{}, new String[]{}, new String[]{});
+      case 29:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.UnitConcept", new String[]{}, new String[]{}, new String[]{});
+      case 30:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.UtilityMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 31:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"});
+      case 32:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.textGen.structure.WithIndentOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
       default:
         return null;
     }

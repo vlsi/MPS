@@ -12,7 +12,7 @@
   <unitInfo fileName="BreakpointCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debug.apiLang.behavior.BreakpointCreator_BehaviorDescriptor" />
   <unitInfo fileName="DebuggerReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debug.apiLang.behavior.DebuggerReference_Behavior" />
   <unitInfo fileName="CreateBreakpointOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.debug.apiLang.behavior.CreateBreakpointOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.apiLang.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.apiLang.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2511103526757024634">
     <scopeInfo nodeId="2511103526757024636" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

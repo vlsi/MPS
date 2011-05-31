@@ -6,13 +6,13 @@
   <unitInfo fileName="DialogExpression_Constraints.java" startLine="24" startPosition="15" endLine="34" endPosition="5" unitName="jetbrains.mps.ide.uiLanguage.constraints.DialogExpression_Constraints$1" />
   <unitInfo fileName="DisposeDialogExpression_Constraints.java" startLine="24" startPosition="15" endLine="34" endPosition="5" unitName="jetbrains.mps.ide.uiLanguage.constraints.DisposeDialogExpression_Constraints$1" />
   <unitInfo fileName="IDEDialog_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.ide.uiLanguage.constraints.IDEDialog_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="DisposeDialogStatement_Constraints.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.constraints.DisposeDialogStatement_Constraints" />
   <unitInfo fileName="ReportErrorStatement_Constraints.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.constraints.ReportErrorStatement_Constraints" />
   <unitInfo fileName="ReportErrorExpression_Constraints.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.constraints.ReportErrorExpression_Constraints" />
   <unitInfo fileName="DialogExpression_Constraints.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.constraints.DialogExpression_Constraints" />
   <unitInfo fileName="DisposeDialogExpression_Constraints.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.constraints.DisposeDialogExpression_Constraints" />
   <unitInfo fileName="IDEDialog_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.constraints.IDEDialog_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1203606392881">
     <nodeInfo nodeId="1203607303141" fileName="DialogUtil.java" startLine="10" startPosition="61" endLine="11" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203607303152" fileName="DialogUtil.java" startLine="12" startPosition="28" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

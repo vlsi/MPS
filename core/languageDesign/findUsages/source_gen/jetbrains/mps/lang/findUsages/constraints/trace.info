@@ -10,7 +10,7 @@
   <unitInfo fileName="NodeStatement_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.NodeStatement_Constraints" />
   <unitInfo fileName="ResultStatement_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ResultStatement_Constraints" />
   <unitInfo fileName="ExecuteFinderExpression_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ExecuteFinderExpression_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213107434939">
     <nodeInfo nodeId="1213107434958" fileName="ExecuteFinderExpression_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1213107434957" fileName="ExecuteFinderExpression_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="234" />

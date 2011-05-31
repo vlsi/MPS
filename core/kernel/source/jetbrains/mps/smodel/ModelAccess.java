@@ -31,7 +31,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   private static ModelAccess ourInstance = new DefaultModelAccess();
 
   private final boolean allowSharedRead;
-  private final ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock();
+  private final ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock(true);
 
   /* support of temporary downgrading write lock to shared read lock */
   protected final ReentrantReadWriteLock mySharedReadInWriteLock = new ReentrantReadWriteLock();

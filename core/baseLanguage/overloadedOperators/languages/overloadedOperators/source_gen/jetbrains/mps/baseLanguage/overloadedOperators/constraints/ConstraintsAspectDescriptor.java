@@ -4,32 +4,35 @@ package jetbrains.mps.baseLanguage.overloadedOperators.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand", "jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer", "jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -897870496:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator"));
-      case -1940290366:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"));
-      case 1590784032:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand"));
-      case 1109458287:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"));
-      case 1644109830:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator"));
-      case -2132423961:
+      case 0:
         return new DataHolderConstraintsDescriptor(new BinaryOperationReference_Constraints());
-      case -298353385:
+      case 1:
         return new DataHolderConstraintsDescriptor(new CustomOperator_Constraints());
-      case -703486262:
+      case 3:
         return new DataHolderConstraintsDescriptor(new CustomOperatorUsage_Constraints());
-      case 849304547:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration"));
       default:
         return null;

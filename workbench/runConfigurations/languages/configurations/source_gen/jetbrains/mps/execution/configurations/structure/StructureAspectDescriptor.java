@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,55 +13,57 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", "jetbrains.mps.execution.configurations.structure.StartStatement"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 980669643:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfiguration", new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfiguration"}, new String[]{}, new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfiguration"});
-      case 2142906111:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationKind", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -750504258:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"}, new String[]{}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -888272298:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"});
-      case 342077763:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.Project_Parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -201221554:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 2023018104:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -833213170:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 809774029:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.StartStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 1931063218:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", new String[]{"jetbrains.mps.execution.configurations.structure.StartStatement"}, new String[]{"jetbrains.mps.execution.configurations.structure.StartStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -115990896:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 497683837:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -2016729914:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationSource", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -152903920:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -390735459:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 567125069:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 661346529:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"});
-      case 223639556:
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"});
+      case 5:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.ModelSource", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1451473908:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.ProjectSource", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -2051678565:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.NodeListSource", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1771502151:
+      case 6:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.ModuleSource", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 229384541:
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.NodeListSource", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 8:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.NodeSource", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.ProjectSource", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationSource"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.Project_Parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfiguration", new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfiguration"}, new String[]{}, new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfiguration"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"}, new String[]{}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationKind", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.RunConfigurationSource", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor", new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"}, new String[]{"jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"}, new String[]{"jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", new String[]{"jetbrains.mps.execution.configurations.structure.StartStatement"}, new String[]{"jetbrains.mps.execution.configurations.structure.StartStatement"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.configurations.structure.StartStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
       default:
         return null;
     }

@@ -4,20 +4,23 @@ package jetbrains.mps.lang.editor.table.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -689183868:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.table.structure.CellModel_Table"));
-      case 772576652:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"));
-      case 607441035:
+      case 0:
         return new DataHolderConstraintsDescriptor(new CellModel_HierarchycalTable_Constraints());
       default:
         return null;

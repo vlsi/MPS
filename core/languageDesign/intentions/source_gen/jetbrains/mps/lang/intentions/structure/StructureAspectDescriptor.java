@@ -4,6 +4,7 @@ package jetbrains.mps.lang.intentions.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,45 +13,47 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.ExecuteUIBlock", "jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionContextParamReference", "jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -713206842:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IntentionDeclaration", new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case -488683575:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.DescriptionBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 599031500:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IsApplicableBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1103938544:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ExecuteBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -328333184:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 1264391293:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.QueryBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -417352459:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IntentionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1572281711:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", new String[]{"jetbrains.mps.lang.intentions.structure.IntentionDeclaration"}, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case -198052079:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ChildFilterBlock", new String[]{}, new String[]{}, new String[]{});
-      case -1133772076:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ChildFilterFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock"}, new String[]{"jetbrains.mps.lang.intentions.structure.ChildFilterBlock"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 226602368:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -619229129:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case -1468598053:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration", new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case 789005578:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration", new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case -1332584164:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ChildFilterBlock", new String[]{}, new String[]{}, new String[]{});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ChildFilterFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock"}, new String[]{"jetbrains.mps.lang.intentions.structure.ChildFilterBlock"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.DescriptionBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ExecuteBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 7:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ExecuteUIBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -706594644:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -238295015:
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration", new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
+      case 9:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IntentionContextParamReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IntentionDeclaration", new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IntentionParameter", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.IsApplicableBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", new String[]{"jetbrains.mps.lang.intentions.structure.IntentionDeclaration"}, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.QueryBlock", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration", new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
       default:
         return null;
     }

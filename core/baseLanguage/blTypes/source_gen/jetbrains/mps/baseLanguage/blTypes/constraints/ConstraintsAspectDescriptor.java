@@ -4,26 +4,29 @@ package jetbrains.mps.baseLanguage.blTypes.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", "jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1756110201:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 4:
         return new DataHolderConstraintsDescriptor(new PrimitiveTypeDescriptor_Constraints());
-      case -10816389:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"));
-      case -1044962277:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType"));
-      case -1921177056:
+      case 0:
         return new DataHolderConstraintsDescriptor(new BLArrayType_Constraints());
-      case -1196824066:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept"));
-      case 1844066795:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.blTypes.structure.FooConcept"));
       default:
         return null;

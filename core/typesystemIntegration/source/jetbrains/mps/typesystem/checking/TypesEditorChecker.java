@@ -187,9 +187,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   }
 
   public boolean areMessagesChanged() {
-    // tmp fix for MPS-12282
-    return true;
-    // return myMessagesChanged;
+    return myMessagesChanged;
   }
 
   public void clear(SNode node, EditorComponent editorComponent) {

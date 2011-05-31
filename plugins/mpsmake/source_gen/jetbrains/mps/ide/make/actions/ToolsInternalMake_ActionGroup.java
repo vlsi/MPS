@@ -16,6 +16,9 @@ public class ToolsInternalMake_ActionGroup extends GeneratedActionGroup {
     try {
       ToolsInternalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action");
       ToolsInternalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllGenerators_Action");
+      ToolsInternalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllStructures_Action");
+      ToolsInternalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllBehaviors_Action");
+      ToolsInternalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllConstraints_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

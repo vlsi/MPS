@@ -4,28 +4,31 @@ package jetbrains.mps.build.dependency.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.build.dependency.structure.CycleReference", "jetbrains.mps.build.dependency.structure.Macros", "jetbrains.mps.build.dependency.structure.ModuleDescription", "jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.build.dependency.structure.ProjectDescriptionReference"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1795909067:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.ProjectDescription"));
-      case 345691720:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.ModuleDescription"));
-      case -1615681218:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.Cycle"));
-      case -1797712679:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.PathHolder"));
-      case -833471571:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.CycleReference"));
-      case 1717622991:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.dependency.structure.Macros"));
-      case -1048556096:
+      case 6:
         return new DataHolderConstraintsDescriptor(new ProjectDescriptionReference_Constraints());
       default:
         return null;

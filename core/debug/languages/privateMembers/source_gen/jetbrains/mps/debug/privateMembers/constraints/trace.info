@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="PrivateStaticFieldReference_Constraints.java" startLine="29" startPosition="42" endLine="51" endPosition="5" unitName="jetbrains.mps.debug.privateMembers.constraints.PrivateStaticFieldReference_Constraints$1" />
   <unitInfo fileName="PrivateStaticMethodCall_Constraints.java" startLine="29" startPosition="44" endLine="51" endPosition="5" unitName="jetbrains.mps.debug.privateMembers.constraints.PrivateStaticMethodCall_Constraints$1" />
   <unitInfo fileName="PrivateFieldReferenceOperation_Constraints.java" startLine="32" startPosition="39" endLine="57" endPosition="5" unitName="jetbrains.mps.debug.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints$1" />

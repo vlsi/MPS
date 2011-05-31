@@ -4,6 +4,7 @@ package jetbrains.mps.lang.script.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,21 +13,23 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater", "jetbrains.mps.lang.script.structure.MigrationScriptPart_node"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 514203685:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.script.structure.MigrationScript", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1511177052:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -894501772:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -2072585175:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_node", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 1334755014:
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_node", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
       default:
         return null;
     }

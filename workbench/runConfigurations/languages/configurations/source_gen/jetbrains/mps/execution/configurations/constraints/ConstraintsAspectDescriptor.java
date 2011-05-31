@@ -4,58 +4,61 @@ package jetbrains.mps.execution.configurations.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", "jetbrains.mps.execution.configurations.structure.StartStatement"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 980669643:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfiguration"));
-      case 2142906111:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfigurationKind"));
-      case -750504258:
+      case 13:
         return new DataHolderConstraintsDescriptor(new RunConfigurationExecutor_Constraints());
-      case -888272298:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"));
-      case 342077763:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
-      case -201221554:
+      case 0:
         return new DataHolderConstraintsDescriptor(new ComplexRunConfigurationExecutor_Constraints());
-      case 2023018104:
+      case 1:
         return new DataHolderConstraintsDescriptor(new ConfigurationFromExecutorReference_Constraints());
-      case -833213170:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
-      case 809774029:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartStatement"));
-      case 1931063218:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"));
-      case -115990896:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor"));
-      case 497683837:
+      case 15:
         return new DataHolderConstraintsDescriptor(new RunConfigurationProducer_Constraints());
-      case -2016729914:
+      case 17:
         return new DataHolderConstraintsDescriptor(new RunConfigurationSource_Constraints());
-      case -152903920:
+      case 16:
         return new DataHolderConstraintsDescriptor(new RunConfigurationProducerPart_Constraints());
-      case -390735459:
+      case 2:
         return new DataHolderConstraintsDescriptor(new Create_ConceptFunction_Constraints());
-      case 567125069:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter"));
-      case 661346529:
+      case 12:
         return new DataHolderConstraintsDescriptor(new RunConfigurationCreator_Constraints());
-      case 223639556:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ModelSource"));
-      case 1451473908:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ProjectSource"));
-      case -2051678565:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.NodeListSource"));
-      case 1771502151:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ModuleSource"));
-      case 229384541:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.NodeSource"));
       default:
         return null;

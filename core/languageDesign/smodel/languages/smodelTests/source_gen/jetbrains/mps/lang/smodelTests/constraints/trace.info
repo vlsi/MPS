@@ -3,7 +3,7 @@
   <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="28" startPosition="27" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$1" />
   <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="51" startPosition="33" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$2" />
   <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="74" startPosition="32" endLine="96" endPosition="5" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$3" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="ReferenceContainer_Constraints.java" startLine="18" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints" />
   <root nodeId="8758390115029091794">
     <nodeInfo nodeId="8758390115029158859" fileName="ReferenceContainer_Constraints.java" startLine="33" startPosition="133" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -16,6 +16,7 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.make.script.IConfig;
@@ -68,7 +69,11 @@ public class ReloadClasses_Facet implements IFacet {
                   return ((TResource) in).module().reloadClassesAfterGeneration();
                 }
               })) {
-                ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+                ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
+                  public void run() {
+                    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+                  }
+                });
               }
               _output_i849au_a0a = Sequence.fromIterable(_output_i849au_a0a).concat(Sequence.fromIterable(input));
             default:

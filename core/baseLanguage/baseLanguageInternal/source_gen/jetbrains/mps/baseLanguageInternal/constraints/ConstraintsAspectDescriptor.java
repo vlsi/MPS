@@ -4,54 +4,57 @@ package jetbrains.mps.baseLanguageInternal.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1776008649:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"));
-      case -748575031:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference"));
-      case -1202134450:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"));
-      case -181962325:
+      case 13:
         return new DataHolderConstraintsDescriptor(new InternalPartialInstanceMethodCall_Constraints());
-      case -332116314:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression"));
-      case 1164317125:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"));
-      case 1895497509:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"));
-      case -1419340984:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference"));
-      case -569834106:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression"));
-      case 2121366688:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression"));
-      case 1991186635:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression"));
-      case -1043226863:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"));
-      case 2027888821:
+      case 1:
         return new DataHolderConstraintsDescriptor(new ExtractStatementListInnerExpression_Constraints());
-      case -338199173:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression"));
-      case -1222117134:
+      case 6:
         return new DataHolderConstraintsDescriptor(new ExtractStaticMethod_CallExpression_Constraints());
-      case -971598052:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"));
-      case 525429288:
+      case 3:
         return new DataHolderConstraintsDescriptor(new ExtractStaticInnerClassCreator_Constraints());
-      case 447898724:
+      case 2:
         return new DataHolderConstraintsDescriptor(new ExtractStaticInnerClassConcept_Constraints());
-      case -1194740616:
+      case 8:
         return new DataHolderConstraintsDescriptor(new ExtractToConstantRefExpression_Constraints());
-      case 484023672:
+      case 19:
         return new DataHolderConstraintsDescriptor(new WeakClassReference_Constraints());
       default:
         return null;

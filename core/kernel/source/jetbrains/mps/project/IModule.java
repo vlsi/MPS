@@ -42,10 +42,25 @@ public interface IModule extends ModelOwner {
 
   DependencyManager getDependenciesManager();
 
+  /**
+   * Explicitly declared deps +
+   * <p>explicitly extended languages + all the generators (for a lang)
+   * <p>explicitly ref'd generators + source lang + runtime modules of the source lang (for a generator)
+   * @return
+   */
   List<Dependency> getDependOn();
 
+  /**
+   * Explicitly used langs +
+   * <p>all bootstrap langs (for a generator)
+   * @return
+   */
   List<ModuleReference> getUsedLanguagesReferences();
 
+  /**
+   * Explicitly used devkits
+   * @return
+   */
   List<ModuleReference> getUsedDevkitReferences();
 
   void addDependency(ModuleReference moduleRef, boolean reexport);

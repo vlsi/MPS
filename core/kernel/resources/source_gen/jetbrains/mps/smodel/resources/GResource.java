@@ -54,4 +54,8 @@ public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable
   public GResource assignFrom(Tuples._4<IModule, SModelDescriptor, Iterable<SModelDescriptor>, GenerationStatus> from) {
     return (GResource) super.assign(from);
   }
+
+  public String describe() {
+    return null;
+  }
 }

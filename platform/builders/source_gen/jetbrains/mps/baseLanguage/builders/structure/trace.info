@@ -16,7 +16,7 @@
   <unitInfo fileName="SimpleBuilderPropertyBuilder.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder" />
   <unitInfo fileName="SimpleBuilderChild.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild" />
   <unitInfo fileName="BeanPropertyBuilder.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="75" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="78" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="SimpleBuilder.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" />
   <unitInfo fileName="SimpleBuilderExtensionDeclaration.java" startLine="12" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration" />
   <unitInfo fileName="BuilderStatement.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" />
@@ -24,9 +24,9 @@
   <unitInfo fileName="SimpleBuilderParameter.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter" />
   <unitInfo fileName="AsBuilderStatement.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement" />
   <unitInfo fileName="SimpleBuilderProperty.java" startLine="17" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.StructureAspectDescriptor" />
   <unitInfo fileName="BeanBuilder.java" startLine="17" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.BeanBuilder" />
   <unitInfo fileName="SimpleBuilders.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.StructureAspectDescriptor" />
   <unitInfo fileName="SimpleBuilderDeclaration.java" startLine="16" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" />
 </debugInfo>
 

@@ -4,60 +4,63 @@ package jetbrains.mps.make.script.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ConfigDefinition", "jetbrains.mps.make.script.structure.Expected", "jetbrains.mps.make.script.structure.ExpectedInput", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.IExpected", "jetbrains.mps.make.script.structure.InputResourcesParameter", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.QueryParameterDeclaration", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 983572414:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 21:
         return new DataHolderConstraintsDescriptor(new ResultStatement_Constraints());
-      case -741479940:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ResourceType"));
-      case 1427448848:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OutputResources"));
-      case -1101840932:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.JobDefinition"));
-      case 575325786:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.InputResourcesParameter"));
-      case -102130137:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.QueryDefinition"));
-      case -1702025755:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.QueryParameterDeclaration"));
-      case 1354309897:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Option"));
-      case -950406463:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Text"));
-      case 1079744641:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OptionExpression"));
-      case 501708771:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.OptionType"));
-      case -123496991:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ExpectedOption"));
-      case -1739978164:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.Expected"));
-      case -1672155938:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ExpectedInput"));
-      case -443646447:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.JobDeclaration"));
-      case -902242003:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.IExpected"));
-      case -1879092157:
+      case 18:
         return new DataHolderConstraintsDescriptor(new RelayQueryExpression_Constraints());
-      case 722524617:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ConfigDefinition"));
-      case -1001578878:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.ReportFeedbackStatement"));
-      case -861662775:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.BeginWorkStatement"));
-      case 1713558928:
+      case 0:
         return new DataHolderConstraintsDescriptor(new AdvanceWorkStatement_Constraints());
-      case 1362544503:
+      case 7:
         return new DataHolderConstraintsDescriptor(new FinishWorkStatement_Constraints());
-      case 69496797:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.make.script.structure.AllWorkLeftExpression"));
       default:
         return null;

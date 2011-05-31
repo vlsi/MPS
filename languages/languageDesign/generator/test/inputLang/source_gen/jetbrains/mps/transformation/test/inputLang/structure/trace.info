@@ -7,9 +7,9 @@
   <unitInfo fileName="InputNode_A.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" />
   <unitInfo fileName="UseInTest_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest_PropertySupport" />
   <unitInfo fileName="Option_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option_PropertySupport" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="42" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Option.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.StructureAspectDescriptor" />
   <unitInfo fileName="UseInTest.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
   <unitInfo fileName="InputRootWithStatementList.java" startLine="16" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList" />
   <unitInfo fileName="InputNode.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputNode" />

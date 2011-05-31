@@ -33,6 +33,12 @@ import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 /**
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
@@ -40,6 +46,7 @@ import java.util.Set;
  */
 public class WorkbenchModelAccess extends ModelAccess {
 
+  public static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
   private EDTExecutor myEDTExecutor = new EDTExecutor(this);
   private Set<Thread> myIndexingThreads = new ConcurrentHashSet<Thread>();
 
@@ -238,6 +245,41 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
+  public void runWriteInEDTAndWait(final Runnable r) {
+    if (isInEDT()) {
+      runWriteAction(r);
+      return;
+    }
+
+    final CyclicBarrier barr = new CyclicBarrier(2);
+    final boolean canRead = canRead();
+    try {
+      if (canRead) getReadLock().unlock();
+      myEDTExecutor.scheduleWrite(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            r.run();
+          }
+          finally {
+            try {
+              barr.await();
+            }
+            catch (InterruptedException ignore) {}
+            catch (BrokenBarrierException ignore) {}
+          }
+        }
+      });
+      barr.await();
+    }
+    catch (InterruptedException ignore) {}
+    catch (BrokenBarrierException ignore) {}
+    finally {
+      if (canRead) getReadLock().lock();
+    }
+  }
+
+  @Override
   public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
     myEDTExecutor.scheduleCommand(r, p);
   }
@@ -274,6 +316,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     });
   }
 
+  @Override
   public boolean tryWrite(final Runnable r) {
     if(canWrite()) {
       r.run();
@@ -284,30 +327,41 @@ public class WorkbenchModelAccess extends ModelAccess {
       return false;
     }
 
-    if (!getWriteLock().tryLock()) {
-      return false;
-    }
-    getWriteLock().unlock();
+//    if (!getWriteLock().tryLock()) {
+//      return false;
+//    }
+//    getWriteLock().unlock();
 
     Computable<Boolean> computable = new Computable<Boolean>() {
       public Boolean compute() {
-        if (getWriteLock().tryLock()) {
-          try {
-            r.run();
-          } finally {
-            getWriteLock().unlock();
+        try {
+          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+            try {
+              r.run();
+            } finally {
+              getWriteLock().unlock();
+            }
+            return true;
+          } else {
+            return false;
           }
-          return true;
-        } else {
+        } catch (InterruptedException e) {
           return false;
         }
       }
     };
 
-    if (ThreadUtils.isEventDispatchThread()) {
-      return ApplicationManager.getApplication().runWriteAction(computable);
-    } else {
-      return ApplicationManager.getApplication().runReadAction(computable);
+    final boolean canRead = canRead();
+    try {
+      if (canRead) getReadLock().unlock();
+      if (ThreadUtils.isEventDispatchThread()) {
+        return ApplicationManager.getApplication().runWriteAction(computable);
+      } else {
+        return ApplicationManager.getApplication().runReadAction(computable);
+      }
+    }
+    finally {
+      if (canRead) getReadLock().lock();
     }
   }
 
@@ -336,6 +390,50 @@ public class WorkbenchModelAccess extends ModelAccess {
     });
   }
 
+
+  @Override
+  public <T> T tryWrite(final Computable<T> c) {
+    if(canWrite()) {
+      return c.compute();
+    }
+
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      return null;
+    }
+
+    Computable<T> computable = new Computable<T>() {
+      public T compute() {
+        try {
+          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+            try {
+              return c.compute();
+            } finally {
+              getWriteLock().unlock();
+            }
+          } else {
+            return null;
+          }
+        } catch (InterruptedException e) {
+          return null;
+        }
+      }
+    };
+
+    final boolean canRead = canRead();
+    try {
+      if (canRead) getReadLock().unlock();
+      if (ThreadUtils.isEventDispatchThread()) {
+        return ApplicationManager.getApplication().runWriteAction(computable);
+      } else {
+        return ApplicationManager.getApplication().runReadAction(computable);
+      }
+    }
+    finally {
+      if (canRead) getReadLock().lock();
+    }
+  }
+
+  @Override
   public boolean tryWriteInCommand(final Runnable r, Project p) {
     if(myDistributedLocksMode) {
       return false;
@@ -343,31 +441,77 @@ public class WorkbenchModelAccess extends ModelAccess {
 
     final boolean[] res = new boolean[]{false};
 
-    //todo this is a hack but it works
-    if (!getWriteLock().tryLock()) {
-      return false;
+    final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
+
+    final boolean canRead = canRead();
+    try {
+      if (canRead) getReadLock().unlock();
+      CommandProcessor.getInstance().executeCommand(
+        project,
+        new Runnable() {
+          public void run() {
+            ApplicationManager.getApplication().runWriteAction(new Runnable() {
+              public void run() {
+                try {
+                  if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+                    try {
+                      new CommandRunnable(r, project).run();
+                    } finally {
+                      getWriteLock().unlock();
+                    }
+                    res[0] = true;
+                  }
+                } catch (InterruptedException ignore) {}
+              }
+            });
+          }
+        },
+        "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
     }
-    getWriteLock().unlock();
+    finally {
+      if (canRead) getReadLock().lock();
+    }
+
+    return res[0];
+  }
+
+  @Override
+  public <T> T tryWriteInCommand(final Computable<T> r, Project p) {
+    if(myDistributedLocksMode) {
+      return null;
+    }
+
+    final T[] res = (T[])new Object[]{null};
 
     final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
 
-    CommandProcessor.getInstance().executeCommand(project, new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            if (getWriteLock().tryLock()) {
-              try {
-                new CommandRunnable(r, project).run();
-              } finally {
-                getWriteLock().unlock();
-              }
-              res[0] = true;
+    final boolean canRead = canRead();
+    try {
+      if (canRead) getReadLock().unlock();
+        CommandProcessor.getInstance().executeCommand(
+          project,
+          new Runnable() {
+            public void run() {
+              ApplicationManager.getApplication().runWriteAction(new Runnable() {
+                public void run() {
+                  try {
+                    if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+                      try {
+                        res[0] = new CommandComputable<T>(r, project).compute();
+                      } finally {
+                        getWriteLock().unlock();
+                      }
+                    }
+                  } catch (InterruptedException ignore) {}
+                }
+              });
             }
-          }
-        });
-      }
-    }, "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-
+          },
+          "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    }
+    finally {
+      if (canRead) getReadLock().lock();
+    }
     return res[0];
   }
 

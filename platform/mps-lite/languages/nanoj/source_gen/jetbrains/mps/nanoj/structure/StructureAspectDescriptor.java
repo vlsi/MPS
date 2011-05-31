@@ -4,6 +4,7 @@ package jetbrains.mps.nanoj.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,24 +13,26 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.nanoj.structure.MinusExpression", "jetbrains.mps.nanoj.structure.NanoClass", "jetbrains.mps.nanoj.structure.NanoExpression", "jetbrains.mps.nanoj.structure.NanoStatement", "jetbrains.mps.nanoj.structure.NanoStatementList", "jetbrains.mps.nanoj.structure.VarDecl", "jetbrains.mps.nanoj.structure.VarDeclReference"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1417927617:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.MinusExpression", new String[]{}, new String[]{}, new String[]{});
-      case -1464384133:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoClass", new String[]{}, new String[]{}, new String[]{});
-      case 1058499720:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.VarDecl", new String[]{}, new String[]{}, new String[]{});
-      case -1967265872:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoStatementList", new String[]{"jetbrains.mps.nanoj.structure.NanoStatement"}, new String[]{"jetbrains.mps.nanoj.structure.NanoStatement"}, new String[]{});
-      case 1839857781:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoExpression", new String[]{}, new String[]{}, new String[]{});
-      case -859501582:
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoStatement", new String[]{}, new String[]{}, new String[]{});
-      case -841774173:
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.NanoStatementList", new String[]{"jetbrains.mps.nanoj.structure.NanoStatement"}, new String[]{"jetbrains.mps.nanoj.structure.NanoStatement"}, new String[]{});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.VarDecl", new String[]{}, new String[]{}, new String[]{});
+      case 6:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoj.structure.VarDeclReference", new String[]{"jetbrains.mps.nanoj.structure.NanoExpression"}, new String[]{"jetbrains.mps.nanoj.structure.NanoExpression"}, new String[]{});
       default:
         return null;

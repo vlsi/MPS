@@ -4,50 +4,53 @@ package jetbrains.mps.build.distrib.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.build.distrib.structure.AbstractCommandLinePart", "jetbrains.mps.build.distrib.structure.AbstractPath", "jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart", "jetbrains.mps.build.distrib.structure.ClassPath", "jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", "jetbrains.mps.build.distrib.structure.DistribConfiguration", "jetbrains.mps.build.distrib.structure.ExternalVariableReference", "jetbrains.mps.build.distrib.structure.FileAssociation", "jetbrains.mps.build.distrib.structure.MacConfig", "jetbrains.mps.build.distrib.structure.MacOsFileAssociation", "jetbrains.mps.build.distrib.structure.PathCommantLinePart", "jetbrains.mps.build.distrib.structure.Role", "jetbrains.mps.build.distrib.structure.SimplePath", "jetbrains.mps.build.distrib.structure.StringCommandLinePart", "jetbrains.mps.build.distrib.structure.SystemSpecificConfig", "jetbrains.mps.build.distrib.structure.UniversalConfig", "jetbrains.mps.build.distrib.structure.UnixConfig", "jetbrains.mps.build.distrib.structure.WindowsConfig"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1656771275:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 5:
         return new DataHolderConstraintsDescriptor(new DistribConfiguration_Constraints());
-      case -575647101:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.ClassPath"));
-      case 699866337:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.AbstractPath"));
-      case -1792201487:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.SimplePath"));
-      case -1453554019:
+      case 14:
         return new DataHolderConstraintsDescriptor(new SystemSpecificConfig_Constraints());
-      case -1035379349:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.WindowsConfig"));
-      case -1687721549:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.UniversalConfig"));
-      case 997126221:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration"));
-      case -1583026122:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.AbstractCommandLinePart"));
-      case 581017063:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.StringCommandLinePart"));
-      case -1525950445:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart"));
-      case 1231612471:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.MacConfig"));
-      case 1472406634:
+      case 6:
         return new DataHolderConstraintsDescriptor(new ExternalVariableReference_Constraints());
-      case 1298311595:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.FileAssociation"));
-      case 1372736716:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.MacOsFileAssociation"));
-      case -1304965136:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.Role"));
-      case 380934371:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.PathCommantLinePart"));
-      case 627527396:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.distrib.structure.UnixConfig"));
       default:
         return null;

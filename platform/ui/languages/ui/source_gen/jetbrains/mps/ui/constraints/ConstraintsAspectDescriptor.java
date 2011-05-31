@@ -4,88 +4,91 @@ package jetbrains.mps.ui.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.ui.structure.AccessUIPropertyOperation", "jetbrains.mps.ui.structure.AppendUIObjectStatement", "jetbrains.mps.ui.structure.BeanPropertyView", "jetbrains.mps.ui.structure.CallUIActionOperation", "jetbrains.mps.ui.structure.ChildAspect", "jetbrains.mps.ui.structure.ClearCompartmentStatement", "jetbrains.mps.ui.structure.CompartmentProviderStatement", "jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.ui.structure.ContainerType", "jetbrains.mps.ui.structure.Controller", "jetbrains.mps.ui.structure.ControllerBinding", "jetbrains.mps.ui.structure.CreateUIObjectStatement", "jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression", "jetbrains.mps.ui.structure.EventHandingBlock", "jetbrains.mps.ui.structure.EventPropertyAccessOp", "jetbrains.mps.ui.structure.EventType", "jetbrains.mps.ui.structure.ExpressionView", "jetbrains.mps.ui.structure.ForceLayoutStatement", "jetbrains.mps.ui.structure.FunctionParameterDeclaration", "jetbrains.mps.ui.structure.IUIObjectContextProvider", "jetbrains.mps.ui.structure.IUIObjectDeclaration", "jetbrains.mps.ui.structure.InlineController", "jetbrains.mps.ui.structure.InsertUIObjectStatement", "jetbrains.mps.ui.structure.IterateContentsStatement", "jetbrains.mps.ui.structure.IterateContentsVariable", "jetbrains.mps.ui.structure.IterateContentsVariableReference", "jetbrains.mps.ui.structure.RemoveUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectProviderStatement", "jetbrains.mps.ui.structure.UIObjectReference", "jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.ui.structure.UIObjectType", "jetbrains.mps.ui.structure.ValidateBlock", "jetbrains.mps.ui.structure.ValidatingView", "jetbrains.mps.ui.structure.Validator", "jetbrains.mps.ui.structure.View", "jetbrains.mps.ui.structure.ViewBinding"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -457922819:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 30:
         return new DataHolderConstraintsDescriptor(new UIObjectStatement_Constraints());
-      case 1661919716:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.View"));
-      case 15032219:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.Controller"));
-      case -298577037:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.Validator"));
-      case -1193887063:
+      case 2:
         return new DataHolderConstraintsDescriptor(new BeanPropertyView_Constraints());
-      case -1295710024:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ValidateBlock"));
-      case -1002931689:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ValidatingView"));
-      case 2062760961:
+      case 36:
         return new DataHolderConstraintsDescriptor(new ViewBinding_Constraints());
-      case -2006705700:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ExpressionView"));
-      case -180538774:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ControllerBinding"));
-      case -341968940:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.InlineController"));
-      case 1475002901:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.EventHandingBlock"));
-      case 906796104:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.FunctionParameterDeclaration"));
-      case 842637589:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EventType_Constraints());
-      case -1618758475:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EventPropertyAccessOp_Constraints());
-      case 1973891664:
+      case 8:
         return new DataHolderConstraintsDescriptor(new ContainerCompartment_Constraints());
-      case 1827164396:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.UIObjectType"));
-      case 380843125:
+      case 4:
         return new DataHolderConstraintsDescriptor(new ChildAspect_Constraints());
-      case 1529100028:
+      case 9:
         return new DataHolderConstraintsDescriptor(new ContainerType_Constraints());
-      case -1355391800:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EnclosingContextCompartmentExpression_Constraints());
-      case 1962085648:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CompartmentReferenceExpression"));
-      case 1875833483:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CompartmentProviderStatement"));
-      case 544695427:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IUIObjectContextProvider"));
-      case 394155994:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsStatement"));
-      case 2016979633:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsVariable"));
-      case -1752831463:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.RemoveUIObjectStatement"));
-      case 855321498:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IterateContentsVariableReference"));
-      case 362362187:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ClearCompartmentStatement"));
-      case 1502433859:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.AppendUIObjectStatement"));
-      case 1134637188:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.InsertUIObjectStatement"));
-      case -1138810823:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.ForceLayoutStatement"));
-      case -486247924:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.UIObjectProviderStatement"));
-      case 1752318113:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.CreateUIObjectStatement"));
-      case -2041417056:
+      case 3:
         return new DataHolderConstraintsDescriptor(new CallUIActionOperation_Constraints());
-      case 210015515:
+      case 0:
         return new DataHolderConstraintsDescriptor(new AccessUIPropertyOperation_Constraints());
-      case 172798653:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.structure.IUIObjectDeclaration"));
-      case 702069977:
+      case 29:
         return new DataHolderConstraintsDescriptor(new UIObjectReference_Constraints());
       default:
         return null;

@@ -4,6 +4,7 @@ package jetbrains.mps.debug.privateMembers.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,18 +13,20 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 1470068757:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation", new String[]{"jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"});
-      case 279156242:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation", new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"});
-      case -795608384:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference", new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference"});
-      case 227879342:
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.StaticMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.StaticMethodCall"});
       default:
         return null;

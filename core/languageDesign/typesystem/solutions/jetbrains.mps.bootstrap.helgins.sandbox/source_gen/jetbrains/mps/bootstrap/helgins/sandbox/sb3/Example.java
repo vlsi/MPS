@@ -4,17 +4,10 @@ package jetbrains.mps.bootstrap.helgins.sandbox.sb3;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModel;
 
 public class Example {
   public void method() {
     List<String> list = new List<String>;
     ListSequence.fromList(list).addElement(1);
-    SModel model = null;
-    ((SModel) model).getLongName();
-    if (1 == 2 || "" == 3) {
-      model = "";
-
-    }
   }
 }

@@ -68,7 +68,7 @@
   <unitInfo fileName="BaseProjectOperation_Constraints.java" startLine="24" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.BaseProjectOperation_Constraints" />
   <unitInfo fileName="ProjectOperation_Constraints.java" startLine="24" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ProjectOperation_Constraints" />
   <unitInfo fileName="ModificationStatement_Constraints.java" startLine="23" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="495" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="498" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104844944">
     <nodeInfo nodeId="1215776991202" fileName="ActionDeclaration_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1215776990685" fileName="ActionDeclaration_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="141" />

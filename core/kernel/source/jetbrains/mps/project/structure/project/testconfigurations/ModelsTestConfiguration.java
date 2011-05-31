@@ -17,7 +17,7 @@ package jetbrains.mps.project.structure.project.testconfigurations;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.ProjectScope;
@@ -69,13 +69,11 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     }
 
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor sm : modelDescriptors) {
-      if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project))) {
-        continue;
-      }
-      models.add(sm);
+    if(fullRegeneration) {
+      models.addAll(modelDescriptors);
+    } else {
+      models.addAll(GenerationFacade.getModifiedModels(modelDescriptors, ProjectOperationContext.get(project)));
     }
-
     return new GenParameters(models, module);
   }
 }

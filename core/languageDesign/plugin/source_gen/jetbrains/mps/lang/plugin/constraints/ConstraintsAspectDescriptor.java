@@ -4,488 +4,491 @@ package jetbrains.mps.lang.plugin.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.AbstractCheckConfigBlock", "jetbrains.mps.lang.plugin.structure.AbstractEditorTab", "jetbrains.mps.lang.plugin.structure.AbstractEnhancedConceptFunction", "jetbrains.mps.lang.plugin.structure.ActionAccessOperation", "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupMember", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionListStatement", "jetbrains.mps.lang.plugin.structure.ActionParameter", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReference", "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionPlaceSpecification", "jetbrains.mps.lang.plugin.structure.ActionType", "jetbrains.mps.lang.plugin.structure.ActionsList_FunctionParameter", "jetbrains.mps.lang.plugin.structure.ActionsStatement", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.AddTabOperation", "jetbrains.mps.lang.plugin.structure.AfterGenerationBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration", "jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock", "jetbrains.mps.lang.plugin.structure.ApplicationPluginType", "jetbrains.mps.lang.plugin.structure.ApplyEditorBlock", "jetbrains.mps.lang.plugin.structure.AskBlock", "jetbrains.mps.lang.plugin.structure.AskStatement", "jetbrains.mps.lang.plugin.structure.BaseCreateRunConfigFunction", "jetbrains.mps.lang.plugin.structure.BaseCreatorTarget", "jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.plugin.structure.BaseNodeBlock", "jetbrains.mps.lang.plugin.structure.BaseProjectOperation", "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", "jetbrains.mps.lang.plugin.structure.BeforeGenerationBlock", "jetbrains.mps.lang.plugin.structure.BuildGroupBlock", "jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock", "jetbrains.mps.lang.plugin.structure.CloseTabOperation", "jetbrains.mps.lang.plugin.structure.CommandClosureLiteral", "jetbrains.mps.lang.plugin.structure.ComponentReference", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Contents", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_InputModel", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OriginalInputNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootDir", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ScopeNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ask", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.plugin.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.lang.plugin.structure.ConceptFunction_GetUnitName", "jetbrains.mps.lang.plugin.structure.ConceptFunction_GetVariables", "jetbrains.mps.lang.plugin.structure.ConceptFunction_PropertyStringGetter", "jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration", "jetbrains.mps.lang.plugin.structure.ConsoleExpression", "jetbrains.mps.lang.plugin.structure.ConsoleType", "jetbrains.mps.lang.plugin.structure.Console_FunctionParameter", "jetbrains.mps.lang.plugin.structure.CreateBlock", "jetbrains.mps.lang.plugin.structure.CreateModelRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateModuleRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock", "jetbrains.mps.lang.plugin.structure.CreateNodeRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock", "jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter", "jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement", "jetbrains.mps.lang.plugin.structure.DebugInfoInitializer", "jetbrains.mps.lang.plugin.structure.DebugSessionCreator", "jetbrains.mps.lang.plugin.structure.DebuggableNodeItem", "jetbrains.mps.lang.plugin.structure.DisposeBlock", "jetbrains.mps.lang.plugin.structure.DisposeConsoleBlock", "jetbrains.mps.lang.plugin.structure.DisposeEditorBlock", "jetbrains.mps.lang.plugin.structure.DoUpdateBlock", "jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock", "jetbrains.mps.lang.plugin.structure.EditorTab", "jetbrains.mps.lang.plugin.structure.EditorTabReference", "jetbrains.mps.lang.plugin.structure.ElementListContents", "jetbrains.mps.lang.plugin.structure.EnumerateChildrenFunction", "jetbrains.mps.lang.plugin.structure.Environment_FunctionParameter", "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace", "jetbrains.mps.lang.plugin.structure.ExecuteBlock", "jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock", "jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.plugin.structure.ExecuteParameterQuery", "jetbrains.mps.lang.plugin.structure.ExecuteSpecific", "jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement", "jetbrains.mps.lang.plugin.structure.Executor_FunctionParameter", "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration", "jetbrains.mps.lang.plugin.structure.FileGeneratorType", "jetbrains.mps.lang.plugin.structure.GenerateFileBlock", "jetbrains.mps.lang.plugin.structure.GeneratePlugins", "jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration", "jetbrains.mps.lang.plugin.structure.GenerationListener_models", "jetbrains.mps.lang.plugin.structure.GenerationListener_options", "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock", "jetbrains.mps.lang.plugin.structure.GetComponentBlock", "jetbrains.mps.lang.plugin.structure.GetConceptsBlock", "jetbrains.mps.lang.plugin.structure.GetConfigurationIconBlock", "jetbrains.mps.lang.plugin.structure.GetGroupOperation", "jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock", "jetbrains.mps.lang.plugin.structure.GetNodeBlock", "jetbrains.mps.lang.plugin.structure.GetNodesBlock", "jetbrains.mps.lang.plugin.structure.GetPreferencesComponentInProjectOperation", "jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation", "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation", "jetbrains.mps.lang.plugin.structure.GetToolInProjectOperation", "jetbrains.mps.lang.plugin.structure.GetToolOperation", "jetbrains.mps.lang.plugin.structure.GetUserDataExpression", "jetbrains.mps.lang.plugin.structure.GroupAccessOperation", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.GroupContents", "jetbrains.mps.lang.plugin.structure.GroupType", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy", "jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration", "jetbrains.mps.lang.plugin.structure.IExecuteCommandStatementSync", "jetbrains.mps.lang.plugin.structure.IExecuteConfigBlock", "jetbrains.mps.lang.plugin.structure.IRunConfigPropertyInstance", "jetbrains.mps.lang.plugin.structure.IconResource", "jetbrains.mps.lang.plugin.structure.IconResourceExpression", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.InitBlock", "jetbrains.mps.lang.plugin.structure.InitTabBlock", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.InterfaceGroup", "jetbrains.mps.lang.plugin.structure.IsApplicableBlock", "jetbrains.mps.lang.plugin.structure.IsApplicableTabBlock", "jetbrains.mps.lang.plugin.structure.IsDefaultBlock", "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke", "jetbrains.mps.lang.plugin.structure.KeyStrokeType", "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", "jetbrains.mps.lang.plugin.structure.ListenBlock", "jetbrains.mps.lang.plugin.structure.MakeConfigBlock", "jetbrains.mps.lang.plugin.structure.ModelCreatorTarget", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.ModuleCreatorTarget", "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab", "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType", "jetbrains.mps.lang.plugin.structure.NewCreateBlock", "jetbrains.mps.lang.plugin.structure.NodeCreatorTarget", "jetbrains.mps.lang.plugin.structure.NodesBlock", "jetbrains.mps.lang.plugin.structure.NodesCreatorTarget", "jetbrains.mps.lang.plugin.structure.OnAfterReadBlock", "jetbrains.mps.lang.plugin.structure.OnBeforeWriteBlock", "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock", "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success", "jetbrains.mps.lang.plugin.structure.Order", "jetbrains.mps.lang.plugin.structure.OrderConstraints", "jetbrains.mps.lang.plugin.structure.OrderReference", "jetbrains.mps.lang.plugin.structure.OverridesDefaultBlock", "jetbrains.mps.lang.plugin.structure.Parameter_FunctionParameter", "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", "jetbrains.mps.lang.plugin.structure.ParametrizedExecuteActions", "jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock", "jetbrains.mps.lang.plugin.structure.ParametrizedExecuteConsole", "jetbrains.mps.lang.plugin.structure.ParametrizedExecuteProcess", "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration", "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", "jetbrains.mps.lang.plugin.structure.PreferencePage", "jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock", "jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock", "jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock", "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", "jetbrains.mps.lang.plugin.structure.PreferencesComponentType", "jetbrains.mps.lang.plugin.structure.PrepareConceptFunction", "jetbrains.mps.lang.plugin.structure.PrepareReturnType_FunctionParameter", "jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement", "jetbrains.mps.lang.plugin.structure.ProcessStatement", "jetbrains.mps.lang.plugin.structure.ProjectCreatorTarget", "jetbrains.mps.lang.plugin.structure.ProjectExpression", "jetbrains.mps.lang.plugin.structure.ProjectOperation", "jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration", "jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock", "jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock", "jetbrains.mps.lang.plugin.structure.ProjectPluginType", "jetbrains.mps.lang.plugin.structure.Project_ConceptFunctionParameter", "jetbrains.mps.lang.plugin.structure.PropertyRefExpression", "jetbrains.mps.lang.plugin.structure.PropertyRefType", "jetbrains.mps.lang.plugin.structure.ReportErrorStatement", "jetbrains.mps.lang.plugin.structure.ResetEditorBlock", "jetbrains.mps.lang.plugin.structure.Resource", "jetbrains.mps.lang.plugin.structure.RunConfigCreator", "jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement", "jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance", "jetbrains.mps.lang.plugin.structure.RunConfigType", "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", "jetbrains.mps.lang.plugin.structure.RunConfigurationMethodDeclaration", "jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration", "jetbrains.mps.lang.plugin.structure.RunModelConfigCreator", "jetbrains.mps.lang.plugin.structure.RunModuleConfigCreator", "jetbrains.mps.lang.plugin.structure.RunNodeConfigCreator", "jetbrains.mps.lang.plugin.structure.ScopeNodeItem", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.ShortcutChange", "jetbrains.mps.lang.plugin.structure.SimpleActionPlace", "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange", "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab", "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolOperation", "jetbrains.mps.lang.plugin.structure.ToStringConceptFunction", "jetbrains.mps.lang.plugin.structure.ToStringParameter", "jetbrains.mps.lang.plugin.structure.ToolActionPlace", "jetbrains.mps.lang.plugin.structure.ToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.ToolTab", "jetbrains.mps.lang.plugin.structure.ToolType", "jetbrains.mps.lang.plugin.structure.UnitNodeItem", "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", "jetbrains.mps.lang.plugin.structure.UpdateBlock", "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock", "jetbrains.mps.lang.plugin.structure.UpdateGroupFunction", "jetbrains.mps.lang.plugin.structure.VariableNodeExpression", "jetbrains.mps.lang.plugin.structure.VariableNodeItem"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 270811528:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 217:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab"));
-      case -1345064170:
+      case 226:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ToolDeclaration"));
-      case -74527987:
+      case 88:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.DoUpdateBlock"));
-      case -145788403:
+      case 46:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent"));
-      case 1013796932:
+      case 96:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ExecuteBlock"));
-      case -656387331:
+      case 9:
         return new DataHolderConstraintsDescriptor(new ActionGroupDeclaration_Constraints());
-      case 1119754263:
+      case 11:
         return new DataHolderConstraintsDescriptor(new ActionInstance_Constraints());
-      case -1501616505:
+      case 153:
         return new DataHolderConstraintsDescriptor(new ModificationStatement_Constraints());
-      case 314999400:
+      case 129:
         return new DataHolderConstraintsDescriptor(new GroupAnchor_Constraints());
-      case 1889228623:
+      case 155:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab"));
-      case 818328122:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.AbstractEditorTab"));
-      case -443586235:
+      case 74:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CreateBlock"));
-      case -1478681823:
+      case 120:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetNodeBlock"));
-      case -1525501018:
+      case 121:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetNodesBlock"));
-      case -148905968:
+      case 119:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock"));
-      case -850055508:
+      case 65:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node"));
-      case -664061771:
+      case 220:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration"));
-      case -175987632:
+      case 114:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock"));
-      case 1697414162:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext"));
-      case -715838478:
+      case 143:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.InterfaceGroup"));
-      case -2031089865:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionGroupMember"));
-      case -617954433:
+      case 142:
         return new DataHolderConstraintsDescriptor(new InterfaceExtentionPoint_Constraints());
-      case 901466097:
+      case 227:
         return new DataHolderConstraintsDescriptor(new ToolInstanceExpression_Constraints());
-      case -317505749:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule"));
-      case -1121386733:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject"));
-      case 539615289:
+      case 213:
         return new DataHolderConstraintsDescriptor(new Separator_Constraints());
-      case -1339095405:
+      case 14:
         return new DataHolderConstraintsDescriptor(new ActionParameterDeclaration_Constraints());
-      case -523458152:
+      case 232:
         return new DataHolderConstraintsDescriptor(new UpdateBlock_Constraints());
-      case 1122141944:
+      case 144:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IsApplicableBlock"));
-      case -778034244:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionType"));
-      case -354587869:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation"));
-      case -941172134:
+      case 190:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration"));
-      case -332712387:
+      case 192:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock"));
-      case 91939022:
+      case 191:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock"));
-      case 1158473306:
+      case 193:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ProjectPluginType"));
-      case -1824392691:
+      case 130:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GroupContents"));
-      case 318944432:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.BuildGroupBlock"));
-      case 1215366376:
+      case 21:
         return new DataHolderConstraintsDescriptor(new AddElementStatement_Constraints());
-      case -1387778232:
+      case 92:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ElementListContents"));
-      case -1360962130:
+      case 147:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.KeyMapKeystroke"));
-      case -1900142898:
+      case 89:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock"));
-      case 1618780077:
+      case 131:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GroupType"));
-      case 1887430942:
+      case 229:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ToolType"));
-      case -1196936582:
+      case 189:
         return new DataHolderConstraintsDescriptor(new ProjectOperation_Constraints());
-      case -908939483:
+      case 126:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetToolOperation"));
-      case 1131418610:
+      case 118:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetGroupOperation"));
-      case 153600834:
+      case 111:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration"));
-      case 440695027:
+      case 163:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock"));
-      case -2071544649:
+      case 164:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success"));
-      case 1529701418:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.BeforeGenerationBlock"));
-      case -1003404943:
+      case 112:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GenerationListener_models"));
-      case 1598512553:
+      case 181:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration"));
-      case -478302302:
+      case 175:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration"));
-      case -1973820557:
+      case 176:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"));
-      case -470749717:
+      case 182:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PreferencesComponentType"));
-      case 953884280:
+      case 123:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation"));
-      case 1665076728:
+      case 162:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.OnBeforeWriteBlock"));
-      case 760004102:
+      case 161:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.OnAfterReadBlock"));
-      case 1291773238:
+      case 177:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PreferencePage"));
-      case -1259608492:
+      case 180:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock"));
-      case -1936434560:
+      case 178:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock"));
-      case -1426920238:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component"));
-      case 679837220:
+      case 179:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock"));
-      case 88538885:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.AfterGenerationBlock"));
-      case -1477896527:
+      case 140:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.InitBlock"));
-      case -1163543590:
+      case 85:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.DisposeBlock"));
-      case -1635472881:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project"));
-      case 1605469146:
+      case 115:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetComponentBlock"));
-      case 1435595046:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock"));
-      case 1964790085:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock"));
-      case 1738915281:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ApplicationPluginType"));
-      case 1890189059:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration"));
-      case -1920365889:
+      case 110:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GeneratePlugins"));
-      case -798449571:
+      case 6:
         return new DataHolderConstraintsDescriptor(new ActionDataParameterDeclaration_Constraints());
-      case 1409489433:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation"));
-      case -2016960409:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionParameter"));
-      case 1825526895:
+      case 107:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration"));
-      case 1834595280:
+      case 109:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GenerateFileBlock"));
-      case 2017356261:
+      case 108:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.FileGeneratorType"));
-      case -1101132313:
+      case 168:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.OverridesDefaultBlock"));
-      case -959649726:
+      case 146:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IsDefaultBlock"));
-      case -176599441:
+      case 59:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode"));
-      case -1105905263:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OriginalInputNode"));
-      case -1218595127:
+      case 53:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_InputModel"));
-      case 1271323364:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Contents"));
-      case 1518314112:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootDir"));
-      case 1773681807:
+      case 64:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ask"));
-      case 352691772:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement"));
-      case 1561751923:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CommandClosureLiteral"));
-      case -1577599775:
+      case 97:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement"));
-      case -838518195:
+      case 98:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement"));
-      case 1414228912:
+      case 100:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement"));
-      case -29065719:
+      case 101:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement"));
-      case 1800789347:
+      case 104:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement"));
-      case 1942357508:
+      case 4:
         return new DataHolderConstraintsDescriptor(new ActionConstructionParameterDeclaration_Constraints());
-      case -843658867:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation"));
-      case 164038650:
+      case 23:
         return new DataHolderConstraintsDescriptor(new AddStatement_Constraints());
-      case -1346026328:
+      case 223:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ToStringConceptFunction"));
-      case -2066029583:
+      case 224:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ToStringParameter"));
-      case -1031196105:
+      case 134:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IExecuteCommandStatementSync"));
-      case 825734903:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync"));
-      case 682401571:
+      case 233:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"));
-      case -904361598:
+      case 234:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.UpdateGroupFunction"));
-      case 1791463119:
+      case 93:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.EnumerateChildrenFunction"));
-      case -2019145632:
+      case 149:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"));
-      case -902867948:
+      case 216:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.SimpleShortcutChange"));
-      case 243091138:
+      case 214:
         return new DataHolderConstraintsDescriptor(new ShortcutChange_Constraints());
-      case 2004466947:
+      case 170:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"));
-      case 943785097:
+      case 208:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration"));
-      case 930189475:
+      case 206:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration"));
-      case 1506387848:
+      case 117:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetConfigurationIconBlock"));
-      case 2059309747:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock"));
-      case -716918558:
+      case 99:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock"));
-      case -1758861026:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionsStatement"));
-      case -1865923544:
+      case 185:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement"));
-      case -1903072668:
+      case 105:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement"));
-      case -1703717495:
+      case 86:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.DisposeConsoleBlock"));
-      case -1653821925:
+      case 103:
         return new DataHolderConstraintsDescriptor(new ExecuteSpecific_Constraints());
-      case -1890665647:
+      case 106:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.Executor_FunctionParameter"));
-      case -2143266119:
+      case 94:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.Environment_FunctionParameter"));
-      case 1463901383:
+      case 197:
         return new DataHolderConstraintsDescriptor(new ReportErrorStatement_Constraints());
-      case -1460618589:
+      case 70:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration"));
-      case 746847998:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ApplyEditorBlock"));
-      case 1146232445:
+      case 198:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ResetEditorBlock"));
-      case -957474643:
+      case 87:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.DisposeEditorBlock"));
-      case -1181265926:
+      case 45:
         return new DataHolderConstraintsDescriptor(new ComponentReference_Constraints());
-      case 1408106087:
+      case 132:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"));
-      case -1942970614:
+      case 195:
         return new DataHolderConstraintsDescriptor(new PropertyRefExpression_Constraints());
-      case -1786619604:
+      case 196:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PropertyRefType"));
-      case 1593120947:
+      case 215:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.SimpleActionPlace"));
-      case -98024386:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionPlaceSpecification"));
-      case -2041882099:
+      case 225:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ToolActionPlace"));
-      case 747634041:
+      case 95:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.EverywhereActionPlace"));
-      case -574991020:
+      case 141:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.InitTabBlock"));
-      case -104840990:
+      case 218:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType"));
-      case 2040077097:
+      case 156:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType"));
-      case -1746244133:
+      case 205:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunConfigType"));
-      case -1917269969:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionListStatement"));
-      case 544296074:
+      case 81:
         return new DataHolderConstraintsDescriptor(new CreateRunConfigStatement_Constraints());
-      case -2134890837:
+      case 204:
         return new DataHolderConstraintsDescriptor(new RunConfigPropertyInstance_Constraints());
-      case 166662635:
+      case 200:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunConfigCreator"));
-      case -2097670198:
+      case 78:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CreateNodeRunConfigBlock"));
-      case 1691347795:
+      case 202:
         return new DataHolderConstraintsDescriptor(new RunConfigMainNodeStatement_Constraints());
-      case -612393057:
+      case 55:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model"));
-      case 1170375036:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType"));
-      case 46111924:
+      case 76:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CreateModuleRunConfigBlock"));
-      case -1948511967:
+      case 75:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CreateModelRunConfigBlock"));
-      case 1132948812:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.BaseCreateRunConfigFunction"));
-      case -1816506743:
+      case 211:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunNodeConfigCreator"));
-      case 902405663:
+      case 210:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunModuleConfigCreator"));
-      case 1128648480:
+      case 209:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunModelConfigCreator"));
-      case -1380903956:
+      case 186:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ProcessStatement"));
-      case -1481950045:
+      case 71:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConsoleExpression"));
-      case -1840947835:
+      case 72:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConsoleType"));
-      case 637212542:
+      case 231:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator"));
-      case 1392397135:
+      case 158:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.NodeCreatorTarget"));
-      case 2028534496:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.BaseCreatorTarget"));
-      case 174665056:
+      case 152:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ModelCreatorTarget"));
-      case -252065243:
+      case 154:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ModuleCreatorTarget"));
-      case 251505960:
+      case 79:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock"));
-      case 914322273:
+      case 80:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter"));
-      case 998680688:
+      case 187:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ProjectCreatorTarget"));
-      case 1901772293:
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.BaseToolDeclaration"));
-      case -1922412118:
+      case 221:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration"));
-      case 915111655:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.AddTabOperation"));
-      case 1381323966:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CloseTabOperation"));
-      case 793311831:
+      case 124:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation"));
-      case -1479082601:
+      case 222:
         return new DataHolderConstraintsDescriptor(new TabbedToolOperation_Constraints());
-      case -1665813681:
+      case 84:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.DebuggableNodeItem"));
-      case 1216694445:
+      case 82:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.DebugInfoInitializer"));
-      case 963723594:
+      case 219:
         return new DataHolderConstraintsDescriptor(new SmartDisposeClosureParameterDeclaration_Constraints());
-      case -66350376:
+      case 160:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.NodesCreatorTarget"));
-      case 1307810097:
+      case 228:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ToolTab"));
-      case -2058746432:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.AskBlock"));
-      case 1898944802:
+      case 32:
         return new DataHolderConstraintsDescriptor(new AskStatement_Constraints());
-      case -1627322184:
+      case 116:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetConceptsBlock"));
-      case 461398621:
+      case 157:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.NewCreateBlock"));
-      case -375137954:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept"));
-      case 1457119997:
+      case 236:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.VariableNodeItem"));
-      case 1240261378:
+      case 235:
         return new DataHolderConstraintsDescriptor(new VariableNodeExpression_Constraints());
-      case -1553462313:
+      case 127:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetUserDataExpression"));
-      case -1906700803:
+      case 212:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ScopeNodeItem"));
-      case -677422964:
+      case 68:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunction_GetVariables"));
-      case -1060007956:
+      case 62:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ScopeNode"));
-      case 45851080:
+      case 201:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration"));
-      case -1462751708:
+      case 203:
         return new DataHolderConstraintsDescriptor(new RunConfigParameterReferenceOperation_Constraints());
-      case -1060063055:
+      case 0:
         return new DataHolderConstraintsDescriptor(new AbstractCheckConfigBlock_Constraints());
-      case -1636226989:
+      case 135:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IExecuteConfigBlock"));
-      case -1155376662:
+      case 172:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock"));
-      case 939195162:
+      case 171:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ParametrizedExecuteActions"));
-      case -1242458252:
+      case 173:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ParametrizedExecuteConsole"));
-      case 1791479948:
+      case 174:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ParametrizedExecuteProcess"));
-      case 298061565:
+      case 73:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.Console_FunctionParameter"));
-      case 1820264648:
+      case 102:
         return new DataHolderConstraintsDescriptor(new ExecuteParameterQuery_Constraints());
-      case 1399302095:
+      case 169:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.Parameter_FunctionParameter"));
-      case -1570645028:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.AbstractEnhancedConceptFunction"));
-      case -447848802:
+      case 133:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration"));
-      case 1830092354:
+      case 207:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.RunConfigurationMethodDeclaration"));
-      case 1900468130:
+      case 122:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetPreferencesComponentInProjectOperation"));
-      case 670745963:
+      case 38:
         return new DataHolderConstraintsDescriptor(new BaseProjectOperation_Constraints());
-      case 1802680725:
+      case 125:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GetToolInProjectOperation"));
-      case 1528354273:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionsList_FunctionParameter"));
-      case 994876954:
+      case 136:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IRunConfigPropertyInstance"));
-      case 2103099992:
+      case 66:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunction_CreateBreakpoint"));
-      case 869006138:
+      case 51:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode"));
-      case -415896701:
+      case 50:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project"));
-      case 599324321:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ActionAccessOperation"));
-      case -1945220592:
+      case 128:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GroupAccessOperation"));
-      case 1876974141:
+      case 83:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.DebugSessionCreator"));
-      case -421968933:
+      case 194:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.Project_ConceptFunctionParameter"));
-      case -1264232443:
+      case 230:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.UnitNodeItem"));
-      case 1350521978:
+      case 67:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunction_GetUnitName"));
-      case 1545804144:
+      case 63:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode"));
-      case 1187172741:
+      case 183:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PrepareConceptFunction"));
-      case -1380232425:
+      case 184:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.PrepareReturnType_FunctionParameter"));
-      case -249964571:
+      case 188:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ProjectExpression"));
-      case 777752695:
+      case 113:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.GenerationListener_options"));
-      case 656846268:
+      case 69:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ConceptFunction_PropertyStringGetter"));
-      case 702569102:
+      case 139:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor"));
-      case -1511645019:
+      case 148:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.KeyStrokeType"));
-      case -1197063516:
+      case 15:
         return new DataHolderConstraintsDescriptor(new ActionParameterReference_Constraints());
-      case -1562142803:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement"));
-      case -2122818965:
+      case 77:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock"));
-      case 1250431036:
+      case 90:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.EditorTab"));
-      case -547981944:
+      case 159:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.NodesBlock"));
-      case 1730882477:
+      case 145:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IsApplicableTabBlock"));
-      case 1216479022:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.BaseNodeBlock"));
-      case 1381450586:
+      case 150:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.ListenBlock"));
-      case -1050352076:
+      case 166:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.OrderConstraints"));
-      case 609111714:
+      case 165:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.Order"));
-      case 655217263:
+      case 91:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.EditorTabReference"));
-      case 179332809:
+      case 167:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.OrderReference"));
-      case -338154824:
+      case 8:
         return new DataHolderConstraintsDescriptor(new ActionDeclaration_Constraints());
-      case -614732333:
+      case 137:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IconResource"));
-      case -1765028806:
+      case 199:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.Resource"));
-      case 1763899889:
+      case 151:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.MakeConfigBlock"));
-      case 593785035:
+      case 138:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.plugin.structure.IconResourceExpression"));
       default:
         return null;

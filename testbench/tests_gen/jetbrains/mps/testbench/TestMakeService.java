@@ -10,20 +10,25 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import dependencies.ModulesClusterizer;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IFeedback;
-import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.ide.IdeEventQueue;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.progress.Progressive;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
@@ -50,8 +55,8 @@ public class TestMakeService implements IMakeService {
     return doMake(resources, script, controller);
   }
 
-  private IResult doMake(Iterable<? extends IResource> inputRes, IScript script, IScriptController controller) {
-    String scrName = "Build";
+  private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
+    final String scrName = "Build";
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
       String msg = scrName + " aborted: nothing to do";
@@ -65,19 +70,55 @@ public class TestMakeService implements IMakeService {
       showError(msg + ". Invalid script.");
       return new IResult.FAILURE(null);
     }
+    final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        clInput.value = new ModulesClusterizer().clusterize(Sequence.fromIterable(inputRes).<IResource>select(new ISelector<IResource, IResource>() {
+          public IResource select(IResource r) {
+            return (IResource) r;
+          }
+        }));
+      }
+    });
+    final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
+    final IScriptController ctl = this.completeController(controller);
 
-    IScriptController ctl = this.completeController(controller);
-    IResult res;
-    res = script.execute(ctl, inputRes);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        IdeEventQueue.getInstance().flushQueue();
+        ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true) {
+          public void run(@NotNull ProgressIndicator pi) {
+            for (Iterable<IResource> cl : clInput.value) {
+              res.value = script.execute(ctl, cl);
+              if (!(res.value.isSucessful()) || pi.isCanceled()) {
+                break;
+              }
+            }
+          }
 
-    if (res == null) {
-      String msg = scrName + " aborted";
-      showError(msg);
-    } else if (!(res.isSucessful())) {
-      String msg = scrName + " failed";
-      showError(msg + ". See previous messages for details.");
-    }
-    return res;
+          @Override
+          public void onSuccess() {
+            reconcile();
+          }
+
+          @Override
+          public void onCancel() {
+            reconcile();
+          }
+
+          private void reconcile() {
+            if (res.value == null) {
+              String msg = scrName + " aborted";
+              showError(msg);
+            } else if (!(res.value.isSucessful())) {
+              String msg = scrName + " failed";
+              showError(msg + ". See previous messages for details.");
+            }
+          }
+        });
+      }
+    });
+    return res.value;
   }
 
   private void showError(String msg) {
@@ -124,14 +165,9 @@ public class TestMakeService implements IMakeService {
         }
       }
 
-      public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        IdeEventQueue.getInstance().flushQueue();
-        ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-          public void run(ProgressIndicator realInd) {
-            pind.value = new EmptyProgressIndicator();
-            code.invoke(jmon);
-          }
-        }, "Build", true, TestMakeService.this.context.getProject());
+      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+        pind.value = new EmptyProgressIndicator();
+        code.invoke(jmon);
       }
 
       public void setup(IParametersPool pool) {

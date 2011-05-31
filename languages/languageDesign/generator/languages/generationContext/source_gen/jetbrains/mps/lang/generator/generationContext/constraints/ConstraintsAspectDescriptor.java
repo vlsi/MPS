@@ -4,78 +4,81 @@ package jetbrains.mps.lang.generator.generationContext.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType", "jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1675511759:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"));
-      case 318020836:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel"));
-      case 1770150199:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"));
-      case -720635398:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType"));
-      case 1972011128:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"));
-      case 346846876:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope"));
-      case -1084377545:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel"));
-      case 2105316072:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel"));
-      case 385633520:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel"));
-      case -1599240108:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode"));
-      case -866781634:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel"));
-      case -627443882:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput"));
-      case 1923097211:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess"));
-      case -2096932387:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"));
-      case -489564563:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess"));
-      case 642722799:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess"));
-      case -1198506886:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage"));
-      case -951127939:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"));
-      case -1335544410:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage"));
-      case -1094187906:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage"));
-      case 1299140630:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName"));
-      case -1945406151:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"));
-      case 1368212233:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope"));
-      case -1934713017:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext"));
-      case 19092085:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput"));
-      case -384502269:
+      case 18:
         return new DataHolderConstraintsDescriptor(new GenerationContextOp_NodePatternRef_Constraints());
-      case -1882922200:
+      case 19:
         return new DataHolderConstraintsDescriptor(new GenerationContextOp_ParameterRef_Constraints());
-      case 1486086651:
+      case 17:
         return new DataHolderConstraintsDescriptor(new GenerationContextOp_LinkPatternRef_Constraints());
-      case -1389769962:
+      case 21:
         return new DataHolderConstraintsDescriptor(new GenerationContextOp_PropertyPatternRef_Constraints());
-      case -1238567583:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"));
-      case 860109494:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode"));
-      case -398934052:
+      case 3:
         return new DataHolderConstraintsDescriptor(new GenerationContextOp_GenParameterRef_Constraints());
       default:
         return null;

@@ -4,40 +4,20 @@ package jetbrains.mps.lang.sharedConcepts;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.structure.DescriptorProvider;
-import jetbrains.mps.smodel.structure.StructureDescriptor;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
-import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.language.LanguageRuntimeInterpreted;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)");
 
-  private DescriptorProvider<StructureDescriptor> structureAspect;
-  private DescriptorProvider<BehaviorDescriptor> behaviorAspect;
-  private DescriptorProvider<ConstraintsDescriptor> constraintsAspect;
   private final Collection<TemplateModule> generators;
 
   public Language() {
     generators = TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "51736086-833e-4b0d-b9a6-a1dbbfda2131(jetbrains.mps.lang.sharedConcepts#1161623873951)"));
-    structureAspect = getAspectDescriptorByClassName("jetbrains.mps.lang.sharedConcepts.structure.StructureAspectDescriptor");
-    behaviorAspect = getAspectDescriptorByClassName("jetbrains.mps.lang.sharedConcepts.behavior.BehaviorAspectDescriptor");
-    constraintsAspect = getAspectDescriptorByClassName("jetbrains.mps.lang.sharedConcepts.constraints.ConstraintsAspectDescriptor");
 
-    if (structureAspect == null) {
-      structureAspect = LanguageRuntimeInterpreted.STRUCTURE_PROVIDER;
-    }
-    if (behaviorAspect == null) {
-      behaviorAspect = LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER;
-    }
-    if (constraintsAspect == null) {
-      constraintsAspect = LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER;
-    }
   }
 
   public String getNamespace() {
@@ -56,20 +36,5 @@ public class Language extends LanguageRuntime {
 
   public Collection<TemplateModule> getGenerators() {
     return generators;
-  }
-
-  @Override
-  public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
-    return constraintsAspect;
-  }
-
-  @Override
-  public DescriptorProvider<StructureDescriptor> getStructureAspect() {
-    return structureAspect;
-  }
-
-  @Override
-  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
-    return behaviorAspect;
   }
 }

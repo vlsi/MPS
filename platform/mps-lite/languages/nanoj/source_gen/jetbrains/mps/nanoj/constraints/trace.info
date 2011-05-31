@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="VarDeclReference_Constraints.java" startLine="31" startPosition="34" endLine="64" endPosition="5" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$1" />
   <unitInfo fileName="VarDeclReference_Constraints.java" startLine="21" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints" />
   <root nodeId="689680155165915392">

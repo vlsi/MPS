@@ -7,6 +7,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.util.NameUtil;
 
 public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>> implements IResource, IMResource {
   public MResource() {
@@ -36,5 +37,9 @@ public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>
   @SuppressWarnings(value = "unchecked")
   public MResource assignFrom(Tuples._2<IModule, Iterable<SModelDescriptor>> from) {
     return (MResource) super.assign(from);
+  }
+
+  public String describe() {
+    return NameUtil.compactNamespace(this.module().getModuleReference().getModuleFqName());
   }
 }

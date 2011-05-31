@@ -4,6 +4,7 @@ package jetbrains.mps.samples.matrixLanguage.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,39 +13,41 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression", "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement", "jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration", "jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference", "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration", "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference", "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", "jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixRow", "jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixType", "jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 1718566832:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case -1444998023:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 609624740:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1609531032:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1216802108:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -868738850:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case -963328413:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case -456273598:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case 816490067:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case 192446598:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"});
-      case -2134083422:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"});
-      case -972986184:
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 4:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"});
-      case 193260041:
+      case 5:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference"});
-      case -1899565965:
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"});
+      case 7:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
       default:
         return null;
     }

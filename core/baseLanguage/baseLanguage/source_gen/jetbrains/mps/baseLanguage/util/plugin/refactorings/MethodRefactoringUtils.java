@@ -22,6 +22,9 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MethodRefactoringUtils {
+  public MethodRefactoringUtils() {
+  }
+
   public static List<SNode> findOverridingMethods(final SNode method, IOperationContext operationContext) {
     final Wrappers._T<List<SNode>> results = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(operationContext.getProject(), "Search for overriding methods", true) {

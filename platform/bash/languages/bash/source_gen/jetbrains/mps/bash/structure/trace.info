@@ -162,7 +162,7 @@
   <unitInfo fileName="GeneralizedWord.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.bash.structure.GeneralizedWord" />
   <unitInfo fileName="WordList.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.bash.structure.WordList" />
   <unitInfo fileName="InputLines.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.bash.structure.InputLines" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="425" startPosition="0" endLine="464" endPosition="0" unitName="jetbrains.mps.bash.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="428" startPosition="0" endLine="467" endPosition="0" unitName="jetbrains.mps.bash.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ForCommand.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.structure.ForCommand" />
   <unitInfo fileName="ConditionalOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.structure.ConditionalOperation" />
   <unitInfo fileName="CommandList.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.structure.CommandList" />
@@ -202,6 +202,6 @@
   <unitInfo fileName="FunctionDeclaration.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.bash.structure.FunctionDeclaration" />
   <unitInfo fileName="ShellScript.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.bash.structure.ShellScript" />
   <unitInfo fileName="IfCommand.java" startLine="13" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.bash.structure.IfCommand" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="465" endPosition="0" unitName="jetbrains.mps.bash.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="468" endPosition="0" unitName="jetbrains.mps.bash.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -37,4 +37,8 @@ public class TResource extends MultiTuple._2<IModule, Iterable<IDelta>> implemen
   public TResource assignFrom(Tuples._2<IModule, Iterable<IDelta>> from) {
     return (TResource) super.assign(from);
   }
+
+  public String describe() {
+    return null;
+  }
 }

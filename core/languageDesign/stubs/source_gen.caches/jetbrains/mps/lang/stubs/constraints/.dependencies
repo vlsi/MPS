@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.stubs.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.constraints.LanguageRef_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.constraints.LibraryStubDescriptor_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.constraints.Stereotype_Constraints" />

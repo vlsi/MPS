@@ -28,6 +28,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
+
 /**
  * evgeny, 3/11/11
  */
@@ -139,12 +141,12 @@ public class LanguageRegistry implements ApplicationComponent {
   }
 
   private void notifyUnload(Collection<LanguageRuntime> languages, boolean unloadAll) {
-    if(languages.isEmpty()) return;
+    if (languages.isEmpty()) return;
 
-    for(LanguageRegistryListener l : myLanguageListeners) {
+    for (LanguageRegistryListener l : myLanguageListeners) {
       try {
         l.languagesUnloaded(languages, unloadAll);
-      } catch(Exception ex) {
+      } catch (Exception ex) {
         LOG.error(ex);
       }
     }
@@ -152,38 +154,21 @@ public class LanguageRegistry implements ApplicationComponent {
   }
 
   private void notifyLoad(Collection<LanguageRuntime> languages) {
-    if(languages.isEmpty()) return;
+    if (languages.isEmpty()) return;
 
     myConceptRegistry.languagesLoaded(languages);
-    for(LanguageRegistryListener l : myLanguageListeners) {
+    for (LanguageRegistryListener l : myLanguageListeners) {
       try {
         l.languagesLoaded(languages);
-      } catch(Exception ex) {
+      } catch (Exception ex) {
         LOG.error(ex);
       }
     }
   }
 
   private static LanguageRuntime createRuntime(Language l, boolean tryToLoad) {
-    LanguageRuntime languageRuntime = null;
-    try {
-      String className = l.getModuleFqName() + ".Language";
-
-      // TODO FIXME hack to avoid errors in LOG
-      if (tryToLoad) {
-        ClassLoader cl = ClassLoaderManager.getInstance().getClassLoaderFor(l, false);
-        if (cl == null) {
-          return null;
-        }
-      }
-
-      Class c = l.getClass(className);
-      if (c != null) {
-        languageRuntime = (LanguageRuntime) c.newInstance();
-      }
-    } catch (Exception e) {
-      /* ignore */
-    }
+    // TODO FIXME hack to avoid errors in LOG
+    LanguageRuntime languageRuntime = (LanguageRuntime) getObjectByClassNameForLanguage(l.getModuleFqName() + ".Language", l, tryToLoad);
     if (languageRuntime == null) {
       languageRuntime = new LanguageRuntimeInterpreted(l);
     }

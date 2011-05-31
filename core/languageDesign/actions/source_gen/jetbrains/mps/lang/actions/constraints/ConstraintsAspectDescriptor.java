@@ -4,232 +4,235 @@ package jetbrains.mps.lang.actions.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped", "jetbrains.mps.lang.actions.structure.ConceptPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessFunction", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.GetActionUIFunction", "jetbrains.mps.lang.actions.structure.ISideTransform_String", "jetbrains.mps.lang.actions.structure.ISubstitute_String", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction", "jetbrains.mps.lang.actions.structure.MenuBuilderPart", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation", "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSetupFunction", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessFunction", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.QueryFunction_ActionType", "jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute", "jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String", "jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper", "jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition", "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart", "jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction", "jetbrains.mps.lang.actions.structure.SideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransformVariableReference", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.SurroundWithAction", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -54139221:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 51:
         return new DataHolderConstraintsDescriptor(new NodeSubstituteActions_Constraints());
-      case 777050736:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"));
-      case 1108864958:
+      case 92:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"));
-      case -621933283:
+      case 91:
         return new DataHolderConstraintsDescriptor(new SideTransformHintSubstituteActions_Constraints());
-      case 571084514:
+      case 53:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction"));
-      case 1982463660:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"));
-      case 93548976:
+      case 93:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction"));
-      case 1441413840:
+      case 45:
         return new DataHolderConstraintsDescriptor(new NodeFactories_Constraints());
-      case -1451012430:
+      case 46:
         return new DataHolderConstraintsDescriptor(new NodeFactory_Constraints());
-      case -475822819:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction"));
-      case 1204834944:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode"));
-      case 1924987726:
+      case 50:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode"));
-      case -359035828:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode"));
-      case -988358567:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.MenuBuilderPart"));
-      case 185654114:
+      case 103:
         return new DataHolderConstraintsDescriptor(new SubstituteMenuPart_Constraints());
-      case 1553951677:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.AddMenuPart"));
-      case -516678347:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute"));
-      case 529292976:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern"));
-      case -550366534:
+      case 85:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler"));
-      case 603829544:
+      case 98:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart"));
-      case -1057851259:
+      case 20:
         return new DataHolderConstraintsDescriptor(new ConceptPart_Constraints());
-      case 1042264256:
+      case 81:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString"));
-      case -1944138161:
+      case 55:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"));
-      case 1139635048:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"));
-      case 1408809543:
+      case 67:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query"));
-      case 780136050:
+      case 68:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String"));
-      case 988976393:
+      case 65:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler"));
-      case 613992397:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart"));
-      case -83978455:
+      case 108:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"));
-      case 1427720644:
+      case 83:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper"));
-      case -832280857:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap"));
-      case -324539571:
+      case 88:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemovePart"));
-      case -376068867:
+      case 86:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveByConditionPart"));
-      case -664073236:
+      case 70:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition"));
-      case -2023559800:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept"));
-      case -2129405912:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.MenuPart"));
-      case -1543718287:
+      case 94:
         return new DataHolderConstraintsDescriptor(new SideTransformMenuPart_Constraints());
-      case 1115700637:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode"));
-      case -1458410401:
+      case 99:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart"));
-      case -775006000:
+      case 79:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String"));
-      case 24213099:
+      case 76:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler"));
-      case -633519004:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"));
-      case 309613498:
+      case 64:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query"));
-      case 1223531964:
+      case 63:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler"));
-      case -1446022915:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result"));
-      case -43959935:
+      case 75:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler"));
-      case 2032288940:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"));
-      case -632103233:
+      case 87:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveDefaultsPart"));
-      case -1030822260:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept"));
-      case -2112239929:
+      case 78:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery"));
-      case -1534306603:
+      case 104:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"));
-      case 1899936614:
+      case 105:
         return new DataHolderConstraintsDescriptor(new SubstituteNodeBuilderVariableReference_Constraints());
-      case 351175527:
+      case 84:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer"));
-      case -79963529:
+      case 82:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer"));
-      case 1605879452:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart"));
-      case 220571071:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptSubstitutePart"));
-      case 48960981:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart"));
-      case 32504686:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ISideTransform_String"));
-      case 1837293923:
+      case 97:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransform_SimpleString"));
-      case -1992118510:
+      case 106:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.Substitute_SimpleString"));
-      case -683800381:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ISubstitute_String"));
-      case -342203840:
+      case 74:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition"));
-      case 834036476:
+      case 89:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"));
-      case -1821846675:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart"));
-      case -341931250:
+      case 62:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart"));
-      case -969699365:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter"));
-      case 876474138:
+      case 66:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon"));
-      case 233172200:
+      case 80:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon"));
-      case 1379883256:
+      case 77:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon"));
-      case 1343363967:
+      case 95:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"));
-      case 747603056:
+      case 72:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer"));
-      case -1176395120:
+      case 96:
         return new DataHolderConstraintsDescriptor(new SideTransformVariableReference_Constraints());
-      case -1007602098:
+      case 73:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer"));
-      case 1816357941:
+      case 71:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart"));
-      case -223097098:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly"));
-      case -1379076187:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped"));
-      case -1349939843:
+      case 59:
         return new DataHolderConstraintsDescriptor(new PasteWrappers_Constraints());
-      case 233548214:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PasteWrapper"));
-      case -108796672:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap"));
-      case 738140277:
+      case 69:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper"));
-      case -305590054:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link"));
-      case -482308667:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.QueryFunction_ActionType"));
-      case -1792759235:
+      case 102:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SmartEditorActions"));
-      case 1188176176:
+      case 107:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SurroundWithAction"));
-      case -59409266:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GenerateCodeAction"));
-      case 400407104:
+      case 100:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SmartActionParameter"));
-      case 530394347:
+      case 101:
         return new DataHolderConstraintsDescriptor(new SmartActionParameterReference_Constraints());
-      case 1499054166:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction"));
-      case -1631079057:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"));
-      case 1827978056:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext"));
-      case 380836034:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.GetActionUIFunction"));
-      case -1212544680:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction"));
-      case -991230283:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PastePostProcessor"));
-      case -1311282358:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.PastePostProcessFunction"));
-      case -1203930055:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess"));
-      case 1505270138:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.CopyPreProcessor"));
-      case -1143269809:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.CopyPreProcessFunction"));
-      case -2087089666:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess"));
-      case -336356881:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal"));
-      case 592790321:
+      case 24:
         return new DataHolderConstraintsDescriptor(new CopyPasteHandlers_Constraints());
-      case -2128542088:
+      case 90:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"));
-      case 194996557:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"));
-      case 533962056:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"));
-      case 866365958:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"));
-      case 507987123:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation"));
-      case 1773263859:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation"));
-      case 969238901:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation"));
-      case -1936628835:
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation"));
-      case -1932924736:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation"));
       default:
         return null;

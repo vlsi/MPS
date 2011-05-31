@@ -12,7 +12,10 @@ public class InvokeMergeRootsAction extends BaseAction {
   private SNodeId myRootId;
 
   public InvokeMergeRootsAction(MergeModelsDialog modelsDialog, SNodeId rootId) {
-    super("Merge Root");
+    super((rootId == null ?
+      "Merge Property Changes" :
+      "Merge Root"
+    ));
     setExecuteOutsideCommand(true);
 
     myModelsDialog = modelsDialog;

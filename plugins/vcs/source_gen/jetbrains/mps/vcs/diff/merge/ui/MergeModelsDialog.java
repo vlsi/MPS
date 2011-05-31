@@ -31,16 +31,18 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.ui.DiffModelTree;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Arrays;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -73,7 +75,6 @@ public class MergeModelsDialog extends BaseDialog {
       }
     });
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
-    myMergeTree.setMultipleRootNames(true);
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ResetState(this), new MergeNonConflictingRoots(this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this), Separator.getInstance(), new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request));
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
@@ -131,7 +132,82 @@ public class MergeModelsDialog extends BaseDialog {
     return myMergeTree.getNeighbourRoot(rootId, next);
   }
 
+  private void invokeMergeMetadata() {
+    List<ModelChange> allChanges = myMergeContext.getMetadataChanges();
+    assert ListSequence.fromList(allChanges).isNotEmpty();
+    boolean allResolved = false;
+    Iterable<ModelChange> interestingChanges;
+    if (ListSequence.fromList(allChanges).any(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return myMergeContext.isChangeResolved(ch);
+      }
+    })) {
+      assert ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return myMergeContext.isChangeResolved(ch);
+        }
+      });
+      interestingChanges = ListSequence.fromList(allChanges).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return myMergeContext.isChangeApplied(ch);
+        }
+      });
+      allResolved = true;
+    } else {
+      interestingChanges = allChanges;
+    }
+    Iterable<ModelChange> mine = Sequence.fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return myMergeContext.isMyChange(ch);
+      }
+    });
+    Iterable<ModelChange> repository = Sequence.fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return !(myMergeContext.isMyChange(ch));
+      }
+    });
+
+    StringBuilder sb = new StringBuilder();
+    if (Sequence.fromIterable(mine).isNotEmpty()) {
+      sb.append("\n\n    ").append(myContentTitles[0]);
+      for (ModelChange ch : Sequence.fromIterable(mine)) {
+        sb.append("\n").append(ch.toString());
+      }
+    }
+    if (Sequence.fromIterable(repository).isNotEmpty()) {
+      sb.append("\n\n    ").append(myContentTitles[2]);
+      for (ModelChange ch : Sequence.fromIterable(repository)) {
+        sb.append("\n").append(ch.toString());
+      }
+    }
+
+    if (allResolved) {
+      if (sb.length() == 0) {
+        Messages.showInfoMessage(this, "Yo have excluded all model property changes.", "Model Properites Changes");
+      } else {
+        Messages.showInfoMessage(this, "You have applied the following changes:" + sb.toString(), "Model Properites Changes");
+      }
+    } else {
+      int ans = Messages.showYesNoCancelDialog(this, "There are pending model properties changes:" + sb.toString() + "\n\nDo you want to apply them all?", "Merge Model Properties", Messages.getQuestionIcon());
+      if (ans == Messages.YES) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            myMergeContext.applyChanges(myMergeContext.getMetadataChanges());
+            rebuildLater();
+          }
+        });
+      } else if (ans == Messages.NO) {
+        myMergeContext.excludeChanges(myMergeContext.getMetadataChanges());
+        rebuildLater();
+      }
+    }
+  }
+
   public void invokeMergeRoots(final SNodeId rootId) {
+    if (rootId == null) {
+      invokeMergeMetadata();
+      return;
+    }
     if (myRootsDialogInvoked) {
       return;
     }
@@ -150,7 +226,12 @@ public class MergeModelsDialog extends BaseDialog {
     final List<ModelChange> changesToApply = ListSequence.fromList(new ArrayList<ModelChange>());
     final List<ModelChange> changesToExclude = ListSequence.fromList(new ArrayList<ModelChange>());
     for (DiffModelTree.RootTreeNode rtn : Sequence.fromIterable(Sequence.fromArray(myMergeTree.getSelectedNodes(DiffModelTree.RootTreeNode.class, null)))) {
-      for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(rtn.getRootId()))) {
+      SNodeId root = rtn.getRootId();
+      List<ModelChange> changes = (root == null ?
+        myMergeContext.getMetadataChanges() :
+        myMergeContext.getChangesForRoot(root)
+      );
+      for (ModelChange change : ListSequence.fromList(changes)) {
         if (!(myMergeContext.isChangeResolved(change))) {
           if (mine == myMergeContext.isMyChange(change)) {
             ListSequence.fromList(changesToApply).addElement(change);
@@ -191,13 +272,21 @@ public class MergeModelsDialog extends BaseDialog {
       super(myOperationContext);
     }
 
-    protected Iterable<BaseAction> getRootActions(final SNodeId rootId) {
+    protected Iterable<BaseAction> getRootActions(@Nullable final SNodeId rootId) {
       MergeModelsDialog md = MergeModelsDialog.this;
       return Arrays.asList(new InvokeMergeRootsAction(md, rootId), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
     }
 
-    protected void updateRootCustomPresentation(DiffModelTree.RootTreeNode rootTreeNode) {
-      List<ModelChange> changes = ListSequence.fromList(myMergeContext.getChangesForRoot(rootTreeNode.getRootId())).where(new IWhereFilter<ModelChange>() {
+    protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
+      List<ModelChange> changes = (rootTreeNode.getRootId() == null ?
+        ListSequence.fromList(myMergeContext.getMetadataChanges()).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+          public ModelChange select(ModelChange ch) {
+            return (ModelChange) ch;
+          }
+        }).toListSequence() :
+        myMergeContext.getChangesForRoot(rootTreeNode.getRootId())
+      );
+      changes = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return !(myMergeContext.isChangeResolved(ch));
         }
@@ -222,7 +311,7 @@ public class MergeModelsDialog extends BaseDialog {
         }
       } else {
         if (nonConflictedCount == 0) {
-          if (myMergeContext.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
+          if (rootTreeNode.getRootId() != null && myMergeContext.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
             rootTreeNode.setText(String.format("<html><s>%s</s></html>", rootTreeNode.getText()));
           }
         } else {
@@ -262,6 +351,11 @@ public class MergeModelsDialog extends BaseDialog {
 
     protected Iterable<SNodeId> getAffectedRoots() {
       return myMergeContext.getAffectedRoots();
+    }
+
+    @Override
+    protected boolean isMultipleRootNames() {
+      return true;
     }
   }
 }

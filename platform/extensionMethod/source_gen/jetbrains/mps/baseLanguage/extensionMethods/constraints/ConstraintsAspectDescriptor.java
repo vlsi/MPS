@@ -4,32 +4,35 @@ package jetbrains.mps.baseLanguage.extensionMethods.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1246147902:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 8:
         return new DataHolderConstraintsDescriptor(new TypeExtension_Constraints());
-      case 129526999:
+      case 1:
         return new DataHolderConstraintsDescriptor(new ExtensionMethodCall_Constraints());
-      case -1723369247:
+      case 2:
         return new DataHolderConstraintsDescriptor(new ExtensionMethodDeclaration_Constraints());
-      case -601699182:
+      case 7:
         return new DataHolderConstraintsDescriptor(new ThisExtensionExpression_Constraints());
-      case -726165355:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"));
-      case 1296239129:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"));
-      case -492181129:
+      case 4:
         return new DataHolderConstraintsDescriptor(new ExtensionStaticFieldReference_Constraints());
-      case 1743013030:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration"));
-      case 818556828:
+      case 5:
         return new DataHolderConstraintsDescriptor(new LocalExtendedMethodCall_Constraints());
       default:
         return null;

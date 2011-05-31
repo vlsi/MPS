@@ -4,21 +4,24 @@ package jetbrains.mps.debug.privateMembers.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1470068757:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 0:
         return new DataHolderConstraintsDescriptor(new PrivateFieldReferenceOperation_Constraints());
-      case 279156242:
+      case 1:
         return new DataHolderConstraintsDescriptor(new PrivateInstanceMethodCallOperation_Constraints());
-      case -795608384:
+      case 2:
         return new DataHolderConstraintsDescriptor(new PrivateStaticFieldReference_Constraints());
-      case 227879342:
+      case 3:
         return new DataHolderConstraintsDescriptor(new PrivateStaticMethodCall_Constraints());
       default:
         return null;

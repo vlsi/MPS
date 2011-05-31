@@ -8,6 +8,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BLDialogs {
+  public BLDialogs() {
+  }
+
   public static SNode showStaticContainerChooser(IOperationContext context, SModelDescriptor contextModel) {
     BaseChooseNodeDialog dialog = new BaseChooseNodeDialog(context.getMainFrame(), context, contextModel, "Choose class") {
       protected boolean isAcceptable(SNode node) {

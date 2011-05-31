@@ -4,414 +4,417 @@ package jetbrains.mps.bash.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.bash.structure.AbstractCommand", "jetbrains.mps.bash.structure.AbstractFollowingCommandList", "jetbrains.mps.bash.structure.AbstractLoopCommand", "jetbrains.mps.bash.structure.AddExpression", "jetbrains.mps.bash.structure.AndAssingmentExpression", "jetbrains.mps.bash.structure.AndCombiningComditionalExpression", "jetbrains.mps.bash.structure.AndOperator", "jetbrains.mps.bash.structure.AppendingOutputErrorRedirection", "jetbrains.mps.bash.structure.AppendingOutputRedirection", "jetbrains.mps.bash.structure.Argument", "jetbrains.mps.bash.structure.ArgumentList", "jetbrains.mps.bash.structure.ArgumentListReference", "jetbrains.mps.bash.structure.ArgumentReference", "jetbrains.mps.bash.structure.ArithmeticCommand", "jetbrains.mps.bash.structure.ArithmeticExpansion", "jetbrains.mps.bash.structure.ArithmeticExpression", "jetbrains.mps.bash.structure.AssingmentExpression", "jetbrains.mps.bash.structure.AsyncOperator", "jetbrains.mps.bash.structure.AsyncTerminator", "jetbrains.mps.bash.structure.BaseAssingmentExpression", "jetbrains.mps.bash.structure.BaseCommandSubstitution", "jetbrains.mps.bash.structure.BaseVariableAssingment", "jetbrains.mps.bash.structure.BasedIntegerLiteral", "jetbrains.mps.bash.structure.BasicParameterExpansion", "jetbrains.mps.bash.structure.BinaryArithmeticExpression", "jetbrains.mps.bash.structure.BinaryConditionalExpression", "jetbrains.mps.bash.structure.BitwiseAndExpression", "jetbrains.mps.bash.structure.BitwiseNegationExpression", "jetbrains.mps.bash.structure.BitwiseOrExpression", "jetbrains.mps.bash.structure.BitwiseXorExpression", "jetbrains.mps.bash.structure.BlockFileConditionalExpression", "jetbrains.mps.bash.structure.BraceGrouping", "jetbrains.mps.bash.structure.BracketConditionalExpression", "jetbrains.mps.bash.structure.BracketExpression", "jetbrains.mps.bash.structure.BracketGrouping", "jetbrains.mps.bash.structure.BuckCommandSubstitution", "jetbrains.mps.bash.structure.CaseClause", "jetbrains.mps.bash.structure.CaseCommand", "jetbrains.mps.bash.structure.CaseTerminator", "jetbrains.mps.bash.structure.CharFileConditionalExpression", "jetbrains.mps.bash.structure.CombiningConditionalExpression", "jetbrains.mps.bash.structure.CommaExpression", "jetbrains.mps.bash.structure.Command", "jetbrains.mps.bash.structure.CommandList", "jetbrains.mps.bash.structure.CommandTerminator", "jetbrains.mps.bash.structure.CommentedCommandList", "jetbrains.mps.bash.structure.CommentedFollowingCommandList", "jetbrains.mps.bash.structure.CommentedText", "jetbrains.mps.bash.structure.ConditionalCommand", "jetbrains.mps.bash.structure.ConditionalExpression", "jetbrains.mps.bash.structure.ConditionalOperation", "jetbrains.mps.bash.structure.DecimalConstant", "jetbrains.mps.bash.structure.DirectoryConditionalExpression", "jetbrains.mps.bash.structure.DivAssingmentExpression", "jetbrains.mps.bash.structure.DivExpression", "jetbrains.mps.bash.structure.DoubleQuote", "jetbrains.mps.bash.structure.DoubleSemicolon", "jetbrains.mps.bash.structure.DoubleSemicolonEt", "jetbrains.mps.bash.structure.DuplicateInputFileDiscriptor", "jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor", "jetbrains.mps.bash.structure.EffectiveGroupIdConditionalExpression", "jetbrains.mps.bash.structure.EffectiveUserIdConditionalExpression", "jetbrains.mps.bash.structure.ElifCommand", "jetbrains.mps.bash.structure.EqualityExpression", "jetbrains.mps.bash.structure.EqualityNumber", "jetbrains.mps.bash.structure.EqualityStrings", "jetbrains.mps.bash.structure.EqualityStrings2", "jetbrains.mps.bash.structure.ExecTestConditionalExpression", "jetbrains.mps.bash.structure.ExistConditionalExpression", "jetbrains.mps.bash.structure.ExpExpression", "jetbrains.mps.bash.structure.ExternalCommandCall", "jetbrains.mps.bash.structure.ExternalCommandDeclaration", "jetbrains.mps.bash.structure.ExternalOptionDeclaration", "jetbrains.mps.bash.structure.ExternalOptionReference", "jetbrains.mps.bash.structure.FollowingCommandList", "jetbrains.mps.bash.structure.FollowingPipeline", "jetbrains.mps.bash.structure.ForCommand", "jetbrains.mps.bash.structure.ForeachCommand", "jetbrains.mps.bash.structure.FreeCommand", "jetbrains.mps.bash.structure.FunctionCallCommand", "jetbrains.mps.bash.structure.FunctionDeclaration", "jetbrains.mps.bash.structure.GeneralizedWord", "jetbrains.mps.bash.structure.GreaterThanExpression", "jetbrains.mps.bash.structure.GreaterThanNumber", "jetbrains.mps.bash.structure.GreaterThanOrEqual", "jetbrains.mps.bash.structure.GreaterThanOrEqualExpression", "jetbrains.mps.bash.structure.GreaterThanString", "jetbrains.mps.bash.structure.GroupIdConditionalExpression", "jetbrains.mps.bash.structure.GroupingCommand", "jetbrains.mps.bash.structure.HeadCommandList", "jetbrains.mps.bash.structure.HeadPipeline", "jetbrains.mps.bash.structure.HereDocumentRedirection", "jetbrains.mps.bash.structure.HereStringRedirection", "jetbrains.mps.bash.structure.HexIntegerLiteral", "jetbrains.mps.bash.structure.IArithmeticHolder", "jetbrains.mps.bash.structure.ICommandParameter", "jetbrains.mps.bash.structure.IComment", "jetbrains.mps.bash.structure.ICompoundCommand", "jetbrains.mps.bash.structure.IConcreteWordUnit", "jetbrains.mps.bash.structure.IDescribedConcept", "jetbrains.mps.bash.structure.IGeneralizedWordUnit", "jetbrains.mps.bash.structure.IORedirection", "jetbrains.mps.bash.structure.IPriorityExpression", "jetbrains.mps.bash.structure.ISymbolConcept", "jetbrains.mps.bash.structure.IToWordRedirection", "jetbrains.mps.bash.structure.IfCommand", "jetbrains.mps.bash.structure.InequalityExpression", "jetbrains.mps.bash.structure.InequalityNumber", "jetbrains.mps.bash.structure.InequalityStrings", "jetbrains.mps.bash.structure.InputLine", "jetbrains.mps.bash.structure.InputLines", "jetbrains.mps.bash.structure.InputRedirection", "jetbrains.mps.bash.structure.IntegerLiteral", "jetbrains.mps.bash.structure.LValue", "jetbrains.mps.bash.structure.LastReadConditionalExpression", "jetbrains.mps.bash.structure.LeftBitwiseShiftExpression", "jetbrains.mps.bash.structure.LeftShiftAssingmentExpression", "jetbrains.mps.bash.structure.LessThanExpression", "jetbrains.mps.bash.structure.LessThanNumber", "jetbrains.mps.bash.structure.LessThanOrEqualExpression", "jetbrains.mps.bash.structure.LessThanOrEqualNumber", "jetbrains.mps.bash.structure.LessThanString", "jetbrains.mps.bash.structure.LogicalAndExpression", "jetbrains.mps.bash.structure.LogicalNegationExpression", "jetbrains.mps.bash.structure.LogicalOrExpression", "jetbrains.mps.bash.structure.MinusAssingmentExpression", "jetbrains.mps.bash.structure.ModAssingmentExpression", "jetbrains.mps.bash.structure.ModExpression", "jetbrains.mps.bash.structure.MulExpression", "jetbrains.mps.bash.structure.MusAssingmentExpression", "jetbrains.mps.bash.structure.NewerThan", "jetbrains.mps.bash.structure.NonZeroStringConditionalExpression", "jetbrains.mps.bash.structure.NotCommand", "jetbrains.mps.bash.structure.OlderThan", "jetbrains.mps.bash.structure.Option", "jetbrains.mps.bash.structure.OptionReference", "jetbrains.mps.bash.structure.OptionSet", "jetbrains.mps.bash.structure.OptionSetReference", "jetbrains.mps.bash.structure.OptionWithParam", "jetbrains.mps.bash.structure.OptionWithParamReference", "jetbrains.mps.bash.structure.OptnameStringConditionalExpression", "jetbrains.mps.bash.structure.OrAssingmentExpression", "jetbrains.mps.bash.structure.OrCombiningConditionalExpression", "jetbrains.mps.bash.structure.OrOperator", "jetbrains.mps.bash.structure.OtherExistConditionalExpression", "jetbrains.mps.bash.structure.OtherSymlinkConditionalExpression", "jetbrains.mps.bash.structure.OutputErrorRedirection", "jetbrains.mps.bash.structure.OutputRedirection", "jetbrains.mps.bash.structure.PipeConditionalExpression", "jetbrains.mps.bash.structure.PipelineOperatorConnection", "jetbrains.mps.bash.structure.PipelineOperatorErrorConnection", "jetbrains.mps.bash.structure.PlusAssingmentExpression", "jetbrains.mps.bash.structure.PostDecExpression", "jetbrains.mps.bash.structure.PostIncExpression", "jetbrains.mps.bash.structure.PostVariableExpression", "jetbrains.mps.bash.structure.PreDecExpression", "jetbrains.mps.bash.structure.PreIncExpression", "jetbrains.mps.bash.structure.PreVariableExpression", "jetbrains.mps.bash.structure.QuotedWord", "jetbrains.mps.bash.structure.QuotesCommandSubstitution", "jetbrains.mps.bash.structure.ReadTestConditionalExpression", "jetbrains.mps.bash.structure.ReadingWritingRedirection", "jetbrains.mps.bash.structure.RedirectedCommand", "jetbrains.mps.bash.structure.Redirection", "jetbrains.mps.bash.structure.RegularFileConditionalExpression", "jetbrains.mps.bash.structure.RightBitwiseShiftExpression", "jetbrains.mps.bash.structure.RightShiftAssingmentExpression", "jetbrains.mps.bash.structure.SameReference", "jetbrains.mps.bash.structure.SelectCommand", "jetbrains.mps.bash.structure.SemicolonEt", "jetbrains.mps.bash.structure.SemicolonOperator", "jetbrains.mps.bash.structure.SemicolonTerminator", "jetbrains.mps.bash.structure.ShellScript", "jetbrains.mps.bash.structure.SimpleCommand", "jetbrains.mps.bash.structure.SimpleWord", "jetbrains.mps.bash.structure.SingleQuote", "jetbrains.mps.bash.structure.SizeConditionalExpression", "jetbrains.mps.bash.structure.SocketConditionalExpression", "jetbrains.mps.bash.structure.StickyBitConditionalExpression", "jetbrains.mps.bash.structure.StringConditionalExpression", "jetbrains.mps.bash.structure.SubExpression", "jetbrains.mps.bash.structure.SymlinkConditionalExpression", "jetbrains.mps.bash.structure.TerminalConditionalExpression", "jetbrains.mps.bash.structure.TildeExpansion", "jetbrains.mps.bash.structure.UnaryArithmeticExpression", "jetbrains.mps.bash.structure.UnaryConditionalExpression", "jetbrains.mps.bash.structure.UnaryMinusExpression", "jetbrains.mps.bash.structure.UnaryPlusExpression", "jetbrains.mps.bash.structure.UntilLoopCommand", "jetbrains.mps.bash.structure.UserIdConditionalExpression", "jetbrains.mps.bash.structure.VariableAddAssingment", "jetbrains.mps.bash.structure.VariableAssingment", "jetbrains.mps.bash.structure.VariableNameDeclaration", "jetbrains.mps.bash.structure.VariableReference", "jetbrains.mps.bash.structure.WhileLoopCommand", "jetbrains.mps.bash.structure.WordExpression", "jetbrains.mps.bash.structure.WordList", "jetbrains.mps.bash.structure.WriteTestConditionalExpression", "jetbrains.mps.bash.structure.XorAssingmentExpression", "jetbrains.mps.bash.structure.ZeroStringConditionalExpression"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1751214806:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CommandList"));
-      case -1688580460:
+      case 110:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.InputLines"));
-      case 1169679804:
+      case 172:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ShellScript"));
-      case -478649446:
+      case 173:
         return new DataHolderConstraintsDescriptor(new SimpleCommand_Constraints());
-      case -162753593:
+      case 196:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.WordList"));
-      case -1791009375:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AsyncOperator"));
-      case -942253325:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CommandTerminator"));
-      case 610030745:
+      case 171:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SemicolonTerminator"));
-      case -191301340:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AsyncTerminator"));
-      case -130393050:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AbstractLoopCommand"));
-      case 918159304:
+      case 188:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.UntilLoopCommand"));
-      case -1329630486:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AbstractCommand"));
-      case -1075895787:
+      case 194:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.WhileLoopCommand"));
-      case -1296101536:
+      case 77:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ForeachCommand"));
-      case -1380544268:
+      case 192:
         return new DataHolderConstraintsDescriptor(new VariableNameDeclaration_Constraints());
-      case -958947455:
+      case 76:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ForCommand"));
-      case -1395519135:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ArithmeticExpression"));
-      case 1861239375:
+      case 105:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IfCommand"));
-      case -1952887480:
+      case 62:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ElifCommand"));
-      case -242628098:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CaseClause"));
-      case 1165178012:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CaseCommand"));
-      case 627780097:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DoubleSemicolon"));
-      case 2094558326:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CaseTerminator"));
-      case 663266273:
+      case 169:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SemicolonEt"));
-      case 2001254032:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DoubleSemicolonEt"));
-      case -1871775472:
+      case 168:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SelectCommand"));
-      case -932595991:
+      case 88:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.GroupingCommand"));
-      case 1812296375:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BraceGrouping"));
-      case -335053844:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BracketGrouping"));
-      case 356461506:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BinaryArithmeticExpression"));
-      case 451754973:
+      case 128:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.MulExpression"));
-      case 753745002:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DivExpression"));
-      case 1167967643:
+      case 127:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ModExpression"));
-      case -1026073478:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AddExpression"));
-      case -519018663:
+      case 180:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SubExpression"));
-      case -1004536542:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ArithmeticCommand"));
-      case 392289170:
+      case 184:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.UnaryArithmeticExpression"));
-      case 1141822899:
+      case 154:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PostVariableExpression"));
-      case 1570872216:
+      case 157:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PreVariableExpression"));
-      case 444388919:
+      case 153:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PostIncExpression"));
-      case 749659483:
+      case 152:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PostDecExpression"));
-      case 1640314162:
+      case 156:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PreIncExpression"));
-      case 1945584726:
+      case 155:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PreDecExpression"));
-      case 664537218:
+      case 187:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.UnaryPlusExpression"));
-      case 590404728:
+      case 186:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.UnaryMinusExpression"));
-      case -2140698457:
+      case 123:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LogicalNegationExpression"));
-      case -2086776369:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BitwiseNegationExpression"));
-      case 293389046:
+      case 69:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ExpExpression"));
-      case -67688081:
+      case 115:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LeftBitwiseShiftExpression"));
-      case 1608290086:
+      case 165:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.RightBitwiseShiftExpression"));
-      case 899464561:
+      case 63:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.EqualityExpression"));
-      case -87418986:
+      case 106:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.InequalityExpression"));
-      case -240007523:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BitwiseAndExpression"));
-      case 1985326157:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BitwiseOrExpression"));
-      case -1951741919:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BitwiseXorExpression"));
-      case -41441083:
+      case 122:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LogicalAndExpression"));
-      case 883352869:
+      case 124:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LogicalOrExpression"));
-      case -1539845778:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CommaExpression"));
-      case 1015035728:
+      case 112:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IntegerLiteral"));
-      case -1457229770:
+      case 51:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DecimalConstant"));
-      case -729531539:
+      case 93:
         return new DataHolderConstraintsDescriptor(new HexIntegerLiteral_Constraints());
-      case -1309172283:
+      case 22:
         return new DataHolderConstraintsDescriptor(new BasedIntegerLiteral_Constraints());
-      case 1343773505:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BracketExpression"));
-      case 363248404:
+      case 82:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.GreaterThanExpression"));
-      case 1218207569:
+      case 117:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LessThanExpression"));
-      case 422166669:
+      case 85:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.GreaterThanOrEqualExpression"));
-      case -1711583824:
+      case 119:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LessThanOrEqualExpression"));
-      case -281672704:
+      case 50:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ConditionalOperation"));
-      case -1118189049:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BaseAssingmentExpression"));
-      case -32343786:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AssingmentExpression"));
-      case 1928991312:
+      case 151:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PlusAssingmentExpression"));
-      case 1738033160:
+      case 125:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.MinusAssingmentExpression"));
-      case -1234235357:
+      case 129:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.MusAssingmentExpression"));
-      case -231289367:
+      case 53:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DivAssingmentExpression"));
-      case -766095910:
+      case 126:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ModAssingmentExpression"));
-      case -1550893997:
+      case 116:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LeftShiftAssingmentExpression"));
-      case -1480136900:
+      case 166:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.RightShiftAssingmentExpression"));
-      case -780311505:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AndAssingmentExpression"));
-      case -1835186215:
+      case 141:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OrAssingmentExpression"));
-      case -1294643021:
+      case 198:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.XorAssingmentExpression"));
-      case -551242325:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BaseVariableAssingment"));
-      case -49554310:
+      case 191:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.VariableAssingment"));
-      case 177057029:
+      case 23:
         return new DataHolderConstraintsDescriptor(new BasicParameterExpansion_Constraints());
-      case -1770336042:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ArithmeticExpansion"));
-      case -694653434:
+      case 183:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.TildeExpansion"));
-      case 1629363139:
+      case 81:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.GeneralizedWord"));
-      case 788741532:
+      case 100:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IGeneralizedWordUnit"));
-      case -193905381:
+      case 174:
         return new DataHolderConstraintsDescriptor(new SimpleWord_Constraints());
-      case -1762334600:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BaseCommandSubstitution"));
-      case -1716626478:
+      case 159:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.QuotesCommandSubstitution"));
-      case -1113380082:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BuckCommandSubstitution"));
-      case 902159153:
+      case 162:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.RedirectedCommand"));
-      case 1680634189:
+      case 163:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.Redirection"));
-      case -382894463:
+      case 111:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.InputRedirection"));
-      case 1257097420:
+      case 147:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OutputRedirection"));
-      case 957655079:
+      case 101:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IORedirection"));
-      case -1853958014:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AppendingOutputRedirection"));
-      case 1607356772:
+      case 146:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OutputErrorRedirection"));
-      case 1528865646:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AppendingOutputErrorRedirection"));
-      case 1387791901:
+      case 104:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IToWordRedirection"));
-      case -971062878:
+      case 91:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.HereDocumentRedirection"));
-      case -741151444:
+      case 92:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.HereStringRedirection"));
-      case 794347757:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DuplicateInputFileDiscriptor"));
-      case 1676082044:
+      case 59:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor"));
-      case 1738412221:
+      case 161:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ReadingWritingRedirection"));
-      case 985026595:
+      case 80:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.FunctionDeclaration"));
-      case -1649341066:
+      case 97:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ICompoundCommand"));
-      case -744484426:
+      case 79:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.FunctionCallCommand"));
-      case 775606169:
+      case 71:
         return new DataHolderConstraintsDescriptor(new ExternalCommandDeclaration_Constraints());
-      case 515421471:
+      case 70:
         return new DataHolderConstraintsDescriptor(new ExternalCommandCall_Constraints());
-      case -89410516:
+      case 73:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ExternalOptionReference"));
-      case 222776974:
+      case 136:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OptionSet"));
-      case 348322100:
+      case 134:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.Option"));
-      case -529709933:
+      case 138:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OptionWithParam"));
-      case -1508784762:
+      case 103:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ISymbolConcept"));
-      case 857250201:
+      case 99:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IDescribedConcept"));
-      case -2036451813:
+      case 72:
         return new DataHolderConstraintsDescriptor(new ExternalOptionDeclaration_Constraints());
-      case 337285213:
+      case 137:
         return new DataHolderConstraintsDescriptor(new OptionSetReference_Constraints());
-      case 1941799031:
+      case 135:
         return new DataHolderConstraintsDescriptor(new OptionReference_Constraints());
-      case 1387827192:
+      case 139:
         return new DataHolderConstraintsDescriptor(new OptionWithParamReference_Constraints());
-      case 1700150536:
+      case 95:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ICommandParameter"));
-      case 1100756719:
+      case 12:
         return new DataHolderConstraintsDescriptor(new ArgumentReference_Constraints());
-      case -1780573252:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.Argument"));
-      case 160858746:
+      case 10:
         return new DataHolderConstraintsDescriptor(new ArgumentList_Constraints());
-      case 1441334769:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ArgumentListReference"));
-      case -356655068:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ConditionalCommand"));
-      case -1771122223:
+      case 158:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.QuotedWord"));
-      case 436823485:
+      case 98:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IConcreteWordUnit"));
-      case -2034342475:
+      case 175:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SingleQuote"));
-      case -1920353332:
+      case 55:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DoubleQuote"));
-      case 246545734:
+      case 102:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IPriorityExpression"));
-      case 1941877505:
+      case 195:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.WordExpression"));
-      case 84076991:
+      case 109:
         return new DataHolderConstraintsDescriptor(new InputLine_Constraints());
-      case 767988458:
+      case 45:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CommentedCommandList"));
-      case -1253324118:
+      case 89:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.HeadCommandList"));
-      case -1929232969:
+      case 74:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.FollowingCommandList"));
-      case 565276220:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AndOperator"));
-      case 572129510:
+      case 143:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OrOperator"));
-      case -1097091081:
+      case 46:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CommentedFollowingCommandList"));
-      case 552013305:
+      case 1:
         return new DataHolderConstraintsDescriptor(new AbstractFollowingCommandList_Constraints());
-      case 793551393:
+      case 90:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.HeadPipeline"));
-      case 451990068:
+      case 75:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.FollowingPipeline"));
-      case 620913699:
+      case 149:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PipelineOperatorConnection"));
-      case -1853234975:
+      case 150:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PipelineOperatorErrorConnection"));
-      case -199765012:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CommentedText"));
-      case 112952940:
+      case 42:
         return new DataHolderConstraintsDescriptor(new Command_Constraints());
-      case 735652533:
+      case 96:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IComment"));
-      case 398757728:
+      case 94:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.IArithmeticHolder"));
-      case 237860132:
+      case 113:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LValue"));
-      case 1804831248:
+      case 193:
         return new DataHolderConstraintsDescriptor(new VariableReference_Constraints());
-      case -1941555425:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ConditionalExpression"));
-      case 1940894478:
+      case 185:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.UnaryConditionalExpression"));
-      case 161410630:
+      case 68:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ExistConditionalExpression"));
-      case -753744556:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BlockFileConditionalExpression"));
-      case 1120091981:
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CharFileConditionalExpression"));
-      case 1998219536:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.DirectoryConditionalExpression"));
-      case -1280160168:
+      case 144:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OtherExistConditionalExpression"));
-      case 310818149:
+      case 164:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.RegularFileConditionalExpression"));
-      case -1479476893:
+      case 87:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.GroupIdConditionalExpression"));
-      case 1547158652:
+      case 181:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SymlinkConditionalExpression"));
-      case 2026297721:
+      case 178:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.StickyBitConditionalExpression"));
-      case -234560111:
+      case 148:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.PipeConditionalExpression"));
-      case -169141321:
+      case 160:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ReadTestConditionalExpression"));
-      case 1686489374:
+      case 176:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SizeConditionalExpression"));
-      case 1877649667:
+      case 182:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.TerminalConditionalExpression"));
-      case -1334062151:
+      case 189:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.UserIdConditionalExpression"));
-      case 726617324:
+      case 197:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.WriteTestConditionalExpression"));
-      case -1614086884:
+      case 67:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ExecTestConditionalExpression"));
-      case 1031523696:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.EffectiveUserIdConditionalExpression"));
-      case -1160759668:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.EffectiveGroupIdConditionalExpression"));
-      case -822908914:
+      case 145:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OtherSymlinkConditionalExpression"));
-      case -808365908:
+      case 177:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SocketConditionalExpression"));
-      case -1210648525:
+      case 114:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LastReadConditionalExpression"));
-      case 1925171150:
+      case 140:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OptnameStringConditionalExpression"));
-      case -1710291322:
+      case 199:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.ZeroStringConditionalExpression"));
-      case 501453335:
+      case 131:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.NonZeroStringConditionalExpression"));
-      case 1725251278:
+      case 179:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.StringConditionalExpression"));
-      case 830236894:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BinaryConditionalExpression"));
-      case -1705769873:
+      case 130:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.NewerThan"));
-      case 413812662:
+      case 133:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OlderThan"));
-      case 1115470822:
+      case 167:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SameReference"));
-      case -82571703:
+      case 65:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.EqualityStrings"));
-      case -1391956412:
+      case 108:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.InequalityStrings"));
-      case 851669322:
+      case 121:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LessThanString"));
-      case -1015011699:
+      case 86:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.GreaterThanString"));
-      case 558087648:
+      case 78:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.FreeCommand"));
-      case 1704792662:
+      case 170:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.SemicolonOperator"));
-      case -297275803:
+      case 190:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.VariableAddAssingment"));
-      case 954565175:
+      case 132:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.NotCommand"));
-      case -1849847993:
+      case 107:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.InequalityNumber"));
-      case 963336866:
+      case 64:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.EqualityNumber"));
-      case 709291138:
+      case 118:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LessThanNumber"));
-      case 1340203617:
+      case 120:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.LessThanOrEqualNumber"));
-      case -1157389883:
+      case 83:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.GreaterThanNumber"));
-      case -754210795:
+      case 84:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.GreaterThanOrEqual"));
-      case 2047084705:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.CombiningConditionalExpression"));
-      case 1034962617:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.AndCombiningComditionalExpression"));
-      case -602308700:
+      case 142:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.OrCombiningConditionalExpression"));
-      case 674529653:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.BracketConditionalExpression"));
-      case 1735244553:
+      case 66:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.bash.structure.EqualityStrings2"));
       default:
         return null;

@@ -16,6 +16,9 @@ import jetbrains.mps.editor.runtime.StyledTextPrinter;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class BaseMethodParameterInformationQueryUtil {
+  public BaseMethodParameterInformationQueryUtil() {
+  }
+
   public static List<SNode> getMethodsToShow(SNode methodCall) {
     SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");

@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.uiLanguage.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.ide.uiLanguage.constraints.DialogExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.ide.uiLanguage.constraints.DisposeDialogExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.ide.uiLanguage.constraints.DisposeDialogStatement_Constraints" />

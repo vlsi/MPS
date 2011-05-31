@@ -87,7 +87,7 @@ public class Module_Behavior {
     }
     return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<SModelRoot, String>() {
       public String select(SModelRoot it) {
-        return it.getPath();
+        return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
     }).distinct().toListSequence(), true);
   }

@@ -4,72 +4,75 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptProperty", "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.structure.structure.IntegerConceptProperty", "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceConceptLink", "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.StringConceptProperty", "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1477894798:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 6:
         return new DataHolderConstraintsDescriptor(new ConceptDeclaration_Constraints());
-      case -1395543648:
+      case 22:
         return new DataHolderConstraintsDescriptor(new LinkDeclaration_Constraints());
-      case -986014491:
+      case 24:
         return new DataHolderConstraintsDescriptor(new PropertyDeclaration_Constraints());
-      case 1357171030:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.DataTypeDeclaration"));
-      case -1299045745:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EnumerationDataTypeDeclaration_Constraints());
-      case -1633495008:
+      case 11:
         return new DataHolderConstraintsDescriptor(new ConstrainedDataTypeDeclaration_Constraints());
-      case 1325016697:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EnumerationMemberDeclaration_Constraints());
-      case 1190771695:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
-      case -592713635:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"));
-      case -830747333:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration"));
-      case -2033547355:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration"));
-      case -1985322674:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"));
-      case 1027995869:
+      case 9:
         return new DataHolderConstraintsDescriptor(new ConceptProperty_Constraints());
-      case -1129024833:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IntegerConceptProperty"));
-      case -485353835:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.BooleanConceptProperty"));
-      case 997829772:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.StringConceptProperty"));
-      case -1176274664:
+      case 8:
         return new DataHolderConstraintsDescriptor(new ConceptLinkDeclaration_Constraints());
-      case 683773698:
+      case 7:
         return new DataHolderConstraintsDescriptor(new ConceptLink_Constraints());
-      case 104092087:
+      case 25:
         return new DataHolderConstraintsDescriptor(new ReferenceConceptLink_Constraints());
-      case -86231616:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.AggregationConceptLink"));
-      case 1520291738:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration"));
-      case 1897751363:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"));
-      case -2073740687:
+      case 3:
         return new DataHolderConstraintsDescriptor(new AnnotationLinkDeclaration_Constraints());
-      case -1216854732:
+      case 0:
         return new DataHolderConstraintsDescriptor(new AbstractConceptDeclaration_Constraints());
-      case 1721541515:
+      case 20:
         return new DataHolderConstraintsDescriptor(new InterfaceConceptDeclaration_Constraints());
-      case 356957596:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.InterfaceConceptReference"));
-      case -1745550620:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"));
-      case -920744680:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
-      case -1479722377:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.structure.structure.IConceptAspect"));
       default:
         return null;

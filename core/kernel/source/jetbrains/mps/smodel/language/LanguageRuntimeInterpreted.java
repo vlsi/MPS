@@ -29,6 +29,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
+
 /**
  * evgeny, 4/28/11
  */
@@ -65,21 +67,16 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
 
   @Override
   public IHelginsDescriptor getTypesystem() {
-    try {
-      SModelDescriptor helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(myLanguage);
-      if (helginsModelDescriptor == null) return null;
-      String packageName = helginsModelDescriptor.getLongName();
-      Class<?> c = (Class<?>) myLanguage.getClass(packageName + ".TypesystemDescriptor");
-      if (c == null) {
-        c = (Class<?>) myLanguage.getClass(packageName + ".HelginsDescriptor");
-      }
-      if (c == null) {
-        return null;
-      }
-      return (IHelginsDescriptor) c.newInstance();
-    } catch (Throwable ex) {
-      //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
-      return null;
+    SModelDescriptor helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(myLanguage);
+    if (helginsModelDescriptor == null) return null;
+    String packageName = helginsModelDescriptor.getLongName();
+
+    Object helginsDescriptor = getObjectByClassNameForLanguage(packageName + ".TypesystemDescriptor", myLanguage, true);
+
+    if (helginsDescriptor != null) {
+      return (IHelginsDescriptor) helginsDescriptor;
+    } else {
+      return (IHelginsDescriptor) getObjectByClassNameForLanguage(packageName + ".HelginsDescriptor", myLanguage, true);
     }
   }
 

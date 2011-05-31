@@ -4,132 +4,135 @@ package jetbrains.mps.baseLanguage.math.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.BigComplexType", "jetbrains.mps.baseLanguage.math.structure.BigDecimalType", "jetbrains.mps.baseLanguage.math.structure.BigIntegerType", "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", "jetbrains.mps.baseLanguage.math.structure.BigMinExpression", "jetbrains.mps.baseLanguage.math.structure.BigProdExpression", "jetbrains.mps.baseLanguage.math.structure.BigSumExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.ComplexType", "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", "jetbrains.mps.baseLanguage.math.structure.CosineExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", "jetbrains.mps.baseLanguage.math.structure.Determinant", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentExpression", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.LogExpression", "jetbrains.mps.baseLanguage.math.structure.MathContext", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.SineExpression", "jetbrains.mps.baseLanguage.math.structure.TangentExpression", "jetbrains.mps.baseLanguage.math.structure.TransposeOperation", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -131104684:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression"));
-      case 1794917198:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression"));
-      case 681346008:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral"));
-      case 1917592753:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.IntervalType"));
-      case 492621374:
+      case 53:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.PowExpression"));
-      case -1490966105:
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"));
-      case 236605103:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.VectorType"));
-      case -1733314897:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixNorm"));
-      case -1733126611:
+      case 50:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixType"));
-      case -808117933:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"));
-      case -2034762699:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathContext"));
-      case -1732967013:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixZero"));
-      case -1539017332:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LiteralI"));
-      case -625116119:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression"));
-      case 648975776:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"));
-      case 352340839:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"));
-      case 1768284982:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"));
-      case -1280513129:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.SineExpression"));
-      case 600829629:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression"));
-      case 320806848:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.TransposeOperation"));
-      case 1331460239:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"));
-      case -2046259329:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"));
-      case 1237343187:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathTypeCast"));
-      case -2083523861:
+      case 55:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.TangentExpression"));
-      case -907482023:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"));
-      case 1813461976:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.AbsExpression"));
-      case -29129125:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"));
-      case 352684074:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.LogExpression"));
-      case 902819658:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression"));
-      case 589006587:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"));
-      case 706551179:
+      case 37:
         return new DataHolderConstraintsDescriptor(new MathSymbolIndexReference_Constraints());
-      case -1733107593:
+      case 51:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixUnit"));
-      case -1765678845:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.Determinant"));
-      case -91353443:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigProdExpression"));
-      case 911944757:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigSumExpression"));
-      case 426304138:
+      case 46:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"));
-      case 1807249027:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.CosineExpression"));
-      case -985547875:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigDecimalType"));
-      case 799425916:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigComplexType"));
-      case -673581188:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigMinExpression"));
-      case -1222184149:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"));
-      case 1648543314:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathSymbol"));
-      case 752375921:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral"));
-      case -1421525320:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ComplexType"));
-      case -1211700423:
+      case 42:
         return new DataHolderConstraintsDescriptor(new MatrixIndexWildcard_Constraints());
-      case -525432371:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.VectorInitializer"));
-      case 1192717066:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
-      case -1200018375:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExponentExpression"));
-      case 1799079950:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression"));
-      case -1282422530:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.AbstractIndex"));
-      case 1595158193:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression"));
-      case -748863831:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"));
-      case -1477721725:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex"));
-      case -1988667291:
+      case 40:
         return new DataHolderConstraintsDescriptor(new MatrixElementAccessExpression_Constraints());
-      case -1331715832:
+      case 45:
         return new DataHolderConstraintsDescriptor(new MatrixInitializerIndexReference_Constraints());
-      case -814510393:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
-      case -1396728140:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
-      case 1846962837:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"));
-      case -1430643391:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation"));
       default:
         return null;

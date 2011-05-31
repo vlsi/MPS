@@ -52,16 +52,19 @@
     <unitInfo nodeId="418677511065472027" fileName="MoveStaticMethod.java" startLine="44" startPosition="47" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod$1" />
   </root>
   <root nodeId="4413749148913391072">
-    <nodeInfo nodeId="4413749148913391096" fileName="RenameUtil.java" startLine="11" startPosition="121" endLine="12" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4413749148913391102" fileName="RenameUtil.java" startLine="13" startPosition="5" endLine="14" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4413749148913391085" fileName="RenameUtil.java" startLine="10" startPosition="70" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4413749148913391078" fileName="RenameUtil.java" startLine="9" startPosition="25" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMethodDeclaration#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="4413749148913391087" fileName="RenameUtil.java" startLine="11" startPosition="121" endLine="12" endPosition="116" />
-    <scopeInfo nodeId="4413749148913391081" fileName="RenameUtil.java" startLine="10" startPosition="70" endLine="14" endPosition="163" />
-    <scopeInfo nodeId="4413749148913391078" fileName="RenameUtil.java" startLine="9" startPosition="25" endLine="16" endPosition="0">
+    <nodeInfo nodeId="4413749148913391096" fileName="RenameUtil.java" startLine="14" startPosition="121" endLine="15" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4413749148913391102" fileName="RenameUtil.java" startLine="16" startPosition="5" endLine="17" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1279276159889585428" fileName="RenameUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameUtil#()V" />
+    <nodeInfo nodeId="4413749148913391085" fileName="RenameUtil.java" startLine="13" startPosition="70" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4413749148913391078" fileName="RenameUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMethodDeclaration#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1279276159889585430" fileName="RenameUtil.java" startLine="10" startPosition="23" endLine="10" endPosition="23" />
+    <scopeInfo nodeId="4413749148913391087" fileName="RenameUtil.java" startLine="14" startPosition="121" endLine="15" endPosition="116" />
+    <scopeInfo nodeId="1279276159889585428" fileName="RenameUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="4413749148913391081" fileName="RenameUtil.java" startLine="13" startPosition="70" endLine="17" endPosition="163" />
+    <scopeInfo nodeId="4413749148913391078" fileName="RenameUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4413749148913391083" varName="methodOrMethodCall" />
     </scopeInfo>
-    <unitInfo nodeId="4413749148913391072" fileName="RenameUtil.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameUtil" />
+    <unitInfo nodeId="4413749148913391072" fileName="RenameUtil.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameUtil" />
   </root>
   <root nodeId="4946830740863976385">
     <nodeInfo nodeId="4946830740863976391" fileName="ConvertAnonymousClass_name_Settings.java" startLine="18" startPosition="35" endLine="19" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -4,70 +4,73 @@ package jetbrains.mpslite.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mpslite.structure.BinaryOperationConcept", "jetbrains.mpslite.structure.BlockBodyPart", "jetbrains.mpslite.structure.BlockConcept", "jetbrains.mpslite.structure.BlockReference", "jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.ConceptContainer", "jetbrains.mpslite.structure.ConcreteChildPart", "jetbrains.mpslite.structure.ConcretePropertyPart", "jetbrains.mpslite.structure.ConcreteReferencePart", "jetbrains.mpslite.structure.ConstantLinePart", "jetbrains.mpslite.structure.ExpressionConcept", "jetbrains.mpslite.structure.FeatureAccessConcept", "jetbrains.mpslite.structure.IMPSLiteConcept", "jetbrains.mpslite.structure.IndentLinePart", "jetbrains.mpslite.structure.Line", "jetbrains.mpslite.structure.LineList", "jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", "jetbrains.mpslite.structure.MPSLiteConceptReference", "jetbrains.mpslite.structure.NamePropertyNamePart", "jetbrains.mpslite.structure.OptionalPart", "jetbrains.mpslite.structure.PropertyPart", "jetbrains.mpslite.structure.ReferencePart", "jetbrains.mpslite.structure.RegularConceptReference", "jetbrains.mpslite.structure.StatementConcept", "jetbrains.mpslite.structure.TypePart", "jetbrains.mpslite.structure.VariableConcept"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 514537623:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.Line"));
-      case -289084118:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.LinePart"));
-      case 1601666542:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConstantLinePart"));
-      case 103985078:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.IndentLinePart"));
-      case 1218873622:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcreteReferencePart"));
-      case 1343505516:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ChildPart"));
-      case 1436461334:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.OptionalPart"));
-      case 1185303143:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcreteChildPart"));
-      case -1764886373:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ReferencePart"));
-      case 253920717:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.MPSLiteConceptDeclaration"));
-      case -289195563:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.LineList"));
-      case -1250297589:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.PropertyPart"));
-      case 1616899376:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ConcretePropertyPart"));
-      case -1908169944:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.AbstractConceptReference"));
-      case 923027550:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.MPSLiteConceptReference"));
-      case -1298220036:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.RegularConceptReference"));
-      case -343724848:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.IMPSLiteConcept"));
-      case 191602437:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BinaryOperationConcept"));
-      case -694953039:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.FeatureAccessConcept"));
-      case 1581481929:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.VariableConcept"));
-      case 447667553:
+      case 20:
         return new DataHolderConstraintsDescriptor(new NamePropertyNamePart_Constraints());
-      case 2140911984:
+      case 26:
         return new DataHolderConstraintsDescriptor(new TypePart_Constraints());
-      case 1547490076:
+      case 6:
         return new DataHolderConstraintsDescriptor(new ConceptContainer_Constraints());
-      case -1971525092:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.StatementConcept"));
-      case 1739767021:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.ExpressionConcept"));
-      case -187385154:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BlockConcept"));
-      case 771570463:
+      case 2:
         return new DataHolderConstraintsDescriptor(new BlockBodyPart_Constraints());
-      case 280085025:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mpslite.structure.BlockReference"));
       default:
         return null;

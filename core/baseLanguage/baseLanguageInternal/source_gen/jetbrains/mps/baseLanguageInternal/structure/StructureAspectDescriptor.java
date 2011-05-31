@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguageInternal.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,50 +13,52 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1776008649:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
-      case -748575031:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1202134450:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
-      case -181962325:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IOperation"});
-      case -332116314:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1164317125:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType"});
-      case 1895497509:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1419340984:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IOperation"});
-      case -569834106:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 2121366688:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1991186635:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1043226863:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"});
-      case 2027888821:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"});
-      case -338199173:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1222117134:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
-      case -971598052:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 525429288:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", new String[]{"jetbrains.mps.baseLanguage.structure.ClassCreator"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ClassCreator"});
-      case 447898724:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept"});
-      case -1194740616:
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", new String[]{"jetbrains.mps.baseLanguage.structure.ClassCreator"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ClassCreator"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 8:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 484023672:
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 19:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguageInternal.structure.WeakClassReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
       default:
         return null;

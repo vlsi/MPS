@@ -138,8 +138,8 @@
   <unitInfo fileName="check_LongLiteral_within_range_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_LongLiteral_within_range_NonTypesystemRule" />
   <unitInfo fileName="typeof_IMethodCall_InferenceRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_IMethodCall_InferenceRule" />
   <unitInfo fileName="check_FinalVariableReferenceNotAssigned_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_FinalVariableReferenceNotAssigned_NonTypesystemRule" />
-  <unitInfo fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.checkUnnecessaryInstanceof_NonTypesystemRule" />
   <unitInfo fileName="check_TypeInVarDecl_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_TypeInVarDecl_NonTypesystemRule" />
+  <unitInfo fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.checkUnnecessaryInstanceof_NonTypesystemRule" />
   <unitInfo fileName="NonFinalParametersInAnonymousClass_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.NonFinalParametersInAnonymousClass_NonTypesystemRule" />
   <unitInfo fileName="check_EqualsMethodTypes_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_EqualsMethodTypes_NonTypesystemRule" />
   <unitInfo fileName="Class_Void_weak_supertypeof_void_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.Class_Void_weak_supertypeof_void_SubtypingRule$QuotationClass_or08yn_a0a0a" />
@@ -524,8 +524,8 @@
     <nodeInfo nodeId="1237041793202" fileName="subtyping_classifier_SubtypingRule.java" startLine="48" startPosition="157" endLine="49" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1175529759216" fileName="subtyping_classifier_SubtypingRule.java" startLine="50" startPosition="112" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1175529708927" fileName="subtyping_classifier_SubtypingRule.java" startLine="51" startPosition="59" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1237041846280" fileName="subtyping_classifier_SubtypingRule.java" startLine="53" startPosition="11" endLine="54" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1898928462087099117" fileName="subtyping_classifier_SubtypingRule.java" startLine="54" startPosition="156" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237041846280" fileName="subtyping_classifier_SubtypingRule.java" startLine="53" startPosition="11" endLine="54" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1898928462087099117" fileName="subtyping_classifier_SubtypingRule.java" startLine="54" startPosition="140" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1175526792116" fileName="subtyping_classifier_SubtypingRule.java" startLine="57" startPosition="7" endLine="58" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1176727703257" fileName="subtyping_classifier_SubtypingRule.java" startLine="59" startPosition="5" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1176727607455" fileName="subtyping_classifier_SubtypingRule.java" startLine="61" startPosition="40" endLine="62" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4770,15 +4770,15 @@
     <scopeInfo nodeId="3511256318310404915" fileName="check_NonStaticClassInInterface_NonTypesystemRule.java" startLine="21" startPosition="123" endLine="27" endPosition="5" />
   </root>
   <root nodeId="3545977178604749608">
-    <nodeInfo nodeId="3545977178604772268" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="21" startPosition="133" endLine="22" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3545977178604772275" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="22" startPosition="94" endLine="23" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3545977178604772302" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3545977178604772302" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="26" startPosition="60" endLine="27" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3545977178604772302" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="24" startPosition="100" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3545977178604772291" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="23" startPosition="136" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="3545977178604772302" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="27" endPosition="251" />
-    <scopeInfo nodeId="3545977178604772292" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="24" startPosition="100" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="3545977178604749609" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="21" startPosition="133" endLine="29" endPosition="5">
+    <nodeInfo nodeId="3545977178604772268" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="23" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3545977178604772275" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="23" startPosition="171" endLine="24" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3545977178604772302" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3545977178604772302" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="27" startPosition="60" endLine="28" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3545977178604772302" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="25" startPosition="100" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3545977178604772291" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="24" startPosition="136" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="3545977178604772302" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="28" endPosition="251" />
+    <scopeInfo nodeId="3545977178604772292" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="25" startPosition="100" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="3545977178604749609" fileName="checkUnnecessaryInstanceof_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="30" endPosition="5">
       <varInfo nodeId="3545977178604772269" varName="classifierType" />
       <varInfo nodeId="3545977178604772276" varName="expressionType" />
     </scopeInfo>

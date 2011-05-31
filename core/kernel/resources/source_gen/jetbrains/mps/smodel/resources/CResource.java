@@ -28,4 +28,8 @@ public class CResource extends MultiTuple._1<IClassesData> implements IResource,
   public CResource assignFrom(Tuples._1<IClassesData> from) {
     return (CResource) super.assign(from);
   }
+
+  public String describe() {
+    return null;
+  }
 }

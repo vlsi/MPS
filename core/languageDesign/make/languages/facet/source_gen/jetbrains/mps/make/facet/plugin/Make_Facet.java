@@ -66,7 +66,7 @@ public class Make_Facet implements IFacet {
           Iterable<IResource> _output_pm9z_a0a = null;
           switch (0) {
             case 0:
-              ModelAccess.instance().writeFilesInEDT(new Runnable() {
+              ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
                 public void run() {
                   new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
                     public Iterable<IDelta> translate(IResource res) {
@@ -77,18 +77,17 @@ public class Make_Facet implements IFacet {
                       return !(d instanceof IInternalDelta);
                     }
                   })).reconcileAll();
+                  new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                    public Iterable<IDelta> translate(IResource res) {
+                      return ((IDeltaResource) res).delta();
+                    }
+                  }).where(new IWhereFilter<IDelta>() {
+                    public boolean accept(IDelta d) {
+                      return d instanceof IInternalDelta;
+                    }
+                  })).reconcileAll();
                 }
               });
-              // "internal" delta gets reconciled in write action (enclosing) 
-              new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
-                public Iterable<IDelta> translate(IResource res) {
-                  return ((IDeltaResource) res).delta();
-                }
-              }).where(new IWhereFilter<IDelta>() {
-                public boolean accept(IDelta d) {
-                  return d instanceof IInternalDelta;
-                }
-              })).reconcileAll();
               _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_pm9z_a0a);

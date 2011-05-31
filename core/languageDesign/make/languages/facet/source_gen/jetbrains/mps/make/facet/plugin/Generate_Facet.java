@@ -30,7 +30,6 @@ import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -439,10 +438,6 @@ public class Generate_Facet implements IFacet {
           final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0d = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
-              MessagesViewTool mvt = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(MessagesViewTool.class);
-              if (mvt != null) {
-                mvt.openToolLater(false);
-              }
               boolean generationOk;
               GeneratorManager gm = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GeneratorManager.class);
               if (!((boolean) pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {

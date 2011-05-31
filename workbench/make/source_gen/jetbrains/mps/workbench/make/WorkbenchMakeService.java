@@ -4,6 +4,7 @@ package jetbrains.mps.workbench.make;
 
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
@@ -12,6 +13,16 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import dependencies.ModulesClusterizer;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
@@ -25,10 +36,7 @@ import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressSt
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IFeedback;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.progress.Progressive;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -44,6 +52,7 @@ import jetbrains.mps.messages.IMessage;
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
   private boolean cleanMake;
+  private ProgressIndicator progInd;
 
   public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
     this.context = context;
@@ -67,11 +76,11 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
-    String scrName = ((cleanMake ?
+    final String scrName = ((cleanMake ?
       "Rebuild" :
       "Make"
     ));
-    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
+    final WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
     mh.clear();
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
@@ -100,27 +109,89 @@ public class WorkbenchMakeService implements IMakeService {
         SModelRepository.getInstance().saveAll();
       }
     });
-
+    final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        clInput.value = new ModulesClusterizer().clusterize(Sequence.fromIterable(inputRes).<IResource>select(new ISelector<IResource, IResource>() {
+          public IResource select(IResource r) {
+            return (IResource) r;
+          }
+        }));
+      }
+    });
     final IScriptController ctl = this.completeController(scrName, mh, controller);
     final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
     doExecute(new Runnable() {
       public void run() {
-        res.value = script.execute(ctl, inputRes);
+        ThreadUtils.runInUIThreadAndWait(new Runnable() {
+          public void run() {
+            IdeEventQueue.getInstance().flushQueue();
+            ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true, PerformInBackgroundOption.DEAF) {
+              public void run(@NotNull ProgressIndicator pi) {
+                pi.pushState();
+                pi.setFraction(0.0);
+                final int clsize = Sequence.fromIterable(clInput.value).count();
+                if (clsize == 0) {
+                  return;
+                }
+                final double clfrac = (1.0 / clsize);
+                final int[] idx = new int[]{0};
+                progInd = new ProgressIndicatorDelegate(pi) {
+                  @Override
+                  public void setFraction(double d) {
+                    getDelegate().setFraction((idx[0] + d) * clfrac);
+                  }
+
+                  @Override
+                  public void setText2(String string) {
+                  }
+                };
+                for (Iterable<IResource> cl : clInput.value) {
+                  pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+                    public String select(IResource r) {
+                      return ((IResource) r).describe();
+                    }
+                  }), ","));
+                  res.value = script.execute(ctl, cl);
+                  if (!(res.value.isSucessful()) || progInd.isCanceled()) {
+                    break;
+                  }
+                  idx[0]++;
+                }
+                pi.popState();
+              }
+
+              @Override
+              public void onSuccess() {
+                reconcile();
+              }
+
+              @Override
+              public void onCancel() {
+                res.value = null;
+                reconcile();
+              }
+
+              private void reconcile() {
+                if (res.value == null) {
+                  String msg = scrName + " aborted";
+                  WorkbenchMakeService.this.displayInfo(msg);
+                } else if (!(res.value.isSucessful())) {
+                  String msg = scrName + " failed";
+                  showError(mh, msg + ". See previous messages for details.");
+                  WorkbenchMakeService.this.displayInfo(msg);
+                } else {
+                  String msg = scrName + " successful";
+                  WorkbenchMakeService.this.displayInfo(msg);
+                }
+              }
+            });
+          }
+        });
       }
     });
 
-    if (res.value == null) {
-      String msg = scrName + " aborted";
-      this.displayInfo(msg);
-    } else if (!(res.value.isSucessful())) {
-      String msg = scrName + " failed";
-      showError(mh, msg + ". See previous messages for details.");
-      this.displayInfo(msg);
-    } else {
-      String msg = scrName + " successful";
-      this.displayInfo(msg);
-    }
-    return res.value;
+    return null;
   }
 
   private void showError(WorkbenchMakeService.MessageHandler mh, String msg) {
@@ -185,15 +256,15 @@ public class WorkbenchMakeService implements IMakeService {
         }
       }
 
-      public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        IdeEventQueue.getInstance().flushQueue();
-        ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-          public void run(ProgressIndicator realInd) {
-            progStrat.setProgressIndicator(realInd);
-            pind.value = new JobMonitorProgressIndicator(jmon);
-            code.invoke(jmon);
-          }
-        }, scrName, true, WorkbenchMakeService.this.context.getProject());
+      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+        try {
+          progStrat.setProgressIndicator(progInd);
+          pind.value = new JobMonitorProgressIndicator(jmon);
+          code.invoke(jmon);
+        } catch (Throwable e) {
+          e.printStackTrace();
+          jmon.reportFeedback(new IFeedback.ERROR(e.getMessage()));
+        }
       }
 
       public void setup(IParametersPool pool) {

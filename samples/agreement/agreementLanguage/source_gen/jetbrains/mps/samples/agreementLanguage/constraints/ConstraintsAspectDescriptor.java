@@ -4,48 +4,51 @@ package jetbrains.mps.samples.agreementLanguage.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1715758101:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.Plan"));
-      case -1643669265:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.Value"));
-      case -1658750440:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.Event"));
-      case 496321613:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.Quantity"));
-      case 777938137:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"));
-      case -1716125584:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.Date"));
-      case 990754180:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty"));
-      case -582045326:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.EventType"));
-      case 684791988:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.EventVariable"));
-      case -405423725:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"));
-      case -324188580:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.PostingRule"));
-      case -273965051:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.AccountType"));
-      case 416993527:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EventVariableReference_Constraints());
-      case 635527964:
+      case 16:
         return new DataHolderConstraintsDescriptor(new ValueReference_Constraints());
-      case -846762783:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations"));
-      case -863414623:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.Date_Past"));
-      case -1080551278:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.agreementLanguage.structure.Date_Future"));
       default:
         return null;

@@ -4,26 +4,29 @@ package jetbrains.mps.baseLanguage.contracts.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.contracts.structure.Condition", "jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression", "jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", "jetbrains.mps.baseLanguage.contracts.structure.Postcondition", "jetbrains.mps.baseLanguage.contracts.structure.Precondition", "jetbrains.mps.baseLanguage.contracts.structure.ResultExpression"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1462653072:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"));
-      case -335874193:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Precondition"));
-      case -42022740:
+      case 5:
         return new DataHolderConstraintsDescriptor(new ResultExpression_Constraints());
-      case 1446856132:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Postcondition"));
-      case 542914276:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.contracts.structure.Condition"));
-      case -1856550305:
+      case 1:
         return new DataHolderConstraintsDescriptor(new ContractThisExpression_Constraints());
       default:
         return null;

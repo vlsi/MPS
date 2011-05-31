@@ -4,6 +4,7 @@ package jetbrains.mps.lang.quotation.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,23 +13,25 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 1297092609:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger"});
-      case 1908060675:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.Antiquotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -142443611:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.Quotation", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger"});
-      case 1042705766:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.LinkAttribute"});
-      case -1479332475:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.ListAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 2120826158:
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.PropertyAttribute"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.Quotation", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.LinkAttribute"});
       default:
         return null;
     }

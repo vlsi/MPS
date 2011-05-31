@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.table.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="CellModel_HierarchycalTable_Constraints.java" startLine="32" startPosition="47" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1" />
   <unitInfo fileName="CellModel_HierarchycalTable_Constraints.java" startLine="51" startPosition="42" endLine="69" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.table.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="CellModel_HierarchycalTable_Constraints.java" startLine="70" startPosition="48" endLine="91" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
   <unitInfo fileName="CellModel_HierarchycalTable_Constraints.java" startLine="22" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints" />
   <root nodeId="6216065619544939788">

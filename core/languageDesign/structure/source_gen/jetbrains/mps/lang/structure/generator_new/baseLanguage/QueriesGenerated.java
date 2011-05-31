@@ -6,10 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.structure.generator_new.util.QueriesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -39,6 +37,7 @@ import java.util.HashSet;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -49,9 +48,8 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).isNotEmpty();
   }
 
-  public static boolean createRootRule_Condition_5088050568745383103(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    SModel model = _context.getOriginalInputModel();
-    return (Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.STRUCTURE) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
+  public static boolean createRootRule_Condition_3125857749401203974(final IOperationContext operationContext, final CreateRootRuleContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930170217(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -1129,7 +1127,11 @@ __switch__:
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       }
-    });
+    }).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      }
+    }, true);
   }
 
   public static SNode mapSrcMacro_mapper_1178978044712(final IOperationContext operationContext, final MapSrcMacroContext _context) {

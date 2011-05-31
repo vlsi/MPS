@@ -51,7 +51,7 @@
   <unitInfo fileName="PrecisionSetting_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.PrecisionSetting_PropertySupport" />
   <unitInfo fileName="RoundingMode_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.RoundingMode_PropertySupport" />
   <unitInfo fileName="CastTargetDescriptor_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.CastTargetDescriptor_PropertySupport" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="143" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="146" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="MatrixElementAccessExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression" />
   <unitInfo fileName="MatrixZero.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.MatrixZero" />
   <unitInfo fileName="MathContext.java" startLine="11" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.MathContext" />
@@ -69,6 +69,6 @@
   <unitInfo fileName="MatrixType.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.MatrixType" />
   <unitInfo fileName="MatrixInitializer.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.MatrixInitializer" />
   <unitInfo fileName="CastTargetDescriptor.java" startLine="9" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.CastTargetDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.StructureAspectDescriptor" />
 </debugInfo>
 

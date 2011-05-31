@@ -4,6 +4,7 @@ package jetbrains.mps.lang.generator.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,167 +13,169 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", "jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", "jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.generator.structure.CreateRootRule_Condition", "jetbrains.mps.lang.generator.structure.DismissTopMappingRule", "jetbrains.mps.lang.generator.structure.DropRootRule", "jetbrains.mps.lang.generator.structure.DropRootRule_Condition", "jetbrains.mps.lang.generator.structure.GeneratorDescriptor", "jetbrains.mps.lang.generator.structure.GeneratorMessage", "jetbrains.mps.lang.generator.structure.GeneratorParameterReference", "jetbrains.mps.lang.generator.structure.IGeneratorParameter", "jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.IfMacro", "jetbrains.mps.lang.generator.structure.IfMacro_Condition", "jetbrains.mps.lang.generator.structure.IncludeMacro", "jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InsertMacro", "jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery", "jetbrains.mps.lang.generator.structure.LabelMacro", "jetbrains.mps.lang.generator.structure.LoopMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro", "jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", "jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MappingConfiguration", "jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", "jetbrains.mps.lang.generator.structure.MappingScript", "jetbrains.mps.lang.generator.structure.MappingScriptReference", "jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", "jetbrains.mps.lang.generator.structure.ReductionRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", "jetbrains.mps.lang.generator.structure.Root_MappingRule", "jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery", "jetbrains.mps.lang.generator.structure.SwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery", "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", "jetbrains.mps.lang.generator.structure.TemplateCallMacro", "jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", "jetbrains.mps.lang.generator.structure.TemplateFragment", "jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", "jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", "jetbrains.mps.lang.generator.structure.TemplateQueryBase", "jetbrains.mps.lang.generator.structure.TemplateSwitch", "jetbrains.mps.lang.generator.structure.TemplateSwitchReference", "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.WeaveMacro", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 240434391:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.PropertyMacro", new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute"});
-      case -517017398:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.NodeMacro", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -984683167:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.ReferenceMacro", new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute"});
-      case -19379584:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case 880434408:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingConfiguration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case 1323014922:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFragment", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -694200722:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateSwitch", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
-      case 1845354200:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.SwitchMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 270361725:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateSwitchReference", new String[]{}, new String[]{}, new String[]{});
-      case 983256987:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -706638209:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.CopySrcListMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 865059471:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.IfMacro", new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 290450792:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.LoopMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -1026581822:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 1578490278:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MapSrcListMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 1688157754:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.CreateRootRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1951843638:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.CreateRootRule_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1708728181:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 788616901:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 16943929:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.BaseMappingRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1001561066:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule"}, new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 809657054:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 145224461:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.Root_MappingRule", new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule"}, new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1503866734:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1260041018:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 2081911779:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 2051280653:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -1285446837:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.IfMacro_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1225539479:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 1828840154:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -802631357:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -1963258745:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.RuleConsequence", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -740236117:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.ITemplateCall"}, new String[]{"jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 717173599:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.DismissTopMappingRule", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 136762859:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 1460916875:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1301128236:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.GeneratorMessage", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -2142679212:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 450186907:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 187173804:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 846503888:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -2032736564:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 626205867:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -193915147:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 251441700:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.IncludeMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 117647253:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -205156606:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 388371737:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingScript", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 110048986:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -1252329934:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingScriptReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -903726924:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 897581757:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 170085951:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateQueryBase", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 635777325:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.DropRootRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1452546967:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.DropRootRule_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -1817930092:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -738651478:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.AbstractMacro", new String[]{}, new String[]{}, new String[]{});
-      case -1153292341:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1484299922:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{"jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -277709087:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.ITemplateCall", new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable"});
-      case -4058871:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -2017778799:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 234268125:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 956292591:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.ReductionRule", new String[]{}, new String[]{}, new String[]{});
-      case -1595525702:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1715606119:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1355318156:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 914250388:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateCallMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.generator.structure.ITemplateCall"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 1296111614:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 2058499135:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.IGeneratorParameter", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1111017602:
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.BaseMappingRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.CopySrcListMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.CreateRootRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.CreateRootRule_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.DismissTopMappingRule", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.DropRootRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.DropRootRule_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 11:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.GeneratorDescriptor", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 54979509:
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.GeneratorMessage", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 13:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.GeneratorParameterReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 444291626:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1859510884:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -1536745640:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.LabelMacro", new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -387170701:
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.IGeneratorParameter", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.ITemplateCall", new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.IfMacro", new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.IfMacro_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.IncludeMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 23:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InsertMacro", new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 777899102:
+      case 24:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -2078831158:
+      case 25:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.LabelMacro", new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 26:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.LoopMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 27:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MapSrcListMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 28:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 29:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 30:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 31:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingConfiguration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
+      case 32:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 33:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 34:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingScript", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 35:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingScriptReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 36:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 37:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.NodeMacro", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 38:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{"jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 39:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.PropertyMacro", new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute"});
+      case 40:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 41:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.ReductionRule", new String[]{}, new String[]{}, new String[]{});
+      case 42:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 43:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.ReferenceMacro", new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute"});
+      case 44:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 45:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 46:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.Root_MappingRule", new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule"}, new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 47:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.RuleConsequence", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 48:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 49:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 50:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 51:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.SwitchMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 52:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 53:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 54:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 55:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 56:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 57:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 58:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 59:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateCallMacro", new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.generator.structure.ITemplateCall"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 60:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
+      case 61:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.ITemplateCall"}, new String[]{"jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 62:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFragment", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 63:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 64:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 65:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 66:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 67:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 68:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 69:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 70:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 71:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateQueryBase", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 72:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateSwitch", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"});
+      case 73:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.TemplateSwitchReference", new String[]{}, new String[]{}, new String[]{});
+      case 74:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 75:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.WeaveMacro", new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 76:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule"}, new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 77:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery", new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       default:
         return null;
     }

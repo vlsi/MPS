@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="TestPropertyVariableReference_Constraints.java" startLine="26" startPosition="34" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.pattern.testLang.constraints.TestPropertyVariableReference_Constraints$1" />
   <unitInfo fileName="TestVariableReference_Constraints.java" startLine="33" startPosition="34" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.pattern.testLang.constraints.TestVariableReference_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="TestPropertyVariableReference_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.constraints.TestPropertyVariableReference_Constraints" />
   <unitInfo fileName="TestVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.constraints.TestVariableReference_Constraints" />
   <root nodeId="1563914226484898755">

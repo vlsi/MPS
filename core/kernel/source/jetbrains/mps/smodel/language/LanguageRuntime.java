@@ -23,10 +23,16 @@ import jetbrains.mps.smodel.structure.*;
 
 import java.util.Collection;
 
+import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguageNamespace;
+
 /**
  * evgeny, 3/11/11
  */
 public abstract class LanguageRuntime {
+  private DescriptorProvider<StructureDescriptor> structureDescriptor;
+  private DescriptorProvider<BehaviorDescriptor> behaviorDescriptor;
+  private DescriptorProvider<ConstraintsDescriptor> constraintsDescriptor;
+
   public abstract String getNamespace();
 
   public IHelginsDescriptor getTypesystem() {
@@ -40,23 +46,30 @@ public abstract class LanguageRuntime {
 
   public abstract Collection<TemplateModule> getGenerators();
 
+  private <T> DescriptorProvider<T> getDescriptorProvider(String aspectName, DescriptorProvider<T> defaultProvider) {
+    String className = getNamespace() + "." + aspectName;
+    DescriptorProvider<T> compiled = (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+    return compiled != null ? compiled : defaultProvider;
+  }
+
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
-    return LanguageRuntimeInterpreted.STRUCTURE_PROVIDER;
+    if (structureDescriptor == null) {
+      structureDescriptor = getDescriptorProvider("structure.StructureAspectDescriptor", LanguageRuntimeInterpreted.STRUCTURE_PROVIDER);
+    }
+    return structureDescriptor;
   }
 
   public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
-    return LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER;
+    if (behaviorDescriptor == null) {
+      behaviorDescriptor = getDescriptorProvider("behavior.BehaviorAspectDescriptor", LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER);
+    }
+    return behaviorDescriptor;
   }
 
   public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
-    return LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER;
-  }
-
-  protected <T> DescriptorProvider<T> getAspectDescriptorByClassName(String className) {
-    try {
-      return (DescriptorProvider<T>) MPSModuleRepository.getInstance().getLanguage(getNamespace()).getClass(className).newInstance();
-    } catch (Throwable t) {
-      return null;
+    if (constraintsDescriptor == null) {
+      constraintsDescriptor = getDescriptorProvider("constraints.ConstraintsAspectDescriptor", LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER);
     }
+    return constraintsDescriptor;
   }
 }

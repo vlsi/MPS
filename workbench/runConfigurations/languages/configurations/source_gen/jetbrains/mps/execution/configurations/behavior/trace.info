@@ -32,7 +32,7 @@
   <unitInfo fileName="RunConfigurationProducer_Behavior.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationProducer_Behavior" />
   <unitInfo fileName="RunConfiguration_Behavior.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfiguration_Behavior" />
   <unitInfo fileName="ExecuteConfiguration_Function_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ExecuteConfiguration_Function_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1931462339887637402">
     <nodeInfo nodeId="1931462339887637405" fileName="SimpleRunConfigurationExecutor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1931462339887637404" fileName="SimpleRunConfigurationExecutor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="61" />

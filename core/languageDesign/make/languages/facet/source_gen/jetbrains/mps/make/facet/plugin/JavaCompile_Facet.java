@@ -16,7 +16,9 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -104,7 +106,7 @@ public class JavaCompile_Facet implements IFacet {
               }
               monitor.currentProgress().beginWork("Compiling", work, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
-                TResource tres = (TResource) resource;
+                final TResource tres = (TResource) resource;
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
@@ -114,20 +116,25 @@ public class JavaCompile_Facet implements IFacet {
 
                 monitor.currentProgress().advanceWork("Compiling", 50, tres.module().getModuleReference().getModuleFqName());
 
-                MPSCompilationResult cr = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressIndicator());
-                if (cr != null) {
-                  for (IMessage msg : cr.getMessages()) {
+                final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    cr.value = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressIndicator());
+                  }
+                });
+                if (cr.value != null) {
+                  for (IMessage msg : cr.value.getMessages()) {
                     monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                   }
                 }
-                if (cr == null || !(cr.isOk())) {
-                  if (cr != null) {
-                    if (cr.getErrors() > 0) {
-                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr)));
-                    } else if (cr.getWarnings() > 0) {
-                      monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr)));
+                if (cr.value == null || !(cr.value.isOk())) {
+                  if (cr.value != null) {
+                    if (cr.value.getErrors() > 0) {
+                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr.value)));
+                    } else if (cr.value.getWarnings() > 0) {
+                      monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(cr.value)));
                     } else {
-                      monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr)));
+                      monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(cr.value)));
                     }
                   }
                   return new IResult.FAILURE(_output_wf1ya0_a0a);

@@ -35,12 +35,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Dec 9, 2010
- * Time: 12:11:13 PM
- */
 public class InequalityBlock extends RelationBlock {
   private boolean lessThan;
 
@@ -147,13 +141,11 @@ public class InequalityBlock extends RelationBlock {
   }
 
   private String getPresentationInternal(SNode left, SNode right) {
-    String sign = myRelationKind.getRelationSign();
     if (lessThan) {
-      sign = ":" + sign;
+      return left + myRelationKind.getRelationSign() + right;
     } else {
-      sign = sign + ":";
+      return right + myRelationKind.getReversedRelationSign() + left;
     }
-    return left + sign + right;
   }
 
   @Override

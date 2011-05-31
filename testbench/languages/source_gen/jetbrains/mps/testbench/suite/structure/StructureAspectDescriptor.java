@@ -4,6 +4,7 @@ package jetbrains.mps.testbench.suite.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,25 +13,27 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.testbench.suite.structure.IModuleRef", "jetbrains.mps.testbench.suite.structure.ITestRef", "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.testbench.suite.structure.TestCaseRef"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 342889525:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.ModuleSuite", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1711035034:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1113498860:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1242581579:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -83577265:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.ITestRef", new String[]{}, new String[]{}, new String[]{});
-      case -478411613:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.SolutionRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.IModuleRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.IModuleRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 927111861:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.IModuleRef", new String[]{}, new String[]{}, new String[]{});
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.ITestRef", new String[]{}, new String[]{}, new String[]{});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.ModuleSuite", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.SolutionRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.IModuleRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.IModuleRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.testbench.suite.structure.TestCaseRef", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

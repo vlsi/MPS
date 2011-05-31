@@ -14,6 +14,9 @@ import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class ParenthesisUtil {
+  public ParenthesisUtil() {
+  }
+
   public static void addClosingParenthesis(@NotNull SNode expression, boolean opening, EditorContext context) {
     SNode newExpr = createParenthesis(expression, opening);
     selectNode(context, newExpr, !(opening));

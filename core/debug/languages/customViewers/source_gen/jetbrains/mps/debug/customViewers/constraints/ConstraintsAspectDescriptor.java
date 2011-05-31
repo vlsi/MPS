@@ -4,84 +4,87 @@ package jetbrains.mps.debug.customViewers.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.debug.customViewers.structure.AllElementsOperation", "jetbrains.mps.debug.customViewers.structure.ArrayValueType", "jetbrains.mps.debug.customViewers.structure.CallMethodOperation", "jetbrains.mps.debug.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.ClassFqNameOperation", "jetbrains.mps.debug.customViewers.structure.ClassNameOperation", "jetbrains.mps.debug.customViewers.structure.CustomViewer", "jetbrains.mps.debug.customViewers.structure.CustomWatchable", "jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debug.customViewers.structure.ElementOperation", "jetbrains.mps.debug.customViewers.structure.ElementsRangeOperation", "jetbrains.mps.debug.customViewers.structure.FieldOperation", "jetbrains.mps.debug.customViewers.structure.FieldsListOperation", "jetbrains.mps.debug.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debug.customViewers.structure.IsInstanceOfOperation", "jetbrains.mps.debug.customViewers.structure.JavaValueOperation", "jetbrains.mps.debug.customViewers.structure.ObjectValueType", "jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter", "jetbrains.mps.debug.customViewers.structure.PrimitiveValueType", "jetbrains.mps.debug.customViewers.structure.SizeOperation", "jetbrains.mps.debug.customViewers.structure.StringValueOperation", "jetbrains.mps.debug.customViewers.structure.StringValueType", "jetbrains.mps.debug.customViewers.structure.ToProcessMethod", "jetbrains.mps.debug.customViewers.structure.ValueType", "jetbrains.mps.debug.customViewers.structure.WatchableCreator", "jetbrains.mps.debug.customViewers.structure.WatchableListType", "jetbrains.mps.debug.customViewers.structure.WatchableType", "jetbrains.mps.debug.customViewers.structure.WatchablesListCreator"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 385455873:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ValueType"));
-      case -1266363140:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ArrayValueType"));
-      case -1840125438:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ObjectValueType"));
-      case -413293266:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.PrimitiveValueType"));
-      case 1596457070:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomWatchable"));
-      case -1554117572:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer"));
-      case -979047827:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CustomViewer"));
-      case -423315143:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchableType"));
-      case 924295629:
+      case 31:
         return new DataHolderConstraintsDescriptor(new WatchableCreator_Constraints());
-      case -902504040:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction"));
-      case -214302830:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter"));
-      case -1566379162:
+      case 13:
         return new DataHolderConstraintsDescriptor(new FieldsListOperation_Constraints());
-      case 1136979095:
+      case 12:
         return new DataHolderConstraintsDescriptor(new FieldOperation_Constraints());
-      case -1553631659:
+      case 10:
         return new DataHolderConstraintsDescriptor(new ElementOperation_Constraints());
-      case -173829120:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction"));
-      case -811022110:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction"));
-      case -1729275250:
+      case 6:
         return new DataHolderConstraintsDescriptor(new ClassNameOperation_Constraints());
-      case -1759524093:
+      case 5:
         return new DataHolderConstraintsDescriptor(new ClassFqNameOperation_Constraints());
-      case 343760412:
+      case 26:
         return new DataHolderConstraintsDescriptor(new SizeOperation_Constraints());
-      case 717792793:
+      case 0:
         return new DataHolderConstraintsDescriptor(new AllElementsOperation_Constraints());
-      case 929781387:
+      case 11:
         return new DataHolderConstraintsDescriptor(new ElementsRangeOperation_Constraints());
-      case -2122334594:
+      case 2:
         return new DataHolderConstraintsDescriptor(new CallMethodOperation_Constraints());
-      case -896987198:
+      case 22:
         return new DataHolderConstraintsDescriptor(new JavaValueOperation_Constraints());
-      case 1817147760:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.StringValueType"));
-      case 1881791729:
+      case 27:
         return new DataHolderConstraintsDescriptor(new StringValueOperation_Constraints());
-      case -2116950617:
+      case 21:
         return new DataHolderConstraintsDescriptor(new IsInstanceOfOperation_Constraints());
-      case 817968827:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer"));
-      case 2113227254:
+      case 14:
         return new DataHolderConstraintsDescriptor(new GetHighLevelValuePresentation_ConceptFunction_Constraints());
-      case -1941463794:
+      case 15:
         return new DataHolderConstraintsDescriptor(new GetHighLevelWatchablesBlock_ConceptFunction_Constraints());
-      case 711558688:
+      case 3:
         return new DataHolderConstraintsDescriptor(new CanWrapHighLevelValue_ConceptFunction_Constraints());
-      case 1061219375:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter"));
-      case -411494629:
+      case 20:
         return new DataHolderConstraintsDescriptor(new HighLevelWatchableCreator_Constraints());
-      case 1020490266:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchablesListCreator"));
-      case -1886369929:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.WatchableListType"));
-      case -463695957:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.customViewers.structure.ToProcessMethod"));
       default:
         return null;

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.money.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,25 +13,27 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyCreator", "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyType"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1002118425:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1060878338:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case -156024220:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"});
-      case 1229314471:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1606837499:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"}, new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 323417086:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"}, new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1525470265:
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"}, new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.money.structure.MoneyType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
       default:
         return null;
     }

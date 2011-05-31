@@ -4,30 +4,33 @@ package jetbrains.mps.ide.uiLanguage.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", "jetbrains.mps.ide.uiLanguage.structure.DialogExpression", "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", "jetbrains.mps.ide.uiLanguage.structure.IDEDialog", "jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", "jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", "jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 151769839:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 4:
         return new DataHolderConstraintsDescriptor(new IDEDialog_Constraints());
-      case -1952532735:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton"));
-      case -1972415012:
+      case 2:
         return new DataHolderConstraintsDescriptor(new DisposeDialogExpression_Constraints());
-      case 1305871817:
+      case 6:
         return new DataHolderConstraintsDescriptor(new ReportErrorExpression_Constraints());
-      case -1756921597:
+      case 1:
         return new DataHolderConstraintsDescriptor(new DialogExpression_Constraints());
-      case 452865592:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions"));
-      case 924388382:
+      case 7:
         return new DataHolderConstraintsDescriptor(new ReportErrorStatement_Constraints());
-      case 1927015851:
+      case 3:
         return new DataHolderConstraintsDescriptor(new DisposeDialogStatement_Constraints());
       default:
         return null;

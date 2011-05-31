@@ -32,8 +32,11 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new BuildAllBehaviors_Action());
+    addAction(new BuildAllConstraints_Action());
     addAction(new BuildAllGenerators_Action());
     addAction(new BuildAllLanguageDescriptors_Action());
+    addAction(new BuildAllStructures_Action());
     addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CleanAllModules_Action());
     addAction(new CleanModule_Action());

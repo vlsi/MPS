@@ -15,6 +15,9 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MoveRefactoringUtils {
+  public MoveRefactoringUtils() {
+  }
+
   public static void addNodeAtLink(SNode container, SNode node) {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(container)))) {

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.javadoc.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,77 +13,79 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -674486598:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -252113956:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1224573282:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 517858378:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 1901023289:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -288448233:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -268401350:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -946350287:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1812431944:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -967557280:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1339220835:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1689892011:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1438679545:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 447555986:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 842791903:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -1898345334:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -55791932:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -906120489:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -612690553:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -349428946:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1151780598:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 2059337802:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 928304358:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1255936821:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -255781154:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 15558262:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1621098166:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1216915753:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1720986962:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -661289190:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1440516478:
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -580943491:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1590048047:
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 18:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 23:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 24:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 25:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 26:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 27:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 28:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 29:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 30:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 31:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 32:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag", new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

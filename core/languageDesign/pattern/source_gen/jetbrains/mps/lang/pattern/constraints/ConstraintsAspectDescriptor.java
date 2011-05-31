@@ -4,48 +4,51 @@ package jetbrains.mps.lang.pattern.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.ActionStatement", "jetbrains.mps.lang.pattern.structure.AsPattern", "jetbrains.mps.lang.pattern.structure.InsertAfterPosition", "jetbrains.mps.lang.pattern.structure.InsertBeforePosition", "jetbrains.mps.lang.pattern.structure.InsertPosition", "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.WildcardPattern"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 716368539:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.AsPattern"));
-      case -2131337619:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.Pattern"));
-      case -1337562907:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.PatternExpression"));
-      case -1529997903:
+      case 13:
         return new DataHolderConstraintsDescriptor(new PatternVariableDeclaration_Constraints());
-      case -1029075866:
+      case 15:
         return new DataHolderConstraintsDescriptor(new PropertyPatternVariableDeclaration_Constraints());
-      case -1207555533:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.WildcardPattern"));
-      case -1884208785:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.ListPattern"));
-      case 809452491:
+      case 6:
         return new DataHolderConstraintsDescriptor(new LinkPatternVariableDeclaration_Constraints());
-      case 1712602949:
+      case 0:
         return new DataHolderConstraintsDescriptor(new ActionAsPattern_Constraints());
-      case -576410186:
+      case 1:
         return new DataHolderConstraintsDescriptor(new ActionStatement_Constraints());
-      case 156926274:
+      case 14:
         return new DataHolderConstraintsDescriptor(new PatternVariableReference_Constraints());
-      case -561000502:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.OrPattern"));
-      case -682112551:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.OrPatternClause"));
-      case 1051743621:
+      case 10:
         return new DataHolderConstraintsDescriptor(new OrPatternVariableReference_Constraints());
-      case -993142711:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertAfterPosition"));
-      case -4587228:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertBeforePosition"));
-      case -737017467:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.structure.InsertPosition"));
       default:
         return null;

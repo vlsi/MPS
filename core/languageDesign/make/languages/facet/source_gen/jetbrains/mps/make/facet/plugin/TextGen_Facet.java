@@ -25,13 +25,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.resources.TResource;
@@ -96,7 +97,7 @@ public class TextGen_Facet implements IFacet {
             case 0:
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
-                GResource gres = (GResource) resource;
+                final GResource gres = (GResource) resource;
                 monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
                   Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
@@ -130,34 +131,38 @@ public class TextGen_Facet implements IFacet {
                 });
 
                 final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, cachesDir);
-                boolean ok;
-                TextGenerator textgen = new TextGenerator(javaStreamHandler, ModelGenerationStatusManager.getInstance().getCacheGenerator(), BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator());
+                final Wrappers._boolean ok = new Wrappers._boolean();
+                final TextGenerator textgen = new TextGenerator(javaStreamHandler, ModelGenerationStatusManager.getInstance().getCacheGenerator(), BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator());
                 textgen.setFailIfNoTextgen(pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).failIfNoTextgen() != null && pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).failIfNoTextgen());
                 try {
-                  ok = textgen.handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      ok.value = textgen.handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
+                    }
+                  });
                 } finally {
                   javaStreamHandler.dispose();
                 }
 
                 final SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
                 if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
-                  ModelAccess.instance().runWriteInEDT(new Runnable() {
+                  ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
                     public void run() {
                       TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
                       ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
+                      CleanupManager.getInstance().cleanup();
                     }
                   });
                 }
-                CleanupManager.getInstance().cleanup();
 
-                if (!(ok)) {
+                if (!(ok.value)) {
                   for (String err : textgen.errors()) {
                     monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(err)));
                   }
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                ModelAccess.instance().writeFilesInEDT(new Runnable() {
+                ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
                   public void run() {
                     javaStreamHandler.flush();
                   }

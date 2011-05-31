@@ -58,7 +58,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.varia.NullAppender;
+import org.apache.log4j.ConsoleAppender;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 import org.jetbrains.annotations.NotNull;
@@ -169,7 +169,7 @@ public abstract class MpsWorker {
   }
 
   protected void setupEnvironment() {
-    BasicConfigurator.configure(new NullAppender());
+    BasicConfigurator.configure(new ConsoleAppender());
     Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
 
@@ -181,7 +181,8 @@ public abstract class MpsWorker {
     }
 
     myWasFileSystemProvider = FileSystem.getInstance().getFileSystemProvider();
-    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
+//    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
+    // TODO we use idea vfs until MPS-12571 is fixed
 
     setMacro();
     loadLibraries();
@@ -472,7 +473,11 @@ public abstract class MpsWorker {
 
       info("Read model " + modelReference);
       SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, modelReference);
-      modelDescriptors.add(smodelDescriptor);
+      if (smodelDescriptor.getModule() == null) {
+        error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
+      } else {
+        modelDescriptors.add(smodelDescriptor);
+      }
     } catch (ModelFileReadException e) {
       log(e);
     } catch (PersistenceVersionNotFoundException e) {
@@ -567,6 +572,17 @@ public abstract class MpsWorker {
 
     public void log(String text, int level) {
       myProjectComponent.log(text, level);
+    }
+  }
+
+  public static class SystemOutLogger implements AntLogger {
+
+    public void log(String text, int level) {
+      if (level == Project.MSG_ERR) {
+        System.err.println(text);
+      } else {
+        System.out.println(text);
+      }
     }
   }
 

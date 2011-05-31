@@ -75,7 +75,7 @@
   <unitInfo fileName="NodeAttributeAccessQualifier_Constraints.java" startLine="26" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.NodeAttributeAccessQualifier_Constraints" />
   <unitInfo fileName="SLinkImplicitSelect_Constraints.java" startLine="24" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints" />
   <unitInfo fileName="CheckedModuleReference_Constraints.java" startLine="22" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.CheckedModuleReference_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="323" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104840262">
     <nodeInfo nodeId="1213104840266" fileName="SPropertyAccess_Constraints.java" startLine="36" startPosition="136" endLine="37" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213104840272" fileName="SPropertyAccess_Constraints.java" startLine="37" startPosition="196" endLine="38" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

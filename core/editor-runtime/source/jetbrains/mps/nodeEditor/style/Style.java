@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.commons.lang.ObjectUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,7 +47,7 @@ public class Style {
     myEditorCell = contextCell;
   }
 
-  public void apply(EditorCell cell) {
+  public void apply(@NotNull EditorCell cell) {
     cell.getStyle().putAll(this);
   }
 

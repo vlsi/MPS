@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,133 +13,135 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", "jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.baseLanguage.regexp.structure.Regexps", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.Replacement", "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1611797126:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Regexp", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1374717238:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1336387331:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1792518964:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1755727380:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 624287648:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1397831625:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -928561125:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1300649657:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -762960189:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1589577813:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1884717202:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -101249024:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1391633112:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1074264799:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1323907037:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1468867215:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -435386697:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1231770290:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1440040543:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1279595906:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1160092315:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 308348669:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1763315530:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1185512346:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVariableAssignment"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1756957861:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -497872613:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", new String[]{}, new String[]{}, new String[]{});
-      case -706622870:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -461984278:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", new String[]{"jetbrains.mps.baseLanguage.structure.Closure"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
-      case 336988160:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -409732792:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 83244052:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1573896761:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Regexps", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 746456180:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1742097838:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 947810022:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 303155600:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 763217537:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -2086202171:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1074154617:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -256725652:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1605576616:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1955121220:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 368331698:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1839375965:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -1683994074:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 2138692255:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 289311745:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1490491956:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 1011294165:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1591715994:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -982871751:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 755114098:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart", new String[]{}, new String[]{}, new String[]{});
-      case 760122078:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
-      case 1337601162:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
-      case -1350214827:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
-      case 1675213427:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 4:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1158319995:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
-      case -1364028204:
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 16:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 439479223:
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVariableAssignment"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 23:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 24:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -983459775:
+      case 25:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 26:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 27:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 28:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 29:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 30:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 31:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 32:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 33:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 34:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 35:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 36:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 37:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 38:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 39:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 40:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Regexp", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 41:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 42:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 43:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 44:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", new String[]{}, new String[]{}, new String[]{});
+      case 45:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Regexps", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 46:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", new String[]{"jetbrains.mps.baseLanguage.structure.Closure"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
+      case 47:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 48:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 49:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 50:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.Replacement", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 51:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 52:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 53:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"});
+      case 54:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 55:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 56:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 57:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 58:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart", new String[]{}, new String[]{}, new String[]{});
+      case 59:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 60:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp", new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

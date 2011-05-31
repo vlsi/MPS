@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/sources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testProjects" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/sources_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -18,6 +18,15 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="MPS-platform" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="workbench" />
+    <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="library" name="commons-lang" level="project" />
+    <orderEntry type="module" module-name="plugin-runtime" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="Closures-runtime" />
   </component>
 </module>
 

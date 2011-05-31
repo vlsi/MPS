@@ -4,316 +4,319 @@ package jetbrains.mps.lang.smodel.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AllAttributesQualifier", "jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.AttributeAccessOperation", "jetbrains.mps.lang.smodel.structure.AttributeQualifier", "jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptPropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation", "jetbrains.mps.lang.smodel.structure.ConceptRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptReference", "jetbrains.mps.lang.smodel.structure.Concept_FindInstances", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation", "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", "jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.ILinkAccess", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer", "jetbrains.mps.lang.smodel.structure.ILinkQualifier", "jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier", "jetbrains.mps.lang.smodel.structure.IPropertyQualifier", "jetbrains.mps.lang.smodel.structure.IRefConceptArg", "jetbrains.mps.lang.smodel.structure.IReferenceOperation", "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable", "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression", "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation", "jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation", "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation", "jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation", "jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation", "jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation", "jetbrains.mps.lang.smodel.structure.Model_GetModule", "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_NodesOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsOperation", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_CopyOperation", "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", "jetbrains.mps.lang.smodel.structure.Node_DetachOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion", "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.OperationParm_Root", "jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel", "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation", "jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.RefConcept_Reference", "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", "jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess", "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess", "jetbrains.mps.lang.smodel.structure.SConceptType", "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation", "jetbrains.mps.lang.smodel.structure.SEnumMemberType", "jetbrains.mps.lang.smodel.structure.SEnumOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SModelType", "jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.lang.smodel.structure.SNodeListType", "jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeType", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SReferenceType", "jetbrains.mps.lang.smodel.structure.SearchScopeType", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", "jetbrains.mps.lang.smodel.structure._LinkAccessT"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 708799270:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 142:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SNodeType"));
-      case -21375261:
+      case 144:
         return new DataHolderConstraintsDescriptor(new SPropertyAccess_Constraints());
-      case 1617751624:
+      case 134:
         return new DataHolderConstraintsDescriptor(new SLinkAccess_Constraints());
-      case -1568011642:
+      case 136:
         return new DataHolderConstraintsDescriptor(new SLinkListAccess_Constraints());
-      case -2045080325:
+      case 141:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SNodeOperation"));
-      case 1659369510:
+      case 117:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Property_SetOperation"));
-      case 2138960647:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EnumMemberReference_Constraints());
-      case -1284314203:
+      case 51:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation"));
-      case -669504312:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation"));
-      case -2072282085:
+      case 84:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetParentOperation"));
-      case -1030782723:
+      case 95:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"));
-      case -890616405:
+      case 90:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation"));
-      case -652573587:
+      case 100:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"));
-      case -655788690:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation"));
-      case 1064039964:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation"));
-      case 566871218:
+      case 50:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation"));
-      case 195801962:
+      case 99:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation"));
-      case -189352440:
+      case 68:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_DeleteOperation"));
-      case 1357308925:
+      case 143:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"));
-      case 643287952:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation"));
-      case 374660331:
+      case 91:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation"));
-      case 816323749:
+      case 92:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation"));
-      case 2081600485:
+      case 93:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation"));
-      case -1968500615:
+      case 137:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SModelType"));
-      case -1035139008:
+      case 81:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetModelOperation"));
-      case -1087850432:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"));
-      case 734097306:
+      case 85:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation"));
-      case -531179430:
+      case 82:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation"));
-      case 447821165:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.AbstractOperationParameter"));
-      case -488554841:
+      case 103:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion"));
-      case 1870753911:
+      case 105:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.OperationParm_Root"));
-      case -294852941:
+      case 101:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.OperationParm_Concept"));
-      case -1696202114:
+      case 67:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_CopyOperation"));
-      case 2090665619:
+      case 98:
         return new DataHolderConstraintsDescriptor(new Node_IsRoleOperation_Constraints());
-      case 1364605668:
+      case 140:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SNodeListType"));
-      case 422410344:
+      case 148:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"));
-      case -1938386736:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation"));
-      case -1311228862:
+      case 139:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SNodeListCreator"));
-      case 1258112385:
+      case 83:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation"));
-      case 1826985537:
+      case 86:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation"));
-      case -1671559849:
+      case 71:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation"));
-      case -806434409:
+      case 124:
         return new DataHolderConstraintsDescriptor(new SConceptPropertyAccess_Constraints());
-      case -2143284088:
+      case 114:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum"));
-      case -2010715271:
+      case 115:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple"));
-      case -1953990159:
+      case 102:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"));
-      case -1074572116:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.ConceptReference"));
-      case -1669164802:
+      case 55:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation"));
-      case -1043058086:
+      case 70:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation"));
-      case -624033421:
+      case 79:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation"));
-      case 184391925:
+      case 78:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation"));
-      case -1398203659:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_RootsOperation"));
-      case 388587541:
+      case 59:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_NodesOperation"));
-      case 972759442:
+      case 72:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation"));
-      case 787693286:
+      case 74:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation"));
-      case -1631787870:
+      case 97:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_IsNullOperation"));
-      case -991770805:
+      case 96:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation"));
-      case -423572663:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation"));
-      case -1744877727:
+      case 75:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"));
-      case -755659195:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation"));
-      case 1934430904:
+      case 125:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SConceptType"));
-      case 1991788652:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.ConceptRefExpression"));
-      case 635577161:
+      case 73:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation"));
-      case 919558908:
+      case 123:
         return new DataHolderConstraintsDescriptor(new SConceptLinkAccess_Constraints());
-      case -794417648:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation"));
-      case -341774294:
+      case 118:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.RefConcept_Reference"));
-      case -1702548664:
+      case 80:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation"));
-      case 1295784455:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts"));
-      case -1006068109:
+      case 66:
         return new DataHolderConstraintsDescriptor(new Node_ConceptMethodCall_Constraints());
-      case -1846642407:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation"));
-      case -617077218:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation"));
-      case 1917590523:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts"));
-      case -1297609089:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy"));
-      case -633402176:
+      case 138:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SNodeCreator"));
-      case 1009358677:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_NewInstance"));
-      case 2047076096:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts"));
-      case -2146574907:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Concept_FindInstances"));
-      case -1705720592:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation"));
-      case -1615207894:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier"));
-      case -1010712843:
+      case 63:
         return new DataHolderConstraintsDescriptor(new NodeAttributeAccessQualifier_Constraints());
-      case -2089055928:
+      case 109:
         return new DataHolderConstraintsDescriptor(new PropertyAttributeAccessQualifier_Constraints());
-      case -669600687:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier"));
-      case 823490107:
+      case 108:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.PoundExpression"));
-      case -650115531:
+      case 113:
         return new DataHolderConstraintsDescriptor(new PropertyRefQualifier_Constraints());
-      case 1973703564:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier"));
-      case -1244112659:
+      case 38:
         return new DataHolderConstraintsDescriptor(new LinkAttributeAccessQualifier_Constraints());
-      case -1614584486:
+      case 49:
         return new DataHolderConstraintsDescriptor(new LinkRefQualifier_Constraints());
-      case 159685504:
+      case 150:
         return new DataHolderConstraintsDescriptor(new _LinkAccessT_Constraints());
-      case -1736302117:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.AllAttributesQualifier"));
-      case 926635024:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.AttributeAccessOperation"));
-      case -137372055:
+      case 94:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation"));
-      case 798725008:
+      case 149:
         return new DataHolderConstraintsDescriptor(new StaticConceptMethodCall_Constraints());
-      case 2127872547:
+      case 53:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_AddRootOperation"));
-      case 305629953:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.IRefConceptArg"));
-      case 1966736489:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation"));
-      case 1100603561:
+      case 45:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation"));
-      case 714749090:
+      case 116:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Property_RemoveOperation"));
-      case 209634016:
+      case 65:
         return new DataHolderConstraintsDescriptor(new NodeRefExpression_Constraints());
-      case 2023346909:
+      case 146:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SearchScopeType"));
-      case -453492024:
+      case 89:
         return new DataHolderConstraintsDescriptor(new Node_GetReferentSearchScopeOperation_Constraints());
-      case -1345123924:
+      case 147:
         return new DataHolderConstraintsDescriptor(new SearchScope_ContainsOperation_Constraints());
-      case -276515864:
+      case 48:
         return new DataHolderConstraintsDescriptor(new LinkRefExpression_Constraints());
-      case -272222870:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression"));
-      case 1135921440:
+      case 69:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_DetachOperation"));
-      case 933847071:
+      case 127:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SEnumMemberType"));
-      case -459084783:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation"));
-      case 386768545:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation"));
-      case 184419980:
+      case 129:
         return new DataHolderConstraintsDescriptor(new SEnumOperationInvocation_Constraints());
-      case -1589046052:
+      case 128:
         return new DataHolderConstraintsDescriptor(new SEnumOperation_Constraints());
-      case 1737045409:
+      case 130:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation"));
-      case -1550174959:
+      case 131:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation"));
-      case -500571047:
+      case 132:
         return new DataHolderConstraintsDescriptor(new SEnum_MemberOperation_Constraints());
-      case -2087995038:
+      case 133:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation"));
-      case 2041564066:
+      case 126:
         return new DataHolderConstraintsDescriptor(new SEnumMemberOperation_Constraints());
-      case -538966257:
+      case 107:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList"));
-      case 309777744:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation"));
-      case -1887571266:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.ILinkAccess"));
-      case -1256324059:
+      case 135:
         return new DataHolderConstraintsDescriptor(new SLinkImplicitSelect_Constraints());
-      case 1270924541:
+      case 88:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation"));
-      case -1370011493:
+      case 145:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.SReferenceType"));
-      case -560537699:
+      case 122:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation"));
-      case 45544256:
+      case 119:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation"));
-      case -698089700:
+      case 33:
         return new DataHolderConstraintsDescriptor(new IReferenceOperation_Constraints());
-      case -2024585192:
+      case 121:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation"));
-      case 440919261:
+      case 76:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation"));
-      case -66986015:
+      case 77:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation"));
-      case 161970526:
+      case 87:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation"));
-      case 1772508757:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"));
-      case 1570406875:
+      case 104:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"));
-      case -282449663:
+      case 120:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo"));
-      case 336240577:
+      case 6:
         return new DataHolderConstraintsDescriptor(new CheckedModuleReference_Constraints());
-      case 1620626116:
+      case 106:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel"));
-      case 362794326:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression"));
-      case 684508125:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement"));
-      case 1195061838:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable"));
-      case 210361014:
+      case 35:
         return new DataHolderConstraintsDescriptor(new IfInstanceOfVarReference_Constraints());
-      case -1782731619:
+      case 46:
         return new DataHolderConstraintsDescriptor(new LinkNameRefExpression_Constraints());
-      case 1725586594:
+      case 111:
         return new DataHolderConstraintsDescriptor(new PropertyNameRefExpression_Constraints());
-      case 273361687:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.AttributeAccess"));
-      case 1327217175:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.AttributeQualifier"));
-      case -483136711:
+      case 64:
         return new DataHolderConstraintsDescriptor(new NodeAttributeQualifier_Constraints());
-      case 1759731505:
+      case 39:
         return new DataHolderConstraintsDescriptor(new LinkAttributeQualifier_Constraints());
-      case -257936474:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"));
-      case -1151553588:
+      case 110:
         return new DataHolderConstraintsDescriptor(new PropertyAttributeQualifier_Constraints());
-      case -2056553200:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.ILinkQualifier"));
-      case 1112741269:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.IPropertyQualifier"));
-      case 245075847:
+      case 47:
         return new DataHolderConstraintsDescriptor(new LinkQualifier_Constraints());
-      case -1212738420:
+      case 112:
         return new DataHolderConstraintsDescriptor(new PropertyQualifier_Constraints());
-      case -872246068:
+      case 8:
         return new DataHolderConstraintsDescriptor(new ConceptPropertyNameRefExpression_Constraints());
-      case -419495005:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.Model_GetModule"));
-      case -1992681106:
+      case 62:
         return new DataHolderConstraintsDescriptor(new ModuleReferenceExpression_Constraints());
-      case -437036222:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression"));
       default:
         return null;

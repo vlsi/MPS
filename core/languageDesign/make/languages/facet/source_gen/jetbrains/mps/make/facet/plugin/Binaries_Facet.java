@@ -124,7 +124,7 @@ public class Binaries_Facet implements IFacet {
               });
               _output_8acy7z_a0a = Sequence.fromIterable(_output_8acy7z_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
 
-              ModelAccess.instance().writeFilesInEDT(new Runnable() {
+              ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
                 public void run() {
                   Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
                     public void visit(Tuples._2<IFile, IFile> ftc) {

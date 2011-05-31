@@ -19,7 +19,7 @@
   <unitInfo fileName="LineList.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mpslite.structure.LineList" />
   <unitInfo fileName="Line.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mpslite.structure.Line" />
   <unitInfo fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum_PropertySupport" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="81" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mpslite.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="84" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mpslite.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ChildPart.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mpslite.structure.ChildPart" />
   <unitInfo fileName="MPSLitePropertyType_Enum.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum" />
   <unitInfo fileName="ConceptContainer.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mpslite.structure.ConceptContainer" />
@@ -29,9 +29,9 @@
   <unitInfo fileName="ExpressionConcept.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mpslite.structure.ExpressionConcept" />
   <unitInfo fileName="StatementConcept.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mpslite.structure.StatementConcept" />
   <unitInfo fileName="FeatureAccessConcept.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mpslite.structure.FeatureAccessConcept" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mpslite.structure.StructureAspectDescriptor" />
   <unitInfo fileName="BlockConcept.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mpslite.structure.BlockConcept" />
   <unitInfo fileName="MPSLiteConceptDeclaration.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mpslite.structure.StructureAspectDescriptor" />
   <unitInfo fileName="BinaryOperationConcept.java" startLine="14" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mpslite.structure.BinaryOperationConcept" />
   <unitInfo fileName="VariableConcept.java" startLine="14" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mpslite.structure.VariableConcept" />
 </debugInfo>

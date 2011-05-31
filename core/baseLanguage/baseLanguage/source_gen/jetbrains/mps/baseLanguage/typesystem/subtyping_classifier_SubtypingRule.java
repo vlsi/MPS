@@ -51,7 +51,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
             ((SNode) supertypeCopy).removeChild(typeParam);
             continue;
           }
-          SNode newNode = SNodeOperations.copyNode(ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(clt, "parameter", true))).getElement(i));
+          SNode newNode = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(clt, "parameter", true)).getElement(i));
           SNodeOperations.replaceWithAnother(typeVar, newNode);
         }
       }

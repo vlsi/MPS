@@ -4,6 +4,7 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,67 +13,69 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mpslite.structure.BinaryOperationConcept", "jetbrains.mpslite.structure.BlockBodyPart", "jetbrains.mpslite.structure.BlockConcept", "jetbrains.mpslite.structure.BlockReference", "jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.ConceptContainer", "jetbrains.mpslite.structure.ConcreteChildPart", "jetbrains.mpslite.structure.ConcretePropertyPart", "jetbrains.mpslite.structure.ConcreteReferencePart", "jetbrains.mpslite.structure.ConstantLinePart", "jetbrains.mpslite.structure.ExpressionConcept", "jetbrains.mpslite.structure.FeatureAccessConcept", "jetbrains.mpslite.structure.IMPSLiteConcept", "jetbrains.mpslite.structure.IndentLinePart", "jetbrains.mpslite.structure.Line", "jetbrains.mpslite.structure.LineList", "jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", "jetbrains.mpslite.structure.MPSLiteConceptReference", "jetbrains.mpslite.structure.NamePropertyNamePart", "jetbrains.mpslite.structure.OptionalPart", "jetbrains.mpslite.structure.PropertyPart", "jetbrains.mpslite.structure.ReferencePart", "jetbrains.mpslite.structure.RegularConceptReference", "jetbrains.mpslite.structure.StatementConcept", "jetbrains.mpslite.structure.TypePart", "jetbrains.mpslite.structure.VariableConcept"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 514537623:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.Line", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -289084118:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.LinePart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1601666542:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConstantLinePart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 103985078:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.IndentLinePart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1218873622:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConcreteReferencePart", new String[]{"jetbrains.mpslite.structure.ReferencePart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.ReferencePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1343505516:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ChildPart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1436461334:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.OptionalPart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1185303143:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConcreteChildPart", new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1764886373:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ReferencePart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 253920717:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.MPSLiteConceptDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -289195563:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.LineList", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1250297589:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.PropertyPart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1616899376:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConcretePropertyPart", new String[]{"jetbrains.mpslite.structure.PropertyPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.PropertyPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1908169944:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.AbstractConceptReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 923027550:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.MPSLiteConceptReference", new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1298220036:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.RegularConceptReference", new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -343724848:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.IMPSLiteConcept", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 191602437:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BinaryOperationConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -694953039:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.FeatureAccessConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1581481929:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.VariableConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 447667553:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.NamePropertyNamePart", new String[]{"jetbrains.mpslite.structure.PropertyPart"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.PropertyPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 2140911984:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.TypePart", new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1547490076:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConceptContainer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1971525092:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.StatementConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1739767021:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ExpressionConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -187385154:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BlockConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 771570463:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BlockBodyPart", new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 280085025:
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BlockConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 4:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.BlockReference", new String[]{"jetbrains.mpslite.structure.MPSLiteConceptReference"}, new String[]{"jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mpslite.structure.MPSLiteConceptReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ChildPart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConceptContainer", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConcreteChildPart", new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConcretePropertyPart", new String[]{"jetbrains.mpslite.structure.PropertyPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.PropertyPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConcreteReferencePart", new String[]{"jetbrains.mpslite.structure.ReferencePart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.ReferencePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ConstantLinePart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ExpressionConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.FeatureAccessConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.IMPSLiteConcept", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.IndentLinePart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.Line", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.LineList", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.LinePart", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.MPSLiteConceptDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.MPSLiteConceptReference", new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.NamePropertyNamePart", new String[]{"jetbrains.mpslite.structure.PropertyPart"}, new String[]{"jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.PropertyPart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.OptionalPart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.PropertyPart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 23:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.ReferencePart", new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 24:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.RegularConceptReference", new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 25:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.StatementConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 26:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.TypePart", new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 27:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mpslite.structure.VariableConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       default:
         return null;
     }

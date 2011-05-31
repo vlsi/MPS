@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -103,4 +104,14 @@ public interface ModelCommandExecutor {
   <T> T tryRead(Computable<T> c);
 
   void flushEventQueue();
+
+  boolean tryWrite(Runnable r);
+
+  <T> T tryWrite(Computable<T> c);
+
+  boolean tryWriteInCommand(Runnable r, Project p);
+
+  <T> T tryWriteInCommand(Computable<T> r, Project p);
+
+  void runWriteInEDTAndWait(Runnable r);
 }

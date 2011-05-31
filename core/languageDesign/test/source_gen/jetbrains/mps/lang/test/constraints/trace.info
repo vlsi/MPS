@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="TestNodeReference_Constraints.java" startLine="30" startPosition="34" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$1" />
   <unitInfo fileName="TestNodeReference_Constraints.java" startLine="20" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104844716">
     <nodeInfo nodeId="1228735143622" fileName="TestNodeReference_Constraints.java" startLine="38" startPosition="139" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104844720" fileName="TestNodeReference_Constraints.java" startLine="40" startPosition="9" endLine="41" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

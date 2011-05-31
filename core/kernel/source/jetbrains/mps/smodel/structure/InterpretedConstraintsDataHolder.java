@@ -31,7 +31,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-import static jetbrains.mps.smodel.structure.DescriptorUtils.getClassByNameForConcept;
+import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForConcept;
 
 public class InterpretedConstraintsDataHolder extends ConstraintsDataHolder {
   private static final Logger LOG = Logger.getLogger(InterpretedConstraintsDataHolder.class);
@@ -46,14 +46,14 @@ public class InterpretedConstraintsDataHolder extends ConstraintsDataHolder {
   }
 
   private static Method getMethod(final String conceptFqName, final String methodName, final Class... parameterTypes) {
-    Class constraintsClass = getClassByNameForConcept(NameUtil.getAspectNodeFqName(conceptFqName, LanguageAspect.CONSTRAINTS) + "_Constraints", conceptFqName);
+    Object constraintsObject = getObjectByClassNameForConcept(NameUtil.getAspectNodeFqName(conceptFqName, LanguageAspect.CONSTRAINTS) + "_Constraints", conceptFqName, false);
 
-    if (constraintsClass == null) {
+    if (constraintsObject == null) {
       return null;
     }
 
     try {
-      return constraintsClass.getMethod(methodName, parameterTypes);
+      return constraintsObject.getClass().getMethod(methodName, parameterTypes);
     } catch (NoSuchMethodException e) {
       //it's ok
       return null;

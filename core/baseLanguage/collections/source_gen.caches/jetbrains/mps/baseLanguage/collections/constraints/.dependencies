@@ -101,6 +101,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractContainerCreator_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractEnumeratorOperation_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractIteratorOperation_Constraints" />

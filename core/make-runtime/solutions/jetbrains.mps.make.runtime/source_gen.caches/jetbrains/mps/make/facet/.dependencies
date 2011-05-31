@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.facet.FacetRegistry" file="FacetRegistry.java">
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.IFacet" file="IFacet.java">
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.util.SmartWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.ITarget" file="ITarget.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.util.SmartWrapper" />

@@ -24,6 +24,9 @@ public final class VisibilityUtil {
     if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       return isClassifierAccessible(context, SNodeOperations.cast(name, "jetbrains.mps.baseLanguage.structure.Classifier"));
     }
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(name), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      return true;
+    }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
       return true;
     }
@@ -43,7 +46,7 @@ public final class VisibilityUtil {
             // check ExpressionName or PrimaryExpression is subclass of cls, works only with right context 
             //  will not work in the case: otherClass.method(protectedMethod()) with enclosed node as context 
             SNode qualifier = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(qualifier), new VisibilityUtil.QuotationClass_v8uv56_a1a0d0a0a0c0g0a().createNode(cls))) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(qualifier), new VisibilityUtil.QuotationClass_v8uv56_a1a0d0a0a0c0h0a().createNode(cls))) {
               return true;
             }
           } else if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
@@ -106,8 +109,8 @@ public final class VisibilityUtil {
     });
   }
 
-  public static class QuotationClass_v8uv56_a1a0d0a0a0c0g0a {
-    public QuotationClass_v8uv56_a1a0d0a0a0c0g0a() {
+  public static class QuotationClass_v8uv56_a1a0d0a0a0c0h0a {
+    public QuotationClass_v8uv56_a1a0d0a0a0c0h0a() {
     }
 
     public SNode createNode(Object parameter_3) {

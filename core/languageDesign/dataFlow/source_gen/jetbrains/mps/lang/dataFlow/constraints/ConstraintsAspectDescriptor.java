@@ -4,78 +4,81 @@ package jetbrains.mps.lang.dataFlow.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.dataFlow.structure.AfterPosition", "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement", "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.BeforePosition", "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.BuilderBlock", "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement", "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", "jetbrains.mps.lang.dataFlow.structure.EmitReadStatement", "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", "jetbrains.mps.lang.dataFlow.structure.EmitStatement", "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement", "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression", "jetbrains.mps.lang.dataFlow.structure.InsertAfter", "jetbrains.mps.lang.dataFlow.structure.InsertBefore", "jetbrains.mps.lang.dataFlow.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation", "jetbrains.mps.lang.dataFlow.structure.InstructionIsJump", "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop", "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet", "jetbrains.mps.lang.dataFlow.structure.InstructionType", "jetbrains.mps.lang.dataFlow.structure.LabelPosition", "jetbrains.mps.lang.dataFlow.structure.NodeParameter", "jetbrains.mps.lang.dataFlow.structure.Position", "jetbrains.mps.lang.dataFlow.structure.RelativePosition"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 781208318:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 7:
         return new DataHolderConstraintsDescriptor(new DataFlowBuilderDeclaration_Constraints());
-      case 2109449209:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.BuilderBlock"));
-      case -1555277216:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.NodeParameter"));
-      case 2034985333:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmitStatement_Constraints());
-      case 131060122:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitNopStatement"));
-      case -1548147329:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitReadStatement"));
-      case -681365494:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement"));
-      case -196981368:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement"));
-      case 1565330160:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.Position"));
-      case -1271191844:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.RelativePosition"));
-      case -1526395313:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.BeforePosition"));
-      case -626591298:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.AfterPosition"));
-      case 33740438:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement"));
-      case -756947382:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement"));
-      case 417658343:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement"));
-      case 166027885:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement"));
-      case 650981384:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitRetStatement"));
-      case -1707265434:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable"));
-      case 137733005:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement"));
-      case 182988949:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"));
-      case 35707606:
+      case 28:
         return new DataHolderConstraintsDescriptor(new LabelPosition_Constraints());
-      case -1997831300:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.InsertAfter"));
-      case -1775929889:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.InsertBefore"));
-      case 2009708425:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.InsertPosition"));
-      case -1739774491:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression"));
-      case -361084607:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.InstructionType"));
-      case -1991741667:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation"));
-      case -403508047:
+      case 3:
         return new DataHolderConstraintsDescriptor(new BaseInstructionOperation_Constraints());
-      case 1680909342:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.InstructionIsNop"));
-      case 1680912880:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.InstructionIsRet"));
-      case -676931686:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation"));
-      case 568468671:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.dataFlow.structure.InstructionIsJump"));
       default:
         return null;

@@ -4,32 +4,35 @@ package jetbrains.mps.debug.evaluation.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -835008139:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept"));
-      case -1499134616:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.LowLevelVariable"));
-      case 833311062:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EvaluatorsThisExpression_Constraints());
-      case 1739473722:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EvaluatorsSuperMethodCall_Constraints());
-      case -1958274575:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"));
-      case 1670737599:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation"));
-      case -262934845:
+      case 6:
         return new DataHolderConstraintsDescriptor(new LowLevelVariableReference_Constraints());
-      case -1756447448:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"));
-      case -1013793137:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation"));
       default:
         return null;

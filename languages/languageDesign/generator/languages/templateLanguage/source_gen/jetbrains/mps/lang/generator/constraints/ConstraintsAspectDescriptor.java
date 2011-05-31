@@ -4,170 +4,173 @@ package jetbrains.mps.lang.generator.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", "jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", "jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.generator.structure.CreateRootRule_Condition", "jetbrains.mps.lang.generator.structure.DismissTopMappingRule", "jetbrains.mps.lang.generator.structure.DropRootRule", "jetbrains.mps.lang.generator.structure.DropRootRule_Condition", "jetbrains.mps.lang.generator.structure.GeneratorDescriptor", "jetbrains.mps.lang.generator.structure.GeneratorMessage", "jetbrains.mps.lang.generator.structure.GeneratorParameterReference", "jetbrains.mps.lang.generator.structure.IGeneratorParameter", "jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.IfMacro", "jetbrains.mps.lang.generator.structure.IfMacro_Condition", "jetbrains.mps.lang.generator.structure.IncludeMacro", "jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InsertMacro", "jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery", "jetbrains.mps.lang.generator.structure.LabelMacro", "jetbrains.mps.lang.generator.structure.LoopMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro", "jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", "jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MappingConfiguration", "jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", "jetbrains.mps.lang.generator.structure.MappingScript", "jetbrains.mps.lang.generator.structure.MappingScriptReference", "jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", "jetbrains.mps.lang.generator.structure.ReductionRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", "jetbrains.mps.lang.generator.structure.Root_MappingRule", "jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery", "jetbrains.mps.lang.generator.structure.SwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery", "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", "jetbrains.mps.lang.generator.structure.TemplateCallMacro", "jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", "jetbrains.mps.lang.generator.structure.TemplateFragment", "jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", "jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", "jetbrains.mps.lang.generator.structure.TemplateQueryBase", "jetbrains.mps.lang.generator.structure.TemplateSwitch", "jetbrains.mps.lang.generator.structure.TemplateSwitchReference", "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.WeaveMacro", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 240434391:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PropertyMacro"));
-      case -517017398:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.NodeMacro"));
-      case -984683167:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReferenceMacro"));
-      case -19379584:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
-      case 880434408:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingConfiguration"));
-      case 1323014922:
+      case 62:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFragment"));
-      case -694200722:
+      case 72:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateSwitch"));
-      case 1845354200:
+      case 51:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SwitchMacro"));
-      case 270361725:
+      case 73:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateSwitchReference"));
-      case 983256987:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"));
-      case -706638209:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CopySrcListMacro"));
-      case 865059471:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IfMacro"));
-      case 290450792:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.LoopMacro"));
-      case -1026581822:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"));
-      case 1578490278:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcListMacro"));
-      case 1688157754:
+      case 6:
         return new DataHolderConstraintsDescriptor(new CreateRootRule_Constraints());
-      case 1951843638:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.CreateRootRule_Condition"));
-      case 1708728181:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition"));
-      case 788616901:
+      case 67:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode"));
-      case 16943929:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.BaseMappingRule"));
-      case 1001561066:
+      case 76:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Weaving_MappingRule"));
-      case 809657054:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Reduction_MappingRule"));
-      case 145224461:
+      case 46:
         return new DataHolderConstraintsDescriptor(new Root_MappingRule_Constraints());
-      case 1503866734:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue"));
-      case 1260041018:
+      case 68:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue"));
-      case 2081911779:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent"));
-      case 2051280653:
+      case 69:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent"));
-      case -1285446837:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IfMacro_Condition"));
-      case 1225539479:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"));
-      case 1828840154:
+      case 50:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery"));
-      case -802631357:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery"));
-      case -1963258745:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.RuleConsequence"));
-      case -740236117:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"));
-      case 717173599:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DismissTopMappingRule"));
-      case 136762859:
+      case 45:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
-      case 1460916875:
+      case 74:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"));
-      case -1301128236:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.GeneratorMessage"));
-      case -2142679212:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction"));
-      case 450186907:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
-      case 187173804:
+      case 63:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery"));
-      case 846503888:
+      case 64:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode"));
-      case -2032736564:
+      case 77:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery"));
-      case 626205867:
+      case 65:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode"));
-      case -193915147:
+      case 66:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode"));
-      case 251441700:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IncludeMacro"));
-      case 117647253:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"));
-      case -205156606:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineSwitch_Case"));
-      case 388371737:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScript"));
-      case 110048986:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock"));
-      case -1252329934:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingScriptReference"));
-      case -903726924:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingLabelDeclaration"));
-      case 897581757:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence"));
-      case 170085951:
+      case 71:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateQueryBase"));
-      case 635777325:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DropRootRule"));
-      case -1452546967:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.DropRootRule_Condition"));
-      case -1817930092:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction"));
-      case -738651478:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.AbstractMacro"));
-      case -1153292341:
+      case 70:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration"));
-      case -1484299922:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"));
-      case -277709087:
+      case 15:
         return new DataHolderConstraintsDescriptor(new ITemplateCall_Constraints());
-      case -4058871:
+      case 58:
         return new DataHolderConstraintsDescriptor(new TemplateArgumentQueryExpression_Constraints());
-      case -2017778799:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"));
-      case 234268125:
+      case 55:
         return new DataHolderConstraintsDescriptor(new TemplateArgumentPatternVarRefExpression_Constraints());
-      case 956292591:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.ReductionRule"));
-      case -1595525702:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"));
-      case 1715606119:
+      case 56:
         return new DataHolderConstraintsDescriptor(new TemplateArgumentPropertyPatternRefExpression_Constraints());
-      case 1355318156:
+      case 52:
         return new DataHolderConstraintsDescriptor(new TemplateArgumentLinkPatternRefExpression_Constraints());
-      case 914250388:
+      case 59:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.TemplateCallMacro"));
-      case 1296111614:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
-      case 2058499135:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.IGeneratorParameter"));
-      case 1111017602:
+      case 11:
         return new DataHolderConstraintsDescriptor(new GeneratorDescriptor_Constraints());
-      case 54979509:
+      case 13:
         return new DataHolderConstraintsDescriptor(new GeneratorParameterReference_Constraints());
-      case 444291626:
+      case 53:
         return new DataHolderConstraintsDescriptor(new TemplateArgumentParameterExpression_Constraints());
-      case 1859510884:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition"));
-      case -1536745640:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.LabelMacro"));
-      case -387170701:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InsertMacro"));
-      case 777899102:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery"));
-      case -2078831158:
+      case 75:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.generator.structure.WeaveMacro"));
       default:
         return null;

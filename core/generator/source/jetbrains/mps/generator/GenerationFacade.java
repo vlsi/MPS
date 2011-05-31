@@ -25,9 +25,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * Evgeny Gryaznov, 1/25/11
@@ -46,6 +44,17 @@ public class GenerationFacade {
 
   public static Collection<TemplateModule> getPossiblyEngagedGenerators(SModel model) {
     return GenerationPartitioningUtil.getTemplateModules(model);
+  }
+
+  public static Collection<SModelDescriptor> getModifiedModels(Collection<SModelDescriptor> models, IOperationContext context) {
+    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
+    ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
+    for(SModelDescriptor sm : models) {
+      if (statusManager.generationRequired(sm, context)) {
+        result.add(sm);
+      }
+    }
+    return result;
   }
 
   public static List<List<SNode/*MappingConfiguration*/>> getPlan(Collection<TemplateModule> generators) {

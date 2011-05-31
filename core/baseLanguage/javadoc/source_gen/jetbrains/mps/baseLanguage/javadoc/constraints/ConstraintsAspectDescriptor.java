@@ -4,80 +4,83 @@ package jetbrains.mps.baseLanguage.javadoc.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -674486598:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"));
-      case -252113956:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"));
-      case 1224573282:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag"));
-      case 517858378:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"));
-      case 1901023289:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"));
-      case -288448233:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag"));
-      case -268401350:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
-      case -946350287:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
-      case 1812431944:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag"));
-      case -967557280:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag"));
-      case -1339220835:
+      case 25:
         return new DataHolderConstraintsDescriptor(new ReturnBlockDocTag_Constraints());
-      case -1689892011:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference"));
-      case 1438679545:
+      case 14:
         return new DataHolderConstraintsDescriptor(new DocMethodParameterReference_Constraints());
-      case 447555986:
+      case 15:
         return new DataHolderConstraintsDescriptor(new DocTypeParameterReference_Constraints());
-      case 842791903:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"));
-      case -1898345334:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"));
-      case -55791932:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));
-      case -906120489:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
-      case -612690553:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"));
-      case -349428946:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"));
-      case -1151780598:
+      case 31:
         return new DataHolderConstraintsDescriptor(new ValueInlineDocTag_Constraints());
-      case 2059337802:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag"));
-      case 928304358:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"));
-      case -1255936821:
+      case 17:
         return new DataHolderConstraintsDescriptor(new FieldDocReference_Constraints());
-      case -255781154:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag"));
-      case 15558262:
+      case 23:
         return new DataHolderConstraintsDescriptor(new MethodDocReference_Constraints());
-      case 1621098166:
+      case 8:
         return new DataHolderConstraintsDescriptor(new ClassifierDocReference_Constraints());
-      case -1216915753:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag"));
-      case -1720986962:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet"));
-      case -661289190:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag"));
-      case -1440516478:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"));
-      case -580943491:
+      case 28:
         return new DataHolderConstraintsDescriptor(new StaticFieldDocReference_Constraints());
-      case 1590048047:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"));
       default:
         return null;

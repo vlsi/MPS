@@ -4,80 +4,83 @@ package jetbrains.mps.lang.constraints.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue", "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -324043823:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 31:
         return new DataHolderConstraintsDescriptor(new NodePropertyConstraint_Constraints());
-      case -1097942195:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter"));
-      case 924567529:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"));
-      case 302525407:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"));
-      case -677435673:
+      case 32:
         return new DataHolderConstraintsDescriptor(new NodeReferentConstraint_Constraints());
-      case 406326366:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase"));
-      case -914874161:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode"));
-      case -754392383:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter"));
-      case 1762292426:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"));
-      case 1458072800:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler"));
-      case 1947310469:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode"));
-      case 242589285:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode"));
-      case -509079444:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode"));
-      case -1638044063:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild"));
-      case 122787636:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode"));
-      case 1126217733:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent"));
-      case -1473086188:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept"));
-      case -124801182:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link"));
-      case 1222015891:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget"));
-      case 1797208725:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue"));
-      case -1169622576:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator"));
-      case 598810059:
+      case 0:
         return new DataHolderConstraintsDescriptor(new ConceptConstraints_Constraints());
-      case 1333086973:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot"));
-      case -33050909:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode"));
-      case 1861386597:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"));
-      case 1779423242:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"));
-      case -1367729942:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference"));
-      case 1262024282:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor"));
-      case 1054521629:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon"));
-      case 1223020358:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"));
-      case -1113348889:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator"));
-      case -219799071:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode"));
-      case 1568730315:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference"));
       default:
         return null;

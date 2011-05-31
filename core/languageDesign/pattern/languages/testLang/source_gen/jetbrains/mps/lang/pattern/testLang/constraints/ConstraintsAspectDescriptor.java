@@ -4,28 +4,31 @@ package jetbrains.mps.lang.pattern.testLang.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.pattern.testLang.structure.ListValue", "jetbrains.mps.lang.pattern.testLang.structure.PatternTest", "jetbrains.mps.lang.pattern.testLang.structure.PropertyValue", "jetbrains.mps.lang.pattern.testLang.structure.TestListReference", "jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.VariableValue"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -2089854751:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.PatternTest"));
-      case 911428916:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.VariableValue"));
-      case -1180169316:
+      case 5:
         return new DataHolderConstraintsDescriptor(new TestVariableReference_Constraints());
-      case -808094393:
+      case 4:
         return new DataHolderConstraintsDescriptor(new TestPropertyVariableReference_Constraints());
-      case -1445432965:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.PropertyValue"));
-      case 737557458:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.ListValue"));
-      case 107590202:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.pattern.testLang.structure.TestListReference"));
       default:
         return null;

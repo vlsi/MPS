@@ -29,12 +29,12 @@
   <unitInfo fileName="CWhile.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CWhile" />
   <unitInfo fileName="CAssignmentExpression.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CAssignmentExpression" />
   <unitInfo fileName="CBody.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CBody" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="85" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.nanoc.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="88" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.nanoc.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="VarDeclStatement.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.structure.VarDeclStatement" />
   <unitInfo fileName="CFor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CFor" />
   <unitInfo fileName="CStatement.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CStatement" />
   <unitInfo fileName="VarDecl.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.nanoc.structure.VarDecl" />
   <unitInfo fileName="File.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.nanoc.structure.File" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.nanoc.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.nanoc.structure.StructureAspectDescriptor" />
 </debugInfo>
 

@@ -53,13 +53,17 @@ public class ConceptRegistry implements ApplicationComponent {
     // ?
   }
 
-  private synchronized <T> T getDescriptor(DescriptorProvider<T> languageAspect, String fqName) {
+  private synchronized <T> T getDescriptor(DescriptorProvider<T> compiledProvider, String fqName, DescriptorProvider<T> defaultProvider) {
+    T descriptor = null;
     try {
-      return languageAspect.getDescriptor(fqName);
+      descriptor = compiledProvider.getDescriptor(fqName);
     } catch (Throwable t) {
       LOG.error("Error while descriptor creating from language aspect for concept " + fqName, t);
-      return null;
     }
+
+    // todo: log.warn!, discuss
+    // for behaviors null descriptors for concepts: Type, AbstractOperation, Expression. Using in editor
+    return descriptor != null ? descriptor : defaultProvider.getDescriptor(fqName);
   }
 
   private synchronized void checkConceptIsLoaded(final String fqName, LanguageAspect languageAspect) {
@@ -99,13 +103,13 @@ public class ConceptRegistry implements ApplicationComponent {
     if (languageRuntime != null) {
       switch (languageAspect) {
         case STRUCTURE:
-          structureDescriptors.put(fqName, getDescriptor(languageRuntime.getStructureAspect(), fqName));
+          structureDescriptors.put(fqName, getDescriptor(languageRuntime.getStructureAspect(), fqName, LanguageRuntimeInterpreted.STRUCTURE_PROVIDER));
           break;
         case BEHAVIOR:
-          behaviorDescriptors.put(fqName, getDescriptor(languageRuntime.getBehaviorAspect(), fqName));
+          behaviorDescriptors.put(fqName, getDescriptor(languageRuntime.getBehaviorAspect(), fqName, LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER));
           break;
         case CONSTRAINTS:
-          constraintsDescriptors.put(fqName, getDescriptor(languageRuntime.getConstraintsAspect(), fqName));
+          constraintsDescriptors.put(fqName, getDescriptor(languageRuntime.getConstraintsAspect(), fqName, LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER));
           break;
       }
     }
@@ -117,9 +121,7 @@ public class ConceptRegistry implements ApplicationComponent {
 
   public synchronized StructureDescriptor getStructureDescriptor(String fqName) {
     checkConceptIsLoaded(fqName, LanguageAspect.STRUCTURE);
-    StructureDescriptor descriptor = structureDescriptors.get(fqName);
-    // todo: ugly quick fix
-    return descriptor != null ? descriptor : LanguageRuntimeInterpreted.STRUCTURE_PROVIDER.getDescriptor(fqName);
+    return structureDescriptors.get(fqName);
   }
 
   public synchronized BehaviorDescriptor getBehaviorDescriptor(String fqName) {
@@ -137,16 +139,7 @@ public class ConceptRegistry implements ApplicationComponent {
       // todo: more clearly logic
       return LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER.getDescriptor(null);
     } else {
-      BehaviorDescriptor descriptor = getBehaviorDescriptor(node.getConceptFqName());
-
-      if (descriptor == null) {
-//        LOG.error("Null behavior descriptor for concept " + node.getConceptFqName());
-//        it's ok for concepts: Type, AbstractOperation, Expression. Using in editor
-//        todo: discuss
-        return LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER.getDescriptor(null);
-      }
-
-      return descriptor;
+      return getBehaviorDescriptor(node.getConceptFqName());
     }
   }
 

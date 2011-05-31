@@ -19,14 +19,14 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.NameUtil;
 
-import static jetbrains.mps.smodel.structure.DescriptorUtils.getClassByNameForConcept;
+import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForConcept;
 
 public class CompiledConstraintsProvider extends DescriptorProvider<ConstraintsDescriptor> {
   @Override
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    Class constraintsClass = getClassByNameForConcept(NameUtil.getAspectNodeFqName(fqName, LanguageAspect.CONSTRAINTS) + "_Constraints", fqName);
+    Object constraintsObject = getObjectByClassNameForConcept(NameUtil.getAspectNodeFqName(fqName, LanguageAspect.CONSTRAINTS) + "_Constraints", fqName, false);
 
-    if (constraintsClass == null) {
+    if (constraintsObject == null) {
       // if ConstraintsDescriptor not exist too - return EmptyConstraintsDataHolder
       if (ModelConstraintsManager.getOldConstraintsDescriptor(NameUtil.namespaceFromConceptFQName(fqName)) == null) {
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder(fqName));
@@ -35,9 +35,9 @@ public class CompiledConstraintsProvider extends DescriptorProvider<ConstraintsD
       }
     }
 
-    if (ConstraintsDataHolder.class.isAssignableFrom(constraintsClass)) {
+    if (ConstraintsDataHolder.class.isAssignableFrom(constraintsObject.getClass())) {
       try {
-        ConstraintsDataHolder compiledDataHolder = (ConstraintsDataHolder) constraintsClass.newInstance();
+        ConstraintsDataHolder compiledDataHolder = (ConstraintsDataHolder) constraintsObject;
         return new DataHolderConstraintsDescriptor(compiledDataHolder);
       } catch (Exception e) {
         return null;

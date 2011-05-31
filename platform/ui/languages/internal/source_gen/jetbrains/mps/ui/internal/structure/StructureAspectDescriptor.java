@@ -4,6 +4,7 @@ package jetbrains.mps.ui.internal.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,35 +13,37 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.ui.internal.structure.AuxObjectHandler", "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", "jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextControllerWrapper", "jetbrains.mps.ui.internal.structure.ContextViewWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapperExpression", "jetbrains.mps.ui.internal.structure.ExpressionStub", "jetbrains.mps.ui.internal.structure.GeometryHandler", "jetbrains.mps.ui.internal.structure.IContextWrapper", "jetbrains.mps.ui.internal.structure.StatementStub", "jetbrains.mps.ui.internal.structure.TypeStub"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -958159147:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextBindingWrapper", new String[]{"jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 46355948:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapper", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -1949889785:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextViewWrapper", new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 1319424232:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 1107322736:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextControllerWrapper", new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 65161903:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.AuxObjectHandler", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -949698192:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.GeometryHandler", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -1804323931:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.IContextWrapper", new String[]{}, new String[]{}, new String[]{});
-      case -385921628:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextBindingWrapper", new String[]{"jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextControllerWrapper", new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextViewWrapper", new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapper", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 6:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapperExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1339320080:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.TypeStub", new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"});
-      case 1966630254:
+      case 7:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.ExpressionStub", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"});
-      case 928355253:
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.GeometryHandler", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.IContextWrapper", new String[]{}, new String[]{}, new String[]{});
+      case 10:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.StatementStub", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ui.internal.structure.TypeStub", new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"});
       default:
         return null;
     }

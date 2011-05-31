@@ -4,6 +4,7 @@ package jetbrains.mps.build.custommps.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,18 +13,20 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.custommps.structure.MPSBuild", "jetbrains.mps.build.custommps.structure.MPSDistribution", "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1744091298:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.MPSBuild", new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"});
-      case 1823655625:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.LibraryFolder", new String[]{"jetbrains.mps.build.packaging.structure.Folder"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.Folder"});
-      case 1040375700:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.MPSBuild", new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"});
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.MPSDistribution", new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"});
-      case 828263516:
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", new String[]{"jetbrains.mps.build.packaging.structure.IStringExpression"}, new String[]{}, new String[]{"jetbrains.mps.build.packaging.structure.IStringExpression"});
       default:
         return null;

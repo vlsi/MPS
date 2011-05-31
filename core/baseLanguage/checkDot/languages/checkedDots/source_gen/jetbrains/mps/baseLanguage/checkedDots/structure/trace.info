@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="CheckedDots_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDots_Language" />
   <unitInfo fileName="CheckedDotExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="27" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="30" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.structure.StructureAspectDescriptor" />
 </debugInfo>
 

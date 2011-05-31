@@ -4,44 +4,47 @@ package jetbrains.mps.lang.findUsages.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", "jetbrains.mps.lang.findUsages.structure.CategorizeBlock", "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", "jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", "jetbrains.mps.lang.findUsages.structure.FindBlock", "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.findUsages.structure.IsApplicableBlock", "jetbrains.mps.lang.findUsages.structure.IsVisibleBlock", "jetbrains.mps.lang.findUsages.structure.MakeResultProvider", "jetbrains.mps.lang.findUsages.structure.NodeStatement", "jetbrains.mps.lang.findUsages.structure.ResultStatement", "jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1681546880:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.FindBlock"));
-      case -415867744:
+      case 7:
         return new DataHolderConstraintsDescriptor(new FinderDeclaration_Constraints());
-      case 408242384:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.IsApplicableBlock"));
-      case 238808196:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node"));
-      case -2054006786:
+      case 13:
         return new DataHolderConstraintsDescriptor(new ResultStatement_Constraints());
-      case 714333881:
+      case 12:
         return new DataHolderConstraintsDescriptor(new NodeStatement_Constraints());
-      case -1710867681:
+      case 4:
         return new DataHolderConstraintsDescriptor(new ExecuteFinderExpression_Constraints());
-      case 206834080:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.CategorizeBlock"));
-      case -658040233:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"));
-      case 1462314592:
+      case 2:
         return new DataHolderConstraintsDescriptor(new CheckCancelledStatusStatement_Constraints());
-      case 1225576921:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.IsVisibleBlock"));
-      case -191444834:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration"));
-      case 360234436:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults"));
-      case -172640271:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.FinderReference"));
-      case -772220656:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.findUsages.structure.MakeResultProvider"));
       default:
         return null;
