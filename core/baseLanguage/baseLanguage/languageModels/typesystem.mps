@@ -18735,12 +18735,15 @@
           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3545977178604772270">
             <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
           </node>
-          <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3545977178604772271">
-            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3545977178604772272">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3545977178604759351" resolveInfo="instanceOfExpression" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3545977178604772273">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1081256993305" />
+          <node role="initializer" roleId="tpee.1068431790190" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1279276159889840338">
+            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
+            <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3545977178604772271">
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3545977178604772272">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3545977178604759351" resolveInfo="instanceOfExpression" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3545977178604772273">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1081256993305" />
+              </node>
             </node>
           </node>
         </node>
