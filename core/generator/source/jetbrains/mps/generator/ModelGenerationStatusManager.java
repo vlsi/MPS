@@ -84,7 +84,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   public String currentHash(SModelDescriptor sm, IOperationContext operationContext) {
-    if (!sm.isGeneratable()) return null;
     return ModelDigestHelper.getInstance().getModelHashFast(sm, operationContext);
   }
 

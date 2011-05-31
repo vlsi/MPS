@@ -60,6 +60,12 @@ public class GenerationFacade {
         continue;
       }
 
+      // TODO regenerating all dependant models can be slow, option?
+      if(!(SModelStereotype.DESCRIPTOR.equals(sm.getStereotype()) || LanguageAspect.BEHAVIOR.is(sm) || LanguageAspect.CONSTRAINTS.is(sm))) {
+        // temporary solution: only descriptor/behavior/constraints models
+        continue;
+      }
+
       GenerationDependencies oldDependencies = GenerationDependenciesCache.getInstance().get(sm);
       if (oldDependencies == null) {
         // TODO turn on when .generated file will be mandatory
@@ -77,35 +83,12 @@ public class GenerationFacade {
         }
         String oldHash = entry.getValue();
         if (oldHash == null) {
-          result.add(sm);
-          break;
+          continue;
         }
         String newHash = ModelGenerationStatusManager.getInstance().currentHash(rmd, context);
         if (newHash == null || !oldHash.equals(newHash)) {
           result.add(sm);
           break;
-        }
-      }
-    }
-
-    // closure
-    boolean changed = true;
-    while (changed) {
-      changed = false;
-      for (SModelDescriptor sm : models) {
-        if (!sm.isGeneratable()) continue;
-        if (result.contains(sm)) continue;
-        GenerationDependencies oldDependencies = GenerationDependenciesCache.getInstance().get(sm);
-        if (oldDependencies == null) continue;
-        Map<String, String> externalHashes = oldDependencies.getExternalHashes();
-        for (Entry<String, String> entry : externalHashes.entrySet()) {
-          String modelReference = entry.getKey();
-          SModelDescriptor rmd = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
-          if (result.contains(rmd)) {
-            result.add(sm);
-            changed = true;
-            break;
-          }
         }
       }
     }
