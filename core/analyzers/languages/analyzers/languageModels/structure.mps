@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0">
+<model modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)">
   <persistence version="7" />
   <language namespace="97a52717-898f-4598-8150-573d9fd03868(jetbrains.mps.analyzers)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
@@ -144,8 +144,16 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Rules" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8424563347437821087">
+      <property name="name" nameId="tpck.1169194664001" value="InsertBeforePosition" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8424563347437829923">
       <property name="name" nameId="tpck.1169194664001" value="InsertPosition" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8424563347437829924">
+      <property name="name" nameId="tpck.1169194664001" value="InsertAfterPosition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
@@ -458,6 +466,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4943044633101449694" resolveInfo="ConceptCondition" />
     </node>
   </root>
+  <root id="8424563347437821087" />
   <root id="8424563347437829923" />
+  <root id="8424563347437829924" />
 </model>
 
