@@ -18,6 +18,8 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
@@ -26,6 +28,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.*;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Evgeny Gryaznov, 1/25/11
@@ -49,11 +52,64 @@ public class GenerationFacade {
   public static Collection<SModelDescriptor> getModifiedModels(Collection<SModelDescriptor> models, IOperationContext context) {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for(SModelDescriptor sm : models) {
+    for (SModelDescriptor sm : models) {
+      if (!sm.isGeneratable()) continue;
+
       if (statusManager.generationRequired(sm, context)) {
         result.add(sm);
+        continue;
+      }
+
+      GenerationDependencies oldDependencies = GenerationDependenciesCache.getInstance().get(sm);
+      if (oldDependencies == null) {
+        // TODO turn on when .generated file will be mandatory
+        //result.add(sm);
+        continue;
+      }
+
+      Map<String, String> externalHashes = oldDependencies.getExternalHashes();
+      for (Entry<String, String> entry : externalHashes.entrySet()) {
+        String modelReference = entry.getKey();
+        SModelDescriptor rmd = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+        if (rmd == null) {
+          result.add(sm);
+          break;
+        }
+        String oldHash = entry.getValue();
+        if (oldHash == null) {
+          result.add(sm);
+          break;
+        }
+        String newHash = ModelGenerationStatusManager.getInstance().currentHash(rmd, context);
+        if (newHash == null || !oldHash.equals(newHash)) {
+          result.add(sm);
+          break;
+        }
       }
     }
+
+    // closure
+    boolean changed = true;
+    while (changed) {
+      changed = false;
+      for (SModelDescriptor sm : models) {
+        if (!sm.isGeneratable()) continue;
+        if (result.contains(sm)) continue;
+        GenerationDependencies oldDependencies = GenerationDependenciesCache.getInstance().get(sm);
+        if (oldDependencies == null) continue;
+        Map<String, String> externalHashes = oldDependencies.getExternalHashes();
+        for (Entry<String, String> entry : externalHashes.entrySet()) {
+          String modelReference = entry.getKey();
+          SModelDescriptor rmd = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+          if (result.contains(rmd)) {
+            result.add(sm);
+            changed = true;
+            break;
+          }
+        }
+      }
+    }
+
     return result;
   }
 
@@ -63,9 +119,9 @@ public class GenerationFacade {
 
     // convert
     List<List<SNode>> result = new ArrayList<List<SNode>>(mappingSets.size());
-    for(List<TemplateMappingConfiguration> configurations : mappingSets) {
+    for (List<TemplateMappingConfiguration> configurations : mappingSets) {
       List<SNode> step = new ArrayList<SNode>(configurations.size());
-      for(TemplateMappingConfiguration c : configurations) {
+      for (TemplateMappingConfiguration c : configurations) {
         step.add(c.getMappingNode().getNode());
       }
       result.add(step);

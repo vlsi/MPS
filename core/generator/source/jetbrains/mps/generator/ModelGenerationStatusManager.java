@@ -83,6 +83,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return myCacheGenerator;
   }
 
+  public String currentHash(SModelDescriptor sm, IOperationContext operationContext) {
+    if (!sm.isGeneratable()) return null;
+    return ModelDigestHelper.getInstance().getModelHashFast(sm, operationContext);
+  }
+
   public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
     if (!sm.isGeneratable()) return false;
     if (sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isChanged()) return true;
