@@ -10,6 +10,7 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
@@ -24,7 +25,6 @@ import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.CommonPaths;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import org.jetbrains.annotations.Nullable;
@@ -100,7 +100,10 @@ public class Java_Command {
         return Java_Command.protect(it);
       }
     }), Java_Command.ps());
-    if (check_yvpt_a0c0a(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
+    if (StringUtils.isEmpty(myClassName)) {
+      throw new ExecutionException("Classname is empty");
+    }
+    if (check_yvpt_a0d0a(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
       File tmpFile = FileUtil.createTmpFile();
       // we want to be sure that file is deleted, even when process is not started 
       tmpFile.deleteOnExit();
@@ -227,7 +230,7 @@ public class Java_Command {
     };
   }
 
-  private static int check_yvpt_a0c0a(String checkedDotOperand) {
+  private static int check_yvpt_a0d0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }

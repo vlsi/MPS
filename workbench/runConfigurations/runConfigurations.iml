@@ -25,6 +25,7 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="module" module-name="make-runtime" />
   </component>
 </module>
 

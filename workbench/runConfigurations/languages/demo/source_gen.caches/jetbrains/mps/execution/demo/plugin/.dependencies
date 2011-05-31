@@ -20,6 +20,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -30,7 +31,7 @@
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration_RunProfileState" />
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Demo_Kind" />
-    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Make_Configuration" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -52,7 +53,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.demo.plugin.DemoApplication_Configuration" />
-    <classNode dependClassName="jetbrains.mps.execution.demo.plugin.Make_Configuration_Editor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>

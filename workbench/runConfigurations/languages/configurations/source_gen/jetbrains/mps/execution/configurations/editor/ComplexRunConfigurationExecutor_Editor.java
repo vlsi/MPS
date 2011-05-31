@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -47,7 +48,9 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_7no64v_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7no64v_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7no64v_d0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_7no64v_e0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_7no64v_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7no64v_f0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_7no64v_g0(editorContext, node));
     return editorCell;
   }
 
@@ -140,15 +143,15 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_7no64v_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7no64v_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7no64v_e0");
+    editorCell.setCellId("Collection_7no64v_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell_7no64v_a4a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7no64v_b4a(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell_7no64v_a6a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7no64v_b6a(editorContext, node));
     return editorCell;
   }
 
@@ -162,6 +165,12 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndentCell_7no64v_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7no64v_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7no64v_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_7no64v_e0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new BeforeTasksComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -242,6 +251,17 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_7no64v_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_7no64v_f0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_7no64v_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "debugger:");
     editorCell.setCellId("Constant_7no64v_b0");
@@ -270,7 +290,7 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createIndentCell_7no64v_a4a(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_7no64v_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
@@ -315,7 +335,7 @@ public class ComplexRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7no64v_b4a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7no64v_b6a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("execute");
     provider.setNoTargetText("<no execute>");

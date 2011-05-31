@@ -7,60 +7,70 @@ import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", "jetbrains.mps.execution.configurations.structure.StartStatement"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", "jetbrains.mps.execution.configurations.structure.StartStatement"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 11:
+      case 16:
         return new RunConfiguration_BehaviorDescriptor();
-      case 14:
+      case 19:
         return new RunConfigurationKind_BehaviorDescriptor();
-      case 13:
+      case 18:
         // interface or abstract concept behavior jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor 
         return null;
-      case 4:
+      case 9:
         return new ExecuteConfiguration_Function_BehaviorDescriptor();
-      case 10:
+      case 15:
         return new Project_Parameter_BehaviorDescriptor();
-      case 0:
+      case 4:
         return new ComplexRunConfigurationExecutor_BehaviorDescriptor();
-      case 1:
+      case 5:
         return new ConfigurationFromExecutorReference_BehaviorDescriptor();
-      case 3:
+      case 7:
         return new DebuggerSettings_Parameter_BehaviorDescriptor();
-      case 21:
+      case 26:
         // interface or abstract concept behavior jetbrains.mps.execution.configurations.structure.StartStatement 
         return null;
-      case 20:
+      case 25:
         return new StartProcessHandlerStatement_BehaviorDescriptor();
-      case 18:
+      case 23:
         return new SimpleRunConfigurationExecutor_BehaviorDescriptor();
-      case 15:
+      case 20:
         return new RunConfigurationProducer_BehaviorDescriptor();
-      case 17:
+      case 22:
         // interface or abstract concept behavior jetbrains.mps.execution.configurations.structure.RunConfigurationSource 
         return null;
-      case 16:
+      case 21:
         return new RunConfigurationProducerPart_BehaviorDescriptor();
-      case 2:
-        return new Create_ConceptFunction_BehaviorDescriptor();
-      case 19:
-        return new Source_ConceptFunctionParameter_BehaviorDescriptor();
-      case 12:
-        return new RunConfigurationCreator_BehaviorDescriptor();
-      case 5:
-        return new ModelSource_BehaviorDescriptor();
-      case 9:
-        return new ProjectSource_BehaviorDescriptor();
-      case 7:
-        return new NodeListSource_BehaviorDescriptor();
       case 6:
+        return new Create_ConceptFunction_BehaviorDescriptor();
+      case 24:
+        return new Source_ConceptFunctionParameter_BehaviorDescriptor();
+      case 17:
+        return new RunConfigurationCreator_BehaviorDescriptor();
+      case 10:
+        return new ModelSource_BehaviorDescriptor();
+      case 14:
+        return new ProjectSource_BehaviorDescriptor();
+      case 12:
+        return new NodeListSource_BehaviorDescriptor();
+      case 11:
         return new ModuleSource_BehaviorDescriptor();
-      case 8:
+      case 13:
         return new NodeSource_BehaviorDescriptor();
+      case 0:
+        return new BeforeTask_BehaviorDescriptor();
+      case 8:
+        return new ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor();
+      case 1:
+        return new BeforeTaskCall_BehaviorDescriptor();
+      case 2:
+        return new BeforeTaskParameter_BehaviorDescriptor();
+      case 3:
+        return new BeforeTaskParameterReference_BehaviorDescriptor();
       default:
         return null;
     }

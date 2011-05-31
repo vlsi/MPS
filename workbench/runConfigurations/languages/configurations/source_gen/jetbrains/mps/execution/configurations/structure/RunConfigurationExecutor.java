@@ -9,8 +9,8 @@ import jetbrains.mps.execution.settings.structure.PersistentConfigurationAssiste
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.execution.settings.structure.PersistentConfiguration;
 import java.util.Iterator;
-import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +25,7 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
   public static final String CAN_RUN = "canRun";
   public static final String CONFIGURATION = "configuration";
   public static final String EXECUTE = "execute";
+  public static final String BEFORE_TASK = "beforeTask";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public RunConfigurationExecutor(SNode node) {
@@ -101,6 +102,26 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
 
   public void setExecute(ExecuteConfiguration_Function node) {
     super.setChild(RunConfigurationExecutor.EXECUTE, node);
+  }
+
+  public int getBeforeTasksCount() {
+    return this.getChildCount(RunConfigurationExecutor.BEFORE_TASK);
+  }
+
+  public Iterator<BeforeTaskCall> beforeTasks() {
+    return this.children(BeforeTaskCall.class, RunConfigurationExecutor.BEFORE_TASK);
+  }
+
+  public List<BeforeTaskCall> getBeforeTasks() {
+    return this.getChildren(BeforeTaskCall.class, RunConfigurationExecutor.BEFORE_TASK);
+  }
+
+  public void addBeforeTask(BeforeTaskCall node) {
+    this.addChild(RunConfigurationExecutor.BEFORE_TASK, node);
+  }
+
+  public void insertBeforeTask(BeforeTaskCall prev, BeforeTaskCall node) {
+    this.insertChild(prev, RunConfigurationExecutor.BEFORE_TASK, node);
   }
 
   public int getSmodelAttributesCount() {

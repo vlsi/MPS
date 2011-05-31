@@ -38,7 +38,6 @@ public class DemoApplication_Producer {
       setSourceElement(new MPSPsiElement(source));
       DemoApplication_Configuration configuration = new DemoApplication_Configuration(getContext().getProject(), (DemoApplication_Configuration_Factory) getConfigurationFactory(), "SomeNode " + SPropertyOperations.getString(source, "name"));
       configuration.getNode().setNode(source);
-      configuration.getMake().setMake(true);
       return configuration;
     }
 

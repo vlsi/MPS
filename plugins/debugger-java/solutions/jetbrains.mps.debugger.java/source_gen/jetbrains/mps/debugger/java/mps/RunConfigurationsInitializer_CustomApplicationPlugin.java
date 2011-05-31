@@ -30,7 +30,6 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     // add foreign factories 
 
     // register creators 
-    ExtensionPoint<RuntimeConfigurationProducer> producerExtensionPoint = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
   }
 
   public void doDispose() {

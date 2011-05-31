@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Configurations_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Configurations_ApplicationPlugin" />
-  <unitInfo fileName="Configurations_ProjectPlugin.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Configurations_ProjectPlugin" />
+  <unitInfo fileName="Make_BeforeTask.java" startLine="27" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Make_BeforeTask$Make_BeforeTask_RunTask" />
+  <unitInfo fileName="Configurations_ProjectPlugin.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Configurations_ProjectPlugin" />
+  <unitInfo fileName="BeforeTasksInitializer_CustomProjectPlugin.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.BeforeTasksInitializer_CustomProjectPlugin" />
+  <unitInfo fileName="Make_BeforeTask.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Make_BeforeTask" />
   <unitInfo fileName="Run_Configuration_TabDescriptor.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Run_Configuration_TabDescriptor" />
   <unitInfo fileName="Executor_TabDescriptor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.execution.configurations.plugin.Executor_TabDescriptor" />
   <root nodeId="2401501559171392650">
@@ -23,6 +26,9 @@
       <varInfo nodeId="1048802521465100173" varName="executor" />
     </scopeInfo>
     <unitInfo nodeId="1048802521465114254" fileName="Executor_TabDescriptor.java" startLine="51" startPosition="183" endLine="55" endPosition="5" unitName="jetbrains.mps.execution.configurations.plugin.Executor_TabDescriptor$1" />
+  </root>
+  <root nodeId="247026320694134524">
+    <nodeInfo nodeId="3591131172574898560" fileName="Make_BeforeTask.java" startLine="38" startPosition="45" endLine="39" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   </root>
 </debugInfo>
 
