@@ -6755,6 +6755,9 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7151024694813697834">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7151024694813681359" resolveInfo="BuildAllGenerators" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1034594012522638046">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1194605474582984738" resolveInfo="BuildAllStructures" />
+      </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="7085363353271333026">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.5361317699454624365" resolveInfo="ToolsInternal" />
