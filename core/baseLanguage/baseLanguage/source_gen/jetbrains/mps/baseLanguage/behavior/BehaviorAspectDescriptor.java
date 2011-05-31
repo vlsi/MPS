@@ -4,552 +4,555 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", "jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.AbstractForStatement", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.AbstractOperation", "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.AndAssignmentExpression", "jetbrains.mps.baseLanguage.structure.AndExpression", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayCreator", "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.ArrayType", "jetbrains.mps.baseLanguage.structure.AsExpression", "jetbrains.mps.baseLanguage.structure.AssertStatement", "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "jetbrains.mps.baseLanguage.structure.BLBottomType", "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseStringOperation", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation", "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation", "jetbrains.mps.baseLanguage.structure.BinaryOperation", "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression", "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression", "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression", "jetbrains.mps.baseLanguage.structure.BlockStatement", "jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.BooleanType", "jetbrains.mps.baseLanguage.structure.BreakStatement", "jetbrains.mps.baseLanguage.structure.ByteType", "jetbrains.mps.baseLanguage.structure.CastExpression", "jetbrains.mps.baseLanguage.structure.CatchClause", "jetbrains.mps.baseLanguage.structure.CharConstant", "jetbrains.mps.baseLanguage.structure.CharType", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.Closure", "jetbrains.mps.baseLanguage.structure.ClosureParameter", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.Closureoid", "jetbrains.mps.baseLanguage.structure.CommentPart", "jetbrains.mps.baseLanguage.structure.CommentedStatement", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "jetbrains.mps.baseLanguage.structure.ContinueStatement", "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor", "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", "jetbrains.mps.baseLanguage.structure.DimensionExpression", "jetbrains.mps.baseLanguage.structure.DivAssignmentExpression", "jetbrains.mps.baseLanguage.structure.DivExpression", "jetbrains.mps.baseLanguage.structure.DoWhileStatement", "jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.baseLanguage.structure.DoubleType", "jetbrains.mps.baseLanguage.structure.ElsifClause", "jetbrains.mps.baseLanguage.structure.EnumClass", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.EqualsExpression", "jetbrains.mps.baseLanguage.structure.EscapeOperation", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ExpressionStatement", "jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.FloatType", "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", "jetbrains.mps.baseLanguage.structure.ForStatement", "jetbrains.mps.baseLanguage.structure.ForeachStatement", "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.GenericNewExpression", "jetbrains.mps.baseLanguage.structure.GetAccessor", "jetbrains.mps.baseLanguage.structure.GreaterThanExpression", "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable", "jetbrains.mps.baseLanguage.structure.IFinalWrapper", "jetbrains.mps.baseLanguage.structure.IInternalType", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration", "jetbrains.mps.baseLanguage.structure.ILocalReference", "jetbrains.mps.baseLanguage.structure.ILocalVariableElement", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList", "jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.baseLanguage.structure.IMethodCall", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IParameter", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods", "jetbrains.mps.baseLanguage.structure.IThisExpression", "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier", "jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.InstanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", "jetbrains.mps.baseLanguage.structure.IntegerConstant", "jetbrains.mps.baseLanguage.structure.IntegerLiteral", "jetbrains.mps.baseLanguage.structure.IntegerType", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.IsEmptyOperation", "jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation", "jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression", "jetbrains.mps.baseLanguage.structure.LessThanExpression", "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", "jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.LongLiteral", "jetbrains.mps.baseLanguage.structure.LongType", "jetbrains.mps.baseLanguage.structure.LoopLabel", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.LowerBoundType", "jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression", "jetbrains.mps.baseLanguage.structure.MinusExpression", "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", "jetbrains.mps.baseLanguage.structure.MulExpression", "jetbrains.mps.baseLanguage.structure.NPEEqualsExpression", "jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression", "jetbrains.mps.baseLanguage.structure.NotEqualsExpression", "jetbrains.mps.baseLanguage.structure.NotExpression", "jetbrains.mps.baseLanguage.structure.NullLiteral", "jetbrains.mps.baseLanguage.structure.NullType", "jetbrains.mps.baseLanguage.structure.Number", "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression", "jetbrains.mps.baseLanguage.structure.OrAssignmentExpression", "jetbrains.mps.baseLanguage.structure.OrExpression", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", "jetbrains.mps.baseLanguage.structure.ParameterReference", "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression", "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveType", "jetbrains.mps.baseLanguage.structure.PrivateVisibility", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyImplementation", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.ProtectedVisibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility", "jetbrains.mps.baseLanguage.structure.RemAssignmentExpression", "jetbrains.mps.baseLanguage.structure.RemExpression", "jetbrains.mps.baseLanguage.structure.RemarkStatement", "jetbrains.mps.baseLanguage.structure.ReturnStatement", "jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression", "jetbrains.mps.baseLanguage.structure.SetAccessor", "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression", "jetbrains.mps.baseLanguage.structure.ShiftRightExpression", "jetbrains.mps.baseLanguage.structure.ShortType", "jetbrains.mps.baseLanguage.structure.SingleLineComment", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.StatementCommentPart", "jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StringBooleanOperation", "jetbrains.mps.baseLanguage.structure.StringLiteral", "jetbrains.mps.baseLanguage.structure.StringType", "jetbrains.mps.baseLanguage.structure.StubStatementList", "jetbrains.mps.baseLanguage.structure.SubstringExpression", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.SwitchCase", "jetbrains.mps.baseLanguage.structure.SwitchStatement", "jetbrains.mps.baseLanguage.structure.SynchronizedStatement", "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", "jetbrains.mps.baseLanguage.structure.TextCommentPart", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.ThrowStatement", "jetbrains.mps.baseLanguage.structure.TrimOperation", "jetbrains.mps.baseLanguage.structure.TryCatchStatement", "jetbrains.mps.baseLanguage.structure.TryStatement", "jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.TypeAnnotable", "jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.UnaryMinus", "jetbrains.mps.baseLanguage.structure.UndefinedType", "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference", "jetbrains.mps.baseLanguage.structure.UpperBoundType", "jetbrains.mps.baseLanguage.structure.UsingStatement", "jetbrains.mps.baseLanguage.structure.ValueParameter", "jetbrains.mps.baseLanguage.structure.VarType", "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VarVariableReference", "jetbrains.mps.baseLanguage.structure.VariableArityType", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.Visibility", "jetbrains.mps.baseLanguage.structure.VoidType", "jetbrains.mps.baseLanguage.structure.WhileStatement", "jetbrains.mps.baseLanguage.structure.WildCardType", "jetbrains.mps.baseLanguage.structure.XorAssignmentExpression"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 914235567:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 25:
         return new AssignmentExpression_BehaviorDescriptor();
-      case 465868666:
+      case 28:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseMethodCall 
         return null;
-      case -96373118:
+      case 85:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Expression 
         return null;
-      case -2125739894:
+      case 87:
         return new FieldDeclaration_BehaviorDescriptor();
-      case 1714152250:
+      case 49:
         return new ClassConcept_BehaviorDescriptor();
-      case -591643269:
+      case 166:
         return new ParameterDeclaration_BehaviorDescriptor();
-      case -1190647132:
+      case 220:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Type 
         return null;
-      case -251918156:
+      case 235:
         return new VariableDeclaration_BehaviorDescriptor();
-      case -1017161467:
+      case 236:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.VariableReference 
         return null;
-      case 897032414:
+      case 29:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration 
         return null;
-      case 1483774595:
+      case 196:
         return new StatementList_BehaviorDescriptor();
-      case -308213182:
+      case 41:
         return new BooleanConstant_BehaviorDescriptor();
-      case 798669322:
+      case 64:
         return new ConstructorDeclaration_BehaviorDescriptor();
-      case -1905895391:
+      case 83:
         return new EqualsExpression_BehaviorDescriptor();
-      case -512228083:
+      case 86:
         return new ExpressionStatement_BehaviorDescriptor();
-      case -644865979:
+      case 194:
         return new Statement_BehaviorDescriptor();
-      case -1515174360:
+      case 125:
         return new IfStatement_BehaviorDescriptor();
-      case -1906771814:
+      case 129:
         return new InstanceMethodDeclaration_BehaviorDescriptor();
-      case 1064806744:
+      case 131:
         return new IntegerConstant_BehaviorDescriptor();
-      case 323816029:
+      case 144:
         return new LocalVariableDeclaration_BehaviorDescriptor();
-      case -342517870:
+      case 145:
         return new LocalVariableDeclarationStatement_BehaviorDescriptor();
-      case 2049356014:
+      case 146:
         return new LocalVariableReference_BehaviorDescriptor();
-      case -88276416:
+      case 148:
         return new LongType_BehaviorDescriptor();
-      case -559347330:
+      case 153:
         return new MinusExpression_BehaviorDescriptor();
-      case 493097868:
+      case 167:
         return new ParameterReference_BehaviorDescriptor();
-      case -1450761540:
+      case 171:
         return new PlusExpression_BehaviorDescriptor();
-      case 26402933:
+      case 187:
         return new ReturnStatement_BehaviorDescriptor();
-      case 14041432:
+      case 238:
         return new VoidType_BehaviorDescriptor();
-      case -213203048:
+      case 197:
         return new StaticFieldDeclaration_BehaviorDescriptor();
-      case -1434208423:
+      case 207:
         return new SuperConstructorInvocation_BehaviorDescriptor();
-      case 1352724276:
+      case 203:
         return new StringLiteral_BehaviorDescriptor();
-      case -547847959:
+      case 198:
         return new StaticFieldReference_BehaviorDescriptor();
-      case -587734868:
+      case 192:
         return new ShortType_BehaviorDescriptor();
-      case -1321036162:
+      case 160:
         return new NullLiteral_BehaviorDescriptor();
-      case 1930776302:
+      case 133:
         return new IntegerType_BehaviorDescriptor();
-      case -671052148:
+      case 89:
         return new FloatType_BehaviorDescriptor();
-      case -1817111915:
+      case 76:
         return new DoubleType_BehaviorDescriptor();
-      case -873278950:
+      case 48:
         return new CharType_BehaviorDescriptor();
-      case 118519500:
+      case 44:
         return new ByteType_BehaviorDescriptor();
-      case -703089448:
+      case 42:
         return new BooleanType_BehaviorDescriptor();
-      case 15374345:
+      case 22:
         return new ArrayType_BehaviorDescriptor();
-      case 1998849569:
+      case 45:
         return new CastExpression_BehaviorDescriptor();
-      case -1658924272:
+      case 208:
         return new SuperMethodCall_BehaviorDescriptor();
-      case -2015143936:
+      case 158:
         return new NotEqualsExpression_BehaviorDescriptor();
-      case -28548056:
+      case 239:
         return new WhileStatement_BehaviorDescriptor();
-      case -1111152182:
+      case 168:
         return new ParenthesizedExpression_BehaviorDescriptor();
-      case 592667557:
+      case 8:
         return new AndExpression_BehaviorDescriptor();
-      case -620212667:
+      case 165:
         return new OrExpression_BehaviorDescriptor();
-      case -623039401:
+      case 200:
         return new StaticMethodCall_BehaviorDescriptor();
-      case -1498134175:
+      case 201:
         return new StaticMethodDeclaration_BehaviorDescriptor();
-      case -1217686418:
+      case 130:
         return new InstanceOfExpression_BehaviorDescriptor();
-      case -195557495:
+      case 97:
         return new GreaterThanExpression_BehaviorDescriptor();
-      case -364220676:
+      case 138:
         return new LessThanExpression_BehaviorDescriptor();
-      case -1778939487:
+      case 159:
         return new NotExpression_BehaviorDescriptor();
-      case -44597734:
+      case 43:
         return new BreakStatement_BehaviorDescriptor();
-      case 418109628:
+      case 35:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BinaryOperation 
         return null;
-      case 824846686:
+      case 66:
         return new ContinueStatement_BehaviorDescriptor();
-      case -587255220:
+      case 40:
         return new BlockStatement_BehaviorDescriptor();
-      case 1656099789:
+      case 78:
         return new EnumClass_BehaviorDescriptor();
-      case -497779509:
+      case 79:
         return new EnumConstantDeclaration_BehaviorDescriptor();
-      case -1281104164:
+      case 80:
         return new EnumConstantReference_BehaviorDescriptor();
-      case 779668818:
+      case 155:
         return new MulExpression_BehaviorDescriptor();
-      case 1081658847:
+      case 73:
         return new DivExpression_BehaviorDescriptor();
-      case 2140264339:
+      case 63:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter 
         return null;
-      case 1417608715:
+      case 51:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Classifier 
         return null;
-      case -510458907:
+      case 54:
         return new ClassifierType_BehaviorDescriptor();
-      case 1942905871:
+      case 134:
         return new Interface_BehaviorDescriptor();
-      case 1672861722:
+      case 223:
         return new TypeVariableDeclaration_BehaviorDescriptor();
-      case 468365581:
+      case 94:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.GenericDeclaration 
         return null;
-      case 1358023147:
+      case 224:
         return new TypeVariableReference_BehaviorDescriptor();
-      case -2002234172:
+      case 90:
         return new FloatingPointConstant_BehaviorDescriptor();
-      case 1545872549:
+      case 52:
         return new ClassifierClassExpression_BehaviorDescriptor();
-      case 1372219574:
+      case 62:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ConceptFunction 
         return null;
-      case 1526245039:
+      case 93:
         return new ForeachStatement_BehaviorDescriptor();
-      case -378226862:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.AbstractForStatement 
         return null;
-      case -1892966384:
+      case 92:
         return new ForStatement_BehaviorDescriptor();
-      case 341122048:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.AbstractCreator 
         return null;
-      case 1953641259:
+      case 95:
         return new GenericNewExpression_BehaviorDescriptor();
-      case -654555396:
+      case 237:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Visibility 
         return null;
-      case -1667330363:
+      case 183:
         return new PublicVisibility_BehaviorDescriptor();
-      case -350331445:
+      case 178:
         return new PrivateVisibility_BehaviorDescriptor();
-      case -759870282:
+      case 182:
         return new ProtectedVisibility_BehaviorDescriptor();
-      case -1009041775:
+      case 55:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Closure 
         return null;
-      case 1970563096:
+      case 56:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ClosureParameter 
         return null;
-      case 1781568019:
+      case 57:
         return new ClosureParameterReference_BehaviorDescriptor();
-      case 1050913707:
+      case 98:
         return new GreaterThanOrEqualsExpression_BehaviorDescriptor();
-      case -254653784:
+      case 185:
         return new RemExpression_BehaviorDescriptor();
-      case 1174204446:
+      case 139:
         return new LessThanOrEqualsExpression_BehaviorDescriptor();
-      case 1737677662:
+      case 219:
         return new TryStatement_BehaviorDescriptor();
-      case -1898895361:
+      case 3:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.AbstractLoopStatement 
         return null;
-      case -628821121:
+      case 19:
         return new ArrayCreatorWithInitializer_BehaviorDescriptor();
-      case -1926151117:
+      case 162:
         return new Number_BehaviorDescriptor();
-      case -1271061729:
+      case 24:
         return new AssertStatement_BehaviorDescriptor();
-      case 446590656:
+      case 215:
         return new ThisExpression_BehaviorDescriptor();
-      case -395066515:
+      case 212:
         return new TernaryOperatorExpression_BehaviorDescriptor();
-      case -2104202511:
+      case 210:
         return new SwitchStatement_BehaviorDescriptor();
-      case 1351274606:
+      case 209:
         return new SwitchCase_BehaviorDescriptor();
-      case 2136072343:
+      case 177:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.PrimitiveType 
         return null;
-      case -251991963:
+      case 218:
         return new TryCatchStatement_BehaviorDescriptor();
-      case -1194407584:
+      case 46:
         return new CatchClause_BehaviorDescriptor();
-      case -1983257581:
+      case 216:
         return new ThrowStatement_BehaviorDescriptor();
-      case 88110117:
+      case 186:
         return new RemarkStatement_BehaviorDescriptor();
-      case 55943313:
+      case 211:
         return new SynchronizedStatement_BehaviorDescriptor();
-      case -1074470923:
+      case 14:
         return new AnonymousClass_BehaviorDescriptor();
-      case -841895490:
+      case 240:
         return new WildCardType_BehaviorDescriptor();
-      case -935333183:
+      case 151:
         return new LowerBoundType_BehaviorDescriptor();
-      case 1907591744:
+      case 228:
         return new UpperBoundType_BehaviorDescriptor();
-      case 120042592:
+      case 142:
         return new LocalStaticFieldReference_BehaviorDescriptor();
-      case -247024818:
+      case 143:
         return new LocalStaticMethodCall_BehaviorDescriptor();
-      case -1798897301:
+      case 16:
         return new ArrayAccessExpression_BehaviorDescriptor();
-      case -49367723:
+      case 61:
         return new CommentedStatementsBlock_BehaviorDescriptor();
-      case 766827283:
+      case 74:
         return new DoWhileStatement_BehaviorDescriptor();
-      case -1639410857:
+      case 231:
         return new VarType_BehaviorDescriptor();
-      case -1143701371:
+      case 53:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ClassifierMember 
         return null;
-      case -1865955789:
+      case 123:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IVisible 
         return null;
-      case -642091262:
+      case 214:
         return new ThisConstructorInvocation_BehaviorDescriptor();
-      case 743443042:
+      case 100:
         return new HexIntegerLiteral_BehaviorDescriptor();
-      case -1704536965:
+      case 132:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IntegerLiteral 
         return null;
-      case 1453935223:
+      case 15:
         return new AnonymousClassCreator_BehaviorDescriptor();
-      case 337350909:
+      case 18:
         return new ArrayCreator_BehaviorDescriptor();
-      case -1295075340:
+      case 71:
         return new DimensionExpression_BehaviorDescriptor();
-      case 144035609:
+      case 9:
         return new Annotation_BehaviorDescriptor();
-      case -838792256:
+      case 13:
         return new AnnotationMethodDeclaration_BehaviorDescriptor();
-      case -1728667954:
+      case 10:
         return new AnnotationInstance_BehaviorDescriptor();
-      case 211680575:
+      case 99:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.HasAnnotation 
         return null;
-      case 1604215814:
+      case 11:
         return new AnnotationInstanceExpression_BehaviorDescriptor();
-      case -1830022333:
+      case 12:
         return new AnnotationInstanceValue_BehaviorDescriptor();
-      case -508743296:
+      case 21:
         return new ArrayLiteral_BehaviorDescriptor();
-      case 746763208:
+      case 111:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IMemberContainer 
         return null;
-      case 1155090583:
+      case 75:
         return new DotExpression_BehaviorDescriptor();
-      case 1911701224:
+      case 114:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IOperation 
         return null;
-      case -547891892:
+      case 88:
         return new FieldReferenceOperation_BehaviorDescriptor();
-      case -1428852621:
+      case 116:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IStatementListContainer 
         return null;
-      case 440907396:
+      case 47:
         return new CharConstant_BehaviorDescriptor();
-      case 569861396:
+      case 222:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.TypeDerivable 
         return null;
-      case 992982079:
+      case 179:
         return new Property_BehaviorDescriptor();
-      case 155210193:
+      case 180:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.PropertyImplementation 
         return null;
-      case -429778850:
+      case 69:
         return new DefaultPropertyImplementation_BehaviorDescriptor();
-      case -342162996:
+      case 181:
         return new PropertyReference_BehaviorDescriptor();
-      case -639822046:
+      case 67:
         return new CustomPropertyImplementation_BehaviorDescriptor();
-      case 1063309587:
+      case 96:
         return new GetAccessor_BehaviorDescriptor();
-      case 974729759:
+      case 189:
         return new SetAccessor_BehaviorDescriptor();
-      case -624938974:
+      case 230:
         return new ValueParameter_BehaviorDescriptor();
-      case -1023827802:
+      case 68:
         return new DefaultGetAccessor_BehaviorDescriptor();
-      case -1112407630:
+      case 70:
         return new DefaultSetAccessor_BehaviorDescriptor();
-      case 502038473:
+      case 128:
         return new InstanceMethodCallOperation_BehaviorDescriptor();
-      case -1594479234:
+      case 112:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IMethodCall 
         return null;
-      case 79791051:
+      case 161:
         return new NullType_BehaviorDescriptor();
-      case 419085942:
+      case 106:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IInternalType 
         return null;
-      case -755617042:
+      case 77:
         return new ElsifClause_BehaviorDescriptor();
-      case 1928093283:
+      case 127:
         return new InstanceInitializer_BehaviorDescriptor();
-      case 112695705:
+      case 58:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Closureoid 
         return null;
-      case -1830171589:
+      case 4:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.AbstractOperation 
         return null;
-      case 913788146:
+      case 20:
         return new ArrayLengthOperation_BehaviorDescriptor();
-      case 1860752006:
+      case 120:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IValidIdentifier 
         return null;
-      case 1791682814:
+      case 50:
         return new ClassCreator_BehaviorDescriptor();
-      case 752369052:
+      case 173:
         return new PostfixIncrementExpression_BehaviorDescriptor();
-      case 1063477696:
+      case 172:
         return new PostfixDecrementExpression_BehaviorDescriptor();
-      case 30213152:
+      case 27:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression 
         return null;
-      case -1217573783:
+      case 170:
         return new PlusAssignmentExpression_BehaviorDescriptor();
-      case 87500971:
+      case 152:
         return new MinusAssignmentExpression_BehaviorDescriptor();
-      case -370558607:
+      case 234:
         return new VariableArityType_BehaviorDescriptor();
-      case -699449274:
+      case 104:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable 
         return null;
-      case 53055594:
+      case 199:
         return new StaticInitializer_BehaviorDescriptor();
-      case -1709970371:
+      case 117:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods 
         return null;
-      case -111476216:
+      case 121:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IVariableAssignment 
         return null;
-      case 70645204:
+      case 23:
         return new AsExpression_BehaviorDescriptor();
-      case -1936826315:
+      case 229:
         return new UsingStatement_BehaviorDescriptor();
-      case 1037551589:
+      case 82:
         return new EnumValuesExpression_BehaviorDescriptor();
-      case 2048104716:
+      case 39:
         return new BitwiseXorExpression_BehaviorDescriptor();
-      case 1496462005:
+      case 81:
         return new EnumValueOfExpression_BehaviorDescriptor();
-      case 548806721:
+      case 33:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation 
         return null;
-      case 174690818:
+      case 38:
         return new BitwiseOrExpression_BehaviorDescriptor();
-      case -535128184:
+      case 36:
         return new BitwiseAndExpression_BehaviorDescriptor();
-      case -56365323:
+      case 118:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IThisExpression 
         return null;
-      case -1152661033:
+      case 101:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IBLDeprecatable 
         return null;
-      case 126015189:
+      case 204:
         return new StringType_BehaviorDescriptor();
-      case -1275379279:
+      case 157:
         return new NPENotEqualsExpression_BehaviorDescriptor();
-      case -351718384:
+      case 156:
         return new NPEEqualsExpression_BehaviorDescriptor();
-      case -1956835173:
+      case 30:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseStringOperation 
         return null;
-      case -1777046834:
+      case 135:
         return new IsEmptyOperation_BehaviorDescriptor();
-      case 2043703193:
+      case 136:
         return new IsNotEmptyOperation_BehaviorDescriptor();
-      case 1504931130:
+      case 202:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.StringBooleanOperation 
         return null;
-      case -190656737:
+      case 206:
         return new SubstringExpression_BehaviorDescriptor();
-      case -1336958149:
+      case 217:
         return new TrimOperation_BehaviorDescriptor();
-      case -2091508438:
+      case 115:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IParameter 
         return null;
-      case -896597385:
+      case 190:
         return new ShiftLeftExpression_BehaviorDescriptor();
-      case -777372580:
+      case 191:
         return new ShiftRightExpression_BehaviorDescriptor();
-      case 1388232068:
+      case 37:
         return new BitwiseNotExpression_BehaviorDescriptor();
-      case 205130171:
+      case 60:
         return new CommentedStatement_BehaviorDescriptor();
-      case 1117561756:
+      case 221:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.TypeAnnotable 
         return null;
-      case -555957343:
+      case 232:
         return new VarVariableDeclaration_BehaviorDescriptor();
-      case 1847323442:
+      case 233:
         return new VarVariableReference_BehaviorDescriptor();
-      case -1583344945:
+      case 102:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IContainsStatementList 
         return null;
-      case 270819796:
+      case 109:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ILocalVariableElement 
         return null;
-      case -1059357550:
+      case 110:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ILocalVariableElementList 
         return null;
-      case -1594203465:
+      case 113:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IMethodLike 
         return null;
-      case -1739264755:
+      case 34:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BinaryCompareOperation 
         return null;
-      case 1171414603:
+      case 175:
         return new PrefixIncrementExpression_BehaviorDescriptor();
-      case 1482523247:
+      case 174:
         return new PrefixDecrementExpression_BehaviorDescriptor();
-      case 1426133915:
+      case 5:
         return new AbstractUnaryNumberOperation_BehaviorDescriptor();
-      case 1674272057:
+      case 26:
         return new BLBottomType_BehaviorDescriptor();
-      case -375707825:
+      case 65:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement 
         return null;
-      case -287078423:
+      case 147:
         return new LongLiteral_BehaviorDescriptor();
-      case 1726058752:
+      case 91:
         return new FloatingPointFloatConstant_BehaviorDescriptor();
-      case 2113898603:
+      case 225:
         return new UnaryMinus_BehaviorDescriptor();
-      case 1537937936:
+      case 169:
         return new PlaceholderMethodDeclaration_BehaviorDescriptor();
-      case -1250266333:
+      case 31:
         return new BaseVariableDeclaration_BehaviorDescriptor();
-      case 537105204:
+      case 32:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseVariableReference 
         return null;
-      case -1599519354:
+      case 149:
         return new LoopLabel_BehaviorDescriptor();
-      case -139267995:
+      case 150:
         return new LoopLabelReference_BehaviorDescriptor();
-      case 1255973689:
+      case 193:
         return new SingleLineComment_BehaviorDescriptor();
-      case -1059710904:
+      case 59:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.CommentPart 
         return null;
-      case 131977691:
+      case 213:
         return new TextCommentPart_BehaviorDescriptor();
-      case -1262053011:
+      case 195:
         return new StatementCommentPart_BehaviorDescriptor();
-      case -1613548673:
+      case 154:
         return new MulAssignmentExpression_BehaviorDescriptor();
-      case 868853708:
+      case 72:
         return new DivAssignmentExpression_BehaviorDescriptor();
-      case -1224180395:
+      case 184:
         return new RemAssignmentExpression_BehaviorDescriptor();
-      case -736599886:
+      case 164:
         return new OrAssignmentExpression_BehaviorDescriptor();
-      case 319831570:
+      case 7:
         return new AndAssignmentExpression_BehaviorDescriptor();
-      case -194499946:
+      case 241:
         return new XorAssignmentExpression_BehaviorDescriptor();
-      case -1619125642:
+      case 137:
         return new LeftShiftAssignmentExpression_BehaviorDescriptor();
-      case 2103354645:
+      case 188:
         return new RightShiftAssignmentExpression_BehaviorDescriptor();
-      case 621161560:
+      case 6:
         return new AdditionalForLoopVariable_BehaviorDescriptor();
-      case -1415538690:
+      case 0:
         return new AbstractClassifierReference_BehaviorDescriptor();
-      case -673196642:
+      case 126:
         return new ImplicitAnnotationInstanceValue_BehaviorDescriptor();
-      case 1598604467:
+      case 176:
         return new PrimitiveClassExpression_BehaviorDescriptor();
-      case 1356292511:
+      case 122:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IVariableDeclaration 
         return null;
-      case 1327333392:
+      case 119:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ITryCatchStatement 
         return null;
-      case 287301749:
+      case 141:
         return new LocalInstanceMethodCall_BehaviorDescriptor();
-      case 247985671:
+      case 140:
         return new LocalInstanceFieldReference_BehaviorDescriptor();
-      case -1766715282:
+      case 107:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ILocalDeclaration 
         return null;
-      case 277350207:
+      case 108:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ILocalReference 
         return null;
-      case -1105960295:
+      case 17:
         return new ArrayCloneOperation_BehaviorDescriptor();
-      case -784549051:
+      case 227:
         return new UnresolvedNameReference_BehaviorDescriptor();
-      case -198708875:
+      case 205:
         return new StubStatementList_BehaviorDescriptor();
-      case -1321592542:
+      case 163:
         return new OperationAssignmentExpression_BehaviorDescriptor();
-      case 2033453380:
+      case 103:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter 
         return null;
-      case 1407104789:
+      case 124:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IWillBeClassifier 
         return null;
-      case 2046850108:
+      case 84:
         return new EscapeOperation_BehaviorDescriptor();
-      case 910940288:
+      case 226:
         return new UndefinedType_BehaviorDescriptor();
-      case -81689316:
+      case 105:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IFinalWrapper 
         return null;
       default:

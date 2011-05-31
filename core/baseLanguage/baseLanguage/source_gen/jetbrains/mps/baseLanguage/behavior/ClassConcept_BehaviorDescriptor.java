@@ -32,6 +32,10 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
 
+  public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
+    return ClassConcept_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
+  }
+
   public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     return ClassConcept_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
   }

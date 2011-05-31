@@ -25,4 +25,8 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
+
+  public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
+    return Interface_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
+  }
 }
