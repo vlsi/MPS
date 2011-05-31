@@ -19,21 +19,21 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 
 public class UndoHelper {
+  private static final UndoHandler DEFAULT = new DefaultUndoHandler();
+
   private static UndoHelper ourInstance = new UndoHelper();
 
   public static UndoHelper getInstance() {
     return ourInstance;
   }
 
-  private UndoHelper() {
-
-  }
-
   //-----
 
-  private static UndoHandler DEFAULT = new DefaultUndoHandler();
-
   private UndoHandler myHandler = DEFAULT;
+
+  private UndoHelper() {
+  }
+
 
   public void setUndoHandler(UndoHandler handler) {
     myHandler = handler;
