@@ -66,7 +66,7 @@ public class DefaultPackagingLanguageConfigurationFromMPSLayout extends BaseConf
           }
         }
       }.invoke());
-      DefaultPackagingLanguageApplication_Configuration _config = new DefaultPackagingLanguageApplication_Configuration(DefaultPackagingLanguageConfigurationFromMPSLayout.this.getContext().getProject(), findFactory(configType, "DefaultPackagingLanguageApplication"), "NewConfig");
+      DefaultPackagingLanguageApplication_Configuration _config = new DefaultPackagingLanguageApplication_Configuration(DefaultPackagingLanguageConfigurationFromMPSLayout.this.getContext().getProject(), findFactory(configType, "jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Factory"), "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().nodeId = parameter.getId();
       _config.getStateObject().modelId = parameter.getModel().getModelDescriptor().getSModelReference().toString();

@@ -202,7 +202,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3893786992128510162(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "name");
+    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "runConfig", false))) + "." + RunConfigurationDeclaration_Behavior.call_getGeneratedFactoryName_7840798570674951628(SLinkOperations.getTarget(_context.getNode(), "runConfig", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_5527296032510113010(final IOperationContext operationContext, final PropertyMacroContext _context) {

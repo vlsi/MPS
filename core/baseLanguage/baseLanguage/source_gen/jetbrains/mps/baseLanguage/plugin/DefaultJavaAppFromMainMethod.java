@@ -35,7 +35,7 @@ public class DefaultJavaAppFromMainMethod extends BaseConfigCreator<SNode> imple
 
     {
       JavaApplication_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class);
-      DefaultJavaApplication_Configuration _config = new DefaultJavaApplication_Configuration(DefaultJavaAppFromMainMethod.this.getContext().getProject(), findFactory(configType, "DefaultJavaApplication"), "NewConfig");
+      DefaultJavaApplication_Configuration _config = new DefaultJavaApplication_Configuration(DefaultJavaAppFromMainMethod.this.getContext().getProject(), findFactory(configType, "jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Factory"), "NewConfig");
       _config.setName(SPropertyOperations.getString(classifier, "name"));
       _config.getStateObject().nodeId = classifier.getId();
       _config.getStateObject().modelId = classifier.getModel().getModelDescriptor().getSModelReference().toString();

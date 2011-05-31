@@ -28,7 +28,7 @@ public class DefaultLambdaCalculusFromProgram extends BaseConfigCreator<SNode> i
     DefaultLambdaCalculusFromProgram.this.setSourceElement(new MPSPsiElement(parameter));
     {
       LambdaCalculus_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), LambdaCalculus_ConfigurationType.class);
-      DefaultLambdaCalculusProgram_Configuration _config = new DefaultLambdaCalculusProgram_Configuration(DefaultLambdaCalculusFromProgram.this.getContext().getProject(), findFactory(configType, "DefaultLambdaCalculusProgram"), "NewConfig");
+      DefaultLambdaCalculusProgram_Configuration _config = new DefaultLambdaCalculusProgram_Configuration(DefaultLambdaCalculusFromProgram.this.getContext().getProject(), findFactory(configType, "jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Factory"), "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().nodeId = parameter.getId();
       _config.getStateObject().modelId = parameter.getModel().getModelDescriptor().getSModelReference().toString();

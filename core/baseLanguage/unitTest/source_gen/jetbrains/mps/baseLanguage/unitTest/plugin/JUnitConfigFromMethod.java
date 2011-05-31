@@ -34,7 +34,7 @@ public class JUnitConfigFromMethod extends BaseConfigCreator<SNode> implements C
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethod.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig");
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethod.this.getContext().getProject(), findFactory(configType, "jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Factory"), "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().type = JUnitRunTypes.METHOD;
       _config.getStateObject().testMethods = new ClonableList<String>(TestUtils.pointerToString(new SNodePointer(parameter)));

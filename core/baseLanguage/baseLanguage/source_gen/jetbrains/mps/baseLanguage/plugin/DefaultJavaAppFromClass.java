@@ -40,7 +40,7 @@ public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements
 
     {
       JavaApplication_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class);
-      DefaultJavaApplication_Configuration _config = new DefaultJavaApplication_Configuration(DefaultJavaAppFromClass.this.getContext().getProject(), findFactory(configType, "DefaultJavaApplication"), "NewConfig");
+      DefaultJavaApplication_Configuration _config = new DefaultJavaApplication_Configuration(DefaultJavaAppFromClass.this.getContext().getProject(), findFactory(configType, "jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Factory"), "NewConfig");
       _config.setName(SPropertyOperations.getString(classConcept, "name"));
       _config.getStateObject().nodeId = classConcept.getId();
       _config.getStateObject().modelId = classConcept.getModel().getModelDescriptor().getSModelReference().toString();

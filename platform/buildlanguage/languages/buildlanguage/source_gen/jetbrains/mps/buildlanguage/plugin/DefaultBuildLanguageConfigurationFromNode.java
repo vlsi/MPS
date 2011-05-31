@@ -28,7 +28,7 @@ public class DefaultBuildLanguageConfigurationFromNode extends BaseConfigCreator
     DefaultBuildLanguageConfigurationFromNode.this.setSourceElement(new MPSPsiElement(parameter));
     {
       BuildLanguage_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), BuildLanguage_ConfigurationType.class);
-      DefaultBuildLanguageApplication_Configuration _config = new DefaultBuildLanguageApplication_Configuration(DefaultBuildLanguageConfigurationFromNode.this.getContext().getProject(), findFactory(configType, "DefaultBuildLanguageApplication"), "NewConfig");
+      DefaultBuildLanguageApplication_Configuration _config = new DefaultBuildLanguageApplication_Configuration(DefaultBuildLanguageConfigurationFromNode.this.getContext().getProject(), findFactory(configType, "jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Factory"), "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().nodeId = parameter.getId();
       _config.getStateObject().modelId = parameter.getModel().getModelDescriptor().getSModelReference().toString();

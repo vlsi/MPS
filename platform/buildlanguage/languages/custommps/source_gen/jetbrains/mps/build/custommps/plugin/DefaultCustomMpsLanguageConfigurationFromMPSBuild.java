@@ -71,7 +71,7 @@ public class DefaultCustomMpsLanguageConfigurationFromMPSBuild extends BaseConfi
           }
         }
       }.invoke());
-      DefaultCustomMpsApplication_Configuration _config = new DefaultCustomMpsApplication_Configuration(DefaultCustomMpsLanguageConfigurationFromMPSBuild.this.getContext().getProject(), findFactory(configType, "DefaultCustomMpsApplication"), "NewConfig");
+      DefaultCustomMpsApplication_Configuration _config = new DefaultCustomMpsApplication_Configuration(DefaultCustomMpsLanguageConfigurationFromMPSBuild.this.getContext().getProject(), findFactory(configType, "jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Factory"), "NewConfig");
       _config.setName(SPropertyOperations.getString(layout.value, "name") + ".mpsbuild." + SPropertyOperations.getString(configuration.value, "name"));
       _config.getStateObject().nodeId = layout.value.getId();
       _config.getStateObject().modelId = layout.value.getModel().getModelDescriptor().getSModelReference().toString();

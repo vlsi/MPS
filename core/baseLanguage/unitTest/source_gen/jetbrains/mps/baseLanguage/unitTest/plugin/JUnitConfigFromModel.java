@@ -32,7 +32,7 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
     JUnitConfigFromModel.this.setSourceElement(new MPSPsiElement(parameter));
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModel.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig") {
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModel.this.getContext().getProject(), findFactory(configType, "jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Factory"), "NewConfig") {
         @Override
         public String suggestedName() {
           return "Tests in '" + name + "'";
