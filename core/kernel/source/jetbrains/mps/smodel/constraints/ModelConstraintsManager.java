@@ -372,12 +372,19 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   // canBeASomething section
-  @NotNull
-  public static <T> CanBeASomethingMethod<T> notNull(@Nullable CanBeASomethingMethod<T> method) {
-    if (method == null) {
-      return (CanBeASomethingMethod<T>) ALWAYS_TRUE_CAN_BE_A_SOMETHING_METHOD;
+  private static <T> boolean executeCanBeASomethingMethod(@Nullable CanBeASomethingMethod<T> method,
+                                                          IOperationContext operationContext,
+                                                          T context,
+                                                          @Nullable CheckingNodeContext checkingNodeContext) {
+    if (method != null) {
+      try {
+        return method.canBe(operationContext, context, checkingNodeContext);
+      } catch (Exception e) {
+        LOG.error("Exception while constraints canBe* method execution", e);
+        return false;
+      }
     } else {
-      return method;
+      return true;
     }
   }
 
@@ -389,7 +396,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     while (currentNode != null) {
       ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConceptFqName());
 
-      if (!notNull(descriptor.getCanBeAnAncestorMethod()).canBe(context, new CanBeAnAncestorContext(currentNode, childConcept), checkingNodeContext)) {
+      if (!executeCanBeASomethingMethod(descriptor.getCanBeAnAncestorMethod(), context, new CanBeAnAncestorContext(currentNode, childConcept), checkingNodeContext)) {
         return false;
       }
 
@@ -409,7 +416,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeParent(ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
-    return notNull(descriptor.getCanBeAParentMethod()).canBe(context, new CanBeAParentContext(parentNode, childConcept, link), checkingNodeContext);
+    return executeCanBeASomethingMethod(descriptor.getCanBeAParentMethod(), context, new CanBeAParentContext(parentNode, childConcept, link), checkingNodeContext);
   }
 
   public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
@@ -419,7 +426,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public static boolean canBeChild(ConstraintsDescriptor descriptor, String fqName, IOperationContext context, SNode parentNode, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
     SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
-    return notNull(descriptor.getCanBeAChildMethod()).canBe(context, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
+    return executeCanBeASomethingMethod(descriptor.getCanBeAChildMethod(), context, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
   }
 
   private static boolean canBeRootByIsRootProperty(final String fqName, @Nullable final CheckingNodeContext checkingNodeContext) {
@@ -444,6 +451,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeRoot(ConstraintsDescriptor descriptor, IOperationContext context, String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeRootByIsRootProperty(conceptFqName, checkingNodeContext) && notNull(descriptor.getCanBeARootMethod()).canBe(context, new CanBeARootContext(model), checkingNodeContext);
+    return canBeRootByIsRootProperty(conceptFqName, checkingNodeContext) && executeCanBeASomethingMethod(descriptor.getCanBeARootMethod(), context, new CanBeARootContext(model), checkingNodeContext);
   }
 }
