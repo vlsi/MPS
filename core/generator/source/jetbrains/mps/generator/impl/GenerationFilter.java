@@ -252,6 +252,19 @@ public class GenerationFilter {
       }
     }
 
+    // there are dirty roots -> mark unchanged roots which dependsOnModelNodes as dirty
+    if(myUnchangedRoots.size() < myRootsCount) {
+      Iterator<SNode> it = myUnchangedRoots.iterator();
+      while(it.hasNext()) {
+        SNode root = it.next();
+        String id = root.getId();
+        GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
+        if(rd.isDependsOnNodes()) {
+          it.remove();
+        }
+      }
+    }
+
     // all roots are dirty? rebuild all
     if (myUnchangedRoots.isEmpty()) {
       if (myTracer != null) myTracer.report("All roots are dirty.");
@@ -261,7 +274,7 @@ public class GenerationFilter {
     // calculate which unchanged roots should be re-generated according with
     // saved dependencies and references between roots
 
-    myConditionalsUnchanged = true;
+    myConditionalsUnchanged = (myUnchangedRoots.size() == myRootsCount || !commonDeps.isDependsOnNodes());
 
     Map<String, Set<String>> savedDep = getDependencies(oldDependencies, myUnchangedRoots);
     ConnectedComponentPartitioner partitioner = null;

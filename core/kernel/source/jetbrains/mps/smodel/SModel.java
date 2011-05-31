@@ -133,6 +133,11 @@ public class SModel {
 
   //---------roots manipulation--------
 
+  private void fireModelNodesReadAccess() {
+    if (isLoading()) return;
+    NodeReadEventsCaster.fireModelNodesReadAccess(this);
+  }
+
   public final Iterable<SNode> roots() {
     return new Iterable<SNode>() {
       public Iterator<SNode> iterator() {
@@ -142,6 +147,7 @@ public class SModel {
   }
 
   public Iterator<SNode> rootsIterator() {
+    fireModelNodesReadAccess();
     return myRoots.iterator();
   }
 
@@ -415,6 +421,7 @@ public class SModel {
     if (myFastNodeFinder == null) {
       myFastNodeFinder = createFastNodeFinder();
     }
+    fireModelNodesReadAccess();
     return myFastNodeFinder;
   }
 

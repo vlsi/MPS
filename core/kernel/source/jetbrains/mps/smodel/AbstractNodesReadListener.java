@@ -27,4 +27,9 @@ public abstract class AbstractNodesReadListener implements INodesReadListener {
   public void propertyCleanReadAccess(SNode node, String propertyName) {
     this.nodePropertyReadAccess(node, propertyName, null);
   }
+
+  @Override
+  public void modelNodesReadAccess(SModel model) {
+  }
 }
+

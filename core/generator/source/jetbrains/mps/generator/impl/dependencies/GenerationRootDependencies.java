@@ -19,6 +19,7 @@ public class GenerationRootDependencies {
   private static final String ATTR_NAME = "name";
   private static final String ATTR_HASH = "hash";
   private static final String ATTR_DEPENDS_ON_CONDITIONALS = "dependsOnCreated";
+  private static final String ATTR_DEPENDS_ON_NODES = "dependsOnNodes";
   private static final String NODE_DEPENDS_ON = "dep";
   private static final String NODE_FILE = "file";
   private static final String ATTR_ROOT_ID = "root";
@@ -29,15 +30,17 @@ public class GenerationRootDependencies {
   private String myRootName;
   private String myHash;
   private boolean myDependsOnConditionals;
+  private boolean myDependsOnNodes;
   private List<String> myLocal;
   private List<String> myExternal;
   private List<String> myGeneratedFiles;
 
-  public GenerationRootDependencies(String rootId, String rootName, String rootHash, boolean dependsOnConditionals, List<String> local, List<String> external, List<String> files) {
+  public GenerationRootDependencies(String rootId, String rootName, String rootHash, boolean dependsOnConditionals, boolean dependsOnNodes, List<String> local, List<String> external, List<String> files) {
     this.myRootId = rootId;
     this.myRootName = rootName;
     this.myHash = rootHash;
     this.myDependsOnConditionals = dependsOnConditionals;
+    this.myDependsOnNodes = dependsOnNodes;
     this.myLocal = local;
     this.myExternal = external;
     this.myGeneratedFiles = files;
@@ -59,6 +62,10 @@ public class GenerationRootDependencies {
     return myDependsOnConditionals;
   }
 
+  public boolean isDependsOnNodes() {
+    return myDependsOnNodes;
+  }
+
   public List<String> getLocal() {
     return Collections.unmodifiableList(myLocal);
   }
@@ -72,7 +79,7 @@ public class GenerationRootDependencies {
   }
 
   public void addGeneratedFile(String name) {
-    if(name == null) throw new IllegalArgumentException("name is null");
+    if (name == null) throw new IllegalArgumentException("name is null");
     myGeneratedFiles.add(name);
   }
 
@@ -88,6 +95,9 @@ public class GenerationRootDependencies {
     }
     if (myDependsOnConditionals) {
       element.setAttribute(ATTR_DEPENDS_ON_CONDITIONALS, TRUE);
+    }
+    if (myDependsOnNodes) {
+      element.setAttribute(ATTR_DEPENDS_ON_NODES, TRUE);
     }
     for (String id : myLocal) {
       Element node = new Element(NODE_DEPENDS_ON);
@@ -116,6 +126,7 @@ public class GenerationRootDependencies {
     String rootName = getValue(element, ATTR_NAME);
     String rootHash = getValue(element, ATTR_HASH);
     boolean dependsOnConditionals = "true".equals(getValue(element, ATTR_DEPENDS_ON_CONDITIONALS));
+    boolean dependsOnNodes = "true".equals(getValue(element, ATTR_DEPENDS_ON_NODES));
     List<String> local = new ArrayList<String>();
     List<String> external = new ArrayList<String>();
     List<String> files = new ArrayList<String>();
@@ -133,7 +144,7 @@ public class GenerationRootDependencies {
         files.add(v);
       }
     }
-    return new GenerationRootDependencies(rootId, rootName, rootHash, dependsOnConditionals, local, external, files);
+    return new GenerationRootDependencies(rootId, rootName, rootHash, dependsOnConditionals, dependsOnNodes, local, external, files);
   }
 
   public static GenerationRootDependencies fromData(RootDependenciesBuilder l, List<String> generatedFiles) {
@@ -157,7 +168,7 @@ public class GenerationRootDependencies {
     return new GenerationRootDependencies(
       originalRoot != null ? originalRoot.getId() : null,
       originalRoot != null ? originalRoot.getName() : null,
-      l.getHash(), l.isDependsOnConditionals(),
+      l.getHash(), l.isDependsOnConditionals(), l.isDependsOnModelNodes(),
       local, external, generatedFiles);
   }
 }
