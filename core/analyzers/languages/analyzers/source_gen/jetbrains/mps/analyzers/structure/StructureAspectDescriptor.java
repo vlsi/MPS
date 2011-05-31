@@ -69,12 +69,8 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.ConceptCondition", new String[]{"jetbrains.mps.analyzers.structure.ApplicableCondition", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mps.analyzers.structure.ApplicableCondition"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 4779448:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.ApplicableNodeReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 530223091:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.InsertBeforePosition", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case -805464172:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.InsertPosition", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1807174758:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.analyzers.structure.InsertAfterPosition", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

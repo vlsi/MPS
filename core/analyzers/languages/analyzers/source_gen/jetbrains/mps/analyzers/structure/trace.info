@@ -3,9 +3,7 @@
   <unitInfo fileName="Analyzers_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.structure.Analyzers_Language" />
   <unitInfo fileName="BackwardDirection.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.analyzers.structure.BackwardDirection" />
   <unitInfo fileName="ForwardDirection.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.analyzers.structure.ForwardDirection" />
-  <unitInfo fileName="InsertAfterPosition.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.analyzers.structure.InsertAfterPosition" />
   <unitInfo fileName="InsertPosition.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.analyzers.structure.InsertPosition" />
-  <unitInfo fileName="InsertBeforePosition.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.analyzers.structure.InsertBeforePosition" />
   <unitInfo fileName="AnalyzerRunnerType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.analyzers.structure.AnalyzerRunnerType" />
   <unitInfo fileName="AnalyzerFunctionResultType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.analyzers.structure.AnalyzerFunctionResultType" />
   <unitInfo fileName="AnalysisDirection.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.analyzers.structure.AnalysisDirection" />
@@ -21,7 +19,7 @@
   <unitInfo fileName="PatternCondition.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.analyzers.structure.PatternCondition" />
   <unitInfo fileName="IsOperation.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.analyzers.structure.IsOperation" />
   <unitInfo fileName="AnalyzerRunnerCreator.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.analyzers.structure.AnalyzerRunnerCreator" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="83" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.analyzers.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="79" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.analyzers.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="EmitInstruction.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.analyzers.structure.EmitInstruction" />
   <unitInfo fileName="InstructionReference.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.analyzers.structure.InstructionReference" />
   <unitInfo fileName="AnalyzerRunnerAnalyzeOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.analyzers.structure.AnalyzerRunnerAnalyzeOperation" />
@@ -30,7 +28,7 @@
   <unitInfo fileName="InstructionParameter.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.analyzers.structure.InstructionParameter" />
   <unitInfo fileName="Instruction.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.analyzers.structure.Instruction" />
   <unitInfo fileName="Rule.java" startLine="16" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.analyzers.structure.Rule" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.analyzers.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.analyzers.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Analyzer.java" startLine="16" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.analyzers.structure.Analyzer" />
 </debugInfo>
 
