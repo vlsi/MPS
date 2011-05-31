@@ -548,7 +548,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         continue;
       }
 
-      SNode inputTargetNode = inputReference.getTargetNode();
+      SNode inputTargetNode = inputReference.getTargetNodeSilently();
       if (inputTargetNode == null) {
         myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
           GeneratorUtil.describeIfExists(inputNode, "input node"),
