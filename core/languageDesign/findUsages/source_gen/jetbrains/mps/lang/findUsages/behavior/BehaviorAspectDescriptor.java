@@ -4,43 +4,46 @@ package jetbrains.mps.lang.findUsages.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", "jetbrains.mps.lang.findUsages.structure.CategorizeBlock", "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", "jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", "jetbrains.mps.lang.findUsages.structure.FindBlock", "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.findUsages.structure.IsApplicableBlock", "jetbrains.mps.lang.findUsages.structure.IsVisibleBlock", "jetbrains.mps.lang.findUsages.structure.MakeResultProvider", "jetbrains.mps.lang.findUsages.structure.NodeStatement", "jetbrains.mps.lang.findUsages.structure.ResultStatement", "jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1681546880:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 6:
         return new FindBlock_BehaviorDescriptor();
-      case -415867744:
+      case 7:
         return new FinderDeclaration_BehaviorDescriptor();
-      case 408242384:
+      case 9:
         return new IsApplicableBlock_BehaviorDescriptor();
-      case 238808196:
+      case 3:
         return new ConceptFunctionParameter_node_BehaviorDescriptor();
-      case -2054006786:
+      case 13:
         return new ResultStatement_BehaviorDescriptor();
-      case 714333881:
+      case 12:
         return new NodeStatement_BehaviorDescriptor();
-      case -1710867681:
+      case 4:
         return new ExecuteFinderExpression_BehaviorDescriptor();
-      case 206834080:
+      case 1:
         return new CategorizeBlock_BehaviorDescriptor();
-      case -658040233:
+      case 14:
         return new SearchedNodesBlock_BehaviorDescriptor();
-      case 1462314592:
+      case 2:
         return new CheckCancelledStatusStatement_BehaviorDescriptor();
-      case 1225576921:
+      case 10:
         return new IsVisibleBlock_BehaviorDescriptor();
-      case -191444834:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration 
         return null;
-      case 360234436:
+      case 5:
         return new ExecuteFindersGetSearchResults_BehaviorDescriptor();
-      case -172640271:
+      case 8:
         return new FinderReference_BehaviorDescriptor();
-      case -772220656:
+      case 11:
         return new MakeResultProvider_BehaviorDescriptor();
       default:
         return null;

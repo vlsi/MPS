@@ -4,26 +4,29 @@ package jetbrains.mps.build.dependency.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.build.dependency.structure.CycleReference", "jetbrains.mps.build.dependency.structure.Macros", "jetbrains.mps.build.dependency.structure.ModuleDescription", "jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.build.dependency.structure.ProjectDescriptionReference"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1795909067:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 5:
         return new ProjectDescription_BehaviorDescriptor();
-      case 345691720:
+      case 3:
         return new ModuleDescription_BehaviorDescriptor();
-      case -1615681218:
+      case 0:
         return new Cycle_BehaviorDescriptor();
-      case -1797712679:
+      case 4:
         return new PathHolder_BehaviorDescriptor();
-      case -833471571:
+      case 1:
         return new CycleReference_BehaviorDescriptor();
-      case 1717622991:
+      case 2:
         return new Macros_BehaviorDescriptor();
-      case -1048556096:
+      case 6:
         return new ProjectDescriptionReference_BehaviorDescriptor();
       default:
         return null;

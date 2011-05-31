@@ -28,7 +28,7 @@
   <unitInfo fileName="MappingConfigRefSet_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_Behavior" />
   <unitInfo fileName="MappingConfigNormalRef_Behavior.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_Behavior" />
   <unitInfo fileName="Module_Behavior.java" startLine="12" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Module_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1250389701475344621">
     <nodeInfo nodeId="1250389701475344628" fileName="ModuleReference_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1250389701475344623" fileName="ModuleReference_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />

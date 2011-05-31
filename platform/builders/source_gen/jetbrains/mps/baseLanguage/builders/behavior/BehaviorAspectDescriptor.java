@@ -4,67 +4,70 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1031423737:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.builders.structure.Builder 
         return null;
-      case -1038698765:
+      case 7:
         return new BuilderCreator_BehaviorDescriptor();
-      case -145962378:
+      case 8:
         return new BuilderStatement_BehaviorDescriptor();
-      case -421754633:
+      case 9:
         return new ResultExpression_BehaviorDescriptor();
-      case 1947798252:
+      case 24:
         return new SimpleBuilders_BehaviorDescriptor();
-      case 1460546293:
+      case 11:
         return new SimpleBuilderChild_BehaviorDescriptor();
-      case 290784105:
+      case 18:
         return new SimpleBuilderParentExpression_BehaviorDescriptor();
-      case 1838033773:
+      case 12:
         return new SimpleBuilderChildExpression_BehaviorDescriptor();
-      case 2029395039:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression 
         return null;
-      case 577643667:
+      case 13:
         return new SimpleBuilderDeclaration_BehaviorDescriptor();
-      case 1171210855:
+      case 10:
         return new SimpleBuilder_BehaviorDescriptor();
-      case -138914558:
+      case 16:
         return new SimpleBuilderParameter_BehaviorDescriptor();
-      case -1028158359:
+      case 17:
         return new SimpleBuilderParameterReference_BehaviorDescriptor();
-      case -332700088:
+      case 0:
         return new AsBuilderStatement_BehaviorDescriptor();
-      case 1528229256:
+      case 6:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.builders.structure.BuilderContainer 
         return null;
-      case -502044524:
+      case 4:
         return new BeanPropertyBuilder_BehaviorDescriptor();
-      case -703502807:
+      case 3:
         return new BeanBuilder_BehaviorDescriptor();
-      case 718963789:
+      case 1:
         return new AsTypeBuilder_BehaviorDescriptor();
-      case 463351132:
+      case 19:
         return new SimpleBuilderProperty_BehaviorDescriptor();
-      case 1871157524:
+      case 21:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression 
         return null;
-      case 1985326374:
+      case 22:
         return new SimpleBuilderPropertyParent_BehaviorDescriptor();
-      case -484610699:
+      case 23:
         return new SimpleBuilderPropertyValue_BehaviorDescriptor();
-      case -1855071585:
+      case 20:
         return new SimpleBuilderPropertyBuilder_BehaviorDescriptor();
-      case 113519492:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration 
         return null;
-      case 379351234:
+      case 15:
         return new SimpleBuilderExtensionDeclaration_BehaviorDescriptor();
       default:
         return null;

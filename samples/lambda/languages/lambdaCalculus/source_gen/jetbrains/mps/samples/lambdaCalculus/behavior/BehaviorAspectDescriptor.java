@@ -4,75 +4,78 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef", "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable", "jetbrains.mps.samples.lambdaCalculus.structure.AddOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation", "jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation", "jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation", "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaType", "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LetRef", "jetbrains.mps.samples.lambdaCalculus.structure.LetVariable", "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", "jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation", "jetbrains.mps.samples.lambdaCalculus.structure.NumberType", "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", "jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", "jetbrains.mps.samples.lambdaCalculus.structure.StringType", "jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation", "jetbrains.mps.samples.lambdaCalculus.structure.Variable", "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner", "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1687922204:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 11:
         // interface or abstract concept behavior jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression 
         return null;
-      case -106727006:
+      case 9:
         return new LambdaAbstraction_BehaviorDescriptor();
-      case 598926277:
+      case 1:
         return new AbstractionVariable_BehaviorDescriptor();
-      case -1527043470:
+      case 22:
         return new StringConstant_BehaviorDescriptor();
-      case 1778472404:
+      case 19:
         return new NumericConstant_BehaviorDescriptor();
-      case -2130288052:
+      case 10:
         return new LambdaApplication_BehaviorDescriptor();
-      case -1182719609:
+      case 21:
         return new Program_BehaviorDescriptor();
-      case -1496603787:
+      case 0:
         return new AbstractionVarRef_BehaviorDescriptor();
-      case 1404709481:
+      case 4:
         // interface or abstract concept behavior jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation 
         return null;
-      case 1507395747:
+      case 2:
         return new AddOperation_BehaviorDescriptor();
-      case 1987793638:
+      case 17:
         return new MultiplyOperation_BehaviorDescriptor();
-      case -979538954:
+      case 24:
         return new SubtractOperation_BehaviorDescriptor();
-      case 2128068849:
+      case 7:
         return new DivideOperation_BehaviorDescriptor();
-      case -1069771330:
+      case 12:
         // interface or abstract concept behavior jetbrains.mps.samples.lambdaCalculus.structure.LambdaType 
         return null;
-      case 1087147072:
+      case 18:
         return new NumberType_BehaviorDescriptor();
-      case -93754104:
+      case 23:
         return new StringType_BehaviorDescriptor();
-      case -228576753:
+      case 8:
         return new FunctionType_BehaviorDescriptor();
-      case -1091927727:
+      case 20:
         return new ParenthesisExpression_BehaviorDescriptor();
-      case 1271713253:
+      case 16:
         return new MultipleExpression_BehaviorDescriptor();
-      case -1759814248:
+      case 3:
         // interface or abstract concept behavior jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation 
         return null;
-      case -881056808:
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation 
         return null;
-      case -1156557809:
+      case 6:
         return new ConcatenateOperation_BehaviorDescriptor();
-      case 195157974:
+      case 13:
         return new LetExpression_BehaviorDescriptor();
-      case -1272924907:
+      case 14:
         return new LetRef_BehaviorDescriptor();
-      case -952543430:
+      case 15:
         return new LetVariable_BehaviorDescriptor();
-      case 783209050:
+      case 26:
         // interface or abstract concept behavior jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner 
         return null;
-      case -2082475150:
+      case 27:
         // interface or abstract concept behavior jetbrains.mps.samples.lambdaCalculus.structure.VariableReference 
         return null;
-      case 1741893593:
+      case 25:
         return new Variable_BehaviorDescriptor();
       default:
         return null;

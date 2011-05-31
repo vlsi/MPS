@@ -26,7 +26,7 @@
   <unitInfo fileName="LibraryStubDescriptor_Behavior.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_Behavior" />
   <unitInfo fileName="ModelManagerDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_Behavior" />
   <unitInfo fileName="StubsCreatorDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.StubsCreatorDeclaration_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2974122604715183932">
     <nodeInfo nodeId="2974122604715185991" fileName="LibraryStubDescriptor_Behavior.java" startLine="27" startPosition="87" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2856649189863832616" fileName="LibraryStubDescriptor_Behavior.java" startLine="13" startPosition="82" endLine="17" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

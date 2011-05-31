@@ -6,7 +6,7 @@
   <unitInfo fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" />
   <unitInfo fileName="MPSDistribution_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_BehaviorDescriptor" />
   <unitInfo fileName="MPSBuild_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="MPSDistribution_Behavior.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
   <unitInfo fileName="MPSBuild_Behavior.java" startLine="33" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
   <root nodeId="1233155892819">

@@ -6,7 +6,7 @@
   <unitInfo fileName="TestPropertyVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="TestVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="VariableValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="PatternTest_Behavior.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
   <unitInfo fileName="PatternTest_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
   <root nodeId="394224946578869061">

@@ -4,43 +4,46 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", "jetbrains.mps.baseLanguage.classifiers.structure.IMember", "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1553485628:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 7:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.classifiers.structure.IClassifier 
         return null;
-      case -1984697667:
+      case 9:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.classifiers.structure.IMember 
         return null;
-      case 1392477911:
+      case 8:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart 
         return null;
-      case 1578447933:
+      case 12:
         return new ThisClassifierExpression_BehaviorDescriptor();
-      case -573869166:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType 
         return null;
-      case -1002552714:
+      case 6:
         return new DefaultClassifierType_BehaviorDescriptor();
-      case 98094890:
+      case 10:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation 
         return null;
-      case 1785336861:
+      case 5:
         return new DefaultClassifierMethodDeclaration_BehaviorDescriptor();
-      case 975488652:
+      case 4:
         return new DefaultClassifierMethodCallOperation_BehaviorDescriptor();
-      case -661473956:
+      case 3:
         return new DefaultClassifierFieldDeclaration_BehaviorDescriptor();
-      case -987394235:
+      case 2:
         return new DefaultClassifierFieldAccessOperation_BehaviorDescriptor();
-      case -1101238887:
+      case 11:
         return new SuperClassifierExpresson_BehaviorDescriptor();
-      case 225062172:
+      case 1:
         return new DefaultClassifier_BehaviorDescriptor();
       default:
         return null;

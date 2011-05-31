@@ -119,7 +119,7 @@
   <unitInfo fileName="MapSrcListMacro_Behavior.java" startLine="11" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior" />
   <unitInfo fileName="CopySrcListMacro_Behavior.java" startLine="11" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_Behavior" />
   <unitInfo fileName="NodeMacro_Behavior.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.NodeMacro_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877219536">
     <nodeInfo nodeId="1213877219539" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877219547" fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="21" startPosition="136" endLine="22" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

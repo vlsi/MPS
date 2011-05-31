@@ -14,6 +14,7 @@
   </dependency>
   <dependency className="jetbrains.mps.make.script.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.AdvanceWorkStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.AllWorkLeftExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.BeginWorkStatement_BehaviorDescriptor" />

@@ -55,7 +55,7 @@
   <unitInfo fileName="BinaryOperationConcept_Behavior.java" startLine="15" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mpslite.behavior.BinaryOperationConcept_Behavior" />
   <unitInfo fileName="ConceptContainer_Behavior.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mpslite.behavior.ConceptContainer_Behavior" />
   <unitInfo fileName="ConcretePropertyPart_Behavior.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mpslite.behavior.ConcretePropertyPart_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mpslite.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mpslite.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="IMPSLiteConcept_Behavior.java" startLine="13" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mpslite.behavior.IMPSLiteConcept_Behavior" />
   <unitInfo fileName="VariableConcept_Behavior.java" startLine="136" startPosition="0" endLine="648" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior$QuotationClass_mkovpu_a0a0a8" />
   <unitInfo fileName="VariableConcept_Behavior.java" startLine="24" startPosition="0" endLine="649" endPosition="0" unitName="jetbrains.mpslite.behavior.VariableConcept_Behavior" />

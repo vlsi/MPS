@@ -4,54 +4,57 @@ package jetbrains.mps.gwt.client.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.gwt.client.structure.Attr", "jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.SuperSource"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 2066284946:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 7:
         return new GWTModule_BehaviorDescriptor();
-      case 82464764:
+      case 4:
         return new EntryPoint_BehaviorDescriptor();
-      case 36823574:
+      case 10:
         return new Inherits_BehaviorDescriptor();
-      case -1933198114:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.gwt.client.structure.PatternHolder 
         return null;
-      case -557407830:
+      case 8:
         return new Include_BehaviorDescriptor();
-      case 473836252:
+      case 5:
         return new Exclude_BehaviorDescriptor();
-      case -1995982166:
+      case 13:
         // interface or abstract concept behavior jetbrains.mps.gwt.client.structure.PatternFilter 
         return null;
-      case 1003894930:
+      case 12:
         return new Pattern_BehaviorDescriptor();
-      case -1340602781:
+      case 11:
         return new Path_BehaviorDescriptor();
-      case -1341031377:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.gwt.client.structure.Attr 
         return null;
-      case -908299716:
+      case 2:
         return new DefaultExcludes_BehaviorDescriptor();
-      case 549227720:
+      case 1:
         return new CaseSensitive_BehaviorDescriptor();
-      case -99773431:
+      case 9:
         return new Includes_BehaviorDescriptor();
-      case 1804022039:
+      case 6:
         return new Excludes_BehaviorDescriptor();
-      case 269775577:
+      case 17:
         return new Source_BehaviorDescriptor();
-      case 1715140472:
+      case 18:
         return new SuperSource_BehaviorDescriptor();
-      case 188857639:
+      case 15:
         return new Public_BehaviorDescriptor();
-      case 132148222:
+      case 3:
         // interface or abstract concept behavior jetbrains.mps.gwt.client.structure.Element 
         return null;
-      case -687424105:
+      case 16:
         return new RenameTo_BehaviorDescriptor();
       default:
         return null;

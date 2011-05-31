@@ -11,7 +11,7 @@
   <unitInfo fileName="MoneyLiteral_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_Behavior" />
   <unitInfo fileName="MoneyType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
   <unitInfo fileName="MoneyType_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877266178">
     <scopeInfo nodeId="1213877266180" fileName="MoneyLiteral_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

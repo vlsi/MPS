@@ -4,54 +4,57 @@ package jetbrains.mps.lang.core.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.IContainer", "jetbrains.mps.lang.core.structure.IDeprecatable", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.lang.core.structure.IType", "jetbrains.mps.lang.core.structure.IWrapper", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 965148823:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.BaseConcept 
         return null;
-      case 2115426872:
+      case 9:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.INamedConcept 
         return null;
-      case 2101294673:
+      case 10:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.IResolveInfo 
         return null;
-      case 491166122:
+      case 12:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.IWrapper 
         return null;
-      case -702055753:
+      case 7:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.IDeprecatable 
         return null;
-      case -826443816:
+      case 6:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.IContainer 
         return null;
-      case -1037801085:
+      case 11:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.IType 
         return null;
-      case -1774624244:
+      case 8:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.IMetaLevelChanger 
         return null;
-      case -98730688:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.ExportScope 
         return null;
-      case 1677536201:
+      case 5:
         return new ExportScopePublic_BehaviorDescriptor();
-      case -953098245:
+      case 4:
         return new ExportScopeNamespace_BehaviorDescriptor();
-      case 1586175948:
+      case 3:
         return new ExportScopeModule_BehaviorDescriptor();
-      case 877743324:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.lang.core.structure.Attribute 
         return null;
-      case -1983711742:
+      case 13:
         return new LinkAttribute_BehaviorDescriptor();
-      case 172703994:
+      case 14:
         return new NodeAttribute_BehaviorDescriptor();
-      case 1806896775:
+      case 15:
         return new PropertyAttribute_BehaviorDescriptor();
       default:
         return null;

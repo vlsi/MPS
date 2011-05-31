@@ -19,7 +19,7 @@
   <unitInfo fileName="IntentionDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BaseIntentionDeclaration_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="IntentionDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BaseIntentionDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior" />
   <root nodeId="1213877237627">
     <nodeInfo nodeId="1213877237631" fileName="IntentionDeclaration_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

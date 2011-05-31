@@ -4,48 +4,51 @@ package jetbrains.mps.lang.pattern.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.ActionStatement", "jetbrains.mps.lang.pattern.structure.AsPattern", "jetbrains.mps.lang.pattern.structure.InsertAfterPosition", "jetbrains.mps.lang.pattern.structure.InsertBeforePosition", "jetbrains.mps.lang.pattern.structure.InsertPosition", "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.WildcardPattern"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 716368539:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 2:
         return new AsPattern_BehaviorDescriptor();
-      case -2131337619:
+      case 11:
         // interface or abstract concept behavior jetbrains.mps.lang.pattern.structure.Pattern 
         return null;
-      case -1337562907:
+      case 12:
         return new PatternExpression_BehaviorDescriptor();
-      case -1529997903:
+      case 13:
         return new PatternVariableDeclaration_BehaviorDescriptor();
-      case -1029075866:
+      case 15:
         return new PropertyPatternVariableDeclaration_BehaviorDescriptor();
-      case -1207555533:
+      case 16:
         return new WildcardPattern_BehaviorDescriptor();
-      case -1884208785:
+      case 7:
         return new ListPattern_BehaviorDescriptor();
-      case 809452491:
+      case 6:
         return new LinkPatternVariableDeclaration_BehaviorDescriptor();
-      case 1712602949:
+      case 0:
         return new ActionAsPattern_BehaviorDescriptor();
-      case -576410186:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.lang.pattern.structure.ActionStatement 
         return null;
-      case 156926274:
+      case 14:
         return new PatternVariableReference_BehaviorDescriptor();
-      case -561000502:
+      case 8:
         return new OrPattern_BehaviorDescriptor();
-      case -682112551:
+      case 9:
         return new OrPatternClause_BehaviorDescriptor();
-      case 1051743621:
+      case 10:
         return new OrPatternVariableReference_BehaviorDescriptor();
-      case -993142711:
+      case 3:
         return new InsertAfterPosition_BehaviorDescriptor();
-      case -4587228:
+      case 4:
         return new InsertBeforePosition_BehaviorDescriptor();
-      case -737017467:
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.lang.pattern.structure.InsertPosition 
         return null;
       default:

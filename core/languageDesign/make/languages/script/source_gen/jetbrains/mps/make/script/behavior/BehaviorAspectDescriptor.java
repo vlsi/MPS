@@ -4,60 +4,63 @@ package jetbrains.mps.make.script.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ConfigDefinition", "jetbrains.mps.make.script.structure.Expected", "jetbrains.mps.make.script.structure.ExpectedInput", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.IExpected", "jetbrains.mps.make.script.structure.InputResourcesParameter", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.QueryParameterDeclaration", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 983572414:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 21:
         return new ResultStatement_BehaviorDescriptor();
-      case -741479940:
+      case 20:
         return new ResourceType_BehaviorDescriptor();
-      case 1427448848:
+      case 15:
         return new OutputResources_BehaviorDescriptor();
-      case -1101840932:
+      case 11:
         return new JobDefinition_BehaviorDescriptor();
-      case 575325786:
+      case 9:
         return new InputResourcesParameter_BehaviorDescriptor();
-      case -102130137:
+      case 16:
         return new QueryDefinition_BehaviorDescriptor();
-      case -1702025755:
+      case 17:
         return new QueryParameterDeclaration_BehaviorDescriptor();
-      case 1354309897:
+      case 12:
         return new Option_BehaviorDescriptor();
-      case -950406463:
+      case 22:
         return new Text_BehaviorDescriptor();
-      case 1079744641:
+      case 13:
         return new OptionExpression_BehaviorDescriptor();
-      case 501708771:
+      case 14:
         return new OptionType_BehaviorDescriptor();
-      case -123496991:
+      case 6:
         return new ExpectedOption_BehaviorDescriptor();
-      case -1739978164:
+      case 4:
         // interface or abstract concept behavior jetbrains.mps.make.script.structure.Expected 
         return null;
-      case -1672155938:
+      case 5:
         return new ExpectedInput_BehaviorDescriptor();
-      case -443646447:
+      case 10:
         return new JobDeclaration_BehaviorDescriptor();
-      case -902242003:
+      case 8:
         // interface or abstract concept behavior jetbrains.mps.make.script.structure.IExpected 
         return null;
-      case -1879092157:
+      case 18:
         return new RelayQueryExpression_BehaviorDescriptor();
-      case 722524617:
+      case 3:
         return new ConfigDefinition_BehaviorDescriptor();
-      case -1001578878:
+      case 19:
         return new ReportFeedbackStatement_BehaviorDescriptor();
-      case -861662775:
+      case 2:
         return new BeginWorkStatement_BehaviorDescriptor();
-      case 1713558928:
+      case 0:
         return new AdvanceWorkStatement_BehaviorDescriptor();
-      case 1362544503:
+      case 7:
         return new FinishWorkStatement_BehaviorDescriptor();
-      case 69496797:
+      case 1:
         return new AllWorkLeftExpression_BehaviorDescriptor();
       default:
         return null;

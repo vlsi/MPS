@@ -16,7 +16,7 @@
   <unitInfo fileName="NamedTupleDeclaration_Behavior.java" startLine="90" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior$QuotationClass_ds5lpv_a0b0d" />
   <unitInfo fileName="NamedTupleType_Behavior.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_Behavior" />
   <unitInfo fileName="NamedTupleComponentDeclaration_BehaviorDescriptor.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="IndexedTupleType_Behavior.java" startLine="13" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleType_Behavior" />
   <unitInfo fileName="NamedTupleDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior" />
   <root nodeId="1238852249419">

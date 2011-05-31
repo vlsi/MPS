@@ -4,82 +4,85 @@ package jetbrains.mps.debug.customViewers.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.debug.customViewers.structure.AllElementsOperation", "jetbrains.mps.debug.customViewers.structure.ArrayValueType", "jetbrains.mps.debug.customViewers.structure.CallMethodOperation", "jetbrains.mps.debug.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.ClassFqNameOperation", "jetbrains.mps.debug.customViewers.structure.ClassNameOperation", "jetbrains.mps.debug.customViewers.structure.CustomViewer", "jetbrains.mps.debug.customViewers.structure.CustomWatchable", "jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debug.customViewers.structure.ElementOperation", "jetbrains.mps.debug.customViewers.structure.ElementsRangeOperation", "jetbrains.mps.debug.customViewers.structure.FieldOperation", "jetbrains.mps.debug.customViewers.structure.FieldsListOperation", "jetbrains.mps.debug.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction", "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debug.customViewers.structure.IsInstanceOfOperation", "jetbrains.mps.debug.customViewers.structure.JavaValueOperation", "jetbrains.mps.debug.customViewers.structure.ObjectValueType", "jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter", "jetbrains.mps.debug.customViewers.structure.PrimitiveValueType", "jetbrains.mps.debug.customViewers.structure.SizeOperation", "jetbrains.mps.debug.customViewers.structure.StringValueOperation", "jetbrains.mps.debug.customViewers.structure.StringValueType", "jetbrains.mps.debug.customViewers.structure.ToProcessMethod", "jetbrains.mps.debug.customViewers.structure.ValueType", "jetbrains.mps.debug.customViewers.structure.WatchableCreator", "jetbrains.mps.debug.customViewers.structure.WatchableListType", "jetbrains.mps.debug.customViewers.structure.WatchableType", "jetbrains.mps.debug.customViewers.structure.WatchablesListCreator"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 385455873:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 30:
         return new ValueType_BehaviorDescriptor();
-      case -1266363140:
+      case 1:
         return new ArrayValueType_BehaviorDescriptor();
-      case -1840125438:
+      case 23:
         return new ObjectValueType_BehaviorDescriptor();
-      case -413293266:
+      case 25:
         return new PrimitiveValueType_BehaviorDescriptor();
-      case 1596457070:
+      case 8:
         return new CustomWatchable_BehaviorDescriptor();
-      case -1554117572:
+      case 9:
         return new CustomWatchablesContainer_BehaviorDescriptor();
-      case -979047827:
+      case 7:
         return new CustomViewer_BehaviorDescriptor();
-      case -423315143:
+      case 33:
         return new WatchableType_BehaviorDescriptor();
-      case 924295629:
+      case 31:
         return new WatchableCreator_BehaviorDescriptor();
-      case -902504040:
+      case 17:
         return new GetWatchablesBlock_ConceptFunction_BehaviorDescriptor();
-      case -214302830:
+      case 24:
         return new OriginalValue_ConceptFunctionParameter_BehaviorDescriptor();
-      case -1566379162:
+      case 13:
         return new FieldsListOperation_BehaviorDescriptor();
-      case 1136979095:
+      case 12:
         return new FieldOperation_BehaviorDescriptor();
-      case -1553631659:
+      case 10:
         return new ElementOperation_BehaviorDescriptor();
-      case -173829120:
+      case 16:
         return new GetValuePresentation_ConceptFunction_BehaviorDescriptor();
-      case -811022110:
+      case 4:
         return new CanWrapValue_ConceptFunction_BehaviorDescriptor();
-      case -1729275250:
+      case 6:
         return new ClassNameOperation_BehaviorDescriptor();
-      case -1759524093:
+      case 5:
         return new ClassFqNameOperation_BehaviorDescriptor();
-      case 343760412:
+      case 26:
         return new SizeOperation_BehaviorDescriptor();
-      case 717792793:
+      case 0:
         return new AllElementsOperation_BehaviorDescriptor();
-      case 929781387:
+      case 11:
         return new ElementsRangeOperation_BehaviorDescriptor();
-      case -2122334594:
+      case 2:
         return new CallMethodOperation_BehaviorDescriptor();
-      case -896987198:
+      case 22:
         return new JavaValueOperation_BehaviorDescriptor();
-      case 1817147760:
+      case 28:
         return new StringValueType_BehaviorDescriptor();
-      case 1881791729:
+      case 27:
         return new StringValueOperation_BehaviorDescriptor();
-      case -2116950617:
+      case 21:
         return new IsInstanceOfOperation_BehaviorDescriptor();
-      case 817968827:
+      case 18:
         return new HighLevelCustomViewer_BehaviorDescriptor();
-      case 2113227254:
+      case 14:
         return new GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor();
-      case -1941463794:
+      case 15:
         return new GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor();
-      case 711558688:
+      case 3:
         return new CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor();
-      case 1061219375:
+      case 19:
         return new HighLevelValue_ConceptFunctionParameter_BehaviorDescriptor();
-      case -411494629:
+      case 20:
         return new HighLevelWatchableCreator_BehaviorDescriptor();
-      case 1020490266:
+      case 34:
         return new WatchablesListCreator_BehaviorDescriptor();
-      case -1886369929:
+      case 32:
         return new WatchableListType_BehaviorDescriptor();
-      case -463695957:
+      case 29:
         return new ToProcessMethod_BehaviorDescriptor();
       default:
         return null;

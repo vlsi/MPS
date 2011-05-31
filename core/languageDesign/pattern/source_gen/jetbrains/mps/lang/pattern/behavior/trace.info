@@ -21,8 +21,8 @@
   <unitInfo fileName="LinkPatternVariableDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PropertyPatternVariableDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ActionStatement_Behavior.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ActionStatement_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="PatternExpression_Behavior.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.BehaviorAspectDescriptor" />
   <root nodeId="111677556049506422">
     <nodeInfo nodeId="111677556049506446" fileName="ActionStatement_Behavior.java" startLine="13" startPosition="132" endLine="14" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="111677556049506457" fileName="ActionStatement_Behavior.java" startLine="15" startPosition="5" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

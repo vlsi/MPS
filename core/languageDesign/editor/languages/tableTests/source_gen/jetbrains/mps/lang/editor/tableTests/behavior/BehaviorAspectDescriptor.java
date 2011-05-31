@@ -4,45 +4,48 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement", "jetbrains.mps.lang.editor.tableTests.structure.ContentElement", "jetbrains.mps.lang.editor.tableTests.structure.DataCell", "jetbrains.mps.lang.editor.tableTests.structure.Event", "jetbrains.mps.lang.editor.tableTests.structure.EventReference", "jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "jetbrains.mps.lang.editor.tableTests.structure.Matrix", "jetbrains.mps.lang.editor.tableTests.structure.Row", "jetbrains.mps.lang.editor.tableTests.structure.State", "jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "jetbrains.mps.lang.editor.tableTests.structure.StateReference", "jetbrains.mps.lang.editor.tableTests.structure.Table", "jetbrains.mps.lang.editor.tableTests.structure.Transition", "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer", "jetbrains.mps.lang.editor.tableTests.structure.XElement", "jetbrains.mps.lang.editor.tableTests.structure.YElement"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -666905361:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 11:
         return new Table_BehaviorDescriptor();
-      case -869806229:
+      case 2:
         return new DataCell_BehaviorDescriptor();
-      case -782817477:
+      case 7:
         return new Row_BehaviorDescriptor();
-      case -288484811:
+      case 9:
         return new StateMachine_BehaviorDescriptor();
-      case -680129605:
+      case 3:
         return new Event_BehaviorDescriptor();
-      case -894213932:
+      case 12:
         return new Transition_BehaviorDescriptor();
-      case -667263566:
+      case 8:
         return new State_BehaviorDescriptor();
-      case -1837348423:
+      case 10:
         return new StateReference_BehaviorDescriptor();
-      case 119100880:
+      case 4:
         return new EventReference_BehaviorDescriptor();
-      case -890570378:
+      case 5:
         return new HierarchycalTable_BehaviorDescriptor();
-      case -483568943:
+      case 13:
         return new UltimateContainer_BehaviorDescriptor();
-      case -2083975547:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement 
         return null;
-      case 600908480:
+      case 6:
         return new Matrix_BehaviorDescriptor();
-      case 322274979:
+      case 14:
         return new XElement_BehaviorDescriptor();
-      case 2065085314:
+      case 15:
         return new YElement_BehaviorDescriptor();
-      case -1219210174:
+      case 1:
         return new ContentElement_BehaviorDescriptor();
       default:
         return null;

@@ -4,24 +4,27 @@ package jetbrains.mps.baseLanguage.blTypes.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", "jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1756110201:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 4:
         return new PrimitiveTypeDescriptor_BehaviorDescriptor();
-      case -10816389:
+      case 5:
         return new PrimitiveTypeRef_BehaviorDescriptor();
-      case -1044962277:
+      case 3:
         return new FunctionType_BehaviorDescriptor();
-      case -1921177056:
+      case 0:
         return new BLArrayType_BehaviorDescriptor();
-      case -1196824066:
+      case 1:
         return new BarConcept_BehaviorDescriptor();
-      case 1844066795:
+      case 2:
         return new FooConcept_BehaviorDescriptor();
       default:
         return null;

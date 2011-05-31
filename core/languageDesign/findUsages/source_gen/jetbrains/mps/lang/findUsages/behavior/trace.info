@@ -19,7 +19,7 @@
   <unitInfo fileName="CheckCancelledStatusStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement_Behavior" />
   <unitInfo fileName="ExecuteFinderExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.ExecuteFinderExpression_Behavior" />
   <unitInfo fileName="FinderDeclaration_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="FinderDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior" />
   <root nodeId="1213877240100">
     <nodeInfo nodeId="1213877240104" fileName="FinderDeclaration_Behavior.java" startLine="24" startPosition="81" endLine="25" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

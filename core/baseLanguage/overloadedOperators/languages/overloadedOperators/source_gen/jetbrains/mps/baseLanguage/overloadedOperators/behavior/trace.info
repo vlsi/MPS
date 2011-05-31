@@ -11,7 +11,7 @@
   <unitInfo fileName="OverloadedOperatorContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedOperatorContainer_BehaviorDescriptor" />
   <unitInfo fileName="CustomOperatorUsage_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior" />
   <unitInfo fileName="OverloadedBinaryOperator_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1141736782992984502">
     <nodeInfo nodeId="1141736782992986318" fileName="CustomOperatorUsage_Behavior.java" startLine="18" startPosition="89" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1141736782992986333" fileName="CustomOperatorUsage_Behavior.java" startLine="19" startPosition="48" endLine="20" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

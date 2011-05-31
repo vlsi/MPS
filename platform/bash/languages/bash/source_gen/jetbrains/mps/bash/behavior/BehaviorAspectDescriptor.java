@@ -4,450 +4,453 @@ package jetbrains.mps.bash.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.bash.structure.AbstractCommand", "jetbrains.mps.bash.structure.AbstractFollowingCommandList", "jetbrains.mps.bash.structure.AbstractLoopCommand", "jetbrains.mps.bash.structure.AddExpression", "jetbrains.mps.bash.structure.AndAssingmentExpression", "jetbrains.mps.bash.structure.AndCombiningComditionalExpression", "jetbrains.mps.bash.structure.AndOperator", "jetbrains.mps.bash.structure.AppendingOutputErrorRedirection", "jetbrains.mps.bash.structure.AppendingOutputRedirection", "jetbrains.mps.bash.structure.Argument", "jetbrains.mps.bash.structure.ArgumentList", "jetbrains.mps.bash.structure.ArgumentListReference", "jetbrains.mps.bash.structure.ArgumentReference", "jetbrains.mps.bash.structure.ArithmeticCommand", "jetbrains.mps.bash.structure.ArithmeticExpansion", "jetbrains.mps.bash.structure.ArithmeticExpression", "jetbrains.mps.bash.structure.AssingmentExpression", "jetbrains.mps.bash.structure.AsyncOperator", "jetbrains.mps.bash.structure.AsyncTerminator", "jetbrains.mps.bash.structure.BaseAssingmentExpression", "jetbrains.mps.bash.structure.BaseCommandSubstitution", "jetbrains.mps.bash.structure.BaseVariableAssingment", "jetbrains.mps.bash.structure.BasedIntegerLiteral", "jetbrains.mps.bash.structure.BasicParameterExpansion", "jetbrains.mps.bash.structure.BinaryArithmeticExpression", "jetbrains.mps.bash.structure.BinaryConditionalExpression", "jetbrains.mps.bash.structure.BitwiseAndExpression", "jetbrains.mps.bash.structure.BitwiseNegationExpression", "jetbrains.mps.bash.structure.BitwiseOrExpression", "jetbrains.mps.bash.structure.BitwiseXorExpression", "jetbrains.mps.bash.structure.BlockFileConditionalExpression", "jetbrains.mps.bash.structure.BraceGrouping", "jetbrains.mps.bash.structure.BracketConditionalExpression", "jetbrains.mps.bash.structure.BracketExpression", "jetbrains.mps.bash.structure.BracketGrouping", "jetbrains.mps.bash.structure.BuckCommandSubstitution", "jetbrains.mps.bash.structure.CaseClause", "jetbrains.mps.bash.structure.CaseCommand", "jetbrains.mps.bash.structure.CaseTerminator", "jetbrains.mps.bash.structure.CharFileConditionalExpression", "jetbrains.mps.bash.structure.CombiningConditionalExpression", "jetbrains.mps.bash.structure.CommaExpression", "jetbrains.mps.bash.structure.Command", "jetbrains.mps.bash.structure.CommandList", "jetbrains.mps.bash.structure.CommandTerminator", "jetbrains.mps.bash.structure.CommentedCommandList", "jetbrains.mps.bash.structure.CommentedFollowingCommandList", "jetbrains.mps.bash.structure.CommentedText", "jetbrains.mps.bash.structure.ConditionalCommand", "jetbrains.mps.bash.structure.ConditionalExpression", "jetbrains.mps.bash.structure.ConditionalOperation", "jetbrains.mps.bash.structure.DecimalConstant", "jetbrains.mps.bash.structure.DirectoryConditionalExpression", "jetbrains.mps.bash.structure.DivAssingmentExpression", "jetbrains.mps.bash.structure.DivExpression", "jetbrains.mps.bash.structure.DoubleQuote", "jetbrains.mps.bash.structure.DoubleSemicolon", "jetbrains.mps.bash.structure.DoubleSemicolonEt", "jetbrains.mps.bash.structure.DuplicateInputFileDiscriptor", "jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor", "jetbrains.mps.bash.structure.EffectiveGroupIdConditionalExpression", "jetbrains.mps.bash.structure.EffectiveUserIdConditionalExpression", "jetbrains.mps.bash.structure.ElifCommand", "jetbrains.mps.bash.structure.EqualityExpression", "jetbrains.mps.bash.structure.EqualityNumber", "jetbrains.mps.bash.structure.EqualityStrings", "jetbrains.mps.bash.structure.EqualityStrings2", "jetbrains.mps.bash.structure.ExecTestConditionalExpression", "jetbrains.mps.bash.structure.ExistConditionalExpression", "jetbrains.mps.bash.structure.ExpExpression", "jetbrains.mps.bash.structure.ExternalCommandCall", "jetbrains.mps.bash.structure.ExternalCommandDeclaration", "jetbrains.mps.bash.structure.ExternalOptionDeclaration", "jetbrains.mps.bash.structure.ExternalOptionReference", "jetbrains.mps.bash.structure.FollowingCommandList", "jetbrains.mps.bash.structure.FollowingPipeline", "jetbrains.mps.bash.structure.ForCommand", "jetbrains.mps.bash.structure.ForeachCommand", "jetbrains.mps.bash.structure.FreeCommand", "jetbrains.mps.bash.structure.FunctionCallCommand", "jetbrains.mps.bash.structure.FunctionDeclaration", "jetbrains.mps.bash.structure.GeneralizedWord", "jetbrains.mps.bash.structure.GreaterThanExpression", "jetbrains.mps.bash.structure.GreaterThanNumber", "jetbrains.mps.bash.structure.GreaterThanOrEqual", "jetbrains.mps.bash.structure.GreaterThanOrEqualExpression", "jetbrains.mps.bash.structure.GreaterThanString", "jetbrains.mps.bash.structure.GroupIdConditionalExpression", "jetbrains.mps.bash.structure.GroupingCommand", "jetbrains.mps.bash.structure.HeadCommandList", "jetbrains.mps.bash.structure.HeadPipeline", "jetbrains.mps.bash.structure.HereDocumentRedirection", "jetbrains.mps.bash.structure.HereStringRedirection", "jetbrains.mps.bash.structure.HexIntegerLiteral", "jetbrains.mps.bash.structure.IArithmeticHolder", "jetbrains.mps.bash.structure.ICommandParameter", "jetbrains.mps.bash.structure.IComment", "jetbrains.mps.bash.structure.ICompoundCommand", "jetbrains.mps.bash.structure.IConcreteWordUnit", "jetbrains.mps.bash.structure.IDescribedConcept", "jetbrains.mps.bash.structure.IGeneralizedWordUnit", "jetbrains.mps.bash.structure.IORedirection", "jetbrains.mps.bash.structure.IPriorityExpression", "jetbrains.mps.bash.structure.ISymbolConcept", "jetbrains.mps.bash.structure.IToWordRedirection", "jetbrains.mps.bash.structure.IfCommand", "jetbrains.mps.bash.structure.InequalityExpression", "jetbrains.mps.bash.structure.InequalityNumber", "jetbrains.mps.bash.structure.InequalityStrings", "jetbrains.mps.bash.structure.InputLine", "jetbrains.mps.bash.structure.InputLines", "jetbrains.mps.bash.structure.InputRedirection", "jetbrains.mps.bash.structure.IntegerLiteral", "jetbrains.mps.bash.structure.LValue", "jetbrains.mps.bash.structure.LastReadConditionalExpression", "jetbrains.mps.bash.structure.LeftBitwiseShiftExpression", "jetbrains.mps.bash.structure.LeftShiftAssingmentExpression", "jetbrains.mps.bash.structure.LessThanExpression", "jetbrains.mps.bash.structure.LessThanNumber", "jetbrains.mps.bash.structure.LessThanOrEqualExpression", "jetbrains.mps.bash.structure.LessThanOrEqualNumber", "jetbrains.mps.bash.structure.LessThanString", "jetbrains.mps.bash.structure.LogicalAndExpression", "jetbrains.mps.bash.structure.LogicalNegationExpression", "jetbrains.mps.bash.structure.LogicalOrExpression", "jetbrains.mps.bash.structure.MinusAssingmentExpression", "jetbrains.mps.bash.structure.ModAssingmentExpression", "jetbrains.mps.bash.structure.ModExpression", "jetbrains.mps.bash.structure.MulExpression", "jetbrains.mps.bash.structure.MusAssingmentExpression", "jetbrains.mps.bash.structure.NewerThan", "jetbrains.mps.bash.structure.NonZeroStringConditionalExpression", "jetbrains.mps.bash.structure.NotCommand", "jetbrains.mps.bash.structure.OlderThan", "jetbrains.mps.bash.structure.Option", "jetbrains.mps.bash.structure.OptionReference", "jetbrains.mps.bash.structure.OptionSet", "jetbrains.mps.bash.structure.OptionSetReference", "jetbrains.mps.bash.structure.OptionWithParam", "jetbrains.mps.bash.structure.OptionWithParamReference", "jetbrains.mps.bash.structure.OptnameStringConditionalExpression", "jetbrains.mps.bash.structure.OrAssingmentExpression", "jetbrains.mps.bash.structure.OrCombiningConditionalExpression", "jetbrains.mps.bash.structure.OrOperator", "jetbrains.mps.bash.structure.OtherExistConditionalExpression", "jetbrains.mps.bash.structure.OtherSymlinkConditionalExpression", "jetbrains.mps.bash.structure.OutputErrorRedirection", "jetbrains.mps.bash.structure.OutputRedirection", "jetbrains.mps.bash.structure.PipeConditionalExpression", "jetbrains.mps.bash.structure.PipelineOperatorConnection", "jetbrains.mps.bash.structure.PipelineOperatorErrorConnection", "jetbrains.mps.bash.structure.PlusAssingmentExpression", "jetbrains.mps.bash.structure.PostDecExpression", "jetbrains.mps.bash.structure.PostIncExpression", "jetbrains.mps.bash.structure.PostVariableExpression", "jetbrains.mps.bash.structure.PreDecExpression", "jetbrains.mps.bash.structure.PreIncExpression", "jetbrains.mps.bash.structure.PreVariableExpression", "jetbrains.mps.bash.structure.QuotedWord", "jetbrains.mps.bash.structure.QuotesCommandSubstitution", "jetbrains.mps.bash.structure.ReadTestConditionalExpression", "jetbrains.mps.bash.structure.ReadingWritingRedirection", "jetbrains.mps.bash.structure.RedirectedCommand", "jetbrains.mps.bash.structure.Redirection", "jetbrains.mps.bash.structure.RegularFileConditionalExpression", "jetbrains.mps.bash.structure.RightBitwiseShiftExpression", "jetbrains.mps.bash.structure.RightShiftAssingmentExpression", "jetbrains.mps.bash.structure.SameReference", "jetbrains.mps.bash.structure.SelectCommand", "jetbrains.mps.bash.structure.SemicolonEt", "jetbrains.mps.bash.structure.SemicolonOperator", "jetbrains.mps.bash.structure.SemicolonTerminator", "jetbrains.mps.bash.structure.ShellScript", "jetbrains.mps.bash.structure.SimpleCommand", "jetbrains.mps.bash.structure.SimpleWord", "jetbrains.mps.bash.structure.SingleQuote", "jetbrains.mps.bash.structure.SizeConditionalExpression", "jetbrains.mps.bash.structure.SocketConditionalExpression", "jetbrains.mps.bash.structure.StickyBitConditionalExpression", "jetbrains.mps.bash.structure.StringConditionalExpression", "jetbrains.mps.bash.structure.SubExpression", "jetbrains.mps.bash.structure.SymlinkConditionalExpression", "jetbrains.mps.bash.structure.TerminalConditionalExpression", "jetbrains.mps.bash.structure.TildeExpansion", "jetbrains.mps.bash.structure.UnaryArithmeticExpression", "jetbrains.mps.bash.structure.UnaryConditionalExpression", "jetbrains.mps.bash.structure.UnaryMinusExpression", "jetbrains.mps.bash.structure.UnaryPlusExpression", "jetbrains.mps.bash.structure.UntilLoopCommand", "jetbrains.mps.bash.structure.UserIdConditionalExpression", "jetbrains.mps.bash.structure.VariableAddAssingment", "jetbrains.mps.bash.structure.VariableAssingment", "jetbrains.mps.bash.structure.VariableNameDeclaration", "jetbrains.mps.bash.structure.VariableReference", "jetbrains.mps.bash.structure.WhileLoopCommand", "jetbrains.mps.bash.structure.WordExpression", "jetbrains.mps.bash.structure.WordList", "jetbrains.mps.bash.structure.WriteTestConditionalExpression", "jetbrains.mps.bash.structure.XorAssingmentExpression", "jetbrains.mps.bash.structure.ZeroStringConditionalExpression"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1751214806:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 43:
         return new CommandList_BehaviorDescriptor();
-      case -1688580460:
+      case 110:
         return new InputLines_BehaviorDescriptor();
-      case 1169679804:
+      case 172:
         return new ShellScript_BehaviorDescriptor();
-      case -478649446:
+      case 173:
         return new SimpleCommand_BehaviorDescriptor();
-      case -162753593:
+      case 196:
         return new WordList_BehaviorDescriptor();
-      case -1791009375:
+      case 17:
         return new AsyncOperator_BehaviorDescriptor();
-      case -942253325:
+      case 44:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.CommandTerminator 
         return null;
-      case 610030745:
+      case 171:
         return new SemicolonTerminator_BehaviorDescriptor();
-      case -191301340:
+      case 18:
         return new AsyncTerminator_BehaviorDescriptor();
-      case -130393050:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.AbstractLoopCommand 
         return null;
-      case 918159304:
+      case 188:
         return new UntilLoopCommand_BehaviorDescriptor();
-      case -1329630486:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.AbstractCommand 
         return null;
-      case -1075895787:
+      case 194:
         return new WhileLoopCommand_BehaviorDescriptor();
-      case -1296101536:
+      case 77:
         return new ForeachCommand_BehaviorDescriptor();
-      case -1380544268:
+      case 192:
         return new VariableNameDeclaration_BehaviorDescriptor();
-      case -958947455:
+      case 76:
         return new ForCommand_BehaviorDescriptor();
-      case -1395519135:
+      case 15:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.ArithmeticExpression 
         return null;
-      case 1861239375:
+      case 105:
         return new IfCommand_BehaviorDescriptor();
-      case -1952887480:
+      case 62:
         return new ElifCommand_BehaviorDescriptor();
-      case -242628098:
+      case 36:
         return new CaseClause_BehaviorDescriptor();
-      case 1165178012:
+      case 37:
         return new CaseCommand_BehaviorDescriptor();
-      case 627780097:
+      case 56:
         return new DoubleSemicolon_BehaviorDescriptor();
-      case 2094558326:
+      case 38:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.CaseTerminator 
         return null;
-      case 663266273:
+      case 169:
         return new SemicolonEt_BehaviorDescriptor();
-      case 2001254032:
+      case 57:
         return new DoubleSemicolonEt_BehaviorDescriptor();
-      case -1871775472:
+      case 168:
         return new SelectCommand_BehaviorDescriptor();
-      case -932595991:
+      case 88:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.GroupingCommand 
         return null;
-      case 1812296375:
+      case 31:
         return new BraceGrouping_BehaviorDescriptor();
-      case -335053844:
+      case 34:
         return new BracketGrouping_BehaviorDescriptor();
-      case 356461506:
+      case 24:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.BinaryArithmeticExpression 
         return null;
-      case 451754973:
+      case 128:
         return new MulExpression_BehaviorDescriptor();
-      case 753745002:
+      case 54:
         return new DivExpression_BehaviorDescriptor();
-      case 1167967643:
+      case 127:
         return new ModExpression_BehaviorDescriptor();
-      case -1026073478:
+      case 3:
         return new AddExpression_BehaviorDescriptor();
-      case -519018663:
+      case 180:
         return new SubExpression_BehaviorDescriptor();
-      case -1004536542:
+      case 13:
         return new ArithmeticCommand_BehaviorDescriptor();
-      case 392289170:
+      case 184:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.UnaryArithmeticExpression 
         return null;
-      case 1141822899:
+      case 154:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.PostVariableExpression 
         return null;
-      case 1570872216:
+      case 157:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.PreVariableExpression 
         return null;
-      case 444388919:
+      case 153:
         return new PostIncExpression_BehaviorDescriptor();
-      case 749659483:
+      case 152:
         return new PostDecExpression_BehaviorDescriptor();
-      case 1640314162:
+      case 156:
         return new PreIncExpression_BehaviorDescriptor();
-      case 1945584726:
+      case 155:
         return new PreDecExpression_BehaviorDescriptor();
-      case 664537218:
+      case 187:
         return new UnaryPlusExpression_BehaviorDescriptor();
-      case 590404728:
+      case 186:
         return new UnaryMinusExpression_BehaviorDescriptor();
-      case -2140698457:
+      case 123:
         return new LogicalNegationExpression_BehaviorDescriptor();
-      case -2086776369:
+      case 27:
         return new BitwiseNegationExpression_BehaviorDescriptor();
-      case 293389046:
+      case 69:
         return new ExpExpression_BehaviorDescriptor();
-      case -67688081:
+      case 115:
         return new LeftBitwiseShiftExpression_BehaviorDescriptor();
-      case 1608290086:
+      case 165:
         return new RightBitwiseShiftExpression_BehaviorDescriptor();
-      case 899464561:
+      case 63:
         return new EqualityExpression_BehaviorDescriptor();
-      case -87418986:
+      case 106:
         return new InequalityExpression_BehaviorDescriptor();
-      case -240007523:
+      case 26:
         return new BitwiseAndExpression_BehaviorDescriptor();
-      case 1985326157:
+      case 28:
         return new BitwiseOrExpression_BehaviorDescriptor();
-      case -1951741919:
+      case 29:
         return new BitwiseXorExpression_BehaviorDescriptor();
-      case -41441083:
+      case 122:
         return new LogicalAndExpression_BehaviorDescriptor();
-      case 883352869:
+      case 124:
         return new LogicalOrExpression_BehaviorDescriptor();
-      case -1539845778:
+      case 41:
         return new CommaExpression_BehaviorDescriptor();
-      case 1015035728:
+      case 112:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IntegerLiteral 
         return null;
-      case -1457229770:
+      case 51:
         return new DecimalConstant_BehaviorDescriptor();
-      case -729531539:
+      case 93:
         return new HexIntegerLiteral_BehaviorDescriptor();
-      case -1309172283:
+      case 22:
         return new BasedIntegerLiteral_BehaviorDescriptor();
-      case 1343773505:
+      case 33:
         return new BracketExpression_BehaviorDescriptor();
-      case 363248404:
+      case 82:
         return new GreaterThanExpression_BehaviorDescriptor();
-      case 1218207569:
+      case 117:
         return new LessThanExpression_BehaviorDescriptor();
-      case 422166669:
+      case 85:
         return new GreaterThanOrEqualExpression_BehaviorDescriptor();
-      case -1711583824:
+      case 119:
         return new LessThanOrEqualExpression_BehaviorDescriptor();
-      case -281672704:
+      case 50:
         return new ConditionalOperation_BehaviorDescriptor();
-      case -1118189049:
+      case 19:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.BaseAssingmentExpression 
         return null;
-      case -32343786:
+      case 16:
         return new AssingmentExpression_BehaviorDescriptor();
-      case 1928991312:
+      case 151:
         return new PlusAssingmentExpression_BehaviorDescriptor();
-      case 1738033160:
+      case 125:
         return new MinusAssingmentExpression_BehaviorDescriptor();
-      case -1234235357:
+      case 129:
         return new MusAssingmentExpression_BehaviorDescriptor();
-      case -231289367:
+      case 53:
         return new DivAssingmentExpression_BehaviorDescriptor();
-      case -766095910:
+      case 126:
         return new ModAssingmentExpression_BehaviorDescriptor();
-      case -1550893997:
+      case 116:
         return new LeftShiftAssingmentExpression_BehaviorDescriptor();
-      case -1480136900:
+      case 166:
         return new RightShiftAssingmentExpression_BehaviorDescriptor();
-      case -780311505:
+      case 4:
         return new AndAssingmentExpression_BehaviorDescriptor();
-      case -1835186215:
+      case 141:
         return new OrAssingmentExpression_BehaviorDescriptor();
-      case -1294643021:
+      case 198:
         return new XorAssingmentExpression_BehaviorDescriptor();
-      case -551242325:
+      case 21:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.BaseVariableAssingment 
         return null;
-      case -49554310:
+      case 191:
         return new VariableAssingment_BehaviorDescriptor();
-      case 177057029:
+      case 23:
         return new BasicParameterExpansion_BehaviorDescriptor();
-      case -1770336042:
+      case 14:
         return new ArithmeticExpansion_BehaviorDescriptor();
-      case -694653434:
+      case 183:
         return new TildeExpansion_BehaviorDescriptor();
-      case 1629363139:
+      case 81:
         return new GeneralizedWord_BehaviorDescriptor();
-      case 788741532:
+      case 100:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IGeneralizedWordUnit 
         return null;
-      case -193905381:
+      case 174:
         return new SimpleWord_BehaviorDescriptor();
-      case -1762334600:
+      case 20:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.BaseCommandSubstitution 
         return null;
-      case -1716626478:
+      case 159:
         return new QuotesCommandSubstitution_BehaviorDescriptor();
-      case -1113380082:
+      case 35:
         return new BuckCommandSubstitution_BehaviorDescriptor();
-      case 902159153:
+      case 162:
         return new RedirectedCommand_BehaviorDescriptor();
-      case 1680634189:
+      case 163:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.Redirection 
         return null;
-      case -382894463:
+      case 111:
         return new InputRedirection_BehaviorDescriptor();
-      case 1257097420:
+      case 147:
         return new OutputRedirection_BehaviorDescriptor();
-      case 957655079:
+      case 101:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IORedirection 
         return null;
-      case -1853958014:
+      case 8:
         return new AppendingOutputRedirection_BehaviorDescriptor();
-      case 1607356772:
+      case 146:
         return new OutputErrorRedirection_BehaviorDescriptor();
-      case 1528865646:
+      case 7:
         return new AppendingOutputErrorRedirection_BehaviorDescriptor();
-      case 1387791901:
+      case 104:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IToWordRedirection 
         return null;
-      case -971062878:
+      case 91:
         return new HereDocumentRedirection_BehaviorDescriptor();
-      case -741151444:
+      case 92:
         return new HereStringRedirection_BehaviorDescriptor();
-      case 794347757:
+      case 58:
         return new DuplicateInputFileDiscriptor_BehaviorDescriptor();
-      case 1676082044:
+      case 59:
         return new DuplicateOutputFileDiscriptor_BehaviorDescriptor();
-      case 1738412221:
+      case 161:
         return new ReadingWritingRedirection_BehaviorDescriptor();
-      case 985026595:
+      case 80:
         return new FunctionDeclaration_BehaviorDescriptor();
-      case -1649341066:
+      case 97:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.ICompoundCommand 
         return null;
-      case -744484426:
+      case 79:
         return new FunctionCallCommand_BehaviorDescriptor();
-      case 775606169:
+      case 71:
         return new ExternalCommandDeclaration_BehaviorDescriptor();
-      case 515421471:
+      case 70:
         return new ExternalCommandCall_BehaviorDescriptor();
-      case -89410516:
+      case 73:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.ExternalOptionReference 
         return null;
-      case 222776974:
+      case 136:
         return new OptionSet_BehaviorDescriptor();
-      case 348322100:
+      case 134:
         return new Option_BehaviorDescriptor();
-      case -529709933:
+      case 138:
         return new OptionWithParam_BehaviorDescriptor();
-      case -1508784762:
+      case 103:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.ISymbolConcept 
         return null;
-      case 857250201:
+      case 99:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IDescribedConcept 
         return null;
-      case -2036451813:
+      case 72:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.ExternalOptionDeclaration 
         return null;
-      case 337285213:
+      case 137:
         return new OptionSetReference_BehaviorDescriptor();
-      case 1941799031:
+      case 135:
         return new OptionReference_BehaviorDescriptor();
-      case 1387827192:
+      case 139:
         return new OptionWithParamReference_BehaviorDescriptor();
-      case 1700150536:
+      case 95:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.ICommandParameter 
         return null;
-      case 1100756719:
+      case 12:
         return new ArgumentReference_BehaviorDescriptor();
-      case -1780573252:
+      case 9:
         return new Argument_BehaviorDescriptor();
-      case 160858746:
+      case 10:
         return new ArgumentList_BehaviorDescriptor();
-      case 1441334769:
+      case 11:
         return new ArgumentListReference_BehaviorDescriptor();
-      case -356655068:
+      case 48:
         return new ConditionalCommand_BehaviorDescriptor();
-      case -1771122223:
+      case 158:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.QuotedWord 
         return null;
-      case 436823485:
+      case 98:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IConcreteWordUnit 
         return null;
-      case -2034342475:
+      case 175:
         return new SingleQuote_BehaviorDescriptor();
-      case -1920353332:
+      case 55:
         return new DoubleQuote_BehaviorDescriptor();
-      case 246545734:
+      case 102:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IPriorityExpression 
         return null;
-      case 1941877505:
+      case 195:
         return new WordExpression_BehaviorDescriptor();
-      case 84076991:
+      case 109:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.InputLine 
         return null;
-      case 767988458:
+      case 45:
         return new CommentedCommandList_BehaviorDescriptor();
-      case -1253324118:
+      case 89:
         return new HeadCommandList_BehaviorDescriptor();
-      case -1929232969:
+      case 74:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.FollowingCommandList 
         return null;
-      case 565276220:
+      case 6:
         return new AndOperator_BehaviorDescriptor();
-      case 572129510:
+      case 143:
         return new OrOperator_BehaviorDescriptor();
-      case -1097091081:
+      case 46:
         return new CommentedFollowingCommandList_BehaviorDescriptor();
-      case 552013305:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.AbstractFollowingCommandList 
         return null;
-      case 793551393:
+      case 90:
         return new HeadPipeline_BehaviorDescriptor();
-      case 451990068:
+      case 75:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.FollowingPipeline 
         return null;
-      case 620913699:
+      case 149:
         return new PipelineOperatorConnection_BehaviorDescriptor();
-      case -1853234975:
+      case 150:
         return new PipelineOperatorErrorConnection_BehaviorDescriptor();
-      case -199765012:
+      case 47:
         return new CommentedText_BehaviorDescriptor();
-      case 112952940:
+      case 42:
         return new Command_BehaviorDescriptor();
-      case 735652533:
+      case 96:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IComment 
         return null;
-      case 398757728:
+      case 94:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.IArithmeticHolder 
         return null;
-      case 237860132:
+      case 113:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.LValue 
         return null;
-      case 1804831248:
+      case 193:
         return new VariableReference_BehaviorDescriptor();
-      case -1941555425:
+      case 49:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.ConditionalExpression 
         return null;
-      case 1940894478:
+      case 185:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.UnaryConditionalExpression 
         return null;
-      case 161410630:
+      case 68:
         return new ExistConditionalExpression_BehaviorDescriptor();
-      case -753744556:
+      case 30:
         return new BlockFileConditionalExpression_BehaviorDescriptor();
-      case 1120091981:
+      case 39:
         return new CharFileConditionalExpression_BehaviorDescriptor();
-      case 1998219536:
+      case 52:
         return new DirectoryConditionalExpression_BehaviorDescriptor();
-      case -1280160168:
+      case 144:
         return new OtherExistConditionalExpression_BehaviorDescriptor();
-      case 310818149:
+      case 164:
         return new RegularFileConditionalExpression_BehaviorDescriptor();
-      case -1479476893:
+      case 87:
         return new GroupIdConditionalExpression_BehaviorDescriptor();
-      case 1547158652:
+      case 181:
         return new SymlinkConditionalExpression_BehaviorDescriptor();
-      case 2026297721:
+      case 178:
         return new StickyBitConditionalExpression_BehaviorDescriptor();
-      case -234560111:
+      case 148:
         return new PipeConditionalExpression_BehaviorDescriptor();
-      case -169141321:
+      case 160:
         return new ReadTestConditionalExpression_BehaviorDescriptor();
-      case 1686489374:
+      case 176:
         return new SizeConditionalExpression_BehaviorDescriptor();
-      case 1877649667:
+      case 182:
         return new TerminalConditionalExpression_BehaviorDescriptor();
-      case -1334062151:
+      case 189:
         return new UserIdConditionalExpression_BehaviorDescriptor();
-      case 726617324:
+      case 197:
         return new WriteTestConditionalExpression_BehaviorDescriptor();
-      case -1614086884:
+      case 67:
         return new ExecTestConditionalExpression_BehaviorDescriptor();
-      case 1031523696:
+      case 61:
         return new EffectiveUserIdConditionalExpression_BehaviorDescriptor();
-      case -1160759668:
+      case 60:
         return new EffectiveGroupIdConditionalExpression_BehaviorDescriptor();
-      case -822908914:
+      case 145:
         return new OtherSymlinkConditionalExpression_BehaviorDescriptor();
-      case -808365908:
+      case 177:
         return new SocketConditionalExpression_BehaviorDescriptor();
-      case -1210648525:
+      case 114:
         return new LastReadConditionalExpression_BehaviorDescriptor();
-      case 1925171150:
+      case 140:
         return new OptnameStringConditionalExpression_BehaviorDescriptor();
-      case -1710291322:
+      case 199:
         return new ZeroStringConditionalExpression_BehaviorDescriptor();
-      case 501453335:
+      case 131:
         return new NonZeroStringConditionalExpression_BehaviorDescriptor();
-      case 1725251278:
+      case 179:
         return new StringConditionalExpression_BehaviorDescriptor();
-      case 830236894:
+      case 25:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.BinaryConditionalExpression 
         return null;
-      case -1705769873:
+      case 130:
         return new NewerThan_BehaviorDescriptor();
-      case 413812662:
+      case 133:
         return new OlderThan_BehaviorDescriptor();
-      case 1115470822:
+      case 167:
         return new SameReference_BehaviorDescriptor();
-      case -82571703:
+      case 65:
         return new EqualityStrings_BehaviorDescriptor();
-      case -1391956412:
+      case 108:
         return new InequalityStrings_BehaviorDescriptor();
-      case 851669322:
+      case 121:
         return new LessThanString_BehaviorDescriptor();
-      case -1015011699:
+      case 86:
         return new GreaterThanString_BehaviorDescriptor();
-      case 558087648:
+      case 78:
         return new FreeCommand_BehaviorDescriptor();
-      case 1704792662:
+      case 170:
         return new SemicolonOperator_BehaviorDescriptor();
-      case -297275803:
+      case 190:
         return new VariableAddAssingment_BehaviorDescriptor();
-      case 954565175:
+      case 132:
         return new NotCommand_BehaviorDescriptor();
-      case -1849847993:
+      case 107:
         return new InequalityNumber_BehaviorDescriptor();
-      case 963336866:
+      case 64:
         return new EqualityNumber_BehaviorDescriptor();
-      case 709291138:
+      case 118:
         return new LessThanNumber_BehaviorDescriptor();
-      case 1340203617:
+      case 120:
         return new LessThanOrEqualNumber_BehaviorDescriptor();
-      case -1157389883:
+      case 83:
         return new GreaterThanNumber_BehaviorDescriptor();
-      case -754210795:
+      case 84:
         return new GreaterThanOrEqual_BehaviorDescriptor();
-      case 2047084705:
+      case 40:
         // interface or abstract concept behavior jetbrains.mps.bash.structure.CombiningConditionalExpression 
         return null;
-      case 1034962617:
+      case 5:
         return new AndCombiningComditionalExpression_BehaviorDescriptor();
-      case -602308700:
+      case 142:
         return new OrCombiningConditionalExpression_BehaviorDescriptor();
-      case 674529653:
+      case 32:
         return new BracketConditionalExpression_BehaviorDescriptor();
-      case 1735244553:
+      case 66:
         return new EqualityStrings2_BehaviorDescriptor();
       default:
         return null;

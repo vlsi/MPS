@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.testbench.suite.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_BehaviorDescriptor" />

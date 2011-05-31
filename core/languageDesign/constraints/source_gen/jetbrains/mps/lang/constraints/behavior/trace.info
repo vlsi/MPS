@@ -48,7 +48,7 @@
   <unitInfo fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior" />
   <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="63" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior$QuotationClass_q6xvx3_a0c0b" />
   <unitInfo fileName="ConceptConstraints_Behavior.java" startLine="19" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="20" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior" />
   <root nodeId="1213877261402">
     <nodeInfo nodeId="1213877261414" fileName="NodeDefaultSearchScope_Behavior.java" startLine="14" startPosition="129" endLine="15" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

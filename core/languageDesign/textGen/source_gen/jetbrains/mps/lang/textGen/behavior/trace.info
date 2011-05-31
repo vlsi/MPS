@@ -49,7 +49,7 @@
   <unitInfo fileName="SimpleTextGenOperation_Behavior.java" startLine="12" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_Behavior" />
   <unitInfo fileName="ConceptTextGenDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_Behavior" />
   <unitInfo fileName="LanguageTextGenDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1234257860776">
     <nodeInfo nodeId="1234257871250" fileName="OperationDeclaration_Behavior.java" startLine="11" startPosition="43" endLine="12" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234265138564" fileName="OperationDeclaration_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

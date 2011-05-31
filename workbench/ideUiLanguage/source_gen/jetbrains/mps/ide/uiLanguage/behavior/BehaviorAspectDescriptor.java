@@ -4,28 +4,31 @@ package jetbrains.mps.ide.uiLanguage.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", "jetbrains.mps.ide.uiLanguage.structure.DialogExpression", "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", "jetbrains.mps.ide.uiLanguage.structure.IDEDialog", "jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", "jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", "jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 151769839:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 4:
         return new IDEDialog_BehaviorDescriptor();
-      case -1952532735:
+      case 5:
         return new IDEDialogButton_BehaviorDescriptor();
-      case -1972415012:
+      case 2:
         return new DisposeDialogExpression_BehaviorDescriptor();
-      case 1305871817:
+      case 6:
         return new ReportErrorExpression_BehaviorDescriptor();
-      case -1756921597:
+      case 1:
         return new DialogExpression_BehaviorDescriptor();
-      case 452865592:
+      case 0:
         return new DialogDimensions_BehaviorDescriptor();
-      case 924388382:
+      case 7:
         return new ReportErrorStatement_BehaviorDescriptor();
-      case 1927015851:
+      case 3:
         return new DisposeDialogStatement_BehaviorDescriptor();
       default:
         return null;

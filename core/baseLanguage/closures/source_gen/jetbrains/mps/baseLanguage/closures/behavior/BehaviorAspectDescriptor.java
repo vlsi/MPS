@@ -4,51 +4,54 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.PairOfInts", "jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 131995956:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 8:
         return new FunctionType_BehaviorDescriptor();
-      case 1285562922:
+      case 10:
         return new InvokeFunctionExpression_BehaviorDescriptor();
-      case 258022262:
+      case 2:
         return new ClosureLiteral_BehaviorDescriptor();
-      case -1356334542:
+      case 9:
         return new InvokeExpression_BehaviorDescriptor();
-      case -1617564188:
+      case 18:
         return new YieldStatement_BehaviorDescriptor();
-      case 1427710889:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration 
         return null;
-      case -28029225:
+      case 12:
         return new PairOfInts_BehaviorDescriptor();
-      case -1786475948:
+      case 13:
         return new StringPropertyHolder_BehaviorDescriptor();
-      case 1069353877:
+      case 11:
         return new InvokeFunctionOperation_BehaviorDescriptor();
-      case 228589625:
+      case 17:
         return new YieldAllStatement_BehaviorDescriptor();
-      case 1139512650:
+      case 15:
         return new UnrestrictedClosureLiteral_BehaviorDescriptor();
-      case 28365227:
+      case 1:
         return new ClosureControlStatement_BehaviorDescriptor();
-      case 1681761519:
+      case 6:
         return new ControlClosureLiteral_BehaviorDescriptor();
-      case 738468150:
+      case 4:
         return new ControlAbstractionContainer_BehaviorDescriptor();
-      case -1237847825:
+      case 5:
         return new ControlAbstractionDeclaration_BehaviorDescriptor();
-      case -760940536:
+      case 16:
         return new UnrestrictedFunctionType_BehaviorDescriptor();
-      case 1385843753:
+      case 3:
         return new CompactInvokeFunctionExpression_BehaviorDescriptor();
-      case 1246863903:
+      case 7:
         return new FunctionMethodDeclaration_BehaviorDescriptor();
-      case -1521674122:
+      case 0:
         return new AbstractFunctionType_BehaviorDescriptor();
       default:
         return null;

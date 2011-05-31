@@ -4,30 +4,33 @@ package jetbrains.mps.debug.apiLang.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.debug.apiLang.structure.BreakpointCreator", "jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem", "jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", "jetbrains.mps.debug.apiLang.structure.DebuggerReference", "jetbrains.mps.debug.apiLang.structure.DebuggerType"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1300900393:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 0:
         return new BreakpointCreator_BehaviorDescriptor();
-      case -1540193358:
+      case 1:
         return new BreakpointableNodeItem_BehaviorDescriptor();
-      case 246842686:
+      case 5:
         return new ConceptFunction_CreateBreakpoint_BehaviorDescriptor();
-      case -938382871:
+      case 3:
         return new ConceptFunctionParameter_Debug_Project_BehaviorDescriptor();
-      case 1851804052:
+      case 4:
         return new ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor();
-      case 585642791:
+      case 2:
         return new ConceptDeclarationReference_BehaviorDescriptor();
-      case 486523661:
+      case 8:
         return new DebuggerType_BehaviorDescriptor();
-      case -1326942376:
+      case 7:
         return new DebuggerReference_BehaviorDescriptor();
-      case 1041442568:
+      case 6:
         return new CreateBreakpointOperation_BehaviorDescriptor();
       default:
         return null;

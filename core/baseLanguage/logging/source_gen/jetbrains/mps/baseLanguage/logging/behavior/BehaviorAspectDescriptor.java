@@ -4,16 +4,19 @@ package jetbrains.mps.baseLanguage.logging.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.logging.structure.LogStatement", "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 72083556:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 0:
         return new LogStatement_BehaviorDescriptor();
-      case 1410338011:
+      case 1:
         return new PrintStatement_BehaviorDescriptor();
       default:
         return null;

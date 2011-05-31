@@ -4,27 +4,30 @@ package jetbrains.mps.transformation.test.inputLang.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement", "jetbrains.mps.transformation.test.inputLang.structure.InputNode", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C", "jetbrains.mps.transformation.test.inputLang.structure.InputRoot", "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -918625170:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 5:
         return new InputRoot_BehaviorDescriptor();
-      case -918744690:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.transformation.test.inputLang.structure.InputNode 
         return null;
-      case 1849618896:
+      case 2:
         return new InputNode_A_BehaviorDescriptor();
-      case 1849618897:
+      case 3:
         return new InputNode_B_BehaviorDescriptor();
-      case 1849618898:
+      case 4:
         return new InputNode_C_BehaviorDescriptor();
-      case 260868253:
+      case 0:
         return new ExpressionToReduceToStatement_BehaviorDescriptor();
-      case 780367033:
+      case 6:
         return new InputRootWithStatementList_BehaviorDescriptor();
       default:
         return null;

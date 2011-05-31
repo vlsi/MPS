@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="LanguageDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.descriptor.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.descriptor.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="LanguageDescriptor_Behavior.java" startLine="19" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_Behavior" />
   <root nodeId="3064888218669919289">
     <nodeInfo nodeId="3064888218669923945" fileName="LanguageDescriptor_Behavior.java" startLine="23" startPosition="152" endLine="24" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

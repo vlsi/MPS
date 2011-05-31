@@ -4,48 +4,51 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1759156442:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 13:
         return new TestBlockList_BehaviorDescriptor();
-      case 1838626778:
+      case 2:
         return new BracesBlock_BehaviorDescriptor();
-      case -1413767628:
+      case 4:
         // interface or abstract concept behavior jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock 
         return null;
-      case 1922376652:
+      case 12:
         return new StubBlock_BehaviorDescriptor();
-      case -1545833224:
+      case 16:
         return new VerticalLayoutBlockList_BehaviorDescriptor();
-      case 777653580:
+      case 3:
         return new BracesStubBlock_BehaviorDescriptor();
-      case 1698810025:
+      case 5:
         return new InspectorBlock_BehaviorDescriptor();
-      case 1655701512:
+      case 10:
         return new ReferenceAnnotataion_BehaviorDescriptor();
-      case -1420746790:
+      case 11:
         return new SideTranformWrapper_BehaviorDescriptor();
-      case 6349412:
+      case 6:
         return new IntegerLiteral_BehaviorDescriptor();
-      case 1761161612:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression 
         return null;
-      case 260124837:
+      case 9:
         return new PlusExpression_BehaviorDescriptor();
-      case -866307302:
+      case 0:
         return new AttractsFocusBlock_BehaviorDescriptor();
-      case 16423650:
+      case 14:
         return new VariableDeclarationBlock_BehaviorDescriptor();
-      case 261153568:
+      case 15:
         return new VariableDeclarationReference_BehaviorDescriptor();
-      case 546793608:
+      case 7:
         return new NonEmptyProperty_BehaviorDescriptor();
-      case 1808004967:
+      case 8:
         return new NotEditableVaraileReference_BehaviorDescriptor();
       default:
         return null;

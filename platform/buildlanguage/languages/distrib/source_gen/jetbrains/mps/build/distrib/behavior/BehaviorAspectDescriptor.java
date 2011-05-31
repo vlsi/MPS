@@ -4,51 +4,54 @@ package jetbrains.mps.build.distrib.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.distrib.structure.AbstractCommandLinePart", "jetbrains.mps.build.distrib.structure.AbstractPath", "jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart", "jetbrains.mps.build.distrib.structure.ClassPath", "jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", "jetbrains.mps.build.distrib.structure.DistribConfiguration", "jetbrains.mps.build.distrib.structure.ExternalVariableReference", "jetbrains.mps.build.distrib.structure.FileAssociation", "jetbrains.mps.build.distrib.structure.MacConfig", "jetbrains.mps.build.distrib.structure.MacOsFileAssociation", "jetbrains.mps.build.distrib.structure.PathCommantLinePart", "jetbrains.mps.build.distrib.structure.Role", "jetbrains.mps.build.distrib.structure.SimplePath", "jetbrains.mps.build.distrib.structure.StringCommandLinePart", "jetbrains.mps.build.distrib.structure.SystemSpecificConfig", "jetbrains.mps.build.distrib.structure.UniversalConfig", "jetbrains.mps.build.distrib.structure.UnixConfig", "jetbrains.mps.build.distrib.structure.WindowsConfig"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1656771275:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 5:
         return new DistribConfiguration_BehaviorDescriptor();
-      case -575647101:
+      case 3:
         return new ClassPath_BehaviorDescriptor();
-      case 699866337:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.build.distrib.structure.AbstractPath 
         return null;
-      case -1792201487:
+      case 12:
         return new SimplePath_BehaviorDescriptor();
-      case -1453554019:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.build.distrib.structure.SystemSpecificConfig 
         return null;
-      case -1035379349:
+      case 17:
         return new WindowsConfig_BehaviorDescriptor();
-      case -1687721549:
+      case 15:
         return new UniversalConfig_BehaviorDescriptor();
-      case 997126221:
+      case 4:
         return new DigitalSignatureWindowsConfiguration_BehaviorDescriptor();
-      case -1583026122:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.build.distrib.structure.AbstractCommandLinePart 
         return null;
-      case 581017063:
+      case 13:
         return new StringCommandLinePart_BehaviorDescriptor();
-      case -1525950445:
+      case 2:
         return new ArtifactReferenceCommandLinePart_BehaviorDescriptor();
-      case 1231612471:
+      case 8:
         return new MacConfig_BehaviorDescriptor();
-      case 1472406634:
+      case 6:
         return new ExternalVariableReference_BehaviorDescriptor();
-      case 1298311595:
+      case 7:
         return new FileAssociation_BehaviorDescriptor();
-      case 1372736716:
+      case 9:
         return new MacOsFileAssociation_BehaviorDescriptor();
-      case -1304965136:
+      case 11:
         return new Role_BehaviorDescriptor();
-      case 380934371:
+      case 10:
         return new PathCommantLinePart_BehaviorDescriptor();
-      case 627527396:
+      case 16:
         return new UnixConfig_BehaviorDescriptor();
       default:
         return null;

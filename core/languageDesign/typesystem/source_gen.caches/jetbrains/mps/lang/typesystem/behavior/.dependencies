@@ -89,6 +89,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.AbstractComparableStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.AbstractInequationStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.AddDependencyStatement_BehaviorDescriptor" />

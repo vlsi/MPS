@@ -4,18 +4,21 @@ package jetbrains.mps.lang.editor.table.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -689183868:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 1:
         return new CellModel_Table_BehaviorDescriptor();
-      case 772576652:
+      case 2:
         return new QueryFunction_TableModel_BehaviorDescriptor();
-      case 607441035:
+      case 0:
         return new CellModel_HierarchycalTable_BehaviorDescriptor();
       default:
         return null;

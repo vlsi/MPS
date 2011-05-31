@@ -23,7 +23,7 @@
   <unitInfo fileName="InternalPartialInstanceMethodCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialInstanceMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="ExtractStatementListExpression_Behavior.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListExpression_Behavior" />
   <unitInfo fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1230552150899">
     <scopeInfo nodeId="1230552150901" fileName="InternalNewExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

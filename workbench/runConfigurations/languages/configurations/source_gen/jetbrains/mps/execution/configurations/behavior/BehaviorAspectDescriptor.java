@@ -4,36 +4,39 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetDebuggerSettings_Function", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", "jetbrains.mps.execution.configurations.structure.StartStatement"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 980669643:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 6:
         return new RunConfiguration_BehaviorDescriptor();
-      case 2142906111:
+      case 8:
         return new RunConfigurationKind_BehaviorDescriptor();
-      case -750504258:
+      case 7:
         // interface or abstract concept behavior jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor 
         return null;
-      case -888272298:
+      case 3:
         return new ExecuteConfiguration_Function_BehaviorDescriptor();
-      case 342077763:
+      case 5:
         return new Project_Parameter_BehaviorDescriptor();
-      case -201221554:
+      case 0:
         return new ComplexRunConfigurationExecutor_BehaviorDescriptor();
-      case 2023018104:
+      case 1:
         return new ConfigurationFromExecutorReference_BehaviorDescriptor();
-      case 1364595805:
+      case 4:
         return new GetDebuggerSettings_Function_BehaviorDescriptor();
-      case -833213170:
+      case 2:
         return new DebuggerSettings_Parameter_BehaviorDescriptor();
-      case 809774029:
+      case 10:
         // interface or abstract concept behavior jetbrains.mps.execution.configurations.structure.StartStatement 
         return null;
-      case 1931063218:
+      case 9:
         return new StartProcessHandlerStatement_BehaviorDescriptor();
       default:
         return null;

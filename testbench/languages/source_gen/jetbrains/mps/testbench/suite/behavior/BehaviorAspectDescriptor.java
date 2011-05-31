@@ -4,27 +4,30 @@ package jetbrains.mps.testbench.suite.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.testbench.suite.structure.IModuleRef", "jetbrains.mps.testbench.suite.structure.ITestRef", "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.testbench.suite.structure.TestCaseRef"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 342889525:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 4:
         return new ModuleSuite_BehaviorDescriptor();
-      case 1711035034:
+      case 6:
         return new TestCaseRef_BehaviorDescriptor();
-      case -1113498860:
+      case 3:
         return new JUnit4TestCaseRef_BehaviorDescriptor();
-      case -1242581579:
+      case 2:
         return new JUnit3TestCaseRef_BehaviorDescriptor();
-      case -83577265:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.testbench.suite.structure.ITestRef 
         return null;
-      case -478411613:
+      case 5:
         return new SolutionRef_BehaviorDescriptor();
-      case 927111861:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.testbench.suite.structure.IModuleRef 
         return null;
       default:

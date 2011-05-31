@@ -4,25 +4,28 @@ package jetbrains.mps.baseLanguage.contracts.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.contracts.structure.Condition", "jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression", "jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", "jetbrains.mps.baseLanguage.contracts.structure.Postcondition", "jetbrains.mps.baseLanguage.contracts.structure.Precondition", "jetbrains.mps.baseLanguage.contracts.structure.ResultExpression"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1462653072:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 2:
         return new MethodConditions_BehaviorDescriptor();
-      case -335874193:
+      case 4:
         return new Precondition_BehaviorDescriptor();
-      case -42022740:
+      case 5:
         return new ResultExpression_BehaviorDescriptor();
-      case 1446856132:
+      case 3:
         return new Postcondition_BehaviorDescriptor();
-      case 542914276:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.contracts.structure.Condition 
         return null;
-      case -1856550305:
+      case 1:
         return new ContractThisExpression_BehaviorDescriptor();
       default:
         return null;

@@ -4,85 +4,88 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -674486598:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment 
         return null;
-      case -252113956:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag 
         return null;
-      case 1224573282:
+      case 0:
         return new AuthorBlockDocTag_BehaviorDescriptor();
-      case 517858378:
+      case 22:
         return new MethodDocComment_BehaviorDescriptor();
-      case 1901023289:
+      case 32:
         return new VersionBlockDocTag_BehaviorDescriptor();
-      case -288448233:
+      case 27:
         return new SinceBlockDocTag_BehaviorDescriptor();
-      case -268401350:
+      case 13:
         return new DeprecatedBlockDocTag_BehaviorDescriptor();
-      case -946350287:
+      case 11:
         return new CommentLine_BehaviorDescriptor();
-      case 1812431944:
+      case 24:
         return new ParameterBlockDocTag_BehaviorDescriptor();
-      case -967557280:
+      case 30:
         return new ThrowsBlockDocTag_BehaviorDescriptor();
-      case -1339220835:
+      case 25:
         return new ReturnBlockDocTag_BehaviorDescriptor();
-      case -1689892011:
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference 
         return null;
-      case 1438679545:
+      case 14:
         return new DocMethodParameterReference_BehaviorDescriptor();
-      case 447555986:
+      case 15:
         return new DocTypeParameterReference_BehaviorDescriptor();
-      case 842791903:
+      case 16:
         return new FieldDocComment_BehaviorDescriptor();
-      case -1898345334:
+      case 7:
         return new ClassifierDocComment_BehaviorDescriptor();
-      case -55791932:
+      case 12:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart 
         return null;
-      case -906120489:
+      case 29:
         return new TextCommentLinePart_BehaviorDescriptor();
-      case -612690553:
+      case 20:
         return new InlineTagCommentLinePart_BehaviorDescriptor();
-      case -349428946:
+      case 4:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag 
         return null;
-      case -1151780598:
+      case 31:
         return new ValueInlineDocTag_BehaviorDescriptor();
-      case 2059337802:
+      case 9:
         return new CodeInlineDocTag_BehaviorDescriptor();
-      case 928304358:
+      case 3:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference 
         return null;
-      case -1255936821:
+      case 17:
         return new FieldDocReference_BehaviorDescriptor();
-      case -255781154:
+      case 26:
         return new SeeBlockDocTag_BehaviorDescriptor();
-      case 15558262:
+      case 23:
         return new MethodDocReference_BehaviorDescriptor();
-      case 1621098166:
+      case 8:
         return new ClassifierDocReference_BehaviorDescriptor();
-      case -1216915753:
+      case 21:
         return new LinkInlineDocTag_BehaviorDescriptor();
-      case -1720986962:
+      case 10:
         return new CodeSnippet_BehaviorDescriptor();
-      case -661289190:
+      case 19:
         return new InheritDocInlineDocTag_BehaviorDescriptor();
-      case -1440516478:
+      case 6:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference 
         return null;
-      case -580943491:
+      case 28:
         return new StaticFieldDocReference_BehaviorDescriptor();
-      case 1590048047:
+      case 18:
         return new HTMLElement_BehaviorDescriptor();
       default:
         return null;

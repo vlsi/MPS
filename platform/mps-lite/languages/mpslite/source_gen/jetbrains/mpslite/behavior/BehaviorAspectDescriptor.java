@@ -4,74 +4,77 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mpslite.structure.BinaryOperationConcept", "jetbrains.mpslite.structure.BlockBodyPart", "jetbrains.mpslite.structure.BlockConcept", "jetbrains.mpslite.structure.BlockReference", "jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.ConceptContainer", "jetbrains.mpslite.structure.ConcreteChildPart", "jetbrains.mpslite.structure.ConcretePropertyPart", "jetbrains.mpslite.structure.ConcreteReferencePart", "jetbrains.mpslite.structure.ConstantLinePart", "jetbrains.mpslite.structure.ExpressionConcept", "jetbrains.mpslite.structure.FeatureAccessConcept", "jetbrains.mpslite.structure.IMPSLiteConcept", "jetbrains.mpslite.structure.IndentLinePart", "jetbrains.mpslite.structure.Line", "jetbrains.mpslite.structure.LineList", "jetbrains.mpslite.structure.LinePart", "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", "jetbrains.mpslite.structure.MPSLiteConceptReference", "jetbrains.mpslite.structure.NamePropertyNamePart", "jetbrains.mpslite.structure.OptionalPart", "jetbrains.mpslite.structure.PropertyPart", "jetbrains.mpslite.structure.ReferencePart", "jetbrains.mpslite.structure.RegularConceptReference", "jetbrains.mpslite.structure.StatementConcept", "jetbrains.mpslite.structure.TypePart", "jetbrains.mpslite.structure.VariableConcept"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 514537623:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 15:
         return new Line_BehaviorDescriptor();
-      case -289084118:
+      case 17:
         // interface or abstract concept behavior jetbrains.mpslite.structure.LinePart 
         return null;
-      case 1601666542:
+      case 10:
         return new ConstantLinePart_BehaviorDescriptor();
-      case 103985078:
+      case 14:
         return new IndentLinePart_BehaviorDescriptor();
-      case 1218873622:
+      case 9:
         return new ConcreteReferencePart_BehaviorDescriptor();
-      case 1343505516:
+      case 5:
         // interface or abstract concept behavior jetbrains.mpslite.structure.ChildPart 
         return null;
-      case 1436461334:
+      case 21:
         return new OptionalPart_BehaviorDescriptor();
-      case 1185303143:
+      case 7:
         return new ConcreteChildPart_BehaviorDescriptor();
-      case -1764886373:
+      case 23:
         // interface or abstract concept behavior jetbrains.mpslite.structure.ReferencePart 
         return null;
-      case 253920717:
+      case 18:
         return new MPSLiteConceptDeclaration_BehaviorDescriptor();
-      case -289195563:
+      case 16:
         return new LineList_BehaviorDescriptor();
-      case -1250297589:
+      case 22:
         // interface or abstract concept behavior jetbrains.mpslite.structure.PropertyPart 
         return null;
-      case 1616899376:
+      case 8:
         return new ConcretePropertyPart_BehaviorDescriptor();
-      case -1908169944:
+      case 0:
         // interface or abstract concept behavior jetbrains.mpslite.structure.AbstractConceptReference 
         return null;
-      case 923027550:
+      case 19:
         return new MPSLiteConceptReference_BehaviorDescriptor();
-      case -1298220036:
+      case 24:
         return new RegularConceptReference_BehaviorDescriptor();
-      case -343724848:
+      case 13:
         // interface or abstract concept behavior jetbrains.mpslite.structure.IMPSLiteConcept 
         return null;
-      case 191602437:
+      case 1:
         return new BinaryOperationConcept_BehaviorDescriptor();
-      case -694953039:
+      case 12:
         return new FeatureAccessConcept_BehaviorDescriptor();
-      case 1581481929:
+      case 27:
         return new VariableConcept_BehaviorDescriptor();
-      case 447667553:
+      case 20:
         return new NamePropertyNamePart_BehaviorDescriptor();
-      case 2140911984:
+      case 26:
         return new TypePart_BehaviorDescriptor();
-      case 1547490076:
+      case 6:
         return new ConceptContainer_BehaviorDescriptor();
-      case -1971525092:
+      case 25:
         return new StatementConcept_BehaviorDescriptor();
-      case 1739767021:
+      case 11:
         return new ExpressionConcept_BehaviorDescriptor();
-      case -187385154:
+      case 3:
         return new BlockConcept_BehaviorDescriptor();
-      case 771570463:
+      case 2:
         return new BlockBodyPart_BehaviorDescriptor();
-      case 280085025:
+      case 4:
         return new BlockReference_BehaviorDescriptor();
       default:
         return null;

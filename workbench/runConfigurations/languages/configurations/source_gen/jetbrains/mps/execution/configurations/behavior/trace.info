@@ -16,8 +16,8 @@
   <unitInfo fileName="RunConfigurationExecutor_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior" />
   <unitInfo fileName="RunConfigurationKind_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationKind_BehaviorDescriptor" />
   <unitInfo fileName="RunConfigurationExecutor_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ExecuteConfiguration_Function_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ExecuteConfiguration_Function_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
   <root nodeId="3754890006475666593">
     <nodeInfo nodeId="3754890006475713443" fileName="RunConfiguration_Behavior.java" startLine="18" startPosition="39" endLine="19" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3754890006475713441" fileName="RunConfiguration_Behavior.java" startLine="17" startPosition="210" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />

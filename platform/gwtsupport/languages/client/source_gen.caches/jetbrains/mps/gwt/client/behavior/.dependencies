@@ -21,6 +21,7 @@
   </dependency>
   <dependency className="jetbrains.mps.gwt.client.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.gwt.client.behavior.CaseSensitive_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.gwt.client.behavior.DefaultExcludes_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.gwt.client.behavior.EntryPoint_BehaviorDescriptor" />

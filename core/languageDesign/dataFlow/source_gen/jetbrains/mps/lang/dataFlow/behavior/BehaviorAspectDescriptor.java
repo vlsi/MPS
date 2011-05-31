@@ -4,84 +4,87 @@ package jetbrains.mps.lang.dataFlow.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.dataFlow.structure.AfterPosition", "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement", "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.BeforePosition", "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.BuilderBlock", "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement", "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", "jetbrains.mps.lang.dataFlow.structure.EmitReadStatement", "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", "jetbrains.mps.lang.dataFlow.structure.EmitStatement", "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement", "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression", "jetbrains.mps.lang.dataFlow.structure.InsertAfter", "jetbrains.mps.lang.dataFlow.structure.InsertBefore", "jetbrains.mps.lang.dataFlow.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation", "jetbrains.mps.lang.dataFlow.structure.InstructionIsJump", "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop", "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet", "jetbrains.mps.lang.dataFlow.structure.InstructionType", "jetbrains.mps.lang.dataFlow.structure.LabelPosition", "jetbrains.mps.lang.dataFlow.structure.NodeParameter", "jetbrains.mps.lang.dataFlow.structure.Position", "jetbrains.mps.lang.dataFlow.structure.RelativePosition"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 781208318:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 7:
         return new DataFlowBuilderDeclaration_BehaviorDescriptor();
-      case 2109449209:
+      case 6:
         return new BuilderBlock_BehaviorDescriptor();
-      case -1555277216:
+      case 29:
         return new NodeParameter_BehaviorDescriptor();
-      case 2034985333:
+      case 16:
         // interface or abstract concept behavior jetbrains.mps.lang.dataFlow.structure.EmitStatement 
         return null;
-      case 131060122:
+      case 13:
         return new EmitNopStatement_BehaviorDescriptor();
-      case -1548147329:
+      case 14:
         return new EmitReadStatement_BehaviorDescriptor();
-      case -681365494:
+      case 18:
         return new EmitWriteStatement_BehaviorDescriptor();
-      case -196981368:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement 
         return null;
-      case 1565330160:
+      case 30:
         // interface or abstract concept behavior jetbrains.mps.lang.dataFlow.structure.Position 
         return null;
-      case -1271191844:
+      case 31:
         // interface or abstract concept behavior jetbrains.mps.lang.dataFlow.structure.RelativePosition 
         return null;
-      case -1526395313:
+      case 4:
         return new BeforePosition_BehaviorDescriptor();
-      case -626591298:
+      case 0:
         return new AfterPosition_BehaviorDescriptor();
-      case 33740438:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement 
         return null;
-      case -756947382:
+      case 9:
         return new EmitIfJumpStatement_BehaviorDescriptor();
-      case 417658343:
+      case 10:
         return new EmitJumpStatement_BehaviorDescriptor();
-      case 166027885:
+      case 8:
         return new EmitCodeForStatement_BehaviorDescriptor();
-      case 650981384:
+      case 15:
         return new EmitRetStatement_BehaviorDescriptor();
-      case -1707265434:
+      case 12:
         return new EmitMayBeUnreachable_BehaviorDescriptor();
-      case 137733005:
+      case 17:
         return new EmitTryFinallyStatement_BehaviorDescriptor();
-      case 182988949:
+      case 11:
         return new EmitLabelStatement_BehaviorDescriptor();
-      case 35707606:
+      case 28:
         return new LabelPosition_BehaviorDescriptor();
-      case -1997831300:
+      case 20:
         return new InsertAfter_BehaviorDescriptor();
-      case -1775929889:
+      case 21:
         return new InsertBefore_BehaviorDescriptor();
-      case 2009708425:
+      case 22:
         // interface or abstract concept behavior jetbrains.mps.lang.dataFlow.structure.InsertPosition 
         return null;
-      case -1739774491:
+      case 19:
         return new GetCodeForExpression_BehaviorDescriptor();
-      case -361084607:
+      case 27:
         return new InstructionType_BehaviorDescriptor();
-      case -1991741667:
+      case 23:
         return new InstructionGetSourceOperation_BehaviorDescriptor();
-      case -403508047:
+      case 3:
         // interface or abstract concept behavior jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation 
         return null;
-      case 1680909342:
+      case 25:
         return new InstructionIsNop_BehaviorDescriptor();
-      case 1680912880:
+      case 26:
         return new InstructionIsRet_BehaviorDescriptor();
-      case -676931686:
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation 
         return null;
-      case 568468671:
+      case 24:
         return new InstructionIsJump_BehaviorDescriptor();
       default:
         return null;

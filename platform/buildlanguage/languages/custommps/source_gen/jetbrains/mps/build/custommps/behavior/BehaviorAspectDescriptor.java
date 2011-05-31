@@ -4,20 +4,23 @@ package jetbrains.mps.build.custommps.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.custommps.structure.MPSBuild", "jetbrains.mps.build.custommps.structure.MPSDistribution", "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1744091298:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 1:
         return new MPSBuild_BehaviorDescriptor();
-      case 1823655625:
+      case 0:
         return new LibraryFolder_BehaviorDescriptor();
-      case 1040375700:
+      case 2:
         return new MPSDistribution_BehaviorDescriptor();
-      case 828263516:
+      case 3:
         return new UndeclaredVariableReference_BehaviorDescriptor();
       default:
         return null;

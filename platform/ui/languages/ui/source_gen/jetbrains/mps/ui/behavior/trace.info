@@ -62,7 +62,7 @@
   <unitInfo fileName="IUIObjectContextProvider_Behavior.java" startLine="11" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior" />
   <unitInfo fileName="CompartmentProviderStatement_Behavior.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.behavior.CompartmentProviderStatement_Behavior" />
   <unitInfo fileName="UIObjectStatement_Behavior.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectStatement_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ui.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ui.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1576918603588684625">
     <nodeInfo nodeId="1576918603588705996" fileName="AppendUIObjectStatement_Behavior.java" startLine="22" startPosition="87" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5197527271413889654" fileName="AppendUIObjectStatement_Behavior.java" startLine="26" startPosition="104" endLine="27" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

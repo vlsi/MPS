@@ -13,7 +13,7 @@
   <unitInfo fileName="StatementStub_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ui.internal.behavior.StatementStub_BehaviorDescriptor" />
   <unitInfo fileName="ExpressionStub_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ui.internal.behavior.ExpressionStub_BehaviorDescriptor" />
   <unitInfo fileName="TypeStub_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ui.internal.behavior.TypeStub_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ui.internal.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ui.internal.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2511103526757027813">
     <scopeInfo nodeId="2511103526757027815" fileName="AuxObjectHandler_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
