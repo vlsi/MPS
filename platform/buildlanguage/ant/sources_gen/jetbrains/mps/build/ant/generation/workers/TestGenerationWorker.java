@@ -69,6 +69,7 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.apache.tools.ant.BuildException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.project.ProjectOperationContext;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -575,7 +576,7 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   public static void main(String[] args) {
-    TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.LogLogger());
+    TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     generator.workFromMain();
   }
 
@@ -585,8 +586,8 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   /*package*/ class MyMessageHandler implements IMessageHandler {
-    private final List<String> myGenerationErrors = new ArrayList<String>();
-    private final List<String> myGenerationWarnings = new ArrayList<String>();
+    private final List<String> myGenerationErrors = ListSequence.fromList(new ArrayList<String>());
+    private final List<String> myGenerationWarnings = ListSequence.fromList(new ArrayList<String>());
 
     /*package*/ MyMessageHandler() {
     }
