@@ -7,15 +7,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class ModelsToResources {
   private Iterable<SModelDescriptor> models;
@@ -34,11 +33,7 @@ public class ModelsToResources {
       }
     }, true);
     if (dirtyOnly) {
-      smds = Sequence.fromIterable(smds).where(new IWhereFilter<SModelDescriptor>() {
-        public boolean accept(SModelDescriptor md) {
-          return ModelGenerationStatusManager.getInstance().generationRequired(md, ModelsToResources.this.context);
-        }
-      }).toListSequence();
+      smds = ListSequence.fromListWithValues(new ArrayList<SModelDescriptor>(), GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).toListSequence(), this.context));
     }
     return arrangeByModule(smds);
   }
