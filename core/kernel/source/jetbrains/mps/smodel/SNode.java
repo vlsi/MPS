@@ -37,7 +37,6 @@ public final class SNode {
 
   @Deprecated
   public static final String PACK = SNodeUtil.property_BaseConcept_virtualPackage;
-  private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
 
@@ -424,7 +423,7 @@ public final class SNode {
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
       if (!threadSet.contains(pair) && !myModel.isLoading()) {
-        INodePropertySetter setter = CONSTRAINTS_MANAGER.getNodePropertySetter(this.getConceptFqName(), propertyName);
+        INodePropertySetter setter = ModelConstraintsManager.getNodePropertySetter(this.getConceptFqName(), propertyName);
         if (setter != null) {
           threadSet.add(pair);
           try {
@@ -912,7 +911,7 @@ public final class SNode {
       Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
       if (!threadSet.contains(pair)) {
-        INodeReferentSetEventHandler handler = CONSTRAINTS_MANAGER.getNodeReferentSetEventHandler(this, role);
+        INodeReferentSetEventHandler handler = ModelConstraintsManager.getNodeReferentSetEventHandler(this, role);
         if (handler != null) {
           boolean referenceKept = true;
           handlerFound = true;
