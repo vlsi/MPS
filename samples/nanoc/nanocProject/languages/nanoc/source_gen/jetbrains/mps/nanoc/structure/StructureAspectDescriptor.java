@@ -4,6 +4,7 @@ package jetbrains.mps.nanoc.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,71 +13,73 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CBody", "jetbrains.mps.nanoc.structure.CChar", "jetbrains.mps.nanoc.structure.CDouble", "jetbrains.mps.nanoc.structure.CExpression", "jetbrains.mps.nanoc.structure.CExpressionStatement", "jetbrains.mps.nanoc.structure.CFloat", "jetbrains.mps.nanoc.structure.CFor", "jetbrains.mps.nanoc.structure.CInt", "jetbrains.mps.nanoc.structure.CLong", "jetbrains.mps.nanoc.structure.CParenthesis", "jetbrains.mps.nanoc.structure.CShort", "jetbrains.mps.nanoc.structure.CStatement", "jetbrains.mps.nanoc.structure.CType", "jetbrains.mps.nanoc.structure.CWhile", "jetbrains.mps.nanoc.structure.DivOp", "jetbrains.mps.nanoc.structure.EqualOp", "jetbrains.mps.nanoc.structure.File", "jetbrains.mps.nanoc.structure.GreaterEqOp", "jetbrains.mps.nanoc.structure.GreaterOp", "jetbrains.mps.nanoc.structure.IntConst", "jetbrains.mps.nanoc.structure.LessEqOp", "jetbrains.mps.nanoc.structure.LessOp", "jetbrains.mps.nanoc.structure.MinusOp", "jetbrains.mps.nanoc.structure.MultOp", "jetbrains.mps.nanoc.structure.PlusOp", "jetbrains.mps.nanoc.structure.VarDecl", "jetbrains.mps.nanoc.structure.VarDeclStatement", "jetbrains.mps.nanoc.structure.VarRef"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1191799892:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.File", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1705525773:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1191919940:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CInt", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1705002537:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CChar", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1318373865:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CFloat", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1330261001:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CShort", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1705277775:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CLong", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -2134391324:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CDouble", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 279092011:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CExpression", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 59982460:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CStatement", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
-      case -1620131775:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.VarDecl", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -218611154:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.VarDeclStatement", new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
-      case 1333949118:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CWhile", new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
-      case 1704979573:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CBody", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 909446691:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CParenthesis", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1422469909:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CBinaryOp", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1707071010:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.DivOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1725918027:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.PlusOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1648075105:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.MultOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -790918591:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.MinusOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1156885788:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.IntConst", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 10161796:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CExpressionStatement", new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
-      case -71547368:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CAssignmentExpression", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1887413788:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.VarRef", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 933881861:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.EqualOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1604877194:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.LessOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 928063307:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.GreaterOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 393429782:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.LessEqOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1484653929:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.GreaterEqOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1191922794:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CBinaryOp", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CBody", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CChar", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CDouble", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CExpression", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CExpressionStatement", new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CFloat", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 8:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CFor", new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CInt", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CLong", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CParenthesis", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CShort", new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.nanoc.structure.CType"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CStatement", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.CWhile", new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.DivOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.EqualOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.File", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.GreaterEqOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.GreaterOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.IntConst", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.LessEqOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 23:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.LessOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 24:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.MinusOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 25:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.MultOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 26:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.PlusOp", new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 27:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.VarDecl", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 28:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.VarDeclStatement", new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.nanoc.structure.CStatement"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.TraceableConcept"});
+      case 29:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.nanoc.structure.VarRef", new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

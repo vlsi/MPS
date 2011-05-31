@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.builders.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,61 +13,63 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 1031423737:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.Builder", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1038698765:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"});
-      case -145962378:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -421754633:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.ResultExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1947798252:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1460546293:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 290784105:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1838033773:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression", new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 2029395039:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 577643667:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", new String[]{"jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1171210855:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -138914558:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1028158359:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -332700088:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"}, new String[]{"jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.structure.Statement"});
-      case 1528229256:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", new String[]{}, new String[]{}, new String[]{});
-      case -502044524:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -703502807:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.structure.IMethodCall"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodCall", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 718963789:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 463351132:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1871157524:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1985326374:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent", new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -484610699:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue", new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1855071585:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 113519492:
+      case 2:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 379351234:
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.structure.IMethodCall"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodCall", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.Builder", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", new String[]{}, new String[]{}, new String[]{});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.ResultExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression", new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", new String[]{"jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 15:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", new String[]{"jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.Builder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent", new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 23:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue", new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"}, new String[]{"jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 24:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       default:
         return null;
     }

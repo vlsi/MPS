@@ -20,7 +20,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
-      case 1:
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", new String[]{"jetbrains.mps.baseLanguage.structure.SwitchStatement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.SwitchStatement"});
       default:
         return null;

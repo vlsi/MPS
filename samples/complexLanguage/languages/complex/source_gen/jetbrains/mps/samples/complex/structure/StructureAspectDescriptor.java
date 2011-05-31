@@ -4,6 +4,7 @@ package jetbrains.mps.samples.complex.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,29 +13,31 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.samples.complex.structure.AbsExpression", "jetbrains.mps.samples.complex.structure.ArgExpression", "jetbrains.mps.samples.complex.structure.ComplexType", "jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", "jetbrains.mps.samples.complex.structure.DegreeComplexExpression", "jetbrains.mps.samples.complex.structure.ImExpression", "jetbrains.mps.samples.complex.structure.ImaginaryUnit", "jetbrains.mps.samples.complex.structure.ReExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1593474570:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ComplexType", new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"});
-      case -917904193:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ReExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 607058924:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.SingleComplexExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1932893306:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ArgExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -221010026:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.AbsExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 724609648:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ImExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1458135484:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ArgExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ComplexType", new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"});
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1387468312:
+      case 4:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.DegreeComplexExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -928932567:
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ImExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 6:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ImaginaryUnit", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.ReExpression", new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.complex.structure.SingleComplexExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
       default:
         return null;
     }

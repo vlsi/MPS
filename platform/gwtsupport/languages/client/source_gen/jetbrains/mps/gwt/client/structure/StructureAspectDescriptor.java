@@ -4,6 +4,7 @@ package jetbrains.mps.gwt.client.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,49 +13,51 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.gwt.client.structure.Attr", "jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.SuperSource"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 2066284946:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.GWTModule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"});
-      case 82464764:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.EntryPoint", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 36823574:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Inherits", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1933198114:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.PatternHolder", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -557407830:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Include", new String[]{"jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 473836252:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Exclude", new String[]{"jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1995982166:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.PatternFilter", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1003894930:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Pattern", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1340602781:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Path", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1341031377:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Attr", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -908299716:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.DefaultExcludes", new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 549227720:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.CaseSensitive", new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -99773431:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Includes", new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1804022039:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Excludes", new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 269775577:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Source", new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1715140472:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.SuperSource", new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 188857639:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Public", new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 132148222:
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.DefaultExcludes", new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Element", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -687424105:
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.EntryPoint", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Exclude", new String[]{"jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Excludes", new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.GWTModule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Include", new String[]{"jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Includes", new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Inherits", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Path", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Pattern", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.PatternFilter", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.PatternHolder", new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Public", new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 16:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.RenameTo", new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.Source", new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.gwt.client.structure.SuperSource", new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

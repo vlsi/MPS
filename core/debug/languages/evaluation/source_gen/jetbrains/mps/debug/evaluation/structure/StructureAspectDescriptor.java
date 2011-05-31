@@ -4,6 +4,7 @@ package jetbrains.mps.debug.evaluation.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,29 +13,31 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -835008139:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1499134616:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"});
-      case 833311062:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1739473722:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
-      case -1958274575:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case 1670737599:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -262934845:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"});
-      case -1756447448:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation", new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
-      case -1013793137:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation", new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation"}, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"});
       default:
         return null;
     }

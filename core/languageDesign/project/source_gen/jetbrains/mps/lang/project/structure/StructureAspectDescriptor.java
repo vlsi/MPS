@@ -4,6 +4,7 @@ package jetbrains.mps.lang.project.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,51 +13,53 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigNormalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", "jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.project.structure.ModelReference", "jetbrains.mps.lang.project.structure.ModelRoot", "jetbrains.mps.lang.project.structure.ModelRootManager", "jetbrains.mps.lang.project.structure.Module", "jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.project.structure.ModuleReference", "jetbrains.mps.lang.project.structure.Solution", "jetbrains.mps.lang.project.structure.SourcePath", "jetbrains.mps.lang.project.structure.StubEntry", "jetbrains.mps.lang.project.structure.StubSolution"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case 312108934:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.Module", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1720355342:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.Language", new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1385181203:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.Solution", new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1272187769:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.Generator", new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1880615228:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModelReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -2097420431:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModuleDependency", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 45707163:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.DevKit", new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1519260628:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingPriorityRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -437776795:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModuleReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1074545398:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.StubEntry", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1025465263:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModelRoot", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -182471140:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModelRootManager", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -411166258:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefBase", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1661022151:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 889560775:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 2064963013:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefSet", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -2109693066:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigNormalRef", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1069959278:
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.Generator", new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.Language", new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigExternalRef", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -2099957279:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.StubSolution", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -634167558:
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigNormalRef", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefBase", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefSet", new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.MappingPriorityRule", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModelReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModelRoot", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModelRootManager", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.Module", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModuleDependency", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.ModuleReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.Solution", new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 17:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.SourcePath", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.StubEntry", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.project.structure.StubSolution", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

@@ -21,7 +21,7 @@
   <unitInfo fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter" />
   <unitInfo fileName="HighLevelWatchableCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator" />
   <unitInfo fileName="WatchableCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.WatchableCreator" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="95" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="98" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="StringValueOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StringValueOperation" />
   <unitInfo fileName="JavaValueOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.JavaValueOperation" />
   <unitInfo fileName="AllElementsOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.AllElementsOperation" />
@@ -38,6 +38,6 @@
   <unitInfo fileName="CustomViewer.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomViewer" />
   <unitInfo fileName="CallMethodOperation.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CallMethodOperation" />
   <unitInfo fileName="HighLevelCustomViewer.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StructureAspectDescriptor" />
 </debugInfo>
 

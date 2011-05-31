@@ -3,8 +3,8 @@
   <unitInfo fileName="IModuleRef.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.IModuleRef" />
   <unitInfo fileName="ITestRef.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.ITestRef" />
   <unitInfo fileName="Suite_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.Suite_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="39" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="42" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.StructureAspectDescriptor" />
   <unitInfo fileName="SolutionRef.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.SolutionRef" />
   <unitInfo fileName="JUnit3TestCaseRef.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef" />
   <unitInfo fileName="JUnit4TestCaseRef.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef" />

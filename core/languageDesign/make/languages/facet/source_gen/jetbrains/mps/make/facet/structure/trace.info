@@ -15,10 +15,10 @@
   <unitInfo fileName="ResourceTypeDeclaration.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourceTypeDeclaration" />
   <unitInfo fileName="TargetDependencyQualifier_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier_PropertySupport" />
   <unitInfo fileName="ResourcesPolicy_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourcesPolicy_PropertySupport" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="53" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.make.facet.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="56" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="TargetDependencyQualifier.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />
   <unitInfo fileName="ResourcesPolicy.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourcesPolicy" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.make.facet.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.make.facet.structure.StructureAspectDescriptor" />
   <unitInfo fileName="TargetDeclaration.java" startLine="16" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
   <unitInfo fileName="FacetDeclaration.java" startLine="16" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetDeclaration" />
 </debugInfo>

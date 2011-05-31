@@ -11,13 +11,13 @@
   <unitInfo fileName="UserComponentReferenceAnnotation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.UserComponentReferenceAnnotation" />
   <unitInfo fileName="JavaCheckBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaCheckBlock" />
   <unitInfo fileName="JavaNodeConfigurationEditorDeclaration.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeConfigurationEditorDeclaration" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="53" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="56" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="JavaNodeRunConfiguration.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration" />
   <unitInfo fileName="OnChangeNodeBlock.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.OnChangeNodeBlock" />
   <unitInfo fileName="Node_FunctionParameter.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter" />
   <unitInfo fileName="JavaConfigurationRunParameters_FunctionParameter.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter" />
   <unitInfo fileName="JavaRunConfiguration.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.StructureAspectDescriptor" />
   <unitInfo fileName="NodeRunConfigPropertyInstance.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance" />
 </debugInfo>
 

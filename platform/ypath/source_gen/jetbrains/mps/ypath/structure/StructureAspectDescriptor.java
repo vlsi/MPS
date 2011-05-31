@@ -4,6 +4,7 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,147 +13,149 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.ypath.structure.ChildrenBlock", "jetbrains.mps.ypath.structure.ExpressionFunctionParam", "jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.FromOperation", "jetbrains.mps.ypath.structure.GFCardinalFun", "jetbrains.mps.ypath.structure.GFCardinalParamFun", "jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.GFGetterParamFun", "jetbrains.mps.ypath.structure.GeneratorFunctionParam", "jetbrains.mps.ypath.structure.GenericFeature", "jetbrains.mps.ypath.structure.GenericParamFeature", "jetbrains.mps.ypath.structure.IDesignFunction", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.ypath.structure.IGenericFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.ITreePathExpression", "jetbrains.mps.ypath.structure.IndexFunctionParam", "jetbrains.mps.ypath.structure.IterateOperation", "jetbrains.mps.ypath.structure.KindBlock", "jetbrains.mps.ypath.structure.LambdaMethod", "jetbrains.mps.ypath.structure.LambdaMethodParameter", "jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", "jetbrains.mps.ypath.structure.MatchKindOperation", "jetbrains.mps.ypath.structure.MatchPropertyOperation", "jetbrains.mps.ypath.structure.NodeFunctionParam", "jetbrains.mps.ypath.structure.NodeKindCase", "jetbrains.mps.ypath.structure.NodeKindDefaultCase", "jetbrains.mps.ypath.structure.NodeKindSpecificCase", "jetbrains.mps.ypath.structure.NodeTypeFunctionParam", "jetbrains.mps.ypath.structure.ParamFeatureGetFun", "jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", "jetbrains.mps.ypath.structure.ParamFeatureSizeFun", "jetbrains.mps.ypath.structure.ParamFunctionParam", "jetbrains.mps.ypath.structure.ParamListFeature", "jetbrains.mps.ypath.structure.ParamSequenceFeature", "jetbrains.mps.ypath.structure.ParameterQueryFun", "jetbrains.mps.ypath.structure.ParameterWrapper", "jetbrains.mps.ypath.structure.ParentBlock", "jetbrains.mps.ypath.structure.PropertyGetter", "jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.SwitchNodeKindStatement", "jetbrains.mps.ypath.structure.TargetTypeFun", "jetbrains.mps.ypath.structure.ToStringFun", "jetbrains.mps.ypath.structure.TreeNodeKind", "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", "jetbrains.mps.ypath.structure.TreeNodeKindProperty", "jetbrains.mps.ypath.structure.TreeNodeKindReference", "jetbrains.mps.ypath.structure.TreePath", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathAspect", "jetbrains.mps.ypath.structure.TreePathCreator", "jetbrains.mps.ypath.structure.TreePathOperation", "jetbrains.mps.ypath.structure.TreePathOperationExpression", "jetbrains.mps.ypath.structure.TreePathType", "jetbrains.mps.ypath.structure.ValueFunctionParam", "jetbrains.mps.ypath.structure.VisitBlock", "jetbrains.mps.ypath.structure.VisitChildrenExpression", "jetbrains.mps.ypath.structure.VisitNodesStatement", "jetbrains.mps.ypath.structure.VisitParameterDeclaration", "jetbrains.mps.ypath.structure.VisitParameterDeclarationList", "jetbrains.mps.ypath.structure.VisitParameterReference", "jetbrains.mps.ypath.structure.WhereBlock", "jetbrains.mps.ypath.structure.WhereOperation"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1316555746:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathType", new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 2010857672:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathCreator", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.ypath.structure.TreePath"}, new String[]{"jetbrains.mps.ypath.structure.TreePath"}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"});
-      case 1362537705:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.LambdaMethod", new String[]{"jetbrains.mps.baseLanguage.structure.Closure"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
-      case -435279742:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParentBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
-      case -934200179:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ChildrenBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
-      case 1179884736:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.LambdaMethodParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ClosureParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ClosureParameter"});
-      case 1818928635:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathOperationExpression", new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.ypath.structure.ITreePathExpression"}, new String[]{"jetbrains.mps.ypath.structure.ITreePathExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression"});
-      case 762961667:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1637661596:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.FromOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 276957934:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IterateOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -527252127:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.WhereOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1356152441:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.WhereBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
-      case 1255788604:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathAspect", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.ypath.structure.TreePath"}, new String[]{"jetbrains.mps.ypath.structure.TreePath"}, new String[]{"jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1114167069:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathAdapterExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1428180011:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreeNodeKind", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -255844593:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.MatchKindOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1295043480:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.KindBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
-      case 1528123594:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreeNodeKindProperty", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -444843935:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.PropertyGetter", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
-      case -2033093754:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -757225490:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.MatchPropertyOperation", new String[]{"jetbrains.mps.ypath.structure.MatchKindOperation"}, new String[]{"jetbrains.mps.ypath.structure.MatchKindOperation", "jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1656608139:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 182317764:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePath", new String[]{}, new String[]{}, new String[]{});
-      case -75355402:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreeNodeKindReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 989253539:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
-      case 1706294887:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeKindCase", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1473688647:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeKindSpecificCase", new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1138852358:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeKindDefaultCase", new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1689240225:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitChildrenExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -839033797:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitParameterDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"});
-      case 1172169292:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitParameterReference", new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"});
-      case 1748286596:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case 2073017192:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitNodesStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
-      case -1689064583:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitParameterDeclarationList", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -2090625289:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ListFeature", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 265941918:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.FeatureGetFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1835310857:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.FeatureSizeFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -254568462:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 251152516:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IndexFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -661644731:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ValueFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -1367060023:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.FeatureSequenceFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 2088181806:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IFeature", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 1704835828:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.SequenceFeature", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1873149783:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 701410719:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParameterQueryFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 251449432:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeTypeFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -708127789:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TargetTypeFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 379055756:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamListFeature", new String[]{"jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.IParamFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.ypath.structure.ListFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1487488525:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamFeatureGetFun", new String[]{"jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -719374188:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", new String[]{"jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -981425324:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamFeatureSizeFun", new String[]{"jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 104760398:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IParamFeatureFun", new String[]{}, new String[]{}, new String[]{});
-      case 285360137:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamSequenceFeature", new String[]{"jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.ypath.structure.SequenceFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 2140639089:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IParamFeature", new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 2060066290:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ToStringFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -838083189:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParameterWrapper", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1108965506:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IDesignFunction", new String[]{}, new String[]{}, new String[]{});
-      case -1693156515:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GFGetterParamFun", new String[]{"jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.IDesignFunction", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case -2113133337:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IGenericFeature", new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -508449828:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ExpressionFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case -1209125171:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IFunctionParam", new String[]{}, new String[]{}, new String[]{});
-      case 794797170:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GFCardinalParamFun", new String[]{"jetbrains.mps.ypath.structure.GFCardinalFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.GFCardinalFun", "jetbrains.mps.ypath.structure.IDesignFunction", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 354722723:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ITreePathExpression", new String[]{}, new String[]{}, new String[]{});
-      case -184768605:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GeneratorFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 644204223:
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.FeatureGetFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.FeatureSequenceFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.FeatureSizeFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.FromOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 6:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GFCardinalFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1041959156:
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GFCardinalParamFun", new String[]{"jetbrains.mps.ypath.structure.GFCardinalFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.GFCardinalFun", "jetbrains.mps.ypath.structure.IDesignFunction", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 8:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GFGetterFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1593676352:
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GFGetterParamFun", new String[]{"jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.IDesignFunction", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GeneratorFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 11:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GenericFeature", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ypath.structure.IGenericFeature", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IGenericFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -402679649:
+      case 12:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.GenericParamFeature", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ypath.structure.IGenericFeature", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IGenericFeature", "jetbrains.mps.ypath.structure.IParamFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IDesignFunction", new String[]{}, new String[]{}, new String[]{});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IFeature", new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IFunctionParam", new String[]{}, new String[]{}, new String[]{});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IGenericFeature", new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IParamFeature", new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IParamFeatureFun", new String[]{}, new String[]{}, new String[]{});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ITreePathExpression", new String[]{}, new String[]{}, new String[]{});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IndexFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.IterateOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.KindBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
+      case 23:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.LambdaMethod", new String[]{"jetbrains.mps.baseLanguage.structure.Closure"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
+      case 24:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.LambdaMethodParameter", new String[]{"jetbrains.mps.baseLanguage.structure.ClosureParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ClosureParameter"});
+      case 25:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ListFeature", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 26:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 27:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.MatchKindOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 28:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.MatchPropertyOperation", new String[]{"jetbrains.mps.ypath.structure.MatchKindOperation"}, new String[]{"jetbrains.mps.ypath.structure.MatchKindOperation", "jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 29:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 30:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeKindCase", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 31:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeKindDefaultCase", new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 32:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeKindSpecificCase", new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 33:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.NodeTypeFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 34:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamFeatureGetFun", new String[]{"jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 35:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", new String[]{"jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 36:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamFeatureSizeFun", new String[]{"jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 37:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 38:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamListFeature", new String[]{"jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.IParamFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.ypath.structure.ListFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 39:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParamSequenceFeature", new String[]{"jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.ypath.structure.SequenceFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 40:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParameterQueryFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 41:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParameterWrapper", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 42:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ParentBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
+      case 43:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.PropertyGetter", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
+      case 44:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.SequenceFeature", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.ypath.structure.IFeature"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 45:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 46:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TargetTypeFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 47:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ToStringFun", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 48:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreeNodeKind", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 49:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 50:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreeNodeKindProperty", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 51:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreeNodeKindReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 52:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePath", new String[]{}, new String[]{}, new String[]{});
+      case 53:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathAdapterExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 54:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathAspect", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.ypath.structure.TreePath"}, new String[]{"jetbrains.mps.ypath.structure.TreePath"}, new String[]{"jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 55:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathCreator", new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.ypath.structure.TreePath"}, new String[]{"jetbrains.mps.ypath.structure.TreePath"}, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"});
+      case 56:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathOperation", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 57:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathOperationExpression", new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.ypath.structure.ITreePathExpression"}, new String[]{"jetbrains.mps.ypath.structure.ITreePathExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression"});
+      case 58:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.TreePathType", new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 59:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.ValueFunctionParam", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 60:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
+      case 61:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitChildrenExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 62:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitNodesStatement", new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"});
+      case 63:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitParameterDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"});
+      case 64:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitParameterDeclarationList", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 65:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.VisitParameterReference", new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"});
+      case 66:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.WhereBlock", new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{"jetbrains.mps.baseLanguage.structure.Closure"});
+      case 67:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.ypath.structure.WhereOperation", new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.math.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,129 +13,131 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.BigComplexType", "jetbrains.mps.baseLanguage.math.structure.BigDecimalType", "jetbrains.mps.baseLanguage.math.structure.BigIntegerType", "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", "jetbrains.mps.baseLanguage.math.structure.BigMinExpression", "jetbrains.mps.baseLanguage.math.structure.BigProdExpression", "jetbrains.mps.baseLanguage.math.structure.BigSumExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.ComplexType", "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", "jetbrains.mps.baseLanguage.math.structure.CosineExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", "jetbrains.mps.baseLanguage.math.structure.Determinant", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentExpression", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.LogExpression", "jetbrains.mps.baseLanguage.math.structure.MathContext", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.SineExpression", "jetbrains.mps.baseLanguage.math.structure.TangentExpression", "jetbrains.mps.baseLanguage.math.structure.TransposeOperation", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -131104684:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case 1794917198:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case 681346008:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1917592753:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case 492621374:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.PowExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1490966105:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 236605103:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.VectorType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case -1733314897:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixNorm", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1733126611:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case -808117933:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", new String[]{}, new String[]{}, new String[]{});
-      case -2034762699:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathContext", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -1732967013:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixZero", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1539017332:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LiteralI", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -625116119:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case 648975776:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 352340839:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case 1768284982:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1280513129:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.SineExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 600829629:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case 320806848:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.TransposeOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1331460239:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -2046259329:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"});
-      case 1237343187:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathTypeCast", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -2083523861:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.TangentExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -907482023:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1813461976:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.AbsExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -29129125:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 352684074:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LogExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 902819658:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case 589006587:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 706551179:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1733107593:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixUnit", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1765678845:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.Determinant", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -91353443:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigProdExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 911944757:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigSumExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 426304138:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1807249027:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.CosineExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -985547875:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case 799425916:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigComplexType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case -673581188:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigMinExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1222184149:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1648543314:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbol", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 752375921:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1421525320:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case -1211700423:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -525432371:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.VectorInitializer", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1192717066:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case -1200018375:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1799079950:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1282422530:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.AbstractIndex", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1595158193:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
-      case -748863831:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", new String[]{}, new String[]{}, new String[]{});
-      case -1477721725:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1988667291:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1331715832:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -814510393:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
-      case -1396728140:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case 1846962837:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
-      case -1430643391:
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigComplexType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigMinExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigProdExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.BigSumExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 12:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.CosineExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 17:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 18:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 19:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.Determinant", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 20:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 21:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 22:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 23:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 24:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 25:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"});
+      case 26:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 27:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.IntervalType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 28:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"});
+      case 29:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LiteralI", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 30:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.LogExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 31:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathContext", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 32:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 33:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 34:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbol", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 35:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 36:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.AbstractIndex"}, new String[]{"jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 37:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 38:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MathTypeCast", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 39:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 40:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 41:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 42:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 43:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 44:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 45:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 46:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 47:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixNorm", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 48:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", new String[]{}, new String[]{}, new String[]{});
+      case 49:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", new String[]{}, new String[]{}, new String[]{});
+      case 50:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
+      case 51:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixUnit", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 52:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixZero", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 53:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.PowExpression", new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 54:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.SineExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 55:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.TangentExpression", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 56:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.TransposeOperation", new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 57:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.VectorInitializer", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"});
+      case 58:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.baseLanguage.math.structure.VectorType", new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"}, new String[]{"jetbrains.mps.baseLanguage.structure.Type"});
       default:
         return null;
     }

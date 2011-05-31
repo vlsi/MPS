@@ -4,6 +4,7 @@ package testRefactoring.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,14 +13,16 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"testRefactoring.structure.MyVeryGoodConcept1", "testRefactoring.structure.YetAnotherGoodConcept"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -60315709:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("testRefactoring.structure.MyVeryGoodConcept1", new String[]{"testRefactoringTargetLang.structure.AbstractGoodConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept", "testRefactoringTargetLang.structure.AbstractGoodConcept"});
-      case -2073477099:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("testRefactoring.structure.YetAnotherGoodConcept", new String[]{"testRefactoringTargetLang.structure.AnsotherGoodConcept"}, new String[]{}, new String[]{"testRefactoringTargetLang.structure.AnsotherGoodConcept"});
       default:
         return null;

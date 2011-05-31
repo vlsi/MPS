@@ -9,14 +9,14 @@
   <unitInfo fileName="AssertEquals.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" />
   <unitInfo fileName="Message.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.Message" />
   <unitInfo fileName="TestMethodList.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="59" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="62" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Fail.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.Fail" />
   <unitInfo fileName="TestMethod.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" />
   <unitInfo fileName="AssertInNotNull.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" />
   <unitInfo fileName="AssertIsNull.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull" />
   <unitInfo fileName="AssertFalse.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" />
   <unitInfo fileName="AssertTrue.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" />
   <unitInfo fileName="BTestCase.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" />
   <unitInfo fileName="BinaryAssert.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" />
   <unitInfo fileName="AssertThrows.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows" />

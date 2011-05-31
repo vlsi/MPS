@@ -7,7 +7,7 @@
   <unitInfo fileName="StateReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StateReference" />
   <unitInfo fileName="HierarchycalTable.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable" />
   <unitInfo fileName="Row.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Row" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="57" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="60" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Transition.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Transition" />
   <unitInfo fileName="State.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.State" />
   <unitInfo fileName="Event.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Event" />
@@ -15,7 +15,7 @@
   <unitInfo fileName="YElement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.YElement" />
   <unitInfo fileName="XElement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.XElement" />
   <unitInfo fileName="UltimateContainer.java" startLine="13" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Table.java" startLine="15" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Table" />
   <unitInfo fileName="Matrix.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Matrix" />
   <unitInfo fileName="StateMachine.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StateMachine" />

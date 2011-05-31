@@ -20,7 +20,7 @@
   <unitInfo fileName="GroupPosition_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.GroupPosition_PropertySupport" />
   <unitInfo fileName="PluginDetail_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginDetail_PropertySupport" />
   <unitInfo fileName="Level_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Level_PropertySupport" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="113" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="116" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="PluginDependency.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginDependency" />
   <unitInfo fileName="Shortcut.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Shortcut" />
   <unitInfo fileName="GroupReference.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.GroupReference" />
@@ -51,7 +51,7 @@
   <unitInfo fileName="Components.java" startLine="13" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Components" />
   <unitInfo fileName="PluginVendor.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginVendor" />
   <unitInfo fileName="AbstractAction.java" startLine="14" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.AbstractAction" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="14" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Plugin.java" startLine="15" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Plugin" />
 </debugInfo>
 

@@ -4,6 +4,7 @@ package jetbrains.mps.quickQueryLanguage.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,25 +13,27 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", "jetbrains.mps.quickQueryLanguage.structure.ModelQuery", "jetbrains.mps.quickQueryLanguage.structure.QueryCondition", "jetbrains.mps.quickQueryLanguage.structure.QueryReplace", "jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1790847041:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1125686739:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryCondition", new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 915201667:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
-      case 1669099603:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case -995053204:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryReplace", new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
-      case 1509101527:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.BaseQuery", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 1780609822:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 1:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.BaseQuery", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryCondition", new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryReplace", new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       default:
         return null;
     }

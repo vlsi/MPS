@@ -4,6 +4,7 @@ package jetbrains.mps.samples.agreementLanguage.structure;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.StructureDescriptor;
+import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
 import java.util.List;
@@ -12,45 +13,47 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};
+
   public StructureAspectDescriptor() {
   }
 
   public StructureDescriptor getDescriptor(String conceptFqName) {
-    switch ((conceptFqName).hashCode()) {
-      case -1715758101:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Plan", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1643669265:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Value", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -1658750440:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Event", new String[]{}, new String[]{}, new String[]{});
-      case 496321613:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Quantity", new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant"}, new String[]{}, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant"});
-      case 777938137:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", new String[]{}, new String[]{}, new String[]{});
-      case -1716125584:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date", new String[]{}, new String[]{}, new String[]{});
-      case 990754180:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{});
-      case -582045326:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 684791988:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariable", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case -405423725:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{});
-      case -324188580:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRule", new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Formula"}, new String[]{}, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Formula"});
-      case -273965051:
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+      case 0:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.AccountType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 416993527:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"});
-      case 635527964:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.ValueReference", new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"});
-      case -846762783:
+      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", new String[]{}, new String[]{}, new String[]{});
-      case -863414623:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Past", new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{});
-      case -1080551278:
+      case 2:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date", new String[]{}, new String[]{}, new String[]{});
+      case 3:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Future", new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Past", new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{});
+      case 5:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Event", new String[]{}, new String[]{}, new String[]{});
+      case 6:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventType", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 7:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariable", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 8:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"});
+      case 9:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Plan", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 10:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRule", new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Formula"}, new String[]{}, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Formula"});
+      case 11:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{});
+      case 12:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Quantity", new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant"}, new String[]{}, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant"});
+      case 13:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{});
+      case 14:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", new String[]{}, new String[]{}, new String[]{});
+      case 15:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Value", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+      case 16:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.agreementLanguage.structure.ValueReference", new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"});
       default:
         return null;
     }
