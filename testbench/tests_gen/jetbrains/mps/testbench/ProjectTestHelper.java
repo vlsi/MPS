@@ -43,6 +43,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
+import java.util.concurrent.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -219,7 +220,11 @@ public class ProjectTestHelper {
         public void run() {
           IOperationContext context = ProjectOperationContext.get(project);
           IScript scr = defaultScriptBuilder().toScript();
-          result.value = new TestMakeService(context, myMessageHandler).make(collectResources(context, module), scr, ctl);
+          try {
+            result.value = new TestMakeService(context, myMessageHandler).make(collectResources(context, module), scr, ctl).get();
+          } catch (InterruptedException ignore) {
+          } catch (ExecutionException ignore) {
+          }
         }
       });
       ModelAccess.instance().flushEventQueue();

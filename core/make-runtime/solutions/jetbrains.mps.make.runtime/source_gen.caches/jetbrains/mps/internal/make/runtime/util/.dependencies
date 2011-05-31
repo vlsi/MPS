@@ -39,6 +39,13 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.make.delta.IDelta" />
   </dependency>
+  <dependency className="jetbrains.mps.internal.make.runtime.util.FutureValue" file="FutureValue.java">
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.util.concurrent.ExecutionException" />
+    <classNode dependClassName="java.util.concurrent.TimeUnit" />
+    <classNode dependClassName="java.util.concurrent.TimeoutException" />
+    <classNode extendsClassName="java.util.concurrent.Future" />
+  </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" file="GraphAnalyzer.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />

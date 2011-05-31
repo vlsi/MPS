@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CResource.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.smodel.resources.CResource" />
   <unitInfo fileName="DResource.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.smodel.resources.DResource" />
+  <unitInfo fileName="CResource.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.smodel.resources.CResource" />
   <unitInfo fileName="TResource.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.smodel.resources.TResource" />
   <unitInfo fileName="MResource.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.smodel.resources.MResource" />
   <unitInfo fileName="FResource.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />

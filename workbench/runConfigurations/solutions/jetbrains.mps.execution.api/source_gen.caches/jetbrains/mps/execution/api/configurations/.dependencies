@@ -8,24 +8,24 @@
     <classNode extendsClassName="com.intellij.execution.configurations.RunConfigurationBase" />
   </dependency>
   <dependency className="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" file="ConsoleProcessListener.java">
-    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
-    <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
-    <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
+    <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="com.intellij.execution.process.ProcessAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" file="DefaultExecutionConsole.java">
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.ui.ExecutionConsole" />
   </dependency>
   <dependency className="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" file="DefaultExecutionResult.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="com.intellij.execution.ui.ExecutionConsole" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode dependClassName="com.intellij.execution.ui.ExecutionConsole" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.ExecutionResult" />
   </dependency>

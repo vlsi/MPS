@@ -365,7 +365,7 @@ public class JavaCompile_Facet implements IFacet {
           switch (0) {
             case 0:
               final JavaCompiler jc = new JavaCompiler();
-              Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
+              final Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
               for (IResource r : Sequence.fromIterable(input)) {
                 FResource fres = ((FResource) r);
                 MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, Object>>() {
@@ -389,13 +389,18 @@ public class JavaCompile_Facet implements IFacet {
                   }
                 }
               });
-              final CompositeClassPathItem ccp = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(modules, true);
-              Sequence.fromIterable(pool.parameters(Target_wf1ya0_c.this.getName(), JavaCompile_Facet.Target_wf1ya0_c.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
-                public void visit(IClassPathItem cpi) {
-                  ccp.add(cpi);
+              final Wrappers._T<CompositeClassPathItem> ccp = new Wrappers._T<CompositeClassPathItem>();
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  ccp.value = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(modules, true);
+                  Sequence.fromIterable(pool.parameters(Target_wf1ya0_c.this.getName(), JavaCompile_Facet.Target_wf1ya0_c.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
+                    public void visit(IClassPathItem cpi) {
+                      ccp.value.add(cpi);
+                    }
+                  });
                 }
               });
-              jc.compile(ccp);
+              jc.compile(ccp.value);
               if ((boolean) pool.parameters(Target_wf1ya0_c.this.getName(), JavaCompile_Facet.Target_wf1ya0_c.Parameters.class).errors()) {
                 return new IResult.FAILURE(_output_wf1ya0_a0c);
               }

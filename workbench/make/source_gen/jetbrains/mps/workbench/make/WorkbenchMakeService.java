@@ -5,24 +5,20 @@ package jetbrains.mps.workbench.make;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.progress.ProgressIndicator;
+import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.PerformInBackgroundOption;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
@@ -48,6 +44,17 @@ import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.IMessage;
+import com.intellij.openapi.progress.Task;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReference;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
@@ -59,15 +66,15 @@ public class WorkbenchMakeService implements IMakeService {
     this.cleanMake = cleanMake;
   }
 
-  public IResult make(Iterable<? extends IResource> resources) {
+  public Future<IResult> make(Iterable<? extends IResource> resources) {
     return doMake(resources, WorkbenchMakeService.defaultMakeScript(), null);
   }
 
-  public IResult make(Iterable<? extends IResource> resources, IScript script) {
+  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
     return doMake(resources, script, null);
   }
 
-  public IResult make(Iterable<? extends IResource> resources, IScript script, IScriptController ctl) {
+  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController ctl) {
     return doMake(resources, script, ctl);
   }
 
@@ -75,12 +82,12 @@ public class WorkbenchMakeService implements IMakeService {
     scriptRunnable.run();
   }
 
-  private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
-    final String scrName = ((cleanMake ?
+  private Future<IResult> doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
+    String scrName = ((cleanMake ?
       "Rebuild" :
       "Make"
     ));
-    final WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
+    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
     mh.clear();
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
@@ -88,10 +95,10 @@ public class WorkbenchMakeService implements IMakeService {
         String msg = scrName + " aborted: nothing to do";
         this.showError(mh, msg);
         this.displayInfo(msg);
-        return new IResult.FAILURE(null);
+        return new FutureValue(new IResult.FAILURE(null));
       } else {
         this.displayInfo("Everything up to date");
-        return new IResult.SUCCESS(null);
+        return new FutureValue(new IResult.SUCCESS(null));
       }
     }
 
@@ -100,15 +107,9 @@ public class WorkbenchMakeService implements IMakeService {
       String msg = scrName + " failed";
       showError(mh, msg + ". Invalid script.");
       this.displayInfo(msg);
-      return new IResult.FAILURE(null);
+      return new FutureValue(new IResult.FAILURE(null));
     }
 
-    // save all before launching the script 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SModelRepository.getInstance().saveAll();
-      }
-    });
     final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -119,79 +120,20 @@ public class WorkbenchMakeService implements IMakeService {
         }));
       }
     });
-    final IScriptController ctl = this.completeController(scrName, mh, controller);
-    final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
+    IScriptController ctl = this.completeController(scrName, mh, controller);
+    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(context.getProject(), scrName, script, scrName, clInput.value, ctl, mh);
     doExecute(new Runnable() {
       public void run() {
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           public void run() {
             IdeEventQueue.getInstance().flushQueue();
-            ProgressManager.getInstance().run(new Task.Backgroundable(context.getProject(), scrName, true, PerformInBackgroundOption.DEAF) {
-              public void run(@NotNull ProgressIndicator pi) {
-                pi.pushState();
-                pi.setFraction(0.0);
-                final int clsize = Sequence.fromIterable(clInput.value).count();
-                if (clsize == 0) {
-                  return;
-                }
-                final double clfrac = (1.0 / clsize);
-                final int[] idx = new int[]{0};
-                progInd = new ProgressIndicatorDelegate(pi) {
-                  @Override
-                  public void setFraction(double d) {
-                    getDelegate().setFraction((idx[0] + d) * clfrac);
-                  }
-
-                  @Override
-                  public void setText2(String string) {
-                  }
-                };
-                for (Iterable<IResource> cl : clInput.value) {
-                  pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
-                    public String select(IResource r) {
-                      return ((IResource) r).describe();
-                    }
-                  }), ","));
-                  res.value = script.execute(ctl, cl);
-                  if (!(res.value.isSucessful()) || progInd.isCanceled()) {
-                    break;
-                  }
-                  idx[0]++;
-                }
-                pi.popState();
-              }
-
-              @Override
-              public void onSuccess() {
-                reconcile();
-              }
-
-              @Override
-              public void onCancel() {
-                res.value = null;
-                reconcile();
-              }
-
-              private void reconcile() {
-                if (res.value == null) {
-                  String msg = scrName + " aborted";
-                  WorkbenchMakeService.this.displayInfo(msg);
-                } else if (!(res.value.isSucessful())) {
-                  String msg = scrName + " failed";
-                  showError(mh, msg + ". See previous messages for details.");
-                  WorkbenchMakeService.this.displayInfo(msg);
-                } else {
-                  String msg = scrName + " successful";
-                  WorkbenchMakeService.this.displayInfo(msg);
-                }
-              }
-            });
+            ProgressManager.getInstance().run(task);
           }
         });
       }
     });
 
-    return null;
+    return task;
   }
 
   private void showError(WorkbenchMakeService.MessageHandler mh, String msg) {
@@ -311,6 +253,131 @@ public class WorkbenchMakeService implements IMakeService {
 
     public void handle(IMessage message) {
       this.mvt.add(message, name);
+    }
+  }
+
+  private class MakeTask extends Task.Backgroundable implements Future<IResult> {
+    private CountDownLatch myLatch = new CountDownLatch(1);
+    private AtomicReference<WorkbenchMakeService.TaskState> myState = new AtomicReference<WorkbenchMakeService.TaskState>(WorkbenchMakeService.TaskState.NOT_STARTED);
+    private final IScript myScript;
+    private final String myScrName;
+    private final Iterable<? extends Iterable<IResource>> myClInput;
+    private IResult myResult = null;
+    private final IScriptController myController;
+    private final WorkbenchMakeService.MessageHandler myMessageHandler;
+
+    public MakeTask(@Nullable Project project, @NotNull String title, IScript script, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, WorkbenchMakeService.MessageHandler mh) {
+      super(project, title, true, DEAF);
+      this.myScript = script;
+      this.myScrName = scrName;
+      this.myClInput = clInput;
+      this.myController = ctl;
+      this.myMessageHandler = mh;
+    }
+
+    public void run(@NotNull ProgressIndicator pi) {
+      if (myState.compareAndSet(WorkbenchMakeService.TaskState.NOT_STARTED, WorkbenchMakeService.TaskState.RUNNING)) {
+        pi.pushState();
+        pi.setFraction(0.0);
+        final int clsize = Sequence.fromIterable(this.myClInput).count();
+        if (clsize == 0) {
+          return;
+        }
+        final double clfrac = (1.0 / clsize);
+        final int[] idx = new int[]{0};
+        progInd = new ProgressIndicatorDelegate(pi) {
+          @Override
+          public void setFraction(double d) {
+            getDelegate().setFraction((idx[0] + d) * clfrac);
+          }
+
+          @Override
+          public void setText2(String string) {
+          }
+        };
+        for (Iterable<IResource> cl : this.myClInput) {
+          pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+            public String select(IResource r) {
+              return ((IResource) r).describe();
+            }
+          }), ","));
+          this.myResult = this.myScript.execute(this.myController, cl);
+          if (!(this.myResult.isSucessful()) || progInd.isCanceled()) {
+            break;
+          }
+          idx[0]++;
+        }
+        pi.popState();
+        this.myState.set(WorkbenchMakeService.TaskState.INDETERMINATE);
+      }
+    }
+
+    @Override
+    public void onSuccess() {
+      reconcile();
+    }
+
+    @Override
+    public void onCancel() {
+      this.myResult = null;
+      reconcile();
+    }
+
+    public boolean cancel(boolean b) {
+      return false;
+    }
+
+    public boolean isCancelled() {
+      return myState.get() == WorkbenchMakeService.TaskState.CANCELLED;
+    }
+
+    public boolean isDone() {
+      return myState.get() != WorkbenchMakeService.TaskState.NOT_STARTED && myState.get() != WorkbenchMakeService.TaskState.RUNNING;
+    }
+
+    public IResult get() throws InterruptedException, ExecutionException {
+      myLatch.await();
+      if (myState.get() == WorkbenchMakeService.TaskState.CANCELLED) {
+        throw new CancellationException();
+      }
+      return myResult;
+    }
+
+    public IResult get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+      myLatch.await(timeout, unit);
+      if (myState.get() == WorkbenchMakeService.TaskState.CANCELLED) {
+        throw new CancellationException();
+      }
+      return myResult;
+    }
+
+    private void reconcile() {
+      if (this.myResult == null) {
+        String msg = this.myScrName + " aborted";
+        WorkbenchMakeService.this.displayInfo(msg);
+        this.myState.set(WorkbenchMakeService.TaskState.CANCELLED);
+      } else if (!(this.myResult.isSucessful())) {
+        String msg = this.myScrName + " failed";
+        showError(this.myMessageHandler, msg + ". See previous messages for details.");
+        WorkbenchMakeService.this.displayInfo(msg);
+        this.myState.set(WorkbenchMakeService.TaskState.DONE);
+      } else {
+        String msg = this.myScrName + " successful";
+        WorkbenchMakeService.this.displayInfo(msg);
+        this.myState.set(WorkbenchMakeService.TaskState.DONE);
+      }
+      myLatch.countDown();
+    }
+  }
+
+  public static   enum TaskState {
+    NOT_STARTED(),
+    RUNNING(),
+    DONE(),
+    CANCELLED(),
+    INDETERMINATE();
+
+    TaskState() {
     }
   }
 }

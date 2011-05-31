@@ -6,6 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -15,10 +16,11 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IResult;
-import com.intellij.openapi.application.ApplicationManager;
+import java.util.concurrent.Future;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import com.intellij.openapi.application.ModalityState;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 
 @Deprecated
 public class RunUtil {
@@ -31,6 +33,9 @@ public class RunUtil {
   }
 
   public static boolean makeBeforeRun(final Project project, List<SNode> nodes) {
+    if (ThreadUtils.isEventDispatchThread()) {
+      throw new RuntimeException("Can't run make from the event dispatch thread");
+    }
     final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (final SNode node : nodes) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -47,13 +52,15 @@ public class RunUtil {
     }
     if (ListSequence.fromList(models).isNotEmpty()) {
       final ProjectOperationContext context = ProjectOperationContext.get(project);
-      final IResult[] result = new IResult[1];
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        public void run() {
-          result[0] = new WorkbenchMakeService(context, true).make(new ModelsToResources(context, models).resources(false));
-        }
-      }, ModalityState.NON_MODAL);
-      return result[0].isSucessful();
+      IResult result = null;
+      Future<IResult> future = new WorkbenchMakeService(context, true).make(new ModelsToResources(context, models).resources(false));
+      try {
+        result = future.get();
+      } catch (CancellationException ignore) {
+      } catch (InterruptedException ignore) {
+      } catch (ExecutionException ignore) {
+      }
+      return result != null && result.isSucessful();
       // <node> 
     }
     return true;

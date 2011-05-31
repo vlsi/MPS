@@ -43,6 +43,8 @@
       <modulePath path="${project}/languages/outlook/outlook.mpl" folder="" />
       <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
       <modulePath path="${mps_home}/testbench/languages/suite.mpl" folder="" />
+      <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
+      <modulePath path="${mps_home}/platform/quickQueryLanguage/quickQueryLanguage.mpl" />
     </projectModules>
     <genConfs>
       <genConfModule name="facet" moduleRef="jetbrains.mps.make.facet" />

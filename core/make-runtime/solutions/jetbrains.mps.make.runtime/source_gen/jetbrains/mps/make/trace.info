@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2082624981609760242">
-    <nodeInfo nodeId="4523074738764584327" fileName="IMakeService.java" startLine="10" startPosition="31" endLine="11" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="2082624981609760244" fileName="IMakeService.java" startLine="11" startPosition="63" endLine="12" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="199467807261954019" fileName="IMakeService.java" startLine="12" startPosition="79" endLine="13" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljetbrains/mps/make/script/IResult;" />
-    <scopeInfo nodeId="4523074738764584327" fileName="IMakeService.java" startLine="10" startPosition="31" endLine="11" endPosition="63">
+    <nodeInfo nodeId="4523074738764584327" fileName="IMakeService.java" startLine="11" startPosition="31" endLine="12" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="2082624981609760244" fileName="IMakeService.java" startLine="12" startPosition="71" endLine="13" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="199467807261954019" fileName="IMakeService.java" startLine="13" startPosition="87" endLine="14" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
+    <scopeInfo nodeId="4523074738764584327" fileName="IMakeService.java" startLine="11" startPosition="31" endLine="12" endPosition="71">
       <varInfo nodeId="4523074738764584328" varName="resources" />
     </scopeInfo>
-    <scopeInfo nodeId="2082624981609760244" fileName="IMakeService.java" startLine="11" startPosition="63" endLine="12" endPosition="79">
+    <scopeInfo nodeId="2082624981609760244" fileName="IMakeService.java" startLine="12" startPosition="71" endLine="13" endPosition="87">
       <varInfo nodeId="6516862185756586882" varName="resources" />
       <varInfo nodeId="2082624981609760248" varName="script" />
     </scopeInfo>
-    <scopeInfo nodeId="199467807261954019" fileName="IMakeService.java" startLine="12" startPosition="79" endLine="13" endPosition="109">
+    <scopeInfo nodeId="199467807261954019" fileName="IMakeService.java" startLine="13" startPosition="87" endLine="14" endPosition="117">
       <varInfo nodeId="199467807261954020" varName="resources" />
       <varInfo nodeId="199467807261954030" varName="controller" />
       <varInfo nodeId="199467807261954027" varName="script" />
     </scopeInfo>
-    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
+    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="11" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
   </root>
   <root nodeId="6168415856807659180">
     <nodeInfo nodeId="6168415856807659181" fileName="WorkflowEngine.java" startLine="7" startPosition="29" endLine="8" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
