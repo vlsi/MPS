@@ -4,70 +4,73 @@ package jetbrains.mps.execution.settings.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.settings.structure.ApplyTo_Function", "jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.CheckProperties_Function", "jetbrains.mps.execution.settings.structure.Configuration_Parameter", "jetbrains.mps.execution.settings.structure.CreateEditor_Function", "jetbrains.mps.execution.settings.structure.Dispose_Function", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.ResetFrom_Function", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1296394842:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod"));
-      case 749715775:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationType"));
-      case -1510705051:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfiguration"));
-      case -183649691:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"));
-      case 1833084214:
+      case 26:
         return new DataHolderConstraintsDescriptor(new TemplateParameterReference_Constraints());
-      case 1273201231:
+      case 21:
         return new DataHolderConstraintsDescriptor(new ReportConfigurationErrorStatement_Constraints());
-      case -1075584972:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CreateEditor_Function"));
-      case -291253230:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.Dispose_Function"));
-      case -1035292158:
+      case 20:
         return new DataHolderConstraintsDescriptor(new PersistentPropertyReferenceOperation_Constraints());
-      case -1173261313:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"));
-      case 629388643:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer"));
-      case -693359468:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"));
-      case -385830507:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.TemplateParameter"));
-      case -1330714145:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EditorExpression_Constraints());
-      case -574308656:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CheckProperitesOperation"));
-      case 793050919:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder"));
-      case 1237712726:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.CheckProperties_Function"));
-      case 795207400:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.ApplyTo_Function"));
-      case -1235690470:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EditorOperationDeclaration_Constraints());
-      case -1869789250:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EditorOperationCall_Constraints());
-      case -375217922:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration"));
-      case 1954773967:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EditorPropertyReference_Constraints());
-      case -1874705576:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.ResetFrom_Function"));
-      case -1000565180:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.SettingsEditorType"));
-      case -1837721622:
+      case 23:
         return new DataHolderConstraintsDescriptor(new SettingsEditor_Constraints());
-      case 1066187846:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.Configuration_Parameter"));
-      case 1731709693:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"));
-      case -1778395202:
+      case 11:
         return new DataHolderConstraintsDescriptor(new GetEditorOperation_Constraints());
       default:
         return null;

@@ -4,36 +4,39 @@ package jetbrains.mps.execution.configurations.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetDebuggerSettings_Function", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", "jetbrains.mps.execution.configurations.structure.StartStatement"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 980669643:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfiguration"));
-      case 2142906111:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfigurationKind"));
-      case -750504258:
+      case 7:
         return new DataHolderConstraintsDescriptor(new RunConfigurationExecutor_Constraints());
-      case -888272298:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"));
-      case 342077763:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
-      case -201221554:
+      case 0:
         return new DataHolderConstraintsDescriptor(new ComplexRunConfigurationExecutor_Constraints());
-      case 2023018104:
+      case 1:
         return new DataHolderConstraintsDescriptor(new ConfigurationFromExecutorReference_Constraints());
-      case 1364595805:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.GetDebuggerSettings_Function"));
-      case -833213170:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
-      case 809774029:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartStatement"));
-      case 1931063218:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"));
       default:
         return null;

@@ -6,7 +6,7 @@
   <unitInfo fileName="Stereotype_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.Stereotype_Constraints" />
   <unitInfo fileName="LibraryStubDescriptor_Constraints.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.LibraryStubDescriptor_Constraints" />
   <unitInfo fileName="LanguageRef_Constraints.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.LanguageRef_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="562112407431569978">
     <nodeInfo nodeId="562112407431866960" fileName="LanguageRef_Constraints.java" startLine="30" startPosition="85" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="562112407431866997" fileName="LanguageRef_Constraints.java" startLine="32" startPosition="9" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

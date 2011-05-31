@@ -6,7 +6,7 @@
   <unitInfo fileName="StateReference_Constraints.java" startLine="48" startPosition="28" endLine="62" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.constraints.StateReference_Constraints$2" />
   <unitInfo fileName="EventReference_Constraints.java" startLine="48" startPosition="28" endLine="62" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.constraints.EventReference_Constraints$2" />
   <unitInfo fileName="AbstractStateMachineElement_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.constraints.AbstractStateMachineElement_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="StateReference_Constraints.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.constraints.StateReference_Constraints" />
   <unitInfo fileName="EventReference_Constraints.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.constraints.EventReference_Constraints" />
   <root nodeId="7943979732673275737">

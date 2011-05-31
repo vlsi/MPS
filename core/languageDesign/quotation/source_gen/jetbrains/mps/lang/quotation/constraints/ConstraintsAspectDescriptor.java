@@ -4,26 +4,29 @@ package jetbrains.mps.lang.quotation.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1297092609:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 0:
         return new DataHolderConstraintsDescriptor(new AbstractAntiquotation_Constraints());
-      case 1908060675:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.Antiquotation"));
-      case -142443611:
+      case 4:
         return new DataHolderConstraintsDescriptor(new Quotation_Constraints());
-      case 1042705766:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"));
-      case -1479332475:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
-      case 2120826158:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"));
       default:
         return null;

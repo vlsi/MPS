@@ -4,34 +4,37 @@ package jetbrains.mps.baseLanguage.constructors.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter", "jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1724814137:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer"));
-      case 2066564648:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"));
-      case 894689369:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage"));
-      case 707139725:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"));
-      case 704260230:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"));
-      case 1479201182:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"));
-      case -204735903:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter"));
-      case -1456569878:
+      case 5:
         return new DataHolderConstraintsDescriptor(new CustomConstructorParameterReference_Constraints());
-      case 168815585:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"));
-      case 1584506201:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter"));
       default:
         return null;

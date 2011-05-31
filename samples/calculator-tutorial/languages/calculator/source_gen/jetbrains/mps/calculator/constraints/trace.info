@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="InputFieldReference_Constraints.java" startLine="28" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.calculator.constraints.InputFieldReference_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.calculator.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.calculator.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="InputFieldReference_Constraints.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.calculator.constraints.InputFieldReference_Constraints" />
   <root nodeId="1241364804758">
     <nodeInfo nodeId="1241364841508" fileName="InputFieldReference_Constraints.java" startLine="35" startPosition="136" endLine="36" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

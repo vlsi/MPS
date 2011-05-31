@@ -4,28 +4,31 @@ package jetbrains.mps.lang.smodelTests.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.smodelTests.structure.Child", "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", "jetbrains.mps.lang.smodelTests.structure.GrandChild", "jetbrains.mps.lang.smodelTests.structure.NamedConcept", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "jetbrains.mps.lang.smodelTests.structure.Root"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -321789996:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.Child"));
-      case 716903352:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.GrandChild"));
-      case 1791188778:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.Root"));
-      case -1210265860:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept"));
-      case -59084354:
+      case 4:
         return new DataHolderConstraintsDescriptor(new ReferenceContainer_Constraints());
-      case 70151991:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.NamedConcept"));
-      case -137395098:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"));
       default:
         return null;

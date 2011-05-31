@@ -4,48 +4,51 @@ package jetbrains.mps.lang.intentions.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.ExecuteUIBlock", "jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionContextParamReference", "jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -713206842:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 11:
         return new DataHolderConstraintsDescriptor(new IntentionDeclaration_Constraints());
-      case -488683575:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.DescriptionBlock"));
-      case 599031500:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.IsApplicableBlock"));
-      case 1103938544:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ExecuteBlock"));
-      case -328333184:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"));
-      case 1264391293:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.QueryBlock"));
-      case -417352459:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.IntentionParameter"));
-      case 1572281711:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"));
-      case -198052079:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ChildFilterBlock"));
-      case -1133772076:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ChildFilterFunction"));
-      case 226602368:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"));
-      case -619229129:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"));
-      case -1468598053:
+      case 8:
         return new DataHolderConstraintsDescriptor(new GenerateIntentionDeclaration_Constraints());
-      case 789005578:
+      case 16:
         return new DataHolderConstraintsDescriptor(new SurroundWithIntentionDeclaration_Constraints());
-      case -1332584164:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.intentions.structure.ExecuteUIBlock"));
-      case -706594644:
+      case 10:
         return new DataHolderConstraintsDescriptor(new IntentionContextParameterDeclaration_Constraints());
-      case -238295015:
+      case 9:
         return new DataHolderConstraintsDescriptor(new IntentionContextParamReference_Constraints());
       default:
         return null;

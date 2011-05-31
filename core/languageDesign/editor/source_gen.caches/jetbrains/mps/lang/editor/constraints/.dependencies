@@ -239,6 +239,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellActionMapDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellKeyMapDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_Constraints" />

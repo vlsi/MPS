@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="VariableReference_Constraints.java" startLine="31" startPosition="31" endLine="50" endPosition="5" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints$1" />
   <unitInfo fileName="VariableReference_Constraints.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="4022026349915821207">
     <nodeInfo nodeId="7125334522320417177" fileName="VariableReference_Constraints.java" startLine="38" startPosition="136" endLine="39" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7125334522320417186" fileName="VariableReference_Constraints.java" startLine="39" startPosition="156" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

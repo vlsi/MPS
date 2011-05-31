@@ -14,6 +14,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.tableTests.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.constraints.AbstractStateMachineElement_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.constraints.EventReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.constraints.StateReference_Constraints" />

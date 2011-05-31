@@ -4,270 +4,273 @@ package jetbrains.mps.lang.typesystem.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", "jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction", "jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.typesystem.structure.Dependency", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock", "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.lang.typesystem.structure.FindSourceBlock", "jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter", "jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes", "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InequationsGroup", "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference", "jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", "jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.typesystem.structure.MessageStatement", "jetbrains.mps.lang.typesystem.structure.MessageTarget", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.Processed", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.lang.typesystem.structure.TypeClause", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -177807772:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"));
-      case 1978817145:
+      case 28:
         return new DataHolderConstraintsDescriptor(new ConceptReference_Constraints());
-      case -1776294879:
+      case 87:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.PatternCondition"));
-      case 975351231:
+      case 55:
         return new DataHolderConstraintsDescriptor(new InferenceRule_Constraints());
-      case -1870256652:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractRule"));
-      case -241651564:
+      case 9:
         return new DataHolderConstraintsDescriptor(new ApplicableNodeReference_Constraints());
-      case 872118495:
+      case 113:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeOfExpression"));
-      case 1790674033:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement"));
-      case 238496651:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"));
-      case -1368679630:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"));
-      case 1515896341:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"));
-      case -100697801:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement"));
-      case -1326300957:
+      case 114:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration"));
-      case 2123616500:
+      case 115:
         return new DataHolderConstraintsDescriptor(new TypeVarReference_Constraints());
-      case 1313974581:
+      case 88:
         return new DataHolderConstraintsDescriptor(new PatternVariableReference_Constraints());
-      case 1610638415:
+      case 63:
         return new DataHolderConstraintsDescriptor(new LinkPatternVariableReference_Constraints());
-      case -1317820886:
+      case 92:
         return new DataHolderConstraintsDescriptor(new PropertyPatternVariableReference_Constraints());
-      case -2109279397:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"));
-      case 1288017501:
+      case 110:
         return new DataHolderConstraintsDescriptor(new SubtypingRule_Constraints());
-      case -337382061:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AssertStatement"));
-      case -830329775:
+      case 103:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"));
-      case 358210017:
+      case 111:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression"));
-      case 854192946:
+      case 59:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"));
-      case -618539290:
+      case 75:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation"));
-      case 44989288:
+      case 71:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"));
-      case 1261423108:
+      case 72:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable"));
-      case 1732940798:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceStatement"));
-      case 1729875825:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression"));
-      case 1504984411:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression"));
-      case -547515552:
+      case 65:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MatchStatement"));
-      case 96981651:
+      case 66:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MatchStatementItem"));
-      case 601192937:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceExpression"));
-      case 303446816:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression"));
-      case 641176122:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.JoinType"));
-      case 868146075:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"));
-      case 41014958:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong"));
-      case -102075104:
+      case 105:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType"));
-      case 339314520:
+      case 108:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
-      case -1451837825:
+      case 112:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypeClause"));
-      case -1575134650:
+      case 77:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.NormalTypeClause"));
-      case 484027738:
+      case 125:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"));
-      case 1180562135:
+      case 68:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MeetType"));
-      case -246103845:
+      case 17:
         return new DataHolderConstraintsDescriptor(new ComparisonRule_Constraints());
-      case 410539137:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Dependency"));
-      case -1933825469:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.FindSourceBlock"));
-      case -293829466:
+      case 45:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter"));
-      case -447882514:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"));
-      case -915472708:
+      case 76:
         return new DataHolderConstraintsDescriptor(new NonTypesystemRule_Constraints());
-      case -1473919865:
+      case 51:
         return new DataHolderConstraintsDescriptor(new InequationReplacementRule_Constraints());
-      case -1532478056:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression"));
-      case 356517052:
+      case 107:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeListVariable"));
-      case 1784030023:
+      case 64:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration"));
-      case -1707343991:
+      case 126:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration"));
-      case -2006384358:
+      case 127:
         return new DataHolderConstraintsDescriptor(new WhenConcreteVariableReference_Constraints());
-      case 982428137:
+      case 123:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.WarningStatement"));
-      case 605065101:
+      case 116:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.TypesystemIntention"));
-      case -1663273622:
+      case 117:
         return new DataHolderConstraintsDescriptor(new TypesystemIntentionArgument_Constraints());
-      case -847803642:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"));
-      case 352035116:
+      case 12:
         return new DataHolderConstraintsDescriptor(new ChildTypeRestriction_Constraints());
-      case -1032433793:
+      case 13:
         return new DataHolderConstraintsDescriptor(new ChildTypeRestrictionReference_Constraints());
-      case 2123566887:
+      case 118:
         return new DataHolderConstraintsDescriptor(new TypesystemQuickFix_Constraints());
-      case -1690765610:
+      case 96:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock"));
-      case -1876673950:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node"));
-      case -1541855621:
+      case 93:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixArgument"));
-      case 1852330768:
+      case 94:
         return new DataHolderConstraintsDescriptor(new QuickFixArgumentReference_Constraints());
-      case 1938528175:
+      case 95:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock"));
-      case -955876295:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement"));
-      case 2105920344:
+      case 89:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Processed"));
-      case 1413919595:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InfoStatement"));
-      case -1678940286:
+      case 70:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MessageTarget"));
-      case 42463661:
+      case 90:
         return new DataHolderConstraintsDescriptor(new PropertyMessageTarget_Constraints());
-      case -242630877:
+      case 100:
         return new DataHolderConstraintsDescriptor(new ReferenceMessageTarget_Constraints());
-      case 609591774:
+      case 69:
         return new DataHolderConstraintsDescriptor(new MessageStatement_Constraints());
-      case 1198891751:
+      case 91:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget"));
-      case 328753884:
+      case 101:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget"));
-      case 348041409:
+      case 119:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem"));
-      case -566769520:
+      case 120:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock"));
-      case -476172601:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var"));
-      case -1957077640:
+      case 121:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock"));
-      case -89318308:
+      case 122:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer"));
-      case -1877507850:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role"));
-      case 26518264:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation"));
-      case 407918545:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode"));
-      case -251640676:
+      case 106:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType"));
-      case -2028184759:
+      case 86:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule"));
-      case -999208539:
+      case 85:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction"));
-      case -870697904:
+      case 62:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter"));
-      case -1062360485:
+      case 79:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Operation_parameter"));
-      case -1693857145:
+      case 104:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter"));
-      case -1634678207:
+      case 46:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.GetOperationType"));
-      case 2021722810:
+      case 83:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer"));
-      case 1567138564:
+      case 67:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.MeetContainer"));
-      case 2024417665:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.JoinContainer"));
-      case -2059829285:
+      case 29:
         return new DataHolderConstraintsDescriptor(new ConceptTypeClause_Constraints());
-      case -1065173015:
+      case 18:
         return new DataHolderConstraintsDescriptor(new ConceptClauseLinkInfo_Constraints());
-      case 507817801:
+      case 84:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"));
-      case -615766377:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"));
-      case 144240694:
+      case 78:
         return new DataHolderConstraintsDescriptor(new OperationContextExpression_Constraints());
-      case -1845791762:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction"));
-      case -2011137436:
+      case 50:
         return new DataHolderConstraintsDescriptor(new InequationReference_Constraints());
-      case -576393731:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry"));
-      case 1598270771:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroup"));
-      case -1468146856:
+      case 53:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference"));
-      case 1918313783:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"));
-      case 1588346278:
+      case 74:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation"));
-      case -1129313146:
+      case 73:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.NodeInfo"));
-      case -2117707983:
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem"));
-      case -1106698262:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode"));
-      case 1947979428:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock"));
-      case -846950656:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock"));
-      case 1265905834:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock"));
-      case 649812724:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode"));
-      case 1612532260:
+      case 81:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"));
-      case 498064593:
+      case 82:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction"));
-      case -1125663387:
+      case 99:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock"));
-      case 1495480066:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext"));
-      case 834281980:
+      case 97:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.QuickFixField"));
-      case 1337178287:
+      case 98:
         return new DataHolderConstraintsDescriptor(new QuickFixFieldReference_Constraints());
-      case 906508784:
+      case 109:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.SelectionType"));
-      case -2122137332:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection"));
-      case 1944185137:
+      case 11:
         return new DataHolderConstraintsDescriptor(new CaretPositionOperation_Constraints());
-      case -782219785:
+      case 124:
         return new DataHolderConstraintsDescriptor(new WasSelectedNodeOperation_Constraints());
-      case 1314250323:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"));
-      case 1895061594:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"));
-      case 113171827:
+      case 102:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference"));
-      case -1922090740:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"));
-      case 528889789:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"));
-      case 2049822806:
+      case 80:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.typesystem.structure.OrStatement"));
       default:
         return null;

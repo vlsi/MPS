@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debug.evaluation.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsThisExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.constraints.LowLevelVariableReference_Constraints" />

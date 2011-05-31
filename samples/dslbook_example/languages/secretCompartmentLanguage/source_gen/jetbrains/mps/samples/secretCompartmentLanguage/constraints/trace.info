@@ -12,7 +12,7 @@
   <unitInfo fileName="State_Constraints.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.State_Constraints" />
   <unitInfo fileName="Event_Constraints.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.Event_Constraints" />
   <unitInfo fileName="StateMachine_Constraints.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.StateMachine_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1197166592844">
     <scopeInfo nodeId="1197166592846" fileName="StateMachine_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

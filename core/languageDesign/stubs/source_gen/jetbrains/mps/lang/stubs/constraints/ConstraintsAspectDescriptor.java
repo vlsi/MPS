@@ -4,52 +4,55 @@ package jetbrains.mps.lang.stubs.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.AbstractModelCreator", "jetbrains.mps.lang.stubs.structure.BaseCreatorType", "jetbrains.mps.lang.stubs.structure.GetRootsBlock", "jetbrains.mps.lang.stubs.structure.InitModuleBlock", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelManagerType", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock", "jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Stereotype", "jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter", "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration", "jetbrains.mps.lang.stubs.structure.StubsCreatorType", "jetbrains.mps.lang.stubs.structure.UpdateModelBlock"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1797502757:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"));
-      case 609152443:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.UpdateModelBlock"));
-      case -1845154588:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock"));
-      case -1706380243:
+      case 4:
         return new DataHolderConstraintsDescriptor(new LanguageRef_Constraints());
-      case -1559100163:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelCreationSettings"));
-      case -1427075749:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock"));
-      case -465229033:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter"));
-      case -266998195:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter"));
-      case 1447561199:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubsCreatorType"));
-      case 948100147:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.AbstractModelCreator"));
-      case -979605080:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"));
-      case -612237561:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.BaseCreatorType"));
-      case -281292084:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.ModelManagerType"));
-      case 124304362:
+      case 5:
         return new DataHolderConstraintsDescriptor(new LibraryStubDescriptor_Constraints());
-      case 392713412:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.GetRootsBlock"));
-      case 1087011552:
+      case 13:
         return new DataHolderConstraintsDescriptor(new Stereotype_Constraints());
-      case -1382459549:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.InitModuleBlock"));
-      case 200906209:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter"));
-      case -1458886093:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter"));
       default:
         return null;

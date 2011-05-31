@@ -4,140 +4,143 @@ package jetbrains.mps.ui.modeling.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ApplyConstraintStatement", "jetbrains.mps.ui.modeling.structure.AspectParameterDecl", "jetbrains.mps.ui.modeling.structure.AspectParameterRef", "jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", "jetbrains.mps.ui.modeling.structure.AuxObjectFactory", "jetbrains.mps.ui.modeling.structure.AuxObjectTemplate", "jetbrains.mps.ui.modeling.structure.Auxillary", "jetbrains.mps.ui.modeling.structure.BeforeUIObjectParam", "jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint", "jetbrains.mps.ui.modeling.structure.CellLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ChildAspectDefinition", "jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint", "jetbrains.mps.ui.modeling.structure.Container", "jetbrains.mps.ui.modeling.structure.ContainerItemAdder", "jetbrains.mps.ui.modeling.structure.ContainerItemClearer", "jetbrains.mps.ui.modeling.structure.ContainerItemInserter", "jetbrains.mps.ui.modeling.structure.ContainerItemIterator", "jetbrains.mps.ui.modeling.structure.ContainerItemRemover", "jetbrains.mps.ui.modeling.structure.ContainerTemplate", "jetbrains.mps.ui.modeling.structure.Context", "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam", "jetbrains.mps.ui.modeling.structure.EditableUIProperty", "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.Event", "jetbrains.mps.ui.modeling.structure.EventHandlerParam", "jetbrains.mps.ui.modeling.structure.EventHandlerSetup", "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", "jetbrains.mps.ui.modeling.structure.EventProducer", "jetbrains.mps.ui.modeling.structure.EventProducerParam", "jetbrains.mps.ui.modeling.structure.EventProperty", "jetbrains.mps.ui.modeling.structure.EventPropertyGetter", "jetbrains.mps.ui.modeling.structure.ExpressionWithUnit", "jetbrains.mps.ui.modeling.structure.ForceLayoutCode", "jetbrains.mps.ui.modeling.structure.Geometry", "jetbrains.mps.ui.modeling.structure.HasTemplate", "jetbrains.mps.ui.modeling.structure.HorizontalAlignment", "jetbrains.mps.ui.modeling.structure.HorizontalConstraint", "jetbrains.mps.ui.modeling.structure.IAspectParameterHolder", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub", "jetbrains.mps.ui.modeling.structure.ItemUIObjectParam", "jetbrains.mps.ui.modeling.structure.LayoutConstraint", "jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression", "jetbrains.mps.ui.modeling.structure.LayoutConstraintType", "jetbrains.mps.ui.modeling.structure.OverrideAnnotation", "jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerParam", "jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerSetup", "jetbrains.mps.ui.modeling.structure.PropertyValueParam", "jetbrains.mps.ui.modeling.structure.RowLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ThisEventParam", "jetbrains.mps.ui.modeling.structure.ThisUIObjectParam", "jetbrains.mps.ui.modeling.structure.UIAction", "jetbrains.mps.ui.modeling.structure.UIActionCode", "jetbrains.mps.ui.modeling.structure.UIObject", "jetbrains.mps.ui.modeling.structure.UIObjectFactory", "jetbrains.mps.ui.modeling.structure.UIObjectTemplate", "jetbrains.mps.ui.modeling.structure.UIProperty", "jetbrains.mps.ui.modeling.structure.UIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.UIPropertyGetter", "jetbrains.mps.ui.modeling.structure.UIPropertySetter", "jetbrains.mps.ui.modeling.structure.UnitType", "jetbrains.mps.ui.modeling.structure.VerticalAlignment", "jetbrains.mps.ui.modeling.structure.VerticalConstraint"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -133672961:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 53:
         return new DataHolderConstraintsDescriptor(new UIObject_Constraints());
-      case -694330731:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.UIProperty"));
-      case 1532659950:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.Event"));
-      case 1542975136:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.EventProducer"));
-      case -535065575:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.EditableUIProperty"));
-      case -209120871:
+      case 55:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.UIObjectTemplate"));
-      case 956909030:
+      case 57:
         return new DataHolderConstraintsDescriptor(new UIPropertyAccessCode_Constraints());
-      case -82160780:
+      case 59:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.UIPropertySetter"));
-      case 412272592:
+      case 50:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ThisUIObjectParam"));
-      case -1343431811:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.PropertyValueParam"));
-      case -425710592:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.UIPropertyGetter"));
-      case -1101720810:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EventHandlerTemplate_Constraints());
-      case 565382013:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ThisEventParam"));
-      case 1836627825:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.EventHandlerParam"));
-      case -1117168179:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.EventProducerParam"));
-      case 1839520097:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.EventHandlerSetup"));
-      case 1553595619:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.EventProperty"));
-      case -817800242:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EventPropertyGetter_Constraints());
-      case -952375804:
+      case 46:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerSetup"));
-      case -1993710998:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EditableUIPropertyAccessCode_Constraints());
-      case -955268076:
+      case 45:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerParam"));
-      case 1472630920:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.HasTemplate"));
-      case -1917183787:
+      case 13:
         return new DataHolderConstraintsDescriptor(new Container_Constraints());
-      case -1339579281:
+      case 19:
         return new DataHolderConstraintsDescriptor(new ContainerTemplate_Constraints());
-      case -2122563205:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ItemUIObjectParam"));
-      case 1566609510:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ContainerItemAdder"));
-      case -2025829365:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.UIObjectFactory"));
-      case -1871420617:
+      case 21:
         return new DataHolderConstraintsDescriptor(new ContextUIObjectParam_Constraints());
-      case 2040465155:
+      case 20:
         return new DataHolderConstraintsDescriptor(new Context_Constraints());
-      case 803437841:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.AuxObjectTemplate"));
-      case 2024706451:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.AuxObjectFactory"));
-      case -749897161:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.Auxillary"));
-      case -21453060:
+      case 4:
         return new DataHolderConstraintsDescriptor(new AuxObjectAccessOp_Constraints());
-      case 890725959:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.OverrideAnnotation"));
-      case -1139407013:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ChildAspectDefinition"));
-      case -132711914:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ContainerItemIterator"));
-      case 218124742:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ContainerItemRemover"));
-      case 775309199:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.BeforeUIObjectParam"));
-      case -773458226:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ContainerItemInserter"));
-      case -16933614:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ContainerItemClearer"));
-      case 1243242910:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.Geometry"));
-      case 620737238:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ForceLayoutCode"));
-      case 2125633613:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.HorizontalConstraint"));
-      case 647024671:
+      case 62:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.VerticalConstraint"));
-      case -1173885485:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.LayoutConstraint"));
-      case 1980682157:
+      case 43:
         return new DataHolderConstraintsDescriptor(new LayoutConstraintType_Constraints());
-      case -1693421365:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression"));
-      case -1221672986:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint"));
-      case -860234674:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit"));
-      case -895429622:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.UnitType"));
-      case -2096595216:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ApplyConstraintStatement"));
-      case 557662549:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.CellLayoutConstraint"));
-      case 870451273:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint"));
-      case 1093336565:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.RowLayoutConstraint"));
-      case -533255434:
+      case 51:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.UIAction"));
-      case 1245504003:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.UIActionCode"));
-      case -925178626:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint"));
-      case -837511327:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.VerticalAlignment"));
-      case -1482550925:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.HorizontalAlignment"));
-      case 251495887:
+      case 2:
         return new DataHolderConstraintsDescriptor(new AspectParameterDecl_Constraints());
-      case 2086336206:
+      case 3:
         return new DataHolderConstraintsDescriptor(new AspectParameterRef_Constraints());
-      case 916875904:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.IAspectParameterHolder"));
-      case 1967227654:
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"));
       default:
         return null;

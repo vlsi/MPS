@@ -6,6 +6,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.core.constraints.BaseConcept_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.core.constraints.IResolveInfo_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConstraintsDescriptor" />

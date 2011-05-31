@@ -4,32 +4,35 @@ package jetbrains.mps.baseLanguage.tuples.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1438987648:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"));
-      case 223205289:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"));
-      case 561072028:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression"));
-      case -1025909252:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
-      case -386467333:
+      case 4:
         return new DataHolderConstraintsDescriptor(new NamedTupleComponentDeclaration_Constraints());
-      case 1695274232:
+      case 8:
         return new DataHolderConstraintsDescriptor(new NamedTupleType_Constraints());
-      case 429857329:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"));
-      case 1512304652:
+      case 5:
         return new DataHolderConstraintsDescriptor(new NamedTupleComponentReference_Constraints());
-      case -897029020:
+      case 3:
         return new DataHolderConstraintsDescriptor(new NamedTupleComponentAccessOperation_Constraints());
       default:
         return null;

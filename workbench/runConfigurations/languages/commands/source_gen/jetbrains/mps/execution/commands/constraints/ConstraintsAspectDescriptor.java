@@ -4,52 +4,55 @@ package jetbrains.mps.execution.commands.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.commands.structure.AbstractProcessBuilderPart", "jetbrains.mps.execution.commands.structure.BuilderBlockStatement", "jetbrains.mps.execution.commands.structure.BuilderParameter", "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandDeclaration", "jetbrains.mps.execution.commands.structure.CommandMethod", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandReferenceExpression", "jetbrains.mps.execution.commands.structure.CommandType", "jetbrains.mps.execution.commands.structure.ProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart", "jetbrains.mps.execution.commands.structure.ProcessBuilderPart", "jetbrains.mps.execution.commands.structure.ProcessType", "jetbrains.mps.execution.commands.structure.RedirectOutputExpression", "jetbrains.mps.execution.commands.structure.ReportErrorStatement", "jetbrains.mps.execution.commands.structure.ReportExecutionError"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 765900688:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandType"));
-      case 2082581805:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandReferenceExpression"));
-      case -102526088:
+      case 9:
         return new DataHolderConstraintsDescriptor(new CommandParameterReference_Constraints());
-      case -1755614617:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"));
-      case 757971008:
+      case 7:
         return new DataHolderConstraintsDescriptor(new CommandParameterAssignment_Constraints());
-      case 1372404663:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandMethod"));
-      case 1884250212:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandDeclaration"));
-      case 1115859376:
+      case 4:
         return new DataHolderConstraintsDescriptor(new CommandDebuggerOperation_Constraints());
-      case 1539140605:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandBuilderExpression"));
-      case 1283902600:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.BuilderBlockStatement"));
-      case -61891901:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.BuilderParameter"));
-      case 176886297:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ReportExecutionError"));
-      case 1989889168:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ReportErrorStatement"));
-      case -79711690:
+      case 0:
         return new DataHolderConstraintsDescriptor(new AbstractProcessBuilderPart_Constraints());
-      case -1126180519:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderExpression"));
-      case -359839791:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart"));
-      case 1602293620:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessBuilderPart"));
-      case -1865300812:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessType"));
-      case 214110698:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.RedirectOutputExpression"));
       default:
         return null;

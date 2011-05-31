@@ -274,6 +274,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.AdditionalForLoopVariable_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.AnnotationInstanceValue_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.AnnotationInstance_Constraints" />

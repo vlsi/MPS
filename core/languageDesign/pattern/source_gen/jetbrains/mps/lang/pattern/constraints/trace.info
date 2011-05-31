@@ -14,7 +14,7 @@
   <unitInfo fileName="PatternVariableDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.PatternVariableDeclaration_Constraints" />
   <unitInfo fileName="ActionAsPattern_Constraints.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.ActionAsPattern_Constraints" />
   <unitInfo fileName="OrPatternVariableReference_Constraints.java" startLine="19" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.OrPatternVariableReference_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="PatternVariableReference_Constraints.java" startLine="25" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.PatternVariableReference_Constraints" />
   <root nodeId="1213104858853">
     <nodeInfo nodeId="1213104858857" fileName="PatternVariableDeclaration_Constraints.java" startLine="25" startPosition="84" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -4,52 +4,55 @@ package jetbrains.mps.gwt.client.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.gwt.client.structure.Attr", "jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.SuperSource"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 2066284946:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 7:
         return new DataHolderConstraintsDescriptor(new GWTModule_Constraints());
-      case 82464764:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.EntryPoint"));
-      case 36823574:
+      case 10:
         return new DataHolderConstraintsDescriptor(new Inherits_Constraints());
-      case -1933198114:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.PatternHolder"));
-      case -557407830:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Include"));
-      case 473836252:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Exclude"));
-      case -1995982166:
+      case 13:
         return new DataHolderConstraintsDescriptor(new PatternFilter_Constraints());
-      case 1003894930:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Pattern"));
-      case -1340602781:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Path"));
-      case -1341031377:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Attr"));
-      case -908299716:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.DefaultExcludes"));
-      case 549227720:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.CaseSensitive"));
-      case -99773431:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Includes"));
-      case 1804022039:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Excludes"));
-      case 269775577:
+      case 17:
         return new DataHolderConstraintsDescriptor(new Source_Constraints());
-      case 1715140472:
+      case 18:
         return new DataHolderConstraintsDescriptor(new SuperSource_Constraints());
-      case 188857639:
+      case 15:
         return new DataHolderConstraintsDescriptor(new Public_Constraints());
-      case 132148222:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.Element"));
-      case -687424105:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.gwt.client.structure.RenameTo"));
       default:
         return null;

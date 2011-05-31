@@ -4,42 +4,45 @@ package jetbrains.mps.samples.matrixLanguage.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression", "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement", "jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration", "jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference", "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration", "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference", "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", "jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixRow", "jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixType", "jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1718566832:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixType"));
-      case -1444998023:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral"));
-      case 609624740:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow"));
-      case 1609531032:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression"));
-      case 1216802108:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression"));
-      case -868738850:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression"));
-      case -963328413:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression"));
-      case -456273598:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression"));
-      case 816490067:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression"));
-      case 192446598:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement"));
-      case -2134083422:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration"));
-      case -972986184:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration"));
-      case 193260041:
+      case 5:
         return new DataHolderConstraintsDescriptor(new MatrixElementVariableReference_Constraints());
-      case -1899565965:
+      case 7:
         return new DataHolderConstraintsDescriptor(new MatrixIndexVariableReference_Constraints());
       default:
         return null;

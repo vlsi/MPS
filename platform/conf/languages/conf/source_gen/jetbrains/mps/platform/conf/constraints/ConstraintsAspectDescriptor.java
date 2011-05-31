@@ -4,102 +4,105 @@ package jetbrains.mps.platform.conf.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.platform.conf.structure.AbstractAction", "jetbrains.mps.platform.conf.structure.Action", "jetbrains.mps.platform.conf.structure.ActionReference", "jetbrains.mps.platform.conf.structure.Actions", "jetbrains.mps.platform.conf.structure.BeanExtension", "jetbrains.mps.platform.conf.structure.BeanExtensionAttribute", "jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "jetbrains.mps.platform.conf.structure.Component", "jetbrains.mps.platform.conf.structure.ComponentRoot", "jetbrains.mps.platform.conf.structure.Components", "jetbrains.mps.platform.conf.structure.ComponentsRoot", "jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", "jetbrains.mps.platform.conf.structure.ConfigurationXmlNode", "jetbrains.mps.platform.conf.structure.ConfigurationXmlRootNode", "jetbrains.mps.platform.conf.structure.Extension", "jetbrains.mps.platform.conf.structure.ExtensionPoint", "jetbrains.mps.platform.conf.structure.ExtensionPoints", "jetbrains.mps.platform.conf.structure.Extensions", "jetbrains.mps.platform.conf.structure.Group", "jetbrains.mps.platform.conf.structure.GroupReference", "jetbrains.mps.platform.conf.structure.HasLevel", "jetbrains.mps.platform.conf.structure.IActionItem", "jetbrains.mps.platform.conf.structure.IConfiguration", "jetbrains.mps.platform.conf.structure.IConfigurationElement", "jetbrains.mps.platform.conf.structure.IConfigurationElementFragment", "jetbrains.mps.platform.conf.structure.IConfigurationFragment", "jetbrains.mps.platform.conf.structure.IExternalConfigurationFragment", "jetbrains.mps.platform.conf.structure.IPluginConfigurationFragment", "jetbrains.mps.platform.conf.structure.IdeaPluginRoot", "jetbrains.mps.platform.conf.structure.IdeaVersion", "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "jetbrains.mps.platform.conf.structure.InterfaceExtension", "jetbrains.mps.platform.conf.structure.KeyboardShortcut", "jetbrains.mps.platform.conf.structure.MouseShortcut", "jetbrains.mps.platform.conf.structure.Plugin", "jetbrains.mps.platform.conf.structure.PluginDependency", "jetbrains.mps.platform.conf.structure.PluginDetails", "jetbrains.mps.platform.conf.structure.PluginHelpset", "jetbrains.mps.platform.conf.structure.PluginVendor", "jetbrains.mps.platform.conf.structure.RootRoot", "jetbrains.mps.platform.conf.structure.Separator", "jetbrains.mps.platform.conf.structure.Service", "jetbrains.mps.platform.conf.structure.Shortcut", "jetbrains.mps.platform.conf.structure.XInclude"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 971103837:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.Component"));
-      case 1758453151:
+      case 14:
         return new DataHolderConstraintsDescriptor(new Extension_Constraints());
-      case -1977845617:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IConfigurationElement"));
-      case -209702095:
+      case 15:
         return new DataHolderConstraintsDescriptor(new ExtensionPoint_Constraints());
-      case 1469365021:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IConfigurationFragment"));
-      case 936997293:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IConfiguration"));
-      case -336597476:
+      case 11:
         return new DataHolderConstraintsDescriptor(new ConfigurationXmlDocument_Constraints());
-      case -1164321518:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IExternalConfigurationFragment"));
-      case -819034192:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.XInclude"));
-      case 51868547:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.ConfigurationXmlNode"));
-      case 2089169762:
+      case 16:
         return new DataHolderConstraintsDescriptor(new ExtensionPoints_Constraints());
-      case 39447990:
+      case 9:
         return new DataHolderConstraintsDescriptor(new Components_Constraints());
-      case 920817409:
+      case 6:
         return new DataHolderConstraintsDescriptor(new BeanExtensionPoint_Constraints());
-      case 409603012:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint"));
-      case -1441308651:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.Service"));
-      case 1307720618:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.HasLevel"));
-      case -1322527052:
+      case 17:
         return new DataHolderConstraintsDescriptor(new Extensions_Constraints());
-      case -1817002068:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IdeaPluginRoot"));
-      case 1169645519:
+      case 4:
         return new DataHolderConstraintsDescriptor(new BeanExtension_Constraints());
-      case 182413734:
+      case 31:
         return new DataHolderConstraintsDescriptor(new InterfaceExtension_Constraints());
-      case 2025833357:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.BeanExtensionAttribute"));
-      case 903593983:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IConfigurationElementFragment"));
-      case 1137121208:
+      case 10:
         return new DataHolderConstraintsDescriptor(new ComponentsRoot_Constraints());
-      case -1626841889:
+      case 8:
         return new DataHolderConstraintsDescriptor(new ComponentRoot_Constraints());
-      case 1017956228:
+      case 39:
         return new DataHolderConstraintsDescriptor(new RootRoot_Constraints());
-      case 2023670890:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IPluginConfigurationFragment"));
-      case -1511314989:
+      case 34:
         return new DataHolderConstraintsDescriptor(new Plugin_Constraints());
-      case 1250684286:
+      case 35:
         return new DataHolderConstraintsDescriptor(new PluginDependency_Constraints());
-      case 1533989115:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.PluginVendor"));
-      case 1519271151:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.PluginDetails"));
-      case 1436871489:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IdeaVersion"));
-      case 767386670:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.PluginHelpset"));
-      case -292298147:
+      case 3:
         return new DataHolderConstraintsDescriptor(new Actions_Constraints());
-      case 1347244952:
+      case 0:
         return new DataHolderConstraintsDescriptor(new AbstractAction_Constraints());
-      case 842362598:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.Shortcut"));
-      case 1427577195:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.MouseShortcut"));
-      case 415682541:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.KeyboardShortcut"));
-      case -1165269025:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.Group"));
-      case -1969266132:
+      case 19:
         return new DataHolderConstraintsDescriptor(new GroupReference_Constraints());
-      case -1744980203:
+      case 2:
         return new DataHolderConstraintsDescriptor(new ActionReference_Constraints());
-      case -1949091626:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.Action"));
-      case 2057533714:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.IActionItem"));
-      case -191126459:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.platform.conf.structure.Separator"));
-      case -1365344507:
+      case 13:
         return new DataHolderConstraintsDescriptor(new ConfigurationXmlRootNode_Constraints());
       default:
         return null;

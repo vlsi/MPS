@@ -4,400 +4,403 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.editor.structure.AbstractComponent", "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "jetbrains.mps.lang.editor.structure.AppendTextOperation", "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.editor.structure.BaseLineCell", "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_keyEvent", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes", "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", "jetbrains.mps.lang.editor.structure.CellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", "jetbrains.mps.lang.editor.structure.CellLayout_Indent", "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", "jetbrains.mps.lang.editor.structure.CellLayout_Superscript", "jetbrains.mps.lang.editor.structure.CellLayout_Table", "jetbrains.mps.lang.editor.structure.CellLayout_Vertical", "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.CellModel_WithRole", "jetbrains.mps.lang.editor.structure.ColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", "jetbrains.mps.lang.editor.structure.EditableStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.FloatStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", "jetbrains.mps.lang.editor.structure.IQueryFunction_Color", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", "jetbrains.mps.lang.editor.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer", "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent", "jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode", "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", "jetbrains.mps.lang.editor.structure.QueryFunction_SNode", "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", "jetbrains.mps.lang.editor.structure.QueryFunction_String", "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectOperation", "jetbrains.mps.lang.editor.structure.SelectParameter", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", "jetbrains.mps.lang.editor.structure.SetBoldOperation", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", "jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.StyledTextType", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue", "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 745057271:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 99:
         return new DataHolderConstraintsDescriptor(new ConceptEditorDeclaration_Constraints());
-      case -1129446392:
+      case 113:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.EditorCellModel"));
-      case 1394538440:
+      case 76:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Collection"));
-      case 709193550:
+      case 79:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Constant"));
-      case 283863423:
+      case 89:
         return new DataHolderConstraintsDescriptor(new CellModel_Property_Constraints());
-      case -1506824117:
+      case 92:
         return new DataHolderConstraintsDescriptor(new CellModel_RefNode_Constraints());
-      case -1424181367:
+      case 93:
         return new DataHolderConstraintsDescriptor(new CellModel_RefNodeList_Constraints());
-      case -1615350269:
+      case 87:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"));
-      case -607586658:
+      case 82:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Error"));
-      case -1709770341:
+      case 80:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Custom"));
-      case 1184967804:
+      case 114:
         return new DataHolderConstraintsDescriptor(new EditorComponentDeclaration_Constraints());
-      case -467466605:
+      case 77:
         return new DataHolderConstraintsDescriptor(new CellModel_Component_Constraints());
-      case -1719233912:
+      case 68:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel"));
-      case -2037420019:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BaseEditorComponent"));
-      case 766537481:
+      case 15:
         return new DataHolderConstraintsDescriptor(new CellKeyMapDeclaration_Constraints());
-      case -1507161173:
+      case 91:
         return new DataHolderConstraintsDescriptor(new CellModel_RefCell_Constraints());
-      case -2045591611:
+      case 130:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.InlineEditorComponent"));
-      case -1769667853:
+      case 69:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Alternation"));
-      case 89349341:
+      case 85:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_JComponent"));
-      case -238034338:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout"));
-      case -663792443:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal"));
-      case -1025383337:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Vertical"));
-      case 613488271:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Flow"));
-      case -892267415:
+      case 72:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"));
-      case 1602151694:
+      case 70:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"));
-      case 473535588:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMapItem"));
-      case 477143718:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke"));
-      case -528924920:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction"));
-      case -1405387126:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode"));
-      case -617327831:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes"));
-      case 1253041480:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_keyEvent"));
-      case 287932751:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction"));
-      case 955382719:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction"));
-      case 1127396723:
+      case 78:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
-      case -310495608:
+      case 11:
         return new DataHolderConstraintsDescriptor(new CellActionMapDeclaration_Constraints());
-      case -10506811:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMapItem"));
-      case -1101001824:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction"));
-      case 61073707:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode"));
-      case -604058127:
+      case 83:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Image"));
-      case 336223750:
+      case 97:
         return new DataHolderConstraintsDescriptor(new CellModel_WithRole_Constraints());
-      case -1371402300:
+      case 86:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"));
-      case -193469720:
+      case 161:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"));
-      case -532046106:
+      case 103:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"));
-      case 1531027222:
+      case 71:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"));
-      case -757544151:
+      case 53:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues"));
-      case -653428962:
+      case 102:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext"));
-      case -1415586751:
+      case 63:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild"));
-      case -1666741440:
+      case 64:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild"));
-      case -2103841875:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query"));
-      case 1943421918:
+      case 67:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create"));
-      case -400776947:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject"));
-      case -1314834353:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode"));
-      case 1682714693:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText"));
-      case -710731794:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText"));
-      case -935965342:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuDescriptor"));
-      case 2018066491:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"));
-      case -959640400:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"));
-      case 1102372371:
+      case 65:
         return new DataHolderConstraintsDescriptor(new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints());
-      case 492547294:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"));
-      case -657684547:
+      case 66:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group"));
-      case -330648828:
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup"));
-      case 411294465:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"));
-      case 983720426:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query"));
-      case 26967066:
+      case 59:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create"));
-      case -653876613:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept"));
-      case 1064052196:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query"));
-      case -817955247:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item"));
-      case -1845428534:
+      case 62:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create"));
-      case 2095074686:
+      case 46:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group"));
-      case 1157989737:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler"));
-      case -763639756:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item"));
-      case -718411233:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler"));
-      case -713221974:
+      case 33:
         return new DataHolderConstraintsDescriptor(new CellMenuComponent_Constraints());
-      case -1267022100:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature"));
-      case -2080000536:
+      case 36:
         return new DataHolderConstraintsDescriptor(new CellMenuComponentFeature_Property_Constraints());
-      case 2137491853:
+      case 35:
         return new DataHolderConstraintsDescriptor(new CellMenuComponentFeature_Link_Constraints());
-      case 325989257:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractComponent"));
-      case 1495004195:
+      case 45:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent"));
-      case 660236385:
+      case 55:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"));
-      case -41375644:
+      case 155:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_JComponent"));
-      case -531876335:
+      case 107:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text"));
-      case 841070446:
+      case 158:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter"));
-      case 1184620258:
+      case 159:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter"));
-      case 940801551:
+      case 160:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator"));
-      case 585332766:
+      case 135:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ModelAccessor"));
-      case -955010928:
+      case 104:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText"));
-      case -2104320540:
+      case 149:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider"));
-      case -937906158:
+      case 150:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Color"));
-      case -1618561513:
+      case 162:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory"));
-      case 49933647:
+      case 152:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath"));
-      case 436388197:
+      case 50:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"));
-      case 240667879:
+      case 51:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes"));
-      case -789234295:
+      case 163:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter"));
-      case -276683046:
+      case 101:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode"));
-      case -1355045345:
+      case 88:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"));
-      case 1454684512:
+      case 182:
         return new DataHolderConstraintsDescriptor(new StyleSheet_Constraints());
-      case 302701560:
+      case 183:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyleSheetClass"));
-      case -1332309972:
+      case 181:
         return new DataHolderConstraintsDescriptor(new StyleClassItem_Constraints());
-      case 228703563:
+      case 98:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ColorStyleClassItem"));
-      case 489404234:
+      case 118:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"));
-      case 2141789576:
+      case 119:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"));
-      case 1582504893:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"));
-      case 887157159:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem"));
-      case -948823497:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"));
-      case -1966093303:
+      case 177:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"));
-      case -1990267443:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem"));
-      case 2041877596:
+      case 110:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem"));
-      case 380866276:
+      case 192:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"));
-      case -781760708:
+      case 117:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"));
-      case 1870723504:
+      case 112:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.EditableStyleClassItem"));
-      case 218590977:
+      case 120:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem"));
-      case 1416526387:
+      case 184:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyleSheetClassReference"));
-      case -1544921386:
+      case 84:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Indent"));
-      case 116336895:
+      case 75:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_BlockStart"));
-      case 612397240:
+      case 74:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"));
-      case -610539229:
+      case 73:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Block"));
-      case -780777511:
+      case 174:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectOperation"));
-      case -489019877:
+      case 175:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectParameter"));
-      case 725637362:
+      case 176:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SelectPositionParameter"));
-      case -2042187921:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CaretPositionParameter"));
-      case 1999931571:
+      case 133:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem"));
-      case -1048646884:
+      case 179:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"));
-      case 51911312:
+      case 188:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"));
-      case 1101248523:
+      case 187:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem"));
-      case -824304361:
+      case 109:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem"));
-      case 2024114308:
+      case 116:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FloatStyleClassItem"));
-      case -76402080:
+      case 139:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"));
-      case -841299305:
+      case 140:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
-      case 150560891:
+      case 115:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem"));
-      case 1795533233:
+      case 132:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem"));
-      case -1866995787:
+      case 145:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PositionStyleClassItem"));
-      case -1967881964:
+      case 95:
         return new DataHolderConstraintsDescriptor(new CellModel_TransactionalProperty_Constraints());
-      case -1206085730:
+      case 191:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler"));
-      case 1217646304:
+      case 190:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue"));
-      case -1898768633:
+      case 189:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue"));
-      case 1192049812:
+      case 144:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem"));
-      case -1571821419:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old"));
-      case 467573051:
+      case 111:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem"));
-      case -345492825:
+      case 124:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IStyleContainer"));
-      case -622720047:
+      case 151:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"));
-      case 1623822893:
+      case 153:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Integer"));
-      case 1842372905:
+      case 168:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"));
-      case 1234020297:
+      case 169:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"));
-      case 2086850200:
+      case 180:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"));
-      case -269517545:
+      case 148:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"));
-      case 835198093:
+      case 123:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IQueryFunction_Color"));
-      case -1002886584:
+      case 170:
         return new DataHolderConstraintsDescriptor(new RGBColor_Constraints());
-      case 1764849372:
+      case 171:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor"));
-      case 1414317540:
+      case 90:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"));
-      case 466196048:
+      case 141:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem"));
-      case -455968316:
+      case 138:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem"));
-      case -326389513:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"));
-      case -709141847:
+      case 137:
         return new DataHolderConstraintsDescriptor(new NavigatableReferenceStyleClassItem_Constraints());
-      case -850586636:
+      case 131:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration"));
-      case -544692119:
+      case 146:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
-      case 1821578670:
+      case 147:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"));
-      case -1974490694:
+      case 122:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem"));
-      case -1777853415:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.BaseLineCell"));
-      case -858145457:
+      case 121:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.HorizontalAlign"));
-      case -586668577:
+      case 134:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem"));
-      case -968641520:
+      case 156:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode"));
-      case 1452537154:
+      case 167:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_String"));
-      case 1239101901:
+      case 27:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
-      case -1925510258:
+      case 125:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"));
-      case -567379962:
+      case 127:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"));
-      case 647687141:
+      case 126:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
-      case -1566343833:
+      case 129:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"));
-      case -63184835:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid"));
-      case 1440346232:
+      case 128:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem"));
-      case 527577755:
+      case 94:
         return new DataHolderConstraintsDescriptor(new CellModel_ReferencePresentation_Constraints());
-      case 1334480010:
+      case 143:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem"));
-      case 1488707640:
+      case 142:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ParametersInformationQuery"));
-      case 1745335769:
+      case 164:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"));
-      case 1386753612:
+      case 157:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation"));
-      case 668629220:
+      case 105:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject"));
-      case -1669071299:
+      case 154:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent"));
-      case 810697380:
+      case 100:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText"));
-      case -2036833586:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AppendTextOperation"));
-      case 1437645010:
+      case 178:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.SetBoldOperation"));
-      case -1051373517:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"));
-      case -327090644:
+      case 185:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.StyledTextType"));
-      case -1623494700:
+      case 108:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.DefaultBaseLine"));
-      case -335559803:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Superscript"));
-      case 1028324730:
+      case 173:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ScriptKindClassItem"));
-      case -947708895:
+      case 106:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode"));
-      case 1850856077:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellLayout_Table"));
-      case 1037299547:
+      case 186:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem"));
-      case -607737373:
+      case 81:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_Empty"));
-      case 270076312:
+      case 136:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem"));
-      case -924110396:
+      case 165:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_SNode"));
-      case -925756539:
+      case 96:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.CellModel_URL"));
-      case -1702936784:
+      case 172:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper"));
-      case 1417937761:
+      case 166:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"));
       default:
         return null;

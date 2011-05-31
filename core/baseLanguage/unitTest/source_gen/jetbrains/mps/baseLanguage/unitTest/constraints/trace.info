@@ -4,7 +4,7 @@
   <unitInfo fileName="BTestCase_Constraints.java" startLine="24" startPosition="27" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints$1" />
   <unitInfo fileName="TestMethod_Constraints.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.TestMethod_Constraints" />
   <unitInfo fileName="BTestCase_Constraints.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.BTestCase_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104846868">
     <nodeInfo nodeId="1213104846872" fileName="BTestCase_Constraints.java" startLine="25" startPosition="84" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1213104846871" fileName="BTestCase_Constraints.java" startLine="25" startPosition="84" endLine="26" endPosition="77" />

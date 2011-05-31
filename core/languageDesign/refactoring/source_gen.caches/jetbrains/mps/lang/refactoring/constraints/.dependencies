@@ -73,6 +73,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.constraints.AbstractUIArgumentExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.constraints.AskBooleanExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.constraints.AskExpression_Constraints" />

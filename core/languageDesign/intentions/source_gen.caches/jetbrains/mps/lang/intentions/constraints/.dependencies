@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.intentions.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.constraints.GenerateIntentionDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.constraints.IntentionContextParameterDeclaration_Constraints" />

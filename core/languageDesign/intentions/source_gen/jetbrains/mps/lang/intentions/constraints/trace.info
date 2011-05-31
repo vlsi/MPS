@@ -9,7 +9,7 @@
   <unitInfo fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.SurroundWithIntentionDeclaration_Constraints" />
   <unitInfo fileName="GenerateIntentionDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.GenerateIntentionDeclaration_Constraints" />
   <unitInfo fileName="IntentionDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionDeclaration_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="IntentionContextParamReference_Constraints.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints" />
   <root nodeId="1227089946706">
     <nodeInfo nodeId="1227089964162" fileName="IntentionDeclaration_Constraints.java" startLine="39" startPosition="112" endLine="40" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

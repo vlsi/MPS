@@ -4,32 +4,35 @@ package jetbrains.mps.debug.apiLang.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.debug.apiLang.structure.BreakpointCreator", "jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem", "jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", "jetbrains.mps.debug.apiLang.structure.DebuggerReference", "jetbrains.mps.debug.apiLang.structure.DebuggerType"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1300900393:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.BreakpointCreator"));
-      case -1540193358:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem"));
-      case 246842686:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint"));
-      case -938382871:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project"));
-      case 1851804052:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode"));
-      case 585642791:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference"));
-      case 486523661:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerType"));
-      case -1326942376:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerReference"));
-      case 1041442568:
+      case 6:
         return new DataHolderConstraintsDescriptor(new CreateBreakpointOperation_Constraints());
       default:
         return null;

@@ -4,28 +4,31 @@ package jetbrains.mps.samples.secretCompartmentLanguage.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", "jetbrains.mps.samples.secretCompartmentLanguage.structure.State", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1517356480:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 3:
         return new DataHolderConstraintsDescriptor(new StateMachine_Constraints());
-      case -914149744:
+      case 0:
         return new DataHolderConstraintsDescriptor(new Event_Constraints());
-      case -901283705:
+      case 2:
         return new DataHolderConstraintsDescriptor(new State_Constraints());
-      case -1996244193:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"));
-      case 186637938:
+      case 4:
         return new DataHolderConstraintsDescriptor(new StateMachineTest_Constraints());
-      case -1225622029:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod"));
-      case 1624840392:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent"));
       default:
         return null;

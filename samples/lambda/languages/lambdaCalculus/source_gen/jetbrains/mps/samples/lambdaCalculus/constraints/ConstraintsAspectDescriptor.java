@@ -4,70 +4,73 @@ package jetbrains.mps.samples.lambdaCalculus.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef", "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable", "jetbrains.mps.samples.lambdaCalculus.structure.AddOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation", "jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation", "jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation", "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaType", "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LetRef", "jetbrains.mps.samples.lambdaCalculus.structure.LetVariable", "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", "jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation", "jetbrains.mps.samples.lambdaCalculus.structure.NumberType", "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", "jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", "jetbrains.mps.samples.lambdaCalculus.structure.StringType", "jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation", "jetbrains.mps.samples.lambdaCalculus.structure.Variable", "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner", "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1687922204:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"));
-      case -106727006:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"));
-      case 598926277:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable"));
-      case -1527043470:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant"));
-      case 1778472404:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant"));
-      case -2130288052:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"));
-      case -1182719609:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.Program"));
-      case -1496603787:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef"));
-      case 1404709481:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation"));
-      case 1507395747:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.AddOperation"));
-      case 1987793638:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation"));
-      case -979538954:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation"));
-      case 2128068849:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation"));
-      case -1069771330:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LambdaType"));
-      case 1087147072:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.NumberType"));
-      case -93754104:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.StringType"));
-      case -228576753:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"));
-      case -1091927727:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression"));
-      case 1271713253:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"));
-      case -1759814248:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation"));
-      case -881056808:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation"));
-      case -1156557809:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation"));
-      case 195157974:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"));
-      case -1272924907:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetRef"));
-      case -952543430:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.LetVariable"));
-      case 783209050:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"));
-      case -2082475150:
+      case 27:
         return new DataHolderConstraintsDescriptor(new VariableReference_Constraints());
-      case 1741893593:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.samples.lambdaCalculus.structure.Variable"));
       default:
         return null;

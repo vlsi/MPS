@@ -4,28 +4,31 @@ package jetbrains.mps.testbench.suite.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.testbench.suite.structure.IModuleRef", "jetbrains.mps.testbench.suite.structure.ITestRef", "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.testbench.suite.structure.TestCaseRef"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 342889525:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 4:
         return new DataHolderConstraintsDescriptor(new ModuleSuite_Constraints());
-      case 1711035034:
+      case 6:
         return new DataHolderConstraintsDescriptor(new TestCaseRef_Constraints());
-      case -1113498860:
+      case 3:
         return new DataHolderConstraintsDescriptor(new JUnit4TestCaseRef_Constraints());
-      case -1242581579:
+      case 2:
         return new DataHolderConstraintsDescriptor(new JUnit3TestCaseRef_Constraints());
-      case -83577265:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.ITestRef"));
-      case -478411613:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.SolutionRef"));
-      case 927111861:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.testbench.suite.structure.IModuleRef"));
       default:
         return null;

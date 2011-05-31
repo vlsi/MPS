@@ -4,22 +4,25 @@ package jetbrains.mps.build.custommps.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.custommps.structure.MPSBuild", "jetbrains.mps.build.custommps.structure.MPSDistribution", "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1744091298:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 1:
         return new DataHolderConstraintsDescriptor(new MPSBuild_Constraints());
-      case 1823655625:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.custommps.structure.LibraryFolder"));
-      case 1040375700:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.build.custommps.structure.MPSDistribution"));
-      case 828263516:
+      case 3:
         return new DataHolderConstraintsDescriptor(new UndeclaredVariableReference_Constraints());
       default:
         return null;

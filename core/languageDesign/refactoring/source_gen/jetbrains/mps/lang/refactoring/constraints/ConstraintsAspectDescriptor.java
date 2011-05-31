@@ -4,204 +4,207 @@ package jetbrains.mps.lang.refactoring.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.lang.refactoring.structure.AffectedNodesClause", "jetbrains.mps.lang.refactoring.structure.AskBooleanExpression", "jetbrains.mps.lang.refactoring.structure.AskExpression", "jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.lang.refactoring.structure.ChooseComponentClause", "jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter", "jetbrains.mps.lang.refactoring.structure.CommitClause", "jetbrains.mps.lang.refactoring.structure.ComponentExpression", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.lang.refactoring.structure.DoRefactorClause", "jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause", "jetbrains.mps.lang.refactoring.structure.ErrorStatement", "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.lang.refactoring.structure.FilterArgumentClause", "jetbrains.mps.lang.refactoring.structure.FilterParameterClause", "jetbrains.mps.lang.refactoring.structure.FinderReference", "jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause", "jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause", "jetbrains.mps.lang.refactoring.structure.InitClause", "jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause", "jetbrains.mps.lang.refactoring.structure.InitialValueClause", "jetbrains.mps.lang.refactoring.structure.IntMPSParameterType", "jetbrains.mps.lang.refactoring.structure.IsApplicableClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause", "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", "jetbrains.mps.lang.refactoring.structure.MPSParameterType", "jetbrains.mps.lang.refactoring.structure.MainProjectOperation", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression", "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation", "jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause", "jetbrains.mps.lang.refactoring.structure.ModuleExpression", "jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType", "jetbrains.mps.lang.refactoring.structure.ModuleOperation", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType", "jetbrains.mps.lang.refactoring.structure.NodeOperation", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.NodesExpression", "jetbrains.mps.lang.refactoring.structure.NodesOperation", "jetbrains.mps.lang.refactoring.structure.NodesToOpenClause", "jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.refactoring.structure.OperationContextExpression", "jetbrains.mps.lang.refactoring.structure.OperationContextOperation", "jetbrains.mps.lang.refactoring.structure.ProjectExpression", "jetbrains.mps.lang.refactoring.structure.ProjectOperation", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", "jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression", "jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringField", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", "jetbrains.mps.lang.refactoring.structure.ScopeExpression", "jetbrains.mps.lang.refactoring.structure.ScopeOperation", "jetbrains.mps.lang.refactoring.structure.SetValueStatement", "jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter", "jetbrains.mps.lang.refactoring.structure.StringMPSParameterType", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelClause", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -2049587604:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 67:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OldRefactoring"));
-      case 522700086:
+      case 84:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument"));
-      case 501316971:
+      case 38:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableClause"));
-      case -1115490897:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DoRefactorClause"));
-      case 1217468085:
+      case 85:
         return new DataHolderConstraintsDescriptor(new RequiredAdditionalArgumentReference_Constraints());
-      case 547406044:
+      case 93:
         return new DataHolderConstraintsDescriptor(new UpdateModelClause_Constraints());
-      case -433093863:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel"));
-      case 749758092:
+      case 32:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause"));
-      case -1363641577:
+      case 86:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument"));
-      case -508452457:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FilterArgumentClause"));
-      case 1410635275:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument"));
-      case 1159516810:
+      case 92:
         return new DataHolderConstraintsDescriptor(new UpdateModelByDefaultOperation_Constraints());
-      case -1369919799:
+      case 9:
         return new DataHolderConstraintsDescriptor(new ChangeFeatureNameOperation_Constraints());
-      case 1110498978:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause"));
-      case -1360528314:
+      case 94:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"));
-      case -1121618289:
+      case 36:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitialValueClause"));
-      case 1464764094:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"));
-      case -44469408:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression"));
-      case 780028867:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression"));
-      case 1628389344:
+      case 56:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression"));
-      case -1898256101:
+      case 57:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression"));
-      case 291871833:
+      case 58:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression"));
-      case 1383766402:
+      case 59:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression"));
-      case 1471088793:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause"));
-      case -1372366961:
+      case 24:
         return new DataHolderConstraintsDescriptor(new DeleteFeatureOperation_Constraints());
-      case -1127588607:
+      case 39:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause"));
-      case 258585126:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model"));
-      case 1564863712:
+      case 33:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause"));
-      case 1606075523:
+      case 28:
         return new DataHolderConstraintsDescriptor(new ExecuteFindersExpression_Constraints());
-      case -541691790:
+      case 31:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FinderReference"));
-      case -1161479694:
+      case 66:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause"));
-      case -677030186:
+      case 64:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesExpression"));
-      case 1986738669:
+      case 60:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeExpression"));
-      case 267980445:
+      case 46:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression"));
-      case 1240470807:
+      case 52:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleExpression"));
-      case 859911678:
+      case 70:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ProjectExpression"));
-      case 1917489849:
+      case 87:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ScopeExpression"));
-      case 1606540851:
+      case 68:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OperationContextExpression"));
-      case -253211357:
+      case 73:
         return new DataHolderConstraintsDescriptor(new RefactoringAction_Constraints());
-      case 254351856:
+      case 45:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression"));
-      case 288833662:
+      case 83:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringTarget"));
-      case -191909049:
+      case 49:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelTarget"));
-      case 1306397584:
+      case 55:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleTarget"));
-      case -1708586138:
+      case 63:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeTarget"));
-      case -503884526:
+      case 40:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause"));
-      case -573780209:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module"));
-      case 16346600:
+      case 41:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause"));
-      case 263153682:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode"));
-      case -1250312083:
+      case 78:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringField"));
-      case 299295132:
+      case 80:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringParameter"));
-      case 1187343326:
+      case 6:
         return new DataHolderConstraintsDescriptor(new AskExpression_Constraints());
-      case 1214549263:
+      case 82:
         return new DataHolderConstraintsDescriptor(new RefactoringParameterReference_Constraints());
-      case -1156527778:
+      case 79:
         return new DataHolderConstraintsDescriptor(new RefactoringFieldReference_Constraints());
-      case 1156176850:
+      case 34:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitClause"));
-      case 36149455:
+      case 42:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MPSParameterChooser"));
-      case 313319629:
+      case 30:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.FilterParameterClause"));
-      case 63851404:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter"));
-      case -1337519210:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser"));
-      case -1161157127:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.CommitClause"));
-      case 913653901:
+      case 72:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.Refactoring"));
-      case -394306871:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause"));
-      case 1543513706:
+      case 74:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringArgument"));
-      case 1904267265:
+      case 75:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"));
-      case 387660799:
+      case 81:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser"));
-      case 973994618:
+      case 35:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause"));
-      case 1567234801:
+      case 20:
         return new DataHolderConstraintsDescriptor(new ContextMemberOperation_Constraints());
-      case -903134014:
+      case 47:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"));
-      case 375162632:
+      case 54:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleOperation"));
-      case 1646161778:
+      case 62:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeOperation"));
-      case 36213097:
+      case 65:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodesOperation"));
-      case 1356802668:
+      case 69:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.OperationContextOperation"));
-      case -1853870783:
+      case 71:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ProjectOperation"));
-      case -1681208026:
+      case 88:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ScopeOperation"));
-      case -483468666:
+      case 77:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter"));
-      case -794827082:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ContextType"));
-      case 1004190172:
+      case 51:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause"));
-      case -2000572061:
+      case 90:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter"));
-      case 846221137:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter"));
-      case 1027130221:
+      case 89:
         return new DataHolderConstraintsDescriptor(new SetValueStatement_Constraints());
-      case 1172207610:
+      case 27:
         return new DataHolderConstraintsDescriptor(new ErrorStatement_Constraints());
-      case 294245282:
+      case 13:
         return new DataHolderConstraintsDescriptor(new ComponentExpression_Constraints());
-      case -1225973606:
+      case 76:
         return new DataHolderConstraintsDescriptor(new RefactoringContextExpression_Constraints());
-      case -1317477002:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression"));
-      case -1393339024:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression"));
-      case -1077879682:
+      case 3:
         return new DataHolderConstraintsDescriptor(new AbstractUIArgumentExpression_Constraints());
-      case 1992952870:
+      case 43:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MPSParameterType"));
-      case 660736873:
+      case 48:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType"));
-      case -908501902:
+      case 53:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType"));
-      case 115280072:
+      case 61:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType"));
-      case 1632447511:
+      case 91:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.StringMPSParameterType"));
-      case -177268952:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType"));
-      case -163531921:
+      case 37:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.IntMPSParameterType"));
-      case -1447029542:
+      case 5:
         return new DataHolderConstraintsDescriptor(new AskBooleanExpression_Constraints());
-      case -1485556838:
+      case 44:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.refactoring.structure.MainProjectOperation"));
-      case -361495971:
+      case 50:
         return new DataHolderConstraintsDescriptor(new ModelsToGenerateByDefault_Constraints());
       default:
         return null;

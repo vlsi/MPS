@@ -13,7 +13,7 @@
   <unitInfo fileName="ExtractStaticMethod_CallExpression_Constraints.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints" />
   <unitInfo fileName="ExtractToConstantRefExpression_Constraints.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints" />
   <unitInfo fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="35" startPosition="44" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="25" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints" />
   <root nodeId="3928209435773827186">
     <nodeInfo nodeId="3928209435773827206" fileName="WeakClassReference_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

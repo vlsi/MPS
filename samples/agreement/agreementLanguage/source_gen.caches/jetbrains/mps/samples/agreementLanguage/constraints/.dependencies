@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.samples.agreementLanguage.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConstraintsDescriptor" />

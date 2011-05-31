@@ -4,54 +4,57 @@ package jetbrains.mps.lang.project.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigNormalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", "jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.project.structure.ModelReference", "jetbrains.mps.lang.project.structure.ModelRoot", "jetbrains.mps.lang.project.structure.ModelRootManager", "jetbrains.mps.lang.project.structure.Module", "jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.project.structure.ModuleReference", "jetbrains.mps.lang.project.structure.Solution", "jetbrains.mps.lang.project.structure.SourcePath", "jetbrains.mps.lang.project.structure.StubEntry", "jetbrains.mps.lang.project.structure.StubSolution"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 312108934:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 13:
         return new DataHolderConstraintsDescriptor(new Module_Constraints());
-      case -1720355342:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Language"));
-      case 1385181203:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Solution"));
-      case 1272187769:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.Generator"));
-      case 1880615228:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelReference"));
-      case -2097420431:
+      case 14:
         return new DataHolderConstraintsDescriptor(new ModuleDependency_Constraints());
-      case 45707163:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.DevKit"));
-      case 1519260628:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingPriorityRule"));
-      case -437776795:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModuleReference"));
-      case -1074545398:
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.StubEntry"));
-      case -1025465263:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelRoot"));
-      case -182471140:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.ModelRootManager"));
-      case -411166258:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefBase"));
-      case 1661022151:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal"));
-      case 889560775:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal"));
-      case 2064963013:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigRefSet"));
-      case -2109693066:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigNormalRef"));
-      case -1069959278:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.MappingConfigExternalRef"));
-      case -2099957279:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.StubSolution"));
-      case -634167558:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.project.structure.SourcePath"));
       default:
         return null;

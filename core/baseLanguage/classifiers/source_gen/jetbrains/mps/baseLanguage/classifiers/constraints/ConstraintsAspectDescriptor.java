@@ -4,40 +4,43 @@ package jetbrains.mps.baseLanguage.classifiers.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", "jetbrains.mps.baseLanguage.classifiers.structure.IMember", "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1553485628:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"));
-      case -1984697667:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.IMember"));
-      case 1392477911:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"));
-      case 1578447933:
+      case 12:
         return new DataHolderConstraintsDescriptor(new ThisClassifierExpression_Constraints());
-      case -573869166:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"));
-      case -1002552714:
+      case 6:
         return new DataHolderConstraintsDescriptor(new DefaultClassifierType_Constraints());
-      case 98094890:
+      case 10:
         return new DataHolderConstraintsDescriptor(new IMemberOperation_Constraints());
-      case 1785336861:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"));
-      case 975488652:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"));
-      case -661473956:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration"));
-      case -987394235:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"));
-      case -1101238887:
+      case 11:
         return new DataHolderConstraintsDescriptor(new SuperClassifierExpresson_Constraints());
-      case 225062172:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier"));
       default:
         return null;

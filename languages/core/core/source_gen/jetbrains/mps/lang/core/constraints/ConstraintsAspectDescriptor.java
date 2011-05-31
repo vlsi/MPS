@@ -4,46 +4,49 @@ package jetbrains.mps.lang.core.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.IContainer", "jetbrains.mps.lang.core.structure.IDeprecatable", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.lang.core.structure.IType", "jetbrains.mps.lang.core.structure.IWrapper", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 965148823:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 1:
         return new DataHolderConstraintsDescriptor(new BaseConcept_Constraints());
-      case 2115426872:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.INamedConcept"));
-      case 2101294673:
+      case 10:
         return new DataHolderConstraintsDescriptor(new IResolveInfo_Constraints());
-      case 491166122:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IWrapper"));
-      case -702055753:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IDeprecatable"));
-      case -826443816:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IContainer"));
-      case -1037801085:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IType"));
-      case -1774624244:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.IMetaLevelChanger"));
-      case -98730688:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScope"));
-      case 1677536201:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopePublic"));
-      case -953098245:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopeNamespace"));
-      case 1586175948:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.ExportScopeModule"));
-      case 877743324:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.Attribute"));
-      case -1983711742:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.LinkAttribute"));
-      case 172703994:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.NodeAttribute"));
-      case 1806896775:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.lang.core.structure.PropertyAttribute"));
       default:
         return null;

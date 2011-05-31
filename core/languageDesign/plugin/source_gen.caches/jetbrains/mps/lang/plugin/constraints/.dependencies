@@ -184,6 +184,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.constraints.AbstractCheckConfigBlock_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.constraints.ActionConstructionParameterDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.constraints.ActionDataParameterDeclaration_Constraints" />

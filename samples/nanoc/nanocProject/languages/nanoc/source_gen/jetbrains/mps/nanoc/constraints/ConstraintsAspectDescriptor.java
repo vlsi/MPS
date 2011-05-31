@@ -4,74 +4,77 @@ package jetbrains.mps.nanoc.constraints;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import java.util.Arrays;
 import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CBody", "jetbrains.mps.nanoc.structure.CChar", "jetbrains.mps.nanoc.structure.CDouble", "jetbrains.mps.nanoc.structure.CExpression", "jetbrains.mps.nanoc.structure.CExpressionStatement", "jetbrains.mps.nanoc.structure.CFloat", "jetbrains.mps.nanoc.structure.CFor", "jetbrains.mps.nanoc.structure.CInt", "jetbrains.mps.nanoc.structure.CLong", "jetbrains.mps.nanoc.structure.CParenthesis", "jetbrains.mps.nanoc.structure.CShort", "jetbrains.mps.nanoc.structure.CStatement", "jetbrains.mps.nanoc.structure.CType", "jetbrains.mps.nanoc.structure.CWhile", "jetbrains.mps.nanoc.structure.DivOp", "jetbrains.mps.nanoc.structure.EqualOp", "jetbrains.mps.nanoc.structure.File", "jetbrains.mps.nanoc.structure.GreaterEqOp", "jetbrains.mps.nanoc.structure.GreaterOp", "jetbrains.mps.nanoc.structure.IntConst", "jetbrains.mps.nanoc.structure.LessEqOp", "jetbrains.mps.nanoc.structure.LessOp", "jetbrains.mps.nanoc.structure.MinusOp", "jetbrains.mps.nanoc.structure.MultOp", "jetbrains.mps.nanoc.structure.PlusOp", "jetbrains.mps.nanoc.structure.VarDecl", "jetbrains.mps.nanoc.structure.VarDeclStatement", "jetbrains.mps.nanoc.structure.VarRef"};
+
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1191799892:
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+      case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.File"));
-      case 1705525773:
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CType"));
-      case -1191919940:
+      case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CInt"));
-      case 1705002537:
+      case 3:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CChar"));
-      case 1318373865:
+      case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CFloat"));
-      case 1330261001:
+      case 12:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CShort"));
-      case 1705277775:
+      case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CLong"));
-      case -2134391324:
+      case 4:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CDouble"));
-      case 279092011:
+      case 5:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CExpression"));
-      case 59982460:
+      case 13:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CStatement"));
-      case -1620131775:
+      case 27:
         return new DataHolderConstraintsDescriptor(new VarDecl_Constraints());
-      case -218611154:
+      case 28:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.VarDeclStatement"));
-      case 1333949118:
+      case 15:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CWhile"));
-      case 1704979573:
+      case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CBody"));
-      case 909446691:
+      case 11:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CParenthesis"));
-      case 1422469909:
+      case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CBinaryOp"));
-      case 1707071010:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.DivOp"));
-      case 1725918027:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.PlusOp"));
-      case 1648075105:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.MultOp"));
-      case -790918591:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.MinusOp"));
-      case -1156885788:
+      case 21:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.IntConst"));
-      case 10161796:
+      case 6:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CExpressionStatement"));
-      case -71547368:
+      case 0:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CAssignmentExpression"));
-      case 1887413788:
+      case 29:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.VarRef"));
-      case 933881861:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.EqualOp"));
-      case 1604877194:
+      case 23:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.LessOp"));
-      case 928063307:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.GreaterOp"));
-      case 393429782:
+      case 22:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.LessEqOp"));
-      case -1484653929:
+      case 19:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.GreaterEqOp"));
-      case -1191922794:
+      case 8:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.nanoc.structure.CFor"));
       default:
         return null;
