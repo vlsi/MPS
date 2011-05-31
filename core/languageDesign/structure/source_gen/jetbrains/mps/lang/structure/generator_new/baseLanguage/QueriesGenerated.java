@@ -1127,7 +1127,11 @@ __switch__:
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       }
-    });
+    }).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      }
+    }, true);
   }
 
   public static SNode mapSrcMacro_mapper_1178978044712(final IOperationContext operationContext, final MapSrcMacroContext _context) {
