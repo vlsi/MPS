@@ -273,20 +273,6 @@ public class GenerationFilter {
 
     myConditionalsUnchanged = (myUnchangedRoots.size() == myRootsCount || !commonDeps.isDependsOnNodes());
 
-    // mark roots which depends on conditionals as dirty
-    if (!myConditionalsUnchanged) {
-
-      Iterator<SNode> it = myUnchangedRoots.iterator();
-      while (it.hasNext()) {
-        SNode root = it.next();
-        String id = root.getId();
-        GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
-        if (rd.isDependsOnConditionals()) {
-          it.remove();
-        }
-      }
-    }
-
     // calculate which unchanged roots should be re-generated according with
     // saved dependencies and references between roots
 
