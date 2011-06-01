@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.List;
+import org.jetbrains.annotations.NotNull;
 import java.util.LinkedList;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -61,7 +62,7 @@ public class GeneratorUtilEx {
     return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(ref, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"), "virtual_getVariableName_2902001550281937661", new Class[]{SNode.class}));
   }
 
-  public static List<SNode> getTemplateFragments(SNode template) {
+  public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new LinkedList<SNode>();
     for (SNode subnode : template.getDescendantsIterable(new IsInstanceCondition("jetbrains.mps.lang.generator.structure.TemplateFragment"), false)) {
       templateFragments.add((SNode) subnode);
@@ -109,6 +110,10 @@ public class GeneratorUtilEx {
         templateContainer = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), "template", false);
       } else {
         templateContainer = ruleConsequence;
+      }
+      if (templateContainer == null) {
+        generator.showErrorMessage(inputNode, ruleConsequence, ruleNode, "error processing template consequence: no 'template'");
+        return null;
       }
       List<SNode> fragments = getTemplateFragments(templateContainer);
       if (GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, inputNode, ruleNode, generator)) {
