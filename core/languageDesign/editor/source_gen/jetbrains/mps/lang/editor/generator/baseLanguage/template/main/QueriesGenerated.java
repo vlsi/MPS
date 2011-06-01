@@ -1691,7 +1691,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3219221556189286990(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "separatorStyle", true), "styleItem", true);
   }
 
   public static Iterable sourceNodesQuery_3219221556189743016(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
