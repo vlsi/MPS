@@ -851,8 +851,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5298169090436276337" fileName="TextPreviewFile.java" startLine="178" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="5298169090436276342" varName="file" />
-      <varInfo nodeId="5298169090436276345" varName="file1" />
       <varInfo nodeId="5298169090436276348" varName="string" />
+      <varInfo nodeId="5298169090436276345" varName="file1" />
       <varInfo nodeId="5298169090436276340" varName="object" />
     </scopeInfo>
     <scopeInfo nodeId="5298169090436276353" fileName="TextPreviewFile.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
@@ -909,8 +909,8 @@
     <scopeInfo nodeId="5298169090436276657" fileName="TextPreviewFile.java" startLine="198" startPosition="0" endLine="203" endPosition="0">
       <varInfo nodeId="5298169090436276660" varName="file" />
       <varInfo nodeId="5298169090436276664" varName="l" />
-      <varInfo nodeId="5298169090436276662" varName="object" />
       <varInfo nodeId="5298169090436276666" varName="l1" />
+      <varInfo nodeId="5298169090436276662" varName="object" />
     </scopeInfo>
     <scopeInfo nodeId="5298169090436276671" fileName="TextPreviewFile.java" startLine="203" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="5298169090436276674" varName="file" />
@@ -968,8 +968,8 @@
     <scopeInfo nodeId="7391893726628729231" fileName="GeneratedTextPreviewEditorProvider.java" startLine="53" startPosition="78" endLine="54" endPosition="43" />
     <scopeInfo nodeId="7391893726628726491" fileName="GeneratedTextPreviewEditorProvider.java" startLine="17" startPosition="79" endLine="19" endPosition="3" />
     <scopeInfo nodeId="7391893726628729177" fileName="GeneratedTextPreviewEditorProvider.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="7391893726628729183" varName="project" />
       <varInfo nodeId="7391893726628729186" varName="element" />
+      <varInfo nodeId="7391893726628729183" varName="project" />
       <varInfo nodeId="7391893726628729180" varName="state" />
     </scopeInfo>
     <scopeInfo nodeId="7391893726628729252" fileName="GeneratedTextPreviewEditorProvider.java" startLine="37" startPosition="34" endLine="41" endPosition="0">
@@ -991,8 +991,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7391893726628729171" fileName="GeneratedTextPreviewEditorProvider.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="7391893726628729190" fileName="GeneratedTextPreviewEditorProvider.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="7391893726628729193" varName="element" />
       <varInfo nodeId="7391893726628729196" varName="project" />
+      <varInfo nodeId="7391893726628729193" varName="element" />
       <varInfo nodeId="7391893726628729199" varName="file" />
     </scopeInfo>
     <unitInfo nodeId="7391893726628729250" fileName="GeneratedTextPreviewEditorProvider.java" startLine="37" startPosition="15" endLine="41" endPosition="5" unitName="jetbrains.mps.workbench.make.GeneratedTextPreviewEditorProvider$1" />

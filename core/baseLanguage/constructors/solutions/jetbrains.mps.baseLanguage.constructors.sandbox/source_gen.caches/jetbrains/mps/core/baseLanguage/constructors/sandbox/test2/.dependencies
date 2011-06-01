@@ -5,10 +5,10 @@
     <classNode dependClassName="java.awt.geom.Rectangle2D" />
   </dependency>
   <dependency className="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.test" file="test.java">
-    <classNode dependClassName="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.Rectangle" />
     <classNode dependClassName="java.awt.geom.Rectangle2D" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.Rectangle" />
   </dependency>
 </dependenciesRoot>
 

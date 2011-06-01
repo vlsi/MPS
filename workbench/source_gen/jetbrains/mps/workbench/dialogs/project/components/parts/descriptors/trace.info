@@ -8,8 +8,8 @@
     <scopeInfo nodeId="1560298786499489464" fileName="EditableStringDescriptor.java" startLine="10" startPosition="74" endLine="11" endPosition="31" />
     <scopeInfo nodeId="1560298786499489472" fileName="EditableStringDescriptor.java" startLine="14" startPosition="41" endLine="15" endPosition="51" />
     <scopeInfo nodeId="1560298786499489456" fileName="EditableStringDescriptor.java" startLine="9" startPosition="68" endLine="12" endPosition="3">
-      <varInfo nodeId="1560298786499489458" varName="name" />
       <varInfo nodeId="1560298786499489462" varName="width" />
+      <varInfo nodeId="1560298786499489458" varName="name" />
       <varInfo nodeId="1560298786499489460" varName="header" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499489469" fileName="EditableStringDescriptor.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
@@ -41,8 +41,8 @@
     <scopeInfo nodeId="1560298786499489951" fileName="ColumnDescriptor.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1560298786499489959" fileName="ColumnDescriptor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1560298786499489916" fileName="ColumnDescriptor.java" startLine="12" startPosition="0" endLine="17" endPosition="3">
-      <varInfo nodeId="1560298786499489918" varName="name" />
       <varInfo nodeId="1560298786499489922" varName="width" />
+      <varInfo nodeId="1560298786499489918" varName="name" />
       <varInfo nodeId="1560298786499489920" varName="header" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499489905" fileName="ColumnDescriptor.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ColumnDescriptor" />
@@ -55,8 +55,8 @@
     <scopeInfo nodeId="1560298786499491475" fileName="StringPathDescriptor.java" startLine="10" startPosition="70" endLine="11" endPosition="31" />
     <scopeInfo nodeId="1560298786499491483" fileName="StringPathDescriptor.java" startLine="14" startPosition="45" endLine="15" endPosition="61" />
     <scopeInfo nodeId="1560298786499491467" fileName="StringPathDescriptor.java" startLine="9" startPosition="64" endLine="12" endPosition="3">
-      <varInfo nodeId="1560298786499491469" varName="name" />
       <varInfo nodeId="1560298786499491473" varName="width" />
+      <varInfo nodeId="1560298786499491469" varName="name" />
       <varInfo nodeId="1560298786499491471" varName="header" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499491480" fileName="StringPathDescriptor.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
@@ -73,8 +73,8 @@
     <scopeInfo nodeId="1560298786499491508" fileName="BooleanDescriptor.java" startLine="16" startPosition="45" endLine="17" endPosition="58" />
     <scopeInfo nodeId="1560298786499491517" fileName="BooleanDescriptor.java" startLine="20" startPosition="41" endLine="21" endPosition="31" />
     <scopeInfo nodeId="1560298786499491492" fileName="BooleanDescriptor.java" startLine="11" startPosition="57" endLine="14" endPosition="3">
-      <varInfo nodeId="1560298786499491494" varName="name" />
       <varInfo nodeId="1560298786499491498" varName="width" />
+      <varInfo nodeId="1560298786499491494" varName="name" />
       <varInfo nodeId="1560298786499491496" varName="header" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499491505" fileName="BooleanDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
@@ -92,8 +92,8 @@
     <scopeInfo nodeId="1560298786499492180" fileName="RuleTypeDescriptor.java" startLine="15" startPosition="41" endLine="16" endPosition="32" />
     <scopeInfo nodeId="1560298786499492187" fileName="RuleTypeDescriptor.java" startLine="19" startPosition="45" endLine="20" endPosition="34" />
     <scopeInfo nodeId="1560298786499492164" fileName="RuleTypeDescriptor.java" startLine="10" startPosition="62" endLine="13" endPosition="3">
-      <varInfo nodeId="1560298786499492166" varName="name" />
       <varInfo nodeId="1560298786499492170" varName="width" />
+      <varInfo nodeId="1560298786499492166" varName="name" />
       <varInfo nodeId="1560298786499492168" varName="header" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499492177" fileName="RuleTypeDescriptor.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
@@ -119,8 +119,8 @@
     <scopeInfo nodeId="1560298786499492242" fileName="PriorityRuleDescriptor.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1560298786499492249" fileName="PriorityRuleDescriptor.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1560298786499492204" fileName="PriorityRuleDescriptor.java" startLine="17" startPosition="0" endLine="23" endPosition="3">
-      <varInfo nodeId="1560298786499492213" varName="name" />
       <varInfo nodeId="1560298786499492217" varName="width" />
+      <varInfo nodeId="1560298786499492213" varName="name" />
       <varInfo nodeId="1560298786499492206" varName="generator" />
       <varInfo nodeId="1560298786499492211" varName="left" />
       <varInfo nodeId="1560298786499492208" varName="depGenerators" />
@@ -145,11 +145,11 @@
     <scopeInfo nodeId="1560298786499492303" fileName="ModuleImportDescriptor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1560298786499492314" fileName="ModuleImportDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1560298786499492274" fileName="ModuleImportDescriptor.java" startLine="15" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="1560298786499492280" varName="name" />
       <varInfo nodeId="1560298786499492284" varName="width" />
+      <varInfo nodeId="1560298786499492280" varName="name" />
       <varInfo nodeId="1560298786499492278" varName="forModel" />
-      <varInfo nodeId="1560298786499492276" varName="props" />
       <varInfo nodeId="1560298786499492282" varName="header" />
+      <varInfo nodeId="1560298786499492276" varName="props" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499492265" fileName="ModuleImportDescriptor.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleImportDescriptor" />
   </root>
@@ -161,8 +161,8 @@
     <scopeInfo nodeId="1560298786499493482" fileName="ModuleDescriptor.java" startLine="10" startPosition="66" endLine="11" endPosition="31" />
     <scopeInfo nodeId="1560298786499493490" fileName="ModuleDescriptor.java" startLine="14" startPosition="45" endLine="15" endPosition="67" />
     <scopeInfo nodeId="1560298786499493474" fileName="ModuleDescriptor.java" startLine="9" startPosition="60" endLine="12" endPosition="3">
-      <varInfo nodeId="1560298786499493476" varName="name" />
       <varInfo nodeId="1560298786499493480" varName="width" />
+      <varInfo nodeId="1560298786499493476" varName="name" />
       <varInfo nodeId="1560298786499493478" varName="header" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499493487" fileName="ModuleDescriptor.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
@@ -181,8 +181,8 @@
     <scopeInfo nodeId="1560298786499494744" fileName="ManagerDescriptor.java" startLine="24" startPosition="45" endLine="25" endPosition="58" />
     <scopeInfo nodeId="1560298786499494720" fileName="ManagerDescriptor.java" startLine="15" startPosition="88" endLine="17" endPosition="20" />
     <scopeInfo nodeId="1560298786499494710" fileName="ManagerDescriptor.java" startLine="14" startPosition="0" endLine="18" endPosition="3">
-      <varInfo nodeId="1560298786499494714" varName="name" />
       <varInfo nodeId="1560298786499494718" varName="width" />
+      <varInfo nodeId="1560298786499494714" varName="name" />
       <varInfo nodeId="1560298786499494712" varName="owner" />
       <varInfo nodeId="1560298786499494716" varName="header" />
     </scopeInfo>
@@ -203,8 +203,8 @@
       <varInfo nodeId="1560298786499495324" varName="renderer" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499495298" fileName="DepDescriptor.java" startLine="12" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="1560298786499495302" varName="name" />
       <varInfo nodeId="1560298786499495306" varName="width" />
+      <varInfo nodeId="1560298786499495302" varName="name" />
       <varInfo nodeId="1560298786499495300" varName="owner" />
       <varInfo nodeId="1560298786499495304" varName="header" />
     </scopeInfo>
@@ -222,8 +222,8 @@
     <scopeInfo nodeId="1560298786499495724" fileName="VoidColumnDescriptor.java" startLine="13" startPosition="45" endLine="14" endPosition="16" />
     <scopeInfo nodeId="1560298786499495730" fileName="VoidColumnDescriptor.java" startLine="17" startPosition="41" endLine="18" endPosition="16" />
     <scopeInfo nodeId="1560298786499495708" fileName="VoidColumnDescriptor.java" startLine="8" startPosition="60" endLine="11" endPosition="3">
-      <varInfo nodeId="1560298786499495710" varName="name" />
       <varInfo nodeId="1560298786499495714" varName="width" />
+      <varInfo nodeId="1560298786499495710" varName="name" />
       <varInfo nodeId="1560298786499495712" varName="header" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499495721" fileName="VoidColumnDescriptor.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -238,8 +238,8 @@
     <scopeInfo nodeId="1560298786499497418" fileName="ModelDescriptor.java" startLine="10" startPosition="65" endLine="11" endPosition="31" />
     <scopeInfo nodeId="1560298786499497426" fileName="ModelDescriptor.java" startLine="14" startPosition="45" endLine="15" endPosition="66" />
     <scopeInfo nodeId="1560298786499497410" fileName="ModelDescriptor.java" startLine="9" startPosition="59" endLine="12" endPosition="3">
-      <varInfo nodeId="1560298786499497412" varName="name" />
       <varInfo nodeId="1560298786499497416" varName="width" />
+      <varInfo nodeId="1560298786499497412" varName="name" />
       <varInfo nodeId="1560298786499497414" varName="header" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499497423" fileName="ModelDescriptor.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />

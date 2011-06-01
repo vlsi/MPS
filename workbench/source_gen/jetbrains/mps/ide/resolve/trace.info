@@ -654,8 +654,8 @@
     <scopeInfo nodeId="2378204549815377502" fileName="Resolver.java" startLine="93" startPosition="32" endLine="116" endPosition="21">
       <varInfo nodeId="2378204549815377560" varName="filtered" />
       <varInfo nodeId="2378204549815377504" varName="status" />
-      <varInfo nodeId="2378204549815377537" varName="nodes" />
       <varInfo nodeId="2378204549815377547" varName="nameMatchesCondition" />
+      <varInfo nodeId="2378204549815377537" varName="nodes" />
       <varInfo nodeId="2378204549815377531" varName="searchScope" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377621" fileName="Resolver.java" startLine="161" startPosition="78" endLine="184" endPosition="17">
@@ -669,8 +669,8 @@
       <varInfo nodeId="2378204549815377344" varName="o1" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377361" fileName="Resolver.java" startLine="190" startPosition="141" endLine="216" endPosition="21">
-      <varInfo nodeId="2378204549815377363" varName="frontier" />
       <varInfo nodeId="2378204549815377370" varName="newFrontier" />
+      <varInfo nodeId="2378204549815377363" varName="frontier" />
       <varInfo nodeId="2378204549815377377" varName="foundCell" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377005" fileName="Resolver.java" startLine="46" startPosition="167" endLine="73" endPosition="28">
@@ -678,8 +678,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2378204549815377149" fileName="Resolver.java" startLine="91" startPosition="98" endLine="118" endPosition="0" />
     <scopeInfo nodeId="2378204549815377350" fileName="Resolver.java" startLine="189" startPosition="0" endLine="218" endPosition="0">
-      <varInfo nodeId="2378204549815377353" varName="editorCell" />
       <varInfo nodeId="2378204549815377359" varName="childLinkDeclaration" />
+      <varInfo nodeId="2378204549815377353" varName="editorCell" />
       <varInfo nodeId="2378204549815377355" varName="sourceNode" />
       <varInfo nodeId="2378204549815377357" varName="refLinkDeclaration" />
     </scopeInfo>
@@ -842,8 +842,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376706" fileName="AutoResolver.java" startLine="43" startPosition="39" endLine="53" endPosition="9" />
     <scopeInfo nodeId="2378204549815376781" fileName="AutoResolver.java" startLine="87" startPosition="76" endLine="97" endPosition="114">
-      <varInfo nodeId="2378204549815376783" varName="newTargetNode" />
       <varInfo nodeId="2378204549815376814" varName="sModelRef" />
+      <varInfo nodeId="2378204549815376783" varName="newTargetNode" />
       <varInfo nodeId="2378204549815376802" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376835" fileName="AutoResolver.java" startLine="99" startPosition="0" endLine="111" endPosition="0">
@@ -868,8 +868,8 @@
       <varInfo nodeId="2378204549815376642" varName="messages" />
     </scopeInfo>
     <scopeInfo nodeId="2378204549815376625" fileName="AutoResolver.java" startLine="29" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="2378204549815376629" varName="rootNode" />
       <varInfo nodeId="2378204549815376638" varName="editorContext" />
+      <varInfo nodeId="2378204549815376629" varName="rootNode" />
       <varInfo nodeId="2378204549815376633" varName="events" />
       <varInfo nodeId="2378204549815376636" varName="wasCheckedOnce" />
     </scopeInfo>
