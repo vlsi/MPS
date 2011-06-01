@@ -15,7 +15,7 @@
   <dep model="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)" hash="-du0hdiyr6i31d0gr04abcdl8et7rkfk" />
   <dep model="r:d9cc47d9-65f3-44ac-ba13-c0e9adf60c8b(jetbrains.mps.make.outlook.behavior)" hash="32cehgapqx6o7ht6kcnttc1o6h33gjb" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
-  <common hash="-30bgjwkmxs16z8ehw7wu511oncrnhgs">
+  <common hash="-30bgjwkmxs16z8ehw7wu511oncrnhgs" dependsOnNodes="true">
     <dep root="2511103526757027801" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />

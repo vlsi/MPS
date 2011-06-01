@@ -509,8 +509,6 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-        style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       }
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -576,8 +574,6 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-        style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
       }
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

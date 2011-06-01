@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="ExtensionMethods_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethods_Language" />
   <unitInfo fileName="SimpleExtensionMethodsContainer.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer" />
-  <unitInfo fileName="ThisExtensionExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression" />
   <unitInfo fileName="ExtensionStaticFieldDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration" />
+  <unitInfo fileName="ThisExtensionExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression" />
   <unitInfo fileName="ExtensionStaticFieldReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference" />
   <unitInfo fileName="LocalExtendedMethodCall.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall" />
   <unitInfo fileName="TypeExtension.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension" />

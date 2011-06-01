@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ClassifierMember.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassifierMember" />
-  <unitInfo fileName="IControlFlowInterrupter.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter" />
   <unitInfo fileName="IFinalWrapper.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IFinalWrapper" />
-  <unitInfo fileName="IVariableDeclaration.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableDeclaration" />
   <unitInfo fileName="IWillBeClassifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IWillBeClassifier" />
-  <unitInfo fileName="ITryCatchStatement.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ITryCatchStatement" />
+  <unitInfo fileName="IControlFlowInterrupter.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter" />
   <unitInfo fileName="ILocalReference.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ILocalReference" />
   <unitInfo fileName="ILocalDeclaration.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ILocalDeclaration" />
+  <unitInfo fileName="ITryCatchStatement.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ITryCatchStatement" />
+  <unitInfo fileName="IVariableDeclaration.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableDeclaration" />
   <unitInfo fileName="IMethodLike.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IMethodLike" />
   <unitInfo fileName="ILocalVariableElementList.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ILocalVariableElementList" />
   <unitInfo fileName="ILocalVariableElement.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ILocalVariableElement" />
@@ -36,7 +36,12 @@
   <unitInfo fileName="_FPNumber_String_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure._FPNumber_String_PropertySupport" />
   <unitInfo fileName="_Identifier_String_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure._Identifier_String_PropertySupport" />
   <unitInfo fileName="IMethodCall.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IMethodCall" />
-  <unitInfo fileName="UnaryMinus.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UnaryMinus" />
+  <unitInfo fileName="UndefinedType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UndefinedType" />
+  <unitInfo fileName="EscapeOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.EscapeOperation" />
+  <unitInfo fileName="OperationAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression" />
+  <unitInfo fileName="StubStatementList.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StubStatementList" />
+  <unitInfo fileName="ImplicitAnnotationInstanceValue.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" />
+  <unitInfo fileName="AdditionalForLoopVariable.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable" />
   <unitInfo fileName="RightShiftAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression" />
   <unitInfo fileName="LeftShiftAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression" />
   <unitInfo fileName="XorAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.XorAssignmentExpression" />
@@ -45,13 +50,8 @@
   <unitInfo fileName="RemAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.RemAssignmentExpression" />
   <unitInfo fileName="DivAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.DivAssignmentExpression" />
   <unitInfo fileName="MulAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.MulAssignmentExpression" />
-  <unitInfo fileName="StubStatementList.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StubStatementList" />
-  <unitInfo fileName="OperationAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression" />
   <unitInfo fileName="PlaceholderMethodDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration" />
-  <unitInfo fileName="UndefinedType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UndefinedType" />
-  <unitInfo fileName="ImplicitAnnotationInstanceValue.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" />
-  <unitInfo fileName="AdditionalForLoopVariable.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable" />
-  <unitInfo fileName="EscapeOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.EscapeOperation" />
+  <unitInfo fileName="UnaryMinus.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UnaryMinus" />
   <unitInfo fileName="BLBottomType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BLBottomType" />
   <unitInfo fileName="PrefixDecrementExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression" />
   <unitInfo fileName="PrefixIncrementExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression" />
@@ -64,10 +64,10 @@
   <unitInfo fileName="NPEEqualsExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" />
   <unitInfo fileName="NPENotEqualsExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" />
   <unitInfo fileName="StringType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StringType" />
-  <unitInfo fileName="BitwiseXorExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BitwiseXorExpression" />
-  <unitInfo fileName="BitwiseOrExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BitwiseOrExpression" />
   <unitInfo fileName="BitwiseAndExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BitwiseAndExpression" />
+  <unitInfo fileName="BitwiseOrExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BitwiseOrExpression" />
   <unitInfo fileName="BinaryBitwiseOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation" />
+  <unitInfo fileName="BitwiseXorExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BitwiseXorExpression" />
   <unitInfo fileName="MinusAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression" />
   <unitInfo fileName="PlusAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" />
   <unitInfo fileName="PostfixDecrementExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression" />
@@ -119,14 +119,14 @@
   <unitInfo fileName="LocalStaticFieldReference.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" />
   <unitInfo fileName="SuperMethodCall.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SuperMethodCall" />
   <unitInfo fileName="ParameterReference.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ParameterReference" />
+  <unitInfo fileName="UnresolvedNameReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UnresolvedNameReference" />
+  <unitInfo fileName="PrimitiveClassExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression" />
   <unitInfo fileName="AbstractClassifierReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference" />
   <unitInfo fileName="StatementCommentPart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StatementCommentPart" />
   <unitInfo fileName="TextCommentPart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
   <unitInfo fileName="BaseVariableReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseVariableReference" />
   <unitInfo fileName="FloatingPointFloatConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant" />
-  <unitInfo fileName="PrimitiveClassExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression" />
   <unitInfo fileName="LongLiteral.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LongLiteral" />
-  <unitInfo fileName="UnresolvedNameReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UnresolvedNameReference" />
   <unitInfo fileName="AbstractUnaryNumberOperation.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" />
   <unitInfo fileName="VarVariableReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.VarVariableReference" />
   <unitInfo fileName="CommentedStatement.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentedStatement" />

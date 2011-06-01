@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.nanoc.debug.CppDebugSession" file="CppDebugSession.java">
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.ResumeRequest" />
-    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.StackInfoRequest" />
-    <classNode dependClassName="jetbrains.mps.debug.executable.SimpleConsoleProcessHandler" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsHandler" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.StepRequest" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsAdapter" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.CppUiState" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.PauseRequest" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.StreamAnswer" />
-    <classNode dependClassName="jetbrains.mps.debug.api.BreakpointManagerComponent" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.AsyncAnswer" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.ResultAnswer" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.debug.api.BreakpointManagerComponent" />
+    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
+    <classNode dependClassName="jetbrains.mps.debug.executable.SimpleConsoleProcessHandler" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.CppUiState" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.CppUiStateImpl" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.AsyncAnswer" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.ResultAnswer" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.StreamAnswer" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsAdapter" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsHandler" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.PauseRequest" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.ResumeRequest" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.StackInfoRequest" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.StepRequest" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.CppGDBCreator" file="CppGDBCreator.java">
-    <classNode dependClassName="com.intellij.execution.ui.ExecutionConsole" />
-    <classNode dependClassName="jetbrains.mps.debug.executable.SimpleConsoleProcessHandler" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.BreakpointRequestor" />
-    <classNode dependClassName="com.intellij.execution.ExecutionException" />
-    <classNode dependClassName="java.lang.Process" />
-    <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode dependClassName="com.intellij.execution.DefaultExecutionResult" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsHandler" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsAdapter" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.CppDebugSession" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.AsyncAnswer" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
-    <classNode dependClassName="java.lang.ProcessBuilder" />
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.ExecutionResult" />
+    <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
-    <classNode dependClassName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
+    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
+    <classNode dependClassName="com.intellij.execution.ui.ExecutionConsole" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Process" />
+    <classNode dependClassName="java.lang.ProcessBuilder" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.executable.SimpleConsoleProcessHandler" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.CppDebugSession" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.AsyncAnswer" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.ResultAnswer" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.StreamAnswer" />
-    <classNode dependClassName="com.intellij.execution.Executor" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsAdapter" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsHandler" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.BreakpointRequestor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode extendsClassName="com.intellij.execution.process.ProcessAdapter" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugSessionCreator" />
   </dependency>
@@ -68,21 +68,21 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractUiState" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.CppUiStateImpl" file="CppUiStateImpl.java">
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IThread" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractUiState" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.IThread" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.nanoc.debug.CppUiState" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.GDBCommands" file="GDBCommands.java">
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="jetbrains.mps.debug.executable.SimpleConsoleProcessHandler" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.executable.SimpleConsoleProcessHandler" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" file="ProgramsLocationUtil.java">
     <classNode dependClassName="java.lang.String" />

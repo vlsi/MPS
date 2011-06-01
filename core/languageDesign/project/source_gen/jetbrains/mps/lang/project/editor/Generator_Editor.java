@@ -795,7 +795,6 @@ public class Generator_Editor extends DefaultNodeEditor {
       editorCell.setSelectable(false);
       {
         Style style = editorCell.getStyle();
-        style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
       }
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");

@@ -14,7 +14,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-dst8w0ik091y9y4mf0krr8dldb7ry91" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-3xupx7hyzpnshlcxg8l0jxlmp5npf6n" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
-  <common hash="-b2keq6v2cqied2p6uuecjmd0vwfhwgz">
+  <common hash="-b2keq6v2cqied2p6uuecjmd0vwfhwgz" dependsOnNodes="true">
     <dep root="1225441503876" />
     <dep root="1225441503896" />
     <dep root="1225441503916" />

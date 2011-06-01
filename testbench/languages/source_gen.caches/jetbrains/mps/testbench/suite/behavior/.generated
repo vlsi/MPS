@@ -30,7 +30,7 @@
   <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="-rwmllia2y1s03q7hf4mke0314kbhj6" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-c8o7egrhhlddj60rzgg330ecnpq5k8d" />
-  <common hash="95uvw2imm9kkcy2lf32nw6fts9b5kct">
+  <common hash="95uvw2imm9kkcy2lf32nw6fts9b5kct" dependsOnNodes="true">
     <dep root="1280144168199506814" />
     <dep root="1280144168199506911" />
     <dep root="1280144168199513541" />

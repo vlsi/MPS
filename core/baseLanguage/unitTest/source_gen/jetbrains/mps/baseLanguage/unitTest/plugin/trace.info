@@ -11,8 +11,8 @@
   <unitInfo fileName="JUnitConfigEditor.java" startLine="321" startPosition="36" endLine="325" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$9" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="333" startPosition="36" endLine="337" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$10" />
   <unitInfo fileName="ListPanel.java" startLine="15" startPosition="32" endLine="21" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel$1" />
-  <unitInfo fileName="ModelChooserComponent.java" startLine="16" startPosition="32" endLine="22" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent$1" />
   <unitInfo fileName="ModuleChooserComponent.java" startLine="16" startPosition="32" endLine="22" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent$1" />
+  <unitInfo fileName="ModelChooserComponent.java" startLine="16" startPosition="32" endLine="22" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent$1" />
   <unitInfo fileName="JUnitConfigEditor.java" startLine="67" startPosition="32" endLine="73" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$1" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="143" startPosition="62" endLine="149" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$3" />
   <unitInfo fileName="JUnitTestActionOptions_PreferencesComponent.java" startLine="50" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestActionOptions_PreferencesComponent$MyState" />
@@ -30,8 +30,8 @@
   <unitInfo fileName="ListPanel.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel" />
   <unitInfo fileName="JUnitTestActionOptions_PreferencesComponent.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestActionOptions_PreferencesComponent" />
   <unitInfo fileName="DefaultJUnit_Configuration.java" startLine="313" startPosition="0" endLine="359" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration$MySettingsEditor" />
-  <unitInfo fileName="ModelChooserComponent.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent" />
   <unitInfo fileName="ModuleChooserComponent.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent" />
+  <unitInfo fileName="ModelChooserComponent.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent" />
   <unitInfo fileName="JUnitConfigFromMethod.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromMethod" />
   <unitInfo fileName="JUnitConfigFromModule.java" startLine="17" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromModule" />
   <unitInfo fileName="JUnitConfigFromProject.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigFromProject" />
@@ -352,8 +352,8 @@
     <scopeInfo nodeId="1104580685292496970" fileName="JUnitConfigEditor.java" startLine="77" startPosition="39" endLine="97" endPosition="7" />
     <scopeInfo nodeId="5554902896496858138" fileName="JUnitConfigEditor.java" startLine="628" startPosition="0" endLine="650" endPosition="0" />
     <scopeInfo nodeId="5887786348813375250" fileName="JUnitConfigEditor.java" startLine="484" startPosition="25" endLine="526" endPosition="0">
-      <varInfo nodeId="5887786348813375447" varName="model" />
       <varInfo nodeId="5887786348813375451" varName="module" />
+      <varInfo nodeId="5887786348813375447" varName="model" />
       <varInfo nodeId="5887786348813375440" varName="testCases" />
       <varInfo nodeId="5887786348813375433" varName="testMethods" />
     </scopeInfo>
@@ -532,8 +532,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5928813260156624704" fileName="UnitTestViewComponent.java" startLine="178" startPosition="57" endLine="182" endPosition="0" />
     <scopeInfo nodeId="5360151489983182434" fileName="UnitTestViewComponent.java" startLine="90" startPosition="63" endLine="95" endPosition="34">
-      <varInfo nodeId="5360151489983197230" varName="manager" />
       <varInfo nodeId="5360151489983197237" varName="toolbar" />
+      <varInfo nodeId="5360151489983197230" varName="manager" />
       <varInfo nodeId="2380206470256882171" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="1208772377400" fileName="UnitTestViewComponent.java" startLine="98" startPosition="79" endLine="103" endPosition="21">
@@ -571,15 +571,15 @@
       <varInfo nodeId="6638278271607605354" varName="dataId" />
     </scopeInfo>
     <scopeInfo nodeId="1208271155272" fileName="UnitTestViewComponent.java" startLine="57" startPosition="136" endLine="87" endPosition="52">
-      <varInfo nodeId="7784214098962507076" varName="leftPanel" />
       <varInfo nodeId="7784214098962507091" varName="rightPanel" />
+      <varInfo nodeId="7784214098962507076" varName="leftPanel" />
       <varInfo nodeId="7784214098962507332" varName="splitter" />
       <varInfo nodeId="7784214098962507035" varName="statisticsModel" />
     </scopeInfo>
     <scopeInfo nodeId="1208271155269" fileName="UnitTestViewComponent.java" startLine="56" startPosition="0" endLine="88" endPosition="3">
       <varInfo nodeId="1210182472374" varName="project" />
-      <varInfo nodeId="6738681183458600657" varName="console" />
       <varInfo nodeId="2281887280934076168" varName="model" />
+      <varInfo nodeId="6738681183458600657" varName="console" />
       <varInfo nodeId="1200269551723334082" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="7784214098962512886" fileName="UnitTestViewComponent.java" startLine="140" startPosition="147" endLine="173" endPosition="22">
@@ -857,13 +857,13 @@
     <scopeInfo nodeId="1208286242568" fileName="TestTree.java" startLine="31" startPosition="0" endLine="41" endPosition="3">
       <varInfo nodeId="1766229992445325263" varName="disposable" />
       <varInfo nodeId="4736282893802026311" varName="project" />
-      <varInfo nodeId="4403789015609946639" varName="state" />
       <varInfo nodeId="1200269551723333766" varName="context" />
+      <varInfo nodeId="4403789015609946639" varName="state" />
     </scopeInfo>
     <scopeInfo nodeId="8392350987251231471" fileName="TestTree.java" startLine="216" startPosition="0" endLine="226" endPosition="0" />
     <scopeInfo nodeId="892466083793292635" fileName="TestTree.java" startLine="43" startPosition="111" endLine="56" endPosition="5">
-      <varInfo nodeId="4399792959753841683" varName="priorityList" />
       <varInfo nodeId="892466083793312739" varName="oldState" />
+      <varInfo nodeId="4399792959753841683" varName="priorityList" />
     </scopeInfo>
     <scopeInfo nodeId="892466083792934547" fileName="TestTree.java" startLine="81" startPosition="81" endLine="94" endPosition="11" />
     <scopeInfo nodeId="4951149158173759733" fileName="TestTree.java" startLine="237" startPosition="130" endLine="250" endPosition="9">
@@ -1281,8 +1281,8 @@
       <varInfo nodeId="6780659990277251672" varName="testsCommandLine" />
       <varInfo nodeId="6780659990277251654" varName="programParams" />
       <varInfo nodeId="6780659990277251677" varName="testCommandLineLength" />
-      <varInfo nodeId="6780659990277251643" varName="params" />
       <varInfo nodeId="6780659990277251650" varName="workingDir" />
+      <varInfo nodeId="6780659990277251643" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1216648032003" fileName="UnitTestRunner.java" startLine="75" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="1216648032009" varName="tests" />
@@ -2247,8 +2247,8 @@
       <varInfo nodeId="1208879518735" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1208878781297" fileName="StatisticsRowRenderer.java" startLine="34" startPosition="34" endLine="77" endPosition="40">
-      <varInfo nodeId="1208887007616" varName="font" />
       <varInfo nodeId="1208887015359" varName="boldFont" />
+      <varInfo nodeId="1208887007616" varName="font" />
     </scopeInfo>
     <scopeInfo nodeId="1208878781294" fileName="StatisticsRowRenderer.java" startLine="33" startPosition="0" endLine="78" endPosition="3" />
     <scopeInfo nodeId="1208878326589" fileName="StatisticsRowRenderer.java" startLine="80" startPosition="137" endLine="186" endPosition="18">
@@ -2260,8 +2260,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1208878326574" fileName="StatisticsRowRenderer.java" startLine="79" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="1208878326581" varName="isSelected" />
-      <varInfo nodeId="1208878326579" varName="value" />
       <varInfo nodeId="1208878326587" varName="column" />
+      <varInfo nodeId="1208878326579" varName="value" />
       <varInfo nodeId="1208878326577" varName="table" />
       <varInfo nodeId="1208878326583" varName="hasFocus" />
       <varInfo nodeId="1208878326585" varName="row" />
@@ -2351,12 +2351,12 @@
     <scopeInfo nodeId="403933718789067713" fileName="ModuleChooserComponent.java" startLine="51" startPosition="101" endLine="52" endPosition="21" />
     <scopeInfo nodeId="4062140231441700365" fileName="ModuleChooserComponent.java" startLine="34" startPosition="26" endLine="36" endPosition="65" />
     <scopeInfo nodeId="145554711892090310" fileName="ModuleChooserComponent.java" startLine="30" startPosition="51" endLine="37" endPosition="9">
-      <varInfo nodeId="5972510671724577915" varName="result" />
       <varInfo nodeId="145554711892090422" varName="ref" />
+      <varInfo nodeId="5972510671724577915" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="403933718789067698" fileName="ModuleChooserComponent.java" startLine="47" startPosition="34" endLine="54" endPosition="97">
-      <varInfo nodeId="403933718789067700" varName="model" />
       <varInfo nodeId="403933718789067743" varName="module" />
+      <varInfo nodeId="403933718789067700" varName="model" />
       <varInfo nodeId="403933718789067706" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="403933718789067697" fileName="ModuleChooserComponent.java" startLine="46" startPosition="336" endLine="55" endPosition="9">
@@ -2716,8 +2716,8 @@
     <scopeInfo nodeId="1717728468090419697" fileName="TestRunState.java" startLine="156" startPosition="63" endLine="164" endPosition="5" />
     <scopeInfo nodeId="9008364566102377728" fileName="TestRunState.java" startLine="214" startPosition="142" endLine="222" endPosition="7">
       <varInfo nodeId="9008364566102377496" varName="testClassName" />
-      <varInfo nodeId="9008364566102377509" varName="testMethodName" />
       <varInfo nodeId="9008364566102377483" varName="key" />
+      <varInfo nodeId="9008364566102377509" varName="testMethodName" />
     </scopeInfo>
     <scopeInfo nodeId="5521528256364956082" fileName="TestRunState.java" startLine="44" startPosition="53" endLine="53" endPosition="8" />
     <scopeInfo nodeId="1200269551723292922" fileName="TestRunState.java" startLine="82" startPosition="76" endLine="91" endPosition="7">
@@ -2868,8 +2868,8 @@
       <varInfo nodeId="2281887280934081019" varName="process" />
     </scopeInfo>
     <scopeInfo nodeId="2281887280934031666" fileName="UnitTestExecutionController.java" startLine="20" startPosition="0" endLine="30" endPosition="3">
-      <varInfo nodeId="2281887280934035641" varName="whatToTest" />
       <varInfo nodeId="2281887280934079559" varName="configurationRunParameters" />
+      <varInfo nodeId="2281887280934035641" varName="whatToTest" />
     </scopeInfo>
     <scopeInfo nodeId="2281887280934080946" fileName="UnitTestExecutionController.java" startLine="54" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="2281887280934079582" fileName="UnitTestExecutionController.java" startLine="36" startPosition="61" endLine="52" endPosition="111">
@@ -3283,8 +3283,8 @@
       <varInfo nodeId="308525442908715193" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="40577050485366645" fileName="UnitTestProcessHandler.java" startLine="49" startPosition="62" endLine="72" endPosition="9">
-      <varInfo nodeId="1813715713114782861" varName="system" />
       <varInfo nodeId="4060094294590056935" varName="text" />
+      <varInfo nodeId="1813715713114782861" varName="system" />
       <varInfo nodeId="4060094294590056952" varName="error" />
       <varInfo nodeId="4060094294590056941" varName="textTrimmed" />
       <varInfo nodeId="4060094294590056972" varName="testEvent" />
@@ -3908,8 +3908,8 @@
       <varInfo nodeId="1772682388919199623" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="2595782876361292076" fileName="TestUtils.java" startLine="145" startPosition="100" endLine="158" endPosition="7">
-      <varInfo nodeId="2595782876361293154" varName="caseNodeWrapper" />
       <varInfo nodeId="1772682388919177325" varName="methods" />
+      <varInfo nodeId="2595782876361293154" varName="caseNodeWrapper" />
     </scopeInfo>
     <scopeInfo nodeId="2595782876361303803" fileName="TestUtils.java" startLine="160" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="2595782876361303805" varName="fullMethodName" />
@@ -4717,8 +4717,8 @@
       <varInfo nodeId="1853639028181769905" varName="comp" />
       <varInfo nodeId="1853639028181773266" varName="toolbar" />
       <varInfo nodeId="813722280256835315" varName="remove" />
-      <varInfo nodeId="813722280256791080" varName="add" />
       <varInfo nodeId="1853639028181772165" varName="group" />
+      <varInfo nodeId="813722280256791080" varName="add" />
     </scopeInfo>
     <scopeInfo nodeId="5842388990471961360" fileName="ListPanel.java" startLine="70" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="5842388990471961442" varName="nodes" />
@@ -4882,8 +4882,8 @@
     <scopeInfo nodeId="2531203453721130634" fileName="TestToolbarPanel.java" startLine="164" startPosition="50" endLine="171" endPosition="6" />
     <scopeInfo nodeId="7450159848769253893" fileName="TestToolbarPanel.java" startLine="29" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="5163834070164081867" varName="project" />
-      <varInfo nodeId="7450159848769323106" varName="tree" />
       <varInfo nodeId="7450159848769323108" varName="navigator" />
+      <varInfo nodeId="7450159848769323106" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="7450159848769282241" fileName="TestToolbarPanel.java" startLine="96" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="7450159848769282244" varName="p0" />

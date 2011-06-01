@@ -3,8 +3,8 @@
   <unitInfo fileName="IContextWrapper.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.IContextWrapper" />
   <unitInfo fileName="Internal_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.Internal_Language" />
   <unitInfo fileName="ContextControllerWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextControllerWrapper" />
-  <unitInfo fileName="ContextViewWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextViewWrapper" />
   <unitInfo fileName="ContextCompartmentWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper" />
+  <unitInfo fileName="ContextViewWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextViewWrapper" />
   <unitInfo fileName="GeometryHandler.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.GeometryHandler" />
   <unitInfo fileName="AuxObjectHandler.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.AuxObjectHandler" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="52" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
