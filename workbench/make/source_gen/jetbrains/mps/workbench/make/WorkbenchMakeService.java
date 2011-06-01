@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.ThreadUtils;
+import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.messages.Message;
@@ -124,10 +124,11 @@ public class WorkbenchMakeService implements IMakeService {
     final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(context.getProject(), scrName, script, scrName, clInput.value, ctl, mh);
     doExecute(new Runnable() {
       public void run() {
-        ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             IdeEventQueue.getInstance().flushQueue();
             ProgressManager.getInstance().run(task);
+            IdeEventQueue.getInstance().flushQueue();
           }
         });
       }
@@ -278,7 +279,11 @@ public class WorkbenchMakeService implements IMakeService {
     public void run(@NotNull ProgressIndicator pi) {
       if (myState.compareAndSet(WorkbenchMakeService.TaskState.NOT_STARTED, WorkbenchMakeService.TaskState.RUNNING)) {
         pi.pushState();
-        pi.setFraction(0.0);
+        try {
+          // The progress indicator appears only after 300ms 
+          Thread.sleep(400);
+        } catch (InterruptedException ignore) {
+        }
         final int clsize = Sequence.fromIterable(this.myClInput).count();
         if (clsize == 0) {
           return;
