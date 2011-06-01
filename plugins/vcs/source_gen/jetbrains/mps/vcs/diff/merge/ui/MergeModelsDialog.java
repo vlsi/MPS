@@ -40,11 +40,11 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.ui.DiffModelTree;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.ChangeColors;
@@ -267,6 +267,23 @@ public class MergeModelsDialog extends BaseDialog {
     rebuildLater();
   }
 
+  /*package*/ static String generateUnresolvedChangesText(int totalChanges, int conflictingChanges) {
+    if (conflictingChanges != 0) {
+      String text = NameUtil.formatNumericalString(conflictingChanges, "conficting change");
+      if (totalChanges == conflictingChanges) {
+        return text;
+      } else {
+        return text + " of " + totalChanges + " total";
+      }
+    } else {
+      if (totalChanges == 0) {
+        return "All changes resolved";
+      } else {
+        return NameUtil.formatNumericalString(totalChanges, " change");
+      }
+    }
+  }
+
   private class MergeModelsTree extends DiffModelTree {
     private MergeModelsTree() {
       super(myOperationContext);
@@ -299,16 +316,10 @@ public class MergeModelsDialog extends BaseDialog {
       }).count();
       int nonConflictedCount = ListSequence.fromList(changes).count() - conflictedCount;
       ChangeType compositeChangeType = null;
+      rootTreeNode.setTooltipText(generateUnresolvedChangesText(ListSequence.fromList(changes).count(), conflictedCount));
       if (conflictedCount != 0) {
         compositeChangeType = ChangeType.CONFLICTED;
-
         rootTreeNode.setAdditionalText("with conflicts");
-        String text = NameUtil.formatNumericalString(conflictedCount, "conficting change");
-        if (nonConflictedCount == 0) {
-          rootTreeNode.setTooltipText(text);
-        } else {
-          rootTreeNode.setTooltipText(text + " of " + ListSequence.fromList(changes).count() + " total");
-        }
       } else {
         if (nonConflictedCount == 0) {
           if (rootTreeNode.getRootId() != null && myMergeContext.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
@@ -336,7 +347,6 @@ public class MergeModelsDialog extends BaseDialog {
           } else {
             rootTreeNode.setAdditionalText("both modified");
           }
-          rootTreeNode.setTooltipText(NameUtil.formatNumericalString(nonConflictedCount, " change"));
         }
       }
 

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.ui.DiffEditorsGroup;
 import jetbrains.mps.vcs.diff.merge.MergeContextState;
 import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.diff.ex.DiffStatusBar;
+import com.intellij.openapi.diff.impl.util.TextDiffType;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import javax.swing.JSplitPane;
@@ -28,6 +30,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip;
 import java.awt.GridBagConstraints;
@@ -55,6 +58,7 @@ public class MergeRootsDialog extends BaseDialog {
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeContextState myStateToRestore;
   private ActionToolbar myToolbar;
+  private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.MERGE_TYPES);
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
     super(mergeModelsDialog, "Merging " + rootName);
@@ -87,6 +91,7 @@ public class MergeRootsDialog extends BaseDialog {
 
     myContainer.add(myToolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
+    myContainer.add(this.myStatusBar, BorderLayout.SOUTH);
     highlightAllChanges();
   }
 
@@ -128,19 +133,28 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   private void highlightAllChanges() {
-    for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId))) {
-      if (!(myMergeContext.isChangeResolved(change))) {
-        higlightChange(myResultEditor, myMergeContext.getResultModel(), change);
-        if (myMergeContext.isMyChange(change)) {
-          higlightChange(myMineEditor, myMergeContext.getMyModel(), change);
-        } else {
-          higlightChange(myRepositoryEditor, myMergeContext.getRepositoryModel(), change);
-        }
+    List<ModelChange> changesForRoot = ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId)).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return !(myMergeContext.isChangeResolved(ch));
+      }
+    }).toListSequence();
+    for (ModelChange change : ListSequence.fromList(changesForRoot)) {
+      higlightChange(myResultEditor, myMergeContext.getResultModel(), change);
+      if (myMergeContext.isMyChange(change)) {
+        higlightChange(myMineEditor, myMergeContext.getMyModel(), change);
+      } else {
+        higlightChange(myRepositoryEditor, myMergeContext.getRepositoryModel(), change);
       }
     }
     myMineEditor.repaintAndRebuildEditorMessages();
     myResultEditor.repaintAndRebuildEditorMessages();
     myRepositoryEditor.repaintAndRebuildEditorMessages();
+    int conflictingChanges = ListSequence.fromList(changesForRoot).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
+      }
+    }).count();
+    myStatusBar.setText(MergeModelsDialog.generateUnresolvedChangesText(ListSequence.fromList(changesForRoot).count(), conflictingChanges));
   }
 
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
