@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.smodel.LanguageID;
 import org.eclipse.jdt.internal.compiler.lookup.FieldBinding;
 import org.eclipse.jdt.internal.compiler.lookup.ParameterizedFieldBinding;
 import org.eclipse.jdt.internal.compiler.lookup.Binding;
@@ -230,7 +231,7 @@ public class TypesProvider {
   private SModelReference modelReferenceFromBinaryClassBinding(BinaryTypeBinding binaryTypeBinding) {
     String classFQName = TypesProvider.getClassifierIdPrefix(binaryTypeBinding);
     String packageName = NodeNameUtil.getNamespace(classFQName);
-    SModelReference modelReference = StubHelper.uidForPackageInStubs(packageName);
+    SModelReference modelReference = StubHelper.uidForPackageInStubs(packageName, LanguageID.JAVA, null, true);
     return modelReference;
   }
 
