@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -46,7 +47,11 @@ public class NewTemplateInInlineSwitchCase_Intention extends BaseIntention imple
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (editorContext.getSelectedCell().getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "caseConsequence")) {
+    final EditorCell editorCell = editorContext.getSelectedCell();
+    if (editorCell == null) {
+      return false;
+    }
+    if (editorCell.getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "caseConsequence")) {
       return false;
     }
     return SLinkOperations.getTarget(node, "caseConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "caseConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");

@@ -27,6 +27,9 @@ public class QueriesUtil {
   }
 
   public static boolean isPropertyMacroApplicable(SNode node, EditorCell cell) {
+    if (cell == null) {
+      return false;
+    }
     if (!(isAnyMacroApplicable(node))) {
       return false;
     }
@@ -44,6 +47,9 @@ public class QueriesUtil {
   }
 
   public static boolean isReferenceMacroApplicable(SNode node, EditorCell cell) {
+    if (cell == null) {
+      return false;
+    }
     if (!(isAnyMacroApplicable(node))) {
       return false;
     }
