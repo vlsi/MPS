@@ -154,6 +154,20 @@ public class WriteHelper {
     );
   }
 
+  public String genResolveInfo(@NotNull SReference ref) {
+    SNode target = (ref instanceof StaticReference ?
+      ref.getTargetNode() :
+      null
+    );
+    if ((target != null)) {
+      String resolveInfo = target.getResolveInfo();
+      if (resolveInfo != null) {
+        return resolveInfo;
+      }
+    }
+    return ref.getResolveInfo();
+  }
+
   public static String encode(String s) {
     return s.replace("%", "%p").replace(":", "%c").replace(".", "%d");
   }

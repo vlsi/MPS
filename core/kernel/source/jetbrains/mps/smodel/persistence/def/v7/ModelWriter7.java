@@ -137,7 +137,7 @@ public class ModelWriter7 implements IModelWriter {
       linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));
       linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
-      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, reference.getResolveInfo());
+      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, myHelper.genResolveInfo(reference));
       element.addContent(linkElement);
     }
 
