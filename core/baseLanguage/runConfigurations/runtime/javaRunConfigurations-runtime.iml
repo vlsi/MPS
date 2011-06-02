@@ -41,6 +41,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>
 

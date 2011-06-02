@@ -17,6 +17,8 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 
 public class JavaConfigOptions extends JPanel {
@@ -29,10 +31,10 @@ public class JavaConfigOptions extends JPanel {
   private FieldWithPathChooseDialog myWorkingDir_g0;
   private JCheckBox myComponent_h0;
   private FieldWithPathChooseDialog myJreHome_i0;
-  private String myProgramParams;
-  private String myVmParams;
-  private String myWorkingDir;
-  private String myAlternativeJRE;
+  private String myProgramParameters;
+  private String myVmOptions;
+  private String myWorkingDirectory;
+  private String myJrePath;
   private boolean myUseAlternativeJRE;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
@@ -75,7 +77,7 @@ public class JavaConfigOptions extends JPanel {
   private void bind() {
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("vmParams");
+      Property sourceProperty = BeanProperty.create("vmOptions");
       Object targetObject = this.myVmParam_c0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
@@ -84,7 +86,7 @@ public class JavaConfigOptions extends JPanel {
     }
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("programParams");
+      Property sourceProperty = BeanProperty.create("programParameters");
       Object targetObject = this.myProgramParam_e0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
@@ -93,7 +95,7 @@ public class JavaConfigOptions extends JPanel {
     }
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("workingDir");
+      Property sourceProperty = BeanProperty.create("workingDirectory");
       Object targetObject = this.myWorkingDir_g0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
@@ -111,7 +113,7 @@ public class JavaConfigOptions extends JPanel {
     }
     {
       Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("alternativeJRE");
+      Property sourceProperty = BeanProperty.create("jrePath");
       Object targetObject = this.myJreHome_i0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
@@ -218,48 +220,48 @@ public class JavaConfigOptions extends JPanel {
     return component;
   }
 
-  public String getProgramParams() {
-    return this.myProgramParams;
+  public String getProgramParameters() {
+    return this.myProgramParameters;
   }
 
-  public String getVmParams() {
-    return this.myVmParams;
+  public String getVmOptions() {
+    return this.myVmOptions;
   }
 
-  public String getWorkingDir() {
-    return this.myWorkingDir;
+  public String getWorkingDirectory() {
+    return this.myWorkingDirectory;
   }
 
-  public String getAlternativeJRE() {
-    return this.myAlternativeJRE;
+  public String getJrePath() {
+    return this.myJrePath;
   }
 
   public boolean getUseAlternativeJRE() {
     return this.myUseAlternativeJRE;
   }
 
-  public void setProgramParams(String newValue) {
-    String oldValue = this.myProgramParams;
-    this.myProgramParams = newValue;
-    this.firePropertyChange("programParams", oldValue, newValue);
+  public void setProgramParameters(String newValue) {
+    String oldValue = this.myProgramParameters;
+    this.myProgramParameters = newValue;
+    this.firePropertyChange("programParameters", oldValue, newValue);
   }
 
-  public void setVmParams(String newValue) {
-    String oldValue = this.myVmParams;
-    this.myVmParams = newValue;
-    this.firePropertyChange("vmParams", oldValue, newValue);
+  public void setVmOptions(String newValue) {
+    String oldValue = this.myVmOptions;
+    this.myVmOptions = newValue;
+    this.firePropertyChange("vmOptions", oldValue, newValue);
   }
 
-  public void setWorkingDir(String newValue) {
-    String oldValue = this.myWorkingDir;
-    this.myWorkingDir = newValue;
-    this.firePropertyChange("workingDir", oldValue, newValue);
+  public void setWorkingDirectory(String newValue) {
+    String oldValue = this.myWorkingDirectory;
+    this.myWorkingDirectory = newValue;
+    this.firePropertyChange("workingDirectory", oldValue, newValue);
   }
 
-  public void setAlternativeJRE(String newValue) {
-    String oldValue = this.myAlternativeJRE;
-    this.myAlternativeJRE = newValue;
-    this.firePropertyChange("alternativeJRE", oldValue, newValue);
+  public void setJrePath(String newValue) {
+    String oldValue = this.myJrePath;
+    this.myJrePath = newValue;
+    this.firePropertyChange("jrePath", oldValue, newValue);
   }
 
   public void setUseAlternativeJRE(boolean newValue) {
@@ -268,24 +270,51 @@ public class JavaConfigOptions extends JPanel {
     this.firePropertyChange("useAlternativeJRE", oldValue, newValue);
   }
 
-  public void reset(ConfigRunParameters config) {
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public void reset(@Nullable ConfigRunParameters config) {
     if (config != null) {
-      myThis.setProgramParams(config.getProgramParameters());
-      myThis.setVmParams(config.getVMParameters());
-      myThis.setWorkingDir(config.getWorkingDirectory());
-      myThis.setAlternativeJRE(config.getAlternativeJRE());
+      myThis.setProgramParameters(config.getProgramParameters());
+      myThis.setVmOptions(config.getVMParameters());
+      myThis.setWorkingDirectory(config.getWorkingDirectory());
+      myThis.setJrePath(config.getAlternativeJRE());
       myThis.setUseAlternativeJRE(config.getUseAlternativeJRE());
     }
   }
 
-  public void apply(ConfigRunParameters config) {
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public void apply(@Nullable ConfigRunParameters config) {
     if (config != null) {
-      config.setVMParameters(myThis.getVmParams());
-      config.setProgramParameters(myThis.getProgramParams());
-      config.setWorkingDirectory(myThis.getWorkingDir());
-      config.setAlternativeJRE(myThis.getAlternativeJRE());
+      config.setVMParameters(myThis.getVmOptions());
+      config.setProgramParameters(myThis.getProgramParameters());
+      config.setWorkingDirectory(myThis.getWorkingDirectory());
+      config.setAlternativeJRE(myThis.getJrePath());
       config.setUseAlternativeJRE(myThis.getUseAlternativeJRE());
     }
+  }
+
+  public void reset(@Nullable JavaRunParameters javaOptions) {
+    if (javaOptions == null) {
+      return;
+    }
+    myThis.setProgramParameters(javaOptions.programParameters());
+    myThis.setVmOptions(javaOptions.vmOptions());
+    myThis.setWorkingDirectory(javaOptions.workingDirectory());
+    myThis.setUseAlternativeJRE((boolean) javaOptions.useAlternativeJre());
+    myThis.setJrePath(javaOptions.jrePath());
+  }
+
+  public void apply(@Nullable JavaRunParameters javaOptions) {
+    if (javaOptions == null) {
+      // todo can it really be null? 
+      return;
+    }
+    javaOptions.programParameters(myThis.getProgramParameters());
+    javaOptions.vmOptions(myThis.getVmOptions());
+    javaOptions.workingDirectory(javaOptions.workingDirectory());
+    javaOptions.useAlternativeJre((boolean) javaOptions.useAlternativeJre());
+    javaOptions.jrePath(javaOptions.jrePath());
   }
 
   public void dispose() {
@@ -296,7 +325,7 @@ public class JavaConfigOptions extends JPanel {
   }
 
   public void onChangeAlternativeJRE() {
-    myThis.setAlternativeJRE(myThis.myJreHome_i0.getText());
+    myThis.setJrePath(myThis.myJreHome_i0.getText());
   }
 
   public void onCheckUseAlternativeJRE() {
@@ -304,14 +333,14 @@ public class JavaConfigOptions extends JPanel {
   }
 
   public void onChangeWorkingDir() {
-    myThis.setWorkingDir(myThis.myWorkingDir_g0.getText());
+    myThis.setWorkingDirectory(myThis.myWorkingDir_g0.getText());
   }
 
   public void onChangeVMParams() {
-    myThis.setVmParams(myThis.myVmParam_c0.getText());
+    myThis.setVmOptions(myThis.myVmParam_c0.getText());
   }
 
   public void onChangeProgramParams() {
-    myThis.setProgramParams(myThis.myProgramParam_e0.getText());
+    myThis.setProgramParameters(myThis.myProgramParam_e0.getText());
   }
 }
