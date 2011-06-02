@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4op5xgqdt0dcf8a09xzaab6da5usx6k">
+<dependencies version="2" modelHash="64vq8nhjnlt6a42lhwfn1y726zvgpjx">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6a6zpdzd0uayt755yuizj6hqmo45nke" />
@@ -40,7 +40,7 @@
   <source id="1228517278170" name="main" hash="a6c92c1wqggkxww088a8bmxwqndjd1d">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1228517514681" name="DemoApp" hash="ehkdbhirqut4c9rkbscj620qq7bpsp7">
+  <source id="1228517514681" name="DemoApp" hash="93qgvnwpsgytyctq2et9x0z8x5qqina">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1228517679341" name="switch_JComponentByElementName" hash="-63vyp8zzyy0zwa93f1t0pxq118sjzgw">

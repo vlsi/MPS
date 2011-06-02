@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:1ebe3253-04ff-442c-a927-b07e3d7072ae(jetbrains.mps.samples.generator_demo.test_models.test3)" doNotGenerate="true">
+<model modelUID="r:1ebe3253-04ff-442c-a927-b07e3d7072ae(jetbrains.mps.samples.generator_demo.test_models.test3)">
   <persistence version="7" />
   <language namespace="772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)" />
   <language-engaged-on-generation namespace="7a4dedfe-9c99-4610-b299-d4a37832823b(jetbrains.mps.samples.generator_demo.demoLang3)" />

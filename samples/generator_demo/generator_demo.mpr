@@ -5,17 +5,14 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/test_models/test_models.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/languages/demoLang1/demoLang1.mpl" />
-      <languagePath path="${project}/languages/demoLang2/demoLang2.mpl" />
-      <languagePath path="${project}/languages/demoLang3/demoLang3.mpl" folder="" />
-      <languagePath path="${project}/languages/demoLang4/demoLang4.mpl" folder="" />
-      <languagePath path="${project}/../sampleXML/languages/sampleXML/sampleXML.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/test_models/test_models.msd" folder="" />
+      <modulePath path="${project}/languages/demoLang1/demoLang1.mpl" />
+      <modulePath path="${project}/languages/demoLang2/demoLang2.mpl" />
+      <modulePath path="${project}/languages/demoLang3/demoLang3.mpl" folder="" />
+      <modulePath path="${project}/languages/demoLang4/demoLang4.mpl" folder="" />
+      <modulePath path="${project}/../sampleXML/languages/sampleXML/sampleXML.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="demoLang1" moduleRef="jetbrains.mps.samples.generator_demo.demoLang1" />
       <genConfModule name="demoLang2" moduleRef="jetbrains.mps.samples.generator_demo.demoLang2" />
@@ -30,5 +27,8 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
 </project>
 
