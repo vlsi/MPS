@@ -21,10 +21,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Set;
@@ -85,7 +84,7 @@ public class SModelUtil {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
         String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
-        Language language = scope.getLanguage(new ModuleReference(languageFqName));
+        Language language = MPSModuleRepository.getInstance().getLanguage(languageFqName);
         if (language == null) {
           return null;
         }
