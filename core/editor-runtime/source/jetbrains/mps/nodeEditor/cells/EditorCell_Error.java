@@ -26,13 +26,26 @@ import jetbrains.mps.nodeEditor.style.Padding;
  */
 public class EditorCell_Error extends EditorCell_Label {
   private String myDefaultText;
+  private boolean myEditable;
 
   public EditorCell_Error(EditorContext editorContext, SNode node, String errorText) {
-    super(editorContext, node, null);
+    this(editorContext, node, errorText, false);
+  }
+
+  /**
+   * @param editable - there are two different kinds of CEll_Error in MPS:
+   * - one (!editable) intended to show error text and then substitute it completely then user type
+   *   something e.g. list<|<no type>>
+   * - another (editable) allows editing error text directly without replacing it with first types character
+   *   e.g. myVariable.|field - in case "field" is not resolved, it should be highlighted as error, but should
+   *   be still completely editable
+   */
+  public EditorCell_Error(EditorContext editorContext, SNode node, String errorText, boolean editable) {
+    super(editorContext, node, editable ? errorText : null);
     myDefaultText = errorText;
     setDefaultText(errorText);
     setErrorState(true);
-
+    myEditable = editable;
 
     getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
     getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
@@ -47,7 +60,7 @@ public class EditorCell_Error extends EditorCell_Label {
   }
 
   public void synchronizeViewWithModel() {
-    setText("");
+    setText(myEditable ? myDefaultText : "");
     setDefaultText(myDefaultText);
   }
 }
