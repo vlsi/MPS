@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="RenderingObject_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.RenderingObject_Editor" />
-  <unitInfo fileName="StubCellRendererInfo_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.StubCellRendererInfo_Editor$_Inline_8ufu2t_a0a" />
-  <unitInfo fileName="EventHandlerReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.EventHandlerReference_Editor$_Inline_dqbp6w_a0a" />
   <unitInfo fileName="EventAccessOperation_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.EventAccessOperation_Editor$_Inline_hsakg1_a0a" />
-  <unitInfo fileName="ComponentCreator_Editor.java" startLine="74" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentCreator_Editor$_Inline_o92roe_a2a" />
+  <unitInfo fileName="EventHandlerReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.EventHandlerReference_Editor$_Inline_dqbp6w_a0a" />
+  <unitInfo fileName="StubCellRendererInfo_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.StubCellRendererInfo_Editor$_Inline_8ufu2t_a0a" />
   <unitInfo fileName="ComponentType_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentType_Editor$_Inline_k3omfe_a2a" />
+  <unitInfo fileName="ComponentCreator_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentCreator_Editor$_Inline_o92roe_a2a" />
   <unitInfo fileName="BeanCreator_Editor.java" startLine="83" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.BeanCreator_Editor$_Inline_pb1ym0_a0a" />
   <unitInfo fileName="BeanType_Editor.java" startLine="86" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.BeanType_Editor$_Inline_8iyext_a2a" />
   <unitInfo fileName="InlineEventHandler_Editor.java" startLine="96" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.InlineEventHandler_Editor$_Inline_1sfp4h_a1a0" />
@@ -15,8 +15,8 @@
   <unitInfo fileName="ComponentReference_Editor.java" startLine="47" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentReference_Editor$_Inline_taca2n_a0a" />
   <unitInfo fileName="AttributeValue_Editor.java" startLine="75" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.AttributeValue_Editor$_Inline_qq2e6z_a0a" />
   <unitInfo fileName="ComponentInstance_Editor.java" startLine="201" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentInstance_Editor$_Inline_9hod0t_a0a0" />
-  <unitInfo fileName="Scroller_Editor.java" startLine="69" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Scroller_Editor$contentListHandler_rbdq4p_b1a" />
   <unitInfo fileName="Form_Editor.java" startLine="69" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Form_Editor$partListHandler_317s4_b1a" />
+  <unitInfo fileName="Scroller_Editor.java" startLine="69" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Scroller_Editor$contentListHandler_rbdq4p_b1a" />
   <unitInfo fileName="GridRow_Editor.java" startLine="73" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.GridRow_Editor$componentListHandler_3uv0ek_b1a" />
   <unitInfo fileName="Grid_Editor.java" startLine="89" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Grid_Editor$rowListHandler_koct37_b1a" />
   <unitInfo fileName="Grid_Editor.java" startLine="125" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Grid_Editor$contentListHandler_koct37_a0" />
@@ -30,28 +30,28 @@
   <unitInfo fileName="ComponentController_Editor.java" startLine="402" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentController_Editor$componentMethodListHandler_ac817d_b31a" />
   <unitInfo fileName="AttributeReferenceOperation_Editor.java" startLine="52" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.AttributeReferenceOperation_Editor$_Inline_vipxp6_a0a" />
   <unitInfo fileName="Stylesheet_StyleSheet.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Stylesheet_StyleSheet" />
-  <unitInfo fileName="InlineRenderer_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.InlineRenderer_Editor" />
   <unitInfo fileName="RaiseInternalStatement_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.RaiseInternalStatement_Editor" />
+  <unitInfo fileName="InlineRenderer_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.InlineRenderer_Editor" />
   <unitInfo fileName="BeanCreator_Editor.java" startLine="116" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.BeanCreator_Editor$parameterListHandler_pb1ym0_c0" />
-  <unitInfo fileName="ListElements_Editor.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ListElements_Editor" />
-  <unitInfo fileName="ActionHandler_Editor.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ActionHandler_Editor" />
   <unitInfo fileName="LayoutConstraint_Editor.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.LayoutConstraint_Editor" />
+  <unitInfo fileName="ActionHandler_Editor.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ActionHandler_Editor" />
+  <unitInfo fileName="ListElements_Editor.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ListElements_Editor" />
   <unitInfo fileName="CellRendererAttribute_Editor.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.CellRendererAttribute_Editor" />
   <unitInfo fileName="RaiseOperation_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.RaiseOperation_Editor" />
   <unitInfo fileName="BindExpression_Editor.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.BindExpression_Editor" />
-  <unitInfo fileName="StubCellRendererInfo_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.StubCellRendererInfo_Editor" />
-  <unitInfo fileName="EventHandlerReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.EventHandlerReference_Editor" />
   <unitInfo fileName="EventAccessOperation_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.EventAccessOperation_Editor" />
+  <unitInfo fileName="EventHandlerReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.EventHandlerReference_Editor" />
+  <unitInfo fileName="StubCellRendererInfo_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.StubCellRendererInfo_Editor" />
   <unitInfo fileName="ComponentReference_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentReference_Editor" />
   <unitInfo fileName="AttributeReferenceOperation_Editor.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.AttributeReferenceOperation_Editor" />
-  <unitInfo fileName="BeforeConstructionBlock_Editor.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.BeforeConstructionBlock_Editor" />
   <unitInfo fileName="AfterConstructionBlock_Editor.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.AfterConstructionBlock_Editor" />
-  <unitInfo fileName="Scroller_Editor.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Scroller_Editor" />
+  <unitInfo fileName="BeforeConstructionBlock_Editor.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.BeforeConstructionBlock_Editor" />
   <unitInfo fileName="Form_Editor.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Form_Editor" />
+  <unitInfo fileName="Scroller_Editor.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.Scroller_Editor" />
   <unitInfo fileName="GridRow_Editor.java" startLine="23" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.GridRow_Editor" />
-  <unitInfo fileName="ComponentCreator_Editor.java" startLine="19" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentCreator_Editor" />
-  <unitInfo fileName="ComponentType_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentType_Editor" />
   <unitInfo fileName="AttributeValue_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.AttributeValue_Editor" />
+  <unitInfo fileName="ComponentType_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentType_Editor" />
+  <unitInfo fileName="ComponentCreator_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.ComponentCreator_Editor" />
   <unitInfo fileName="BeanType_Editor.java" startLine="20" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.BeanType_Editor" />
   <unitInfo fileName="PngIcon_Editor.java" startLine="24" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.PngIcon_Editor" />
   <unitInfo fileName="FormPart_Editor.java" startLine="20" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.uiLanguage.editor.FormPart_Editor" />
