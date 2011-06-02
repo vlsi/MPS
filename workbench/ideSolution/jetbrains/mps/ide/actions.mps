@@ -197,12 +197,6 @@
       <property name="isPopup" nameId="tp4k.1213283637680" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1204991236497">
-      <property name="name" nameId="tpck.1169194664001" value="Generate" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Generate (obsolete)" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
-    </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1204991237264">
       <property name="name" nameId="tpck.1169194664001" value="Goto" />
       <property name="caption" nameId="tp4k.1204991940915" value="Go To" />
@@ -1782,21 +1776,6 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1207910902706">
         <property name="name" nameId="tpck.1169194664001" value="custom" />
       </node>
-    </node>
-  </root>
-  <root id="1204991236497">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148351921">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2841218117793440861">
-        <property name="name" nameId="tpck.1169194664001" value="generateModule" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1215003470096" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2841218117793440877">
-        <property name="name" nameId="tpck.1169194664001" value="generateModel" />
-      </node>
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1215012731529">
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="5716258091890928630" resolveInfo="aux" />
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1215013255981" resolveInfo="Build" />
     </node>
   </root>
   <root id="1204991237264">

@@ -127,7 +127,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new FileSystemNewActions_ActionGroup());
     addGroup(new FolderActions_ActionGroup());
     addGroup(new Folding_ActionGroup());
-    addGroup(new Generate_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
     addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
@@ -188,7 +187,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(DebugActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
-    insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
     insertGroupIntoAnother(GoToEditorPopupAddition_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goto);
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, GoToEditorPopupAddition_ActionGroup.ID, GoToEditorPopupAddition_ActionGroup.LABEL_ID_refs);
