@@ -1,36 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="MappingLabelUtil.java" startLine="36" startPosition="55" endLine="40" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.MappingLabelUtil$1" />
+  <unitInfo fileName="NewTemplateFragment_Intention.java" startLine="49" startPosition="89" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention$1" />
+  <unitInfo fileName="AttachMappingLabelDialog.java" startLine="56" startPosition="36" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog$1" />
+  <unitInfo fileName="NewTemplateFragment_Intention.java" startLine="63" startPosition="104" endLine="67" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention$2" />
+  <unitInfo fileName="NewCreateRootRule_Intention.java" startLine="71" startPosition="107" endLine="75" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention$2" />
+  <unitInfo fileName="NewRootMappingRule_Intention.java" startLine="71" startPosition="108" endLine="75" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention$2" />
+  <unitInfo fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="77" startPosition="161" endLine="81" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention$1" />
+  <unitInfo fileName="NewCreateRootRule_Intention.java" startLine="85" startPosition="82" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention$2" />
+  <unitInfo fileName="NewRootMappingRule_Intention.java" startLine="85" startPosition="82" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention$2" />
+  <unitInfo fileName="AttachMappingLabel_Intention.java" startLine="86" startPosition="97" endLine="90" endPosition="7" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$1" />
+  <unitInfo fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="91" startPosition="135" endLine="95" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention$1" />
+  <unitInfo fileName="AttachMappingLabel_Intention.java" startLine="94" startPosition="97" endLine="98" endPosition="7" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$2" />
+  <unitInfo fileName="AttachMappingLabel_Intention.java" startLine="160" startPosition="35" endLine="165" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$4" />
+  <unitInfo fileName="NewCreateRootRule_Intention.java" startLine="69" startPosition="63" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention$1" />
+  <unitInfo fileName="NewRootMappingRule_Intention.java" startLine="69" startPosition="63" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention$1" />
+  <unitInfo fileName="NewTemplateInCreateRootRule_Intention.java" startLine="76" startPosition="11" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$2" />
+  <unitInfo fileName="NewTemplateInRootMappingRule_Intention.java" startLine="78" startPosition="11" endLine="88" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$2" />
+  <unitInfo fileName="NewTemplateInCreateRootRule_Intention.java" startLine="60" startPosition="65" endLine="76" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$1" />
+  <unitInfo fileName="NewTemplateInRootMappingRule_Intention.java" startLine="62" startPosition="65" endLine="78" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$1" />
+  <unitInfo fileName="AttachMappingLabelDialog.java" startLine="90" startPosition="55" endLine="107" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog$2" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="MacroIntentionsUtil.java" startLine="94" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a3a1" />
+  <unitInfo fileName="AttachMappingLabel_Intention.java" startLine="116" startPosition="23" endLine="155" endPosition="13" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$5" />
+  <unitInfo fileName="MappingLabelUtil.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MappingLabelUtil" />
   <unitInfo fileName="AddContext_Intention.java" startLine="58" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddContext_Intention$QuotationClass_7sjj31_a2a0a3a5" />
+  <unitInfo fileName="AttachMappingLabel_Intention.java" startLine="114" startPosition="19" endLine="157" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$4" />
+  <unitInfo fileName="AttachMappingLabel_Intention.java" startLine="112" startPosition="94" endLine="159" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$3" />
   <unitInfo fileName="CreateScript_Intention.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.CreateScript_Intention" />
   <unitInfo fileName="AddNodeMacro_Intention.java" startLine="14" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacro_Intention" />
-  <unitInfo fileName="AddReferenceMacro_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddReferenceMacro_Intention" />
   <unitInfo fileName="AddPropertyMacro_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddPropertyMacro_Intention" />
+  <unitInfo fileName="AddReferenceMacro_Intention.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddReferenceMacro_Intention" />
   <unitInfo fileName="NewTemplateInSwitchDefault_Intention.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchDefault_Intention" />
+  <unitInfo fileName="MacroIntentionsUtil.java" startLine="133" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a0d0b" />
   <unitInfo fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertInlineTemplateToTemplateFragment_Intention" />
   <unitInfo fileName="NewTemplateInInlineSwitchDefault_Intention.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchDefault_Intention" />
   <unitInfo fileName="ConvertClassConceptToExtract_Intention.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertClassConceptToExtract_Intention" />
   <unitInfo fileName="NewTemplateFragment_Intention.java" startLine="14" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention" />
   <unitInfo fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertTemplateDeclRefToInlineTemplate_Intention" />
   <unitInfo fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchCase_Intention" />
-  <unitInfo fileName="NewTemplateInSwitchCase_Intention.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention" />
   <unitInfo fileName="NewTemplateInReductionRule_Intention.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInReductionRule_Intention" />
+  <unitInfo fileName="NewTemplateInSwitchCase_Intention.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention" />
   <unitInfo fileName="NewTemplateInWeaveEach_Intention.java" startLine="19" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeaveEach_Intention" />
   <unitInfo fileName="AddNodeMacroParam_switch_Intention.java" startLine="21" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_switch_Intention" />
   <unitInfo fileName="NewTemplateInCreateRootRule_Intention.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention" />
   <unitInfo fileName="NewTemplateInWeavingRule_Intention.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" />
   <unitInfo fileName="NewTemplateInRootMappingRule_Intention.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention" />
   <unitInfo fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention" />
-  <unitInfo fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_loopMacro_Intention" />
-  <unitInfo fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrclMacro_Intention" />
+  <unitInfo fileName="ConvertLoopWithCopySrc_Intention.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention" />
   <unitInfo fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrcMacro_Intention" />
+  <unitInfo fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrclMacro_Intention" />
+  <unitInfo fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_loopMacro_Intention" />
   <unitInfo fileName="AddContext_Intention.java" startLine="18" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddContext_Intention" />
   <unitInfo fileName="NewCreateRootRule_Intention.java" startLine="24" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention" />
   <unitInfo fileName="NewRootMappingRule_Intention.java" startLine="24" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention" />
   <unitInfo fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="23" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_ifMacro_Intention" />
   <unitInfo fileName="AddReferenceMacroParam_link_Intention.java" startLine="22" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddReferenceMacroParam_link_Intention" />
+  <unitInfo fileName="AttachMappingLabelDialog.java" startLine="29" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabelDialog" />
   <unitInfo fileName="AddPropertyMacroParam_property_Intention.java" startLine="21" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AddPropertyMacroParam_property_Intention" />
   <unitInfo fileName="AttachMappingLabel_Intention.java" startLine="30" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention" />
+  <unitInfo fileName="MacroIntentionsUtil.java" startLine="20" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil" />
   <root nodeId="1203775431223">
     <nodeInfo nodeId="1203775470228" fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203776371855" fileName="ConvertInlineTemplateToTemplateFragment_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -86,11 +115,11 @@
     <scopeInfo nodeId="1205437065527" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="56" startPosition="50" endLine="58" endPosition="13" />
     <scopeInfo nodeId="1205437296805" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="60" startPosition="49" endLine="62" endPosition="13" />
     <scopeInfo nodeId="1205436780375" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="54" startPosition="76" endLine="75" endPosition="5">
-      <varInfo nodeId="1205437482224" varName="inlineTemplate" />
       <varInfo nodeId="1205437393790" varName="oldTemplate" />
+      <varInfo nodeId="1205437482224" varName="inlineTemplate" />
       <varInfo nodeId="1205438118130" varName="TFtoDelete" />
-      <varInfo nodeId="1205437576725" varName="fragmentToSet" />
       <varInfo nodeId="1205437054639" varName="TFs" />
+      <varInfo nodeId="1205437576725" varName="fragmentToSet" />
       <varInfo nodeId="1205437833863" varName="option" />
     </scopeInfo>
   </root>
@@ -215,8 +244,8 @@
     <scopeInfo nodeId="1216319039425" fileName="NewTemplateInWeaveEach_Intention.java" startLine="54" startPosition="76" endLine="79" endPosition="58">
       <varInfo nodeId="1216319039467" varName="t" />
       <varInfo nodeId="1227226372561" varName="contextNodeType" />
-      <varInfo nodeId="1216319039436" varName="name" />
       <varInfo nodeId="1216319039427" varName="applicableConcept" />
+      <varInfo nodeId="1216319039436" varName="name" />
       <varInfo nodeId="1227226315440" varName="ownerRule" />
     </scopeInfo>
   </root>
@@ -255,8 +284,8 @@
     <scopeInfo nodeId="1216320260194" fileName="NewTemplateInReductionRule_Intention.java" startLine="63" startPosition="76" endLine="78" endPosition="56">
       <varInfo nodeId="1216320260236" varName="t" />
       <varInfo nodeId="1216320260257" varName="tr" />
-      <varInfo nodeId="1216320260205" varName="name" />
       <varInfo nodeId="1216320260196" varName="applicableConcept" />
+      <varInfo nodeId="1216320260205" varName="name" />
     </scopeInfo>
   </root>
   <root nodeId="1216323872536">
@@ -319,8 +348,8 @@
     <scopeInfo nodeId="1216334966292" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="63" startPosition="35" endLine="76" endPosition="20" />
     <scopeInfo nodeId="1216334966291" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="62" startPosition="85" endLine="78" endPosition="0" />
     <scopeInfo nodeId="1216334426563" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="56" startPosition="76" endLine="88" endPosition="7">
-      <varInfo nodeId="1216335853054" varName="rule" />
       <varInfo nodeId="1216334426565" varName="name" />
+      <varInfo nodeId="1216335853054" varName="rule" />
     </scopeInfo>
     <unitInfo nodeId="1216335413270" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="78" startPosition="11" endLine="88" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$2" />
     <unitInfo nodeId="1216334966291" fileName="NewTemplateInRootMappingRule_Intention.java" startLine="62" startPosition="65" endLine="78" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$1" />
@@ -362,8 +391,8 @@
     <scopeInfo nodeId="1216337594158" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="61" startPosition="35" endLine="74" endPosition="20" />
     <scopeInfo nodeId="1216337594157" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="60" startPosition="85" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1216337594123" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="54" startPosition="76" endLine="85" endPosition="7">
-      <varInfo nodeId="1216337594151" varName="rule" />
       <varInfo nodeId="1216337594125" varName="name" />
+      <varInfo nodeId="1216337594151" varName="rule" />
     </scopeInfo>
     <unitInfo nodeId="1216337594195" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="76" startPosition="11" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$2" />
     <unitInfo nodeId="1216337594157" fileName="NewTemplateInCreateRootRule_Intention.java" startLine="60" startPosition="65" endLine="76" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$1" />
@@ -418,13 +447,13 @@
       <varInfo nodeId="1227218614365" varName="sameVPackConfigs" />
     </scopeInfo>
     <scopeInfo nodeId="1227216572222" fileName="NewCreateRootRule_Intention.java" startLine="82" startPosition="76" endLine="102" endPosition="63">
-      <varInfo nodeId="1227220716121" varName="opener" />
       <varInfo nodeId="1227218039959" varName="configs" />
+      <varInfo nodeId="1227220716121" varName="opener" />
       <varInfo nodeId="1227219164351" varName="rule" />
     </scopeInfo>
     <scopeInfo nodeId="1227216955655" fileName="NewCreateRootRule_Intention.java" startLine="57" startPosition="90" endLine="79" endPosition="25">
-      <varInfo nodeId="1227219557532" varName="configs" />
       <varInfo nodeId="1227217922382" varName="annotation" />
+      <varInfo nodeId="1227219557532" varName="configs" />
       <varInfo nodeId="1227219557547" varName="usage" />
     </scopeInfo>
     <unitInfo nodeId="1227219557562" fileName="NewCreateRootRule_Intention.java" startLine="71" startPosition="107" endLine="75" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention$2" />
@@ -482,13 +511,13 @@
       <varInfo nodeId="1227221178652" varName="sameVPackConfigs" />
     </scopeInfo>
     <scopeInfo nodeId="1227221178640" fileName="NewRootMappingRule_Intention.java" startLine="82" startPosition="76" endLine="103" endPosition="63">
-      <varInfo nodeId="1227221178717" varName="opener" />
       <varInfo nodeId="1227221178642" varName="configs" />
+      <varInfo nodeId="1227221178717" varName="opener" />
       <varInfo nodeId="1227221178702" varName="rule" />
     </scopeInfo>
     <scopeInfo nodeId="1227221178732" fileName="NewRootMappingRule_Intention.java" startLine="57" startPosition="90" endLine="79" endPosition="25">
-      <varInfo nodeId="1227221178757" varName="configs" />
       <varInfo nodeId="1227221178734" varName="annotation" />
+      <varInfo nodeId="1227221178757" varName="configs" />
       <varInfo nodeId="1227221178772" varName="usage" />
     </scopeInfo>
     <unitInfo nodeId="1227221178787" fileName="NewRootMappingRule_Intention.java" startLine="71" startPosition="108" endLine="75" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.NewRootMappingRule_Intention$2" />
@@ -826,8 +855,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1240572960653" fileName="AddNodeMacroParam_ifMacro_Intention.java" startLine="64" startPosition="76" endLine="79" endPosition="48">
       <varInfo nodeId="1240843206033" varName="expressionStatement" />
-      <varInfo nodeId="1240843205998" varName="dotExpression" />
       <varInfo nodeId="1240573178824" varName="nodeMacro" />
+      <varInfo nodeId="1240843205998" varName="dotExpression" />
       <varInfo nodeId="1240843205992" varName="ifMacro_Condition" />
       <varInfo nodeId="1240843206004" varName="linkAccess" />
       <varInfo nodeId="1240837596079" varName="ifMacro" />
@@ -940,11 +969,11 @@
       <varInfo nodeId="1240833268384" varName="propertySource" />
     </scopeInfo>
     <scopeInfo nodeId="1240595522631" fileName="AddPropertyMacroParam_property_Intention.java" startLine="62" startPosition="76" endLine="75" endPosition="54">
-      <varInfo nodeId="1240595522682" varName="expressionStatement" />
       <varInfo nodeId="1240595522653" varName="propertyAccess" />
-      <varInfo nodeId="1240595522647" varName="dotExpression" />
-      <varInfo nodeId="1240595522641" varName="propertyValue" />
+      <varInfo nodeId="1240595522682" varName="expressionStatement" />
       <varInfo nodeId="1240595522633" varName="propertyMacro" />
+      <varInfo nodeId="1240595522641" varName="propertyValue" />
+      <varInfo nodeId="1240595522647" varName="dotExpression" />
     </scopeInfo>
     <scopeInfo nodeId="1240595522718" fileName="AddPropertyMacroParam_property_Intention.java" startLine="82" startPosition="93" endLine="102" endPosition="18">
       <varInfo nodeId="972611735516891132" varName="propertyName" />
@@ -985,8 +1014,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1240595838071" fileName="AddNodeMacroParam_copySrcMacro_Intention.java" startLine="61" startPosition="76" endLine="76" endPosition="53">
       <varInfo nodeId="1240838267946" varName="expressionStatement" />
-      <varInfo nodeId="1240838267911" varName="dotExpression" />
       <varInfo nodeId="1240838267889" varName="nodeMacro" />
+      <varInfo nodeId="1240838267911" varName="dotExpression" />
       <varInfo nodeId="1240838267917" varName="linkAccess" />
       <varInfo nodeId="1240838267905" varName="referentValue" />
       <varInfo nodeId="1240838267894" varName="copySrcMacro" />
@@ -1026,8 +1055,8 @@
     <scopeInfo nodeId="1240595864251" fileName="AddNodeMacroParam_copySrclMacro_Intention.java" startLine="61" startPosition="76" endLine="76" endPosition="57">
       <varInfo nodeId="1240838336628" varName="copySrcListMacro" />
       <varInfo nodeId="1240838336680" varName="expressionStatement" />
-      <varInfo nodeId="1240838336645" varName="dotExpression" />
       <varInfo nodeId="1240838336623" varName="nodeMacro" />
+      <varInfo nodeId="1240838336645" varName="dotExpression" />
       <varInfo nodeId="1240838336651" varName="linkAccess" />
       <varInfo nodeId="1240838336639" varName="referentValue" />
     </scopeInfo>
@@ -1065,10 +1094,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1240595919499" fileName="AddNodeMacroParam_loopMacro_Intention.java" startLine="61" startPosition="76" endLine="76" endPosition="50">
       <varInfo nodeId="1240596309708" varName="expressionStatement" />
-      <varInfo nodeId="1240596309673" varName="dotExpression" />
       <varInfo nodeId="1240836734073" varName="nodeMacro" />
-      <varInfo nodeId="1240596309679" varName="linkAccess" />
+      <varInfo nodeId="1240596309673" varName="dotExpression" />
       <varInfo nodeId="1240596309659" varName="loopMacro" />
+      <varInfo nodeId="1240596309679" varName="linkAccess" />
       <varInfo nodeId="1240596309667" varName="referentValue" />
     </scopeInfo>
   </root>
@@ -1379,6 +1408,70 @@
       <varInfo nodeId="3644457381597322677" varName="switchMacro" />
     </scopeInfo>
   </root>
+  <root nodeId="7834938100936599479">
+    <nodeInfo nodeId="7834938100936609527" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7834938100936635469" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="48" startPosition="39" endLine="49" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7834938100936635485" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="51" startPosition="7" endLine="52" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7834938100936644926" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="55" startPosition="105" endLine="56" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7834938100936645012" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="57" startPosition="338" endLine="58" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7834938100936645016" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="59" startPosition="11" endLine="60" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7834938100936635527" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="60" startPosition="142" endLine="61" endPosition="354" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7834938100936644922" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="62" startPosition="16" endLine="63" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7834938100936635507" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="65" startPosition="29" endLine="66" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7834938100936609531" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="68" startPosition="5" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7834938100936651119" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="74" startPosition="39" endLine="75" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7834938100936651126" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="77" startPosition="7" endLine="78" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7834938100936651220" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="81" startPosition="105" endLine="82" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7834938100936651231" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="82" startPosition="40" endLine="83" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7834938100936651230" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="84" startPosition="9" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7834938100936651211" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="86" startPosition="29" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7834938100936644913" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="62" startPosition="14" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7834938100936644946" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="56" startPosition="155" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7834938100936635467" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="47" startPosition="145" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7834938100936651117" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="73" startPosition="145" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7834938100936651134" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="80" startPosition="17" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7834938100936635456" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="46" startPosition="90" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7834938100936651106" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="72" startPosition="76" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7834938100936651132" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="79" startPosition="27" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7834938100936635515" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="54" startPosition="17" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7834938100936651130" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="78" startPosition="25" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7834938100936635488" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="53" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7834938100936635477" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="52" startPosition="25" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="7834938100936599481" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="36" />
+    <scopeInfo nodeId="7834938100936635468" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="48" startPosition="39" endLine="49" endPosition="100" />
+    <scopeInfo nodeId="7834938100936644947" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="57" startPosition="338" endLine="58" endPosition="25" />
+    <scopeInfo nodeId="7834938100936644914" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="62" startPosition="16" endLine="63" endPosition="23" />
+    <scopeInfo nodeId="7834938100936635497" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="65" startPosition="29" endLine="66" endPosition="20" />
+    <scopeInfo nodeId="7834938100936651118" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="74" startPosition="39" endLine="75" endPosition="100" />
+    <scopeInfo nodeId="7834938100936651210" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="86" startPosition="29" endLine="87" endPosition="20" />
+    <scopeInfo nodeId="7834938100936651135" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="81" startPosition="105" endLine="83" endPosition="118" />
+    <scopeInfo nodeId="7834938100936635467" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="47" startPosition="145" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="7834938100936651117" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="73" startPosition="145" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="7834938100936651133" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="80" startPosition="17" endLine="85" endPosition="15" />
+    <scopeInfo nodeId="7834938100936635516" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="55" startPosition="105" endLine="61" endPosition="354">
+      <varInfo nodeId="7834938100936644927" varName="m" />
+      <varInfo nodeId="7834938100936645017" varName="st" />
+    </scopeInfo>
+    <scopeInfo nodeId="7834938100936651131" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="79" startPosition="27" endLine="88" endPosition="7" />
+    <scopeInfo nodeId="7834938100936635489" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="54" startPosition="17" endLine="64" endPosition="9" />
+    <scopeInfo nodeId="7834938100936651130" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="78" startPosition="25" endLine="89" endPosition="5">
+      <varInfo nodeId="7834938100936651215" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="7834938100936635478" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="53" startPosition="27" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="7834938100936635477" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="52" startPosition="25" endLine="68" endPosition="5">
+      <varInfo nodeId="7834938100936635480" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="7834938100936599483" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="72" startPosition="76" endLine="89" endPosition="5">
+      <varInfo nodeId="7834938100936651107" varName="nodes" />
+      <varInfo nodeId="7834938100936651127" varName="seen" />
+    </scopeInfo>
+    <scopeInfo nodeId="7834938100936609530" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="46" startPosition="90" endLine="69" endPosition="17">
+      <varInfo nodeId="7834938100936635457" varName="nodes" />
+      <varInfo nodeId="7834938100936635486" varName="seen" />
+    </scopeInfo>
+    <unitInfo nodeId="7834938100936635467" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="47" startPosition="122" endLine="51" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention$1" />
+    <unitInfo nodeId="7834938100936651117" fileName="ConvertLoopWithCopySrc_Intention.java" startLine="73" startPosition="122" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention$2" />
+  </root>
   <root nodeId="8004199436029426156">
     <nodeInfo nodeId="8004199436029426159" fileName="NewTemplateInSwitchCase_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7902250453896652114" fileName="NewTemplateInSwitchCase_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1414,8 +1507,8 @@
     <scopeInfo nodeId="8004199436029426162" fileName="NewTemplateInSwitchCase_Intention.java" startLine="63" startPosition="76" endLine="78" endPosition="56">
       <varInfo nodeId="8004199436029426223" varName="t" />
       <varInfo nodeId="8004199436029426258" varName="tr" />
-      <varInfo nodeId="8004199436029426170" varName="name" />
       <varInfo nodeId="8004199436029426164" varName="applicableConcept" />
+      <varInfo nodeId="8004199436029426170" varName="name" />
     </scopeInfo>
   </root>
   <root nodeId="8004199436029429270">
@@ -1478,8 +1571,8 @@
     <scopeInfo nodeId="8004199436029429368" fileName="NewTemplateInInlineSwitchCase_Intention.java" startLine="60" startPosition="76" endLine="75" endPosition="56">
       <varInfo nodeId="8004199436029429407" varName="t" />
       <varInfo nodeId="8004199436029429442" varName="tr" />
-      <varInfo nodeId="8004199436029429376" varName="name" />
       <varInfo nodeId="8004199436029429805" varName="applicableConcept" />
+      <varInfo nodeId="8004199436029429376" varName="name" />
     </scopeInfo>
   </root>
   <root nodeId="8699312839322230162">
@@ -1527,8 +1620,8 @@
       <varInfo nodeId="8699312839322230238" varName="t" />
       <varInfo nodeId="8699312839322230308" varName="tr" />
       <varInfo nodeId="8699312839322230395" varName="contextNodeType" />
-      <varInfo nodeId="8699312839322230184" varName="name" />
       <varInfo nodeId="8699312839322230178" varName="applicableConcept" />
+      <varInfo nodeId="8699312839322230184" varName="name" />
     </scopeInfo>
   </root>
   <root nodeId="9092065972411421046">

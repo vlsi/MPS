@@ -26,6 +26,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new AttachMappingLabel_Intention(), "1227291795686");
     add(new ConvertClassConceptToExtract_Intention(), "34229510189607557");
     add(new ConvertInlineTemplateToTemplateFragment_Intention(), "1203775431223");
+    add(new ConvertLoopWithCopySrc_Intention(), "7834938100936599479");
     add(new ConvertTemplateDeclRefToInlineTemplate_Intention(), "1205436780371");
     add(new CreateScript_Intention(), "2357139912674486242");
     add(new NewCreateRootRule_Intention(), "1227216572218");

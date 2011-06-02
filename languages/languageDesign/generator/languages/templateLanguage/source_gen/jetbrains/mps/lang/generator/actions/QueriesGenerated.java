@@ -39,6 +39,12 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_CopySrcListMacro_7834938100936651351(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.LoopMacro")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "sourceNodesQuery", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.LoopMacro"), "sourceNodesQuery", true), true);
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1169570930693(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
