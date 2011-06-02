@@ -16,6 +16,7 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="workbench" />
   </component>
 </module>
