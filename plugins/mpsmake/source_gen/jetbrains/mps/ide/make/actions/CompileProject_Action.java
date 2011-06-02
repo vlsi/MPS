@@ -25,7 +25,7 @@ public class CompileProject_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(CompileProject_Action.class);
 
   public CompileProject_Action() {
-    super("Compile Project", "", ICON);
+    super("Compile Java Files", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

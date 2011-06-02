@@ -22,7 +22,7 @@ public class MakeModule_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(MakeModule_Action.class);
 
   public MakeModule_Action() {
-    super("Make", "", ICON);
+    super("Compile Java Files", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

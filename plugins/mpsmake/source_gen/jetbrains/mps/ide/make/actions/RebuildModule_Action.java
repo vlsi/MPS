@@ -22,7 +22,7 @@ public class RebuildModule_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(RebuildModule_Action.class);
 
   public RebuildModule_Action() {
-    super("Rebuild", "", ICON);
+    super("Recompile Java Files", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

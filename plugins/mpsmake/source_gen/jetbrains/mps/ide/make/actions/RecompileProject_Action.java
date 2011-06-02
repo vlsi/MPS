@@ -25,7 +25,7 @@ public class RecompileProject_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(RecompileProject_Action.class);
 
   public RecompileProject_Action() {
-    super("Recompile Project", "", ICON);
+    super("Recompile Java Files", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

@@ -66,7 +66,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5332171957773611161">
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="CleanAllModules" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Clean Java Files" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Clean Compiled Java Files" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.BuildMenu" />
     </node>
@@ -110,19 +110,19 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2017614408232613007">
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="CleanProject" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Clean Project" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Clean Compiled Java Files" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Project" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2017614408232613081">
       <property name="name" nameId="tpck.1169194664001" value="CompileProject" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Compile Project" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Compile Java Files" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Project" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2017614408232613132">
       <property name="name" nameId="tpck.1169194664001" value="RecompileProject" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Recompile Project" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Recompile Java Files" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Project" />
@@ -134,19 +134,19 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4753172061859438783">
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="CleanModule" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Clean" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Clean Compiled Java Files" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Module" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4753172061859438849">
       <property name="name" nameId="tpck.1169194664001" value="RebuildModule" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Rebuild" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Recompile Java Files" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Module" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4753172061859438882">
       <property name="name" nameId="tpck.1169194664001" value="MakeModule" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Make" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Compile Java Files" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Module" />
     </node>
