@@ -45,6 +45,7 @@ public class NameUtil {
   private static final Map<Character, String> ESCAPE_MAP = new HashMap<Character, String>();
 
   static {
+    ESCAPE_MAP.put('\000', "\\000");
     ESCAPE_MAP.put('\b', "\\b");
     ESCAPE_MAP.put('\t', "\\t");
     ESCAPE_MAP.put('\n', "\\n");
