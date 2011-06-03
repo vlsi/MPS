@@ -13,8 +13,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
 public abstract class GoToNeighbourRootActions {
-  private static Icon PREVIOUS_ROOT_ICON = IconLoader.getIcon("/actions/prevfile.png", Icons.class);
-  private static Icon NEXT_ROOT_ICON = IconLoader.getIcon("/actions/nextfile.png", Icons.class);
+  private static final Icon PREVIOUS_ROOT_ICON = IconLoader.getIcon("/actions/prevfile.png", Icons.class);
+  private static final Icon NEXT_ROOT_ICON = IconLoader.getIcon("/actions/nextfile.png", Icons.class);
 
   public GoToNeighbourRootActions() {
   }

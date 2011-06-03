@@ -195,6 +195,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorsGroup" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.NextPreviousTraverser" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
