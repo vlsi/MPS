@@ -82,7 +82,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.commands.structure.CommandDeclaration");
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart");
           }
         };
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
@@ -91,7 +91,7 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode builder = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.commands.structure.CommandBuilderExpression", null);
-                SLinkOperations.setTarget(builder, "command", (item), false);
+                SLinkOperations.setTarget(builder, "commandPart", (item), false);
                 return builder;
               }
 

@@ -13,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 public class CommandBuilderExpression extends Expression {
   public static final String concept = "jetbrains.mps.execution.commands.structure.CommandBuilderExpression";
   public static final String COMMAND = "command";
+  public static final String COMMAND_PART = "commandPart";
   public static final String ARGUMENT = "argument";
 
   public CommandBuilderExpression(SNode node) {
@@ -25,6 +26,14 @@ public class CommandBuilderExpression extends Expression {
 
   public void setCommand(CommandDeclaration node) {
     super.setReferent(CommandBuilderExpression.COMMAND, node);
+  }
+
+  public ExecuteCommandPart getCommandPart() {
+    return (ExecuteCommandPart) this.getReferent(ExecuteCommandPart.class, CommandBuilderExpression.COMMAND_PART);
+  }
+
+  public void setCommandPart(ExecuteCommandPart node) {
+    super.setReferent(CommandBuilderExpression.COMMAND_PART, node);
   }
 
   public int getArgumentsCount() {

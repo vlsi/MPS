@@ -69,7 +69,7 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
       case 2:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.BeforeTaskParameter"));
       case 3:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference"));
+        return new DataHolderConstraintsDescriptor(new BeforeTaskParameterReference_Constraints());
       default:
         return null;
     }

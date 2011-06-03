@@ -20,7 +20,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2401501559171345993">
       <property name="name" nameId="tpck.1169194664001" value="RunConfiguration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="fb9u.946964771156066336" resolveInfo="PersistentEditor" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="fb9u.946964771156066336" resolveInfo="PersistentConfiguration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2401501559171345994">
       <property name="name" nameId="tpck.1169194664001" value="RunConfigurationKind" />
@@ -50,7 +50,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2401501559171392633" resolveInfo="RunConfigurationExecutor" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7806358006983738927">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="ConfigurationFromExecutorReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -163,7 +163,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="editor" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="fb9u.946964771156066621" resolveInfo="PersistentEditor" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="fb9u.946964771156066621" resolveInfo="SettingsEditor" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="fb9u.946964771156066337" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4763274727405873310">
@@ -176,7 +176,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="configurationKind" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="2401501559171345994" resolveInfo="RunConfigurationType" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2401501559171345994" resolveInfo="RunConfigurationKind" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2401501559171392599">
       <property name="value" nameId="tpce.1105725733873" value="run configuration" />
@@ -237,7 +237,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="execute" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6139196002333163564" resolveInfo="Execute_Function" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6139196002333163564" resolveInfo="ExecuteConfiguration_Function" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6550182048787537895">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -268,7 +268,7 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6720907903633293832">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="debuggerConfiguration" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="86gq.6720907903633266421" resolveInfo="DebuggerConfigurations" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="86gq.6720907903633266421" resolveInfo="DebuggerConfiguration" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7806358006983646766">
       <property name="value" nameId="tpce.1105725733873" value="complex executor" />

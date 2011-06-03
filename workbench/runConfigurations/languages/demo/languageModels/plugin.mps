@@ -378,14 +378,15 @@
         <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.946964771156870353" id="4318884729311291896">
           <node role="process" roleId="uhxm.946964771156870354" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="4318884729311291898">
             <link role="command" roleId="rzqf.856705193941281782" targetNodeId="awpe.7991611468341333073" resolveInfo="javaNode" />
+            <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="awpe.6129022259108656950" resolveInfo="java" />
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="4318884729311291899">
-              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8669189765729911126" resolveInfo="programParameter" />
+              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.6129022259108656966" resolveInfo="programParameter" />
               <node role="value" roleId="rzqf.856705193941281766" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4318884729311291900">
                 <property name="value" nameId="tpee.1070475926801" value="Julia" />
               </node>
             </node>
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="4318884729311291901">
-              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8669189765729911129" resolveInfo="virtualMachineParameter" />
+              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.6129022259108656968" resolveInfo="virtualMachineParameter" />
               <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4318884729311291903">
                 <node role="operand" roleId="tpee.1197027771414" type="uhxm.DebuggerSettings_Parameter" typeId="uhxm.4816403309550879744" id="4318884729311291904" />
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4318884729311291905">
@@ -397,7 +398,7 @@
               </node>
             </node>
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="4318884729311291907">
-              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8669189765729911117" resolveInfo="node" />
+              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.6129022259108656953" resolveInfo="node" />
               <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5951219512641119385">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5951219512641119386">
                   <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="5951219512641119387">

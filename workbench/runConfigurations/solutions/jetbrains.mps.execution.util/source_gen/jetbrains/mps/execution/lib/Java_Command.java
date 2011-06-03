@@ -15,11 +15,13 @@ import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
-import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunParameters;
+import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
@@ -37,7 +39,6 @@ public class Java_Command {
   private String myJrePath = Java_Command.getJdkHome();
   private String myProgramParameter;
   private String myVirtualMachineParameter;
-  private String myClassName;
   private List<String> myClassPath = ListSequence.fromList(new ArrayList<String>());
   private String myDebuggerSettings;
 
@@ -72,13 +73,6 @@ public class Java_Command {
     return this;
   }
 
-  public Java_Command setClassName(String className) {
-    if (className != null) {
-      myClassName = className;
-    }
-    return this;
-  }
-
   public Java_Command setClassPath(List<String> classPath) {
     if (classPath != null) {
       myClassPath = classPath;
@@ -93,17 +87,17 @@ public class Java_Command {
     return this;
   }
 
-  public ProcessHandler createProcess() throws ExecutionException {
+  public ProcessHandler createProcess(String className) throws ExecutionException {
     String java = Java_Command.getJavaCommand(myJrePath);
     String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return Java_Command.protect(it);
       }
     }), Java_Command.ps());
-    if (StringUtils.isEmpty(myClassName)) {
+    if (StringUtils.isEmpty(className)) {
       throw new ExecutionException("Classname is empty");
     }
-    if (check_yvpt_a0d0a(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
+    if (check_yvpt_a0d0a0(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
       File tmpFile = FileUtil.createTmpFile();
       // we want to be sure that file is deleted, even when process is not started 
       tmpFile.deleteOnExit();
@@ -117,12 +111,30 @@ public class Java_Command {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build(myWorkingDirectory);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(className).append(myProgramParameter).build(myWorkingDirectory);
     }
+  }
+
+  public ProcessHandler createProcess(SNode node) throws ExecutionException {
+    return new Java_Command().setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setClassPath(Java_Command.getClasspath(node)).setDebuggerSettings(myDebuggerSettings).createProcess(Java_Command.getClassName(node));
+  }
+
+  public ProcessHandler createProcess(JavaRunParameters runParameters, SNode node) throws ExecutionException {
+    return new Java_Command().setJrePath(runParameters.getAlternativeJre()).setProgramParameter(runParameters.programParameters()).setVirtualMachineParameter(runParameters.vmOptions()).setWorkingDirectory(new File(runParameters.workingDirectory())).createProcess(node);
   }
 
   public static IDebugger getDebugger() {
     return getDebuggerConfiguration().getDebugger();
+  }
+
+  private static String getClassName(final SNode node) {
+    final Wrappers._T<String> className = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        className.value = TraceInfoUtil.getUnitName(node);
+      }
+    });
+    return className.value;
   }
 
   private static int getMaxCommandLine() {
@@ -230,7 +242,7 @@ public class Java_Command {
     };
   }
 
-  private static int check_yvpt_a0d0a(String checkedDotOperand) {
+  private static int check_yvpt_a0d0a0(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }

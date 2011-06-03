@@ -2,27 +2,18 @@
 <debugInfo>
   <unitInfo fileName="Commands_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.Commands_Language" />
   <unitInfo fileName="DebuggerSettingsCommandParameterDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration" />
-  <unitInfo fileName="ReportExecutionError.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ReportExecutionError" />
   <unitInfo fileName="CommandParameterDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandParameterDeclaration" />
-  <unitInfo fileName="ProcessType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessType" />
-  <unitInfo fileName="AbstractProcessBuilderPart.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.AbstractProcessBuilderPart" />
-  <unitInfo fileName="BuilderParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.BuilderParameter" />
-  <unitInfo fileName="BuilderBlockStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.BuilderBlockStatement" />
   <unitInfo fileName="CommandMethod.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandMethod" />
   <unitInfo fileName="CommandType.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandType" />
   <unitInfo fileName="ExplicitCommandParameterDeclaration.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration" />
-  <unitInfo fileName="ProcessBuilderPart.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderPart" />
   <unitInfo fileName="CommandReferenceExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandReferenceExpression" />
-  <unitInfo fileName="RedirectOutputExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.RedirectOutputExpression" />
-  <unitInfo fileName="ProcessBuilderKeyPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart" />
   <unitInfo fileName="CommandParameterReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandParameterReference" />
-  <unitInfo fileName="ReportErrorStatement.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ReportErrorStatement" />
   <unitInfo fileName="CommandParameterAssignment.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandParameterAssignment" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="70" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="ProcessBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderExpression" />
-  <unitInfo fileName="CommandBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandBuilderExpression" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="72" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="CommandBuilderExpression.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandBuilderExpression" />
   <unitInfo fileName="CommandDebuggerOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandDebuggerOperation" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor" />
-  <unitInfo fileName="CommandDeclaration.java" startLine="20" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandDeclaration" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="ExecuteCommandPart.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ExecuteCommandPart" />
+  <unitInfo fileName="CommandDeclaration.java" startLine="19" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.CommandDeclaration" />
 </debugInfo>
 

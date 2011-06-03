@@ -10,6 +10,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -51,7 +54,7 @@ public class CommandDeclaration_Behavior {
   }
 
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "execute", true), "statements", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "", false), "statements", true);
   }
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
@@ -60,9 +63,40 @@ public class CommandDeclaration_Behavior {
 
   public static List<SNode> call_getParameters_8478830098674430159(SNode thisNode) {
     if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(thisNode)) {
-      return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterDeclaration", true)).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(thisNode, "debuggerParameter", true)))).toListSequence();
+      return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "", false)).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(thisNode, "debuggerParameter", true)))).toListSequence();
     }
-    return SLinkOperations.getTargets(thisNode, "parameterDeclaration", true);
+    return SLinkOperations.getTargets(thisNode, "", false);
+  }
+
+  public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode thisNode) {
+    // we get all parameters generated into fields and select a list with uniquie names 
+    final Iterable<SNode> parameterDeclarations = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "executePart", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(it)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(it);
+          }
+        });
+      }
+    });
+    Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).<String>select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549117850(it);
+      }
+    }).distinct();
+    return Sequence.fromIterable(fieldNames).<SNode>translate(new ITranslator2<String, SNode>() {
+      public Iterable<SNode> translate(final String it) {
+        SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode decl) {
+            return eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0i(CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549117850(decl), it);
+          }
+        });
+        if (first == null) {
+          return new ArrayList<SNode>();
+        }
+        return Sequence.<SNode>singleton(first);
+      }
+    }).toListSequence();
   }
 
   public static String call_getSuffix_856705193941282112(SNode thisNode) {
@@ -116,6 +150,13 @@ public class CommandDeclaration_Behavior {
 
   public static String getGetDebuggerMethodName_856705193941282096() {
     return "getDebugger";
+  }
+
+  private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0i(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public static class QuotationClass_5aznw1_a0a0d {

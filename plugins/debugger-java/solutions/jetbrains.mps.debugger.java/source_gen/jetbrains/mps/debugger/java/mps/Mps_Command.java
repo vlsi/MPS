@@ -67,7 +67,7 @@ public class Mps_Command {
 
   public ProcessHandler createProcess() throws ExecutionException {
     String mpsProperties = "-Didea.config.path=" + myConfigurationPath + " " + "-Didea.system.path=" + mySystemPath;
-    return new Java_Command().setClassName("jetbrains.mps.Launcher").setClassPath(Mps_Command.getClassPath()).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties).setDebuggerSettings(myDebuggerSettings).setWorkingDirectory(new File(System.getProperty("user.dir"))).setJrePath(myJrePath).createProcess();
+    return new Java_Command().setClassPath(Mps_Command.getClassPath()).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties).setDebuggerSettings(myDebuggerSettings).setWorkingDirectory(new File(System.getProperty("user.dir"))).setJrePath(myJrePath).createProcess("jetbrains.mps.Launcher");
   }
 
   public static IDebugger getDebugger() {

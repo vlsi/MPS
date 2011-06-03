@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ec099g7sha7rdiyzuwxgxce3uezyoyv">
+<dependencies version="2" modelHash="-62xds8v7cdu9dczbxn7v2b0py25mr1o">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -22,7 +22,7 @@
   <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" hash="-8cu48di6ep5i8o2pci10okyteyfu6hg" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
-  <dep model="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)" hash="-ec099g7sha7rdiyzuwxgxce3uezyoyv" />
+  <dep model="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)" hash="-62xds8v7cdu9dczbxn7v2b0py25mr1o" />
   <dep model="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" hash="5zye1x1gm7ruxx2ur923k278pxk5jt2" />
   <common hash="6eic5xov1nhnsqv53neib3ne7veblp4" dependsOnNodes="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -46,10 +46,11 @@
     <file name="Configurations_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="2401501559171345993" name="RunConfiguration" hash="ah4qdxm28ope2wgn1r643n22mmd5r2x">
+  <source id="2401501559171345993" name="RunConfiguration" hash="-6i39p1rs4huz9bld3lt1gfilfpns8di">
     <dep root="2401501559171345994" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -84,7 +85,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RunConfigurationKind.java" />
   </source>
-  <source id="2401501559171392633" name="RunConfigurationExecutor" hash="-clqno7czt4tgoigzkcuunxx399amucx">
+  <source id="2401501559171392633" name="RunConfigurationExecutor" hash="-e259dmwpbm93tjtd6240hlacyxx56aa">
     <dep root="2401501559171345993" />
     <dep root="6139196002333163564" />
     <dep root="6550182048787537880" />
@@ -135,7 +136,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Project_Parameter.java" />
   </source>
-  <source id="7806358006983614956" name="ComplexRunConfigurationExecutor" hash="-3tojagntqk30xwm4wkxg8khqz50puld">
+  <source id="7806358006983614956" name="ComplexRunConfigurationExecutor" hash="-dqqf52dkgb33yoebw6p8ivt8eqwbkzh">
     <dep root="2401501559171392633" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -152,7 +153,7 @@
     <dep model="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" />
     <file name="ComplexRunConfigurationExecutor.java" />
   </source>
-  <source id="7806358006983738927" name="ConfigurationFromExecutorReference" hash="-edh8dm1covc1nfgzmsfgc712l98tfu4">
+  <source id="7806358006983738927" name="ConfigurationFromExecutorReference" hash="-brbqsntep7d4nc9xg1u3u6g3brmxp6f">
     <dep root="7037083547576022975" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />

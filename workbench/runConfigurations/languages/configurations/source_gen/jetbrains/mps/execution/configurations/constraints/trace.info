@@ -5,6 +5,7 @@
   <unitInfo fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="48" startPosition="27" endLine="52" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.ConfigurationFromExecutorReference_Constraints$2" />
   <unitInfo fileName="RunConfigurationExecutor_Constraints.java" startLine="25" startPosition="27" endLine="32" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationExecutor_Constraints$1" />
   <unitInfo fileName="ComplexRunConfigurationExecutor_Constraints.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ComplexRunConfigurationExecutor_Constraints" />
+  <unitInfo fileName="BeforeTaskParameterReference_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.BeforeTaskParameterReference_Constraints$1" />
   <unitInfo fileName="RunConfigurationSource_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationSource_Constraints$1" />
   <unitInfo fileName="RunConfigurationCreator_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationCreator_Constraints$1" />
   <unitInfo fileName="Create_ConceptFunction_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.configurations.constraints.Create_ConceptFunction_Constraints$1" />
@@ -12,6 +13,7 @@
   <unitInfo fileName="RunConfigurationProducerPart_Constraints.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationProducerPart_Constraints" />
   <unitInfo fileName="RunConfigurationProducer_Constraints.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationProducer_Constraints" />
   <unitInfo fileName="RunConfigurationExecutor_Constraints.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationExecutor_Constraints" />
+  <unitInfo fileName="BeforeTaskParameterReference_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.BeforeTaskParameterReference_Constraints" />
   <unitInfo fileName="RunConfigurationSource_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationSource_Constraints" />
   <unitInfo fileName="RunConfigurationCreator_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.RunConfigurationCreator_Constraints" />
   <unitInfo fileName="Create_ConceptFunction_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.Create_ConceptFunction_Constraints" />
@@ -49,6 +51,10 @@
   <root nodeId="7952658987872188475">
     <nodeInfo nodeId="7952658987872188478" fileName="RunConfigurationSource_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7952658987872188477" fileName="RunConfigurationSource_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="147" />
+  </root>
+  <root nodeId="8852113381329465494">
+    <nodeInfo nodeId="8852113381329465497" fileName="BeforeTaskParameterReference_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8852113381329465496" fileName="BeforeTaskParameterReference_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="164" />
   </root>
 </debugInfo>
 

@@ -25,8 +25,8 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.7806358006983614956" resolveInfo="ComplexRunConfigurationExecutor" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7806358006983738928">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.7806358006983738927" resolveInfo="ConfigurationReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.7806358006983738927" resolveInfo="ConfigurationFromExecutorReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4366236229294141339">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="producer" />
@@ -47,6 +47,10 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7952658987872188475">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="producer.source" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.4366236229294141334" resolveInfo="RunConfigurationSource" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8852113381329465494">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="before" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.6550182048787583936" resolveInfo="BeforeTaskParameterReference" />
     </node>
   </roots>
   <root id="1048802521465134864">
@@ -212,6 +216,25 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="7952658987872188484">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7952658987872188486">
                 <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.4366236229294149030" resolveInfo="RunConfigurationProducerPart" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="8852113381329465494">
+    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="8852113381329465495">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8852113381329465496">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8852113381329465497">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8852113381329465504">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8852113381329465499">
+              <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="8852113381329465498" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingRootOperation" typeId="tp25.1171310072040" id="8852113381329465503" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8852113381329465508">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8852113381329465510">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.7037083547576022975" resolveInfo="BeforeTask" />
               </node>
             </node>
           </node>

@@ -312,9 +312,9 @@ public class JavaConfigOptions extends JPanel {
     }
     javaOptions.programParameters(myThis.getProgramParameters());
     javaOptions.vmOptions(myThis.getVmOptions());
-    javaOptions.workingDirectory(javaOptions.workingDirectory());
-    javaOptions.useAlternativeJre((boolean) javaOptions.useAlternativeJre());
-    javaOptions.jrePath(javaOptions.jrePath());
+    javaOptions.workingDirectory(myThis.getWorkingDirectory());
+    javaOptions.useAlternativeJre(myThis.getUseAlternativeJRE());
+    javaOptions.jrePath(myThis.getJrePath());
   }
 
   public void dispose() {

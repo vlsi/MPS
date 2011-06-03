@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.runConfigurations.runtime;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.annotations.Nls;
 
 public class JavaRunParameters extends MultiTuple._5<String, String, String, String, Boolean> implements Cloneable {
   public JavaRunParameters() {
@@ -61,5 +62,13 @@ public class JavaRunParameters extends MultiTuple._5<String, String, String, Str
 
   public JavaRunParameters clone() {
     return new JavaRunParameters(this.programParameters(), this.vmOptions(), this.jrePath(), this.workingDirectory(), (boolean) this.useAlternativeJre());
+  }
+
+  @Nls
+  public String getAlternativeJre() {
+    if ((boolean) this.useAlternativeJre()) {
+      return this.jrePath();
+    }
+    return null;
   }
 }

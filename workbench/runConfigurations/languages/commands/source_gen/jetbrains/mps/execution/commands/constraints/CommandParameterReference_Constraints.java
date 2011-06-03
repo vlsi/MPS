@@ -15,7 +15,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
+import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommandParameterReference_Constraints extends ConstraintsDataHolder {
@@ -52,7 +52,7 @@ public class CommandParameterReference_Constraints extends ConstraintsDataHolder
       }
 
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-        return CommandDeclaration_Behavior.call_getParameters_8478830098674430159(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.execution.commands.structure.CommandDeclaration"));
+        return ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", false, false));
       }
 
       public SNodePointer getSearchScopeValidatorNodePointer() {
@@ -63,6 +63,6 @@ public class CommandParameterReference_Constraints extends ConstraintsDataHolder
   }
 
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getParentNode()), "jetbrains.mps.execution.commands.structure.CommandDeclaration");
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", false, false) != null);
   }
 }
