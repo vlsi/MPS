@@ -18,9 +18,8 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Arrays;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -80,26 +79,9 @@ public class NextPreviousTraverser {
     }
   }
 
-  private void assertKnownEditor() {
-    assert ListSequence.fromList(myChangeGroupBuilders).any(new IWhereFilter<ChangeGroupBuilder>() {
-      public boolean accept(ChangeGroupBuilder b) {
-        return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
-      }
-    });
-  }
-
-  private ChangeGroupBuilder getBuilder() {
-    assertKnownEditor();
+  @Nullable
+  private ChangeGroupBuilder getBuilderAsLeft() {
     return ListSequence.fromList(myChangeGroupBuilders).findFirst(new IWhereFilter<ChangeGroupBuilder>() {
-      public boolean accept(ChangeGroupBuilder b) {
-        return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
-      }
-    });
-  }
-
-  private boolean isEditorLeft() {
-    assertKnownEditor();
-    return ListSequence.fromList(myChangeGroupBuilders).any(new IWhereFilter<ChangeGroupBuilder>() {
       public boolean accept(ChangeGroupBuilder b) {
         return b.getLeftComponent() == myLastEditor;
       }
@@ -107,27 +89,66 @@ public class NextPreviousTraverser {
   }
 
   @Nullable
-  private ChangeGroup getNeighbourGroup(boolean previous) {
-    // TODO consider result editor 
-    final Wrappers._int currentY = new Wrappers._int(myLastEditor.getViewport().getViewPosition().y);
-    EditorCell selectedCell = myLastEditor.getSelectedCell();
-    if (selectedCell != null) {
-      currentY.value = selectedCell.getY();
+  private ChangeGroupBuilder getBuilderAsRight() {
+    return ListSequence.fromList(myChangeGroupBuilders).findFirst(new IWhereFilter<ChangeGroupBuilder>() {
+      public boolean accept(ChangeGroupBuilder b) {
+        return b.getRightComponent() == myLastEditor;
+      }
+    });
+  }
+
+  private int findNeighbourGroupAsLeftOrRight(final int currentY, boolean previous, final boolean left) {
+    assert ListSequence.fromList(myChangeGroupBuilders).any(new IWhereFilter<ChangeGroupBuilder>() {
+      public boolean accept(ChangeGroupBuilder b) {
+        return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
+      }
+    });
+
+    ChangeGroupBuilder builder = (left ?
+      getBuilderAsLeft() :
+      getBuilderAsRight()
+    );
+    if (builder == null) {
+      return -1;
     }
-    final boolean isLeft = isEditorLeft();
-    List<ChangeGroup> changeGroups = getBuilder().getChangeGroups();
+    List<ChangeGroup> changeGroups = builder.getChangeGroups();
+    ChangeGroup changeGroup;
     if (previous) {
-      return ListSequence.fromList(changeGroups).findLast(new IWhereFilter<ChangeGroup>() {
+      changeGroup = ListSequence.fromList(changeGroups).findLast(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup cg) {
-          return (int) cg.getBounds(isLeft).end() < currentY.value;
+          return (int) cg.getBounds(left).end() < currentY;
         }
       });
     } else {
-      return ListSequence.fromList(changeGroups).findFirst(new IWhereFilter<ChangeGroup>() {
+      changeGroup = ListSequence.fromList(changeGroups).findFirst(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup cg) {
-          return (int) cg.getBounds(isLeft).start() > currentY.value;
+          return (int) cg.getBounds(left).start() > currentY;
         }
       });
+    }
+    return (changeGroup == null ?
+      -1 :
+      (int) changeGroup.getBounds(left).start()
+    );
+  }
+
+  private int getNeighbourGroupY(boolean previous) {
+    // -1 means that group is not available 
+
+    int currentY = myLastEditor.getViewport().getViewPosition().y;
+    EditorCell selectedCell = myLastEditor.getSelectedCell();
+    if (selectedCell != null) {
+      currentY = selectedCell.getY();
+    }
+    int asLeft = findNeighbourGroupAsLeftOrRight(currentY, previous, true);
+    int asRight = findNeighbourGroupAsLeftOrRight(currentY, previous, false);
+    if (asLeft != -1 && asRight != -1) {
+      return (previous ?
+        Math.max(asLeft, asRight) :
+        Math.min(asLeft, asRight)
+      );
+    } else {
+      return Math.max(asLeft, asRight);
     }
   }
 
@@ -139,13 +160,8 @@ public class NextPreviousTraverser {
     return myNextAction;
   }
 
-  private void goToChangeGroup(@NotNull ChangeGroup group) {
-    int y = (int) ((isEditorLeft() ?
-      group.getLeftBounds() :
-      group.getRightBounds()
-    )).start();
-    EditorCell cell = myLastEditor.findCellWeak(1, y + 1);
-    myLastEditor.changeSelection(cell);
+  private void goToChangeGroup(int y) {
+    myLastEditor.changeSelection(myLastEditor.findCellWeak(1, y + 1));
   }
 
   private class TheAction extends BaseAction {
@@ -165,13 +181,13 @@ public class NextPreviousTraverser {
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-      assert getNeighbourGroup(myPrevious) != null;
-      goToChangeGroup(getNeighbourGroup(myPrevious));
+      assert getNeighbourGroupY(myPrevious) != -1;
+      goToChangeGroup(getNeighbourGroupY(myPrevious));
     }
 
     @Override
     protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
-      event.getPresentation().setEnabled(getNeighbourGroup(myPrevious) != null);
+      event.getPresentation().setEnabled(getNeighbourGroupY(myPrevious) != -1);
     }
   }
 }
