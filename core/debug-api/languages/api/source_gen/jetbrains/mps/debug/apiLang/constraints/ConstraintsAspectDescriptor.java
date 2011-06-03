@@ -34,10 +34,10 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerReference"));
       case 6:
         return new DataHolderConstraintsDescriptor(new CreateBreakpointOperation_Constraints());
-      case 7:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration"));
       case 10:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.GetDebuggerSettings_Function"));
+      case 7:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration"));
       default:
         return null;
     }
