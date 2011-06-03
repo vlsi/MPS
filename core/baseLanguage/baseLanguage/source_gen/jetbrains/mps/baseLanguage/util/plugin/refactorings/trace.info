@@ -6079,95 +6079,90 @@
     <unitInfo nodeId="8492459591399173316" fileName="FieldInitializationPlace.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" />
   </root>
   <root nodeId="8492459591399173347">
-    <nodeInfo nodeId="8492459591399173348" fileName="LocalVariableIntroducer.java" startLine="25" startPosition="38" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoring" />
-    <nodeInfo nodeId="6775277158921933014" fileName="LocalVariableIntroducer.java" startLine="26" startPosition="58" endLine="27" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponent" />
-    <nodeInfo nodeId="6775277158921933018" fileName="LocalVariableIntroducer.java" startLine="27" startPosition="44" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
-    <nodeInfo nodeId="8492459591399173360" fileName="LocalVariableIntroducer.java" startLine="30" startPosition="156" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921933031" fileName="LocalVariableIntroducer.java" startLine="31" startPosition="32" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921933024" fileName="LocalVariableIntroducer.java" startLine="32" startPosition="40" endLine="33" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921877756" fileName="LocalVariableIntroducer.java" startLine="39" startPosition="54" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921877859" fileName="LocalVariableIntroducer.java" startLine="40" startPosition="47" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921877779" fileName="LocalVariableIntroducer.java" startLine="45" startPosition="54" endLine="46" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921877862" fileName="LocalVariableIntroducer.java" startLine="46" startPosition="46" endLine="47" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921877799" fileName="LocalVariableIntroducer.java" startLine="49" startPosition="8" endLine="50" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6775277158921877814" fileName="LocalVariableIntroducer.java" startLine="50" startPosition="186" endLine="51" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921896108" fileName="LocalVariableIntroducer.java" startLine="52" startPosition="12" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6564671247051204828" fileName="LocalVariableIntroducer.java" startLine="57" startPosition="27" endLine="58" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6564671247051204847" fileName="LocalVariableIntroducer.java" startLine="59" startPosition="52" endLine="60" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6775277158921935451" fileName="LocalVariableIntroducer.java" startLine="61" startPosition="5" endLine="62" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7710932603589166290" fileName="LocalVariableIntroducer.java" startLine="62" startPosition="53" endLine="63" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921933128" fileName="LocalVariableIntroducer.java" startLine="63" startPosition="91" endLine="64" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6775277158921933147" fileName="LocalVariableIntroducer.java" startLine="66" startPosition="25" endLine="67" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921933111" fileName="LocalVariableIntroducer.java" startLine="67" startPosition="53" endLine="68" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7710932603589160141" fileName="LocalVariableIntroducer.java" startLine="70" startPosition="7" endLine="71" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7710932603589160163" fileName="LocalVariableIntroducer.java" startLine="72" startPosition="23" endLine="73" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6564671247051058488" fileName="LocalVariableIntroducer.java" startLine="75" startPosition="45" endLine="76" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6564671247051058472" fileName="LocalVariableIntroducer.java" startLine="76" startPosition="57" endLine="77" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212418935296537012" fileName="LocalVariableIntroducer.java" startLine="78" startPosition="14" endLine="79" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6775277158921932983" fileName="LocalVariableIntroducer.java" startLine="84" startPosition="44" endLine="85" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6775277158921877835" fileName="LocalVariableIntroducer.java" startLine="52" startPosition="10" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6564671247051058470" fileName="LocalVariableIntroducer.java" startLine="78" startPosition="12" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6564671247051204838" fileName="LocalVariableIntroducer.java" startLine="58" startPosition="141" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6775277158921933041" fileName="LocalVariableIntroducer.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRelativePoint#()Lcom/intellij/ui/awt/RelativePoint;" />
-    <nodeInfo nodeId="8492459591399173352" fileName="LocalVariableIntroducer.java" startLine="29" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariableIntroducer#(Ljava/awt/Frame;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceLocalVariableRefactoring;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="6775277158921877750" fileName="LocalVariableIntroducer.java" startLine="38" startPosition="71" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="6775277158921877773" fileName="LocalVariableIntroducer.java" startLine="44" startPosition="173" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="6775277158921933099" fileName="LocalVariableIntroducer.java" startLine="65" startPosition="67" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6775277158921877743" fileName="LocalVariableIntroducer.java" startLine="37" startPosition="40" endLine="43" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6775277158921877766" fileName="LocalVariableIntroducer.java" startLine="43" startPosition="8" endLine="49" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6775277158921933098" fileName="LocalVariableIntroducer.java" startLine="64" startPosition="63" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6564671247051040014" fileName="LocalVariableIntroducer.java" startLine="74" startPosition="12" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7710932603589160161" fileName="LocalVariableIntroducer.java" startLine="74" startPosition="10" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7710932603589160151" fileName="LocalVariableIntroducer.java" startLine="71" startPosition="93" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6775277158921877741" fileName="LocalVariableIntroducer.java" startLine="36" startPosition="47" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6775277158921877723" fileName="LocalVariableIntroducer.java" startLine="35" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lcom/intellij/openapi/actionSystem/DataContext;)V" />
-    <nodeInfo nodeId="6775277158921877714" fileName="LocalVariableIntroducer.java" startLine="56" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="askFinal#()V" />
-    <scopeInfo nodeId="6775277158921877836" fileName="LocalVariableIntroducer.java" startLine="52" startPosition="12" endLine="53" endPosition="17" />
-    <scopeInfo nodeId="6564671247051204839" fileName="LocalVariableIntroducer.java" startLine="59" startPosition="52" endLine="60" endPosition="13" />
-    <scopeInfo nodeId="7710932603589160152" fileName="LocalVariableIntroducer.java" startLine="72" startPosition="23" endLine="73" endPosition="43" />
-    <scopeInfo nodeId="6564671247051058471" fileName="LocalVariableIntroducer.java" startLine="78" startPosition="14" endLine="79" endPosition="67" />
-    <scopeInfo nodeId="6775277158921932982" fileName="LocalVariableIntroducer.java" startLine="84" startPosition="44" endLine="85" endPosition="108" />
-    <scopeInfo nodeId="6775277158921877755" fileName="LocalVariableIntroducer.java" startLine="39" startPosition="54" endLine="41" endPosition="21" />
-    <scopeInfo nodeId="6775277158921877778" fileName="LocalVariableIntroducer.java" startLine="45" startPosition="54" endLine="47" endPosition="21" />
-    <scopeInfo nodeId="6775277158921933100" fileName="LocalVariableIntroducer.java" startLine="66" startPosition="25" endLine="68" endPosition="62" />
-    <scopeInfo nodeId="6564671247051040015" fileName="LocalVariableIntroducer.java" startLine="75" startPosition="45" endLine="77" endPosition="96">
+    <nodeInfo nodeId="8492459591399173348" fileName="LocalVariableIntroducer.java" startLine="24" startPosition="38" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoring" />
+    <nodeInfo nodeId="6775277158921933014" fileName="LocalVariableIntroducer.java" startLine="25" startPosition="58" endLine="26" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponent" />
+    <nodeInfo nodeId="6775277158921933018" fileName="LocalVariableIntroducer.java" startLine="26" startPosition="44" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
+    <nodeInfo nodeId="8492459591399173360" fileName="LocalVariableIntroducer.java" startLine="29" startPosition="156" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921933031" fileName="LocalVariableIntroducer.java" startLine="30" startPosition="32" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921933024" fileName="LocalVariableIntroducer.java" startLine="31" startPosition="40" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921877756" fileName="LocalVariableIntroducer.java" startLine="38" startPosition="54" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921877859" fileName="LocalVariableIntroducer.java" startLine="39" startPosition="47" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921877779" fileName="LocalVariableIntroducer.java" startLine="44" startPosition="54" endLine="45" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921877862" fileName="LocalVariableIntroducer.java" startLine="45" startPosition="46" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921877799" fileName="LocalVariableIntroducer.java" startLine="48" startPosition="8" endLine="49" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6775277158921877814" fileName="LocalVariableIntroducer.java" startLine="49" startPosition="186" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921896108" fileName="LocalVariableIntroducer.java" startLine="51" startPosition="12" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921935451" fileName="LocalVariableIntroducer.java" startLine="56" startPosition="26" endLine="57" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7710932603589166290" fileName="LocalVariableIntroducer.java" startLine="57" startPosition="36" endLine="58" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921933128" fileName="LocalVariableIntroducer.java" startLine="58" startPosition="91" endLine="59" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6775277158921933147" fileName="LocalVariableIntroducer.java" startLine="61" startPosition="25" endLine="62" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921933111" fileName="LocalVariableIntroducer.java" startLine="62" startPosition="53" endLine="63" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7710932603589160141" fileName="LocalVariableIntroducer.java" startLine="65" startPosition="7" endLine="66" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7710932603589160163" fileName="LocalVariableIntroducer.java" startLine="67" startPosition="23" endLine="68" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6564671247051058488" fileName="LocalVariableIntroducer.java" startLine="70" startPosition="45" endLine="71" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6564671247051058472" fileName="LocalVariableIntroducer.java" startLine="71" startPosition="57" endLine="72" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212418935296537012" fileName="LocalVariableIntroducer.java" startLine="73" startPosition="14" endLine="74" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6775277158921932983" fileName="LocalVariableIntroducer.java" startLine="79" startPosition="44" endLine="80" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6775277158921877835" fileName="LocalVariableIntroducer.java" startLine="51" startPosition="10" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6564671247051058470" fileName="LocalVariableIntroducer.java" startLine="73" startPosition="12" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6775277158921933041" fileName="LocalVariableIntroducer.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRelativePoint#()Lcom/intellij/ui/awt/RelativePoint;" />
+    <nodeInfo nodeId="8492459591399173352" fileName="LocalVariableIntroducer.java" startLine="28" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariableIntroducer#(Ljava/awt/Frame;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceLocalVariableRefactoring;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="6775277158921877750" fileName="LocalVariableIntroducer.java" startLine="37" startPosition="71" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="6775277158921877773" fileName="LocalVariableIntroducer.java" startLine="43" startPosition="173" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="6775277158921933099" fileName="LocalVariableIntroducer.java" startLine="60" startPosition="67" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6775277158921877743" fileName="LocalVariableIntroducer.java" startLine="36" startPosition="40" endLine="42" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6775277158921877766" fileName="LocalVariableIntroducer.java" startLine="42" startPosition="8" endLine="48" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6775277158921933098" fileName="LocalVariableIntroducer.java" startLine="59" startPosition="63" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6564671247051040014" fileName="LocalVariableIntroducer.java" startLine="69" startPosition="12" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7710932603589160161" fileName="LocalVariableIntroducer.java" startLine="69" startPosition="10" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7710932603589160151" fileName="LocalVariableIntroducer.java" startLine="66" startPosition="93" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6775277158921877741" fileName="LocalVariableIntroducer.java" startLine="35" startPosition="47" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6775277158921877723" fileName="LocalVariableIntroducer.java" startLine="34" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lcom/intellij/openapi/actionSystem/DataContext;)V" />
+    <nodeInfo nodeId="6775277158921877714" fileName="LocalVariableIntroducer.java" startLine="55" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()V" />
+    <scopeInfo nodeId="6775277158921877836" fileName="LocalVariableIntroducer.java" startLine="51" startPosition="12" endLine="52" endPosition="16" />
+    <scopeInfo nodeId="7710932603589160152" fileName="LocalVariableIntroducer.java" startLine="67" startPosition="23" endLine="68" endPosition="43" />
+    <scopeInfo nodeId="6564671247051058471" fileName="LocalVariableIntroducer.java" startLine="73" startPosition="14" endLine="74" endPosition="67" />
+    <scopeInfo nodeId="6775277158921932982" fileName="LocalVariableIntroducer.java" startLine="79" startPosition="44" endLine="80" endPosition="108" />
+    <scopeInfo nodeId="6775277158921877755" fileName="LocalVariableIntroducer.java" startLine="38" startPosition="54" endLine="40" endPosition="20" />
+    <scopeInfo nodeId="6775277158921877778" fileName="LocalVariableIntroducer.java" startLine="44" startPosition="54" endLine="46" endPosition="20" />
+    <scopeInfo nodeId="6775277158921933100" fileName="LocalVariableIntroducer.java" startLine="61" startPosition="25" endLine="63" endPosition="62" />
+    <scopeInfo nodeId="6564671247051040015" fileName="LocalVariableIntroducer.java" startLine="70" startPosition="45" endLine="72" endPosition="96">
       <varInfo nodeId="6564671247051058489" varName="ecl" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399173355" fileName="LocalVariableIntroducer.java" startLine="30" startPosition="156" endLine="33" endPosition="36" />
-    <scopeInfo nodeId="6775277158921933041" fileName="LocalVariableIntroducer.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="8492459591399173352" fileName="LocalVariableIntroducer.java" startLine="29" startPosition="0" endLine="34" endPosition="3">
+    <scopeInfo nodeId="8492459591399173355" fileName="LocalVariableIntroducer.java" startLine="29" startPosition="156" endLine="32" endPosition="36" />
+    <scopeInfo nodeId="6775277158921933041" fileName="LocalVariableIntroducer.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="8492459591399173352" fileName="LocalVariableIntroducer.java" startLine="28" startPosition="0" endLine="33" endPosition="3">
       <varInfo nodeId="8492459591399173399" varName="frame" />
       <varInfo nodeId="8492459591399173403" varName="editorContext" />
       <varInfo nodeId="6775277158921933036" varName="editorComponent" />
       <varInfo nodeId="8492459591399173401" varName="refactoring" />
     </scopeInfo>
-    <scopeInfo nodeId="6775277158921877750" fileName="LocalVariableIntroducer.java" startLine="38" startPosition="71" endLine="43" endPosition="0">
+    <scopeInfo nodeId="6775277158921877750" fileName="LocalVariableIntroducer.java" startLine="37" startPosition="71" endLine="42" endPosition="0">
       <varInfo nodeId="6775277158921877753" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6775277158921877773" fileName="LocalVariableIntroducer.java" startLine="44" startPosition="173" endLine="49" endPosition="0">
+    <scopeInfo nodeId="6775277158921877773" fileName="LocalVariableIntroducer.java" startLine="43" startPosition="173" endLine="48" endPosition="0">
       <varInfo nodeId="6775277158921877776" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6775277158921933099" fileName="LocalVariableIntroducer.java" startLine="65" startPosition="67" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="7710932603589160162" fileName="LocalVariableIntroducer.java" startLine="74" startPosition="12" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="6775277158921877742" fileName="LocalVariableIntroducer.java" startLine="37" startPosition="40" endLine="51" endPosition="37">
+    <scopeInfo nodeId="6775277158921933099" fileName="LocalVariableIntroducer.java" startLine="60" startPosition="67" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="7710932603589160162" fileName="LocalVariableIntroducer.java" startLine="69" startPosition="12" endLine="75" endPosition="7" />
+    <scopeInfo nodeId="6775277158921877742" fileName="LocalVariableIntroducer.java" startLine="36" startPosition="40" endLine="50" endPosition="37">
       <varInfo nodeId="6775277158921877800" varName="popup" />
       <varInfo nodeId="6775277158921877767" varName="allOccurences" />
       <varInfo nodeId="6775277158921877744" varName="thisOnly" />
     </scopeInfo>
-    <scopeInfo nodeId="6775277158921877726" fileName="LocalVariableIntroducer.java" startLine="36" startPosition="47" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="6775277158921877723" fileName="LocalVariableIntroducer.java" startLine="35" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="6775277158921877865" varName="dataContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6775277158921877717" fileName="LocalVariableIntroducer.java" startLine="57" startPosition="27" endLine="81" endPosition="5">
+    <scopeInfo nodeId="6775277158921877726" fileName="LocalVariableIntroducer.java" startLine="35" startPosition="47" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="6775277158921877717" fileName="LocalVariableIntroducer.java" startLine="56" startPosition="26" endLine="76" endPosition="5">
       <varInfo nodeId="6775277158921933129" varName="result" />
       <varInfo nodeId="7710932603589160142" varName="cell" />
-      <varInfo nodeId="6564671247051204829" varName="answer" />
     </scopeInfo>
-    <scopeInfo nodeId="6775277158921877714" fileName="LocalVariableIntroducer.java" startLine="56" startPosition="0" endLine="83" endPosition="0" />
-    <unitInfo nodeId="6775277158921877748" fileName="LocalVariableIntroducer.java" startLine="38" startPosition="30" endLine="43" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer$1" />
-    <unitInfo nodeId="6775277158921877771" fileName="LocalVariableIntroducer.java" startLine="44" startPosition="35" endLine="49" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer$2" />
-    <unitInfo nodeId="6775277158921933099" fileName="LocalVariableIntroducer.java" startLine="65" startPosition="55" endLine="70" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer$3" />
-    <unitInfo nodeId="8492459591399173347" fileName="LocalVariableIntroducer.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer" />
+    <scopeInfo nodeId="6775277158921877723" fileName="LocalVariableIntroducer.java" startLine="34" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="6775277158921877865" varName="dataContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6775277158921877714" fileName="LocalVariableIntroducer.java" startLine="55" startPosition="0" endLine="78" endPosition="0" />
+    <unitInfo nodeId="6775277158921877748" fileName="LocalVariableIntroducer.java" startLine="37" startPosition="30" endLine="42" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer$1" />
+    <unitInfo nodeId="6775277158921877771" fileName="LocalVariableIntroducer.java" startLine="43" startPosition="35" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer$2" />
+    <unitInfo nodeId="6775277158921933099" fileName="LocalVariableIntroducer.java" startLine="60" startPosition="55" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer$3" />
+    <unitInfo nodeId="8492459591399173347" fileName="LocalVariableIntroducer.java" startLine="24" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.LocalVariableIntroducer" />
   </root>
   <root nodeId="8492459591399173414">
     <nodeInfo nodeId="8492459591399173423" fileName="ExtractMethodFromExpressionRefactoring.java" startLine="19" startPosition="97" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
