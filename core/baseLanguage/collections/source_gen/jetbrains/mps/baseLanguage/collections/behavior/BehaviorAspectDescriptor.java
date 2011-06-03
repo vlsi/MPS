@@ -4,334 +4,337 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType", "jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation", "jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", "jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", "jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", "jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.AllConstant", "jetbrains.mps.baseLanguage.collections.structure.AllOperation", "jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation", "jetbrains.mps.baseLanguage.collections.structure.AnyOperation", "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation", "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", "jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation", "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", "jetbrains.mps.baseLanguage.collections.structure.ConcatOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType", "jetbrains.mps.baseLanguage.collections.structure.ContainsAllOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration", "jetbrains.mps.baseLanguage.collections.structure.CustomContainers", "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", "jetbrains.mps.baseLanguage.collections.structure.CutOperation", "jetbrains.mps.baseLanguage.collections.structure.DequeType", "jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation", "jetbrains.mps.baseLanguage.collections.structure.DistinctOperation", "jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", "jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation", "jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation", "jetbrains.mps.baseLanguage.collections.structure.FindLastOperation", "jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation", "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation", "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation", "jetbrains.mps.baseLanguage.collections.structure.GetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation", "jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation", "jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", "jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", "jetbrains.mps.baseLanguage.collections.structure.GetLastOperation", "jetbrains.mps.baseLanguage.collections.structure.GetNextOperation", "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation", "jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", "jetbrains.mps.baseLanguage.collections.structure.HasNextOperation", "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", "jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation", "jetbrains.mps.baseLanguage.collections.structure.IDequeOperation", "jetbrains.mps.baseLanguage.collections.structure.IListOperation", "jetbrains.mps.baseLanguage.collections.structure.IQueueOperation", "jetbrains.mps.baseLanguage.collections.structure.IStackOperation", "jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.IntersectOperation", "jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation", "jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation", "jetbrains.mps.baseLanguage.collections.structure.IteratorType", "jetbrains.mps.baseLanguage.collections.structure.JoinOperation", "jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation", "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", "jetbrains.mps.baseLanguage.collections.structure.LinkedListType", "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", "jetbrains.mps.baseLanguage.collections.structure.ListType", "jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", "jetbrains.mps.baseLanguage.collections.structure.MapElement", "jetbrains.mps.baseLanguage.collections.structure.MapEntry", "jetbrains.mps.baseLanguage.collections.structure.MapInitializer", "jetbrains.mps.baseLanguage.collections.structure.MapOperation", "jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", "jetbrains.mps.baseLanguage.collections.structure.MapType", "jetbrains.mps.baseLanguage.collections.structure.MappingType", "jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation", "jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.PageOperation", "jetbrains.mps.baseLanguage.collections.structure.PeekOperation", "jetbrains.mps.baseLanguage.collections.structure.PopOperation", "jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator", "jetbrains.mps.baseLanguage.collections.structure.PushOperation", "jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", "jetbrains.mps.baseLanguage.collections.structure.QueueType", "jetbrains.mps.baseLanguage.collections.structure.ReduceLeftOperation", "jetbrains.mps.baseLanguage.collections.structure.ReduceRightOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation", "jetbrains.mps.baseLanguage.collections.structure.ReverseOperation", "jetbrains.mps.baseLanguage.collections.structure.SelectOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceType", "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SetType", "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SkipOperation", "jetbrains.mps.baseLanguage.collections.structure.SkipStatement", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", "jetbrains.mps.baseLanguage.collections.structure.SortDirection", "jetbrains.mps.baseLanguage.collections.structure.SortOperation", "jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation", "jetbrains.mps.baseLanguage.collections.structure.SortedMapType", "jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation", "jetbrains.mps.baseLanguage.collections.structure.SortedSetType", "jetbrains.mps.baseLanguage.collections.structure.StackType", "jetbrains.mps.baseLanguage.collections.structure.StopStatement", "jetbrains.mps.baseLanguage.collections.structure.SubListOperation", "jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", "jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TailListOperation", "jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", "jetbrains.mps.baseLanguage.collections.structure.TailOperation", "jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TakeOperation", "jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation", "jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.ToListOperation", "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation", "jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator", "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator", "jetbrains.mps.baseLanguage.collections.structure.UnionOperation", "jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation", "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation", "jetbrains.mps.baseLanguage.collections.structure.WhereOperation"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1384755749:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 82:
         return new ListType_BehaviorDescriptor();
-      case 1670947326:
+      case 117:
         return new SequenceType_BehaviorDescriptor();
-      case -760619741:
+      case 116:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.SequenceOperation 
         return null;
-      case -1402435221:
+      case 143:
         return new ToListOperation_BehaviorDescriptor();
-      case -613576696:
+      case 43:
         return new ForEachStatement_BehaviorDescriptor();
-      case 880694728:
+      case 45:
         return new ForEachVariableReference_BehaviorDescriptor();
-      case 590033409:
+      case 80:
         return new ListCreatorWithInit_BehaviorDescriptor();
-      case 560388041:
+      case 8:
         return new AddElementOperation_BehaviorDescriptor();
-      case 496250253:
+      case 6:
         return new AddAllElementsOperation_BehaviorDescriptor();
-      case -1030429570:
+      case 47:
         return new GetElementOperation_BehaviorDescriptor();
-      case -1443641197:
+      case 55:
         return new GetSizeOperation_BehaviorDescriptor();
-      case 402205706:
+      case 49:
         return new GetFirstOperation_BehaviorDescriptor();
-      case -420862905:
+      case 71:
         return new IsEmptyOperation_BehaviorDescriptor();
-      case 618540446:
+      case 53:
         return new GetLastOperation_BehaviorDescriptor();
-      case -531433966:
+      case 107:
         return new RemoveElementOperation_BehaviorDescriptor();
-      case -719936559:
+      case 50:
         return new GetIndexOfOperation_BehaviorDescriptor();
-      case -1985861499:
+      case 26:
         return new ContainsOperation_BehaviorDescriptor();
-      case 1671547813:
+      case 122:
         return new SkipOperation_BehaviorDescriptor();
-      case -1344936547:
+      case 140:
         return new TakeOperation_BehaviorDescriptor();
-      case -1573453675:
+      case 95:
         return new PageOperation_BehaviorDescriptor();
-      case 826670934:
+      case 104:
         return new RemoveAllElementsOperation_BehaviorDescriptor();
-      case 388515464:
+      case 113:
         return new ReverseOperation_BehaviorDescriptor();
-      case 1361778560:
+      case 72:
         return new IsNotEmptyOperation_BehaviorDescriptor();
-      case 1711372795:
+      case 147:
         return new UnionOperation_BehaviorDescriptor();
-      case -1339257821:
+      case 17:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.BinaryOperation 
         return null;
-      case -855278549:
+      case 70:
         return new IntersectOperation_BehaviorDescriptor();
-      case 1842778768:
+      case 38:
         return new ExcludeOperation_BehaviorDescriptor();
-      case -216162178:
+      case 125:
         return new SortDirection_BehaviorDescriptor();
-      case 2066749512:
+      case 35:
         return new DistinctOperation_BehaviorDescriptor();
-      case -1140922768:
+      case 22:
         return new ConcatOperation_BehaviorDescriptor();
-      case 1413678156:
+      case 141:
         return new ToArrayOperation_BehaviorDescriptor();
-      case -2022286989:
+      case 90:
         return new MapType_BehaviorDescriptor();
-      case -189089407:
+      case 58:
         return new HashMapCreator_BehaviorDescriptor();
-      case -1255080413:
+      case 84:
         return new MapElement_BehaviorDescriptor();
-      case -1936503802:
+      case 88:
         return new MapOperationExpression_BehaviorDescriptor();
-      case -1620212018:
+      case 87:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.MapOperation 
         return null;
-      case -459308566:
+      case 25:
         return new ContainsKeyOperation_BehaviorDescriptor();
-      case -566985728:
+      case 52:
         return new GetKeysOperation_BehaviorDescriptor();
-      case -1141269879:
+      case 86:
         return new MapInitializer_BehaviorDescriptor();
-      case 1719436633:
+      case 85:
         return new MapEntry_BehaviorDescriptor();
-      case -1889330838:
+      case 89:
         return new MapRemoveOperation_BehaviorDescriptor();
-      case -1274565989:
+      case 142:
         return new ToIteratorOperation_BehaviorDescriptor();
-      case 1870797971:
+      case 83:
         return new MapClearOperation_BehaviorDescriptor();
-      case -1120324388:
+      case 144:
         return new TranslateOperation_BehaviorDescriptor();
-      case -1677889821:
+      case 150:
         return new WhereOperation_BehaviorDescriptor();
-      case -483242616:
+      case 114:
         return new SelectOperation_BehaviorDescriptor();
-      case 1255892294:
+      case 124:
         return new SmartClosureParameterDeclaration_BehaviorDescriptor();
-      case 431700710:
+      case 69:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation 
         return null;
-      case -239075282:
+      case 149:
         return new VisitAllOperation_BehaviorDescriptor();
-      case -693467618:
+      case 34:
         return new DisjunctOperation_BehaviorDescriptor();
-      case -1885835674:
+      case 126:
         return new SortOperation_BehaviorDescriptor();
-      case -672538595:
+      case 18:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.ChunkOperation 
         return null;
-      case -981414744:
+      case 32:
         return new CutOperation_BehaviorDescriptor();
-      case 873371636:
+      case 138:
         return new TailOperation_BehaviorDescriptor();
-      case 250348784:
+      case 21:
         return new ComparatorSortOperation_BehaviorDescriptor();
-      case -1892399384:
+      case 115:
         return new SequenceCreator_BehaviorDescriptor();
-      case -2076303443:
+      case 123:
         return new SkipStatement_BehaviorDescriptor();
-      case 1188634762:
+      case 132:
         return new StopStatement_BehaviorDescriptor();
-      case -1546668473:
+      case 68:
         return new InsertElementOperation_BehaviorDescriptor();
-      case 1720809866:
+      case 118:
         return new SetElementOperation_BehaviorDescriptor();
-      case 1611789815:
+      case 81:
         return new ListElementAccessExpression_BehaviorDescriptor();
-      case -674526253:
+      case 39:
         return new FindFirstOperation_BehaviorDescriptor();
-      case 583807157:
+      case 40:
         return new FindLastOperation_BehaviorDescriptor();
-      case -874021511:
+      case 119:
         return new SetType_BehaviorDescriptor();
-      case -1626746949:
+      case 59:
         return new HashSetCreator_BehaviorDescriptor();
-      case 1484522698:
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation 
         return null;
-      case -305569905:
+      case 11:
         return new AddSetElementOperation_BehaviorDescriptor();
-      case -987647834:
+      case 111:
         return new RemoveSetElementOperation_BehaviorDescriptor();
-      case 1106018673:
+      case 7:
         return new AddAllSetElementsOperation_BehaviorDescriptor();
-      case 603483912:
+      case 105:
         return new RemoveAllSetElementsOperation_BehaviorDescriptor();
-      case -563200881:
+      case 20:
         return new ClearSetOperation_BehaviorDescriptor();
-      case -629557166:
+      case 78:
         return new LinkedListCreator_BehaviorDescriptor();
-      case 81056093:
+      case 9:
         return new AddFirstElementOperation_BehaviorDescriptor();
-      case 419599231:
+      case 10:
         return new AddLastElementOperation_BehaviorDescriptor();
-      case -1218016603:
+      case 106:
         return new RemoveAtElementOperation_BehaviorDescriptor();
-      case 1881580025:
+      case 19:
         return new ClearAllElementsOperation_BehaviorDescriptor();
-      case 1734162612:
+      case 108:
         return new RemoveFirstElementOperation_BehaviorDescriptor();
-      case 750019912:
+      case 109:
         return new RemoveLastElementOperation_BehaviorDescriptor();
-      case -504553092:
+      case 36:
         return new DowncastExpression_BehaviorDescriptor();
-      case 1766577214:
+      case 15:
         return new AnyOperation_BehaviorDescriptor();
-      case -674779095:
+      case 13:
         return new AllOperation_BehaviorDescriptor();
-      case 955469955:
+      case 121:
         return new SingletonSequenceCreator_BehaviorDescriptor();
-      case 6876230:
+      case 51:
         return new GetIteratorOperation_BehaviorDescriptor();
-      case 1390548011:
+      case 73:
         return new IteratorType_BehaviorDescriptor();
-      case -938587628:
+      case 3:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation 
         return null;
-      case -1586972387:
+      case 57:
         return new HasNextOperation_BehaviorDescriptor();
-      case 153243105:
+      case 54:
         return new GetNextOperation_BehaviorDescriptor();
-      case 1224360609:
+      case 46:
         return new GetCurrentOperation_BehaviorDescriptor();
-      case 903459296:
+      case 93:
         return new MoveNextOperation_BehaviorDescriptor();
-      case 679738305:
+      case 37:
         return new EnumeratorType_BehaviorDescriptor();
-      case 1032120510:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation 
         return null;
-      case -910178704:
+      case 48:
         return new GetEnumeratorOperation_BehaviorDescriptor();
-      case 1344179088:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator 
         return null;
-      case 49522850:
+      case 12:
         return new AllConstant_BehaviorDescriptor();
-      case -1373347176:
+      case 27:
         return new ContainsValueOperation_BehaviorDescriptor();
-      case 1431857490:
+      case 56:
         return new GetValuesOperation_BehaviorDescriptor();
-      case -199312410:
+      case 23:
         return new ContainerIteratorType_BehaviorDescriptor();
-      case -2122972416:
+      case 110:
         return new RemoveOperation_BehaviorDescriptor();
-      case 913393082:
+      case 76:
         return new LinkedHashMapCreator_BehaviorDescriptor();
-      case -524264460:
+      case 77:
         return new LinkedHashSetCreator_BehaviorDescriptor();
-      case 1561919030:
+      case 128:
         return new SortedMapType_BehaviorDescriptor();
-      case 929986577:
+      case 145:
         return new TreeMapCreator_BehaviorDescriptor();
-      case 647128043:
+      case 127:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation 
         return null;
-      case -1138266290:
+      case 61:
         return new HeadMapOperation_BehaviorDescriptor();
-      case 1788259774:
+      case 137:
         return new TailMapOperation_BehaviorDescriptor();
-      case -61211768:
+      case 134:
         return new SubMapOperation_BehaviorDescriptor();
-      case -1584782788:
+      case 130:
         return new SortedSetType_BehaviorDescriptor();
-      case -507670965:
+      case 146:
         return new TreeSetCreator_BehaviorDescriptor();
-      case 2037699493:
+      case 129:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation 
         return null;
-      case 252305160:
+      case 62:
         return new HeadSetOperation_BehaviorDescriptor();
-      case -1116136072:
+      case 139:
         return new TailSetOperation_BehaviorDescriptor();
-      case 1329359682:
+      case 135:
         return new SubSetOperation_BehaviorDescriptor();
-      case 1997672401:
+      case 16:
         return new AsSequenceOperation_BehaviorDescriptor();
-      case -737272475:
+      case 91:
         return new MappingType_BehaviorDescriptor();
-      case 926565466:
+      case 74:
         return new JoinOperation_BehaviorDescriptor();
-      case 809731934:
+      case 4:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation 
         return null;
-      case -1343102187:
+      case 148:
         return new ValueAccessOperation_BehaviorDescriptor();
-      case 2063685927:
+      case 75:
         return new KeyAccessOperation_BehaviorDescriptor();
-      case 285362573:
+      case 92:
         return new MappingsSetOperation_BehaviorDescriptor();
-      case -329753806:
+      case 100:
         return new PutAllOperation_BehaviorDescriptor();
-      case -483119256:
+      case 101:
         return new QueueType_BehaviorDescriptor();
-      case 261938774:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType 
         return null;
-      case 1483900279:
+      case 33:
         return new DequeType_BehaviorDescriptor();
-      case 2106493292:
+      case 63:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.IContainerOperation 
         return null;
-      case 796957475:
+      case 65:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.IListOperation 
         return null;
-      case 1169068508:
+      case 66:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.IQueueOperation 
         return null;
-      case -1310702241:
+      case 131:
         return new StackType_BehaviorDescriptor();
-      case 1099869485:
+      case 64:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.IDequeOperation 
         return null;
-      case 1036295749:
+      case 67:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.IStackOperation 
         return null;
-      case -620479111:
+      case 97:
         return new PopOperation_BehaviorDescriptor();
-      case 330080362:
+      case 99:
         return new PushOperation_BehaviorDescriptor();
-      case 1869622786:
+      case 98:
         return new PriorityQueueCreator_BehaviorDescriptor();
-      case 1832171732:
+      case 79:
         return new LinkedListType_BehaviorDescriptor();
-      case -1370452546:
+      case 120:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation 
         return null;
-      case 868177908:
+      case 94:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation 
         return null;
-      case -411683257:
+      case 112:
         return new RemoveWhereOperation_BehaviorDescriptor();
-      case 107525983:
+      case 14:
         return new AlsoSortOperation_BehaviorDescriptor();
-      case 1110782184:
+      case 24:
         return new ContainsAllOperation_BehaviorDescriptor();
-      case -1319094804:
+      case 133:
         return new SubListOperation_BehaviorDescriptor();
-      case 1357698889:
+      case 96:
         return new PeekOperation_BehaviorDescriptor();
-      case -348046618:
+      case 60:
         return new HeadListOperation_BehaviorDescriptor();
-      case 179948150:
+      case 136:
         return new TailListOperation_BehaviorDescriptor();
-      case -1922496147:
+      case 29:
         return new CustomContainerDeclaration_BehaviorDescriptor();
-      case -2132191162:
+      case 30:
         return new CustomContainers_BehaviorDescriptor();
-      case -426375777:
+      case 28:
         return new CustomContainerCreator_BehaviorDescriptor();
-      case -1132525724:
+      case 31:
         return new CustomMapCreator_BehaviorDescriptor();
-      case 2123019459:
+      case 44:
         return new ForEachVariable_BehaviorDescriptor();
-      case 1256368279:
+      case 102:
         return new ReduceLeftOperation_BehaviorDescriptor();
-      case 946669076:
+      case 103:
         return new ReduceRightOperation_BehaviorDescriptor();
-      case 1202327836:
+      case 41:
         return new FoldLeftOperation_BehaviorDescriptor();
-      case -728584657:
+      case 42:
         return new FoldRightOperation_BehaviorDescriptor();
       default:
         return null;

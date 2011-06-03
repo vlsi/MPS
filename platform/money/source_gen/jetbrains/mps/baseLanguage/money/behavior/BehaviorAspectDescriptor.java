@@ -4,27 +4,30 @@ package jetbrains.mps.baseLanguage.money.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyCreator", "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyType"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1002118425:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 4:
         return new MoneyLiteral_BehaviorDescriptor();
-      case 1060878338:
+      case 6:
         return new MoneyType_BehaviorDescriptor();
-      case -156024220:
+      case 0:
         return new MoneyCreator_BehaviorDescriptor();
-      case 1229314471:
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall 
         return null;
-      case -1606837499:
+      case 1:
         return new MoneyGetAmountMethodCall_BehaviorDescriptor();
-      case 323417086:
+      case 2:
         return new MoneyGetCurrencyMethodCall_BehaviorDescriptor();
-      case 1525470265:
+      case 3:
         return new MoneyIsZeroMethodCall_BehaviorDescriptor();
       default:
         return null;

@@ -244,19 +244,19 @@
     <unitInfo nodeId="1560298786499493158" fileName="SolutionChooser.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SolutionChooser" />
   </root>
   <root nodeId="1560298786499495733">
-    <nodeInfo nodeId="1560298786499495738" fileName="StubRootChooser.java" startLine="14" startPosition="75" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
+    <nodeInfo nodeId="1560298786499495738" fileName="StubRootChooser.java" startLine="14" startPosition="69" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="1560298786499495746" fileName="StubRootChooser.java" startLine="17" startPosition="47" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499495757" fileName="StubRootChooser.java" startLine="21" startPosition="42" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495757" fileName="StubRootChooser.java" startLine="21" startPosition="36" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499495762" fileName="StubRootChooser.java" startLine="22" startPosition="52" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499495767" fileName="StubRootChooser.java" startLine="23" startPosition="64" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495779" fileName="StubRootChooser.java" startLine="24" startPosition="85" endLine="25" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495791" fileName="StubRootChooser.java" startLine="26" startPosition="30" endLine="27" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495796" fileName="StubRootChooser.java" startLine="27" startPosition="50" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499495779" fileName="StubRootChooser.java" startLine="24" startPosition="85" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495791" fileName="StubRootChooser.java" startLine="26" startPosition="30" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495796" fileName="StubRootChooser.java" startLine="27" startPosition="38" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8571970830724245316" fileName="StubRootChooser.java" startLine="28" startPosition="34" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499495803" fileName="StubRootChooser.java" startLine="29" startPosition="46" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499495808" fileName="StubRootChooser.java" startLine="31" startPosition="5" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499495741" fileName="StubRootChooser.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubRootChooser#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;)V" />
-    <nodeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="25" startPosition="68" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="25" startPosition="56" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1560298786499495752" fileName="StubRootChooser.java" startLine="20" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/util/List;" />
     <scopeInfo nodeId="1560298786499495745" fileName="StubRootChooser.java" startLine="17" startPosition="47" endLine="18" endPosition="20" />
     <scopeInfo nodeId="1560298786499495741" fileName="StubRootChooser.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
@@ -265,10 +265,10 @@
     <scopeInfo nodeId="1560298786499495790" fileName="StubRootChooser.java" startLine="26" startPosition="30" endLine="30" endPosition="22">
       <varInfo nodeId="1560298786499495792" varName="sme" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="25" startPosition="68" endLine="31" endPosition="5">
+    <scopeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="25" startPosition="56" endLine="31" endPosition="5">
       <varInfo nodeId="1560298786499495788" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499495756" fileName="StubRootChooser.java" startLine="21" startPosition="42" endLine="32" endPosition="18">
+    <scopeInfo nodeId="1560298786499495756" fileName="StubRootChooser.java" startLine="21" startPosition="36" endLine="32" endPosition="18">
       <varInfo nodeId="1560298786499495780" varName="result" />
       <varInfo nodeId="1560298786499495768" varName="files" />
       <varInfo nodeId="1560298786499495758" varName="chooser" />

@@ -4,28 +4,31 @@ package jetbrains.mps.nanoj.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.nanoj.structure.MinusExpression", "jetbrains.mps.nanoj.structure.NanoClass", "jetbrains.mps.nanoj.structure.NanoExpression", "jetbrains.mps.nanoj.structure.NanoStatement", "jetbrains.mps.nanoj.structure.NanoStatementList", "jetbrains.mps.nanoj.structure.VarDecl", "jetbrains.mps.nanoj.structure.VarDeclReference"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1417927617:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 0:
         return new MinusExpression_BehaviorDescriptor();
-      case -1464384133:
+      case 1:
         return new NanoClass_BehaviorDescriptor();
-      case 1058499720:
+      case 5:
         return new VarDecl_BehaviorDescriptor();
-      case -1967265872:
+      case 4:
         return new NanoStatementList_BehaviorDescriptor();
-      case 1839857781:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.nanoj.structure.NanoExpression 
         return null;
-      case -859501582:
+      case 3:
         // interface or abstract concept behavior jetbrains.mps.nanoj.structure.NanoStatement 
         return null;
-      case -841774173:
+      case 6:
         return new VarDeclReference_BehaviorDescriptor();
       default:
         return null;

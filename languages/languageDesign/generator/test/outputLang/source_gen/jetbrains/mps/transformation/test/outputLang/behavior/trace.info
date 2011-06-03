@@ -8,7 +8,7 @@
   <unitInfo fileName="CustomRoot_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_Behavior" />
   <unitInfo fileName="CustomStatement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatement_BehaviorDescriptor" />
   <unitInfo fileName="OutputRoot_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.OutputRoot_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2511103526757027810">
     <scopeInfo nodeId="2511103526757027812" fileName="CustomRoot_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

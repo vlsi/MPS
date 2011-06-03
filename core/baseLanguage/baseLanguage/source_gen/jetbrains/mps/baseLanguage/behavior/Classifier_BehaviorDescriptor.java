@@ -25,20 +25,8 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return IMemberContainer_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
   }
 
-  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
-    return Classifier_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
-  }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return Classifier_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  public boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
-    return Classifier_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
-  }
-
-  public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
   public String virtual_getNestedName_8540045600162184125(SNode thisNode) {
@@ -49,12 +37,8 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getThisType_3305065273710880775(thisNode);
   }
 
-  public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
-    return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
-  }
-
-  public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return Classifier_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
+  public boolean virtual_checkLoops_3980490811621705344(SNode thisNode) {
+    return Classifier_Behavior.virtual_checkLoops_3980490811621705344(thisNode);
   }
 
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
@@ -65,11 +49,35 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getOwnMethods_1906502351318572840(thisNode);
   }
 
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return Classifier_Behavior.virtual_getFqName_1213877404258(thisNode);
-  }
-
   public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return IMemberContainer_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
+  }
+
+  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return Classifier_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
+  }
+
+  public boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
+    return Classifier_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
+  }
+
+  public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
+    return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
+  }
+
+  public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
+    return Classifier_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
+  }
+
+  public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  }
+
+  public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
+    return Classifier_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
+  }
+
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return Classifier_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 }

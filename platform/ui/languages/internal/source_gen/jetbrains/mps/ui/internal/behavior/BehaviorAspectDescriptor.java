@@ -4,37 +4,40 @@ package jetbrains.mps.ui.internal.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.ui.internal.structure.AuxObjectHandler", "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", "jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextControllerWrapper", "jetbrains.mps.ui.internal.structure.ContextViewWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapperExpression", "jetbrains.mps.ui.internal.structure.ExpressionStub", "jetbrains.mps.ui.internal.structure.GeometryHandler", "jetbrains.mps.ui.internal.structure.IContextWrapper", "jetbrains.mps.ui.internal.structure.StatementStub", "jetbrains.mps.ui.internal.structure.TypeStub"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -958159147:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 1:
         return new ContextBindingWrapper_BehaviorDescriptor();
-      case 46355948:
+      case 5:
         return new ContextWrapper_BehaviorDescriptor();
-      case -1949889785:
+      case 4:
         return new ContextViewWrapper_BehaviorDescriptor();
-      case 1319424232:
+      case 2:
         return new ContextCompartmentWrapper_BehaviorDescriptor();
-      case 1107322736:
+      case 3:
         return new ContextControllerWrapper_BehaviorDescriptor();
-      case 65161903:
+      case 0:
         return new AuxObjectHandler_BehaviorDescriptor();
-      case -949698192:
+      case 8:
         return new GeometryHandler_BehaviorDescriptor();
-      case -1804323931:
+      case 9:
         // interface or abstract concept behavior jetbrains.mps.ui.internal.structure.IContextWrapper 
         return null;
-      case -385921628:
+      case 6:
         return new ContextWrapperExpression_BehaviorDescriptor();
-      case 1339320080:
+      case 11:
         return new TypeStub_BehaviorDescriptor();
-      case 1966630254:
+      case 7:
         return new ExpressionStub_BehaviorDescriptor();
-      case 928355253:
+      case 10:
         return new StatementStub_BehaviorDescriptor();
       default:
         return null;

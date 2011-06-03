@@ -4,30 +4,33 @@ package jetbrains.mps.debug.evaluation.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debug.evaluation.structure.LowLevelVariable", "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -835008139:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 1:
         return new EvaluatorConcept_BehaviorDescriptor();
-      case -1499134616:
+      case 5:
         return new LowLevelVariable_BehaviorDescriptor();
-      case 833311062:
+      case 3:
         return new EvaluatorsThisExpression_BehaviorDescriptor();
-      case 1739473722:
+      case 2:
         return new EvaluatorsSuperMethodCall_BehaviorDescriptor();
-      case -1958274575:
+      case 4:
         return new GenerationHelperAnnotation_BehaviorDescriptor();
-      case 1670737599:
+      case 7:
         return new ToEvaluateAnnotation_BehaviorDescriptor();
-      case -262934845:
+      case 6:
         return new LowLevelVariableReference_BehaviorDescriptor();
-      case -1756447448:
+      case 8:
         return new UnprocessedAnnotation_BehaviorDescriptor();
-      case -1013793137:
+      case 0:
         return new DoNotTransformAnnotation_BehaviorDescriptor();
       default:
         return null;

@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
@@ -25,7 +26,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.compiler.IClassesData;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
@@ -59,7 +59,12 @@ public class FindInstancesDialog extends BaseDialog {
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
         ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
-        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, myModelOwner, FindInstancesDialog.this.myNode);
+        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, myModelOwner, myNode) {
+          @Override
+          protected void processClassesData(IClassesData cd) {
+            doProcessClassesData(cd);
+          }
+        };
       }
     });
     if (module instanceof Language) {
@@ -100,36 +105,46 @@ public class FindInstancesDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "Find", mnemonic = 'F', defaultButton = true)
   public void buttonFind() {
-    try {
-      final Wrappers._T<Language> language = new Wrappers._T<Language>();
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          language.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode));
-        }
-      });
-      // <node> 
-      IClassesData cd = myEditor.make(Collections.singleton(language.value.getClassPathItem()));
-      if (cd == null) {
-        return;
+    final Wrappers._T<Language> language = new Wrappers._T<Language>();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        language.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode));
       }
-      final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          model.value = SNodeOperations.getModel(myNode);
-        }
-      });
-      String fqName = model.value.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
-      ClassLoader loader = cd.getClassLoader(QueryExecutor.class.getClassLoader());
-      final Query query = (Query) Class.forName(fqName, true, loader).newInstance();
-      final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
-        }
-      });
-    } catch (Throwable t) {
-      t.printStackTrace();
+    });
+    // <node> 
+    myEditor.make(Collections.singleton(language.value.getClassPathItem()));
+  }
+
+  private void doProcessClassesData(IClassesData cd) {
+    if (cd == null) {
+      return;
     }
+    final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        model.value = SNodeOperations.getModel(myNode);
+      }
+    });
+    String fqName = model.value.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
+    ClassLoader loader = cd.getClassLoader(QueryExecutor.class.getClassLoader());
+    final Wrappers._T<Query> query = new Wrappers._T<Query>(null);
+    try {
+      query.value = (Query) Class.forName(fqName, true, loader).newInstance();
+    } catch (ClassNotFoundException ignore) {
+    } catch (IllegalAccessException ignore) {
+
+    } catch (InstantiationException ignore) {
+    }
+    if (query.value == null) {
+      return;
+    }
+
+    final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+      }
+    });
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)

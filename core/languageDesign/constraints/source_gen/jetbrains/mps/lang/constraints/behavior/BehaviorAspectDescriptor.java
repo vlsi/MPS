@@ -4,79 +4,82 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue", "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -324043823:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 31:
         return new NodePropertyConstraint_BehaviorDescriptor();
-      case -1097942195:
+      case 19:
         return new ConstraintFunction_PropertyGetter_BehaviorDescriptor();
-      case 924567529:
+      case 28:
         return new ConstraintsFunctionParameter_node_BehaviorDescriptor();
-      case 302525407:
+      case 24:
         return new ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor();
-      case -677435673:
+      case 32:
         return new NodeReferentConstraint_BehaviorDescriptor();
-      case 406326366:
+      case 23:
         // interface or abstract concept behavior jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase 
         return null;
-      case -914874161:
+      case 1:
         return new ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor();
-      case -754392383:
+      case 20:
         return new ConstraintFunction_PropertySetter_BehaviorDescriptor();
-      case 1762292426:
+      case 30:
         return new NodeDefaultSearchScope_BehaviorDescriptor();
-      case 1458072800:
+      case 27:
         return new ConstraintFunction_ReferentSetHandler_BehaviorDescriptor();
-      case 1947310469:
+      case 11:
         return new ConstraintFunctionParameter_referenceNode_BehaviorDescriptor();
-      case 242589285:
+      case 7:
         return new ConstraintFunctionParameter_newReferentNode_BehaviorDescriptor();
-      case -509079444:
+      case 8:
         return new ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor();
-      case -1638044063:
+      case 14:
         return new ConstraintFunction_CanBeAChild_BehaviorDescriptor();
-      case 122787636:
+      case 10:
         return new ConstraintFunctionParameter_parentNode_BehaviorDescriptor();
-      case 1126217733:
+      case 15:
         return new ConstraintFunction_CanBeAParent_BehaviorDescriptor();
-      case -1473086188:
+      case 3:
         return new ConstraintFunctionParameter_childConcept_BehaviorDescriptor();
-      case -124801182:
+      case 5:
         return new ConstraintFunctionParameter_link_BehaviorDescriptor();
-      case 1222015891:
+      case 6:
         return new ConstraintFunctionParameter_linkTarget_BehaviorDescriptor();
-      case 1797208725:
+      case 29:
         return new ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor();
-      case -1169622576:
+      case 21:
         return new ConstraintFunction_PropertyValidator_BehaviorDescriptor();
-      case 598810059:
+      case 0:
         return new ConceptConstraints_BehaviorDescriptor();
-      case 1333086973:
+      case 16:
         return new ConstraintFunction_CanBeARoot_BehaviorDescriptor();
-      case -33050909:
+      case 9:
         return new ConstraintFunctionParameter_parameterNode_BehaviorDescriptor();
-      case 1861386597:
+      case 25:
         return new ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor();
-      case 1779423242:
+      case 13:
         return new ConstraintFunctionParameter_visible_BehaviorDescriptor();
-      case -1367729942:
+      case 12:
         return new ConstraintFunctionParameter_smartReference_BehaviorDescriptor();
-      case 1262024282:
+      case 4:
         return new ConstraintFunctionParameter_inEditor_BehaviorDescriptor();
-      case 1054521629:
+      case 18:
         return new ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor();
-      case 1223020358:
+      case 17:
         return new ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor();
-      case -1113348889:
+      case 26:
         return new ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor();
-      case -219799071:
+      case 2:
         return new ConstraintFunctionParameter_checkedNode_BehaviorDescriptor();
-      case 1568730315:
+      case 22:
         return new ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor();
       default:
         return null;

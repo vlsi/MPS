@@ -4,20 +4,23 @@ package jetbrains.mps.debug.privateMembers.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1470068757:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 0:
         return new PrivateFieldReferenceOperation_BehaviorDescriptor();
-      case 279156242:
+      case 1:
         return new PrivateInstanceMethodCallOperation_BehaviorDescriptor();
-      case -795608384:
+      case 2:
         return new PrivateStaticFieldReference_BehaviorDescriptor();
-      case 227879342:
+      case 3:
         return new PrivateStaticMethodCall_BehaviorDescriptor();
       default:
         return null;

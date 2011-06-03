@@ -4,33 +4,36 @@ package jetbrains.mps.baseLanguage.constructors.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter", "jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1724814137:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 3:
         return new CustomConstructorContainer_BehaviorDescriptor();
-      case 2066564648:
+      case 2:
         return new CustomConstructor_BehaviorDescriptor();
-      case 894689369:
+      case 6:
         return new CustomConstructorUsage_BehaviorDescriptor();
-      case 707139725:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause 
         return null;
-      case 704260230:
+      case 7:
         return new ListArgumentsClause_BehaviorDescriptor();
-      case 1479201182:
+      case 1:
         return new CustomArgumentClause_BehaviorDescriptor();
-      case -204735903:
+      case 4:
         return new CustomConstructorParameter_BehaviorDescriptor();
-      case -1456569878:
+      case 5:
         return new CustomConstructorParameterReference_BehaviorDescriptor();
-      case 168815585:
+      case 9:
         return new ListParameterReference_BehaviorDescriptor();
-      case 1584506201:
+      case 8:
         return new ListCustomParameter_BehaviorDescriptor();
       default:
         return null;

@@ -4,42 +4,45 @@ package jetbrains.mps.make.facet.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetReference", "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.IFacet", "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1205517430:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.make.facet.structure.IFacet 
         return null;
-      case 141486335:
+      case 1:
         return new FacetDeclaration_BehaviorDescriptor();
-      case 2113881325:
+      case 12:
         return new TargetDeclaration_BehaviorDescriptor();
-      case 107334008:
+      case 13:
         return new TargetDependency_BehaviorDescriptor();
-      case -1240215536:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.make.facet.structure.FacetReference 
         return null;
-      case -584621039:
+      case 0:
         return new ExtendsFacetReference_BehaviorDescriptor();
-      case 1375745059:
+      case 9:
         return new RelatedFacetReference_BehaviorDescriptor();
-      case -1145966348:
+      case 8:
         return new ParametersDeclaration_BehaviorDescriptor();
-      case 84807153:
+      case 7:
         return new LocalParametersExpression_BehaviorDescriptor();
-      case 1983802428:
+      case 6:
         return new LocalParametersComponentExpression_BehaviorDescriptor();
-      case -1750433830:
+      case 4:
         return new ForeignParametersExpression_BehaviorDescriptor();
-      case -722923405:
+      case 3:
         return new ForeignParametersComponentExpression_BehaviorDescriptor();
-      case -871274826:
+      case 11:
         return new ResourceTypeDeclaration_BehaviorDescriptor();
-      case 596111717:
+      case 10:
         return new ResourceClassifierType_BehaviorDescriptor();
       default:
         return null;

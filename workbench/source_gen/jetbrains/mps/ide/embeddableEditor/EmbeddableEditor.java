@@ -17,13 +17,14 @@ import javax.swing.JComponent;
 import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.compiler.IClassesData;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
+import com.intellij.openapi.application.ApplicationManager;
+import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
@@ -37,6 +38,9 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.resources.CResource;
+import javax.swing.SwingUtilities;
+import java.util.concurrent.ExecutionException;
+import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
@@ -138,29 +142,43 @@ public class EmbeddableEditor {
     return myFileNodeEditor.getNodeEditor();
   }
 
-  public IClassesData make(final Set<IClassPathItem> classPath) {
-    IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("compileToMemory")).toScript();
+  public void make(final Set<IClassPathItem> classPath) {
+    final IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("compileToMemory")).toScript();
 
-
-    IResult res = new WorkbenchMakeService(myContext, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, new IScriptController.Stub(new IConfigMonitor.Stub() {
-      public <T extends IOption> T relayQuery(IQuery<T> query) {
-        return query.defaultOption();
-      }
-    }, new IJobMonitor.Stub()) {
-      @Override
-      public void setup(IParametersPool ppool) {
-        super.setup(ppool);
-        Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("compileToMemory"), Object.class);
-        if (params != null) {
-          params._0(classPath);
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        Future<IResult> future = new WorkbenchMakeService(myContext, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, new IScriptController.Stub(new IConfigMonitor.Stub() {
+          public <T extends IOption> T relayQuery(IQuery<T> query) {
+            return query.defaultOption();
+          }
+        }, new IJobMonitor.Stub()) {
+          @Override
+          public void setup(IParametersPool ppool) {
+            super.setup(ppool);
+            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("compileToMemory"), Object.class);
+            if (params != null) {
+              params._0(classPath);
+            }
+          }
+        });
+        try {
+          IResult result = future.get();
+          if (result.isSucessful()) {
+            final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                processClassesData(out.classes());
+              }
+            });
+          }
+        } catch (InterruptedException ignore) {
+        } catch (ExecutionException ignore) {
         }
       }
     });
-    if (res.isSucessful()) {
-      CResource out = (CResource) Sequence.fromIterable(res.output()).first();
-      return out.classes();
-    }
-    return null;
+  }
+
+  protected void processClassesData(IClassesData cd) {
   }
 
   @Deprecated

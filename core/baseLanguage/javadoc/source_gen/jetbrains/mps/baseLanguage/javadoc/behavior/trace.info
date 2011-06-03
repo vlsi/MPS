@@ -41,7 +41,7 @@
   <unitInfo fileName="CommentLine_Behavior.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" />
   <unitInfo fileName="InlineTagCommentLinePart_Behavior.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_Behavior" />
   <unitInfo fileName="HTMLElement_Behavior.java" startLine="14" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2068944020170643572">
     <nodeInfo nodeId="8970989240998299492" fileName="ClassifierDocComment_Behavior.java" startLine="13" startPosition="87" endLine="14" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2068944020170643574" fileName="ClassifierDocComment_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />

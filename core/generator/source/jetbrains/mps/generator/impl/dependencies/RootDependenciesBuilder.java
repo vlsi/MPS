@@ -21,6 +21,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   private final String myHash;
   private boolean isUnchanged;
 
+  private boolean dependsOnModelNodes = false;
   private boolean dependsOnConditionals = false;
   private Set<SNode> dependsOn = new HashSet<SNode>();
   private Set<SModelDescriptor> dependsOnModels = new HashSet<SModelDescriptor>();
@@ -173,6 +174,17 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
     }
   }
 
+  @Override
+  public void modelNodesReadAccess(SModel model) {
+    if (model == myBuilder.currentInputModel) {
+      dependsOnModelNodes = true;
+    } else if (model == myBuilder.currentOutputModel) {
+      dependsOnModelNodes = true;
+    } else {
+      addModelAccess(model);
+    }
+  }
+
   @Nullable
   public SNode getOriginalRoot() {
     return myOriginalRoot;
@@ -192,6 +204,10 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   public boolean isDependsOnConditionals() {
     return dependsOnConditionals && myOriginalRoot != null;
+  }
+
+  public boolean isDependsOnModelNodes() {
+    return dependsOnModelNodes;
   }
 
   public boolean isUnchanged() {

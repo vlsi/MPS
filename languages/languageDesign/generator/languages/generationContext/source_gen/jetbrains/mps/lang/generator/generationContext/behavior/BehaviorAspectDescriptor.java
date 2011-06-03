@@ -4,80 +4,83 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType", "jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1675511759:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base 
         return null;
-      case 318020836:
+      case 9:
         return new GenerationContextOp_GetOutputByLabel_BehaviorDescriptor();
-      case 1770150199:
+      case 10:
         return new GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor();
-      case -720635398:
+      case 30:
         return new GenerationContextType_BehaviorDescriptor();
-      case 1972011128:
+      case 31:
         return new TemplateFunctionParameter_generationContext_BehaviorDescriptor();
-      case 346846876:
+      case 15:
         return new GenerationContextOp_GetScope_BehaviorDescriptor();
-      case -1084377545:
+      case 5:
         return new GenerationContextOp_GetInputModel_BehaviorDescriptor();
-      case 2105316072:
+      case 8:
         return new GenerationContextOp_GetOriginalInputModel_BehaviorDescriptor();
-      case 385633520:
+      case 13:
         return new GenerationContextOp_GetOutputModel_BehaviorDescriptor();
-      case -1599240108:
+      case 16:
         return new GenerationContextOp_GetTemplateNode_BehaviorDescriptor();
-      case -866781634:
+      case 14:
         return new GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor();
-      case -627443882:
+      case 4:
         return new GenerationContextOp_GetCopiedOutputByInput_BehaviorDescriptor();
-      case 1923097211:
+      case 22:
         return new GenerationContextOp_SessionObjectAccess_BehaviorDescriptor();
-      case -2096932387:
+      case 29:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase 
         return null;
-      case -489564563:
+      case 27:
         return new GenerationContextOp_StepObjectAccess_BehaviorDescriptor();
-      case 642722799:
+      case 28:
         return new GenerationContextOp_TransientObjectAccess_BehaviorDescriptor();
-      case -1198506886:
+      case 23:
         return new GenerationContextOp_ShowErrorMessage_BehaviorDescriptor();
-      case -951127939:
+      case 25:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase 
         return null;
-      case -1335544410:
+      case 26:
         return new GenerationContextOp_ShowWarningMessage_BehaviorDescriptor();
-      case -1094187906:
+      case 24:
         return new GenerationContextOp_ShowInfoMessage_BehaviorDescriptor();
-      case 1299140630:
+      case 1:
         return new GenerationContextOp_CreateUniqueName_BehaviorDescriptor();
-      case -1945406151:
+      case 12:
         return new GenerationContextOp_GetOutputListByLabelAndInput_BehaviorDescriptor();
-      case 1368212233:
+      case 11:
         return new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor();
-      case -1934713017:
+      case 6:
         return new GenerationContextOp_GetInvocationContext_BehaviorDescriptor();
-      case 19092085:
+      case 7:
         return new GenerationContextOp_GetOriginalCopiedInputByOutput_BehaviorDescriptor();
-      case -384502269:
+      case 18:
         return new GenerationContextOp_NodePatternRef_BehaviorDescriptor();
-      case -1882922200:
+      case 19:
         return new GenerationContextOp_ParameterRef_BehaviorDescriptor();
-      case 1486086651:
+      case 17:
         return new GenerationContextOp_LinkPatternRef_BehaviorDescriptor();
-      case -1389769962:
+      case 21:
         return new GenerationContextOp_PropertyPatternRef_BehaviorDescriptor();
-      case -1238567583:
+      case 20:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef 
         return null;
-      case 860109494:
+      case 2:
         return new GenerationContextOp_DirtyNode_BehaviorDescriptor();
-      case -398934052:
+      case 3:
         return new GenerationContextOp_GenParameterRef_BehaviorDescriptor();
       default:
         return null;

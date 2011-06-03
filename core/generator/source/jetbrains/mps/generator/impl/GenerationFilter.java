@@ -252,18 +252,32 @@ public class GenerationFilter {
       }
     }
 
+    // there are dirty roots -> mark unchanged roots which dependsOnModelNodes as dirty
+    if (myUnchangedRoots.size() < myRootsCount) {
+      Iterator<SNode> it = myUnchangedRoots.iterator();
+      while (it.hasNext()) {
+        SNode root = it.next();
+        String id = root.getId();
+        GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
+        if (rd.isDependsOnNodes()) {
+          it.remove();
+        }
+      }
+    }
+
     // all roots are dirty? rebuild all
     if (myUnchangedRoots.isEmpty()) {
       if (myTracer != null) myTracer.report("All roots are dirty.");
       return;
     }
 
+    myConditionalsUnchanged = (myUnchangedRoots.size() == myRootsCount || !commonDeps.isDependsOnNodes());
+
     // calculate which unchanged roots should be re-generated according with
     // saved dependencies and references between roots
 
-    myConditionalsUnchanged = true;
+    Map<String, Set<String>> savedDep = getDependencies(oldDependencies, myUnchangedRoots, myConditionalsUnchanged);
 
-    Map<String, Set<String>> savedDep = getDependencies(oldDependencies, myUnchangedRoots);
     ConnectedComponentPartitioner partitioner = null;
     boolean changed;
 
@@ -465,12 +479,14 @@ public class GenerationFilter {
     }
   }
 
-  private static Map<String, Set<String>> getDependencies(GenerationDependencies dependencies, Set<SNode> selectedRoots) {
+  private static Map<String, Set<String>> getDependencies(GenerationDependencies dependencies, Set<SNode> selectedRoots, boolean condUnchanged) {
     Map<String, Set<String>> graph = new HashMap<String, Set<String>>();
     for (SNode n : selectedRoots) {
       graph.put(n.getId(), new HashSet<String>());
     }
-    graph.put(CONDITIONALS_ID, new HashSet<String>());
+    if (condUnchanged) {
+      graph.put(CONDITIONALS_ID, new HashSet<String>());
+    }
     for (GenerationRootDependencies rd : dependencies.getRootDependencies()) {
       String id = rd.getRootId();
       if (id == null) {
@@ -503,11 +519,11 @@ public class GenerationFilter {
     StringBuilder sb = new StringBuilder();
     String[] keys = parameters.keySet().toArray(new String[parameters.size()]);
     Arrays.sort(keys);
-    for(String k : keys) {
+    for (String k : keys) {
       sb.append(k);
       sb.append(':');
       Object value = parameters.get(k);
-      if(value == null) {
+      if (value == null) {
         sb.append("null");
       } else {
         sb.append(val);

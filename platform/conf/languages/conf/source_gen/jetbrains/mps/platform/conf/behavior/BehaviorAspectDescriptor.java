@@ -4,113 +4,116 @@ package jetbrains.mps.platform.conf.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.platform.conf.structure.AbstractAction", "jetbrains.mps.platform.conf.structure.Action", "jetbrains.mps.platform.conf.structure.ActionReference", "jetbrains.mps.platform.conf.structure.Actions", "jetbrains.mps.platform.conf.structure.BeanExtension", "jetbrains.mps.platform.conf.structure.BeanExtensionAttribute", "jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "jetbrains.mps.platform.conf.structure.Component", "jetbrains.mps.platform.conf.structure.ComponentRoot", "jetbrains.mps.platform.conf.structure.Components", "jetbrains.mps.platform.conf.structure.ComponentsRoot", "jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", "jetbrains.mps.platform.conf.structure.ConfigurationXmlNode", "jetbrains.mps.platform.conf.structure.ConfigurationXmlRootNode", "jetbrains.mps.platform.conf.structure.Extension", "jetbrains.mps.platform.conf.structure.ExtensionPoint", "jetbrains.mps.platform.conf.structure.ExtensionPoints", "jetbrains.mps.platform.conf.structure.Extensions", "jetbrains.mps.platform.conf.structure.Group", "jetbrains.mps.platform.conf.structure.GroupReference", "jetbrains.mps.platform.conf.structure.HasLevel", "jetbrains.mps.platform.conf.structure.IActionItem", "jetbrains.mps.platform.conf.structure.IConfiguration", "jetbrains.mps.platform.conf.structure.IConfigurationElement", "jetbrains.mps.platform.conf.structure.IConfigurationElementFragment", "jetbrains.mps.platform.conf.structure.IConfigurationFragment", "jetbrains.mps.platform.conf.structure.IExternalConfigurationFragment", "jetbrains.mps.platform.conf.structure.IPluginConfigurationFragment", "jetbrains.mps.platform.conf.structure.IdeaPluginRoot", "jetbrains.mps.platform.conf.structure.IdeaVersion", "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "jetbrains.mps.platform.conf.structure.InterfaceExtension", "jetbrains.mps.platform.conf.structure.KeyboardShortcut", "jetbrains.mps.platform.conf.structure.MouseShortcut", "jetbrains.mps.platform.conf.structure.Plugin", "jetbrains.mps.platform.conf.structure.PluginDependency", "jetbrains.mps.platform.conf.structure.PluginDetails", "jetbrains.mps.platform.conf.structure.PluginHelpset", "jetbrains.mps.platform.conf.structure.PluginVendor", "jetbrains.mps.platform.conf.structure.RootRoot", "jetbrains.mps.platform.conf.structure.Separator", "jetbrains.mps.platform.conf.structure.Service", "jetbrains.mps.platform.conf.structure.Shortcut", "jetbrains.mps.platform.conf.structure.XInclude"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 971103837:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 7:
         return new Component_BehaviorDescriptor();
-      case 1758453151:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.Extension 
         return null;
-      case -1977845617:
+      case 23:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.IConfigurationElement 
         return null;
-      case -209702095:
+      case 15:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.ExtensionPoint 
         return null;
-      case 1469365021:
+      case 25:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.IConfigurationFragment 
         return null;
-      case 936997293:
+      case 22:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.IConfiguration 
         return null;
-      case -336597476:
+      case 11:
         return new ConfigurationXmlDocument_BehaviorDescriptor();
-      case -1164321518:
+      case 26:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.IExternalConfigurationFragment 
         return null;
-      case -819034192:
+      case 43:
         return new XInclude_BehaviorDescriptor();
-      case 51868547:
+      case 12:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.ConfigurationXmlNode 
         return null;
-      case 2089169762:
+      case 16:
         return new ExtensionPoints_BehaviorDescriptor();
-      case 39447990:
+      case 9:
         return new Components_BehaviorDescriptor();
-      case 920817409:
+      case 6:
         return new BeanExtensionPoint_BehaviorDescriptor();
-      case 409603012:
+      case 30:
         return new IntefaceExtensionPoint_BehaviorDescriptor();
-      case -1441308651:
+      case 41:
         return new Service_BehaviorDescriptor();
-      case 1307720618:
+      case 20:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.HasLevel 
         return null;
-      case -1322527052:
+      case 17:
         return new Extensions_BehaviorDescriptor();
-      case -1817002068:
+      case 28:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.IdeaPluginRoot 
         return null;
-      case 1169645519:
+      case 4:
         return new BeanExtension_BehaviorDescriptor();
-      case 182413734:
+      case 31:
         return new InterfaceExtension_BehaviorDescriptor();
-      case 2025833357:
+      case 5:
         return new BeanExtensionAttribute_BehaviorDescriptor();
-      case 903593983:
+      case 24:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.IConfigurationElementFragment 
         return null;
-      case 1137121208:
+      case 10:
         return new ComponentsRoot_BehaviorDescriptor();
-      case -1626841889:
+      case 8:
         return new ComponentRoot_BehaviorDescriptor();
-      case 1017956228:
+      case 39:
         return new RootRoot_BehaviorDescriptor();
-      case 2023670890:
+      case 27:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.IPluginConfigurationFragment 
         return null;
-      case -1511314989:
+      case 34:
         return new Plugin_BehaviorDescriptor();
-      case 1250684286:
+      case 35:
         return new PluginDependency_BehaviorDescriptor();
-      case 1533989115:
+      case 38:
         return new PluginVendor_BehaviorDescriptor();
-      case 1519271151:
+      case 36:
         return new PluginDetails_BehaviorDescriptor();
-      case 1436871489:
+      case 29:
         return new IdeaVersion_BehaviorDescriptor();
-      case 767386670:
+      case 37:
         return new PluginHelpset_BehaviorDescriptor();
-      case -292298147:
+      case 3:
         return new Actions_BehaviorDescriptor();
-      case 1347244952:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.AbstractAction 
         return null;
-      case 842362598:
+      case 42:
         return new Shortcut_BehaviorDescriptor();
-      case 1427577195:
+      case 33:
         return new MouseShortcut_BehaviorDescriptor();
-      case 415682541:
+      case 32:
         return new KeyboardShortcut_BehaviorDescriptor();
-      case -1165269025:
+      case 18:
         return new Group_BehaviorDescriptor();
-      case -1969266132:
+      case 19:
         return new GroupReference_BehaviorDescriptor();
-      case -1744980203:
+      case 2:
         return new ActionReference_BehaviorDescriptor();
-      case -1949091626:
+      case 1:
         return new Action_BehaviorDescriptor();
-      case 2057533714:
+      case 21:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.IActionItem 
         return null;
-      case -191126459:
+      case 40:
         return new Separator_BehaviorDescriptor();
-      case -1365344507:
+      case 13:
         // interface or abstract concept behavior jetbrains.mps.platform.conf.structure.ConfigurationXmlRootNode 
         return null;
       default:

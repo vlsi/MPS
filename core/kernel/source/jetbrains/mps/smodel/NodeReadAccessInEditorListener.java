@@ -79,6 +79,11 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     myNodesToDependOn.add(node);
   }
 
+  @Override
+  public void modelNodesReadAccess(SModel model) {
+    /* ignored */
+  }
+
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
      addRefTargetToDependOn(new SNodePointer(referent));
   }

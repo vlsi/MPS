@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Configurations_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.Configurations_Language" />
-  <unitInfo fileName="ModelSource.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ModelSource" />
-  <unitInfo fileName="ProjectSource.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ProjectSource" />
   <unitInfo fileName="ModuleSource.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ModuleSource" />
-  <unitInfo fileName="Project_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.Project_Parameter" />
-  <unitInfo fileName="DebuggerSettings_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter" />
-  <unitInfo fileName="StartStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StartStatement" />
-  <unitInfo fileName="Create_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.Create_ConceptFunction" />
+  <unitInfo fileName="ProjectSource.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ProjectSource" />
+  <unitInfo fileName="ModelSource.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ModelSource" />
+  <unitInfo fileName="BeforeTaskParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.BeforeTaskParameter" />
+  <unitInfo fileName="ExecuteBeforeTask_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction" />
   <unitInfo fileName="Source_ConceptFunctionParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter" />
+  <unitInfo fileName="Create_ConceptFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.Create_ConceptFunction" />
+  <unitInfo fileName="StartStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StartStatement" />
+  <unitInfo fileName="DebuggerSettings_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter" />
+  <unitInfo fileName="Project_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.Project_Parameter" />
   <unitInfo fileName="RunConfigurationSource.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfigurationSource" />
+  <unitInfo fileName="BeforeTaskParameterReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference" />
   <unitInfo fileName="SimpleRunConfigurationExecutor.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor" />
-  <unitInfo fileName="ComplexRunConfigurationExecutor.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor" />
-  <unitInfo fileName="StartProcessHandlerStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement" />
-  <unitInfo fileName="NodeListSource.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.NodeListSource" />
   <unitInfo fileName="NodeSource.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.NodeSource" />
-  <unitInfo fileName="RunConfiguration.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfiguration" />
+  <unitInfo fileName="NodeListSource.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.NodeListSource" />
+  <unitInfo fileName="StartProcessHandlerStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor" />
   <unitInfo fileName="RunConfigurationCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfigurationCreator" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="72" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="RunConfiguration.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfiguration" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="82" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="BeforeTaskCall.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.BeforeTaskCall" />
   <unitInfo fileName="ExecuteConfiguration_Function.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function" />
   <unitInfo fileName="ConfigurationFromExecutorReference.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference" />
   <unitInfo fileName="RunConfigurationKind.java" startLine="17" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfigurationKind" />
   <unitInfo fileName="RunConfigurationProducerPart.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="BeforeTask.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.BeforeTask" />
   <unitInfo fileName="RunConfigurationProducer.java" startLine="17" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfigurationProducer" />
-  <unitInfo fileName="RunConfigurationExecutor.java" startLine="18" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="RunConfigurationExecutor.java" startLine="18" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor" />
 </debugInfo>
 

@@ -4,159 +4,162 @@ package jetbrains.mps.ypath.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.ypath.structure.ChildrenBlock", "jetbrains.mps.ypath.structure.ExpressionFunctionParam", "jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.FromOperation", "jetbrains.mps.ypath.structure.GFCardinalFun", "jetbrains.mps.ypath.structure.GFCardinalParamFun", "jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.GFGetterParamFun", "jetbrains.mps.ypath.structure.GeneratorFunctionParam", "jetbrains.mps.ypath.structure.GenericFeature", "jetbrains.mps.ypath.structure.GenericParamFeature", "jetbrains.mps.ypath.structure.IDesignFunction", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.ypath.structure.IGenericFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.ITreePathExpression", "jetbrains.mps.ypath.structure.IndexFunctionParam", "jetbrains.mps.ypath.structure.IterateOperation", "jetbrains.mps.ypath.structure.KindBlock", "jetbrains.mps.ypath.structure.LambdaMethod", "jetbrains.mps.ypath.structure.LambdaMethodParameter", "jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", "jetbrains.mps.ypath.structure.MatchKindOperation", "jetbrains.mps.ypath.structure.MatchPropertyOperation", "jetbrains.mps.ypath.structure.NodeFunctionParam", "jetbrains.mps.ypath.structure.NodeKindCase", "jetbrains.mps.ypath.structure.NodeKindDefaultCase", "jetbrains.mps.ypath.structure.NodeKindSpecificCase", "jetbrains.mps.ypath.structure.NodeTypeFunctionParam", "jetbrains.mps.ypath.structure.ParamFeatureGetFun", "jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", "jetbrains.mps.ypath.structure.ParamFeatureSizeFun", "jetbrains.mps.ypath.structure.ParamFunctionParam", "jetbrains.mps.ypath.structure.ParamListFeature", "jetbrains.mps.ypath.structure.ParamSequenceFeature", "jetbrains.mps.ypath.structure.ParameterQueryFun", "jetbrains.mps.ypath.structure.ParameterWrapper", "jetbrains.mps.ypath.structure.ParentBlock", "jetbrains.mps.ypath.structure.PropertyGetter", "jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.SwitchNodeKindStatement", "jetbrains.mps.ypath.structure.TargetTypeFun", "jetbrains.mps.ypath.structure.ToStringFun", "jetbrains.mps.ypath.structure.TreeNodeKind", "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", "jetbrains.mps.ypath.structure.TreeNodeKindProperty", "jetbrains.mps.ypath.structure.TreeNodeKindReference", "jetbrains.mps.ypath.structure.TreePath", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathAspect", "jetbrains.mps.ypath.structure.TreePathCreator", "jetbrains.mps.ypath.structure.TreePathOperation", "jetbrains.mps.ypath.structure.TreePathOperationExpression", "jetbrains.mps.ypath.structure.TreePathType", "jetbrains.mps.ypath.structure.ValueFunctionParam", "jetbrains.mps.ypath.structure.VisitBlock", "jetbrains.mps.ypath.structure.VisitChildrenExpression", "jetbrains.mps.ypath.structure.VisitNodesStatement", "jetbrains.mps.ypath.structure.VisitParameterDeclaration", "jetbrains.mps.ypath.structure.VisitParameterDeclarationList", "jetbrains.mps.ypath.structure.VisitParameterReference", "jetbrains.mps.ypath.structure.WhereBlock", "jetbrains.mps.ypath.structure.WhereOperation"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1316555746:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 58:
         return new TreePathType_BehaviorDescriptor();
-      case 2010857672:
+      case 55:
         return new TreePathCreator_BehaviorDescriptor();
-      case 1362537705:
+      case 23:
         return new LambdaMethod_BehaviorDescriptor();
-      case -435279742:
+      case 42:
         return new ParentBlock_BehaviorDescriptor();
-      case -934200179:
+      case 0:
         return new ChildrenBlock_BehaviorDescriptor();
-      case 1179884736:
+      case 24:
         return new LambdaMethodParameter_BehaviorDescriptor();
-      case 1818928635:
+      case 57:
         return new TreePathOperationExpression_BehaviorDescriptor();
-      case 762961667:
+      case 56:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.TreePathOperation 
         return null;
-      case 1637661596:
+      case 5:
         return new FromOperation_BehaviorDescriptor();
-      case 276957934:
+      case 21:
         return new IterateOperation_BehaviorDescriptor();
-      case -527252127:
+      case 67:
         return new WhereOperation_BehaviorDescriptor();
-      case -1356152441:
+      case 66:
         return new WhereBlock_BehaviorDescriptor();
-      case 1255788604:
+      case 54:
         return new TreePathAspect_BehaviorDescriptor();
-      case -1114167069:
+      case 53:
         return new TreePathAdapterExpression_BehaviorDescriptor();
-      case -1428180011:
+      case 48:
         return new TreeNodeKind_BehaviorDescriptor();
-      case -255844593:
+      case 27:
         return new MatchKindOperation_BehaviorDescriptor();
-      case 1295043480:
+      case 22:
         return new KindBlock_BehaviorDescriptor();
-      case 1528123594:
+      case 50:
         return new TreeNodeKindProperty_BehaviorDescriptor();
-      case -444843935:
+      case 43:
         return new PropertyGetter_BehaviorDescriptor();
-      case -2033093754:
+      case 49:
         return new TreeNodeKindOccurrence_BehaviorDescriptor();
-      case -757225490:
+      case 28:
         return new MatchPropertyOperation_BehaviorDescriptor();
-      case -1656608139:
+      case 26:
         return new MatchDefaultPropertyOperation_BehaviorDescriptor();
-      case 182317764:
+      case 52:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.TreePath 
         return null;
-      case -75355402:
+      case 51:
         return new TreeNodeKindReference_BehaviorDescriptor();
-      case 989253539:
+      case 60:
         return new VisitBlock_BehaviorDescriptor();
-      case 1706294887:
+      case 30:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.NodeKindCase 
         return null;
-      case -1473688647:
+      case 32:
         return new NodeKindSpecificCase_BehaviorDescriptor();
-      case -1138852358:
+      case 31:
         return new NodeKindDefaultCase_BehaviorDescriptor();
-      case 1689240225:
+      case 61:
         return new VisitChildrenExpression_BehaviorDescriptor();
-      case -839033797:
+      case 63:
         return new VisitParameterDeclaration_BehaviorDescriptor();
-      case 1172169292:
+      case 65:
         return new VisitParameterReference_BehaviorDescriptor();
-      case 1748286596:
+      case 45:
         return new SwitchNodeKindStatement_BehaviorDescriptor();
-      case 2073017192:
+      case 62:
         return new VisitNodesStatement_BehaviorDescriptor();
-      case -1689064583:
+      case 64:
         return new VisitParameterDeclarationList_BehaviorDescriptor();
-      case -2090625289:
+      case 25:
         return new ListFeature_BehaviorDescriptor();
-      case 265941918:
+      case 2:
         return new FeatureGetFun_BehaviorDescriptor();
-      case 1835310857:
+      case 4:
         return new FeatureSizeFun_BehaviorDescriptor();
-      case -254568462:
+      case 29:
         return new NodeFunctionParam_BehaviorDescriptor();
-      case 251152516:
+      case 20:
         return new IndexFunctionParam_BehaviorDescriptor();
-      case -661644731:
+      case 59:
         return new ValueFunctionParam_BehaviorDescriptor();
-      case -1367060023:
+      case 3:
         return new FeatureSequenceFun_BehaviorDescriptor();
-      case 2088181806:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.IFeature 
         return null;
-      case 1704835828:
+      case 44:
         return new SequenceFeature_BehaviorDescriptor();
-      case -1873149783:
+      case 37:
         return new ParamFunctionParam_BehaviorDescriptor();
-      case 701410719:
+      case 40:
         return new ParameterQueryFun_BehaviorDescriptor();
-      case 251449432:
+      case 33:
         return new NodeTypeFunctionParam_BehaviorDescriptor();
-      case -708127789:
+      case 46:
         return new TargetTypeFun_BehaviorDescriptor();
-      case 379055756:
+      case 38:
         return new ParamListFeature_BehaviorDescriptor();
-      case -1487488525:
+      case 34:
         return new ParamFeatureGetFun_BehaviorDescriptor();
-      case -719374188:
+      case 35:
         return new ParamFeatureSequenceFun_BehaviorDescriptor();
-      case -981425324:
+      case 36:
         return new ParamFeatureSizeFun_BehaviorDescriptor();
-      case 104760398:
+      case 18:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.IParamFeatureFun 
         return null;
-      case 285360137:
+      case 39:
         return new ParamSequenceFeature_BehaviorDescriptor();
-      case 2140639089:
+      case 17:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.IParamFeature 
         return null;
-      case 2060066290:
+      case 47:
         return new ToStringFun_BehaviorDescriptor();
-      case -838083189:
+      case 41:
         return new ParameterWrapper_BehaviorDescriptor();
-      case -1108965506:
+      case 13:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.IDesignFunction 
         return null;
-      case -1693156515:
+      case 9:
         return new GFGetterParamFun_BehaviorDescriptor();
-      case -2113133337:
+      case 16:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.IGenericFeature 
         return null;
-      case -508449828:
+      case 1:
         return new ExpressionFunctionParam_BehaviorDescriptor();
-      case -1209125171:
+      case 15:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.IFunctionParam 
         return null;
-      case 794797170:
+      case 7:
         return new GFCardinalParamFun_BehaviorDescriptor();
-      case 354722723:
+      case 19:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.ITreePathExpression 
         return null;
-      case -184768605:
+      case 10:
         return new GeneratorFunctionParam_BehaviorDescriptor();
-      case 644204223:
+      case 6:
         // interface or abstract concept behavior jetbrains.mps.ypath.structure.GFCardinalFun 
         return null;
-      case 1041959156:
+      case 8:
         return new GFGetterFun_BehaviorDescriptor();
-      case 1593676352:
+      case 11:
         return new GenericFeature_BehaviorDescriptor();
-      case -402679649:
+      case 12:
         return new GenericParamFeature_BehaviorDescriptor();
       default:
         return null;

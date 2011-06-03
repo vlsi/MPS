@@ -4,17 +4,15 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
-import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.Generate_ActionGroup;
-import jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup;
 import jetbrains.mps.ide.actions.Build_ActionGroup;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
-import jetbrains.mps.ide.actions.Favorites_ActionGroup;
 import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
+import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
+import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,8 +40,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CleanModule_Action());
     addAction(new CleanProject_Action());
     addAction(new CompileProject_Action());
-    addAction(new GenerateFiles_Action());
-    addAction(new GenerateTextFromSolution_Action());
     addAction(new MakeAllModules_Action());
     addAction(new MakeModule_Action());
     addAction(new MakeProject_Action());
@@ -60,17 +56,10 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new TextPreviewModel_Action());
     // groups 
     addGroup(new Compile_ActionGroup());
-    addGroup(new GenerateFavorites_ActionGroup());
-    addGroup(new GenerateModelPopup_ActionGroup());
-    addGroup(new GenerateModels_ActionGroup());
-    addGroup(new GenerateModulePopup_ActionGroup());
-    addGroup(new GenerateModule_ActionGroup());
     addGroup(new GenerateOptions_ActionGroup());
-    addGroup(new GenerateProjectPopup_ActionGroup());
     addGroup(new GlobalMake_ActionGroup());
     addGroup(new JavaModuleActions_ActionGroup());
     addGroup(new Make_ActionGroup());
-    addGroup(new NamespaceGenerateFiles_ActionGroup());
     addGroup(new NamespaceMake_ActionGroup());
     addGroup(new ProjectCompileActions_ActionGroup());
     addGroup(new ProjectMake_ActionGroup());
@@ -81,22 +70,12 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
-    insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
-    insertGroupIntoAnother(GenerateProjectPopup_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_generate);
-    insertGroupIntoAnother(GenerateModelPopup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
-    insertGroupIntoAnother(GenerateModule_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
-    insertGroupIntoAnother(GenerateModule_ActionGroup.ID, GenerateModulePopup_ActionGroup.ID, GenerateModulePopup_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(ProjectCompileActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_compileJava);
-    insertGroupIntoAnother(NamespaceGenerateFiles_ActionGroup.ID, NamespaceMakeActions_ActionGroup.ID, NamespaceMakeActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(JavaModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(JavaModuleActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(Compile_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
     insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
-    insertGroupIntoAnother(GenerateModels_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
-    insertGroupIntoAnother(GenerateModels_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
-    insertGroupIntoAnother(GenerateFavorites_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(ToolsInternalMake_ActionGroup.ID, ToolsInternal_ActionGroup.ID, ToolsInternal_ActionGroup.LABEL_ID_internal);
     insertGroupIntoAnother(Make_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(Make_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_make);

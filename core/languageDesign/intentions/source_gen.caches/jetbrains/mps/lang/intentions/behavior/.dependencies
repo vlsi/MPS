@@ -35,6 +35,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ChildFilterFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />

@@ -3,8 +3,8 @@
   <unitInfo fileName="CustomOperatorUsage_Constraints.java" startLine="26" startPosition="31" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints$1" />
   <unitInfo fileName="CustomOperator_Constraints.java" startLine="26" startPosition="34" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints$1" />
   <unitInfo fileName="BinaryOperationReference_Constraints.java" startLine="37" startPosition="38" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints$1" />
-  <unitInfo fileName="CustomOperator_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints" />
   <unitInfo fileName="CustomOperatorUsage_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints" />
+  <unitInfo fileName="CustomOperator_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="BinaryOperationReference_Constraints.java" startLine="27" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints" />
   <root nodeId="1569627462441400262">

@@ -65,7 +65,7 @@ public class BuildAllBehaviors_Action extends GeneratedAction {
           Iterable<SModelDescriptor> allModels = SModelRepository.getInstance().getModelDescriptors();
           models.value = Sequence.fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it) {
-              return it.isGeneratable() && LanguageAspect.CONSTRAINTS.is(it);
+              return it.isGeneratable() && LanguageAspect.BEHAVIOR.is(it);
             }
           }).toListSequence();
         }

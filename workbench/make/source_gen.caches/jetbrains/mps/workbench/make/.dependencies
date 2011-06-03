@@ -98,7 +98,6 @@
   </dependency>
   <dependency className="jetbrains.mps.workbench.make.WorkbenchMakeService" file="WorkbenchMakeService.java">
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
-    <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
@@ -107,16 +106,24 @@
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="dependencies.ModulesClusterizer" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.concurrent.CancellationException" />
+    <classNode dependClassName="java.util.concurrent.CountDownLatch" />
+    <classNode dependClassName="java.util.concurrent.ExecutionException" />
+    <classNode dependClassName="java.util.concurrent.TimeUnit" />
+    <classNode dependClassName="java.util.concurrent.TimeoutException" />
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicReference" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -126,6 +133,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FutureValue" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -145,10 +153,12 @@
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.make.UIFeedbackStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.progress.Backgroundable" />
+    <classNode extendsClassName="java.util.concurrent.Future" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
   </dependency>

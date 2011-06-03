@@ -4,40 +4,40 @@
   <unitInfo fileName="IUIObjectDeclaration.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.structure.IUIObjectDeclaration" />
   <unitInfo fileName="Ui_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.structure.Ui_Language" />
   <unitInfo fileName="AppendUIObjectStatement.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ui.structure.AppendUIObjectStatement" />
-  <unitInfo fileName="ValidateBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.ValidateBlock" />
-  <unitInfo fileName="Controller.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.Controller" />
-  <unitInfo fileName="View.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.View" />
   <unitInfo fileName="ForceLayoutStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.ForceLayoutStatement" />
+  <unitInfo fileName="ClearCompartmentStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.ClearCompartmentStatement" />
   <unitInfo fileName="EnclosingContextCompartmentExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression" />
   <unitInfo fileName="FunctionParameterDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.FunctionParameterDeclaration" />
   <unitInfo fileName="EventHandingBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.EventHandingBlock" />
-  <unitInfo fileName="ClearCompartmentStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.ClearCompartmentStatement" />
-  <unitInfo fileName="ExpressionView.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.structure.ExpressionView" />
+  <unitInfo fileName="ValidateBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.ValidateBlock" />
+  <unitInfo fileName="Controller.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.Controller" />
+  <unitInfo fileName="View.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.structure.View" />
+  <unitInfo fileName="InsertUIObjectStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.structure.InsertUIObjectStatement" />
   <unitInfo fileName="IterateContentsVariableReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.structure.IterateContentsVariableReference" />
   <unitInfo fileName="IterateContentsStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.structure.IterateContentsStatement" />
-  <unitInfo fileName="InsertUIObjectStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.structure.InsertUIObjectStatement" />
+  <unitInfo fileName="ExpressionView.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.structure.ExpressionView" />
+  <unitInfo fileName="AccessUIPropertyOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.AccessUIPropertyOperation" />
   <unitInfo fileName="CallUIActionOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.CallUIActionOperation" />
-  <unitInfo fileName="EventType.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.EventType" />
   <unitInfo fileName="RemoveUIObjectStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.RemoveUIObjectStatement" />
   <unitInfo fileName="UIObjectType.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.UIObjectType" />
-  <unitInfo fileName="AccessUIPropertyOperation.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.AccessUIPropertyOperation" />
+  <unitInfo fileName="EventType.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.structure.EventType" />
   <unitInfo fileName="ValidatingView.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.structure.ValidatingView" />
-  <unitInfo fileName="ViewBinding.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.structure.ViewBinding" />
   <unitInfo fileName="CompartmentReferenceExpression.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.structure.CompartmentReferenceExpression" />
   <unitInfo fileName="ControllerBinding.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.structure.ControllerBinding" />
-  <unitInfo fileName="ChildAspect.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.structure.ChildAspect" />
+  <unitInfo fileName="ViewBinding.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ui.structure.ViewBinding" />
   <unitInfo fileName="ContainerType.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.structure.ContainerType" />
+  <unitInfo fileName="ChildAspect.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.structure.ChildAspect" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="102" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ui.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="BeanPropertyView.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ui.structure.BeanPropertyView" />
   <unitInfo fileName="CreateUIObjectStatement.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ui.structure.CreateUIObjectStatement" />
   <unitInfo fileName="InlineController.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ui.structure.InlineController" />
-  <unitInfo fileName="Validator.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ui.structure.Validator" />
   <unitInfo fileName="UIObjectReference.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ui.structure.UIObjectReference" />
-  <unitInfo fileName="EventPropertyAccessOp.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ui.structure.EventPropertyAccessOp" />
+  <unitInfo fileName="Validator.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ui.structure.Validator" />
   <unitInfo fileName="IterateContentsVariable.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ui.structure.IterateContentsVariable" />
+  <unitInfo fileName="EventPropertyAccessOp.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ui.structure.EventPropertyAccessOp" />
+  <unitInfo fileName="UIObjectProviderStatement.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.structure.UIObjectProviderStatement" />
   <unitInfo fileName="CompartmentProviderStatement.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.structure.CompartmentProviderStatement" />
   <unitInfo fileName="ContainerCompartment.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.structure.ContainerCompartment" />
-  <unitInfo fileName="UIObjectProviderStatement.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.structure.UIObjectProviderStatement" />
   <unitInfo fileName="UIObjectStatement.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ui.structure.UIObjectStatement" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.ui.structure.StructureAspectDescriptor" />
 </debugInfo>

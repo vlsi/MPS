@@ -10,12 +10,12 @@
   <unitInfo fileName="BracesBlock.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.BracesBlock" />
   <unitInfo fileName="BracesStubBlock.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock" />
   <unitInfo fileName="StubBlock.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" />
-  <unitInfo fileName="NonEmptyProperty.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty" />
-  <unitInfo fileName="IntegerLiteral.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral" />
   <unitInfo fileName="NotEditableVaraileReference.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference" />
-  <unitInfo fileName="InspectorBlock.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock" />
+  <unitInfo fileName="NonEmptyProperty.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty" />
   <unitInfo fileName="VariableDeclarationReference.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference" />
   <unitInfo fileName="AttractsFocusBlock.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock" />
+  <unitInfo fileName="IntegerLiteral.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral" />
+  <unitInfo fileName="InspectorBlock.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock" />
   <unitInfo fileName="VariableDeclarationBlock.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock" />
   <unitInfo fileName="BinaryExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression" />
   <unitInfo fileName="SideTranformWrapper.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper" />

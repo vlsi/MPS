@@ -44,12 +44,13 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.resources.FResource;
+import jetbrains.mps.util.JavaNameUtil;
 
 public class TextGen_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -270,28 +271,36 @@ public class TextGen_Facet implements IFacet {
           switch (0) {
             case 0:
               for (IResource resource : Sequence.fromIterable(input)) {
-                GResource gres = (GResource) resource;
-                Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
-                String prefix = JavaNameUtil.packageName(gres.status().getOutputModel());
-
-                for (SNode root : Sequence.fromIterable(gres.status().getOutputModel().roots()).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode rt) {
-                    return rt.getName() != null;
+                final GResource gres = (GResource) resource;
+                final Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
+                final Wrappers._T<SModel> sModel = new Wrappers._T<SModel>();
+                final Wrappers._boolean errors = new Wrappers._boolean(false);
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    sModel.value = gres.status().getOutputModel();
+                    for (SNode root : Sequence.fromIterable(sModel.value.roots()).where(new IWhereFilter<SNode>() {
+                      public boolean accept(SNode rt) {
+                        return rt.getName() != null;
+                      }
+                    })) {
+                      TextGenerationResult tgr = TextGenerationUtil.generateText(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), root);
+                      errors.value |= tgr.hasErrors();
+                      if (errors.value) {
+                        break;
+                      }
+                      String ext = TextGenManager.instance().getExtension(root);
+                      String fname = ((ext != null ?
+                        root.getName() + "." + ext :
+                        root.getName()
+                      ));
+                      MapSequence.fromMap(texts).put(fname, tgr.getResult());
+                    }
                   }
-                })) {
-                  TextGenerationResult tgr = TextGenerationUtil.generateText(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), root);
-                  if (tgr.hasErrors()) {
-                    return new IResult.FAILURE(_output_21gswx_a0b);
-                  }
-                  String ext = TextGenManager.instance().getExtension(root);
-                  String fname = ((ext != null ?
-                    root.getName() + "." + ext :
-                    root.getName()
-                  ));
-                  MapSequence.fromMap(texts).put(fname, tgr.getResult());
+                });
+                if (errors.value) {
+                  return new IResult.FAILURE(_output_21gswx_a0b);
                 }
-
-                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(prefix, texts, gres.module(), gres.model()))));
+                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(sModel.value), texts, gres.module(), gres.model()))));
               }
             default:
               return new IResult.SUCCESS(_output_21gswx_a0b);

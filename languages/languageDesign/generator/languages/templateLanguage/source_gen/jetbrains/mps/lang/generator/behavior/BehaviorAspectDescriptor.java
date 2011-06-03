@@ -4,178 +4,181 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", "jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", "jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.generator.structure.CreateRootRule_Condition", "jetbrains.mps.lang.generator.structure.DismissTopMappingRule", "jetbrains.mps.lang.generator.structure.DropRootRule", "jetbrains.mps.lang.generator.structure.DropRootRule_Condition", "jetbrains.mps.lang.generator.structure.GeneratorDescriptor", "jetbrains.mps.lang.generator.structure.GeneratorMessage", "jetbrains.mps.lang.generator.structure.GeneratorParameterReference", "jetbrains.mps.lang.generator.structure.IGeneratorParameter", "jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.IfMacro", "jetbrains.mps.lang.generator.structure.IfMacro_Condition", "jetbrains.mps.lang.generator.structure.IncludeMacro", "jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InsertMacro", "jetbrains.mps.lang.generator.structure.InsertMacro_CreateNodeQuery", "jetbrains.mps.lang.generator.structure.LabelMacro", "jetbrains.mps.lang.generator.structure.LoopMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro", "jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", "jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MappingConfiguration", "jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", "jetbrains.mps.lang.generator.structure.MappingScript", "jetbrains.mps.lang.generator.structure.MappingScriptReference", "jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", "jetbrains.mps.lang.generator.structure.ReductionRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", "jetbrains.mps.lang.generator.structure.Root_MappingRule", "jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery", "jetbrains.mps.lang.generator.structure.SwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery", "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", "jetbrains.mps.lang.generator.structure.TemplateCallMacro", "jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", "jetbrains.mps.lang.generator.structure.TemplateFragment", "jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", "jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", "jetbrains.mps.lang.generator.structure.TemplateQueryBase", "jetbrains.mps.lang.generator.structure.TemplateSwitch", "jetbrains.mps.lang.generator.structure.TemplateSwitchReference", "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.WeaveMacro", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 240434391:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 39:
         return new PropertyMacro_BehaviorDescriptor();
-      case -517017398:
+      case 37:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.NodeMacro 
         return null;
-      case -984683167:
+      case 43:
         return new ReferenceMacro_BehaviorDescriptor();
-      case -19379584:
+      case 60:
         return new TemplateDeclaration_BehaviorDescriptor();
-      case 880434408:
+      case 31:
         return new MappingConfiguration_BehaviorDescriptor();
-      case 1323014922:
+      case 62:
         return new TemplateFragment_BehaviorDescriptor();
-      case -694200722:
+      case 72:
         return new TemplateSwitch_BehaviorDescriptor();
-      case 1845354200:
+      case 51:
         return new SwitchMacro_BehaviorDescriptor();
-      case 270361725:
+      case 73:
         return new TemplateSwitchReference_BehaviorDescriptor();
-      case 983256987:
+      case 5:
         return new CopySrcNodeMacro_BehaviorDescriptor();
-      case -706638209:
+      case 4:
         return new CopySrcListMacro_BehaviorDescriptor();
-      case 865059471:
+      case 16:
         return new IfMacro_BehaviorDescriptor();
-      case 290450792:
+      case 26:
         return new LoopMacro_BehaviorDescriptor();
-      case -1026581822:
+      case 30:
         return new MapSrcNodeMacro_BehaviorDescriptor();
-      case 1578490278:
+      case 27:
         return new MapSrcListMacro_BehaviorDescriptor();
-      case 1688157754:
+      case 6:
         return new CreateRootRule_BehaviorDescriptor();
-      case 1951843638:
+      case 7:
         return new CreateRootRule_Condition_BehaviorDescriptor();
-      case 1708728181:
+      case 3:
         return new BaseMappingRule_Condition_BehaviorDescriptor();
-      case 788616901:
+      case 67:
         return new TemplateFunctionParameter_sourceNode_BehaviorDescriptor();
-      case 16943929:
+      case 2:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.BaseMappingRule 
         return null;
-      case 1001561066:
+      case 76:
         return new Weaving_MappingRule_BehaviorDescriptor();
-      case 809657054:
+      case 42:
         return new Reduction_MappingRule_BehaviorDescriptor();
-      case 145224461:
+      case 46:
         return new Root_MappingRule_BehaviorDescriptor();
-      case 1503866734:
+      case 40:
         return new PropertyMacro_GetPropertyValue_BehaviorDescriptor();
-      case 1260041018:
+      case 68:
         return new TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor();
-      case 2081911779:
+      case 44:
         return new ReferenceMacro_GetReferent_BehaviorDescriptor();
-      case 2051280653:
+      case 69:
         return new TemplateFunctionParameter_templateReferent_BehaviorDescriptor();
-      case -1285446837:
+      case 17:
         return new IfMacro_Condition_BehaviorDescriptor();
-      case 1225539479:
+      case 48:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.SourceSubstituteMacro 
         return null;
-      case 1828840154:
+      case 50:
         return new SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor();
-      case -802631357:
+      case 49:
         return new SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor();
-      case -1963258745:
+      case 47:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.RuleConsequence 
         return null;
-      case -740236117:
+      case 61:
         return new TemplateDeclarationReference_BehaviorDescriptor();
-      case 717173599:
+      case 8:
         return new DismissTopMappingRule_BehaviorDescriptor();
-      case 136762859:
+      case 45:
         return new RootTemplateAnnotation_BehaviorDescriptor();
-      case 1460916875:
+      case 74:
         return new WeaveEach_RuleConsequence_BehaviorDescriptor();
-      case -1301128236:
+      case 12:
         return new GeneratorMessage_BehaviorDescriptor();
-      case -2142679212:
+      case 28:
         return new MapSrcMacro_MapperFunction_BehaviorDescriptor();
-      case 450186907:
+      case 22:
         return new InlineTemplate_RuleConsequence_BehaviorDescriptor();
-      case 187173804:
+      case 63:
         return new TemplateFragment_ContextNodeQuery_BehaviorDescriptor();
-      case 846503888:
+      case 64:
         return new TemplateFunctionParameter_mainContextNode_BehaviorDescriptor();
-      case -2032736564:
+      case 77:
         return new Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor();
-      case 626205867:
+      case 65:
         return new TemplateFunctionParameter_outputNode_BehaviorDescriptor();
-      case -193915147:
+      case 66:
         return new TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor();
-      case 251441700:
+      case 18:
         return new IncludeMacro_BehaviorDescriptor();
-      case 117647253:
+      case 20:
         return new InlineSwitch_RuleConsequence_BehaviorDescriptor();
-      case -205156606:
+      case 19:
         return new InlineSwitch_Case_BehaviorDescriptor();
-      case 388371737:
+      case 34:
         return new MappingScript_BehaviorDescriptor();
-      case 110048986:
+      case 36:
         return new MappingScript_CodeBlock_BehaviorDescriptor();
-      case -1252329934:
+      case 35:
         return new MappingScriptReference_BehaviorDescriptor();
-      case -903726924:
+      case 33:
         return new MappingLabelDeclaration_BehaviorDescriptor();
-      case 897581757:
+      case 0:
         return new AbandonInput_RuleConsequence_BehaviorDescriptor();
-      case 170085951:
+      case 71:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.TemplateQueryBase 
         return null;
-      case 635777325:
+      case 9:
         return new DropRootRule_BehaviorDescriptor();
-      case -1452546967:
+      case 10:
         return new DropRootRule_Condition_BehaviorDescriptor();
-      case -1817930092:
+      case 29:
         return new MapSrcMacro_PostMapperFunction_BehaviorDescriptor();
-      case -738651478:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.AbstractMacro 
         return null;
-      case -1153292341:
+      case 70:
         return new TemplateParameterDeclaration_BehaviorDescriptor();
-      case -1484299922:
+      case 38:
         return new PatternReduction_MappingRule_BehaviorDescriptor();
-      case -277709087:
+      case 15:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.ITemplateCall 
         return null;
-      case -4058871:
+      case 58:
         return new TemplateArgumentQueryExpression_BehaviorDescriptor();
-      case -2017778799:
+      case 57:
         return new TemplateArgumentQuery_BehaviorDescriptor();
-      case 234268125:
+      case 55:
         return new TemplateArgumentPatternVarRefExpression_BehaviorDescriptor();
-      case 956292591:
+      case 41:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.ReductionRule 
         return null;
-      case -1595525702:
+      case 54:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef 
         return null;
-      case 1715606119:
+      case 56:
         return new TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor();
-      case 1355318156:
+      case 52:
         return new TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor();
-      case 914250388:
+      case 59:
         return new TemplateCallMacro_BehaviorDescriptor();
-      case 1296111614:
+      case 21:
         return new InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor();
-      case 2058499135:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.lang.generator.structure.IGeneratorParameter 
         return null;
-      case 1111017602:
+      case 11:
         return new GeneratorDescriptor_BehaviorDescriptor();
-      case 54979509:
+      case 13:
         return new GeneratorParameterReference_BehaviorDescriptor();
-      case 444291626:
+      case 53:
         return new TemplateArgumentParameterExpression_BehaviorDescriptor();
-      case 1859510884:
+      case 32:
         return new MappingConfiguration_Condition_BehaviorDescriptor();
-      case -1536745640:
+      case 25:
         return new LabelMacro_BehaviorDescriptor();
-      case -387170701:
+      case 23:
         return new InsertMacro_BehaviorDescriptor();
-      case 777899102:
+      case 24:
         return new InsertMacro_CreateNodeQuery_BehaviorDescriptor();
-      case -2078831158:
+      case 75:
         return new WeaveMacro_BehaviorDescriptor();
       default:
         return null;

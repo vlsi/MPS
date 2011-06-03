@@ -4,31 +4,34 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand", "jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer", "jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -897870496:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 6:
         return new OverloadedBinaryOperator_BehaviorDescriptor();
-      case -1940290366:
+      case 7:
         return new OverloadedOperatorContainer_BehaviorDescriptor();
-      case 1590784032:
+      case 4:
         return new LeftOperand_BehaviorDescriptor();
-      case 1109458287:
+      case 8:
         return new RightOperand_BehaviorDescriptor();
-      case 1644109830:
+      case 5:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator 
         return null;
-      case -2132423961:
+      case 0:
         return new BinaryOperationReference_BehaviorDescriptor();
-      case -298353385:
+      case 1:
         return new CustomOperator_BehaviorDescriptor();
-      case -703486262:
+      case 3:
         return new CustomOperatorUsage_BehaviorDescriptor();
-      case 849304547:
+      case 2:
         return new CustomOperatorDeclaration_BehaviorDescriptor();
       default:
         return null;

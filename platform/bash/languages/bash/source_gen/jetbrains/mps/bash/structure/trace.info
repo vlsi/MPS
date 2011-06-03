@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IGeneralizedWordUnit.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.bash.structure.IGeneralizedWordUnit" />
-  <unitInfo fileName="ICommandParameter.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.bash.structure.ICommandParameter" />
-  <unitInfo fileName="ICompoundCommand.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.bash.structure.ICompoundCommand" />
   <unitInfo fileName="IArithmeticHolder.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.bash.structure.IArithmeticHolder" />
   <unitInfo fileName="IComment.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.bash.structure.IComment" />
+  <unitInfo fileName="ICommandParameter.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.bash.structure.ICommandParameter" />
+  <unitInfo fileName="ICompoundCommand.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.bash.structure.ICompoundCommand" />
+  <unitInfo fileName="IGeneralizedWordUnit.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.bash.structure.IGeneralizedWordUnit" />
   <unitInfo fileName="IPriorityExpression.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.structure.IPriorityExpression" />
   <unitInfo fileName="IConcreteWordUnit.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.structure.IConcreteWordUnit" />
   <unitInfo fileName="IDescribedConcept.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.bash.structure.IDescribedConcept" />
   <unitInfo fileName="ISymbolConcept.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.bash.structure.ISymbolConcept" />
   <unitInfo fileName="IToWordRedirection.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.bash.structure.IToWordRedirection" />
   <unitInfo fileName="Bash_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.structure.Bash_Language" />
+  <unitInfo fileName="EqualityStrings2.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.EqualityStrings2" />
+  <unitInfo fileName="OrCombiningConditionalExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.OrCombiningConditionalExpression" />
+  <unitInfo fileName="AndCombiningComditionalExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.AndCombiningComditionalExpression" />
+  <unitInfo fileName="GreaterThanOrEqual.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.GreaterThanOrEqual" />
+  <unitInfo fileName="GreaterThanNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.GreaterThanNumber" />
+  <unitInfo fileName="LessThanOrEqualNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.LessThanOrEqualNumber" />
+  <unitInfo fileName="LessThanNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.LessThanNumber" />
+  <unitInfo fileName="EqualityNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.EqualityNumber" />
+  <unitInfo fileName="InequalityNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.InequalityNumber" />
+  <unitInfo fileName="VariableAddAssingment.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.VariableAddAssingment" />
+  <unitInfo fileName="SemicolonOperator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.SemicolonOperator" />
   <unitInfo fileName="GreaterThanString.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.GreaterThanString" />
   <unitInfo fileName="LessThanString.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.LessThanString" />
   <unitInfo fileName="InequalityStrings.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.InequalityStrings" />
@@ -46,14 +57,9 @@
   <unitInfo fileName="PipelineOperatorConnection.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.PipelineOperatorConnection" />
   <unitInfo fileName="OrOperator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.OrOperator" />
   <unitInfo fileName="AndOperator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.AndOperator" />
-  <unitInfo fileName="BracketGrouping.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.BracketGrouping" />
-  <unitInfo fileName="BraceGrouping.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.BraceGrouping" />
-  <unitInfo fileName="DoubleSemicolonEt.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DoubleSemicolonEt" />
-  <unitInfo fileName="SemicolonEt.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.SemicolonEt" />
-  <unitInfo fileName="DoubleSemicolon.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DoubleSemicolon" />
-  <unitInfo fileName="AbstractCommand.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.AbstractCommand" />
-  <unitInfo fileName="AsyncTerminator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.AsyncTerminator" />
-  <unitInfo fileName="SemicolonTerminator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.SemicolonTerminator" />
+  <unitInfo fileName="DoubleQuote.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DoubleQuote" />
+  <unitInfo fileName="SingleQuote.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.SingleQuote" />
+  <unitInfo fileName="ArgumentList.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.ArgumentList" />
   <unitInfo fileName="ReadingWritingRedirection.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.ReadingWritingRedirection" />
   <unitInfo fileName="DuplicateOutputFileDiscriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor" />
   <unitInfo fileName="DuplicateInputFileDiscriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DuplicateInputFileDiscriptor" />
@@ -103,72 +109,66 @@
   <unitInfo fileName="ModExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.ModExpression" />
   <unitInfo fileName="DivExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DivExpression" />
   <unitInfo fileName="MulExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.MulExpression" />
+  <unitInfo fileName="BracketGrouping.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.BracketGrouping" />
+  <unitInfo fileName="BraceGrouping.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.BraceGrouping" />
+  <unitInfo fileName="DoubleSemicolonEt.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DoubleSemicolonEt" />
+  <unitInfo fileName="SemicolonEt.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.SemicolonEt" />
+  <unitInfo fileName="DoubleSemicolon.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DoubleSemicolon" />
+  <unitInfo fileName="AbstractCommand.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.AbstractCommand" />
+  <unitInfo fileName="AsyncTerminator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.AsyncTerminator" />
+  <unitInfo fileName="SemicolonTerminator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.SemicolonTerminator" />
   <unitInfo fileName="AsyncOperator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.AsyncOperator" />
-  <unitInfo fileName="DoubleQuote.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.DoubleQuote" />
-  <unitInfo fileName="SingleQuote.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.SingleQuote" />
-  <unitInfo fileName="ArgumentList.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.ArgumentList" />
-  <unitInfo fileName="OrCombiningConditionalExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.OrCombiningConditionalExpression" />
-  <unitInfo fileName="AndCombiningComditionalExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.AndCombiningComditionalExpression" />
-  <unitInfo fileName="GreaterThanOrEqual.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.GreaterThanOrEqual" />
-  <unitInfo fileName="GreaterThanNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.GreaterThanNumber" />
-  <unitInfo fileName="LessThanOrEqualNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.LessThanOrEqualNumber" />
-  <unitInfo fileName="LessThanNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.LessThanNumber" />
-  <unitInfo fileName="EqualityNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.EqualityNumber" />
-  <unitInfo fileName="InequalityNumber.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.InequalityNumber" />
-  <unitInfo fileName="VariableAddAssingment.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.VariableAddAssingment" />
-  <unitInfo fileName="SemicolonOperator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.SemicolonOperator" />
-  <unitInfo fileName="EqualityStrings2.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.bash.structure.EqualityStrings2" />
   <unitInfo fileName="ConditionalExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.ConditionalExpression" />
   <unitInfo fileName="LValue.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.LValue" />
+  <unitInfo fileName="Command.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.Command" />
   <unitInfo fileName="AbstractFollowingCommandList.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.AbstractFollowingCommandList" />
   <unitInfo fileName="InputLine.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.InputLine" />
-  <unitInfo fileName="ArithmeticExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.ArithmeticExpression" />
-  <unitInfo fileName="ExternalOptionReference.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.ExternalOptionReference" />
   <unitInfo fileName="ExternalOptionDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.ExternalOptionDeclaration" />
+  <unitInfo fileName="ExternalOptionReference.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.ExternalOptionReference" />
   <unitInfo fileName="Redirection.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.Redirection" />
-  <unitInfo fileName="Command.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.Command" />
+  <unitInfo fileName="ArithmeticExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bash.structure.ArithmeticExpression" />
   <unitInfo fileName="CaseTerminator.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.bash.structure.CaseTerminator" />
   <unitInfo fileName="CommandTerminator.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.bash.structure.CommandTerminator" />
+  <unitInfo fileName="BracketConditionalExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.BracketConditionalExpression" />
+  <unitInfo fileName="NotCommand.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.NotCommand" />
   <unitInfo fileName="StringConditionalExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.StringConditionalExpression" />
-  <unitInfo fileName="WhileLoopCommand.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.WhileLoopCommand" />
-  <unitInfo fileName="UntilLoopCommand.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.UntilLoopCommand" />
   <unitInfo fileName="OutputRedirection.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.OutputRedirection" />
   <unitInfo fileName="BracketExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.BracketExpression" />
   <unitInfo fileName="HexIntegerLiteral.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.HexIntegerLiteral" />
   <unitInfo fileName="DecimalConstant.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.DecimalConstant" />
-  <unitInfo fileName="BracketConditionalExpression.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.BracketConditionalExpression" />
-  <unitInfo fileName="NotCommand.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.NotCommand" />
+  <unitInfo fileName="WhileLoopCommand.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.WhileLoopCommand" />
+  <unitInfo fileName="UntilLoopCommand.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.structure.UntilLoopCommand" />
   <unitInfo fileName="OptionReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.bash.structure.OptionReference" />
   <unitInfo fileName="UnaryConditionalExpression.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.bash.structure.UnaryConditionalExpression" />
   <unitInfo fileName="FollowingCommandList.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.bash.structure.FollowingCommandList" />
-  <unitInfo fileName="UnaryArithmeticExpression.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.bash.structure.UnaryArithmeticExpression" />
   <unitInfo fileName="WordExpression.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.bash.structure.WordExpression" />
+  <unitInfo fileName="UnaryArithmeticExpression.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.bash.structure.UnaryArithmeticExpression" />
   <unitInfo fileName="FollowingPipeline.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.bash.structure.FollowingPipeline" />
-  <unitInfo fileName="OptionWithParamReference.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.bash.structure.OptionWithParamReference" />
   <unitInfo fileName="ArgumentReference.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.bash.structure.ArgumentReference" />
+  <unitInfo fileName="OptionWithParamReference.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.bash.structure.OptionWithParamReference" />
   <unitInfo fileName="FunctionCallCommand.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.bash.structure.FunctionCallCommand" />
   <unitInfo fileName="BasedIntegerLiteral.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.bash.structure.BasedIntegerLiteral" />
   <unitInfo fileName="HeadPipeline.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.bash.structure.HeadPipeline" />
   <unitInfo fileName="HeadCommandList.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.bash.structure.HeadCommandList" />
   <unitInfo fileName="ElifCommand.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.bash.structure.ElifCommand" />
+  <unitInfo fileName="CombiningConditionalExpression.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.bash.structure.CombiningConditionalExpression" />
   <unitInfo fileName="BinaryConditionalExpression.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.bash.structure.BinaryConditionalExpression" />
   <unitInfo fileName="BaseVariableAssingment.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.bash.structure.BaseVariableAssingment" />
   <unitInfo fileName="BaseAssingmentExpression.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.bash.structure.BaseAssingmentExpression" />
-  <unitInfo fileName="CombiningConditionalExpression.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.bash.structure.CombiningConditionalExpression" />
   <unitInfo fileName="FreeCommand.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.bash.structure.FreeCommand" />
+  <unitInfo fileName="ArgumentListReference.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.bash.structure.ArgumentListReference" />
   <unitInfo fileName="OptionSetReference.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.bash.structure.OptionSetReference" />
   <unitInfo fileName="OptionSet.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.bash.structure.OptionSet" />
-  <unitInfo fileName="ArgumentListReference.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.bash.structure.ArgumentListReference" />
   <unitInfo fileName="GeneralizedWord.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.bash.structure.GeneralizedWord" />
   <unitInfo fileName="WordList.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.bash.structure.WordList" />
   <unitInfo fileName="InputLines.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.bash.structure.InputLines" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="428" startPosition="0" endLine="467" endPosition="0" unitName="jetbrains.mps.bash.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="ForCommand.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.structure.ForCommand" />
   <unitInfo fileName="ConditionalOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.structure.ConditionalOperation" />
+  <unitInfo fileName="ForCommand.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.structure.ForCommand" />
   <unitInfo fileName="CommandList.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.structure.CommandList" />
-  <unitInfo fileName="ForeachCommand.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.bash.structure.ForeachCommand" />
   <unitInfo fileName="ExternalCommandCall.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.bash.structure.ExternalCommandCall" />
   <unitInfo fileName="RedirectedCommand.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.bash.structure.RedirectedCommand" />
+  <unitInfo fileName="ForeachCommand.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.bash.structure.ForeachCommand" />
   <unitInfo fileName="HereDocumentRedirection.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.bash.structure.HereDocumentRedirection" />
   <unitInfo fileName="CaseClause.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.bash.structure.CaseClause" />
   <unitInfo fileName="QuotesCommandSubstitution.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.bash.structure.QuotesCommandSubstitution" />
@@ -176,17 +176,17 @@
   <unitInfo fileName="VariableReference.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.VariableReference" />
   <unitInfo fileName="CommentedFollowingCommandList.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.CommentedFollowingCommandList" />
   <unitInfo fileName="CommentedCommandList.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.CommentedCommandList" />
-  <unitInfo fileName="AbstractLoopCommand.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.AbstractLoopCommand" />
+  <unitInfo fileName="ConditionalCommand.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.ConditionalCommand" />
   <unitInfo fileName="HereStringRedirection.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.HereStringRedirection" />
   <unitInfo fileName="AppendingOutputErrorRedirection.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.AppendingOutputErrorRedirection" />
   <unitInfo fileName="OutputErrorRedirection.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.OutputErrorRedirection" />
   <unitInfo fileName="BasicParameterExpansion.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.BasicParameterExpansion" />
   <unitInfo fileName="ArithmeticCommand.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.ArithmeticCommand" />
-  <unitInfo fileName="ConditionalCommand.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.ConditionalCommand" />
+  <unitInfo fileName="AbstractLoopCommand.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.bash.structure.AbstractLoopCommand" />
   <unitInfo fileName="CommentedText.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.bash.structure.CommentedText" />
   <unitInfo fileName="SimpleWord.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.bash.structure.SimpleWord" />
-  <unitInfo fileName="VariableNameDeclaration.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.bash.structure.VariableNameDeclaration" />
   <unitInfo fileName="ArithmeticExpansion.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.bash.structure.ArithmeticExpansion" />
+  <unitInfo fileName="VariableNameDeclaration.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.bash.structure.VariableNameDeclaration" />
   <unitInfo fileName="QuotedWord.java" startLine="14" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.bash.structure.QuotedWord" />
   <unitInfo fileName="GroupingCommand.java" startLine="13" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.bash.structure.GroupingCommand" />
   <unitInfo fileName="BaseCommandSubstitution.java" startLine="14" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.bash.structure.BaseCommandSubstitution" />

@@ -79,6 +79,19 @@ public class ClassConcept_Behavior {
     return Classifier_Behavior.call_isDescendant_checkLoops_7165541881557222950(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), nodeToCompare, visited);
   }
 
+  public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
+    if (SetSequence.fromSet(visited).contains(thisNode)) {
+      LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      return false;
+    }
+    if (SLinkOperations.getTarget(thisNode, "superclass", true) == null) {
+      return true;
+    }
+    SetSequence.fromSet(visited).addElement(thisNode);
+    // todo: not only superclass 
+    return Classifier_Behavior.call_checkLoops_3980490811621705349(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), visited);
+  }
+
   public static SNode call_getMainMethod_1213877355884(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -145,7 +158,7 @@ public class ClassConcept_Behavior {
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "superclass", true) != null ?
       SLinkOperations.getTarget(thisNode, "superclass", true) :
-      new ClassConcept_Behavior.QuotationClass_xjj00_a0a0a9().createNode()
+      new ClassConcept_Behavior.QuotationClass_xjj00_a0a0a01().createNode()
     );
   }
 
@@ -221,8 +234,8 @@ public class ClassConcept_Behavior {
     return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
 
-  public static class QuotationClass_xjj00_a0a0a9 {
-    public QuotationClass_xjj00_a0a0a9() {
+  public static class QuotationClass_xjj00_a0a0a01 {
+    public QuotationClass_xjj00_a0a0a01() {
     }
 
     public SNode createNode() {

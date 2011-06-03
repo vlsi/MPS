@@ -15,7 +15,7 @@
   <unitInfo fileName="MatrixLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.behavior.MatrixLiteral_BehaviorDescriptor" />
   <unitInfo fileName="MatrixType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.behavior.MatrixType_BehaviorDescriptor" />
   <unitInfo fileName="MatrixType_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.behavior.MatrixType_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1215414020889">
     <nodeInfo nodeId="1215414028678" fileName="MatrixType_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1215414028689" fileName="MatrixType_Behavior.java" startLine="14" startPosition="25" endLine="15" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

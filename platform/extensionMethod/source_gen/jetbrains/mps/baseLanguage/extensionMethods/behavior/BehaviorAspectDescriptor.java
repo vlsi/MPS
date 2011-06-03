@@ -4,30 +4,33 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1246147902:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 8:
         return new TypeExtension_BehaviorDescriptor();
-      case 129526999:
+      case 1:
         return new ExtensionMethodCall_BehaviorDescriptor();
-      case -1723369247:
+      case 2:
         return new ExtensionMethodDeclaration_BehaviorDescriptor();
-      case -601699182:
+      case 7:
         return new ThisExtensionExpression_BehaviorDescriptor();
-      case -726165355:
+      case 6:
         return new SimpleExtensionMethodsContainer_BehaviorDescriptor();
-      case 1296239129:
+      case 0:
         return new BaseExtensionMethodContainer_BehaviorDescriptor();
-      case -492181129:
+      case 4:
         return new ExtensionStaticFieldReference_BehaviorDescriptor();
-      case 1743013030:
+      case 3:
         return new ExtensionStaticFieldDeclaration_BehaviorDescriptor();
-      case 818556828:
+      case 5:
         return new LocalExtendedMethodCall_BehaviorDescriptor();
       default:
         return null;

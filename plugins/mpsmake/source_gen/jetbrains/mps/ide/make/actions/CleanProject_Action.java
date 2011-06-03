@@ -29,7 +29,7 @@ public class CleanProject_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(CleanProject_Action.class);
 
   public CleanProject_Action() {
-    super("Clean Project", "", ICON);
+    super("Clean Compiled Java Files", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

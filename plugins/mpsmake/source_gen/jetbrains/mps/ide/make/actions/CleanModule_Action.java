@@ -26,7 +26,7 @@ public class CleanModule_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(CleanModule_Action.class);
 
   public CleanModule_Action() {
-    super("Clean", "", ICON);
+    super("Clean Compiled Java Files", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

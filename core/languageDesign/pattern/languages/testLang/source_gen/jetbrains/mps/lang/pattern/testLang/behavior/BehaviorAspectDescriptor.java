@@ -4,26 +4,29 @@ package jetbrains.mps.lang.pattern.testLang.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.pattern.testLang.structure.ListValue", "jetbrains.mps.lang.pattern.testLang.structure.PatternTest", "jetbrains.mps.lang.pattern.testLang.structure.PropertyValue", "jetbrains.mps.lang.pattern.testLang.structure.TestListReference", "jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.VariableValue"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -2089854751:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 1:
         return new PatternTest_BehaviorDescriptor();
-      case 911428916:
+      case 6:
         return new VariableValue_BehaviorDescriptor();
-      case -1180169316:
+      case 5:
         return new TestVariableReference_BehaviorDescriptor();
-      case -808094393:
+      case 4:
         return new TestPropertyVariableReference_BehaviorDescriptor();
-      case -1445432965:
+      case 2:
         return new PropertyValue_BehaviorDescriptor();
-      case 737557458:
+      case 0:
         return new ListValue_BehaviorDescriptor();
-      case 107590202:
+      case 3:
         return new TestListReference_BehaviorDescriptor();
       default:
         return null;

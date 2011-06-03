@@ -48,6 +48,13 @@ public class NodeReadEventsCaster {
     }
   }
 
+  public static void fireModelNodesReadAccess(SModel model) {
+    ListenersContainer listenersContainer = ourListenersContainer.get();
+    if (listenersContainer != null) {
+      listenersContainer.fireModelNodesReadAccess(model);
+    }
+  }
+
   public static void setNodesReadListener(INodesReadListener listener) {
     getListenersContainer().addListener(listener);
   }
@@ -115,6 +122,11 @@ public class NodeReadEventsCaster {
     public void fireNodeUnclassifiedReadAccess(SNode node) {
       if (myEventsBlocked || node.isModelLoading()) return;
       myListenersStack.peek().nodeUnclassifiedReadAccess(node);
+    }
+
+    public void fireModelNodesReadAccess(SModel model) {
+      if (myEventsBlocked || model.isLoading()) return;
+      myListenersStack.peek().modelNodesReadAccess(model);
     }
 
     public boolean areEventsBlocked() {

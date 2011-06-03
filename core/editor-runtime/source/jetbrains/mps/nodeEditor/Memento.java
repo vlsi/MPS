@@ -87,6 +87,7 @@ class Memento {
     if (needsRelayout) {
       editor.relayout();
     }
+    editor.ensureSelectionVisible();
   }
 
   private boolean restoreErrors(EditorComponent editor) {

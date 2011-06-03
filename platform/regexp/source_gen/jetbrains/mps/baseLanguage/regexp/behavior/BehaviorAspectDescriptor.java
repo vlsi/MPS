@@ -4,143 +4,146 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", "jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.baseLanguage.regexp.structure.Regexps", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.Replacement", "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1611797126:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 40:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.Regexp 
         return null;
-      case 1374717238:
+      case 55:
         return new StringLiteralRegexp_BehaviorDescriptor();
-      case -1336387331:
+      case 29:
         return new OrRegexp_BehaviorDescriptor();
-      case 1792518964:
+      case 31:
         return new PlusRegexp_BehaviorDescriptor();
-      case -1755727380:
+      case 54:
         return new StarRegexp_BehaviorDescriptor();
-      case 624287648:
+      case 41:
         return new RegexpDeclaration_BehaviorDescriptor();
-      case -1397831625:
+      case 51:
         return new SeqRegexp_BehaviorDescriptor();
-      case -928561125:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp 
         return null;
-      case -1300649657:
+      case 59:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp 
         return null;
-      case -762960189:
+      case 30:
         return new ParensRegexp_BehaviorDescriptor();
-      case -1589577813:
+      case 8:
         return new InlineRegexpExpression_BehaviorDescriptor();
-      case 1884717202:
+      case 21:
         return new MatchRegexpStatement_BehaviorDescriptor();
-      case -101249024:
+      case 39:
         return new QuestionRegexp_BehaviorDescriptor();
-      case 1391633112:
+      case 57:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp 
         return null;
-      case 1074264799:
+      case 34:
         return new PositiveSymbolClassRegexp_BehaviorDescriptor();
-      case -1323907037:
+      case 28:
         return new NegativeSymbolClassRegexp_BehaviorDescriptor();
-      case -1468867215:
+      case 35:
         return new PredefinedSymbolClassDeclaration_BehaviorDescriptor();
-      case -435386697:
+      case 38:
         return new PredefinedSymbolClasses_BehaviorDescriptor();
-      case 1231770290:
+      case 36:
         return new PredefinedSymbolClassRegexp_BehaviorDescriptor();
-      case -1440040543:
+      case 3:
         return new DotRegexp_BehaviorDescriptor();
-      case 1279595906:
+      case 56:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart 
         return null;
-      case 1160092315:
+      case 2:
         return new CharacterSymbolClassPart_BehaviorDescriptor();
-      case 308348669:
+      case 10:
         return new IntervalSymbolClassPart_BehaviorDescriptor();
-      case 1763315530:
+      case 37:
         return new PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor();
-      case -1185512346:
+      case 18:
         return new MatchParensRegexp_BehaviorDescriptor();
-      case -1756957861:
+      case 22:
         return new MatchVariableReference_BehaviorDescriptor();
-      case -497872613:
+      case 44:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction 
         return null;
-      case -706622870:
+      case 48:
         return new ReplaceWithRegexpExpression_BehaviorDescriptor();
-      case -461984278:
+      case 46:
         return new ReplaceBlock_BehaviorDescriptor();
-      case 336988160:
+      case 13:
         return new LazyStarRegexp_BehaviorDescriptor();
-      case -409732792:
+      case 11:
         return new LazyPlusRegexp_BehaviorDescriptor();
-      case 83244052:
+      case 12:
         return new LazyQuestionRegexp_BehaviorDescriptor();
-      case 1573896761:
+      case 45:
         return new Regexps_BehaviorDescriptor();
-      case 746456180:
+      case 42:
         return new RegexpDeclarationReferenceRegexp_BehaviorDescriptor();
-      case -1742097838:
+      case 25:
         return new NTimesRegexp_BehaviorDescriptor();
-      case 947810022:
+      case 0:
         return new AtLeastNTimesRegexp_BehaviorDescriptor();
-      case 303155600:
+      case 7:
         return new FromNToMTimesRegexp_BehaviorDescriptor();
-      case 763217537:
+      case 32:
         return new PositiveLookAheadRegexp_BehaviorDescriptor();
-      case -2086202171:
+      case 26:
         return new NegativeLookAheadRegexp_BehaviorDescriptor();
-      case 1074154617:
+      case 17:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.LookRegexp 
         return null;
-      case -256725652:
+      case 33:
         return new PositiveLookBehindRegexp_BehaviorDescriptor();
-      case 1605576616:
+      case 27:
         return new NegativeLookBehindRegexp_BehaviorDescriptor();
-      case 1955121220:
+      case 23:
         return new MatchVariableReferenceRegexp_BehaviorDescriptor();
-      case 368331698:
+      case 43:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression 
         return null;
-      case -1839375965:
+      case 6:
         return new ForEachMatchStatement_BehaviorDescriptor();
-      case -1683994074:
+      case 15:
         return new LineStartRegexp_BehaviorDescriptor();
-      case 2138692255:
+      case 14:
         return new LineEndRegexp_BehaviorDescriptor();
-      case 289311745:
+      case 52:
         return new SplitExpression_BehaviorDescriptor();
-      case 1490491956:
+      case 5:
         return new FindMatchStatement_BehaviorDescriptor();
-      case 1011294165:
+      case 19:
         return new MatchRegexpExpression_BehaviorDescriptor();
-      case -1591715994:
+      case 60:
         return new UnicodeCharacterRegexp_BehaviorDescriptor();
-      case -982871751:
+      case 9:
         return new IntersectionSymbolClassPart_BehaviorDescriptor();
-      case 755114098:
+      case 58:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart 
         return null;
-      case 760122078:
+      case 53:
         return new SplitOperation_BehaviorDescriptor();
-      case 1337601162:
+      case 20:
         return new MatchRegexpOperation_BehaviorDescriptor();
-      case -1350214827:
+      case 49:
         return new ReplaceWithRegexpOperation_BehaviorDescriptor();
-      case 1675213427:
+      case 4:
         return new FindMatchExpression_BehaviorDescriptor();
-      case 1158319995:
+      case 47:
         return new ReplaceRegexpOperation_BehaviorDescriptor();
-      case -1364028204:
+      case 16:
         return new LiteralReplacement_BehaviorDescriptor();
-      case 439479223:
+      case 24:
         return new MatchVariableReferenceReplacement_BehaviorDescriptor();
-      case -983459775:
+      case 50:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.regexp.structure.Replacement 
         return null;
       default:

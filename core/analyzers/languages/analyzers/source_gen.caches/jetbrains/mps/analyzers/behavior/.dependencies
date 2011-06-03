@@ -124,6 +124,7 @@
   </dependency>
   <dependency className="jetbrains.mps.analyzers.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.analyzers.behavior.AnalyzerFunFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.analyzers.behavior.AnalyzerFunParameterInput_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.analyzers.behavior.AnalyzerFunParameterProgramState_BehaviorDescriptor" />

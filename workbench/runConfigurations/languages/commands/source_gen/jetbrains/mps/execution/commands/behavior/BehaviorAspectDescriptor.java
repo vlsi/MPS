@@ -54,11 +54,11 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new ProcessType_BehaviorDescriptor();
       case 18:
         return new RedirectOutputExpression_BehaviorDescriptor();
+      case 12:
+        return new DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor();
       case 8:
         // interface or abstract concept behavior jetbrains.mps.execution.commands.structure.CommandParameterDeclaration 
         return null;
-      case 12:
-        return new DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor();
       default:
         return null;
     }

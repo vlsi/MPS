@@ -103,6 +103,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.AsBuilderStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.AsTypeBuilder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_BehaviorDescriptor" />

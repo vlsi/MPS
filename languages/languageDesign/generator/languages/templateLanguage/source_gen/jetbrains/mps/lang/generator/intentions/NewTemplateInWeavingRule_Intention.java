@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -48,7 +49,11 @@ public class NewTemplateInWeavingRule_Intention extends BaseIntention implements
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (editorContext.getSelectedCell().getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", "ruleConsequence")) {
+    final EditorCell editorCell = editorContext.getSelectedCell();
+    if (editorCell == null) {
+      return false;
+    }
+    if (editorCell.getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", "ruleConsequence")) {
       return false;
     }
     return SLinkOperations.getTarget(node, "ruleConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "ruleConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");

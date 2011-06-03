@@ -4,6 +4,8 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -24,6 +26,13 @@ public class MakeActionImpl {
 
   public void executeAction() {
     final Iterable<? extends IResource> inputRes = params.collectInput(!(this.cleanMake));
+
+    // save all before launching make 
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        SModelRepository.getInstance().saveAll();
+      }
+    });
 
     new WorkbenchMakeService(context, cleanMake) {
       @Override

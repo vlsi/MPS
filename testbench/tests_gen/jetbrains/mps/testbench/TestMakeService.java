@@ -5,8 +5,10 @@ package jetbrains.mps.testbench;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.messages.IMessageHandler;
+import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -43,16 +45,16 @@ public class TestMakeService implements IMakeService {
     this.messageHandler = messageHandler;
   }
 
-  public IResult make(Iterable<? extends IResource> resources) {
-    return doMake(resources, null, null);
+  public Future<IResult> make(Iterable<? extends IResource> resources) {
+    return new FutureValue(doMake(resources, null, null));
   }
 
-  public IResult make(Iterable<? extends IResource> resources, IScript script) {
-    return doMake(resources, script, null);
+  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
+    return new FutureValue(doMake(resources, script, null));
   }
 
-  public IResult make(Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return doMake(resources, script, controller);
+  public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
+    return new FutureValue(doMake(resources, script, controller));
   }
 
   private IResult doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {

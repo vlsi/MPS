@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="DefaultGeneratorParameterContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameterContainer_BehaviorDescriptor" />
   <unitInfo fileName="DefaultGeneratorParameter_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="DefaultGeneratorParameter_Behavior.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_Behavior" />
   <root nodeId="8484425748929510084">
     <nodeInfo nodeId="8484425748929510113" fileName="DefaultGeneratorParameter_Behavior.java" startLine="22" startPosition="6" endLine="23" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -4,50 +4,53 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", "jetbrains.mps.baseLanguage.unitTest.structure.Fail", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.baseLanguage.unitTest.structure.Message", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -941576521:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 15:
         return new TestMethod_BehaviorDescriptor();
-      case -537086400:
+      case 7:
         return new BTestCase_BehaviorDescriptor();
-      case 1980801013:
+      case 16:
         return new TestMethodList_BehaviorDescriptor();
-      case 35036233:
+      case 0:
         return new AssertEquals_BehaviorDescriptor();
-      case -392811368:
+      case 6:
         return new AssertTrue_BehaviorDescriptor();
-      case 694305625:
+      case 1:
         return new AssertFalse_BehaviorDescriptor();
-      case -392857744:
+      case 4:
         return new AssertSame_BehaviorDescriptor();
-      case 865895618:
+      case 9:
         return new Fail_BehaviorDescriptor();
-      case 150257243:
+      case 3:
         return new AssertIsNull_BehaviorDescriptor();
-      case 456086231:
+      case 5:
         return new AssertThrows_BehaviorDescriptor();
-      case -1930575901:
+      case 13:
         return new Message_BehaviorDescriptor();
-      case -1766538385:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder 
         return null;
-      case -303471279:
+      case 12:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.unitTest.structure.ITestable 
         return null;
-      case -304365753:
+      case 10:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.unitTest.structure.ITestCase 
         return null;
-      case -147690696:
+      case 11:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod 
         return null;
-      case 668322123:
+      case 2:
         return new AssertInNotNull_BehaviorDescriptor();
-      case 606040139:
+      case 8:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert 
         return null;
       default:

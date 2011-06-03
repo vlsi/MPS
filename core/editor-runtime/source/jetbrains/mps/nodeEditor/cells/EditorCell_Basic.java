@@ -1353,6 +1353,15 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
+  // Following methods are used from layout algorythms
+  protected void markNeedsRelayout() {
+    myIsNeedRelayout = true;
+  }
+
+  boolean isNeedsRelayout() {
+    return myIsNeedRelayout;
+  }
+
   public void unrequestLayout() {
     myIsNeedRelayout = false;
   }

@@ -306,7 +306,7 @@
   <unitInfo fileName="ActionParameterDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionParameterDeclaration_Behavior" />
   <unitInfo fileName="ActionDataParameterDeclaration_Behavior.java" startLine="21" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior" />
   <unitInfo fileName="RunConfigurationDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.RunConfigurationDeclaration_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="518" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="521" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1171743928471337190">
     <scopeInfo nodeId="1171743928471337192" fileName="ActionParameter_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
   </root>

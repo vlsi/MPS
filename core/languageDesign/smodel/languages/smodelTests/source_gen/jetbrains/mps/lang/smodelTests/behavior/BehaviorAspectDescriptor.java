@@ -4,26 +4,29 @@ package jetbrains.mps.lang.smodelTests.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.smodelTests.structure.Child", "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", "jetbrains.mps.lang.smodelTests.structure.GrandChild", "jetbrains.mps.lang.smodelTests.structure.NamedConcept", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "jetbrains.mps.lang.smodelTests.structure.Root"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -321789996:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 0:
         return new Child_BehaviorDescriptor();
-      case 716903352:
+      case 2:
         return new GrandChild_BehaviorDescriptor();
-      case 1791188778:
+      case 6:
         return new Root_BehaviorDescriptor();
-      case -1210265860:
+      case 1:
         return new ChildSubConcept_BehaviorDescriptor();
-      case -59084354:
+      case 4:
         return new ReferenceContainer_BehaviorDescriptor();
-      case 70151991:
+      case 3:
         return new NamedConcept_BehaviorDescriptor();
-      case -137395098:
+      case 5:
         return new ReferenceContainerSubConcept_BehaviorDescriptor();
       default:
         return null;

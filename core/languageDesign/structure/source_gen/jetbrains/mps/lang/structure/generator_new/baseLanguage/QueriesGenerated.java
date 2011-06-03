@@ -1107,7 +1107,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1281791650135608799(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SetSequence.fromSet(AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).o1).toListSequence().sort(new ISelector<SNode, Comparable<?>>() {
+    return SetSequence.fromSet(AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(_context.getNode()).o1).toListSequence().sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return NameUtil.nodeFQName(it);
       }
@@ -1123,11 +1123,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1281791650135608648(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
-      }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.fromList(SModelOperations.getNodes(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

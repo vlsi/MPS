@@ -29,4 +29,6 @@ public interface INodesReadListener {
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent);
 
   public void nodeUnclassifiedReadAccess(SNode node);
+
+  public void modelNodesReadAccess(SModel model);
 }

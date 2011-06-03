@@ -83,6 +83,7 @@
   <unitInfo fileName="LinkList_AddNewChildOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LinkList_AddNewChildOperation_BehaviorDescriptor" />
   <unitInfo fileName="Link_SetNewChildOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.Link_SetNewChildOperation_BehaviorDescriptor" />
   <unitInfo fileName="Property_SetOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.Property_SetOperation_BehaviorDescriptor" />
+  <unitInfo fileName="ReadConceptReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ReadConceptReferenceExpression_BehaviorDescriptor" />
   <unitInfo fileName="ConceptPropertyNameRefExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ConceptPropertyNameRefExpression_BehaviorDescriptor" />
   <unitInfo fileName="PropertyQualifier_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.PropertyQualifier_BehaviorDescriptor" />
   <unitInfo fileName="LinkQualifier_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LinkQualifier_BehaviorDescriptor" />
@@ -192,7 +193,7 @@
   <unitInfo fileName="AttributeQualifier_Behavior.java" startLine="25" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior" />
   <unitInfo fileName="_LinkAccessT_Behavior.java" startLine="15" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior" />
   <unitInfo fileName="AttributeAccess_Behavior.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeAccess_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877246679">
     <scopeInfo nodeId="1213877246681" fileName="PropertyRefQualifier_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

@@ -4,16 +4,19 @@ package jetbrains.mps.lang.generator.generationParameters.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 933753525:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 0:
         return new DefaultGeneratorParameter_BehaviorDescriptor();
-      case -133647028:
+      case 1:
         return new DefaultGeneratorParameterContainer_BehaviorDescriptor();
       default:
         return null;

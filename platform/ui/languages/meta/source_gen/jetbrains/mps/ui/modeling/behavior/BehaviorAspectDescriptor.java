@@ -4,142 +4,145 @@ package jetbrains.mps.ui.modeling.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ApplyConstraintStatement", "jetbrains.mps.ui.modeling.structure.AspectParameterDecl", "jetbrains.mps.ui.modeling.structure.AspectParameterRef", "jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", "jetbrains.mps.ui.modeling.structure.AuxObjectFactory", "jetbrains.mps.ui.modeling.structure.AuxObjectTemplate", "jetbrains.mps.ui.modeling.structure.Auxillary", "jetbrains.mps.ui.modeling.structure.BeforeUIObjectParam", "jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint", "jetbrains.mps.ui.modeling.structure.CellLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ChildAspectDefinition", "jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint", "jetbrains.mps.ui.modeling.structure.Container", "jetbrains.mps.ui.modeling.structure.ContainerItemAdder", "jetbrains.mps.ui.modeling.structure.ContainerItemClearer", "jetbrains.mps.ui.modeling.structure.ContainerItemInserter", "jetbrains.mps.ui.modeling.structure.ContainerItemIterator", "jetbrains.mps.ui.modeling.structure.ContainerItemRemover", "jetbrains.mps.ui.modeling.structure.ContainerTemplate", "jetbrains.mps.ui.modeling.structure.Context", "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam", "jetbrains.mps.ui.modeling.structure.EditableUIProperty", "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.Event", "jetbrains.mps.ui.modeling.structure.EventHandlerParam", "jetbrains.mps.ui.modeling.structure.EventHandlerSetup", "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", "jetbrains.mps.ui.modeling.structure.EventProducer", "jetbrains.mps.ui.modeling.structure.EventProducerParam", "jetbrains.mps.ui.modeling.structure.EventProperty", "jetbrains.mps.ui.modeling.structure.EventPropertyGetter", "jetbrains.mps.ui.modeling.structure.ExpressionWithUnit", "jetbrains.mps.ui.modeling.structure.ForceLayoutCode", "jetbrains.mps.ui.modeling.structure.Geometry", "jetbrains.mps.ui.modeling.structure.HasTemplate", "jetbrains.mps.ui.modeling.structure.HorizontalAlignment", "jetbrains.mps.ui.modeling.structure.HorizontalConstraint", "jetbrains.mps.ui.modeling.structure.IAspectParameterHolder", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub", "jetbrains.mps.ui.modeling.structure.ItemUIObjectParam", "jetbrains.mps.ui.modeling.structure.LayoutConstraint", "jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression", "jetbrains.mps.ui.modeling.structure.LayoutConstraintType", "jetbrains.mps.ui.modeling.structure.OverrideAnnotation", "jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerParam", "jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerSetup", "jetbrains.mps.ui.modeling.structure.PropertyValueParam", "jetbrains.mps.ui.modeling.structure.RowLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ThisEventParam", "jetbrains.mps.ui.modeling.structure.ThisUIObjectParam", "jetbrains.mps.ui.modeling.structure.UIAction", "jetbrains.mps.ui.modeling.structure.UIActionCode", "jetbrains.mps.ui.modeling.structure.UIObject", "jetbrains.mps.ui.modeling.structure.UIObjectFactory", "jetbrains.mps.ui.modeling.structure.UIObjectTemplate", "jetbrains.mps.ui.modeling.structure.UIProperty", "jetbrains.mps.ui.modeling.structure.UIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.UIPropertyGetter", "jetbrains.mps.ui.modeling.structure.UIPropertySetter", "jetbrains.mps.ui.modeling.structure.UnitType", "jetbrains.mps.ui.modeling.structure.VerticalAlignment", "jetbrains.mps.ui.modeling.structure.VerticalConstraint"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -133672961:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 53:
         return new UIObject_BehaviorDescriptor();
-      case -694330731:
+      case 56:
         return new UIProperty_BehaviorDescriptor();
-      case 1532659950:
+      case 24:
         return new Event_BehaviorDescriptor();
-      case 1542975136:
+      case 28:
         return new EventProducer_BehaviorDescriptor();
-      case -535065575:
+      case 22:
         return new EditableUIProperty_BehaviorDescriptor();
-      case -209120871:
+      case 55:
         return new UIObjectTemplate_BehaviorDescriptor();
-      case 956909030:
+      case 57:
         return new UIPropertyAccessCode_BehaviorDescriptor();
-      case -82160780:
+      case 59:
         return new UIPropertySetter_BehaviorDescriptor();
-      case 412272592:
+      case 50:
         return new ThisUIObjectParam_BehaviorDescriptor();
-      case -1343431811:
+      case 47:
         return new PropertyValueParam_BehaviorDescriptor();
-      case -425710592:
+      case 58:
         return new UIPropertyGetter_BehaviorDescriptor();
-      case -1101720810:
+      case 27:
         return new EventHandlerTemplate_BehaviorDescriptor();
-      case 565382013:
+      case 49:
         return new ThisEventParam_BehaviorDescriptor();
-      case 1836627825:
+      case 25:
         return new EventHandlerParam_BehaviorDescriptor();
-      case -1117168179:
+      case 29:
         return new EventProducerParam_BehaviorDescriptor();
-      case 1839520097:
+      case 26:
         return new EventHandlerSetup_BehaviorDescriptor();
-      case 1553595619:
+      case 30:
         return new EventProperty_BehaviorDescriptor();
-      case -817800242:
+      case 31:
         return new EventPropertyGetter_BehaviorDescriptor();
-      case -952375804:
+      case 46:
         return new PropertyChangeHandlerSetup_BehaviorDescriptor();
-      case -1993710998:
+      case 23:
         return new EditableUIPropertyAccessCode_BehaviorDescriptor();
-      case -955268076:
+      case 45:
         return new PropertyChangeHandlerParam_BehaviorDescriptor();
-      case 1472630920:
+      case 35:
         // interface or abstract concept behavior jetbrains.mps.ui.modeling.structure.HasTemplate 
         return null;
-      case -1917183787:
+      case 13:
         return new Container_BehaviorDescriptor();
-      case -1339579281:
+      case 19:
         return new ContainerTemplate_BehaviorDescriptor();
-      case -2122563205:
+      case 40:
         return new ItemUIObjectParam_BehaviorDescriptor();
-      case 1566609510:
+      case 14:
         return new ContainerItemAdder_BehaviorDescriptor();
-      case -2025829365:
+      case 54:
         return new UIObjectFactory_BehaviorDescriptor();
-      case -1871420617:
+      case 21:
         return new ContextUIObjectParam_BehaviorDescriptor();
-      case 2040465155:
+      case 20:
         return new Context_BehaviorDescriptor();
-      case 803437841:
+      case 6:
         return new AuxObjectTemplate_BehaviorDescriptor();
-      case 2024706451:
+      case 5:
         return new AuxObjectFactory_BehaviorDescriptor();
-      case -749897161:
+      case 7:
         return new Auxillary_BehaviorDescriptor();
-      case -21453060:
+      case 4:
         return new AuxObjectAccessOp_BehaviorDescriptor();
-      case 890725959:
+      case 44:
         return new OverrideAnnotation_BehaviorDescriptor();
-      case -1139407013:
+      case 11:
         return new ChildAspectDefinition_BehaviorDescriptor();
-      case -132711914:
+      case 17:
         return new ContainerItemIterator_BehaviorDescriptor();
-      case 218124742:
+      case 18:
         return new ContainerItemRemover_BehaviorDescriptor();
-      case 775309199:
+      case 8:
         return new BeforeUIObjectParam_BehaviorDescriptor();
-      case -773458226:
+      case 16:
         return new ContainerItemInserter_BehaviorDescriptor();
-      case -16933614:
+      case 15:
         return new ContainerItemClearer_BehaviorDescriptor();
-      case 1243242910:
+      case 34:
         return new Geometry_BehaviorDescriptor();
-      case 620737238:
+      case 33:
         return new ForceLayoutCode_BehaviorDescriptor();
-      case 2125633613:
+      case 37:
         return new HorizontalConstraint_BehaviorDescriptor();
-      case 647024671:
+      case 62:
         return new VerticalConstraint_BehaviorDescriptor();
-      case -1173885485:
+      case 41:
         // interface or abstract concept behavior jetbrains.mps.ui.modeling.structure.LayoutConstraint 
         return null;
-      case 1980682157:
+      case 43:
         return new LayoutConstraintType_BehaviorDescriptor();
-      case -1693421365:
+      case 42:
         return new LayoutConstraintExpression_BehaviorDescriptor();
-      case -1221672986:
+      case 9:
         return new BoxLayoutConstraint_BehaviorDescriptor();
-      case -860234674:
+      case 32:
         return new ExpressionWithUnit_BehaviorDescriptor();
-      case -895429622:
+      case 60:
         // interface or abstract concept behavior jetbrains.mps.ui.modeling.structure.UnitType 
         return null;
-      case -2096595216:
+      case 1:
         return new ApplyConstraintStatement_BehaviorDescriptor();
-      case 557662549:
+      case 10:
         return new CellLayoutConstraint_BehaviorDescriptor();
-      case 870451273:
+      case 12:
         return new ColumnLayoutConstraint_BehaviorDescriptor();
-      case 1093336565:
+      case 48:
         return new RowLayoutConstraint_BehaviorDescriptor();
-      case -533255434:
+      case 51:
         return new UIAction_BehaviorDescriptor();
-      case 1245504003:
+      case 52:
         return new UIActionCode_BehaviorDescriptor();
-      case -925178626:
+      case 0:
         return new AlignmentLayoutConstraint_BehaviorDescriptor();
-      case -837511327:
+      case 61:
         return new VerticalAlignment_BehaviorDescriptor();
-      case -1482550925:
+      case 36:
         return new HorizontalAlignment_BehaviorDescriptor();
-      case 251495887:
+      case 2:
         return new AspectParameterDecl_BehaviorDescriptor();
-      case 2086336206:
+      case 3:
         return new AspectParameterRef_BehaviorDescriptor();
-      case 916875904:
+      case 38:
         // interface or abstract concept behavior jetbrains.mps.ui.modeling.structure.IAspectParameterHolder 
         return null;
-      case 1967227654:
+      case 39:
         // interface or abstract concept behavior jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub 
         return null;
       default:

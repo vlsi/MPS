@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
+import com.intellij.openapi.diff.ex.DiffStatusBar;
+import com.intellij.openapi.diff.impl.util.TextDiffType;
 import java.awt.Frame;
 import javax.swing.JSplitPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -21,6 +23,7 @@ import jetbrains.mps.smodel.SModel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -41,6 +44,7 @@ public class RootDifferenceDialog extends BaseDialog {
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
   private JPanel myContainer = new JPanel(new BorderLayout());
+  private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
 
   public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName) {
     super(modelDialog, "Difference for " + rootName);
@@ -73,6 +77,8 @@ public class RootDifferenceDialog extends BaseDialog {
 
     myContainer.add(toolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
+    myContainer.add(myStatusBar, BorderLayout.SOUTH);
+
     highlightAllChanges();
   }
 
@@ -100,6 +106,12 @@ public class RootDifferenceDialog extends BaseDialog {
     }
     myOldEditor.repaintAndRebuildEditorMessages();
     myNewEditor.repaintAndRebuildEditorMessages();
+
+    int count = ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId)).count();
+    myStatusBar.setText((count == 0 ?
+      "no differences" :
+      NameUtil.formatNumericalString(count, "difference")
+    ));
   }
 
   private void linkEditors(boolean inspector) {

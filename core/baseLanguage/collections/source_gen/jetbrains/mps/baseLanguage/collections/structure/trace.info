@@ -2,26 +2,26 @@
 <debugInfo>
   <unitInfo fileName="IStackOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IStackOperation" />
   <unitInfo fileName="IDequeOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IDequeOperation" />
-  <unitInfo fileName="IListOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IListOperation" />
   <unitInfo fileName="IQueueOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IQueueOperation" />
+  <unitInfo fileName="IListOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IListOperation" />
   <unitInfo fileName="IContainerOperation.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IContainerOperation" />
   <unitInfo fileName="Collections_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.Collections_Language" />
-  <unitInfo fileName="StackType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.StackType" />
   <unitInfo fileName="ContainsAllOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ContainsAllOperation" />
-  <unitInfo fileName="QueueType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.QueueType" />
-  <unitInfo fileName="LinkedListType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.LinkedListType" />
-  <unitInfo fileName="PriorityQueueCreator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator" />
-  <unitInfo fileName="DequeType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.DequeType" />
   <unitInfo fileName="AlsoSortOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation" />
   <unitInfo fileName="NoArgumentsSequenceOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation" />
+  <unitInfo fileName="LinkedListType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.LinkedListType" />
+  <unitInfo fileName="PriorityQueueCreator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator" />
+  <unitInfo fileName="StackType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.StackType" />
+  <unitInfo fileName="DequeType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.DequeType" />
+  <unitInfo fileName="QueueType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.QueueType" />
   <unitInfo fileName="MappingsSetOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation" />
   <unitInfo fileName="KeyAccessOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation" />
   <unitInfo fileName="ValueAccessOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation" />
   <unitInfo fileName="SortedSetOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation" />
   <unitInfo fileName="SortedSetType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SortedSetType" />
+  <unitInfo fileName="SortedMapOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation" />
   <unitInfo fileName="TreeMapCreator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator" />
   <unitInfo fileName="SortedMapType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SortedMapType" />
-  <unitInfo fileName="SortedMapOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation" />
   <unitInfo fileName="LinkedHashSetCreator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" />
   <unitInfo fileName="RemoveOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveOperation" />
   <unitInfo fileName="ContainerIteratorType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType" />
@@ -36,11 +36,11 @@
   <unitInfo fileName="ClearSetOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation" />
   <unitInfo fileName="AbstractSetOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation" />
   <unitInfo fileName="HashSetCreator.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" />
-  <unitInfo fileName="MapClearOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MapClearOperation" />
-  <unitInfo fileName="ToIteratorOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation" />
   <unitInfo fileName="TailOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.TailOperation" />
   <unitInfo fileName="CutOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.CutOperation" />
   <unitInfo fileName="DisjunctOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation" />
+  <unitInfo fileName="MapClearOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MapClearOperation" />
+  <unitInfo fileName="ToIteratorOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation" />
   <unitInfo fileName="GetKeysOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" />
   <unitInfo fileName="ToArrayOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation" />
   <unitInfo fileName="ConcatOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" />
@@ -74,8 +74,8 @@
   <unitInfo fileName="TranslateOperation.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" />
   <unitInfo fileName="CustomMapCreator.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator" />
   <unitInfo fileName="CustomContainerCreator.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator" />
-  <unitInfo fileName="AbstractContainerType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" />
   <unitInfo fileName="SingleArgumentSequenceOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
+  <unitInfo fileName="AbstractContainerType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" />
   <unitInfo fileName="PutAllOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PutAllOperation" />
   <unitInfo fileName="JoinOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.JoinOperation" />
   <unitInfo fileName="TailSetOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.TailSetOperation" />
@@ -92,9 +92,9 @@
   <unitInfo fileName="RemoveSetElementOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation" />
   <unitInfo fileName="AddSetElementOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" />
   <unitInfo fileName="SetType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SetType" />
-  <unitInfo fileName="MapRemoveOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation" />
   <unitInfo fileName="ChunkOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ChunkOperation" />
   <unitInfo fileName="InternalSequenceOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" />
+  <unitInfo fileName="MapRemoveOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation" />
   <unitInfo fileName="ContainsKeyOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation" />
   <unitInfo fileName="BinaryOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" />
   <unitInfo fileName="TakeOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.TakeOperation" />

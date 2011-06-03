@@ -8,9 +8,9 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Test" file="Test.java">
-    <classNode dependClassName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Abc" />
-    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Abc" />
   </dependency>
 </dependenciesRoot>
 

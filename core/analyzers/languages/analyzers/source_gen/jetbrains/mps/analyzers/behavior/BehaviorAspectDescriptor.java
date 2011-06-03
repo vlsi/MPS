@@ -4,72 +4,75 @@ package jetbrains.mps.analyzers.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.analyzers.structure.AnalysisDirection", "jetbrains.mps.analyzers.structure.Analyzer", "jetbrains.mps.analyzers.structure.AnalyzerFunFunction", "jetbrains.mps.analyzers.structure.AnalyzerFunParameterInput", "jetbrains.mps.analyzers.structure.AnalyzerFunParameterProgramState", "jetbrains.mps.analyzers.structure.AnalyzerFunctionResultType", "jetbrains.mps.analyzers.structure.AnalyzerInitialFunction", "jetbrains.mps.analyzers.structure.AnalyzerMergeFunction", "jetbrains.mps.analyzers.structure.AnalyzerMergeParameterInput", "jetbrains.mps.analyzers.structure.AnalyzerParameterProgram", "jetbrains.mps.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.analyzers.structure.AnalyzerRunnerType", "jetbrains.mps.analyzers.structure.ApplicableCondition", "jetbrains.mps.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.analyzers.structure.BackwardDirection", "jetbrains.mps.analyzers.structure.ConceptCondition", "jetbrains.mps.analyzers.structure.EmitInstruction", "jetbrains.mps.analyzers.structure.ForwardDirection", "jetbrains.mps.analyzers.structure.InsertAfterPosition", "jetbrains.mps.analyzers.structure.InsertBeforePosition", "jetbrains.mps.analyzers.structure.InsertPosition", "jetbrains.mps.analyzers.structure.Instruction", "jetbrains.mps.analyzers.structure.InstructionParameter", "jetbrains.mps.analyzers.structure.InstructionReference", "jetbrains.mps.analyzers.structure.IsOperation", "jetbrains.mps.analyzers.structure.PatternCondition", "jetbrains.mps.analyzers.structure.Rule", "jetbrains.mps.analyzers.structure.RuleReference"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 2015249080:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 1:
         return new Analyzer_BehaviorDescriptor();
-      case 562521404:
+      case 22:
         return new Instruction_BehaviorDescriptor();
-      case -518857640:
+      case 7:
         return new AnalyzerMergeFunction_BehaviorDescriptor();
-      case -2017044109:
+      case 9:
         return new AnalyzerParameterProgram_BehaviorDescriptor();
-      case 1845992993:
+      case 8:
         return new AnalyzerMergeParameterInput_BehaviorDescriptor();
-      case -974038684:
+      case 6:
         return new AnalyzerInitialFunction_BehaviorDescriptor();
-      case -1524729697:
+      case 2:
         return new AnalyzerFunFunction_BehaviorDescriptor();
-      case 246362447:
+      case 4:
         return new AnalyzerFunParameterProgramState_BehaviorDescriptor();
-      case -1245140696:
+      case 3:
         return new AnalyzerFunParameterInput_BehaviorDescriptor();
-      case -1649923535:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.analyzers.structure.AnalysisDirection 
         return null;
-      case -1803639220:
+      case 18:
         return new ForwardDirection_BehaviorDescriptor();
-      case -805582582:
+      case 15:
         return new BackwardDirection_BehaviorDescriptor();
-      case -946169913:
+      case 5:
         return new AnalyzerFunctionResultType_BehaviorDescriptor();
-      case 1055221262:
+      case 27:
         return new Rule_BehaviorDescriptor();
-      case -853438003:
+      case 23:
         return new InstructionParameter_BehaviorDescriptor();
-      case -665745686:
+      case 13:
         // interface or abstract concept behavior jetbrains.mps.analyzers.structure.ApplicableCondition 
         return null;
-      case 571631485:
+      case 26:
         return new PatternCondition_BehaviorDescriptor();
-      case -1580899223:
+      case 17:
         return new EmitInstruction_BehaviorDescriptor();
-      case 561913199:
+      case 24:
         return new InstructionReference_BehaviorDescriptor();
-      case -1843468067:
+      case 28:
         return new RuleReference_BehaviorDescriptor();
-      case 2019025762:
+      case 12:
         return new AnalyzerRunnerType_BehaviorDescriptor();
-      case -1382799965:
+      case 10:
         return new AnalyzerRunnerAnalyzeOperation_BehaviorDescriptor();
-      case -338765052:
+      case 11:
         return new AnalyzerRunnerCreator_BehaviorDescriptor();
-      case -1192849397:
+      case 25:
         return new IsOperation_BehaviorDescriptor();
-      case 95620005:
+      case 16:
         return new ConceptCondition_BehaviorDescriptor();
-      case 4779448:
+      case 14:
         return new ApplicableNodeReference_BehaviorDescriptor();
-      case 530223091:
+      case 20:
         return new InsertBeforePosition_BehaviorDescriptor();
-      case -805464172:
+      case 21:
         return new InsertPosition_BehaviorDescriptor();
-      case -1807174758:
+      case 19:
         return new InsertAfterPosition_BehaviorDescriptor();
       default:
         return null;

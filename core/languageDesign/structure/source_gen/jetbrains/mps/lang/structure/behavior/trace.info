@@ -51,8 +51,8 @@
   <unitInfo fileName="InterfaceConceptDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.InterfaceConceptDeclaration_Behavior" />
   <unitInfo fileName="ConceptDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.ConceptDeclaration_Behavior" />
   <unitInfo fileName="IConceptAspect_Behavior.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="PrimitiveDataTypeDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="DataTypeDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior" />
   <unitInfo fileName="AbstractConceptDeclaration_Behavior.java" startLine="42" startPosition="0" endLine="380" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
   <root nodeId="1213877216526">

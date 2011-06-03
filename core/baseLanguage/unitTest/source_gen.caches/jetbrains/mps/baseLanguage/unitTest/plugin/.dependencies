@@ -751,6 +751,7 @@
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory" file="TestNodeWrapperFactory.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3MethodWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper" />

@@ -40,6 +40,21 @@ public class Interface_Behavior {
     return false;
   }
 
+  public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
+    if (SetSequence.fromSet(visited).contains(thisNode)) {
+      LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      return false;
+    }
+    SetSequence.fromSet(visited).addElement(thisNode);
+    for (SNode extended : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true))) {
+      Set<SNode> classifiers = SetSequence.fromSetWithValues(new HashSet<SNode>(), visited);
+      if (!(Classifier_Behavior.call_checkLoops_3980490811621705349(SLinkOperations.getTarget(extended, "classifier", false), classifiers))) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static String virtual_getUnitName_3822000666564591112(SNode thisNode) {
     String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {

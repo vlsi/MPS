@@ -4,30 +4,33 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1438987648:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 2:
         return new IndexedTupleType_BehaviorDescriptor();
-      case 223205289:
+      case 0:
         return new IndexedTupleLiteral_BehaviorDescriptor();
-      case 561072028:
+      case 1:
         return new IndexedTupleMemberAccessExpression_BehaviorDescriptor();
-      case -1025909252:
+      case 6:
         return new NamedTupleDeclaration_BehaviorDescriptor();
-      case -386467333:
+      case 4:
         return new NamedTupleComponentDeclaration_BehaviorDescriptor();
-      case 1695274232:
+      case 8:
         return new NamedTupleType_BehaviorDescriptor();
-      case 429857329:
+      case 7:
         return new NamedTupleLiteral_BehaviorDescriptor();
-      case 1512304652:
+      case 5:
         return new NamedTupleComponentReference_BehaviorDescriptor();
-      case -897029020:
+      case 3:
         return new NamedTupleComponentAccessOperation_BehaviorDescriptor();
       default:
         return null;

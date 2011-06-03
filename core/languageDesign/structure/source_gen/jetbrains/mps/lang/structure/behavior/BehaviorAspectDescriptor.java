@@ -4,76 +4,79 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptProperty", "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.structure.structure.IntegerConceptProperty", "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceConceptLink", "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.StringConceptProperty", "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1477894798:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 6:
         return new ConceptDeclaration_BehaviorDescriptor();
-      case -1395543648:
+      case 22:
         return new LinkDeclaration_BehaviorDescriptor();
-      case -986014491:
+      case 24:
         return new PropertyDeclaration_BehaviorDescriptor();
-      case 1357171030:
+      case 12:
         return new DataTypeDeclaration_BehaviorDescriptor();
-      case -1299045745:
+      case 14:
         return new EnumerationDataTypeDeclaration_BehaviorDescriptor();
-      case -1633495008:
+      case 11:
         return new ConstrainedDataTypeDeclaration_BehaviorDescriptor();
-      case 1325016697:
+      case 15:
         return new EnumerationMemberDeclaration_BehaviorDescriptor();
-      case 1190771695:
+      case 23:
         return new PrimitiveDataTypeDeclaration_BehaviorDescriptor();
-      case -592713635:
+      case 10:
         // interface or abstract concept behavior jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration 
         return null;
-      case -830747333:
+      case 19:
         return new IntegerConceptPropertyDeclaration_BehaviorDescriptor();
-      case -2033547355:
+      case 5:
         return new BooleanConceptPropertyDeclaration_BehaviorDescriptor();
-      case -1985322674:
+      case 28:
         return new StringConceptPropertyDeclaration_BehaviorDescriptor();
-      case 1027995869:
+      case 9:
         // interface or abstract concept behavior jetbrains.mps.lang.structure.structure.ConceptProperty 
         return null;
-      case -1129024833:
+      case 18:
         return new IntegerConceptProperty_BehaviorDescriptor();
-      case -485353835:
+      case 4:
         return new BooleanConceptProperty_BehaviorDescriptor();
-      case 997829772:
+      case 27:
         return new StringConceptProperty_BehaviorDescriptor();
-      case -1176274664:
+      case 8:
         // interface or abstract concept behavior jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration 
         return null;
-      case 683773698:
+      case 7:
         // interface or abstract concept behavior jetbrains.mps.lang.structure.structure.ConceptLink 
         return null;
-      case 104092087:
+      case 25:
         return new ReferenceConceptLink_BehaviorDescriptor();
-      case -86231616:
+      case 1:
         return new AggregationConceptLink_BehaviorDescriptor();
-      case 1520291738:
+      case 2:
         return new AggregationConceptLinkDeclaration_BehaviorDescriptor();
-      case 1897751363:
+      case 26:
         return new ReferenceConceptLinkDeclaration_BehaviorDescriptor();
-      case -2073740687:
+      case 3:
         return new AnnotationLinkDeclaration_BehaviorDescriptor();
-      case -1216854732:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration 
         return null;
-      case 1721541515:
+      case 20:
         return new InterfaceConceptDeclaration_BehaviorDescriptor();
-      case 356957596:
+      case 21:
         return new InterfaceConceptReference_BehaviorDescriptor();
-      case -1745550620:
+      case 13:
         return new DeprecatedNodeAnnotation_BehaviorDescriptor();
-      case -920744680:
+      case 17:
         // interface or abstract concept behavior jetbrains.mps.lang.structure.structure.IStructureDeprecatable 
         return null;
-      case -1479722377:
+      case 16:
         // interface or abstract concept behavior jetbrains.mps.lang.structure.structure.IConceptAspect 
         return null;
       default:

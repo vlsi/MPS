@@ -10,10 +10,8 @@
     <classNode dependClassName="jetbrains.mps.debug.apiLang.behavior.ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.debug.apiLang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.debug.apiLang.behavior.CreateBreakpointOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.debug.apiLang.behavior.DebuggerConfiguration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.debug.apiLang.behavior.DebuggerReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.debug.apiLang.behavior.DebuggerType_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.debug.apiLang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
   </dependency>
@@ -50,10 +48,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.apiLang.behavior.DebuggerConfiguration_BehaviorDescriptor" file="DebuggerConfiguration_BehaviorDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.debug.apiLang.behavior.DebuggerReference_Behavior" file="DebuggerReference_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
@@ -63,10 +57,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debug.apiLang.behavior.DebuggerType_BehaviorDescriptor" file="DebuggerType_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.debug.apiLang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" file="GetDebuggerSettings_Function_BehaviorDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>

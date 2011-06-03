@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="VariableDeclarationReference_Constraints.java" startLine="30" startPosition="26" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1" />
   <unitInfo fileName="NotEditableVaraileReference_Constraints.java" startLine="30" startPosition="42" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$1" />
-  <unitInfo fileName="VariableDeclarationReference_Constraints.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints" />
   <unitInfo fileName="NotEditableVaraileReference_Constraints.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints" />
+  <unitInfo fileName="VariableDeclarationReference_Constraints.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="4965160547087600886">
     <nodeInfo nodeId="4965160547087600890" fileName="NotEditableVaraileReference_Constraints.java" startLine="37" startPosition="136" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

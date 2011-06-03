@@ -27,6 +27,7 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.xml.sax.SAXParseException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -54,7 +55,10 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
       is = cacheFile.openInputStream();
       return load(is);
     } catch (IOException e) {
-      LOG.error(e);
+      /* not a valid XML? ignore */
+      if(!(e.getCause() instanceof SAXParseException)) {
+        LOG.error(e);
+      }
     } finally {
       try {
         if (is != null) {

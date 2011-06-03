@@ -2,31 +2,31 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ui.swt.runtime.widgets.ControlIterator" file="ControlIterator.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="org.eclipse.swt.widgets.Composite" />
     <classNode dependClassName="org.eclipse.swt.widgets.Control" />
-    <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode extendsClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.ui.swt.runtime.widgets.ExpandController" file="ExpandController.java">
-    <classNode dependClassName="org.eclipse.swt.widgets.Display" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="org.eclipse.swt.widgets.ExpandItem" />
-    <classNode dependClassName="org.eclipse.swt.events.ExpandListener" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="org.eclipse.swt.events.ControlListener" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="org.eclipse.swt.events.ExpandEvent" />
-    <classNode dependClassName="org.eclipse.swt.widgets.ExpandBar" />
-    <classNode dependClassName="org.eclipse.swt.graphics.Rectangle" />
-    <classNode dependClassName="org.eclipse.swt.events.ControlEvent" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.eclipse.swt.events.ControlEvent" />
+    <classNode dependClassName="org.eclipse.swt.events.ControlListener" />
+    <classNode dependClassName="org.eclipse.swt.events.ExpandEvent" />
+    <classNode dependClassName="org.eclipse.swt.events.ExpandListener" />
+    <classNode dependClassName="org.eclipse.swt.graphics.Rectangle" />
+    <classNode dependClassName="org.eclipse.swt.widgets.Display" />
+    <classNode dependClassName="org.eclipse.swt.widgets.ExpandBar" />
+    <classNode dependClassName="org.eclipse.swt.widgets.ExpandItem" />
   </dependency>
   <dependency className="jetbrains.mps.ui.swt.runtime.widgets.StubDialog" file="StubDialog.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.eclipse.swt.SWT" />
-    <classNode dependClassName="org.eclipse.swt.widgets.Shell" />
     <classNode dependClassName="org.eclipse.swt.layout.FillLayout" />
     <classNode dependClassName="org.eclipse.swt.widgets.Display" />
+    <classNode dependClassName="org.eclipse.swt.widgets.Shell" />
     <classNode extendsClassName="org.eclipse.swt.widgets.Dialog" />
   </dependency>
 </dependenciesRoot>

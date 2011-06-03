@@ -54,10 +54,10 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.ProcessType"));
       case 18:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.RedirectOutputExpression"));
-      case 8:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"));
       case 12:
         return new DataHolderConstraintsDescriptor(new DebuggerSettingsCommandParameterDeclaration_Constraints());
+      case 8:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"));
       default:
         return null;
     }

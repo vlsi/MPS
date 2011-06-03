@@ -27,6 +27,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.behavior.AfterPosition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.behavior.BeforePosition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_BehaviorDescriptor" />

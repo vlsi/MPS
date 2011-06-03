@@ -4,140 +4,143 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.BigComplexType", "jetbrains.mps.baseLanguage.math.structure.BigDecimalType", "jetbrains.mps.baseLanguage.math.structure.BigIntegerType", "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", "jetbrains.mps.baseLanguage.math.structure.BigMinExpression", "jetbrains.mps.baseLanguage.math.structure.BigProdExpression", "jetbrains.mps.baseLanguage.math.structure.BigSumExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.ComplexType", "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", "jetbrains.mps.baseLanguage.math.structure.CosineExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", "jetbrains.mps.baseLanguage.math.structure.Determinant", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentExpression", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.LogExpression", "jetbrains.mps.baseLanguage.math.structure.MathContext", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.SineExpression", "jetbrains.mps.baseLanguage.math.structure.TangentExpression", "jetbrains.mps.baseLanguage.math.structure.TransposeOperation", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -131104684:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 24:
         return new InIntervalExpression_BehaviorDescriptor();
-      case 1794917198:
+      case 25:
         return new IntervalContainsExpression_BehaviorDescriptor();
-      case 681346008:
+      case 26:
         return new IntervalLiteral_BehaviorDescriptor();
-      case 1917592753:
+      case 27:
         return new IntervalType_BehaviorDescriptor();
-      case 492621374:
+      case 53:
         return new PowExpression_BehaviorDescriptor();
-      case -1490966105:
+      case 39:
         return new MatrixConstructor_BehaviorDescriptor();
-      case 236605103:
+      case 58:
         return new VectorType_BehaviorDescriptor();
-      case -1733314897:
+      case 47:
         return new MatrixNorm_BehaviorDescriptor();
-      case -1733126611:
+      case 50:
         return new MatrixType_BehaviorDescriptor();
-      case -808117933:
+      case 49:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType 
         return null;
-      case -2034762699:
+      case 31:
         return new MathContext_BehaviorDescriptor();
-      case -1732967013:
+      case 52:
         return new MatrixZero_BehaviorDescriptor();
-      case -1539017332:
+      case 29:
         return new LiteralI_BehaviorDescriptor();
-      case -625116119:
+      case 16:
         return new DecimalMinusExpression_BehaviorDescriptor();
-      case 648975776:
+      case 36:
         return new MathSymbolIndex_BehaviorDescriptor();
-      case 352340839:
+      case 14:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation 
         return null;
-      case 1768284982:
+      case 32:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.MathFuncExpression 
         return null;
-      case -1280513129:
+      case 54:
         return new SineExpression_BehaviorDescriptor();
-      case 600829629:
+      case 17:
         return new DecimalMulExpression_BehaviorDescriptor();
-      case 320806848:
+      case 56:
         return new TransposeOperation_BehaviorDescriptor();
-      case 1331460239:
+      case 43:
         return new MatrixInitializer_BehaviorDescriptor();
-      case -2046259329:
+      case 28:
         return new LinearSolveOperation_BehaviorDescriptor();
-      case 1237343187:
+      case 38:
         return new MathTypeCast_BehaviorDescriptor();
-      case -2083523861:
+      case 55:
         return new TangentExpression_BehaviorDescriptor();
-      case -907482023:
+      case 20:
         return new DivExpressionFraction_BehaviorDescriptor();
-      case 1813461976:
+      case 0:
         return new AbsExpression_BehaviorDescriptor();
-      case -29129125:
+      case 35:
         return new MathSymbolFromToIndex_BehaviorDescriptor();
-      case 352684074:
+      case 30:
         return new LogExpression_BehaviorDescriptor();
-      case 902819658:
+      case 15:
         return new DecimalDivExpression_BehaviorDescriptor();
-      case 589006587:
+      case 23:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.ExtrSymbol 
         return null;
-      case 706551179:
+      case 37:
         return new MathSymbolIndexReference_BehaviorDescriptor();
-      case -1733107593:
+      case 51:
         return new MatrixUnit_BehaviorDescriptor();
-      case -1765678845:
+      case 19:
         return new Determinant_BehaviorDescriptor();
-      case -91353443:
+      case 8:
         return new BigProdExpression_BehaviorDescriptor();
-      case 911944757:
+      case 9:
         return new BigSumExpression_BehaviorDescriptor();
-      case 426304138:
+      case 46:
         return new MatrixInverseOperation_BehaviorDescriptor();
-      case 1807249027:
+      case 13:
         return new CosineExpression_BehaviorDescriptor();
-      case -985547875:
+      case 4:
         return new BigDecimalType_BehaviorDescriptor();
-      case 799425916:
+      case 3:
         return new BigComplexType_BehaviorDescriptor();
-      case -673581188:
+      case 7:
         return new BigMinExpression_BehaviorDescriptor();
-      case -1222184149:
+      case 2:
         return new ArithmSymbol_BehaviorDescriptor();
-      case 1648543314:
+      case 34:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.MathSymbol 
         return null;
-      case 752375921:
+      case 10:
         return new ComplexLiteral_BehaviorDescriptor();
-      case -1421525320:
+      case 11:
         return new ComplexType_BehaviorDescriptor();
-      case -1211700423:
+      case 42:
         return new MatrixIndexWildcard_BehaviorDescriptor();
-      case -525432371:
+      case 57:
         return new VectorInitializer_BehaviorDescriptor();
-      case 1192717066:
+      case 5:
         return new BigIntegerType_BehaviorDescriptor();
-      case -1200018375:
+      case 21:
         return new ExponentExpression_BehaviorDescriptor();
-      case 1799079950:
+      case 6:
         return new BigMaxExpression_BehaviorDescriptor();
-      case -1282422530:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.AbstractIndex 
         return null;
-      case 1595158193:
+      case 18:
         return new DecimalPlusExpression_BehaviorDescriptor();
-      case -748863831:
+      case 48:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer 
         return null;
-      case -1477721725:
+      case 44:
         return new MatrixInitializerIndex_BehaviorDescriptor();
-      case -1988667291:
+      case 40:
         return new MatrixElementAccessExpression_BehaviorDescriptor();
-      case -1331715832:
+      case 45:
         return new MatrixInitializerIndexReference_BehaviorDescriptor();
-      case -814510393:
+      case 33:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType 
         return null;
-      case -1396728140:
+      case 22:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.ExponentialOperation 
         return null;
-      case 1846962837:
+      case 41:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation 
         return null;
-      case -1430643391:
+      case 12:
         return new ConjugateOperation_BehaviorDescriptor();
       default:
         return null;

@@ -93,7 +93,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   }
 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
-    EditorCell_Error errorCell = new EditorCell_Error(context, node, error);
+    EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
     return errorCell;
   }

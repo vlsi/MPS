@@ -4,27 +4,30 @@ package jetbrains.mps.quickQueryLanguage.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", "jetbrains.mps.quickQueryLanguage.structure.ModelQuery", "jetbrains.mps.quickQueryLanguage.structure.QueryCondition", "jetbrains.mps.quickQueryLanguage.structure.QueryReplace", "jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -1790847041:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 2:
         return new ModelQuery_BehaviorDescriptor();
-      case 1125686739:
+      case 3:
         return new QueryCondition_BehaviorDescriptor();
-      case 915201667:
+      case 5:
         return new Query_node_Parameter_BehaviorDescriptor();
-      case 1669099603:
+      case 6:
         return new ReplaceModelQuery_BehaviorDescriptor();
-      case -995053204:
+      case 4:
         return new QueryReplace_BehaviorDescriptor();
-      case 1509101527:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.quickQueryLanguage.structure.BaseQuery 
         return null;
-      case 1780609822:
+      case 0:
         // interface or abstract concept behavior jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction 
         return null;
       default:

@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.samples.matrixLanguage.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.samples.matrixLanguage.behavior.DeterminantExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.matrixLanguage.behavior.ForEachMatrixElement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.matrixLanguage.behavior.MatrixAddExpression_BehaviorDescriptor" />

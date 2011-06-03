@@ -161,7 +161,7 @@
   <unitInfo fileName="FindSourceBlock_Behavior.java" startLine="47" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior$QuotationClass_1go9bg_a0a0b" />
   <unitInfo fileName="AbstractRule_Behavior.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AbstractRule_Behavior" />
   <unitInfo fileName="FindSourceBlock_Behavior.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877218089">
     <scopeInfo nodeId="1213877218091" fileName="LinkPatternVariableReference_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1225210740877" fileName="LinkPatternVariableReference_Behavior.java" startLine="17" startPosition="90" endLine="17" endPosition="90" />

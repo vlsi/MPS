@@ -13,6 +13,7 @@
   </dependency>
   <dependency className="jetbrains.mps.bootstrap.helgins.test.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.bootstrap.helgins.test.behavior.AConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.bootstrap.helgins.test.behavior.BConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />

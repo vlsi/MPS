@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -61,8 +62,11 @@ public enum TestNodeWrapperFactory {
     public boolean canWrap(@NotNull SNode node) {
       if (eq_kl7j79_a0a0b2(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         SNode ancestor = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
+        if (!(Classifier_Behavior.call_checkLoops_3980490811621705344(ancestor))) {
+          return false;
+        }
         while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(INamedConcept_Behavior.call_getFqName_1213877404258(ancestor).equals(TestCase.class.getCanonicalName()))) {
-          ancestor = check_kl7j79_a0a0b0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true));
+          ancestor = check_kl7j79_a0a0c0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true));
         }
         return ancestor != null;
       }
@@ -186,7 +190,7 @@ public enum TestNodeWrapperFactory {
     }).distinct();
   }
 
-  private static SNode check_kl7j79_a0a0b0a0b2(SNode checkedDotOperand) {
+  private static SNode check_kl7j79_a0a0c0a0b2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }

@@ -4,47 +4,50 @@ package jetbrains.mps.lang.intentions.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.ExecuteUIBlock", "jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionContextParamReference", "jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case -713206842:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 11:
         return new IntentionDeclaration_BehaviorDescriptor();
-      case -488683575:
+      case 5:
         return new DescriptionBlock_BehaviorDescriptor();
-      case 599031500:
+      case 13:
         return new IsApplicableBlock_BehaviorDescriptor();
-      case 1103938544:
+      case 6:
         return new ExecuteBlock_BehaviorDescriptor();
-      case -328333184:
+      case 4:
         return new ConceptFunctionParameter_node_BehaviorDescriptor();
-      case 1264391293:
+      case 15:
         return new QueryBlock_BehaviorDescriptor();
-      case -417352459:
+      case 12:
         return new IntentionParameter_BehaviorDescriptor();
-      case 1572281711:
+      case 14:
         return new ParameterizedIntentionDeclaration_BehaviorDescriptor();
-      case -198052079:
+      case 1:
         // interface or abstract concept behavior jetbrains.mps.lang.intentions.structure.ChildFilterBlock 
         return null;
-      case -1133772076:
+      case 2:
         return new ChildFilterFunction_BehaviorDescriptor();
-      case 226602368:
+      case 3:
         return new ConceptFunctionParameter_childNode_BehaviorDescriptor();
-      case -619229129:
+      case 0:
         return new BaseIntentionDeclaration_BehaviorDescriptor();
-      case -1468598053:
+      case 8:
         return new GenerateIntentionDeclaration_BehaviorDescriptor();
-      case 789005578:
+      case 16:
         return new SurroundWithIntentionDeclaration_BehaviorDescriptor();
-      case -1332584164:
+      case 7:
         return new ExecuteUIBlock_BehaviorDescriptor();
-      case -706594644:
+      case 10:
         return new IntentionContextParameterDeclaration_BehaviorDescriptor();
-      case -238295015:
+      case 9:
         return new IntentionContextParamReference_BehaviorDescriptor();
       default:
         return null;

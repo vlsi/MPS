@@ -3,15 +3,15 @@
   <dependency className="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" file="Address.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="org.jdom.Text" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jdom.Text" />
   </dependency>
   <dependency className="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person" file="Person.java">
-    <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="org.jdom.Text" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jdom.Text" />
   </dependency>
 </dependenciesRoot>
 

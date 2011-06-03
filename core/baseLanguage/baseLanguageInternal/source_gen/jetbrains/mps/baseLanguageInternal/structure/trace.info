@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguageInternal_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.BaseLanguageInternal_Language" />
-  <unitInfo fileName="ExtractStaticInnerClassCreator.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator" />
   <unitInfo fileName="ExtractStaticInnerClassConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept" />
+  <unitInfo fileName="ExtractStaticInnerClassCreator.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator" />
   <unitInfo fileName="InternalThisExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression" />
   <unitInfo fileName="ExtractStaticMethod_CallExpression.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression" />
   <unitInfo fileName="ExtractToConstantRefExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression" />

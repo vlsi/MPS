@@ -7,8 +7,8 @@
   <unitInfo fileName="DoNotTransformAnnotation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation" />
   <unitInfo fileName="UnprocessedAnnotation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation" />
   <unitInfo fileName="ToEvaluateAnnotation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation" />
-  <unitInfo fileName="EvaluatorsThisExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" />
   <unitInfo fileName="GenerationHelperAnnotation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation" />
+  <unitInfo fileName="EvaluatorsThisExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" />
   <unitInfo fileName="LowLevelVariableReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference" />
   <unitInfo fileName="EvaluatorsSuperMethodCall.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall" />
   <unitInfo fileName="LowLevelVariable.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.evaluation.structure.LowLevelVariable" />

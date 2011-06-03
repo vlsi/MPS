@@ -87,7 +87,22 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
   @Override
   public void handleException(Throwable t) {
-    Message message = new Message(MessageKind.ERROR, t.getMessage());
+    String text = t.getMessage();
+    if(text == null) {
+      Throwable cause = t.getCause();
+      int tries = 0;
+      while(text == null && cause != null && tries < 10) {
+        text = cause.getMessage();
+        cause = cause.getCause();
+        tries++;
+      }
+    }
+    if(text == null) {
+      text = "An exception was encountered: " + t.getClass().getName() + " (no message)";
+    } else {
+      text = "(" + t.getClass().getName() + "): " + text;
+    }
+    Message message = new Message(MessageKind.ERROR, text);
     message.setException(t);
     synchronized (myMessageHandler) {
       myMessageHandler.handle(message);

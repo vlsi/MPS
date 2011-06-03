@@ -122,7 +122,11 @@ public class DataHolderConstraintsDescriptor extends ConstraintsDescriptor {
 
     ConceptRegistry conceptRegistry = ConceptRegistry.getInstance();
     for (String parentName : conceptRegistry.getStructureDescriptor(fqName).getParentsNames()) {
-      descriptors.add(conceptRegistry.getConstraintsDescriptor(parentName));
+      ConstraintsDescriptor childDescriptor = conceptRegistry.getConstraintsDescriptor(parentName);
+      if (childDescriptor != null) {
+        // todo: else?
+        descriptors.add(childDescriptor);
+      }
     }
 
     return descriptors;

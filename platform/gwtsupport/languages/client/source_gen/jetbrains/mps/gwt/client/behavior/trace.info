@@ -35,7 +35,7 @@
   <unitInfo fileName="Element_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Element_Behavior" />
   <unitInfo fileName="EntryPoint_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.EntryPoint_Behavior" />
   <unitInfo fileName="Inherits_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Inherits_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1572321421814401055">
     <nodeInfo nodeId="1572321421814404027" fileName="GWTModule_Behavior.java" startLine="14" startPosition="80" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1572321421814401057" fileName="GWTModule_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />

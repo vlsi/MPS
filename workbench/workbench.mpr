@@ -30,11 +30,9 @@
     <option name="warnings" value="true" />
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/ideSolution/jetbrains.mps.ide.msd" />
-    </projectSolutions>
-    <projectLanguages />
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/ideSolution/jetbrains.mps.ide.msd" />
+    </projectModules>
     <genConfs />
   </component>
   <component name="ProjectDetails">

@@ -59,170 +59,165 @@
     <scopeInfo nodeId="2708838034905939890" fileName="CResource.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
   </root>
   <root nodeId="7219626660275504879">
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="106" startPosition="27" endLine="106" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="113" startPosition="27" endLine="113" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="116" startPosition="27" endLine="116" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="119" startPosition="28" endLine="119" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="126" startPosition="28" endLine="126" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802635819" fileName="ModelsToResources.java" startLine="20" startPosition="32" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="models" />
-    <nodeInfo nodeId="3608835296802635845" fileName="ModelsToResources.java" startLine="21" startPosition="44" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
-    <nodeInfo nodeId="3608835296802635824" fileName="ModelsToResources.java" startLine="24" startPosition="90" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802635848" fileName="ModelsToResources.java" startLine="25" startPosition="25" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802635832" fileName="ModelsToResources.java" startLine="29" startPosition="59" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3608835296802635781" fileName="ModelsToResources.java" startLine="32" startPosition="58" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802635800" fileName="ModelsToResources.java" startLine="38" startPosition="52" endLine="39" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802635815" fileName="ModelsToResources.java" startLine="42" startPosition="5" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802538216" fileName="ModelsToResources.java" startLine="46" startPosition="80" endLine="47" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="52" startPosition="54" endLine="53" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="60" startPosition="28" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="61" startPosition="54" endLine="62" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="64" startPosition="40" endLine="65" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="65" startPosition="40" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="67" startPosition="23" endLine="68" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="68" startPosition="38" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="71" startPosition="49" endLine="72" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="72" startPosition="40" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="74" startPosition="23" endLine="75" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="75" startPosition="38" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="78" startPosition="49" endLine="79" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="79" startPosition="41" endLine="80" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="81" startPosition="23" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="82" startPosition="39" endLine="83" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="85" startPosition="102" endLine="86" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="86" startPosition="41" endLine="87" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="88" startPosition="23" endLine="89" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="89" startPosition="39" endLine="90" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="92" startPosition="49" endLine="93" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="93" startPosition="41" endLine="94" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="95" startPosition="23" endLine="96" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="96" startPosition="38" endLine="97" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="98" startPosition="27" endLine="99" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="99" startPosition="38" endLine="100" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="100" startPosition="118" endLine="101" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="102" startPosition="28" endLine="103" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="103" startPosition="39" endLine="104" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="104" startPosition="118" endLine="105" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="106" startPosition="27" endLine="107" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="107" startPosition="38" endLine="108" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="109" startPosition="27" endLine="110" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802640731" fileName="ModelsToResources.java" startLine="109" startPosition="27" endLine="110" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="110" startPosition="44" endLine="111" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="111" startPosition="38" endLine="112" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="113" startPosition="27" endLine="114" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="114" startPosition="38" endLine="115" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="116" startPosition="27" endLine="117" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="117" startPosition="38" endLine="118" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="119" startPosition="28" endLine="120" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="120" startPosition="39" endLine="121" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="122" startPosition="28" endLine="123" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802640757" fileName="ModelsToResources.java" startLine="122" startPosition="28" endLine="123" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="123" startPosition="74" endLine="124" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="124" startPosition="39" endLine="125" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="126" startPosition="28" endLine="127" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="127" startPosition="39" endLine="128" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="129" startPosition="28" endLine="130" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802640783" fileName="ModelsToResources.java" startLine="129" startPosition="28" endLine="130" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="130" startPosition="42" endLine="131" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="131" startPosition="39" endLine="132" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="133" startPosition="28" endLine="134" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3608835296802640795" fileName="ModelsToResources.java" startLine="133" startPosition="28" endLine="134" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="134" startPosition="107" endLine="135" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="135" startPosition="38" endLine="136" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="137" startPosition="28" endLine="138" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="140" startPosition="31" endLine="141" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802640807" fileName="ModelsToResources.java" startLine="148" startPosition="44" endLine="149" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7219626660275504881" fileName="ModelsToResources.java" startLine="23" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelsToResources#(Ljetbrains/mps/smodel/IOperationContext;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="31" startPosition="94" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Comparable;" />
-    <nodeInfo nodeId="3608835296802635798" fileName="ModelsToResources.java" startLine="37" startPosition="85" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="63" startPosition="27" endLine="67" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="70" startPosition="27" endLine="74" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="77" startPosition="27" endLine="81" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="84" startPosition="28" endLine="88" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="91" startPosition="28" endLine="95" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="147" startPosition="64" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/resources/MResource;)Ljetbrains/mps/make/resources/IResource;" />
-    <nodeInfo nodeId="3608835296802635773" fileName="ModelsToResources.java" startLine="30" startPosition="45" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802635792" fileName="ModelsToResources.java" startLine="36" startPosition="20" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802635790" fileName="ModelsToResources.java" startLine="35" startPosition="13" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7219626660275509691" fileName="ModelsToResources.java" startLine="28" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resources#(Z)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="57" startPosition="20" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="55" startPosition="46" endLine="140" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="54" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="51" startPosition="49" endLine="143" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="50" startPosition="42" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="49" startPosition="72" endLine="145" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="48" startPosition="205" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3608835296802538221" fileName="ModelsToResources.java" startLine="47" startPosition="101" endLine="151" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802538210" fileName="ModelsToResources.java" startLine="45" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="arrangeByModule#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="106" startPosition="27" endLine="106" endPosition="27" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="113" startPosition="27" endLine="113" endPosition="27" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="116" startPosition="27" endLine="116" endPosition="27" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="119" startPosition="28" endLine="119" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="126" startPosition="28" endLine="126" endPosition="28" />
-    <scopeInfo nodeId="3608835296802635780" fileName="ModelsToResources.java" startLine="32" startPosition="58" endLine="33" endPosition="50" />
-    <scopeInfo nodeId="3608835296802635799" fileName="ModelsToResources.java" startLine="38" startPosition="52" endLine="39" endPosition="115" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="109" startPosition="27" endLine="110" endPosition="44" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="122" startPosition="28" endLine="123" endPosition="74" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="129" startPosition="28" endLine="130" endPosition="42" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="133" startPosition="28" endLine="134" endPosition="107" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="137" startPosition="28" endLine="138" endPosition="37" />
-    <scopeInfo nodeId="3608835296802640806" fileName="ModelsToResources.java" startLine="148" startPosition="44" endLine="149" endPosition="29" />
-    <scopeInfo nodeId="7219626660275504884" fileName="ModelsToResources.java" startLine="24" startPosition="90" endLine="26" endPosition="27" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="60" startPosition="28" endLine="62" endPosition="35" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="64" startPosition="40" endLine="66" endPosition="30" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="71" startPosition="49" endLine="73" endPosition="30" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="78" startPosition="49" endLine="80" endPosition="30" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="85" startPosition="102" endLine="87" endPosition="30" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="92" startPosition="49" endLine="94" endPosition="30" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="106" startPosition="27" endLine="108" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="113" startPosition="27" endLine="115" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="116" startPosition="27" endLine="118" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="119" startPosition="28" endLine="121" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="126" startPosition="28" endLine="128" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="98" startPosition="27" endLine="101" endPosition="34" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="102" startPosition="28" endLine="105" endPosition="34" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="109" startPosition="27" endLine="112" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="122" startPosition="28" endLine="125" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="129" startPosition="28" endLine="132" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="133" startPosition="28" endLine="136" endPosition="28" />
-    <scopeInfo nodeId="7219626660275504881" fileName="ModelsToResources.java" startLine="23" startPosition="0" endLine="27" endPosition="3">
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="101" startPosition="27" endLine="101" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="108" startPosition="27" endLine="108" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="111" startPosition="27" endLine="111" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="114" startPosition="28" endLine="114" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="121" startPosition="28" endLine="121" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802635819" fileName="ModelsToResources.java" startLine="19" startPosition="32" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="models" />
+    <nodeInfo nodeId="3608835296802635845" fileName="ModelsToResources.java" startLine="20" startPosition="44" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
+    <nodeInfo nodeId="3608835296802635824" fileName="ModelsToResources.java" startLine="23" startPosition="90" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802635848" fileName="ModelsToResources.java" startLine="24" startPosition="25" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802635832" fileName="ModelsToResources.java" startLine="28" startPosition="59" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3608835296802635781" fileName="ModelsToResources.java" startLine="31" startPosition="58" endLine="32" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2098458047196775592" fileName="ModelsToResources.java" startLine="35" startPosition="20" endLine="36" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802635815" fileName="ModelsToResources.java" startLine="37" startPosition="5" endLine="38" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802538216" fileName="ModelsToResources.java" startLine="41" startPosition="80" endLine="42" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="47" startPosition="54" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="55" startPosition="28" endLine="56" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="56" startPosition="54" endLine="57" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="59" startPosition="40" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="60" startPosition="40" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="62" startPosition="23" endLine="63" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="63" startPosition="38" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="66" startPosition="49" endLine="67" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="67" startPosition="40" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="69" startPosition="23" endLine="70" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="70" startPosition="38" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="73" startPosition="49" endLine="74" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="74" startPosition="41" endLine="75" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="76" startPosition="23" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="77" startPosition="39" endLine="78" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="80" startPosition="102" endLine="81" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="81" startPosition="41" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="83" startPosition="23" endLine="84" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="84" startPosition="39" endLine="85" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="87" startPosition="49" endLine="88" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="88" startPosition="41" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="90" startPosition="23" endLine="91" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="91" startPosition="38" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="93" startPosition="27" endLine="94" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="94" startPosition="38" endLine="95" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="95" startPosition="118" endLine="96" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="97" startPosition="28" endLine="98" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="98" startPosition="39" endLine="99" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="99" startPosition="118" endLine="100" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="101" startPosition="27" endLine="102" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="102" startPosition="38" endLine="103" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="104" startPosition="27" endLine="105" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802640731" fileName="ModelsToResources.java" startLine="104" startPosition="27" endLine="105" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="105" startPosition="44" endLine="106" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="106" startPosition="38" endLine="107" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="108" startPosition="27" endLine="109" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="109" startPosition="38" endLine="110" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="111" startPosition="27" endLine="112" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="112" startPosition="38" endLine="113" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="114" startPosition="28" endLine="115" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="115" startPosition="39" endLine="116" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="117" startPosition="28" endLine="118" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802640757" fileName="ModelsToResources.java" startLine="117" startPosition="28" endLine="118" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="118" startPosition="74" endLine="119" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="119" startPosition="39" endLine="120" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="121" startPosition="28" endLine="122" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="122" startPosition="39" endLine="123" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="124" startPosition="28" endLine="125" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802640783" fileName="ModelsToResources.java" startLine="124" startPosition="28" endLine="125" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="125" startPosition="42" endLine="126" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="126" startPosition="39" endLine="127" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="128" startPosition="28" endLine="129" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3608835296802640795" fileName="ModelsToResources.java" startLine="128" startPosition="28" endLine="129" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="129" startPosition="107" endLine="130" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="130" startPosition="38" endLine="131" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="132" startPosition="28" endLine="133" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="135" startPosition="31" endLine="136" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802640807" fileName="ModelsToResources.java" startLine="143" startPosition="44" endLine="144" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802635790" fileName="ModelsToResources.java" startLine="34" startPosition="13" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7219626660275504881" fileName="ModelsToResources.java" startLine="22" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelsToResources#(Ljetbrains/mps/smodel/IOperationContext;Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="30" startPosition="94" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="58" startPosition="27" endLine="62" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="65" startPosition="27" endLine="69" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="72" startPosition="27" endLine="76" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="79" startPosition="28" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="86" startPosition="28" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="142" startPosition="64" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/resources/MResource;)Ljetbrains/mps/make/resources/IResource;" />
+    <nodeInfo nodeId="3608835296802635773" fileName="ModelsToResources.java" startLine="29" startPosition="45" endLine="34" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219626660275509691" fileName="ModelsToResources.java" startLine="27" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resources#(Z)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="52" startPosition="20" endLine="134" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="50" startPosition="46" endLine="135" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="49" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="46" startPosition="49" endLine="138" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="45" startPosition="42" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="44" startPosition="72" endLine="140" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="43" startPosition="205" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3608835296802538221" fileName="ModelsToResources.java" startLine="42" startPosition="101" endLine="146" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802538210" fileName="ModelsToResources.java" startLine="40" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="arrangeByModule#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="101" startPosition="27" endLine="101" endPosition="27" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="108" startPosition="27" endLine="108" endPosition="27" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="111" startPosition="27" endLine="111" endPosition="27" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="114" startPosition="28" endLine="114" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="121" startPosition="28" endLine="121" endPosition="28" />
+    <scopeInfo nodeId="3608835296802635780" fileName="ModelsToResources.java" startLine="31" startPosition="58" endLine="32" endPosition="50" />
+    <scopeInfo nodeId="3608835296802635791" fileName="ModelsToResources.java" startLine="35" startPosition="20" endLine="36" endPosition="176" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="104" startPosition="27" endLine="105" endPosition="44" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="117" startPosition="28" endLine="118" endPosition="74" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="124" startPosition="28" endLine="125" endPosition="42" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="128" startPosition="28" endLine="129" endPosition="107" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="132" startPosition="28" endLine="133" endPosition="37" />
+    <scopeInfo nodeId="3608835296802640806" fileName="ModelsToResources.java" startLine="143" startPosition="44" endLine="144" endPosition="29" />
+    <scopeInfo nodeId="7219626660275504884" fileName="ModelsToResources.java" startLine="23" startPosition="90" endLine="25" endPosition="27" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="55" startPosition="28" endLine="57" endPosition="35" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="59" startPosition="40" endLine="61" endPosition="30" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="66" startPosition="49" endLine="68" endPosition="30" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="73" startPosition="49" endLine="75" endPosition="30" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="80" startPosition="102" endLine="82" endPosition="30" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="87" startPosition="49" endLine="89" endPosition="30" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="101" startPosition="27" endLine="103" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="108" startPosition="27" endLine="110" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="111" startPosition="27" endLine="113" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="114" startPosition="28" endLine="116" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="121" startPosition="28" endLine="123" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="93" startPosition="27" endLine="96" endPosition="34" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="97" startPosition="28" endLine="100" endPosition="34" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="104" startPosition="27" endLine="107" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="117" startPosition="28" endLine="120" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="124" startPosition="28" endLine="127" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="128" startPosition="28" endLine="131" endPosition="28" />
+    <scopeInfo nodeId="7219626660275504881" fileName="ModelsToResources.java" startLine="22" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="7219626660275504885" varName="models" />
       <varInfo nodeId="3608835296802635842" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="31" startPosition="94" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3608835296802635798" fileName="ModelsToResources.java" startLine="37" startPosition="85" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="147" startPosition="64" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="3608835296802635791" fileName="ModelsToResources.java" startLine="36" startPosition="20" endLine="41" endPosition="26" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="63" startPosition="27" endLine="69" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="70" startPosition="27" endLine="76" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="77" startPosition="27" endLine="83" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="84" startPosition="28" endLine="90" endPosition="28" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="91" startPosition="28" endLine="97" endPosition="28" />
-    <scopeInfo nodeId="7219626660275509694" fileName="ModelsToResources.java" startLine="29" startPosition="59" endLine="43" endPosition="33">
+    <scopeInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="30" startPosition="94" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="142" startPosition="64" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="58" startPosition="27" endLine="64" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="65" startPosition="27" endLine="71" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="72" startPosition="27" endLine="78" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="79" startPosition="28" endLine="85" endPosition="28" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="86" startPosition="28" endLine="92" endPosition="28" />
+    <scopeInfo nodeId="7219626660275509694" fileName="ModelsToResources.java" startLine="28" startPosition="59" endLine="38" endPosition="33">
       <varInfo nodeId="3608835296802635833" varName="smds" />
     </scopeInfo>
-    <scopeInfo nodeId="7219626660275509691" fileName="ModelsToResources.java" startLine="28" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="7219626660275509691" fileName="ModelsToResources.java" startLine="27" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="3608835296802635854" varName="dirtyOnly" />
     </scopeInfo>
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="57" startPosition="20" endLine="139" endPosition="19" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="55" startPosition="46" endLine="141" endPosition="29" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="54" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="51" startPosition="49" endLine="143" endPosition="14" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="50" startPosition="42" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="49" startPosition="72" endLine="145" endPosition="10" />
-    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="48" startPosition="205" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="3608835296802538215" fileName="ModelsToResources.java" startLine="46" startPosition="80" endLine="151" endPosition="24">
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="52" startPosition="20" endLine="134" endPosition="19" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="50" startPosition="46" endLine="136" endPosition="29" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="49" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="46" startPosition="49" endLine="138" endPosition="14" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="45" startPosition="42" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="44" startPosition="72" endLine="140" endPosition="10" />
+    <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="43" startPosition="205" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="3608835296802538215" fileName="ModelsToResources.java" startLine="41" startPosition="80" endLine="146" endPosition="24">
       <varInfo nodeId="3608835296802538217" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="3608835296802538210" fileName="ModelsToResources.java" startLine="45" startPosition="0" endLine="153" endPosition="0">
+    <scopeInfo nodeId="3608835296802538210" fileName="ModelsToResources.java" startLine="40" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="3608835296802538211" varName="smds" />
     </scopeInfo>
-    <unitInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="31" startPosition="48" endLine="35" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$1" />
-    <unitInfo nodeId="3608835296802635798" fileName="ModelsToResources.java" startLine="37" startPosition="51" endLine="41" endPosition="7" unitName="jetbrains.mps.smodel.resources.ModelsToResources$2" />
-    <unitInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="147" startPosition="29" endLine="151" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$4" />
-    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="52" startPosition="23" endLine="143" endPosition="13" unitName="jetbrains.mps.smodel.resources.ModelsToResources$5" />
-    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="50" startPosition="19" endLine="145" endPosition="9" unitName="jetbrains.mps.smodel.resources.ModelsToResources$4" />
-    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="48" startPosition="160" endLine="147" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$3" />
-    <unitInfo nodeId="7219626660275504879" fileName="ModelsToResources.java" startLine="20" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.smodel.resources.ModelsToResources" />
+    <unitInfo nodeId="3608835296802635779" fileName="ModelsToResources.java" startLine="30" startPosition="48" endLine="34" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$1" />
+    <unitInfo nodeId="3608835296802640805" fileName="ModelsToResources.java" startLine="142" startPosition="29" endLine="146" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$3" />
+    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="47" startPosition="23" endLine="138" endPosition="13" unitName="jetbrains.mps.smodel.resources.ModelsToResources$4" />
+    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="45" startPosition="19" endLine="140" endPosition="9" unitName="jetbrains.mps.smodel.resources.ModelsToResources$3" />
+    <unitInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="43" startPosition="160" endLine="142" endPosition="5" unitName="jetbrains.mps.smodel.resources.ModelsToResources$2" />
+    <unitInfo nodeId="7219626660275504879" fileName="ModelsToResources.java" startLine="19" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.smodel.resources.ModelsToResources" />
   </root>
   <root nodeId="7544464876070881646">
     <nodeInfo nodeId="7544464876070881649" fileName="ICResouce.java" startLine="8" startPosition="46" endLine="9" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classes#()Ljetbrains/mps/compiler/IClassesData;" />

@@ -13,7 +13,7 @@
   <unitInfo fileName="InstructionReference_Constraints.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.InstructionReference_Constraints" />
   <unitInfo fileName="ApplicableNodeReference_Constraints.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.ApplicableNodeReference_Constraints" />
   <unitInfo fileName="IsOperation_Constraints.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.IsOperation_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="178770917832460637">
     <nodeInfo nodeId="178770917832460641" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="178770917832460640" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="154" />

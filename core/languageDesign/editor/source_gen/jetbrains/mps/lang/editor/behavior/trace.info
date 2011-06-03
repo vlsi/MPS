@@ -268,7 +268,7 @@
   <unitInfo fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="14" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior" />
   <unitInfo fileName="QueryFunction_ParametersList_Behavior.java" startLine="17" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior" />
   <unitInfo fileName="EditorCellModel_Behavior.java" startLine="20" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877183870">
     <nodeInfo nodeId="1216378145858" fileName="CellModel_RefCell_Behavior.java" startLine="14" startPosition="77" endLine="15" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216812405508" fileName="CellModel_RefCell_Behavior.java" startLine="18" startPosition="100" endLine="19" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

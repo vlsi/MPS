@@ -550,6 +550,19 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     super.moveTo(x, y);
     for (EditorCell myEditorCell : getCells()) {
       myEditorCell.moveTo(myEditorCell.getX() + x - xOld, myEditorCell.getY() + y - yOld);
+      if (((EditorCell_Basic) myEditorCell).isNeedsRelayout()) {
+        markNeedsRelayout();
+      }
+    }
+    adjustNeedsRelayout(xOld, yOld, x, y);
+  }
+
+  private void adjustNeedsRelayout(int oldX, int oldY, int newX, int newY) {
+    if (isNeedsRelayout()) {
+      return;
+    }
+    if (oldX != newX && (myCellLayout instanceof CellLayout_Indent || myCellLayout instanceof CellLayout_Indent_Old)) {
+      markNeedsRelayout();
     }
   }
 

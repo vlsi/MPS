@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="NewLibDialogContentPane.java" startLine="43" startPosition="32" endLine="49" endPosition="3" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane$1" />
+  <unitInfo fileName="NewLibDialogContentPane.java" startLine="42" startPosition="32" endLine="48" endPosition="3" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane$1" />
   <unitInfo fileName="NewLibDialog.java" startLine="12" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialog" />
-  <unitInfo fileName="NewLibDialogContentPane.java" startLine="31" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane" />
+  <unitInfo fileName="NewLibDialogContentPane.java" startLine="30" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.ide.newLibDialog.NewLibDialogContentPane" />
   <root nodeId="7619659760484896661">
     <nodeInfo nodeId="7619659760484896804" fileName="NewLibDialogContentPane.java" startLine="58" startPosition="31" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7619659760484896810" fileName="NewLibDialogContentPane.java" startLine="59" startPosition="30" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

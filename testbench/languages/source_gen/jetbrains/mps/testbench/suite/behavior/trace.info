@@ -14,7 +14,7 @@
   <unitInfo fileName="TestCaseRef_Behavior.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.TestCaseRef_Behavior" />
   <unitInfo fileName="ITestRef_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ITestRef_Behavior" />
   <unitInfo fileName="IModuleRef_Behavior.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ModuleSuite_Behavior.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior" />
   <unitInfo fileName="JUnit3TestCaseRef_Behavior.java" startLine="21" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior" />
   <unitInfo fileName="JUnit4TestCaseRef_Behavior.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior" />

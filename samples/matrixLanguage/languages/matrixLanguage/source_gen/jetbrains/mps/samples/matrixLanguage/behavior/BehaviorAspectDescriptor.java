@@ -4,40 +4,43 @@ package jetbrains.mps.samples.matrixLanguage.behavior;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression", "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement", "jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration", "jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference", "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration", "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference", "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", "jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixRow", "jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression", "jetbrains.mps.samples.matrixLanguage.structure.MatrixType", "jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression"};
+
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch ((fqName).hashCode()) {
-      case 1718566832:
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 12:
         return new MatrixType_BehaviorDescriptor();
-      case -1444998023:
+      case 8:
         return new MatrixLiteral_BehaviorDescriptor();
-      case 609624740:
+      case 10:
         return new MatrixRow_BehaviorDescriptor();
-      case 1609531032:
+      case 0:
         return new DeterminantExpression_BehaviorDescriptor();
-      case 1216802108:
+      case 13:
         return new TransposeExpression_BehaviorDescriptor();
-      case -868738850:
+      case 9:
         return new MatrixMultExpression_BehaviorDescriptor();
-      case -963328413:
+      case 2:
         return new MatrixAddExpression_BehaviorDescriptor();
-      case -456273598:
+      case 11:
         return new MatrixSubExpression_BehaviorDescriptor();
-      case 816490067:
+      case 3:
         return new MatrixDivExpression_BehaviorDescriptor();
-      case 192446598:
+      case 1:
         return new ForEachMatrixElement_BehaviorDescriptor();
-      case -2134083422:
+      case 6:
         return new MatrixIndexVariableDeclaration_BehaviorDescriptor();
-      case -972986184:
+      case 4:
         return new MatrixElementVariableDeclaration_BehaviorDescriptor();
-      case 193260041:
+      case 5:
         return new MatrixElementVariableReference_BehaviorDescriptor();
-      case -1899565965:
+      case 7:
         return new MatrixIndexVariableReference_BehaviorDescriptor();
       default:
         return null;
