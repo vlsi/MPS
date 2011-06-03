@@ -9,7 +9,9 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 public enum RuleType {
   strictly_before("before (<)", "strictly_before"),
   strictly_together("together with (=)", "strictly_together"),
-  before_or_together("before or together (<=)", "before_or_together");
+  before_or_together("before or together (<=)", "before_or_together"),
+  after_or_together("after or together (>=)", "after_or_together"),
+  strictly_after("after (>)", "strictly_after");
 
   private String myName;
   private String myValue;
@@ -36,6 +38,8 @@ public enum RuleType {
     ListSequence.fromList(list).addElement(RuleType.strictly_before);
     ListSequence.fromList(list).addElement(RuleType.strictly_together);
     ListSequence.fromList(list).addElement(RuleType.before_or_together);
+    ListSequence.fromList(list).addElement(RuleType.after_or_together);
+    ListSequence.fromList(list).addElement(RuleType.strictly_after);
     return list;
   }
 
@@ -55,6 +59,12 @@ public enum RuleType {
     }
     if (value.equals(RuleType.before_or_together.getValueAsString())) {
       return RuleType.before_or_together;
+    }
+    if (value.equals(RuleType.after_or_together.getValueAsString())) {
+      return RuleType.after_or_together;
+    }
+    if (value.equals(RuleType.strictly_after.getValueAsString())) {
+      return RuleType.strictly_after;
     }
     return RuleType.getDefault();
   }

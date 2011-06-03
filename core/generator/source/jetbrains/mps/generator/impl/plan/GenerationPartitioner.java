@@ -104,22 +104,30 @@ public class GenerationPartitioner {
     MappingConfig_AbstractRef right = rule.getRight();
     if (left == null || right == null) return;
 
-    Collection<TemplateMappingConfiguration> greaterPriMappings = getMappingsFromRef(left, generator);
-    Collection<TemplateMappingConfiguration> lesserPriMappings = getMappingsFromRef(right, generator);
+    Collection<TemplateMappingConfiguration> rightPriMappings = getMappingsFromRef(left, generator);
+    Collection<TemplateMappingConfiguration> leftPriMappings = getMappingsFromRef(right, generator);
     if (rule.getType() == RuleType.STRICTLY_TOGETHER) {
-      Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(lesserPriMappings);
-      coherentMappings.addAll(greaterPriMappings);
+      Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(leftPriMappings);
+      coherentMappings.addAll(rightPriMappings);
       myCoherentMappings.add(new CoherentSetData(coherentMappings, rule));
 
     } else {
-      // map: lesser-pri mapping -> {greater-pri mapping, .... , greater-pri mapping }
-      lesserPriMappings = CollectionUtil.subtract(lesserPriMappings, greaterPriMappings);
 
-      for (TemplateMappingConfiguration lesserPriMapping : lesserPriMappings) {
+      // swap
+      if(rule.getType() == RuleType.STRICTLY_AFTER || rule.getType() == RuleType.AFTER_OR_TOGETHER) {
+        Collection<TemplateMappingConfiguration> temp = rightPriMappings;
+        rightPriMappings = leftPriMappings;
+        leftPriMappings = temp;
+      }
+
+      // map: left-pri mapping -> {right-pri mapping, .... , right-pri mapping }
+      leftPriMappings = CollectionUtil.subtract(leftPriMappings, rightPriMappings);
+      boolean isStrict = rule.getType() == RuleType.STRICTLY_BEFORE || rule.getType() == RuleType.STRICTLY_AFTER;
+
+      for (TemplateMappingConfiguration lesserPriMapping : leftPriMappings) {
         Map<TemplateMappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
 
-        for (TemplateMappingConfiguration grtPriMapping : greaterPriMappings) {
-          boolean isStrict = (rule.getType() == RuleType.STRICTLY_BEFORE);
+        for (TemplateMappingConfiguration grtPriMapping : rightPriMappings) {
           if (!grtPriMappingsFromMap.containsKey(grtPriMapping)) {
             grtPriMappingsFromMap.put(grtPriMapping, new PriorityData(isStrict, rule));
           } else {

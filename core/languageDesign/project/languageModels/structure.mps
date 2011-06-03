@@ -110,7 +110,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="model" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6370754048397540903" resolveInfo="Model" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6370754048397540903" resolveInfo="ModelReference" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1855399583446017057">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -122,7 +122,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="dependencies" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6370754048397540904" resolveInfo="Dependency" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6370754048397540904" resolveInfo="ModuleDependency" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1855399583446017055">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -338,6 +338,16 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="before_or_together" />
       <property name="externalValue" nameId="tpce.1083923523172" value="before or together (&lt;=)" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="before_or_together" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734302">
+      <property name="javaIdentifier" nameId="tpce.1192116978809" value="after_or_together" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="after_or_together" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="after or together (&gt;=)" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734303">
+      <property name="javaIdentifier" nameId="tpce.1192116978809" value="strictly_after" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="strictly_after" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="after (&gt;)" />
     </node>
   </root>
   <root id="1855399583446016268">

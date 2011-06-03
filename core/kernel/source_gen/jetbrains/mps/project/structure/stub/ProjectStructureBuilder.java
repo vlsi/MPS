@@ -206,6 +206,12 @@ public abstract class ProjectStructureBuilder {
       case STRICTLY_BEFORE:
         SPropertyOperations.set(rule, "type", "strictly_before");
         break;
+      case STRICTLY_AFTER:
+        SPropertyOperations.set(rule, "type", "strictly_after");
+        break;
+      case AFTER_OR_TOGETHER:
+        SPropertyOperations.set(rule, "type", "after_or_together");
+        break;
       default:
         SPropertyOperations.set(rule, "type", "strictly_together");
     }
