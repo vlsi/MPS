@@ -162,6 +162,17 @@ public class Generate_Facet implements IFacet {
       return cls.cast(new Variables());
     }
 
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((Generate_Facet.Target_fi61u2_a.Variables) t).project(((Generate_Facet.Target_fi61u2_a.Variables) copyFrom).project());
+        ((Generate_Facet.Target_fi61u2_a.Variables) t).operationContext(((Generate_Facet.Target_fi61u2_a.Variables) copyFrom).operationContext());
+        ((Generate_Facet.Target_fi61u2_a.Variables) t).cleanMake(((Generate_Facet.Target_fi61u2_a.Variables) copyFrom).cleanMake());
+        ((Generate_Facet.Target_fi61u2_a.Variables) t).pindGet(((Generate_Facet.Target_fi61u2_a.Variables) copyFrom).pindGet());
+      }
+      return t;
+    }
+
     public static class Variables extends MultiTuple._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> {
       public Variables() {
         super();
@@ -279,6 +290,11 @@ public class Generate_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
   }
 
   public static class Target_fi61u2_c implements ITarget {
@@ -389,6 +405,15 @@ public class Generate_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((Generate_Facet.Target_fi61u2_c.Variables) t).saveTransient((boolean) ((Generate_Facet.Target_fi61u2_c.Variables) copyFrom).saveTransient());
+        ((Generate_Facet.Target_fi61u2_c.Variables) t).generationOptions(((Generate_Facet.Target_fi61u2_c.Variables) copyFrom).generationOptions());
+      }
+      return t;
     }
 
     public static class Variables extends MultiTuple._2<Boolean, GenerationOptions.OptionsBuilder> {
@@ -591,6 +616,11 @@ public class Generate_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return null;
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
     }
   }
 }

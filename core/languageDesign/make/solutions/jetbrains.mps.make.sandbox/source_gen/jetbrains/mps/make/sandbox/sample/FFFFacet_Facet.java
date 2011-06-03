@@ -112,6 +112,11 @@ public class FFFFacet_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
   }
 
   public static class Target_chixuw_b implements ITarget {
@@ -184,6 +189,11 @@ public class FFFFacet_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
   }
 
   public static class Target_chixuw_c implements ITarget {
@@ -250,6 +260,11 @@ public class FFFFacet_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return null;
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
     }
   }
 }

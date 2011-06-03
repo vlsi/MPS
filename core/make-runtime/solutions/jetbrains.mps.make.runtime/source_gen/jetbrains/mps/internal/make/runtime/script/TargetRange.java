@@ -212,6 +212,10 @@ public class TargetRange {
       return null;
     }
 
+    public <T> T createParameters(Class<T> varCls, T copyFrom) {
+      return null;
+    }
+
     public IJob createJob() {
       return null;
     }

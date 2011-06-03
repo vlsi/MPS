@@ -3060,6 +3060,37 @@
           </node>
         </node>
       </node>
+      <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3173704087496346619">
+        <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+        <property name="name" nameId="tpck.1169194664001" value="createParameters" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3173704087496346620" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3173704087496346621">
+          <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3173704087496346618" resolveInfo="T" />
+        </node>
+        <node role="typeVariableDeclaration" roleId="tpee.1109279881614" type="tpee.TypeVariableDeclaration" typeId="tpee.1109279763828" id="3173704087496346618">
+          <property name="name" nameId="tpck.1169194664001" value="T" />
+        </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3173704087496346622">
+          <property name="name" nameId="tpck.1169194664001" value="varCls" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3173704087496346623">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Class" resolveInfo="Class" />
+            <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3173704087496346624">
+              <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3173704087496346618" resolveInfo="T" />
+            </node>
+          </node>
+        </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3173704087496346625">
+          <property name="name" nameId="tpck.1169194664001" value="copyFrom" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3173704087496346626">
+            <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3173704087496346618" resolveInfo="T" />
+          </node>
+        </node>
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3173704087496346627">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3173704087496346640">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3173704087496346641" />
+          </node>
+        </node>
+      </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6168415856807658476">
         <property name="name" nameId="tpck.1169194664001" value="createJob" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6168415856807658477" />

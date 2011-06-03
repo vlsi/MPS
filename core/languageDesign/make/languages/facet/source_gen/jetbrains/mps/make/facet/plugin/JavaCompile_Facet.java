@@ -193,6 +193,11 @@ public class JavaCompile_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
   }
 
   public static class Target_wf1ya0_b implements ITarget {
@@ -323,6 +328,14 @@ public class JavaCompile_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Parameters());
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((JavaCompile_Facet.Target_wf1ya0_b.Parameters) t).skipAuxCompile(((JavaCompile_Facet.Target_wf1ya0_b.Parameters) copyFrom).skipAuxCompile());
+      }
+      return t;
     }
 
     public static class Parameters extends MultiTuple._1<Boolean> {
@@ -458,6 +471,15 @@ public class JavaCompile_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Parameters());
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((JavaCompile_Facet.Target_wf1ya0_c.Parameters) t).classPath(((JavaCompile_Facet.Target_wf1ya0_c.Parameters) copyFrom).classPath());
+        ((JavaCompile_Facet.Target_wf1ya0_c.Parameters) t).errors((boolean) ((JavaCompile_Facet.Target_wf1ya0_c.Parameters) copyFrom).errors());
+      }
+      return t;
     }
 
     public static class Parameters extends MultiTuple._2<Iterable<IClassPathItem>, Boolean> {
