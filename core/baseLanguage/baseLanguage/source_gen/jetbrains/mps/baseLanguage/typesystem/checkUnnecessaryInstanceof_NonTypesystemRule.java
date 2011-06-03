@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -20,7 +19,7 @@ public class checkUnnecessaryInstanceof_NonTypesystemRule extends AbstractNonTyp
   }
 
   public void applyRule(final SNode instanceOfExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode classifierType = SNodeOperations.cast(SLinkOperations.getTarget(instanceOfExpression, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    SNode classifierType = SLinkOperations.getTarget(instanceOfExpression, "classType", true);
     SNode expressionType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true));
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, classifierType)) {
       {
