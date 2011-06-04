@@ -7,6 +7,7 @@ import java.awt.MediaTracker;
 import java.util.Map;
 import javax.swing.Icon;
 import java.util.HashMap;
+import jetbrains.mps.smodel.LanguageAspect;
 import java.awt.Component;
 import java.awt.Graphics;
 import jetbrains.mps.smodel.SNode;
@@ -33,7 +34,6 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -45,11 +45,14 @@ import javax.swing.ImageIcon;
 import java.io.InputStream;
 import java.io.IOException;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.EnumMap;
 
 public class IconManager {
   public static final Logger LOG = Logger.getLogger(IconManager.class);
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
+  private static Map<LanguageAspect, Icon> ourAspectsToIcons;
   public static final Icon EMPTY_ICON = new Icon() {
     public void paintIcon(Component c, Graphics g, int x, int y) {
     }
@@ -304,50 +307,29 @@ public class IconManager {
   }
 
   public static Icon getIconForAspect(LanguageAspect aspect) {
-    if (LanguageAspect.ACTIONS.equals(aspect)) {
-      return Icons.ACTIONS_MODEL_ICON;
-    } else
-    if (LanguageAspect.BEHAVIOR.equals(aspect)) {
-      return Icons.BEHAVIOR_MODEL_ICON;
-    } else
-    if (LanguageAspect.CONSTRAINTS.equals(aspect)) {
-      return Icons.CONSTRAINTS_MODEL_ICON;
-    } else
-    if (LanguageAspect.DATA_FLOW.equals(aspect)) {
-      return Icons.DATA_FLOW_MODEL_ICON;
-    } else
-    if (LanguageAspect.EDITOR.equals(aspect)) {
-      return Icons.EDITOR_MODEL_ICON;
-    } else
-    if (LanguageAspect.FIND_USAGES.equals(aspect)) {
-      return Icons.FIND_USAGES_MODEL_ICON;
-    } else
-    if (LanguageAspect.INTENTIONS.equals(aspect)) {
-      return Icons.INTENTIONS_MODEL_ICON;
-    } else
-    if (LanguageAspect.PLUGIN.equals(aspect)) {
-      return Icons.PLUGIN_MODEL_ICON;
-    } else
-    if (LanguageAspect.REFACTORINGS.equals(aspect)) {
-      return Icons.REFACTORINGS_MODEL_ICON;
-    } else
-    if (LanguageAspect.SCRIPTS.equals(aspect)) {
-    } else
-    if (LanguageAspect.STRUCTURE.equals(aspect)) {
-      return Icons.STRUCTURE_MODEL_ICON;
-    } else
-    if (LanguageAspect.STUBS.equals(aspect)) {
-      return Icons.STUBS_MODEL_ICON;
-    } else
-    if (LanguageAspect.TEST.equals(aspect)) {
-      return Icons.TEST_MODEL_ICON;
-    } else
-    if (LanguageAspect.TEXT_GEN.equals(aspect)) {
-      return Icons.TEXT_GEN_MODEL_ICON;
-    } else
-    if (LanguageAspect.TYPESYSTEM.equals(aspect)) {
-      return Icons.TYPESYSTEM_MODEL_ICON;
+    Icon icon = MapSequence.fromMap(ourAspectsToIcons).get(aspect);
+    if (icon == null) {
+      return Icons.MODEL_ICON;
     }
-    return Icons.MODEL_ICON;
+    return icon;
+  }
+
+  static {
+    ourAspectsToIcons = new EnumMap<LanguageAspect, Icon>(LanguageAspect.class);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.ACTIONS, Icons.ACTIONS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.BEHAVIOR, Icons.BEHAVIOR_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.CONSTRAINTS, Icons.CONSTRAINTS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.DATA_FLOW, Icons.DATA_FLOW_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.EDITOR, Icons.EDITOR_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.FIND_USAGES, Icons.FIND_USAGES_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.INTENTIONS, Icons.INTENTIONS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.PLUGIN, Icons.PLUGIN_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.REFACTORINGS, Icons.REFACTORINGS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.SCRIPTS, Icons.MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.STRUCTURE, Icons.STRUCTURE_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.STUBS, Icons.STUBS_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TEST, Icons.TEST_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TEXT_GEN, Icons.TEXT_GEN_MODEL_ICON);
+    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TYPESYSTEM, Icons.TYPESYSTEM_MODEL_ICON);
   }
 }
