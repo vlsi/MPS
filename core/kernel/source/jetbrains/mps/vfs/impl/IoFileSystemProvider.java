@@ -32,8 +32,8 @@ public class IoFileSystemProvider implements FileSystemProvider {
       String jarPath = path.substring(0, index);
       String entryPath = path.substring(index + 1);
 
-      if (!entryPath.startsWith("/")) {
-        entryPath = "/" + entryPath;
+      if (entryPath.startsWith("/")) {
+        entryPath = entryPath.substring(1);
       }
 
       File jarFile = new File(jarPath);
