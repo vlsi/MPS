@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.CellActionType;
 
 public class SelectNext_Action extends GeneratedAction {
@@ -22,7 +21,7 @@ public class SelectNext_Action extends GeneratedAction {
   public SelectNext_Action() {
     super("Select Next", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
@@ -56,11 +55,7 @@ public class SelectNext_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.SELECT_NEXT);
-        }
-      });
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.SELECT_NEXT);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SelectNext", t);
