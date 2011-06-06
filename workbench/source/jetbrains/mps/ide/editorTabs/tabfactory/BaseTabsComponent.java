@@ -21,9 +21,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import javax.swing.KeyStroke;
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.Set;
 
@@ -36,14 +34,12 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private JComponent myComponent;
 
-
   public BaseTabsComponent(JComponent baseComponent, SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback, boolean showGrayed) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myShortcutComponent = shortcutComponent;
     myCallback = callback;
     myShowGrayed = showGrayed;
-
 
     myComponent = baseComponent;
 
@@ -66,7 +62,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
         });
       }
     }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
-
   }
 
   public final JComponent getComponent() {

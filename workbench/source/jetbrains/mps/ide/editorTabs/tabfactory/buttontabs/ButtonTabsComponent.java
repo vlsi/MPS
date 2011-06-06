@@ -127,7 +127,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     getComponent().add(myToolbar, BorderLayout.CENTER);
   }
 
-  //todo
   public void setLastNode(SNodePointer node) {
     myLastNode = node;
   }
