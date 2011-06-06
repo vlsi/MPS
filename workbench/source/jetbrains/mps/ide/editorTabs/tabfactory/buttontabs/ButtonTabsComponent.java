@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.tabfactory.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.baseListening.ModelListener;
@@ -40,18 +41,12 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public class ButtonTabsComponent implements TabsComponent {
-  private SNodePointer myBaseNode;
+public class ButtonTabsComponent extends BaseTabsComponent {
   private SNodePointer myLastNode = null;
-  private Set<EditorTabDescriptor> myPossibleTabs;
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
   private List<Document> myEditedDocuments = new ArrayList<Document>();
   private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
   private JComponent myToolbar = null;
-  private JComponent myShortcutComponent;
-  private NodeChangeCallback myCallback;
-  private boolean myShowGrayed;
-  private JComponent myComponent;
 
   private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
   private ModelListener myTabRemovalListener = new MyTabRemovalListener();
@@ -63,33 +58,8 @@ public class ButtonTabsComponent implements TabsComponent {
   };
 
   public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback, boolean showGrayed) {
-    myBaseNode = baseNode;
-    myPossibleTabs = possibleTabs;
-    myShortcutComponent = shortcutComponent;
-    myCallback = callback;
-    myShowGrayed = showGrayed;
+    super(new JPanel(new BorderLayout()),baseNode,possibleTabs,shortcutComponent,callback,showGrayed);
 
-    myComponent = new JPanel(new BorderLayout());
-
-    myComponent.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            prevTab();
-          }
-        });
-      }
-    }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
-
-    myComponent.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            nextTab();
-          }
-        });
-      }
-    }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
     myAddButton = new AddConceptTab(myBaseNode, myPossibleTabs, myNodeChangeCallback) {
       protected SNode getCurrentAspect() {
@@ -115,10 +85,6 @@ public class ButtonTabsComponent implements TabsComponent {
 
   public List<Document> getAllEditedDocuments() {
     return myEditedDocuments;
-  }
-
-  public JComponent getComponent() {
-    return myComponent;
   }
 
   private void updateTabs() {
@@ -153,12 +119,12 @@ public class ButtonTabsComponent implements TabsComponent {
       group.add(tab.getAction(myShortcutComponent));
     }
     if (myToolbar != null) {
-      myComponent.remove(myToolbar);
+      getComponent().remove(myToolbar);
     }
     ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true);
     actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     myToolbar = actionToolbar.getComponent();
-    myComponent.add(myToolbar, BorderLayout.CENTER);
+    getComponent().add(myToolbar, BorderLayout.CENTER);
   }
 
   //todo
@@ -171,7 +137,7 @@ public class ButtonTabsComponent implements TabsComponent {
     myCallback.changeNode(node);
   }
 
-  private void nextTab() {
+  protected void nextTab() {
     for (EditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
       int index = myRealTabs.indexOf(tab);
@@ -198,7 +164,7 @@ public class ButtonTabsComponent implements TabsComponent {
     return current;
   }
 
-  private void prevTab() {
+  protected void prevTab() {
     for (EditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
 
@@ -214,7 +180,7 @@ public class ButtonTabsComponent implements TabsComponent {
   }
 
   private void performTabAction(final int index) {
-    final DataContext context = DataManager.getInstance().getDataContext(myComponent);
+    final DataContext context = DataManager.getInstance().getDataContext(getComponent());
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
 
     myRealTabs.get(index).getAction(myShortcutComponent).actionPerformed(event);
