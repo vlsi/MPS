@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.editors;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
@@ -24,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
+import jetbrains.mps.ide.CustomizationSettings;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
@@ -222,7 +224,7 @@ public class MPSEditorOpener {
   private IEditor openEditor(final SNode root, IOperationContext context, boolean openBaseNode) {
     SNode baseNode = null;
 
-    if (openBaseNode) {
+    if (openBaseNode  && isUseTabs()) {
       baseNode = getBaseNode(context, root);
     }
 
@@ -253,6 +255,10 @@ public class MPSEditorOpener {
     }
 
     return nodeEditor;
+  }
+
+  private boolean isUseTabs() {
+    return ApplicationManager.getApplication().getComponent(CustomizationSettings.class).getState().show;
   }
 
   //----------util
