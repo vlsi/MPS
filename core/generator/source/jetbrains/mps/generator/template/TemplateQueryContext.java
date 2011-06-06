@@ -31,7 +31,6 @@ public class TemplateQueryContext {
   // key for 'node user object' used to keep track of 'original input node' for a generated node
   // only used when output node has been created as a 'copy' of 'original input node'
   public static final String ORIGINAL_INPUT_NODE = "originalInputNode";
-  public static final String ORIGINAL_DEBUG_NODE = "originalDebugNode";
 
   private final SNode myInputNode;
   private final SNode myTemplateNode;

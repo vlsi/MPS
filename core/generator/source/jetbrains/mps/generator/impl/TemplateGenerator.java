@@ -274,13 +274,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
         outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE));
-        outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE));
       }
 
       if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
         for (SNode outputNode : outputNodes) {
           outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
-          outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
         }
       }
 
@@ -426,7 +424,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                 // keep track of 'original input node'
                 if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
                   reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
-                  reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
                 }
               }
             }
@@ -523,7 +520,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // keep track of 'original input node'
     if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
       outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
-      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
     }
 
     for (SReference inputReference : inputNode.getReferencesIterable()) {

@@ -182,7 +182,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
     @Override
     protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {
       // write user objects here
-      Object userObject = node.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE);
+      Object userObject = node.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
       if (userObject instanceof SNode) {
         os.writeInt(1);
         os.writeModelReference(((SNode) userObject).getModel().getSModelReference());
@@ -220,7 +220,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
         }
         if (tmodel != null) {
           SNode userObject = tmodel.getNodeById(nodeId);
-          node.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, userObject);
+          node.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, userObject);
         }
         else {
           throw new IOException("couldn't load user object");
