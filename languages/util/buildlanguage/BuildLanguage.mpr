@@ -31,10 +31,10 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/platform/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="bash" />
+      <modulePath path="${mps_home}/languages/util/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="bash" />
       <modulePath path="${project}/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="customMPS" />
       <modulePath path="${project}/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="ant" />
-      <modulePath path="${mps_home}/platform/bash/languages/bash/bash.mpl" folder="bash" />
+      <modulePath path="${mps_home}/languages/util/bash/languages/bash/bash.mpl" folder="bash" />
       <modulePath path="${project}/languages/buildlanguage/buildlanguage.mpl" folder="buildlanguage" />
       <modulePath path="${project}/languages/custommps/custommps.mpl" folder="customMPS" />
       <modulePath path="${project}/languages/dependency/dependency.mpl" folder="packaging" />

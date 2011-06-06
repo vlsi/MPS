@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.build.antsupport" uuid="77c9a130-703f-4530-bf21-6580757768d0" compileInMPS="false" generatorOutputPath="${mps_home}/platform/buildlanguage/ant/source_gen">
+<solution name="jetbrains.mps.build.antsupport" uuid="77c9a130-703f-4530-bf21-6580757768d0" compileInMPS="false" generatorOutputPath="${mps_home}/languages/util/buildlanguage/ant/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/platform/buildlanguage/ant/classes">
+    <stubModelEntry path="${mps_home}/languages/util/buildlanguage/ant/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>

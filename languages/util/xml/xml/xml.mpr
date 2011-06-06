@@ -21,9 +21,9 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/xml.mpl" />
-      <languagePath path="${mps_home}/platform/xml/xmlInternal/xmlInternal.mpl" />
-      <languagePath path="${mps_home}/platform/xml/xmlSchema/xmlSchema.mpl" />
-      <languagePath path="${mps_home}/platform/xml/xmlQuery/xmlQuery.mpl" folder="" />
+      <languagePath path="${mps_home}/languages/util/xml/xmlInternal/xmlInternal.mpl" />
+      <languagePath path="${mps_home}/languages/util/xml/xmlSchema/xmlSchema.mpl" />
+      <languagePath path="${mps_home}/languages/util/xml/xmlQuery/xmlQuery.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

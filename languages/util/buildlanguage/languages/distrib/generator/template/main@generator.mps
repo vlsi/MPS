@@ -1843,7 +1843,7 @@
                       <node role="templateNode" roleId="tpf8.1177093586806" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1580548376419850388">
                         <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1580548376419850389">
                           <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1580548376419850390">
-                            <property name="value" nameId="tpsk.1196861024475" value="/platform/buildlanguage/languages/distrib/classes" />
+                            <property name="value" nameId="tpsk.1196861024475" value="/languages/util/buildlanguage/languages/distrib/classes" />
                           </node>
                           <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1580548376419850391">
                             <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1230642359528" resolveInfo="mps_home" />

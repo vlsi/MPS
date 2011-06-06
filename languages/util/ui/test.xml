@@ -3,7 +3,7 @@
   <property environment="env"/>    
   <property file="./test.properties"/>
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
-         classpath="${mps_home}/platform/generate.ant.task.jar"/>
+         classpath="${mps_home}/languages/util/generate.ant.task.jar"/>
 
   <target name="test">
     <mps.test.generation fork="true" mpshome="${mps_home}" loglevel="info" invokeTests="true">

@@ -1,9 +1,9 @@
 <project name="mps.tests" default="all">
   <property name="mps.home" value="${ant.file.mps.tests}/../../../../.."/>
-  <import file="${mps.home}/platform/gwtsupport/solutions/gwtsupport.buildtest/build.xml"/>
+  <import file="${mps.home}/languages/util/gwtsupport/solutions/gwtsupport.buildtest/build.xml"/>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
-           classpath="${mps.home}/platform/buildlanguage/ant/classes"/>
+           classpath="${mps.home}/languages/util/buildlanguage/ant/classes"/>
 
   <target name="all" depends="generation.tests,broken.references.test,gwtsupport.buildtest.build"/>
   <target name="all.bymodule" depends="bymodule.generation.tests,broken.references.test,gwtsupport.buildtest.build"/>
@@ -100,7 +100,7 @@
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
       <jvmargs refid="mps.args"/>
       <perfomancereport file="${mps.home}/generation.platform.perfomance"/>
-      <modules dir="${mps.home}/platform/">
+      <modules dir="${mps.home}/languages/util/">
         <patternset refid="excluded.modules"/>
         <exclude name="**/**mpsautobuild.msd"/>
       </modules>
@@ -108,7 +108,7 @@
     <mps.test.generation fork="true" compile="false" showdiff="false" invoketests="false" loglevel="info"
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
       <jvmargs refid="mps.args"/>
-      <model file="${mps.home}/platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains/mps/build/mpsautobuild.mps"/>
+      <model file="${mps.home}/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains/mps/build/mpsautobuild.mps"/>
     </mps.test.generation>
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
@@ -160,14 +160,14 @@
       <project file="${mps.home}/core/languageDesign/stubs/stubs.mpr"/>
       <project file="${mps.home}/core/languageDesign/test/test.mpr"/>
       <project file="${mps.home}/core/languageDesign/typesystem/typesystem.mpr"/>
-      <project file="${mps.home}/platform/builders/builders.mpr"/>
-      <project file="${mps.home}/platform/buildlanguage/BuildLanguage.mpr"/>
-      <project file="${mps.home}/platform/gtext/gtext.mpr"/>
-      <project file="${mps.home}/platform/extensionMethod/MethodExtension.mpr"/>
-      <project file="${mps.home}/platform/regexp/regexp.mpr"/>
-      <project file="${mps.home}/platform/xml/xml/xml.mpr"/>
-      <project file="${mps.home}/platform/xmlDeprecated/xmlDeprecated.mpr"/>
-      <project file="${mps.home}/platform/xmlUnitTest/xmlUnitTest.mpr"/>
+      <project file="${mps.home}/languages/util/builders/builders.mpr"/>
+      <project file="${mps.home}/languages/util/buildlanguage/BuildLanguage.mpr"/>
+      <project file="${mps.home}/languages/util/gtext/gtext.mpr"/>
+      <project file="${mps.home}/languages/util/extensionMethod/MethodExtension.mpr"/>
+      <project file="${mps.home}/languages/util/regexp/regexp.mpr"/>
+      <project file="${mps.home}/languages/util/xml/xml/xml.mpr"/>
+      <project file="${mps.home}/languages/util/xmlDeprecated/xmlDeprecated.mpr"/>
+      <project file="${mps.home}/languages/util/xmlUnitTest/xmlUnitTest.mpr"/>
 
       <!-- Applications tests -->
       <project file="${mps.home}/core/kernel/kernelSolution/kernel.mpr"/>
@@ -175,15 +175,15 @@
       <project file="${mps.home}/core/kernel/traceinfo/traceInfo.mpr"/>
       <project file="${mps.home}/core/tests/testMake/testMake.mpr"/>
       <project file="${mps.home}/core/languageDesign/mps-lite/mps-lite.mpr"/>
-      <project file="${mps.home}/platform/quickQueryLanguage/quickQueryLanguage.mpr"/>
-      <project file="${mps.home}/platform/uiLanguage/uiLanguage.mpr"/>
-      <project file="${mps.home}/platform/ypath/YPath.mpr"/>
-      <project file="${mps.home}/platform/dates/dates.mpr"/>
+      <project file="${mps.home}/languages/util/quickQueryLanguage/quickQueryLanguage.mpr"/>
+      <project file="${mps.home}/languages/util/uiLanguage/uiLanguage.mpr"/>
+      <project file="${mps.home}/languages/util/ypath/YPath.mpr"/>
+      <project file="${mps.home}/languages/util/dates/dates.mpr"/>
       <project file="${mps.home}/core/baseLanguage/unitTest/unitTest.mpr"/>
-      <project file="${mps.home}/platform/math/mathLanguage.mpr"/>
-      <project file="${mps.home}/platform/money/MoneyLang.mpr"/>
+      <project file="${mps.home}/languages/util/math/mathLanguage.mpr"/>
+      <project file="${mps.home}/languages/util/money/MoneyLang.mpr"/>
 <!--
-      <project file="${mps.home}/platform/contracts/contracts.mpr"/>
+      <project file="${mps.home}/languages/util/contracts/contracts.mpr"/>
 -->
       <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
 
@@ -203,7 +203,7 @@
     <mps.test.generation fork="true" compile="false" showdiff="false" invoketests="false" loglevel="info"
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
       <jvmargs refid="mps.args"/>
-      <model file="${mps.home}/platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains/mps/build/mpsautobuild.mps"/>
+      <model file="${mps.home}/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains/mps/build/mpsautobuild.mps"/>
     </mps.test.generation>
   </target>
 

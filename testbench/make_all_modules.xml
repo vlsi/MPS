@@ -2,7 +2,7 @@
   <property name="mps.home" value="${ant.file.make_all_modules}/../.."/>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
-           classpath="${mps.home}/platform/buildlanguage/ant/classes"/>
+           classpath="${mps.home}/languages/util/buildlanguage/ant/classes"/>
 
   <jvmargs id="mps.args">
     <arg value="-Xss1024k"/>

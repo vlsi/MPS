@@ -158,7 +158,7 @@
       <arg file="${homepage.icon}" />
       <arg file="${help.folder.tmp}" />
       <classpath>
-        <pathelement path="${mps_home}/platform/buildlanguage/languages/distrib/classes" />
+        <pathelement path="${mps_home}/languages/util/buildlanguage/languages/distrib/classes" />
         <pathelement path="${mps_home}/core/runtime/classes" />
       </classpath>
     </java>
