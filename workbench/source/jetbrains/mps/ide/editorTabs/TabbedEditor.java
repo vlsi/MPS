@@ -29,8 +29,10 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.BaseNodeEditor;
 import jetbrains.mps.ide.MPSEditorState;
-import jetbrains.mps.ide.editorTabs.tabs.CreateGroupsBuilder;
-import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
+import jetbrains.mps.ide.editorTabs.tabfactory.TabComponentFactory;
+import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.CreateGroupsBuilder;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -70,7 +72,10 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
 
     showNode(baseNode.getNode(), false);
 
-    getComponent().add(myTabsComponent, BorderLayout.SOUTH);
+    JComponent c = myTabsComponent.getComponent();
+    if (c != null) {
+      getComponent().add(c, BorderLayout.SOUTH);
+    }
   }
 
   public void dispose() {
@@ -161,11 +166,12 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private AnAction getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, null) {
-      public void aspectCreated(SNode sNode) {
-        myTabsComponent.onNodeChange(sNode);
+    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, null, new NodeChangeCallback() {
+      public void changeNode(SNode node) {
+        myTabsComponent.setLastNode(new SNodePointer(node));
+        showNode(node, !node.isRoot());
       }
-    };
+    });
     for (DefaultActionGroup group : builder.getCreateGroups()) {
       result.add(group);
       result.add(new Separator());

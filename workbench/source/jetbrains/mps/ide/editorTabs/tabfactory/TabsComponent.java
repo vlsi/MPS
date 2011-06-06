@@ -13,10 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs;
+package jetbrains.mps.ide.editorTabs.tabfactory;
 
-import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.editor.Document;
+import jetbrains.mps.smodel.SNodePointer;
 
-public interface NodeChangeCallback {
-  void changeNode(SNode newNode);
+import javax.swing.JComponent;
+import java.util.List;
+
+public interface TabsComponent {
+  void dispose();
+
+  List<SNodePointer> getAllEditedNodes();
+
+  List<Document> getAllEditedDocuments();
+
+  void setLastNode(SNodePointer sNodePointer);
+
+  JComponent getComponent();
 }

@@ -13,9 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs;
+package jetbrains.mps.ide.editorTabs.tabfactory;
 
-import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.CustomizationSettings;
+import jetbrains.mps.ide.CustomizationSettings.MyState;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.ButtonTabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.emptytabs.EmptyTabsComponent;
 import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.JComponent;
@@ -23,6 +29,10 @@ import java.util.Set;
 
 public abstract class TabComponentFactory {
   public static TabsComponent createTabsComponent(final SNodePointer baseNode, final Set<EditorTabDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback) {
-    return new TabsComponent(baseNode, possibleTabs, component, callback);
+    MyState state = ApplicationManager.getApplication().getComponent(CustomizationSettings.class).getState();
+    if (!state.show){
+      return new EmptyTabsComponent(baseNode);
+    }
+    return new ButtonTabsComponent(baseNode, possibleTabs, component, callback);
   }
 }

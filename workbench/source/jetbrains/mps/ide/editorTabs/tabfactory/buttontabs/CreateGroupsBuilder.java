@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabs;
+package jetbrains.mps.ide.editorTabs.tabfactory.buttontabs;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -30,15 +31,17 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class CreateGroupsBuilder {
+public class CreateGroupsBuilder {
   private SNodePointer myBaseNode;
   private Collection<EditorTabDescriptor> myPossibleTabs;
   private SNode myCurrentAspect;
+  private NodeChangeCallback myCallback;
 
-  public CreateGroupsBuilder(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, SNode currentAspect) {
+  public CreateGroupsBuilder(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, SNode currentAspect, NodeChangeCallback callback) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myCurrentAspect = currentAspect;
+    myCallback = callback;
   }
 
   public List<DefaultActionGroup> getCreateGroups() {
@@ -98,7 +101,7 @@ public abstract class CreateGroupsBuilder {
         public void run() {
           String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
           created[0].setProperty(SNode.PACK, mainPack);
-          aspectCreated(created[0]);
+          myCallback.changeNode(created[0]);
         }
       };
 
@@ -117,6 +120,4 @@ public abstract class CreateGroupsBuilder {
       }
     }
   }
-
-  public abstract void aspectCreated(SNode sNode);
 }

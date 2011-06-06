@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabs;
+package jetbrains.mps.ide.editorTabs.tabfactory.buttontabs;
 
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.ide.editorTabs.tabs.icons.Icons;
+import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
+import jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.icons.Icons;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -29,10 +30,12 @@ import java.util.Set;
 abstract class AddConceptTab {
   private SNodePointer myBaseNode;
   private Set<EditorTabDescriptor> myPossibleTabs;
+  private NodeChangeCallback myCallback;
 
-  AddConceptTab(final SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
+  AddConceptTab(final SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, NodeChangeCallback callback) {
     this.myBaseNode = baseNode;
     this.myPossibleTabs = possibleTabs;
+    myCallback = callback;
   }
 
   public AnAction getAction() {
@@ -41,16 +44,10 @@ abstract class AddConceptTab {
 
   protected abstract SNode getCurrentAspect();
 
-  protected abstract void aspectCreated(SNode aspect);
-
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, getCurrentAspect()) {
-      public void aspectCreated(SNode sNode) {
-        AddConceptTab.this.aspectCreated(sNode);
-      }
-    };
+    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, getCurrentAspect(),myCallback) ;
 
     Iterator<DefaultActionGroup> it = builder.getCreateGroups().iterator();
 

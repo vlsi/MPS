@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabs.icons;
+package jetbrains.mps.ide.editorTabs.tabfactory;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.smodel.SNode;
 
-public class Icons {
-  public static final Icon ADD_ICON = new ImageIcon(Icons.class.getResource("add.png"));
+public interface NodeChangeCallback {
+  void changeNode(SNode newNode);
 }

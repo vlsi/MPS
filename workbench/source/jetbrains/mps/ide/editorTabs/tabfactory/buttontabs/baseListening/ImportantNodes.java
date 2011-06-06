@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.ide.editorTabs.tabs.baseListening;
+package jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.baseListening;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;

@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabs;
+package jetbrains.mps.ide.editorTabs.tabfactory.buttontabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.ide.editorTabs.NodeChangeCallback;
-import jetbrains.mps.ide.editorTabs.tabs.baseListening.ModelListener;
+import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
+import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.baseListening.ModelListener;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -39,7 +40,7 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public class TabsComponent extends JPanel {
+public class ButtonTabsComponent extends JPanel implements TabsComponent {
   private SNodePointer myBaseNode;
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
@@ -53,8 +54,13 @@ public class TabsComponent extends JPanel {
   private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
   private ModelListener myTabRemovalListener = new MyTabRemovalListener();
   private AddConceptTab myAddButton;
+  private final NodeChangeCallback myNodeChangeCallback = new NodeChangeCallback() {
+    public void changeNode(SNode newNode) {
+      onNodeChange(newNode);
+    }
+  };
 
-  public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent,NodeChangeCallback callback) {
+  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myShortcutComponent = shortcutComponent;
@@ -82,13 +88,9 @@ public class TabsComponent extends JPanel {
 
     setLayout(new BorderLayout());
 
-    myAddButton = new AddConceptTab(myBaseNode, myPossibleTabs) {
+    myAddButton = new AddConceptTab(myBaseNode, myPossibleTabs, myNodeChangeCallback) {
       protected SNode getCurrentAspect() {
         return myLastNode.getNode();
-      }
-
-      protected void aspectCreated(SNode aspect) {
-        onNodeChange(aspect);
       }
     };
 
@@ -112,6 +114,10 @@ public class TabsComponent extends JPanel {
     return myEditedDocuments;
   }
 
+  public JComponent getComponent() {
+    return this;
+  }
+
   private void updateTabs() {
     myRealTabs.clear();
     List<Document> editedDocumentsNew = new ArrayList<Document>();
@@ -132,7 +138,7 @@ public class TabsComponent extends JPanel {
         editedDocumentsNew.add(MPSUndoUtil.getDoc(nodePointer));
       }
 
-      final EditorTab tab = new EditorTab(this, myRealTabs.size(), d, myBaseNode);
+      final EditorTab tab = new EditorTab(this, myNodeChangeCallback, myRealTabs.size(), d, myBaseNode);
       myRealTabs.add(tab);
     }
     myEditedDocuments = editedDocumentsNew;
@@ -157,7 +163,7 @@ public class TabsComponent extends JPanel {
     myLastNode = node;
   }
 
-  public void onNodeChange(SNode node) {
+  private void onNodeChange(SNode node) {
     myLastNode = new SNodePointer(node);
     myCallback.changeNode(node);
   }
@@ -235,12 +241,6 @@ public class TabsComponent extends JPanel {
       assert r1 * r2 <= 0 : "can't determine order";
 
       return r1;
-    }
-  }
-
-  private class AdditionDescriptor extends Pair<Condition<SModelDescriptor>, SModelListener> {
-    public AdditionDescriptor(Condition<SModelDescriptor> first, SModelListener second) {
-      super(first, second);
     }
   }
 
