@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.List;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfNotNullAll extends DataFlowConstructor {
   public IfNotNullAll() {
@@ -47,6 +49,30 @@ public class IfNotNullAll extends DataFlowConstructor {
               Instruction instruction = new nullableInstruction(notNullNode);
               instruction.setSource(node);
               ((Program) (o)).insert(instruction, position, true, before);
+            }
+          }
+          if (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null) {
+            {
+              Object object = SLinkOperations.getTarget(node, "ifFalseStatement", true);
+              if (((Program) o).contains(object)) {
+                boolean before = true;
+                int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+                Instruction instruction = new nullableInstruction(notNullNode);
+                instruction.setSource(node);
+                ((Program) (o)).insert(instruction, position, true, before);
+              }
+            }
+          }
+          if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
+            {
+              Object object = ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
+              if (((Program) o).contains(object)) {
+                boolean before = true;
+                int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
+                Instruction instruction = new nullableInstruction(notNullNode);
+                instruction.setSource(node);
+                ((Program) (o)).insert(instruction, position, true, before);
+              }
             }
           }
         }
