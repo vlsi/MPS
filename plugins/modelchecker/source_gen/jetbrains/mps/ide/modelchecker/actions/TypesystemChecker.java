@@ -43,7 +43,7 @@ public class TypesystemChecker extends SpecificChecker {
     return results;
   }
 
-  private static String getResultCategory(MessageStatus messageStatus) {
+  public static String getResultCategory(MessageStatus messageStatus) {
     switch (messageStatus) {
       case ERROR:
         return ModelChecker.SEVERITY_ERROR;

@@ -77,7 +77,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     task.invoke(newViewer);
     if (showTab) {
       if (newViewer.getSearchResults().getSearchResults().isEmpty()) {
-        JOptionPane.showMessageDialog(ModelCheckerTool_Tool.this.getComponent(), "No problems found", "Not found", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(ModelCheckerTool_Tool.this.getComponent(), "There were no problems detected during Model Checker execution", "Model Checker results", JOptionPane.INFORMATION_MESSAGE);
       } else {
         ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
       }
