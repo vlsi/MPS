@@ -377,7 +377,6 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7806358006983646765">
         <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.946964771156870353" id="4318884729311291896">
           <node role="process" roleId="uhxm.946964771156870354" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="4318884729311291898">
-            <link role="command" roleId="rzqf.856705193941281782" targetNodeId="awpe.7991611468341333073" resolveInfo="javaNode" />
             <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="awpe.6129022259108656950" resolveInfo="java" />
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="4318884729311291899">
               <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.6129022259108656966" resolveInfo="programParameter" />

@@ -5,7 +5,6 @@ package jetbrains.mps.execution.commands.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
-import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.execution.common.structure.IGeneratedToClass;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration;
@@ -16,7 +15,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CommandDeclaration extends BaseConcept implements INamedConcept, IClassifier, IMethodLike, IGeneratedToClass {
+public class CommandDeclaration extends BaseConcept implements INamedConcept, IClassifier, IGeneratedToClass {
   public static final String concept = "jetbrains.mps.execution.commands.structure.CommandDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

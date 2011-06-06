@@ -4,6 +4,7 @@ package jetbrains.mps.execution.commands.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.BlockStatement;
 import java.util.Iterator;
@@ -13,7 +14,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ExecuteCommandPart extends BaseConcept implements INamedConcept {
+public class ExecuteCommandPart extends BaseConcept implements INamedConcept, IMethodLike {
   public static final String concept = "jetbrains.mps.execution.commands.structure.ExecuteCommandPart";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

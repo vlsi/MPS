@@ -5,18 +5,16 @@ package jetbrains.mps.execution.commands.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IClassifier_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, IGeneratedToClass_BehaviorDescriptor {
+public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IClassifier_BehaviorDescriptor, IGeneratedToClass_BehaviorDescriptor {
   public CommandDeclaration_BehaviorDescriptor() {
   }
 
@@ -28,20 +26,12 @@ public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorD
     return IClassifier_Behavior.virtual_getMembers_1213877528124(thisNode);
   }
 
-  public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return CommandDeclaration_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
-  }
-
   public String virtual_getFullName_946964771156905503(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
   }
 
   public List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     return IClassifier_Behavior.virtual_getMembers_1213877528020(thisNode, contextNode);
-  }
-
-  public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
-    return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
   }
 
   public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
@@ -52,24 +42,16 @@ public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorD
     return IClassifier_Behavior.virtual_getParts_1213877527988(thisNode);
   }
 
-  public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
-    return IGeneratedToClass_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
-  }
-
-  public SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
-    return IMethodLike_Behavior.virtual_getLastStatement_1239354409446(thisNode);
-  }
-
   public SNode virtual_createSuperType_1217433657148(SNode thisNode) {
     return IClassifier_Behavior.virtual_createSuperType_1217433657148(thisNode);
   }
 
-  public AbstractExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
-    return IClassifier_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToRefactor);
+  public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
+    return IGeneratedToClass_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
   }
 
-  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
-    return CommandDeclaration_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
+  public AbstractExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
+    return IClassifier_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToRefactor);
   }
 
   @NonNls
@@ -79,9 +61,5 @@ public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorD
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  }
-
-  public SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return CommandDeclaration_Behavior.virtual_getBody_1239354440022(thisNode);
   }
 }
