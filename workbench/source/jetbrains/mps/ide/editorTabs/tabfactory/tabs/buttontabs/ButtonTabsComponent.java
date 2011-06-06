@@ -105,12 +105,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     getComponent().add(myToolbar, BorderLayout.CENTER);
   }
 
-
-  private void onNodeChange(SNode node) {
-    setLastNode(new SNodePointer(node));
-    myCallback.changeNode(node);
-  }
-
   protected void nextTab() {
     for (EditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;

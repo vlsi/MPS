@@ -107,6 +107,13 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return myTabRemovalListener;
   }
 
+  protected void onNodeChange(SNode node) {
+    setLastNode(new SNodePointer(node));
+    myCallback.changeNode(node);
+  }
+
+  ///-------------tab navigation----------------
+
   protected abstract void nextTab();
 
   protected abstract void prevTab();
@@ -138,6 +145,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
       updateTabs();
     }
   }
+
+  ///-------------tab update----------------
 
   protected abstract boolean checkNodeAdded();
 
