@@ -36,6 +36,9 @@ public class DemoApplication_Producer {
 
     protected DemoApplication_Configuration doCreateConfiguration(SNode source) {
       setSourceElement(new MPSPsiElement(source));
+      if (!(SPropertyOperations.getBoolean(source, "valid"))) {
+        return null;
+      }
       DemoApplication_Configuration configuration = new DemoApplication_Configuration(getContext().getProject(), (DemoApplication_Configuration_Factory) getConfigurationFactory(), "SomeNode " + SPropertyOperations.getString(source, "name"));
       configuration.getNode().setNode(source);
       return configuration;
