@@ -539,16 +539,18 @@ public class NodeEditorActions {
 
     @Override
     public void execute(final EditorContext context) {
-      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      EditorComponent editorComponent = context.getNodeEditorComponent();
+      SelectionManager selectionManager = editorComponent.getSelectionManager();
       Selection selection = selectionManager.getSelection();
       if (selection instanceof SingularSelection) {
         EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
         SNode selectedNode = selectedCell.getSNode();
         SNode topMostNodeInSingularContainment = findTopMostNodeWithSingularContainment(selectedNode);
         if (topMostNodeInSingularContainment != selectedNode) {
-          EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(topMostNodeInSingularContainment);
+          EditorCell nodeCell = editorComponent.findNodeCell(topMostNodeInSingularContainment);
           if (nodeCell != null) {
-            context.getNodeEditorComponent().pushSelection(nodeCell);
+            editorComponent.pushSelection(nodeCell);
+            editorComponent.scrollToCell(nodeCell);
           }
         } else {
           Selection newSelection = selectionManager.createRangeSelection(selectedNode, selectedNode);
@@ -557,13 +559,21 @@ public class NodeEditorActions {
           }
           if (newSelection != null) {
             selectionManager.pushSelection(newSelection);
+            scrollToSelection(editorComponent, newSelection);
           }
         }
       } else if (selection instanceof NodeRangeSelection) {
         Selection newSelection = ((NodeRangeSelection) selection).enlargeSelection(myUp);
         if (newSelection != null) {
           selectionManager.pushSelection(newSelection);
+          scrollToSelection(editorComponent, newSelection);
         }
+      }
+    }
+
+    private void scrollToSelection(EditorComponent editorComponent, Selection selection) {
+      if (selection instanceof NodeRangeSelection) {
+        editorComponent.scrollToCell(((NodeRangeSelection) selection).getLastCell());
       }
     }
 
