@@ -441,11 +441,15 @@
   </root>
   <root nodeId="6872280991287216857">
     <nodeInfo nodeId="6872280991287216866" fileName="IParametersPool.java" startLine="7" startPosition="34" endLine="8" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameters#(Ljetbrains/mps/make/facet/ITarget/Name;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="3754120030656252184" fileName="IParametersPool.java" startLine="8" startPosition="61" endLine="9" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPredecessor#(Ljetbrains/mps/make/script/IParametersPool;)V" />
     <scopeInfo nodeId="6872280991287216866" fileName="IParametersPool.java" startLine="7" startPosition="34" endLine="8" endPosition="61">
       <varInfo nodeId="6872280991287216873" varName="cls" />
       <varInfo nodeId="6872280991287216871" varName="target" />
     </scopeInfo>
-    <unitInfo nodeId="6872280991287216857" fileName="IParametersPool.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.script.IParametersPool" />
+    <scopeInfo nodeId="3754120030656252184" fileName="IParametersPool.java" startLine="8" startPosition="61" endLine="9" endPosition="52">
+      <varInfo nodeId="3754120030656252218" varName="ppool" />
+    </scopeInfo>
+    <unitInfo nodeId="6872280991287216857" fileName="IParametersPool.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.script.IParametersPool" />
   </root>
   <root nodeId="7797884084018455875">
     <nodeInfo nodeId="7797884084018527781" fileName="IFeedback.java" startLine="7" startPosition="28" endLine="8" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSeverity#()Ljetbrains/mps/make/script/IFeedback/Severity;" />

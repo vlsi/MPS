@@ -5,6 +5,7 @@ package jetbrains.mps.workbench.make;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
+import jetbrains.mps.make.script.IParametersPool;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
@@ -33,7 +34,6 @@ import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressSt
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.make.script.IParametersPool;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -60,6 +60,7 @@ public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
   private boolean cleanMake;
   private ProgressIndicatorDelegate progInd;
+  private IParametersPool predParamPool;
 
   public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
     this.context = context;
@@ -215,6 +216,8 @@ public class WorkbenchMakeService implements IMakeService {
     }
 
     public void setup(IParametersPool ppool) {
+      ppool.setPredecessor(predParamPool);
+      predParamPool = ppool;
       final ProgressIndicator pind = new JobMonitorProgressIndicator(jobMon);
       Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) ppool.parameters(new ITarget.Name("checkParameters"), Object.class);
       if (vars != null) {
