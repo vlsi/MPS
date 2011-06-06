@@ -18,7 +18,6 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
-import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.CreateGroupsBuilder;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -80,5 +79,4 @@ public abstract class AddAspectAction extends AnAction {
 
     return result;
   }
-
 }

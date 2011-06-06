@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
+package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
