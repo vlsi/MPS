@@ -37,7 +37,6 @@ import java.awt.Component;
 import java.util.*;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
-  private SNodePointer myLastNode = null;
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
   private List<Document> myEditedDocuments = new ArrayList<Document>();
   private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
@@ -57,7 +56,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
     myAddButton = new AddAspectAction(myBaseNode, myPossibleTabs, myNodeChangeCallback) {
       protected SNode getCurrentAspect() {
-        return myLastNode.getNode();
+        return getLastNode().getNode();
       }
     };
 
@@ -121,12 +120,9 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     getComponent().add(myToolbar, BorderLayout.CENTER);
   }
 
-  public void setLastNode(SNodePointer node) {
-    myLastNode = node;
-  }
 
   private void onNodeChange(SNode node) {
-    myLastNode = new SNodePointer(node);
+    setLastNode(new SNodePointer(node));
     myCallback.changeNode(node);
   }
 
@@ -148,8 +144,8 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   public boolean isCurrent(EditorTab tab) {
     boolean current = false;
     for (SNode aspect : tab.getDescriptor().getNodes(myBaseNode.getNode())) {
-      if (myLastNode == null) continue;
-      if (aspect.getContainingRoot().equals(myLastNode.getNode())) {
+      if (getLastNode() == null) continue;
+      if (aspect.getContainingRoot().equals(getLastNode().getNode())) {
         current = true;
         break;
       }
@@ -211,7 +207,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     protected void onImportantRootRemoved(SNodePointer node) {
       if (myBaseNode.equals(node)) return; //will be closed by idea
 
-      if (myLastNode.equals(node)) {
+      if (getLastNode().equals(node)) {
         onNodeChange(myBaseNode.getNode());
       }
 

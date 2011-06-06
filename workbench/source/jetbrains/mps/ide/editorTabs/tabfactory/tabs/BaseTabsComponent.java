@@ -34,6 +34,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected final NodeChangeCallback myCallback;
   protected final boolean myShowGrayed;
 
+  private SNodePointer myLastNode = null;
+
   private JComponent myComponent;
 
   public BaseTabsComponent(JComponent baseComponent, SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback, boolean showGrayed) {
@@ -68,6 +70,14 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   public final JComponent getComponent() {
     return myComponent;
+  }
+
+  public void setLastNode(SNodePointer node) {
+    myLastNode = node;
+  }
+
+  public SNodePointer getLastNode() {
+    return myLastNode;
   }
 
   protected abstract void nextTab();
