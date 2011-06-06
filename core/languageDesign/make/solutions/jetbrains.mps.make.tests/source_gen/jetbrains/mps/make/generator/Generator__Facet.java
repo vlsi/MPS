@@ -114,6 +114,14 @@ public class Generator__Facet implements IFacet {
       return cls.cast(new Variables());
     }
 
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((Generator__Facet.Target_j0fmyu_a.Variables) t).value(((Generator__Facet.Target_j0fmyu_a.Variables) copyFrom).value());
+      }
+      return t;
+    }
+
     public static class Variables extends MultiTuple._1<String> {
       public Variables() {
         super();
@@ -212,6 +220,11 @@ public class Generator__Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return null;
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
     }
   }
 }
