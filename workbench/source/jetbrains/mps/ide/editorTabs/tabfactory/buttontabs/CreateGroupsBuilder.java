@@ -18,6 +18,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory.buttontabs;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
