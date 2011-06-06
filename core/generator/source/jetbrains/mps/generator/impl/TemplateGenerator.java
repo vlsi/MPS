@@ -273,6 +273,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
+        outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE));
+        outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE));
+      }
+
+      if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
+        for (SNode outputNode : outputNodes) {
+          outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+          outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
+        }
       }
 
     } catch (DismissTopMappingRuleException e) {
@@ -345,7 +354,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public boolean isDirty(SNode node) {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(node);
-    if(builder != null && builder.isUnchanged()) {
+    if (builder != null && builder.isUnchanged()) {
       return false;
     }
     return true;
@@ -501,7 +510,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     blockReductionsForCopiedNode(inputNode, outputNode, reductionContext); // prevent infinite applying of the same reduction to the 'same' node.
 
-    if(templateNodeId != null) {
+    if (templateNodeId != null) {
       myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, outputNode);
     } else if (templateNode != null) {
       myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode.getNode(), outputNode);
