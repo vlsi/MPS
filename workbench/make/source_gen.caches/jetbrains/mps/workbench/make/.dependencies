@@ -160,7 +160,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
-    <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
@@ -175,6 +174,7 @@
     <classNode extendsClassName="com.intellij.openapi.progress.Backgroundable" />
     <classNode extendsClassName="java.util.concurrent.Future" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />
+    <classNode extendsClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
   </dependency>
 </dependenciesRoot>
