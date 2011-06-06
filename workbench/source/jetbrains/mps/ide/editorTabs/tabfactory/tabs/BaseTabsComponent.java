@@ -23,7 +23,6 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
-import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.EditorTab;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -34,14 +33,16 @@ import jetbrains.mps.smodel.event.SModelEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 import javax.swing.KeyStroke;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
 public abstract class BaseTabsComponent implements TabsComponent {
   protected final SNodePointer myBaseNode;
   protected final Set<EditorTabDescriptor> myPossibleTabs;
-  protected final JComponent myShortcutComponent;
+  protected final JComponent myEditor;
   protected final NodeChangeCallback myCallback;
   protected final boolean myShowGrayed;
   protected final AnAction myAddAction;
@@ -55,10 +56,10 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private JComponent myComponent;
 
-  public BaseTabsComponent(JComponent baseComponent, SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback, boolean showGrayed) {
+  public BaseTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
-    myShortcutComponent = shortcutComponent;
+    myEditor = editor;
     myCallback = callback;
     myShowGrayed = showGrayed;
 
@@ -68,7 +69,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
       }
     };
 
-    myComponent = baseComponent;
+    myComponent = new JPanel(new BorderLayout());
 
     myComponent.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -135,12 +136,14 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
     Map<EditorTabDescriptor,List<SNode>> result = new THashMap<EditorTabDescriptor, List<SNode>>();
 
+    getTabRemovalListener().clearAspects();
     for (EditorTabDescriptor d : tabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
       if (nodes.isEmpty()) continue;
 
       result.put(d,nodes);
       for (SNode node : nodes) {
+        getTabRemovalListener().aspectAdded(node.getContainingRoot());
         SNodePointer nodePointer = new SNodePointer(node);
         editedNodesNew.add(nodePointer);
         editedDocumentsNew.add(MPSUndoUtil.getDoc(nodePointer));

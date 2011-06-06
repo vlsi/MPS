@@ -31,7 +31,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class EditorTab {
+class EditorTab {
   private ButtonTabsComponent myTabComponent;
   private NodeChangeCallback myCallback;
   private int myIndex;

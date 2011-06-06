@@ -17,18 +17,14 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.editor.Document;
-import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
-import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.util.*;
@@ -43,8 +39,8 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     }
   };
 
-  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback, boolean showGrayed) {
-    super(new JPanel(new BorderLayout()), baseNode, possibleTabs, shortcutComponent, callback, showGrayed);
+  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
+    super(baseNode, possibleTabs, editor, callback, showGrayed);
     updateTabs();
   }
 
@@ -55,21 +51,15 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   protected void updateTabs() {
     myRealTabs.clear();
 
-    getTabRemovalListener().clearAspects();
     Map<EditorTabDescriptor,List<SNode>> newContent = updateDocumentsAndNodes();
     for (EditorTabDescriptor key: newContent.keySet()){
-      for (SNode node:newContent.get(key)){
-        getTabRemovalListener().aspectAdded(node.getContainingRoot());
-      }
-
-      final EditorTab tab = new EditorTab(this, myNodeChangeCallback, myRealTabs.size(), key, myBaseNode);
-      myRealTabs.add(tab);
+      myRealTabs.add(new EditorTab(this, myNodeChangeCallback, myRealTabs.size(), key, myBaseNode));
     }
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(myAddAction);
     for (EditorTab tab : myRealTabs) {
-      group.add(tab.getAction(myShortcutComponent));
+      group.add(tab.getAction(myEditor));
     }
     if (myToolbar != null) {
       getComponent().remove(myToolbar);
@@ -125,7 +115,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     final DataContext context = DataManager.getInstance().getDataContext(getComponent());
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
 
-    myRealTabs.get(index).getAction(myShortcutComponent).actionPerformed(event);
+    myRealTabs.get(index).getAction(myEditor).actionPerformed(event);
   }
 
   protected boolean checkNodeAdded() {

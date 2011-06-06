@@ -21,6 +21,7 @@ import jetbrains.mps.ide.CustomizationSettings.MyState;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.ButtonTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.emptytabs.EmptyTabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs.PlainTabsComponent;
 import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.JComponent;
@@ -33,8 +34,7 @@ public abstract class TabComponentFactory {
       return new EmptyTabsComponent(baseNode);
     } else {
       if (state.showPlain) {
-        return null;
-        //return new PlainTabsComponent(baseNode, possibleTabs, component, callback, state.showGrayed);
+        return new PlainTabsComponent(baseNode, possibleTabs, component, callback, state.showGrayed);
       } else {
         return new ButtonTabsComponent(baseNode, possibleTabs, component, callback, state.showGrayed);
       }
