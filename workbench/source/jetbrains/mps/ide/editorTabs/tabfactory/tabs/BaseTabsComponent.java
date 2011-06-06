@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
+import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.baseListening.ModelListener;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -38,6 +40,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected final JComponent myShortcutComponent;
   protected final NodeChangeCallback myCallback;
   protected final boolean myShowGrayed;
+  protected final AnAction myAddAction;
 
   private SNodePointer myLastNode = null;
 
@@ -52,6 +55,12 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myShortcutComponent = shortcutComponent;
     myCallback = callback;
     myShowGrayed = showGrayed;
+
+    myAddAction = new AddAspectAction(myBaseNode, myPossibleTabs, myCallback) {
+      protected SNode getCurrentAspect() {
+        return getLastNode().getNode();
+      }
+    };
 
     myComponent = baseComponent;
 

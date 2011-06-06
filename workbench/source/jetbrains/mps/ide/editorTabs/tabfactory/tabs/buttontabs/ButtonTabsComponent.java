@@ -21,7 +21,6 @@ import com.intellij.openapi.editor.Document;
 import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
-import jetbrains.mps.ide.editorTabs.tabfactory.tabs.AddAspectAction;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.SNode;
@@ -43,7 +42,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
   private JComponent myToolbar = null;
 
-  private AnAction myAddButton;
   private final NodeChangeCallback myNodeChangeCallback = new NodeChangeCallback() {
     public void changeNode(SNode newNode) {
       onNodeChange(newNode);
@@ -52,13 +50,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
   public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback, boolean showGrayed) {
     super(new JPanel(new BorderLayout()), baseNode, possibleTabs, shortcutComponent, callback, showGrayed);
-
-    myAddButton = new AddAspectAction(myBaseNode, myPossibleTabs, myNodeChangeCallback) {
-      protected SNode getCurrentAspect() {
-        return getLastNode().getNode();
-      }
-    };
-
     updateTabs();
   }
 
@@ -101,7 +92,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     myEditedNodes = editedNodesNew;
 
     DefaultActionGroup group = new DefaultActionGroup();
-    group.add(myAddButton);
+    group.add(myAddAction);
     for (EditorTab tab : myRealTabs) {
       group.add(tab.getAction(myShortcutComponent));
     }
