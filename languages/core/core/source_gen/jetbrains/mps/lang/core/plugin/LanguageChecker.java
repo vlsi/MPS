@@ -35,6 +35,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class LanguageChecker extends BaseEditorChecker {
   private static Logger LOG = Logger.getLogger(LanguageChecker.class);
@@ -199,6 +200,14 @@ public class LanguageChecker extends BaseEditorChecker {
       HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorReporter.getSNode(), NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageChecker.this, editorContext);
       SetSequence.fromSet(result).addElement(message);
     }
+    return result;
+  }
+
+  public Set<IErrorReporter> getErrors(SNode rootNode, IOperationContext context) {
+    LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(rootNode);
+    errorsComponent.check(rootNode, myRules, context);
+    Set<IErrorReporter> result = errorsComponent.getErrors();
+    errorsComponent.dispose();
     return result;
   }
 

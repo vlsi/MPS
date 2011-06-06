@@ -104,6 +104,20 @@ public class TypeSystemTracePanel extends JPanel {
         myTraceTree.expandAll();
       }
     };
+    ToggleAction showTypesExpansion = new ToggleAction("Show types expansion", "Show types expansion", jetbrains.mps.ide.projectPane.Icons.OPENED_FOLDER) {
+      private boolean mySelected = TraceSettings.isShowTypesExpansion();
+
+      public boolean isSelected(AnActionEvent e) {
+        return mySelected;
+      }
+
+      public void setSelected(AnActionEvent e, boolean state) {
+        mySelected = state;
+        TraceSettings.setShowTypesExpansion(state);
+        myTraceTree.rebuildNow();
+        myTraceTree.expandAll();
+      }
+    };
     ToggleAction showTraceForSelectedNode = new ToggleAction("Trace for Selected Node", "Show trace for selected node", Icons.NODE) {
       private boolean mySelected = TraceSettings.isTraceForSelectedNode();
 
@@ -143,7 +157,7 @@ public class TypeSystemTracePanel extends JPanel {
       }
     };
 
-    return ActionUtils.groupFromActions(showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showBlockDependencies, refreshAction, nextErrorAction);
+    return ActionUtils.groupFromActions(showApplyRuleAction, showGenerationModeAction, showTraceForSelectedNode, showTypesExpansion, showBlockDependencies, refreshAction, nextErrorAction);
   }
 
   public void refresh(final boolean checkRoot) {
