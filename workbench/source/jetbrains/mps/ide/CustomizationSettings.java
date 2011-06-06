@@ -70,8 +70,8 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
 
     myShowCheckbox = new JCheckBox(new AbstractAction("show") {
       public void actionPerformed(ActionEvent e) {
-        myPlainCheckbox.setEnabled(isEnabled());
-        myGrayedCheckbox.setEnabled(isEnabled());
+        myPlainCheckbox.setEnabled(myShowCheckbox.isSelected());
+        myGrayedCheckbox.setEnabled(myShowCheckbox.isSelected());
       }
     });
 
