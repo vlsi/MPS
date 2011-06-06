@@ -164,4 +164,37 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     ImmatureReferences.getInstance().disable();
     UnregisteredNodes.instance().disable();
   }
+
+  /**
+   * Throws RuntimeException if unsuccessful
+   */
+  public static void requireWrite (Runnable run) {
+    int i;
+    int MAX_TRIES = 4;
+    for (i = 0; i < MAX_TRIES && !ModelAccess.instance().tryWrite(run); ++i) {
+      try {
+        Thread.sleep((1<<i)*100);
+      } catch (InterruptedException ignore) {}
+    }
+    if (i >= MAX_TRIES) {
+      throw new RuntimeException("Failed to acquire write lock");
+    }
+  }
+
+    /**
+   * Throws RuntimeException if unsuccessful
+   */
+  public static void requireRead (Runnable run) {
+    int i;
+    int MAX_TRIES = 4;
+    for (i = 0; i < MAX_TRIES && !ModelAccess.instance().tryRead(run); ++i) {
+      try {
+        Thread.sleep((1<<i)*100);
+      } catch (InterruptedException ignore) {}
+    }
+    if (i >= MAX_TRIES) {
+      throw new RuntimeException("Failed to acquire read lock");
+    }
+  }
+
 }
