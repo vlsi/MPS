@@ -18,13 +18,18 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.baseListening.ModelListener;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import java.awt.event.ActionEvent;
+import java.util.List;
 import java.util.Set;
 
 public abstract class BaseTabsComponent implements TabsComponent {
@@ -35,6 +40,9 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected final boolean myShowGrayed;
 
   private SNodePointer myLastNode = null;
+
+  private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
+  private ModelListener myTabRemovalListener = new MyTabRemovalListener();
 
   private JComponent myComponent;
 
@@ -66,6 +74,12 @@ public abstract class BaseTabsComponent implements TabsComponent {
         });
       }
     }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
+
+    addListeners();
+  }
+
+  public void dispose() {
+    removeListeners();
   }
 
   public final JComponent getComponent() {
@@ -80,7 +94,45 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return myLastNode;
   }
 
+  public ModelListener getTabRemovalListener() {
+    return myTabRemovalListener;
+  }
+
   protected abstract void nextTab();
 
   protected abstract void prevTab();
+
+  ///-------------events----------------
+
+  private void addListeners() {
+    myTabRemovalListener.startListening();
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myTabAdditionListener);
+  }
+
+  private void removeListeners() {
+    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myTabAdditionListener);
+    myTabRemovalListener.stopListening();
+  }
+
+  ///-------------tab insert events----------------
+
+  private class MyTabAdditionListener implements SModelCommandListener {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      if (!checkNodeAdded()) return;
+      updateTabs();
+    }
+  }
+
+  private class MyTabRemovalListener extends ModelListener {
+    protected void onImportantRootRemoved(SNodePointer node) {
+      if (!checkNodeRemoved(node)) return;
+      updateTabs();
+    }
+  }
+
+  protected abstract boolean checkNodeAdded();
+
+  protected abstract boolean checkNodeRemoved(SNodePointer node);
+
+  protected abstract void updateTabs();
 }

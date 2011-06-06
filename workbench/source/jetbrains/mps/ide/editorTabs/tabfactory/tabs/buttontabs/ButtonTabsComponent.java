@@ -20,21 +20,22 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
 import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.AddAspectAction;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
-import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
-import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.baseListening.ModelListener;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
@@ -42,8 +43,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
   private JComponent myToolbar = null;
 
-  private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
-  private ModelListener myTabRemovalListener = new MyTabRemovalListener();
   private AnAction myAddButton;
   private final NodeChangeCallback myNodeChangeCallback = new NodeChangeCallback() {
     public void changeNode(SNode newNode) {
@@ -52,7 +51,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   };
 
   public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback, boolean showGrayed) {
-    super(new JPanel(new BorderLayout()),baseNode,possibleTabs,shortcutComponent,callback,showGrayed);
+    super(new JPanel(new BorderLayout()), baseNode, possibleTabs, shortcutComponent, callback, showGrayed);
 
     myAddButton = new AddAspectAction(myBaseNode, myPossibleTabs, myNodeChangeCallback) {
       protected SNode getCurrentAspect() {
@@ -60,16 +59,11 @@ public class ButtonTabsComponent extends BaseTabsComponent {
       }
     };
 
-    addListeners();
     updateTabs();
   }
 
   public Component getComponentForTabIndex(int index) {
     return myToolbar.getComponent(index + 1);
-  }
-
-  public void dispose() {
-    removeListeners();
   }
 
   public List<SNodePointer> getAllEditedNodes() {
@@ -80,11 +74,11 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return myEditedDocuments;
   }
 
-  private void updateTabs() {
+  protected void updateTabs() {
     myRealTabs.clear();
     List<Document> editedDocumentsNew = new ArrayList<Document>();
     List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
-    myTabRemovalListener.clearAspects();
+    getTabRemovalListener().clearAspects();
 
     ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
     Collections.sort(tabs, new EditorTabComparator());
@@ -94,7 +88,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
       if (nodes.isEmpty()) continue;
 
       for (SNode node : nodes) {
-        myTabRemovalListener.aspectAdded(node.getContainingRoot());
+        getTabRemovalListener().aspectAdded(node.getContainingRoot());
         SNodePointer nodePointer = new SNodePointer(node);
         editedNodesNew.add(nodePointer);
         editedDocumentsNew.add(MPSUndoUtil.getDoc(nodePointer));
@@ -175,43 +169,25 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     myRealTabs.get(index).getAction(myShortcutComponent).actionPerformed(event);
   }
 
-  ///-------------events----------------
-
-  private void addListeners() {
-    myTabRemovalListener.startListening();
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myTabAdditionListener);
-  }
-
-  private void removeListeners() {
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myTabAdditionListener);
-    myTabRemovalListener.stopListening();
-  }
-
-  ///-------------tab insert events----------------
-
-  private class MyTabAdditionListener implements SModelCommandListener {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      outer:
-      for (EditorTabDescriptor d : myPossibleTabs) {
-        for (EditorTab tab : myRealTabs) {
-          if (tab.getDescriptor() == d) continue outer;
-        }
-
-        if (d.getNodes(myBaseNode.getNode()).isEmpty()) continue;
-        updateTabs();
-      }
-    }
-  }
-
-  private class MyTabRemovalListener extends ModelListener {
-    protected void onImportantRootRemoved(SNodePointer node) {
-      if (myBaseNode.equals(node)) return; //will be closed by idea
-
-      if (getLastNode().equals(node)) {
-        onNodeChange(myBaseNode.getNode());
+  protected boolean checkNodeAdded() {
+    outer:
+    for (EditorTabDescriptor d : myPossibleTabs) {
+      for (EditorTab tab : myRealTabs) {
+        if (tab.getDescriptor() == d) continue outer;
       }
 
-      updateTabs();
+      if (!d.getNodes(myBaseNode.getNode()).isEmpty()) return true;
     }
+    return false;
+  }
+
+  protected boolean checkNodeRemoved(SNodePointer node) {
+    if (myBaseNode.equals(node)) return false; //will be closed by idea
+
+    if (getLastNode().equals(node)) {
+      onNodeChange(myBaseNode.getNode());
+    }
+
+    return false;
   }
 }
