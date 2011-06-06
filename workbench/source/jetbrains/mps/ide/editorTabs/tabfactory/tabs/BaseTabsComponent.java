@@ -16,10 +16,15 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.editor.Document;
+import gnu.trove.THashMap;
+import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.EditorTab;
+import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -31,8 +36,7 @@ import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import java.awt.event.ActionEvent;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class BaseTabsComponent implements TabsComponent {
   protected final SNodePointer myBaseNode;
@@ -42,6 +46,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected final boolean myShowGrayed;
   protected final AnAction myAddAction;
 
+  private List<Document> myEditedDocuments = new ArrayList<Document>();
+  private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
   private SNodePointer myLastNode = null;
 
   private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
@@ -95,6 +101,14 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return myComponent;
   }
 
+  public List<SNodePointer> getAllEditedNodes() {
+    return myEditedNodes;
+  }
+
+  public List<Document> getAllEditedDocuments() {
+    return myEditedDocuments;
+  }
+
   public void setLastNode(SNodePointer node) {
     myLastNode = node;
   }
@@ -110,6 +124,33 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected void onNodeChange(SNode node) {
     setLastNode(new SNodePointer(node));
     myCallback.changeNode(node);
+  }
+
+  protected Map<EditorTabDescriptor,List<SNode>> updateDocumentsAndNodes(){
+    List<Document> editedDocumentsNew = new ArrayList<Document>();
+    List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
+
+    ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
+    Collections.sort(tabs, new EditorTabComparator());
+
+    Map<EditorTabDescriptor,List<SNode>> result = new THashMap<EditorTabDescriptor, List<SNode>>();
+
+    for (EditorTabDescriptor d : tabs) {
+      List<SNode> nodes = d.getNodes(myBaseNode.getNode());
+      if (nodes.isEmpty()) continue;
+
+      result.put(d,nodes);
+      for (SNode node : nodes) {
+        SNodePointer nodePointer = new SNodePointer(node);
+        editedNodesNew.add(nodePointer);
+        editedDocumentsNew.add(MPSUndoUtil.getDoc(nodePointer));
+      }
+    }
+
+    myEditedDocuments = editedDocumentsNew;
+    myEditedNodes = editedNodesNew;
+
+    return result;
   }
 
   ///-------------tab navigation----------------

@@ -31,15 +31,10 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
-  private List<Document> myEditedDocuments = new ArrayList<Document>();
-  private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
   private JComponent myToolbar = null;
 
   private final NodeChangeCallback myNodeChangeCallback = new NodeChangeCallback() {
@@ -57,39 +52,19 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return myToolbar.getComponent(index + 1);
   }
 
-  public List<SNodePointer> getAllEditedNodes() {
-    return myEditedNodes;
-  }
-
-  public List<Document> getAllEditedDocuments() {
-    return myEditedDocuments;
-  }
-
   protected void updateTabs() {
     myRealTabs.clear();
-    List<Document> editedDocumentsNew = new ArrayList<Document>();
-    List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
+
     getTabRemovalListener().clearAspects();
-
-    ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
-    Collections.sort(tabs, new EditorTabComparator());
-
-    for (EditorTabDescriptor d : tabs) {
-      List<SNode> nodes = d.getNodes(myBaseNode.getNode());
-      if (nodes.isEmpty()) continue;
-
-      for (SNode node : nodes) {
+    Map<EditorTabDescriptor,List<SNode>> newContent = updateDocumentsAndNodes();
+    for (EditorTabDescriptor key: newContent.keySet()){
+      for (SNode node:newContent.get(key)){
         getTabRemovalListener().aspectAdded(node.getContainingRoot());
-        SNodePointer nodePointer = new SNodePointer(node);
-        editedNodesNew.add(nodePointer);
-        editedDocumentsNew.add(MPSUndoUtil.getDoc(nodePointer));
       }
 
-      final EditorTab tab = new EditorTab(this, myNodeChangeCallback, myRealTabs.size(), d, myBaseNode);
+      final EditorTab tab = new EditorTab(this, myNodeChangeCallback, myRealTabs.size(), key, myBaseNode);
       myRealTabs.add(tab);
     }
-    myEditedDocuments = editedDocumentsNew;
-    myEditedNodes = editedNodesNew;
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(myAddAction);
@@ -115,7 +90,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
       }
 
       performTabAction(index + 1);
-
       return;
     }
   }
