@@ -32,7 +32,7 @@ import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabComponentFactory;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
-import jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.CreateGroupsBuilder;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.CreateGroupsBuilder;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;

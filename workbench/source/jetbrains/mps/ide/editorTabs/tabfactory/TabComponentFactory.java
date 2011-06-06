@@ -19,9 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.CustomizationSettings;
 import jetbrains.mps.ide.CustomizationSettings.MyState;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.ButtonTabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.ButtonTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.emptytabs.EmptyTabsComponent;
-import jetbrains.mps.ide.editorTabs.tabfactory.plaintabs.PlainTabsComponent;
 import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.JComponent;

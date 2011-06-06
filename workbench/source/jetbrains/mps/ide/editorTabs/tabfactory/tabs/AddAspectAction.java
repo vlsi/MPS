@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabfactory.buttontabs;
+package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
-import jetbrains.mps.ide.editorTabs.tabfactory.buttontabs.icons.Icons;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.CreateGroupsBuilder;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.icons.Icons;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -27,19 +28,30 @@ import javax.swing.JPopupMenu;
 import java.util.Iterator;
 import java.util.Set;
 
-abstract class AddConceptTab {
+public abstract class AddAspectAction extends AnAction {
   private SNodePointer myBaseNode;
   private Set<EditorTabDescriptor> myPossibleTabs;
   private NodeChangeCallback myCallback;
 
-  AddConceptTab(final SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, NodeChangeCallback callback) {
-    this.myBaseNode = baseNode;
-    this.myPossibleTabs = possibleTabs;
+  public AddAspectAction(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, NodeChangeCallback callback) {
+    super("", "", Icons.ADD_ICON);
+    myBaseNode = baseNode;
+    myPossibleTabs = possibleTabs;
     myCallback = callback;
   }
 
-  public AnAction getAction() {
-    return new MyAddAction();
+  public boolean displayTextInToolbar() {
+    return true;
+  }
+
+  public void actionPerformed(final AnActionEvent e) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
+        JPopupMenu popupComponent = popup.getComponent();
+        popupComponent.show(e.getInputEvent().getComponent(), 0, 0);
+      }
+    });
   }
 
   protected abstract SNode getCurrentAspect();
@@ -64,26 +76,6 @@ abstract class AddConceptTab {
     }
 
     return result;
-  }
-
-  private class MyAddAction extends AnAction {
-    public MyAddAction() {
-      super("", "", Icons.ADD_ICON);
-    }
-
-    public boolean displayTextInToolbar() {
-      return true;
-    }
-
-    public void actionPerformed(final AnActionEvent e) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
-          JPopupMenu popupComponent = popup.getComponent();
-          popupComponent.show(e.getInputEvent().getComponent(), 0, 0);
-        }
-      });
-    }
   }
 
 }
