@@ -107,7 +107,6 @@
   <unitInfo fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSavingClassConceptSet_Test$TestBody" />
   <unitInfo fileName="SubstituteSmallPatternInLeft_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.SubstituteSmallPatternInLeft_Test$TestBody" />
   <unitInfo fileName="RestoringSThintCell_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.RestoringSThintCell_Test$TestBody" />
-  <unitInfo fileName="MoveNodeRange_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test$TestBody" />
   <unitInfo fileName="BracesTest_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.BracesTest_Test$TestBody" />
   <unitInfo fileName="DeleteVariableInitializer_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteVariableInitializer_Test$TestBody" />
   <unitInfo fileName="SurroundExpressionWithParenthesis_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test$TestBody" />
@@ -117,6 +116,7 @@
   <unitInfo fileName="SurrondByParensesis_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondByParensesis_Test$TestBody" />
   <unitInfo fileName="AssignLeftTransform_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.AssignLeftTransform_Test$TestBody" />
   <unitInfo fileName="PressingEndWithSelectedNode_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.PressingEndWithSelectedNode_Test$TestBody" />
+  <unitInfo fileName="MoveNodeRange_Test.java" startLine="20" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test$TestBody" />
   <unitInfo fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="20" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOverridenMethodInBehavior_Test$TestBody" />
   <unitInfo fileName="LT_DotExpression_with_UnaryMinus_Test.java" startLine="22" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test$TestBody" />
   <unitInfo fileName="UndoSustitutionOfExpressionWithIntContant_Test.java" startLine="20" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test$TestBody" />
@@ -237,7 +237,6 @@
   <unitInfo fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSavingClassConceptSet_Test" />
   <unitInfo fileName="SubstituteSmallPatternInLeft_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.SubstituteSmallPatternInLeft_Test" />
   <unitInfo fileName="RestoringSThintCell_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.RestoringSThintCell_Test" />
-  <unitInfo fileName="MoveNodeRange_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test" />
   <unitInfo fileName="BracesTest_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.BracesTest_Test" />
   <unitInfo fileName="DeleteVariableInitializer_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteVariableInitializer_Test" />
   <unitInfo fileName="SurroundExpressionWithParenthesis_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test" />
@@ -247,6 +246,7 @@
   <unitInfo fileName="SurrondByParensesis_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.SurrondByParensesis_Test" />
   <unitInfo fileName="AssignLeftTransform_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.AssignLeftTransform_Test" />
   <unitInfo fileName="PressingEndWithSelectedNode_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.PressingEndWithSelectedNode_Test" />
+  <unitInfo fileName="MoveNodeRange_Test.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test" />
   <unitInfo fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOverridenMethodInBehavior_Test" />
   <unitInfo fileName="LT_DotExpression_with_UnaryMinus_Test.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test" />
   <unitInfo fileName="UndoSustitutionOfExpressionWithIntContant_Test.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test" />
@@ -799,6 +799,7 @@
     <nodeInfo nodeId="3090865991386030230" fileName="MoveNodeRange_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3090865991386030234" fileName="MoveNodeRange_Test.java" startLine="26" startPosition="109" endLine="27" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3090865991386030237" fileName="MoveNodeRange_Test.java" startLine="27" startPosition="109" endLine="28" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6273514573586487819" fileName="MoveNodeRange_Test.java" startLine="28" startPosition="113" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="7301049412170069060">
     <nodeInfo nodeId="7301049412170285938" fileName="RestoreCellSelection_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
