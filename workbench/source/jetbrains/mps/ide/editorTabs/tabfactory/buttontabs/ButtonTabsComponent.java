@@ -40,7 +40,7 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public class ButtonTabsComponent extends JPanel implements TabsComponent {
+public class ButtonTabsComponent implements TabsComponent {
   private SNodePointer myBaseNode;
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
@@ -50,6 +50,8 @@ public class ButtonTabsComponent extends JPanel implements TabsComponent {
   private JComponent myToolbar = null;
   private JComponent myShortcutComponent;
   private NodeChangeCallback myCallback;
+  private boolean myShowGrayed;
+  private JComponent myComponent;
 
   private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
   private ModelListener myTabRemovalListener = new MyTabRemovalListener();
@@ -60,13 +62,16 @@ public class ButtonTabsComponent extends JPanel implements TabsComponent {
     }
   };
 
-  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback) {
+  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent, NodeChangeCallback callback, boolean showGrayed) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myShortcutComponent = shortcutComponent;
     myCallback = callback;
+    myShowGrayed = showGrayed;
 
-    registerKeyboardAction(new AbstractAction() {
+    myComponent = new JPanel(new BorderLayout());
+
+    myComponent.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -76,7 +81,7 @@ public class ButtonTabsComponent extends JPanel implements TabsComponent {
       }
     }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
-    registerKeyboardAction(new AbstractAction() {
+    myComponent.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -85,8 +90,6 @@ public class ButtonTabsComponent extends JPanel implements TabsComponent {
         });
       }
     }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
-
-    setLayout(new BorderLayout());
 
     myAddButton = new AddConceptTab(myBaseNode, myPossibleTabs, myNodeChangeCallback) {
       protected SNode getCurrentAspect() {
@@ -115,7 +118,7 @@ public class ButtonTabsComponent extends JPanel implements TabsComponent {
   }
 
   public JComponent getComponent() {
-    return this;
+    return myComponent;
   }
 
   private void updateTabs() {
@@ -150,12 +153,12 @@ public class ButtonTabsComponent extends JPanel implements TabsComponent {
       group.add(tab.getAction(myShortcutComponent));
     }
     if (myToolbar != null) {
-      remove(myToolbar);
+      myComponent.remove(myToolbar);
     }
     ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true);
     actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     myToolbar = actionToolbar.getComponent();
-    add(myToolbar, BorderLayout.CENTER);
+    myComponent.add(myToolbar, BorderLayout.CENTER);
   }
 
   //todo
@@ -211,7 +214,7 @@ public class ButtonTabsComponent extends JPanel implements TabsComponent {
   }
 
   private void performTabAction(final int index) {
-    final DataContext context = DataManager.getInstance().getDataContext(this);
+    final DataContext context = DataManager.getInstance().getDataContext(myComponent);
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
 
     myRealTabs.get(index).getAction(myShortcutComponent).actionPerformed(event);
