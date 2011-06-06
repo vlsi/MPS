@@ -19,22 +19,25 @@ import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.CreateGroupsBuilder;
-import jetbrains.mps.ide.editorTabs.tabfactory.tabs.icons.Icons;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JPopupMenu;
 import java.util.Iterator;
 import java.util.Set;
 
 public abstract class AddAspectAction extends AnAction {
+  public static final Icon ADD_ICON = new ImageIcon(AddAspectAction.class.getResource("add.png"));
+
   private SNodePointer myBaseNode;
   private Set<EditorTabDescriptor> myPossibleTabs;
   private NodeChangeCallback myCallback;
 
   public AddAspectAction(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, NodeChangeCallback callback) {
-    super("", "", Icons.ADD_ICON);
+    super("", "", ADD_ICON);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myCallback = callback;
@@ -59,7 +62,7 @@ public abstract class AddAspectAction extends AnAction {
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, getCurrentAspect(),myCallback) ;
+    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, getCurrentAspect(), myCallback);
 
     Iterator<DefaultActionGroup> it = builder.getCreateGroups().iterator();
 
