@@ -38,7 +38,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   protected volatile boolean mySharedReadInWriteMode = false;
 
   protected ModelAccess() {
-    allowSharedRead = "true".equals(System.getProperty("mps.sharedread"));
+    allowSharedRead = !("false".equalsIgnoreCase(System.getProperty("mps.sharedread")));
   }
 
   public static ModelAccess instance() {
