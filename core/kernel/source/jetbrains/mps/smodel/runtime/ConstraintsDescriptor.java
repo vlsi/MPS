@@ -35,7 +35,7 @@ public interface ConstraintsDescriptor {
 
   ReferenceConstraintsDescriptor getReference(String refName);
 
-  ReferenceScopeProvider getNodeDefaultSearchScopeProvider();
+  ReferenceScopeProvider getDefaultScopeProvider();
 
   // todo: remove/move this methods
   // by convention inheritance for this methods not works

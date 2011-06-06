@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
 public interface CheckingNodeContext {
-  void setBreakingNode(@Nullable SNodePointer nodePointer);
+  void setBreakingNode(@Nullable SNodePointer node);
+
+  @Nullable
   SNodePointer getBreakingNode();
 }
