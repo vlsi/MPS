@@ -1,78 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="226334238991961367">
+    <nodeInfo nodeId="226334238991980422" fileName="GDBBreakpointsProvider.java" startLine="24" startPosition="98" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980424" fileName="GDBBreakpointsProvider.java" startLine="29" startPosition="65" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980426" fileName="GDBBreakpointsProvider.java" startLine="34" startPosition="110" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980428" fileName="GDBBreakpointsProvider.java" startLine="39" startPosition="119" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980430" fileName="GDBBreakpointsProvider.java" startLine="44" startPosition="130" endLine="45" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980432" fileName="GDBBreakpointsProvider.java" startLine="49" startPosition="101" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980434" fileName="GDBBreakpointsProvider.java" startLine="53" startPosition="83" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980436" fileName="GDBBreakpointsProvider.java" startLine="57" startPosition="81" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980438" fileName="GDBBreakpointsProvider.java" startLine="62" startPosition="62" endLine="63" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991961369" fileName="GDBBreakpointsProvider.java" startLine="19" startPosition="117" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBBreakpointsProvider#()V" />
+    <nodeInfo nodeId="226334238991980402" fileName="GDBBreakpointsProvider.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canCreateFromNode#(Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint/GDBBreakpointKind;)Z" />
+    <nodeInfo nodeId="226334238991980409" fileName="GDBBreakpointsProvider.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canCreateFromUi#(Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint/GDBBreakpointKind;)Z" />
+    <nodeInfo nodeId="226334238991980340" fileName="GDBBreakpointsProvider.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint;Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="226334238991980351" fileName="GDBBreakpointsProvider.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveToState#(Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint;)Lorg/jdom/Element;" />
+    <nodeInfo nodeId="226334238991980359" fileName="GDBBreakpointsProvider.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadFromState#(Lorg/jdom/Element;Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint/GDBBreakpointKind;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint;" />
+    <nodeInfo nodeId="226334238991980370" fileName="GDBBreakpointsProvider.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPropertiesEditor#(Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint/GDBBreakpointKind;)Ljetbrains/mps/debug/api/breakpoints/IBreakpointPropertiesUi;" />
+    <nodeInfo nodeId="226334238991980379" fileName="GDBBreakpointsProvider.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFromNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint/GDBBreakpointKind;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/breakpoints/ILocationBreakpoint;" />
+    <nodeInfo nodeId="226334238991980392" fileName="GDBBreakpointsProvider.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFromUi#(Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint/GDBBreakpointKind;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint;" />
+    <nodeInfo nodeId="226334238991980416" fileName="GDBBreakpointsProvider.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllKinds#()Ljava/util/List;" />
+    <scopeInfo nodeId="226334238991961372" fileName="GDBBreakpointsProvider.java" startLine="20" startPosition="35" endLine="20" endPosition="35" />
+    <scopeInfo nodeId="226334238991980350" fileName="GDBBreakpointsProvider.java" startLine="24" startPosition="98" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="226334238991980358" fileName="GDBBreakpointsProvider.java" startLine="29" startPosition="65" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="226334238991980369" fileName="GDBBreakpointsProvider.java" startLine="34" startPosition="110" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="226334238991980378" fileName="GDBBreakpointsProvider.java" startLine="39" startPosition="119" endLine="40" endPosition="16" />
+    <scopeInfo nodeId="226334238991980391" fileName="GDBBreakpointsProvider.java" startLine="44" startPosition="130" endLine="45" endPosition="62" />
+    <scopeInfo nodeId="226334238991980401" fileName="GDBBreakpointsProvider.java" startLine="49" startPosition="101" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="226334238991980408" fileName="GDBBreakpointsProvider.java" startLine="53" startPosition="83" endLine="54" endPosition="16" />
+    <scopeInfo nodeId="226334238991980415" fileName="GDBBreakpointsProvider.java" startLine="57" startPosition="81" endLine="58" endPosition="17" />
+    <scopeInfo nodeId="226334238991980421" fileName="GDBBreakpointsProvider.java" startLine="62" startPosition="62" endLine="63" endPosition="67" />
+    <scopeInfo nodeId="226334238991961369" fileName="GDBBreakpointsProvider.java" startLine="19" startPosition="117" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="226334238991980402" fileName="GDBBreakpointsProvider.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="226334238991980405" varName="kind" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991980409" fileName="GDBBreakpointsProvider.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="226334238991980412" varName="kind" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991980340" fileName="GDBBreakpointsProvider.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="226334238991980346" varName="session" />
+      <varInfo nodeId="226334238991980343" varName="breakpoint" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991980351" fileName="GDBBreakpointsProvider.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="226334238991980354" varName="breakpoint" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991980359" fileName="GDBBreakpointsProvider.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="226334238991980362" varName="element" />
+      <varInfo nodeId="226334238991980366" varName="project" />
+      <varInfo nodeId="226334238991980364" varName="kind" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991980370" fileName="GDBBreakpointsProvider.java" startLine="37" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="226334238991980374" varName="kind" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991980379" fileName="GDBBreakpointsProvider.java" startLine="42" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="226334238991980388" varName="project" />
+      <varInfo nodeId="226334238991980382" varName="node" />
+      <varInfo nodeId="226334238991980385" varName="kind" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991980392" fileName="GDBBreakpointsProvider.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="226334238991980398" varName="project" />
+      <varInfo nodeId="226334238991980395" varName="kind" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991980416" fileName="GDBBreakpointsProvider.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
+    <unitInfo nodeId="226334238991961367" fileName="GDBBreakpointsProvider.java" startLine="19" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpointsProvider" />
+  </root>
   <root nodeId="3990508698139426916">
-    <nodeInfo nodeId="3990508698139426928" fileName="GDBBreakpoint.java" startLine="18" startPosition="58" endLine="19" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BKPT" />
-    <nodeInfo nodeId="3990508698139426932" fileName="GDBBreakpoint.java" startLine="19" startPosition="44" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NUMBER" />
-    <nodeInfo nodeId="3990508698139426919" fileName="GDBBreakpoint.java" startLine="21" startPosition="0" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointRequestor" />
-    <nodeInfo nodeId="3990508698139426921" fileName="GDBBreakpoint.java" startLine="22" startPosition="56" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAdded" />
-    <nodeInfo nodeId="3990508698139426924" fileName="GDBBreakpoint.java" startLine="23" startPosition="38" endLine="24" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInternalGDBNumber" />
-    <nodeInfo nodeId="3990508698139426944" fileName="GDBBreakpoint.java" startLine="26" startPosition="67" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3990508698139427025" fileName="GDBBreakpoint.java" startLine="32" startPosition="53" endLine="33" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427032" fileName="GDBBreakpoint.java" startLine="40" startPosition="53" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427039" fileName="GDBBreakpoint.java" startLine="48" startPosition="101" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427043" fileName="GDBBreakpoint.java" startLine="49" startPosition="23" endLine="50" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139427054" fileName="GDBBreakpoint.java" startLine="50" startPosition="102" endLine="51" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139427063" fileName="GDBBreakpoint.java" startLine="51" startPosition="96" endLine="52" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139427070" fileName="GDBBreakpoint.java" startLine="52" startPosition="63" endLine="53" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427076" fileName="GDBBreakpoint.java" startLine="60" startPosition="101" endLine="61" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427080" fileName="GDBBreakpoint.java" startLine="61" startPosition="24" endLine="62" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139426936" fileName="GDBBreakpoint.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBBreakpoint#(Ljetbrains/mps/smodel/SNodePointer;Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="3990508698139426957" fileName="GDBBreakpoint.java" startLine="31" startPosition="98" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/nanoc/debug/CppDebugSession;)V" />
-    <nodeInfo nodeId="3990508698139426973" fileName="GDBBreakpoint.java" startLine="39" startPosition="98" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/nanoc/debug/CppDebugSession;)V" />
-    <nodeInfo nodeId="3990508698139426951" fileName="GDBBreakpoint.java" startLine="30" startPosition="43" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139426967" fileName="GDBBreakpoint.java" startLine="38" startPosition="38" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427015" fileName="GDBBreakpoint.java" startLine="59" startPosition="85" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onRequestFulfilled#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;)V" />
-    <nodeInfo nodeId="3990508698139427008" fileName="GDBBreakpoint.java" startLine="58" startPosition="79" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139426947" fileName="GDBBreakpoint.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFromRunningSessions#()V" />
-    <nodeInfo nodeId="3990508698139426963" fileName="GDBBreakpoint.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addToRunningSessions#()V" />
-    <nodeInfo nodeId="3990508698139426992" fileName="GDBBreakpoint.java" startLine="47" startPosition="95" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onRequestFulfilled#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;)V" />
-    <nodeInfo nodeId="3990508698139426985" fileName="GDBBreakpoint.java" startLine="46" startPosition="73" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427002" fileName="GDBBreakpoint.java" startLine="57" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRemoveBreakpointRequest#(Ljetbrains/mps/nanoc/debug/requests/GDBRequestManager;)V" />
-    <nodeInfo nodeId="3990508698139426979" fileName="GDBBreakpoint.java" startLine="45" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBreakpointRequest#(Ljetbrains/mps/nanoc/debug/requests/GDBRequestManager;)V" />
-    <scopeInfo nodeId="3990508698139426943" fileName="GDBBreakpoint.java" startLine="26" startPosition="67" endLine="27" endPosition="32" />
-    <scopeInfo nodeId="3990508698139427024" fileName="GDBBreakpoint.java" startLine="32" startPosition="53" endLine="33" endPosition="75" />
-    <scopeInfo nodeId="3990508698139427031" fileName="GDBBreakpoint.java" startLine="40" startPosition="53" endLine="41" endPosition="69" />
-    <scopeInfo nodeId="3990508698139427075" fileName="GDBBreakpoint.java" startLine="60" startPosition="101" endLine="62" endPosition="33" />
-    <scopeInfo nodeId="3990508698139426936" fileName="GDBBreakpoint.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+    <nodeInfo nodeId="3990508698139426928" fileName="GDBBreakpoint.java" startLine="24" startPosition="99" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BKPT" />
+    <nodeInfo nodeId="3990508698139426932" fileName="GDBBreakpoint.java" startLine="25" startPosition="44" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NUMBER" />
+    <nodeInfo nodeId="3990508698139426919" fileName="GDBBreakpoint.java" startLine="27" startPosition="0" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointRequestor" />
+    <nodeInfo nodeId="3990508698139426921" fileName="GDBBreakpoint.java" startLine="28" startPosition="52" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAdded" />
+    <nodeInfo nodeId="3990508698139426924" fileName="GDBBreakpoint.java" startLine="29" startPosition="34" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInternalGDBNumber" />
+    <nodeInfo nodeId="226334238991961403" fileName="GDBBreakpoint.java" startLine="30" startPosition="39" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocation" />
+    <nodeInfo nodeId="3990508698139426944" fileName="GDBBreakpoint.java" startLine="33" startPosition="67" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="226334238991961407" fileName="GDBBreakpoint.java" startLine="34" startPosition="19" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427025" fileName="GDBBreakpoint.java" startLine="40" startPosition="53" endLine="41" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427032" fileName="GDBBreakpoint.java" startLine="48" startPosition="53" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427039" fileName="GDBBreakpoint.java" startLine="56" startPosition="101" endLine="57" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427043" fileName="GDBBreakpoint.java" startLine="57" startPosition="23" endLine="58" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3990508698139427054" fileName="GDBBreakpoint.java" startLine="58" startPosition="102" endLine="59" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3990508698139427063" fileName="GDBBreakpoint.java" startLine="59" startPosition="96" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3990508698139427070" fileName="GDBBreakpoint.java" startLine="60" startPosition="63" endLine="61" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427076" fileName="GDBBreakpoint.java" startLine="68" startPosition="101" endLine="69" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427080" fileName="GDBBreakpoint.java" startLine="69" startPosition="24" endLine="70" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="226334238991980440" fileName="GDBBreakpoint.java" startLine="76" startPosition="35" endLine="77" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980159" fileName="GDBBreakpoint.java" startLine="81" startPosition="52" endLine="82" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991962239" fileName="GDBBreakpoint.java" startLine="86" startPosition="43" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980233" fileName="GDBBreakpoint.java" startLine="97" startPosition="37" endLine="98" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980237" fileName="GDBBreakpoint.java" startLine="102" startPosition="29" endLine="103" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991980239" fileName="GDBBreakpoint.java" startLine="106" startPosition="38" endLine="107" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991962251" fileName="GDBBreakpoint.java" startLine="92" startPosition="0" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBBreakpointKind#()V" />
+    <nodeInfo nodeId="3990508698139426936" fileName="GDBBreakpoint.java" startLine="32" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBBreakpoint#(Ljetbrains/mps/smodel/SNodePointer;Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="3990508698139426957" fileName="GDBBreakpoint.java" startLine="39" startPosition="98" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/nanoc/debug/CppDebugSession;)V" />
+    <nodeInfo nodeId="3990508698139426973" fileName="GDBBreakpoint.java" startLine="47" startPosition="98" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/nanoc/debug/CppDebugSession;)V" />
+    <nodeInfo nodeId="226334238991980222" fileName="GDBBreakpoint.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="supportsDisable#()Z" />
+    <nodeInfo nodeId="3990508698139426951" fileName="GDBBreakpoint.java" startLine="38" startPosition="43" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139426967" fileName="GDBBreakpoint.java" startLine="46" startPosition="38" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427015" fileName="GDBBreakpoint.java" startLine="67" startPosition="85" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onRequestFulfilled#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;)V" />
+    <nodeInfo nodeId="226334238991961382" fileName="GDBBreakpoint.java" startLine="74" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="226334238991961387" fileName="GDBBreakpoint.java" startLine="79" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKind#()Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpoint/GDBBreakpointKind;" />
+    <nodeInfo nodeId="226334238991961392" fileName="GDBBreakpoint.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocation#()Ljetbrains/mps/debug/api/breakpoints/BreakpointLocation;" />
+    <nodeInfo nodeId="226334238991980212" fileName="GDBBreakpoint.java" startLine="95" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="226334238991980217" fileName="GDBBreakpoint.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139427008" fileName="GDBBreakpoint.java" startLine="66" startPosition="79" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139426947" fileName="GDBBreakpoint.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFromRunningSessions#()V" />
+    <nodeInfo nodeId="3990508698139426963" fileName="GDBBreakpoint.java" startLine="45" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addToRunningSessions#()V" />
+    <nodeInfo nodeId="3990508698139426992" fileName="GDBBreakpoint.java" startLine="55" startPosition="123" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onRequestFulfilled#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;)V" />
+    <nodeInfo nodeId="3990508698139426985" fileName="GDBBreakpoint.java" startLine="54" startPosition="73" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427002" fileName="GDBBreakpoint.java" startLine="65" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRemoveBreakpointRequest#(Ljetbrains/mps/nanoc/debug/requests/GDBRequestManager;)V" />
+    <nodeInfo nodeId="3990508698139426979" fileName="GDBBreakpoint.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBreakpointRequest#(Ljetbrains/mps/nanoc/debug/requests/GDBRequestManager;)V" />
+    <scopeInfo nodeId="226334238991962254" fileName="GDBBreakpoint.java" startLine="93" startPosition="25" endLine="93" endPosition="25" />
+    <scopeInfo nodeId="3990508698139427024" fileName="GDBBreakpoint.java" startLine="40" startPosition="53" endLine="41" endPosition="75" />
+    <scopeInfo nodeId="3990508698139427031" fileName="GDBBreakpoint.java" startLine="48" startPosition="53" endLine="49" endPosition="69" />
+    <scopeInfo nodeId="226334238991961386" fileName="GDBBreakpoint.java" startLine="76" startPosition="35" endLine="77" endPosition="40" />
+    <scopeInfo nodeId="226334238991961391" fileName="GDBBreakpoint.java" startLine="81" startPosition="52" endLine="82" endPosition="59" />
+    <scopeInfo nodeId="226334238991961396" fileName="GDBBreakpoint.java" startLine="86" startPosition="43" endLine="87" endPosition="22" />
+    <scopeInfo nodeId="226334238991980216" fileName="GDBBreakpoint.java" startLine="97" startPosition="37" endLine="98" endPosition="35" />
+    <scopeInfo nodeId="226334238991980221" fileName="GDBBreakpoint.java" startLine="102" startPosition="29" endLine="103" endPosition="35" />
+    <scopeInfo nodeId="226334238991980225" fileName="GDBBreakpoint.java" startLine="106" startPosition="38" endLine="107" endPosition="18" />
+    <scopeInfo nodeId="3990508698139426943" fileName="GDBBreakpoint.java" startLine="33" startPosition="67" endLine="35" endPosition="53" />
+    <scopeInfo nodeId="3990508698139427075" fileName="GDBBreakpoint.java" startLine="68" startPosition="101" endLine="70" endPosition="33" />
+    <scopeInfo nodeId="226334238991962251" fileName="GDBBreakpoint.java" startLine="92" startPosition="0" endLine="94" endPosition="5" />
+    <scopeInfo nodeId="3990508698139426936" fileName="GDBBreakpoint.java" startLine="32" startPosition="0" endLine="36" endPosition="3">
       <varInfo nodeId="3990508698139426941" varName="project" />
       <varInfo nodeId="3990508698139426939" varName="nodePointer" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426957" fileName="GDBBreakpoint.java" startLine="31" startPosition="98" endLine="35" endPosition="0">
+    <scopeInfo nodeId="3990508698139426957" fileName="GDBBreakpoint.java" startLine="39" startPosition="98" endLine="43" endPosition="0">
       <varInfo nodeId="3990508698139426960" varName="debugSession" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426973" fileName="GDBBreakpoint.java" startLine="39" startPosition="98" endLine="43" endPosition="0">
+    <scopeInfo nodeId="3990508698139426973" fileName="GDBBreakpoint.java" startLine="47" startPosition="98" endLine="51" endPosition="0">
       <varInfo nodeId="3990508698139426976" varName="debugSession" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426950" fileName="GDBBreakpoint.java" startLine="30" startPosition="43" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="3990508698139426966" fileName="GDBBreakpoint.java" startLine="38" startPosition="38" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="3990508698139427038" fileName="GDBBreakpoint.java" startLine="48" startPosition="101" endLine="53" endPosition="37">
+    <scopeInfo nodeId="226334238991980222" fileName="GDBBreakpoint.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="3990508698139426950" fileName="GDBBreakpoint.java" startLine="38" startPosition="43" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="3990508698139426966" fileName="GDBBreakpoint.java" startLine="46" startPosition="38" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="3990508698139427038" fileName="GDBBreakpoint.java" startLine="56" startPosition="101" endLine="61" endPosition="37">
       <varInfo nodeId="3990508698139427044" varName="bkptInfo" />
       <varInfo nodeId="3990508698139427055" varName="numberValue" />
       <varInfo nodeId="3990508698139427064" varName="number" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427015" fileName="GDBBreakpoint.java" startLine="59" startPosition="85" endLine="64" endPosition="0">
+    <scopeInfo nodeId="3990508698139427015" fileName="GDBBreakpoint.java" startLine="67" startPosition="85" endLine="72" endPosition="0">
       <varInfo nodeId="3990508698139427020" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139427018" varName="answer" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427007" fileName="GDBBreakpoint.java" startLine="58" startPosition="79" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="3990508698139426947" fileName="GDBBreakpoint.java" startLine="29" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="3990508698139426963" fileName="GDBBreakpoint.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3990508698139426992" fileName="GDBBreakpoint.java" startLine="47" startPosition="95" endLine="55" endPosition="0">
+    <scopeInfo nodeId="226334238991961382" fileName="GDBBreakpoint.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="226334238991961387" fileName="GDBBreakpoint.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="226334238991961392" fileName="GDBBreakpoint.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="226334238991980212" fileName="GDBBreakpoint.java" startLine="95" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="226334238991980217" fileName="GDBBreakpoint.java" startLine="100" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427007" fileName="GDBBreakpoint.java" startLine="66" startPosition="79" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="3990508698139426947" fileName="GDBBreakpoint.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3990508698139426963" fileName="GDBBreakpoint.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="3990508698139426992" fileName="GDBBreakpoint.java" startLine="55" startPosition="123" endLine="63" endPosition="0">
       <varInfo nodeId="3990508698139426997" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139426995" varName="answer" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426984" fileName="GDBBreakpoint.java" startLine="46" startPosition="73" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="3990508698139427002" fileName="GDBBreakpoint.java" startLine="57" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="3990508698139426984" fileName="GDBBreakpoint.java" startLine="54" startPosition="73" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="3990508698139427002" fileName="GDBBreakpoint.java" startLine="65" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="3990508698139427005" varName="requestManager" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426979" fileName="GDBBreakpoint.java" startLine="45" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="3990508698139426979" fileName="GDBBreakpoint.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="3990508698139426982" varName="requestManager" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139426956" fileName="GDBBreakpoint.java" startLine="31" startPosition="60" endLine="35" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$1" />
-    <unitInfo nodeId="3990508698139426972" fileName="GDBBreakpoint.java" startLine="39" startPosition="60" endLine="43" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$2" />
-    <unitInfo nodeId="3990508698139427014" fileName="GDBBreakpoint.java" startLine="59" startPosition="37" endLine="64" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$4" />
-    <unitInfo nodeId="3990508698139426991" fileName="GDBBreakpoint.java" startLine="47" startPosition="37" endLine="55" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$3" />
-    <unitInfo nodeId="3990508698139426916" fileName="GDBBreakpoint.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
+    <unitInfo nodeId="3990508698139426956" fileName="GDBBreakpoint.java" startLine="39" startPosition="60" endLine="43" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$1" />
+    <unitInfo nodeId="3990508698139426972" fileName="GDBBreakpoint.java" startLine="47" startPosition="60" endLine="51" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$2" />
+    <unitInfo nodeId="3990508698139427014" fileName="GDBBreakpoint.java" startLine="67" startPosition="37" endLine="72" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$4" />
+    <unitInfo nodeId="3990508698139426991" fileName="GDBBreakpoint.java" startLine="55" startPosition="37" endLine="63" endPosition="5" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$3" />
+    <unitInfo nodeId="226334238991962249" fileName="GDBBreakpoint.java" startLine="90" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint$GDBBreakpointKind" />
+    <unitInfo nodeId="3990508698139426916" fileName="GDBBreakpoint.java" startLine="24" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
   </root>
 </debugInfo>
 

@@ -19,6 +19,8 @@
       <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" folder="usages" />
       <modulePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="old.usages" />
       <modulePath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="old.usages" />
+      <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="usages" />
+      <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
       <modulePath path="${project}/languages/commands/commands.mpl" folder="" />
       <modulePath path="${project}/languages/common/common.mpl" folder="" />
       <modulePath path="${project}/languages/configurations/configurations.mpl" />

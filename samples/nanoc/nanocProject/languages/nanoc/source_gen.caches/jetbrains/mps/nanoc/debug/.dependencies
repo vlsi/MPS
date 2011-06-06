@@ -26,6 +26,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
   </dependency>
+  <dependency className="jetbrains.mps.nanoc.debug.CppDebugger" file="CppDebugger.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSessionCreator" />
+    <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
+    <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.CppGDBCreator" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpointsProvider" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugger" />
+  </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.CppGDBCreator" file="CppGDBCreator.java">
     <classNode dependClassName="com.intellij.execution.DefaultExecutionResult" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />

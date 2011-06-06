@@ -128,7 +128,7 @@
     <nodeInfo nodeId="3990508698139429119" fileName="GDBRequestManager.java" startLine="44" startPosition="59" endLine="45" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139429146" fileName="GDBRequestManager.java" startLine="50" startPosition="48" endLine="51" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139429083" fileName="GDBRequestManager.java" startLine="34" startPosition="59" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139429141" fileName="GDBRequestManager.java" startLine="49" startPosition="86" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139429141" fileName="GDBRequestManager.java" startLine="49" startPosition="77" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139429051" fileName="GDBRequestManager.java" startLine="25" startPosition="61" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
     <nodeInfo nodeId="3990508698139429044" fileName="GDBRequestManager.java" startLine="24" startPosition="36" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139429134" fileName="GDBRequestManager.java" startLine="48" startPosition="42" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -139,7 +139,7 @@
     <scopeInfo nodeId="3990508698139429154" fileName="GDBRequestManager.java" startLine="26" startPosition="137" endLine="27" endPosition="61" />
     <scopeInfo nodeId="3990508698139429087" fileName="GDBRequestManager.java" startLine="35" startPosition="31" endLine="36" endPosition="13" />
     <scopeInfo nodeId="3990508698139429145" fileName="GDBRequestManager.java" startLine="50" startPosition="48" endLine="51" endPosition="67" />
-    <scopeInfo nodeId="3990508698139429140" fileName="GDBRequestManager.java" startLine="49" startPosition="86" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="3990508698139429140" fileName="GDBRequestManager.java" startLine="49" startPosition="77" endLine="52" endPosition="7" />
     <scopeInfo nodeId="3990508698139429051" fileName="GDBRequestManager.java" startLine="25" startPosition="61" endLine="29" endPosition="0">
       <varInfo nodeId="3990508698139429054" varName="result" />
       <varInfo nodeId="3990508698139429056" varName="receivedStreamAnswers" />
