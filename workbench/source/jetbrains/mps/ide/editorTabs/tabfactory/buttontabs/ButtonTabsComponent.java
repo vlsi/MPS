@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
@@ -198,19 +199,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   ///-------------tab insert events----------------
-
-  private static class EditorTabComparator implements Comparator<EditorTabDescriptor> {
-    public int compare(EditorTabDescriptor d1, EditorTabDescriptor d2) {
-      int r1 = d1.compareTo(d2);
-      int r2 = d2.compareTo(d1);
-
-      if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
-
-      assert r1 * r2 <= 0 : "can't determine order";
-
-      return r1;
-    }
-  }
 
   private class MyTabAdditionListener implements SModelCommandListener {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
