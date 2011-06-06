@@ -73,13 +73,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
   private FileEditorManager myManager;
-  private MPSEditorOpener myEditorOpener;
 
   @SuppressWarnings({"UnusedDeclaration"})
   public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager, MPSEditorOpener editorOpener) {
     myProject = project;
     myManager = manager;
-    myEditorOpener = editorOpener;
+    MPSEditorOpener editorOpener1 = editorOpener;
   }
 
   public void projectOpened() {
