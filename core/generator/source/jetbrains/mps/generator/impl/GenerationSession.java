@@ -24,9 +24,7 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
-import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
@@ -95,7 +93,9 @@ public class GenerationSession {
     ttrace.push("analyzing dependencies", false);
     myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel(), GlobalScope.getInstance());
     if (!checkGenerationPlan(myGenerationPlan)) {
-      // throw new GenerationCanceledException();
+      if(myGenerationOptions.isStrictMode()) {
+        throw new GenerationCanceledException();
+      }
     }
 
     // generation parameters
@@ -521,19 +521,29 @@ public class GenerationSession {
 
   private boolean checkGenerationPlan(GenerationPlan generationPlan) {
     if (generationPlan.hasConflictingPriorityRules()) {
-      myLogger.error("Conflicting mapping priority rules encountered:");
-      List<com.intellij.openapi.util.Pair<MappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
-      for (com.intellij.openapi.util.Pair<MappingPriorityRule, String> error : errors) {
-        MappingPriorityRule rule = error.first;
-        String text = error.second;
+      Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();
+      for (TemplateModule generator : generationPlan.getGenerators()) {
+        Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
+        if(priorities == null) {
+          continue;
+        }
 
-        /* todo
-         GeneratorDescriptor generatorDescriptor = rule.findParent(GeneratorDescriptor.class);
-        Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
-        addMessage(MessageKind.ERROR, text, generatorModule);
-          */
+        for (TemplateMappingPriorityRule rule : priorities) {
+          myRule2Generator.put((MappingPriorityRule) rule, generator);
+        }
       }
-      myLogger.error("-----------------------------------------------");
+
+
+      myLogger.error("Conflicting mapping priority rules encountered:");
+      List<Pair<MappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
+      for (Pair<MappingPriorityRule, String> error : errors) {
+        MappingPriorityRule rule = error.o1;
+        String text = error.o2;
+
+        TemplateModule templateModule = myRule2Generator.get(rule);
+        myLogger.error(templateModule.getReference(), text);
+      }
+      myLogger.error("");
       return false;
     }
     return true;

@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Igor Alshannikov
@@ -42,7 +43,6 @@ public class GenerationPartitioner {
   // maps
   private final Map<ModuleReference, TemplateModule> myModulesMap;
   private final Map<SModelReference, TemplateModel> myModelMap;
-  private final Map<SNodePointer, TemplateMappingConfiguration> myMappingsMap;
 
   // result
   private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
@@ -57,15 +57,10 @@ public class GenerationPartitioner {
 
     myModulesMap = new HashMap<ModuleReference, TemplateModule>(myGenerators.size());
     myModelMap = new HashMap<SModelReference, TemplateModel>();
-    myMappingsMap = new HashMap<SNodePointer, TemplateMappingConfiguration>();
     for (TemplateModule module : myGenerators) {
       myModulesMap.put(module.getReference(), module);
       for (TemplateModel model : module.getModels()) {
         myModelMap.put(model.getSModelReference(), model);
-        for (TemplateMappingConfiguration templateMappingConfiguration : model.getConfigurations()) {
-          SNodePointer mnode = templateMappingConfiguration.getMappingNode();
-          myMappingsMap.put(mnode, templateMappingConfiguration);
-        }
       }
     }
 
@@ -99,35 +94,46 @@ public class GenerationPartitioner {
     }
   }
 
+  private void printRules() {
+    for (TemplateMappingConfiguration left : myPriorityMap.keySet()) {
+      Map<TemplateMappingConfiguration, PriorityData> right = myPriorityMap.get(left);
+
+      System.out.println(left.getName() + " (" + left.getModel().getLongName() + ")");
+      for (Entry<TemplateMappingConfiguration, PriorityData> entry : right.entrySet()){
+        System.out.println("\t\t" + (entry.getValue().isStrict() ? "<   " : "<= ") + entry.getKey().getName() + " (" + entry.getKey().getModel().getLongName() + ")");
+      }
+    }
+  }
+
   private void processRule(MappingPriorityRule rule, TemplateModule generator) {
     MappingConfig_AbstractRef left = rule.getLeft();
     MappingConfig_AbstractRef right = rule.getRight();
     if (left == null || right == null) return;
 
-    Collection<TemplateMappingConfiguration> rightPriMappings = getMappingsFromRef(left, generator);
-    Collection<TemplateMappingConfiguration> leftPriMappings = getMappingsFromRef(right, generator);
+    Collection<TemplateMappingConfiguration> hiPrio = getMappingsFromRef(left, generator);
+    Collection<TemplateMappingConfiguration> loPrio = getMappingsFromRef(right, generator);
     if (rule.getType() == RuleType.STRICTLY_TOGETHER) {
-      Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(leftPriMappings);
-      coherentMappings.addAll(rightPriMappings);
+      Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(loPrio);
+      coherentMappings.addAll(hiPrio);
       myCoherentMappings.add(new CoherentSetData(coherentMappings, rule));
 
     } else {
 
       // swap
       if(rule.getType() == RuleType.STRICTLY_AFTER || rule.getType() == RuleType.AFTER_OR_TOGETHER) {
-        Collection<TemplateMappingConfiguration> temp = rightPriMappings;
-        rightPriMappings = leftPriMappings;
-        leftPriMappings = temp;
+        Collection<TemplateMappingConfiguration> temp = hiPrio;
+        hiPrio = loPrio;
+        loPrio = temp;
       }
 
-      // map: left-pri mapping -> {right-pri mapping, .... , right-pri mapping }
-      leftPriMappings = CollectionUtil.subtract(leftPriMappings, rightPriMappings);
+      // map: lo-pri mapping -> {hi-pri mapping, .... , hi-pri mapping }
+      loPrio = CollectionUtil.subtract(loPrio, hiPrio);
       boolean isStrict = rule.getType() == RuleType.STRICTLY_BEFORE || rule.getType() == RuleType.STRICTLY_AFTER;
 
-      for (TemplateMappingConfiguration lesserPriMapping : leftPriMappings) {
+      for (TemplateMappingConfiguration lesserPriMapping : loPrio) {
         Map<TemplateMappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
 
-        for (TemplateMappingConfiguration grtPriMapping : rightPriMappings) {
+        for (TemplateMappingConfiguration grtPriMapping : hiPrio) {
           if (!grtPriMappingsFromMap.containsKey(grtPriMapping)) {
             grtPriMappingsFromMap.put(grtPriMapping, new PriorityData(isStrict, rule));
           } else {

@@ -1,6 +1,5 @@
 package jetbrains.mps.generator.impl.plan;
 
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
@@ -11,6 +10,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
