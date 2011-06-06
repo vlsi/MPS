@@ -53,7 +53,7 @@ public abstract class EditorTabDescriptor implements Comparable<EditorTabDescrip
     return new ArrayList<SNode>();
   }
 
-  public boolean commandOnCreate(){
+  public boolean commandOnCreate() {
     return true;
   }
 

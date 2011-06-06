@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.*;
@@ -38,7 +39,7 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public abstract class TabsComponent extends JPanel {
+public class TabsComponent extends JPanel {
   private SNodePointer myBaseNode;
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
@@ -47,15 +48,17 @@ public abstract class TabsComponent extends JPanel {
   private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
   private JComponent myToolbar = null;
   private JComponent myShortcutComponent;
+  private NodeChangeCallback myCallback;
 
   private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
   private ModelListener myTabRemovalListener = new MyTabRemovalListener();
   private AddConceptTab myAddButton;
 
-  public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent) {
+  public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent,NodeChangeCallback callback) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myShortcutComponent = shortcutComponent;
+    myCallback = callback;
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -156,10 +159,8 @@ public abstract class TabsComponent extends JPanel {
 
   public void onNodeChange(SNode node) {
     myLastNode = new SNodePointer(node);
-    changeNode(node);
+    myCallback.changeNode(node);
   }
-
-  protected abstract void changeNode(SNode newNode);
 
   private void nextTab() {
     for (EditorTab tab : myRealTabs) {

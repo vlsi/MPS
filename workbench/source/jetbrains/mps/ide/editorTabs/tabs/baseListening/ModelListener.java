@@ -43,7 +43,7 @@ public abstract class ModelListener {
 
   //------event&callback------
 
-  public void clearAspects(){
+  public void clearAspects() {
     stopListening();
     startListening();
   }

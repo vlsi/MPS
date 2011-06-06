@@ -18,8 +18,6 @@ package jetbrains.mps.workbench.editors;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;

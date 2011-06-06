@@ -42,8 +42,8 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.JComponent;
 import java.awt.BorderLayout;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -62,11 +62,11 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     myContext = context;
     myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
 
-    myTabsComponent = new TabsComponent(baseNode, possibleTabs, getComponent()) {
-      protected void changeNode(SNode newNode) {
+    myTabsComponent = TabComponentFactory.createTabsComponent(baseNode, possibleTabs, getComponent(), new NodeChangeCallback() {
+      public void changeNode(SNode newNode) {
         showNode(newNode, !newNode.isRoot());
       }
-    };
+    });
 
     showNode(baseNode.getNode(), false);
 
@@ -161,7 +161,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private AnAction getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, null){
+    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, null) {
       public void aspectCreated(SNode sNode) {
         myTabsComponent.onNodeChange(sNode);
       }

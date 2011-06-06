@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.editorTabs.tabs;
 
-import com.intellij.execution.actions.CreateAction;
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabs.icons.Icons;
@@ -24,7 +23,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.JPopupMenu;
-import java.util.*;
+import java.util.Iterator;
+import java.util.Set;
 
 abstract class AddConceptTab {
   private SNodePointer myBaseNode;
@@ -60,7 +60,7 @@ abstract class AddConceptTab {
       result.add(new Separator());
     }
 
-    while (it.hasNext()){
+    while (it.hasNext()) {
       DefaultActionGroup g = it.next();
       g.setPopup(true);
       result.add(g);
