@@ -31,14 +31,18 @@ public interface ConstraintsDescriptor {
 
   boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext);
 
+  @Nullable
   PropertyConstraintsDescriptor getProperty(String name);
 
+  @Nullable
   ReferenceConstraintsDescriptor getReference(String refName);
 
   ReferenceScopeProvider getDefaultScopeProvider();
 
   // todo: remove/move this methods
   // by convention inheritance for this methods not works
+  // null if icon not alternative
+  @Nullable
   String getAlternativeIcon(SNode node);
 
   String getDefaultConcreteConceptFqName();

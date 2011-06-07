@@ -24,5 +24,5 @@ public interface ConstraintsDispatchable extends ConstraintsDescriptor {
 
   boolean hasOwnCanBeAncestorMethod();
 
-  boolean hasOwnNodeDefaultSearchScopeProvider();
+  boolean hasOwnDefaultScopeProvider();
 }
