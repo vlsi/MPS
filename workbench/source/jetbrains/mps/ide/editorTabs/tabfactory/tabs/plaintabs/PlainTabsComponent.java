@@ -24,6 +24,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.PrevNextActionsDescriptor;
 import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
@@ -56,6 +57,10 @@ public class PlainTabsComponent extends BaseTabsComponent {
       onNodeChange(newNode);
     }
   };
+  private final Disposable myJbTabsDisposable = new Disposable() {
+    public void dispose() {
+    }
+  };
 
   public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
     super(baseNode, possibleTabs, editor, callback, showGrayed);
@@ -64,11 +69,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     Project project = PlatformDataKeys.PROJECT.getData(dataContext);
 
     PrevNextActionsDescriptor navigation = new PrevNextActionsDescriptor(IdeActions.ACTION_NEXT_EDITOR_TAB, IdeActions.ACTION_PREVIOUS_EDITOR_TAB);
-    myJbTabs = new AsJBTabs(project, SwingConstants.BOTTOM, navigation, new Disposable() {
-      public void dispose() {
-        //todo
-      }
-    });
+    myJbTabs = new AsJBTabs(project, SwingConstants.BOTTOM, navigation, myJbTabsDisposable);
     decorate(myJbTabs.getTabs());
 
     getComponent().add(createAddNodeComponent(), BorderLayout.WEST);
@@ -91,6 +92,11 @@ public class PlainTabsComponent extends BaseTabsComponent {
         });
       }
     });
+  }
+
+  public void dispose() {
+    Disposer.dispose(myJbTabsDisposable);
+    super.dispose();
   }
 
   private void decorate(JBTabs jbTabs) {
