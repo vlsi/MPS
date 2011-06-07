@@ -39,7 +39,7 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7806358006983511789">
       <property name="name" nameId="tpck.1169194664001" value="RemoteSettingsEditor" />
     </node>
-    <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="801101525254379837">
+    <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="801101525254379837">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="false" />
       <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="7806358006983511602" resolveInfo="Remote" />

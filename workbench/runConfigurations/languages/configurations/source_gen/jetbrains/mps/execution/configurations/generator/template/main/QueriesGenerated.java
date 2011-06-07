@@ -18,8 +18,8 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.execution.configurations.behavior.AbstractRunConfigurationExecutor_Behavior;
 import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
-import jetbrains.mps.execution.configurations.behavior.ComplexRunConfigurationExecutor_Behavior;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
@@ -114,7 +114,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983618075(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return RunConfigurationExecutor_Behavior.call_getCanExecuteMethodName_7806358006983616236(_context.getNode());
+    return AbstractRunConfigurationExecutor_Behavior.call_getCanExecuteMethodName_7806358006983616236(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983709820(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -126,7 +126,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650472774(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(ComplexRunConfigurationExecutor_Behavior.call_getCommand_6226796386650434672(_context.getNode()));
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(RunConfigurationExecutor_Behavior.call_getCommand_6226796386650434672(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650472784(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -150,7 +150,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983619390(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return RunConfigurationExecutor_Behavior.call_getCanExecuteMethodName_7806358006983616236(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
+    return AbstractRunConfigurationExecutor_Behavior.call_getCanExecuteMethodName_7806358006983616236(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_7876144211257452123(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -313,7 +313,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5812151570929690853(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"), "ExecutorToConfigurationField");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"), "ExecutorToConfigurationField");
   }
 
   public static Object referenceMacro_GetReferent_3945544195318608478(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -376,7 +376,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7806358006983617866(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ComplexRunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
+    return RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_6226796386650441487(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -384,11 +384,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2363787617167802334(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ComplexRunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
+    return RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_4371737370140155778(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ComplexRunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
+    return RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_2535050848643232570(final IOperationContext operationContext, final IfMacroContext _context) {

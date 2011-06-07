@@ -26,8 +26,8 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
   }
 
   public SNode getBaseNode(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"), "configuration", false);
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"), "configuration", false);
     }
     return node;
   }
@@ -48,7 +48,7 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
 
   public SNode getNode(SNode node) {
     final SNode nodeFinal = node;
-    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "configuration", false) == nodeFinal;
       }
@@ -60,7 +60,7 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
   }
 
   public SNode createNode(final SNode node, final SNode concept) {
-    SNode executor = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", null);
+    SNode executor = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", null);
     SLinkOperations.setTarget(executor, "configuration", node, false);
     SModelOperations.addRootNode(SNodeOperations.getModel(node), executor);
     return executor;

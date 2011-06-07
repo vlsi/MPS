@@ -31,7 +31,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3091009652595852676">
       <property name="name" nameId="tpck.1169194664001" value="typeof_DebuggerSettings_Parameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex.settings" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2535050848643223607">
       <property name="name" nameId="tpck.1169194664001" value="check_RunConfiguration" />
@@ -116,7 +116,7 @@
                 <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6586232406240905076">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2867534278886351284">
                     <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="2867534278886351285">
-                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="uhxm.7806358006983614956" resolveInfo="ComplexRunConfigurationExecutor" />
+                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="uhxm.7806358006983614956" resolveInfo="RunConfigurationExecutor" />
                       <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2867534278886351286">
                         <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2867534278886351287">
                           <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3091009652595852678" resolveInfo="debuggerConnectionSettings" />
@@ -152,7 +152,7 @@
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="2867534278886351278">
             <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="2867534278886351280">
-              <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.7806358006983614956" resolveInfo="ComplexRunConfigurationExecutor" />
+              <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.7806358006983614956" resolveInfo="RunConfigurationExecutor" />
             </node>
           </node>
         </node>

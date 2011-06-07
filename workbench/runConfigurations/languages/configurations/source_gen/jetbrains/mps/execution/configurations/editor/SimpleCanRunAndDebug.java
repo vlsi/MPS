@@ -91,7 +91,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     editorCell.setCellId("Constant_o92gz8_b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleCanRunAndDebug.ComplexRunConfigurationExecutor_generic_cellMenu_a0b1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0b1a()}));
     return editorCell;
   }
 
@@ -103,7 +103,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleCanRunAndDebug.ComplexRunConfigurationExecutor_generic_cellMenu_a0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0c1a()}));
     return editorCell;
   }
 
@@ -119,7 +119,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     editorCell.setCellId("Constant_o92gz8_a3a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleCanRunAndDebug.ComplexRunConfigurationExecutor_generic_cellMenu_a0a3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0a3a()}));
     return editorCell;
   }
 
@@ -131,7 +131,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleCanRunAndDebug.ComplexRunConfigurationExecutor_generic_cellMenu_a0b3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0b3a()}));
     return editorCell;
   }
 
@@ -156,8 +156,8 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     return !(SPropertyOperations.getBoolean(node, "canDebug"));
   }
 
-  public static class ComplexRunConfigurationExecutor_generic_cellMenu_a0b1a extends AbstractCellMenuPart_Generic_Item {
-    public ComplexRunConfigurationExecutor_generic_cellMenu_a0b1a() {
+  public static class RunConfigurationExecutor_generic_cellMenu_a0b1a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0b1a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -169,8 +169,8 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     }
   }
 
-  public static class ComplexRunConfigurationExecutor_generic_cellMenu_a0c1a extends AbstractCellMenuPart_Generic_Item {
-    public ComplexRunConfigurationExecutor_generic_cellMenu_a0c1a() {
+  public static class RunConfigurationExecutor_generic_cellMenu_a0c1a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0c1a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -182,8 +182,8 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     }
   }
 
-  public static class ComplexRunConfigurationExecutor_generic_cellMenu_a0a3a extends AbstractCellMenuPart_Generic_Item {
-    public ComplexRunConfigurationExecutor_generic_cellMenu_a0a3a() {
+  public static class RunConfigurationExecutor_generic_cellMenu_a0a3a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0a3a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -195,8 +195,8 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     }
   }
 
-  public static class ComplexRunConfigurationExecutor_generic_cellMenu_a0b3a extends AbstractCellMenuPart_Generic_Item {
-    public ComplexRunConfigurationExecutor_generic_cellMenu_a0b3a() {
+  public static class RunConfigurationExecutor_generic_cellMenu_a0b3a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0b3a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

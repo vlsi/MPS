@@ -29,13 +29,13 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2401501559171392633">
-      <property name="name" nameId="tpck.1169194664001" value="RunConfigurationExecutor" />
+      <property name="name" nameId="tpck.1169194664001" value="AbstractRunConfigurationExecutor" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6139196002333163564">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteConfiguration_Function" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -45,10 +45,10 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7806358006983614956">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
-      <property name="name" nameId="tpck.1169194664001" value="ComplexRunConfigurationExecutor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="name" nameId="tpck.1169194664001" value="RunConfigurationExecutor" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2401501559171392633" resolveInfo="RunConfigurationExecutor" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2401501559171392633" resolveInfo="AbstractRunConfigurationExecutor" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7806358006983738927">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
@@ -56,25 +56,14 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4816403309550879744">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex.settings" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="DebuggerSettings_Parameter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4762811064051339797">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
-      <property name="name" nameId="tpck.1169194664001" value="StartStatement" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068581242878" resolveInfo="ReturnStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="946964771156870353">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="StartProcessHandlerStatement" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="4762811064051339797" resolveInfo="StartStatement" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1931462339887551502">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.simple" />
-      <property name="name" nameId="tpck.1169194664001" value="SimpleRunConfigurationExecutor" />
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2401501559171392633" resolveInfo="RunConfigurationExecutor" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068581242878" resolveInfo="ReturnStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4366236229294105349">
       <property name="name" nameId="tpck.1169194664001" value="RunConfigurationProducer" />
@@ -233,7 +222,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="fb9u.946964771156905617" resolveInfo="PersistentConfigurationAssistent" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1048802521465134534">
-      <property name="value" nameId="tpce.1105725733873" value="executor" />
+      <property name="value" nameId="tpce.1105725733873" value="abstract executor" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7806358006983673426">
@@ -277,7 +266,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="86gq.6720907903633266421" resolveInfo="DebuggerConfiguration" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7806358006983646766">
-      <property name="value" nameId="tpce.1105725733873" value="complex executor" />
+      <property name="value" nameId="tpce.1105725733873" value="executor" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6226796386650281949">
@@ -296,11 +285,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
-  <root id="4762811064051339797">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="4762811064051339800">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
-  </root>
   <root id="946964771156870353">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="946964771156870354">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -311,16 +295,6 @@
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="946964771156870355">
       <property name="value" nameId="tpce.1105725733873" value="start process handler" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="1931462339887551502">
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1931462339887637411">
-      <property name="name" nameId="tpck.1169194664001" value="canDebug" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1931462339887551503">
-      <property name="value" nameId="tpce.1105725733873" value="simple executor" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>

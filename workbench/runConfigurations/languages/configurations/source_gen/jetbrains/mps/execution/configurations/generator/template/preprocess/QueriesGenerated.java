@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.execution.configurations.behavior.ComplexRunConfigurationExecutor_Behavior;
+import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
@@ -23,9 +23,9 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static void mappingScript_CodeBlock_5916922432461069146(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode executor : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor")).where(new IWhereFilter<SNode>() {
+    for (SNode executor : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ComplexRunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(it) && ComplexRunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(it);
+        return RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(it) && RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(it);
       }
     })) {
       for (SNode builder : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(executor, "execute", true), "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -65,7 +65,7 @@ public class QueriesGenerated {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.addReference(SReference.create("variableDeclaration", quotedNode1_6, SModelReference.fromString("r:d62ab551-1ac6-4186-a211-a0944c081963(jetbrains.mps.execution.configurations.generator.template.preprocess@1_1)"), SNodeId.fromString("")));
+          quotedNode1_6.addReference(SReference.create("variableDeclaration", quotedNode1_6, SModelReference.fromString("r:d04ac35e-30ce-449b-aa73-da704c5fe866(jetbrains.mps.execution.configurations.generator.template.preprocess@1_1)"), SNodeId.fromString("")));
           quotedNode_1.addChild("operand", quotedNode1_6);
         }
         {

@@ -364,7 +364,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Java Application" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
-    <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="6226796386650347532">
+    <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="6226796386650347532">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
       <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />

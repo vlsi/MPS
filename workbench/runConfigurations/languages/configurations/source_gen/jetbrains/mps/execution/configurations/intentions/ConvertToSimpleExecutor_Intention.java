@@ -16,7 +16,7 @@ public class ConvertToSimpleExecutor_Intention extends BaseIntention implements 
   }
 
   public String getConcept() {
-    return "jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor";
+    return "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor";
   }
 
   public boolean isParameterized() {
@@ -36,10 +36,10 @@ public class ConvertToSimpleExecutor_Intention extends BaseIntention implements 
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode simpleExecutor = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor", null);
+    SNode simpleExecutor = SConceptOperations.createNewNode("", null);
     SPropertyOperations.set(simpleExecutor, "canRun", "" + (SPropertyOperations.getBoolean(node, "canRun")));
     SPropertyOperations.set(simpleExecutor, "configurationName", SPropertyOperations.getString(node, "configurationName"));
-    SPropertyOperations.set(simpleExecutor, "canDebug", "" + ((SLinkOperations.getTarget(node, "debuggerConfiguration", true) != null)));
+    SPropertyOperations.set(simpleExecutor, "", "" + ((SLinkOperations.getTarget(node, "debuggerConfiguration", true) != null)));
     SLinkOperations.setTarget(simpleExecutor, "execute", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "execute", true)), true);
     SLinkOperations.setTarget(simpleExecutor, "configuration", SLinkOperations.getTarget(node, "configuration", false), false);
     SNodeOperations.replaceWithAnother(node, simpleExecutor);

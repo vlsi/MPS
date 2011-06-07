@@ -89,7 +89,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3754890006475702959">
       <property name="name" nameId="tpck.1169194664001" value="ExecutorRunProfileState_Template" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7460665385311861254">
       <property name="name" nameId="tpck.1169194664001" value="RunConfigurationFactory_Template" />
@@ -120,7 +120,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="8018778075741045465">
       <property name="name" nameId="tpck.1169194664001" value="reduce_DebuggerSettings_Parameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex.settings" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="uhxm.4816403309550879744" resolveInfo="DebuggerSettings_Parameter" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="4762811064051417753">
@@ -365,10 +365,10 @@
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="3754890006475707294" resolveInfo="KindToClass" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3754890006475702966">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3754890006475702959" resolveInfo="ExecutorRunProfileState_Template" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="3754890006475707296" resolveInfo="ExecutorToClass" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.7806358006983614956" resolveInfo="ComplexRunConfigurationExecutor" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.7806358006983614956" resolveInfo="RunConfigurationExecutor" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="7460665385311866805">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.2401501559171345993" resolveInfo="RunConfiguration" />
@@ -382,6 +382,7 @@
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="4013739085301550959" resolveInfo="RunConfigurationProducerToClass" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="4929913054057214437">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="before" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.7037083547576022975" resolveInfo="BeforeTask" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="4929913054057094037" resolveInfo="BeforeTaskProvider_Template" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="4929913054057220490" resolveInfo="BeforeTaskToClass" />
@@ -393,7 +394,7 @@
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="3754890006475707296">
       <property name="name" nameId="tpck.1169194664001" value="ExecutorToClass" />
-      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="uhxm.2401501559171392633" resolveInfo="RunConfigurationExecutor" />
+      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="uhxm.2401501559171392633" resolveInfo="AbstractRunConfigurationExecutor" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="7460665385311866804">
@@ -413,7 +414,7 @@
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="5812151570929690873">
       <property name="name" nameId="tpck.1169194664001" value="ExecutorToConfigurationField" />
-      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="uhxm.2401501559171392633" resolveInfo="RunConfigurationExecutor" />
+      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="uhxm.2401501559171392633" resolveInfo="AbstractRunConfigurationExecutor" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="4013739085301519674">
@@ -561,7 +562,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8018778075741045467">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex.settings" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.4816403309550879744" resolveInfo="DebuggerSettings_Parameter" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="8018778075741045468">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8018778075741045465" resolveInfo="reduce_DebuggerSettings_Parameter" />
@@ -737,6 +738,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6550182048787667267">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="before" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.6550182048787583936" resolveInfo="BeforeTaskParameterReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6550182048787667275">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tp68.InternalPartialFieldReference" typeId="tp68.1177590007607" id="6550182048787667278">
@@ -1379,7 +1381,7 @@
       </node>
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="3754890006475702965">
-      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="uhxm.7806358006983614956" resolveInfo="ComplexRunConfigurationExecutor" />
+      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="uhxm.7806358006983614956" resolveInfo="RunConfigurationExecutor" />
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3754890006475707249">
       <property name="name" nameId="tpck.1169194664001" value="getConfigurationSettings" />
@@ -2779,7 +2781,7 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="5812151570929690861">
                           <link role="label" roleId="tpf3.1216860049628" targetNodeId="5812151570929690873" resolveInfo="ExecutorToConfigurationField" />
                           <node role="inputNode" roleId="tpf3.1216860049632" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="5812151570929690869">
-                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="uhxm.2401501559171392633" resolveInfo="RunConfigurationExecutor" />
+                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="uhxm.2401501559171392633" resolveInfo="AbstractRunConfigurationExecutor" />
                             <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5812151570929690864">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5812151570929690863" />
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingRootOperation" typeId="tp25.1171310072040" id="5812151570929690868" />

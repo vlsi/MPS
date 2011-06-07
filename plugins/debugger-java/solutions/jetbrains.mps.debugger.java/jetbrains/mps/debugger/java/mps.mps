@@ -41,7 +41,7 @@
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="3271576760503788622">
       <property name="name" nameId="tpck.1169194664001" value="MPS" />
     </node>
-    <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="3271576760503799855">
+    <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="3271576760503799855">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
       <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="3271576760503781388" resolveInfo="MPS Instance" />

@@ -7,7 +7,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.ComplexRunConfigurationExecutor_Behavior" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

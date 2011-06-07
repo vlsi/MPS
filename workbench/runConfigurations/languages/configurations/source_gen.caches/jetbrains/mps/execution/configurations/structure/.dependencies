@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor" file="AbstractRunConfigurationExecutor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.execution.common.structure.IGeneratedToClass" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.BeforeTaskCall" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.RunConfiguration" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.structure.PersistentConfiguration" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.structure.BeforeTask" file="BeforeTask.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -39,16 +57,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.VariableReference" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.structure.BeforeTaskParameter" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor" file="ComplexRunConfigurationExecutor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -193,16 +201,8 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor" file="RunConfigurationExecutor.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.execution.common.structure.IGeneratedToClass" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.BeforeTaskCall" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.RunConfiguration" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.structure.PersistentConfiguration" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -260,15 +260,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.structure.SimpleRunConfigurationExecutor" file="SimpleRunConfigurationExecutor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter" file="Source_ConceptFunctionParameter.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter" />
@@ -281,15 +272,6 @@
   <dependency className="jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement" file="StartProcessHandlerStatement.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.structure.StartStatement" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.structure.StartStatement" file="StartStatement.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

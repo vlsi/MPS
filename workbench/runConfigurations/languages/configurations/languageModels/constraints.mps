@@ -18,11 +18,11 @@
   <roots>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1048802521465134864">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.2401501559171392633" resolveInfo="RunConfigurationExecutor" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.2401501559171392633" resolveInfo="AbstractRunConfigurationExecutor" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7806358006983673554">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.7806358006983614956" resolveInfo="ComplexRunConfigurationExecutor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.7806358006983614956" resolveInfo="RunConfigurationExecutor" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7806358006983738928">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
@@ -128,7 +128,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="7806358006983738942">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6720907903633245121">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.2401501559171392633" resolveInfo="RunConfigurationExecutor" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.2401501559171392633" resolveInfo="AbstractRunConfigurationExecutor" />
               </node>
             </node>
           </node>
