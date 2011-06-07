@@ -92,6 +92,12 @@ public abstract class BaseNodeEditor implements IEditor {
     }
   }
 
+  protected void showEditor() {
+  }
+
+  protected void showComponent(JComponent replace) {
+  }
+
   //---state---
 
   @Nullable

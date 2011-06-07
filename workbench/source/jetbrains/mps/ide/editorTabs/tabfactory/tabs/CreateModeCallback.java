@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
+package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.smodel.SNode;
 
-class PlainEditorTab {
-  private SNode myNode;
-  private EditorTabDescriptor myTab;
+import javax.swing.JComponent;
 
-  PlainEditorTab(SNode node, EditorTabDescriptor tab) {
-    myNode = node;
-    myTab = tab;
+public class CreateModeCallback {
+  public void exitCreateMode() {
+
   }
 
-  public SNode getNode() {
-    return myNode;
-  }
+  public void enterCreateMode(JComponent replace) {
 
-  public EditorTabDescriptor getTab() {
-    return myTab;
   }
 }

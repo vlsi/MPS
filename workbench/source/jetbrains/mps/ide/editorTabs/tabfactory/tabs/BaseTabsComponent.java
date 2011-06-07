@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.util.Computable;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
@@ -29,17 +29,20 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
-import javax.swing.AbstractAction;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.KeyStroke;
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-import java.util.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public abstract class BaseTabsComponent implements TabsComponent {
   private final NodeChangeCallback myCallback;
+  private CreateModeCallback myCreateModeCallback;
   protected final SNodePointer myBaseNode;
   protected final Set<EditorTabDescriptor> myPossibleTabs;
   protected final JComponent myEditor;
@@ -53,12 +56,13 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private JComponent myComponent;
 
-  public BaseTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
+  public BaseTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myEditor = editor;
     myCallback = callback;
     myShowGrayed = showGrayed;
+    myCreateModeCallback = createModeCallback;
 
     AnAction addAction = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
       public void changeNode(SNode newNode) {
@@ -127,8 +131,21 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   protected void onNodeChange(SNode node) {
-    setLastNode(new SNodePointer(node));
+    SNodePointer oldNode = myLastNode;
+    myLastNode = new SNodePointer(node);
+    if (oldNode == null && node != null) {
+      if (myCreateModeCallback != null) {
+        myCreateModeCallback.exitCreateMode();
+      }
+    }
     myCallback.changeNode(node);
+  }
+
+  protected void enterCreateMode(EditorTabDescriptor tab) {
+    myLastNode = null;
+    if (myCreateModeCallback != null) {
+      myCreateModeCallback.enterCreateMode(new CreatePanel(tab));
+    }
   }
 
   protected Map<EditorTabDescriptor, List<SNode>> updateDocumentsAndNodes() {
@@ -183,4 +200,34 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected abstract boolean checkNodeRemoved(SNodePointer node);
 
   protected abstract void updateTabs();
+
+  ///-------------grayed mode----------------
+
+  private class CreatePanel extends JPanel {
+    public CreatePanel(final EditorTabDescriptor tab) {
+      super(new BorderLayout());
+
+      JLabel label = new JLabel("Click to create new aspect");
+      label.addMouseListener(new MouseAdapter() {
+        public void mouseClicked(final MouseEvent e) {
+          ActionGroup group = ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+            public ActionGroup compute() {
+              return CreateGroupsBuilder.getCreateGroup(myBaseNode, new NodeChangeCallback() {
+                public void changeNode(SNode newNode) {
+                  updateTabs();
+                  onNodeChange(newNode);
+                }
+              }, tab);
+            }
+          });
+
+          ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
+          JPopupMenu popupComponent = popup.getComponent();
+          popupComponent.show(e.getComponent(), e.getX(), e.getY());
+        }
+      });
+
+      add(label, BorderLayout.CENTER);
+    }
+  }
 }

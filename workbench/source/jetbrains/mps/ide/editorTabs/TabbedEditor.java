@@ -33,6 +33,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabComponentFactory;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -68,7 +69,15 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       public void changeNode(SNode newNode) {
         showNodeInternal(newNode, !newNode.isRoot(), true);
       }
-    });
+    }, new CreateModeCallback(){
+      public void exitCreateMode() {
+        showEditor();
+      }
+
+      public void enterCreateMode(JComponent replace) {
+        showComponent(replace);
+      }
+    }) ;
 
     showNode(baseNode.getNode(), false);
 

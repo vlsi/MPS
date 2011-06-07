@@ -35,7 +35,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   private JComponent myToolbar = null;
 
   public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed);
+    super(baseNode, possibleTabs, editor, callback, showGrayed, null);
     updateTabs();
   }
 

@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.CustomizationSettings;
 import jetbrains.mps.ide.CustomizationSettings.MyState;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs.ButtonTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.emptytabs.EmptyTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs.PlainTabsComponent;
@@ -28,13 +29,13 @@ import javax.swing.JComponent;
 import java.util.Set;
 
 public abstract class TabComponentFactory {
-  public static TabsComponent createTabsComponent(final SNodePointer baseNode, final Set<EditorTabDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback) {
+  public static TabsComponent createTabsComponent(final SNodePointer baseNode, final Set<EditorTabDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback, CreateModeCallback createModeCallback) {
     MyState state = ApplicationManager.getApplication().getComponent(CustomizationSettings.class).getState();
     if (!state.show) {
       return new EmptyTabsComponent(baseNode);
     } else {
       if (state.showPlain) {
-        return new PlainTabsComponent(baseNode, possibleTabs, component, callback, state.showGrayed);
+        return new PlainTabsComponent(baseNode, possibleTabs, component, callback, state.showGrayed, createModeCallback);
       } else {
         return new ButtonTabsComponent(baseNode, possibleTabs, component, callback, state.showGrayed);
       }

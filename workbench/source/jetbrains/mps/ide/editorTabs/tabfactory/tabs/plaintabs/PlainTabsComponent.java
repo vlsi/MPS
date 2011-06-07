@@ -19,7 +19,6 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.PrevNextActionsDescriptor;
 import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
@@ -28,7 +27,7 @@ import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
-import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -38,8 +37,6 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.*;
 
 public class PlainTabsComponent extends BaseTabsComponent {
@@ -51,8 +48,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   };
 
-  public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed);
+  public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback) {
+    super(baseNode, possibleTabs, editor, callback, showGrayed,createModeCallback);
 
     DataContext dataContext = DataManager.getInstance().getDataContext(myEditor);
     Project project = PlatformDataKeys.PROJECT.getData(dataContext);
@@ -70,10 +67,13 @@ public class PlainTabsComponent extends BaseTabsComponent {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             int index = myJbTabs.getSelectedIndex();
+            PlainEditorTab tab = myRealTabs.get(index);
+            SNode node = tab.getNode();
 
-            SNode node = myRealTabs.get(index).getNode();
             if (node != null) {
               onNodeChange(node);
+            } else {
+              enterCreateMode(tab.getTab());
             }
           }
         });
@@ -110,19 +110,18 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     Map<EditorTabDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
 
-    //todo show grayed
     //todo sort nodes inside aspect
     JLabel fill = new JLabel("");
     for (EditorTabDescriptor tab : tabs) {
       List<SNode> nodes = newContent.get(tab);
       if (nodes != null) {
         for (SNode node : nodes) {
-          myRealTabs.add(new PlainEditorTab(node));
+          myRealTabs.add(new PlainEditorTab(node, tab));
           myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
         }
       } else if (myShowGrayed) {
-        myRealTabs.add(new PlainEditorTab(null));
-        myJbTabs.addTab(tab.getTitle(), new CreatePanel(tab));
+        myRealTabs.add(new PlainEditorTab(null, tab));
+        myJbTabs.addTab(tab.getTitle(), fill);
       }
     }
   }
@@ -158,33 +157,5 @@ public class PlainTabsComponent extends BaseTabsComponent {
       }
     }
     return false;
-  }
-
-  private class CreatePanel extends JPanel {
-    public CreatePanel(final EditorTabDescriptor tab) {
-      super(new BorderLayout());
-
-      JLabel label = new JLabel("Click to create new aspect");
-      label.addMouseListener(new MouseAdapter() {
-        public void mouseClicked(final MouseEvent e) {
-          ActionGroup group = ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
-            public ActionGroup compute() {
-              return CreateGroupsBuilder.getCreateGroup(myBaseNode, new NodeChangeCallback() {
-                public void changeNode(SNode newNode) {
-                  updateTabs();
-                  onNodeChange(newNode);
-                }
-              }, tab);
-            }
-          });
-
-          ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
-          JPopupMenu popupComponent = popup.getComponent();
-          popupComponent.show(e.getComponent(), e.getX(), e.getY());
-        }
-      });
-
-      add(label, BorderLayout.CENTER);
-    }
   }
 }
