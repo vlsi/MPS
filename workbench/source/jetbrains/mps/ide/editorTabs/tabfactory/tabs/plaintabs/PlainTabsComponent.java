@@ -167,7 +167,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   protected boolean checkNodeRemoved(SNodePointer node) {
     if (myBaseNode.equals(node)) return false; //will be closed by idea
     for (PlainEditorTab tab : myRealTabs) {
-      if (tab.getNode().equals(node)) {
+      if (ObjectUtils.equals(tab.getNode(), node)) {
         onNodeChange(myBaseNode.getNode());
         return true;
       }
