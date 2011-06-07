@@ -1802,7 +1802,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     changeSelection(newSelectedCell, true);
   }
 
-  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
+  void changeSelection(@NotNull EditorCell newSelectedCell, boolean resetLastCaretX) {
     if (resetLastCaretX) {
       resetLastCaretX();
     }
@@ -1830,7 +1830,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   // TODO: think about replacing this method with one of ensureVisible()/scrollToCell()
-  private void showCellInViewPort(EditorCell newSelectedCell) {
+  private void showCellInViewPort(@NotNull EditorCell newSelectedCell) {
     if (getVisibleRect().isEmpty()) {
       final JViewport viewport = getViewport();
       viewport.addChangeListener(new ChangeListener() {
@@ -1863,7 +1863,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     scrollToCell(getSelectedCell());
   }
 
-  public void scrollToCell(EditorCell cell) {
+  public void scrollToCell(@NotNull EditorCell cell) {
     if (getVisibleRect().isEmpty()) {
       return;
     }
@@ -2679,6 +2679,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             EditorCell cell = findNodeCell(target);
             if (cell != null) {
               EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+              if (lastLeaf == null) {
+                return;
+              }
               changeSelection(lastLeaf);
               lastLeaf.end();
               return;
@@ -2687,6 +2690,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             EditorCell cell = findNodeCell(siblings.get(0));
             if (cell != null) {
               EditorCell lastLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
+              if (lastLeaf == null) {
+                return;
+              }
               changeSelection(lastLeaf);
               lastLeaf.home();
               return;
