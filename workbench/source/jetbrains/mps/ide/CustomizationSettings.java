@@ -20,7 +20,10 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.CustomizationSettings.MyState;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
@@ -98,6 +101,10 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
     myState.showPlain = myPlainCheckbox.isSelected();
     myState.showGrayed = myGrayedCheckbox.isSelected();
     myState.show = myShowCheckbox.isSelected();
+
+    for (Project p:ProjectManager.getInstance().getOpenProjects()){
+      p.getComponent(ProjectPluginManager.class).recreateTabbedEditors();
+    }
   }
 
   public void reset() {

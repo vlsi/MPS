@@ -251,7 +251,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //--------------ADDITIONAL----------------
 
-  private void recreateTabbedEditors() {
+  public void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         editors:
