@@ -56,14 +56,17 @@ public class CreateGroupsBuilder {
       if (concepts.isEmpty()) continue;
 
       boolean current = false;
+      List<SNode> nodes = d.getNodes(myBaseNode.getNode());
       if (myCurrentAspect != null) {
-        for (SNode aspect : d.getNodes(myBaseNode.getNode())) {
+        for (SNode aspect : nodes) {
           if (aspect.getContainingRoot().equals(myCurrentAspect)) {
             current = true;
             break;
           }
         }
       }
+
+      if (!nodes.isEmpty() && d.isSingle()) continue;
 
       DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), false);
       for (final SNode concept : concepts) {

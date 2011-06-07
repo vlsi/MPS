@@ -67,6 +67,6 @@ public abstract class EditorTabDescriptor implements Comparable<EditorTabDescrip
   }
 
   public boolean isSingle(){
-    return true;
+    return false;
   }
 }
