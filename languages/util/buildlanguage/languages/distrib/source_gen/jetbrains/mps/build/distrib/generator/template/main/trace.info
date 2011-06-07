@@ -457,8 +457,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1234545169127" fileName="QueriesGenerated.java" startLine="1030" startPosition="74" endLine="1038" endPosition="5" />
     <scopeInfo nodeId="1234544998539" fileName="QueriesGenerated.java" startLine="1028" startPosition="149" endLine="1039" endPosition="20">
-      <varInfo nodeId="1234545184329" varName="elements" />
       <varInfo nodeId="1234545164165" varName="extensions" />
+      <varInfo nodeId="1234545184329" varName="elements" />
     </scopeInfo>
   </root>
   <root nodeId="1234781216378">
@@ -564,8 +564,8 @@
     <scopeInfo nodeId="1237301624594" fileName="QueriesGenerated.java" startLine="555" startPosition="145" endLine="578" endPosition="16">
       <varInfo nodeId="1237302838621" varName="macDecl" />
       <varInfo nodeId="1237302900479" varName="target" />
-      <varInfo nodeId="1237303784395" varName="unixDecl" />
       <varInfo nodeId="1237302846138" varName="winDecl" />
+      <varInfo nodeId="1237303784395" varName="unixDecl" />
     </scopeInfo>
     <unitInfo nodeId="1237302941272" fileName="QueriesGenerated.java" startLine="569" startPosition="127" endLine="573" endPosition="5" unitName="jetbrains.mps.build.distrib.generator.template.main.QueriesGenerated$1" />
   </root>
