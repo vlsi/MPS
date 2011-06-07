@@ -19,7 +19,6 @@ import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -49,15 +48,7 @@ public class MergeContext {
         fillRootToChangesMap();
 
         myResultModel = CopyUtil.copyModel(base);
-        int pv = Sequence.fromIterable(Sequence.fromArray(new SModel[]{base, mine, repository})).<Integer>select(new ISelector<SModel, Integer>() {
-          public Integer select(SModel m) {
-            return m.getPersistenceVersion();
-          }
-        }).sort(new ISelector<Integer, Comparable<?>>() {
-          public Comparable<?> select(Integer v) {
-            return v;
-          }
-        }, false).first();
+        int pv = Math.max(base.getPersistenceVersion(), Math.max(mine.getPersistenceVersion(), repository.getPersistenceVersion()));
         myResultModel.setPersistenceVersion(pv);
         myNodeCopier = new NodeCopier(myResultModel);
       }
