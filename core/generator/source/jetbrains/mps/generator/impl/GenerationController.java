@@ -223,7 +223,7 @@ public class GenerationController implements ITaskPoolProvider {
     } finally {
       Logger.removeLoggingHandler(generationSession.getLoggingHandler());
       generationSession.discardTransients();
-      ModelAccess.requireWrite(new Runnable() {
+      ModelAccess.instance().requireWrite(new Runnable() {
         @Override
         public void run() {
           CleanupManager.getInstance().cleanup();

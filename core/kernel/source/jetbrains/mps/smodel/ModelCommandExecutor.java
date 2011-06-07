@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.command.UndoConfirmationPolicy;
-import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -99,15 +98,70 @@ public interface ModelCommandExecutor {
 
   void removeCommandListener(ModelAccessListener l);
 
+  /**
+   * Returns true iff the locking and the operation were successful.
+   * @param r
+   * @return
+   */
   boolean tryRead(Runnable r);
 
+  /**
+   * Returns the result of the computation, null if locking was unsuccessful.
+   * @param c
+   * @param <T>
+   * @return
+   */
   <T> T tryRead(Computable<T> c);
+
+  /**
+   * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
+   * Throws a RuntimeException if nothing helped.
+   * @param r
+   * @return
+   */
+  void requireRead(Runnable r);
+
+  /**
+   * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
+   * Throws a RuntimeException if nothing helped.
+   * Returns the result of the computation.
+   * @param c
+   * @return
+   */
+  <T> T requireRead(Computable<T> c);
 
   void flushEventQueue();
 
+  /**
+   * Returns true iff the locking and the operation were successful.
+   * @param r
+   * @return
+   */
   boolean tryWrite(Runnable r);
 
+  /**
+   * Returns the result of the computation, null if locking was unsuccessful.
+   * @param c
+   * @param <T>
+   * @return
+   */
   <T> T tryWrite(Computable<T> c);
+
+  /**
+   * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
+   * Throws a RuntimeException if nothing helped.
+   * @param r
+   */
+  void requireWrite(Runnable r);
+
+  /**
+   * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
+   * Throws a RuntimeException if nothing helped.
+   * Returns the result of the computation.
+   * @param c
+   * @return
+   */
+  <T> T requireWrite(Computable<T> c);
 
   boolean tryWriteInCommand(Runnable r, Project p);
 

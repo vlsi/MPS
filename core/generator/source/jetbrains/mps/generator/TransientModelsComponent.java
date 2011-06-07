@@ -107,7 +107,7 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   private void clearAll() {
-    ModelAccess.requireWrite(new Runnable() {
+    ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
         myModuleMap.clear();
@@ -125,7 +125,7 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   public synchronized void publishAll() {
-    ModelAccess.requireWrite(new Runnable() {
+    ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         for(TransientModelsModule m : myModuleMap.values()) {
           m.publishAll();
