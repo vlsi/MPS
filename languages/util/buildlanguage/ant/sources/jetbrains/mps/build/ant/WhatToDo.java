@@ -45,12 +45,12 @@ public class WhatToDo {
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
 
   public void addModuleFile(File file) {
-    assert file.exists() && !file.isDirectory();
+    assert file.exists() && !file.isDirectory() : "bad file: " + file.toString();
     myModules.add(file);
   }
 
   public void addModelFile(File file) {
-    assert file.exists() && !file.isDirectory();
+    assert file.exists() && !file.isDirectory() : "bad file: " + file.toString();
     myModels.add(file);
   }
 

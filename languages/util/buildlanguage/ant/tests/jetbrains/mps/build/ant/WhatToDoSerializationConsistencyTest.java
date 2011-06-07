@@ -29,9 +29,9 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   public void testCloningConcistencyWithProjects() {
     WhatToDo toDo = new WhatToDo();
 
-    toDo.addProjectFile(new File("platform/buildlanguage/BuildLanguage.mpr").getAbsoluteFile(), "blahblahblah1", "blahblahblah2");
-    toDo.addProjectFile(new File("platform/bash/jetbrains.mps.bash.mpr").getAbsoluteFile(), "blahblahblah1");
-    toDo.addProjectFile(new File("platform/regexp/regexp.mpr").getAbsoluteFile());
+    toDo.addProjectFile(new File("languages/util/buildlanguage/BuildLanguage.mpr").getAbsoluteFile(), "blahblahblah1", "blahblahblah2");
+    toDo.addProjectFile(new File("languages/util/bash/jetbrains.mps.bash.mpr").getAbsoluteFile(), "blahblahblah1");
+    toDo.addProjectFile(new File("languages/util/regexp/regexp.mpr").getAbsoluteFile());
 
     testToDoConsistency(toDo);
   }
@@ -39,9 +39,9 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   public void testCloningConcistencyWithModels() {
     WhatToDo toDo = new WhatToDo();
 
-    toDo.addModelFile(new File("platform/regexp/languageModels/editor.mps").getAbsoluteFile());
-    toDo.addModelFile(new File("platform/regexp/languageModels/structure.mps").getAbsoluteFile());
-    toDo.addModelFile(new File("platform/regexp/languageModels/typesystem.mps").getAbsoluteFile());
+    toDo.addModelFile(new File("languages/util/regexp/languageModels/editor.mps").getAbsoluteFile());
+    toDo.addModelFile(new File("languages/util/regexp/languageModels/structure.mps").getAbsoluteFile());
+    toDo.addModelFile(new File("languages/util/regexp/languageModels/typesystem.mps").getAbsoluteFile());
 
     testToDoConsistency(toDo);
   }
@@ -49,9 +49,9 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   public void testCloningConcistencyWithModules() {
     WhatToDo toDo = new WhatToDo();
 
-    toDo.addModuleFile(new File("platform/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd").getAbsoluteFile());
-    toDo.addModuleFile(new File("platform/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.regexp.sandbox.msd").getAbsoluteFile());
-    toDo.addModuleFile(new File("platform/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.regexp.unittest.msd").getAbsoluteFile());
+    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd").getAbsoluteFile());
+    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.regexp.sandbox.msd").getAbsoluteFile());
+    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.regexp.unittest.msd").getAbsoluteFile());
 
     testToDoConsistency(toDo);
   }
