@@ -65,7 +65,7 @@ public class LegacyRunConfigurationsProvider_CustomApplicationPlugin extends Bas
     for (RuntimeConfigurationProducer configurationCreator : ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).reversedList()) {
       creatorsExtensionPoint.unregisterExtension(configurationCreator);
     }
-    ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationKinds).clear();
+    ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).clear();
     ExtensionPoint<ConfigurationType> kindsExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
     for (ConfigurationType configurationKind : ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationKinds).reversedList()) {
       kindsExtensionPoint.unregisterExtension(configurationKind);
