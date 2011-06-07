@@ -66,7 +66,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
 
     myTabsComponent = TabComponentFactory.createTabsComponent(baseNode, possibleTabs, getComponent(), new NodeChangeCallback() {
       public void changeNode(SNode newNode) {
-        showNode(newNode, !newNode.isRoot());
+        showNodeInternal(newNode, !newNode.isRoot(), true);
       }
     });
 
@@ -103,10 +103,17 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   }
 
   public void showNode(SNode node, boolean select) {
+    showNodeInternal(node, select, false);
+  }
+
+  private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
     SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
     SNodePointer currentlyEditedNode = getCurrentlyEditedNode();
     boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.getNode());
-    myTabsComponent.setLastNode(new SNodePointer(node));
+
+    if (!fromTabs) {
+      myTabsComponent.setLastNode(new SNodePointer(node));
+    }
 
     if (rootChange) {
       if (myColorProvider != null) {

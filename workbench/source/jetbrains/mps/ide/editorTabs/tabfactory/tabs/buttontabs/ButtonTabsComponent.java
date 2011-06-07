@@ -31,14 +31,8 @@ import java.awt.Component;
 import java.util.*;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
-  private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
+  private List<ButtonEditorTab> myRealTabs = new ArrayList<ButtonEditorTab>();
   private JComponent myToolbar = null;
-
-  private final NodeChangeCallback myNodeChangeCallback = new NodeChangeCallback() {
-    public void changeNode(SNode newNode) {
-      onNodeChange(newNode);
-    }
-  };
 
   public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
     super(baseNode, possibleTabs, editor, callback, showGrayed);
@@ -54,12 +48,16 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
     List<Pair<EditorTabDescriptor,List<SNode>>> newContent = updateDocumentsAndNodes();
     for (Pair<EditorTabDescriptor,List<SNode>> p : newContent) {
-      myRealTabs.add(new EditorTab(this, myNodeChangeCallback, myRealTabs.size(), p.first, myBaseNode));
+      myRealTabs.add(new ButtonEditorTab(this, new NodeChangeCallback() {
+        public void changeNode(SNode newNode) {
+          onNodeChange(newNode);
+        }
+      }, myRealTabs.size(), p.first, myBaseNode));
     }
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(myAddAction);
-    for (EditorTab tab : myRealTabs) {
+    for (ButtonEditorTab tab : myRealTabs) {
       group.add(tab.getAction(myEditor));
     }
     if (myToolbar != null) {
@@ -72,7 +70,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   protected void nextTab() {
-    for (EditorTab tab : myRealTabs) {
+    for (ButtonEditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
       int index = myRealTabs.indexOf(tab);
       if (index == myRealTabs.size() - 1) {
@@ -85,7 +83,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     }
   }
 
-  public boolean isCurrent(EditorTab tab) {
+  public boolean isCurrent(ButtonEditorTab tab) {
     boolean current = false;
     for (SNode aspect : tab.getDescriptor().getNodes(myBaseNode.getNode())) {
       if (getLastNode() == null) continue;
@@ -98,7 +96,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   protected void prevTab() {
-    for (EditorTab tab : myRealTabs) {
+    for (ButtonEditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
 
       int index = myRealTabs.indexOf(tab);
@@ -117,18 +115,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
 
     myRealTabs.get(index).getAction(myEditor).actionPerformed(event);
-  }
-
-  protected boolean checkNodeAdded() {
-    outer:
-    for (EditorTabDescriptor d : myPossibleTabs) {
-      for (EditorTab tab : myRealTabs) {
-        if (tab.getDescriptor() == d) continue outer;
-      }
-
-      if (!d.getNodes(myBaseNode.getNode()).isEmpty()) return true;
-    }
-    return false;
   }
 
   protected boolean checkNodeRemoved(SNodePointer node) {

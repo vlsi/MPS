@@ -110,15 +110,13 @@ public class CreateGroupsBuilder {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             r1.run();
-            if (created[0] == null) return;
-            r2.run();
           }
         });
       } else {
         r1.run();
-        if (created[0] == null) return;
-        ModelAccess.instance().runWriteActionInCommand(r2);
       }
+      if (created[0] == null) return;
+      ModelAccess.instance().runWriteActionInCommand(r2);
     }
   }
 }

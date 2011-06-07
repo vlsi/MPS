@@ -29,7 +29,6 @@ import jetbrains.mps.ide.CustomizationSettings;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -54,11 +53,6 @@ public class MPSEditorOpener {
   public MPSEditorOpener(Project project) {
     myProject = project;
     assert myProject != null;
-  }
-
-  public SNode getBaseNode(IOperationContext context, SNode node) {
-    MPSEditorOpenHandler h = getOpenHandler(context);
-    return h.getBaseNode(context, node);
   }
 
   public IEditor createEditorFor(IOperationContext operationContext, SNode node) {
@@ -184,7 +178,7 @@ public class MPSEditorOpener {
     SNode baseNode = null;
 
     if (openBaseNode && isUseTabs()) {
-      baseNode = getBaseNode(context, root);
+      baseNode = getOpenHandler(context).getBaseNode(context, root);
     }
 
     if (baseNode == null) {
@@ -203,6 +197,7 @@ public class MPSEditorOpener {
     assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodePointer: " + new SNodePointer(baseNode).getNode();
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+    editorManager.closeFile(file);
     FileEditor fileEditor = editorManager.openFile(file, false)[0];
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;

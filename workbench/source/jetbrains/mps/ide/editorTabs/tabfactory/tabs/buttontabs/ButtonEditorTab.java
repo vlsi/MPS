@@ -31,14 +31,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class EditorTab {
+class ButtonEditorTab {
   private ButtonTabsComponent myTabComponent;
   private NodeChangeCallback myCallback;
   private int myIndex;
   private EditorTabDescriptor myDescriptor;
   private SNodePointer myBaseNode;
 
-  public EditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode) {
+  public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode) {
     myTabComponent = tabComponent;
     myCallback = callback;
     myIndex = index;
@@ -112,7 +112,7 @@ class EditorTab {
     public boolean isSelected(AnActionEvent e) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          return myTabComponent.isCurrent(EditorTab.this);
+          return myTabComponent.isCurrent(ButtonEditorTab.this);
         }
       });
     }

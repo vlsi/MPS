@@ -23,7 +23,6 @@ import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.PrevNextActionsDescriptor;
@@ -52,11 +51,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
   private List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
   private AsJBTabs myJbTabs;
 
-  private final NodeChangeCallback myNodeChangeCallback = new NodeChangeCallback() {
-    public void changeNode(SNode newNode) {
-      onNodeChange(newNode);
-    }
-  };
   private final Disposable myJbTabsDisposable = new Disposable() {
     public void dispose() {
     }
@@ -83,15 +77,22 @@ public class PlainTabsComponent extends BaseTabsComponent {
           public void run() {
             int index = myJbTabs.getSelectedIndex();
 
-            //todo show grayed
             SNode node = myRealTabs.get(index).getNode();
             if (node != null) {
-              myCallback.changeNode(node);
+              onNodeChange(node);
             }
           }
         });
       }
     });
+  }
+
+  public void setLastNode(SNodePointer node) {
+    //not to make infinite recursion when tab is clicked
+    if (node.equals(getLastNode())) return;
+
+    super.setLastNode(node);
+    selectNodeTab();
   }
 
   public void dispose() {
@@ -107,7 +108,12 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   private JComponent createAddNodeComponent() {
-    AddAspectAction action = new AddAspectAction(myBaseNode, myPossibleTabs, myNodeChangeCallback) {
+    AddAspectAction action = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
+      public void changeNode(SNode newNode) {
+        updateTabs();
+        onNodeChange(newNode);
+      }
+    }) {
       protected SNode getCurrentAspect() {
         return myRealTabs.get(myJbTabs.getSelectedIndex()).getNode();
       }
@@ -116,10 +122,12 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   protected void updateTabs() {
+    myRealTabs.clear();
     myJbTabs.removeAll();
 
     List<Pair<EditorTabDescriptor, List<SNode>>> newContent = updateDocumentsAndNodes();
 
+    //todo show grayed
     //todo sort
     //todo navi actions
     JLabel fill = new JLabel("");
@@ -127,6 +135,14 @@ public class PlainTabsComponent extends BaseTabsComponent {
       for (SNode node : p.second) {
         myRealTabs.add(new PlainEditorTab(node));
         myJbTabs.addTab(node.getPresentation(), fill);
+      }
+    }
+  }
+
+  private void selectNodeTab() {
+    for (PlainEditorTab t : myRealTabs) {
+      if (new SNodePointer(t.getNode()).equals(getLastNode())) {
+        myJbTabs.setSelectedIndex(myRealTabs.indexOf(t));
       }
     }
   }
@@ -143,17 +159,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
     if (i > 0) {
       myJbTabs.setSelectedIndex(i - 1);
     }
-  }
-
-  protected boolean checkNodeAdded() {
-    List<SNode> nodes = new ArrayList<SNode>();
-    for (EditorTabDescriptor d : myPossibleTabs) {
-      nodes.addAll(d.getNodes(myBaseNode.getNode()));
-    }
-    for (PlainEditorTab tab:myRealTabs){
-      nodes.remove(tab.getNode());
-    }
-    return !nodes.isEmpty();
   }
 
   protected boolean checkNodeRemoved(SNodePointer node) {

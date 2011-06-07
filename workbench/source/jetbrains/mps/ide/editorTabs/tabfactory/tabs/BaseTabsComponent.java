@@ -43,18 +43,17 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class BaseTabsComponent implements TabsComponent {
+  private final NodeChangeCallback myCallback;
   protected final SNodePointer myBaseNode;
   protected final Set<EditorTabDescriptor> myPossibleTabs;
   protected final JComponent myEditor;
-  protected final NodeChangeCallback myCallback;
   protected final boolean myShowGrayed;
-  protected final AnAction myAddAction;
+  protected final AnAction myAddAction;   //todo make private
 
   private List<Document> myEditedDocuments = new ArrayList<Document>();
   private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
   private SNodePointer myLastNode = null;
 
-  private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
   private ModelListener myTabRemovalListener = new MyTabRemovalListener();
 
   private JComponent myComponent;
@@ -66,7 +65,12 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myCallback = callback;
     myShowGrayed = showGrayed;
 
-    myAddAction = new AddAspectAction(myBaseNode, myPossibleTabs, myCallback) {
+    myAddAction = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
+      public void changeNode(SNode newNode) {
+        updateTabs();
+        onNodeChange(newNode);
+      }
+    }) {
       protected SNode getCurrentAspect() {
         return getLastNode().getNode();
       }
@@ -169,21 +173,10 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private void addListeners() {
     myTabRemovalListener.startListening();
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myTabAdditionListener);
   }
 
   private void removeListeners() {
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myTabAdditionListener);
     myTabRemovalListener.stopListening();
-  }
-
-  ///-------------tab insert events----------------
-
-  private class MyTabAdditionListener implements SModelCommandListener {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      if (!checkNodeAdded()) return;
-      updateTabs();
-    }
   }
 
   private class MyTabRemovalListener extends ModelListener {
@@ -192,10 +185,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
       updateTabs();
     }
   }
-
-  ///-------------tab update----------------
-
-  protected abstract boolean checkNodeAdded();
 
   protected abstract boolean checkNodeRemoved(SNodePointer node);
 
