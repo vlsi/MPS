@@ -274,6 +274,7 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
 
     private boolean validateInternal(BaseSModelDescriptor.ModelLoadResult result) throws SAXException {
       new StructureModificationProcessor(fieldlinkMap, fieldmodel).updateModelOnLoad();
+      fieldlinkMap.fillRoleIdsComponent();
       result.setState(ModelLoadingState.FULLY_LOADED);
       fieldmodel.setLoading(false);
       return true;

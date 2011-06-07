@@ -36,6 +36,10 @@ public class RoleIdsComponent {
     ourHandler = handler;
   }
 
+  public static boolean isEnabled() {
+    return ourHandler != null;
+  }
+
   public static void conceptRead(SNode node, SNodeId conceptId) {
     if (ourHandler != null) {
       ourHandler.conceptRead(node.getConceptFqName(), conceptId);

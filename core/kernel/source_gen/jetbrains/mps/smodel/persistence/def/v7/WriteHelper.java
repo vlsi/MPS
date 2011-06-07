@@ -12,11 +12,9 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -75,20 +73,6 @@ public class WriteHelper {
   }
 
   @NotNull
-  private String genConceptReferenceString(@Nullable SNode concept, @NotNull String fqName) {
-    // return fqName prefixed with "." if we can't find model or name of concept 
-    String name = SPropertyOperations.getString(concept, "name");
-    if (name == null) {
-      return MODEL_SEPARATOR_CHAR + fqName;
-    }
-    String index = MapSequence.fromMap(myModelIndex).get(SNodeOperations.getModel(concept).getSModelReference());
-    if (index == null) {
-      return MODEL_SEPARATOR_CHAR + fqName;
-    }
-    return new StringBuilder().append(index).append(MODEL_SEPARATOR_CHAR).append(name).toString();
-  }
-
-  @NotNull
   public String genReferenceId(@NotNull SModelReference ref, @NotNull SNodeId nodeId) {
     return genReferenceString(ref, nodeId.toString());
   }
@@ -109,8 +93,8 @@ public class WriteHelper {
   }
 
   public String genTypeId(@NotNull SNode node) {
-    SNodeId conceptId = RoleIdsComponent.getConceptId(node);
-    if (conceptId != null) {
+    if (RoleIdsComponent.isEnabled()) {
+      SNodeId conceptId = RoleIdsComponent.getConceptId(node);
       return genReferenceId(getModelReferenceForConcept(node), conceptId);
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node);
@@ -132,8 +116,8 @@ public class WriteHelper {
     if (SNodeOperations.getParent(node) == null) {
       return null;
     }
-    SNodeId roleId = RoleIdsComponent.getNodeRoleId(node);
-    if (roleId != null) {
+    if (RoleIdsComponent.isEnabled()) {
+      SNodeId roleId = RoleIdsComponent.getNodeRoleId(node);
       return genReferenceId(getModelReferenceForConcept(SNodeOperations.getParent(node)), roleId);
     }
     SNode linkDecl = SNodeOperations.getContainingLinkDeclaration(node);
@@ -144,8 +128,8 @@ public class WriteHelper {
   }
 
   public String genRoleId(@NotNull SReference ref) {
-    SNodeId roleId = RoleIdsComponent.getReferenceRoleId(ref);
-    if (roleId != null) {
+    if (RoleIdsComponent.isEnabled()) {
+      SNodeId roleId = RoleIdsComponent.getReferenceRoleId(ref);
       return genReferenceId(getModelReferenceForConcept(ref.getSourceNode()), roleId);
     }
     SNode linkDecl = SLinkOperations.findLinkDeclaration(ref);
@@ -160,8 +144,8 @@ public class WriteHelper {
   }
 
   public String genNameId(@NotNull SNode node, @NotNull String prop) {
-    SNodeId propertyId = RoleIdsComponent.getPropertyNameId(node, prop);
-    if (propertyId != null) {
+    if (RoleIdsComponent.isEnabled()) {
+      SNodeId propertyId = RoleIdsComponent.getPropertyNameId(node, prop);
       return genReferenceId(getModelReferenceForConcept(node), propertyId);
     }
     SNode propDecl = node.getPropertyDeclaration(prop);
