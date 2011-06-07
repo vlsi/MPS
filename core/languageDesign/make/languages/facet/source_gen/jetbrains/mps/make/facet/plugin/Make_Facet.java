@@ -139,6 +139,11 @@ public class Make_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
   }
 
   public static class Target_pm9z_b implements ITarget {
@@ -205,6 +210,11 @@ public class Make_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return null;
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
     }
   }
 }

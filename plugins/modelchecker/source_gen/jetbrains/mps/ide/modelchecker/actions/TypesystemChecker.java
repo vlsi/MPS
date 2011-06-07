@@ -16,7 +16,6 @@ import java.util.Set;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.errors.MessageStatus;
 
 public class TypesystemChecker extends SpecificChecker {
   public TypesystemChecker() {
@@ -35,24 +34,11 @@ public class TypesystemChecker extends SpecificChecker {
       for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeWithErrors)) {
         SNode node = nodeErrorReporters.o1;
         for (IErrorReporter errorReporter : ListSequence.fromList(nodeErrorReporters.o2)) {
-          addIssue(results, node, errorReporter.reportError(), getResultCategory(errorReporter.getMessageStatus()), "type system", null);
+          addIssue(results, node, errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), "type system", null);
         }
       }
       typeCheckingContext.dispose();
     }
     return results;
-  }
-
-  private static String getResultCategory(MessageStatus messageStatus) {
-    switch (messageStatus) {
-      case ERROR:
-        return ModelChecker.SEVERITY_ERROR;
-      case WARNING:
-        return ModelChecker.SEVERITY_WARNING;
-      case OK:
-        return ModelChecker.SEVERITY_INFO;
-      default:
-        return ModelChecker.SEVERITY_ERROR;
-    }
   }
 }

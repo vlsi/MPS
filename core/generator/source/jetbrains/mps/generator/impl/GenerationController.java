@@ -31,6 +31,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
@@ -222,7 +223,12 @@ public class GenerationController implements ITaskPoolProvider {
     } finally {
       Logger.removeLoggingHandler(generationSession.getLoggingHandler());
       generationSession.discardTransients();
-      CleanupManager.getInstance().cleanup();
+      ModelAccess.requireWrite(new Runnable() {
+        @Override
+        public void run() {
+          CleanupManager.getInstance().cleanup();
+        }
+      });
 
       progressHelper.finishTask();
 

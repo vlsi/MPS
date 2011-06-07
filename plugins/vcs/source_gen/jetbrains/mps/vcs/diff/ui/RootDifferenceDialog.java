@@ -16,15 +16,16 @@ import java.awt.Frame;
 import javax.swing.JSplitPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.SModel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
@@ -71,9 +72,10 @@ public class RootDifferenceDialog extends BaseDialog {
     splitPane.setResizeWeight(0.7);
 
     RootDifferenceDialog.MyGoToNeighbourRootActions neighbourActions = new RootDifferenceDialog.MyGoToNeighbourRootActions();
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(neighbourActions.previous(), neighbourActions.next());
+    NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupBuilders, myNewEditor.getMainEditor());
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction());
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
-    toolbar.updateActionsImmediately();
+    neighbourTraverser.setActionToolbar(toolbar);
 
     myContainer.add(toolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
@@ -100,6 +102,12 @@ public class RootDifferenceDialog extends BaseDialog {
   }
 
   private void highlightAllChanges() {
+    ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
+      public void visit(ChangeGroupBuilder b) {
+        b.invalidate();
+      }
+    });
+
     for (ModelChange change : ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId))) {
       higlightChange(myOldEditor, myModelDialog.getChangeSet().getOldModel(), change);
       higlightChange(myNewEditor, myModelDialog.getChangeSet().getNewModel(), change);
@@ -142,12 +150,6 @@ public class RootDifferenceDialog extends BaseDialog {
 
     myNewEditor.getMainEditor().rebuildEditorContent();
     myOldEditor.getMainEditor().rebuildEditorContent();
-
-    ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
-      public void visit(ChangeGroupBuilder b) {
-        b.invalidate();
-      }
-    });
 
     highlightAllChanges();
   }

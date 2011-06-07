@@ -16,7 +16,11 @@
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 public enum RuleType {
-  STRICTLY_BEFORE("strictly_before", "<"), STRICTLY_TOGETHER("strictly_together", "="), BEFORE_OR_TOGETHER("before_or_together", "<=");
+  STRICTLY_BEFORE("strictly_before", "<"),
+  STRICTLY_TOGETHER("strictly_together", "="),
+  BEFORE_OR_TOGETHER("before_or_together", "<="),
+  AFTER_OR_TOGETHER("after_or_together", ">="),
+  STRICTLY_AFTER("strictly_after", ">");
 
   private String myType;
   private String myPresentation;

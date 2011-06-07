@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -31,6 +30,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.output.OutputViewTool;
 
 import javax.swing.JOptionPane;
@@ -69,7 +69,7 @@ public class PartitioningHelper {
 
       List<Pair<MappingPriorityRule, String>> strings = GenerationPartitioningUtil.toStrings(rules, true);
       for (Pair<MappingPriorityRule, String> string : strings) {
-        Message msg = new Message(MessageKind.INFORMATION, " " + string.second);
+        Message msg = new Message(MessageKind.INFORMATION, " " + string.o2);
         msg.setHintObject(generator.getReference());
         messagesView.add(msg);
       }
@@ -81,8 +81,8 @@ public class PartitioningHelper {
       messagesView.add(new Message(MessageKind.ERROR, PartitioningHelper.class, "Conflicting mapping priority rules encountered:"));
       List<Pair<MappingPriorityRule, String>> messagesFull = plan.getConflictingPriorityRulesAsStrings();
       for (Pair<MappingPriorityRule, String> message : messagesFull) {
-        Message msg = new Message(MessageKind.ERROR, PartitioningHelper.class, message.second);
-        TemplateModule templateModule = myRule2Generator.get(message.first);
+        Message msg = new Message(MessageKind.ERROR, PartitioningHelper.class, message.o2);
+        TemplateModule templateModule = myRule2Generator.get(message.o1);
         msg.setHintObject(templateModule.getReference());
         messagesView.add(msg);
       }

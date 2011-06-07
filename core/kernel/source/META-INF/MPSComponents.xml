@@ -101,6 +101,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.CustomizationSettings</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.tempoptions.InternalOptionsSettings</implementation-class>
     </component>
 

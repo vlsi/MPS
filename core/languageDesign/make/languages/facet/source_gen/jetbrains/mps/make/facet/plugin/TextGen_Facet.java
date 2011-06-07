@@ -223,6 +223,15 @@ public class TextGen_Facet implements IFacet {
       return cls.cast(new Parameters());
     }
 
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((TextGen_Facet.Target_21gswx_a.Parameters) t).pathToFile(((TextGen_Facet.Target_21gswx_a.Parameters) copyFrom).pathToFile());
+        ((TextGen_Facet.Target_21gswx_a.Parameters) t).failIfNoTextgen(((TextGen_Facet.Target_21gswx_a.Parameters) copyFrom).failIfNoTextgen());
+      }
+      return t;
+    }
+
     public static class Parameters extends MultiTuple._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> {
       public Parameters() {
         super();
@@ -351,6 +360,11 @@ public class TextGen_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return null;
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
     }
   }
 }

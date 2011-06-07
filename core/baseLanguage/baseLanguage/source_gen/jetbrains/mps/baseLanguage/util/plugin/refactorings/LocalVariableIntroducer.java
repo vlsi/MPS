@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -38,28 +37,24 @@ public class LocalVariableIntroducer {
       AnAction thisOnly = new AnAction("Replace this occurence only") {
         public void actionPerformed(AnActionEvent e) {
           myRefactoring.setReplacingAll(false);
-          askFinal();
+          execute();
         }
       };
       AnAction allOccurences = new AnAction("Replace all " + NameUtil.formatNumericalString(ListSequence.fromList(myRefactoring.getDuplicates()).count() + 1, "occurence")) {
         public void actionPerformed(AnActionEvent e) {
           myRefactoring.setReplacingAll(true);
-          askFinal();
+          execute();
         }
       };
       ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Multiple occurences found", ActionUtils.groupFromActions(thisOnly, allOccurences), dataContext, null, false);
       popup.show(getRelativePoint());
     } else {
-      askFinal();
+      execute();
     }
   }
 
-  private void askFinal() {
-    final int answer = Messages.showYesNoCancelDialog(myEditorComponent, "Declare final?", "Introduce Variable", Messages.getQuestionIcon());
-    if (answer == Messages.CANCEL || answer == -1) {
-      return;
-    }
-    myRefactoring.setIsFinal(answer == Messages.YES);
+  private void execute() {
+    myRefactoring.setIsFinal(false);
     myRefactoring.setName(ListSequence.fromList(myRefactoring.getExpectedNames()).first());
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {

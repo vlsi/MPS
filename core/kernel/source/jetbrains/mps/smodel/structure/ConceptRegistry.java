@@ -112,6 +112,19 @@ public class ConceptRegistry implements ApplicationComponent {
           constraintsDescriptors.put(fqName, getDescriptor(languageRuntime.getConstraintsAspect(), fqName, LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER));
           break;
       }
+    } else {
+      // todo: MPS-12650, no way to get NPE
+      switch (languageAspect) {
+        case STRUCTURE:
+          structureDescriptors.put(fqName, LanguageRuntimeInterpreted.STRUCTURE_PROVIDER.getDescriptor(fqName));
+          break;
+        case BEHAVIOR:
+          behaviorDescriptors.put(fqName, LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER.getDescriptor(fqName));
+          break;
+        case CONSTRAINTS:
+          constraintsDescriptors.put(fqName, LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER.getDescriptor(fqName));
+          break;
+      }
     }
 //      }
 //    });

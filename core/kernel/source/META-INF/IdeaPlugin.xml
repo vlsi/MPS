@@ -11,6 +11,7 @@
     <xi:include href="/META-INF/LangExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
 
     <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
+    <extensionPoint name="mps.SpecificCheckers" interface="jetbrains.mps.ide.INodeChecker"/>
     <extensionPoint name="mps.ModelValidator" interface="jetbrains.mps.ide.generator.ModelValidator"/>
     <extensionPoint name="mps.GenerationHandler"
                     interface="jetbrains.mps.ide.generator.GeneratorUIFacade$GenerationHandlerProvider"/>

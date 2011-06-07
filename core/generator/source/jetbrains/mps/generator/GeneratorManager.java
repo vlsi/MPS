@@ -89,42 +89,52 @@ public class GeneratorManager {
                                 final IMessageHandler messages,
                                 final GenerationOptions options) {
     final boolean[] result = new boolean[1];
-    int i;
-    for (i = 0; i < 3 && !ModelAccess.instance().tryWrite(new Runnable() {
+    final TransientModelsComponent transientModelsComponent = myProject.getComponent(TransientModelsComponent.class);
+    transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());
+
+    options.getGenerationTracer().startTracing();
+
+    ModelAccess.requireWrite(new Runnable() {
       public void run() {
-        TransientModelsComponent transientModelsComponent = myProject.getComponent(TransientModelsComponent.class);
-        transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());
-
-        options.getGenerationTracer().startTracing();
         fireBeforeGeneration(inputModels, options, invocationContext);
+      }
+    });
 
-        GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
+    GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
-        final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, progress);
+    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, progress);
+    ModelAccess.requireRead(new Runnable() {
+      @Override
+      public void run() {
         result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
-            boolean success = gc.generate();
+            final boolean success = gc.generate();
             if(success) {
-              fireModelsGenerated(Collections.unmodifiableList(inputModels), success);
+              try {
+                ModelAccess.requireWrite(new Runnable() {
+                  public void run() {
+                    fireModelsGenerated(Collections.unmodifiableList(inputModels), success);
+                  }
+                });
+              }
+              catch (RuntimeException e) {LOG.error(e);}
             }
             return success;
           }
         });
-        options.getGenerationTracer().finishTracing();
-        fireAfterGeneration(inputModels, options, invocationContext);
+      }
+    });
 
+    options.getGenerationTracer().finishTracing();
+
+    ModelAccess.requireWrite(new Runnable() {
+      public void run() {
+        fireAfterGeneration(inputModels, options, invocationContext);
         transientModelsComponent.publishAll();
         CleanupManager.getInstance().cleanup();
       }
-    }); ++i) {
-      try {
-        Thread.sleep((1<<i)*100);
-      } catch (InterruptedException ignore) {}
-    }
-    if (i >= 3) {
-      throw new RuntimeException("Failed to acquire write lock");
-    }
+    });
 
     generationHandler.generationCompleted();
     return result[0];

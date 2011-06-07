@@ -46,6 +46,9 @@ public class JarEntryFile implements IFileEx {
     if (index != -1) {
       result = result.substring(index + 1);
     }
+    if (myEntryPath.isEmpty()) {
+      return "/";
+    }
     return result;
   }
 
@@ -83,7 +86,7 @@ public class JarEntryFile implements IFileEx {
   }
 
   public String getPath() {
-    return myJarFile.getAbsolutePath() + "!" + myEntryPath;
+    return myJarFile.getAbsolutePath() + "!/" + myEntryPath;
   }
 
   @Override

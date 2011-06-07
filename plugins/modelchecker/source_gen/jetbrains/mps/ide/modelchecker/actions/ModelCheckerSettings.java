@@ -108,6 +108,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     if (isCheckTypesystem()) {
       ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
     }
+    ListSequence.fromList(specificCheckers).addElement(new LangSpecificChecker());
     return specificCheckers;
   }
 

@@ -54,6 +54,14 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "type", "before_or_together", "strictly_before");
   }
 
+  public static boolean baseMappingRule_Condition_2643213347103793267(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "type", "strictly_after", "strictly_before");
+  }
+
+  public static boolean baseMappingRule_Condition_2643213347103793295(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "type", "after_or_together", "strictly_before");
+  }
+
   public static boolean baseMappingRule_Condition_6655394244919371015(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "generateTemplates");
   }
@@ -238,6 +246,22 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "right", true);
   }
 
+  public static SNode sourceNodeQuery_2643213347103793325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "left", true);
+  }
+
+  public static SNode sourceNodeQuery_2643213347103793333(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "right", true);
+  }
+
+  public static SNode sourceNodeQuery_2643213347103793342(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "left", true);
+  }
+
+  public static SNode sourceNodeQuery_2643213347103793350(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "right", true);
+  }
+
   public static SNode sourceNodeQuery_1820665478710839976(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "left", true);
   }
@@ -273,7 +297,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0ub(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0ac(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -329,7 +353,7 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0ub(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0ac(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

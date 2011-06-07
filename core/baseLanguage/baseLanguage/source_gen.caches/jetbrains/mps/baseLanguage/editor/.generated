@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-58exps2fst0hzd8avno9h9m7szasa85">
+<dependencies version="2" modelHash="e2onf16wieb7dyjjiwamil6p5xr3sv2">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.cellProviders(MPS.Classpath/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.generator.internal(MPS.Classpath/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
@@ -20,10 +20,12 @@
   <dep model="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="825rp84upt1y6v11n9p1wxcrc6ht5b7" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-2obg04a8cz181kb3dba004vwgdf7aie" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-90p12bynkqvtwu25su0j7ert7fwqv0b" />
   <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="1szkxv6fvytkejmw0tts5mha3gajyhc" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="99ar6qjrdpx1l8n1cch4x01p86974bw" />
@@ -59,7 +61,7 @@
   <dep model="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" hash="trpas9pyih57q4pqegnjsoz7zwcqgf" />
   <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="-rwmllia2y1s03q7hf4mke0314kbhj6" />
   <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" hash="451v3ayuc2va1znurkpxo0cj56judjl" />
-  <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" hash="7tdn6zvp4xj8sjzmgi81mnom2bqqfcc" />
+  <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" hash="8qof4qiu220brd7f3rdju3bwezvvp34" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-c8o7egrhhlddj60rzgg330ecnpq5k8d" />
   <common hash="-e6v8ca7nqx69hsp3n2jxlj61lap7dle" dependsOnNodes="true">
@@ -240,7 +242,6 @@
     <dep root="1241450665683" />
     <dep root="1461424660015405640" />
     <dep root="1830039279190442603" />
-    <dep root="2404148721319673822" />
     <dep root="2580416627845338978" />
     <dep root="2948164764175055171" />
     <dep root="3066917033203112511" />
@@ -292,13 +293,15 @@
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
-  <source id="1073416106125" name="StatementList_Editor" hash="cp7lonjr2xmad1tgr1j5o1shs1knft4">
+  <source id="1073416106125" name="StatementList_Editor" hash="3qk7t8rh3wt1auukrp1t00z9homhlg">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -318,7 +321,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StatementList_Editor.java" />
   </source>
-  <source id="1074794490343" name="ClassConcept_Editor" hash="-dvnakik6pjmccveldkq284pxka7bges">
+  <source id="1074794490343" name="ClassConcept_Editor" hash="ekndhlvb26mjao8v60c1565yu4bndnq">
     <dep root="1109280020740" />
     <dep root="1178547675197" />
     <dep root="1186415538255" />
@@ -354,10 +357,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClassConcept_Editor.java" />
   </source>
-  <source id="1075139052656" name="ConstructorDeclaration_Editor" hash="-c4qq03q3ffa0h7lf7uptdxeol0acdu6">
+  <source id="1075139052656" name="ConstructorDeclaration_Editor" hash="eidwv94pdneu6a6261y5z1yve4k8tsd">
     <dep root="1109280020740" />
     <dep root="1164890912564" />
     <dep root="1178547675197" />
@@ -393,7 +397,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConstructorDeclaration_Editor.java" />
   </source>
-  <source id="1075233459437" name="InstanceMethodDeclaration_Editor" hash="ed7vlpis9zle0xz4t5x3eizthjs4vns">
+  <source id="1075233459437" name="InstanceMethodDeclaration_Editor" hash="6ohuoxp2t2knve1v3stl343jy5881yd">
     <dep root="1109280020740" />
     <dep root="1164890912564" />
     <dep root="1178547675197" />
@@ -431,10 +435,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InstanceMethodDeclaration_Editor.java" />
   </source>
-  <source id="1075287750850" name="StaticMethodDeclaration_Editor" hash="4ih4ozt3orda5zenuzqq06gn7ppvwd8">
+  <source id="1075287750850" name="StaticMethodDeclaration_Editor" hash="-12jkbyv3peru9gme7ogutzqzxqv6e6">
     <dep root="1109280020740" />
     <dep root="1164890912564" />
     <dep root="1178547675197" />
@@ -468,16 +473,16 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StaticMethodDeclaration_Editor.java" />
   </source>
-  <source id="1075289941062" name="FieldDeclaration_Editor" hash="-31qxw6hgly2p8zpoaueeluek01qzziz">
+  <source id="1075289941062" name="FieldDeclaration_Editor" hash="-a9sn5h2isquzxvv44jknyczzjd90mb3">
     <dep root="1178547675197" />
     <dep root="1181823106174" />
     <dep root="1186415538255" />
     <dep root="1223637210494" />
     <dep root="7113443356592971504" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -497,10 +502,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FieldDeclaration_Editor.java" />
   </source>
-  <source id="1075302295734" name="ParameterDeclaration_Editor" hash="76bxam5aphta96w4o7pkrhvi7vynrz8">
+  <source id="1075302295734" name="ParameterDeclaration_Editor" hash="8j9wmpstxwyo50d7w8h9uya750jn547">
     <dep root="1181823106174" />
     <dep root="1186415538255" />
     <dep root="1221569820786" />
@@ -528,15 +534,15 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ParameterDeclaration_Editor.java" />
   </source>
-  <source id="1075303160500" name="LocalVariableDeclaration_Editor" hash="5gq7aeaqk58gurejnr0a6fxzgvvm2i3">
+  <source id="1075303160500" name="LocalVariableDeclaration_Editor" hash="-bfay4zdjxnibeyprfdx8899qnooxyzl">
     <dep root="1144367099981" />
     <dep root="1181823106174" />
     <dep root="1186415538255" />
     <dep root="1221569820786" />
-    <dep root="2404148721319673822" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -562,10 +568,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LocalVariableDeclaration_Editor.java" />
   </source>
-  <source id="1075308772515" name="StaticMethodCall_Editor" hash="386wmxmxhxl5qo1c13quh33u39v3qfg">
+  <source id="1075308772515" name="StaticMethodCall_Editor" hash="-4tmtqmsawkqy4y1o50mn8vqv3qntq24">
     <dep root="1172061831827" />
     <dep root="1173990860683" />
     <dep root="1186415538255" />
@@ -622,7 +629,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BaseAssignmentExpression_Editor.java" />
   </source>
-  <source id="1075374082688" name="IntegerConstant_Editor" hash="a0c4z4mpr4u2cxryln71zepidgsd2xt">
+  <source id="1075374082688" name="IntegerConstant_Editor" hash="-d2bo473eeg4lbegtpsnqwg1aso5wsh0">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -640,7 +647,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IntegerConstant_Editor.java" />
   </source>
-  <source id="1075374106049" name="BooleanConstant_Editor" hash="-2ldq117x9i7672j7u9n7ibgk01umguf">
+  <source id="1075374106049" name="BooleanConstant_Editor" hash="azzq3b7rovh951pamsnkr8zs0v8egft">
     <dep root="1186415538255" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -656,7 +663,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BooleanConstant_Editor.java" />
   </source>
-  <source id="1075374365333" name="ThisExpression_Editor" hash="-5xri3grau4nbspd53srh0ddd2btd1qs">
+  <source id="1075374365333" name="ThisExpression_Editor" hash="d0qwe0smqytm4b41r1cgez8cffstimu">
     <dep root="1182955931370" />
     <dep root="1186415538255" />
     <dep root="3380441905079579782" />
@@ -681,8 +688,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ThisExpression_Editor.java" />
   </source>
-  <source id="1075376169046" name="Expression_Editor" hash="-76hknle5kz87vqjpa56rbwur94ne8u5">
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
+  <source id="1075376169046" name="Expression_Editor" hash="81beu48mzopqxq2imoz1ovw77t494lf">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
@@ -702,10 +708,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Expression_Editor.java" />
   </source>
-  <source id="1075379141234" name="ExpressionStatement_Editor" hash="38x67eo6s31cwj549q2uxdwm27ffz57">
+  <source id="1075379141234" name="ExpressionStatement_Editor" hash="2up66w48qwljirn44p267cakaidjmk">
     <dep root="1140226376803" />
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -725,7 +732,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExpressionStatement_Editor.java" />
   </source>
-  <source id="1075379419312" name="IfStatement_Editor" hash="-5nfpahiwcf5k5y7gok4jfkfwzz82r5s">
+  <source id="1075379419312" name="IfStatement_Editor" hash="6bossqfgyfqai8p9wxmwlo1xtuslro5">
     <dep root="1177552153770" />
     <dep root="1186415538255" />
     <dep root="1219402070982" />
@@ -758,7 +765,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IfStatement_Editor.java" />
   </source>
-  <source id="1075380566828" name="LocalVariableDeclarationStatement_Editor" hash="81xz1izwlqfyim71cxgc8ms0am21rw5">
+  <source id="1075380566828" name="LocalVariableDeclarationStatement_Editor" hash="5eyym17hecj1sjlk9s4fjo51y3l2ccr">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -775,7 +782,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LocalVariableDeclarationStatement_Editor.java" />
   </source>
-  <source id="1075380723765" name="ReturnStatement_Editor" hash="6fkybtkzl0foqo4czamv6rtcjrdlitw">
+  <source id="1075380723765" name="ReturnStatement_Editor" hash="5og5gva4bh5rxp979u5rt0634z75vc5">
     <dep root="1152311212234" />
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -799,7 +806,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReturnStatement_Editor.java" />
   </source>
-  <source id="1075381298843" name="Statement_Editor" hash="d5wydj1k6w4n8e2upjcnm3q2zwku5zq">
+  <source id="1075381298843" name="Statement_Editor" hash="-75po24gji2s4mu3666p4t4xygyx4yhq">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -816,7 +823,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Statement_Editor.java" />
   </source>
-  <source id="1079605716538" name="NullLiteral_Editor" hash="93usyda5du37q0h35xokzcwcxj7vqn">
+  <source id="1079605716538" name="NullLiteral_Editor" hash="aw40f6ols45cxp8zzlhd6lswi4tntf2">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -834,7 +841,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NullLiteral_Editor.java" />
   </source>
-  <source id="1079622224907" name="StringLiteral_Editor" hash="-8m1wcnhru9ipm7tjrzl07jw6fw3fsj7">
+  <source id="1079622224907" name="StringLiteral_Editor" hash="-5rrtnqiu0r7x52osgua94yn7iwnm103">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -853,7 +860,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StringLiteral_Editor.java" />
   </source>
-  <source id="1080902646656" name="CastExpression_Editor" hash="-cabaout3xzw2zecrcvmlwlt3421qrd5">
+  <source id="1080902646656" name="CastExpression_Editor" hash="75cjprjx97k5cg15jim38r6ptjcezcd">
     <dep root="1144185359094" />
     <dep root="1158938292640" />
     <dep root="1186415538255" />
@@ -875,7 +882,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CastExpression_Editor.java" />
   </source>
-  <source id="1081257049503" name="InstanceOfExpression_Editor" hash="-8pe9zixweuigtidew9out59rc3lbjrq">
+  <source id="1081257049503" name="InstanceOfExpression_Editor" hash="-4yvtkgsjexp5reupveim2l91f83v6uz">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -894,7 +901,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InstanceOfExpression_Editor.java" />
   </source>
-  <source id="1081264157973" name="WhileStatement_Editor" hash="-4pccaomvxdawtxz43tai4zovkvivif5">
+  <source id="1081264157973" name="WhileStatement_Editor" hash="2urmkqg65m5zwwok6k6yzfv3fn222ka">
     <dep root="1186415538255" />
     <dep root="1199465658351" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -918,7 +925,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="WhileStatement_Editor.java" />
   </source>
-  <source id="1081790432906" name="SuperConstructorInvocation_Editor" hash="a4w7byay9j1ogd9u5mutmn81kj2dyvk">
+  <source id="1081790432906" name="SuperConstructorInvocation_Editor" hash="-1prs3utd3bwmopjd8lufc3a3dw5lo7q">
     <dep root="1186415538255" />
     <dep root="4755152624708725521" />
     <dep root="893779103613531782" />
@@ -942,7 +949,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SuperConstructorInvocation_Editor.java" />
   </source>
-  <source id="1081792356328" name="SuperMethodCall_Editor" hash="shgluhpqhld0xmhmu0pcru6ma6gbba">
+  <source id="1081792356328" name="SuperMethodCall_Editor" hash="cohme11zlwhic76xt7v7w4ytqbdsmyx">
     <dep root="1186415538255" />
     <dep root="4972241301747172167" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -972,7 +979,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SuperMethodCall_Editor.java" />
   </source>
-  <source id="1081792505531" name="StaticFieldReference_Editor" hash="-7mbrsc29imuhhrha46d1vnhf66tr7fg">
+  <source id="1081792505531" name="StaticFieldReference_Editor" hash="-96zhqtjcdfufk7xp7dexykhlr4sx53a">
     <dep root="1172013289681" />
     <dep root="1186415538255" />
     <dep root="7812779912049781470" />
@@ -1002,7 +1009,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StaticFieldReference_Editor.java" />
   </source>
-  <source id="1081880010406" name="ParenthesizedExpression_Editor" hash="-6e79s9vt4dvadd3f2yfwvuf4vrn2pdm">
+  <source id="1081880010406" name="ParenthesizedExpression_Editor" hash="-325z9dllgfdwzcqpb58ttguv0sx0v5c">
     <dep root="1166027091157" />
     <dep root="1166102189373" />
     <dep root="1166110777830" />
@@ -1027,7 +1034,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ParenthesizedExpression_Editor.java" />
   </source>
-  <source id="1081929659485" name="NotExpression_Editor" hash="-65s5j4o3njp04tuxgeryu41d5uebjm1">
+  <source id="1081929659485" name="NotExpression_Editor" hash="1i03po4vu7e3qm3lmiyfk2p082ng6xt">
     <dep root="1140733182387" />
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -1050,7 +1057,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NotExpression_Editor.java" />
   </source>
-  <source id="1081933895507" name="BreakStatement_Editor" hash="-44cz8qn4qrrei1op4zr736ziegdg0az">
+  <source id="1081933895507" name="BreakStatement_Editor" hash="8uu0gf7cqbrx5h214ssy1m3xt2ukpvq">
     <dep root="1186415538255" />
     <dep root="1199466353637" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -1079,14 +1086,14 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BreakStatement_Editor.java" />
   </source>
-  <source id="1081942381484" name="Type_Editor" hash="-72k7db1ra63bs8gftmwi9qanf1dhll">
+  <source id="1081942381484" name="Type_Editor" hash="1drxsls37tp0mwgwp7rdhvaa4q2jndl">
     <dep root="1186415538255" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -1101,10 +1108,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Type_Editor.java" />
   </source>
-  <source id="1082114095844" name="ContinueStatement_Editor" hash="5nz04vwm1lr5jo8dbpqh62d6gvqoctf">
+  <source id="1082114095844" name="ContinueStatement_Editor" hash="by643mcrfmftukveoh7uk880uvkkde7">
     <dep root="1186415538255" />
     <dep root="1199470218836" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -1133,11 +1141,12 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ContinueStatement_Editor.java" />
   </source>
-  <source id="1082485734863" name="BlockStatement_Editor" hash="-9ustc4b4isga90s3ttsxabyy5e1hb2q">
+  <source id="1082485734863" name="BlockStatement_Editor" hash="-5hl7ljv1bavsvej4n4jz6ppu160d5c">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -1156,7 +1165,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BlockStatement_Editor.java" />
   </source>
-  <source id="1083262769250" name="EnumConstantReference_Editor" hash="2b7rp7c6po3zuaaqnn8df7xqezy1pt8">
+  <source id="1083262769250" name="EnumConstantReference_Editor" hash="a8hleadq9g1owg87jrcsr65d842tczt">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -1178,14 +1187,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EnumConstantReference_Editor.java" />
   </source>
-  <source id="1084188901668" name="StaticFieldDeclaration_Editor" hash="2zabtw3ol7hw0gxejzqgs5ofdohe55i">
+  <source id="1084188901668" name="StaticFieldDeclaration_Editor" hash="-xj2a1qhccs6sueahlgpz64wyinstjk">
     <dep root="1178547675197" />
     <dep root="1181823106174" />
     <dep root="1186415538255" />
     <dep root="1223637210494" />
     <dep root="7113443356592971504" />
     <dep root="7743745654901224334" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -1207,10 +1215,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StaticFieldDeclaration_Editor.java" />
   </source>
-  <source id="1085483277582" name="EnumClass_Editor" hash="-aampspp86s649iy8lmkys69n6p13w6f">
+  <source id="1085483277582" name="EnumClass_Editor" hash="-19cbxxytuij03ocu39vjonvavkll7xf">
     <dep root="1109280020740" />
     <dep root="1178547675197" />
     <dep root="1186415538255" />
@@ -1245,7 +1254,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EnumClass_Editor.java" />
   </source>
-  <source id="1085485112422" name="EnumConstantDeclaration_Editor" hash="3ifqo3wnrlj156qt3r6o9wxfqbw9bl1">
+  <source id="1085485112422" name="EnumConstantDeclaration_Editor" hash="eeg0xkee9lqpuank37dilafwttbrkgg">
     <dep root="1186415538255" />
     <dep root="7113443356592971504" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -1275,7 +1284,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EnumConstantDeclaration_Editor.java" />
   </source>
-  <source id="1090242255906" name="VariableReference_Editor" hash="-bk640heoj6i7o026ipvape828pjbe9e">
+  <source id="1090242255906" name="VariableReference_Editor" hash="-7j87iq5um6wzo22cjgosmajpwma360i">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1293,7 +1302,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VariableReference_Editor.java" />
   </source>
-  <source id="1107796847143" name="Interface_Editor" hash="-eughxkpapkiezfyflt8ichan14s2ypb">
+  <source id="1107796847143" name="Interface_Editor" hash="-du8hgwkq3nn4tnipqyasvhgjabyt2qh">
     <dep root="1109280020740" />
     <dep root="1178547675197" />
     <dep root="1186415538255" />
@@ -1329,7 +1338,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Interface_Editor.java" />
   </source>
-  <source id="1109280020740" name="_GenericDeclaration_TypeVariables_Component" hash="-3mgtjfz96akq4hhplgp8okck61acg28">
+  <source id="1109280020740" name="_GenericDeclaration_TypeVariables_Component" hash="-a2q1ytlss0pk9f9del4vf1de1pjmowu">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -1350,7 +1359,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_GenericDeclaration_TypeVariables_Component.java" />
   </source>
-  <source id="1109281376921" name="TypeVariableDeclaration_Editor" hash="-8143kvevbr6vvas1nnjyx7kg3y6qdmc">
+  <source id="1109281376921" name="TypeVariableDeclaration_Editor" hash="-14dgtu51x1n6mwu64np4zx4pu40btz3">
     <dep root="1186415538255" />
     <dep root="1214997316768" />
     <dep root="5019026806746802173" />
@@ -1381,7 +1390,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TypeVariableDeclaration_Editor.java" />
   </source>
-  <source id="1109283666334" name="TypeVariableReference_Editor" hash="-9eehvkvv3meda0cvcmh9o0yfgzmigvy">
+  <source id="1109283666334" name="TypeVariableReference_Editor" hash="e9wm8hstd6oxzsmv7kfyylgn8ce7cw4">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -1398,7 +1407,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TypeVariableReference_Editor.java" />
   </source>
-  <source id="1112992952159" name="FloatingPointConstant_Editor" hash="-60537h3hxvhbzsyqllhj090slrzwt09">
+  <source id="1112992952159" name="FloatingPointConstant_Editor" hash="5ngipcaaji0d7mzdevuryzm3itzsnuv">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1416,7 +1425,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FloatingPointConstant_Editor.java" />
   </source>
-  <source id="1113208357709" name="ArrayType_Editor" hash="ebr1xt3mwc92hluy12us7l15o8q8tmb">
+  <source id="1113208357709" name="ArrayType_Editor" hash="b7qkypggyeu90yiyal3epzziazr84vh">
     <dep root="1140562594615" />
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -1439,7 +1448,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrayType_Editor.java" />
   </source>
-  <source id="1116615249130" name="ClassifierClassExpression_Editor" hash="aukdtq3ewvfusmc0e0jbz8cyn1w325z">
+  <source id="1116615249130" name="ClassifierClassExpression_Editor" hash="bupa78zxfnyz2t2526xiag5qrg0hp5m">
     <dep root="1186415538255" />
     <dep root="4848386836749782320" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -1460,7 +1469,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClassifierClassExpression_Editor.java" />
   </source>
-  <source id="1128163980260" name="ClassifierType_Editor" hash="-awu5if6aebsqzbiuxxcy1fcuihp4xls">
+  <source id="1128163980260" name="ClassifierType_Editor" hash="-8pwcugizuw99k7yd0af9optxrip1efc">
     <dep root="1186415538255" />
     <dep root="4580808751701012788" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -1490,9 +1499,8 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClassifierType_Editor.java" />
   </source>
-  <source id="1137022694554" name="ConceptFunction_Editor" hash="-6cwora713lodgrlfvx5egyu4bwc6zck">
+  <source id="1137022694554" name="ConceptFunction_Editor" hash="-8a6jbxu0r9eiiz79ukmndo5pxrbk309">
     <dep root="1196975362614" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1513,10 +1521,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConceptFunction_Editor.java" />
   </source>
-  <source id="1139533461943" name="ConceptFunctionParameter_Editor" hash="cvy9g37uo15bawz2pp1iifri1651gc9">
+  <source id="1139533461943" name="ConceptFunctionParameter_Editor" hash="bxenbsvmdqgef1eepmr7ms2mtetcwyj">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -1535,9 +1544,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConceptFunctionParameter_Editor.java" />
   </source>
-  <source id="1140226376803" name="ExpressionStatement_Expression_Actions" hash="-i1rxgqi23gkw6uerrel82uapgjlv8n">
+  <source id="1140226376803" name="ExpressionStatement_Expression_Actions" hash="4mhqoynxa3vnjtaglkxx8vbokqf2mrl">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
@@ -1554,7 +1564,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExpressionStatement_Expression_Actions.java" />
   </source>
-  <source id="1140562594615" name="ArrayType_Brackets_Actions" hash="-e4bwy5vsw9v9q505acmyer090isn3p8">
+  <source id="1140562594615" name="ArrayType_Brackets_Actions" hash="-8dinuvt89w7bbsatetfplekir7cg98e">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1575,7 +1585,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrayType_Brackets_Actions.java" />
   </source>
-  <source id="1140722264121" name="BinaryOperation_Symbol_Actions" hash="-aa16ddr4pku3517rrijq0lrf9i3g22l">
+  <source id="1140722264121" name="BinaryOperation_Symbol_Actions" hash="-5r4kmwclddekxv8235ipk1yin98yn5v">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1597,7 +1607,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BinaryOperation_Symbol_Actions.java" />
   </source>
-  <source id="1140733182387" name="NotExpression_Parens_Actions" hash="bshz52x50pky1is3crr55bgm8uimfdy">
+  <source id="1140733182387" name="NotExpression_Parens_Actions" hash="-2ub0anwlbmbcc846f6kczeaa2xteuvv">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1618,7 +1628,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NotExpression_Parens_Actions.java" />
   </source>
-  <source id="1140734304236" name="BinaryOperation_LeftArgument_Actions" hash="-6hpp330gw4zd8d8x0ka12a8xfpkoqbr">
+  <source id="1140734304236" name="BinaryOperation_LeftArgument_Actions" hash="-bcsfarlw8xvh7d2wjgnzie7206hbn79">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1640,7 +1650,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BinaryOperation_LeftArgument_Actions.java" />
   </source>
-  <source id="1140734681122" name="BinaryOperation_RightArgument_Actions" hash="-4zz388fl4wumiyatj7xmplhfcj7oulv">
+  <source id="1140734681122" name="BinaryOperation_RightArgument_Actions" hash="-6p0tym7bpj5ksh9jzmypeeaby3z3kig">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1662,7 +1672,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BinaryOperation_RightArgument_Actions.java" />
   </source>
-  <source id="1140748024390" name="ParameterDeclaration_Name_Actions" hash="-5ermjmudttbm864jv6eb227sg88xyrz">
+  <source id="1140748024390" name="ParameterDeclaration_Name_Actions" hash="1inbxmb0idbpu7f1wnk1lw09ii347kw">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1684,7 +1694,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ParameterDeclaration_Name_Actions.java" />
   </source>
-  <source id="1144185359094" name="CastExpression_Actions" hash="7yxiefseg7s2a6dv1b8r92ctn21xydl">
+  <source id="1144185359094" name="CastExpression_Actions" hash="1971ioj0u877qn6w5ki002ec9e4b90u">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1705,7 +1715,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CastExpression_Actions.java" />
   </source>
-  <source id="1144226417952" name="ForeachStatement_Editor" hash="-aclxiqqw2gxh8zjdnvp0p6tnx4umgu8">
+  <source id="1144226417952" name="ForeachStatement_Editor" hash="-2l3taa14vciiv8bhpks3ctorhamnf6j">
     <dep root="1186415538255" />
     <dep root="1199465658351" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -1729,7 +1739,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ForeachStatement_Editor.java" />
   </source>
-  <source id="1144231351548" name="ForStatement_Editor" hash="-2x1al69i047msz2qzv7qgczsrcbqpgn">
+  <source id="1144231351548" name="ForStatement_Editor" hash="97pd66bg72g9oy6efe7ic2bxpix6sj">
     <dep root="1186415538255" />
     <dep root="1199465658351" />
     <dep root="772870278648919542" />
@@ -1761,7 +1771,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ForStatement_Editor.java" />
   </source>
-  <source id="1144367099981" name="LocalVariableDeclaration_Initializer_Actions" hash="97ttb9y9lonaj7purvfgiur2idtwd0a">
+  <source id="1144367099981" name="LocalVariableDeclaration_Initializer_Actions" hash="-eva53eliqtr38vk9vn0pfc9typ5wk1j">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1783,7 +1793,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LocalVariableDeclaration_Initializer_Actions.java" />
   </source>
-  <source id="1145552942324" name="AbstractCreator_Editor" hash="bcp5a94ur43fc12cbiakwlzssdf54ui">
+  <source id="1145552942324" name="AbstractCreator_Editor" hash="-7q4250utpxj0xtcceub20z511uldn0l">
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
@@ -1798,7 +1808,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AbstractCreator_Editor.java" />
   </source>
-  <source id="1145553127929" name="GenericNewExpression_Editor" hash="e6yabqz81lb28ci5m5xu36w6u8xqvx6">
+  <source id="1145553127929" name="GenericNewExpression_Editor" hash="b8ohd5j6uk82dt9u4ybfmcxrk3a3i73">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -1818,7 +1828,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GenericNewExpression_Editor.java" />
   </source>
-  <source id="1152311212234" name="ReturnStatement_Actions" hash="cktoo646n5kc9yssvm7pzlcm70l83xi">
+  <source id="1152311212234" name="ReturnStatement_Actions" hash="ebocqpl0hkf52woy2xb5ijzs42t8wkc">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.action(MPS.Classpath/jetbrains.mps.smodel.action@java_stub)" />
@@ -1840,7 +1850,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReturnStatement_Actions.java" />
   </source>
-  <source id="1153179573304" name="ClosureParameterReference_Editor" hash="-64lry6upt9krugilitz0yrzy87h8jnh">
+  <source id="1153179573304" name="ClosureParameterReference_Editor" hash="-9zbkthkz241x8q0ivixsg08lr6lqkm1">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -1859,7 +1869,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClosureParameterReference_Editor.java" />
   </source>
-  <source id="1153952460625" name="TryStatement_Editor" hash="-2qr8wzxrq8trk8j9os0rfjz0tmbm5vf">
+  <source id="1153952460625" name="TryStatement_Editor" hash="-977frarua69aedfc9cfnahkr8hrghjy">
     <dep root="1186415538255" />
     <dep root="3726020645866465468" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -1884,7 +1894,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TryStatement_Editor.java" />
   </source>
-  <source id="1154543001514" name="ArrayCreatorWithInitializer_Editor" hash="317e1cs130cb9ukr7wj7zjjeh6a30y8">
+  <source id="1154543001514" name="ArrayCreatorWithInitializer_Editor" hash="4lwamrh31330xhia2k3q383mx2y0lu4">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -1905,7 +1915,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrayCreatorWithInitializer_Editor.java" />
   </source>
-  <source id="1157103825466" name="Number_Editor" hash="-a1dh874nb25s2grvtyac93cimrh9rg4">
+  <source id="1157103825466" name="Number_Editor" hash="7cx76kw7ivw65cul6ijd23hxnucxmx7">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1923,7 +1933,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Number_Editor.java" />
   </source>
-  <source id="1158938292640" name="CastExpression_KeyMap" hash="-2z7qxj0a0ucohvsu2xu5cku00z5t43t">
+  <source id="1158938292640" name="CastExpression_KeyMap" hash="-1lp1z7vetmxi95s1u1ojyvavaz7ggct">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1946,7 +1956,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CastExpression_KeyMap.java" />
   </source>
-  <source id="1160998925942" name="AssertStatement_Editor" hash="-d5ilxuv0c0h28wbzxw2h11t0nah1i9b">
+  <source id="1160998925942" name="AssertStatement_Editor" hash="-94se9jopn8yeqnqo6rha0rw05wsyl6n">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -1968,7 +1978,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AssertStatement_Editor.java" />
   </source>
-  <source id="1163668945130" name="TernaryOperatorExpression_Editor" hash="cotlpfgewfk9v58j26w404sz46v52m6">
+  <source id="1163668945130" name="TernaryOperatorExpression_Editor" hash="9ffqppoquazy2bne6paerh6imr9sh1t">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -1987,7 +1997,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TernaryOperatorExpression_Editor.java" />
   </source>
-  <source id="1163670694952" name="SwitchCase_Editor" hash="1btcaniq7pzphecw1su2mkq8vdw44pr">
+  <source id="1163670694952" name="SwitchCase_Editor" hash="-1o0u5n5o1208h0jr6tw9p71kaxovril">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -2006,7 +2016,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SwitchCase_Editor.java" />
   </source>
-  <source id="1163670786880" name="SwitchStatement_Editor" hash="31jxje7ae3vg6q8ojrrxdgv8csy45on">
+  <source id="1163670786880" name="SwitchStatement_Editor" hash="-3nk78fb6jqfqt9znpemm91qlbzzptji">
     <dep root="1186415538255" />
     <dep root="1199465658351" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -2032,7 +2042,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SwitchStatement_Editor.java" />
   </source>
-  <source id="1163704265146" name="QueriesUtil" hash="7l5uii5bqijzh3j3pw9onmk0sc8nu8v">
+  <source id="1163704265146" name="QueriesUtil" hash="ewtlk4iuh7xa8r1374a1p19duum6dzf">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.action(MPS.Classpath/jetbrains.mps.smodel.action@java_stub)" />
@@ -2061,7 +2071,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesUtil.java" />
   </source>
-  <source id="1164880014998" name="TryCatchStatement_Editor" hash="1le2fwow2ett0c5smny53i8surb4bg7">
+  <source id="1164880014998" name="TryCatchStatement_Editor" hash="6aqwl8ngrn8dn1p83k4bkevasayxrht">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -2082,7 +2092,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TryCatchStatement_Editor.java" />
   </source>
-  <source id="1164883858924" name="_TryCatchStatement_Actions" hash="-chscjk8krxncz71q92bkosgp14rpa2e">
+  <source id="1164883858924" name="_TryCatchStatement_Actions" hash="-c8m5rxzdu0zqmbv4tgey0xaq33wz3dr">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -2101,7 +2111,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_TryCatchStatement_Actions.java" />
   </source>
-  <source id="1164890912564" name="_BaseMethodDeclaration_Actions" hash="-elpl9ytw021asnkdkzldtqexxs0bhlr">
+  <source id="1164890912564" name="_BaseMethodDeclaration_Actions" hash="o85npt4xtm70nfvqbdnlt03ymxvm84">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -2120,7 +2130,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_BaseMethodDeclaration_Actions.java" />
   </source>
-  <source id="1164903401135" name="CatchClause_Editor" hash="-ivcvcsuadry07yackc6v1auv20otoa">
+  <source id="1164903401135" name="CatchClause_Editor" hash="-5mhz7v8fodvp32ogwv3gjn88lym33gw">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -2139,7 +2149,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CatchClause_Editor.java" />
   </source>
-  <source id="1164991126499" name="ThrowStatement_Editor" hash="-9aiengivpgjnv5diengt41opke41kx5">
+  <source id="1164991126499" name="ThrowStatement_Editor" hash="-4w8nnp65kk2nk8lvlnfng4ewy22jfha">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -2156,7 +2166,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ThrowStatement_Editor.java" />
   </source>
-  <source id="1166027091157" name="DeleteParenthesis_Actions" hash="9d1h4tjqxgaecyxsmgikuqwybjvqafy">
+  <source id="1166027091157" name="DeleteParenthesis_Actions" hash="48qhbowqgcbhkd0jjvab48d4hni7gmp">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2177,7 +2187,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DeleteParenthesis_Actions.java" />
   </source>
-  <source id="1166063928779" name="BinaryOperation_Editor" hash="e0gyy7vk5y7by6gio2vuk5k62zg59ov">
+  <source id="1166063928779" name="BinaryOperation_Editor" hash="-5cbt7cuzxb0grct4445ic61nfnk5r81">
     <dep root="1140722264121" />
     <dep root="1140734304236" />
     <dep root="1140734681122" />
@@ -2208,7 +2218,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BinaryOperation_Editor.java" />
   </source>
-  <source id="1166102189373" name="CloseParenthesis_KeyMap" hash="-2u567u61xw53tujfcqai7nu0wgkyk00">
+  <source id="1166102189373" name="CloseParenthesis_KeyMap" hash="6qasno5kh53edfqltxkvln5vq0x23u6">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2227,7 +2237,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CloseParenthesis_KeyMap.java" />
   </source>
-  <source id="1166110777830" name="OpenParenthesis_KeyMap" hash="7dduwdajmv3jxgi1roeggw190m0wfma">
+  <source id="1166110777830" name="OpenParenthesis_KeyMap" hash="-dpsgxsdjxjxxh4riax8civ6mi1yrg3">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2246,7 +2256,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OpenParenthesis_KeyMap.java" />
   </source>
-  <source id="1168623081884" name="RemarkStatement_Editor" hash="-340mbxc0o1tc9sm2fuw0pk4jhfjf6bl">
+  <source id="1168623081884" name="RemarkStatement_Editor" hash="lkohn4sbzmj07mzwisafpujk4g1okw">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -2270,7 +2280,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RemarkStatement_Editor.java" />
   </source>
-  <source id="1170075795309" name="SynchronizedStatement_Editor" hash="-3vr24uqlh62zeghlzfd26yt7nhrneii">
+  <source id="1170075795309" name="SynchronizedStatement_Editor" hash="1yjbypr1yq9lfs3wazwrpz803d5iviz">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -2289,7 +2299,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SynchronizedStatement_Editor.java" />
   </source>
-  <source id="1170345896430" name="AnonymousClass_Editor" hash="chj7evb5eft4fzbc7kgvjz9zi4yadbi">
+  <source id="1170345896430" name="AnonymousClass_Editor" hash="coc82vvmx4ijh0rhiknxhfbvi8ni930">
     <dep root="1186415538255" />
     <dep root="4755152624708725521" />
     <dep root="7483212795958380584" />
@@ -2323,7 +2333,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AnonymousClass_Editor.java" />
   </source>
-  <source id="1171903619613" name="WildCardType_Editor" hash="-el8288gm1br73rscv6yh6yg2g4hnqj9">
+  <source id="1171903619613" name="WildCardType_Editor" hash="-5o9q7e6ibueeqlna2i7hdezkhbdjv4r">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -2341,7 +2351,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="WildCardType_Editor.java" />
   </source>
-  <source id="1171903877173" name="LowerBoundType_Editor" hash="alcbbprpxu8fa8dg2gf6fl8f4uhb793">
+  <source id="1171903877173" name="LowerBoundType_Editor" hash="-7ojcyt9rvj5h6rz49emzq3ipc3a7jro">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -2360,7 +2370,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LowerBoundType_Editor.java" />
   </source>
-  <source id="1171903928452" name="UpperBoundType_Editor" hash="8amxovuideuy5pecxomh9rxl6szpg1j">
+  <source id="1171903928452" name="UpperBoundType_Editor" hash="-7le39ainhwhbv4zj6bxkhme9cr4x95x">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -2379,7 +2389,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="UpperBoundType_Editor.java" />
   </source>
-  <source id="1172008996157" name="LocalStaticFieldReference_Editor" hash="1ut6jdour6kbmvpm7ej4xltztppknpe">
+  <source id="1172008996157" name="LocalStaticFieldReference_Editor" hash="9sgs2flhqxzh06bjx9on132zblz9rnx">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2397,7 +2407,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LocalStaticFieldReference_Editor.java" />
   </source>
-  <source id="1172013289681" name="StaticFieldReference_Actions" hash="227g3bmfgrbehc6ocx4ei5re1bcgazx">
+  <source id="1172013289681" name="StaticFieldReference_Actions" hash="9i4sl0h2fi7eb9iuuykxxqy53vof4pn">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.action(MPS.Classpath/jetbrains.mps.smodel.action@java_stub)" />
@@ -2420,7 +2430,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StaticFieldReference_Actions.java" />
   </source>
-  <source id="1172058463645" name="LocalStaticMethodCall_Editor" hash="-deet8eeusej5f76z7lc3dup49y3qsfl">
+  <source id="1172058463645" name="LocalStaticMethodCall_Editor" hash="e1ymw0bhgbvximr8hnpsh238jaz1hva">
     <dep root="1173990860683" />
     <dep root="4755152624708725521" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -2442,7 +2452,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LocalStaticMethodCall_Editor.java" />
   </source>
-  <source id="1172061831827" name="StaticMethodCall_Actions" hash="4csndu41zh987oode4o4ox74vwc244s">
+  <source id="1172061831827" name="StaticMethodCall_Actions" hash="-7nkgtqwgz7tfhuotjuqn2qke8bcfrn8">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -2463,7 +2473,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StaticMethodCall_Actions.java" />
   </source>
-  <source id="1173175587503" name="ArrayAccessExpression_Editor" hash="3kd09bjigatuntv14c1np4jkqhq45xn">
+  <source id="1173175587503" name="ArrayAccessExpression_Editor" hash="-dz63p9z6k2vja113pmgbxz7ho1zxnuv">
     <dep root="1173187381459" />
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -2484,7 +2494,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrayAccessExpression_Editor.java" />
   </source>
-  <source id="1173187381459" name="ArrayAccessExpression_Actions" hash="-aij7buumga3w0gpuz8ffnx5a1ucezv8">
+  <source id="1173187381459" name="ArrayAccessExpression_Actions" hash="-1fd0gaweohqk9evz5npix01czcp6y3v">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2536,7 +2546,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IMethodCall_actualArguments.java" />
   </source>
-  <source id="1177326561663" name="CommentedStatementsBlock_Editor" hash="81a8f02kfne189ckkzjvsljmbva7q5v">
+  <source id="1177326561663" name="CommentedStatementsBlock_Editor" hash="4l7n8a0aodxihr7rfw0idwkg70x3jx2">
     <dep root="1206565009193" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -2561,7 +2571,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CommentedStatementsBlock_Editor.java" />
   </source>
-  <source id="1177552153770" name="IfStatement_elseDelete_action" hash="c1fc8f5iganos0g3h6z6l5pycuag5lx">
+  <source id="1177552153770" name="IfStatement_elseDelete_action" hash="4hq7pfklmz7fi23fo12wk7vbgnin7bw">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2582,7 +2592,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IfStatement_elseDelete_action.java" />
   </source>
-  <source id="1177552860488" name="IfStatement_elseBlockStatement_delete" hash="553ulv0iejfrxrzv4pezu3oqt1wtwkq">
+  <source id="1177552860488" name="IfStatement_elseBlockStatement_delete" hash="-7cg3jfxr50dvcsrsmf9gsp585z1i6q8">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2606,7 +2616,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IfStatement_elseBlockStatement_delete.java" />
   </source>
-  <source id="1177666725159" name="DoWhileStatement_Editor" hash="avvuw37vgomapljqzn0urnr7m0wh93q">
+  <source id="1177666725159" name="DoWhileStatement_Editor" hash="e700qmxruruo79efmh4hevz9ilxspgf">
     <dep root="1186415538255" />
     <dep root="1199465658351" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -2630,7 +2640,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DoWhileStatement_Editor.java" />
   </source>
-  <source id="1178547675197" name="_Component_Visibility" hash="-6kipgr4d52dkvoz1mplu3hin000aivh">
+  <source id="1178547675197" name="_Component_Visibility" hash="4b4tz1iv43e7p09dn7jh7c5c9db6dsx">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -2647,14 +2657,14 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_Component_Visibility.java" />
   </source>
-  <source id="1178609533048" name="_InstanceMethodDeclaration_AddAbstract" hash="-6xyoch96n7yvdzcrne3b9wjv5prnj2">
+  <source id="1178609533048" name="_InstanceMethodDeclaration_AddAbstract" hash="-8zrvhq0c0p4lc1vrzh4lody5x8en3et">
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="_InstanceMethodDeclaration_AddAbstract.java" />
   </source>
-  <source id="1178609859861" name="_InstanceMethodDeclaration_RemoveAbstract" hash="-5rdj4b42uypga2plr2qjahiyyjh6alg" dependsOnNodes="true">
+  <source id="1178609859861" name="_InstanceMethodDeclaration_RemoveAbstract" hash="-bb2a96q4wzm75w8pe93zpvxrlfqhxan" dependsOnNodes="true">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.cellProviders(MPS.Classpath/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.generator.internal(MPS.Classpath/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
@@ -2705,7 +2715,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="_InstanceMethodDeclaration_RemoveAbstract.java" />
   </source>
-  <source id="1178893548885" name="ThisConstructorInvocation_Editor" hash="-407olgkgx4hi7jgmbad4ndeidagbsez">
+  <source id="1178893548885" name="ThisConstructorInvocation_Editor" hash="cd5fztvwvctyhldbtbvuhk7wa72fdht">
     <dep root="1186415538255" />
     <dep root="4755152624708725521" />
     <dep root="893779103613531782" />
@@ -2729,7 +2739,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ThisConstructorInvocation_Editor.java" />
   </source>
-  <source id="1179360863034" name="HexIntegerLiteral_Editor" hash="-27fzofh3uks00tbndfgnacc0h2l01x6">
+  <source id="1179360863034" name="HexIntegerLiteral_Editor" hash="7ltz0sgburkcte432ltjtnvmobpc6gb">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -2748,7 +2758,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="HexIntegerLiteral_Editor.java" />
   </source>
-  <source id="1181823106174" name="VariableDeclaration_NameCellComponent" hash="-dtoom10spoxzggorqljnh3j8eqzpoao">
+  <source id="1181823106174" name="VariableDeclaration_NameCellComponent" hash="5nfcne1etsxbhsh0zlzb3102cjwyfac">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2773,7 +2783,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VariableDeclaration_NameCellComponent.java" />
   </source>
-  <source id="1182160159358" name="AnonymousClassCreator_Editor" hash="-3j7e1vrw7zchnqp6xtho0pdxluiky0f">
+  <source id="1182160159358" name="AnonymousClassCreator_Editor" hash="-1oa7tf6up6zzt7czc5qgv8pfugzgae3">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -2789,7 +2799,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AnonymousClassCreator_Editor.java" />
   </source>
-  <source id="1182955931370" name="ThisExpression_ClassConcept_Actions" hash="-d5b0ayvwuorfojnm4gqfjqya83cg665">
+  <source id="1182955931370" name="ThisExpression_ClassConcept_Actions" hash="62w5gnzjrk2roizb0zd23pqtcj3pgkj">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -2808,7 +2818,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ThisExpression_ClassConcept_Actions.java" />
   </source>
-  <source id="1184160518419" name="FieldDeclaration_keyMap" hash="5obt13r8c7qtk2i3iebvview8z59r3h">
+  <source id="1184160518419" name="FieldDeclaration_keyMap" hash="-1b68vuwcv4jk4t7l6lxtdyycp3c3xzw">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2832,10 +2842,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FieldDeclaration_keyMap.java" />
   </source>
-  <source id="1184951028097" name="ArrayCreator_Editor" hash="-51wf7048xh25n5kk9puq155w6tdphr7">
+  <source id="1184951028097" name="ArrayCreator_Editor" hash="-9f4dhrowtvb4zsyohifitw3ba1e9kwj">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -2853,7 +2864,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrayCreator_Editor.java" />
   </source>
-  <source id="1184952950988" name="DimensionExpression_Editor" hash="-9z8wmu0vw7upty0fo3bgbkn43sk3cf8">
+  <source id="1184952950988" name="DimensionExpression_Editor" hash="aik4i5g7shpb81lliknlgnlf5ac4ftg">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -2870,7 +2881,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DimensionExpression_Editor.java" />
   </source>
-  <source id="1185274995812" name="BaseMethodDeclaration_NameCellComponent" hash="cpzk36rr8gog695cnxkpx3y9dxislkp">
+  <source id="1185274995812" name="BaseMethodDeclaration_NameCellComponent" hash="2lf7qf6b0lb5oflej776soe20ma50ab">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -2895,7 +2906,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BaseMethodDeclaration_NameCellComponent.java" />
   </source>
-  <source id="1186415538255" name="BaseLanguageStyle" hash="dewz7ohnmw13iy3q8w3ywntfgs1zvle">
+  <source id="1186415538255" name="BaseLanguageStyle" hash="-8vodlg0fednim195i1mczpsrte83thl">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -2914,7 +2925,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BaseLanguageStyle_StyleSheet.java" />
   </source>
-  <source id="1188206419020" name="Annotation_Editor" hash="aqls1xoz3nayppkrq2ghbp6d2bwfzho">
+  <source id="1188206419020" name="Annotation_Editor" hash="-cew0xrwwbc94bk8q1b9yt7832wps6fl">
     <dep root="1178547675197" />
     <dep root="1186415538255" />
     <dep root="7113443356592971504" />
@@ -2940,7 +2951,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Annotation_Editor.java" />
   </source>
-  <source id="1188206648638" name="AnnotationMethodDeclaration_Editor" hash="-2e1ylwverqtcp1m5msdbvi4n6oqz93j">
+  <source id="1188206648638" name="AnnotationMethodDeclaration_Editor" hash="-65i7udjyftxpq8musg44wlbv04g8tia">
     <dep root="1186415538255" />
     <dep root="7113443356592971504" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -2964,7 +2975,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AnnotationMethodDeclaration_Editor.java" />
   </source>
-  <source id="1188208059946" name="AnnotationInstance_Editor" hash="6paugey7pjh570eavvbo0rffh3dljyj">
+  <source id="1188208059946" name="AnnotationInstance_Editor" hash="-7rdfyudl79srqzliqd1g3kcf77chxwy">
     <dep root="1186415538255" />
     <dep root="97516636738982400" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -2995,7 +3006,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AnnotationInstance_Editor.java" />
   </source>
-  <source id="1188214518509" name="AnnotationInstanceExpression_Editor" hash="-a7pxqo71zei4mw17jvqksnwmbsdxo2o">
+  <source id="1188214518509" name="AnnotationInstanceExpression_Editor" hash="-99kbha58exsl7jz38nb493tv7meze4d">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -3011,7 +3022,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AnnotationInstanceExpression_Editor.java" />
   </source>
-  <source id="1188214575924" name="AnnotationInstanceValue_Editor" hash="-9n51jjkek2t5xa42trvoolpxbx90q8f">
+  <source id="1188214575924" name="AnnotationInstanceValue_Editor" hash="-9z27fo1khowu3wtmjwohceqrmbdxinx">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -3029,7 +3040,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AnnotationInstanceValue_Editor.java" />
   </source>
-  <source id="1188220208781" name="ArrayLiteral_Editor" hash="-531pu0k4iikujsmxgt4zm9qra71lopo">
+  <source id="1188220208781" name="ArrayLiteral_Editor" hash="29cc4fpqwkv2w2dfkwc8acobj59ukbv">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -3110,7 +3121,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClosureParameter_Editor.java" />
   </source>
-  <source id="1196975362614" name="ConceptFunction_Component" hash="4653hw4cjuu7783d3tmnx1j3ifq32sv">
+  <source id="1196975362614" name="ConceptFunction_Component" hash="7xt993tfz34z0b9fi0ugeqridzkhed8">
     <dep root="1186415538255" />
     <dep root="916904233595886821" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -3137,7 +3148,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConceptFunction_Component.java" />
   </source>
-  <source id="1197028127400" name="DotExpression_Editor" hash="-crcjidlsacvj90vfmomfh3ufxvl3lq9">
+  <source id="1197028127400" name="DotExpression_Editor" hash="-aeteiwroyd03o7unqoav5kc3ogkndy7">
     <dep root="1186415538255" />
     <dep root="1197028249488" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -3157,7 +3168,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DotExpression_Editor.java" />
   </source>
-  <source id="1197028249488" name="DotExpression_Actions_DeleteOperation" hash="14oekorum0yyi3pvg2wm4qjk0hmem4v">
+  <source id="1197028249488" name="DotExpression_Actions_DeleteOperation" hash="-c482t9h1egjwpn05w9vi2a03yq3f9ug">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -3253,9 +3264,8 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ContinueStatement_Actions.java" />
   </source>
-  <source id="1200397585756" name="CharConstant_Editor" hash="-cp632b2hay2x5toc197sxms0pjpvph1">
+  <source id="1200397585756" name="CharConstant_Editor" hash="9fegem6cremshd3sw4qbqwqsamunwce">
     <dep root="1186415538255" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -3272,6 +3282,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CharConstant_Editor.java" />
   </source>
@@ -3350,7 +3361,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CustomPropertyImplementation_Editor.java" />
   </source>
-  <source id="1202003995106" name="ValueParameter_Editor" hash="wfgq704p3ki2ajv5yjv5dyszy3rff8">
+  <source id="1202003995106" name="ValueParameter_Editor" hash="edvnmoxm10jhabwt9nlndpzl6r0yuj4">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -3570,7 +3581,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ArrayLengthOperation_Editor.java" />
   </source>
-  <source id="1212695915153" name="ClassCreator_Editor" hash="-8mdcd42b4eyc99zbao2o25ve0o3a3yj">
+  <source id="1212695915153" name="ClassCreator_Editor" hash="219hzwcixx8gtt1xnif303on9l8e405">
     <dep root="1173990860683" />
     <dep root="1186415538255" />
     <dep root="4755152624708725521" />
@@ -3624,7 +3635,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PostfixIncrementExpression_Editor.java" />
   </source>
-  <source id="1214919137520" name="PostfixDecrementExpression_Editor" hash="-8yima0zslxzau368ysv63nakvztmaww">
+  <source id="1214919137520" name="PostfixDecrementExpression_Editor" hash="-5mo8b1tn50lzx53e4hvmcywwpgtq6zj">
     <dep root="1236610315254" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -3866,7 +3877,6 @@
   </source>
   <source id="1223637210494" name="_DeprecatedPart" hash="-8byvh3kdbcimvh50ctwq3tb9mq0d1d4">
     <dep root="1186415538255" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -3884,6 +3894,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_DeprecatedPart.java" />
   </source>
@@ -3930,7 +3941,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="UsingStatement_Editor.java" />
   </source>
-  <source id="1224574042506" name="EnumValuesExpression_Editor" hash="-3cu7fz42co4a8d9capc4urouqwvg7tr">
+  <source id="1224574042506" name="EnumValuesExpression_Editor" hash="-390rihqmw2l0a7c6l2sq78od5tatzf4">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -3950,7 +3961,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EnumValuesExpression_Editor.java" />
   </source>
-  <source id="1224575196387" name="EnumValueOfExpression_Editor" hash="eb0b9zgk0jok79vum574drsj1mhro1p">
+  <source id="1224575196387" name="EnumValueOfExpression_Editor" hash="-t1p608sm0e5rsjhkaqa7252que0q3p">
     <dep root="1186415538255" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -4118,7 +4129,6 @@
     <file name="_ClassConcept_Abstract_Actions.java" />
   </source>
   <source id="1232110805175" name="RemarkStatement_KeyMap" hash="dblm88u7fncay7tmdk8ay2jrli5g18p">
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -4140,6 +4150,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RemarkStatement_KeyMap.java" />
   </source>
@@ -4244,7 +4255,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VarVariableReference_Editor.java" />
   </source>
-  <source id="1239709274498" name="PrefixIncrementExpression_Editor" hash="-1wntphcj91xctef6czv3c44pvr27p8k">
+  <source id="1239709274498" name="PrefixIncrementExpression_Editor" hash="7fbjsdk31wawc5skcjv8hzegv3wkiln">
     <dep root="1236610315254" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -4542,7 +4553,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BaseVariableDeclaration_Editor.java" />
   </source>
-  <source id="5497648299878491910" name="BaseVariableReference_Editor" hash="c2l2jk18ggnifyvh5ubt2da0kqne4qj">
+  <source id="5497648299878491910" name="BaseVariableReference_Editor" hash="8qaxl80jtpt8cbu9hjwrx8w24qy4bfw">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -4971,7 +4982,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClassifierClassExpression_DeleteClass.java" />
   </source>
-  <source id="7812779912047922393" name="AbstractClassifierReference_Editor" hash="-pn452e7bt1c5x3r7a9pqjw0vj9kolq">
+  <source id="7812779912047922393" name="AbstractClassifierReference_Editor" hash="-4hjou2z39iqaeu16y2t3kmdx89ol0vs">
     <dep root="7812779912049087960" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -5036,30 +5047,6 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StaticFieldReference_DeleteDot.java" />
   </source>
-  <source id="2404148721319673822" name="LocalVariableDeclaration_delete_name" hash="-crscpv4qlcd625omr9uarvj7g5w0188">
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="LocalVariableDeclaration_delete_name.java" />
-  </source>
   <source id="2580416627845338978" name="ImplicitAnnotationInstanceValue_Editor" hash="-2lg7ep5xfvh6kom2k5p4zs4h4mqs8a9">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -5097,7 +5084,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PrimitiveClassExpression_Editor.java" />
   </source>
-  <source id="4276006055363816577" name="DeleteSynchronizedInBaseMethod" hash="2mr4jui9qurbkwwnogn09w1dmr7juvw" dependsOnNodes="true">
+  <source id="4276006055363816577" name="DeleteSynchronizedInBaseMethod" hash="-6v541ayjc8pugwe5rucy5kyi4dwcjpj" dependsOnNodes="true">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.cellProviders(MPS.Classpath/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.generator.internal(MPS.Classpath/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
@@ -5260,6 +5247,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AnnotationInstanceParameterInformationQuery.java" />
   </source>
@@ -5288,6 +5276,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
@@ -5358,7 +5347,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StubStatementList_Editor.java" />
   </source>
-  <source id="6827006320070687174" name="BaseMethodDeclaration_BodyComponent" hash="8ci5q2r9gcrbznsm4fe9xn1rfqscvju">
+  <source id="6827006320070687174" name="BaseMethodDeclaration_BodyComponent" hash="3b40v8f7n62v9z1icomxisdxbybh5d3">
     <dep root="1186415538255" />
     <dep root="8709572687796750356" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />

@@ -111,7 +111,6 @@
   <unitInfo fileName="ValueParameter_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ValueParameter_Editor" />
   <unitInfo fileName="WildCardType_Editor.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.WildCardType_Editor" />
   <unitInfo fileName="IfStatement_elseBlockStatement_delete.java" startLine="21" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IfStatement_elseBlockStatement_delete$IfStatement_elseBlockStatement_delete_DELETE" />
-  <unitInfo fileName="LocalVariableDeclaration_delete_name.java" startLine="40" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_delete_name.LocalVariableDeclaration_delete_name_DELETE$QuotationClass_f3i3w9_a1a1a0a1a" />
   <unitInfo fileName="VariableDeclaration_NameCellComponent.java" startLine="80" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent$VariableDeclaration_name_postfixCellMenu_a0a" />
   <unitInfo fileName="UndefinedType_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.UndefinedType_Editor" />
   <unitInfo fileName="EscapeOperation_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EscapeOperation_Editor" />
@@ -231,7 +230,6 @@
   <unitInfo fileName="OpenParenthesis_KeyMap.java" startLine="66" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.OpenParenthesis_KeyMap$OpenParenthesis_KeyMap_Action1" />
   <unitInfo fileName="CloseParenthesis_KeyMap.java" startLine="66" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.CloseParenthesis_KeyMap$CloseParenthesis_KeyMap_Action1" />
   <unitInfo fileName="UnaryMinus_Editor.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.UnaryMinus_Editor" />
-  <unitInfo fileName="LocalVariableDeclaration_delete_name.java" startLine="22" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_delete_name$LocalVariableDeclaration_delete_name_DELETE" />
   <unitInfo fileName="LastCommentPart.java" startLine="23" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LastCommentPart$LastCommentPart_Action0" />
   <unitInfo fileName="RemarkStatement_KeyMap.java" startLine="25" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.RemarkStatement_KeyMap$RemarkStatement_KeyMap_Action0" />
   <unitInfo fileName="ReturnStatement_Actions.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ReturnStatement_Actions" />
@@ -260,7 +258,6 @@
   <unitInfo fileName="CommentedStatement_Editor.java" startLine="19" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.CommentedStatement_Editor" />
   <unitInfo fileName="HexIntegerLiteral_Editor.java" startLine="19" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.HexIntegerLiteral_Editor" />
   <unitInfo fileName="GenericNewExpression_Editor.java" startLine="19" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.GenericNewExpression_Editor" />
-  <unitInfo fileName="LocalVariableDeclaration_delete_name.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_delete_name" />
   <unitInfo fileName="TextCommentPart_Editor.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TextCommentPart_Editor" />
   <unitInfo fileName="BinaryOperation_Editor.java" startLine="116" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BinaryOperation_Editor$BinaryOperation_generic_cellMenu_b0b0" />
   <unitInfo fileName="BaseAssignmentExpression_Editor.java" startLine="121" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BaseAssignmentExpression_Editor$BaseAssignmentExpression_generic_cellMenu_b0b0" />
@@ -1520,15 +1517,6 @@
   <root nodeId="1830039279190442603">
     <nodeInfo nodeId="1830039279190442637" fileName="AdditionalForLoopVariable_Editor.java" startLine="85" startPosition="111" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1830039279190442636" fileName="AdditionalForLoopVariable_Editor.java" startLine="85" startPosition="111" endLine="86" endPosition="72" />
-  </root>
-  <root nodeId="2404148721319673822">
-    <nodeInfo nodeId="2404148721319749639" fileName="LocalVariableDeclaration_delete_name.java" startLine="34" startPosition="143" endLine="35" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2404148721319749647" fileName="LocalVariableDeclaration_delete_name.java" startLine="35" startPosition="144" endLine="36" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2404148721319749622" fileName="LocalVariableDeclaration_delete_name.java" startLine="33" startPosition="75" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="2404148721319749623" fileName="LocalVariableDeclaration_delete_name.java" startLine="34" startPosition="143" endLine="36" endPosition="261">
-      <varInfo nodeId="2404148721319749640" varName="type" />
-    </scopeInfo>
-    <scopeInfo nodeId="2404148721319673825" fileName="LocalVariableDeclaration_delete_name.java" startLine="33" startPosition="75" endLine="37" endPosition="7" />
   </root>
   <root nodeId="3380441905079579782">
     <nodeInfo nodeId="3380441905079626397" fileName="ThisExpressionToLocal.java" startLine="54" startPosition="152" endLine="55" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

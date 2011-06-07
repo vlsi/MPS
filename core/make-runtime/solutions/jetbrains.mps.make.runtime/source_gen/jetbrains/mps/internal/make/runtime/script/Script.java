@@ -322,8 +322,9 @@ __switch__:
     });
   }
 
-  public class ParametersPool implements IParametersPool {
+  private class ParametersPool implements IParametersPool {
     private Map<ITarget.Name, Object> cache = MapSequence.fromMap(new HashMap<ITarget.Name, Object>());
+    private Map<ITarget.Name, Object> copyFrom;
 
     public ParametersPool() {
     }
@@ -331,13 +332,22 @@ __switch__:
     public <T> T parameters(ITarget.Name target, Class<T> cls) {
       if (!(MapSequence.fromMap(cache).containsKey(target))) {
         if (targetRange.hasTarget(target)) {
-          T vars = targetRange.getTarget(target).createParameters(cls);
+          T vars = (MapSequence.fromMap(copyFrom).containsKey(target) ?
+            targetRange.getTarget(target).createParameters(cls, (T) MapSequence.fromMap(copyFrom).get(target)) :
+            targetRange.getTarget(target).createParameters(cls)
+          );
           MapSequence.fromMap(cache).put(target, vars);
         } else {
           return null;
         }
       }
       return cls.cast(MapSequence.fromMap(cache).get(target));
+    }
+
+    public void setPredecessor(IParametersPool ppool) {
+      if (ppool != null) {
+        this.copyFrom = ((Script.ParametersPool) ppool).cache;
+      }
     }
   }
 

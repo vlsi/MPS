@@ -134,6 +134,16 @@ public class GenerateSpecial_Facet implements IFacet {
       return cls.cast(new Variables());
     }
 
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) t).foo(((GenerateSpecial_Facet.Target_i03q2a_a.Variables) copyFrom).foo());
+        ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) t).bar((int) ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) copyFrom).bar());
+        ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) t).baz((boolean) ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) copyFrom).baz());
+      }
+      return t;
+    }
+
     public static class Variables extends MultiTuple._3<String, Integer, Boolean> {
       public Variables() {
         super();

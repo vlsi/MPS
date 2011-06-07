@@ -109,5 +109,10 @@ public class Generate_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
   }
 }

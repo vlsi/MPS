@@ -4,7 +4,8 @@ package jetbrains.mps.workbench.make;
 
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
+import jetbrains.mps.make.script.IParametersPool;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
@@ -16,6 +17,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
 import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
@@ -24,24 +27,22 @@ import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
-import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
-import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IProgress;
-import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
-import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IFeedback;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.make.script.IOption;
+import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.IMessage;
 import com.intellij.openapi.progress.Task;
@@ -49,7 +50,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
@@ -59,7 +59,8 @@ import java.util.concurrent.TimeoutException;
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
   private boolean cleanMake;
-  private ProgressIndicator progInd;
+  private ProgressIndicatorDelegate progInd;
+  private IParametersPool predParamPool;
 
   public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
     this.context = context;
@@ -120,8 +121,23 @@ public class WorkbenchMakeService implements IMakeService {
         }));
       }
     });
-    IScriptController ctl = this.completeController(scrName, mh, controller);
-    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(context.getProject(), scrName, script, scrName, clInput.value, ctl, mh);
+    final Wrappers._boolean alreadySentToBg = new Wrappers._boolean(false);
+    IScriptController ctl = this.completeController(mh, controller, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        if (!(alreadySentToBg.value)) {
+          progInd.background();
+        }
+      }
+    });
+    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(context.getProject(), scrName, script, scrName, clInput.value, ctl, mh, new PerformInBackgroundOption() {
+      public boolean shouldStartInBackground() {
+        return false;
+      }
+
+      public void processSentToBackground() {
+        alreadySentToBg.value = true;
+      }
+    });
     doExecute(new Runnable() {
       public void run() {
         SwingUtilities.invokeLater(new Runnable() {
@@ -148,95 +164,121 @@ public class WorkbenchMakeService implements IMakeService {
     }
   }
 
-  private IScriptController completeController(final String scrName, final IMessageHandler mh, final IScriptController ctl) {
-    final Wrappers._T<IConfigMonitor> cmon2delegate = new Wrappers._T<IConfigMonitor>(null);
-    final IConfigMonitor cmon = new IConfigMonitor.Stub() {
-      public <T extends IOption> T relayQuery(IQuery<T> query) {
-        T opt = null;
-        if (cmon2delegate.value != null) {
-          opt = cmon2delegate.value.relayQuery(query);
-        }
-        return (opt != null ?
-          opt :
-          new UIQueryRelayStrategy().relayQuery(query, WorkbenchMakeService.this.context)
-        );
-      }
-    };
-    final ProgressIndicatorProgressStrategy progStrat = new ProgressIndicatorProgressStrategy();
-    final IJobMonitor jmon = new IJobMonitor() {
-      public boolean stopRequested() {
-        return (progStrat.getProgressIndicator() != null ?
-          progStrat.getProgressIndicator().isCanceled() :
-          false
-        );
-      }
-
-      public IProgress currentProgress() {
-        return progStrat.currentProgress();
-      }
-
-      public void reportFeedback(IFeedback fdbk) {
-        new UIFeedbackStrategy(mh).reportFeedback(fdbk);
-      }
-    };
-
-    final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(null);
-    return new IScriptController() {
-      public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
-        if (ctl != null) {
-          ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
-            public void invoke(IConfigMonitor c) {
-              try {
-                cmon2delegate.value = c;
-                code.invoke(cmon);
-              } finally {
-                cmon2delegate.value = null;
-              }
-            }
-          });
-        } else {
-          code.invoke(cmon);
-        }
-      }
-
-      public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-        try {
-          progStrat.setProgressIndicator(progInd);
-          pind.value = new JobMonitorProgressIndicator(jmon);
-          code.invoke(jmon);
-        } catch (Throwable e) {
-          e.printStackTrace();
-          jmon.reportFeedback(new IFeedback.ERROR(e.getMessage()));
-        }
-      }
-
-      public void setup(IParametersPool pool) {
-        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
-        if (vars != null) {
-          vars._0(WorkbenchMakeService.this.context.getProject());
-          vars._1(WorkbenchMakeService.this.context);
-          vars._2(WorkbenchMakeService.this.cleanMake);
-          vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
-            public ProgressIndicator invoke() {
-              return pind.value;
-            }
-          });
-        }
-
-        Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) pool.parameters(new ITarget.Name("textGen"), Object.class);
-        if (tparams != null) {
-          tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
-        }
-
-        if (ctl != null) {
-          ctl.setup(pool);
-        }
-      }
-    };
+  private IScriptController completeController(final IMessageHandler mh, final IScriptController ctl, final _FunctionTypes._void_P0_E0 beforeDialog) {
+    return new WorkbenchMakeService.Controller(ctl, mh, beforeDialog);
   }
 
   public static IScript defaultMakeScript() {
     return new ScriptBuilder().withFacets(new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("ReloadClasses"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make")).toScript();
+  }
+
+  private class Controller implements IScriptController {
+    private ProgressIndicatorProgressStrategy progStrat = new ProgressIndicatorProgressStrategy();
+    private IScriptController delegateScrCtr;
+    private IConfigMonitor delegateConfMon;
+    private IConfigMonitor confMon;
+    private IJobMonitor jobMon;
+    private IMessageHandler mh;
+    private _FunctionTypes._void_P0_E0 beforeDialog;
+
+    public Controller(IScriptController delegate, IMessageHandler mh, _FunctionTypes._void_P0_E0 beforeDialog) {
+      this.delegateScrCtr = delegate;
+      this.mh = mh;
+      this.beforeDialog = beforeDialog;
+      init();
+    }
+
+    public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
+      if (delegateScrCtr != null) {
+        delegateScrCtr.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
+          public void invoke(IConfigMonitor c) {
+            try {
+              Controller.this.delegateConfMon = c;
+              code.invoke(confMon);
+            } finally {
+              Controller.this.delegateConfMon = null;
+            }
+          }
+        });
+      } else {
+        code.invoke(confMon);
+      }
+    }
+
+    public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+      try {
+        progStrat.setProgressIndicator(progInd);
+        code.invoke(jobMon);
+      } catch (Throwable e) {
+        e.printStackTrace();
+        jobMon.reportFeedback(new IFeedback.ERROR(e.getMessage()));
+      }
+    }
+
+    public void setup(IParametersPool ppool) {
+      ppool.setPredecessor(predParamPool);
+      predParamPool = ppool;
+      final ProgressIndicator pind = new JobMonitorProgressIndicator(jobMon);
+      Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) ppool.parameters(new ITarget.Name("checkParameters"), Object.class);
+      if (vars != null) {
+        vars._0(WorkbenchMakeService.this.context.getProject());
+        vars._1(WorkbenchMakeService.this.context);
+        vars._2(WorkbenchMakeService.this.cleanMake);
+        vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
+          public ProgressIndicator invoke() {
+            return pind;
+          }
+        });
+      }
+
+      Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.parameters(new ITarget.Name("textGen"), Object.class);
+      if (tparams != null) {
+        tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
+      }
+
+      if (delegateScrCtr != null) {
+        delegateScrCtr.setup(ppool);
+      }
+    }
+
+    private void init() {
+      this.confMon = new IConfigMonitor.Stub() {
+        @Override
+        public <T extends IOption> T relayQuery(IQuery<T> query) {
+          T opt = null;
+          if (delegateConfMon != null) {
+            opt = delegateConfMon.relayQuery(query);
+          }
+          return (opt != null ?
+            opt :
+            new UIQueryRelayStrategy(new UIQueryRelayStrategy.DialogListener() {
+              public void beforeDialogShown() {
+                beforeDialog.invoke();
+              }
+            }).relayQuery(query, WorkbenchMakeService.this.context)
+          );
+        }
+      };
+      this.jobMon = new IJobMonitor.Stub() {
+        @Override
+        public boolean stopRequested() {
+          return (progStrat.getProgressIndicator() != null ?
+            progStrat.getProgressIndicator().isCanceled() :
+            false
+          );
+        }
+
+        @Override
+        public void reportFeedback(IFeedback fdbk) {
+          new UIFeedbackStrategy(mh).reportFeedback(fdbk);
+        }
+
+        @Override
+        public IProgress currentProgress() {
+          return progStrat.currentProgress();
+        }
+      };
+    }
   }
 
   private class MessageHandler implements IMessageHandler {
@@ -267,8 +309,8 @@ public class WorkbenchMakeService implements IMakeService {
     private final IScriptController myController;
     private final WorkbenchMakeService.MessageHandler myMessageHandler;
 
-    public MakeTask(@Nullable Project project, @NotNull String title, IScript script, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, WorkbenchMakeService.MessageHandler mh) {
-      super(project, title, true, DEAF);
+    public MakeTask(@Nullable Project project, @NotNull String title, IScript script, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, WorkbenchMakeService.MessageHandler mh, PerformInBackgroundOption bgoption) {
+      super(project, title, true, bgoption);
       this.myScript = script;
       this.myScrName = scrName;
       this.myClInput = clInput;
@@ -375,7 +417,7 @@ public class WorkbenchMakeService implements IMakeService {
     }
   }
 
-  public static   enum TaskState {
+  private static   enum TaskState {
     NOT_STARTED(),
     RUNNING(),
     DONE(),

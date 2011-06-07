@@ -14,6 +14,8 @@ public class RuleTypeEditor extends DefaultCellEditor {
     cb.addItem(RuleType.STRICTLY_BEFORE);
     cb.addItem(RuleType.STRICTLY_TOGETHER);
     cb.addItem(RuleType.BEFORE_OR_TOGETHER);
+    cb.addItem(RuleType.AFTER_OR_TOGETHER);
+    cb.addItem(RuleType.STRICTLY_AFTER);
     editorComponent = RuleTypeRenderer.createCenterAlignmentInCell(editorComponent);
   }
 }

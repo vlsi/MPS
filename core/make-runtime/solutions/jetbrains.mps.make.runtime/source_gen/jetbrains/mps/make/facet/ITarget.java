@@ -17,8 +17,9 @@ public interface ITarget {
   public Iterable<ITarget.Name> notBefore();
   public Iterable<ITarget.Name> after();
   public Iterable<ITarget.Name> notAfter();
-  public <T> T createParameters(Class<T> varCls);
   public IConfig createConfig();
+  public <T> T createParameters(Class<T> varCls);
+  public <T> T createParameters(Class<T> varCls, T copyFrom);
   public IJob createJob();
   public static class Name extends SmartWrapper<String> {
     public Name(String name) {

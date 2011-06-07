@@ -149,8 +149,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (module == null) throw new IllegalArgumentException("no module for " + sm);
 
     IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
-    IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
+    if(outputPath == null) {
+      return null;
+    }
 
+    IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
     IFile hashFile = null;
 
     for (IFile f : sourcesDir.getChildren()) {

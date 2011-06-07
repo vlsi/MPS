@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9hkoikk4sq30pgqx0sdfwcdfxeb8f3v">
+<dependencies version="2" modelHash="2xue4pxcrseiq6l36j5m6xasws37ii5">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6a6zpdzd0uayt755yuizj6hqmo45nke" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
@@ -7,13 +7,13 @@
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-3xupx7hyzpnshlcxg8l0jxlmp5npf6n" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
-  <common hash="5ute4rajvvr31vxtdl21enlcalm408f" />
+  <common hash="-7ja9fndhk3m6fb9tru780r6yjbskyw6" />
   <source id="8502503369265714992" name="ProgressIndicatorAdapter" hash="-ety2nzhks2m7jvutp56ba246wmeyjg">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ProgressIndicatorAdapter.java" />
   </source>
-  <source id="6199524110956704943" name="JobMonitorProgressIndicator" hash="7g6ago79q58oclezoscmj3dhhvvocdh">
+  <source id="6199524110956704943" name="JobMonitorProgressIndicator" hash="7brqcufe7hhsspcjreblnywt8prx834">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -23,7 +23,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JobMonitorProgressIndicator.java" />
   </source>
-  <source id="5589305777382258419" name="ProgressIndicatorProgressStrategy" hash="-7kiphjrnaxln8bwumnszzo2dzost6e1">
+  <source id="5589305777382258419" name="ProgressIndicatorProgressStrategy" hash="-aw0tvcen2zwhnsrv9nnzr8ip2iz70aj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -31,7 +31,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ProgressIndicatorProgressStrategy.java" />
   </source>
-  <source id="2130030975859798586" name="ProgressIndicatorDelegate" hash="-90dn9koilrxinrvnz9mq55b1m75r9ui">
+  <source id="2130030975859798586" name="ProgressIndicatorDelegate" hash="4bwxhmtnzxrzg0lhwyfej760ph2paf7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

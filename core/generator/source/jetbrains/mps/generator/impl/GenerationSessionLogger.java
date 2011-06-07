@@ -21,9 +21,11 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +75,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     if (!myHandleInfo) {
       return;
     }
-    report(MessageKind.INFORMATION, message, null);
+    report(MessageKind.INFORMATION, message, (SNode) null);
   }
 
   public void warning(String message) {
@@ -81,7 +83,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
       return;
     }
     myWarningsCount++;
-    report(MessageKind.WARNING, message, null);
+    report(MessageKind.WARNING, message, (SNode) null);
   }
 
   public void warning(SNode node, String message, ProblemDescription... descriptions) {
@@ -98,9 +100,14 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.ERROR, message, node, descriptions);
   }
 
+  /* package */ void error(@NotNull ModuleReference moduleReference, String message) {
+    myErrorsCount++;
+    report(MessageKind.ERROR, message, moduleReference);
+  }
+
   public void error(String message) {
     myErrorsCount++;
-    report(MessageKind.ERROR, message, null);
+    report(MessageKind.ERROR, message, (SNode) null);
   }
 
   public void handleException(Throwable t) {
@@ -113,6 +120,13 @@ public class GenerationSessionLogger implements IGeneratorLogger {
 
   private void report(MessageKind kind, String text, SNode node) {
     Message message = prepare(kind, text, node);
+    synchronized (myMessageHandler) {
+      myMessageHandler.handle(message);
+    }
+  }
+
+  private void report(MessageKind kind, String text, ModuleReference module) {
+    Message message = prepare(kind, text, module);
     synchronized (myMessageHandler) {
       myMessageHandler.handle(message);
     }
@@ -133,6 +147,12 @@ public class GenerationSessionLogger implements IGeneratorLogger {
         myMessageHandler.handle(m);
       }
     }
+  }
+
+  private Message prepare(MessageKind kind, String text, @NotNull ModuleReference module) {
+    Message message = new Message(kind, text);
+    message.setHintObject(module);
+    return message;
   }
 
   private Message prepare(MessageKind kind, String text, SNode node) {

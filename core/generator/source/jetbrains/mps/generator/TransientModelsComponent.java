@@ -22,7 +22,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -108,8 +107,7 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   private void clearAll() {
-    int i;
-    for (i = 0; i < 3 && !ModelAccess.instance().tryWrite(new Runnable() {
+    ModelAccess.requireWrite(new Runnable() {
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
         myModuleMap.clear();
@@ -117,14 +115,7 @@ public class TransientModelsComponent implements ProjectComponent {
           m.disposeModule();
         }
       }
-    }); ++i) {
-      try {
-        Thread.sleep((1<<i)*100);
-      } catch (InterruptedException ignore) {}
-    }
-    if (i >= 3) {
-      throw new RuntimeException("Failed to acquire write lock");
-    }
+    });
 
     TransientSwapSpace space = getTransientSwapSpace();
     if (space != null) {
@@ -134,21 +125,13 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   public synchronized void publishAll() {
-    int i;
-    for (i = 0; i < 3 && !ModelAccess.instance().tryWrite(new Runnable() {
+    ModelAccess.requireWrite(new Runnable() {
       public void run() {
         for(TransientModelsModule m : myModuleMap.values()) {
           m.publishAll();
         }
       }
-    }); ++i) {
-      try {
-        Thread.sleep((1<<i)*100);
-      } catch (InterruptedException ignore) {}
-    }
-    if (i >= 3) {
-      throw new RuntimeException("Failed to acquire write lock");
-    }
+    });
   }
 
   public TransientModelsModule getModule(final IModule module) {

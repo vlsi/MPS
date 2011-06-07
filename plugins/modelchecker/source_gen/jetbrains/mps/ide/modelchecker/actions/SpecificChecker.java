@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.errors.MessageStatus;
 
 public abstract class SpecificChecker {
   public SpecificChecker() {
@@ -17,5 +18,18 @@ public abstract class SpecificChecker {
 
   protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, SNode node, String message, String severity, String issueType, IModelCheckerFix fix) {
     ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForNode(node, message, fix, severity, issueType));
+  }
+
+  public static String getResultCategory(MessageStatus messageStatus) {
+    switch (messageStatus) {
+      case ERROR:
+        return ModelChecker.SEVERITY_ERROR;
+      case WARNING:
+        return ModelChecker.SEVERITY_WARNING;
+      case OK:
+        return ModelChecker.SEVERITY_INFO;
+      default:
+        return ModelChecker.SEVERITY_ERROR;
+    }
   }
 }

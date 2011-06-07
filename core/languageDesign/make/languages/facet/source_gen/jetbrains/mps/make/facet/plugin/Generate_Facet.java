@@ -29,15 +29,17 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.smodel.resources.IMResource;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.resources.MResource;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -62,6 +64,7 @@ public class Generate_Facet implements IFacet {
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_b());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_c());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_d());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_e());
   }
 
   public Iterable<ITarget> targets() {
@@ -160,6 +163,17 @@ public class Generate_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((Generate_Facet.Target_fi61u2_a.Variables) t).project(((Generate_Facet.Target_fi61u2_a.Variables) copyFrom).project());
+        ((Generate_Facet.Target_fi61u2_a.Variables) t).operationContext(((Generate_Facet.Target_fi61u2_a.Variables) copyFrom).operationContext());
+        ((Generate_Facet.Target_fi61u2_a.Variables) t).cleanMake(((Generate_Facet.Target_fi61u2_a.Variables) copyFrom).cleanMake());
+        ((Generate_Facet.Target_fi61u2_a.Variables) t).pindGet(((Generate_Facet.Target_fi61u2_a.Variables) copyFrom).pindGet());
+      }
+      return t;
     }
 
     public static class Variables extends MultiTuple._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> {
@@ -279,6 +293,11 @@ public class Generate_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
   }
 
   public static class Target_fi61u2_c implements ITarget {
@@ -307,11 +326,11 @@ public class Generate_Facet implements IFacet {
                   null
                 ))));
               }
-              IGenerationTracer tracer = ((boolean) pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient() ?
+              IGenerationTracer tracer = (pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient() ?
                 pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(IGenerationTracer.class) :
                 new NullGenerationTracer()
               );
-              pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions(pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().saveTransientModels((boolean) pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).cleanMake()).keepOutputModel(true));
+              pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions(pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().saveTransientModels(pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).cleanMake()).keepOutputModel(true));
               return new IResult.SUCCESS(_output_fi61u2_a0c);
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0c);
@@ -326,6 +345,9 @@ public class Generate_Facet implements IFacet {
           switch (0) {
             case 0:
               GenerationSettings settings = GenerationSettings.getInstance();
+              if (pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient() != null) {
+                return true;
+              }
               if (settings.isSaveTransientModels()) {
                 switch (cmonitor.<SaveTransient_Option>relayQuery(new SaveTransientModels_Query())) {
                   case SAVE_fi61u2_a0a0c:
@@ -391,6 +413,15 @@ public class Generate_Facet implements IFacet {
       return cls.cast(new Variables());
     }
 
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((Generate_Facet.Target_fi61u2_c.Variables) t).saveTransient(((Generate_Facet.Target_fi61u2_c.Variables) copyFrom).saveTransient());
+        ((Generate_Facet.Target_fi61u2_c.Variables) t).generationOptions(((Generate_Facet.Target_fi61u2_c.Variables) copyFrom).generationOptions());
+      }
+      return t;
+    }
+
     public static class Variables extends MultiTuple._2<Boolean, GenerationOptions.OptionsBuilder> {
       public Variables() {
         super();
@@ -427,7 +458,7 @@ public class Generate_Facet implements IFacet {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("generate");
+    private ITarget.Name name = new ITarget.Name("preloadModels");
 
     public Target_fi61u2_d() {
     }
@@ -435,12 +466,109 @@ public class Generate_Facet implements IFacet {
     public IJob createJob() {
       return new IJob() {
         public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
-          final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0d = new Wrappers._T<Iterable<IResource>>(null);
+          Iterable<IResource> _output_fi61u2_a0d = null;
+          switch (0) {
+            case 0:
+              int work = Sequence.fromIterable(input).count() * 100;
+              if (work == 0) {
+                return new IResult.SUCCESS(_output_fi61u2_a0d);
+              }
+              monitor.currentProgress().beginWork("Pre-loading models", work, monitor.currentProgress().workLeft());
+              Sequence.fromIterable(input).visitAll(new IVisitor<IResource>() {
+                public void visit(IResource mod) {
+                  MResource mres = ((MResource) mod);
+                  Sequence.fromIterable(mres.models()).visitAll(new IVisitor<SModelDescriptor>() {
+                    public void visit(final SModelDescriptor smd) {
+                      if (smd instanceof DefaultSModelDescriptor) {
+                        monitor.currentProgress().advanceWork("Pre-loading models", 100, smd.getSModelReference().getCompactPresentation());
+                        ModelAccess.instance().runReadAction(new Runnable() {
+                          public void run() {
+                            smd.getSModel();
+                            ((DefaultSModelDescriptor) smd).enforceFullLoad();
+                          }
+                        });
+                      }
+                    }
+                  });
+                }
+              });
+              monitor.currentProgress().finishWork("Pre-loading models");
+              _output_fi61u2_a0d = Sequence.fromIterable(_output_fi61u2_a0d).concat(Sequence.fromIterable(input));
+            default:
+              return new IResult.SUCCESS(_output_fi61u2_a0d);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("configure")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
+      return true;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      return Sequence.fromArray(EXPECTED_INPUT);
+    }
+
+    public Iterable<Class<? extends IResource>> expectedOutput() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
+    }
+  }
+
+  public static class Target_fi61u2_e implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
+    private ITarget.Name name = new ITarget.Name("generate");
+
+    public Target_fi61u2_e() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0e = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
               boolean generationOk;
               GeneratorManager gm = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GeneratorManager.class);
-              if (!((boolean) pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {
+              if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {
                 IGenerationTracer tracer = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(IGenerationTracer.class);
                 if (tracer != null) {
                   tracer.discardTracing();
@@ -496,7 +624,7 @@ public class Generate_Facet implements IFacet {
                 public Boolean invoke(GResource data) {
                   monitor.currentProgress().advanceWork("Generating", 1000);
                   data.retainedModels(MapSequence.fromMap(retainedModels).get(data.module()));
-                  _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
+                  _output_fi61u2_a0e.value = Sequence.fromIterable(_output_fi61u2_a0e.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }
               });
@@ -513,7 +641,8 @@ public class Generate_Facet implements IFacet {
                 public Integer combine(Integer s, IResource it) {
                   return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
                 }
-              }), monitor.currentProgress().workLeft());
+              }) + 1000, monitor.currentProgress().workLeft());
+              monitor.currentProgress().advanceWork("Generating", 1000, "Warming up...");
               List<SModelDescriptor> models = Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();
@@ -524,9 +653,9 @@ public class Generate_Facet implements IFacet {
 
               monitor.currentProgress().finishWork("Generating");
               if (!(generationOk)) {
-                return new IResult.FAILURE(_output_fi61u2_a0d.value);
+                return new IResult.FAILURE(_output_fi61u2_a0e.value);
               }
-              _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IInternalDelta() {
+              _output_fi61u2_a0e.value = Sequence.fromIterable(_output_fi61u2_a0e.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IInternalDelta() {
                 public IDelta merge(IDelta toMerge) {
                   return this;
                 }
@@ -536,14 +665,14 @@ public class Generate_Facet implements IFacet {
                 }
 
                 public boolean reconcile() {
-                  if (!((boolean) pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {
+                  if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {
                     pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
                   }
                   return true;
                 }
               })))));
             default:
-              return new IResult.SUCCESS(_output_fi61u2_a0d.value);
+              return new IResult.SUCCESS(_output_fi61u2_a0e.value);
           }
         }
       };
@@ -591,6 +720,11 @@ public class Generate_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return null;
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
     }
   }
 }

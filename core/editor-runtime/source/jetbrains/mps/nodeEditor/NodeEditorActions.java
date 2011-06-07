@@ -44,15 +44,14 @@ public class NodeEditorActions {
     }
 
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
+      EditorCell selection = getDeepestSelectedCell(context);
       return selection != null && findTarget(selection) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-      EditorCell selection = nodeEditorComponent.getDeepestSelectedCell();
+      EditorCell selection = getDeepestSelectedCell(context);
       EditorCell target = findTarget(selection);
-      nodeEditorComponent.changeSelection(target);
+      context.getNodeEditorComponent().changeSelection(target);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         if (myHome) {
@@ -61,6 +60,16 @@ public class NodeEditorActions {
           label.end();
         }
       }
+    }
+
+    private EditorCell getDeepestSelectedCell(EditorContext context) {
+      Selection deepestSelection = context.getNodeEditorComponent().getSelectionManager().getDeepestSelection();
+      if (deepestSelection instanceof SingularSelection) {
+        return ((SingularSelection) deepestSelection).getEditorCell();
+      } else if (deepestSelection instanceof NodeRangeSelection) {
+        return ((NodeRangeSelection) deepestSelection).getFirstCell();
+      }
+      return null;
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -164,12 +173,12 @@ public class NodeEditorActions {
 
   public static class MoveRight extends NavigationAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
+      EditorCell selection = getDeepestSelectedCell(context);
       return selection != null && findTarget(selection) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
+      EditorCell selection = getDeepestSelectedCell(context);
       EditorCell target = findTarget(selection);
       context.getNodeEditorComponent().changeSelection(target);
       if (target.isPunctuationLayout() && ((EditorCell_Label) target).isCaretPositionAllowed(1)) {
@@ -178,6 +187,16 @@ public class NodeEditorActions {
         EditorCell_Label label = (EditorCell_Label) target;
         label.home();
       }
+    }
+
+    private EditorCell getDeepestSelectedCell(EditorContext context) {
+      Selection deepestSelection = context.getNodeEditorComponent().getSelectionManager().getDeepestSelection();
+      if (deepestSelection instanceof SingularSelection) {
+        return ((SingularSelection) deepestSelection).getEditorCell();
+      } else if (deepestSelection instanceof NodeRangeSelection) {
+        return ((NodeRangeSelection) deepestSelection).getLastCell();
+      }
+      return null;
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -191,20 +210,30 @@ public class NodeEditorActions {
 
   public static class MoveUp extends NavigationAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-      return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
+      EditorCell selectedCell = getDeepestSelectedCell(context);
+      return selectedCell != null && selectedCell.getParent() != null && findTarget(selectedCell, selectedCell.getCaretX()) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-      int caretX = selection.getCaretX();
+      EditorCell selectedCell = getDeepestSelectedCell(context);
+      int caretX = selectedCell.getCaretX();
       if (context.getNodeEditorComponent().hasLastCaretX()) {
         caretX = context.getNodeEditorComponent().getLastCaretX();
       }
       context.getNodeEditorComponent().saveLastCaretX(caretX);
-      EditorCell target = findTarget(selection, caretX);
+      EditorCell target = findTarget(selectedCell, caretX);
       target.setCaretX(caretX);
       context.getNodeEditorComponent().changeSelection(target, false);
+    }
+
+    private EditorCell getDeepestSelectedCell(EditorContext context) {
+      Selection deepestSelection = context.getNodeEditorComponent().getSelectionManager().getDeepestSelection();
+      if (deepestSelection instanceof SingularSelection) {
+        return ((SingularSelection) deepestSelection).getEditorCell();
+      } else if (deepestSelection instanceof NodeRangeSelection) {
+        return ((NodeRangeSelection) deepestSelection).getFirstCell();
+      }
+      return null;
     }
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
@@ -214,20 +243,30 @@ public class NodeEditorActions {
 
   public static class MoveDown extends NavigationAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-      return selection != null && findTarget(selection, selection.getCaretX()) != null;
+      EditorCell selectedCell = getDeepestSelectedCell(context);
+      return selectedCell != null && findTarget(selectedCell, selectedCell.getCaretX()) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-      int caretX = selection.getCaretX();
+      EditorCell selectedCell = getDeepestSelectedCell(context);
+      int caretX = selectedCell.getCaretX();
       if (context.getNodeEditorComponent().hasLastCaretX()) {
         caretX = context.getNodeEditorComponent().getLastCaretX();
       }
       context.getNodeEditorComponent().saveLastCaretX(caretX);
-      EditorCell target = findTarget(selection, caretX);
+      EditorCell target = findTarget(selectedCell, caretX);
       target.setCaretX(caretX);
       context.getNodeEditorComponent().changeSelection(target, false);
+    }
+
+    private EditorCell getDeepestSelectedCell(EditorContext context) {
+      Selection deepestSelection = context.getNodeEditorComponent().getSelectionManager().getDeepestSelection();
+      if (deepestSelection instanceof SingularSelection) {
+        return ((SingularSelection) deepestSelection).getEditorCell();
+      } else if (deepestSelection instanceof NodeRangeSelection) {
+        return ((NodeRangeSelection) deepestSelection).getLastCell();
+      }
+      return null;
     }
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
@@ -500,16 +539,18 @@ public class NodeEditorActions {
 
     @Override
     public void execute(final EditorContext context) {
-      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      EditorComponent editorComponent = context.getNodeEditorComponent();
+      SelectionManager selectionManager = editorComponent.getSelectionManager();
       Selection selection = selectionManager.getSelection();
       if (selection instanceof SingularSelection) {
         EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
         SNode selectedNode = selectedCell.getSNode();
         SNode topMostNodeInSingularContainment = findTopMostNodeWithSingularContainment(selectedNode);
         if (topMostNodeInSingularContainment != selectedNode) {
-          EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(topMostNodeInSingularContainment);
+          EditorCell nodeCell = editorComponent.findNodeCell(topMostNodeInSingularContainment);
           if (nodeCell != null) {
-            context.getNodeEditorComponent().pushSelection(nodeCell);
+            editorComponent.pushSelection(nodeCell);
+            editorComponent.scrollToCell(nodeCell);
           }
         } else {
           Selection newSelection = selectionManager.createRangeSelection(selectedNode, selectedNode);
@@ -518,13 +559,21 @@ public class NodeEditorActions {
           }
           if (newSelection != null) {
             selectionManager.pushSelection(newSelection);
+            scrollToSelection(editorComponent, newSelection);
           }
         }
       } else if (selection instanceof NodeRangeSelection) {
         Selection newSelection = ((NodeRangeSelection) selection).enlargeSelection(myUp);
         if (newSelection != null) {
           selectionManager.pushSelection(newSelection);
+          scrollToSelection(editorComponent, newSelection);
         }
+      }
+    }
+
+    private void scrollToSelection(EditorComponent editorComponent, Selection selection) {
+      if (selection instanceof NodeRangeSelection) {
+        editorComponent.scrollToCell(((NodeRangeSelection) selection).getLastCell());
       }
     }
 

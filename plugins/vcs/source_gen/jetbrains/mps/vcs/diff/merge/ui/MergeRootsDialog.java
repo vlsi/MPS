@@ -23,6 +23,7 @@ import com.intellij.openapi.diff.impl.util.TextDiffType;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import javax.swing.JSplitPane;
+import jetbrains.mps.vcs.diff.ui.NextPreviousTraverser;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
@@ -85,9 +86,10 @@ public class MergeRootsDialog extends BaseDialog {
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
     MergeRootsDialog.MyGoToNeighbourRootActions neighbourActions = new MergeRootsDialog.MyGoToNeighbourRootActions();
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next());
+    NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupBuilders, myResultEditor.getMainEditor());
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction());
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
-    myToolbar.updateActionsImmediately();
+    neighbourTraverser.setActionToolbar(myToolbar);
 
     myContainer.add(myToolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
@@ -109,7 +111,6 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   public void rehighlight() {
-    myToolbar.updateActionsImmediately();
     myMineEditor.unhighlightAllChanges();
     myResultEditor.unhighlightAllChanges();
     myRepositoryEditor.unhighlightAllChanges();
@@ -123,16 +124,16 @@ public class MergeRootsDialog extends BaseDialog {
 
     myResultEditor.getMainEditor().rebuildEditorContent();
 
+    highlightAllChanges();
+  }
+
+  private void highlightAllChanges() {
     ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
       public void visit(ChangeGroupBuilder b) {
         b.invalidate();
       }
     });
 
-    highlightAllChanges();
-  }
-
-  private void highlightAllChanges() {
     List<ModelChange> changesForRoot = ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId)).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return !(myMergeContext.isChangeResolved(ch));

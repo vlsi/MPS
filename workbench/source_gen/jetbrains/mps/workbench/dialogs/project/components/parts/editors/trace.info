@@ -16,8 +16,8 @@
     <scopeInfo nodeId="1560298786499490388" fileName="BooleanEditor.java" startLine="11" startPosition="54" endLine="14" endPosition="3" />
     <scopeInfo nodeId="1560298786499490395" fileName="BooleanEditor.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1560298786499490402" varName="isSelected" />
-      <varInfo nodeId="1560298786499490406" varName="column" />
       <varInfo nodeId="1560298786499490400" varName="value" />
+      <varInfo nodeId="1560298786499490406" varName="column" />
       <varInfo nodeId="1560298786499490398" varName="table" />
       <varInfo nodeId="1560298786499490404" varName="row" />
     </scopeInfo>
@@ -26,8 +26,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490411" fileName="BooleanEditor.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1560298786499490418" varName="isSelected" />
-      <varInfo nodeId="1560298786499490422" varName="column" />
       <varInfo nodeId="1560298786499490416" varName="value" />
+      <varInfo nodeId="1560298786499490422" varName="column" />
       <varInfo nodeId="1560298786499490414" varName="table" />
       <varInfo nodeId="1560298786499490420" varName="row" />
     </scopeInfo>
@@ -61,8 +61,8 @@
     <scopeInfo nodeId="1560298786499489360" fileName="ModuleImportEditor.java" startLine="27" startPosition="117" endLine="36" endPosition="84" />
     <scopeInfo nodeId="1560298786499489347" fileName="ModuleImportEditor.java" startLine="25" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1560298786499489354" varName="isSelected" />
-      <varInfo nodeId="1560298786499489358" varName="column" />
       <varInfo nodeId="1560298786499489352" varName="value" />
+      <varInfo nodeId="1560298786499489358" varName="column" />
       <varInfo nodeId="1560298786499489350" varName="table" />
       <varInfo nodeId="1560298786499489356" varName="row" />
     </scopeInfo>
@@ -86,8 +86,8 @@
     <scopeInfo nodeId="1560298786499490034" fileName="ModuleEditor.java" startLine="13" startPosition="0" endLine="18" endPosition="3" />
     <scopeInfo nodeId="1560298786499490065" fileName="ModuleEditor.java" startLine="23" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1560298786499490072" varName="isSelected" />
-      <varInfo nodeId="1560298786499490076" varName="column" />
       <varInfo nodeId="1560298786499490070" varName="value" />
+      <varInfo nodeId="1560298786499490076" varName="column" />
       <varInfo nodeId="1560298786499490068" varName="table" />
       <varInfo nodeId="1560298786499490074" varName="row" />
     </scopeInfo>
@@ -138,8 +138,8 @@
     <scopeInfo nodeId="1560298786499491214" fileName="RuleOperandEditor.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1560298786499491354" fileName="RuleOperandEditor.java" startLine="58" startPosition="41" endLine="62" endPosition="26" />
     <scopeInfo nodeId="1560298786499491301" fileName="RuleOperandEditor.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
-      <varInfo nodeId="1560298786499491310" varName="column" />
       <varInfo nodeId="1560298786499491306" varName="value" />
+      <varInfo nodeId="1560298786499491310" varName="column" />
       <varInfo nodeId="1560298786499491304" varName="table" />
       <varInfo nodeId="1560298786499491308" varName="row" />
     </scopeInfo>
@@ -162,8 +162,8 @@
     <scopeInfo nodeId="1560298786499491274" fileName="RuleOperandEditor.java" startLine="52" startPosition="135" endLine="68" endPosition="57" />
     <scopeInfo nodeId="1560298786499491261" fileName="RuleOperandEditor.java" startLine="51" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1560298786499491268" varName="isSelected" />
-      <varInfo nodeId="1560298786499491272" varName="column" />
       <varInfo nodeId="1560298786499491266" varName="value" />
+      <varInfo nodeId="1560298786499491272" varName="column" />
       <varInfo nodeId="1560298786499491264" varName="table" />
       <varInfo nodeId="1560298786499491270" varName="row" />
     </scopeInfo>
@@ -213,11 +213,11 @@
     <scopeInfo nodeId="4256903895781786765" fileName="ManagerTableCellEditor.java" startLine="47" startPosition="25" endLine="52" endPosition="9" />
     <scopeInfo nodeId="4256903895781786771" fileName="ManagerTableCellEditor.java" startLine="47" startPosition="25" endLine="52" endPosition="9" />
     <scopeInfo nodeId="4256903895781784709" fileName="ManagerTableCellEditor.java" startLine="35" startPosition="55" endLine="41" endPosition="0">
-      <varInfo nodeId="4256903895781784718" varName="selected" />
       <varInfo nodeId="4256903895781784716" varName="index" />
+      <varInfo nodeId="4256903895781784718" varName="selected" />
       <varInfo nodeId="4256903895781784714" varName="value" />
-      <varInfo nodeId="4256903895781784720" varName="focus" />
       <varInfo nodeId="4256903895781784712" varName="list" />
+      <varInfo nodeId="4256903895781784720" varName="focus" />
     </scopeInfo>
     <scopeInfo nodeId="8571970830724169302" fileName="ManagerTableCellEditor.java" startLine="62" startPosition="80" endLine="68" endPosition="120">
       <varInfo nodeId="8571970830724172997" varName="model" />
@@ -256,13 +256,15 @@
     <nodeInfo nodeId="1560298786499498097" fileName="RuleTypeEditor.java" startLine="13" startPosition="47" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499498102" fileName="RuleTypeEditor.java" startLine="14" startPosition="41" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499498107" fileName="RuleTypeEditor.java" startLine="15" startPosition="43" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499498112" fileName="RuleTypeEditor.java" startLine="16" startPosition="44" endLine="17" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499498083" fileName="RuleTypeEditor.java" startLine="10" startPosition="55" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleTypeEditor#()V" />
-    <scopeInfo nodeId="1560298786499498085" fileName="RuleTypeEditor.java" startLine="11" startPosition="27" endLine="17" endPosition="84">
+    <nodeInfo nodeId="447239626913685985" fileName="RuleTypeEditor.java" startLine="16" startPosition="44" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="447239626913718121" fileName="RuleTypeEditor.java" startLine="17" startPosition="43" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499498112" fileName="RuleTypeEditor.java" startLine="18" startPosition="40" endLine="19" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499498083" fileName="RuleTypeEditor.java" startLine="10" startPosition="55" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleTypeEditor#()V" />
+    <scopeInfo nodeId="1560298786499498085" fileName="RuleTypeEditor.java" startLine="11" startPosition="27" endLine="19" endPosition="84">
       <varInfo nodeId="1560298786499498090" varName="cb" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499498083" fileName="RuleTypeEditor.java" startLine="10" startPosition="55" endLine="18" endPosition="3" />
-    <unitInfo nodeId="1560298786499498080" fileName="RuleTypeEditor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleTypeEditor" />
+    <scopeInfo nodeId="1560298786499498083" fileName="RuleTypeEditor.java" startLine="10" startPosition="55" endLine="20" endPosition="3" />
+    <unitInfo nodeId="1560298786499498080" fileName="RuleTypeEditor.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleTypeEditor" />
   </root>
 </debugInfo>
 

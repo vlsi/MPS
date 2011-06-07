@@ -623,10 +623,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void moveCurrentUp() {
+    if (getSelectionManager().getSelection() == null) {
+      return;
+    }
     new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
   }
 
   public void moveCurrentDown() {
+    if (getSelectionManager().getSelection() == null) {
+      return;
+    }
     new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
   }
 

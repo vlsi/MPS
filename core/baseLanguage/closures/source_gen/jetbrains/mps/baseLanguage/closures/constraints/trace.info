@@ -483,8 +483,8 @@
     <scopeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="391" startPosition="49" endLine="414" endPosition="20" />
     <scopeInfo nodeId="1202763885220" fileName="ClassifierTypeUtil.java" startLine="215" startPosition="55" endLine="239" endPosition="5" />
     <scopeInfo nodeId="1210666961221" fileName="ClassifierTypeUtil.java" startLine="123" startPosition="78" endLine="149" endPosition="19">
-      <varInfo nodeId="1210666992324" varName="concretes" />
       <varInfo nodeId="1210666992317" varName="visitedClassifiers" />
+      <varInfo nodeId="1210666992324" varName="concretes" />
       <varInfo nodeId="1210666992336" varName="resType" />
     </scopeInfo>
     <scopeInfo nodeId="1201536121399" fileName="ClassifierTypeUtil.java" startLine="297" startPosition="0" endLine="323" endPosition="0" />

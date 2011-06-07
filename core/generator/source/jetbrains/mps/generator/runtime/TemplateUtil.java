@@ -133,6 +133,22 @@ public class TemplateUtil {
     return rule;
   }
 
+  public static TemplateMappingPriorityRule createAfterOrTogetherRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {
+    MappingPriorityRule rule = new MappingPriorityRule();
+    rule.setLeft((MappingConfig_AbstractRef) left);
+    rule.setRight((MappingConfig_AbstractRef) right);
+    rule.setType(RuleType.AFTER_OR_TOGETHER);
+    return rule;
+  }
+
+  public static TemplateMappingPriorityRule createStrictlyAfterRule(TemplateMappingConfigRef left, TemplateMappingConfigRef right) {
+    MappingPriorityRule rule = new MappingPriorityRule();
+    rule.setLeft((MappingConfig_AbstractRef) left);
+    rule.setRight((MappingConfig_AbstractRef) right);
+    rule.setType(RuleType.STRICTLY_AFTER);
+    return rule;
+  }
+
   public static TemplateMappingConfigRef createRefGlobal() {
     return new MappingConfig_RefAllGlobal();
   }

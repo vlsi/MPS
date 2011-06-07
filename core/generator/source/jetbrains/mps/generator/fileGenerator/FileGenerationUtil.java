@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
@@ -35,7 +36,7 @@ public class FileGenerationUtil {
     return FileSystem.getInstance().getFileByPath(outputDir.getPath() + CACHES_SUFFIX);
   }
 
-  public static IFile getDefaultOutputDir(SModelDescriptor inputModelDescriptor, IFile outputRootDir) {
+  public static IFile getDefaultOutputDir(SModelDescriptor inputModelDescriptor, @NotNull IFile outputRootDir) {
     SModelReference reference = inputModelDescriptor.getSModelReference();
     return getDefaultOutputDir(reference, outputRootDir);
   }
@@ -44,7 +45,7 @@ public class FileGenerationUtil {
     return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
   }
 
-  public static IFile getDefaultOutputDir(SModelReference reference, IFile outputRootDir) {
+  public static IFile getDefaultOutputDir(SModelReference reference, @NotNull IFile outputRootDir) {
     String packageName = JavaNameUtil.packageNameForModelUID(reference);
     String packagePath;
     if (FileSystem.getInstance().isPackaged(outputRootDir)) {

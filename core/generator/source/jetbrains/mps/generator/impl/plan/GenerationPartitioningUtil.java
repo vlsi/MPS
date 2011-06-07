@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -28,6 +27,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -140,7 +140,7 @@ public class GenerationPartitioningUtil {
     }
     Collections.sort(list, new Comparator<Pair<MappingPriorityRule, String>>() {
       public int compare(Pair<MappingPriorityRule, String> o1, Pair<MappingPriorityRule, String> o2) {
-        return o1.second.compareTo(o2.second);
+        return o1.o2.compareTo(o2.o2);
       }
     });
     return list;

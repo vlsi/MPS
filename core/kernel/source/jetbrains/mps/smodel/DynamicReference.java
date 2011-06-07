@@ -67,12 +67,14 @@ public class DynamicReference extends SReferenceBase {
     SNode referenceNode = getSourceNode();
     SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
     SNode enclosingNode = getSourceNode().getParent();
+    IModule module = getModule();
+    if (module == null) return null;
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(
       enclosingNode,
       referenceNode,
       referenceNodeConcept,
       getRole(), // "genuine" role here
-      new ReferenceResolvingContext(getModule()));
+      new ReferenceResolvingContext(module));
     if (status.isError()) {
       if (!silently) {
         error("cannot obtain search scope: " + status.getMessage());

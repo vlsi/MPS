@@ -56,26 +56,25 @@ public class CellAction_CopyNode extends EditorCellAction {
     TextBuilder textBuilder = TextRenderUtil.getTextBuilderForSelectedCellsOfEditor(editorComponent);
 
     SelectionManager selectionManager = editorComponent.getSelectionManager();
-    List<SNode> selectedNodes = selectionManager.getSelection().getSelectedNodes();
-    if (selectedNodes.size() == 0) {
+    List<EditorCell> selectedCells = selectionManager.getSelection().getSelectedCells();
+    if (selectedCells.size() == 0) {
       return null;
     }
-    if (selectedNodes.size() > 1) {
-      LOG.debug("Copy " + selectedNodes.size() + " nodes : ");
-      for (SNode aNodeList : selectedNodes) {
-        LOG.debug("    " + aNodeList.getDebugText());
+    if (selectedCells.size() > 1) {
+      LOG.debug("Copy " + selectedCells.size() + " nodes : ");
+      for (EditorCell aCell : selectedCells) {
+        LOG.debug("    " + aCell.getSNode().getDebugText());
       }
     } else {
-      LOG.debug("Copy node : " + selectedNodes.get(0).getDebugText());
+      LOG.debug("Copy node : " + selectedCells.get(0).getSNode().getDebugText());
     }
 
     List<SNode> copyNodeList = new ArrayList<SNode>();
     Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
-    for (SNode node : selectedNodes) {
+    for (EditorCell selectedCell : selectedCells) {
+      SNode node = selectedCell.getSNode();
       final SNode parent = node.getParent();
       if (parent != null && AttributeOperations.isAttribute(node)) {
-
-        EditorCell selectedCell = editorComponent.getSelectedCell();
         Condition<EditorCell> condition = new Condition<EditorCell>() {
           public boolean met(EditorCell object) {
             SNode selectedNode = object.getSNode();

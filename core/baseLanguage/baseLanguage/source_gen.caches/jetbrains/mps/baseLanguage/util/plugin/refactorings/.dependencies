@@ -725,7 +725,6 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.ListPopup" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />

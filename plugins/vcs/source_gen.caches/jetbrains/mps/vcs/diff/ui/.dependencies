@@ -339,6 +339,39 @@
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.DiffModelTree" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.NextPreviousTraverser" file="NextPreviousTraverser.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.Selection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.OldChangeEditorMessage" file="OldChangeEditorMessage.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
@@ -728,6 +761,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Separator" />
     <classNode dependClassName="com.intellij.openapi.diff.ex.DiffStatusBar" />
     <classNode dependClassName="com.intellij.openapi.diff.impl.util.TextDiffType" />
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -761,6 +795,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorsGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.NextPreviousTraverser" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

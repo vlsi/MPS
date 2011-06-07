@@ -184,6 +184,14 @@ public class Binaries_Facet implements IFacet {
       return cls.cast(new Parameters());
     }
 
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      if (t != null) {
+        ((Binaries_Facet.Target_8acy7z_a.Parameters) t).pathToFile(((Binaries_Facet.Target_8acy7z_a.Parameters) copyFrom).pathToFile());
+      }
+      return t;
+    }
+
     public static class Parameters extends MultiTuple._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> {
       public Parameters() {
         super();

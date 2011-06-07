@@ -202,6 +202,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.HighlighterMessage" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelAdapter" />
@@ -217,9 +218,12 @@
     <classNode dependClassName="jetbrains.mps.typesystem.checking.TypesEditorChecker" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode extendsClassName="jetbrains.mps.ide.INodeChecker" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.LanguageChecksPlugin_CustomProjectPlugin" file="LanguageChecksPlugin_CustomProjectPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="jetbrains.mps.ide.INodeChecker" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.LanguageChecker" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
