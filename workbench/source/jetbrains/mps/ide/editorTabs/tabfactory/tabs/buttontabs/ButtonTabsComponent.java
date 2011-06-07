@@ -56,7 +56,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     }
 
     DefaultActionGroup group = new DefaultActionGroup();
-    group.add(myAddAction);
     for (ButtonEditorTab tab : myRealTabs) {
       group.add(tab.getAction(myEditor));
     }
@@ -122,6 +121,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
     if (getLastNode().equals(node)) {
       onNodeChange(myBaseNode.getNode());
+      return true;
     }
 
     return false;

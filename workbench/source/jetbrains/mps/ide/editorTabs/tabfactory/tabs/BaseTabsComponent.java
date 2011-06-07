@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.editorTabs.EditorTabComparator;
@@ -36,6 +38,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,7 +51,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected final Set<EditorTabDescriptor> myPossibleTabs;
   protected final JComponent myEditor;
   protected final boolean myShowGrayed;
-  protected final AnAction myAddAction;   //todo make private
 
   private List<Document> myEditedDocuments = new ArrayList<Document>();
   private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
@@ -65,7 +67,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myCallback = callback;
     myShowGrayed = showGrayed;
 
-    myAddAction = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
+    AnAction addAction = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
       public void changeNode(SNode newNode) {
         updateTabs();
         onNodeChange(newNode);
@@ -77,6 +79,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
     };
 
     myComponent = new JPanel(new BorderLayout());
+    ActionButton btn = new ActionButton(addAction, addAction.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
+    myComponent.add(btn, BorderLayout.WEST);
 
     myComponent.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {

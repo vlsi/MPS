@@ -66,7 +66,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
     myJbTabs = new AsJBTabs(project, SwingConstants.BOTTOM, navigation, myJbTabsDisposable);
     decorate(myJbTabs.getTabs());
 
-    getComponent().add(createAddNodeComponent(), BorderLayout.WEST);
     getComponent().add(myJbTabs.getTabs().getComponent(), BorderLayout.CENTER);
 
     updateTabs();
@@ -105,20 +104,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
       .setPaintBorder(0, 0, 0, 0)
       .setAdjustBorders(true)
       .setGhostsAlwaysVisible(true);
-  }
-
-  private JComponent createAddNodeComponent() {
-    AddAspectAction action = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
-      public void changeNode(SNode newNode) {
-        updateTabs();
-        onNodeChange(newNode);
-      }
-    }) {
-      protected SNode getCurrentAspect() {
-        return myRealTabs.get(myJbTabs.getSelectedIndex()).getNode();
-      }
-    };
-    return new ActionButton(action, action.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
   }
 
   protected void updateTabs() {
