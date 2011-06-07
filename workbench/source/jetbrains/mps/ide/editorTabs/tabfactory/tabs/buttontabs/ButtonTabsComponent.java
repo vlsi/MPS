@@ -17,6 +17,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
@@ -51,9 +52,9 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   protected void updateTabs() {
     myRealTabs.clear();
 
-    Map<EditorTabDescriptor,List<SNode>> newContent = updateDocumentsAndNodes();
-    for (EditorTabDescriptor key: newContent.keySet()){
-      myRealTabs.add(new EditorTab(this, myNodeChangeCallback, myRealTabs.size(), key, myBaseNode));
+    List<Pair<EditorTabDescriptor,List<SNode>>> newContent = updateDocumentsAndNodes();
+    for (Pair<EditorTabDescriptor,List<SNode>> p : newContent) {
+      myRealTabs.add(new EditorTab(this, myNodeChangeCallback, myRealTabs.size(), p.first, myBaseNode));
     }
 
     DefaultActionGroup group = new DefaultActionGroup();

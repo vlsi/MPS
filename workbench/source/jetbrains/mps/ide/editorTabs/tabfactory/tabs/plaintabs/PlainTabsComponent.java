@@ -20,6 +20,7 @@ import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Pair;
 import com.intellij.ui.PrevNextActionsDescriptor;
 import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
@@ -97,11 +98,11 @@ public class PlainTabsComponent extends BaseTabsComponent {
   protected void updateTabs() {
     myJbTabs.removeAll();
 
-    Map<EditorTabDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
+    List<Pair<EditorTabDescriptor,List<SNode>>> newContent = updateDocumentsAndNodes();
 
     //todo sort
-    for (EditorTabDescriptor key : newContent.keySet()) {
-      for (SNode node : newContent.get(key)) {
+    for (Pair<EditorTabDescriptor,List<SNode>> p : newContent) {
+      for (SNode node : p.second) {
         myRealTabs.add(new PlainEditorTab(node));
         myJbTabs.addTab(node.getPresentation(), new JPanel());
       }

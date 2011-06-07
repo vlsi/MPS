@@ -17,6 +17,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.util.Pair;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
@@ -127,21 +128,21 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myCallback.changeNode(node);
   }
 
-  protected Map<EditorTabDescriptor,List<SNode>> updateDocumentsAndNodes(){
+  protected List<Pair<EditorTabDescriptor,List<SNode>>> updateDocumentsAndNodes(){
     List<Document> editedDocumentsNew = new ArrayList<Document>();
     List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
 
     ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
     Collections.sort(tabs, new EditorTabComparator());
 
-    Map<EditorTabDescriptor,List<SNode>> result = new THashMap<EditorTabDescriptor, List<SNode>>();
+    List<Pair<EditorTabDescriptor,List<SNode>>> result = new ArrayList<Pair<EditorTabDescriptor, List<SNode>>>();
 
     getTabRemovalListener().clearAspects();
     for (EditorTabDescriptor d : tabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
       if (nodes.isEmpty()) continue;
 
-      result.put(d,nodes);
+      result.add(new Pair<EditorTabDescriptor, List<SNode>>(d, nodes));
       for (SNode node : nodes) {
         getTabRemovalListener().aspectAdded(node.getContainingRoot());
         SNodePointer nodePointer = new SNodePointer(node);
