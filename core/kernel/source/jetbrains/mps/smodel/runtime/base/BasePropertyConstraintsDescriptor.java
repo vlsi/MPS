@@ -15,59 +15,37 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import com.sun.tools.internal.ws.processor.model.jaxb.RpcLitMember;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
-  private ConstraintsDescriptor container;
-  private String name;
-
+public abstract class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
   private PropertyConstraintsDescriptor getterDescriptor;
   private PropertyConstraintsDescriptor setterDescriptor;
   private PropertyConstraintsDescriptor validatorDescriptor;
 
-  private PropertyConstraintsDispatchable directConstraints;
+  protected BasePropertyConstraintsDescriptor() {
+    if (hasOwnGetter()) {
+      getterDescriptor = this;
+    } else {
+      getterDescriptor = getGetterUsingInheritance(getContainer().getConceptFqName(), getName());
+    }
 
-  private BasePropertyConstraintsDescriptor(ConstraintsDescriptor container, String name, PropertyConstraintsDescriptor getterDescriptor, PropertyConstraintsDescriptor setterDescriptor, PropertyConstraintsDescriptor validatorDescriptor, PropertyConstraintsDispatchable directConstraints) {
-    this.container = container;
-    this.name = name;
-    this.getterDescriptor = getterDescriptor;
-    this.setterDescriptor = setterDescriptor;
-    this.validatorDescriptor = validatorDescriptor;
-    this.directConstraints = directConstraints;
-  }
+    if (hasOwnSetter()) {
+      setterDescriptor = this;
+    } else {
+      setterDescriptor = getSetterUsingInheritance(getContainer().getConceptFqName(), getName());
+    }
 
-  public static PropertyConstraintsDispatchable getEmptyDirectPropertyConstraintsDescriptor(final String propertyName, final ConstraintsDescriptor container) {
-    return new BaseDirectPropertyConstraintsDescriptor() {
-      @Override
-      public String getName() {
-        return propertyName;
-      }
-
-      @Override
-      public ConstraintsDescriptor getContainer() {
-        return container;
-      }
-    };
-  }
-
-  public static BasePropertyConstraintsDescriptor getPropertyConstraintsDescriptorUsingInheritance(@NotNull BaseDirectPropertyConstraintsDescriptor directConstraints) {
-    ConstraintsDescriptor container = directConstraints.getContainer();
-    String name = directConstraints.getName();
-    return new BasePropertyConstraintsDescriptor(
-      container, name,
-      directConstraints.hasOwnGetter() ? directConstraints : getGetterUsingInheritance(container.getConceptFqName(), name),
-      directConstraints.hasOwnSetter() ? directConstraints : getSetterUsingInheritance(container.getConceptFqName(), name),
-      directConstraints.hasOwnValidator() ? directConstraints : getValidatorUsingInheritance(container.getConceptFqName(), name),
-      directConstraints
-    );
+    if (hasOwnValidator()) {
+      validatorDescriptor = this;
+    } else {
+      validatorDescriptor = getValidatorUsingInheritance(getContainer().getConceptFqName(), getName());
+    }
   }
 
   @Nullable
@@ -126,27 +104,17 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public boolean hasOwnGetter() {
-    return setterDescriptor == directConstraints;
+    return false;
   }
 
   @Override
   public boolean hasOwnSetter() {
-    return getterDescriptor == directConstraints;
+    return false;
   }
 
   @Override
   public boolean hasOwnValidator() {
-    return validatorDescriptor == directConstraints;
-  }
-
-  @Override
-  public String getName() {
-    return name;
-  }
-
-  @Override
-  public ConstraintsDescriptor getContainer() {
-    return container;
+    return false;
   }
 
   @Override
@@ -154,7 +122,8 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (getterDescriptor != null) {
       return getterDescriptor.getValue(node, scope);
     } else {
-      return baseGet(getName(), node, scope);
+      // todo: base get
+      return null;
     }
   }
 
@@ -163,7 +132,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (setterDescriptor != null) {
       setterDescriptor.setValue(node, value, scope);
     } else {
-      baseSet(getName(), node, value, scope);
+      // todo: base set
     }
   }
 
@@ -172,53 +141,8 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (validatorDescriptor != null) {
       return validatorDescriptor.validateValue(node, value, scope);
     } else {
-      return baseValidate(getName(), node, value, scope);
-    }
-  }
-
-  private static void baseSet(String propertyName, SNode node, String value, IScope scope) {
-    // todo: base
-  }
-
-  private static Object baseGet(String propertyName, SNode node, IScope scope) {
-    // todo: base
-    return null;
-  }
-
-  private static boolean baseValidate(String propertyName, SNode node, String value, IScope scope) {
-    // todo: base
-    return true;
-  }
-
-  public static abstract class BaseDirectPropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
-    @Override
-    public boolean hasOwnGetter() {
-      return false;
-    }
-
-    @Override
-    public boolean hasOwnSetter() {
-      return false;
-    }
-
-    @Override
-    public boolean hasOwnValidator() {
-      return false;
-    }
-
-    @Override
-    public Object getValue(SNode node, IScope scope) {
-      return baseGet(getName(), node, scope);
-    }
-
-    @Override
-    public void setValue(SNode node, String value, IScope scope) {
-      baseSet(getName(), node, value, scope);
-    }
-
-    @Override
-    public boolean validateValue(SNode node, String value, IScope scope) {
-      return baseValidate(getName(), node, value, scope);
+      // todo: base validate
+      return true;
     }
   }
 }
