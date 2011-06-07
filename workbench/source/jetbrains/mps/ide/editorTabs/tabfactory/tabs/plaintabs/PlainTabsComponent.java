@@ -27,6 +27,7 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.AddAspectAction;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -74,13 +75,17 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     myJbTabs.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-        int index = myJbTabs.getSelectedIndex();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            int index = myJbTabs.getSelectedIndex();
 
-        //todo show grayed
-        SNode node = myRealTabs.get(index).getNode();
-        if (node != null) {
-          myCallback.changeNode(node);
-        }
+            //todo show grayed
+            SNode node = myRealTabs.get(index).getNode();
+            if (node != null) {
+              myCallback.changeNode(node);
+            }
+          }
+        });
       }
     });
   }
@@ -92,7 +97,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
         return null;//todo
       }
     });
-    return ActionManager.getInstance().createButtonToolbar(ActionPlaces.UNKNOWN, group);
+    return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group,true).getComponent();
   }
 
   protected void updateTabs() {
