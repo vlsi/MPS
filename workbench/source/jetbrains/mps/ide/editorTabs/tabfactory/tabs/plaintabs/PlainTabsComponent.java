@@ -47,6 +47,7 @@ import java.util.*;
 public class PlainTabsComponent extends BaseTabsComponent {
   private List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
   private AsJBTabs myJbTabs;
+  private EditorTabDescriptor myLastEmptyTab = null;
 
   private final Disposable myJbTabsDisposable = new Disposable() {
     public void dispose() {
@@ -73,12 +74,15 @@ public class PlainTabsComponent extends BaseTabsComponent {
           public void run() {
             int index = myJbTabs.getSelectedIndex();
             PlainEditorTab tab = myRealTabs.get(index);
-            SNode node = tab.getNode().getNode();
+            SNodePointer np = tab.getNode();
+            SNode node = np == null ? null : np.getNode();
 
             if (node != null) {
+              myLastEmptyTab = null;
               onNodeChange(node);
             } else {
-              enterCreateMode(tab.getTab());
+              myLastEmptyTab = tab.getTab();
+              enterCreateMode(myLastEmptyTab);
             }
           }
         });
@@ -133,8 +137,15 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   private void selectNodeTab() {
     for (PlainEditorTab t : myRealTabs) {
-      if (t.getNode().equals(getLastNode())) {
+      if (t.getNode() != null && t.getNode().equals(getLastNode())) {
         myJbTabs.setSelectedIndex(myRealTabs.indexOf(t));
+        return;
+      }
+    }
+    for (PlainEditorTab t : myRealTabs) {
+      if (t.getNode() == null && t.getTab().equals(myLastEmptyTab)) {
+        myJbTabs.setSelectedIndex(myRealTabs.indexOf(t));
+        return;
       }
     }
   }

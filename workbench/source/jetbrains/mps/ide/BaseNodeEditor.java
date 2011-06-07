@@ -113,6 +113,11 @@ public abstract class BaseNodeEditor implements IEditor {
       myEditorComponent = null;
     }
 
+    if (myReplace != null) {
+      myComponent.remove(myReplace);
+      myReplace = null;
+    }
+
     myReplace = replace;
     myComponent.add(myReplace, BorderLayout.CENTER);
   }
