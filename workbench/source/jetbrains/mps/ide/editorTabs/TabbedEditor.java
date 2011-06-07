@@ -69,7 +69,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       public void changeNode(SNode newNode) {
         showNodeInternal(newNode, !newNode.isRoot(), true);
       }
-    }, new CreateModeCallback(){
+    }, new CreateModeCallback() {
       public void exitCreateMode() {
         showEditor();
       }
@@ -77,7 +77,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       public void enterCreateMode(JComponent replace) {
         showComponent(replace);
       }
-    }) ;
+    });
 
     showNode(baseNode.getNode(), false);
 
@@ -219,7 +219,8 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (state instanceof TabbedEditorState) {
-          SNode node = ((TabbedEditorState) state).myCurrentNode.getNode();
+          SNodePointer nodePointer = ((TabbedEditorState) state).myCurrentNode;
+          SNode node = nodePointer == null ? null : nodePointer.getNode();
           if (node != null) {
             showNode(node, false);
           }

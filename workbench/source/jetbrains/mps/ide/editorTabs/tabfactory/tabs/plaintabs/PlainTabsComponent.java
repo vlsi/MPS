@@ -17,7 +17,9 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.PrevNextActionsDescriptor;
@@ -32,8 +34,11 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.apache.commons.lang.ObjectUtils;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
@@ -49,7 +54,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   };
 
   public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed,createModeCallback);
+    super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback);
 
     DataContext dataContext = DataManager.getInstance().getDataContext(myEditor);
     Project project = PlatformDataKeys.PROJECT.getData(dataContext);
@@ -83,7 +88,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   public void setLastNode(SNodePointer node) {
     //not to make infinite recursion when tab is clicked
-    if (node.equals(getLastNode())) return;
+    if (ObjectUtils.equals(node, getLastNode())) return;
 
     super.setLastNode(node);
     selectNodeTab();

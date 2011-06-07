@@ -132,7 +132,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   protected void onNodeChange(SNode node) {
     SNodePointer oldNode = myLastNode;
-    myLastNode = new SNodePointer(node);
+    setLastNode(new SNodePointer(node));
     if (oldNode == null && node != null) {
       if (myCreateModeCallback != null) {
         myCreateModeCallback.exitCreateMode();
@@ -142,7 +142,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   protected void enterCreateMode(EditorTabDescriptor tab) {
-    myLastNode = null;
+    setLastNode(null);
     if (myCreateModeCallback != null) {
       myCreateModeCallback.enterCreateMode(new CreatePanel(tab));
     }
@@ -226,6 +226,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
           popupComponent.show(e.getComponent(), e.getX(), e.getY());
         }
       });
+      label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 
       add(label, BorderLayout.CENTER);
     }
