@@ -17,11 +17,9 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.Pair;
@@ -30,8 +28,8 @@ import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
 import com.intellij.ui.tabs.JBTabs;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
-import jetbrains.mps.ide.editorTabs.tabfactory.tabs.AddAspectAction;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -42,7 +40,6 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -119,7 +116,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     for (Pair<EditorTabDescriptor, List<SNode>> p : newContent) {
       for (SNode node : p.second) {
         myRealTabs.add(new PlainEditorTab(node));
-        myJbTabs.addTab(node.getPresentation(), fill);
+        myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
       }
     }
   }
