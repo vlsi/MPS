@@ -4,14 +4,13 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.ide.modelchecker.actions.SpecificChecker;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.extensions.Extensions;
+import jetbrains.mps.ide.INodeChecker;
 
 public class LanguageChecksPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private LanguageChecker myChecker;
   private Highlighter myHighlighter;
-  private SpecificChecker myLangSpecificChecker;
 
   public LanguageChecksPlugin_CustomProjectPlugin() {
   }
@@ -22,8 +21,7 @@ public class LanguageChecksPlugin_CustomProjectPlugin extends BaseCustomProjectP
     if (LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter != null) {
       LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
     }
-    LanguageChecksPlugin_CustomProjectPlugin.this.myLangSpecificChecker = new LangSpecificChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
-    Extensions.getArea(null).getExtensionPoint(SpecificChecker.CHECKERS).registerExtension(LanguageChecksPlugin_CustomProjectPlugin.this.myLangSpecificChecker);
+    Extensions.getArea(null).getExtensionPoint(INodeChecker.CHECKERS).registerExtension(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
   }
 
   public void doDispose(MPSProject project) {
@@ -31,6 +29,6 @@ public class LanguageChecksPlugin_CustomProjectPlugin extends BaseCustomProjectP
       LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
     }
     LanguageChecksPlugin_CustomProjectPlugin.this.myChecker.dispose();
-    Extensions.getArea(null).getExtensionPoint(SpecificChecker.CHECKERS).unregisterExtension(LanguageChecksPlugin_CustomProjectPlugin.this.myLangSpecificChecker);
+    Extensions.getArea(null).getExtensionPoint(INodeChecker.CHECKERS).unregisterExtension(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
   }
 }

@@ -13,11 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps;
+package jetbrains.mps.ide;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 
-public class ISpecificChecker {
-   public static ExtensionPointName<ISpecificChecker> CHECKERS =
-    ExtensionPointName.create("com.intellij.mps.ISpecificChecker");
+import java.util.Set;
+
+public interface INodeChecker {
+  public static ExtensionPointName<INodeChecker> CHECKERS = ExtensionPointName.create("com.intellij.mps.SpecificCheckers");
+
+  public abstract Set<IErrorReporter> getErrors(SNode node, IOperationContext operationContext);
 }

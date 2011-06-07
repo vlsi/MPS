@@ -15,12 +15,10 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/kernelSolution/jetbrains.mps.kernel.msd" />
-      <solutionPath path="${project}/smodelRuntime/smodelRuntime.msd" />
-    </projectSolutions>
-    <projectLanguages />
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/kernelSolution/jetbrains.mps.kernel.msd" />
+      <modulePath path="${project}/smodelRuntime/smodelRuntime.msd" />
+    </projectModules>
     <genConfs>
       <genConfModule name="kernel" moduleRef="jetbrains.mps.kernel" />
     </genConfs>
