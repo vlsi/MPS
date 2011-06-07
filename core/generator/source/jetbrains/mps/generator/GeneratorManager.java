@@ -110,21 +110,28 @@ public class GeneratorManager {
           @Override
           public Boolean compute() {
             final boolean success = gc.generate();
-            if(success) {
-              try {
-                ModelAccess.instance().requireWrite(new Runnable() {
-                  public void run() {
-                    fireModelsGenerated(Collections.unmodifiableList(inputModels), success);
-                  }
-                });
-              }
-              catch (RuntimeException e) {LOG.error(e);}
-            }
             return success;
           }
         });
       }
     });
+    ModelAccess.instance().requireWrite(new Runnable() {
+      @Override
+      public void run() {
+        CleanupManager.getInstance().cleanup();
+      }
+    });
+
+    if(result[0]) {
+      try {
+        ModelAccess.instance().requireWrite(new Runnable() {
+          public void run() {
+            fireModelsGenerated(Collections.unmodifiableList(inputModels), result[0]);
+          }
+        });
+      }
+      catch (RuntimeException e) {LOG.error(e);}
+    }
 
     options.getGenerationTracer().finishTracing();
 
