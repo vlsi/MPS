@@ -69,19 +69,15 @@ public class EditorCell_Property extends EditorCell_Label {
     boolean oldSelected = isSelected();
     super.setSelected(selected);
     if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (myCommitInCommand) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                commit();
-              }
-            });
-          } else {
+      if (myCommitInCommand) {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
             commit();
           }
-        }
-      });
+        }, getOperationContext().getProject());
+      } else {
+        commit();
+      }
     }
   }
 
