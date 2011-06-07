@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,27 +59,52 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   public static BasePropertyConstraintsDescriptor getPropertyConstraintsDescriptorUsingInheritance(@NotNull BaseDirectPropertyConstraintsDescriptor directConstraints) {
     ConstraintsDescriptor container = directConstraints.getContainer();
+    String name = directConstraints.getName();
     return new BasePropertyConstraintsDescriptor(
-      container, directConstraints.getName(),
-      directConstraints.hasOwnGetter() ? directConstraints : getGetterUsingInheritance(container.getConceptFqName()),
-      directConstraints.hasOwnSetter() ? directConstraints : getSetterUsingInheritance(container.getConceptFqName()),
-      directConstraints.hasOwnValidator() ? directConstraints : getValidatorUsingInheritance(container.getConceptFqName()),
+      container, name,
+      directConstraints.hasOwnGetter() ? directConstraints : getGetterUsingInheritance(container.getConceptFqName(), name),
+      directConstraints.hasOwnSetter() ? directConstraints : getSetterUsingInheritance(container.getConceptFqName(), name),
+      directConstraints.hasOwnValidator() ? directConstraints : getValidatorUsingInheritance(container.getConceptFqName(), name),
       directConstraints
     );
   }
 
   @Nullable
-  private static PropertyConstraintsDescriptor getGetterUsingInheritance(String conceptFqName) {
+  private static PropertyConstraintsDescriptor getGetterUsingInheritance(String conceptFqName, String propertyName) {
+    for (String parent : ConceptRegistry.getInstance().getStructureDescriptor(conceptFqName).getParentsNames()) {
+      // todo: remove case, wrong code
+      ConstraintsDescriptor parentDescriptor = (ConstraintsDescriptor) ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
+      if (parentDescriptor == null) {
+        continue;
+      }
+      PropertyConstraintsDescriptor parentPropertyDescriptor = parentDescriptor.getProperty(propertyName);
+      if (parentPropertyDescriptor == null) {
+        continue;
+      }
+
+      if (parentPropertyDescriptor instanceof BasePropertyConstraintsDescriptor) {
+        return ((BasePropertyConstraintsDescriptor) parentPropertyDescriptor).getterDescriptor;
+      } else if (parentPropertyDescriptor instanceof PropertyConstraintsDispatchable) {
+        if (((PropertyConstraintsDispatchable) parentPropertyDescriptor).hasOwnGetter()) {
+          return parentPropertyDescriptor;
+        } else {
+          return getGetterUsingInheritance(parent, propertyName);
+        }
+      } else {
+        return parentPropertyDescriptor;
+      }
+    }
+
     return null;
   }
 
   @Nullable
-  private static PropertyConstraintsDescriptor getSetterUsingInheritance(String conceptFqName) {
+  private static PropertyConstraintsDescriptor getSetterUsingInheritance(String conceptFqName, String propertyName) {
     return null;
   }
 
   @Nullable
-  private static PropertyConstraintsDescriptor getValidatorUsingInheritance(String conceptFqName) {
+  private static PropertyConstraintsDescriptor getValidatorUsingInheritance(String conceptFqName, String propertyName) {
     return null;
   }
 
