@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import com.sun.tools.internal.ws.processor.model.jaxb.RpcLitMember;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -88,7 +89,10 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
         if (((PropertyConstraintsDispatchable) parentPropertyDescriptor).hasOwnGetter()) {
           return parentPropertyDescriptor;
         } else {
-          return getGetterUsingInheritance(parent, propertyName);
+          PropertyConstraintsDescriptor parentGetter = getGetterUsingInheritance(parent, propertyName);
+          if (parentGetter != null) {
+            return parentGetter;
+          }
         }
       } else {
         return parentPropertyDescriptor;
