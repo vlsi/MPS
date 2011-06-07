@@ -17,9 +17,31 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public abstract class BaseConceptDescriptor implements ConceptDescriptor {
+  private Set<String> propertyNamesSet;
+  private Set<String> referenceNamesSet;
+
   @Override
   public boolean isAssignableTo(String toConceptFqName) {
-    return getAncestorsNames().contains(toConceptFqName);
+    return getAncestorNames().contains(toConceptFqName);
+  }
+
+  @Override
+  public boolean hasProperty(String name) {
+    if (propertyNamesSet == null) {
+      propertyNamesSet = new HashSet<String>(getPropertyNames());
+    }
+    return propertyNamesSet.contains(name);
+  }
+
+  @Override
+  public boolean hasReference(String name) {
+    if (referenceNamesSet == null) {
+      referenceNamesSet = new HashSet<String>(getReferenceNames());
+    }
+    return referenceNamesSet.contains(name);
   }
 }

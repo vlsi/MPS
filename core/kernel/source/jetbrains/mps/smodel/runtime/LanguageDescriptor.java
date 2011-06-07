@@ -15,8 +15,24 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public interface ReferenceConstraintsDispatchable extends ReferenceConstraintsDescriptor {
-  boolean hasOwnScopeProvider();
+import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 
-  boolean hasOwnOnReferenceSetHandler();
+import java.util.Collection;
+
+public interface LanguageDescriptor {
+  String getNamespace();
+
+  IHelginsDescriptor getTypesystem();
+
+  BaseFindUsagesDescriptor getFindUsages();
+
+  Collection<TemplateModule> getGenerators();
+
+  StructureAspectDescriptor getStructureAspect();
+
+  BehaviorAspectDescriptor getBehaviorAspect();
+
+  ConstraintsAspectDescriptor getConstraintsAspect();
 }

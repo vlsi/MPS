@@ -23,12 +23,18 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
-  private PropertyConstraintsDescriptor getterDescriptor;
-  private PropertyConstraintsDescriptor setterDescriptor;
-  private PropertyConstraintsDescriptor validatorDescriptor;
+public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
+  private final String name;
+  private final ConstraintsDescriptor container;
 
-  protected BasePropertyConstraintsDescriptor() {
+  private final PropertyConstraintsDescriptor getterDescriptor;
+  private final PropertyConstraintsDescriptor setterDescriptor;
+  private final PropertyConstraintsDescriptor validatorDescriptor;
+
+  public BasePropertyConstraintsDescriptor(String propertyName, ConstraintsDescriptor container) {
+    this.name = propertyName;
+    this.container = container;
+
     if (hasOwnGetter()) {
       getterDescriptor = this;
     } else {
@@ -108,13 +114,18 @@ public abstract class BasePropertyConstraintsDescriptor implements PropertyConst
   }
 
   @Override
+  public String getName() {
+    return name;
+  }
+
+  @Override
+  public ConstraintsDescriptor getContainer() {
+    return container;
+  }
+
+  @Override
   public Object getValue(SNode node, IScope scope) {
-    if (getterDescriptor != null) {
-      return getterDescriptor.getValue(node, scope);
-    } else {
-      // todo: base get
-      return null;
-    }
+    return getterDescriptor != null ? getterDescriptor.getValue(node, scope) : node.getPersistentProperty(getName());
   }
 
   @Override
@@ -128,12 +139,7 @@ public abstract class BasePropertyConstraintsDescriptor implements PropertyConst
 
   @Override
   public boolean validateValue(SNode node, String value, IScope scope) {
-    if (validatorDescriptor != null) {
-      return validatorDescriptor.validateValue(node, value, scope);
-    } else {
-      // todo: base validate
-      return true;
-    }
+    return validatorDescriptor == null || validatorDescriptor.validateValue(node, value, scope);
   }
 
   private static interface InheritanceCalculateParameters {
@@ -153,7 +159,6 @@ public abstract class BasePropertyConstraintsDescriptor implements PropertyConst
       return parentDescriptor.hasOwnGetter();
     }
   };
-
   private static final InheritanceCalculateParameters SETTER_INHERITANCE_PARAMETERS = new InheritanceCalculateParameters() {
     @Override
     public PropertyConstraintsDescriptor getParentCalculatedDescriptor(BasePropertyConstraintsDescriptor parentDescriptor) {
@@ -165,7 +170,6 @@ public abstract class BasePropertyConstraintsDescriptor implements PropertyConst
       return parentDescriptor.hasOwnSetter();
     }
   };
-
   private static final InheritanceCalculateParameters VALIDATOR_INHERITANCE_PARAMETERS = new InheritanceCalculateParameters() {
     @Override
     public PropertyConstraintsDescriptor getParentCalculatedDescriptor(BasePropertyConstraintsDescriptor parentDescriptor) {

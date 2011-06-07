@@ -19,6 +19,8 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.structure.*;
 
 import java.util.Collection;
@@ -71,5 +73,9 @@ public abstract class LanguageRuntime {
       constraintsDescriptor = getDescriptorProvider("constraints.ConstraintsAspectDescriptor", LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER);
     }
     return constraintsDescriptor;
+  }
+
+  public StructureAspectDescriptor getStructureAspectDescriptor() {
+    return StructureAspectInterpreted.getInstance();
   }
 }

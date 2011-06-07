@@ -59,6 +59,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.smodel.behaviour.BehaviorManager</implementation-class>
     </component>
 

@@ -30,14 +30,18 @@ public interface ConceptDescriptor {
 
   List<String> getPropertyNames();
 
-  boolean hasProperty();
+  boolean hasProperty(String name);
+
+  List<String> getReferenceNames();
+
+  boolean hasReference(String name);
 
   // LanguageHierarchyCache replace
   List<String> getParentsNames();
 
   boolean isAssignableTo(String toConceptFqName);
 
-  Set<String> getAncestorsNames();
+  Set<String> getAncestorNames();
 
 //  Set<String> getDescendantsOfConcept(String conceptFQName);
 //  Set<String> getAllDescendantsOfConcept(String conceptFqName);

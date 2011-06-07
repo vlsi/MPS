@@ -20,17 +20,28 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BaseConstraintsDescriptor implements ConstraintsDispatchable {
-  private ConstraintsDescriptor canBeChildDescriptor;
-  private ConstraintsDescriptor canBeRootDescriptor;
-  private ConstraintsDescriptor canBeParentDescriptor;
-  private ConstraintsDescriptor canBeAncestorDescriptor;
+import java.util.Map;
 
-  private ConstraintsDescriptor defaultScopeProviderDescriptor;
+public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
+  private final String fqName;
 
-  protected BaseConstraintsDescriptor() {
+  private final ConstraintsDescriptor canBeChildDescriptor;
+  private final ConstraintsDescriptor canBeRootDescriptor;
+  private final ConstraintsDescriptor canBeParentDescriptor;
+  private final ConstraintsDescriptor canBeAncestorDescriptor;
+
+  private final ConstraintsDescriptor defaultScopeProviderDescriptor;
+
+  private final Map<String, PropertyConstraintsDescriptor> propertiesConstraints = new HashMap<String, PropertyConstraintsDescriptor>();
+
+  private final Map<String, ReferenceConstraintsDescriptor> referencesConstraints = new HashMap<String, ReferenceConstraintsDescriptor>();
+
+  protected BaseConstraintsDescriptor(String fqName) {
+    this.fqName = fqName;
+
     if (hasOwnCanBeChildMethod()) {
       canBeChildDescriptor = this;
     } else {
@@ -115,6 +126,11 @@ public abstract class BaseConstraintsDescriptor implements ConstraintsDispatchab
   }
 
   @Override
+  public String getConceptFqName() {
+    return fqName;
+  }
+
+  @Override
   public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
     return canBeChildDescriptor == null || canBeChildDescriptor.canBeChild(operationContext, parentNode, link, concept, checkingNodeContext);
   }
@@ -136,12 +152,34 @@ public abstract class BaseConstraintsDescriptor implements ConstraintsDispatchab
 
   @Override
   public PropertyConstraintsDescriptor getProperty(String name) {
-    return null;
+    if (propertiesConstraints.containsKey(name)) {
+      return propertiesConstraints.get(name);
+    }
+
+    // todo!
+    if (!((ConceptDescriptor) ConceptRegistry.getInstance().getStructureDescriptor(getConceptFqName())).hasProperty(name)) {
+      return null;
+    }
+
+    propertiesConstraints.put(name, new BasePropertyConstraintsDescriptor(name, this));
+
+    return propertiesConstraints.get(name);
   }
 
   @Override
   public ReferenceConstraintsDescriptor getReference(String refName) {
-    return null;
+    if (referencesConstraints.containsKey(refName)) {
+      return referencesConstraints.get(refName);
+    }
+
+    // todo!
+    if (!((ConceptDescriptor) ConceptRegistry.getInstance().getStructureDescriptor(getConceptFqName())).hasReference(refName)) {
+      return null;
+    }
+
+    referencesConstraints.put(refName, new BaseReferenceConstraintsDescriptor(refName, this));
+
+    return referencesConstraints.get(refName);
   }
 
   @Override
@@ -176,7 +214,6 @@ public abstract class BaseConstraintsDescriptor implements ConstraintsDispatchab
       return parentDescriptor.hasOwnCanBeParentMethod();
     }
   };
-
   private static final InheritanceCalculateParameters CAN_BE_CHILD_INHERITANCE_PARAMETERS = new InheritanceCalculateParameters() {
     @Override
     public ConstraintsDescriptor getParentCalculatedDescriptor(BaseConstraintsDescriptor parentDescriptor) {
