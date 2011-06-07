@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.HackSNodeUtil;
@@ -63,18 +64,22 @@ public class ModelLinkMap {
   }
 
   public void addTypeLocation(SNodePointer ptr, SNode node) {
+    RoleIdsComponent.conceptRead(node, ptr.getNodeId());
     addValue(myNodeTypeMap, ptr, node);
   }
 
   public void addRoleLocation(SNodePointer ptr, SNode node) {
+    RoleIdsComponent.nodeRoleRead(node, ptr.getNodeId());
     addValue(myNodeRoleMap, ptr, node);
   }
 
   public void addRoleLocation(SNodePointer ptr, SReference ref) {
+    RoleIdsComponent.referenceRoleRead(ref, ptr.getNodeId());
     addValue(myRefRoleMap, ptr, ref);
   }
 
   public void addNameLocation(SNodePointer ptr, SNode node, String name) {
+    RoleIdsComponent.propertyNameRead(node, name, ptr.getNodeId());
     addValue(myPropNameMap, ptr, new Pair<SNode, String>(node, name));
   }
 
