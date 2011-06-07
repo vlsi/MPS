@@ -17,32 +17,30 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.IdeActions;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Disposer;
-import com.intellij.openapi.util.Pair;
 import com.intellij.ui.PrevNextActionsDescriptor;
 import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
 import com.intellij.ui.tabs.JBTabs;
+import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
+import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.*;
 
 public class PlainTabsComponent extends BaseTabsComponent {
   private List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
@@ -107,16 +105,24 @@ public class PlainTabsComponent extends BaseTabsComponent {
     myRealTabs.clear();
     myJbTabs.removeAll();
 
-    List<Pair<EditorTabDescriptor, List<SNode>>> newContent = updateDocumentsAndNodes();
+    ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
+    Collections.sort(tabs, new EditorTabComparator());
+
+    Map<EditorTabDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
 
     //todo show grayed
-    //todo sort
-    //todo navi actions
+    //todo sort nodes inside aspect
     JLabel fill = new JLabel("");
-    for (Pair<EditorTabDescriptor, List<SNode>> p : newContent) {
-      for (SNode node : p.second) {
-        myRealTabs.add(new PlainEditorTab(node));
-        myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
+    for (EditorTabDescriptor tab : tabs) {
+      List<SNode> nodes = newContent.get(tab);
+      if (nodes != null) {
+        for (SNode node : nodes) {
+          myRealTabs.add(new PlainEditorTab(node));
+          myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
+        }
+      } else if (myShowGrayed) {
+        myRealTabs.add(new PlainEditorTab(null));
+        myJbTabs.addTab(tab.getTitle(), new CreatePanel(tab));
       }
     }
   }
@@ -152,5 +158,33 @@ public class PlainTabsComponent extends BaseTabsComponent {
       }
     }
     return false;
+  }
+
+  private class CreatePanel extends JPanel {
+    public CreatePanel(final EditorTabDescriptor tab) {
+      super(new BorderLayout());
+
+      JLabel label = new JLabel("Click to create new aspect");
+      label.addMouseListener(new MouseAdapter() {
+        public void mouseClicked(final MouseEvent e) {
+          ActionGroup group = ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+            public ActionGroup compute() {
+              return CreateGroupsBuilder.getCreateGroup(myBaseNode, new NodeChangeCallback() {
+                public void changeNode(SNode newNode) {
+                  updateTabs();
+                  onNodeChange(newNode);
+                }
+              }, tab);
+            }
+          });
+
+          ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
+          JPopupMenu popupComponent = popup.getComponent();
+          popupComponent.show(e.getComponent(), e.getX(), e.getY());
+        }
+      });
+
+      add(label, BorderLayout.CENTER);
+    }
   }
 }

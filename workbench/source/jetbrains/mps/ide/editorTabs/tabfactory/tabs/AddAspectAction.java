@@ -61,9 +61,7 @@ public abstract class AddAspectAction extends AnAction {
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    CreateGroupsBuilder builder = new CreateGroupsBuilder(myBaseNode, myPossibleTabs, getCurrentAspect(), myCallback);
-
-    Iterator<DefaultActionGroup> it = builder.getCreateGroups().iterator();
+    Iterator<DefaultActionGroup> it = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, getCurrentAspect(), myCallback).iterator();
 
     if (it.hasNext()) {
       DefaultActionGroup current = it.next();

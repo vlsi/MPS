@@ -19,19 +19,15 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.util.Pair;
-import jetbrains.mps.ide.editorTabs.EditorTabComparator;
+import gnu.trove.THashMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
@@ -40,10 +36,7 @@ import javax.swing.KeyStroke;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class BaseTabsComponent implements TabsComponent {
   private final NodeChangeCallback myCallback;
@@ -138,21 +131,18 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myCallback.changeNode(node);
   }
 
-  protected List<Pair<EditorTabDescriptor, List<SNode>>> updateDocumentsAndNodes() {
+  protected Map<EditorTabDescriptor, List<SNode>> updateDocumentsAndNodes() {
     List<Document> editedDocumentsNew = new ArrayList<Document>();
     List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
 
-    ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
-    Collections.sort(tabs, new EditorTabComparator());
-
-    List<Pair<EditorTabDescriptor, List<SNode>>> result = new ArrayList<Pair<EditorTabDescriptor, List<SNode>>>();
+    Map<EditorTabDescriptor, List<SNode>> result = new THashMap<EditorTabDescriptor, List<SNode>>();
 
     getTabRemovalListener().clearAspects();
-    for (EditorTabDescriptor d : tabs) {
+    for (EditorTabDescriptor d : myPossibleTabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
       if (nodes.isEmpty()) continue;
 
-      result.add(new Pair<EditorTabDescriptor, List<SNode>>(d, nodes));
+      result.put(d, nodes);
       for (SNode node : nodes) {
         getTabRemovalListener().aspectAdded(node.getContainingRoot());
         SNodePointer nodePointer = new SNodePointer(node);

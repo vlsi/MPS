@@ -33,45 +33,28 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreateGroupsBuilder {
-  private SNodePointer myBaseNode;
-  private Collection<EditorTabDescriptor> myPossibleTabs;
-  private SNode myCurrentAspect;
-  private NodeChangeCallback myCallback;
-
-  public CreateGroupsBuilder(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, SNode currentAspect, NodeChangeCallback callback) {
-    myBaseNode = baseNode;
-    myPossibleTabs = possibleTabs;
-    myCurrentAspect = currentAspect;
-    myCallback = callback;
-  }
-
-  public List<DefaultActionGroup> getCreateGroups() {
+  public static List<DefaultActionGroup> getCreateGroups(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, SNode currentAspect, NodeChangeCallback callback) {
     List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
 
-    List<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
+    List<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(possibleTabs);
     Collections.sort(tabs, new EditorTabComparator());
 
     for (final EditorTabDescriptor d : tabs) {
-      List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
-      if (concepts.isEmpty()) continue;
+      List<SNode> nodes = d.getNodes(baseNode.getNode());
+      if (!nodes.isEmpty() && d.isSingle()) continue;
 
       boolean current = false;
-      List<SNode> nodes = d.getNodes(myBaseNode.getNode());
-      if (myCurrentAspect != null) {
+      if (currentAspect != null) {
         for (SNode aspect : nodes) {
-          if (aspect.getContainingRoot().equals(myCurrentAspect)) {
+          if (aspect.getContainingRoot().equals(currentAspect)) {
             current = true;
             break;
           }
         }
       }
 
-      if (!nodes.isEmpty() && d.isSingle()) continue;
-
-      DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), false);
-      for (final SNode concept : concepts) {
-        group.add(new CreateAction(concept, d));
-      }
+      DefaultActionGroup group = getCreateGroup(baseNode, callback, d);
+      if (group == null) continue;
 
       if (current) {
         groups.add(0, group);
@@ -82,14 +65,29 @@ public class CreateGroupsBuilder {
     return groups;
   }
 
-  private class CreateAction extends AnAction {
+  public static DefaultActionGroup getCreateGroup(SNodePointer baseNode, NodeChangeCallback callback, EditorTabDescriptor d) {
+    List<SNode> concepts = d.getConcepts(baseNode.getNode());
+    if (concepts.isEmpty()) return null;
+
+    DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), false);
+    for (final SNode concept : concepts) {
+      group.add(new CreateAction(concept, d, baseNode, callback));
+    }
+    return group;
+  }
+
+  private static class CreateAction extends AnAction {
     private final SNode myConcept;
     private final EditorTabDescriptor myDescriptor;
+    private SNodePointer myBaseNode;
+    private NodeChangeCallback myCallback;
 
-    public CreateAction(SNode concept, EditorTabDescriptor descriptor) {
+    public CreateAction(SNode concept, EditorTabDescriptor descriptor, SNodePointer baseNode, NodeChangeCallback callback) {
       super(concept.getName().replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myDescriptor = descriptor;
+      myBaseNode = baseNode;
+      myCallback = callback;
     }
 
     public void actionPerformed(AnActionEvent e) {
