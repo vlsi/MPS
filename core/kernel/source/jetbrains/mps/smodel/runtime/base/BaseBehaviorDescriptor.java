@@ -15,5 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-public class BaseBehaviorDescriptor {
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+
+public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
 }

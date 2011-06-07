@@ -17,8 +17,9 @@ package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.Nullable;
 
-public class CheckingNodeContext {
+public class CheckingNodeContext implements jetbrains.mps.smodel.runtime.CheckingNodeContext {
   public SNodePointer breakingNodePointer;
 
   public SNode getBreakingNodeAndClearContext() {
@@ -29,5 +30,15 @@ public class CheckingNodeContext {
     SNode node = breakingNodePointer.getNode();
     breakingNodePointer = null;
     return node;
+  }
+
+  @Override
+  public void setBreakingNode(@Nullable SNodePointer node) {
+    this.breakingNodePointer = node;
+  }
+
+  @Override
+  public SNodePointer getBreakingNode() {
+    return breakingNodePointer;
   }
 }

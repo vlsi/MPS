@@ -18,14 +18,17 @@ package jetbrains.mps.smodel.structure;
 import com.intellij.util.Function;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.*;
+import jetbrains.mps.smodel.runtime.*;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.util.SmallMap;
 import jetbrains.mps.util.misc.hash.HashMap;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class DataHolderConstraintsDescriptor extends ConstraintsDescriptor {
+public class DataHolderConstraintsDescriptor extends ConstraintsDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsDescriptor {
   private static final Function<ConstraintsDescriptor, Map<String, INodePropertyGetter>> PROPERTY_GETTERS_FUNCTION = new Function<ConstraintsDescriptor, Map<String, INodePropertyGetter>>() {
     @Override
     public Map<String, INodePropertyGetter> fun(ConstraintsDescriptor descriptor) {
@@ -225,4 +228,67 @@ public class DataHolderConstraintsDescriptor extends ConstraintsDescriptor {
   public String getDefaultConcreteConceptFqName() {
     return defaultConcreteConceptFqName;
   }
+
+  // adapter to new constraints descriptor
+  @Override
+  public String getConceptFqName() {
+    return fqName;
+  }
+
+  private <T> boolean executeCanBeMethod(@Nullable CanBeASomethingMethod<T> method, IOperationContext operationContext, T context, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (method == null) {
+      return true;
+    }
+
+    jetbrains.mps.smodel.structure.CheckingNodeContext _checkingNodeContext = null;
+    if (checkingNodeContext != null) {
+      _checkingNodeContext = new jetbrains.mps.smodel.structure.CheckingNodeContext();
+      _checkingNodeContext.setBreakingNode(checkingNodeContext.getBreakingNode());
+    }
+
+    boolean result = method.canBe(operationContext, context, _checkingNodeContext);
+
+    if (checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(_checkingNodeContext.getBreakingNode());
+    }
+
+    return result;
+  }
+
+  @Override
+  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
+    return executeCanBeMethod(getCanBeAChildMethod(), operationContext, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
+  }
+
+  @Override
+  public boolean canBeRoot(IOperationContext operationContext, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
+    return executeCanBeMethod(getCanBeARootMethod(), operationContext, new CanBeARootContext(model), checkingNodeContext);
+  }
+
+  @Override
+  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
+    return executeCanBeMethod(getCanBeAParentMethod(), operationContext, new CanBeAParentContext(node, childConcept, link), checkingNodeContext);
+  }
+
+  @Override
+  public boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
+    return executeCanBeMethod(getCanBeAnAncestorMethod(), operationContext, new CanBeAnAncestorContext(node, childConcept), checkingNodeContext);
+  }
+
+  @Override
+  public PropertyConstraintsDescriptor getProperty(String name) {
+    return null;
+  }
+
+  @Override
+  public ReferenceConstraintsDescriptor getReference(String refName) {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public ReferenceScopeProvider getDefaultScopeProvider() {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+//  private static class
 }
