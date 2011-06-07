@@ -32,24 +32,24 @@ public abstract class BasePropertyConstraintsDescriptor implements PropertyConst
     if (hasOwnGetter()) {
       getterDescriptor = this;
     } else {
-      getterDescriptor = getGetterUsingInheritance(getContainer().getConceptFqName(), getName());
+      getterDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), GETTER_INHERITANCE_PARAMETERS);
     }
 
     if (hasOwnSetter()) {
       setterDescriptor = this;
     } else {
-      setterDescriptor = getSetterUsingInheritance(getContainer().getConceptFqName(), getName());
+      setterDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), SETTER_INHERITANCE_PARAMETERS);
     }
 
     if (hasOwnValidator()) {
       validatorDescriptor = this;
     } else {
-      validatorDescriptor = getValidatorUsingInheritance(getContainer().getConceptFqName(), getName());
+      validatorDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), VALIDATOR_INHERITANCE_PARAMETERS);
     }
   }
 
   @Nullable
-  private static PropertyConstraintsDescriptor getGetterUsingInheritance(String conceptFqName, String propertyName) {
+  private static PropertyConstraintsDescriptor getSomethingUsingInheritance(String conceptFqName, String propertyName, InheritanceCalculateParameters parameters) {
     for (String parent : ConceptRegistry.getInstance().getStructureDescriptor(conceptFqName).getParentsNames()) {
       // todo: remove case, wrong code
       ConstraintsDescriptor parentDescriptor = (ConstraintsDescriptor) ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
@@ -62,12 +62,12 @@ public abstract class BasePropertyConstraintsDescriptor implements PropertyConst
       }
 
       if (parentPropertyDescriptor instanceof BasePropertyConstraintsDescriptor) {
-        return ((BasePropertyConstraintsDescriptor) parentPropertyDescriptor).getterDescriptor;
+        return parameters.getParentCalculatedDescriptor((BasePropertyConstraintsDescriptor) parentPropertyDescriptor);
       } else if (parentPropertyDescriptor instanceof PropertyConstraintsDispatchable) {
-        if (((PropertyConstraintsDispatchable) parentPropertyDescriptor).hasOwnGetter()) {
+        if (parameters.hasOwn((PropertyConstraintsDispatchable) parentPropertyDescriptor)) {
           return parentPropertyDescriptor;
         } else {
-          PropertyConstraintsDescriptor parentGetter = getGetterUsingInheritance(parent, propertyName);
+          PropertyConstraintsDescriptor parentGetter = getSomethingUsingInheritance(parent, propertyName, parameters);
           if (parentGetter != null) {
             return parentGetter;
           }
@@ -77,16 +77,6 @@ public abstract class BasePropertyConstraintsDescriptor implements PropertyConst
       }
     }
 
-    return null;
-  }
-
-  @Nullable
-  private static PropertyConstraintsDescriptor getSetterUsingInheritance(String conceptFqName, String propertyName) {
-    return null;
-  }
-
-  @Nullable
-  private static PropertyConstraintsDescriptor getValidatorUsingInheritance(String conceptFqName, String propertyName) {
     return null;
   }
 
@@ -145,4 +135,46 @@ public abstract class BasePropertyConstraintsDescriptor implements PropertyConst
       return true;
     }
   }
+
+  private static interface InheritanceCalculateParameters {
+    PropertyConstraintsDescriptor getParentCalculatedDescriptor(BasePropertyConstraintsDescriptor parentDescriptor);
+
+    boolean hasOwn(PropertyConstraintsDispatchable parentDescriptor);
+  }
+
+  private static final InheritanceCalculateParameters GETTER_INHERITANCE_PARAMETERS = new InheritanceCalculateParameters() {
+    @Override
+    public PropertyConstraintsDescriptor getParentCalculatedDescriptor(BasePropertyConstraintsDescriptor parentDescriptor) {
+      return parentDescriptor.getterDescriptor;
+    }
+
+    @Override
+    public boolean hasOwn(PropertyConstraintsDispatchable parentDescriptor) {
+      return parentDescriptor.hasOwnGetter();
+    }
+  };
+
+  private static final InheritanceCalculateParameters SETTER_INHERITANCE_PARAMETERS = new InheritanceCalculateParameters() {
+    @Override
+    public PropertyConstraintsDescriptor getParentCalculatedDescriptor(BasePropertyConstraintsDescriptor parentDescriptor) {
+      return parentDescriptor.setterDescriptor;
+    }
+
+    @Override
+    public boolean hasOwn(PropertyConstraintsDispatchable parentDescriptor) {
+      return parentDescriptor.hasOwnSetter();
+    }
+  };
+
+  private static final InheritanceCalculateParameters VALIDATOR_INHERITANCE_PARAMETERS = new InheritanceCalculateParameters() {
+    @Override
+    public PropertyConstraintsDescriptor getParentCalculatedDescriptor(BasePropertyConstraintsDescriptor parentDescriptor) {
+      return parentDescriptor.validatorDescriptor;
+    }
+
+    @Override
+    public boolean hasOwn(PropertyConstraintsDispatchable parentDescriptor) {
+      return parentDescriptor.hasOwnValidator();
+    }
+  };
 }
