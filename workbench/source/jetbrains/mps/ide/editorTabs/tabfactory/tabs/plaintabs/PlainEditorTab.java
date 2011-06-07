@@ -17,17 +17,18 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 class PlainEditorTab {
-  private SNode myNode;
+  private SNodePointer myNode;
   private EditorTabDescriptor myTab;
 
-  PlainEditorTab(SNode node, EditorTabDescriptor tab) {
+  PlainEditorTab(SNodePointer node, EditorTabDescriptor tab) {
     myNode = node;
     myTab = tab;
   }
 
-  public SNode getNode() {
+  public SNodePointer getNode() {
     return myNode;
   }
 

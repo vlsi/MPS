@@ -73,7 +73,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
           public void run() {
             int index = myJbTabs.getSelectedIndex();
             PlainEditorTab tab = myRealTabs.get(index);
-            SNode node = tab.getNode();
+            SNode node = tab.getNode().getNode();
 
             if (node != null) {
               onNodeChange(node);
@@ -121,7 +121,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
       List<SNode> nodes = newContent.get(tab);
       if (nodes != null) {
         for (SNode node : nodes) {
-          myRealTabs.add(new PlainEditorTab(node, tab));
+          myRealTabs.add(new PlainEditorTab(new SNodePointer(node), tab));
           myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
         }
       } else if (myShowGrayed) {
@@ -133,7 +133,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   private void selectNodeTab() {
     for (PlainEditorTab t : myRealTabs) {
-      if (new SNodePointer(t.getNode()).equals(getLastNode())) {
+      if (t.getNode().equals(getLastNode())) {
         myJbTabs.setSelectedIndex(myRealTabs.indexOf(t));
       }
     }
@@ -156,7 +156,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   protected boolean checkNodeRemoved(SNodePointer node) {
     if (myBaseNode.equals(node)) return false; //will be closed by idea
     for (PlainEditorTab tab : myRealTabs) {
-      if (new SNodePointer(tab.getNode()).equals(node)) {
+      if (tab.getNode().equals(node)) {
         onNodeChange(myBaseNode.getNode());
         return true;
       }
