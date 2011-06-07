@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandMethod_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandParameterAssignment_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandParameterReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandProcessType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandReferenceExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor" />
@@ -48,6 +49,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandBuilderExpression_BehaviorDescriptor" file="CommandBuilderExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandBuilderExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -138,6 +140,10 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandParameterReference_BehaviorDescriptor" file="CommandParameterReference_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.commands.behavior.CommandProcessType_BehaviorDescriptor" file="CommandProcessType_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ProcessType_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandReferenceExpression_BehaviorDescriptor" file="CommandReferenceExpression_BehaviorDescriptor.java">

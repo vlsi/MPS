@@ -12,10 +12,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -24,11 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
 
 public class SimpleRunConfigurationExecutor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -85,50 +77,7 @@ public class SimpleRunConfigurationExecutor_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createCollection_ulab0u_a1c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_ulab0u_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_ulab0u_a1c0");
-    editorCell.addEditorCell(this.createConstant_ulab0u_a0b2a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_ulab0u_b0b2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ulab0u_c0b2a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_ulab0u_d0b2a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_ulab0u_b0b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_ulab0u_b0b2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createIndentCell_ulab0u_a1a1c0(editorContext, node));
-    if (renderingCondition_ulab0u_a1b0b2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_ulab0u_b1a1c0(editorContext, node));
-    }
-    if (renderingCondition_ulab0u_a2b0b2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_ulab0u_c1a1c0(editorContext, node));
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCollection_ulab0u_d0b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_ulab0u_d0b2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    if (renderingCondition_ulab0u_a0d0b2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_ulab0u_a3a1c0(editorContext, node));
-    }
-    if (renderingCondition_ulab0u_a1d0b2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_ulab0u_b3a1c0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_ulab0u_a1c0(editorContext, node));
     return editorCell;
   }
 
@@ -141,6 +90,12 @@ public class SimpleRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createIndentCell_ulab0u_a6a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ulab0u_b6a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_ulab0u_a1c0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new SimpleCanRunAndDebug(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -163,63 +118,6 @@ public class SimpleRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ulab0u_d1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ulab0u_a0b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can:");
-    editorCell.setCellId("Constant_ulab0u_a0b2a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ulab0u_b1a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "run");
-    editorCell.setCellId("Constant_ulab0u_b1a1c0");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleRunConfigurationExecutor_Editor.SimpleRunConfigurationExecutor_generic_cellMenu_a0b1a1c0()}));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ulab0u_c1a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't run");
-    editorCell.setCellId("Constant_ulab0u_c1a1c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
-    }
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleRunConfigurationExecutor_Editor.SimpleRunConfigurationExecutor_generic_cellMenu_a0c1a1c0()}));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ulab0u_c0b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_ulab0u_c0b2a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ulab0u_a3a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "debug");
-    editorCell.setCellId("Constant_ulab0u_a3a1c0");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleRunConfigurationExecutor_Editor.SimpleRunConfigurationExecutor_generic_cellMenu_a0a3a1c0()}));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ulab0u_b3a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't debug");
-    editorCell.setCellId("Constant_ulab0u_b3a1c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
-    }
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SimpleRunConfigurationExecutor_Editor.SimpleRunConfigurationExecutor_generic_cellMenu_a0b3a1c0()}));
     return editorCell;
   }
 
@@ -251,11 +149,6 @@ public class SimpleRunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ulab0u_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
-  private EditorCell createIndentCell_ulab0u_a1a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
@@ -338,22 +231,6 @@ public class SimpleRunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ulab0u_a1b0b2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "canRun");
-  }
-
-  private static boolean renderingCondition_ulab0u_a2b0b2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "canRun"));
-  }
-
-  private static boolean renderingCondition_ulab0u_a0d0b2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "canDebug");
-  }
-
-  private static boolean renderingCondition_ulab0u_a1d0b2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "canDebug"));
-  }
-
   public static class _Inline_ulab0u_a2b0 extends InlineCellProvider {
     public _Inline_ulab0u_a2b0() {
       super();
@@ -384,58 +261,6 @@ public class SimpleRunConfigurationExecutor_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  public static class SimpleRunConfigurationExecutor_generic_cellMenu_a0b1a1c0 extends AbstractCellMenuPart_Generic_Item {
-    public SimpleRunConfigurationExecutor_generic_cellMenu_a0b1a1c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "canRun", "" + (false));
-    }
-
-    public String getMatchingText() {
-      return "can't run";
-    }
-  }
-
-  public static class SimpleRunConfigurationExecutor_generic_cellMenu_a0c1a1c0 extends AbstractCellMenuPart_Generic_Item {
-    public SimpleRunConfigurationExecutor_generic_cellMenu_a0c1a1c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "canRun", "" + (true));
-    }
-
-    public String getMatchingText() {
-      return "run";
-    }
-  }
-
-  public static class SimpleRunConfigurationExecutor_generic_cellMenu_a0a3a1c0 extends AbstractCellMenuPart_Generic_Item {
-    public SimpleRunConfigurationExecutor_generic_cellMenu_a0a3a1c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "canDebug", "" + (false));
-    }
-
-    public String getMatchingText() {
-      return "can't debug";
-    }
-  }
-
-  public static class SimpleRunConfigurationExecutor_generic_cellMenu_a0b3a1c0 extends AbstractCellMenuPart_Generic_Item {
-    public SimpleRunConfigurationExecutor_generic_cellMenu_a0b3a1c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "canDebug", "" + (true));
-    }
-
-    public String getMatchingText() {
-      return "debug";
     }
   }
 }

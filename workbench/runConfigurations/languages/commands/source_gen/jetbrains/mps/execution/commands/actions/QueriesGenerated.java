@@ -166,6 +166,35 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ProcessType_1810236057992543712(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.execution.commands.structure.CommandProcessType");
+        }
+
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "command process";
+        }
+
+        public SNode getActionType(String pattern) {
+          return new QueriesGenerated.QuotationClass_x583g4_a0a0e0a0a0b0a0b0f().createNode();
+        }
+      });
+    }
+    return result;
+  }
+
   public static class QuotationClass_x583g4_a1a0a0a {
     public QuotationClass_x583g4_a1a0a0a() {
     }
@@ -176,6 +205,23 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0e0a0a0b0a0b0f {
+    public QuotationClass_x583g4_a0a0e0a0a0b0a0b0f() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

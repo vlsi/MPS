@@ -9,6 +9,8 @@
   <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)" />
   <language namespace="f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="uhxm" modelUID="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)" version="0" />
   <import index="ojho" modelUID="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.execution.configurations.behavior)" version="-1" />
@@ -18,7 +20,6 @@
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="1" implicit="yes" />
-  <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" version="0" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
@@ -31,10 +32,6 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3091009652595852676">
       <property name="name" nameId="tpck.1169194664001" value="typeof_DebuggerSettings_Parameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex.settings" />
-    </node>
-    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="946964771156870370">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_StartProcessHandlerStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2535050848643223607">
       <property name="name" nameId="tpck.1169194664001" value="check_RunConfiguration" />
@@ -64,6 +61,10 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5475888311765601531">
       <property name="name" nameId="tpck.1169194664001" value="typeof_BeforeTaskCall" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="before" />
+    </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6764660826575853706">
+      <property name="name" nameId="tpck.1169194664001" value="check_StartProcessHandlerStatement" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
   </roots>
   <root id="7806358006983757918">
@@ -160,34 +161,6 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3091009652595852678">
       <property name="name" nameId="tpck.1169194664001" value="debuggerConnectionSettings" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.4816403309550879744" resolveInfo="DebuggerSettings_Parameter" />
-    </node>
-  </root>
-  <root id="946964771156870370">
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="946964771156870371">
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="946964771156870372">
-        <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="946964771156870373" />
-        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="946964771156870374">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="946964771156870375">
-            <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="946964771156870376">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="946964771156870382" resolveInfo="startProcessHandlerStatement" />
-            </node>
-          </node>
-        </node>
-        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="946964771156870377">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="946964771156870378">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.JoinType" typeId="tpd4.1179479408386" id="946964771156870379">
-              <node role="argument" roleId="tpd4.1179479418730" type="rzqf.ProcessType" typeId="rzqf.856705193941281810" id="946964771156870380" />
-              <node role="argument" roleId="tpd4.1179479418730" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="946964771156870381">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7jsa.~ProcessHandler" resolveInfo="ProcessHandler" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="946964771156870382">
-      <property name="name" nameId="tpck.1169194664001" value="startProcessHandlerStatement" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.946964771156870353" resolveInfo="StartProcessHandlerStatement" />
     </node>
   </root>
   <root id="2535050848643223607">
@@ -536,6 +509,37 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5475888311765601533">
       <property name="name" nameId="tpck.1169194664001" value="beforeTaskCall" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.6550182048787537880" resolveInfo="BeforeTaskCall" />
+    </node>
+  </root>
+  <root id="6764660826575853706">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6764660826575853707">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6764660826575853709">
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6764660826575853718">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6764660826575853713">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6764660826575853712">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6764660826575853708" resolveInfo="startProcessHandler" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6764660826575853717">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.946964771156870354" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNullOperation" typeId="tp25.1171999116870" id="6764660826575853722" />
+        </node>
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6764660826575853711">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="6764660826575853723">
+            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6764660826575853726">
+              <property name="value" nameId="tpee.1070475926801" value="Process is required." />
+            </node>
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6764660826575853727">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6764660826575853708" resolveInfo="startProcessHandler" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6764660826575853708">
+      <property name="name" nameId="tpck.1169194664001" value="startProcessHandler" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.946964771156870353" resolveInfo="StartProcessHandlerStatement" />
     </node>
   </root>
 </model>

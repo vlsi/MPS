@@ -120,7 +120,10 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNode node) throws ExecutionException {
-    return new Java_Command().setJrePath(runParameters.getAlternativeJre()).setProgramParameter(runParameters.programParameters()).setVirtualMachineParameter(runParameters.vmOptions()).setWorkingDirectory(new File(runParameters.workingDirectory())).createProcess(node);
+    return new Java_Command().setJrePath(check_yvpt_a0a0a0c(runParameters)).setProgramParameter(check_yvpt_a2a0a0c(runParameters)).setVirtualMachineParameter(check_yvpt_a3a0a0c(runParameters)).setWorkingDirectory((check_yvpt_a0a4a0a0c(runParameters) == null ?
+      null :
+      new File(check_yvpt_a0a0e0a0a2(runParameters))
+    )).createProcess(node);
   }
 
   public static IDebugger getDebugger() {
@@ -247,5 +250,40 @@ public class Java_Command {
       return checkedDotOperand.length();
     }
     return 0;
+  }
+
+  private static String check_yvpt_a0a0a0c(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getAlternativeJre();
+    }
+    return null;
+  }
+
+  private static String check_yvpt_a2a0a0c(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.programParameters();
+    }
+    return null;
+  }
+
+  private static String check_yvpt_a3a0a0c(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.vmOptions();
+    }
+    return null;
+  }
+
+  private static String check_yvpt_a0a0e0a0a2(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.workingDirectory();
+    }
+    return null;
+  }
+
+  private static String check_yvpt_a0a4a0a0c(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.workingDirectory();
+    }
+    return null;
   }
 }

@@ -1050,7 +1050,7 @@
       <property name="includes" nameId="tps4.1206439615350" value="**/*.java" />
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Antcall" typeId="tps4.1210777529562" id="8431776905956472412">
         <property name="includes" nameId="tps4.1206439615350" value="**/*.java" />
-        <link role="project" roleId="tps4.1210777812278" targetNodeId="2235195415637076848" resolveInfo="help-build-src" />
+        <link role="project" roleId="tps4.1210777812278" targetNodeId="2235195415637076848" resolveInfo="help-build" />
         <link role="targetDeclaration" roleId="tps4.1224178284812" targetNodeId="2235195415637076859" resolveInfo="repack.sources" />
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="8431776905956472423">
           <property name="excludes" nameId="tps4.1204107522064" value="**/sandbox/**" />

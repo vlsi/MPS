@@ -100,6 +100,10 @@ public class CommandDeclaration_Behavior {
     return "getDebugger";
   }
 
+  public static String getGetDebuggerConfidurationMethodName_6226796386650472924() {
+    return "getDebuggerConfiguration";
+  }
+
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :

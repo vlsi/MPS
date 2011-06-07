@@ -10,18 +10,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StartProcessHandlerStatement extends StartStatement {
   public static final String concept = "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement";
-  public static final String PROCESS = "process";
 
   public StartProcessHandlerStatement(SNode node) {
     super(node);
   }
 
   public Expression getProcess() {
-    return (Expression) this.getChild(Expression.class, StartProcessHandlerStatement.PROCESS);
+    return this.ensureAdapter(Expression.class, "expression", this.getExpression());
   }
 
   public void setProcess(Expression node) {
-    super.setChild(StartProcessHandlerStatement.PROCESS, node);
+    this.setExpression(node);
   }
 
   public static StartProcessHandlerStatement newInstance(SModel sm, boolean init) {

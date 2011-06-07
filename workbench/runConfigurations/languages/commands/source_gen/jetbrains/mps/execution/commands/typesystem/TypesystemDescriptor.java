@@ -41,6 +41,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new CommandProcessCanSurviveWithoutCommand_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new CommandProcessIsProcess_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new processIsProcessHandler_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

@@ -457,7 +457,7 @@
         <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6129022259108656952">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6129022259108656970">
             <node role="expression" roleId="tpee.1068580123156" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="6129022259108656971">
-              <link role="command" roleId="rzqf.856705193941281782" targetNodeId="3107334613900744127" resolveInfo="java" />
+              <link role="command" targetNodeId="3107334613900744127" resolveInfo="java" />
               <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="6129022259108656791" resolveInfo="java" />
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="6129022259108656972">
                 <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="^" resolveInfo="jrePath" />
@@ -540,7 +540,7 @@
               <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="6129022259108656950" resolveInfo="java" />
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="1715641077095367952">
                 <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="6129022259108656961" resolveInfo="jrePath" />
-                <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1715641077095367953">
+                <node role="value" roleId="rzqf.856705193941281766" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="6829399386646847992">
                   <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1715641077095367954">
                     <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095367946" resolveInfo="runParameters" />
                   </node>
@@ -557,7 +557,7 @@
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="1715641077095367958">
                 <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="6129022259108656966" resolveInfo="programParameter" />
-                <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1715641077095367959">
+                <node role="value" roleId="rzqf.856705193941281766" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="6829399386646847995">
                   <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1715641077095367960">
                     <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095367946" resolveInfo="runParameters" />
                   </node>
@@ -568,7 +568,7 @@
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="1715641077095367962">
                 <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="6129022259108656968" resolveInfo="virtualMachineParameter" />
-                <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1715641077095367963">
+                <node role="value" roleId="rzqf.856705193941281766" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="6829399386646847998">
                   <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1715641077095367964">
                     <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095367946" resolveInfo="runParameters" />
                   </node>
@@ -579,14 +579,28 @@
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="1715641077095367966">
                 <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="6129022259108656955" resolveInfo="workingDirectory" />
-                <node role="value" roleId="rzqf.856705193941281766" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1715641077095367967">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1715641077095367968">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1715641077095367969">
-                      <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1715641077095367970">
+                <node role="value" roleId="rzqf.856705193941281766" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="6281323727604974622">
+                  <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6281323727604974626" />
+                  <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6281323727604974630">
+                    <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6281323727604974632">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="6281323727604974633">
+                        <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="6281323727604974634">
+                          <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095367946" resolveInfo="runParameters" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="6281323727604974635">
+                          <link role="component" roleId="cx9y.1239576542472" targetNodeId="fmpm.2535050848642906815" resolveInfo="workingDirectory" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="6281323727604965924">
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6281323727604974621" />
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="6281323727604962636">
+                      <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="6281323727604962637">
                         <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095367946" resolveInfo="runParameters" />
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="59224697583834967">
+                      <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="6281323727604962638">
                         <link role="component" roleId="cx9y.1239576542472" targetNodeId="fmpm.2535050848642906815" resolveInfo="workingDirectory" />
                       </node>
                     </node>

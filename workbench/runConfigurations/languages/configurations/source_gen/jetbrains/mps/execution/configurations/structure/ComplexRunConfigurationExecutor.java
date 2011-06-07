@@ -10,10 +10,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComplexRunConfigurationExecutor extends RunConfigurationExecutor {
   public static final String concept = "jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor";
+  public static final String CAN_DEBUG = "canDebug";
   public static final String DEBUGGER_CONFIGURATION = "debuggerConfiguration";
 
   public ComplexRunConfigurationExecutor(SNode node) {
     super(node);
+  }
+
+  public boolean getCanDebug() {
+    return this.getBooleanProperty(ComplexRunConfigurationExecutor.CAN_DEBUG);
+  }
+
+  public void setCanDebug(boolean value) {
+    this.setBooleanProperty(ComplexRunConfigurationExecutor.CAN_DEBUG, value);
   }
 
   public DebuggerConfiguration getDebuggerConfiguration() {

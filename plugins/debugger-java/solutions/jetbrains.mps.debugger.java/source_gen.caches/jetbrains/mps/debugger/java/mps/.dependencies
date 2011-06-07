@@ -77,7 +77,6 @@
     <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.settings.LocalConnectionSettings" />
     <classNode dependClassName="jetbrains.mps.debugger.java.mps.MPSInstance_Configuration" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.mps.Mps_Command" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />

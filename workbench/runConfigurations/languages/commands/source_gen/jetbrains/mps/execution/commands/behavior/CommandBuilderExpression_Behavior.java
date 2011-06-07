@@ -18,6 +18,10 @@ public class CommandBuilderExpression_Behavior {
     return true;
   }
 
+  public static String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
+    return "process";
+  }
+
   public static boolean call_isLegalAsStatement_856705193941282164(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_856705193941282164);

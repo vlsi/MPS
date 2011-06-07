@@ -13,6 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ExecuteConfiguration_Function_Behavior {
   private static Class[] PARAMETERS_6538811202682334478 = {SNode.class};
@@ -32,6 +36,10 @@ public class ExecuteConfiguration_Function_Behavior {
     return ListSequence.fromListAndArray(new ArrayList(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
   }
 
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return new ExecuteConfiguration_Function_Behavior.QuotationClass_cw5ucd_a0a0d().createNode();
+  }
+
   public static List<SNode> call_getLocalVariableElements_6538811202682334478(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), "virtual_getLocalVariableElements_1238805763253", PARAMETERS_6538811202682334478);
@@ -48,5 +56,22 @@ public class ExecuteConfiguration_Function_Behavior {
 
   public static List<SNode> callSuper_getParameters_3091009652595815824(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_3091009652595815824);
+  }
+
+  public static class QuotationClass_cw5ucd_a0a0d {
+    public QuotationClass_cw5ucd_a0a0d() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

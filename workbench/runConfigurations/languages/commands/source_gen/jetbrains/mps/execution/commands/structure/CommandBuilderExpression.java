@@ -12,20 +12,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CommandBuilderExpression extends Expression {
   public static final String concept = "jetbrains.mps.execution.commands.structure.CommandBuilderExpression";
-  public static final String COMMAND = "command";
   public static final String COMMAND_PART = "commandPart";
   public static final String ARGUMENT = "argument";
 
   public CommandBuilderExpression(SNode node) {
     super(node);
-  }
-
-  public CommandDeclaration getCommand() {
-    return (CommandDeclaration) this.getReferent(CommandDeclaration.class, CommandBuilderExpression.COMMAND);
-  }
-
-  public void setCommand(CommandDeclaration node) {
-    super.setReferent(CommandBuilderExpression.COMMAND, node);
   }
 
   public ExecuteCommandPart getCommandPart() {
