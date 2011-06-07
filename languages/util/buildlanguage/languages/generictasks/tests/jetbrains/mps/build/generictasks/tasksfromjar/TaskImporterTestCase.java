@@ -35,7 +35,7 @@ import java.util.jar.JarFile;
 
 public class TaskImporterTestCase extends TestCase {
   private static final String ANT_PATH = System.getProperty("user.dir")+"/lib/ant-1.7.0";
-  private static final String TEST_FOLDER = "platform/buildlanguage/tests";
+  private static final String TEST_FOLDER = "languages/util/buildlanguage/tests";
 
   public void testTestTask1(){
      try {
@@ -57,7 +57,7 @@ public class TaskImporterTestCase extends TestCase {
   public void testGetTaskClasses(){
     try {
       ClassLoader loader = Scanner.createClassLoader(ANT_PATH, TEST_FOLDER);
-      Set<ClassInfo<? extends Task>> taskClasses = Scanner.getTaskClasses(new JarFile("platform/buildlanguage/tests/testTasks.jar"), loader, Task.class);
+      Set<ClassInfo<? extends Task>> taskClasses = Scanner.getTaskClasses(new JarFile("languages/util/buildlanguage/tests/testTasks.jar"), loader, Task.class);
       assertEquals(2, taskClasses.size());
       ClassInfo[] classInfos = taskClasses.toArray(new ClassInfo[0]);
       Set<String> set = new LinkedHashSet<String>();
@@ -73,7 +73,7 @@ public class TaskImporterTestCase extends TestCase {
 
   public void testGenerateTasks1(){
     try {
-      TestBuilder testBuilder = testImporting("platform/buildlanguage/tests/testTasks.jar");
+      TestBuilder testBuilder = testImporting("languages/util/buildlanguage/tests/testTasks.jar");
 
       assertEquals("declarations {child=false, datatype=true, parent=false, task=true}\n" +
                    "interfaces {}\n" +
@@ -104,7 +104,7 @@ public class TaskImporterTestCase extends TestCase {
 
   public void testGenerateTasks2NestedElements(){
     try {
-      TestBuilder testBuilder = testImporting("platform/buildlanguage/tests/testNested.jar");
+      TestBuilder testBuilder = testImporting("languages/util/buildlanguage/tests/testNested.jar");
 
       assertEquals("declarations {bigtask=false, datatype=true, inner1=false, inner2=false, inner3=false, task=true}\n" +
                    "interfaces {}\n" +

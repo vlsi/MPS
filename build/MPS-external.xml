@@ -185,7 +185,7 @@
       <fileset dir="${mps_home}/workbench/typesystemUi/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/platform/uiLanguage/runtime/classes" />
+      <fileset dir="${mps_home}/languages/util/uiLanguage/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
@@ -412,7 +412,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.nanoj" />
     <mkdir dir="${deploy.dir}/MPS/languages/util" />
     <copy todir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp">
-      <fileset dir="${mps_home}/platform/buildlanguage/ant/classes" includes="**/*.class, **/*.xml, " />
+      <fileset dir="${mps_home}/languages/util/buildlanguage/ant/classes" includes="**/*.class, **/*.xml, " />
     </copy>
     <jar destfile="${deploy.dir}/MPS/languages/generate.ant.task.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
