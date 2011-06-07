@@ -18,7 +18,6 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.Pair;
-import gnu.trove.THashMap;
 import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
@@ -38,7 +37,10 @@ import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 public abstract class BaseTabsComponent implements TabsComponent {
   protected final SNodePointer myBaseNode;
@@ -128,14 +130,14 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myCallback.changeNode(node);
   }
 
-  protected List<Pair<EditorTabDescriptor,List<SNode>>> updateDocumentsAndNodes(){
+  protected List<Pair<EditorTabDescriptor, List<SNode>>> updateDocumentsAndNodes() {
     List<Document> editedDocumentsNew = new ArrayList<Document>();
     List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
 
     ArrayList<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
     Collections.sort(tabs, new EditorTabComparator());
 
-    List<Pair<EditorTabDescriptor,List<SNode>>> result = new ArrayList<Pair<EditorTabDescriptor, List<SNode>>>();
+    List<Pair<EditorTabDescriptor, List<SNode>>> result = new ArrayList<Pair<EditorTabDescriptor, List<SNode>>>();
 
     getTabRemovalListener().clearAspects();
     for (EditorTabDescriptor d : tabs) {

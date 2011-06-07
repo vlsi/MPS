@@ -17,12 +17,16 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.PrevNextActionsDescriptor;
 import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
+import com.intellij.ui.tabs.JBTabs;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.AddAspectAction;
@@ -32,14 +36,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class PlainTabsComponent extends BaseTabsComponent {
@@ -62,14 +66,14 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     PrevNextActionsDescriptor navigation = new PrevNextActionsDescriptor(IdeActions.ACTION_NEXT_EDITOR_TAB, IdeActions.ACTION_PREVIOUS_EDITOR_TAB);
     myJbTabs = new AsJBTabs(project, SwingConstants.BOTTOM, navigation, new Disposable() {
-      @Override
       public void dispose() {
-                             //todo
+        //todo
       }
     });
+    decorate(myJbTabs.getTabs());
 
     getComponent().add(createAddNodeComponent(), BorderLayout.WEST);
-    getComponent().add(myJbTabs.getComponent(), BorderLayout.CENTER);
+    getComponent().add(myJbTabs.getTabs().getComponent(), BorderLayout.CENTER);
 
     updateTabs();
 
@@ -90,26 +94,33 @@ public class PlainTabsComponent extends BaseTabsComponent {
     });
   }
 
+  private void decorate(JBTabs jbTabs) {
+    jbTabs.getPresentation()
+      .setPaintBorder(0, 0, 0, 0)
+      .setAdjustBorders(true)
+      .setGhostsAlwaysVisible(true);
+  }
+
   private JComponent createAddNodeComponent() {
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new AddAspectAction(myBaseNode, myPossibleTabs, myCallback) {
+    AddAspectAction action = new AddAspectAction(myBaseNode, myPossibleTabs, myCallback) {
       protected SNode getCurrentAspect() {
         return null;//todo
       }
-    });
-    return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group,true).getComponent();
+    };
+    return new ActionButton(action, action.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
   }
 
   protected void updateTabs() {
     myJbTabs.removeAll();
 
-    List<Pair<EditorTabDescriptor,List<SNode>>> newContent = updateDocumentsAndNodes();
+    List<Pair<EditorTabDescriptor, List<SNode>>> newContent = updateDocumentsAndNodes();
 
     //todo sort
-    for (Pair<EditorTabDescriptor,List<SNode>> p : newContent) {
+    JLabel fill = new JLabel("");
+    for (Pair<EditorTabDescriptor, List<SNode>> p : newContent) {
       for (SNode node : p.second) {
         myRealTabs.add(new PlainEditorTab(node));
-        myJbTabs.addTab(node.getPresentation(), new JPanel());
+        myJbTabs.addTab(node.getPresentation(), fill);
       }
     }
 
