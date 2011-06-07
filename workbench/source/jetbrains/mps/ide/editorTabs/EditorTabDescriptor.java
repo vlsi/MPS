@@ -65,4 +65,8 @@ public abstract class EditorTabDescriptor implements Comparable<EditorTabDescrip
   public Icon getIcon() {
     return null;
   }
+
+  public boolean isSingle(){
+    return true;
+  }
 }
