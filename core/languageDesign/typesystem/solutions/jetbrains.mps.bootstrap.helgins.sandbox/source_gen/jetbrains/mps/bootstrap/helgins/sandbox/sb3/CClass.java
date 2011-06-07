@@ -4,4 +4,13 @@ package jetbrains.mps.bootstrap.helgins.sandbox.sb3;
 
 
 public class CClass {
+  public CClass() {
+  }
+
+  private void privateMethod() {
+  }
+
+  public void pub() {
+    this.privateMethod();
+  }
 }

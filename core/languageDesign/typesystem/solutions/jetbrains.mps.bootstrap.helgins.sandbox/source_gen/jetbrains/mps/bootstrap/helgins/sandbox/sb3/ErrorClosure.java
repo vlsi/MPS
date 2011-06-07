@@ -6,6 +6,9 @@ import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ErrorClosure<Q> {
+  public ErrorClosure() {
+  }
+
   private <K, C extends CClass> Map<K, C> f(_FunctionTypes._return_P1_E0<? extends K, ? super C> arg) {
     return null;
   }
@@ -15,7 +18,6 @@ public class ErrorClosure<Q> {
 
   public void g() {
     Q q;
-    gg(q);
     f(new _FunctionTypes._return_P1_E0<String, CClass>() {
       public String invoke(CClass c) {
         return "";
