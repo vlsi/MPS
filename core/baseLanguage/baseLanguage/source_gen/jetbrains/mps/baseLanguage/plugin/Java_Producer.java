@@ -99,7 +99,11 @@ public class Java_Producer {
       if (!(Java_Command.isUnitNode(source))) {
         return null;
       }
-      Java_Configuration configuration = new Java_Configuration(getContext().getProject(), (Java_Configuration_Factory) getConfigurationFactory(), "Node " + IMainClass_Behavior.call_getUnitName_747009152928925147(source));
+      String name = (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.core.structure.INamedConcept") ?
+        SPropertyOperations.getString(SNodeOperations.cast(source, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
+        IMainClass_Behavior.call_getUnitName_747009152928925147(source)
+      );
+      Java_Configuration configuration = new Java_Configuration(getContext().getProject(), (Java_Configuration_Factory) getConfigurationFactory(), "Node " + name);
       configuration.getNode().setNode(source);
       return configuration;
     }
