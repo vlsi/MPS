@@ -22,6 +22,8 @@
       <modulePath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="usages.implicit" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="usages" />
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
+      <modulePath path="${mps_home}/samples/sampleLanguage/sampleLanguage.mpl" folder="old.usages" />
+      <modulePath path="${mps_home}/samples/sampleLanguage/solutions/sandbox/jetbrains.mps.samples.sampleLanguage.sandbox.msd" folder="old.usages" />
       <modulePath path="${project}/languages/commands/commands.mpl" folder="" />
       <modulePath path="${project}/languages/common/common.mpl" folder="" />
       <modulePath path="${project}/languages/configurations/configurations.mpl" />

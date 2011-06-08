@@ -26,6 +26,7 @@ workbench/runConfigurations/classes
 workbench/typesystemUi/classes
 platform/uiLanguage/runtime/classes
 MPSPlugin/apiclasses
+languages/util/uiLanguage/runtime/classes
 core/baseLanguage/closures/runtime/classes
 core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar
 core/baseLanguage/collections/languages/trove/runtime/classes
