@@ -4,14 +4,19 @@ package jetbrains.mps.workbench.make;
 
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
 import jetbrains.mps.make.script.IParametersPool;
+import java.util.concurrent.atomic.AtomicReference;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -27,7 +32,6 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
@@ -49,9 +53,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.IMessage;
 import com.intellij.openapi.progress.Task;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicReference;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
@@ -60,26 +62,90 @@ import java.util.concurrent.TimeoutException;
 
 public class WorkbenchMakeService implements IMakeService {
   private static Logger LOG = Logger.getLogger(WorkbenchMakeService.class);
+  private static WorkbenchMakeService INSTANCE = null;
 
-  private IOperationContext context;
-  private boolean cleanMake;
   private ProgressIndicatorDelegate progInd;
   private IParametersPool predParamPool;
+  private AtomicReference<MakeSession> currentSession = new AtomicReference<MakeSession>();
+
+  public WorkbenchMakeService() {
+  }
 
   public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
-    this.context = context;
-    this.cleanMake = cleanMake;
+    this.currentSession.set(new MakeSession(context, new WorkbenchMakeService.MessageHandler("Make", context), cleanMake));
+  }
+
+  public void initComponent() {
+    INSTANCE = this;
+  }
+
+  public void disposeComponent() {
+    INSTANCE = null;
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Workbench Make Service";
+  }
+
+  private boolean isInstance() {
+    return this == INSTANCE;
+  }
+
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
+    this.checkValidUsage();
+    this.checkValidSession(session);
+    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), null);
+  }
+
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
+    this.checkValidUsage();
+    this.checkValidSession(session);
+    return doMake(resources, script, null);
+  }
+
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
+    this.checkValidUsage();
+    this.checkValidSession(session);
+    return doMake(resources, script, controller);
+  }
+
+  public boolean isSessionActive() {
+    this.checkValidUsage();
+    return currentSession.get() != null;
+  }
+
+  public boolean startNewSession(MakeSession session) {
+    this.checkValidUsage();
+    return currentSession.compareAndSet(null, session);
+  }
+
+  public void endSession(MakeSession session) {
+    this.checkValidUsage();
+    if (!(currentSession.compareAndSet(session, null))) {
+      throw new IllegalArgumentException("invalid session");
+    }
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources) {
+    if (isInstance()) {
+      throw new IllegalStateException("deprecated API called on a service");
+    }
     return doMake(resources, WorkbenchMakeService.defaultMakeScript(), null);
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
+    if (isInstance()) {
+      throw new IllegalStateException("deprecated API called on a service");
+    }
     return doMake(resources, script, null);
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController ctl) {
+    if (isInstance()) {
+      throw new IllegalStateException("deprecated API called on a service");
+    }
     return doMake(resources, script, ctl);
   }
 
@@ -88,15 +154,15 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private Future<IResult> doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
-    String scrName = ((cleanMake ?
+    String scrName = ((currentSession.get().isCleanMake() ?
       "Rebuild" :
       "Make"
     ));
-    WorkbenchMakeService.MessageHandler mh = new WorkbenchMakeService.MessageHandler("Make");
+    IMessageHandler mh = currentSession.get().getMessageHandler();
     mh.clear();
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
-      if (cleanMake) {
+      if (currentSession.get().isCleanMake()) {
         String msg = scrName + " aborted: nothing to do";
         this.showError(mh, msg);
         this.displayInfo(msg);
@@ -133,7 +199,7 @@ public class WorkbenchMakeService implements IMakeService {
         }
       }
     });
-    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(context.getProject(), scrName, script, scrName, clInput.value, ctl, mh, new PerformInBackgroundOption() {
+    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(currentSession.get().getContext().getProject(), scrName, script, scrName, clInput.value, ctl, mh, new PerformInBackgroundOption() {
       public boolean shouldStartInBackground() {
         return false;
       }
@@ -157,12 +223,24 @@ public class WorkbenchMakeService implements IMakeService {
     return task;
   }
 
-  private void showError(WorkbenchMakeService.MessageHandler mh, String msg) {
+  private void checkValidUsage() {
+    if (!(isInstance())) {
+      throw new IllegalStateException("invalid usage of service");
+    }
+  }
+
+  public void checkValidSession(MakeSession session) {
+    if (!(currentSession.get() == session)) {
+      throw new IllegalStateException("invalid session");
+    }
+  }
+
+  private void showError(IMessageHandler mh, String msg) {
     mh.handle(new Message(MessageKind.ERROR, msg));
   }
 
   private void displayInfo(String info) {
-    IdeFrame frame = WindowManager.getInstance().getIdeFrame(context.getProject());
+    IdeFrame frame = WindowManager.getInstance().getIdeFrame(currentSession.get().getContext().getProject());
     if (frame != null) {
       frame.getStatusBar().setInfo(info);
     }
@@ -228,9 +306,9 @@ public class WorkbenchMakeService implements IMakeService {
       final ProgressIndicator pind = new JobMonitorProgressIndicator(jobMon);
       Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) ppool.parameters(new ITarget.Name("checkParameters"), Object.class);
       if (vars != null) {
-        vars._0(WorkbenchMakeService.this.context.getProject());
-        vars._1(WorkbenchMakeService.this.context);
-        vars._2(WorkbenchMakeService.this.cleanMake);
+        vars._0(WorkbenchMakeService.this.currentSession.get().getContext().getProject());
+        vars._1(WorkbenchMakeService.this.currentSession.get().getContext());
+        vars._2(WorkbenchMakeService.this.currentSession.get().isCleanMake());
         vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
           public ProgressIndicator invoke() {
             return pind;
@@ -262,7 +340,7 @@ public class WorkbenchMakeService implements IMakeService {
               public void beforeDialogShown() {
                 beforeDialog.invoke();
               }
-            }).relayQuery(query, WorkbenchMakeService.this.context)
+            }).relayQuery(query, WorkbenchMakeService.this.currentSession.get().getContext())
           );
         }
       };
@@ -292,7 +370,7 @@ public class WorkbenchMakeService implements IMakeService {
     private String name;
     private MessagesViewTool mvt;
 
-    public MessageHandler(String name) {
+    public MessageHandler(String name, IOperationContext context) {
       this.name = name;
       this.mvt = context.getProject().getComponent(MessagesViewTool.class);
     }
@@ -314,9 +392,9 @@ public class WorkbenchMakeService implements IMakeService {
     private final Iterable<? extends Iterable<IResource>> myClInput;
     private IResult myResult = null;
     private final IScriptController myController;
-    private final WorkbenchMakeService.MessageHandler myMessageHandler;
+    private final IMessageHandler myMessageHandler;
 
-    public MakeTask(@Nullable Project project, @NotNull String title, IScript script, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, WorkbenchMakeService.MessageHandler mh, PerformInBackgroundOption bgoption) {
+    public MakeTask(@Nullable Project project, @NotNull String title, IScript script, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
       super(project, title, true, bgoption);
       this.myScript = script;
       this.myScrName = scrName;

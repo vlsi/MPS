@@ -27,6 +27,12 @@
     <component>
       <implementation-class>jetbrains.mps.ide.make.actions.Make_PluginInitializer</implementation-class>
     </component>
+
+    <component>
+      <interface-class>jetbrains.mps.make.IMakeService</interface-class>
+      <implementation-class>jetbrains.mps.workbench.make.WorkbenchMakeService</implementation-class>
+    </component>
+
   </application-components>
 
   <project-components>

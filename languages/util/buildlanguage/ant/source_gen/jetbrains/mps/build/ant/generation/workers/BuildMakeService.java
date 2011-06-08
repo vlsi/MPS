@@ -7,10 +7,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.messages.IMessageHandler;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -30,6 +31,8 @@ import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.make.facet.ITarget;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 
@@ -40,6 +43,29 @@ public class BuildMakeService implements IMakeService {
   public BuildMakeService(IOperationContext context, IMessageHandler messageHandler) {
     this.context = context;
     this.messageHandler = messageHandler;
+  }
+
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
+    return null;
+  }
+
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
+    return null;
+  }
+
+  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
+    return null;
+  }
+
+  public boolean isSessionActive() {
+    return false;
+  }
+
+  public boolean startNewSession(MakeSession session) {
+    return false;
+  }
+
+  public void endSession(MakeSession session) {
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources) {
@@ -135,6 +161,18 @@ public class BuildMakeService implements IMakeService {
         }
       }
     };
+  }
+
+  public void disposeComponent() {
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return null;
+  }
+
+  public void initComponent() {
   }
 
   public static IScript defaultMakeScript() {
