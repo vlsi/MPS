@@ -53,6 +53,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   // changed only in EDT
   private volatile boolean myDistributedLocksMode = false;
+  private static final int REQUIRE_MAX_TRIES = 5;
 
   public WorkbenchModelAccess() {
   }
@@ -344,35 +345,33 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void requireRead(Runnable r) {
-    int MAX_TRIES = 4;
     int i;
     do {
-      for (i = 0; i < MAX_TRIES && !tryRead(r); ++i) {
+      for (i = 0; i < REQUIRE_MAX_TRIES && !tryRead(r); ++i) {
         try {
           Thread.sleep((1<<i)*100);
         } catch (InterruptedException ignore) {}
       }
-    } while (i >= MAX_TRIES && !confirmActionCancellation());
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
 
-    if (i >= MAX_TRIES) {
+    if (i >= REQUIRE_MAX_TRIES) {
       throw new RuntimeException("Failed to acquire read lock");
     }
   }
 
   @Override
   public <T> T requireRead(Computable<T> c) {
-    int MAX_TRIES = 4;
     T result = null;
     int i;
     do {
-      for (i = 0; i < MAX_TRIES && (result = tryRead(c)) == null; ++i) {
+      for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryRead(c)) == null; ++i) {
         try {
           Thread.sleep((1<<i)*100);
         } catch (InterruptedException ignore) {}
       }
-    } while (i >= MAX_TRIES && !confirmActionCancellation());
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
 
-    if (i >= MAX_TRIES) {
+    if (i >= REQUIRE_MAX_TRIES) {
       throw new RuntimeException("Failed to acquire read lock");
     }
     return result;
@@ -472,35 +471,33 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void requireWrite(Runnable r) {
-    int MAX_TRIES = 4;
     int i;
     do {
-      for (i = 0; i < MAX_TRIES && !tryWrite(r); ++i) {
+      for (i = 0; i < REQUIRE_MAX_TRIES && !tryWrite(r); ++i) {
         try {
           Thread.sleep((1<<i)*100);
         } catch (InterruptedException ignore) {}
       }
-    } while (i >= MAX_TRIES && !confirmActionCancellation());
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
 
-    if (i >= MAX_TRIES) {
+    if (i >= REQUIRE_MAX_TRIES) {
       throw new RuntimeException("Failed to acquire write lock");
     }
   }
 
   @Override
   public <T> T requireWrite(Computable<T> c) {
-    int MAX_TRIES = 4;
     T result = null;
     int i;
     do {
-      for (i = 0; i < MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
+      for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
         try {
           Thread.sleep((1<<i)*100);
         } catch (InterruptedException ignore) {}
       }
-    } while (i >= MAX_TRIES && !confirmActionCancellation());
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
 
-    if (i >= MAX_TRIES) {
+    if (i >= REQUIRE_MAX_TRIES) {
       throw new RuntimeException("Failed to acquire write lock");
     }
     return result;
@@ -691,7 +688,7 @@ public class WorkbenchModelAccess extends ModelAccess {
             ((ProgressWindow) pi).background();
           }
 
-          chosen[0] = Messages.showYesNoDialog("The current action is taking too long, do you want to abort it?", "Unresponsive", null);
+          chosen[0] = Messages.showYesNoDialog("The current action is taking too long, do you want to abort it?", "Unresponsive Process", null);
         }
       });
     }
