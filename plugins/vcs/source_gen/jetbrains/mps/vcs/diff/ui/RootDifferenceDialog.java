@@ -186,6 +186,11 @@ public class RootDifferenceDialog extends BaseDialog {
   }
 
   @Override
+  protected int getDisposeOnEscapeCondition() {
+    return JComponent.WHEN_IN_FOCUSED_WINDOW;
+  }
+
+  @Override
   public void dispose() {
     myModelDialog.rootDialogClosed();
     super.dispose();

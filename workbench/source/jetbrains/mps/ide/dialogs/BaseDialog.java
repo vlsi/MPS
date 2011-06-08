@@ -210,11 +210,15 @@ public abstract class BaseDialog extends JDialog {
       public void actionPerformed(ActionEvent e) {
         dispose();
       }
-    }, KeyStroke.getKeyStroke("ESCAPE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ESCAPE"), getDisposeOnEscapeCondition());
 
     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
     myPrepared = true;
+  }
+
+  protected int getDisposeOnEscapeCondition() {
+    return JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT;
   }
 
   protected String getButtonsPosition() {
