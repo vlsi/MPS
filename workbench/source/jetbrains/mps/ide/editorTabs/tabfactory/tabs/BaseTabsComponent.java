@@ -208,6 +208,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
       super(new BorderLayout());
 
       JLabel label = new JLabel("Click to create new aspect");
+      label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+      label.setHorizontalAlignment(SwingConstants.CENTER);
       add(label, BorderLayout.CENTER);
 
       this.addMouseListener(new MouseAdapter() {
