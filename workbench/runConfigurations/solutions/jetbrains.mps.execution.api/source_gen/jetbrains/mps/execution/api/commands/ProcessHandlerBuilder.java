@@ -112,7 +112,7 @@ public class ProcessHandlerBuilder {
 
   public static Iterable<String> splitCommandInParts(@NotNull String command) {
     if (!(command.contains(" "))) {
-      return Sequence.<String>singleton(command);
+      return Sequence.<String>singleton(command.replace("\"", ""));
     }
     // TODO this is actually slow, so test&optimize 
     // this mega-regexp finds a space outside of " 
