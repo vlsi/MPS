@@ -642,7 +642,7 @@ public class Generate_Facet implements IFacet {
                   return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
                 }
               }) + 1000, monitor.currentProgress().workLeft());
-              monitor.currentProgress().advanceWork("Generating", 1000, "Warming up...");
+              monitor.currentProgress().advanceWork("Generating", 1000, "...warming up...");
               List<SModelDescriptor> models = Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();

@@ -36,8 +36,7 @@ import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.CountDownLatch;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -253,7 +252,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       return;
     }
 
-    final CyclicBarrier barr = new CyclicBarrier(2);
+    final CountDownLatch latch = new CountDownLatch(1);
     final boolean ownRead = ownReadLock();
     try {
       if (ownRead) getReadLock().unlock();
@@ -264,18 +263,13 @@ public class WorkbenchModelAccess extends ModelAccess {
             r.run();
           }
           finally {
-            try {
-              barr.await();
-            }
-            catch (InterruptedException ignore) {}
-            catch (BrokenBarrierException ignore) {}
+            latch.countDown();
           }
         }
       });
-      barr.await();
+      latch.await();
     }
     catch (InterruptedException ignore) {}
-    catch (BrokenBarrierException ignore) {}
     finally {
       if (ownRead) getReadLock().lock();
     }
