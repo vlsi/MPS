@@ -24,6 +24,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class MergeContext {
   private ChangeSet myMineChangeSet;
@@ -149,6 +151,15 @@ public class MergeContext {
   }
 
   private void applyChangesNoRestoreIds(Iterable<ModelChange> changes) {
+    Sequence.fromIterable(changes).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return ch instanceof NodeGroupChange;
+      }
+    }).visitAll(new IVisitor<ModelChange>() {
+      public void visit(ModelChange ch) {
+        ((NodeGroupChange) ch).prepare();
+      }
+    });
     for (ModelChange c : Sequence.fromIterable(changes)) {
       applyChange(c);
     }
