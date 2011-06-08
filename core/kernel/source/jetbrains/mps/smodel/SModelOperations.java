@@ -303,6 +303,9 @@ public class SModelOperations {
   }
 
   static void validateLanguages(SModel sModel, SNode node) {
+    if (GlobalScope.getInstance() == null) {
+      return;
+    }
     Collection<ModuleReference> allrefs = getAllImportedLanguages(sModel);
     Set<String> available = new HashSet<String>(allrefs.size());
     for (ModuleReference ref : allrefs) {

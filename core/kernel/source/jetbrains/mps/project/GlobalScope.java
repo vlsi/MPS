@@ -15,20 +15,21 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GlobalScope extends BaseScope {
   private static GlobalScope ourInstance;
 
   public static GlobalScope getInstance() {
     if (ourInstance == null) {
-      ourInstance = new GlobalScope();
+      if (ApplicationManager.getApplication() != null) {
+        ourInstance = new GlobalScope();
+      }
     }
     return ourInstance;
   }

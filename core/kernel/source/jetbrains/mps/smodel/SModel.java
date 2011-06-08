@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -637,6 +638,11 @@ public class SModel {
 
   // create new implicit import list based on used models, explicit import and old implicit import list
   public void calculateImplicitImports() {
+    if (GlobalScope.getInstance() == null) {
+      // TODO use RoleIdsComponent
+      return;
+    }
+
     Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
     if (myModelDescriptor != null && !LanguageAspect.STRUCTURE.is(myModelDescriptor))
       usedModels.remove(myReference);   // do not import self if not structure

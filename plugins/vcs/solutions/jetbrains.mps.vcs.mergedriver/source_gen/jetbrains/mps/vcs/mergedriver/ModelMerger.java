@@ -21,6 +21,7 @@ import jetbrains.mps.util.FileUtil;
 
   @Override
   protected int mergeFiles(File baseFile, File localFile, File latestFile) {
+    System.setProperty("mps.playRefactorings", "false");
     try {
       MergerRoleIdsHandler roleIdsHandler = new MergerRoleIdsHandler();
       RoleIdsComponent.setHandler(roleIdsHandler);

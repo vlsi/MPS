@@ -110,6 +110,9 @@ public class ModelPersistence {
   private static PersistenceSettings ourPersistenceSettings;
 
   private static PersistenceSettings getPersistenceSettings() {
+    if (ApplicationManager.getApplication() == null) {
+      return null;
+    }
     if (ourPersistenceSettings == null) {
       ourPersistenceSettings = ApplicationManager.getApplication().getComponent(PersistenceSettings.class);
     }
@@ -244,6 +247,7 @@ public class ModelPersistence {
           //this is normal for ROOTS_LOADED
         } catch (Throwable t) {
           LOG.error(t);
+          t.printStackTrace();
           return new ModelLoadResult(new StubModel(header.getModelReference()), ModelLoadingState.NOT_LOADED);
         }
         return handler.getResult();
@@ -394,7 +398,11 @@ public class ModelPersistence {
   }
 
   public static int getCurrentPersistenceVersion() {
-    int persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
+    int persistenceVersion = PersistenceSettings.VERSION_UNDEFINED;
+    if (getPersistenceSettings() != null) {
+      persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
+    }
+
     if (persistenceVersion == PersistenceSettings.VERSION_UNDEFINED) {
       return currentApplicationPersistenceVersion;
     } else if (persistenceVersion == PersistenceSettings.VERSION_UPDATE_TO_THE_LATEST) {

@@ -26,7 +26,7 @@ import java.util.Map;
  * Sep 21, 2007
  */
 public class SNodePointer {
-  private static final SModelRepository SMODEL_REPOSITORY = SModelRepository.getInstance();
+  private static SModelRepository ourSModelRepository = null;
 
   private SModelReference myModelReference;
   private SNodeId myNodeId;
@@ -73,7 +73,7 @@ public class SNodePointer {
   public SModelDescriptor getModel() {
     SModelReference modelReference = getCurrentSModelReference(myModelReference, myTimestamp);
     if (modelReference == null) return null;
-    return SMODEL_REPOSITORY.getModelDescriptor(modelReference);
+    return getSModelRepository().getModelDescriptor(modelReference);
   }
 
   public SModelReference getModelReference() {
@@ -143,5 +143,12 @@ public class SNodePointer {
       ourPointersTimestamp = ourModelsTimestamp;
     }
     return ourPointersTimestamp;
+  }
+
+  private static SModelRepository getSModelRepository() {
+    if (ourSModelRepository == null) {
+      ourSModelRepository = SModelRepository.getInstance();
+    }
+    return ourSModelRepository;
   }
 }
