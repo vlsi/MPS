@@ -42,6 +42,7 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.util.*;
 
 public class PlainTabsComponent extends BaseTabsComponent {
@@ -131,6 +132,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
       } else if (myShowGrayed) {
         myRealTabs.add(new PlainEditorTab(null, tab));
         myJbTabs.addTab(tab.getTitle(), fill);
+        myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
       }
     }
   }
